@@ -1,0 +1,1 @@
+java -verbose:class >>jav.txt

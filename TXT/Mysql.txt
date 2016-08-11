@@ -1,0 +1,152 @@
+
+创建表时设置自增长，并设置起始值
+create table cc(id int auto_increment,name varchar(20),primary key(id)) auto_increment=1000;
+设置已有字段自增长
+alter table test MODIFY id INT UNSIGNED AUTO_INCREMENT;
+自增长的修改
+alter table test auto_increment=10； 注意只能改的比当前大，不可以改的比当前小
+主键约束的修改
+alter table 表名  add constraint (PK_表名) primary key (j,k,l);
+
+关于一些约束条件constraint好像没有起到作用比如 check
+
+==================插入时间 ：=============================
+
+    NOW()函数以`'YYYY-MM-DD HH:MM:SS'返回当前的日期时间，可以直接存到DATETIME    字   段中。
+    CURDATE()以’YYYY-MM-DD’的格式返回今天的日期，可以直接存到DATE字段中。
+    CURTIME()以’HH:MM:SS’的格式返回当前的时间，可以直接存到TIME字段中。
+  例：insert into tablename (fieldname) values (now())
+
+ insert into data values ('Myth','4','2016-03-10',curtime());//年月日，时间
+
+select datediff(curdate(), date_sub(curdate(), interval i month)); 
+#获取当前时间与i个月之间的天数 
+   i>0 是以前的日期，假设当前是5月19 且i=1 就是算4月19到今天的天数
+
+MYSQL 截取日期格式　年,月,日
+
+select DATE_FORMAT(produceDate, '%Y') as yeahr from historybarcodesort where DATE_FORMAT(produceDate, '%Y')='2013'
+select date_format('1997-10-04 22:23:00','%y %M %b %D %W %a %Y-%m-%d %H:%i:%s %r %T');
+结果：97 October Oct 4th Saturday Sat 1997-10-04 22:23:00 10:23:00 PM 22:23:00
+ 
+get_date = "2006-12-07"
+SELECT count(*) FROM t_get_video_temp Where DATE_FORMAT(get_date, '%Y-%d')='2006-07';
+ 
+SELECT count(*) FROM t_get_video_temp Where get_date like '2006%-07%';
+===================插入外码：==================================
+
+ mysql> alter table `Bookinfo` add constraint `F_N` foreign key `F_N`(`classno`) references `Bookclass`(`classno`) on delete cascade on
+update cascade;
+============================变量=============================================
+加了@的是用户变量， 限定当前用户，当前客户端，在declare中声明的参数可以不加@，是局部变量
+例如：declare a int ;  也可以直接就用不用声明，作为临时变量 例如这两种写法：
+	set @name = 
+	select @name:=
+注意：MySQL中只有基本数据类型，没有Oracle中那个绑定类型：表类型或行类型，所以处理起来有点。。不如Oracle方便，不管是触发器还是存储过程
+set @a= select * from User；执行这句话就会报出 operand should contain 1 column(s)错误，就是说多值赋值的错误
+===============================基本流程语法========================================
+
+	if ... then 
+	elseif ... then (注意elseif中间没有空格)
+	end if;
+
+
+===========================触发器=============================================
+=====创建单语句的触发器
+CREATE TRIGGER ins_sum BEFORE INSERT ON account
+    FOR EACH ROW SET @sum = @sum + NEW.amount;
+
+CREATE TRIGGER trigger_name trigger_time trigger_event
+    ON tbl_name FOR EACH ROW trigger_stmt
+=====创建多语句的触发器
+
+CREATE TRIGGER trigger_name trigger_time trigger_event
+    ON tbl_name FOR EACH ROW
+BEGIN
+    .......
+END
+========NEW 和 OLD关键字
+使用OLD和NEW关键字，能够访问受触发程序影响的行中的列（OLD和NEW不区分大小写）。在INSERT触发程序中，仅能使用NEW.col_name，没有旧行。
+在DELETE触发程序中，仅能使用OLD.col_name，没有新行。在UPDATE触发程序中，可以使用OLD.col_name来引用更新前的某一行的列，也能使用NEW.col_name
+来引用更新后的行中的列。
+
+用OLD命名的列是只读的。你可以引用它，但不能更改它。对于用NEW命名的列，如果具有SELECT权限，可引用它。
+在BEFORE触发程序中，如果你具有UPDATE权限，可使用“SET NEW.col_name = value”更改它的值。这意味着，
+你可以使用触发程序来更改将要插入到新行中的值，或用于更新行的值。
+
+在BEFORE触发程序中，AUTO_INCREMENT列的NEW值为0，不是实际插入新记录时将自动生成的序列号。
+
+
+
+===========================存储过程==============================================
+
+
+============================异常============================================
+
+
+
+
+
+=====================================小知识点===========================================
+一、连接MYSQL。
+格式： mysql -h主机地址 -u用户名 －p用户密码
+1、例1：连接到本机上的MYSQL。
+首先在打开DOS窗口，然后进入目录 mysqlbin，再键入命令mysql -uroot -p，回车后提示你输密码，如果刚安装好MYSQL，超级用户root是没有密码的，故直接回车即可进入到MYSQL中了，MYSQL的提示符是：mysql>
+2、例2：连接到远程主机上的MYSQL。假设远程主机的IP为：110.110.110.110，用户名为root,密码为abcd123。则键入以下命令：
+mysql -h110.110.110.110 -uroot -pabcd123
+（注:u与root可以不用加空格，其它也一样）
+3、退出MYSQL命令： exit （回车）
+二、修改密码。
+格式：mysqladmin -u用户名 -p旧密码 password 新密码
+1、例1：给root加个密码ab12。首先在DOS下进入目录mysqlbin，然后键入以下命令
+mysqladmin -uroot -password ab12
+注：因为开始时root没有密码，所以-p旧密码一项就可以省略了。
+2、例2：再将root的密码改为djg345。
+mysqladmin -uroot -pab12 password djg345
+三、增加新用户。（注意：和上面不同，下面的因为是MYSQL环境中的命令，所以后面都带一个分号作为命令结束符）
+格式：grant select on 数据库.* to 用户名@登录主机 identified by \"密码\"
+例1、增加一个用户test1密码为abc，让他可以在任何主机上登录，并对所有数据库有查询、插入、修改、删除的权限。首先用以root用户连入MYSQL，然后键入以下命令：
+grant select,insert,update,delete on *.* to test1@\"%\" Identified by \"abc\";
+但例1增加的用户是十分危险的，你想如某个人知道test1的密码，那么他就可以在internet上的任何一台电脑上登录你的mysql数据库并对你的数据可以为所欲为了，解决办法见例2。
+例2、增加一个用户test2密码为abc,让他只可以在localhost上登录，并可以对数据库mydb进行查询、插入、修改、删除的*作（localhost指本地主机，即MYSQL数据库所在的那台主机），这样用户即使用知道test2的密码，他也无法从internet上直接访问数据库，只能通过MYSQL主机上的web页来访问了。
+grant select,insert,update,delete on mydb.* to test2@localhost identified by \"abc\";
+如果你不想test2有密码，可以再打一个命令将密码消掉。
+grant select,insert,update,delete on mydb.* to test2@localhost identified by \"\";
+在上篇我们讲了登录、增加用户、密码更改等问题。下篇我们来看看MYSQL中有关数据库方面的*作。注意：你必须首先登录到MYSQL中，以下*作都是在MYSQL的提示符下进行的，而且每个命令以分号结束。
+=================================================
+
+==================================================================
+三、一个建库和建表以及插入数据的实例
+drop database if exists school; //如果存在SCHOOL则删除
+create database school; //建立库SCHOOL
+use school; //打开库SCHOOL
+create table teacher //建立表TEACHER
+(
+id int(3) auto_increment not null primary key,
+name char(10) not null,
+address varchar(50) default '深圳',
+year date
+); //建表结束
+//以下为插入字段
+insert into teacher values('','glchengang','深圳一中','1976-10-10');
+insert into teacher values('','jack','深圳一中','1975-12-23');
+注：在建表中（1）将ID设为长度为3的数字字段:int(3)并让它每个记录自动加一:auto_increment并不能为空:not null而且让他成为主字段primary key
+（2）将NAME设为长度为10的字符字段（3）将ADDRESS设为长度50的字符字段，而且缺省值为深圳。varchar和char有什么区别呢，只有等以后的文章再说了。
+（4）将YEAR设为日期字段。
+如果你在mysql提示符键入上面的命令也可以，但不方便调试。你可以将以上命令原样写入一个文本文件中假设为school.sql，然后复制到c:\\下，
+并在DOS状态进入目录\\mysql\\bin，然后键入以下命令：
+mysql -uroot -p密码 < c:\\school.sql
+如果成功，空出一行无任何显示；如有错误，会有提示。（以上命令已经调试，你只要将//的注释去掉即可使用）。
+四、将文本数据转到数据库中
+1、文本数据应符合的格式：字段数据之间用tab键隔开，null值用\ 来代替.
+例：
+3 rose 深圳二中 1976-10-10
+4 mike 深圳一中 1975-12-23
+2、数据传入命令 load data local infile \"文件名\" into table 表名;
+注意：你最好将文件复制到\\mysql\\bin目录下，并且要先用use命令打表所在的库。
+五、备份数据库：（命令在DOS的\\mysql\\bin目录下执行）
+mysqldump --opt school>school.bbb
+注释:将数据库school备份到school.bbb文件，school.bbb是一个文本文件，文件名任取，打开看看你会有新发现。
+后记：其实MYSQL的对数据库的*作与其它的SQL类数据库大同小异，您最好找本将SQL的书看看。我在这里只介绍一些基本的，其实我也就只懂这些了，呵呵。最好的MYSQL教程还是"晏子"译的"MYSQL中文参考手册"不仅免费每个相关网站都有下载，而且它是最权威的。可惜不是象\"PHP4 中文手册\"那样是chm的格式，在查找函数命令的时候不太方便。
+
+

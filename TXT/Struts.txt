@@ -1,0 +1,119 @@
+================================struts运行过程
+1.浏览器的各种事件，发起一个URL的请求，
+2.被项目的过滤器监听到了，调用对应的action，(需要配置好xml文件的package和action标签）
+3.由action里运行方法（这里是真正的代码处理的地方）的return值来确定等会跳转的结果页面（配置xml文件的result标签）
+
+
+==================搭建Struts2开发环境=================
+（或者直接使用MyEclipse的快速搭建，struts2.1+Hibernate3.3.2+JSTL1.2.2(本机jdk7.45+tomcat7.08)）
+1.找到Struts2应用所需要使用到的JAR包（特别注意不能和Hibernate的JAR包有重复的，不然就报错）
+	**Struts2.33版本的开发必须JAR包：路径在 f:\Tool\AllJar\SSH\struts23
+		sm-3.3.jar
+		sm-commons-3.3.jar
+		sm-tree-3.3.jar
+		ommons-fileupload-1.2.2.jar
+		ommons-io-2.0.1.jar
+		ommons-lang3-3.1.jar
+		ommons-logging-1.1.1.jar
+		reemarker-2.3.19.jar
+		avassist-3.11.0.GA.jar
+		gnl-3.0.5.jar
+		truts2-core-2.3.3.jar
+		work-core-2.3.3.jar
+
+2. 创建JSP文件
+
+3. 创建Action文件（实现了Struts的Action接口的普通类,或者继承ActionSupport类）
+
+4. 编写Struts2的配置文件Struts.xml
+
+5. 在web.xml中加入Struts2 框架启动的过滤器配置（核心过滤器）
+
+================================================
+================================================
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+<struts>
+	<!-- /primer/helloWorldAction.action
+		package：包
+			* name：包名，唯一的，必选项
+			* namespace：命名空间，唯一的，相当于房间号。可选项，省略情况下是"/"。页面中请求连接的前半部分
+			* extends：继承 可以将Action继承下去
+				* extends="struts-default"：struts2框架底层提供的核心包struts2-core-2.3.3.jar下的struts-default.xml文件
+	 -->
+	<package name="primer" namespace="/primer" extends="struts-default">
+		<!-- 
+			action：
+				* name：对应页面中请求连接的后面半部分
+				* class：对应要执行的类的完整路径
+		 -->
+		<action name="helloWorldAction" class="cn.itcast.primer.HelloWorldAction">
+			<!-- 
+				result：结果类型
+					* name：对应的是执行的类的方法的返回值
+						public String execute() throws Exception {
+							System.out.println("HelloWorldAction ************* execute()");
+							return "success";
+						}
+					* 后半部分的文本内容：要转向到的页面
+			 -->
+			<result name="success">/primer/success.jsp</result>
+		</action>
+	</package> 
+</struts>
+================================================
+================================================
+==访问Action的URL：
+	package的namespace加上Action的名字加上后缀
+
+==URL 默认搜索特性 ：
+	/a/b/c/d/df.action
+	/a/df.action
+	*这两个是等价的，上面长的那个同样分解为两部分，前半部分的路径是从d到a
+	依次向上搜索的，直到找到，否则才会报错，所以说，只要根是对的，中间可以乱写，但是会影响性能
+
+==如果没有给Action指定class：
+	struts.xml继承的struts-default.xml 中配置了一个默认的class，所以说不会报错
+	<default-class-ref name=""/>
+
+==如果找不到Action：
+	就需要配置默认的Action名称，没有的话，就会报错。有就执行那个了
+	<default-action-ref name=""/>
+
+==URL的后缀名可以自定义（会覆盖原本的配置）
+在struts.xml 中配置:
+	（使用多个的话，用逗号分隔）默认是action和空
+	name : 框架自带配置文件 default.properties中常量名
+	value ：常量值
+	<constan name="struts.action.extension" value="myth"></constant>
+或者：
+	src下新建一个default.properties 里面只写需要修改的常量
+		struts.action.extension=myth 
+	
+	若两者都修改了按以下顺序：
+	1 struts-default.xml
+	2 struts-plugin.xml
+	3 struts.xml
+	4 struts.properties
+	5 web.xml
+	若有相同的常量配置好，后者覆盖前者
+建议在struts.xml中配置
+
+<!-- 配置URL后缀 默认是action或空-->
+	<constant name="struts.action.extension" value="myth"></constant>
+	<!-- 配置国际化资源文件被修改时，是否重新加载 默认是false -->
+	<!-- <constant name="struts.i18n.reload" value="true"></constant> -->
+	<!-- 配置struts2框架的配置文件修改时，是否重新加载 默认是false-->
+	<!-- <constant name="struts.configuration.xml.reload" value="true"></constant> -->
+	<!--
+		 配置struts2的模式 
+			false 生产模式 默认是false
+			true 开发模式 需要更多的调试信息 会自动将上面两个常量设置为true
+	-->
+	<constant name="struts.devMode" value="true"></constant>
+================================================================
+自定义使用的 struts.xml 不仅路径，还有名字，方便多人开发
+需要在struts.xml中写一个<include file=""></include>路径都是以src为起点，注意把点换成  /
+

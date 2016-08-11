@@ -1,0 +1,133 @@
+用斜杠/或者用  ;  号   执行  但是；感觉反应更快
+show parameter instance_name   查看当前数据库的SID
+--以DBA身份连接系统数据库  
+conn  as sysdba 
+       sys__ad123 
+或： myth__ad
+
+========================PL/SQL============================
+set serveroutput on   设置后才可以看到输出
+dbms_output.put_line();  输出语句
+执行要用   /   执行
+
+
+oracle 里面的case结构特殊：
+	case 语句是会自动跳出的，不会执行后面的case语句
+	不像C语言是要加break才能跳出
+
+====================解锁账户以及设立密码===========
+alter user hr account unlock;
+ alter user hr identified by hr;
+
+ 创建用户并授权:
+   create user myth identified by ad
+    grant connect,resource,dba,sysdba to myth
+
+=====记录============
+spool  路径
+spool off
+=====查询当前状态，要使用系统用户连接========
+select status from v$instance;
+==输出格式调整=============
+col 表 for a10
+col 列 format 999
+
+==查看所有数据文件============
+select name from v$datafile
+
+==查看成员===========
+select group#,members from v$log
+==查看控制文件========
+select group#,member from v$controlfile
+==连接至数据库管理员======
+conn /as sysdba
+==关闭数据库==========
+shut immediate
+
+==连接至 nomount    可以恢复控制文件=========
+startup nomount
+select instance_name,status from v$instance;
+==连接至mount 控制文件上线      可以用日志文件进行恢复
+alter database mount
+==数据文件上线open  可以查询数据库的表
+alter database open
+
+
+可以直接选择全部忽略，不影响db的使用。
+Oracle执行先决条件检查是依赖c$共享，通常为了安全默认都关闭了这个，所以导致检查不通过。打开方法很简单，确保“服务”里的Server服务正常运行，然后在CMD命令控制台里输入
+net share c$=c:
+即可
+
+alter table exer_student add constraint P_F foreign key (cno) references exer_class(cno)
+
+
+SQL> create table exer_class(cno number(2), constraint tu primary key(cno));
+
+表已创建。
+
+SQL> alter table exer_student add constraint hh foreign key(cno) references exer_class(cno);
+alter table exer_student add constraint hh foreign key(cno) references exer_class(cno)
+                                        *
+第 1 行出现错误:
+ORA-02298: 无法验证 (MYTH.HH) - 未找到父项关键字  
+====最终解决方法是重新创建一个表空间，基于该表空间创建用户，再创建表就没错了===
+==虽然已经解决，但是不知道为什么会这样
+
+
+SQL> desc eser_class;
+ERROR:
+ORA-04043: 对象 eser_class 不存在
+
+
+SQL> desc exer_class;
+ 名称                                      是否为空? 类型
+ ----------------------------------------- -------- ----------------------------
+ CNO                                       NOT NULL NUMBER(2)
+
+SQL> shut immediate;
+ORA-01031: 权限不足
+SQL> conn as sysdba
+请输入用户名:  3
+输入口令:
+已连接。
+SQL> shut immediate;
+数据库已经关闭。
+已经卸载数据库。
+ORACLE 例程已经关闭。
+
++++++++++++++++++++++++有关使用的细节++++++++
+
+===================插入表
+insert all 
+   when dept=10 then into emp10
+   when dept=20 then into emp20
+   when dept=30 then into emp30
+   when dept=40 then into emp_other
+   when salary<2000 then into lowsal
+   when salary>4000 then into highsal
+   else into middlesal
+   select * from employees;
+    只能有一个else 而且else后面就应该接上select语句
+--个人理解这个else是不满足上面所有when的那种情况，即 不是10 20 30 40 部门号
+--并且2000到4000中间的工资  事实上猜测是正确的
+
+===========插入时间======
+分为Date 和timestamp类型
+前者是年月日时分秒
+后者可以精确到小数秒位数自己指定 例如：timestamp(4)
+
+to_date('2010-02-02 13:45:32','yyyy-mm-dd hh24:mi:ss')
+to_date('2010-02-05','yyyy-mm-dd')
+
+==================绑定变量=============
+         感觉相当于Java中preparements 的那个Set ？ 机制是一样的用变量来插入SQL语句再执行
+    简单使用：
+variable i number;  声明一个变量
+exec :i :=1;  给变量赋值
+select * from tudent where id=:i;  使用这个绑定变量
+
+=================事务操作===============
+设立保存点：savepoint A;
+回滚：rollback to A; 或者回滚所有操作 rollback;
+
+注意 ： 一旦commit，会话注销，保存点是会失效的，所以不能做回退操作
