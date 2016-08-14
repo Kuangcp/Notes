@@ -13,7 +13,8 @@ create table u (a int key auto_increment,b int );
 insert into u(b) values(31);
 insert into test(b)  select b from test;
 alter table test auto_increment=30;
-
+--创建登录历史记录表
+create table history(name varchar(20),times datetime,adds varchar(20));
 drop table test 
 delete from  customers ;
 
