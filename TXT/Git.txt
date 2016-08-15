@@ -80,6 +80,7 @@ git commit 不带命令：进入VI编辑器
 	8.1 把文件单独从index中去除
 	8.2 将index中的文件提交
 	8.3 再次添加回文件
+
 （9）：保留working tree 并且丢弃一些commit
 		git tag start
 		git checkout -b branch 1
