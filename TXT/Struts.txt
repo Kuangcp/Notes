@@ -1,4 +1,6 @@
-================================struts运行过程
+
+
+================================【struts运行过程】===================
 1.浏览器的各种事件，发起一个URL的请求，
 2.被项目的过滤器监听到了，调用对应的action，(需要配置好xml文件的package和action标签）
 3.由action里运行方法（这里是真正的代码处理的地方）的return值来确定等会跳转的结果页面（配置xml文件的result标签）
@@ -117,3 +119,51 @@
 自定义使用的 struts.xml 不仅路径，还有名字，方便多人开发
 需要在struts.xml中写一个<include file=""></include>路径都是以src为起点，注意把点换成  /
 
+==================【action类型转换】===========================
+1、在JSP页面上的输入框提交给action时，只要在action中声明同名变量，定义setget方法
+	那之后直接使用get方法就能获取到值，封装成对象再setget也是一样可以的但是在JSP上的input的name上要加对象名做前缀
+	还可以批量添加数据，就使用Collection集合 Collection<T> ts;同样的加setget方法，但是在JSP上的多个input的name就要写成这种格式
+		ts[0].name ts[1].name......
+
+
+2、result标签名为input的是默认为错误页面
+
+3、当struts有些类型无法转换时，就需要自定义转换器
+	【基于字段】（局部）
+		3.1、在当前action包下新建 convert.properties 文件名是自定义的
+		3.2、在该文件中 xwork.default.fieldvalue=无效的字段值 "{0}".
+		
+		3.3、在struts.xml文件加载该资源文件
+			<constant name="struts.custom.i18n.resources" 
+				value="cn.itcast.converter.converter,
+						cn.itcast.i18n.resources">
+		</constant>
+	【基于类】（全局）：
+		在src目录下新建一个xwork-conversion.properties文件
+		内容： 待转换的类型=类型转换器的全类名
+		例如：java.util.Date=cn.itcast.convert.DataConverter
+
+在错误页面调出错误信息：<s:fielderror fieldName="createTime"/>
+【针对每个字段给出提示信息】invalid.fieldvalue.createTime=新增信息失败
+
+【注意】JSP页面中引入struts标签<%@ taglib uri="/struts-type" prefix="s" %>
+==========================【与Servlet解耦】====================================
+struts2 对 HttpServletRequest HttpSession ServletContext进行了封装成了Map对象
+【方法一】:   通过ServletActionContext类直接获取
+	这个类是action执行的上下文对象，包括了parameter request session application等。
+//分别三个属性的设置request session application
+	HttpServletRequest request = ServletActionContext.getRequest();
+		request.setAttribute("username", "username_request");
+	Map sessionMap = ServletActionContext.getContext().getSession();
+		sessionMap.put("username", "username_session");
+	ServletContext sc = ServletActionContext.getServletContext();
+		sc.setAttribute("username", "username_application");
+//JSP页面的获取：
+    ${requestScope.username}<br>
+    ${sessionScope.username}<br>
+    ${applicationScope.username}<br>
+
+【通过实现接口struts2自动注入】
+	实现这四个接口：ServletRequestAware，ServletResponseAware，ServletContextAware，SessionAware
+	实例化对象分别是HttpServletRequest，HttpServletResponse，Map，ServletContext
+	重写四个set方法，方法体写上this.** = **;
