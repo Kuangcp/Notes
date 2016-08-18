@@ -162,7 +162,7 @@ git commit 不带命令：进入VI编辑器
 	git merge--no-ff feature-D 将当前分支与分支feature-D 合并
 	git reset --hard 哈希值：数据库的回滚操作似的
 	git reflog 查看仓库的操作日志
-
+	git mv -k oldName  newName :更改文件名字
 
 	usage: git [--version] [--help] [-C <path>] [-c name=value]
            [--exec-path[=<path>]] [--html-path] [--man-path] [--info-path]
