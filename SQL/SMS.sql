@@ -42,6 +42,8 @@ alter table obligatory add constraint PK_tn foreign key PK_tn(tno) references te
 
 alter table excelonegrade add constraint PK_ss foreign key PK_ss(sno) references student(sno) on delete cascade on update cascade;
 
+alter table student add constraint PK_CC foreign key PK_CC(cid) references classs(cid)on delete cascade on update cascade;
+
 alter table syllabus add constraint LP_week check week<7&&week>0;
 --添加唯一约束
 alter table mark add constraint K_all key(sno,cno,term,year);
@@ -68,7 +70,10 @@ begin
 end
 
 insert into mark(sno,cno,grade,year) values(12,20003,98,'2015-2016')
-   
+
+
+
+
 
 
 
