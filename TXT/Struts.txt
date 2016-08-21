@@ -1,14 +1,15 @@
-
- 【F5】  Step into 跳入
- 【F6】  Step over 下一步
- 【F7】  Step return 跳出
- 【F8】  resume 恢复
+======================【debug】=======================================
+					 【F5】  Step into 跳入
+					 【F6】  Step over 下一步
+					 【F7】  Step return 跳出
+					 【F8】  resume 恢复
+【注意】
+		1、JSP页面上的SQL标签以及EL标签是优先于文件头的那些JavaServlet语句运行的，所以要保证非法进入页面时重定向的问题
 
 ================================【struts运行过程】===================
 1.浏览器的各种事件，发起一个URL的请求，
 2.被项目的过滤器监听到了，调用对应的action，(需要配置好xml文件的package和action标签）
 3.由action里运行方法（这里是真正的代码处理的地方）的return值来确定等会跳转的结果页面（配置xml文件的result标签）
-
 
 ==================搭建Struts2开发环境=================
 （或者直接使用MyEclipse的快速搭建，struts2.1+Hibernate3.3.2+JSTL1.2.2(本机jdk7.45+tomcat7.08)）

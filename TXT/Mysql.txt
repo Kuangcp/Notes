@@ -9,7 +9,8 @@ alter table test auto_increment=10； 注意只能改的比当前大，不可以改的比当前小
 alter table 表名  add constraint (PK_表名) primary key (j,k,l);
 
 关于一些约束条件constraint好像没有起到作用比如 check
-
+【表名】：rename table table1 to table2; 
+		切记不可随便修改表名，改了就要修改相应的 外键，触发器，函数，存储过程！！！
 ==================插入时间 ：=============================
 
     NOW()函数以`'YYYY-MM-DD HH:MM:SS'返回当前的日期时间，可以直接存到DATETIME    字   段中。

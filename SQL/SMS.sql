@@ -51,30 +51,34 @@ alter table mark add constraint K_all key(sno,cno,term,year);
 update mark set gpa = grade/10-5
 --创建触发器  如果是在命令行中，就需要声明定界符 delimiter
 drop trigger t_checktwo_b_i;
---这个触发器就是用来实现了两个字段组成候选码，不重复
+--这个触发器就是用来实现了两个字段组成候选码，不重复,切记
 --中断机制采用的是错误的SQL语句，并且插入之前计算出绩点的值，那么只需要学号，课程，成绩，学期，四个值
 create trigger t_checktwo_b_i before insert on mark for each row
 begin 
 	set @flag=(select id from mark where sno=NEW.sno and cno=NEW.cno);
 	if @flag is not null then 
-		insert into w values('23','er','eww');
+		insert into mark_error values('23','er','eww');
   elseif @flag is null then 
        set NEW.gpa=(NEW.grade/10-5);
 	end if;
 end
 --创建触发器来自动计算绩点,这是错误的，不允许在insert之后来更改new的值，所以应该放在前面
-drop trigger t_caculatergpa_a_i;
-create trigger t_caculatergpa_a_i after insert on mark for each row
-begin 
-      set NEW.gpa = (NEW.grade/10-5);
-end
+--drop trigger t_caculatergpa_a_i;
+--create trigger t_caculatergpa_a_i after insert on mark for each row
+--begin 
+--      set NEW.gpa = (NEW.grade/10-5);
+--end
 
-insert into mark(sno,cno,grade,year) values(12,20003,98,'2015-2016')
+select aid id,academy name from academy
 
+insert into grade(sno,cno,grade) values(12,'20003',98)
 
+insert into grade(sno,cno,grade,year,term) values(12,20003,98,'2015-2016',1)
 
-
-
+--创建bug数据库
+use bug
+create table student(num int primary key auto_increment,how datetime,info varchar(255),causes varchar(255),handle varchar(255));
+insert into student(how,info,causes,handle) values(now(),"","","");
 
 
 
