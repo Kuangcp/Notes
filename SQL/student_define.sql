@@ -7,6 +7,9 @@
 #
 # Structure for table "academy"
 #
+create database student;
+
+use student;
 
 DROP TABLE IF EXISTS `academy`;
 CREATE TABLE `academy` (
@@ -28,7 +31,7 @@ INSERT INTO `academy` VALUES ('IT','信息科学与技术学院','专注于技�
 
 DROP TABLE IF EXISTS `assitant`;
 CREATE TABLE `assitant` (
-  `ano` int(11) NOT NULL AUTO_INCREMENT COMMENT '辅导员工号',
+  `ano` bigint(15) NOT NULL AUTO_INCREMENT COMMENT '辅导员工号',
   `aname` varchar(20) NOT NULL COMMENT '姓名',
   `pass` varchar(20) NOT NULL COMMENT '密码',
   `asex` char(4) NOT NULL COMMENT '性别',
@@ -149,7 +152,7 @@ INSERT INTO `manager` VALUES ('34224','df','dasf'),('3443','df','d23'),('5','df'
 
 DROP TABLE IF EXISTS `student`;
 CREATE TABLE `student` (
-  `sno` int(11) NOT NULL AUTO_INCREMENT COMMENT '学号',
+  `sno` bigint(15) NOT NULL AUTO_INCREMENT COMMENT '学号',
   `pass` varchar(20) NOT NULL COMMENT '密码',
   `sname` varchar(20) NOT NULL COMMENT '姓名',
   `ssex` char(4) NOT NULL COMMENT '性别',
@@ -175,17 +178,17 @@ INSERT INTO `student` VALUES (12,'1','12','2','1970-01-01','90','3','3','45','55
 # Structure for table "mark"
 #
 
-DROP TABLE IF EXISTS `grade`;
-CREATE TABLE `grade` (
+DROP TABLE IF EXISTS `mark`;
+CREATE TABLE `mark` (
   `id` int(11) NOT NULL AUTO_INCREMENT COMMENT '序列',
-  `sno` int(11) NOT NULL COMMENT '学号',
+  `sno` bigint(15) NOT NULL COMMENT '学号',
   `cno` varchar(20) NOT NULL COMMENT '课程号',
   `grade` float(4,2) NOT NULL COMMENT '成绩',
   `gpa` float(4,2) DEFAULT NULL COMMENT '绩点，需要由触发器写入，计算：成绩/10-5',
   `makeup` float(4,2) NOT NULL DEFAULT '-1.00' COMMENT '补考,没有考就为-1',
   `ultimate` float(4,2) NOT NULL DEFAULT '-1.00' COMMENT '清考，没有考就为-1',
   `year` varchar(20) DEFAULT '' COMMENT '学年 2015-2016',
-  `term` int(11) NOT NULL DEFAULT '1' COMMENT '学期',
+  `term` int(3) NOT NULL DEFAULT '1' COMMENT '学期',
   `info` varchar(20) NOT NULL DEFAULT '*' COMMENT '备注，不填写默认为 *',
   PRIMARY KEY (`id`),
   KEY `PK_SNO` (`sno`),
@@ -198,7 +201,7 @@ CREATE TABLE `grade` (
 # Data for table "markse"
 #
 
-INSERT INTO `grade` VALUES (1,20,'20002',12.00,-3.80,-1.00,-1.00,'2015-2016',1,'*'),(2,12,'20002',66.00,1.60,-1.00,-1.00,'2015-2016',1,'*'),(3,15,'20003',76.00,2.60,-1.00,-1.00,'2015-2016',1,'*'),(14,12,'20003',98.00,4.80,-1.00,-1.00,'2015-2016',1,'*'),(15,20,'20003',87.00,3.70,0.00,0.00,'2015-2016',1,'*');
+INSERT INTO `mark` VALUES (1,20,'20002',12.00,-3.80,-1.00,-1.00,'2015-2016',1,'*'),(2,12,'20002',66.00,1.60,-1.00,-1.00,'2015-2016',1,'*'),(3,15,'20003',76.00,2.60,-1.00,-1.00,'2015-2016',1,'*'),(14,12,'20003',98.00,4.80,-1.00,-1.00,'2015-2016',1,'*'),(15,20,'20003',87.00,3.70,0.00,0.00,'2015-2016',1,'*');
 
 #
 # Structure for table "excelonegrade"
@@ -207,7 +210,7 @@ INSERT INTO `grade` VALUES (1,20,'20002',12.00,-3.80,-1.00,-1.00,'2015-2016',1,'
 DROP TABLE IF EXISTS `excelonegrade`;
 CREATE TABLE `excelonegrade` (
   `id` int(11) NOT NULL AUTO_INCREMENT COMMENT '序号',
-  `sno` int(11) NOT NULL COMMENT '学号',
+  `sno` bigint(15) NOT NULL COMMENT '学号',
   `sname` varchar(20) NOT NULL COMMENT '姓名',
   `grade` float(4,2) NOT NULL COMMENT '成绩',
   PRIMARY KEY (`id`),
@@ -226,7 +229,7 @@ CREATE TABLE `excelonegrade` (
 
 DROP TABLE IF EXISTS `teacher`;
 CREATE TABLE `teacher` (
-  `tno` int(11) NOT NULL AUTO_INCREMENT COMMENT '教师工号',
+  `tno` bigint(15) NOT NULL AUTO_INCREMENT COMMENT '教师工号',
   `tname` varchar(20) NOT NULL COMMENT '姓名',
   `pass` varchar(20) NOT NULL COMMENT '密码',
   `tsex` char(4) NOT NULL COMMENT '性别',
@@ -254,7 +257,7 @@ DROP TABLE IF EXISTS `syllabus`;
 CREATE TABLE `syllabus` (
   `cid` varchar(20) NOT NULL COMMENT '班级编号',
   `cno` varchar(20) NOT NULL COMMENT '课程编号',
-  `tno` int(11) NOT NULL COMMENT '教师编号',
+  `tno` bigint(15) NOT NULL COMMENT '教师编号',
   `theoryroom` varchar(20) NOT NULL DEFAULT '' COMMENT '理论/实践教室',
   `week` int(11) NOT NULL COMMENT '星期几',
   `start` int(11) NOT NULL COMMENT '第几节开始',
@@ -282,7 +285,7 @@ CREATE TABLE `obligatory` (
   `term` int(11) NOT NULL COMMENT '学期',
   `cid` varchar(20) NOT NULL COMMENT '班级',
   `cno` varchar(20) NOT NULL COMMENT '课程',
-  `tno` int(11) NOT NULL COMMENT '教师',
+  `tno` bigint(15) NOT NULL COMMENT '教师',
   `info` varchar(20) DEFAULT NULL COMMENT '备注',
   KEY `PK_Cn` (`cno`),
   KEY `PK_Ci` (`cid`),
@@ -303,7 +306,7 @@ INSERT INTO `obligatory` VALUES ('2015-2016',1,'3','20002',900001,'*');
 #
 
 DROP TRIGGER IF EXISTS `t_checktwo_b_i`;
-CREATE DEFINER='root'@'localhost' TRIGGER `t_checktwo_b_i` BEFORE INSERT ON `markse`
+CREATE DEFINER='root'@'localhost' TRIGGER `t_checktwo_b_i` BEFORE INSERT ON `mark`
   FOR EACH ROW begin 
 	set @flag=(select id from mark where sno=NEW.sno and cno=NEW.cno);
 	if @flag is not null then 

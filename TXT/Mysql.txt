@@ -1,17 +1,15 @@
 
-创建表时设置自增长，并设置起始值
-create table cc(id int auto_increment,name varchar(20),primary key(id)) auto_increment=1000;
-设置已有字段自增长
-alter table test MODIFY id INT UNSIGNED AUTO_INCREMENT;
-自增长的修改
-alter table test auto_increment=10； 注意只能改的比当前大，不可以改的比当前小
-主键约束的修改
-alter table 表名  add constraint (PK_表名) primary key (j,k,l);
-
-关于一些约束条件constraint好像没有起到作用比如 check
-【表名】：rename table table1 to table2; 
+【创建表时设置自增长，并设置起始值】 create table cc(id int auto_increment,name varchar(20),primary key(id)) auto_increment=1000;
+【设置已有字段自增长】 alter table test MODIFY id INT UNSIGNED AUTO_INCREMENT;
+【自增长的修改】  alter table test auto_increment=10； 注意只能改的比当前的值大，不可以改的比当前小
+【自增长字段溢出】 设置自动增长的列，只能是int类型（包含了各种int），当出现了溢出就可以改成bigint
+	但是如果有外键约束，可能就会更改失败，还不如删库重建，实在太大了就删约束再建约束
+【主键约束的修改】 alter table 表名  add constraint (PK_表名) primary key (j,k,l);
+		关于一些约束条件constraint好像没有起到作用比如 check
+【修改表名】：rename table table1 to table2; 
 		切记不可随便修改表名，改了就要修改相应的 外键，触发器，函数，存储过程！！！
-==================插入时间 ：=============================
+
+=================================【插入时间 】==============================================
 
     NOW()函数以`'YYYY-MM-DD HH:MM:SS'返回当前的日期时间，可以直接存到DATETIME    字   段中。
     CURDATE()以’YYYY-MM-DD’的格式返回今天的日期，可以直接存到DATE字段中。
@@ -34,25 +32,25 @@ get_date = "2006-12-07"
 SELECT count(*) FROM t_get_video_temp Where DATE_FORMAT(get_date, '%Y-%d')='2006-07';
  
 SELECT count(*) FROM t_get_video_temp Where get_date like '2006%-07%';
-===================插入外码：==================================
+=================================【插入外码】==========================================
 
- mysql> alter table `Bookinfo` add constraint `F_N` foreign key `F_N`(`classno`) references `Bookclass`(`classno`) on delete cascade on
+alter table `Bookinfo` add constraint `F_N` foreign key `F_N`(`classno`) references `Bookclass`(`classno`) on delete cascade on
 update cascade;
-============================变量=============================================
-加了@的是用户变量， 限定当前用户，当前客户端，在declare中声明的参数可以不加@，是局部变量
+=================================【变量】=============================================
+加了@ 的是用户变量， 限定当前用户，当前客户端， 在declare中声明的参数可以不加 @，那就是是局部变量
 例如：declare a int ;  也可以直接就用不用声明，作为临时变量 例如这两种写法：
 	set @name = 
 	select @name:=
 注意：MySQL中只有基本数据类型，没有Oracle中那个绑定类型：表类型或行类型，所以处理起来有点。。不如Oracle方便，不管是触发器还是存储过程
 set @a= select * from User；执行这句话就会报出 operand should contain 1 column(s)错误，就是说多值赋值的错误
-===============================基本流程语法========================================
+===============================【基本流程语法】========================================
 
 	if ... then 
 	elseif ... then (注意elseif中间没有空格)
 	end if;
 
 
-===========================触发器=============================================
+================================【触发器】===========================================
 =====创建单语句的触发器
 CREATE TRIGGER ins_sum BEFORE INSERT ON account
     FOR EACH ROW SET @sum = @sum + NEW.amount;
@@ -66,7 +64,7 @@ CREATE TRIGGER trigger_name trigger_time trigger_event
 BEGIN
     .......
 END
-========NEW 和 OLD关键字
+========【NEW 和 OLD关键字】
 使用OLD和NEW关键字，能够访问受触发程序影响的行中的列（OLD和NEW不区分大小写）。在INSERT触发程序中，仅能使用NEW.col_name，没有旧行。
 在DELETE触发程序中，仅能使用OLD.col_name，没有新行。在UPDATE触发程序中，可以使用OLD.col_name来引用更新前的某一行的列，也能使用NEW.col_name
 来引用更新后的行中的列。
@@ -79,16 +77,16 @@ END
 
 
 
-===========================存储过程==============================================
+===========================【存储过程】==============================================
 
 
-============================异常============================================
+============================【异常】============================================
 
 
 
 
 
-=====================================小知识点===========================================
+=====================================【小知识点】===========================================
 一、连接MYSQL。
 格式： mysql -h主机地址 -u用户名 －p用户密码
 1、例1：连接到本机上的MYSQL。
@@ -114,9 +112,9 @@ grant select,insert,update,delete on mydb.* to test2@localhost identified by \"a
 如果你不想test2有密码，可以再打一个命令将密码消掉。
 grant select,insert,update,delete on mydb.* to test2@localhost identified by \"\";
 在上篇我们讲了登录、增加用户、密码更改等问题。下篇我们来看看MYSQL中有关数据库方面的*作。注意：你必须首先登录到MYSQL中，以下*作都是在MYSQL的提示符下进行的，而且每个命令以分号结束。
-=================================================
+===============================================================================
 
-==================================================================
+================================================================================
 三、一个建库和建表以及插入数据的实例
 drop database if exists school; //如果存在SCHOOL则删除
 create database school; //建立库SCHOOL
