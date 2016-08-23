@@ -240,4 +240,106 @@ struts2框架的文件上传：
 			* 在动作类action中声明的相关属性，类型改成数组；
 			* 在业务方法中，相关处理流程改成单文件上传的循环。
 		
+==================================【校验】====================================================	
+【struts2手动验证】：
+		也就是说手动的是直接在action里，重写个validate方法就是了 
+		方法里只要按需求写this.addFieldError( key, value);语句就行了，后续的由框架来处理
+	* 首先要从页面中获取对应的标签name属性的值，在动作类action中声明 同名的属性，提供get和set方法
+
+	* 要继承ActionSupport类或者实现Validateable接口
+	
+	* 重写Validateable接口的validate()方法
+		* 前提是：要保证setUsername()、validate()、login()方法要按照这个先后顺序执行
+	
+	* 如果登录失败，如何处理：
+		* this.addFieldError( key, value);
+			* key：错误提示字段
+			* value：错误提示信息
+	
+	* 什么时候才是验证通过？
+		* 验证通过：1、map集合不存在；2、map集合存在并为空
+		* 验证不通过：map集合存在并且不为空
+	
+	* 分析需求：
+		* 用户名不能为null ,""
+		* 密码不能为null, "" ，并且密码的长度6-12之间 
+	
+	* 针对所有业务方法进行验证还是针对某个指定业务方法进行验证？
+		* 重写的validate()方法，针对所有业务方法进行验证
+		* 重写的validate()方法加上要验证的指定的业务方法名(业务方法名的首字母大写)，实现针对某个指定的业务方法进行验证
+			* 为什么要这样进行拼接？因为struts2框架底层拼接，如果不这样写，底层就找不到对应方法名
+	
+【struts2框架验证(xml方式)】:
+	* 首先要从页面中获取对应的标签name属性的值，在动作类action中声明同名的属性，提供get和set方法
+	
+	* 创建一个xml格式验证文件：
+		* 命名方式：ActionClassName-validation.xml，ActionClassName指的是动作类action的名称
+		* <validators>标签：根元素
+		* field：指定action中要校验的属性，实际上就是页面中表单的name属性的值
+			* name：指定页面中表单的name属性的值
+		* field-validator：指定验证规则
+			* type：指定验证规则名称，
+					struts2框架提供的验证规则放在xwork-core-xxx.jar
+					下的com\opensymphony\xwork2\validator\validators
+					的default.xml配置文件。
+		* param：向底层的验证规则传递的参数
+		* message：验证失败时，提供的错误提示信息
+	
+	* 如果要对指定方法进行验证的话：
+		* xml验证文件的命名方式：ActionClassName-ActionName-validation.xml，
+								ActionName对应的是struts.xml文件对应的action标签的name属性的值
+
+=================================【自定义拦截器】===============================================
+【拦截器 特性】：
+	# 执行顺序：执行完struts中配置的拦截器栈中所有intercept方法后再执行action的execute方法
+	# 当拦截器的 intercept方法  返回null就会继续执行action 
+		如果在前面就调出来了action实例，并且执行了方法那么之后的action就不会再重复执行
+	# 检查是否还有拦截器待执行，有就去执行，没有就会得到null，同样的继续执行action
+			String result = invocation.invoke();
+			return result;
+【如何自定义拦截器】
+	1、 所有的拦截器都需要实现Interceptor接口或者继承Interceptor接口的扩展实现类
+	
+	2、要重写init()、intercept()、destroy()方法
+	
+		* init()是在struts2框架运行时执行，在拦截器的生命周期中只执行一次，可以做必要的内容的初始化工作
 		
+		* intercept()，是每一次请求就执行一次，做相关处理工作。
+		
+			* intercept()方法接收一个ActionInvocation接口的实例
+			
+			* 通过这个接口的实例，可以获取以下内容
+			：
+					//cn.itcast.aop.UserAction @15b5783， 动作类的对象
+				System.out.println("invocation.getAction() : "+invocation.getAction());
+					//cn.itcast.aop.UserAction @15b5783， 与invocation.getAction()方法获取的是同一的对象
+				System.out.println("invocation.getProxy().getAction() : "+invocation.getProxy().getAction());
+					//userAction_save，自定义配置文件中的action标签的name属性的值
+				System.out.println("invocation.getProxy().getActionName() : "+invocation.getProxy().getActionName());
+					//save，对应动作类指定要执行的方法名
+				System.out.println("invocation.getProxy().getMethod() : "+invocation.getProxy().getMethod());
+					//	/aop，自定义配置文件中的package标签的namespace属性的值
+				System.out.println("invocation.getProxy().getNamespace() : "+invocation.getProxy().getNamespace());
+		* destroy()是在拦截器销毁前执行，在拦截器的声明周期中只执行一次。
+		
+	3、 在struts.xml配置文件中，进行注册
+		* 在配置文件中的package标签下，进行相关配置：
+		
+		<interceptors>
+			<!-- 声明自定义的拦截器 -->
+			<interceptor name="expessionInterceptor" class="cn.itcast.aop.ExpessionInterceptor" />
+			<!-- 声明自定义拦截器栈 -->
+			<interceptor-stack name="expessionStack">
+				 <interceptor-ref name="defaultStack"/>
+				 <!-- 配置使用自定义拦截器 -->
+				 <interceptor-ref name="expessionInterceptor"/>
+			</interceptor-stack>
+		</interceptors>
+		<!-- 配置修改struts2框架运行时，默认执行的是自定义拦截器栈 -->
+		<default-interceptor-ref name="expessionStack" />
+		
+		下方就是action的配置了
+	
+=============================================================================================
+
+

@@ -78,6 +78,7 @@ insert into grade(sno,cno,grade,year,term) values(12,20003,98,'2015-2016',1)
 --创建bug数据库
 use bug
 create table student(num int primary key auto_increment,how datetime,info varchar(255),causes varchar(255),handle varchar(255));
+
 insert into student(how,info,causes,handle) values(now(),"","","");
 
 
