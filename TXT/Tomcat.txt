@@ -69,3 +69,65 @@ Web 服务器主要是处理需要向浏览器发送 HTML 的请求以供浏览。
       Tomcat 是提供一个支持 Servlet 和 JSP 运行的容器。Servlet 和 JSP 能根据实时需要，产生动态网页内容。而对于 Web 服务器来说， Apache 仅仅支持静态网页，对于支持动态网页就会显得无能为力；Tomcat 则既能为动态网页服务，同时也能为静态网页提供支持。尽管它没有通常的 Web 服务器快、功能也不如 Web 服务器丰富，但是 Tomcat 逐渐为支持静态内容不断扩充。大多数的 Web 服务器都是用底层语言编写如 C，利用了相应平台的特征，因此用纯 Java 编写的 Tomcat 执行速度不可能与它们相提并论。
 
       一般来说，大的站点都是将 Tomcat 与 Apache 的结合，Apache 负责接受所有来自客户端的 HTTP 请求，然后将 Servlets 和 JSP 的请求转发给 Tomcat 来处理。Tomcat 完成处理后，将响应传回给 Apache，最后 Apache 将响应返回给客户端。
+======================================================================================================================================================================
+浏览器表单utf-8     xml utf-8  乱码
+
+服务器   浏览器  乱码  使用response.setContentType("text/html; charset=utf-8");。无效方法response.setChaoactorEncoding;
+
+xml文件里面有乱码，saxreader会生成document错误。
+
+查看端口占用 netstat -ano
+浏览器默认端口是80.
+修改tomcat的端口号 conf/server.xml 找到connector 8080
+
+编码
+myecpipse 文件编码utf-8
+数据库
+服务器
+页面编码 utf-8
+
+浏览器表单get方式：需要重新编码获得字符串
+浏览器表单post方式 request.setCharactorEncoding(utf-8);
+
+自己建立的工程里面的web.xml继承了conf/web.xml.只需要重写自己的web.xml相关的配置的参数就可以覆盖其功能
+
+
+虚拟目录
+指定webapp目录外的可访问的文件
+方法1.conf/server.xml找到host
+value旁边增加,<Context path="/hello" docBase="c:/mydsadf"/>
+
+方法2：conf/catalina/localhost/myxml.xml
+context放置进来<Context  docBase="c:/mydsadf"/>
+访问方式http://localhsot:8080/myxml/
+
+war包生成1.myeclipse导出到war
+2.目录下文件压缩到zip改扩展名
+
+虚拟目录设置
+
+con/server。xml
+<host>
+<Context path="/abc" docBase="d:/webA"
+
+默认主页
+
+个人web下的web.xml中设置 
+<welcome-file-list>
+<welcome-file>index.html</welcome-file>
+</welcome-file-list>
+
+虚拟主机
+
+server.xml
+<host name="www.baidu.com" appBase="c:/webA" 
+unpackWARs="true" autoDeploy="true">
+<Valve className="org.apache.catalina.valves.AccessLogValve" directory="logs"
+               prefix="localhost_access_log." suffix=".txt"
+               pattern="%h %l %u %t &quot;%r&quot; %s %b" />
+<Context path="/" docBase="d:/webA" />
+>
+
+File f=new File("/information.xml");这个写法是错的，空指针异常。
+
+request.getParameter返回字符串，如果表单里面是空的，就返回长度为零的字符串。

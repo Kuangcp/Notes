@@ -1,14 +1,16 @@
 =====================================================================================
 ======================【debug】========================================================
-					 【F5】  Step into 跳入
-					 【F6】  Step over 下一步
-					 【F7】  Step return 跳出
-					 【F8】  resume 恢复
+【F5】  Step into 跳入
+【F6】  Step over 下一步
+【F7】  Step return 跳出
+【F8】  resume 恢复
 
+使用ognl表达式，<s:debug></s:debug>
 ================================【struts运行过程】=========================================
 1.浏览器的各种事件，发起一个URL的请求，
-2.被项目的过滤器监听到了，调用对应的action，(需要配置好xml文件的package和action标签）
-3.由action里运行方法（这里是真正的代码处理的地方）的return值来确定等会跳转的结果页面（配置xml文件的result标签）
+2.被项目的默认过滤器监听到了，调用对应的action，(需要配置好xml文件的package和action标签）
+3.若action有绑定拦截器，就先执行拦截器里的方法
+4.由action里运行方法（这里是真正的代码处理的地方）的return值来确定等会跳转的结果页面（配置xml文件的result标签）
 
 ================================【搭建Struts2开发环境】=======================================
 （或者直接使用MyEclipse的快速搭建，struts2.1+Hibernate3.3.2+JSTL1.2.2(本机jdk7.45+tomcat7.08)）
@@ -28,67 +30,31 @@
 		work-core-2.3.3.jar
 
 2. 创建JSP文件
-
 3. 创建Action文件（实现了Struts的Action接口的普通类,或者继承ActionSupport类）
-
 4. 编写Struts2的配置文件Struts.xml
-
 5. 在web.xml中加入Struts2 框架启动的过滤器配置（核心过滤器）
 
-=========================================================================
-=========================================================================
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE struts PUBLIC
-	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
-	"http://struts.apache.org/dtds/struts-2.3.dtd">
-<struts>
-	<!-- /primer/helloWorldAction.action
-		package：包
-			* name：包名，唯一的，必选项
-			* namespace：命名空间，唯一的，相当于房间号。可选项，省略情况下是"/"。页面中请求连接的前半部分
-			* extends：继承 可以将Action继承下去
-				* extends="struts-default"：struts2框架底层提供的核心包struts2-core-2.3.3.jar下的struts-default.xml文件
-	 -->
-	<package name="primer" namespace="/primer" extends="struts-default">
-		<!-- 
-			action：
-				* name：对应页面中请求连接的后面半部分
-				* class：对应要执行的类的完整路径
-		 -->
-		<action name="helloWorldAction" class="cn.itcast.primer.HelloWorldAction">
-			<!-- 
-				result：结果类型
-					* name：对应的是执行的类的方法的返回值
-						public String execute() throws Exception {
-							System.out.println("HelloWorldAction ************* execute()");
-							return "success";
-						}
-					* 后半部分的文本内容：要转向到的页面
-			 -->
-			<result name="success">/primer/success.jsp</result>
-		</action>
-	</package> 
-</struts>
 ===========================================================================
+
 ===========================================================================
-==访问Action的URL：
+=====访问Action的URL：
 	package的namespace加上Action的名字加上后缀
 
-==URL 默认搜索特性 ：
+======URL 默认搜索特性 ：
 	/a/b/c/d/df.action
 	/a/df.action
 	*这两个是等价的，上面长的那个同样分解为两部分，前半部分的路径是从d到a
 	依次向上搜索的，直到找到，否则才会报错，所以说，只要根是对的，中间可以乱写，但是会影响性能
 
-==如果没有给Action指定class：
+======如果没有给Action指定class：
 	struts.xml继承的struts-default.xml 中配置了一个默认的class，所以说不会报错
 	<default-class-ref name=""/>
 
-==如果找不到Action：
+======如果找不到Action：
 	就需要配置默认的Action名称，没有的话，就会报错。有就执行那个了
 	<default-action-ref name=""/>
 
-==URL的后缀名可以自定义（会覆盖原本的配置）
+======URL的后缀名可以自定义（会覆盖原本的配置）
 在struts.xml 中配置:
 	（使用多个的话，用逗号分隔）默认是action和空
 	name : 框架自带配置文件 default.properties中常量名
@@ -338,8 +304,80 @@ struts2框架的文件上传：
 		<!-- 配置修改struts2框架运行时，默认执行的是自定义拦截器栈 -->
 		<default-interceptor-ref name="expessionStack" />
 		
-		下方就是action的配置了
+		后面跟着的就是action的配置了
 	
-=============================================================================================
+=========================================【ognl】====================================================
 
+【valueStack】：
+	ValueStack实际上是一个接口，在struts2中利用OGNL时，实际上是哦那个的是实现了该接口的OgnlValueStack类，这个类是利用OGNL的基础
+	贯穿整个action生命周期，每个action类的对象都有一个valueStack对象，相当于一个数据的中转站，在其中保存了当前action对象和其他相关对象
+	struts框架把valueStack对象保存在名为 “struts.valueStack”的请求属性中（request中）
 
+		 ValueStack vs = (ValueStack)request.getAttribute("struts.valueStack");
+		 vs.set("key","value");//实际上是放在了Map集合里再放在栈里的
+		 vs.getRoot().add(0,new Person());//把person对象压入List集合的0位置（栈顶）
+	
+【理解OGNL Context】 上下文
+	# OgnlValueStack类包含两个重要的属性：root 和 context 
+	     * 其中toot本质上是一个List集合
+	     * Context是一个Map（确切的说是一个OgnlContext对象）
+	# 在这个OgnlContext对象中，有一个默认的顶层对象 root OGNL访问context中这个默认顶层对象中的元素时不需要#号，直接通过名称来引用
+	# 而访问其他对象时， request，session，attr 等则需要#号引用。
+	总结：ognl Context包含ObjectStack属性和ContextMap属性
+
+	 底层类：
+		public class OgnlValueStack implements ValueStack {
+			 CompoundRoot root;    ---  list集合
+			transient Map<String, Object> context;  --- map集合
+		}
+	
+												
+			
+++++++++++++++++++++++【OGNL表达式】++++++++【示例JSP】+++++++++++++++++++++++++++++++++++++++++++
+实际操作的不是值栈，而是值栈的属性：Context的上下文（就是一个Map集合）
+
+	【】使用EL表达式取值-----------------------------------------<br>
+		${requestScope.username}<br>
+		${sessionScope.username}<br>
+		${applicationScope.username}<br><br><br><br>
+	【】使用Ognl表达式取值-----------------------------------------<br>
+				【访问Map集合加#】
+	1 # 如果访问其他Context中的对象，由于他们不是根对象，所以在访问时，需要添加#前缀。<br>
+		<s:property value="#request.username"/><br>
+		<s:property value="#session.username"/><br>
+		<s:property value="#application.username"/><br><br>
+		<s:property value="#request['username']"/><br>
+		<s:property value="#parameters.cid[0]"/><br>
+		<s:property value="#attr.username"/><br><br>
+			【访问对象栈中对象可不加#】
+	2 # 如果要访问根对象（即ValueStack）中对象的属性，则可以省略#命名对象，直接访问该对象的属性即可。<br>
+		<s:property value="msg"/><br><br>
+		深入理解值栈中的 ObjectStack<br>
+		【后台代码：】 vs.getRoot().add(0,new Person()); 
+		<s:property value="name"/><br> 【若有多个name属性名】只取出栈中第一个
+		<s:property value="sex"/><br>
+		<s:property value="age"/><br>
+		<s:property value="salary"/><br><br>
+	
+	
+	用法3:构造Map<br>
+		<s:radio list="#{'01':'男','02':'女'}"></s:radio><br><br><br><br>
+		%的用法：“%”符号的用途是在标签的属性值被理解为字符串类型时，告诉执行环境%{}里的是OGNL表达式。 <br>
+		<s:property value="#request.username"/><br>
+		<s:property value="%{#request.username}"/>%{}是万能用法，无论里面的表达式是不是ognl表达式，都会强制理解为ognl表达式<br><br>
+		
+【“$”有两个主要的用途】
+
+	    1 *  用于在国际化资源文件中，引用OGNL表达式<br>
+		<s:text name="ognl" /><br><br>
+			在properties文件中配置：ognl=${error} ognl
+			取的是值栈中的error属性  代码：valueStack1.set("error", "error_valueStack");
+	    
+	    2 *  在Struts 2配置文件中，引用OGNL表达式<br>
+	    <s:property value="#parameters.msg[0]"/><br><br>
+		 <result name="s" >ognl/ognl.jsp?msg=${msg}</result>
+			这里的msg是request的param 使用 ${} 访问的都是值栈里的
+		
+	<s:debug></s:debug> 能查看值栈状态
+
++++++++++++++++++++++++++++++【OGNL标签】+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
