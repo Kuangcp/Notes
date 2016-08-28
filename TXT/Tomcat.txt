@@ -80,11 +80,12 @@ xml文件里面有乱码，saxreader会生成document错误。
 浏览器默认端口是80.
 修改tomcat的端口号 conf/server.xml 找到connector 8080
 
-编码
+	编码
 myecpipse 文件编码utf-8
 数据库
 服务器
 页面编码 utf-8
+Tomcat 添加 URIEncoding="UTF-8"
 
 浏览器表单get方式：需要重新编码获得字符串
 浏览器表单post方式 request.setCharactorEncoding(utf-8);

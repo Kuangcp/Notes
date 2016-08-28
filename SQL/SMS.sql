@@ -80,6 +80,7 @@ use bug
 create table student(num int primary key auto_increment,how datetime,info varchar(255),causes varchar(255),handle varchar(255));
 
 insert into student(how,info,causes,handle) values(now(),"","","");
+desc student;
 
 
 
