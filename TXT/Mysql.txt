@@ -39,8 +39,8 @@ update cascade;
 =================================【变量】=============================================
 加了@ 的是用户变量， 限定当前用户，当前客户端， 在declare中声明的参数可以不加 @，那就是是局部变量
 例如：declare a int ;  也可以直接就用不用声明，作为临时变量 例如这两种写法：
-	set @name = 
-	select @name:=
+	set @name =   expr;
+	select @name:= expr;
 注意：MySQL中只有基本数据类型，没有Oracle中那个绑定类型：表类型或行类型，所以处理起来有点。。不如Oracle方便，不管是触发器还是存储过程
 set @a= select * from User；执行这句话就会报出 operand should contain 1 column(s)错误，就是说多值赋值的错误
 ===============================【基本流程语法】===========================================
@@ -78,6 +78,19 @@ END
 
 
 ===========================【存储过程】======================================================
+ 【loop】 要有iterate 和leave才是完整的
+  CREATE PROCEDURE doiterate(p1 INT)
+BEGIN
+  label1: LOOP
+    SET p1 = p1 + 1;
+    IF p1 < 10 THEN ITERATE label1; END IF;
+    LEAVE label1;
+  END LOOP label1;
+  SET @x = p1;
+END
+
+call doiterate(7);
+select @x;
 
 ===========================【函数】======================================================
 【简单示例】

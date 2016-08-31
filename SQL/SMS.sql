@@ -74,7 +74,49 @@ select aid id,academy name from academy
 insert into grade(sno,cno,grade) values(12,'20003',98)
 
 insert into grade(sno,cno,grade,year,term) values(12,20003,98,'2015-2016',1)
+select * from student order by sno desc;
 
+-----------------------------------------------------------------------------------
+drop procedure getGrade;
+delimiter //
+create procedure getGrade(classid varchar(20),years varchar(20),terms int)
+	begin 
+		declare num int ;
+		declare i int default 0;
+		
+		select cname from obligatory o ,course c where o.cno = c.cno and cid =  classid and year = years and term = terms;
+	
+		select count(*) into num from obligatory o ,course c where o.cno = c.cno and cid =  classid and year = years and term = terms;
+	
+		f:LOOP
+   SET i = i + 1;
+   select 
+   if i<num then iterate f;
+   end if;
+   LEAVE f;
+    END LOOP f; 
+    SET @x = num;
+	end;
+	//
+  call getGrade('3','2015-2016',1);
+  
+  select cname from obligatory o ,course c where o.cno = c.cno and cid =  '3' and year = '2015-2016' and term = 1;
+ ---------------------------
+ drop procedure doiterate;
+ 
+  CREATE PROCEDURE doiterate(p1 INT)
+BEGIN
+  label1: LOOP
+    SET p1 = p1 + 1;
+    IF p1 < 10 THEN ITERATE label1; END IF;
+    LEAVE label1;
+  END LOOP label1;
+  SET @x = p1;
+END
+
+call doiterate(7);
+select @x;
+-------------------------------------------------------------------------------------
 --创建bug数据库
 use bug
 create table student(num int primary key auto_increment,how datetime,info varchar(255),causes varchar(255),handle varchar(255));
