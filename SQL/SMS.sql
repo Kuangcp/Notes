@@ -71,9 +71,9 @@ end
 
 select aid id,academy name from academy
 
-insert into grade(sno,cno,grade) values(12,'20003',98)
+insert into mark(sno,cno,grade) values(20,'20004',93)
 
-insert into grade(sno,cno,grade,year,term) values(12,20003,98,'2015-2016',1)
+insert into mark(sno,cno,grade,year,term) values(12,20003,98,'2015-2016',1)
 select * from student order by sno desc;
 
 -----------------------------------------------------------------------------------
@@ -124,8 +124,24 @@ create table student(num int primary key auto_increment,how datetime,info varcha
 insert into student(how,info,causes,handle) values(now(),"","","");
 desc student;
 
+-------------
+drop table if exists temp ;
+create table temp as (select a.sno,sname,a.grade c_20002,b.grade c_20003,c.grade c_20004 from 
+       (select sno,grade from mark where cno='20002') a,
+       (select sno,grade from mark where cno='20003') b,
+       (select sno,grade from mark where cno='20004') c,
+       student 
+       where a.sno=b.sno and a.sno=student.sno
+);
 
+select * from excel a left join excel b on a.a=b.a;
+select c.cno,cname from obligatory o,course c where o.cno=c.cno and cid='3'
 
-
+--貌似左外连接只能用基本表，视图或虚表是不可用的
+(select a,b from excel) f left join (select b,c from excel) g on f.b=g.b
+--
+select * from (select a,b,c from excel ) a ,(select a,d,e from excel) b  where a.a = b.a;
+drop table if exists inserts ;
+create table inserts(id int ,name char(4));
 
 
