@@ -114,7 +114,7 @@ git commit 不带命令：进入VI编辑器
 	通过 用户名/仓库名 #编号 来指定仓库的指定Issue
 【将Bash和GitHub绑定起来】：
 	1.在GItHub上设置SSH key， 有一个即可
-	2.$ssh -keygen -t rsa -C "Kuangchengping@outlook.com" 回车 
+	2.$ssh-keygen -t rsa -C "Kuangchengping@outlook.com" 回车 
 	3.设置密码 ad14293366
 	4.测试SSH $ssh -T git@github.com  输入yes 输入 密码  ****
 
@@ -125,7 +125,7 @@ git commit 不带命令：进入VI编辑器
 	$git config --global user.email " "
 	$git config --global color.ui  auto 
 	
-	可以在这时候设置  .gitingnore 文件，内容规则如下 :
+【忽略文件】可以在这时候设置  .gitingnore 【文件】，文件内容如下 :
 		test.txt  忽略该文件
 		*.html  忽略所有HTML文件
 		*[o/a]  忽略所有o和a后缀的文件
