@@ -1,10 +1,13 @@
 用斜杠/或者用  ;  号   执行  但是；感觉反应更快
 show parameter instance_name   查看当前数据库的SID
---以DBA身份连接系统数据库  
-conn  as sysdba 
-       sys__ad123 
-或： myth__ad
-
+-------以DBA身份连接系统数据库  
+使用命令行规则：
+		conn  as sysdba 
+		       sys__ad123 
+		或： myth__ad
+使用SQL plus ：
+	先使用 myth ad 连接上
+	再以管理员身份连接 ：conn  as sysdba
 alert session set NLS_DATE_FORMAT='yyyy-mm-dd';本次会话范围内（全局范围是global）设置日期格式
 
 set linesize 120;设置命令行界面每行显示120个字符

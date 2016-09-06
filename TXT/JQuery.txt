@@ -7,8 +7,8 @@ $('button').click(function(){
 【CSS修改】
 单属性获取：css('要获取的css属性名称');
 单属性修改：css('要修改的属性名','修改的值') css('class','')
-多属性修改：css({属性名:'值'，属性名:'值'}) css({class:'',border:''})
-动态CSS: 将css换成animate，并加上时间，就会有个动画变更效果 animate({class:''},500)
+多属性修改：css({属性名:'值'，属性名:'值'}) css({class : '',border : ''})
+动态CSS: 将css换成animate，并加上时间，就会有个动画变更效果 animate({class : ''},500)
 注意：关于CSS复合属性的修改：
 background-color 要改为 backgroundColor 不能有短杠的出现
 ===========控制HTML属性=====================
