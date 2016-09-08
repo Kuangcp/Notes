@@ -11,6 +11,8 @@
 【定界符】delimiter 任意字符除了转义字符：\
 【已有表数据，新建表】 create table temp as select * from test;
 【查看所有连接状态】 show processlist  如果是普通用户，只能查看自己当前的连接状态
+【查看表的状态】show table status like 'assitant' 可以看到当前自动增长的id到了多少
+
 =================================【插入时间 】=================================================
 
     NOW()函数以`'YYYY-MM-DD HH:MM:SS'返回当前的日期时间，可以直接存到DATETIME    字   段中。
