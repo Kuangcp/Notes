@@ -9,6 +9,12 @@
 
  * 使用export导出时带上resource选项，这样的话注释才会导出去了
  * 自动添加注释在 Java>Code Style>Code Templates下
+ ========【debug】===========
+【F5】  Step into 跳入
+【F6】  Step over 下一步
+【F7】  Step return 跳出
+【F8】  resume 恢复
+
 ==============================【eclipse EE】========================================
 
 *这里的Tomcat是使用了你所导入的必要执行文件，但是运行的必要配置文件在eclipse Server项目里另有一份

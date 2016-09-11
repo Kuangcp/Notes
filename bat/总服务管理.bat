@@ -8,27 +8,39 @@ rem rem 清除之前的缓存值
 
 echo +++++++++++++++++  功能列表  ++++++++++++++++++++++++
 echo +
-echo +    ns  :   打开服务中心
-echo +    no  :   开启 Oracle 服务
-echo +    co  :   关闭 Oracle 服务
-echo +    nv  :   开启 VMWare 服务
-echo +    cv  :   关闭 VMWare 服务
-echo +    ex  :   退出程序
+echo +    11  :   打开服务中心
+echo +    12  :   开启 Oracle 服务
+echo +    13  :   开启 Tomcat 7.07
+echo +    14  :   开启 VMWare 服务
+echo +
+echo +    21  :   关闭 VMWare 服务
+echo +    22  :   关闭 Oracle 服务
+echo +    23  :   关闭 Tomcat 7.07
+echo +    0  :   退出程序
 echo +
 echo +++++++++++++++++  功能列表  ++++++++++++++++++++++++
 
 
-echo 请输入操作对应的命令:
+echo 请输入操作对应的代码:
 set /p action=Action :  
-if "%action%"=="no" goto NO
-if "%action%"=="co" goto CO
-if "%action%"=="nv" goto NV
-if "%action%"=="cv" goto CV
-if "%action%"=="ns" goto NS
-if "%action%"=="ex" goto EX
+if "%action%"=="12" goto NO
+if "%action%"=="22" goto CO
+if "%action%"=="14" goto NV
+if "%action%"=="21" goto CV
+if "%action%"=="11" goto NS
+if "%action%"=="0" goto EX
+if "%action%"=="13" goto TR
+if "%action%"=="23" goto TS
 rem rem 不满足上述所有的参数才执行下面的代码：
 cls 
-echo ## 请输入有效的命令 ！！！！！！！！
+echo ## ！
+echo ## ！！
+echo ## ！！！
+echo ## ！！！！   《请输入有效的命令》
+echo ## ！！！
+echo ## ！！
+echo ## ！
+
 goto redo
 
 echo +++++++++++++++++ 多个标号区  +++++++++++++++++++++++
@@ -45,6 +57,7 @@ echo 关闭 Oracle 服务
 net stop "OracleOraDb11g_home1TNSListener"
 net stop "OracleServiceORCL"
 goto end
+
 :NV
 echo ++开启 VMWare 服务
 net start "VMAuthdService"
@@ -52,6 +65,7 @@ net start "VMnetDHCP"
 net start "VMware NAT Service"
 net start "VMUSBArbService"
 goto end 
+
 :CV
 echo ++关闭 VMWare 服务
 net stop "VMAuthdService"
@@ -63,6 +77,17 @@ goto end
 :NS
 echo ++打开服务中心
 start "myth" "services.msc"
+goto end 
+
+:TR
+echo ++tomcat startup
+net start "Tomcat7"
+goto end 
+
+
+:TS
+echo ++tomcat stop
+net stop "Tomcat7"
 goto end 
 
 :end
