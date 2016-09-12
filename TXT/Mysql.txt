@@ -141,7 +141,8 @@ grant select,insert,update,delete on *.* to test1@\"%\" Identified by \"abc\";
 grant select,insert,update,delete on mydb.* to test2@localhost identified by \"abc\";
 如果你不想test2有密码，可以再打一个命令将密码消掉。
 grant select,insert,update,delete on mydb.* to test2@localhost identified by \"\";
-在上篇我们讲了登录、增加用户、密码更改等问题。下篇我们来看看MYSQL中有关数据库方面的*作。注意：你必须首先登录到MYSQL中，以下*作都是在MYSQL的提示符下进行的，而且每个命令以分号结束。
+在上篇我们讲了登录、增加用户、密码更改等问题。下篇我们来看看MYSQL中有关数据库方面的*作。
+注意：你必须首先登录到MYSQL中，以下*作都是在MYSQL的提示符下进行的，而且每个命令以分号结束。
 ===============================================================================
 
 ================================================================================
@@ -180,7 +181,7 @@ mysqldump --opt school>school.bbb
 我在这里只介绍一些基本的，其实我也就只懂这些了，呵呵。最好的MYSQL教程还是"晏子"译的"MYSQL中文参考手册"不仅免费每个相关网站都有下载
 而且它是最权威的。可惜不是象\"PHP4 中文手册\"那样是chm的格式，在查找函数命令的时候不太方便。
 
-============================================【mysql -u root -p 等这些常用的参数外，你知道多少？来测试一下吧】============================================================
+============================================【mysql -u root -p 等这些常用的参数外，你知道多少？来测试一下吧】=======================================
 
 
 一，mysql命令行参数
@@ -272,7 +273,8 @@ Usage: mysql [OPTIONS] [database] //命令方式
 
 1，auto-rehash自动补全
 
-说例子前，先说一下，你到google或baidu上面搜一下mysql auto-rehash，然后会出来结果，绝大部分都是一样的，并且内容里面有明显错误。mysqld_safe –user=mysql –auto-rehash &，这个根本就不对，为什么抄袭的人不知道自己测试一下，对于这种人，我也是很无语的。你自己写着玩到也无所谓，但是你会害人的。
+说例子前，先说一下，你到google或baidu上面搜一下mysql auto-rehash，然后会出来结果，绝大部分都是一样的，并且内容里面有明显错误。
+mysqld_safe –user=mysql –auto-rehash &，这个根本就不对，为什么抄袭的人不知道自己测试一下，对于这种人，我也是很无语的。你自己写着玩到也无所谓，但是你会害人的。
 
 [root@BlackGhost zhangy]# mysqld_safe –help |grep rehash
 
@@ -313,7 +315,8 @@ Tables_in_bak_test: user4，－D的用法
 
 7，-e的用法
 
-D:\xampp\mysql\bin>mysql.exe -uroot -D bak_test -e "show tables;"这个很有用的，因为我不用进入mysql客户里面去，就能把我要的数据取出来，这个可以配合shell脚本的话，能发挥很大的功能
+D:\xampp\mysql\bin>mysql.exe -uroot -D bak_test -e "show tables;"
+这个很有用的，因为我不用进入mysql客户里面去，就能把我要的数据取出来，这个可以配合shell脚本的话，能发挥很大的功能
 
 8，-f的用法
 
@@ -372,7 +375,8 @@ D:\xampp\mysql\bin>mysql.exe -uroot bak_test -e "show tables " -X
 
 15，-S的用法
 
-[root@BlackGhost zhangy]# mysql -u root -D test -S /tmp/mysql.sock当我们一台服务器启动了二个不同mysql版本的时候，存放socket的文件是不能一样的，－S用来指定连接到那个
+[root@BlackGhost zhangy]# mysql -u root -D test -S /tmp/mysql.sock
+当我们一台服务器启动了二个不同mysql版本的时候，存放socket的文件是不能一样的，－S用来指定连接到那个
 
 16，-v的用法
 
@@ -523,8 +527,9 @@ mysql不支持全外连接。
 查数据：select * from class order by id limit 0,2;  查看排序最前的两行数据
 查触发器：SELECT * FROM information_schema.`TRIGGERS`;
 查约束：SELECT * FROM information_schema.`TABLE_CONSTRAINTS`;
-	SELECT  CONSTRAINT_CATALOG,  CONSTRAINT_SCHEMA,  CONSTRAINT_NAME,  TABLE_SCHEMA,  TABLE_NAME,  CONSTRAINT_TYPE   FROM  information_schema.TABLE_CONSTRAINTS 
- WHERE  TABLE_NAME='t_org';
+	SELECT  CONSTRAINT_CATALOG,  CONSTRAINT_SCHEMA,  CONSTRAINT_NAME,  TABLE_SCHEMA,  TABLE_NAME,  CONSTRAINT_TYPE 
+	FROM  information_schema.TABLE_CONSTRAINTS 
+ 	WHERE  TABLE_NAME='t_org';
 
 
 主键表主键值被外键表参照时，主键表记录不允许被删除。
@@ -588,8 +593,12 @@ mysql不支持全外连接。
 	->flush privileges;
 删除约束：alter table class drop constraint c1;
 
-外键约束是保证一个或两个表之间的参照完整性，外键是构建于一个表的两个字段或是两个表的两个字段之间的参照关系。 也就是说从表的外键值必须在主表中能找到或者为空。 当主表的记录被从表参照时，主表的记录将不允许删除，如果要删除数据，需要先删除从表中依赖该记录的数据， 然后才可以删除主表的数据。还有一种就是级联删除子表数据。
-注意：外键约束的参照列，在主表中引用的只能是主键或唯一键约束的列，假定引用的主表列不是唯一的记录， 那么从表引用的数据就不确定记录的位置。同一个表可以有多个外键约束。通常先建主表，然后再建从表，这样从表的参照引用的表才存在。
+外键约束是保证一个或两个表之间的参照完整性，外键是构建于一个表的两个字段或是两个表的两个字段之间的参照关系。 
+也就是说从表的外键值必须在主表中能找到或者为空。 当主表的记录被从表参照时，主表的记录将不允许删除，如果要删除数据，需要先删除从表中依赖该记录的数据，
+然后才可以删除主表的数据。还有一种就是级联删除子表数据。
+注意：
+	外键约束的参照列，在主表中引用的只能是主键或唯一键约束的列，假定引用的主表列不是唯一的记录， 那么从表引用的数据就不确定记录的位置。
+	同一个表可以有多个外键约束。通常先建主表，然后再建从表，这样从表的参照引用的表才存在。
 
 主表 create table classes( id int auto_increment primary key,name varchar(20) ); 
 从表 create table student( id int auto_increment,name varchar(22), constraint pk_id primary key(id),classes_id int references classes(id));   
