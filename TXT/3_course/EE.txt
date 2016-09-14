@@ -44,6 +44,10 @@ MVC设计模式：
 	数据库方言 
 	辅助配置
 	POJO类配置文件的映射
+	etc/hibernate.properties里可以看到更多配置，数据库连接池，SQL优化等
+
+	在：project/core/src/main/resources/org/hibernate/下有各种dtd文件，
+		可以为eclipse的xml配置自动提示功能
 
 ==============================【JDBC 和 Hibernate 比较】=============================
 JDBC使用其简洁精悍，最快，但是使用时接收数据以及多方面的比较麻烦
