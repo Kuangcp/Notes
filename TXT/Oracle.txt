@@ -1,13 +1,17 @@
 用斜杠/或者用  ;  号   执行  但是；感觉反应更快
 show parameter instance_name   查看当前数据库的SID
--------以DBA身份连接系统数据库  
-使用命令行规则：
-		conn  as sysdba 
-		       sys__ad123 
-		或： myth__ad
-使用SQL plus ：
+【创建用户】
+create tablespace myth_data datafile 'D:\myth\a.dbf' size 50m autoextend on next 50m maxsize 2048m[extent management local;]
+create user myth idenitfied by ad default tablespace myth_data;
+grant connect,resource,dba to myth;
+
+【sqlplus】
+	sys as sysdba
+	密码
+	或： 
 	先使用 myth ad 连接上
 	再以管理员身份连接 ：conn  as sysdba
+
 alert session set NLS_DATE_FORMAT='yyyy-mm-dd';本次会话范围内（全局范围是global）设置日期格式
 
 set linesize 120;设置命令行界面每行显示120个字符
@@ -17,6 +21,7 @@ col payment for 9999;设置字段显示4位数字
 如果集合中含有null,不能使用not in，但可以使用in。
 select sal*12+nvl(bonus,0);空值问题：查询年收入（月薪*12+奖金）
 
+====================================================================================================
 多列排序,先排sal
 select sal ，deptno from emp order by sal,deptno desc；
 
@@ -445,6 +450,7 @@ SYSTEM具有创建别 的用户的 权限 create role STUDENT;
 
 
 改：
+
 口令：password 用户名 新密码  
 alter user user01 identified by usr01;
 如果使用password命令，用户输入的新口令将不在屏幕上显示。有dba特权的用户可以通过password命令改变任何其他用户的口令;其他用户只能改变自己的口令。  

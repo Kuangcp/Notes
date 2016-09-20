@@ -5,7 +5,11 @@
 	再进行git push -u origin master 才能正确提交代码，如果不pull，提交是注定失败的
 4、在github上修改文件，容易引起编码的变化，这时候没有pull就修改文件再commit也是会在push的时候很麻烦
 	最好是，在github上修改了就在本地pull之后再修改文件，万一出错了回退也简单
-
+5、出现了冲突，从而无法自动merge：
+	git pull 对方的分支
+	git checkout 自己的分支
+	git merge --no-ff 对方的分支
+	git push （自己的源+分支）origin master
  ================================【git commit】=========================================
 git commit 不带命令：进入VI编辑器
 	第一行：用一行文字简述提交的更改内容
