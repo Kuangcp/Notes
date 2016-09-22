@@ -1,24 +1,24 @@
-#Struts2±Ê¼Ç
-####Ê¹ÓÃognl±í´ïÊ½£¬<s:debug></s:debug>
-####Ê¹ÓÃµÄjar°ü²»½öÒª·ÅÔÚlibraryÀï£¬Èç¹ûÔËÐÐÊ±ÐèÒª£¬¾ÍÒª¼ÓÔØlibÄ¿Â¼ÏÂ
-£¿£¿£¿
+#Struts2ç¬”è®°
+####ä½¿ç”¨ognlè¡¨è¾¾å¼ï¼Œ<s:debug></s:debug>
+####ä½¿ç”¨çš„jaråŒ…ä¸ä»…è¦æ”¾åœ¨libraryé‡Œï¼Œå¦‚æžœè¿è¡Œæ—¶éœ€è¦ï¼Œå°±è¦åŠ è½½libç›®å½•ä¸‹
+ï¼Ÿï¼Ÿï¼Ÿ
 < result-types>
       ...
       < result-type name="myresult" class="com.foo.MyResult" />
   < /result-types>
 
-####actionÃ»ÓÐresult£¬Ö´ÐÐµÄ·½·¨Ã»ÓÐ·µ»ØÖµ£¬·½·¨ÀïÐ´ÉÏout.write(JSON); µ÷ÓÃaction·½¾ÍÄÜÊÕµ½JSON×Ö·û´®
-####result±êÇ©ÀàÐÍÄ¬ÈÏÊÇ×ª·¢£¬ÒªÏÔÊ¾ËµÃ÷ÊÇÖØ¶¨Ïò
-##¡¾strutsÔËÐÐ¹ý³Ì¡¿
-1.ä¯ÀÀÆ÷µÄ¸÷ÖÖÊÂ¼þ£¬·¢ÆðÒ»¸öURLµÄÇëÇó£¬
-2.±»ÏîÄ¿µÄÄ¬ÈÏ¹ýÂËÆ÷¼àÌýµ½ÁË£¬µ÷ÓÃ¶ÔÓ¦µÄaction£¬(ÐèÒªÅäÖÃºÃxmlÎÄ¼þµÄpackageºÍaction±êÇ©£©
-3.ÈôactionÓÐ°ó¶¨À¹½ØÆ÷£¬¾ÍÏÈÖ´ÐÐÀ¹½ØÆ÷ÀïµÄ·½·¨
-4.ÓÉactionÀïÔËÐÐ·½·¨£¨ÕâÀïÊÇÕæÕýµÄ´úÂë´¦ÀíµÄµØ·½£©µÄreturnÖµÀ´È·¶¨µÈ»áÌø×ªµÄ½á¹ûÒ³Ãæ£¨ÅäÖÃxmlÎÄ¼þµÄresult±êÇ©£©
+####actionæ²¡æœ‰resultï¼Œæ‰§è¡Œçš„æ–¹æ³•æ²¡æœ‰è¿”å›žå€¼ï¼Œæ–¹æ³•é‡Œå†™ä¸Šout.write(JSON); è°ƒç”¨actionæ–¹å°±èƒ½æ”¶åˆ°JSONå­—ç¬¦ä¸²
+####resultæ ‡ç­¾ç±»åž‹é»˜è®¤æ˜¯è½¬å‘ï¼Œè¦æ˜¾ç¤ºè¯´æ˜Žæ˜¯é‡å®šå‘
+##ã€strutsè¿è¡Œè¿‡ç¨‹ã€‘
+1.æµè§ˆå™¨çš„å„ç§äº‹ä»¶ï¼Œå‘èµ·ä¸€ä¸ªURLçš„è¯·æ±‚ï¼Œ
+2.è¢«é¡¹ç›®çš„é»˜è®¤è¿‡æ»¤å™¨ç›‘å¬åˆ°äº†ï¼Œè°ƒç”¨å¯¹åº”çš„actionï¼Œ(éœ€è¦é…ç½®å¥½xmlæ–‡ä»¶çš„packageå’Œactionæ ‡ç­¾ï¼‰
+3.è‹¥actionæœ‰ç»‘å®šæ‹¦æˆªå™¨ï¼Œå°±å…ˆæ‰§è¡Œæ‹¦æˆªå™¨é‡Œçš„æ–¹æ³•
+4.ç”±actioné‡Œè¿è¡Œæ–¹æ³•ï¼ˆè¿™é‡Œæ˜¯çœŸæ­£çš„ä»£ç å¤„ç†çš„åœ°æ–¹ï¼‰çš„returnå€¼æ¥ç¡®å®šç­‰ä¼šè·³è½¬çš„ç»“æžœé¡µé¢ï¼ˆé…ç½®xmlæ–‡ä»¶çš„resultæ ‡ç­¾ï¼‰
 
-##¡¾´î½¨Struts2¿ª·¢»·¾³¡¿
-£¨»òÕßÖ±½ÓÊ¹ÓÃMyEclipseµÄ¿ìËÙ´î½¨£¬struts2.1+Hibernate3.3.2+JSTL1.2.2(±¾»újdk7.45+tomcat7.08)£©
-1.ÕÒµ½Struts2Ó¦ÓÃËùÐèÒªÊ¹ÓÃµ½µÄJAR°ü£¨ÌØ±ð×¢Òâ²»ÄÜºÍHibernateµÄJAR°üÓÐÖØ¸´µÄ£¬²»È»¾Í±¨´í£©
-	**Struts2.33°æ±¾µÄ¿ª·¢±ØÐëJAR°ü£ºÂ·¾¶ÔÚ f:\Tool\AllJar\SSH\struts23
+##ã€æ­å»ºStruts2å¼€å‘çŽ¯å¢ƒã€‘
+ï¼ˆæˆ–è€…ç›´æŽ¥ä½¿ç”¨MyEclipseçš„å¿«é€Ÿæ­å»ºï¼Œstruts2.1+Hibernate3.3.2+JSTL1.2.2(æœ¬æœºjdk7.45+tomcat7.08)ï¼‰
+1.æ‰¾åˆ°Struts2åº”ç”¨æ‰€éœ€è¦ä½¿ç”¨åˆ°çš„JARåŒ…ï¼ˆç‰¹åˆ«æ³¨æ„ä¸èƒ½å’ŒHibernateçš„JARåŒ…æœ‰é‡å¤çš„ï¼Œä¸ç„¶å°±æŠ¥é”™ï¼‰
+	**Struts2.33ç‰ˆæœ¬çš„å¼€å‘å¿…é¡»JARåŒ…ï¼šè·¯å¾„åœ¨ f:\Tool\AllJar\SSH\struts23
 		sm-3.3.jar
 		sm-commons-3.3.jar
 		sm-tree-3.3.jar
@@ -32,354 +32,355 @@
 		truts2-core-2.3.3.jar
 		work-core-2.3.3.jar
 
-2. ´´½¨JSPÎÄ¼þ
-3. ´´½¨ActionÎÄ¼þ£¨ÊµÏÖÁËStrutsµÄAction½Ó¿ÚµÄÆÕÍ¨Àà,»òÕß¼Ì³ÐActionSupportÀà£©
-4. ±àÐ´Struts2µÄÅäÖÃÎÄ¼þStruts.xml
-5. ÔÚweb.xmlÖÐ¼ÓÈëStruts2 ¿ò¼ÜÆô¶¯µÄ¹ýÂËÆ÷ÅäÖÃ£¨ºËÐÄ¹ýÂËÆ÷£©
+2. åˆ›å»ºJSPæ–‡ä»¶
+3. åˆ›å»ºActionæ–‡ä»¶ï¼ˆå®žçŽ°äº†Strutsçš„ActionæŽ¥å£çš„æ™®é€šç±»,æˆ–è€…ç»§æ‰¿ActionSupportç±»ï¼‰
+4. ç¼–å†™Struts2çš„é…ç½®æ–‡ä»¶Struts.xml
+5. åœ¨web.xmlä¸­åŠ å…¥Struts2 æ¡†æž¶å¯åŠ¨çš„è¿‡æ»¤å™¨é…ç½®ï¼ˆæ ¸å¿ƒè¿‡æ»¤å™¨ï¼‰
 
-###·ÃÎÊActionµÄURL£º
-	packageµÄnamespace¼ÓÉÏActionµÄÃû×Ö¼ÓÉÏºó×º
+###è®¿é—®Actionçš„URLï¼š
+	packageçš„namespaceåŠ ä¸ŠActionçš„åå­—åŠ ä¸ŠåŽç¼€
 
-###URL Ä¬ÈÏËÑË÷ÌØÐÔ £º
+###URL é»˜è®¤æœç´¢ç‰¹æ€§ ï¼š
 	/a/b/c/d/df.action
 	/a/df.action
-	*ÕâÁ½¸öÊÇµÈ¼ÛµÄ£¬ÉÏÃæ³¤µÄÄÇ¸öÍ¬Ñù·Ö½âÎªÁ½²¿·Ö£¬Ç°°ë²¿·ÖµÄÂ·¾¶ÊÇ´Ódµ½a
-	ÒÀ´ÎÏòÉÏËÑË÷µÄ£¬Ö±µ½ÕÒµ½£¬·ñÔò²Å»á±¨´í£¬ËùÒÔËµ£¬Ö»Òª¸ùÊÇ¶ÔµÄ£¬ÖÐ¼ä¿ÉÒÔÂÒÐ´£¬µ«ÊÇ»áÓ°ÏìÐÔÄÜ
+	*è¿™ä¸¤ä¸ªæ˜¯ç­‰ä»·çš„ï¼Œä¸Šé¢é•¿çš„é‚£ä¸ªåŒæ ·åˆ†è§£ä¸ºä¸¤éƒ¨åˆ†ï¼Œå‰åŠéƒ¨åˆ†çš„è·¯å¾„æ˜¯ä»Ždåˆ°a
+	ä¾æ¬¡å‘ä¸Šæœç´¢çš„ï¼Œç›´åˆ°æ‰¾åˆ°ï¼Œå¦åˆ™æ‰ä¼šæŠ¥é”™ï¼Œæ‰€ä»¥è¯´ï¼Œåªè¦æ ¹æ˜¯å¯¹çš„ï¼Œä¸­é—´å¯ä»¥ä¹±å†™ï¼Œä½†æ˜¯ä¼šå½±å“æ€§èƒ½
 
-###Èç¹ûÃ»ÓÐ¸øActionÖ¸¶¨class£º
-	struts.xml¼Ì³ÐµÄstruts-default.xml ÖÐÅäÖÃÁËÒ»¸öÄ¬ÈÏµÄclass£¬ËùÒÔËµ²»»á±¨´í
+###å¦‚æžœæ²¡æœ‰ç»™ActionæŒ‡å®šclassï¼š
+	struts.xmlç»§æ‰¿çš„struts-default.xml ä¸­é…ç½®äº†ä¸€ä¸ªé»˜è®¤çš„classï¼Œæ‰€ä»¥è¯´ä¸ä¼šæŠ¥é”™
 	<default-class-ref name=""/>
 
-###Èç¹ûÕÒ²»µ½Action£º
-	¾ÍÐèÒªÅäÖÃÄ¬ÈÏµÄActionÃû³Æ£¬Ã»ÓÐµÄ»°£¬¾Í»á±¨´í¡£ÓÐ¾ÍÖ´ÐÐÄÇ¸öÁË
+###å¦‚æžœæ‰¾ä¸åˆ°Actionï¼š
+	å°±éœ€è¦é…ç½®é»˜è®¤çš„Actionåç§°ï¼Œæ²¡æœ‰çš„è¯ï¼Œå°±ä¼šæŠ¥é”™ã€‚æœ‰å°±æ‰§è¡Œé‚£ä¸ªäº†
 	<default-action-ref name=""/>
 
-###URLµÄºó×ºÃû¿ÉÒÔ×Ô¶¨Òå£¨»á¸²¸ÇÔ­±¾µÄÅäÖÃ£©
-ÔÚstruts.xml ÖÐÅäÖÃ:
-	£¨Ê¹ÓÃ¶à¸öµÄ»°£¬ÓÃ¶ººÅ·Ö¸ô£©Ä¬ÈÏÊÇactionºÍ¿Õ
-	name : ¿ò¼Ü×Ô´øÅäÖÃÎÄ¼þ default.propertiesÖÐ³£Á¿Ãû
-	value £º³£Á¿Öµ
+###URLçš„åŽç¼€åå¯ä»¥è‡ªå®šä¹‰ï¼ˆä¼šè¦†ç›–åŽŸæœ¬çš„é…ç½®ï¼‰
+åœ¨struts.xml ä¸­é…ç½®:
+	ï¼ˆä½¿ç”¨å¤šä¸ªçš„è¯ï¼Œç”¨é€—å·åˆ†éš”ï¼‰é»˜è®¤æ˜¯actionå’Œç©º
+	name : æ¡†æž¶è‡ªå¸¦é…ç½®æ–‡ä»¶ default.propertiesä¸­å¸¸é‡å
+	value ï¼šå¸¸é‡å€¼
 	< constant name="struts.action.extension" value="myth">< /constant>
-»òÕß£º
-	srcÏÂÐÂ½¨Ò»¸ödefault.properties ÀïÃæÖ»Ð´ÐèÒªÐÞ¸ÄµÄ³£Á¿
+æˆ–è€…ï¼š
+	srcä¸‹æ–°å»ºä¸€ä¸ªdefault.properties é‡Œé¢åªå†™éœ€è¦ä¿®æ”¹çš„å¸¸é‡
 		struts.action.extension=myth 
 	
-	ÈôÁ½Õß¶¼ÐÞ¸ÄÁË°´ÒÔÏÂË³Ðò£º
+	è‹¥ä¸¤è€…éƒ½ä¿®æ”¹äº†æŒ‰ä»¥ä¸‹é¡ºåºï¼š
 	1 struts-default.xml
 	2 struts-plugin.xml
 	3 struts.xml
 	4 struts.properties
 	5 web.xml
-	ÈôÓÐÏàÍ¬µÄ³£Á¿ÅäÖÃºÃ£¬ºóÕß¸²¸ÇÇ°Õß
-½¨ÒéÔÚstruts.xmlÖÐÅäÖÃ
+	è‹¥æœ‰ç›¸åŒçš„å¸¸é‡é…ç½®å¥½ï¼ŒåŽè€…è¦†ç›–å‰è€…
+å»ºè®®åœ¨struts.xmlä¸­é…ç½®
 
-<-- ÅäÖÃURLºó×º Ä¬ÈÏÊÇaction»ò¿Õ-->
+<-- é…ç½®URLåŽç¼€ é»˜è®¤æ˜¯actionæˆ–ç©º-->
 	< constant name="struts.action.extension" value="myth"></ constant>
-	<-- ÅäÖÃ¹ú¼Ê»¯×ÊÔ´ÎÄ¼þ±»ÐÞ¸ÄÊ±£¬ÊÇ·ñÖØÐÂ¼ÓÔØ Ä¬ÈÏÊÇfalse -->
+	<-- é…ç½®å›½é™…åŒ–èµ„æºæ–‡ä»¶è¢«ä¿®æ”¹æ—¶ï¼Œæ˜¯å¦é‡æ–°åŠ è½½ é»˜è®¤æ˜¯false -->
 	< constant name="struts.i18n.reload" value="true"></ constant> 
-	<-- ÅäÖÃstruts2¿ò¼ÜµÄÅäÖÃÎÄ¼þÐÞ¸ÄÊ±£¬ÊÇ·ñÖØÐÂ¼ÓÔØ Ä¬ÈÏÊÇfalse-->
+	<-- é…ç½®struts2æ¡†æž¶çš„é…ç½®æ–‡ä»¶ä¿®æ”¹æ—¶ï¼Œæ˜¯å¦é‡æ–°åŠ è½½ é»˜è®¤æ˜¯false-->
 	< constant name="struts.configuration.xml.reload" value="true"></ constant> 
 	<--
-		 ÅäÖÃstruts2µÄÄ£Ê½ 
-			false Éú²úÄ£Ê½ Ä¬ÈÏÊÇfalse
-			true ¿ª·¢Ä£Ê½ ÐèÒª¸ü¶àµÄµ÷ÊÔÐÅÏ¢ »á×Ô¶¯½«ÉÏÃæÁ½¸ö³£Á¿ÉèÖÃÎªtrue
+		 é…ç½®struts2çš„æ¨¡å¼ 
+			false ç”Ÿäº§æ¨¡å¼ é»˜è®¤æ˜¯false
+			true å¼€å‘æ¨¡å¼ éœ€è¦æ›´å¤šçš„è°ƒè¯•ä¿¡æ¯ ä¼šè‡ªåŠ¨å°†ä¸Šé¢ä¸¤ä¸ªå¸¸é‡è®¾ç½®ä¸ºtrue
 	-->
 < constant name="struts.devMode" value="true">< /constant>
 
 ================================================================
-×Ô¶¨ÒåÊ¹ÓÃµÄ struts.xml ²»½öÂ·¾¶£¬»¹ÓÐÃû×Ö£¬·½±ã¶àÈË¿ª·¢
-ÐèÒªÔÚstruts.xmlÖÐÐ´Ò»¸ö<include file=""></include>Â·¾¶¶¼ÊÇÒÔsrcÎªÆðµã£¬×¢Òâ°Ñµã»»³É  /
+è‡ªå®šä¹‰ä½¿ç”¨çš„ struts.xml ä¸ä»…è·¯å¾„ï¼Œè¿˜æœ‰åå­—ï¼Œæ–¹ä¾¿å¤šäººå¼€å‘
+éœ€è¦åœ¨struts.xmlä¸­å†™ä¸€ä¸ª<include file=""></include>è·¯å¾„éƒ½æ˜¯ä»¥srcä¸ºèµ·ç‚¹ï¼Œæ³¨æ„æŠŠç‚¹æ¢æˆ  /
 
-##¡¾actionÀàÐÍ×ª»»¡¿
-1¡¢ÔÚJSPÒ³ÃæÉÏµÄÊäÈë¿òÌá½»¸øactionÊ±£¬Ö»ÒªÔÚactionÖÐÉùÃ÷Í¬Ãû±äÁ¿£¬¶¨Òåsetget·½·¨
-	ÄÇÖ®ºóÖ±½ÓÊ¹ÓÃget·½·¨¾ÍÄÜ»ñÈ¡µ½Öµ£¬·â×°³É¶ÔÏóÔÙsetgetÒ²ÊÇÒ»Ñù¿ÉÒÔµÄµ«ÊÇÔÚJSPÉÏµÄinputµÄnameÉÏÒª¼Ó¶ÔÏóÃû×öÇ°×º
-	»¹¿ÉÒÔÅúÁ¿Ìí¼ÓÊý¾Ý£¬¾ÍÊ¹ÓÃCollection¼¯ºÏ Collection<T> ts;Í¬ÑùµÄ¼Ósetget·½·¨£¬µ«ÊÇÔÚJSPÉÏµÄ¶à¸öinputµÄname¾ÍÒªÐ´³ÉÕâÖÖ¸ñÊ½
+##ã€actionç±»åž‹è½¬æ¢ã€‘
+
+1ã€åœ¨JSPé¡µé¢ä¸Šçš„è¾“å…¥æ¡†æäº¤ç»™actionæ—¶ï¼Œåªè¦åœ¨actionä¸­å£°æ˜ŽåŒåå˜é‡ï¼Œå®šä¹‰setgetæ–¹æ³•
+	é‚£ä¹‹åŽç›´æŽ¥ä½¿ç”¨getæ–¹æ³•å°±èƒ½èŽ·å–åˆ°å€¼ï¼Œå°è£…æˆå¯¹è±¡å†setgetä¹Ÿæ˜¯ä¸€æ ·å¯ä»¥çš„ä½†æ˜¯åœ¨JSPä¸Šçš„inputçš„nameä¸Šè¦åŠ å¯¹è±¡ååšå‰ç¼€
+	è¿˜å¯ä»¥æ‰¹é‡æ·»åŠ æ•°æ®ï¼Œå°±ä½¿ç”¨Collectioné›†åˆ Collection<T> ts;åŒæ ·çš„åŠ setgetæ–¹æ³•ï¼Œä½†æ˜¯åœ¨JSPä¸Šçš„å¤šä¸ªinputçš„nameå°±è¦å†™æˆè¿™ç§æ ¼å¼
 		ts[0].name ts[1].name......
 
-2¡¢µ±strutsÓÐÐ©ÀàÐÍÎÞ·¨×ª»»Ê±£¬¾ÍÐèÒª×Ô¶¨Òå×ª»»Æ÷
-	¡¾»ùÓÚ×Ö¶Î¡¿£¨¾Ö²¿£©
-		* ÔÚµ±Ç°action°üÏÂÐÂ½¨ convert.properties ÎÄ¼þÃûÊÇ×Ô¶¨ÒåµÄ
-		* ÔÚ¸ÃÎÄ¼þÖÐ xwork.default.fieldvalue=ÎÞÐ§µÄ×Ö¶ÎÖµ "{0}".
-		* ÔÚstruts.xmlÎÄ¼þ¼ÓÔØ¸Ã×ÊÔ´ÎÄ¼þ
+2ã€å½“strutsæœ‰äº›ç±»åž‹æ— æ³•è½¬æ¢æ—¶ï¼Œå°±éœ€è¦è‡ªå®šä¹‰è½¬æ¢å™¨
+	ã€åŸºäºŽå­—æ®µã€‘ï¼ˆå±€éƒ¨ï¼‰
+		* åœ¨å½“å‰actionåŒ…ä¸‹æ–°å»º convert.properties æ–‡ä»¶åæ˜¯è‡ªå®šä¹‰çš„
+		* åœ¨è¯¥æ–‡ä»¶ä¸­ xwork.default.fieldvalue=æ— æ•ˆçš„å­—æ®µå€¼ "{0}".
+		* åœ¨struts.xmlæ–‡ä»¶åŠ è½½è¯¥èµ„æºæ–‡ä»¶
 			<constant name="struts.custom.i18n.resources" 
 				value="cn.itcast.converter.converter,
 						cn.itcast.i18n.resources">
 		</constant>
-	¡¾»ùÓÚÀà¡¿£¨È«¾Ö£©£º
-		* ÔÚsrcÄ¿Â¼ÏÂÐÂ½¨Ò»¸öxwork-conversion.propertiesÎÄ¼þ
-		* ÄÚÈÝ£º ´ý×ª»»µÄÀàÐÍ=ÀàÐÍ×ª»»Æ÷µÄÈ«ÀàÃû
-			ÀýÈç£ºjava.util.Date=cn.itcast.convert.DataConverter
-3¡¢result±êÇ©ÃûÎªinputµÄÊÇÄ¬ÈÏÎª´íÎóÒ³ÃæµÄÌø×ª·½Ïò
-	ÔÚ´íÎóÒ³Ãæµ÷³ö´íÎóÐÅÏ¢£º<s:fielderror fieldName="createTime"/>
-	¡¾Õë¶ÔÃ¿¸ö×Ö¶Î¸ø³öÌáÊ¾ÐÅÏ¢¡¿
-		ÔÚconverte.propertiesÖÐÌí¼ÓÒ»ÐÐinvalid.fieldvalue.createTime=****
+	ã€åŸºäºŽç±»ã€‘ï¼ˆå…¨å±€ï¼‰ï¼š
+		* åœ¨srcç›®å½•ä¸‹æ–°å»ºä¸€ä¸ªxwork-conversion.propertiesæ–‡ä»¶
+		* å†…å®¹ï¼š å¾…è½¬æ¢çš„ç±»åž‹=ç±»åž‹è½¬æ¢å™¨çš„å…¨ç±»å
+			ä¾‹å¦‚ï¼šjava.util.Date=cn.itcast.convert.DataConverter
+3ã€resultæ ‡ç­¾åä¸ºinputçš„æ˜¯é»˜è®¤ä¸ºé”™è¯¯é¡µé¢çš„è·³è½¬æ–¹å‘
+	åœ¨é”™è¯¯é¡µé¢è°ƒå‡ºé”™è¯¯ä¿¡æ¯ï¼š<s:fielderror fieldName="createTime"/>
+	ã€é’ˆå¯¹æ¯ä¸ªå­—æ®µç»™å‡ºæç¤ºä¿¡æ¯ã€‘
+		åœ¨converte.propertiesä¸­æ·»åŠ ä¸€è¡Œinvalid.fieldvalue.createTime=****
 
-¡¾×¢Òâ¡¿
-	JSPÒ³ÃæÖÐÒýÈëstruts±êÇ©<%@ taglib uri="/struts-tags" prefix="s" %>
-	* ´´½¨ÍêÎÄ¼þºó¼ÇµÃÒ»¶¨ÒªÌí¼Óµ½struts.xmlÎÄ¼þÖÐÈ¥£¬ÈôÃ»¼Ó£¬Ò²¿ÉÒÔÔÚJSPÒ³ÃæÖÐÖ±½ÓÊ¹ÓÃ
-###¡¾ÓëServlet½âñî¡¿
-struts2 ¶Ô HttpServletRequest HttpSession ServletContext½øÐÐÁË·â×°³ÉÁËMap¶ÔÏó
-¡¾·½·¨Ò»¡¿:   Í¨¹ýServletActionContextÀàÖ±½Ó»ñÈ¡
-	Õâ¸öÀàÊÇactionÖ´ÐÐµÄÉÏÏÂÎÄ¶ÔÏó£¬°üÀ¨ÁËparameter request session applicationµÈ¡£
-//·Ö±ðÈý¸öÊôÐÔµÄÉèÖÃrequest session application
+ã€æ³¨æ„ã€‘
+	JSPé¡µé¢ä¸­å¼•å…¥strutsæ ‡ç­¾<%@ taglib uri="/struts-tags" prefix="s" %>
+	* åˆ›å»ºå®Œæ–‡ä»¶åŽè®°å¾—ä¸€å®šè¦æ·»åŠ åˆ°struts.xmlæ–‡ä»¶ä¸­åŽ»ï¼Œè‹¥æ²¡åŠ ï¼Œä¹Ÿå¯ä»¥åœ¨JSPé¡µé¢ä¸­ç›´æŽ¥ä½¿ç”¨
+###ã€ä¸ŽServletè§£è€¦ã€‘
+struts2 å¯¹ HttpServletRequest HttpSession ServletContextè¿›è¡Œäº†å°è£…æˆäº†Mapå¯¹è±¡
+ã€æ–¹æ³•ä¸€ã€‘:   é€šè¿‡ServletActionContextç±»ç›´æŽ¥èŽ·å–
+	è¿™ä¸ªç±»æ˜¯actionæ‰§è¡Œçš„ä¸Šä¸‹æ–‡å¯¹è±¡ï¼ŒåŒ…æ‹¬äº†parameter request session applicationç­‰ã€‚
+//åˆ†åˆ«ä¸‰ä¸ªå±žæ€§çš„è®¾ç½®request session application
 	HttpServletRequest request = ServletActionContext.getRequest();
 		request.setAttribute("username", "username_request");
 	Map sessionMap = ServletActionContext.getContext().getSession();
 		sessionMap.put("username", "username_session");
 	ServletContext sc = ServletActionContext.getServletContext();
 		sc.setAttribute("username", "username_application");
-//JSPÒ³ÃæµÄ»ñÈ¡£º
+//JSPé¡µé¢çš„èŽ·å–ï¼š
     ${requestScope.username}<br>
     ${sessionScope.username}<br>
     ${applicationScope.username}<br>
 
-###¡¾Í¨¹ýÊµÏÖ½Ó¿Ústruts2×Ô¶¯×¢Èë¡¿
-	ÊµÏÖÕâËÄ¸ö½Ó¿Ú£ºServletRequestAware£¬ServletResponseAware£¬ServletContextAware£¬SessionAware
-	ÊµÀý»¯¶ÔÏó·Ö±ðÊÇHttpServletRequest£¬HttpServletResponse£¬Map£¬ServletContext
-	ÖØÐ´ËÄ¸öset·½·¨£¬·½·¨ÌåÐ´ÉÏthis.** = **;
+###ã€é€šè¿‡å®žçŽ°æŽ¥å£struts2è‡ªåŠ¨æ³¨å…¥ã€‘
+	å®žçŽ°è¿™å››ä¸ªæŽ¥å£ï¼šServletRequestAwareï¼ŒServletResponseAwareï¼ŒServletContextAwareï¼ŒSessionAware
+	å®žä¾‹åŒ–å¯¹è±¡åˆ†åˆ«æ˜¯HttpServletRequestï¼ŒHttpServletResponseï¼ŒMapï¼ŒServletContext
+	é‡å†™å››ä¸ªsetæ–¹æ³•ï¼Œæ–¹æ³•ä½“å†™ä¸Šthis.** = **;
 
-##¡¾ÎÄ¼þÉÏ´«¡¿
-¡¾1¡¿Ì×Â·Ò»ÖÂ£¬µ«ÊÇÔÚÅäÖÃÊ±£¬actionÀïÒ»¶¨ÓÐinputµÄresult²Å¿ÉÒÔ
-¡¾2¡¿<-- ÅäÖÃÎÄ¼þÉÏ´«µÄ×Ü´óÐ¡ -->
+##ã€æ–‡ä»¶ä¸Šä¼ ã€‘
+ã€1ã€‘å¥—è·¯ä¸€è‡´ï¼Œä½†æ˜¯åœ¨é…ç½®æ—¶ï¼Œactioné‡Œä¸€å®šæœ‰inputçš„resultæ‰å¯ä»¥
+ã€2ã€‘<-- é…ç½®æ–‡ä»¶ä¸Šä¼ çš„æ€»å¤§å° -->
 	< constant name="struts.multipart.maxSize" value="2097152000"></ constant>
-¡¾3¡¿´íÎóÌáÊ¾ÅäÖÃ
-ÐÂ½¨Ò»¸öpropertiesÎÄ¼þ£¬Ãû×Ö×Ô¶¨Òå
+ã€3ã€‘é”™è¯¯æç¤ºé…ç½®
+æ–°å»ºä¸€ä¸ªpropertiesæ–‡ä»¶ï¼Œåå­—è‡ªå®šä¹‰
 	struts.messages.error.uploading=Error uploading: {0}
 	struts.messages.error.file.too.large=File too large: {0} "{1}" "{2}" {3}
 	struts.messages.error.content.type.not.allowed=Content-Type not allowed: {0} "{1}" "{2}" {3}
 	struts.messages.error.file.extension.not.allowed=File extension not allowed: {0} "{1}" "{2}" {3}
-	{0}£º<input>±êÇ©µÄname ÊôÐÔÖµ
-	{1}£ºÉÏ´«ÎÄ¼þµÄÕæÊµÃû³Æ
-	{2}£ºÉÏ´«ÎÄ¼þ±£´æµ½ÁÙÊ±Ä¿Â¼µÄÃû³Æ
-	{3}£ºÉÏ´«ÎÄ¼þµÄÀàÐÍ£¨¶ÔÓÚtoo.largeÀ´ËµÊÇÉÏ´«ÎÄ¼þµÄ´óÐ¡£©
+	{0}ï¼š< input>æ ‡ç­¾çš„name å±žæ€§å€¼
+	{1}ï¼šä¸Šä¼ æ–‡ä»¶çš„çœŸå®žåç§°
+	{2}ï¼šä¸Šä¼ æ–‡ä»¶ä¿å­˜åˆ°ä¸´æ—¶ç›®å½•çš„åç§°
+	{3}ï¼šä¸Šä¼ æ–‡ä»¶çš„ç±»åž‹ï¼ˆå¯¹äºŽtoo.largeæ¥è¯´æ˜¯ä¸Šä¼ æ–‡ä»¶çš„å¤§å°ï¼‰
 	
-##¼ÓÈëµ½strutsÅäÖÃÎÄ¼þÖÐÈ¥
+##åŠ å…¥åˆ°strutsé…ç½®æ–‡ä»¶ä¸­åŽ»
 
-struts2¿ò¼ÜµÄÎÄ¼þÉÏ´«£º
-	* µ¥ÎÄ¼þÉÏ´«£º
-		* ÔÚ¶¯×÷ÀàactionÖÐÉùÃ÷Ïà¹ØÊôÐÔ£º
-			* ÔÚ¶¯×÷ÀàactionÖÐ£¬ÒªÉùÃ÷ÓëÒ³ÃæÖÐ±íµ¥nameÊôÐÔÍ¬ÃûµÄÊôÐÔ£¬Í¬ÃûµÄÊôÐÔµÄÀàÐÍÊ±FileÀàÐÍ£»
-			* ÔÚ¶¯×÷ÀàactionÖÐ£¬ÒªÉùÃ÷[Í¬ÃûµÄÊôÐÔ]ContentType£¬ÀàÐÍÊ±StringÀàÐÍ£»
-			* ÔÚ¶¯×÷ÀàactionÖÐ£¬ÒªÉùÃ÷[Í¬ÃûµÄÊôÐÔ]FileName£¬ÀàÐÍÊ±StringÀàÐÍ
-			* ¸øËùÓÐÊôÐÔÌá¹©getºÍset·½·¨
-		* ÔÚÒµÎñ·½·¨ÖÐ£¬´¦ÀíÎÄ¼þÉÏ´«£º
-			* »ñÈ¡ÒªÉÏ´«ÎÄ¼þµÄÂ·¾¶£¬±£´æµÄÎ»ÖÃ
-			* ÔÚÄ¿±êÎÄ¼þ¼ÐÄÚ£¬´´½¨Ò»¸öÓëÉÏ´«ÎÄ¼þÍ¬ÃûµÄÎÄ¼þ
-			* Í¨¹ýFileUtils¹¤¾ßÀàÌá¹©copyFile()·½·¨£¬½«ÁÙÊ±ÎÄ¼þÄÚÈÝ¿½±´µ½Ä¿±êÎÄ¼þ¼ÐÏÂµÄÄÇ¸öÍ¬ÃûµÄÎÄ¼þ
-		* ÉèÖÃÉÏ´«ÎÄ¼þµÄ×Ü´óÐ¡
-			* ÔÚstruts.xmlÎÄ¼þÖÐ£¬<constant name="struts.multipart.maxSize" value="2097152000"></constant>
-		* ÉèÖÃÉÏ´«ÎÄ¼þµÄ´óÐ¡¡¢ÀàÐÍºÍÀ©Õ¹Ãû£º
-			* ÔÚ×Ô¶¨ÒåµÄÅäÖÃÎÄ¼þÖÐ£¬ÔÚaction±êÇ©ÏÂ£º
-				<!-- ÅäÖÃÀ¹½ØÆ÷µÄ²ÎÊý£¬ÕâÀïÊÇÎÄ¼þÉÏ´«À¹½ØÆ÷ -->
+struts2æ¡†æž¶çš„æ–‡ä»¶ä¸Šä¼ ï¼š
+	* å•æ–‡ä»¶ä¸Šä¼ ï¼š
+		* åœ¨åŠ¨ä½œç±»actionä¸­å£°æ˜Žç›¸å…³å±žæ€§ï¼š
+			* åœ¨åŠ¨ä½œç±»actionä¸­ï¼Œè¦å£°æ˜Žä¸Žé¡µé¢ä¸­è¡¨å•nameå±žæ€§åŒåçš„å±žæ€§ï¼ŒåŒåçš„å±žæ€§çš„ç±»åž‹æ—¶Fileç±»åž‹ï¼›
+			* åœ¨åŠ¨ä½œç±»actionä¸­ï¼Œè¦å£°æ˜Ž[åŒåçš„å±žæ€§]ContentTypeï¼Œç±»åž‹æ—¶Stringç±»åž‹ï¼›
+			* åœ¨åŠ¨ä½œç±»actionä¸­ï¼Œè¦å£°æ˜Ž[åŒåçš„å±žæ€§]FileNameï¼Œç±»åž‹æ—¶Stringç±»åž‹
+			* ç»™æ‰€æœ‰å±žæ€§æä¾›getå’Œsetæ–¹æ³•
+		* åœ¨ä¸šåŠ¡æ–¹æ³•ä¸­ï¼Œå¤„ç†æ–‡ä»¶ä¸Šä¼ ï¼š
+			* èŽ·å–è¦ä¸Šä¼ æ–‡ä»¶çš„è·¯å¾„ï¼Œä¿å­˜çš„ä½ç½®
+			* åœ¨ç›®æ ‡æ–‡ä»¶å¤¹å†…ï¼Œåˆ›å»ºä¸€ä¸ªä¸Žä¸Šä¼ æ–‡ä»¶åŒåçš„æ–‡ä»¶
+			* é€šè¿‡FileUtilså·¥å…·ç±»æä¾›copyFile()æ–¹æ³•ï¼Œå°†ä¸´æ—¶æ–‡ä»¶å†…å®¹æ‹·è´åˆ°ç›®æ ‡æ–‡ä»¶å¤¹ä¸‹çš„é‚£ä¸ªåŒåçš„æ–‡ä»¶
+		* è®¾ç½®ä¸Šä¼ æ–‡ä»¶çš„æ€»å¤§å°
+			* åœ¨struts.xmlæ–‡ä»¶ä¸­ï¼Œ<constant name="struts.multipart.maxSize" value="2097152000"></constant>
+		* è®¾ç½®ä¸Šä¼ æ–‡ä»¶çš„å¤§å°ã€ç±»åž‹å’Œæ‰©å±•åï¼š
+			* åœ¨è‡ªå®šä¹‰çš„é…ç½®æ–‡ä»¶ä¸­ï¼Œåœ¨actionæ ‡ç­¾ä¸‹ï¼š
+				<!-- é…ç½®æ‹¦æˆªå™¨çš„å‚æ•°ï¼Œè¿™é‡Œæ˜¯æ–‡ä»¶ä¸Šä¼ æ‹¦æˆªå™¨ -->
 				<interceptor-ref name="defaultStack">
 	              	<!-- 
-	              		ÅäÖÃÎÄ¼þÉÏ´«À¹½ØÆ÷µÄ²ÎÊý
-	              			* Óë¶¨Òå²ÎÊýµÄË³ÐòÎÞ¹Ø
-	              			* ÔÊÐíµÄÀàÐÍ(allowedTypes)ºÍÔÊÐíµÄÀ©Õ¹Ãû(allowedExtensions)±ØÐë±£³ÖÒ»ÖÂ
+	              		é…ç½®æ–‡ä»¶ä¸Šä¼ æ‹¦æˆªå™¨çš„å‚æ•°
+	              			* ä¸Žå®šä¹‰å‚æ•°çš„é¡ºåºæ— å…³
+	              			* å…è®¸çš„ç±»åž‹(allowedTypes)å’Œå…è®¸çš„æ‰©å±•å(allowedExtensions)å¿…é¡»ä¿æŒä¸€è‡´
 	              	 -->
 	              	<!-- 
-	              		* ÅäÖÃÉÏ´«ÎÄ¼þµÄ´óÐ¡
-	              			* struts.xmlÎÄ¼þÖÐÅäÖÃµÄÊÇÉÏ´«ÎÄ¼þµÄ×Ü´óÐ¡
-	              			* ÕâÀïÅäÖÃµÄÊÇÉÏ´«ÎÄ¼þµÄµ¥¸ö´óÐ¡
+	              		* é…ç½®ä¸Šä¼ æ–‡ä»¶çš„å¤§å°
+	              			* struts.xmlæ–‡ä»¶ä¸­é…ç½®çš„æ˜¯ä¸Šä¼ æ–‡ä»¶çš„æ€»å¤§å°
+	              			* è¿™é‡Œé…ç½®çš„æ˜¯ä¸Šä¼ æ–‡ä»¶çš„å•ä¸ªå¤§å°
 	              	 -->
 	              	<param name="fileUpload.maximumSize">20971520</param>
-	              	<!-- ÅäÖÃÉÏ´«ÎÄ¼þÔÊÐíµÄÀàÐÍ£¬Èç¹ûÅäÖÃ¶à¸öÖµµÄ»°£¬ÓÃ","¸ô¿ª -->
+	              	<!-- é…ç½®ä¸Šä¼ æ–‡ä»¶å…è®¸çš„ç±»åž‹ï¼Œå¦‚æžœé…ç½®å¤šä¸ªå€¼çš„è¯ï¼Œç”¨","éš”å¼€ -->
 	              	<param name="fileUpload.allowedTypes">text/plain,application/msword</param>
-	              	<!-- ÅäÖÃÉÏ´«ÎÄ¼þµÄÀ©Õ¹Ãû£¬Èç¹ûÅäÖÃ¶à¸öÖµµÄ»°£¬ÓÃ","¸ô¿ª -->
+	              	<!-- é…ç½®ä¸Šä¼ æ–‡ä»¶çš„æ‰©å±•åï¼Œå¦‚æžœé…ç½®å¤šä¸ªå€¼çš„è¯ï¼Œç”¨","éš”å¼€ -->
 	              	<param name="fileUpload.allowedExtensions">.txt</param>
 	            </interceptor-ref>
-	         * ×Ô¶¨ÒåÉÏ´«ÎÄ¼þµÄ´íÎóÌáÊ¾ÐÅÏ¢£º
-	         	* ÔÚ¶¯×÷ÀàactionÍ¬Ä¿Â¼ÏÂ£¬´´½¨Ò»¸öÃûÎªfileuploadmessage.properties×ÊÔ´ÎÄ¼þ(ÃûÎª×Ô¶¨Òå)
-	         	* ¸Ä×ÊÔ´ÎÄ¼þÅäÖÃÈçÏÂ£º
+	         * è‡ªå®šä¹‰ä¸Šä¼ æ–‡ä»¶çš„é”™è¯¯æç¤ºä¿¡æ¯ï¼š
+	         	* åœ¨åŠ¨ä½œç±»actionåŒç›®å½•ä¸‹ï¼Œåˆ›å»ºä¸€ä¸ªåä¸ºfileuploadmessage.propertiesèµ„æºæ–‡ä»¶(åä¸ºè‡ªå®šä¹‰)
+	         	* æ”¹èµ„æºæ–‡ä»¶é…ç½®å¦‚ä¸‹ï¼š
 	         		struts.messages.error.uploading=Error uploading: {0}
 					struts.messages.error.file.too.large=File too large: {0} "{1}" "{2}" {3}
 					struts.messages.error.content.type.not.allowed=Content-Type not allowed: {0} "{1}" "{2}" {3}
 					struts.messages.error.file.extension.not.allowed=File extension not allowed: {0} "{1}" "{2}" {3}
 		
 		
-	* ¶àÎÄ¼þÉÏ´«£º
-		* ËùÓÐÁ÷³ÌÓÚÅäÖÃ¶¼Óëµ¥ÎÄ¼þÉÏ´«Ò»ÖÂ¡£
-		* ÐèÒª×¢ÒâµÄÊÇ£º
-			* ÔÚÒ³ÃæÖÐ£¬ËäÈ»ÊÇ¶àÎÄ¼þÉÏ´«£¬µ«ÊÇÒ³ÃæÖÐ±íµ¥µÄnameÊôÐÔµÄÖµ±ØÐë±£³ÖÒ»ÖÂ£»
-			* ÔÚ¶¯×÷ÀàactionÖÐÉùÃ÷µÄÏà¹ØÊôÐÔ£¬ÀàÐÍ¸Ä³ÉÊý×é£»
-			* ÔÚÒµÎñ·½·¨ÖÐ£¬Ïà¹Ø´¦ÀíÁ÷³Ì¸Ä³Éµ¥ÎÄ¼þÉÏ´«µÄÑ­»·¡£
-##¡¾ÎÄ¼þÏÂÔØ¡¿
- 1¡¢ÏÂÔØÎÄ¼þÊ± Ñ¹ÈëÖµÕ»µÄÃû×ÖÈç¹ûº¬ÖÐÎÄÐèÒª×ªÂë£ºfileName = new String(filename.getBytes(),"ISO-8859-1");
-ÅäÖÃÎÄ¼þ  filename=${filename}.xls
-##¡¾Ð£Ñé¡¿
-####¡¾struts2ÊÖ¶¯ÑéÖ¤¡¿£º
-		Ò²¾ÍÊÇËµÊÖ¶¯µÄÊÇÖ±½ÓÔÚactionÀï£¬ÖØÐ´¸övalidate·½·¨¾ÍÊÇÁË 
-		·½·¨ÀïÖ»Òª°´ÐèÇóÐ´this.addFieldError( key, value);Óï¾ä¾ÍÐÐÁË£¬ºóÐøµÄÓÉ¿ò¼ÜÀ´´¦Àí
-	* Ê×ÏÈÒª´ÓÒ³ÃæÖÐ»ñÈ¡¶ÔÓ¦µÄ±êÇ©nameÊôÐÔµÄÖµ£¬ÔÚ¶¯×÷ÀàactionÖÐÉùÃ÷ Í¬ÃûµÄÊôÐÔ£¬Ìá¹©getºÍset·½·¨
+	* å¤šæ–‡ä»¶ä¸Šä¼ ï¼š
+		* æ‰€æœ‰æµç¨‹äºŽé…ç½®éƒ½ä¸Žå•æ–‡ä»¶ä¸Šä¼ ä¸€è‡´ã€‚
+		* éœ€è¦æ³¨æ„çš„æ˜¯ï¼š
+			* åœ¨é¡µé¢ä¸­ï¼Œè™½ç„¶æ˜¯å¤šæ–‡ä»¶ä¸Šä¼ ï¼Œä½†æ˜¯é¡µé¢ä¸­è¡¨å•çš„nameå±žæ€§çš„å€¼å¿…é¡»ä¿æŒä¸€è‡´ï¼›
+			* åœ¨åŠ¨ä½œç±»actionä¸­å£°æ˜Žçš„ç›¸å…³å±žæ€§ï¼Œç±»åž‹æ”¹æˆæ•°ç»„ï¼›
+			* åœ¨ä¸šåŠ¡æ–¹æ³•ä¸­ï¼Œç›¸å…³å¤„ç†æµç¨‹æ”¹æˆå•æ–‡ä»¶ä¸Šä¼ çš„å¾ªçŽ¯ã€‚
+##ã€æ–‡ä»¶ä¸‹è½½ã€‘
+ 1ã€ä¸‹è½½æ–‡ä»¶æ—¶ åŽ‹å…¥å€¼æ ˆçš„åå­—å¦‚æžœå«ä¸­æ–‡éœ€è¦è½¬ç ï¼šfileName = new String(filename.getBytes(),"ISO-8859-1");
+é…ç½®æ–‡ä»¶  filename=${filename}.xls
+##ã€æ ¡éªŒã€‘
+####ã€struts2æ‰‹åŠ¨éªŒè¯ã€‘ï¼š
+		ä¹Ÿå°±æ˜¯è¯´æ‰‹åŠ¨çš„æ˜¯ç›´æŽ¥åœ¨actioné‡Œï¼Œé‡å†™ä¸ªvalidateæ–¹æ³•å°±æ˜¯äº† 
+		æ–¹æ³•é‡Œåªè¦æŒ‰éœ€æ±‚å†™this.addFieldError( key, value);è¯­å¥å°±è¡Œäº†ï¼ŒåŽç»­çš„ç”±æ¡†æž¶æ¥å¤„ç†
+	* é¦–å…ˆè¦ä»Žé¡µé¢ä¸­èŽ·å–å¯¹åº”çš„æ ‡ç­¾nameå±žæ€§çš„å€¼ï¼Œåœ¨åŠ¨ä½œç±»actionä¸­å£°æ˜Ž åŒåçš„å±žæ€§ï¼Œæä¾›getå’Œsetæ–¹æ³•
 
-	* Òª¼Ì³ÐActionSupportÀà»òÕßÊµÏÖValidateable½Ó¿Ú
+	* è¦ç»§æ‰¿ActionSupportç±»æˆ–è€…å®žçŽ°ValidateableæŽ¥å£
 	
-	* ÖØÐ´Validateable½Ó¿ÚµÄvalidate()·½·¨
-		* Ç°ÌáÊÇ£ºÒª±£Ö¤setUsername()¡¢validate()¡¢login()·½·¨Òª°´ÕÕÕâ¸öÏÈºóË³ÐòÖ´ÐÐ
+	* é‡å†™ValidateableæŽ¥å£çš„validate()æ–¹æ³•
+		* å‰ææ˜¯ï¼šè¦ä¿è¯setUsername()ã€validate()ã€login()æ–¹æ³•è¦æŒ‰ç…§è¿™ä¸ªå…ˆåŽé¡ºåºæ‰§è¡Œ
 	
-	* Èç¹ûµÇÂ¼Ê§°Ü£¬ÈçºÎ´¦Àí£º
+	* å¦‚æžœç™»å½•å¤±è´¥ï¼Œå¦‚ä½•å¤„ç†ï¼š
 		* this.addFieldError( key, value);
-			* key£º´íÎóÌáÊ¾×Ö¶Î
-			* value£º´íÎóÌáÊ¾ÐÅÏ¢
+			* keyï¼šé”™è¯¯æç¤ºå­—æ®µ
+			* valueï¼šé”™è¯¯æç¤ºä¿¡æ¯
 	
-	* Ê²Ã´Ê±ºò²ÅÊÇÑéÖ¤Í¨¹ý£¿
-		* ÑéÖ¤Í¨¹ý£º1¡¢map¼¯ºÏ²»´æÔÚ£»2¡¢map¼¯ºÏ´æÔÚ²¢Îª¿Õ
-		* ÑéÖ¤²»Í¨¹ý£ºmap¼¯ºÏ´æÔÚ²¢ÇÒ²»Îª¿Õ
+	* ä»€ä¹ˆæ—¶å€™æ‰æ˜¯éªŒè¯é€šè¿‡ï¼Ÿ
+		* éªŒè¯é€šè¿‡ï¼š1ã€mapé›†åˆä¸å­˜åœ¨ï¼›2ã€mapé›†åˆå­˜åœ¨å¹¶ä¸ºç©º
+		* éªŒè¯ä¸é€šè¿‡ï¼šmapé›†åˆå­˜åœ¨å¹¶ä¸”ä¸ä¸ºç©º
 	
-	* ·ÖÎöÐèÇó£º
-		* ÓÃ»§Ãû²»ÄÜÎªnull ,""
-		* ÃÜÂë²»ÄÜÎªnull, "" £¬²¢ÇÒÃÜÂëµÄ³¤¶È6-12Ö®¼ä 
+	* åˆ†æžéœ€æ±‚ï¼š
+		* ç”¨æˆ·åä¸èƒ½ä¸ºnull ,""
+		* å¯†ç ä¸èƒ½ä¸ºnull, "" ï¼Œå¹¶ä¸”å¯†ç çš„é•¿åº¦6-12ä¹‹é—´ 
 	
-	* Õë¶ÔËùÓÐÒµÎñ·½·¨½øÐÐÑéÖ¤»¹ÊÇÕë¶ÔÄ³¸öÖ¸¶¨ÒµÎñ·½·¨½øÐÐÑéÖ¤£¿
-		* ÖØÐ´µÄvalidate()·½·¨£¬Õë¶ÔËùÓÐÒµÎñ·½·¨½øÐÐÑéÖ¤
-		* ÖØÐ´µÄvalidate()·½·¨¼ÓÉÏÒªÑéÖ¤µÄÖ¸¶¨µÄÒµÎñ·½·¨Ãû(ÒµÎñ·½·¨ÃûµÄÊ××ÖÄ¸´óÐ´)£¬ÊµÏÖÕë¶ÔÄ³¸öÖ¸¶¨µÄÒµÎñ·½·¨½øÐÐÑéÖ¤
-			* ÎªÊ²Ã´ÒªÕâÑù½øÐÐÆ´½Ó£¿ÒòÎªstruts2¿ò¼Üµ×²ãÆ´½Ó£¬Èç¹û²»ÕâÑùÐ´£¬µ×²ã¾ÍÕÒ²»µ½¶ÔÓ¦·½·¨Ãû
+	* é’ˆå¯¹æ‰€æœ‰ä¸šåŠ¡æ–¹æ³•è¿›è¡ŒéªŒè¯è¿˜æ˜¯é’ˆå¯¹æŸä¸ªæŒ‡å®šä¸šåŠ¡æ–¹æ³•è¿›è¡ŒéªŒè¯ï¼Ÿ
+		* é‡å†™çš„validate()æ–¹æ³•ï¼Œé’ˆå¯¹æ‰€æœ‰ä¸šåŠ¡æ–¹æ³•è¿›è¡ŒéªŒè¯
+		* é‡å†™çš„validate()æ–¹æ³•åŠ ä¸Šè¦éªŒè¯çš„æŒ‡å®šçš„ä¸šåŠ¡æ–¹æ³•å(ä¸šåŠ¡æ–¹æ³•åçš„é¦–å­—æ¯å¤§å†™)ï¼Œå®žçŽ°é’ˆå¯¹æŸä¸ªæŒ‡å®šçš„ä¸šåŠ¡æ–¹æ³•è¿›è¡ŒéªŒè¯
+			* ä¸ºä»€ä¹ˆè¦è¿™æ ·è¿›è¡Œæ‹¼æŽ¥ï¼Ÿå› ä¸ºstruts2æ¡†æž¶åº•å±‚æ‹¼æŽ¥ï¼Œå¦‚æžœä¸è¿™æ ·å†™ï¼Œåº•å±‚å°±æ‰¾ä¸åˆ°å¯¹åº”æ–¹æ³•å
 	
-####¡¾struts2¿ò¼ÜÑéÖ¤(xml·½Ê½)¡¿:
-	* Ê×ÏÈÒª´ÓÒ³ÃæÖÐ»ñÈ¡¶ÔÓ¦µÄ±êÇ©nameÊôÐÔµÄÖµ£¬ÔÚ¶¯×÷ÀàactionÖÐÉùÃ÷Í¬ÃûµÄÊôÐÔ£¬Ìá¹©getºÍset·½·¨
+####ã€struts2æ¡†æž¶éªŒè¯(xmlæ–¹å¼)ã€‘:
+	* é¦–å…ˆè¦ä»Žé¡µé¢ä¸­èŽ·å–å¯¹åº”çš„æ ‡ç­¾nameå±žæ€§çš„å€¼ï¼Œåœ¨åŠ¨ä½œç±»actionä¸­å£°æ˜ŽåŒåçš„å±žæ€§ï¼Œæä¾›getå’Œsetæ–¹æ³•
 	
-	* ´´½¨Ò»¸öxml¸ñÊ½ÑéÖ¤ÎÄ¼þ£º
-		* ÃüÃû·½Ê½£ºActionClassName-validation.xml£¬ActionClassNameÖ¸µÄÊÇ¶¯×÷ÀàactionµÄÃû³Æ
-		* <validators>±êÇ©£º¸ùÔªËØ
-		* field£ºÖ¸¶¨actionÖÐÒªÐ£ÑéµÄÊôÐÔ£¬Êµ¼ÊÉÏ¾ÍÊÇÒ³ÃæÖÐ±íµ¥µÄnameÊôÐÔµÄÖµ
-			* name£ºÖ¸¶¨Ò³ÃæÖÐ±íµ¥µÄnameÊôÐÔµÄÖµ
-		* field-validator£ºÖ¸¶¨ÑéÖ¤¹æÔò
-			* type£ºÖ¸¶¨ÑéÖ¤¹æÔòÃû³Æ£¬
-					struts2¿ò¼ÜÌá¹©µÄÑéÖ¤¹æÔò·ÅÔÚxwork-core-xxx.jar
-					ÏÂµÄcom\opensymphony\xwork2\validator\validators
-					µÄdefault.xmlÅäÖÃÎÄ¼þ¡£
-		* param£ºÏòµ×²ãµÄÑéÖ¤¹æÔò´«µÝµÄ²ÎÊý
-		* message£ºÑéÖ¤Ê§°ÜÊ±£¬Ìá¹©µÄ´íÎóÌáÊ¾ÐÅÏ¢
+	* åˆ›å»ºä¸€ä¸ªxmlæ ¼å¼éªŒè¯æ–‡ä»¶ï¼š
+		* å‘½åæ–¹å¼ï¼šActionClassName-validation.xmlï¼ŒActionClassNameæŒ‡çš„æ˜¯åŠ¨ä½œç±»actionçš„åç§°
+		* <validators>æ ‡ç­¾ï¼šæ ¹å…ƒç´ 
+		* fieldï¼šæŒ‡å®šactionä¸­è¦æ ¡éªŒçš„å±žæ€§ï¼Œå®žé™…ä¸Šå°±æ˜¯é¡µé¢ä¸­è¡¨å•çš„nameå±žæ€§çš„å€¼
+			* nameï¼šæŒ‡å®šé¡µé¢ä¸­è¡¨å•çš„nameå±žæ€§çš„å€¼
+		* field-validatorï¼šæŒ‡å®šéªŒè¯è§„åˆ™
+			* typeï¼šæŒ‡å®šéªŒè¯è§„åˆ™åç§°ï¼Œ
+					struts2æ¡†æž¶æä¾›çš„éªŒè¯è§„åˆ™æ”¾åœ¨xwork-core-xxx.jar
+					ä¸‹çš„com\opensymphony\xwork2\validator\validators
+					çš„default.xmlé…ç½®æ–‡ä»¶ã€‚
+		* paramï¼šå‘åº•å±‚çš„éªŒè¯è§„åˆ™ä¼ é€’çš„å‚æ•°
+		* messageï¼šéªŒè¯å¤±è´¥æ—¶ï¼Œæä¾›çš„é”™è¯¯æç¤ºä¿¡æ¯
 	
-	* Èç¹ûÒª¶ÔÖ¸¶¨·½·¨½øÐÐÑéÖ¤µÄ»°£º
-		* xmlÑéÖ¤ÎÄ¼þµÄÃüÃû·½Ê½£ºActionClassName-ActionName-validation.xml£¬
-								ActionName¶ÔÓ¦µÄÊÇstruts.xmlÎÄ¼þ¶ÔÓ¦µÄaction±êÇ©µÄnameÊôÐÔµÄÖµ
+	* å¦‚æžœè¦å¯¹æŒ‡å®šæ–¹æ³•è¿›è¡ŒéªŒè¯çš„è¯ï¼š
+		* xmléªŒè¯æ–‡ä»¶çš„å‘½åæ–¹å¼ï¼šActionClassName-ActionName-validation.xmlï¼Œ
+								ActionNameå¯¹åº”çš„æ˜¯struts.xmlæ–‡ä»¶å¯¹åº”çš„actionæ ‡ç­¾çš„nameå±žæ€§çš„å€¼
 
-##¡¾×Ô¶¨ÒåÀ¹½ØÆ÷¡¿
-¡¾À¹½ØÆ÷ ÌØÐÔ¡¿£º
+##ã€è‡ªå®šä¹‰æ‹¦æˆªå™¨ã€‘
+ã€æ‹¦æˆªå™¨ ç‰¹æ€§ã€‘ï¼š
 
-	À¹½ØÆ÷Ò»°ãÊÇºÍ¶ÔÓ¦µÄaction°ó¶¨µÄ£¬¶øÔ­ÉúµÄfilterÊÇ¶ÔURLÄ£Ê½½øÐÐÀ¹½ØµÄ
+	æ‹¦æˆªå™¨ä¸€èˆ¬æ˜¯å’Œå¯¹åº”çš„actionç»‘å®šçš„ï¼Œè€ŒåŽŸç”Ÿçš„filteræ˜¯å¯¹URLæ¨¡å¼è¿›è¡Œæ‹¦æˆªçš„
 
-	# Ö´ÐÐË³Ðò£ºÖ´ÐÐÍêstrutsÖÐÅäÖÃµÄÀ¹½ØÆ÷Õ»ÖÐËùÓÐintercept·½·¨ºóÔÙÖ´ÐÐactionµÄexecute·½·¨
-	# µ±À¹½ØÆ÷µÄ intercept·½·¨  ·µ»Ønull¾Í»á¼ÌÐøÖ´ÐÐaction 
-		Èç¹ûÔÚÇ°Ãæ¾Íµ÷³öÀ´ÁËactionÊµÀý£¬²¢ÇÒÖ´ÐÐÁË·½·¨ÄÇÃ´Ö®ºóµÄaction¾Í²»»áÔÙÖØ¸´Ö´ÐÐ
-	# ¼ì²éÊÇ·ñ»¹ÓÐÀ¹½ØÆ÷´ýÖ´ÐÐ£¬ÓÐ¾ÍÈ¥Ö´ÐÐ£¬Ã»ÓÐ¾Í»áµÃµ½null£¬Í¬ÑùµÄ¼ÌÐøÖ´ÐÐaction
+	# æ‰§è¡Œé¡ºåºï¼šæ‰§è¡Œå®Œstrutsä¸­é…ç½®çš„æ‹¦æˆªå™¨æ ˆä¸­æ‰€æœ‰interceptæ–¹æ³•åŽå†æ‰§è¡Œactionçš„executeæ–¹æ³•
+	# å½“æ‹¦æˆªå™¨çš„ interceptæ–¹æ³•  è¿”å›žnullå°±ä¼šç»§ç»­æ‰§è¡Œaction 
+		å¦‚æžœåœ¨å‰é¢å°±è°ƒå‡ºæ¥äº†actionå®žä¾‹ï¼Œå¹¶ä¸”æ‰§è¡Œäº†æ–¹æ³•é‚£ä¹ˆä¹‹åŽçš„actionå°±ä¸ä¼šå†é‡å¤æ‰§è¡Œ
+	# æ£€æŸ¥æ˜¯å¦è¿˜æœ‰æ‹¦æˆªå™¨å¾…æ‰§è¡Œï¼Œæœ‰å°±åŽ»æ‰§è¡Œï¼Œæ²¡æœ‰å°±ä¼šå¾—åˆ°nullï¼ŒåŒæ ·çš„ç»§ç»­æ‰§è¡Œaction
 			String result = invocation.invoke();
 			return result;
-¡¾ÈçºÎ×Ô¶¨ÒåÀ¹½ØÆ÷¡¿
-#####1¡¢ ËùÓÐµÄÀ¹½ØÆ÷¶¼ÐèÒªÊµÏÖInterceptor½Ó¿Ú»òÕß¼Ì³ÐInterceptor½Ó¿ÚµÄÀ©Õ¹ÊµÏÖÀà
+ã€å¦‚ä½•è‡ªå®šä¹‰æ‹¦æˆªå™¨ã€‘
+#####1ã€ æ‰€æœ‰çš„æ‹¦æˆªå™¨éƒ½éœ€è¦å®žçŽ°InterceptoræŽ¥å£æˆ–è€…ç»§æ‰¿InterceptoræŽ¥å£çš„æ‰©å±•å®žçŽ°ç±»
 	
-#####2¡¢ÒªÖØÐ´init()¡¢intercept()¡¢destroy()·½·¨
+#####2ã€è¦é‡å†™init()ã€intercept()ã€destroy()æ–¹æ³•
 	
-		* init()ÊÇÔÚstruts2¿ò¼ÜÔËÐÐÊ±Ö´ÐÐ£¬ÔÚÀ¹½ØÆ÷µÄÉúÃüÖÜÆÚÖÐÖ»Ö´ÐÐÒ»´Î£¬¿ÉÒÔ×ö±ØÒªµÄÄÚÈÝµÄ³õÊ¼»¯¹¤×÷
+		* init()æ˜¯åœ¨struts2æ¡†æž¶è¿è¡Œæ—¶æ‰§è¡Œï¼Œåœ¨æ‹¦æˆªå™¨çš„ç”Ÿå‘½å‘¨æœŸä¸­åªæ‰§è¡Œä¸€æ¬¡ï¼Œå¯ä»¥åšå¿…è¦çš„å†…å®¹çš„åˆå§‹åŒ–å·¥ä½œ
 		
-		* intercept()£¬ÊÇÃ¿Ò»´ÎÇëÇó¾ÍÖ´ÐÐÒ»´Î£¬×öÏà¹Ø´¦Àí¹¤×÷¡£
+		* intercept()ï¼Œæ˜¯æ¯ä¸€æ¬¡è¯·æ±‚å°±æ‰§è¡Œä¸€æ¬¡ï¼Œåšç›¸å…³å¤„ç†å·¥ä½œã€‚
 		
-			* intercept()·½·¨½ÓÊÕÒ»¸öActionInvocation½Ó¿ÚµÄÊµÀý
+			* intercept()æ–¹æ³•æŽ¥æ”¶ä¸€ä¸ªActionInvocationæŽ¥å£çš„å®žä¾‹
 			
-			* Í¨¹ýÕâ¸ö½Ó¿ÚµÄÊµÀý£¬¿ÉÒÔ»ñÈ¡ÒÔÏÂÄÚÈÝ
-			£º
-					//cn.itcast.aop.UserAction @15b5783£¬ ¶¯×÷ÀàµÄ¶ÔÏó
+			* é€šè¿‡è¿™ä¸ªæŽ¥å£çš„å®žä¾‹ï¼Œå¯ä»¥èŽ·å–ä»¥ä¸‹å†…å®¹
+			ï¼š
+					//cn.itcast.aop.UserAction @15b5783ï¼Œ åŠ¨ä½œç±»çš„å¯¹è±¡
 				System.out.println("invocation.getAction() : "+invocation.getAction());
-					//cn.itcast.aop.UserAction @15b5783£¬ Óëinvocation.getAction()·½·¨»ñÈ¡µÄÊÇÍ¬Ò»µÄ¶ÔÏó
+					//cn.itcast.aop.UserAction @15b5783ï¼Œ ä¸Žinvocation.getAction()æ–¹æ³•èŽ·å–çš„æ˜¯åŒä¸€çš„å¯¹è±¡
 				System.out.println("invocation.getProxy().getAction() : "+invocation.getProxy().getAction());
-					//userAction_save£¬×Ô¶¨ÒåÅäÖÃÎÄ¼þÖÐµÄaction±êÇ©µÄnameÊôÐÔµÄÖµ
+					//userAction_saveï¼Œè‡ªå®šä¹‰é…ç½®æ–‡ä»¶ä¸­çš„actionæ ‡ç­¾çš„nameå±žæ€§çš„å€¼
 				System.out.println("invocation.getProxy().getActionName() : "+invocation.getProxy().getActionName());
-					//save£¬¶ÔÓ¦¶¯×÷ÀàÖ¸¶¨ÒªÖ´ÐÐµÄ·½·¨Ãû
+					//saveï¼Œå¯¹åº”åŠ¨ä½œç±»æŒ‡å®šè¦æ‰§è¡Œçš„æ–¹æ³•å
 				System.out.println("invocation.getProxy().getMethod() : "+invocation.getProxy().getMethod());
-					//	/aop£¬×Ô¶¨ÒåÅäÖÃÎÄ¼þÖÐµÄpackage±êÇ©µÄnamespaceÊôÐÔµÄÖµ
+					//	/aopï¼Œè‡ªå®šä¹‰é…ç½®æ–‡ä»¶ä¸­çš„packageæ ‡ç­¾çš„namespaceå±žæ€§çš„å€¼
 				System.out.println("invocation.getProxy().getNamespace() : "+invocation.getProxy().getNamespace());
-		* destroy()ÊÇÔÚÀ¹½ØÆ÷Ïú»ÙÇ°Ö´ÐÐ£¬ÔÚÀ¹½ØÆ÷µÄÉùÃ÷ÖÜÆÚÖÐÖ»Ö´ÐÐÒ»´Î¡£
+		* destroy()æ˜¯åœ¨æ‹¦æˆªå™¨é”€æ¯å‰æ‰§è¡Œï¼Œåœ¨æ‹¦æˆªå™¨çš„å£°æ˜Žå‘¨æœŸä¸­åªæ‰§è¡Œä¸€æ¬¡ã€‚
 		
-#####3¡¢ ÔÚstruts.xmlÅäÖÃÎÄ¼þÖÐ£¬½øÐÐ×¢²á
-		* ÔÚÅäÖÃÎÄ¼þÖÐµÄpackage±êÇ©ÏÂ£¬½øÐÐÏà¹ØÅäÖÃ£º
+#####3ã€ åœ¨struts.xmlé…ç½®æ–‡ä»¶ä¸­ï¼Œè¿›è¡Œæ³¨å†Œ
+		* åœ¨é…ç½®æ–‡ä»¶ä¸­çš„packageæ ‡ç­¾ä¸‹ï¼Œè¿›è¡Œç›¸å…³é…ç½®ï¼š
 		
 		<interceptors>
-			<!-- ÉùÃ÷×Ô¶¨ÒåµÄÀ¹½ØÆ÷ -->
+			<!-- å£°æ˜Žè‡ªå®šä¹‰çš„æ‹¦æˆªå™¨ -->
 			<interceptor name="expessionInterceptor" class="cn.itcast.aop.ExpessionInterceptor" />
-			<!-- ÉùÃ÷×Ô¶¨ÒåÀ¹½ØÆ÷Õ» -->
+			<!-- å£°æ˜Žè‡ªå®šä¹‰æ‹¦æˆªå™¨æ ˆ -->
 			<interceptor-stack name="expessionStack">
 				 <interceptor-ref name="defaultStack"/>
-				 <!-- ÅäÖÃÊ¹ÓÃ×Ô¶¨ÒåÀ¹½ØÆ÷ -->
+				 <!-- é…ç½®ä½¿ç”¨è‡ªå®šä¹‰æ‹¦æˆªå™¨ -->
 				 <interceptor-ref name="expessionInterceptor"/>
 			</interceptor-stack>
 		</interceptors>
-		<!-- ÅäÖÃÐÞ¸Ästruts2¿ò¼ÜÔËÐÐÊ±£¬Ä¬ÈÏÖ´ÐÐµÄÊÇ×Ô¶¨ÒåÀ¹½ØÆ÷Õ» -->
+		<!-- é…ç½®ä¿®æ”¹struts2æ¡†æž¶è¿è¡Œæ—¶ï¼Œé»˜è®¤æ‰§è¡Œçš„æ˜¯è‡ªå®šä¹‰æ‹¦æˆªå™¨æ ˆ -->
 		<default-interceptor-ref name="expessionStack" />
 		
-		ºóÃæ¸ú×ÅµÄ¾ÍÊÇactionµÄÅäÖÃÁË
+		åŽé¢è·Ÿç€çš„å°±æ˜¯actionçš„é…ç½®äº†
 	
-##¡¾ognlÑ§Ï°¡¿
+##ã€ognlå­¦ä¹ ã€‘
 
-###¡¾valueStack¡¿£º
-	ValueStackÊµ¼ÊÉÏÊÇÒ»¸ö½Ó¿Ú£¬ÔÚstruts2ÖÐÀûÓÃOGNLÊ±£¬Êµ¼ÊÉÏÊÇÅ¶ÄÇ¸öµÄÊÇÊµÏÖÁË¸Ã½Ó¿ÚµÄOgnlValueStackÀà£¬Õâ¸öÀàÊÇÀûÓÃOGNLµÄ»ù´¡
-	¹á´©Õû¸öactionÉúÃüÖÜÆÚ£¬Ã¿¸öactionÀàµÄ¶ÔÏó¶¼ÓÐÒ»¸övalueStack¶ÔÏó£¬Ïàµ±ÓÚÒ»¸öÊý¾ÝµÄÖÐ×ªÕ¾£¬ÔÚÆäÖÐ±£´æÁËµ±Ç°action¶ÔÏóºÍÆäËûÏà¹Ø¶ÔÏó
-	struts¿ò¼Ü°ÑvalueStack¶ÔÏó±£´æÔÚÃûÎª ¡°struts.valueStack¡±µÄÇëÇóÊôÐÔÖÐ£¨requestÖÐ£©
+###ã€valueStackã€‘ï¼š
+	ValueStackå®žé™…ä¸Šæ˜¯ä¸€ä¸ªæŽ¥å£ï¼Œåœ¨struts2ä¸­åˆ©ç”¨OGNLæ—¶ï¼Œå®žé™…ä¸Šæ˜¯å“¦é‚£ä¸ªçš„æ˜¯å®žçŽ°äº†è¯¥æŽ¥å£çš„OgnlValueStackç±»ï¼Œè¿™ä¸ªç±»æ˜¯åˆ©ç”¨OGNLçš„åŸºç¡€
+	è´¯ç©¿æ•´ä¸ªactionç”Ÿå‘½å‘¨æœŸï¼Œæ¯ä¸ªactionç±»çš„å¯¹è±¡éƒ½æœ‰ä¸€ä¸ªvalueStackå¯¹è±¡ï¼Œç›¸å½“äºŽä¸€ä¸ªæ•°æ®çš„ä¸­è½¬ç«™ï¼Œåœ¨å…¶ä¸­ä¿å­˜äº†å½“å‰actionå¯¹è±¡å’Œå…¶ä»–ç›¸å…³å¯¹è±¡
+	strutsæ¡†æž¶æŠŠvalueStackå¯¹è±¡ä¿å­˜åœ¨åä¸º â€œstruts.valueStackâ€çš„è¯·æ±‚å±žæ€§ä¸­ï¼ˆrequestä¸­ï¼‰
 
 		 ValueStack vs = (ValueStack)request.getAttribute("struts.valueStack");
-		 vs.set("key","value");//Êµ¼ÊÉÏÊÇ·ÅÔÚÁËMap¼¯ºÏÀïÔÙ·ÅÔÚÕ»ÀïµÄ
-		 vs.getRoot().add(0,new Person());//°Ñperson¶ÔÏóÑ¹ÈëList¼¯ºÏµÄ0Î»ÖÃ£¨Õ»¶¥£©
+		 vs.set("key","value");//å®žé™…ä¸Šæ˜¯æ”¾åœ¨äº†Mapé›†åˆé‡Œå†æ”¾åœ¨æ ˆé‡Œçš„
+		 vs.getRoot().add(0,new Person());//æŠŠpersonå¯¹è±¡åŽ‹å…¥Listé›†åˆçš„0ä½ç½®ï¼ˆæ ˆé¡¶ï¼‰
 	
-###¡¾Àí½âOGNL Context¡¿ ÉÏÏÂÎÄ
-	# OgnlValueStackÀà°üº¬Á½¸öÖØÒªµÄÊôÐÔ£ºroot ºÍ context 
-	     * ÆäÖÐtoot±¾ÖÊÉÏÊÇÒ»¸öList¼¯ºÏ
-	     * ContextÊÇÒ»¸öMap£¨È·ÇÐµÄËµÊÇÒ»¸öOgnlContext¶ÔÏó£©
-	# ÔÚÕâ¸öOgnlContext¶ÔÏóÖÐ£¬ÓÐÒ»¸öÄ¬ÈÏµÄ¶¥²ã¶ÔÏó root OGNL·ÃÎÊcontextÖÐÕâ¸öÄ¬ÈÏ¶¥²ã¶ÔÏóÖÐµÄÔªËØÊ±²»ÐèÒª#ºÅ£¬Ö±½ÓÍ¨¹ýÃû³ÆÀ´ÒýÓÃ
-	# ¶ø·ÃÎÊÆäËû¶ÔÏóÊ±£¬ request£¬session£¬attr µÈÔòÐèÒª#ºÅÒýÓÃ¡£
-	×Ü½á£ºognl Context°üº¬ObjectStackÊôÐÔºÍContextMapÊôÐÔ
+###ã€ç†è§£OGNL Contextã€‘ ä¸Šä¸‹æ–‡
+	# OgnlValueStackç±»åŒ…å«ä¸¤ä¸ªé‡è¦çš„å±žæ€§ï¼šroot å’Œ context 
+	     * å…¶ä¸­tootæœ¬è´¨ä¸Šæ˜¯ä¸€ä¸ªListé›†åˆ
+	     * Contextæ˜¯ä¸€ä¸ªMapï¼ˆç¡®åˆ‡çš„è¯´æ˜¯ä¸€ä¸ªOgnlContextå¯¹è±¡ï¼‰
+	# åœ¨è¿™ä¸ªOgnlContextå¯¹è±¡ä¸­ï¼Œæœ‰ä¸€ä¸ªé»˜è®¤çš„é¡¶å±‚å¯¹è±¡ root OGNLè®¿é—®contextä¸­è¿™ä¸ªé»˜è®¤é¡¶å±‚å¯¹è±¡ä¸­çš„å…ƒç´ æ—¶ä¸éœ€è¦#å·ï¼Œç›´æŽ¥é€šè¿‡åç§°æ¥å¼•ç”¨
+	# è€Œè®¿é—®å…¶ä»–å¯¹è±¡æ—¶ï¼Œ requestï¼Œsessionï¼Œattr ç­‰åˆ™éœ€è¦#å·å¼•ç”¨ã€‚
+	æ€»ç»“ï¼šognl ContextåŒ…å«ObjectStackå±žæ€§å’ŒContextMapå±žæ€§
 
-	 µ×²ãÀà£º
+	 åº•å±‚ç±»ï¼š
 		public class OgnlValueStack implements ValueStack {
-			 CompoundRoot root;    ---  list¼¯ºÏ
-			transient Map<String, Object> context;  --- map¼¯ºÏ
+			 CompoundRoot root;    ---  listé›†åˆ
+			transient Map<String, Object> context;  --- mapé›†åˆ
 		}
 												
 			
-##¡¾OGNL±í´ïÊ½¡¿¡¾Ê¾ÀýJSP¡¿
-Êµ¼Ê²Ù×÷µÄ²»ÊÇÖµÕ»£¬¶øÊÇÖµÕ»µÄÊôÐÔ£ºContextµÄÉÏÏÂÎÄ£¨¾ÍÊÇÒ»¸öMap¼¯ºÏ£©
+##ã€OGNLè¡¨è¾¾å¼ã€‘ã€ç¤ºä¾‹JSPã€‘
+å®žé™…æ“ä½œçš„ä¸æ˜¯å€¼æ ˆï¼Œè€Œæ˜¯å€¼æ ˆçš„å±žæ€§ï¼šContextçš„ä¸Šä¸‹æ–‡ï¼ˆå°±æ˜¯ä¸€ä¸ªMapé›†åˆï¼‰
 
-	¡¾¡¿Ê¹ÓÃEL±í´ïÊ½È¡Öµ-----------------------------------------<br>
+	ã€ã€‘ä½¿ç”¨ELè¡¨è¾¾å¼å–å€¼-----------------------------------------<br>
 		${requestScope.username}<br>
 		${sessionScope.username}<br>
 		${applicationScope.username}<br><br><br><br>
-	¡¾¡¿Ê¹ÓÃOgnl±í´ïÊ½È¡Öµ-----------------------------------------<br>
-				¡¾·ÃÎÊMap¼¯ºÏ¼Ó#¡¿
-####1.Èç¹û·ÃÎÊÆäËûContextÖÐµÄ¶ÔÏó£¬ÓÉÓÚËûÃÇ²»ÊÇ¸ù¶ÔÏó£¬ËùÒÔÔÚ·ÃÎÊÊ±£¬ÐèÒªÌí¼Ó#Ç°×º¡£<br>
+	ã€ã€‘ä½¿ç”¨Ognlè¡¨è¾¾å¼å–å€¼-----------------------------------------<br>
+				ã€è®¿é—®Mapé›†åˆåŠ #ã€‘
+####1.å¦‚æžœè®¿é—®å…¶ä»–Contextä¸­çš„å¯¹è±¡ï¼Œç”±äºŽä»–ä»¬ä¸æ˜¯æ ¹å¯¹è±¡ï¼Œæ‰€ä»¥åœ¨è®¿é—®æ—¶ï¼Œéœ€è¦æ·»åŠ #å‰ç¼€ã€‚<br>
 		<s:property value="#request.username"/><br>
 		<s:property value="#session.username"/><br>
 		<s:property value="#application.username"/><br><br>
 		<s:property value="#request['username']"/><br>
 		<s:property value="#parameters.cid[0]"/><br>
 		<s:property value="#attr.username"/><br><br>
-			¡¾·ÃÎÊ¶ÔÏóÕ»ÖÐ¶ÔÏó¿É²»¼Ó#¡¿
-#### 2.Èç¹ûÒª·ÃÎÊ¸ù¶ÔÏó£¨¼´ValueStack£©ÖÐ¶ÔÏóµÄÊôÐÔ£¬Ôò¿ÉÒÔÊ¡ÂÔ#ÃüÃû¶ÔÏó£¬Ö±½Ó·ÃÎÊ¸Ã¶ÔÏóµÄÊôÐÔ¼´¿É¡£<br>
+			ã€è®¿é—®å¯¹è±¡æ ˆä¸­å¯¹è±¡å¯ä¸åŠ #ã€‘
+#### 2.å¦‚æžœè¦è®¿é—®æ ¹å¯¹è±¡ï¼ˆå³ValueStackï¼‰ä¸­å¯¹è±¡çš„å±žæ€§ï¼Œåˆ™å¯ä»¥çœç•¥#å‘½åå¯¹è±¡ï¼Œç›´æŽ¥è®¿é—®è¯¥å¯¹è±¡çš„å±žæ€§å³å¯ã€‚<br>
 		<s:property value="msg"/><br><br>
-		ÉîÈëÀí½âÖµÕ»ÖÐµÄ ObjectStack<br>
-		¡¾ºóÌ¨´úÂë£º¡¿ vs.getRoot().add(0,new Person()); 
-		<s:property value="name"/><br> ¡¾ÈôÓÐ¶à¸önameÊôÐÔÃû¡¿Ö»È¡³öÕ»ÖÐµÚÒ»¸ö
+		æ·±å…¥ç†è§£å€¼æ ˆä¸­çš„ ObjectStack<br>
+		ã€åŽå°ä»£ç ï¼šã€‘ vs.getRoot().add(0,new Person()); 
+		<s:property value="name"/><br> ã€è‹¥æœ‰å¤šä¸ªnameå±žæ€§åã€‘åªå–å‡ºæ ˆä¸­ç¬¬ä¸€ä¸ª
 		<s:property value="sex"/><br>
 		<s:property value="age"/><br>
 		<s:property value="salary"/><br><br>
 	
 	
-####ÓÃ·¨3:¹¹ÔìMap<br>
-		<s:radio list="#{'01':'ÄÐ','02':'Å®'}"></s:radio><br><br><br><br>
-		%µÄÓÃ·¨£º¡°%¡±·ûºÅµÄÓÃÍ¾ÊÇÔÚ±êÇ©µÄÊôÐÔÖµ±»Àí½âÎª×Ö·û´®ÀàÐÍÊ±£¬¸æËßÖ´ÐÐ»·¾³%{}ÀïµÄÊÇOGNL±í´ïÊ½¡£ <br>
+####ç”¨æ³•3:æž„é€ Map<br>
+		<s:radio list="#{'01':'ç”·','02':'å¥³'}"></s:radio><br><br><br><br>
+		%çš„ç”¨æ³•ï¼šâ€œ%â€ç¬¦å·çš„ç”¨é€”æ˜¯åœ¨æ ‡ç­¾çš„å±žæ€§å€¼è¢«ç†è§£ä¸ºå­—ç¬¦ä¸²ç±»åž‹æ—¶ï¼Œå‘Šè¯‰æ‰§è¡ŒçŽ¯å¢ƒ%{}é‡Œçš„æ˜¯OGNLè¡¨è¾¾å¼ã€‚ <br>
 		<s:property value="#request.username"/><br>
-		<s:property value="%{#request.username}"/>%{}ÊÇÍòÄÜÓÃ·¨£¬ÎÞÂÛÀïÃæµÄ±í´ïÊ½ÊÇ²»ÊÇognl±í´ïÊ½£¬¶¼»áÇ¿ÖÆÀí½âÎªognl±í´ïÊ½<br><br>
+		<s:property value="%{#request.username}"/>%{}æ˜¯ä¸‡èƒ½ç”¨æ³•ï¼Œæ— è®ºé‡Œé¢çš„è¡¨è¾¾å¼æ˜¯ä¸æ˜¯ognlè¡¨è¾¾å¼ï¼Œéƒ½ä¼šå¼ºåˆ¶ç†è§£ä¸ºognlè¡¨è¾¾å¼<br><br>
 		
-¡¾¡°$¡±ÓÐÁ½¸öÖ÷ÒªµÄÓÃÍ¾¡¿
+ã€â€œ$â€æœ‰ä¸¤ä¸ªä¸»è¦çš„ç”¨é€”ã€‘
 
-	    1 *  ÓÃÓÚÔÚ¹ú¼Ê»¯×ÊÔ´ÎÄ¼þÖÐ£¬ÒýÓÃOGNL±í´ïÊ½<br>
+	    1 *  ç”¨äºŽåœ¨å›½é™…åŒ–èµ„æºæ–‡ä»¶ä¸­ï¼Œå¼•ç”¨OGNLè¡¨è¾¾å¼<br>
 		<s:text name="ognl" /><br><br>
-			ÔÚpropertiesÎÄ¼þÖÐÅäÖÃ£ºognl=${error} ognl
-			È¡µÄÊÇÖµÕ»ÖÐµÄerrorÊôÐÔ  ´úÂë£ºvalueStack1.set("error", "error_valueStack");
+			åœ¨propertiesæ–‡ä»¶ä¸­é…ç½®ï¼šognl=${error} ognl
+			å–çš„æ˜¯å€¼æ ˆä¸­çš„errorå±žæ€§  ä»£ç ï¼švalueStack1.set("error", "error_valueStack");
 	    
-	    2 *  ÔÚStruts 2ÅäÖÃÎÄ¼þÖÐ£¬ÒýÓÃOGNL±í´ïÊ½<br>
+	    2 *  åœ¨Struts 2é…ç½®æ–‡ä»¶ä¸­ï¼Œå¼•ç”¨OGNLè¡¨è¾¾å¼<br>
 	    <s:property value="#parameters.msg[0]"/><br><br>
 		 <result name="s" >ognl/ognl.jsp?msg=${msg}</result>
-			ÕâÀïµÄmsgÊÇrequestµÄparam Ê¹ÓÃ ${} ·ÃÎÊµÄ¶¼ÊÇÖµÕ»ÀïµÄ
+			è¿™é‡Œçš„msgæ˜¯requestçš„param ä½¿ç”¨ ${} è®¿é—®çš„éƒ½æ˜¯å€¼æ ˆé‡Œçš„
 		
-	<s:debug></s:debug> ÄÜ²é¿´ÖµÕ»×´Ì¬
+	<s:debug></s:debug> èƒ½æŸ¥çœ‹å€¼æ ˆçŠ¶æ€
 
-##¡¾OGNL±êÇ©¡¿
+##ã€OGNLæ ‡ç­¾ã€‘

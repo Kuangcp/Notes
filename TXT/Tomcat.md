@@ -1,116 +1,114 @@
 #Tomcat 
 
-Ò»°ãµÄÊ¹ÓÃdoget¾ÍÊÇ ÏîÄ¿Ãû/+XMLÎÄµµÅäÖÃºÃµÄÂ·¾¶
+ä¸€èˆ¬çš„ä½¿ç”¨dogetå°±æ˜¯ é¡¹ç›®å/+XMLæ–‡æ¡£é…ç½®å¥½çš„è·¯å¾„
 
-Ê¹ÓÃ×Ô¶¨ÒåµÄJSPµÄÊ±ºò¾ÍÊÇÏîÄ¿Ãû+JSPÎÄ¼þÈ«Ãû£¨×¢Òâ´óÐ¡Ð´£© 
- ÈôÈ±Ê¡  ¾ÍÊÇ·ÃÎÊµÄ Ä¬ÈÏÌí¼ÓµÄ  index.jspÎÄ¼þ
+ä½¿ç”¨è‡ªå®šä¹‰çš„JSPçš„æ—¶å€™å°±æ˜¯é¡¹ç›®å+JSPæ–‡ä»¶å…¨åï¼ˆæ³¨æ„å¤§å°å†™ï¼‰ 
+ è‹¥ç¼ºçœ  å°±æ˜¯è®¿é—®çš„ é»˜è®¤æ·»åŠ çš„  index.jspæ–‡ä»¶
 
-##	WebÈÝÆ÷ºÍWeb·þÎñÆ÷µÈ¡£¡£¡£µÄÇø±ð
-###¡¾web ÈÝÆ÷¡¿ 
+##	Webå®¹å™¨å’ŒWebæœåŠ¡å™¨ç­‰ã€‚ã€‚ã€‚çš„åŒºåˆ«
+###ã€web å®¹å™¨ã€‘ 
 
-ºÎÎªÈÝÆ÷£º
+ä½•ä¸ºå®¹å™¨ï¼š
+>   å®¹å™¨æ˜¯ä¸€ç§æœåŠ¡è°ƒç”¨è§„èŒƒæ¡†æž¶ï¼ŒJ2EE å¤§é‡è¿ç”¨äº†å®¹å™¨å’Œç»„ä»¶æŠ€æœ¯æ¥æž„å»ºåˆ†å±‚çš„ä¼ä¸šçº§åº”ç”¨ã€‚åœ¨ J2EE è§„èŒƒä¸­ï¼Œç›¸åº”çš„æœ‰ WEB Container å’Œ EJB Container ç­‰ã€‚
+     WEB å®¹å™¨ç»™å¤„äºŽå…¶ä¸­çš„åº”ç”¨ç¨‹åºç»„ä»¶ï¼ˆJSPï¼ŒSERVLETï¼‰æä¾›ä¸€ä¸ªçŽ¯å¢ƒï¼Œä½¿ JSPï¼ŒSERVLET ç›´æŽ¥è·Ÿå®¹å™¨ä¸­çš„çŽ¯å¢ƒå˜é‡äº¤äº’ï¼Œä¸å¿…å…³æ³¨å…¶å®ƒç³»ç»Ÿé—®é¢˜
+      ï¼ˆä»Žè¿™ä¸ªè§’åº¦æ¥è¯´ï¼Œweb å®¹å™¨åº”è¯¥å±žäºŽæž¶æž„ä¸Šçš„æ¦‚å¿µï¼‰ã€‚web å®¹å™¨ä¸»è¦ç”± WEB æœåŠ¡å™¨æ¥å®žçŽ°ã€‚ä¾‹å¦‚ï¼šTOMCATï¼ŒWEBLOGICï¼ŒWEBSPHERE ç­‰ã€‚
+      è‹¥å®¹å™¨æä¾›çš„æŽ¥å£ä¸¥æ ¼éµå®ˆ J2EE è§„èŒƒä¸­çš„ WEB APPLICATION æ ‡å‡†ã€‚æˆ‘ä»¬æŠŠè¯¥å®¹å™¨å«åš J2EE ä¸­çš„ WEB å®¹å™¨ã€‚
+			WEB å®¹å™¨æ›´å¤šçš„æ˜¯è·ŸåŸºäºŽ HTTP çš„è¯·æ±‚æ‰“äº¤é“ã€‚è€Œ EJB å®¹å™¨ä¸æ˜¯ã€‚å®ƒæ˜¯æ›´å¤šçš„è·Ÿæ•°æ®åº“ã€å…¶å®ƒæœåŠ¡æ‰“äº¤é“ã€‚
+      å®¹å™¨çš„è¡Œä¸ºæ˜¯ å°†å…¶å†…éƒ¨çš„åº”ç”¨ç¨‹åºç»„ä»¶ä¸Žå¤–ç•Œçš„é€šä¿¡åè®®äº¤äº’è¿›è¡Œäº†éš”ç¦»ï¼Œä»Žè€Œå‡è½»å†…éƒ¨åº”ç”¨ç¨‹åºç»„ä»¶çš„è´Ÿæ‹…ï¼ˆå®žçŽ°æ–¹é¢çš„è´Ÿæ‹…ï¼Ÿï¼‰ã€‚
+			ä¾‹å¦‚ï¼š
+					SERVLET ä¸ç”¨å…³å¿ƒ HTTP çš„ç»†èŠ‚ï¼Œè€Œæ˜¯ç›´æŽ¥å¼•ç”¨çŽ¯å¢ƒå˜é‡ sessionã€requestã€response å°±è¡Œã€EJB ä¸ç”¨å…³å¿ƒæ•°æ®åº“è¿žæŽ¥é€Ÿåº¦ã€å„ç§äº‹åŠ¡æŽ§åˆ¶ï¼Œç›´æŽ¥ç”±å®¹å™¨æ¥å®Œæˆã€‚
 
-      ÈÝÆ÷ÊÇÒ»ÖÖ·þÎñµ÷ÓÃ¹æ·¶¿ò¼Ü£¬J2EE ´óÁ¿ÔËÓÃÁËÈÝÆ÷ºÍ×é¼þ¼¼ÊõÀ´¹¹½¨·Ö²ãµÄÆóÒµ¼¶Ó¦ÓÃ¡£ÔÚ J2EE ¹æ·¶ÖÐ£¬ÏàÓ¦µÄÓÐ WEB Container ºÍ EJB Container µÈ¡£
-      WEB ÈÝÆ÷¸ø´¦ÓÚÆäÖÐµÄÓ¦ÓÃ³ÌÐò×é¼þ£¨JSP£¬SERVLET£©Ìá¹©Ò»¸ö»·¾³£¬Ê¹ JSP£¬SERVLET Ö±½Ó¸úÈÝÆ÷ÖÐµÄ»·¾³±äÁ¿½»»¥£¬²»±Ø¹Ø×¢ÆäËüÏµÍ³ÎÊÌâ
-      £¨´ÓÕâ¸ö½Ç¶ÈÀ´Ëµ£¬web ÈÝÆ÷Ó¦¸ÃÊôÓÚ¼Ü¹¹ÉÏµÄ¸ÅÄî£©¡£web ÈÝÆ÷Ö÷ÒªÓÉ WEB ·þÎñÆ÷À´ÊµÏÖ¡£ÀýÈç£ºTOMCAT£¬WEBLOGIC£¬WEBSPHERE µÈ¡£
-      ÈôÈÝÆ÷Ìá¹©µÄ½Ó¿ÚÑÏ¸ñ×ñÊØ J2EE ¹æ·¶ÖÐµÄ WEB APPLICATION ±ê×¼¡£ÎÒÃÇ°Ñ¸ÃÈÝÆ÷½Ð×ö J2EE ÖÐµÄ WEB ÈÝÆ÷¡£
-			WEB ÈÝÆ÷¸ü¶àµÄÊÇ¸ú»ùÓÚ HTTP µÄÇëÇó´ò½»µÀ¡£¶ø EJB ÈÝÆ÷²»ÊÇ¡£ËüÊÇ¸ü¶àµÄ¸úÊý¾Ý¿â¡¢ÆäËü·þÎñ´ò½»µÀ¡£
-      ÈÝÆ÷µÄÐÐÎªÊÇ ½«ÆäÄÚ²¿µÄÓ¦ÓÃ³ÌÐò×é¼þÓëÍâ½çµÄÍ¨ÐÅÐ­Òé½»»¥½øÐÐÁË¸ôÀë£¬´Ó¶ø¼õÇáÄÚ²¿Ó¦ÓÃ³ÌÐò×é¼þµÄ¸ºµ££¨ÊµÏÖ·½ÃæµÄ¸ºµ££¿£©¡£
-			ÀýÈç£º
-					SERVLET ²»ÓÃ¹ØÐÄ HTTP µÄÏ¸½Ú£¬¶øÊÇÖ±½ÓÒýÓÃ»·¾³±äÁ¿ session¡¢request¡¢response ¾ÍÐÐ¡¢EJB ²»ÓÃ¹ØÐÄÊý¾Ý¿âÁ¬½ÓËÙ¶È¡¢¸÷ÖÖÊÂÎñ¿ØÖÆ£¬Ö±½ÓÓÉÈÝÆ÷À´Íê³É¡£
+####ã€WebæœåŠ¡å™¨ã€‘
+> Web æœåŠ¡å™¨ï¼ˆWeb Serverï¼‰å¯ä»¥å¤„ç† HTTP åè®®ã€‚å½“ Web æœåŠ¡å™¨æŽ¥æ”¶åˆ°ä¸€ä¸ª HTTP è¯·æ±‚ï¼Œä¼šè¿”å›žä¸€ä¸ª HTTP å“åº”ï¼Œä¾‹å¦‚é€å›žä¸€ä¸ª HTML é¡µé¢ã€‚
+      Web æœåŠ¡å™¨å¯ä»¥å“åº”é’ˆå¯¹é™æ€é¡µé¢æˆ–å›¾ç‰‡çš„è¯·æ±‚ï¼Œ è¿›è¡Œé¡µé¢è·³è½¬ï¼ˆredirectï¼‰ï¼Œæˆ–è€…æŠŠåŠ¨æ€å“åº”ï¼ˆdynamic responseï¼‰çš„äº§ç”Ÿå§”æ‰˜ï¼ˆdelegateï¼‰ç»™ä¸€äº›å…¶å®ƒçš„ç¨‹åº
+      	ä¾‹å¦‚ CGI è„šæœ¬ï¼ŒJSPï¼ˆJavaServer Pagesï¼‰è„šæœ¬ï¼Œservletsï¼ŒASPï¼ˆActive Server Pagesï¼‰è„šæœ¬ï¼ŒæœåŠ¡å™¨ç«¯ JavaScriptï¼Œæˆ–è€…ä¸€äº›å…¶å®ƒçš„æœåŠ¡å™¨ç«¯æŠ€æœ¯ã€‚
+			Web æœåŠ¡å™¨ä»…ä»…æä¾›ä¸€ä¸ªå¯ä»¥æ‰§è¡ŒæœåŠ¡å™¨ç«¯ç¨‹åºå’Œè¿”å›ž(ç¨‹åºæ‰€äº§ç”Ÿçš„)å“åº”çš„çŽ¯å¢ƒï¼Œè€Œä¸ä¼šè¶…å‡ºèŒèƒ½èŒƒå›´ã€‚
+			Web æœåŠ¡å™¨ä¸»è¦æ˜¯å¤„ç†éœ€è¦å‘æµè§ˆå™¨å‘é€ HTML çš„è¯·æ±‚ä»¥ä¾›æµè§ˆã€‚
 
-####¡¾Web·þÎñÆ÷¡¿
-      Web ·þÎñÆ÷£¨Web Server£©¿ÉÒÔ´¦Àí HTTP Ð­Òé¡£µ± Web ·þÎñÆ÷½ÓÊÕµ½Ò»¸ö HTTP ÇëÇó£¬»á·µ»ØÒ»¸ö HTTP ÏìÓ¦£¬ÀýÈçËÍ»ØÒ»¸ö HTML Ò³Ãæ¡£
-      Web ·þÎñÆ÷¿ÉÒÔÏìÓ¦Õë¶Ô¾²Ì¬Ò³Ãæ»òÍ¼Æ¬µÄÇëÇó£¬ ½øÐÐÒ³ÃæÌø×ª£¨redirect£©£¬»òÕß°Ñ¶¯Ì¬ÏìÓ¦£¨dynamic response£©µÄ²úÉúÎ¯ÍÐ£¨delegate£©¸øÒ»Ð©ÆäËüµÄ³ÌÐò
-      	ÀýÈç CGI ½Å±¾£¬JSP£¨JavaServer Pages£©½Å±¾£¬servlets£¬ASP£¨Active Server Pages£©½Å±¾£¬·þÎñÆ÷¶Ë JavaScript£¬»òÕßÒ»Ð©ÆäËüµÄ·þÎñÆ÷¶Ë¼¼Êõ¡£
-			Web ·þÎñÆ÷½ö½öÌá¹©Ò»¸ö¿ÉÒÔÖ´ÐÐ·þÎñÆ÷¶Ë³ÌÐòºÍ·µ»Ø(³ÌÐòËù²úÉúµÄ)ÏìÓ¦µÄ»·¾³£¬¶ø²»»á³¬³öÖ°ÄÜ·¶Î§¡£
-			Web ·þÎñÆ÷Ö÷ÒªÊÇ´¦ÀíÐèÒªÏòä¯ÀÀÆ÷·¢ËÍ HTML µÄÇëÇóÒÔ¹©ä¯ÀÀ¡£
+####ã€åº”ç”¨ç¨‹åºæœåŠ¡å™¨ï¼ˆThe Application Serverï¼‰ã€‘
+>æ ¹æ®å®šä¹‰ï¼Œä½œä¸ºåº”ç”¨ç¨‹åºæœåŠ¡å™¨ï¼Œè¦æ±‚å¯ä»¥é€šè¿‡å„ç§åè®®ï¼ˆåŒ…æ‹¬ HTTP åè®®ï¼‰æŠŠå•†ä¸šé€»è¾‘æš´éœ²ç»™ï¼ˆexposeï¼‰å®¢æˆ·ç«¯åº”ç”¨ç¨‹åºã€‚
+      åº”ç”¨ç¨‹åºä½¿ç”¨æ­¤å•†ä¸šé€»è¾‘å°±åƒä½ è°ƒç”¨å¯¹è±¡çš„ä¸€ä¸ªæ–¹æ³•æˆ–è¿‡ç¨‹ï¼ˆè¯­è¨€ä¸­çš„ä¸€ä¸ªå‡½æ•°ï¼‰ä¸€æ ·ã€‚
 
-####¡¾Ó¦ÓÃ³ÌÐò·þÎñÆ÷£¨The Application Server£©¡¿
+####ã€serverletã€‘
 
-      ¸ù¾Ý¶¨Òå£¬×÷ÎªÓ¦ÓÃ³ÌÐò·þÎñÆ÷£¬ÒªÇó¿ÉÒÔÍ¨¹ý¸÷ÖÖÐ­Òé£¨°üÀ¨ HTTP Ð­Òé£©°ÑÉÌÒµÂß¼­±©Â¶¸ø£¨expose£©¿Í»§¶ËÓ¦ÓÃ³ÌÐò¡£
-      Ó¦ÓÃ³ÌÐòÊ¹ÓÃ´ËÉÌÒµÂß¼­¾ÍÏñÄãµ÷ÓÃ¶ÔÏóµÄÒ»¸ö·½·¨»ò¹ý³Ì£¨ÓïÑÔÖÐµÄÒ»¸öº¯Êý£©Ò»Ñù¡£
+>Servletï¼ˆServer Appletï¼‰ï¼Œå…¨ç§° Java Servletï¼Œæœªæœ‰ä¸­æ–‡è¯‘æ–‡ã€‚æ˜¯ç”¨ Java ç¼–å†™çš„æœåŠ¡å™¨ç«¯ç¨‹åºã€‚å…¶ä¸»è¦åŠŸèƒ½åœ¨äºŽäº¤äº’å¼åœ°æµè§ˆå’Œä¿®æ”¹æ•°æ®ï¼Œç”ŸæˆåŠ¨æ€ Web å†…å®¹ã€‚
+      ç‹­ä¹‰çš„ Servlet æ˜¯æŒ‡ Java è¯­è¨€å®žçŽ°çš„ä¸€ä¸ªæŽ¥å£
+      å¹¿ä¹‰çš„ Servlet æ˜¯æŒ‡ä»»ä½•å®žçŽ°äº†è¿™ä¸ª Servlet æŽ¥å£çš„ç±»ï¼Œä¸€èˆ¬æƒ…å†µä¸‹ï¼Œäººä»¬å°† Servlet ç†è§£ä¸ºåŽè€…ã€‚
+      Servlet è¿è¡ŒäºŽæ”¯æŒ Java çš„åº”ç”¨æœåŠ¡å™¨ä¸­ã€‚ä»Žå®žçŽ°ä¸Šè®²ï¼ŒServlet å¯ä»¥å“åº”ä»»ä½•ç±»åž‹çš„è¯·æ±‚ï¼Œä½†ç»å¤§å¤šæ•°æƒ…å†µä¸‹ Servlet åªç”¨æ¥æ‰©å±•åŸºäºŽ HTTP åè®®çš„ Web æœåŠ¡å™¨ã€‚
 
-####¡¾serverlet¡¿
+####ã€Tomcatã€‘
 
-      Servlet£¨Server Applet£©£¬È«³Æ Java Servlet£¬Î´ÓÐÖÐÎÄÒëÎÄ¡£ÊÇÓÃ Java ±àÐ´µÄ·þÎñÆ÷¶Ë³ÌÐò¡£ÆäÖ÷Òª¹¦ÄÜÔÚÓÚ½»»¥Ê½µØä¯ÀÀºÍÐÞ¸ÄÊý¾Ý£¬Éú³É¶¯Ì¬ Web ÄÚÈÝ¡£
-      ÏÁÒåµÄ Servlet ÊÇÖ¸ Java ÓïÑÔÊµÏÖµÄÒ»¸ö½Ó¿Ú
-      ¹ãÒåµÄ Servlet ÊÇÖ¸ÈÎºÎÊµÏÖÁËÕâ¸ö Servlet ½Ó¿ÚµÄÀà£¬Ò»°ãÇé¿öÏÂ£¬ÈËÃÇ½« Servlet Àí½âÎªºóÕß¡£
-      Servlet ÔËÐÐÓÚÖ§³Ö Java µÄÓ¦ÓÃ·þÎñÆ÷ÖÐ¡£´ÓÊµÏÖÉÏ½²£¬Servlet ¿ÉÒÔÏìÓ¦ÈÎºÎÀàÐÍµÄÇëÇó£¬µ«¾ø´ó¶àÊýÇé¿öÏÂ Servlet Ö»ÓÃÀ´À©Õ¹»ùÓÚ HTTP Ð­ÒéµÄ Web ·þÎñÆ÷¡£
-
-####¡¾Tomcat¡¿
-
-      Tomcat ·þÎñÆ÷ÊÇÒ»¸öÃâ·ÑµÄ¿ª·ÅÔ´´úÂëµÄ Web Ó¦ÓÃ·þÎñÆ÷£¬ÊôÓÚÇáÁ¿¼¶Ó¦ÓÃ·þÎñÆ÷£¬ÔÚÖÐÐ¡ÐÍÏµÍ³ºÍ²¢·¢·ÃÎÊÓÃ»§²»ÊÇºÜ¶àµÄ³¡ºÏÏÂ±»ÆÕ±éÊ¹ÓÃ£¬ÊÇ¿ª·¢ºÍµ÷ÊÔ JSP ³ÌÐòµÄÊ×Ñ¡¡£
-      ¶ÔÓÚÒ»¸ö³õÑ§ÕßÀ´Ëµ£¬¿ÉÒÔÕâÑùÈÏÎª£¬µ±ÔÚÒ»Ì¨»úÆ÷ÉÏÅäÖÃºÃ Apache ·þÎñÆ÷£¬¿ÉÀûÓÃËüÏìÓ¦¶Ô HTML Ò³ÃæµÄ·ÃÎÊÇëÇó¡£
-      Êµ¼ÊÉÏ Tomcat ²¿·ÖÊÇApache ·þÎñÆ÷µÄÀ©Õ¹£¬µ«ËüÊÇ¶ÀÁ¢ÔËÐÐµÄ£¬ËùÒÔµ±ÄãÔËÐÐ tomcat Ê±£¬ËüÊµ¼ÊÉÏ×÷ÎªÒ»¸öÓë Apache ¶ÀÁ¢µÄ½ø³Ìµ¥¶ÀÔËÐÐµÄ¡£
+>Tomcat æœåŠ¡å™¨æ˜¯ä¸€ä¸ªå…è´¹çš„å¼€æ”¾æºä»£ç çš„ Web åº”ç”¨æœåŠ¡å™¨ï¼Œå±žäºŽè½»é‡çº§åº”ç”¨æœåŠ¡å™¨ï¼Œåœ¨ä¸­å°åž‹ç³»ç»Ÿå’Œå¹¶å‘è®¿é—®ç”¨æˆ·ä¸æ˜¯å¾ˆå¤šçš„åœºåˆä¸‹è¢«æ™®éä½¿ç”¨ï¼Œæ˜¯å¼€å‘å’Œè°ƒè¯• JSP ç¨‹åºçš„é¦–é€‰ã€‚
+      å¯¹äºŽä¸€ä¸ªåˆå­¦è€…æ¥è¯´ï¼Œå¯ä»¥è¿™æ ·è®¤ä¸ºï¼Œå½“åœ¨ä¸€å°æœºå™¨ä¸Šé…ç½®å¥½ Apache æœåŠ¡å™¨ï¼Œå¯åˆ©ç”¨å®ƒå“åº”å¯¹ HTML é¡µé¢çš„è®¿é—®è¯·æ±‚ã€‚
+      å®žé™…ä¸Š Tomcat éƒ¨åˆ†æ˜¯Apache æœåŠ¡å™¨çš„æ‰©å±•ï¼Œä½†å®ƒæ˜¯ç‹¬ç«‹è¿è¡Œçš„ï¼Œæ‰€ä»¥å½“ä½ è¿è¡Œ tomcat æ—¶ï¼Œå®ƒå®žé™…ä¸Šä½œä¸ºä¸€ä¸ªä¸Ž Apache ç‹¬ç«‹çš„è¿›ç¨‹å•ç‹¬è¿è¡Œçš„ã€‚
     Apache Tomcat is an open source software implementation of the Java Servlet and JavaServer Pages technologies.
 
-####¡¾TomcatÓëWeb·þÎñÆ÷¡¢Ó¦ÓÃ·þÎñÆ÷µÄ¹ØÏµ¡¿
+####ã€Tomcatä¸ŽWebæœåŠ¡å™¨ã€åº”ç”¨æœåŠ¡å™¨çš„å…³ç³»ã€‘
 
-      Tomcat ·þÎñÆ÷ÊÇÒ»¸öÃâ·ÑµÄ¿ª·ÅÔ´´úÂëµÄ Web Ó¦ÓÃ·þÎñÆ÷¡£ÒòÎª Tomcat ¼¼ÊõÏÈ½ø¡¢ÐÔÄÜÎÈ¶¨ÇÒÃâ·Ñ£¬ËùÒÔÉîÊÜ Java °®ºÃÕßµÄÏ²°®²¢µÃµ½ÁË²¿·ÖÈí¼þ¿ª·¢ÉÌµÄÈÏ¿É£¬³ÉÎªÄ¿Ç°±È½ÏÁ÷ÐÐµÄ Web Ó¦ÓÃ·þÎñÆ÷¡£
+>Tomcat æœåŠ¡å™¨æ˜¯ä¸€ä¸ªå…è´¹çš„å¼€æ”¾æºä»£ç çš„ Web åº”ç”¨æœåŠ¡å™¨ã€‚å› ä¸º Tomcat æŠ€æœ¯å…ˆè¿›ã€æ€§èƒ½ç¨³å®šä¸”å…è´¹ï¼Œæ‰€ä»¥æ·±å— Java çˆ±å¥½è€…çš„å–œçˆ±å¹¶å¾—åˆ°äº†éƒ¨åˆ†è½¯ä»¶å¼€å‘å•†çš„è®¤å¯ï¼Œæˆä¸ºç›®å‰æ¯”è¾ƒæµè¡Œçš„ Web åº”ç”¨æœåŠ¡å™¨ã€‚
 
-##Ò»¡¢Tomcat ÓëÓ¦ÓÃ·þÎñÆ÷
+##ä¸€ã€Tomcat ä¸Žåº”ç”¨æœåŠ¡å™¨
 
-      µ½Ä¿Ç°ÎªÖ¹£¬Tomcat Ò»Ö±±»ÈÏÎªÊÇ Servlet/JSP API µÄÖ´ÐÐÆ÷£¬Ò²¾ÍËùÎ½µÄ Servlet ÈÝÆ÷¡£È»¶ø£¬Tomcat²¢²»½ö½öÈç´Ë£¬Ëü»¹Ìá¹©ÁË JNDI ºÍ JMX API µÄÊµÏÖ»úÖÆ¡£¾¡¹ÜÈç´Ë£¬Tomcat ÈÔÈ»»¹²»ÄÜËãÊÇÓ¦ÓÃ·þÎñÆ÷£¬ÒòÎªËü²»Ìá¹©´ó¶àÊý J2EE API µÄÖ§³Ö¡£
+>åˆ°ç›®å‰ä¸ºæ­¢ï¼ŒTomcat ä¸€ç›´è¢«è®¤ä¸ºæ˜¯ Servlet/JSP API çš„æ‰§è¡Œå™¨ï¼Œä¹Ÿå°±æ‰€è°“çš„ Servlet å®¹å™¨ã€‚ç„¶è€Œï¼ŒTomcatå¹¶ä¸ä»…ä»…å¦‚æ­¤ï¼Œå®ƒè¿˜æä¾›äº† JNDI å’Œ JMX API çš„å®žçŽ°æœºåˆ¶ã€‚å°½ç®¡å¦‚æ­¤ï¼ŒTomcat ä»ç„¶è¿˜ä¸èƒ½ç®—æ˜¯åº”ç”¨æœåŠ¡å™¨ï¼Œå› ä¸ºå®ƒä¸æä¾›å¤§å¤šæ•° J2EE API çš„æ”¯æŒã€‚
 
-      ºÜÓÐÒâË¼µÄÊÇ£¬Ä¿Ç°Ðí¶àµÄÓ¦ÓÃ·þÎñÆ÷Í¨³£°Ñ Tomcat ×÷ÎªËüÃÇ Servlet ºÍ JSP API µÄÈÝÆ÷¡£ÓÉÓÚ TomcatÔÊÐí¿ª·¢ÕßÖ»ÐèÍ¨¹ý¼ÓÈëÒ»ÐÐÖÂÐ»£¬¾Í¿ÉÒÔ°Ñ Tomcat Ç¶Èëµ½ËüÃÇµÄÓ¦ÓÃÖÐ¡£ÒÅº¶µÄÊÇ£¬Ðí¶àÉÌÒµÓ¦ÓÃ·þÎñÆ÷²¢Ã»ÓÐ×ñÊØ´Ë¹æÔò¡£
+      å¾ˆæœ‰æ„æ€çš„æ˜¯ï¼Œç›®å‰è®¸å¤šçš„åº”ç”¨æœåŠ¡å™¨é€šå¸¸æŠŠ Tomcat ä½œä¸ºå®ƒä»¬ Servlet å’Œ JSP API çš„å®¹å™¨ã€‚ç”±äºŽ Tomcatå…è®¸å¼€å‘è€…åªéœ€é€šè¿‡åŠ å…¥ä¸€è¡Œè‡´è°¢ï¼Œå°±å¯ä»¥æŠŠ Tomcat åµŒå…¥åˆ°å®ƒä»¬çš„åº”ç”¨ä¸­ã€‚é—æ†¾çš„æ˜¯ï¼Œè®¸å¤šå•†ä¸šåº”ç”¨æœåŠ¡å™¨å¹¶æ²¡æœ‰éµå®ˆæ­¤è§„åˆ™ã€‚
 
-      ¶ÔÓÚ¿ª·¢ÕßÀ´Ëµ£¬Èç¹ûÊÇÎªÁËÑ°ÕÒÀûÓÃ Servlet¡¢JSP¡¢JNDI ºÍ JMX ¼¼ÊõÀ´Éú³É Java Web Ó¦ÓÃµÄ»°£¬Ñ¡ÔñTomcat ÊÇÒ»¸öÓÅÐãµÄ½â¾ö·½°¸£»µ«ÊÇÎªÁËÑ°ÕÒÖ§³ÖÆäËûµÄ J2EE API£¬ÄÇÃ´Ñ°ÕÒÒ»¸öÓ¦ÓÃ·þÎñÆ÷»òÕß°Ñ Tomcat×÷ÎªÓ¦ÓÃ·þÎñÆ÷µÄ¸¨Öú£¬
-      ½«ÊÇÒ»¸ö²»´íµÄ½â¾ö·½°¸£»µÚÈýÖÖ·½Ê½ÊÇÕÒµ½¶ÀÁ¢µÄ J2EE API ÊµÏÖ£¬È»ºó°ÑËüÃÇ¸úTomcat ½áºÏÆðÀ´Ê¹ÓÃ¡£ËäÈ»ÕûºÏ»á´øÀ´Ïà¹ØµÄÎÊÌâ£¬µ«ÊÇÕâÖÖ·½Ê½ÊÇ×îÎªÓÐÐ§µÄ¡£
+      å¯¹äºŽå¼€å‘è€…æ¥è¯´ï¼Œå¦‚æžœæ˜¯ä¸ºäº†å¯»æ‰¾åˆ©ç”¨ Servletã€JSPã€JNDI å’Œ JMX æŠ€æœ¯æ¥ç”Ÿæˆ Java Web åº”ç”¨çš„è¯ï¼Œé€‰æ‹©Tomcat æ˜¯ä¸€ä¸ªä¼˜ç§€çš„è§£å†³æ–¹æ¡ˆï¼›ä½†æ˜¯ä¸ºäº†å¯»æ‰¾æ”¯æŒå…¶ä»–çš„ J2EE APIï¼Œé‚£ä¹ˆå¯»æ‰¾ä¸€ä¸ªåº”ç”¨æœåŠ¡å™¨æˆ–è€…æŠŠ Tomcatä½œä¸ºåº”ç”¨æœåŠ¡å™¨çš„è¾…åŠ©ï¼Œ
+      å°†æ˜¯ä¸€ä¸ªä¸é”™çš„è§£å†³æ–¹æ¡ˆï¼›ç¬¬ä¸‰ç§æ–¹å¼æ˜¯æ‰¾åˆ°ç‹¬ç«‹çš„ J2EE API å®žçŽ°ï¼Œç„¶åŽæŠŠå®ƒä»¬è·ŸTomcat ç»“åˆèµ·æ¥ä½¿ç”¨ã€‚è™½ç„¶æ•´åˆä¼šå¸¦æ¥ç›¸å…³çš„é—®é¢˜ï¼Œä½†æ˜¯è¿™ç§æ–¹å¼æ˜¯æœ€ä¸ºæœ‰æ•ˆçš„ã€‚
 
-##¶þ¡¢Tomcat Óë Web ·þÎñÆ÷
+##äºŒã€Tomcat ä¸Ž Web æœåŠ¡å™¨
 
-      Tomcat ÊÇÌá¹©Ò»¸öÖ§³Ö Servlet ºÍ JSP ÔËÐÐµÄÈÝÆ÷¡£Servlet ºÍ JSP ÄÜ¸ù¾ÝÊµÊ±ÐèÒª£¬²úÉú¶¯Ì¬ÍøÒ³ÄÚÈÝ¡£¶ø¶ÔÓÚ Web ·þÎñÆ÷À´Ëµ£¬ Apache ½ö½öÖ§³Ö¾²Ì¬ÍøÒ³£¬¶ÔÓÚÖ§³Ö¶¯Ì¬ÍøÒ³¾Í»áÏÔµÃÎÞÄÜÎªÁ¦£»Tomcat Ôò¼ÈÄÜÎª¶¯Ì¬ÍøÒ³·þÎñ£¬Í¬Ê±Ò²ÄÜÎª¾²Ì¬ÍøÒ³Ìá¹©Ö§³Ö¡£
-      ¾¡¹ÜËüÃ»ÓÐÍ¨³£µÄ Web ·þÎñÆ÷¿ì¡¢¹¦ÄÜÒ²²»Èç Web ·þÎñÆ÷·á¸»£¬µ«ÊÇ Tomcat Öð½¥ÎªÖ§³Ö¾²Ì¬ÄÚÈÝ²»¶ÏÀ©³ä¡£´ó¶àÊýµÄ Web ·þÎñÆ÷¶¼ÊÇÓÃµ×²ãÓïÑÔ±àÐ´Èç C£¬ÀûÓÃÁËÏàÓ¦Æ½Ì¨µÄÌØÕ÷£¬Òò´ËÓÃ´¿ Java ±àÐ´µÄ Tomcat Ö´ÐÐËÙ¶È²»¿ÉÄÜÓëËüÃÇÏàÌá²¢ÂÛ¡£
+      Tomcat æ˜¯æä¾›ä¸€ä¸ªæ”¯æŒ Servlet å’Œ JSP è¿è¡Œçš„å®¹å™¨ã€‚Servlet å’Œ JSP èƒ½æ ¹æ®å®žæ—¶éœ€è¦ï¼Œäº§ç”ŸåŠ¨æ€ç½‘é¡µå†…å®¹ã€‚è€Œå¯¹äºŽ Web æœåŠ¡å™¨æ¥è¯´ï¼Œ Apache ä»…ä»…æ”¯æŒé™æ€ç½‘é¡µï¼Œå¯¹äºŽæ”¯æŒåŠ¨æ€ç½‘é¡µå°±ä¼šæ˜¾å¾—æ— èƒ½ä¸ºåŠ›ï¼›Tomcat åˆ™æ—¢èƒ½ä¸ºåŠ¨æ€ç½‘é¡µæœåŠ¡ï¼ŒåŒæ—¶ä¹Ÿèƒ½ä¸ºé™æ€ç½‘é¡µæä¾›æ”¯æŒã€‚
+      å°½ç®¡å®ƒæ²¡æœ‰é€šå¸¸çš„ Web æœåŠ¡å™¨å¿«ã€åŠŸèƒ½ä¹Ÿä¸å¦‚ Web æœåŠ¡å™¨ä¸°å¯Œï¼Œä½†æ˜¯ Tomcat é€æ¸ä¸ºæ”¯æŒé™æ€å†…å®¹ä¸æ–­æ‰©å……ã€‚å¤§å¤šæ•°çš„ Web æœåŠ¡å™¨éƒ½æ˜¯ç”¨åº•å±‚è¯­è¨€ç¼–å†™å¦‚ Cï¼Œåˆ©ç”¨äº†ç›¸åº”å¹³å°çš„ç‰¹å¾ï¼Œå› æ­¤ç”¨çº¯ Java ç¼–å†™çš„ Tomcat æ‰§è¡Œé€Ÿåº¦ä¸å¯èƒ½ä¸Žå®ƒä»¬ç›¸æå¹¶è®ºã€‚
 
-      Ò»°ãÀ´Ëµ£¬´óµÄÕ¾µã¶¼ÊÇ½« Tomcat Óë Apache µÄ½áºÏ£¬Apache ¸ºÔð½ÓÊÜËùÓÐÀ´×Ô¿Í»§¶ËµÄ HTTP ÇëÇó£¬È»ºó½« Servlets ºÍ JSP µÄÇëÇó×ª·¢¸ø Tomcat À´´¦Àí¡£Tomcat Íê³É´¦Àíºó£¬½«ÏìÓ¦´«»Ø¸ø Apache£¬×îºó Apache ½«ÏìÓ¦·µ»Ø¸ø¿Í»§¶Ë¡£
+      ä¸€èˆ¬æ¥è¯´ï¼Œå¤§çš„ç«™ç‚¹éƒ½æ˜¯å°† Tomcat ä¸Ž Apache çš„ç»“åˆï¼ŒApache è´Ÿè´£æŽ¥å—æ‰€æœ‰æ¥è‡ªå®¢æˆ·ç«¯çš„ HTTP è¯·æ±‚ï¼Œç„¶åŽå°† Servlets å’Œ JSP çš„è¯·æ±‚è½¬å‘ç»™ Tomcat æ¥å¤„ç†ã€‚Tomcat å®Œæˆå¤„ç†åŽï¼Œå°†å“åº”ä¼ å›žç»™ Apacheï¼Œæœ€åŽ Apache å°†å“åº”è¿”å›žç»™å®¢æˆ·ç«¯ã€‚
       
-##	±àÂë
-ä¯ÀÀÆ÷±íµ¥utf-8     xml utf-8  ÂÒÂë
-·þÎñÆ÷   ä¯ÀÀÆ÷  ÂÒÂë  Ê¹ÓÃresponse.setContentType("text/html; charset=utf-8");¡£ÎÞÐ§·½·¨response.setChaoactorEncoding;
-xmlÎÄ¼þÀïÃæÓÐÂÒÂë£¬saxreader»áÉú³Édocument´íÎó¡£
-ÐÞ¸ÄtomcatµÄ¶Ë¿ÚºÅ conf/server.xml ÕÒµ½connector 8080
+##	ç¼–ç 
+>æµè§ˆå™¨è¡¨å•utf-8     xml utf-8  ä¹±ç 
+æœåŠ¡å™¨   æµè§ˆå™¨  ä¹±ç   ä½¿ç”¨response.setContentType("text/html; charset=utf-8");ã€‚æ— æ•ˆæ–¹æ³•response.setChaoactorEncoding;
+xmlæ–‡ä»¶é‡Œé¢æœ‰ä¹±ç ï¼Œsaxreaderä¼šç”Ÿæˆdocumenté”™è¯¯ã€‚
+ä¿®æ”¹tomcatçš„ç«¯å£å· conf/server.xml æ‰¾åˆ°connector 8080
 
-myecpipse ÎÄ¼þ±àÂëutf-8
-Êý¾Ý¿â
-·þÎñÆ÷
-Ò³Ãæ±àÂë utf-8
-Tomcat Ìí¼Ó URIEncoding="UTF-8"
+####myecpipse æ–‡ä»¶ç¼–ç utf-8
+>æ•°æ®åº“
+æœåŠ¡å™¨
+é¡µé¢ç¼–ç  utf-8
+Tomcat æ·»åŠ  URIEncoding="UTF-8"
 
-ä¯ÀÀÆ÷±íµ¥get·½Ê½£ºÐèÒªÖØÐÂ±àÂë»ñµÃ×Ö·û´®
-ä¯ÀÀÆ÷±íµ¥post·½Ê½ request.setCharactorEncoding(utf-8);
+æµè§ˆå™¨è¡¨å•getæ–¹å¼ï¼šéœ€è¦é‡æ–°ç¼–ç èŽ·å¾—å­—ç¬¦ä¸²
+æµè§ˆå™¨è¡¨å•postæ–¹å¼ request.setCharactorEncoding(utf-8);
 
-×Ô¼º½¨Á¢µÄ¹¤³ÌÀïÃæµÄweb.xml¼Ì³ÐÁËconf/web.xml.Ö»ÐèÒªÖØÐ´×Ô¼ºµÄweb.xmlÏà¹ØµÄÅäÖÃµÄ²ÎÊý¾Í¿ÉÒÔ¸²¸ÇÆä¹¦ÄÜ
+è‡ªå·±å»ºç«‹çš„å·¥ç¨‹é‡Œé¢çš„web.xmlç»§æ‰¿äº†conf/web.xml.åªéœ€è¦é‡å†™è‡ªå·±çš„web.xmlç›¸å…³çš„é…ç½®çš„å‚æ•°å°±å¯ä»¥è¦†ç›–å…¶åŠŸèƒ½
 
 
-##ÐéÄâÄ¿Â¼
-Ö¸¶¨webappÄ¿Â¼ÍâµÄ¿É·ÃÎÊµÄÎÄ¼þ
-·½·¨1.conf/server.xmlÕÒµ½host
-valueÅÔ±ßÔö¼Ó,< Context path="/hello" docBase="c:/mydsadf"/>
+##è™šæ‹Ÿç›®å½•
+æŒ‡å®šwebappç›®å½•å¤–çš„å¯è®¿é—®çš„æ–‡ä»¶
 
-·½·¨2£ºconf/catalina/localhost/myxml.xml
-context·ÅÖÃ½øÀ´< Context  docBase="c:/mydsadf"/>
-·ÃÎÊ·½Ê½http://localhsot:8080/myxml/
+>æ–¹æ³•1.conf/server.xmlæ‰¾åˆ°host
+valueæ—è¾¹å¢žåŠ ,< Context path="/hello" docBase="c:/mydsadf"/>
 
-war°üÉú³É1.myeclipseµ¼³öµ½war
-2.Ä¿Â¼ÏÂÎÄ¼þÑ¹Ëõµ½zip¸ÄÀ©Õ¹Ãû
+>æ–¹æ³•2ï¼šconf/catalina/localhost/myxml.xml
+contextæ”¾ç½®è¿›æ¥< Context  docBase="c:/mydsadf"/>
+è®¿é—®æ–¹å¼http://localhsot:8080/myxml/
 
-ÐéÄâÄ¿Â¼ÉèÖÃ
+waråŒ…ç”Ÿæˆ1.myeclipseå¯¼å‡ºåˆ°war
+2.ç›®å½•ä¸‹æ–‡ä»¶åŽ‹ç¼©åˆ°zipæ”¹æ‰©å±•å
 
-con/server¡£xml
+>è™šæ‹Ÿç›®å½•è®¾ç½®
+con/serverã€‚xml
 < host>
 <Context path="/abc" docBase="d:/webA"
 
-Ä¬ÈÏÖ÷Ò³
+é»˜è®¤ä¸»é¡µ
 
-¸öÈËwebÏÂµÄweb.xmlÖÐÉèÖÃ 
+>ä¸ªäººwebä¸‹çš„web.xmlä¸­è®¾ç½® 
 < welcome-file-list>
 < welcome-file>index.html< /welcome-file>
 < /welcome-file-list>
 
-ÐéÄâÖ÷»ú
+è™šæ‹Ÿä¸»æœº
 
-server.xml
+>server.xml
 <host name="www.baidu.com" appBase="c:/webA" 
 unpackWARs="true" autoDeploy="true">
 <Valve className="org.apache.catalina.valves.AccessLogValve" directory="logs"
@@ -119,6 +117,6 @@ unpackWARs="true" autoDeploy="true">
 < Context path="/" docBase="d:/webA" />
 >
 
-File f=new File("/information.xml");Õâ¸öÐ´·¨ÊÇ´íµÄ£¬¿ÕÖ¸ÕëÒì³£¡£
+File f=new File("/information.xml");è¿™ä¸ªå†™æ³•æ˜¯é”™çš„ï¼Œç©ºæŒ‡é’ˆå¼‚å¸¸ã€‚
 
-request.getParameter·µ»Ø×Ö·û´®£¬Èç¹û±íµ¥ÀïÃæÊÇ¿ÕµÄ£¬¾Í·µ»Ø³¤¶ÈÎªÁãµÄ×Ö·û´®¡£
+request.getParameterè¿”å›žå­—ç¬¦ä¸²ï¼Œå¦‚æžœè¡¨å•é‡Œé¢æ˜¯ç©ºçš„ï¼Œå°±è¿”å›žé•¿åº¦ä¸ºé›¶çš„å­—ç¬¦ä¸²ã€‚
