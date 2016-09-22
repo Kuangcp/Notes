@@ -1,22 +1,21 @@
-=====================================================================================
-
-使用ognl表达式，<s:debug></s:debug>
-使用的jar包不仅要放在library里，如果运行时需要，就要加载lib目录下
+#Struts2笔记
+####使用ognl表达式，<s:debug></s:debug>
+####使用的jar包不仅要放在library里，如果运行时需要，就要加载lib目录下
 ？？？
-<result-types>
+< result-types>
       ...
-      <result-type name="myresult" class="com.foo.MyResult" />
-  </result-types>
+      < result-type name="myresult" class="com.foo.MyResult" />
+  < /result-types>
 
-  action没有result，执行的方法没有返回值，方法里写上out.write(JSON); 调用action方就能收到JSON字符串
-  result标签类型默认是转发，要显示说明是重定向
-================================【struts运行过程】=========================================
+####action没有result，执行的方法没有返回值，方法里写上out.write(JSON); 调用action方就能收到JSON字符串
+####result标签类型默认是转发，要显示说明是重定向
+##【struts运行过程】
 1.浏览器的各种事件，发起一个URL的请求，
 2.被项目的默认过滤器监听到了，调用对应的action，(需要配置好xml文件的package和action标签）
 3.若action有绑定拦截器，就先执行拦截器里的方法
 4.由action里运行方法（这里是真正的代码处理的地方）的return值来确定等会跳转的结果页面（配置xml文件的result标签）
 
-================================【搭建Struts2开发环境】=======================================
+##【搭建Struts2开发环境】
 （或者直接使用MyEclipse的快速搭建，struts2.1+Hibernate3.3.2+JSTL1.2.2(本机jdk7.45+tomcat7.08)）
 1.找到Struts2应用所需要使用到的JAR包（特别注意不能和Hibernate的JAR包有重复的，不然就报错）
 	**Struts2.33版本的开发必须JAR包：路径在 f:\Tool\AllJar\SSH\struts23
@@ -38,32 +37,29 @@
 4. 编写Struts2的配置文件Struts.xml
 5. 在web.xml中加入Struts2 框架启动的过滤器配置（核心过滤器）
 
-===========================================================================
-
-===========================================================================
-=====访问Action的URL：
+###访问Action的URL：
 	package的namespace加上Action的名字加上后缀
 
-======URL 默认搜索特性 ：
+###URL 默认搜索特性 ：
 	/a/b/c/d/df.action
 	/a/df.action
 	*这两个是等价的，上面长的那个同样分解为两部分，前半部分的路径是从d到a
 	依次向上搜索的，直到找到，否则才会报错，所以说，只要根是对的，中间可以乱写，但是会影响性能
 
-======如果没有给Action指定class：
+###如果没有给Action指定class：
 	struts.xml继承的struts-default.xml 中配置了一个默认的class，所以说不会报错
 	<default-class-ref name=""/>
 
-======如果找不到Action：
+###如果找不到Action：
 	就需要配置默认的Action名称，没有的话，就会报错。有就执行那个了
 	<default-action-ref name=""/>
 
-======URL的后缀名可以自定义（会覆盖原本的配置）
+###URL的后缀名可以自定义（会覆盖原本的配置）
 在struts.xml 中配置:
 	（使用多个的话，用逗号分隔）默认是action和空
 	name : 框架自带配置文件 default.properties中常量名
 	value ：常量值
-	<constan name="struts.action.extension" value="myth"></constant>
+	< constant name="struts.action.extension" value="myth">< /constant>
 或者：
 	src下新建一个default.properties 里面只写需要修改的常量
 		struts.action.extension=myth 
@@ -77,30 +73,28 @@
 	若有相同的常量配置好，后者覆盖前者
 建议在struts.xml中配置
 
-<!-- 配置URL后缀 默认是action或空-->
-	<constant name="struts.action.extension" value="myth"></constant>
-	<!-- 配置国际化资源文件被修改时，是否重新加载 默认是false -->
-	<!-- <constant name="struts.i18n.reload" value="true"></constant> -->
-	<!-- 配置struts2框架的配置文件修改时，是否重新加载 默认是false-->
-	<!-- <constant name="struts.configuration.xml.reload" value="true"></constant> -->
-	<!--
+<-- 配置URL后缀 默认是action或空-->
+	< constant name="struts.action.extension" value="myth"></ constant>
+	<-- 配置国际化资源文件被修改时，是否重新加载 默认是false -->
+	< constant name="struts.i18n.reload" value="true"></ constant> 
+	<-- 配置struts2框架的配置文件修改时，是否重新加载 默认是false-->
+	< constant name="struts.configuration.xml.reload" value="true"></ constant> 
+	<--
 		 配置struts2的模式 
 			false 生产模式 默认是false
 			true 开发模式 需要更多的调试信息 会自动将上面两个常量设置为true
 	-->
-	<constant name="struts.devMode" value="true"></constant>
+< constant name="struts.devMode" value="true">< /constant>
+
 ================================================================
 自定义使用的 struts.xml 不仅路径，还有名字，方便多人开发
 需要在struts.xml中写一个<include file=""></include>路径都是以src为起点，注意把点换成  /
 
-==================【action类型转换】===========================
+##【action类型转换】
 1、在JSP页面上的输入框提交给action时，只要在action中声明同名变量，定义setget方法
 	那之后直接使用get方法就能获取到值，封装成对象再setget也是一样可以的但是在JSP上的input的name上要加对象名做前缀
 	还可以批量添加数据，就使用Collection集合 Collection<T> ts;同样的加setget方法，但是在JSP上的多个input的name就要写成这种格式
 		ts[0].name ts[1].name......
-
-
-
 
 2、当struts有些类型无法转换时，就需要自定义转换器
 	【基于字段】（局部）
@@ -123,7 +117,7 @@
 【注意】
 	JSP页面中引入struts标签<%@ taglib uri="/struts-tags" prefix="s" %>
 	* 创建完文件后记得一定要添加到struts.xml文件中去，若没加，也可以在JSP页面中直接使用
-==========================【与Servlet解耦】====================================
+###【与Servlet解耦】
 struts2 对 HttpServletRequest HttpSession ServletContext进行了封装成了Map对象
 【方法一】:   通过ServletActionContext类直接获取
 	这个类是action执行的上下文对象，包括了parameter request session application等。
@@ -139,15 +133,15 @@ struts2 对 HttpServletRequest HttpSession ServletContext进行了封装成了Map对象
     ${sessionScope.username}<br>
     ${applicationScope.username}<br>
 
-【通过实现接口struts2自动注入】
+###【通过实现接口struts2自动注入】
 	实现这四个接口：ServletRequestAware，ServletResponseAware，ServletContextAware，SessionAware
 	实例化对象分别是HttpServletRequest，HttpServletResponse，Map，ServletContext
 	重写四个set方法，方法体写上this.** = **;
 
-=============================【文件上传】================================
+##【文件上传】
 【1】套路一致，但是在配置时，action里一定有input的result才可以
-【2】<!-- 配置文件上传的总大小 -->
-	<constant name="struts.multipart.maxSize" value="2097152000"></constant>
+【2】<-- 配置文件上传的总大小 -->
+	< constant name="struts.multipart.maxSize" value="2097152000"></ constant>
 【3】错误提示配置
 新建一个properties文件，名字自定义
 	struts.messages.error.uploading=Error uploading: {0}
@@ -159,8 +153,8 @@ struts2 对 HttpServletRequest HttpSession ServletContext进行了封装成了Map对象
 	{2}：上传文件保存到临时目录的名称
 	{3}：上传文件的类型（对于too.large来说是上传文件的大小）
 	
-	加入到struts配置文件中去
-=============================================================
+##加入到struts配置文件中去
+
 struts2框架的文件上传：
 	* 单文件上传：
 		* 在动作类action中声明相关属性：
@@ -209,13 +203,11 @@ struts2框架的文件上传：
 			* 在页面中，虽然是多文件上传，但是页面中表单的name属性的值必须保持一致；
 			* 在动作类action中声明的相关属性，类型改成数组；
 			* 在业务方法中，相关处理流程改成单文件上传的循环。
-=================================【文件下载】=========================================================
- 1、
-
-下载文件时 压入值栈的名字如果含中文需要转码：fileName = new String(filename.getBytes(),"ISO-8859-1");
+##【文件下载】
+ 1、下载文件时 压入值栈的名字如果含中文需要转码：fileName = new String(filename.getBytes(),"ISO-8859-1");
 配置文件  filename=${filename}.xls
-==================================【校验】====================================================	
-【struts2手动验证】：
+##【校验】
+####【struts2手动验证】：
 		也就是说手动的是直接在action里，重写个validate方法就是了 
 		方法里只要按需求写this.addFieldError( key, value);语句就行了，后续的由框架来处理
 	* 首先要从页面中获取对应的标签name属性的值，在动作类action中声明 同名的属性，提供get和set方法
@@ -243,7 +235,7 @@ struts2框架的文件上传：
 		* 重写的validate()方法加上要验证的指定的业务方法名(业务方法名的首字母大写)，实现针对某个指定的业务方法进行验证
 			* 为什么要这样进行拼接？因为struts2框架底层拼接，如果不这样写，底层就找不到对应方法名
 	
-【struts2框架验证(xml方式)】:
+####【struts2框架验证(xml方式)】:
 	* 首先要从页面中获取对应的标签name属性的值，在动作类action中声明同名的属性，提供get和set方法
 	
 	* 创建一个xml格式验证文件：
@@ -263,7 +255,7 @@ struts2框架的文件上传：
 		* xml验证文件的命名方式：ActionClassName-ActionName-validation.xml，
 								ActionName对应的是struts.xml文件对应的action标签的name属性的值
 
-=================================【自定义拦截器】===============================================
+##【自定义拦截器】
 【拦截器 特性】：
 
 	拦截器一般是和对应的action绑定的，而原生的filter是对URL模式进行拦截的
@@ -275,9 +267,9 @@ struts2框架的文件上传：
 			String result = invocation.invoke();
 			return result;
 【如何自定义拦截器】
-	1、 所有的拦截器都需要实现Interceptor接口或者继承Interceptor接口的扩展实现类
+#####1、 所有的拦截器都需要实现Interceptor接口或者继承Interceptor接口的扩展实现类
 	
-	2、要重写init()、intercept()、destroy()方法
+#####2、要重写init()、intercept()、destroy()方法
 	
 		* init()是在struts2框架运行时执行，在拦截器的生命周期中只执行一次，可以做必要的内容的初始化工作
 		
@@ -299,7 +291,7 @@ struts2框架的文件上传：
 				System.out.println("invocation.getProxy().getNamespace() : "+invocation.getProxy().getNamespace());
 		* destroy()是在拦截器销毁前执行，在拦截器的声明周期中只执行一次。
 		
-	3、 在struts.xml配置文件中，进行注册
+#####3、 在struts.xml配置文件中，进行注册
 		* 在配置文件中的package标签下，进行相关配置：
 		
 		<interceptors>
@@ -317,9 +309,9 @@ struts2框架的文件上传：
 		
 		后面跟着的就是action的配置了
 	
-=========================================【ognl】====================================================
+##【ognl学习】
 
-【valueStack】：
+###【valueStack】：
 	ValueStack实际上是一个接口，在struts2中利用OGNL时，实际上是哦那个的是实现了该接口的OgnlValueStack类，这个类是利用OGNL的基础
 	贯穿整个action生命周期，每个action类的对象都有一个valueStack对象，相当于一个数据的中转站，在其中保存了当前action对象和其他相关对象
 	struts框架把valueStack对象保存在名为 “struts.valueStack”的请求属性中（request中）
@@ -328,7 +320,7 @@ struts2框架的文件上传：
 		 vs.set("key","value");//实际上是放在了Map集合里再放在栈里的
 		 vs.getRoot().add(0,new Person());//把person对象压入List集合的0位置（栈顶）
 	
-【理解OGNL Context】 上下文
+###【理解OGNL Context】 上下文
 	# OgnlValueStack类包含两个重要的属性：root 和 context 
 	     * 其中toot本质上是一个List集合
 	     * Context是一个Map（确切的说是一个OgnlContext对象）
@@ -341,10 +333,9 @@ struts2框架的文件上传：
 			 CompoundRoot root;    ---  list集合
 			transient Map<String, Object> context;  --- map集合
 		}
-	
 												
 			
-++++++++++++++++++++++【OGNL表达式】++++++++【示例JSP】+++++++++++++++++++++++++++++++++++++++++++
+##【OGNL表达式】【示例JSP】
 实际操作的不是值栈，而是值栈的属性：Context的上下文（就是一个Map集合）
 
 	【】使用EL表达式取值-----------------------------------------<br>
@@ -353,7 +344,7 @@ struts2框架的文件上传：
 		${applicationScope.username}<br><br><br><br>
 	【】使用Ognl表达式取值-----------------------------------------<br>
 				【访问Map集合加#】
-	1 # 如果访问其他Context中的对象，由于他们不是根对象，所以在访问时，需要添加#前缀。<br>
+####1.如果访问其他Context中的对象，由于他们不是根对象，所以在访问时，需要添加#前缀。<br>
 		<s:property value="#request.username"/><br>
 		<s:property value="#session.username"/><br>
 		<s:property value="#application.username"/><br><br>
@@ -361,7 +352,7 @@ struts2框架的文件上传：
 		<s:property value="#parameters.cid[0]"/><br>
 		<s:property value="#attr.username"/><br><br>
 			【访问对象栈中对象可不加#】
-	2 # 如果要访问根对象（即ValueStack）中对象的属性，则可以省略#命名对象，直接访问该对象的属性即可。<br>
+#### 2.如果要访问根对象（即ValueStack）中对象的属性，则可以省略#命名对象，直接访问该对象的属性即可。<br>
 		<s:property value="msg"/><br><br>
 		深入理解值栈中的 ObjectStack<br>
 		【后台代码：】 vs.getRoot().add(0,new Person()); 
@@ -371,7 +362,7 @@ struts2框架的文件上传：
 		<s:property value="salary"/><br><br>
 	
 	
-	用法3:构造Map<br>
+####用法3:构造Map<br>
 		<s:radio list="#{'01':'男','02':'女'}"></s:radio><br><br><br><br>
 		%的用法：“%”符号的用途是在标签的属性值被理解为字符串类型时，告诉执行环境%{}里的是OGNL表达式。 <br>
 		<s:property value="#request.username"/><br>
@@ -391,4 +382,4 @@ struts2框架的文件上传：
 		
 	<s:debug></s:debug> 能查看值栈状态
 
-+++++++++++++++++++++++++++++【OGNL标签】+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+##【OGNL标签】
