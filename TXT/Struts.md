@@ -1,41 +1,43 @@
-#Struts2笔记
-####使用ognl表达式，<s:debug></s:debug>
-####使用的jar包不仅要放在library里，如果运行时需要，就要加载lib目录下
-？？？
-< result-types>
+# 								Struts2笔记
+---
+* 使用ognl表达式在页面debug，<s:debug></s:debug>
+* 使用的jar包不仅要放在library里，如果运行时需要，就要加载lib目录下
+
+<pre>< result-types>
       ...
       < result-type name="myresult" class="com.foo.MyResult" />
   < /result-types>
-
-####action没有result，执行的方法没有返回值，方法里写上out.write(JSON); 调用action方就能收到JSON字符串
-####result标签类型默认是转发，要显示说明是重定向
+</pre>
+* action没有result，执行的方法没有返回值(void)，方法里写上out.write(JSON); 调用action方就能收到JSON字符串
+* result标签类型默认是转发，要显示说明是重定向
+---
 ##【struts运行过程】
 1.浏览器的各种事件，发起一个URL的请求，
 2.被项目的默认过滤器监听到了，调用对应的action，(需要配置好xml文件的package和action标签）
 3.若action有绑定拦截器，就先执行拦截器里的方法
 4.由action里运行方法（这里是真正的代码处理的地方）的return值来确定等会跳转的结果页面（配置xml文件的result标签）
-
+---
 ##【搭建Struts2开发环境】
 （或者直接使用MyEclipse的快速搭建，struts2.1+Hibernate3.3.2+JSTL1.2.2(本机jdk7.45+tomcat7.08)）
-1.找到Struts2应用所需要使用到的JAR包（特别注意不能和Hibernate的JAR包有重复的，不然就报错）
-	**Struts2.33版本的开发必须JAR包：路径在 f:\Tool\AllJar\SSH\struts23
-		sm-3.3.jar
-		sm-commons-3.3.jar
-		sm-tree-3.3.jar
-		ommons-fileupload-1.2.2.jar
-		ommons-io-2.0.1.jar
-		ommons-lang3-3.1.jar
-		ommons-logging-1.1.1.jar
-		reemarker-2.3.19.jar
-		avassist-3.11.0.GA.jar
-		gnl-3.0.5.jar
-		truts2-core-2.3.3.jar
-		work-core-2.3.3.jar
-
-2. 创建JSP文件
-3. 创建Action文件（实现了Struts的Action接口的普通类,或者继承ActionSupport类）
-4. 编写Struts2的配置文件Struts.xml
-5. 在web.xml中加入Struts2 框架启动的过滤器配置（核心过滤器）
+* 1、找到Struts2应用所需要使用到的JAR包（特别注意不能和Hibernate的JAR包有重复的，不然就报错）
+<pre> Struts2.3.3版本的开发必须JAR包：路径在 f:\Tool\AllJar\SSH\struts23
+				sm-3.3.jar
+				sm-commons-3.3.jar
+				sm-tree-3.3.jar
+				ommons-fileupload-1.2.2.jar
+				ommons-io-2.0.1.jar
+				ommons-lang3-3.1.jar
+				ommons-logging-1.1.1.jar
+				reemarker-2.3.19.jar
+				avassist-3.11.0.GA.jar
+				gnl-3.0.5.jar
+				truts2-core-2.3.3.jar
+				work-core-2.3.3.jar
+</pre>
+* 2、 创建JSP文件
+* 3、 创建Action文件（实现了Struts的Action接口的普通类,或者继承ActionSupport类）
+* 4、 编写Struts2的配置文件Struts.xml
+* 5、 在web.xml中加入Struts2 框架启动的过滤器配置（核心过滤器）
 
 ###访问Action的URL：
 	package的namespace加上Action的名字加上后缀
@@ -89,7 +91,7 @@
 ================================================================
 自定义使用的 struts.xml 不仅路径，还有名字，方便多人开发
 需要在struts.xml中写一个<include file=""></include>路径都是以src为起点，注意把点换成  /
-
+--
 ##【action类型转换】
 
 1、在JSP页面上的输入框提交给action时，只要在action中声明同名变量，定义setget方法
@@ -153,23 +155,22 @@ struts2 对 HttpServletRequest HttpSession ServletContext进行了封装成了Ma
 	{1}：上传文件的真实名称
 	{2}：上传文件保存到临时目录的名称
 	{3}：上传文件的类型（对于too.large来说是上传文件的大小）
-	
-##加入到struts配置文件中去
+	加入到struts配置文件中去
 
-struts2框架的文件上传：
-	* 单文件上传：
-		* 在动作类action中声明相关属性：
+###struts2框架的文件上传：
+* 单文件上传：
+	* 在动作类action中声明相关属性：
 			* 在动作类action中，要声明与页面中表单name属性同名的属性，同名的属性的类型时File类型；
 			* 在动作类action中，要声明[同名的属性]ContentType，类型时String类型；
 			* 在动作类action中，要声明[同名的属性]FileName，类型时String类型
 			* 给所有属性提供get和set方法
-		* 在业务方法中，处理文件上传：
+	* 在业务方法中，处理文件上传：
 			* 获取要上传文件的路径，保存的位置
 			* 在目标文件夹内，创建一个与上传文件同名的文件
 			* 通过FileUtils工具类提供copyFile()方法，将临时文件内容拷贝到目标文件夹下的那个同名的文件
-		* 设置上传文件的总大小
+	* 设置上传文件的总大小
 			* 在struts.xml文件中，<constant name="struts.multipart.maxSize" value="2097152000"></constant>
-		* 设置上传文件的大小、类型和扩展名：
+	* 设置上传文件的大小、类型和扩展名：
 			* 在自定义的配置文件中，在action标签下：
 				<!-- 配置拦截器的参数，这里是文件上传拦截器 -->
 				<interceptor-ref name="defaultStack">
@@ -189,16 +190,16 @@ struts2框架的文件上传：
 	              	<!-- 配置上传文件的扩展名，如果配置多个值的话，用","隔开 -->
 	              	<param name="fileUpload.allowedExtensions">.txt</param>
 	            </interceptor-ref>
-	         * 自定义上传文件的错误提示信息：
+	* 自定义上传文件的错误提示信息：
 	         	* 在动作类action同目录下，创建一个名为fileuploadmessage.properties资源文件(名为自定义)
 	         	* 改资源文件配置如下：
-	         		struts.messages.error.uploading=Error uploading: {0}
-					struts.messages.error.file.too.large=File too large: {0} "{1}" "{2}" {3}
-					struts.messages.error.content.type.not.allowed=Content-Type not allowed: {0} "{1}" "{2}" {3}
-					struts.messages.error.file.extension.not.allowed=File extension not allowed: {0} "{1}" "{2}" {3}
+`struts.messages.error.uploading=Error uploading: {0}`
+`struts.messages.error.file.too.large=File too large: {0} "{1}" "{2}" {3}`
+`struts.messages.error.content.type.not.allowed=Content-Type not allowed: {0} "{1}" "{2}" {3}`
+`struts.messages.error.file.extension.not.allowed=File extension not allowed: {0} "{1}" "{2}" {3}`
 		
 		
-	* 多文件上传：
+* 多文件上传：
 		* 所有流程于配置都与单文件上传一致。
 		* 需要注意的是：
 			* 在页面中，虽然是多文件上传，但是页面中表单的name属性的值必须保持一致；
@@ -322,29 +323,28 @@ struts2框架的文件上传：
 		 vs.getRoot().add(0,new Person());//把person对象压入List集合的0位置（栈顶）
 	
 ###【理解OGNL Context】 上下文
-	# OgnlValueStack类包含两个重要的属性：root 和 context 
-	     * 其中toot本质上是一个List集合
-	     * Context是一个Map（确切的说是一个OgnlContext对象）
-	# 在这个OgnlContext对象中，有一个默认的顶层对象 root OGNL访问context中这个默认顶层对象中的元素时不需要#号，直接通过名称来引用
-	# 而访问其他对象时， request，session，attr 等则需要#号引用。
-	总结：ognl Context包含ObjectStack属性和ContextMap属性
-
-	 底层类：
-		public class OgnlValueStack implements ValueStack {
-			 CompoundRoot root;    ---  list集合
-			transient Map<String, Object> context;  --- map集合
-		}
-												
+* OgnlValueStack类包含两个重要的属性：root 和 context 
+     * 其中toot本质上是一个List集合
+     * Context是一个Map（确切的说是一个OgnlContext对象）
+* 在这个OgnlContext对象中，有一个默认的顶层对象 root OGNL访问context中这个默认顶层对象中的元素时不需要#号，直接通过名称来引用
+而访问其他对象时， request，session，attr 等则需要#号引用。
+* 总结：ognl Context包含ObjectStack属性和ContextMap属性
+* 在底层类中的部分代码：
+<PRE>
+	public class OgnlValueStack implements ValueStack {
+		 CompoundRoot root;    ---  list集合
+		transient Map<String, Object> context;  --- map集合
+	}
+</PRE>
+										
 			
 ##【OGNL表达式】【示例JSP】
 实际操作的不是值栈，而是值栈的属性：Context的上下文（就是一个Map集合）
-
-	【】使用EL表达式取值-----------------------------------------<br>
+* 使用EL表达式取值:
 		${requestScope.username}<br>
 		${sessionScope.username}<br>
 		${applicationScope.username}<br><br><br><br>
-	【】使用Ognl表达式取值-----------------------------------------<br>
-				【访问Map集合加#】
+* 使用Ognl表达式取值:  【访问Map集合加#】
 ####1.如果访问其他Context中的对象，由于他们不是根对象，所以在访问时，需要添加#前缀。<br>
 		<s:property value="#request.username"/><br>
 		<s:property value="#session.username"/><br>
@@ -367,9 +367,10 @@ struts2框架的文件上传：
 		<s:radio list="#{'01':'男','02':'女'}"></s:radio><br><br><br><br>
 		%的用法：“%”符号的用途是在标签的属性值被理解为字符串类型时，告诉执行环境%{}里的是OGNL表达式。 <br>
 		<s:property value="#request.username"/><br>
-		<s:property value="%{#request.username}"/>%{}是万能用法，无论里面的表达式是不是ognl表达式，都会强制理解为ognl表达式<br><br>
+		<s:property value="%{#request.username}"/>
+		%{}是万能用法，无论里面的表达式是不是ognl表达式，都会强制理解为ognl表达式<br><br>
 		
-【“$”有两个主要的用途】
+####【“$”有两个主要的用途】
 
 	    1 *  用于在国际化资源文件中，引用OGNL表达式<br>
 		<s:text name="ognl" /><br><br>
