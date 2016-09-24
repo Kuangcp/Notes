@@ -142,10 +142,10 @@ struts2 对 HttpServletRequest HttpSession ServletContext进行了封装成了Ma
 	重写四个set方法，方法体写上this.** = **;
 
 ##【文件上传】
-【1】套路一致，但是在配置时，action里一定有input的result才可以
-【2】<-- 配置文件上传的总大小 -->
+* 【1】套路一致，但是在配置时，action里一定有input的result才可以
+* 【2】<-- 配置文件上传的总大小 -->
 	< constant name="struts.multipart.maxSize" value="2097152000"></ constant>
-【3】错误提示配置
+* 【3】错误提示配置
 新建一个properties文件，名字自定义
 	struts.messages.error.uploading=Error uploading: {0}
 	struts.messages.error.file.too.large=File too large: {0} "{1}" "{2}" {3}
@@ -258,19 +258,18 @@ struts2 对 HttpServletRequest HttpSession ServletContext进行了封装成了Ma
 								ActionName对应的是struts.xml文件对应的action标签的name属性的值
 
 ##【自定义拦截器】
-【拦截器 特性】：
+* 【拦截器 特性】：
 
 	拦截器一般是和对应的action绑定的，而原生的filter是对URL模式进行拦截的
 
-	# 执行顺序：执行完struts中配置的拦截器栈中所有intercept方法后再执行action的execute方法
-	# 当拦截器的 intercept方法  返回null就会继续执行action 
+	* 执行顺序：执行完struts中配置的拦截器栈中所有intercept方法后再执行action的execute方法
+	* 当拦截器的 intercept方法  返回null就会继续执行action 
 		如果在前面就调出来了action实例，并且执行了方法那么之后的action就不会再重复执行
-	# 检查是否还有拦截器待执行，有就去执行，没有就会得到null，同样的继续执行action
+	* 检查是否还有拦截器待执行，有就去执行，没有就会得到null，同样的继续执行action
 			String result = invocation.invoke();
 			return result;
 【如何自定义拦截器】
-#####1、 所有的拦截器都需要实现Interceptor接口或者继承Interceptor接口的扩展实现类
-	
+#####1、 所有的拦截器都需要实现Interceptor接口或者继承Interceptor接口的扩展实现类	
 #####2、要重写init()、intercept()、destroy()方法
 	
 		* init()是在struts2框架运行时执行，在拦截器的生命周期中只执行一次，可以做必要的内容的初始化工作
