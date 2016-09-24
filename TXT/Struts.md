@@ -74,32 +74,154 @@
 	5 web.xml
 	若有相同的常量配置好，后者覆盖前者
 建议在struts.xml中配置
-
-<-- 配置URL后缀 默认是action或空-->
-	< constant name="struts.action.extension" value="myth"></ constant>
+---
+	<-- 配置URL后缀 默认是action或空-->
+	<constant name="struts.action.extension" value="myth"></constant>
 	<-- 配置国际化资源文件被修改时，是否重新加载 默认是false -->
-	< constant name="struts.i18n.reload" value="true"></ constant> 
+	<constant name="struts.i18n.reload" value="true"></constant>
 	<-- 配置struts2框架的配置文件修改时，是否重新加载 默认是false-->
-	< constant name="struts.configuration.xml.reload" value="true"></ constant> 
+	<constant name="struts.configuration.xml.reload" value="true"></constant> 
 	<--
 		 配置struts2的模式 
 			false 生产模式 默认是false
 			true 开发模式 需要更多的调试信息 会自动将上面两个常量设置为true
 	-->
-< constant name="struts.devMode" value="true">< /constant>
+	<constant name="struts.devMode" value="true"></constant>
 
 ================================================================
+
+
 自定义使用的 struts.xml 不仅路径，还有名字，方便多人开发
-需要在struts.xml中写一个<include file=""></include>路径都是以src为起点，注意把点换成  /
---
+规范一般是一个action对应于一个xml文件，所以在struts.xml中引入xml文件要：
+`<include file=""></include>` file的路径都是以src为起点，注意把点换成 /
+##【action标签的配置】
+####【关于result的配置】
+
+---
+    <struts>
+	<package name="resulttype" namespace="/resulttype" extends="struts-default">
+	<!-- 这是action的执行入口，里面定义返回类型，或者转发重定向啥的 -->
+	<action name="resulttypeAction" class="com.myth.resulttype.resulttypeAction">
+		<!-- 默认是转发 type属性：是指定type类型-->
+		<!-- <result name="success" type="dispatcher">/resulttype/success.jsp</result> -->
+		<!--
+		 	result标签的标准写法  验证了一个特性，可以在重定向后再重定向，这在原本的JSP中是不允许的
+		 	 转发：dispatcher
+		-->
+		<result name="success" type="dispatcher">
+			<param name="location">/resulttype/success.jsp</param>
+		</result>
+		<result name="jqgrid" type="dispatcher">
+			<param name="location">/resulttype/Jqgrid.jsp</param>
+		</result>
+		<!-- 重定向到jsp 和后面的重定向action底层代码是一样的-->
+		<!-- <result name="success" type="redirect">
+			<param name="location">/resulttype/success.jsp</param>
+		</result> -->
+		
+		<!-- 重定向到Action (可以是别的配置文件里的，只要引入到了主配置文件struts.xml就可以)-->
+		<!-- <result name="success" type="redirectAction">
+			
+				actionName:指定的是struts.xml文件 中action标签中name属性的值
+				namespace：指定的是struts.xml文件action对应的package的namespace值
+			 
+			<param name="actionName">helloWorldAction</param>
+			<param name="namespace">/primer</param>
+		</result> -->
+	</action>
+	<!-- 不写result就是默认返回文本 -->
+	<action name="JSONAction" class="com.myth.resulttype.resulttypeAction" method="Json">
+		<!-- <result type="json"/> -->
+	</action>
+	</package> 
+	</struts>
+####【模式匹配】
+---
+	<struts>
+		<package name="pattern" namespace="/pattern"  extends="struts-default">
+			<!-- 全局result 之后的可以不用配置了相当于全局变量，如果之后的action配置了，那就是局部变量覆盖原理-->
+			<!-- <global-result>
+				<result name="success">/pattern/success.jsp</result>
+			</global-result> -->
+			
+			<!-- 框架中默认是运行的execute，如果自定义就更改那个method属性 -->
+			<action name="BookAction" class="com.myth.pattern.BookAction">
+				<result name="success">/pattern/success.jsp</result>
+				<result name="add">/pattern/BookAction.jsp</result>
+			</action>
+			<!-- 
+				通配符的使用，可以匹配任意长字符 
+			-->
+			<!-- <action name="*_add" class="com.myth.pattern.BookAction" method="add">
+				<result name="success">/pattern/success.jsp</result>
+				<result name="add">/pattern/BookAction.jsp</result>
+			</action> -->
+			<!-- 问题出现了，如果没有下面两个action，访问的都会是bookaction没错
+			可是有了上面的通配符的action，下面还能正常运行，这是因为覆盖？ -->
+			<!-- <action name="BookAction_add" class="com.myth.pattern.BookAction" method="add">
+				<result name="success">/pattern/success.jsp</result>
+				<result name="add">/pattern/BookAction.jsp</result>
+			</action>
+			<action name="UserAction_add" class="com.myth.pattern.UserAction" method="add">
+				<result name="success">/pattern/success.jsp</result>
+				<result name="add">/pattern/UserAction.jsp</result>
+			</action> -->
+			<!-- 
+				上面两个可以改写 (1)匹配的是通配符的第一个子串
+			 -->
+			<!-- <action name="*_add" class="com.myth.pattern.{1}" method="add">
+				<result name="success">/pattern/success.jsp</result>
+				<result name="add">/pattern/{1}.jsp</result>
+			</action> -->
+			
+			<!-- <action name="BookAction_add" class="com.myth.pattern.BookAction" method="add">
+				<result name="add">/pattern/BookAction.jsp</result>
+			</action>
+			<action name="BookAction_delete" class="com.myth.pattern.BookAction" method="delete">
+				<result name="success">/pattern/success.jsp</result>
+			</action>
+			<action name="UserAction_add" class="com.myth.pattern.UserAction" method="add">
+				<result name="add">/pattern/UserAction.jsp</result>
+			</action>
+			<action name="UserAction_delete" class="com.myth.pattern.UserAction" method="delete">
+				<result name="success">/pattern/success.jsp</result>
+			</action> -->
+			<!-- 
+				改写： 
+					{1}：通配符 * 的第一个子串
+					{2}：通配符 * 的第二个子串
+					{0}：通配符 * 的整个串
+			-->
+			<action name="*_*" class="com.myth.pattern.{1}" method="{2}">
+				<result name="success">/pattern/success.jsp</result>
+				<result name="add">/pattern/{1}.jsp</result>
+			</action>
+			<!-- 动态方法调用：（默认开启，已经配置关闭了）链接写法：namespace+actionname+！+方法名
+					那么在配置中不用配置method方法，而是由页面的指定的方法名来调用相应的方法
+				<a href="${pageContext.request.contextPath }/pattern/BookAction!add.action">添加图书</a>
+				<a href="${pageContext.request.contextPath }/pattern/BookAction!delete.action">删除图书</a>
+			 -->
+			<!-- <action name="BookAction" class="com.myth.pattern.BookAction">
+				<result name="success">/pattern/success.jsp</result>
+				<result name="add">/pattern/BookAction.jsp</result>
+			</action> -->
+		</package>
+	</struts>
+2.3以上版本使用通配
+---
+	<action name="user_*"  class="userAction" method="{1}">                                  
+	    <result name="success">/WEB-INF/jsp/login.jsp</result>                  
+	    <allowed-methods>login</allowed-methods>                                      
+	</action>
+总结：在struts2.3之前的版本，正常的配置就可以了，但在struts2.3版本之后，使用通配符调用方法时，内部会验证是否允许访问该方法，所以要加上`<allowed-methods>方法名1，方法名2…</allowed-methods>`代码。
 ##【action类型转换】
 
-1、在JSP页面上的输入框提交给action时，只要在action中声明同名变量，定义setget方法
+* 1、在JSP页面上的输入框提交给action时，只要在action中声明同名变量，定义setget方法
 	那之后直接使用get方法就能获取到值，封装成对象再setget也是一样可以的但是在JSP上的input的name上要加对象名做前缀
 	还可以批量添加数据，就使用Collection集合 Collection<T> ts;同样的加setget方法，但是在JSP上的多个input的name就要写成这种格式
 		ts[0].name ts[1].name......
 
-2、当struts有些类型无法转换时，就需要自定义转换器
+* 2、当struts有些类型无法转换时，就需要自定义转换器
 	【基于字段】（局部）
 		* 在当前action包下新建 convert.properties 文件名是自定义的
 		* 在该文件中 xwork.default.fieldvalue=无效的字段值 "{0}".
@@ -112,7 +234,7 @@
 		* 在src目录下新建一个xwork-conversion.properties文件
 		* 内容： 待转换的类型=类型转换器的全类名
 			例如：java.util.Date=cn.itcast.convert.DataConverter
-3、result标签名为input的是默认为错误页面的跳转方向
+* 3、result标签名为input的是默认为错误页面的跳转方向
 	在错误页面调出错误信息：<s:fielderror fieldName="createTime"/>
 	【针对每个字段给出提示信息】
 		在converte.properties中添加一行invalid.fieldvalue.createTime=****
@@ -122,9 +244,11 @@
 	* 创建完文件后记得一定要添加到struts.xml文件中去，若没加，也可以在JSP页面中直接使用
 ###【与Servlet解耦】
 struts2 对 HttpServletRequest HttpSession ServletContext进行了封装成了Map对象
-【方法一】:   通过ServletActionContext类直接获取
+* 【方法一】:   通过ServletActionContext类直接获取
 	这个类是action执行的上下文对象，包括了parameter request session application等。
-//分别三个属性的设置request session application
+	
+---
+	//分别三个属性的设置request session application
 	HttpServletRequest request = ServletActionContext.getRequest();
 		request.setAttribute("username", "username_request");
 	Map sessionMap = ServletActionContext.getContext().getSession();
@@ -132,6 +256,7 @@ struts2 对 HttpServletRequest HttpSession ServletContext进行了封装成了Ma
 	ServletContext sc = ServletActionContext.getServletContext();
 		sc.setAttribute("username", "username_application");
 //JSP页面的获取：
+
     ${requestScope.username}<br>
     ${sessionScope.username}<br>
     ${applicationScope.username}<br>
@@ -147,6 +272,7 @@ struts2 对 HttpServletRequest HttpSession ServletContext进行了封装成了Ma
 	< constant name="struts.multipart.maxSize" value="2097152000"></ constant>
 * 【3】错误提示配置
 新建一个properties文件，名字自定义
+---
 	struts.messages.error.uploading=Error uploading: {0}
 	struts.messages.error.file.too.large=File too large: {0} "{1}" "{2}" {3}
 	struts.messages.error.content.type.not.allowed=Content-Type not allowed: {0} "{1}" "{2}" {3}
@@ -171,32 +297,33 @@ struts2 对 HttpServletRequest HttpSession ServletContext进行了封装成了Ma
 	* 设置上传文件的总大小
 			* 在struts.xml文件中，<constant name="struts.multipart.maxSize" value="2097152000"></constant>
 	* 设置上传文件的大小、类型和扩展名：
-			* 在自定义的配置文件中，在action标签下：
-				<!-- 配置拦截器的参数，这里是文件上传拦截器 -->
-				<interceptor-ref name="defaultStack">
-	              	<!-- 
-	              		配置文件上传拦截器的参数
-	              			* 与定义参数的顺序无关
-	              			* 允许的类型(allowedTypes)和允许的扩展名(allowedExtensions)必须保持一致
-	              	 -->
-	              	<!-- 
-	              		* 配置上传文件的大小
-	              			* struts.xml文件中配置的是上传文件的总大小
-	              			* 这里配置的是上传文件的单个大小
-	              	 -->
-	              	<param name="fileUpload.maximumSize">20971520</param>
-	              	<!-- 配置上传文件允许的类型，如果配置多个值的话，用","隔开 -->
-	              	<param name="fileUpload.allowedTypes">text/plain,application/msword</param>
-	              	<!-- 配置上传文件的扩展名，如果配置多个值的话，用","隔开 -->
-	              	<param name="fileUpload.allowedExtensions">.txt</param>
-	            </interceptor-ref>
+		* 在自定义的配置文件中，在action标签下：
+			<!-- 配置拦截器的参数，这里是文件上传拦截器 -->
+			<interceptor-ref name="defaultStack">
+              	<!-- 
+              		配置文件上传拦截器的参数
+              			* 与定义参数的顺序无关
+              			* 允许的类型(allowedTypes)和允许的扩展名(allowedExtensions)必须保持一致
+              	 -->
+              	<!-- 
+              		* 配置上传文件的大小
+              			* struts.xml文件中配置的是上传文件的总大小
+              			* 这里配置的是上传文件的单个大小
+              	 -->
+              	<param name="fileUpload.maximumSize">20971520</param>
+              	<!-- 配置上传文件允许的类型，如果配置多个值的话，用","隔开 -->
+              	<param name="fileUpload.allowedTypes">text/plain,application/msword</param>
+              	<!-- 配置上传文件的扩展名，如果配置多个值的话，用","隔开 -->
+              	<param name="fileUpload.allowedExtensions">.txt</param>
+            </interceptor-ref>
 	* 自定义上传文件的错误提示信息：
-	         	* 在动作类action同目录下，创建一个名为fileuploadmessage.properties资源文件(名为自定义)
-	         	* 改资源文件配置如下：
-`struts.messages.error.uploading=Error uploading: {0}`
-`struts.messages.error.file.too.large=File too large: {0} "{1}" "{2}" {3}`
-`struts.messages.error.content.type.not.allowed=Content-Type not allowed: {0} "{1}" "{2}" {3}`
-`struts.messages.error.file.extension.not.allowed=File extension not allowed: {0} "{1}" "{2}" {3}`
+     	* 在动作类action同目录下，创建一个名为fileuploadmessage.properties资源文件(名为自定义)
+     	* 改资源文件配置如下：
+---
+	struts.messages.error.uploading=Error uploading: {0}
+	struts.messages.error.file.too.large=File too large: {0} "{1}" "{2}" {3}
+	struts.messages.error.content.type.not.allowed=Content-Type not allowed: {0} "{1}" "{2}" {3}
+	struts.messages.error.file.extension.not.allowed=File extension not allowed: {0} "{1}" "{2}" {3}
 		
 		
 * 多文件上传：
@@ -344,6 +471,7 @@ struts2 对 HttpServletRequest HttpSession ServletContext进行了封装成了Ma
 		${sessionScope.username}<br>
 		${applicationScope.username}<br><br><br><br>
 * 使用Ognl表达式取值:  【访问Map集合加#】
+
 ####1.如果访问其他Context中的对象，由于他们不是根对象，所以在访问时，需要添加#前缀。<br>
 		<s:property value="#request.username"/><br>
 		<s:property value="#session.username"/><br>
@@ -352,6 +480,7 @@ struts2 对 HttpServletRequest HttpSession ServletContext进行了封装成了Ma
 		<s:property value="#parameters.cid[0]"/><br>
 		<s:property value="#attr.username"/><br><br>
 			【访问对象栈中对象可不加#】
+
 #### 2.如果要访问根对象（即ValueStack）中对象的属性，则可以省略#命名对象，直接访问该对象的属性即可。<br>
 		<s:property value="msg"/><br><br>
 		深入理解值栈中的 ObjectStack<br>

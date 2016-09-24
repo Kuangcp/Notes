@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+<struts>
+	<package name="pattern" namespace="/pattern"  extends="struts-default">
+		<!-- 全局result 之后的可以不用配置了相当于全局变量，如果之后的action配置了，那就是局部变量覆盖原理-->
+		<!-- <global-result>
+			<result name="success">/pattern/success.jsp</result>
+		</global-result> -->
+		
+		<!-- 框架中默认是运行的execute，如果自定义就更改那个method属性 -->
+		<action name="BookAction" class="com.myth.pattern.BookAction">
+			<result name="success">/pattern/success.jsp</result>
+			<result name="add">/pattern/BookAction.jsp</result>
+		</action>
+		<!-- 
+			通配符的使用，可以匹配任意长字符 
+		-->
+		<!-- <action name="*_add" class="com.myth.pattern.BookAction" method="add">
+			<result name="success">/pattern/success.jsp</result>
+			<result name="add">/pattern/BookAction.jsp</result>
+		</action> -->
+		<!-- 问题出现了，如果没有下面两个action，访问的都会是bookaction没错
+		可是有了上面的通配符的action，下面还能正常运行，这是因为覆盖？ -->
+		<!-- <action name="BookAction_add" class="com.myth.pattern.BookAction" method="add">
+			<result name="success">/pattern/success.jsp</result>
+			<result name="add">/pattern/BookAction.jsp</result>
+		</action>
+		<action name="UserAction_add" class="com.myth.pattern.UserAction" method="add">
+			<result name="success">/pattern/success.jsp</result>
+			<result name="add">/pattern/UserAction.jsp</result>
+		</action> -->
+		<!-- 
+			上面两个可以改写 (1)匹配的是通配符的第一个子串
+		 -->
+		<!-- <action name="*_add" class="com.myth.pattern.{1}" method="add">
+			<result name="success">/pattern/success.jsp</result>
+			<result name="add">/pattern/{1}.jsp</result>
+		</action> -->
+		
+		<!-- <action name="BookAction_add" class="com.myth.pattern.BookAction" method="add">
+			<result name="add">/pattern/BookAction.jsp</result>
+		</action>
+		<action name="BookAction_delete" class="com.myth.pattern.BookAction" method="delete">
+			<result name="success">/pattern/success.jsp</result>
+		</action>
+		<action name="UserAction_add" class="com.myth.pattern.UserAction" method="add">
+			<result name="add">/pattern/UserAction.jsp</result>
+		</action>
+		<action name="UserAction_delete" class="com.myth.pattern.UserAction" method="delete">
+			<result name="success">/pattern/success.jsp</result>
+		</action> -->
+		<!-- 
+			改写： 
+				{1}：通配符 * 的第一个子串
+				{2}：通配符 * 的第二个子串
+				{0}：通配符 * 的整个串
+		-->
+		<action name="*_*" class="com.myth.pattern.{1}" method="{2}">
+			<result name="success">/pattern/success.jsp</result>
+			<result name="add">/pattern/{1}.jsp</result>
+		</action>
+		<!-- 动态方法调用：（默认开启，已经配置关闭了）链接写法：namespace+actionname+！+方法名
+				那么在配置中不用配置method方法，而是由页面的指定的方法名来调用相应的方法
+			<a href="${pageContext.request.contextPath }/pattern/BookAction!add.action">添加图书</a>
+			<a href="${pageContext.request.contextPath }/pattern/BookAction!delete.action">删除图书</a>
+		 -->
+		<!-- <action name="BookAction" class="com.myth.pattern.BookAction">
+			<result name="success">/pattern/success.jsp</result>
+			<result name="add">/pattern/BookAction.jsp</result>
+		</action> -->
+	</package>
+
+</struts>
