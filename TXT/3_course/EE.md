@@ -65,22 +65,40 @@ MVC设计模式：
 	轻量级的容器，一级缓存
 	是非线程安全的对象
 ###OID的作用：
-* 在Hibernate中唯一标识对象的属性
+	 在Hibernate中唯一标识对象的属性
 * assigned：要求用户去手动指定对象的OID；该对象ID的类型可以是任意的
 * native：数据类型是数值型，id的生成策略为数据库底层自增长（数据库自己去决定使用那种方式）
 * sequence：Oracle数据库推荐，数值型（Long）
 * hilo：类型为数值型（long）；应用中推荐使用
 	id = hi+lo (高位和低位进行组合)
 	sessionFactory实例化，高位就会加一，生成算法是：hi*(max lo +1)+lo;
-    `<generator class="hilo" >`
-	`<param name="table">stu_hilo</param><!-- 放高值的表名 最好是一个对象对应于一个高低值的表避免了并发-->`
-	`<param name="cloumn">next_hi</param><!-- 高的值放在表的哪个字段 -->`
-	`<param name="max_lo">100</ param><!-- 每个轮回值的上限是多少 虚拟机启动频繁就设小一些，避免编码的浪费-->`
-`</generator>`
+---
+    <generator class="hilo" >
+	<param name="table">stu_hilo</param>
+	<!-- 放高值的表名 最好是一个对象对应于一个高低值的表避免了并发-->
+	<param name="cloumn">next_hi</param>
+	<!-- 高的值放在表的哪个字段 -->
+	<param name="max_lo">100</ param>
+	<!-- 每个轮回值的上限是多少 虚拟机启动频繁就设小一些，避免编码的浪费-->
+	</generator>
 
 * seqhilo oracle 推荐使用的策略，使用序列来搭配高低机制
 * uuid.hex 32位字符
 * uuid
+
+
+####关联
+
+* 一对多的配置
+>一定要两个都有oid的情况才能配置一对多的映射,不能是依赖于主键类
+>
+
+* 双向的关联，会有SQL的执行来维护关系，影响效率
+* 一方：inverse="true" 就由多方来控制，但是代码要特别注意
+* 
+
+
+
 
 ####特殊的属性
 集合：

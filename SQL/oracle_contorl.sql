@@ -1,3 +1,4 @@
+--关于Oracle的一些配置文件的语句
 create table emp_subquery as
 select employee_id,first_name,salary from employees;
 
@@ -41,16 +42,6 @@ password_life_time 20;
 alter user  userb_exer3 profile pwd_file;
 
 conn hr/hr;
-
-
-
-
-
-
-
-
-
-
 
 
 conn as sysdba

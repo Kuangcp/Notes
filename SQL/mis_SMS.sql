@@ -62,6 +62,17 @@ begin
        set NEW.gpa=(NEW.grade/10-5);
 	end if;
 end
+--
+创建触发器，进行数据格式的转换   java.util.Date 转换为 '1970-00-00' 格式
+create trigger t_checktwo_b_i before insert on mark for each row
+begin 
+	set @flag=(select id from mark where sno=NEW.sno and cno=NEW.cno);
+	if @flag is not null then 
+		insert into mark_error values('23','er','eww');
+  elseif @flag is null then 
+       set NEW.gpa=(NEW.grade/10-5);
+	end if;
+end
 --创建触发器来自动计算绩点,这是错误的，不允许在insert之后来更改new的值，所以应该放在前面
 --drop trigger t_caculatergpa_a_i;
 --create trigger t_caculatergpa_a_i after insert on mark for each row
@@ -143,5 +154,39 @@ select c.cno,cname from obligatory o,course c where o.cno=c.cno and cid='3'
 select * from (select a,b,c from excel ) a ,(select a,d,e from excel) b  where a.a = b.a;
 drop table if exists inserts ;
 create table inserts(id int ,name char(4));
+
+create table temp as ( select distinct col_0.sno,sname ,col_0.grade '编译原理',col_0.credit cr_20002,col_1.grade '单片机',col_1.credit cr_20003,col_2.grade '编译原理',col_2.credit cr_20004 from (select sno,grade,credit from mark,course where course.cno=mark.cno and mark.cno = '20002' and year='2015-2016' and term = 1 ) col_0 ,(select sno,grade,credit from mark,course where course.cno=mark.cno and mark.cno = '20003' and year='2015-2016' and term = 1 ) col_1 ,(select sno,grade,credit from mark,course where course.cno=mark.cno and mark.cno = '20004' and year='2015-2016' and term = 1 ) col_2 ,student s where  col_0.sno=col_1.sno and col_1.sno=col_2.sno and s.sno = col_0.sno and cid = '3' );
+
+----------------------------------------------
+create table course(cno int primary key,name varchar(20),totalClass int,block int,room varchar(20))
+
+create database EEZH;
+create table test (sno int, sname varchar(20));
+
+create table login (users varchar(20),pass varchar(20));
+create table person (id varchar(20),name varchar(20),sex char(4),age int,addr varchar(20),major varchar(20));
+
+
+
+
+
+
+select * from student where sbirth ='1970-01-02';
+update student set sbirth ='1990-03-03' where sbirth ='1970-01-01';
+
+
+
+
+select major,cid,classs from major m,classs c where c.mid=m.mid and m.mid ='I10001'
+
+
+
+select student0_.sno as sno4_, student0_.pass as pass4_, student0_.sname as sname4_, student0_.ssex as ssex4_, student0_.sbirth as sbirth4_, student0_.sid as sid4_, student0_.cid as cid4_, student0_.spolitics as spolitics4_, student0_.saddr as saddr4_, student0_.sinfo as sinfo4_ from student.student student0_
+
+
+
+
+
+
 
 
