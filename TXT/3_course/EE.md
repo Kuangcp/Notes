@@ -7,6 +7,16 @@
 			使用get方法，需要转换成gbk :new String(s.getBytes("ISO-88511-1","gbk");
 			post方法需要转换成UTF-8
 		回应 均使用UTF-8
+####查询数据：
+使用set集合，查询使用contians
+
+
+
+
+
+
+
+
 ##【框架】
 MVC设计模式：
 	* M
