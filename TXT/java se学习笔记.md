@@ -1,3 +1,9 @@
+线程中使用旗帜布尔变量来终止线程
+	加上volatile关键字来声明变量
+ 	join方法是让其他线程等待调用join方法的那个线程结束
+ 互斥和同步：
+ 互斥：synchronized
+同步 wait()  notify() notifyall()
 * 命令行输入set显示系统环境变量。
 * vector 运行效率低一些，主要多线程中用
 * System.gc();调用系统垃圾回收，但不保证一定执行。

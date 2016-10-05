@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50519
 File Encoding         : 65001
 
-Date: 2016-09-19 10:02:51
+Date: 2016-10-04 11:38:07
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -38,7 +38,7 @@ CREATE TABLE `assitant` (
   `mid` varchar(20) NOT NULL DEFAULT '' COMMENT '所属专业',
   `ainfo` varchar(20) DEFAULT NULL COMMENT '备注',
   PRIMARY KEY (`ano`)
-) ENGINE=InnoDB AUTO_INCREMENT=800022 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=800005 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Table structure for classs
@@ -62,14 +62,12 @@ CREATE TABLE `course` (
   `cno` varchar(20) NOT NULL COMMENT '课程编号\nk111',
   `cname` varchar(20) NOT NULL COMMENT '名称',
   `credit` float(4,2) NOT NULL COMMENT '学分',
-  `theoryhour` float(4,2) NOT NULL COMMENT '理论课时',
-  `practicehour` float(4,2) DEFAULT NULL COMMENT '实践课时',
+  `theoryhour` float(4,2) DEFAULT NULL COMMENT '理论课时',
+  `practicehour` float(4,2) DEFAULT NULL COMMENT '实践课时，暂时用来放学期',
   `ctype` varchar(20) NOT NULL COMMENT '课程类型',
-  `cacademy` varchar(20) NOT NULL COMMENT '所属学院',
-  `cinfo` varchar(20) DEFAULT NULL COMMENT '备注',
-  PRIMARY KEY (`cno`),
-  KEY `PK_ACA` (`cacademy`),
-  CONSTRAINT `PK_ACA` FOREIGN KEY (`cacademy`) REFERENCES `academy` (`aid`) ON DELETE CASCADE ON UPDATE CASCADE
+  `cacademy` varchar(20) DEFAULT '' COMMENT '所属学院',
+  `cinfo` varchar(20) DEFAULT NULL COMMENT '备注，暂时用来放学年',
+  PRIMARY KEY (`cno`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- ----------------------------
@@ -141,7 +139,7 @@ CREATE TABLE `mark` (
   KEY `PK_C` (`cno`),
   CONSTRAINT `PK_C` FOREIGN KEY (`cno`) REFERENCES `course` (`cno`) ON DELETE CASCADE ON UPDATE CASCADE,
   CONSTRAINT `PK_SNO` FOREIGN KEY (`sno`) REFERENCES `student` (`sno`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=25 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=1433 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Table structure for obligatory
@@ -152,14 +150,13 @@ CREATE TABLE `obligatory` (
   `term` int(11) NOT NULL COMMENT '学期',
   `cid` varchar(20) NOT NULL COMMENT '班级',
   `cno` varchar(20) NOT NULL COMMENT '课程',
-  `tno` bigint(15) NOT NULL COMMENT '教师',
+  `tno` bigint(15) DEFAULT '0' COMMENT '教师',
   `info` varchar(20) DEFAULT NULL COMMENT '备注',
   KEY `PK_Cn` (`cno`),
   KEY `PK_Ci` (`cid`),
   KEY `PK_tn` (`tno`),
   CONSTRAINT `PK_Ci` FOREIGN KEY (`cid`) REFERENCES `classs` (`cid`) ON DELETE CASCADE ON UPDATE CASCADE,
-  CONSTRAINT `PK_Cn` FOREIGN KEY (`cno`) REFERENCES `course` (`cno`) ON DELETE CASCADE ON UPDATE CASCADE,
-  CONSTRAINT `PK_tn` FOREIGN KEY (`tno`) REFERENCES `teacher` (`tno`) ON DELETE CASCADE ON UPDATE CASCADE
+  CONSTRAINT `PK_Cn` FOREIGN KEY (`cno`) REFERENCES `course` (`cno`) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- ----------------------------
@@ -170,18 +167,17 @@ CREATE TABLE `student` (
   `sno` bigint(15) NOT NULL AUTO_INCREMENT COMMENT '学号',
   `pass` varchar(20) NOT NULL COMMENT '密码',
   `sname` varchar(20) NOT NULL COMMENT '姓名',
-  `ssex` char(4) NOT NULL COMMENT '性别',
-  `sbirth` date NOT NULL COMMENT '出生年月',
-  `sid` varchar(20) NOT NULL DEFAULT '' COMMENT '身份证号',
+  `ssex` char(4) DEFAULT '' COMMENT '性别',
+  `sbirth` date DEFAULT '0000-00-00' COMMENT '出生年月',
+  `sid` varchar(20) DEFAULT '' COMMENT '身份证号',
   `cid` varchar(20) NOT NULL COMMENT '班级',
   `spolitics` varchar(20) DEFAULT NULL COMMENT '政治面貌',
-  `saddr` varchar(50) NOT NULL COMMENT '家庭住址',
+  `saddr` varchar(50) DEFAULT '' COMMENT '家庭住址',
   `sinfo` varchar(20) DEFAULT NULL COMMENT '备注',
   PRIMARY KEY (`sno`),
-  UNIQUE KEY `sid` (`sid`),
   KEY `PK_CC` (`cid`),
   CONSTRAINT `PK_CC` FOREIGN KEY (`cid`) REFERENCES `classs` (`cid`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=2038 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=20160101008 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Table structure for syllabus
@@ -222,7 +218,7 @@ CREATE TABLE `teacher` (
   PRIMARY KEY (`tno`),
   KEY `pk_ac` (`tacademy`),
   CONSTRAINT `pk_ac` FOREIGN KEY (`tacademy`) REFERENCES `academy` (`aid`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=900008 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=900007 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Table structure for temp
