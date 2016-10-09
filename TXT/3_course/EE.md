@@ -131,14 +131,14 @@ MVC设计模式：
 ###### 一对多的配置
 * 注意：一定要两个都有oid的情况才能配置一对多的映射,不能是依赖于另一个主键类
 * 一方：
---- 
+
+---
 	<set name="" [cascade=""]> 
 		<key column="这是外键"></key>
 		<one-to-many class="多方的类"></one-to-many>
 	</set>
 * 多方：
 `<many-to-one name="" class="一方的类" column="外键，key要一致" />`
-
 * 双向的关联，会有update的SQL语句的执行来维护关系，影响效率
 * 多方维护：一方中set标签加inverse="true"一方就不会维护，代码一定要多方执行set**(*)
 * 一方维护：一方代码一定要执行**.add*()
@@ -150,6 +150,7 @@ MVC设计模式：
 `</set>`
 
 2.在一的一方，修改POJO持久类文件，添加一个hashset，用来存储多方，添加setget方法，名字就是配置文件里添加的那个名字 注意修改构造器
+
 3.在多的一方，修改xml文件，置换掉那个外键，换成many-to-one标签，里面写上外键的列
 `<many-to-one name="类中属性名（对象）" class="一方的类路径" column="数据库中列名"></many-to-one>`
 
