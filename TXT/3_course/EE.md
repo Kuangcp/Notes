@@ -30,11 +30,24 @@ MVC设计模式：
 		* spring  模块的整合
 	* V:
 		视图层
-	
-##【Hibernate】
-###环境搭建：
 
-####Hibernate必须JAR：
+*************************************************************************************	
+##【Hibernate】
+####【JDBC 和 Hibernate 比较】
+* JDBC
+>	使用其简洁精悍，最快，但是使用时接收数据以及多方面的比较麻烦
+* Hibernate
+>	单表操作是很便捷的，但是涉及到多表复杂操作时比较麻烦
+
+#####【配置流程】如果后续需要添加表的话，就这个顺序
+  1  先有数据库和表，建立cfg.xml文件配置好数据库的基本参数
+  2  使用工具建立POJO持久类
+  3  导入Hibernate所必需JAR包，最好使用Myeclipse的配置，自己导包总有一堆错误
+  4  使用MyEclipse自动创建hbm.xml文件，还有各种文件。配置好hbm文件里关于表间关系的映射，或者在Myeclipse配置时手动选择
+  5  配置好DAO类中事务开启和关闭，以及各种所必需的配置，若表没有设立主键，那么POJO类需要继承自动生成的抽象类（含有主键）
+  6  调用DAO或者自己的Utils类，通过Hibernate来操作数据库
+
+####Hibernate必须JAR：【Hibernate 3.6】
 		required目录下所有JAR都要导入
 		jpa的JAR包（做注解用）
 		日志包：
@@ -44,10 +57,10 @@ MVC设计模式：
 		数据库驱动包  mysql-connector-java-5.1.7-bin.jar
 	在src同级目录下新建一个lib目录，把JAR包复制进去，然后右击将jar文件  Add to build path 加入到类搜索路径里
 
-###编写POJO持久层对应的对象：
-	使用自己的工具类创建到对应的包下。能用IDE自动创建？
+####编写POJO持久层对应的对象：
+	使用自己的工具类创建到对应的包下，或者能用IDE自动创建生成？
 
-###编写hibernate.cfg.xml文件 一般在src目录下
+####编写hibernate.cfg.xml文件 一般在src目录下
 	数据库连接属性 驱动，url，用户名，密码
 	数据库方言 
 	辅助配置
@@ -56,81 +69,80 @@ MVC设计模式：
 
 	在：project/core/src/main/resources/org/hibernate/下有各种dtd文件，
 		可以为eclipse的xml配置自动提示功能
-####日志文件的配置
-	在etc下复制log4j.properties到src下，就可以了
+####日志文件的配置：
+	在etc下复制log4j.properties到src下，就可以了，本人ssh下复制log4j.xml就可以了
 
-####【工厂类】：SessionFactory
-	重量级容器：消耗大量资源，不能有太多实例
+#####SessionFactory 和 Session 比较：
+* 【SessionFactory】 
+>   重量级容器：消耗大量资源，不能有太多实例,二级缓存
 	通常将该工厂类是单例模式，一个工厂类实例表示一个数据库
 	所以Hibernate一般是不能跨数据库来做事务操作。但是EJB和JPA可以实现
-	这是一个二级缓存，Session是一级缓存
+	>> 这个配置选项：
+	hibernate.hbm2ddl.auto create-drop 在一个数据库中创建，然后使用完关闭实例时就删除所有建立的表
+	hibernate.hbm2ddl.auto create 清除数据库的表及数据，重新创建表
+	hibernate.hbm2ddl.auto update 更改配置文件，能够在数据库进行操作（更新，建立）
+	hibernate.hbm2ddl.auto validate
 
-	这个配置选项：
-	#hibernate.hbm2ddl.auto create-drop 在一个数据库中创建，然后使用完关闭实例时就删除所有建立的表
-	#hibernate.hbm2ddl.auto create 清除数据库的表及数据，重新创建表
-	#hibernate.hbm2ddl.auto update 更改配置文件，能够在数据库进行操作（更新，建立）
-	#hibernate.hbm2ddl.auto validate
-
-###【session】:
-	轻量级的容器，一级缓存
+* 【session】
+>	轻量级的容器，一级缓存
 	是非线程安全的对象
-###OID的作用：
-	 在Hibernate中唯一标识对象的属性
+
+#####OID的作用： 在Hibernate中唯一标识对象的属性，每个实体都是必须要有OID的
+####【id 生成策略】：
 * assigned：要求用户去手动指定对象的OID；该对象ID的类型可以是任意的
 * native：数据类型是数值型，id的生成策略为数据库底层自增长（数据库自己去决定使用那种方式）
 * sequence：Oracle数据库推荐，数值型（Long）
-* hilo：类型为数值型（long）；应用中推荐使用
-	id = hi+lo (高位和低位进行组合)
+* seqhilo oracle :推荐使用的策略，使用序列来搭配高低机制
+* uuid.hex :32位字符
+* uuid:
+* hilo：类型为数值型（long） [实际开发中推荐使用]
+>	id = hi+lo (高位和低位进行组合)
 	sessionFactory实例化，高位就会加一，生成算法是：hi*(max lo +1)+lo;
+    `<generator class="hilo" >`
+	`<param name="table">stu_hilo</param>`
+	`<!-- 放高值的表名 最好是一个对象对应于一个高低值的表避免了并发-->`
+	`<param name="cloumn">next_hi</param>`
+	`<!-- 高的值放在表的哪个字段 -->`
+	`<param name="max_lo">100</ param>`
+	`<!-- 每个轮回值的上限是多少 虚拟机启动频繁就设小一些，避免编码的浪费-->`
+	`</generator>`
+
+####【非普通类型】
+* Set集合：
+
 ---
-    <generator class="hilo" >
-	<param name="table">stu_hilo</param>
-	<!-- 放高值的表名 最好是一个对象对应于一个高低值的表避免了并发-->
-	<param name="cloumn">next_hi</param>
-	<!-- 高的值放在表的哪个字段 -->
-	<param name="max_lo">100</ param>
-	<!-- 每个轮回值的上限是多少 虚拟机启动频繁就设小一些，避免编码的浪费-->
-	</generator>
+	<set name="Nos" table="表">
+		<key column="外码"></key><!-- 外码 是必须的 -->
+		<element column="号码" type="string"/>
+	</set>
+* List集合:
 
-* seqhilo oracle 推荐使用的策略，使用序列来搭配高低机制
-* uuid.hex 32位字符
-* uuid
-
-
-####关联
-
-* 一对多的配置
->一定要两个都有oid的情况才能配置一对多的映射,不能是依赖于主键类
->
-
-* 双向的关联，会有SQL的执行来维护关系，影响效率
-* 一方：inverse="true" 就由多方来控制，但是代码要特别注意
-* 
-
-
-
-
-####特殊的属性
-集合：
-`<set name="Nos" table="电话表">`
-	`<key column="stu_id"></key><!-- 外码 是必须的 -->`
-	`<element column="号码" type="string"/>`
-`</set>`
-查询列：
+---
+	<list>
+			<key></key>
+			<index></index>
+			<element></element>
+	</list>
+* 查询列：
 `<property name="" formula="(select sum() from 选修表 as u where u.id=id)"></property>`
 
-##【JDBC 和 Hibernate 比较】
-JDBC使用其简洁精悍，最快，但是使用时接收数据以及多方面的比较麻烦
-Hibernate单表操作是很便捷的，但是涉及到多表复杂操作时比较麻烦
-##【配置流程】如果后续需要添加表的话，就这个顺序
-  1  先有数据库和表，建立cfg.xml文件配置好数据库的基本参数
-  2  使用工具建立POJO持久类
-  3  导入Hibernate所必需JAR包，最好使用Myeclipse的配置，自己导包总有一堆错误
-  4  使用MyEclipse自动创建hbm.xml文件，还有各种文件。配置好hbm文件里关于表间关系的映射，或者在Myeclipse配置时手动选择
-  5  配置好DAO类中事务开启和关闭，以及各种所必需的配置，若表没有设立主键，那么POJO类需要继承自动生成的抽象类（含有主键）
-  6  调用DAO或者自己的Utils类，通过Hibernate来操作数据库
+****************************************************************
+##【Hibernate关联配置】
+###### 一对多的配置
+* 注意：一定要两个都有oid的情况才能配置一对多的映射,不能是依赖于另一个主键类
+* 一方：
+--- 
+	<set name="" [cascade=""]> 
+		<key column="这是外键"></key>
+		<one-to-many class="多方的类"></one-to-many>
+	</set>
+* 多方：
+`<many-to-one name="" class="一方的类" column="外键，key要一致" />`
 
-##【配置多对一的映射关系】
+* 双向的关联，会有update的SQL语句的执行来维护关系，影响效率
+* 多方维护：一方中set标签加inverse="true"一方就不会维护，代码一定要多方执行set**(*)
+* 一方维护：一方代码一定要执行**.add*()
+
 1.在一的一方，修改xml文件，添加一个set 属性，表示 多方 的一个集合
 `<set name="类中属性名（集合）" inverse="true">`
 	`<key>< column name="数据库列名"/></key>`
@@ -142,6 +154,17 @@ Hibernate单表操作是很便捷的，但是涉及到多表复杂操作时比�
 `<many-to-one name="类中属性名（对象）" class="一方的类路径" column="数据库中列名"></many-to-one>`
 
 4.在多的一方，修改POJO持久类文件，添加一个一方的对象添加setget方法，名字就是配置文件里添加的那个名字  注意修改构造器
+##### 一对一的配置
+* 单向
+	只要配置单向的配置文件添加：
+	`<many-to-one name=""class="映射的类" column="数据库字段" unique="true"></many-to-one>`
+* 多向
+	* 一方 甲：
+	`<many-to-one name="" class="乙方类"column="数据库字段" unique="true"></many-to-one>`
+	* 一方 乙：
+	`<one-to-one name="" class="甲方类" property-ref="甲方配置的标签的name"></one-to-one>`
+
+********************
 ##【使用多对一的技巧】
 ###1.添加记录：
 	1.1.当需要添加一个多方时，一看成课程，多看成成绩。当然的首先得有相关课程，再添加成绩记录。
@@ -155,6 +178,8 @@ Hibernate单表操作是很便捷的，但是涉及到多表复杂操作时比�
 			把一方的set中的要修改的一条，（查找之前需要对象 = session.load(对象.class,主键名)将多方的数据加载进来）
 			注意多方不能有空列必须指定一个默认值（是和构造器有关么？）
 			再查找出来，修改再update，新增也是如此增加多的一方的时候，就是在一方的set中新增一条记录，多方的操作都体现在了一方那里
+
+*******************************************************
 ##【异常】
 ###could not find a getter for ...
 	原因：1 可能真的没写get方法
@@ -172,6 +197,7 @@ Hibernate单表操作是很便捷的，但是涉及到多表复杂操作时比�
 		对应POJO的抽象类，hbm配置文件，以及默认的几个类，HibernateSessionFactory，IBaseHibernateDao，
 		对应的Dao（添加的时候默认是没有使用事务，所以需要手动修改）,添加，删除，都是依据主键的，
 		至少要初始化主键，当然还得满足数据库的要求
+
 ****************************************************************************************************************************************************************
 ##【Mybatis】
 ###xml文件配置：
