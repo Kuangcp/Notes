@@ -1,22 +1,29 @@
-##注意
+###注意
 * 1 、虽然在物理上本地仓库中所有文件是放在一起的，但是分支之间是互不能访问以及操作的
 * 2 、在本地的每次commit都是有index的，上传到github可以不用那么频繁，反正都是有记录的
 * 3、 在github上修改了项目后，或者以后是和别人一起开发，就要先git pull origin （master）将别人的分支和自己的分支都拉下来确保是最新，再进行git push -u origin master 才能正确提交代码，如果不pull，提交是注定失败的，还会扰乱分支图
 * 4、在github上修改文件，容易引起编码的变化，这时候没有pull就修改文件再commit也是会在push的时候很麻烦，最好在本地修改文件
 	最好是，在github上修改了就在本地pull之后再修改文件，万一出错了回退也简单
 * 5、出现了冲突，从而无法自动merge：
----
-	git pull 对方的分支
-	git checkout 自己的分支
-	git merge --no-ff 对方的分支
-	git push （自己的源+分支）origin master
-###【git commit】
+	
+		git pull 对方的分支
+		git checkout 自己的分支
+		git merge --no-ff 对方的分支
+		git push （自己的源+分支）origin master
+
+####【git commit】
 ---
 	git commit 不带命令：进入VI编辑器
 	第一行：用一行文字简述提交的更改内容
 	第二行：空行
 	第三行：记述更改的原因和详细内容
 	使用下面方法关闭退出
+
+####【git remote】
+	* 添加远程关联仓库 git remote add origin URL地址
+	* 修改关联仓库 git remote set-url origin URL地址
+
+**************************************************
 ##【git reset常用方式】
 ###（1）：回滚add操作
 		edit  (1)
