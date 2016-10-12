@@ -186,7 +186,44 @@ MVC设计模式：
 			把一方的set中的要修改的一条，（查找之前需要对象 = session.load(对象.class,主键名)将多方的数据加载进来）
 			注意多方不能有空列必须指定一个默认值（是和构造器有关么？）
 			再查找出来，修改再update，新增也是如此增加多的一方的时候，就是在一方的set中新增一条记录，多方的操作都体现在了一方那里
+*****************************************************
+##多对多映射
 
+* table 是多对多的中间表（存放了一个关系）
+* key中的column一般是填当前配置文件中的id
+* 多对多的配置是需要两个外键的
+* 如果使用了反转并使用了级联，就只会保存实体，但是关系是没有维护的（就是不会插入到第三方表），和一对多一样的（一对多是外键列没有值）。
+* 如果双方都级联了，必须要有一方inverse，不然会有重复维护的错误
+
+####学生方
+---
+	<set name="students" table="student_course">
+		<key column="cid"></key>
+		<many-to-many class="Student" column="stu_id"></many-to-many>
+	</set>
+####课程方
+---
+	<set name="courses" table="student_course">
+		<key column="stu_id"></key>
+		<many-to-many class="Course" column="cid"></many-to-many>
+	</set>
+*****************************************
+##继承 有两种配置，一般使用前者：
+---
+	<!-- 将子类插入到父类的配置文件 需要使用key来关联的-->
+		<joined-subclass name="cn.hibernate.extend.Student" table="extend_student">
+			<key column="id"></key>
+			<property name="sru_id" type="long"></property>
+		</joined-subclass>
+	<!--
+		union是相当于将父类的所有属性复制到子类里，是共享父类的OID，
+		所以父类的OID是不能和子类的OID重复的
+		不然 查询的时候就会报错,
+		所以就需要改父类的主键生成策略是高低值（或者是手动set），可以手动配置高低值的表的生成
+	-->
+		<union-subclass name="cn.hibernate.extend.Student" table="union_student">
+			<property name="sru_id" type="long"></property>
+		</union-subclass>
 *******************************************************
 ##6.【异常】
 ###could not find a getter for ...
