@@ -84,7 +84,8 @@ MVC设计模式：
 #####OID的作用： 在Hibernate中唯一标识对象的属性，每个实体都是必须要有OID的
 ####【id 生成策略】：
 * assigned：要求用户去手动指定对象的OID；该对象ID的类型可以是任意的
-* native：数据类型是数值型，id的生成策略为数据库底层自增长（数据库自己去决定使用那种方式）
+* identity：MySQL的自动生成
+* native：数据类型是数值型，id的生成策略为数据库底层自增长（数据库自己去决定使用哪种方式，MySQL用identity，Oracle用序列等）
 * sequence：Oracle数据库推荐，数值型（Long）
 * seqhilo oracle :推荐使用的策略，使用序列来搭配高低机制
 * uuid.hex :32位字符
