@@ -9,3 +9,5 @@ insert into student values(14,'rt','男',21,'CS');
 insert into course values (46,'大学语文',45,2);
 insert into sc values (12,45,68);
 ----创建基本表
+
+select * from test;
