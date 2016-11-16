@@ -1,4 +1,4 @@
-##1.【JSP/Servlet 】
+## 1.【JSP/Servlet 】
 *	1、JSP页面上的SQL标签以及EL标签是优先于文件头的那些JavaServlet语句运行的，所以要保证非法进入页面时重定向的问题
 *	2、如果想要获取异常来据此返回参数到页面弹窗提示，那么就要对一层层的方法调用，进行查找，所有的try catch 块 都要检查
 		>因为一般我的习惯就是把异常当场就处理了，而要实现这个要求就必须将异常层层上抛！！！！
@@ -11,7 +11,7 @@
 使用set集合，查询使用contians
 
 
-##2.【几大框架简述】
+## 2.【几大框架简述】
 MVC设计模式：
 	* M
 		* hibernarte （相应操作的SQL语句由Hibernate框架生成）
@@ -26,14 +26,14 @@ MVC设计模式：
 		视图层
 
 *************************************************************************************	
-##3.【Hibernate基础配置】
-####【JDBC 和 Hibernate 比较】
+## 3.【Hibernate基础配置】
+#### 【JDBC 和 Hibernate 比较】
 * JDBC
 	*	使用其简洁精悍，最快，但是使用时接收数据以及多方面的比较麻烦
 * Hibernate
 	*	单表操作是很便捷的，但是涉及到多表复杂操作时比较麻烦
 
-#####【配置流程】如果后续需要添加表的话，就这个顺序
+##### 【配置流程】如果后续需要添加表的话，就这个顺序
   1  先有数据库和表，建立cfg.xml文件配置好数据库的基本参数
   2  使用工具建立POJO持久类
   3  导入Hibernate所必需JAR包，最好使用Myeclipse的配置，自己导包总有一堆错误
@@ -41,7 +41,7 @@ MVC设计模式：
   5  配置好DAO类中事务开启和关闭，以及各种所必需的配置，若表没有设立主键，那么POJO类需要继承自动生成的抽象类（含有主键）
   6  调用DAO或者自己的Utils类，通过Hibernate来操作数据库
 
-####Hibernate必须JAR：【Hibernate 3.6】
+#### Hibernate必须JAR：【Hibernate 3.6】
 		required目录下所有JAR都要导入
 		jpa的JAR包（做注解用）
 		日志包：
@@ -51,10 +51,10 @@ MVC设计模式：
 		数据库驱动包  mysql-connector-java-5.1.7-bin.jar
 	在src同级目录下新建一个lib目录，把JAR包复制进去，然后右击将jar文件  Add to build path 加入到类搜索路径里
 
-####编写POJO持久层对应的对象：
+#### 编写POJO持久层对应的对象：
 	使用自己的工具类创建到对应的包下，或者能用IDE自动创建生成？
 
-####编写hibernate.cfg.xml文件 一般在src目录下
+#### 编写hibernate.cfg.xml文件 一般在src目录下
 	数据库连接属性 驱动，url，用户名，密码
 	数据库方言 
 	辅助配置
@@ -63,10 +63,10 @@ MVC设计模式：
 
 	在：project/core/src/main/resources/org/hibernate/下有各种dtd文件，
 		可以为eclipse的xml配置自动提示功能
-####日志文件的配置：
+#### 日志文件的配置：
 	在etc下复制log4j.properties到src下，就可以了，本人ssh下复制log4j.xml就可以了
 
-#####SessionFactory 和 Session 比较：
+##### SessionFactory 和 Session 比较：
 * 【SessionFactory】 
 >   重量级容器：消耗大量资源，不能有太多实例,二级缓存
 	通常将该工厂类是单例模式，一个工厂类实例表示一个数据库
@@ -81,8 +81,10 @@ MVC设计模式：
 >	轻量级的容器，一级缓存
 	是非线程安全的对象
 
-#####OID的作用： 在Hibernate中唯一标识对象的属性，每个实体都是必须要有OID的
-####【id 生成策略】：
+##### OID的作用：
+> 在Hibernate中唯一标识对象的属性，每个实体都是必须要有OID的
+
+#### 【id 生成策略】：
 * assigned：要求用户去手动指定对象的OID；该对象ID的类型可以是任意的
 * identity：MySQL的自动生成
 * native：数据类型是数值型，id的生成策略为数据库底层自增长（数据库自己去决定使用哪种方式，MySQL用identity，Oracle用序列等）
@@ -102,7 +104,7 @@ MVC设计模式：
 	`<!-- 每个轮回值的上限是多少 虚拟机启动频繁就设小一些，避免编码的浪费-->`
 	`</generator>`
 
-####【非普通类型】
+#### 【非普通类型】
 * Set集合：
 
 ---
@@ -122,7 +124,7 @@ MVC设计模式：
 `<property name="" formula="(select sum() from 选修表 as u where u.id=id)"></property>`
 
 ****************************************************************
-##4.【Hibernate对象的关联配置】
+## 4.【Hibernate对象的关联配置】
 ###### 一对多的配置
 * 注意：一定要两个都有oid的情况才能配置一对多的映射,不能是依赖于另一个主键类
 * 一方：
@@ -163,13 +165,13 @@ MVC设计模式：
 * 如果使用了反转并使用了级联，就只会保存实体，但是关系是没有维护的（就是不会插入到第三方表），和一对多一样的（一对多是外键列没有值）。
 * ！！如果双方都级联了，必须要有一方inverse，不然会有重复维护的错误发生
 
-####学生方 配置
+#### 学生方 配置
 ---
 	<set name="students" table="student_course">
 		<key column="cid"></key>
 		<many-to-many class="Student" column="stu_id"></many-to-many>
 	</set>
-####课程方 配置
+#### 课程方 配置
 ---
 	<set name="courses" table="student_course">
 		<key column="stu_id"></key>
@@ -187,14 +189,14 @@ MVC设计模式：
 	`<one-to-one name="" class="甲方类" property-ref="甲方配置的标签的name"></one-to-one>`
 
 ********************
-###5.【使用多对一的技巧】
-###1.添加记录：
+### 5.【使用多对一的技巧】
+### 1.添加记录：
 	1.1.当需要添加一个多方时，一看成课程，多看成成绩。当然的首先得有相关课程，再添加成绩记录。
 	1.2.那就先实例化一个课程对象，配置好信息
 	1.3.实例化多个成绩实例，再 课程对象.get**Set().add(成绩对象); 将成绩对象添加到集合中，
 	1.4.session.save(课程对象)；
 注意：既然实现了这样的操作，那就说明了在实例化成绩的时候，不需要指定课程的值，那就需要添加一个构造器
-###2.删除记录
+### 2.删除记录
 	2.1.如果删除一方，那就会将一删除，如果没有配置级联，就会将多方的外键置空，不会删除多方表
 	2.2.如何通过一方修改多方的一条
 			把一方的set中的要修改的一条，（查找之前需要对象 = session.load(对象.class,主键名)将多方的数据加载进来）
@@ -202,7 +204,7 @@ MVC设计模式：
 			再查找出来，修改再update，新增也是如此增加多的一方的时候，就是在一方的set中新增一条记录，多方的操作都体现在了一方那里
 
 *****************************************
-###【有继承的类的配置】 有两种配置，一般使用前者：
+### 【继承关系的配置】 分两种，一般使用前者：
 ---
 	<!-- 将子类插入到父类的配置文件 需要使用key来关联的-->
 		<joined-subclass name="cn.hibernate.extend.Student" table="extend_student">
@@ -219,13 +221,13 @@ MVC设计模式：
 			<property name="sru_id" type="long"></property>
 		</union-subclass>
 *******************************************************
-##6.【异常】
-###could not find a getter for ...
+## 6.【异常】
+### could not find a getter for ...
 	原因：1 可能真的没写get方法，或者get方法不合规范 setget方法中不允许两个连续大写字母
 		 2 *.hmb.xml文件中的属性名和pojo持久类中属性名不一致（一定不能在表名中添加下划线）
 		 3 方法名写错（基本不可能，都是自动生成的）
 		
-###个人总结：
+### 个人总结：
 	当使用了没有主键的表，使用Myeclipse自动创建配置文件，使用自己的Table2Class来生成POJO持久类，
 	就要继承对应的自动创建的抽象类，因为没有主键的表默认是将所有列看成一个主键，并且还会有添加一个id属性，
 	这样也说明还有一点就是，这种表的字段不能有叫做id的列
@@ -237,7 +239,7 @@ MVC设计模式：
 		对应的Dao（添加的时候默认是没有使用事务，所以需要手动修改）,添加，删除，都是依据主键的，
 		至少要初始化主键，当然还得满足数据库的要求
 
-##7.【对象的状态】
+## 7.【对象的状态】
 
 1. 临时态：刚实例化对象。对象在数据库中不存在，Session中也不存在
 1. 游离态：刚实例化的对象，但是该对象手动指定了OID并且OID在数据库中已经存在，并且是没有绑定Session的（特殊的临时态）
@@ -260,7 +262,7 @@ MVC设计模式：
 	- clear 全部清除   
 	- close
 
-#####注意：
+##### 特别注意：
 * 一个对象（内存）不能存在于多个Session中，一个存，一个改的情况是会错误的
 * 但是数据库中同一条记录可以实例化为多个对象（内存），那么这些对象（内存）放在不同的Session中是可以的
 
@@ -273,19 +275,69 @@ MVC设计模式：
 
 * 懒加载如果Session关闭了或者是对象游离态。就会有懒加载初始化的异常
 
-*****************************************************************************
-##【Mybatis】
-###xml文件配置：
+******************************************************************
+## 【Mybatis】
+### xml文件配置：
 	创建mybatis-config.xml文件
 	创建generatorConfig.xml文件
 
-###导入JAR包：
+### 导入JAR包：
 	核心包
 
-###创建SqlSessionFactory类
+### 创建SqlSessionFactory类
 
 
 ##【Spring】
+### 基本JAR包：
+
+### xml方式和注解方式的比较：
+---
+    <?xml version="1.0" encoding="UTF-8"?>
+    <beans xmlns="http://www.springframework.org/schema/beans"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xmlns:context="http://www.springframework.org/schema/context"
+         xsi:schemaLocation="http://www.springframework.org/schema/beans
+             http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+             http://www.springframework.org/schema/context
+             http://www.springframework.org/schema/context/spring-context-3.0.xsd">
+    </bean>
+---
+### IOC / DI：
+- DI 译为依赖注入 所有的bean都在IOC容器中（单例的）多例的不在该容器中进行管理
+- 通过注入 可以注入基本属性 对象属性，集合属性，构造器，properties等
+- 
+
+### AOP：
+- 方法级别的添加代理，Servlet中的过滤器也类似（但是那个是类级别的）
+- **基本概念：**
+    - JoinPoint  切入面、连接点、切入点（所有方法）
+    - PointCut 切点（特殊的连接点，需要增强的连接点）
+    - Advice 增强（切入点的逻辑，待添加的功能）
+    - Aspect 切面（切点和增强的合集）
+    - Target 目标对象（被增强的实例）
+    - Weave 织入（增强切点的过程）
+    - 代理（增强后的类，一般是使用了代理类） 装饰器模式
+    - 引介（为类添加属性和方法） 用的较少因为破坏了OOP思想
+
+
+---
+<!-- 基本类 提供切点 -->
+	<bean id="student" class="cn.spring.aop.Student"></bean>
+	<!-- 增强部分 -->
+	<bean id="adder" class="cn.spring.aop.NewDeal"></bean>
+	<!-- 使用aop的自动提示也要配置上面的头文件声明 -->
+	<aop:config>
+		<!--aspect表示切面 ref 标明增强方法的类来源 -->
+		<aop:aspect id="myAop" ref="adder">
+			<!-- execution 是表达式（正则一样的功能）匹配的是具体的切点 -->
+			<aop:pointcut expression="execution(* cn.spring.aop.Student.run(..))" id="needAdd"/>
+			<!-- 织入 的过程 将增强和切入点结合 -->
+			<aop:before method="add" pointcut-ref="needAdd"/>
+		</aop:aspect>
+	</aop:config>
+---	
+- 然后在test类中直接实例化基类（提供切点的类）然后运行被修饰的方法，运行结果就是修饰后的
+
 
 
 ##【SpringMVC】
