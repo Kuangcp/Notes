@@ -10,6 +10,15 @@
 		git checkout 自己的分支
 		git merge --no-ff 对方的分支
 		git push （自己的源+分支）origin master
+* **git bash下记住密码 ： **
+    * 新建环境变量 HOME 值：%USERPROFILE%
+    * 在C盘User下你的当前用户目录下新建 _netrc 文本文件：
+        * machine https://github.com/Kuangcp/
+        * login ***
+        * password ***
+
+    * 成功配置，测试便知
+
 
 ####【git commit】
 ---
