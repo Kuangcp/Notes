@@ -1,80 +1,16 @@
-=======================================================
-¡¾ÊÂ¼þ°ó¶¨¡¿
-$('button').click(function(){ 
-
-})
-
-¡¾CSSÐÞ¸Ä¡¿
-µ¥ÊôÐÔ»ñÈ¡£ºcss('Òª»ñÈ¡µÄcssÊôÐÔÃû³Æ');
-µ¥ÊôÐÔÐÞ¸Ä£ºcss('ÒªÐÞ¸ÄµÄÊôÐÔÃû','ÐÞ¸ÄµÄÖµ') css('class','')
-¶àÊôÐÔÐÞ¸Ä£ºcss({ÊôÐÔÃû:'Öµ'£¬ÊôÐÔÃû:'Öµ'}) css({class : '',border : ''})
-¶¯Ì¬CSS: ½«css»»³Éanimate£¬²¢¼ÓÉÏÊ±¼ä£¬¾Í»áÓÐ¸ö¶¯»­±ä¸üÐ§¹û animate({class : ''},500)
-×¢Òâ£º¹ØÓÚCSS¸´ºÏÊôÐÔµÄÐÞ¸Ä£º
-background-color Òª¸ÄÎª backgroundColor ²»ÄÜÓÐ¶Ì¸ÜµÄ³öÏÖ
-===========¿ØÖÆHTMLÊôÐÔ=====================
-.attr('ÊôÐÔÃû','Öµ')
-$('a').attr('href','https://github.com') ÐÞ¸Äa±êÇ©µÄÁ´½Ó
-
-===================Ñ¡ÔñÆ÷==========================
-¡¾»ù´¡Ñ¡ÔñÆ÷¡¿
-> ±íÊ¾Ñ¡ÖÐÖ¸¶¨µÄÔªËØÎ¨Ò»µÄÒ»¼¶×Ó´úÔªËØ
-+ ±íÊ¾Ñ¡ÖÐÖ¸¶¨ÔªËØÆäºó½ôÁÚµÄÎ¨Ò»Ò»¸öÔªËØ
-~ ±íÊ¾Ñ¡ÖÐÖ¸¶¨ÔªËØÆäËùÓÐµÄÔªËØ
-
-¡¾¹ýÂËÑ¡ÔñÆ÷¡¿ Ð´ÔÚÑ¡ÔñÆ÷Àï   ÔÚjqueryÖÐËùÓÐµÄ¹ýÂËÑ¡ÔñÆ÷¶¼ÓÐÒ»¸öÌØµã£¬¶¼ÒÔÃ°ºÅ¿ªÍ·
-:not() ÔÚÖ¸¶¨ÔªËØµÄÄÇ¸öÖÐÅÅ³ýÄ³Ò»¸öÔªËØ»òÄ³Ò»ÀàÔªËØ
-:eq() °´ÕÕÖ¸¶¨µÄË÷ÒýÖµ½øÐÐ¹ýÂË£¬Ë÷ÒýÖµÊÇÊý×éÏÂ±êÊ½
-:gt() ¹ýÂË´óÓÚÖ¸¶¨Ë÷ÒýÖµµÄËùÓÐÔªËØ
-:lt() ¹ýÂËÐ¡ÓÚÖ¸¶¨Ë÷ÒýµÄËùÓÐÔªËØ
-¡¾×¢Òâ¡¿ÎÞÂÛÊÇ´óÓÚÐ¡ÓÚ¶¼ÊÇ²»°üº¬×Ô¼ºµÄ
-
-¡¾É¸Ñ¡Ñ¡ÔñÆ÷¡¿
-É¸Ñ¡Ñ¡ÔñÆ÷ÖÐÓÐÈý¸ö¾ÞÍ·Ñ¡ÔñÆ÷£¬¸¸×ÓÐÖ£»
-¸¸ £º parent£¨£© Ñ¡ÖÐµ±Ç°ÔªËØµÄ¸¸¼¶ÔªËØ
-×Ó £º children£¨£© Ñ¡ÖÐµ±Ç°ÔªËØµÄ×Ó¼¯ÔªËØ£¬À¨ºÅÄÚ¿ÉÒÔ¼Ó²ÎÊý½øÐÐÉ¸Ñ¡
-ÐÖ £º siblings£¨£© Ñ¡ÖÐµ±Ç°ÔªËØËùÓÐµÄÍ¬¼¶ÔªËØ£¬³ýÁË×Ô¼º
-
-ÌØµã£ºËùÓÐµÄÉ¸Ñ¡Ñ¡ÔñÆ÷¶¼ÊÇÒÔÒ»¸öº¯ÊýµÄÐÎÊ½£¬ËùÒÔËû²»»á³öÏÖÔÚÑ¡Ôñ·ûºÅÄÚ²¿
-
-¡¾Àý×Ó¡¿
-	** É¾³ý½Úµã
-	$('#two ul li:eq(2)').remove();
-	//É¾³ýidÎªtwoÏÂµÄul±êÇ©ÏÂµÄµÚÈý¸öli±êÇ©£¬×¢Òâ£¬É¾³ýÁËÔÚËûÖ®ºóµÄ½ÚµãÒÀ´ÎÇ°ÒÆ
-	** Ìæ»»½Úµã
-	$('#two ul li:eq(0)').replaceWith("°à¼¶¿Î±í²éÑ¯");
-	**¸´ÖÆ½Úµã
-	$(this).clone(true).appendTo("ul");
-	//¸´ÖÆµ±Ç°½Úµã£¬×·¼Óµ½ulÖÐÈ¥
+# 1.Oracleæ€§èƒ½ä¼˜åŒ–
+##å†…å­˜è®²è§£
+	ç†è§£è®¡ç®—æœºçš„åŸºæœ¬çŸ¥è¯†
 
 
-// ±íÊ¾Ö»ÓÐµ±Ç°¶ÔÏóµÄ×Ó¼¶ÔªËØclassÊÇcurrentµÄÔªËØ²Å»á±»¸ü¸Ä
-$(this).children('.current').css('background','yellow');
-====================================================================
-¡¾¶¯»­µÄÅÅ¶ÓµÈ´ý¡¿
-jqueryµ±ÖÐµÄ¶¯»­»á×ñÑ­Ò»¸öÅÅ¶Ó»úÖÆ£¬È¡ÏûµÄ»°£¬ÐèÒªÔÚÖ´ÐÐ¶¯»­Ç°ÓÃstopº¯ÊýÀ´Çå¿ÕÅÅ¶Ó
+*******************************************
+# 2.
 
-
-===================JQueryÊéÐ´=====================================
-1¡¢ÒýÈëÎÄ¼þ
-2¡¢ÐÂ½¨script
-	$(document).ready(function() {
-	....
-	}
-¡¾×¢Òâ¡¿
-        JSON¸ñÊ½Ê®·ÖÖØÒª£¬±ØÐëÊÇ{"j":"8"}ÕâÖÖ(ÕâÊÇ±ê×¼¸ñÊ½)£¬±ØÐëÈ«²¿¼ÓÉÏË«ÒýºÅ£¨±»ExtjSº¦²ÒÁË£¬Ò»Ö±ÓÃµÄµ¥ÒýºÅ£¡£¡£¡£¡£©
-	Èç¹ûÒªÊ¹ÓÃ.load()º¯ÊýÀ´¼ÓÔØÒ³Ãæµ½Ä³ÔªËØÀï£¬ÐèÒª×¢ÒâÁ½¸öÒ³ÃæµÄJSÒÔ¼°CSSµÄÖØ¸´ÐÔ
-=====================================
-
-¡¾Èý¸ö°´Å¥ÇÐ»»Òþ²ØÍ¼Æ¬¡¿
-	$('#b2').click(function(){
-		$('#tu').hide(100);
-	});
-	$('#b1').click(function(){
-		$('#tu').show(100);
-	});
-	$('#b3').click(function(){
-		$('#tu').toggle(10000);/*±íÊ¾hideºÍshowµÄÇÐ»»*/
-	});
-
-¡¾¶¯Ì¬CSS¡¿
-	$('ul li').eq(num).animate({left:'0'},200);
+# 3.
+ 
+ 
+## 3.9 å…³é—­æ•°æ®åº“çš„å››ç§æ–¹å¼ï¼š
+- A shutdown abort å¼ºåˆ¶åœåº“ï¼Œå¯åŠ¨éœ€è¦åšæ•°æ®åº“æ¢å¤
+- I shutdown immediate ä¸­æ–­äº‹åŠ¡ï¼Œä¸­æ–­ä¼šè¯ï¼Œå…³é—­æ–‡ä»¶ï¼Œå¯åŠ¨éœ€è¦æ¢å¤äº‹åŠ¡
+- T transactional ä¸­æ–­ä¼šè¯ï¼Œç­‰å¾…äº‹åŠ¡å…³é—­ï¼Œå…³é—­æ–‡ä»¶
+- N normalshutdown ç­‰å¾…ä¼šè¯ï¼Œäº‹åŠ¡å…³é—­ï¼Œå…³é—­æ–‡ä»¶
