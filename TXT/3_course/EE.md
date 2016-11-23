@@ -296,6 +296,15 @@
 *********************************************************
 ## 8.【Spring】
 ### 8.1 基本JAR包：
+- aspectjtools.jar
+- com.springsource.org.aopalliance-1.0.0.jar
+- com.springsource.org.apache.commons.logging-1.1.1.jar
+- spring-aop-3.2.6.RELEASE.jar
+- spring-aspects-3.2.6.RELEASE.jar
+- spring-beans-3.2.6.RELEASE.jar
+- spring-context-3.2.6.RELEASE.jar
+- spring-core-3.2.6.RELEASE.jar
+- spring-expression-3.2.6.RELEASE.jar
 
 ### 8.2 xml方式和注解方式的比较：
 
@@ -318,11 +327,13 @@ XML风格有两个缺点。第一是它不能完全将需求实现的地方封�
 
 在XML风格中能声明开头的两个连接点：
 
-  <aop:pointcut id="propertyAccess"       expression="execution(* get*())"/>  <aop:pointcut id="operationReturningAnAccount"       expression="execution(org.xyz.Account+ *(..))"/>
+  <aop:pointcut id="propertyAccess" expression="execution(* get*())"/>  
+  <aop:pointcut id="operationReturningAnAccount"  expression="execution(org.xyz.Account+ *(..))"/>
 
 但是不能通过组合这些来定义accountPropertyAccess连接点
 
 @AspectJ风格支持其它的实例模型以及更丰富的连接点组合。它具有将将切面保持为一个模块单元的优点。 还有一个优点就是@AspectJ切面能被Spring AOP和AspectJ两者都理解 - 所以如果稍后你认为你需要AspectJ 的能力去实现附加的需求，那么你非常容易转移到基于AspectJ的途径。总而言之，我们更喜欢@AspectJ风格只要你有切面 去做超出简单的“配置”企业服务之外的事情。
+
 #### 8.2.3 混合切面类型
 
 我们完全可以混合使用以下几种风格的切面定义：使用自动代理的@AspectJ 风格的切面，schema-defined <aop:aspect> 的切面，和用 <aop:advisor> 声明的advisor，甚至是使用Spring 1.2风格的代理和拦截器。 由于以上几种风格的切面定义的都使用了相同的底层机制，因此可以很好的共存。
@@ -429,6 +440,7 @@ XML风格有两个缺点。第一是它不能完全将需求实现的地方封�
     - Introduction 引介（为类添加属性和方法） 用的较少因为破坏了OOP思想
 
 
+#### 8.6.2 基本配置
 ---
 <!-- 基本类 提供切点 -->
 	<bean id="student" class="cn.spring.aop.Student"></bean>
@@ -447,12 +459,17 @@ XML风格有两个缺点。第一是它不能完全将需求实现的地方封�
 		</aop:aspect>
 	</aop:config>
 ---	
+
+#### 8.6.3 注意
 - 要注意环绕的写法 public void around(ProceedingJoinPoint m)throws Throwable{
 - [Spring AOP中的around](https://www.oschina.net/code/snippet_246557_9205)
 - 然后在test类中直接getBean（基类）但是实际上是获取到的是装饰好的代理对象
 - [Spring AOP配置(转)](http://blog.csdn.net/yuqinying112/article/details/7335416)
 - [aop:config详解](http://www.cnblogs.com/yangy608/archive/2010/11/14/1876833.html)
+- 善用debug 调试看是否获取到的是代理对象 $proxy
+
 > 在Spring的配置文件中，所有的切面和通知器都必须定义在 <aop:config> 元素内部。 一个application context可以包含多个 <aop:config>。 一个 <aop:config> 可以包含pointcut，advisor和aspect元素（注意它们必须按照这样的顺序进行声明）。 
+
 
 ## 9 【SpringMVC】
 

@@ -10,14 +10,31 @@
 </pre>
 * action没有result，执行的方法没有返回值(void)，方法里写上out.write(JSON); 调用action方就能收到JSON字符串
 * result标签类型默认是转发，要显示说明是重定向
----
-##【struts运行过程】
+
+## 常见问题
+- action是单例还是多例的？
+    - 多例的，可以在构造器中证明
+- struts2有哪三个类重要的类？
+    - ActionContext Action的上下文
+    - ServletActionContext 建立struts2与Servlet的通信基础
+    - ActionInvocation struts2的总的上下文
+- struts2的数据都在值栈中，怎么保证数据的安全性？值栈的生命周期是？
+    - 因为ValueStack在ActionContext中，而ActionContext又是在ThreadLocal中，所以是线程安全的，
+    - 值栈的生命周期是一次请求，当前的action，actionContext，ValueStack 生命周期是一致的
+- 自己写的action是由谁调用的？
+- ActionProxy和拦截器的意义？
+
+----------------------------------
+
+## 1.【struts基本运行过程】
 1.浏览器的各种事件，发起一个URL的请求，
 2.被项目的默认过滤器监听到了，调用对应的action，(需要配置好xml文件的package和action标签）
 3.若action有绑定拦截器，就先执行拦截器里的方法
 4.由action里运行方法（这里是真正的代码处理的地方）的return值来确定等会跳转的结果页面（配置xml文件的result标签）
----
-##【搭建Struts2开发环境】
+
+---------------------------------
+
+## 2.【搭建Struts2开发环境】
 （或者直接使用MyEclipse的快速搭建，struts2.1+Hibernate3.3.2+JSTL1.2.2(本机jdk7.45+tomcat7.08)）
 * 1、找到Struts2应用所需要使用到的JAR包（特别注意不能和Hibernate的JAR包有重复的，不然就报错）
 <pre> Struts2.3.3版本的开发必须JAR包：路径在 f:\Tool\AllJar\SSH\struts23
@@ -39,24 +56,24 @@
 * 4、 编写Struts2的配置文件Struts.xml
 * 5、 在web.xml中加入Struts2 框架启动的过滤器配置（核心过滤器）
 
-###访问Action的URL：
+### 2.1 访问Action的URL：
 	package的namespace加上Action的名字加上后缀
 
-###URL 默认搜索特性 ：
+### 2.2 URL 默认搜索特性 ：
 	/a/b/c/d/df.action
 	/a/df.action
 	*这两个是等价的，上面长的那个同样分解为两部分，前半部分的路径是从d到a
 	依次向上搜索的，直到找到，否则才会报错，所以说，只要根是对的，中间可以乱写，但是会影响性能
 
-###如果没有给Action指定class：
+### 2.3 如果没有给Action指定class：
 	struts.xml继承的struts-default.xml 中配置了一个默认的class，所以说不会报错
 	<default-class-ref name=""/>
 
-###如果找不到Action：
+### 2.4 如果找不到Action：
 	就需要配置默认的Action名称，没有的话，就会报错。有就执行那个了
 	<default-action-ref name=""/>
 
-###URL的后缀名可以自定义（会覆盖原本的配置）
+### 2.5 URL的后缀名可以自定义（会覆盖原本的配置）
 在struts.xml 中配置:
 	（使用多个的话，用逗号分隔）默认是action和空
 	name : 框架自带配置文件 default.properties中常量名
@@ -74,6 +91,7 @@
 	5 web.xml
 	若有相同的常量配置好，后者覆盖前者
 建议在struts.xml中配置
+
 ---
 	<-- 配置URL后缀 默认是action或空-->
 	<constant name="struts.action.extension" value="myth"></constant>
@@ -87,15 +105,16 @@
 			true 开发模式 需要更多的调试信息 会自动将上面两个常量设置为true
 	-->
 	<constant name="struts.devMode" value="true"></constant>
+---
 
 ================================================================
-
 
 自定义使用的 struts.xml 不仅路径，还有名字，方便多人开发
 规范一般是一个action对应于一个xml文件，所以在struts.xml中引入xml文件要：
 `<include file=""></include>` file的路径都是以src为起点，注意把点换成 /
-##【action标签的配置】
-####【关于result的配置】
+
+## 3.【action标签的配置】
+### 3.1 【关于result的配置】
 
 ---
     <struts>
@@ -135,7 +154,7 @@
 	</action>
 	</package> 
 	</struts>
-####【模式匹配】
+### 3.2 【模式匹配】
 ---
 	<struts>
 		<package name="pattern" namespace="/pattern"  extends="struts-default">
@@ -207,42 +226,50 @@
 			</action> -->
 		</package>
 	</struts>
-2.3以上版本使用通配
+**2.3以上版本使用通配**
+
 ---
 	<action name="user_*"  class="userAction" method="{1}">                                  
 	    <result name="success">/WEB-INF/jsp/login.jsp</result>                  
 	    <allowed-methods>login</allowed-methods>                                      
 	</action>
-总结：在struts2.3之前的版本，正常的配置就可以了，但在struts2.3版本之后，使用通配符调用方法时，内部会验证是否允许访问该方法，所以要加上`<allowed-methods>方法名1，方法名2…</allowed-methods>`代码。
-##【action类型转换】
+**总结**：在struts2.3之前的版本，正常的配置就可以了，但在struts2.3版本之后，使用通配符调用方法时，内部会验证是否允许访问该方法，所以要加上`<allowed-methods>方法名1，方法名2…</allowed-methods>`代码。
 
-* 1、在JSP页面上的输入框提交给action时，只要在action中声明同名变量，定义setget方法
-	那之后直接使用get方法就能获取到值，封装成对象再setget也是一样可以的但是在JSP上的input的name上要加对象名做前缀
-	还可以批量添加数据，就使用Collection集合 Collection<T> ts;同样的加setget方法，但是在JSP上的多个input的name就要写成这种格式
-		ts[0].name ts[1].name......
+## 4.【action类型转换】
+
+* 1、从JSP页面上的**输入框提交给action**时，只要在action中声明同名变量，定义setget方法,那之后直接使用get方法就能获取到值。
+    * 封装成对象再setget也是一样可以的但是在JSP上的input的name上要加对象名做前缀。
+    * 还可以批量添加数据，就使用Collection集合 Collection<T> ts;同样的加setget方法，
+    * 但是在JSP上的多个input的name就要写成这种格式**ts[0].name ts[1].name......**
 
 * 2、当struts有些类型无法转换时，就需要自定义转换器
-	【基于字段】（局部）
-		* 在当前action包下新建 convert.properties 文件名是自定义的
-		* 在该文件中 xwork.default.fieldvalue=无效的字段值 "{0}".
-		* 在struts.xml文件加载该资源文件
-			<constant name="struts.custom.i18n.resources" 
-				value="cn.itcast.converter.converter,
-						cn.itcast.i18n.resources">
-		</constant>
-	【基于类】（全局）：
+	* **【基于字段】（局部）**
+	* 在当前action包下新建 convert.properties 文件名是自定义的
+	* 在该文件中 xwork.default.fieldvalue=无效的字段值 "{0}".
+	* 在struts.xml文件加载该资源文件
+    
+    ---
+    		<constant name="struts.custom.i18n.resources" 
+    			value="cn.itcast.converter.converter,
+    					cn.itcast.i18n.resources">
+    	</constant>
+    ---
+
+	* **【基于类】（全局）：**
 		* 在src目录下新建一个xwork-conversion.properties文件
 		* 内容： 待转换的类型=类型转换器的全类名
-			例如：java.util.Date=cn.itcast.convert.DataConverter
+		* 例如：java.util.Date=cn.itcast.convert.DataConverter
 * 3、result标签名为input的是默认为错误页面的跳转方向
 	在错误页面调出错误信息：<s:fielderror fieldName="createTime"/>
-	【针对每个字段给出提示信息】
+	* 【针对每个字段给出提示信息】
 		在converte.properties中添加一行invalid.fieldvalue.createTime=****
 
-【注意】
-	JSP页面中引入struts标签<%@ taglib uri="/struts-tags" prefix="s" %>
-	* 创建完文件后记得一定要添加到struts.xml文件中去，若没加，也可以在JSP页面中直接使用
-###【与Servlet解耦】
+
+####【注意】
+JSP页面中引入struts标签<%@ taglib uri="/struts-tags" prefix="s" %>
+* 创建完文件后记得一定要添加到struts.xml文件中去，若没加，也可以在JSP页面中直接使用
+
+### 4.1【与Servlet解耦】
 struts2 对 HttpServletRequest HttpSession ServletContext进行了封装成了Map对象
 * 【方法一】:   通过ServletActionContext类直接获取
 	这个类是action执行的上下文对象，包括了parameter request session application等。
@@ -255,18 +282,18 @@ struts2 对 HttpServletRequest HttpSession ServletContext进行了封装成了Ma
 		sessionMap.put("username", "username_session");
 	ServletContext sc = ServletActionContext.getServletContext();
 		sc.setAttribute("username", "username_application");
-//JSP页面的获取：
+// JSP页面的获取：
 
     ${requestScope.username}<br>
     ${sessionScope.username}<br>
     ${applicationScope.username}<br>
 
-###【通过实现接口struts2自动注入】
+### 4.2 【通过实现接口struts2自动注入】
 	实现这四个接口：ServletRequestAware，ServletResponseAware，ServletContextAware，SessionAware
 	实例化对象分别是HttpServletRequest，HttpServletResponse，Map，ServletContext
 	重写四个set方法，方法体写上this.** = **;
 
-##【文件上传】
+## 5.【文件上传】
 * 【1】套路一致，但是在配置时，action里一定有input的result才可以
 * 【2】<-- 配置文件上传的总大小 -->
 	< constant name="struts.multipart.maxSize" value="2097152000"></ constant>
@@ -283,7 +310,7 @@ struts2 对 HttpServletRequest HttpSession ServletContext进行了封装成了Ma
 	{3}：上传文件的类型（对于too.large来说是上传文件的大小）
 	加入到struts配置文件中去
 
-###struts2框架的文件上传：
+### 5.1 struts2框架的文件上传：
 * 单文件上传：
 	* 在动作类action中声明相关属性：
 			* 在动作类action中，要声明与页面中表单name属性同名的属性，同名的属性的类型时File类型；
@@ -332,11 +359,13 @@ struts2 对 HttpServletRequest HttpSession ServletContext进行了封装成了Ma
 			* 在页面中，虽然是多文件上传，但是页面中表单的name属性的值必须保持一致；
 			* 在动作类action中声明的相关属性，类型改成数组；
 			* 在业务方法中，相关处理流程改成单文件上传的循环。
-##【文件下载】
+
+## 6. 【文件下载】
  1、下载文件时 压入值栈的名字如果含中文需要转码：fileName = new String(filename.getBytes(),"ISO-8859-1");
 配置文件  filename=${filename}.xls
-##【校验】
-####【struts2手动验证】：
+
+## 7.【校验】
+### 7.1 【struts2手动验证】：
 		也就是说手动的是直接在action里，重写个validate方法就是了 
 		方法里只要按需求写this.addFieldError( key, value);语句就行了，后续的由框架来处理
 	* 首先要从页面中获取对应的标签name属性的值，在动作类action中声明 同名的属性，提供get和set方法
@@ -364,7 +393,8 @@ struts2 对 HttpServletRequest HttpSession ServletContext进行了封装成了Ma
 		* 重写的validate()方法加上要验证的指定的业务方法名(业务方法名的首字母大写)，实现针对某个指定的业务方法进行验证
 			* 为什么要这样进行拼接？因为struts2框架底层拼接，如果不这样写，底层就找不到对应方法名
 	
-####【struts2框架验证(xml方式)】:
+
+### 7.2【struts2框架验证(xml方式)】:
 	* 首先要从页面中获取对应的标签name属性的值，在动作类action中声明同名的属性，提供get和set方法
 	
 	* 创建一个xml格式验证文件：
@@ -384,7 +414,7 @@ struts2 对 HttpServletRequest HttpSession ServletContext进行了封装成了Ma
 		* xml验证文件的命名方式：ActionClassName-ActionName-validation.xml，
 								ActionName对应的是struts.xml文件对应的action标签的name属性的值
 
-##【自定义拦截器】
+## 8.【自定义拦截器】
 * 【拦截器 特性】：
 
 	拦截器一般是和对应的action绑定的，而原生的filter是对URL模式进行拦截的
@@ -395,9 +425,10 @@ struts2 对 HttpServletRequest HttpSession ServletContext进行了封装成了Ma
 	* 检查是否还有拦截器待执行，有就去执行，没有就会得到null，同样的继续执行action
 			String result = invocation.invoke();
 			return result;
-【如何自定义拦截器】
-#####1、 所有的拦截器都需要实现Interceptor接口或者继承Interceptor接口的扩展实现类	
-#####2、要重写init()、intercept()、destroy()方法
+
+### 8.1 【如何自定义拦截器】
+#### 1、 所有的拦截器都需要实现Interceptor接口或者继承Interceptor接口的扩展实现类	
+#### 2、要重写init()、intercept()、destroy()方法
 	
 		* init()是在struts2框架运行时执行，在拦截器的生命周期中只执行一次，可以做必要的内容的初始化工作
 		
@@ -436,10 +467,11 @@ struts2 对 HttpServletRequest HttpSession ServletContext进行了封装成了Ma
 		<default-interceptor-ref name="expessionStack" />
 		
 		后面跟着的就是action的配置了
-	
-##【ognl学习】
 
-###【valueStack】：
+	
+## 9.【ognl学习】
+
+### 9.1【valueStack】：
 	ValueStack实际上是一个接口，在struts2中利用OGNL时，实际上是哦那个的是实现了该接口的OgnlValueStack类，这个类是利用OGNL的基础
 	贯穿整个action生命周期，每个action类的对象都有一个valueStack对象，相当于一个数据的中转站，在其中保存了当前action对象和其他相关对象
 	struts框架把valueStack对象保存在名为 “struts.valueStack”的请求属性中（request中）
@@ -448,7 +480,7 @@ struts2 对 HttpServletRequest HttpSession ServletContext进行了封装成了Ma
 		 vs.set("key","value");//实际上是放在了Map集合里再放在栈里的
 		 vs.getRoot().add(0,new Person());//把person对象压入List集合的0位置（栈顶）
 	
-###【理解OGNL Context】 上下文
+### 9.2 【理解OGNL Context】 上下文
 * OgnlValueStack类包含两个重要的属性：root 和 context 
      * 其中toot本质上是一个List集合
      * Context是一个Map（确切的说是一个OgnlContext对象）
@@ -463,8 +495,9 @@ struts2 对 HttpServletRequest HttpSession ServletContext进行了封装成了Ma
 	}
 </PRE>
 										
+
 			
-##【OGNL表达式】【示例JSP】
+### 9.3 【OGNL表达式】【示例JSP】
 实际操作的不是值栈，而是值栈的属性：Context的上下文（就是一个Map集合）
 * 使用EL表达式取值:
 		${requestScope.username}<br>
@@ -472,7 +505,7 @@ struts2 对 HttpServletRequest HttpSession ServletContext进行了封装成了Ma
 		${applicationScope.username}<br><br><br><br>
 * 使用Ognl表达式取值:  【访问Map集合加#】
 
-####1.如果访问其他Context中的对象，由于他们不是根对象，所以在访问时，需要添加#前缀。<br>
+#### 1.如果访问其他Context中的对象，由于他们不是根对象，所以在访问时，需要添加#前缀。<br>
 		<s:property value="#request.username"/><br>
 		<s:property value="#session.username"/><br>
 		<s:property value="#application.username"/><br><br>
@@ -491,14 +524,14 @@ struts2 对 HttpServletRequest HttpSession ServletContext进行了封装成了Ma
 		<s:property value="salary"/><br><br>
 	
 	
-####用法3:构造Map<br>
+#### 用法3:构造Map<br>
 		<s:radio list="#{'01':'男','02':'女'}"></s:radio><br><br><br><br>
 		%的用法：“%”符号的用途是在标签的属性值被理解为字符串类型时，告诉执行环境%{}里的是OGNL表达式。 <br>
 		<s:property value="#request.username"/><br>
 		<s:property value="%{#request.username}"/>
 		%{}是万能用法，无论里面的表达式是不是ognl表达式，都会强制理解为ognl表达式<br><br>
 		
-####【“$”有两个主要的用途】
+#### 【“$”有两个主要的用途】
 
 	    1 *  用于在国际化资源文件中，引用OGNL表达式<br>
 		<s:text name="ognl" /><br><br>
@@ -512,4 +545,4 @@ struts2 对 HttpServletRequest HttpSession ServletContext进行了封装成了Ma
 		
 	<s:debug></s:debug> 能查看值栈状态
 
-##【OGNL标签】
+### 9.4【OGNL标签】
