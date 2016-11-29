@@ -290,14 +290,115 @@
 ******************************************************
 ## 7 【Mybatis】
 ### 7.1 xml文件配置：
-	创建mybatis-config.xml文件
-	创建generatorConfig.xml文件
+- 创建mybatis-config.xml文件
+    - 该文件是主配置文件，配置了sessionFactory
+- 创建generatorConfig.xml文件
+    - 是各种操作的配置，一个操作对应一个SQL的配置
 
+#### 主配置文件：
+---
+    <?xml version="1.0" encoding="UTF-8" ?>
+    <!DOCTYPE configuration
+    PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-config.dtd">
+
+    <configuration>
+	<!-- 配置别名 为了方便配置操作文件-->  
+    <typeAliases>  
+        <typeAlias type="cn.mybatis.test.Human" alias="Human" />  
+    </typeAliases>  
+       
+    <!-- 配置环境变量 -->  
+	<environments default="development">
+		<environment id="development">
+			<transactionManager type="JDBC"/>
+			<dataSource type="POOLED">
+				<property name="driver" value="com.mysql.jdbc.Driver"/>
+				<property name="url" value="jdbc:mysql://localhost:3306/test?characterEncoding=UTF-8"/>
+				<property name="username" value="root"/>
+				<property name="password" value="123456"/>
+			</dataSource>
+		</environment>
+	</environments>
+    <!-- 配置mappers -->  
+    <mappers>  
+        <mapper resource="cn/mybatis/test/HumanDao.xml" />  
+    </mappers>  
+    </configuration>
+    
+---
+##### 操作配置文件：
+---
+    <?xml version="1.0" encoding="UTF-8" ?>  
+    <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">  
+    <mapper namespace="cn.mybatis.test">  
+    	<!-- 按id查询 -->
+        <select id="queryUsersById" parameterType="Human" resultType="Human">  
+            <!-- useCache="false" -->
+            <![CDATA[ 
+          select * from inserts t where t.id=#{id}
+          ]]>  
+        </select>  
+        <!-- 查询全部 -->
+        <select id="queryUsers" resultType="Human">
+        	select * from inserts
+        </select>
+    	<!-- 插入记录 -->    
+        <insert id="insertUser" parameterType="Human" >
+        <!-- 该字段是必须要在数据库中自增长的
+        	可能会有并发问题
+        	useGeneratedKeys="true" keyProperty="id"
+        	所以用查询方式好点， 写语句就不要考虑主键了
+         -->
+        	<selectKey resultType="int" keyProperty="id">
+        		select LAST_INSERT_ID()
+        	</selectKey>
+        	insert into inserts (name) values(#{name})
+        </insert>
+        <!-- 删除记录 -->
+        <delete id="deleteUser" parameterType="String">
+        	delete from inserts where id=#{id}
+        </delete>
+        <!-- 更新记录 -->
+        <update id="updateUserById" parameterType="Human">
+        	update inserts set name=#{name} where id=#{id}
+        </update>
+    </mapper>  
+
+
+---
 ### 7.2 导入JAR包：
-	核心包
+- **核心包**
+- mybatis-3.4.1.jar 主包
+- dom4j-1.6.1.jar 日志记录
+- log4j-1.2.15.jar
+- slf4j-api-1.5.8.jar
+- slf4j-log4j12.jar
 
 ### 7.3 创建SqlSessionFactory类
-
+---
+    private static SqlSessionFactory sessionFactory;
+	static{
+		try {
+			String resource = "cn/mybatis/test/mybatis-config.xml";
+			InputStream inputStream = Resources.getResourceAsStream(resource);
+			sessionFactory = new SqlSessionFactoryBuilder().build(inputStream);
+		} catch (Exception e) {
+			// TODO: handle exception
+			System.out.println("获取Session失败");
+		}
+	}
+	
+	/**
+	 * 获取Session
+	 * @return
+	 */
+	public static SqlSession getSession(){
+		SqlSession session = null;
+		session = sessionFactory.openSession();
+		return session;
+	}
+---
 
 *********************************************************
 ## 8.【Spring】
@@ -314,35 +415,63 @@
 
 ### 8.2 xml方式和注解方式的比较：
 
-- 当你确定切面是实现一个给定需求的最佳方法时，你如何选择是使用Spring AOP还是AspectJ，以及选择 Aspect语言（代码）风格、@AspectJ声明风格或XML风格？这个决定会受到多个因素的影响，包括应用的需求、 开发工具和小组对AOP的精通程度。
+- 当你确定切面是实现一个给定需求的最佳方法时，你如何选择是使用Spring AOP还是AspectJ，以及选择 Aspect语言（代码）风格、@AspectJ声明风格或XML风格？
+- 这个决定会受到多个因素的影响，包括应用的需求、 开发工具和小组对AOP的精通程度。
 
 #### 8.2.1 Spring AOP还是完全用AspectJ？
 
-做能起作用的最简单的事。Spring AOP比完全使用AspectJ更加简单，因为它不需要引入AspectJ的编译器／织入器到你开发和构建过程中。 如果你仅仅需要在Spring bean上通知执行操作，那么Spring AOP是合适的选择。如果你需要通知domain对象或其它没有在Spring容器中 管理的任意对象，那么你需要使用AspectJ。如果你想通知除了简单的方法执行之外的连接点（如：调用连接点、字段get或set的连接点等等）， 也需要使用AspectJ。
+做能起作用的最简单的事。Spring AOP比完全使用AspectJ更加简单，因为它不需要引入AspectJ的编译器／织入器到你开发和构建过程中。 
+如果你仅仅需要在Spring bean上通知执行操作，那么Spring AOP是合适的选择。如果你需要通知domain对象或其它没有在Spring容器中 
+管理的任意对象，那么你需要使用AspectJ。如果你想通知除了简单的方法执行之外的连接点（如：调用连接点、字段get或set的连接点等等）， 
+也需要使用AspectJ。
 
-当使用AspectJ时，你可以选择使用AspectJ语言（也称为“代码风格”）或@AspectJ注解风格。 如果切面在你的设计中扮演一个很大的角色，并且你能在Eclipse中使用AspectJ Development Tools (AJDT)， 那么首选AspectJ语言 :- 因为该语言专门被设计用来编写切面，所以会更清晰、更简单。如果你没有使用 Eclipse，或者在你的应用中只有很少的切面并没有作为一个主要的角色，你或许应该考虑使用@AspectJ风格 并在你的IDE中附加一个普通的Java编辑器，并且在你的构建脚本中增加切面织入（链接）的段落。
+当使用AspectJ时，你可以选择使用AspectJ语言（也称为“代码风格”）或@AspectJ注解风格。 
+如果切面在你的设计中扮演一个很大的角色，并且你能在Eclipse中使用AspectJ Development Tools (AJDT)， 那么首选AspectJ语言 :- 
+因为该语言专门被设计用来编写切面，所以会更清晰、更简单。如果你没有使用 
+Eclipse，或者在你的应用中只有很少的切面并没有作为一个主要的角色，你或许应该考虑使用@AspectJ风格 
+并在你的IDE中附加一个普通的Java编辑器，并且在你的构建脚本中增加切面织入（链接）的段落。
+
 #### 8.2.2 Spring AOP中使用@AspectJ还是XML？
 
-如果你选择使用Spring AOP，那么你可以选择@AspectJ或者XML风格。总的来说，如果你使用Java 5， 我们建议使用@AspectJ风格。显然如果你不是运行在Java 5上，XML风格是最佳选择。XML和@AspectJ 之间权衡的细节将在下面进行讨论。
+如果你选择使用Spring AOP，那么你可以选择@AspectJ或者XML风格。总的来说，如果你使用Java 5， 我们建议使用@AspectJ风格。
+显然如果你不是运行在Java 5上，XML风格是最佳选择。XML和@AspectJ 之间权衡的细节将在下面进行讨论。
 
-XML风格对现有的Spring用户来说更加习惯。它可以使用在任何Java级别中（参考连接点表达式内部的命名连接点，虽然它也需要Java 5） 并且通过纯粹的POJO来支持。当使用AOP作为工具来配置企业服务时（一个好的例子是当你认为连接点表达式是你的配置中的一部分时， 你可能想单独更改它）XML会是一个很好的选择。对于XML风格，从你的配置中可以清晰的表明在系统中存在那些切面。
+XML风格对现有的Spring用户来说更加习惯。它可以使用在任何Java级别中（参考连接点表达式内部的命名连接点，虽然它也需要Java 5） 
+并且通过纯粹的POJO来支持。当使用AOP作为工具来配置企业服务时（一个好的例子是当你认为连接点表达式是你的配置中的一部分时， 
+你可能想单独更改它）XML会是一个很好的选择。对于XML风格，从你的配置中可以清晰的表明在系统中存在那些切面。
 
-XML风格有两个缺点。第一是它不能完全将需求实现的地方封装到一个位置。DRY原则中说系统中的每一项知识都必须具有单一、无歧义、权威的表示。 当使用XML风格时，如何实现一个需求的知识被分割到支撑类的声明中以及XML配置文件中。当使用@AspectJ风格时就只有一个单独的模块 -切面- 信息被封装了起来。 第二是XML风格同@AspectJ风格所能表达的内容相比有更多的限制：仅仅支持"singleton"切面实例模型，并且不能在XML中组合命名连接点的声明。 例如，在@AspectJ风格中我们可以编写如下的内容：
+XML风格有两个缺点。第一是它不能完全将需求实现的地方封装到一个位置。DRY原则中说系统中的每一项知识都必须具有单一、无歧义、权威的表示。 
+当使用XML风格时，如何实现一个需求的知识被分割到支撑类的声明中以及XML配置文件中。当使用@AspectJ风格时就只有一个单独的模块 -切面- 
+信息被封装了起来。 第二是XML风格同@AspectJ风格所能表达的内容相比有更多的限制：仅仅支持"singleton"切面实例模型，并且不能在XML中组合命名连接点的声
+明。 例如，在@AspectJ风格中我们可以编写如下的内容：
 
-  @Pointcut(execution(* get*()))  public void propertyAccess() {}  @Pointcut(execution(org.xyz.Account+ *(..))  public void operationReturningAnAccount() {}  @Pointcut(propertyAccess() && operationReturningAnAccount())  public void accountPropertyAccess() {}
+---
+    @Pointcut(execution(* get*()))  
+    public void propertyAccess() {} 
+    @Pointcut(execution(org.xyz.Account+ *(..)) 
+    public void operationReturningAnAccount() {}  
+    @Pointcut(propertyAccess() && operationReturningAnAccount())  
+    public void accountPropertyAccess() {}
+---
 
 在XML风格中能声明开头的两个连接点：
 
+---
   <aop:pointcut id="propertyAccess" expression="execution(* get*())"/>  
   <aop:pointcut id="operationReturningAnAccount"  expression="execution(org.xyz.Account+ *(..))"/>
+---
 
 但是不能通过组合这些来定义accountPropertyAccess连接点
 
-@AspectJ风格支持其它的实例模型以及更丰富的连接点组合。它具有将将切面保持为一个模块单元的优点。 还有一个优点就是@AspectJ切面能被Spring AOP和AspectJ两者都理解 - 所以如果稍后你认为你需要AspectJ 的能力去实现附加的需求，那么你非常容易转移到基于AspectJ的途径。总而言之，我们更喜欢@AspectJ风格只要你有切面 去做超出简单的“配置”企业服务之外的事情。
+@AspectJ风格支持其它的实例模型以及更丰富的连接点组合。它具有将将切面保持为一个模块单元的优点。 还有一个优点就是@AspectJ切面能
+被Spring AOP和AspectJ两者都理解 - 所以如果稍后你认为你需要AspectJ 的能力去实现附加的需求，
+那么你非常容易转移到基于AspectJ的途径。总而言之，我们更喜欢@AspectJ风格只要你有切面 去做超出简单的“配置”企业服务之外的事情。
 
 #### 8.2.3 混合切面类型
 
-我们完全可以混合使用以下几种风格的切面定义：使用自动代理的@AspectJ 风格的切面，schema-defined <aop:aspect> 的切面，和用 <aop:advisor> 声明的advisor，甚至是使用Spring 1.2风格的代理和拦截器。 由于以上几种风格的切面定义的都使用了相同的底层机制，因此可以很好的共存。
+我们完全可以混合使用以下几种风格的切面定义：使用自动代理的@AspectJ 风格的切面，schema-defined <aop:aspect> 的切面，
+和用 <aop:advisor> 声明的advisor，甚至是使用Spring 1.2风格的代理和拦截器。
+由于以上几种风格的切面定义的都使用了相同的底层机制，因此可以很好的共存。
 
 
 ### 8.3 注解方式：
@@ -433,17 +562,19 @@ XML风格有两个缺点。第一是它不能完全将需求实现的地方封�
          http://www.springframework.org/schema/aop/spring-aop-3.0.xsd">
          </beans>
 ---
+
 - 方法级别的添加代理，Servlet中的过滤器也类似（但是那个是类级别的）
 
 #### 8.6.1 基本概念
-    - JoinPoint  切入面、连接点、切入点（所有方法）
-    - PointCut 切点（特殊的连接点，需要增强的连接点）
-    - Advice 增强（切入点的逻辑，待添加的功能）
-    - Aspect 切面（切点和增强的合集）
-    - Target 目标对象（被增强的实例）
-    - Weave 织入（增强切点的过程）
-    - Proxy 代理（增强后的类，一般是使用了代理类） 装饰器模式
-    - Introduction 引介（为类添加属性和方法） 用的较少因为破坏了OOP思想
+
+- JoinPoint  切入面、连接点、切入点（所有方法）
+- PointCut 切点（特殊的连接点，需要增强的连接点）
+- Advice 增强（切入点的逻辑，待添加的功能）
+- Aspect 切面（切点和增强的合集）
+- Target 目标对象（被增强的实例）
+- Weave 织入（增强切点的过程）
+- Proxy 代理（增强后的类，一般是使用了代理类） 装饰器模式
+- Introduction 引介（为类添加属性和方法） 用的较少因为破坏了OOP思想
 
 #### 8.6.2 基本配置
 ---
