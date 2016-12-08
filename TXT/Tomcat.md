@@ -99,21 +99,24 @@ context放置进来< Context  docBase="c:/mydsadf"/>
 war包生成1.myeclipse导出到war
 2.目录下文件压缩到zip改扩展名
 
->虚拟目录设置
-con/server。xml
-< host>
+虚拟目录设置
+con/server.xml
+<host>
 <Context path="/abc" docBase="d:/webA"
 
-默认主页
+#### 默认主页
 
->个人web下的web.xml中设置 
+---
+个人web下的web.xml中设置 
 < welcome-file-list>
 < welcome-file>index.html< /welcome-file>
 < /welcome-file-list>
+---
 
-虚拟主机
+#### 虚拟主机
 
->server.xml
+---
+server.xml
 <host name="www.baidu.com" appBase="c:/webA" 
 unpackWARs="true" autoDeploy="true">
 <Valve className="org.apache.catalina.valves.AccessLogValve" directory="logs"
@@ -125,3 +128,4 @@ unpackWARs="true" autoDeploy="true">
 File f=new File("/information.xml");这个写法是错的，空指针异常。
 
 request.getParameter返回字符串，如果表单里面是空的，就返回长度为零的字符串。
+---

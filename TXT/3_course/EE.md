@@ -11,7 +11,27 @@
 
 *  4、查询数据： 使用set集合，查询对象是否存在，使用contians
 *  5、Servlet 是单例多线程的
-
+*  6、**将java转成web**
+    *  经常在eclipse中导入web项目时，出现转不了项目类型的问题，导入后就是一个java项目，有过很多次经历，今天也有同事遇到类似问题，就把这个解决方法记下来吧，免得以后再到处去搜索。  
+    解决步骤：  
+  
+    1、进入项目目录，可看到.project文件，打开。  
+      
+    2、找到<natures>...</natures>代码段。  
+      
+    3、在第2步的代码段中加入如下标签内容并保存： 
+    
+    ---
+    <nature>org.eclipse.wst.common.project.facet.core.nature</nature>  
+    <nature>org.eclipse.wst.common.modulecore.ModuleCoreNature</nature>  
+    <nature>org.eclipse.jem.workbench.JavaEMFNature</nature>  
+    ---
+    
+    4、在eclipse的项目上点右键，刷新项目。  
+      
+    5、在项目上点右键，进入属性（properties）  
+      
+    6、在左侧列表项目中点击选择“Project Facets”，在右侧选择“Dynamic Web Module”和"Java"，点击OK保存即可。
 
 ## 2.【几大框架简述】
 * MVC设计模式：
@@ -193,7 +213,7 @@
 * 单向
 	只要配置单向的配置文件添加：
 	`<many-to-one name=""class="映射的类" column="数据库字段" unique="true"></many-to-one>`
-* 多向
+* 双向
 	* 一方 甲：
 	`<many-to-one name="" class="乙方类"column="数据库字段" unique="true"></many-to-one>`
 	* 一方 乙：
@@ -240,7 +260,7 @@
 		 3 方法名写错（基本不可能，都是自动生成的）
 		
 ### 5.2 个人总结：
-	当使用了没有主键的表，使用Myeclipse自动创建配置文件，使用自己的Table2Class来生成POJO持久类，
+	当使用了没有 主键的表，使用Myeclipse自动创建配置文件，使用自己的Table2Class来生成POJO持久类，
 	就要继承对应的自动创建的抽象类，因为没有主键的表默认是将所有列看成一个主键，并且还会有添加一个id属性，
 	这样也说明还有一点就是，这种表的字段不能有叫做id的列
 
@@ -578,7 +598,7 @@ XML风格有两个缺点。第一是它不能完全将需求实现的地方封�
 
 #### 8.6.2 基本配置
 ---
-<!-- 基本类 提供切点 -->
+    <!-- 基本类 提供切点 -->
 	<bean id="student" class="cn.spring.aop.Student"></bean>
 	<!-- 增强部分 -->
 	<bean id="adder" class="cn.spring.aop.NewDeal"></bean>
@@ -596,7 +616,10 @@ XML风格有两个缺点。第一是它不能完全将需求实现的地方封�
 	</aop:config>
 ---	
 
-#### 8.6.3 注意
+#### 8.6.3 JDBC
+Spring中有封装的关于JDBC操作的类 JDBCSupport 只要传入datasource对象即可
+
+#### 8.6.4 注意
 - 要注意环绕的写法 public void around(ProceedingJoinPoint m)throws Throwable{
 - [Spring AOP中的around](https://www.oschina.net/code/snippet_246557_9205)
 - 然后在test类中直接getBean（基类）但是实际上是获取到的是装饰好的代理对象
@@ -608,9 +631,85 @@ XML风格有两个缺点。第一是它不能完全将需求实现的地方封�
 
 
 ## 9 【SpringMVC】
+- 一般使用注解方式更方便书写
+### 9.1 必要JAR包：
+- Spring的核心JAR包
+- spring-web-3.2.6.RELEASE.jar
+- spring-webmvc-3.2.6.RELEASE.jar
+- spring-webmvc-portlet-3.2.6.RELEASE.jar
+
+### 9.2 实现逻辑
+
+- 核心类是DispatchServlet 由它来接收各种请求
+- 发出request请求，到controller解析器，得到Model和view等的名字
+- 发送到controller执行，返回view名字
+- 发送到视图解析器
+- 执行视图返回到dispatchServlet
+
+### 9.3 controller的配置
+
+- @RequestMapping对方法的配置
+
+#### 9.3.1类型转换（也可以使用Hibernate的convert）
 
 
-## 10 【Hibernate】
+#### Controller层的异常处理（一般处理自定义异常）
 
-## 【Hibernate】
+---
+    处理所有接收到的的异常
+    @ControllerAdvice
+    public class ExceptionHandle{
+    @EXceptionHandler({Exception.class})
+    public ModelAndView dealException(Exception e){
+        ModelAndView view = new ModelAndView("exception";
+        Exception e = new Exception("?");
+        view.addObject("",e.getMessage());
+        return view;
+    }
+---
+
+#### 拦截器机制
+
+---
+    implements HandleInterceptor 有三个方法
+    
+    preHandle 返回true就继续往后，false就被拦截
+    PostHandle 在渲染视图之前，
+    afterCompletion 渲染视图之后调用，释放资源
+    
+    
+    配置文件，需要配置：
+    ？如果这个路径大于springmvc拦截的路径？
+    
+<mvc:interceptors>
+    <mvc:interceptor>
+        <bean class=""></bean>
+        <mvc:mapping path="/**"/>
+    </mvc:interceptor>
+</mvc:interceptor>
+---
+
+#### 上传下载
+jar包：
+common-upload
+common-io
+
+---
+配置文件
+
+---
+
+#### JSON的解析
+第三方的JSON工具包：
+    jsonlib
+    jackson ： 三个包 annotion core databind
+    gson
+
+只要有返回值，加上这个注解就会自动返回JSON格式的数据而不是对象
+@responseBody
+@ReqeustMapping("")
+## 10. SSH和SSM框架的整合
+
+
+## 11 
 
