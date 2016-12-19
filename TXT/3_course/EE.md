@@ -652,6 +652,23 @@ Spring中有封装的关于JDBC操作的类 JDBCSupport 只要传入datasource�
 
 #### 9.3.1类型转换（也可以使用Hibernate的convert）
 
+---
+    <mvc:annotation-driven conversion-service="conversionService" />
+	<!--配置ConversionService -->
+	<bean id="conversionService"
+		class="org.springframework.context.support.ConversionServiceFactoryBean">
+		<property name="converters">
+			<set>
+				<ref bean="DateConverter" />
+			</set>
+		</property>
+	</bean>
+---
+
+
+##### SpringMVC的内置代理
+
+##### Hibernate的covert包
 
 #### Controller层的异常处理（一般处理自定义异常）
 
@@ -662,7 +679,7 @@ Spring中有封装的关于JDBC操作的类 JDBCSupport 只要传入datasource�
     @EXceptionHandler({Exception.class})
     public ModelAndView dealException(Exception e){
         ModelAndView view = new ModelAndView("exception";
-        Exception e = new Exception("?");
+        Exception e = new Exception("错误信息");
         view.addObject("",e.getMessage());
         return view;
     }
@@ -700,14 +717,21 @@ common-io
 ---
 
 #### JSON的解析
-第三方的JSON工具包：
-    jsonlib
-    jackson ： 三个包 annotion core databind
-    gson
+- 第三方的JSON工具包：
+    - jsonlib
+    - jackson ： 三个包 annotion core databind
+    - gson
 
-只要有返回值，加上这个注解就会自动返回JSON格式的数据而不是对象
-@responseBody
-@ReqeustMapping("")
+- 发送JSON
+    - 只要有返回值，方法前加上这个注解就会自动返回JSON格式的数据而不是对象
+    - @responseBody
+    - @ReqeustMapping("")
+- 接收JSON 
+    - 参数前 也加上@equestBody 就可以把JSON数据转成对象
+
+
+
+
 ## 10. SSH和SSM框架的整合
 
 
