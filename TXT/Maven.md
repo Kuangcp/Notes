@@ -20,6 +20,12 @@
 * mvn deploy：将jar包发布到远程仓库
 * mvn eclipse:eclipse ：生成 Eclipse 项目文件
 
+---
+mvn install:install-file -Dfile=D:\mvn\spring-context-support-3.1.0.RELEASE.jar 
+-DgroupId=org.springframework -DartifactId=spring-context-support 
+-Dversion=3.1.0.RELEASE -Dpackaging=jar
+
+---
 ## 2.maven配置
 ### 2.1 eclipse中配置：
 高版本自带maven，需要注意的是eclipse的JRE环境目录要选择jdk下的JRE
@@ -28,69 +34,69 @@
 
 ### 2.3 配置文件的详解
 ---
-   <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-  <!--当前pom的版本号-->
-  <modelVersion>4.0.0</modelVersion>
-
-  <groupId>反写的公司名+项目名</groupId>
-  <artifactId>项目名+模块名</artifactId>
-  <!--
-      第一个 0 是大版本号
-      第二个 0 是分支版本号
-      第三个 0 是小版本号
-      snapshot 快照
-      alpha 内部测试
-      beta 公测
-      Release 稳定
-      GA 正式发布
-  -->
-  <version>0.0.1-SNAPSHOT</version>
-  <!--jar war zip pom-->
-  <packaging>jar</packaging>
-  <!--项目描述名-->
-  <name>test</name>
-  <!--项目地址-->
-  <url>http://maven.apache.org</url>
-  <!--项目描述-->
-  <description></description>
-  <developers></developers>
-  <licenses></licenses>
-  <orgnazation></orgnazation>
-  <!--
-      依赖
-  -->
-  <dependencies>
-    <dependency>
-      <groupId>junit</groupId>
-      <artifactId>junit</artifactId>
-      <version>3.8.1</version>
-      <!--
-         test 表明这个构件只在junit  中可以被引用
-         compile 默认的
-         provided 只在编译中引用
-         runtime 编译和运行都有效
-      -->
-      <scope>test</scope>
-      <!--设置依赖是否可选，默认是false-->
-      <optional></optional>
-      <!--排除依赖传递列表-->
-      <exclusions></exclusions>
-    </dependency>
-  </dependencies>
-  <dependencyManagement>
-  </dependencyManagement>
-  
-  <build>
-   <plugins>
-      构件三要素
-   </plugins>
-  </build>
-  <!--继承-->
-  <parent></parent>
-  <modules>
-      <module></module>
-  </modules>
+     <!--当前pom的版本号-->
+     <modelVersion>4.0.0</modelVersion>
+   
+     <groupId>反写的公司名+项目名</groupId>
+     <artifactId>项目名+模块名</artifactId>
+     <!--
+         第一个 0 是大版本号
+         第二个 0 是分支版本号
+         第三个 0 是小版本号
+         snapshot 快照
+         alpha 内部测试
+         beta 公测
+         Release 稳定
+         GA 正式发布
+     -->
+     <version>0.0.1-SNAPSHOT</version>
+     <!--jar war zip pom-->
+     <packaging>jar</packaging>
+     <!--项目描述名-->
+     <name>test</name>
+     <!--项目地址-->
+     <url>http://maven.apache.org</url>
+     <!--项目描述-->
+     <description></description>
+     <developers></developers>
+     <licenses></licenses>
+     <orgnazation></orgnazation>
+     <!--
+         依赖
+     -->
+     <dependencies>
+       <dependency>
+         <groupId>junit</groupId>
+         <artifactId>junit</artifactId>
+         <version>3.8.1</version>
+         <!--
+            test 表明这个构件只在junit  中可以被引用
+            compile 默认的
+            provided 只在编译中引用
+            runtime 编译和运行都有效
+         -->
+         <scope>test</scope>
+         <!--设置依赖是否可选，默认是false-->
+         <optional></optional>
+         <!--排除依赖传递列表-->
+         <exclusions></exclusions>
+       </dependency>
+     </dependencies>
+     <dependencyManagement>
+     </dependencyManagement>
+     
+     <build>
+      <plugins>
+         构件三要素
+      </plugins>
+     </build>
+     <!--继承-->
+     <parent></parent>
+     <modules>
+         <module></module>
+     </modules>
 ---
 
 #### 2.3.1配置:源码package成JAR包：(pom.xml中配置)
@@ -144,7 +150,7 @@ A 项目 compile
 新建一个项目作为父项目，可以删除Test目录（无用）
 然后在需要引用父项目pom文件的地方加上parent 标签里面写上 父项目的三要素
 
-## 5.使用maven新建Web3.0项目
+## 5.使用maven新建Web3.0项目 [网络maven仓库](http://mvnrepository.com/)
 - 新建maven 选择webapp 然后输入三要素
 - 但是因为模板默认的是web2.3，所以要手动修改成3.0
 - 1. pom文件中添加插件 编译部分
@@ -160,6 +166,73 @@ A 项目 compile
 ---
 - 2.navigator目录模式下 修改相关文件，把2.3改成3.0
 - 3.eclipse中右击改动Facets 然后maven-update一下就可以了
+
+#### 添加web容器
+##### Jetty
+- http://mvnrepository.com/ 里找到想要的版本，加入即可
+
+---
+      <plugin>
+				<groupId>org.mortbay.jetty</groupId>
+				<artifactId>jetty-maven-plugin</artifactId>
+				<version>8.1.16.v20140903</version>
+				<!-- <groupId>org.apache.tomcat.maven</groupId> <artifactId>tomcat6-maven-plugin</artifactId> 
+					<version>2.2</version> -->
+				<executions>
+					<execution>
+						<!-- 在打包成功后使用jetty:run来运行 -->
+						<phase>package</phase>
+						<goals>
+							<goal>run</goal>
+						</goals>
+					</execution>
+				</executions>
+				<configuration>
+					<stopKey>stop</stopKey>
+					<stopPort>9999</stopPort>
+					<scanIntervalSeconds>1</scanIntervalSeconds>
+					<contextXml>${project.basedir}/src/main/resources/jetty-context.xml</contextXml>
+					<webApp>
+						<contextPath>/</contextPath>
+					</webApp>
+					<connectors>
+						<connector implementation="org.eclipse.jetty.server.nio.SelectChannelConnector">
+							<port>80</port>
+							<maxIdleTime>60000</maxIdleTime>
+						</connector>
+					</connectors>
+				</configuration>
+			</plugin>
+
+---
+- 部署成功后，使用jetty:run 即可运行起服务器
+
+##### Tomcat
+- 去Tomcat官网 找到maven plugins进入找到想要的版本即可
+
+---
+      <plugin>
+				<groupId>org.apache.tomcat.maven</groupId>
+				<artifactId>tomcat6-maven-plugin</artifactId>
+				<version>2.2</version>
+				<executions>
+					<execution>
+						<!-- 在打包成功后使用tomcat6:deploy来运行 -->
+						<phase>package</phase>
+						<goals>
+							<goal>run</goal>
+						</goals>
+					</execution>
+				</executions>
+				<configuration>
+					<!-- 注意此处的url -->
+					<url>http://localhost:8080/manager/text</url>
+					<server>tomcat6</server> <!-- 此处的名字必须和setting.xml中配置的ID一致 -->
+					<path>/mavenProject</path> <!-- 此处的名字是项目发布的工程名 -->
+				</configuration>
+			</plugin>
+---
+- 部署完成后 tomcat7:deploy 运行服务器
 
 ### 5.1 加入Servlet的API包:
 ---
