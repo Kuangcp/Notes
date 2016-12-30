@@ -1,12 +1,15 @@
-##安装
-* 下载zip包解压，将bin目录配置至PATH
+##1. 安装
+* 下载zip包解压，将bin目录配置至PATH（最好是配置HOME然后引用）
 * 修改conf下53行的setting标签，指定本地仓库的路径
 * 在eclipse或Myeclipse中add，并采用自己的setting文件
 
-*************************************************************
-##Maven常用命令:
-
+*****
+### 1.1 Maven常用命令:
 * mvn archetype:generate ：创建 Maven 项目
+    * -DgroupId=组织名/公司网址的反写+项目名
+    * -DartifactId=项目名-模块名
+    * -Dversion=版本号
+    * -Dpackage=代码所在的包
 * mvn compile ：编译源代码
 * mvn test-compile ：编译测试代码
 * mvn test ： 运行应用程序中的单元测试
@@ -17,7 +20,159 @@
 * mvn deploy：将jar包发布到远程仓库
 * mvn eclipse:eclipse ：生成 Eclipse 项目文件
 
-Maven和Ant的区别一:
+## 2.maven配置
+### 2.1 eclipse中配置：
+高版本自带maven，需要注意的是eclipse的JRE环境目录要选择jdk下的JRE
+
+### 2.2 配置插件 [插件地址](http://maven.apache.org/plugins/index.html)
+
+### 2.3 配置文件的详解
+---
+   <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <!--当前pom的版本号-->
+  <modelVersion>4.0.0</modelVersion>
+
+  <groupId>反写的公司名+项目名</groupId>
+  <artifactId>项目名+模块名</artifactId>
+  <!--
+      第一个 0 是大版本号
+      第二个 0 是分支版本号
+      第三个 0 是小版本号
+      snapshot 快照
+      alpha 内部测试
+      beta 公测
+      Release 稳定
+      GA 正式发布
+  -->
+  <version>0.0.1-SNAPSHOT</version>
+  <!--jar war zip pom-->
+  <packaging>jar</packaging>
+  <!--项目描述名-->
+  <name>test</name>
+  <!--项目地址-->
+  <url>http://maven.apache.org</url>
+  <!--项目描述-->
+  <description></description>
+  <developers></developers>
+  <licenses></licenses>
+  <orgnazation></orgnazation>
+  <!--
+      依赖
+  -->
+  <dependencies>
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <version>3.8.1</version>
+      <!--
+         test 表明这个构件只在junit  中可以被引用
+         compile 默认的
+         provided 只在编译中引用
+         runtime 编译和运行都有效
+      -->
+      <scope>test</scope>
+      <!--设置依赖是否可选，默认是false-->
+      <optional></optional>
+      <!--排除依赖传递列表-->
+      <exclusions></exclusions>
+    </dependency>
+  </dependencies>
+  <dependencyManagement>
+  </dependencyManagement>
+  
+  <build>
+   <plugins>
+      构件三要素
+   </plugins>
+  </build>
+  <!--继承-->
+  <parent></parent>
+  <modules>
+      <module></module>
+  </modules>
+---
+
+#### 2.3.1配置:源码package成JAR包：(pom.xml中配置)
+---
+      <project>
+
+      ......
+      
+      <build>
+       <plugins>
+         <plugin>
+           <groupId>org.apache.maven.plugins</groupId>
+           <artifactId>maven-source-plugin</artifactId>
+           <version>3.0.1</version>
+           <executions>
+           	<execution>
+           	<phase>package</phase>
+           	<goals>
+           		<goal>jar-no-fork</goal>
+           	</goals>
+           	</execution>
+           </executions>
+         </plugin>
+       </plugins>
+      </build>
+      </project>
+---
+
+## 3. maven概念
+- 坐标：三个标签唯一的标识了项目
+- 仓库：jar包的集合目录
+    - 本地仓库
+    - 远程仓库
+
+## 4.maven的依赖
+### 4.1处理项目间依赖方法
+项目A依赖B
+A项目 pom.xml中配置依赖 （构件三要素）
+B项目 先clean package
+      然后build 的 install
+A 项目 compile
+
+### 4.2依赖冲突
+- 依赖路径短优先
+   - 1 A->B->C->X(jar文件)
+   - 2 A->C->X(jar文件)
+   - 会选择 2 中的X的jar版本
+- 先声明的优先
+
+### 4.3继承
+新建一个项目作为父项目，可以删除Test目录（无用）
+然后在需要引用父项目pom文件的地方加上parent 标签里面写上 父项目的三要素
+
+## 5.使用maven新建Web3.0项目
+- 新建maven 选择webapp 然后输入三要素
+- 但是因为模板默认的是web2.3，所以要手动修改成3.0
+- 1. pom文件中添加插件 编译部分
+---
+      <plugin>
+       <artifactId>maven-compiler-plugin</artifactId>
+       <version>3.0</version>
+       <configuration>
+        <source>1.8</source>
+        <target>1.8</target>
+       </configuration>
+      </plugin>
+---
+- 2.navigator目录模式下 修改相关文件，把2.3改成3.0
+- 3.eclipse中右击改动Facets 然后maven-update一下就可以了
+
+### 5.1 加入Servlet的API包:
+---
+<dependency>
+    <groupId>javax.servlet</groupId>
+    <artifactId>javax.servlet-api</artifactId>
+    <version>3.0.1</version>
+    <scope>provided</scope>
+	</dependency>
+---
+
+
+## Maven和Ant的区别一:
 
 1.ant脚本是可以直接运行在maven中的。maven和ant最大的差别就是在于maven的编译以及所有的脚本都有一个基础，就是POM（project object model）。这个模型定义了项目的方方面面，然后各式各样的脚本在这个模型上工作，而ant完全是自己定义，显然maven更胜一筹。
 
@@ -28,19 +183,13 @@ Maven和Ant的区别一:
 4.maven有大量的重用脚本可以利用，如生成网站，生成javadoc，sourcecode reference，等。而ant都需要自己去写。
 
 5.maven目前不足的地方就是没有象ant那样成熟的GUI界面，不过mavengui正在努力中。目前使用maven最好的方法还是命令行，又快又方便
-2
 
-Maven的优势:
+## Maven的优势:
 
-•协同开发的基本规范，为大家提供方便的协作的模式，能增加代码的复用，提高生产率。
+- 协同开发的基本规范，为大家提供方便的协作的模式，能增加代码的复用，提高生产率。
+- 提供方便，规范化的打包方法，是公司完成自动构建系统的核心部分，能帮助提高敏捷开发的效率(敏捷开发提倡尽早集成)。
+- 减少冗余，减少出错的可能。
+- 中心资源库管理，能减低源码库的大小，中心资源库可以统一定期备份。
+- 目录结构规范，让开发者从一个maven项目过度到另一maven项目很容易。
+- 大量的开源项目使用了maven。     
 
-•提供方便，规范化的打包方法，是公司完成自动构建系统的核心部分，能帮助提高敏捷开发的效率(敏捷开发提倡尽早集成)。
-
-•减少冗余，减少出错的可能。
-
-•中心资源库管理，能减低源码库的大小，中心资源库可以统一定期备份。
-
-• 目录结构规范，让开发者从一个maven项目过度到另一maven项目很容易。
-
-• 大量的开源项目使用了maven。     
-- 欧鹏

@@ -137,6 +137,66 @@ alter system switch logfile;
 'F:\DB\Oracle\Data\Log\REDO01B.log','F:\DB\Oracle\Data\Log\REDO01C.log')size 15m;
 
 ***************************************************
+## 6.表空间和数据文件的管理
+### 6.5 创建本地管理的表空间
+- create tablespace 名字 
+- datafile '' size 50m,'' size 30m 
+- extent management local 
+- uniform size 1m;
+
+#### 查询
+- select tablespace_name,block_size,extent_management,segment_space_management from dba_tablespaces
+- where tablespace_name like 'myth%';
+
+### 6.8 默认临时表空间
+- oracle 是默认的temp表空间
+- 修改： alter database default temporary tablespace myth_temp;
+- **注意**：数据库只有一个默认的临时表空间，要根据实际需要来调整
+
+### 6.9 设置表空间脱机
+- alter tablespace myth offline;
+
+### 6.10 设置只读表空间
+- alter tablespace myth read only ;
+- alter tablespace myth read write; 正常状态
+
+#### 6.11 重置表空间的大小
+- 数据字典管理的表空间：
+    - alter tablespace 名 [minimum extent 2[k|m]] | [default 存储子句]
+- 本地管理的表空间：
+    - 不能更改存储设置，但是可以重置大小：
+    - 改变数据文件的大小
+        - 创建表空间时使用autoextent on 自动改变数据文件的大小
+        - 在创建表空间之后，使用带有autoextent on 选项的alter database 命令手动开启自动扩展功能
+    - 使用alter tablespace 添加数据文件 
+
+****
+- 自动扩展
+    - alter database datafile '' autoextent on next 1m;
+- 手动重置数据文件大小
+    - alter database datafile '' resize 100m;
+- 添加数据文件
+    - alter tablespace myth add datafile '' size 80m;
+
+#### 6.13 移动数据文件的方法
+
+##### 方法一：
+该语句适用于没有活动的还原数据或者是临时段的非系统表空间中的数据文件，使用语句中表空间必须是脱机且目标数据文件必须存在
+- alter tablespace 表空间名 rename datafile ''[,''] to ''[,'']
+    - 1.使用数据字典查询所需信息
+    - 2.将表空间置为脱机
+    - 3.使用命令或操作系统移动或复制数据文件
+    - 4.执行alter tablespace.... 命令
+    - 5.将表空间联机
+    - 6.使用数据字典查询信息
+    - 7.使用操作系统删除无用的文件
+
+##### 方法二：
+该语句适用于系统表空间和不能置为脱机的表空间的数据文件，要求使用该语句时数据库处于mount状态
+- alter database 数据库名 rename file ''[,''] to ''[,'']
+    - 1.使用数据字典查询信息
+    - 2.关闭数据库
+    - 3.使用命令或操作系统移动或复制文件
 
 
 
