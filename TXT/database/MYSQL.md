@@ -1,5 +1,4 @@
 # 1.mysql常用命令集合
-[toc]
 ### 1.1【自增长】
 - 【创建表时设置自增长，并设置起始值】
 - create table cc(id int auto_increment,name varchar(20),primary key(id)) auto_increment=1000;
@@ -62,40 +61,48 @@ show table status like 'assitant' 可以看到当前自动增长的id当前值 d
 ---
 
 **DATETIME、DATE 和 TIMESTAMP 区别：**
-DATETIME 类型可用于需要同时包含日期和时间信息的值。MySQL 以 'YYYY-MM-DD HH:MM:SS' 格式检索与显示 DATETIME 类型。
-支持的范围是 '1000-01-01 00:00:00' 到 '9999-12-31 23:59:59'。(“支持”的含义是，尽管更早的值可能工作，但不能保证他们均可以。)
+- **DATETIME** 类型可用于需要同时包含日期和时间信息的值。MySQL 以 'YYYY-MM-DD HH:MM:SS' 格式检索与显示 DATETIME 类型。
+    - 支持的范围是 '1000-01-01 00:00:00' 到 '9999-12-31 23:59:59'。
+    - (“支持”的含义是，尽管更早的值可能工作，但不能保证他们均可以。)
+- **DATE** 类型可用于需要一个日期值而不需要时间部分时。MySQL 以 'YYYY-MM-DD' 格式检索与显示 DATE 值。
+    - 支持的范围是 '1000-01-01' 到 '9999-12-31'。
 
-DATE 类型可用于需要一个日期值而不需要时间部分时。MySQL 以 'YYYY-MM-DD' 格式检索与显示 DATE 值。支持的范围是 '1000-01-01' 到 '9999-12-31'。
+- **TIMESTAMP** 列类型提供了一种类型，通过它你可以以当前操作的日期和时间自动地标记 Insert 或Update 操作。
+    - 如果一张表中有多个 TIMESTAMP 列，只有第一个被自动更新。
 
-TIMESTAMP 列类型提供了一种类型，通过它你可以以当前操作的日期和时间自动地标记 Insert 或Update 操作。如果一张表中有多个 TIMESTAMP 列，只有第一个被自动更新。
 
-“完整”TIMESTAMP格式是14位，但TIMESTAMP列也可以用更短的显示尺寸创造
+>“完整”TIMESTAMP格式是14位，但TIMESTAMP列也可以用更短的显示尺寸创造
 最常见的显示尺寸是6、8、12、和14。
-你可以在创建表时指定一个任意的显示尺寸，但是定义列长为0或比14大均会被强制定义为列长14。
+你可以在创建表时指定一个任意的显示尺寸，但是定义列长为0或比14大均会被强制定义为列长14
 列长在从1～13范围的奇数值尺寸均被强制为下一个更大的偶数。
 
-列如：
+>列如：
 定义字段长度 强制字段长度
 TIMESTAMP(0) -> TIMESTAMP(14)
 TIMESTAMP(15)-> TIMESTAMP(14)
 TIMESTAMP(1) -> TIMESTAMP(2)
 TIMESTAMP(5) -> TIMESTAMP(6)
 
-所有的TIMESTAMP列都有同样的存储大小，
+>所有的TIMESTAMP列都有同样的存储大小，
 使用被指定的时期时间值的完整精度（14位）存储合法的值不考虑显示尺寸。
 不合法的日期，将会被强制为0存储
-自动更新第一个 TIMESTAMP 列在下列任何条件下发生：
 
-列值没有明确地在一个 Insert 或 LOAD DATA INFILE 语句中被指定。
-列值没有明确地在一个 Update 语句中被指定，并且其它的一些列值已发生改变。(注意，当一个 Update 设置一个列值为它原有值时，这将不会引起 TIMESTAMP 列的更新，因为，如果你设置一个列值为它当前值时，MySQL 为了效率为忽略更新。)
-明确地以 NULL 设置 TIMESTAMP 列。
-第一个列以外其它 TIMESTAMP 列，可以设置到当前的日期和时间，只要将该列赋值 NULL 或 NOW()。
 
-任何 TIMESTAMP 列均可以被设置一个不同于当前操作日期与时间的值，这通过为该列明确指定一个你所期望的值来实现。这也适用于第一个 TIMESTAMP 列。这个选择性是很有用的，举例来说，当你希望 TIMESTAMP 列保存该记录行被新添加时的当前的日期和时间，但该值不再发生改变，无论以后是否对该记录行进行过更新：
+ **自动更新第一个 TIMESTAMP 列在下列任何条件下发生：**
 
-当该记录行被建立时，让 MySQL 设置该列值。这将初始化该列为当前日期和时间。
+- 列值没有明确地在一个 Insert 或 LOAD DATA INFILE 语句中被指定。
+
+- 列值没有明确地在一个 Update 语句中被指定，并且其它的一些列值已发生改变。(注意，当一个 Update 设置一个列值为它原有值时，这将不会引起 TIMESTAMP 列的更新，因为，如果你设置一个列值为它当前值时，MySQL 为了效率为忽略更新。)
+
+- 明确地以 NULL 设置 TIMESTAMP 列。
+- 第一个列以外其它 TIMESTAMP 列，可以设置到当前的日期和时间，只要将该列赋值 NULL 或 NOW()。
+
+- 任何 TIMESTAMP 列均可以被设置一个不同于当前操作日期与时间的值，这通过为该列明确指定一个你所期望的值来实现。这也适用于第一个 TIMESTAMP 列。这个选择性是很有用的，举例来说，当你希望 TIMESTAMP 列保存该记录行被新添加时的当前的日期和时间，但该值不再发生改变，无论以后是否对该记录行进行过更新：
+
+- 当该记录行被建立时，让 MySQL 设置该列值。这将初始化该列为当前日期和时间。
 以后当你对该记录行的其它列执行更新时，为 TIMESTAMP 列值明确地指定为它原来的值。
-另一方面，你可能发现更容易的方法，使用 DATETIME 列，当新建记录行时以 NOW() 初始化该列，以后在对该记录行进行更新时不再处理它。
+
+- 另一方面，你可能发现更容易的方法，使用 DATETIME 列，当新建记录行时以 NOW() 初始化该列，以后在对该记录行进行更新时不再处理它。
 
 #### 1.9 【插入外码】
 > alter table `Bookinfo` add constraint `F_N` foreign key `F_N`(`classno`) references `Bookclass`(`classno`) on delete cascade on update cascade;
