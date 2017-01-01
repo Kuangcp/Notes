@@ -1,5 +1,5 @@
 # 1.mysql常用命令集合
-
+[toc]
 ### 1.1【自增长】
 - 【创建表时设置自增长，并设置起始值】
 - create table cc(id int auto_increment,name varchar(20),primary key(id)) auto_increment=1000;
@@ -60,9 +60,10 @@ show table status like 'assitant' 可以看到当前自动增长的id当前值 d
       -- 上面报错原因不明，大意是只能有一个timestamp的列有默认值
       
 ---
-区别：
-DATETIME、DATE 和 TIMESTAMP 类型是相似的。本篇描述了它们的特性以及它们的相似点与不同点。
-DATETIME 类型可用于需要同时包含日期和时间信息的值。MySQL 以 'YYYY-MM-DD HH:MM:SS' 格式检索与显示 DATETIME 类型。支持的范围是 '1000-01-01 00:00:00' 到 '9999-12-31 23:59:59'。(“支持”的含义是，尽管更早的值可能工作，但不能保证他们均可以。)
+
+**DATETIME、DATE 和 TIMESTAMP 区别：**
+DATETIME 类型可用于需要同时包含日期和时间信息的值。MySQL 以 'YYYY-MM-DD HH:MM:SS' 格式检索与显示 DATETIME 类型。
+支持的范围是 '1000-01-01 00:00:00' 到 '9999-12-31 23:59:59'。(“支持”的含义是，尽管更早的值可能工作，但不能保证他们均可以。)
 
 DATE 类型可用于需要一个日期值而不需要时间部分时。MySQL 以 'YYYY-MM-DD' 格式检索与显示 DATE 值。支持的范围是 '1000-01-01' 到 '9999-12-31'。
 
