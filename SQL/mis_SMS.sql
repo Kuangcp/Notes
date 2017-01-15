@@ -149,7 +149,7 @@ select * from excel a left join excel b on a.a=b.a;
 select c.cno,cname from obligatory o,course c where o.cno=c.cno and cid='3'
 
 --貌似左外连接只能用基本表，视图或虚表是不可用的
-(select a,b from excel) f left join (select b,c from excel) g on f.b=g.b
+错误：(select a,b from excel) f left join (select b,c from excel) g on f.b=g.b
 --
 select * from (select a,b,c from excel ) a ,(select a,d,e from excel) b  where a.a = b.a;
 drop table if exists inserts ;

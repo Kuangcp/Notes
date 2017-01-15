@@ -170,6 +170,8 @@ A 项目 compile
 #### 添加web容器
 ##### Jetty
 - http://mvnrepository.com/ 里找到想要的版本，加入即可
+特别注意 NIO的原因，静态文件在服务器启动的时候不能更改，需要找到maven仓库下的org/eclipse/jettyjetty-webapp/ 
+下的jar包中的default配置文件，把useFileBuffer标签的 true 改成false
 
 ---
       <plugin>

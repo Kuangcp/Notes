@@ -1,13 +1,13 @@
 # 1.mysql常用命令集合
 ### 1.1【自增长】
 - 【创建表时设置自增长，并设置起始值】
-- create table cc(id int auto_increment,name varchar(20),primary key(id)) auto_increment=1000;
+    - create table cc(id int auto_increment,name varchar(20),primary key(id)) auto_increment=1000;
 - 【设置已有字段自增长】 
-- alter table test MODIFY id INT UNSIGNED AUTO_INCREMENT;
+    - alter table test MODIFY id INT UNSIGNED AUTO_INCREMENT;
 - 【自增长的修改】  
-- alter table test auto_increment=10； 注意只能改的比当前的值大，不可以改的比当前小
+    - alter table test auto_increment=10； 注意只能改的比当前的值大，不可以改的比当前小
 - 【自增长字段溢出】
-- 设置自动增长的列，只能是int类型（包含了各种int），当出现了溢出就可以改成bigint 但是如果有外键约束，可能就会更改失败，还不如删库重建，实在太大了就删约束再建约束
+    - 设置自动增长的列，只能是int类型（包含了各种int），当出现了溢出就可以改成bigint 但是如果有外键约束，可能就会更改失败，还不如删库重建，实在太大了就删约束再建约束
 
 ### 1.2【主键约束的修改】
 alter table 表名  add constraint (PK_表名) primary key (j,k,l); 关于一些约束条件constraint好像没有起到作用比如 check
@@ -21,6 +21,8 @@ create table temp as select * from test;
 show processlist  如果是普通用户，只能查看自己当前的连接状态
 #### 1.7【查看表的状态】
 show table status like 'assitant' 可以看到当前自动增长的id当前值 dev.mysql.com/downloads/mysql/#downloads
+
+*****
 #### 1.8【关于时间 】
 ##### 1.8.1【常用函数】
 - NOW()函数以 'YYYY-MM-DD HH:MM:SS' 返回当前的日期时间，可以直接存到DATETIME    字   段中。
