@@ -195,6 +195,7 @@ A 项目 compile
 					<scanIntervalSeconds>1</scanIntervalSeconds>
 					<contextXml>${project.basedir}/src/main/resources/jetty-context.xml</contextXml>
 					<webApp>
+					<!--这里配置主机后的目录，现在表示根目录，最好加上项目名例如： /Project -->
 						<contextPath>/</contextPath>
 					</webApp>
 					<connectors>
