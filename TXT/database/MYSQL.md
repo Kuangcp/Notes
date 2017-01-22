@@ -1,7 +1,7 @@
 # 1.mysql常用命令集合
 ### 1.1【自增长】
 - 【创建表时设置自增长，并设置起始值】
-    - create table cc(id int auto_increment,name varchar(20),primary key(id)) auto_increment=1000;
+    - create table cc( id int auto_increment,name varchar(20),primary key(id) ) auto_increment=1000;
 - 【设置已有字段自增长】 
     - alter table test MODIFY id INT UNSIGNED AUTO_INCREMENT;
 - 【自增长的修改】  
@@ -25,9 +25,9 @@ show table status like 'assitant' 可以看到当前自动增长的id当前值 d
 *****
 #### 1.8【关于时间 】
 ##### 1.8.1【常用函数】
-- NOW()函数以 'YYYY-MM-DD HH:MM:SS' 返回当前的日期时间，可以直接存到DATETIME    字   段中。
-- CURDATE()以’YYYY-MM-DD’的格式返回今天的日期，可以直接存到DATE字段中。
-- CURTIME()以’HH:MM:SS’的格式返回当前的时间，可以直接存到TIME字段中。
+- **NOW()**函数以 'YYYY-MM-DD HH:MM:SS' 返回当前的日期时间，可以直接存到**DATETIME**字段中。
+- **CURDATE()**以’YYYY-MM-DD’的格式返回今天的日期，可以直接存到**DATE**字段中。
+- **CURTIME()**以’HH:MM:SS’的格式返回当前的时间，可以直接存到**TIME**字段中。
 - 例：insert into tablename (fieldname) values (now())
 - insert into data values ('Myth','4','2016-03-10',curtime());//年月日，时间
 - select datediff(curdate(), date_sub(curdate(), interval i month)); 
@@ -180,6 +180,15 @@ TIMESTAMP(5) -> TIMESTAMP(6)
       select hello('Myth ');
       drop function hello;
 ---
+
+create function fun_test(var1 int,var2 varchar(16)) returns int
+begin 
+   declare temp int;
+   select count(*) into temp from test;
+   return temp;
+end;
+
+select fun_test(8,'d');
 
 ## 7.【异常】
 

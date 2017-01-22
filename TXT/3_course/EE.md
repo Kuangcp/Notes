@@ -395,7 +395,7 @@
 - slf4j-api-1.5.8.jar
 - slf4j-log4j12.jar
 
-### 7.3 创建SqlSessionFactory类
+### 7.3 创建SqlSessionFactory类 内容：
 ---
     private static SqlSessionFactory sessionFactory;
 	static{
@@ -419,7 +419,32 @@
 		return session;
 	}
 ---
+### 7.4 流程控制
 
+#### foreach 循环语句
+---
+	<foreach collection="param_list 自定义的话就是Map中的key，或者使用 @Param("")来指定 " item="params" index="currentIndex 当前索引"  separator="循环分隔符" open="在循环前加上字符" close="循环结束后加上字符">
+		${params}
+	</foreach>
+---
+##### collection 有 arry list map 几种 还有item是必写，其他的是可选的
+#### if 判断语句
+<if test=""></if>
+#### set 方便书写update语句
+<set>
+<if test="col!=null">col=#{col},</if>
+</set>
+会自动去除多余的逗号，书写要写逗号
+#### choose 相当于switch语句
+<choose>
+	<when test=""></when>
+</choose>
+- $ 会有SQL注入的漏洞，#则没有
+- 使用$ 是SQLString的拼接，使用#是preparstatement的预处理然后注入
+- 使用#的时候出现这个问题
+2017-01-22 11:16:11.046 [main] DEBUG myth.book.getAll_Param_BookType - ==>  Preparing: select * from book_type where ? and ? and 1=1; 
+2017-01-22 11:16:11.136 [main] DEBUG myth.book.getAll_Param_BookType - ==> Parameters:  book_type<10 (String),  'father_type='2 (String)
+- 条件不能使用数值？？？？？，如果拆开呢
 *********************************************************
 ## 8.【Spring】
 ### 8.1 基本JAR包：
