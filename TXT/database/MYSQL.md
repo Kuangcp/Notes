@@ -28,15 +28,13 @@ show table status like 'assitant' 可以看到当前自动增长的id当前值 d
 - **NOW()**函数以 'YYYY-MM-DD HH:MM:SS' 返回当前的日期时间，可以直接存到**DATETIME**字段中。
 - **CURDATE()**以’YYYY-MM-DD’的格式返回今天的日期，可以直接存到**DATE**字段中。
 - **CURTIME()**以’HH:MM:SS’的格式返回当前的时间，可以直接存到**TIME**字段中。
-- 例：insert into tablename (fieldname) values (now())
-- insert into data values ('Myth','4','2016-03-10',curtime());//年月日，时间
-- select datediff(curdate(), date_sub(curdate(), interval i month)); 
-
+   - 例：insert into tablename (fieldname) values (now())
+   - insert into data values ('Myth','4','2016-03-10',curtime());//年月日，时间
+   - select datediff(curdate(), date_sub(curdate(), interval i month)); 
+- 一般函数是不能作为 default默认值的，使用只能在插入修改数据时使用
 ##### 1.8.2【获取当前时间与i个月之间的天数 】
 - 问题：假设当前是5月19 且（提前月份）i=1 就是计算从4月19到今天的天数
     - 解答：
-
-
 
 ---
       -- 时间格式的简单操作：
