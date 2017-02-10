@@ -6,33 +6,36 @@
 
 
 *	3、中文乱码问题：
-		**接收**使用get方法，需要转换成gbk :newString(s.getBytes("ISO-88511-1","gbk");
-			post方法需要转换成UTF-8
-		**回应** 均使用UTF-8
+	- **接收**
+		- 使用get方法，需要转换成gbk :`newString(s.getBytes("ISO-88511-1","gbk");`
+		- post方法需要转换成UTF-8
+	- **回应** 均使用UTF-8
 
 *  4、查询数据： 使用set集合，查询对象是否存在，使用contians
 *  5、Servlet 是单例多线程的
-*  6、**将java转成web**
+*  6、**eclipse中将java项目转成web项目**
     *  经常在eclipse中导入web项目时，出现转不了项目类型的问题，导入后就是一个java项目，有过很多次经历，今天也有同事遇到类似问题，就把这个解决方法记下来吧，免得以后再到处去搜索。  
-    解决步骤：  
+    **解决步骤**：  
   
-    1、进入项目目录，可看到.project文件，打开。  
-      
-    2、找到<natures>...</natures>代码段。  
-      
-    3、在第2步的代码段中加入如下标签内容并保存： 
+-  1、进入项目目录，可看到.project文件，打开。  
+   
+-  2、找到`<natures>...</natures>`代码段。  
+   
+-  3、在第2步的代码段中加入如下标签内容并保存： 
     
-    ---
+---
+
     <nature>org.eclipse.wst.common.project.facet.core.nature</nature>  
     <nature>org.eclipse.wst.common.modulecore.ModuleCoreNature</nature>  
     <nature>org.eclipse.jem.workbench.JavaEMFNature</nature>  
-    ---
+
+---
     
-    4、在eclipse的项目上点右键，刷新项目。  
-      
-    5、在项目上点右键，进入属性（properties）  
-      
-    6、在左侧列表项目中点击选择“Project Facets”，在右侧选择“Dynamic Web Module”和"Java"，点击OK保存即可。
+- 4、在eclipse的项目上点右键，刷新项目。  
+   
+- 5、在项目上点右键，进入属性（properties）  
+   
+- 6、在左侧列表项目中点击选择“Project Facets”，在右侧选择“Dynamic Web Module”和"Java"，点击OK保存即可。
 
 ## 2.【几大框架简述】
 * MVC设计模式：
@@ -48,7 +51,7 @@
 	* V:
 		视图层
 
-* **再度理解**Dao service模式的概念
+- **再度理解** Dao service模式的概念
     * dao : 基础单笔业务的功能模块
     * service : 将单个的dao组合一起，得到复杂的业务逻辑
     * 如果要实现AOP或者规范化，dao和service分别要有接口的存在（为了多态，代理，严谨）
@@ -63,35 +66,34 @@
 	*	单表操作是很便捷的，但是涉及到多表复杂操作时比较麻烦
 
 #### 3.1.1【配置流程】如果后续需要添加表的话，就这个顺序
-  1  先有数据库和表，建立cfg.xml文件配置好数据库的基本参数
-  2  使用工具建立POJO持久类
-  3  导入Hibernate所必需JAR包，最好使用Myeclipse的配置，自己导包总有一堆错误
-  4  使用MyEclipse自动创建hbm.xml文件，还有各种文件。配置好hbm文件里关于表间关系的映射，或者在Myeclipse配置时手动选择
-  5  配置好DAO类中事务开启和关闭，以及各种所必需的配置，若表没有设立主键，那么POJO类需要继承自动生成的抽象类（含有主键）
-  6  调用DAO或者自己的Utils类，通过Hibernate来操作数据库
+- **1 :**  先有数据库和表，建立cfg.xml文件配置好数据库的基本参数
+- **2 :**  使用工具建立POJO持久类
+- **3 :**  导入Hibernate所必需JAR包，最好使用Myeclipse的配置，自己导包总有一堆错误
+- **4 :**  使用MyEclipse自动创建hbm.xml文件，还有各种文件。配置好hbm文件里关于表间关系的映射，或者在Myeclipse配置时手动选择
+- **5 :**  配置好DAO类中事务开启和关闭，以及各种所必需的配置，若表没有设立主键，那么POJO类需要继承自动生成的抽象类（含有主键）
+- **6 :**  调用DAO或者自己的Utils类，通过Hibernate来操作数据库
 
 ### 3.2 Hibernate必须JAR：【Hibernate 3.6】
-		required目录下所有JAR都要导入
-		jpa的JAR包（做注解用）
-		日志包：
-			slf4j-api-* .jar	该包是一个日志接口，需要一个JAR包的实现：
-			slf4j-log4j12.jar	该包是转换的JAR包
-			log4j-1.2.11.jar	实现的JAR包
-		数据库驱动包  mysql-connector-java-5.1.7-bin.jar
-	在src同级目录下新建一个lib目录，把JAR包复制进去，然后右击将jar文件  Add to build path 加入到类搜索路径里
+- required目录下所有JAR都要导入
+- jpa的JAR包（做注解用）
+- 日志包：
+	- slf4j-api-* .jar	该包是一个日志接口，需要一个JAR包的实现：
+	- slf4j-log4j12.jar	该包是转换的JAR包
+	- log4j-1.2.11.jar	实现的JAR包
+- 数据库驱动包  mysql-connector-java-5.1.7-bin.jar
+- 在src同级目录下新建一个lib目录，把JAR包复制进去，然后右击将jar文件  Add to build path 加入到类搜索路径里
 
-### 3.3 编写POJO持久层对应的对象：
-	使用自己的工具类创建到对应的包下，或者能用IDE自动创建生成？
+### 3.3 编写数据库表对应框架持久层的对象：
+- 使用自己的工具类创建到对应的包下，或者用相关工具生成，类型要自己多加注意
 
 ### 3.4 编写hibernate.cfg.xml文件 一般在src目录下
-	数据库连接属性 驱动，url，用户名，密码
-	数据库方言 
-	辅助配置
-	POJO类配置文件的映射
-	etc/hibernate.properties里可以看到更多配置，数据库连接池，SQL优化等
-
-	在：project/core/src/main/resources/org/hibernate/下有各种dtd文件，
-		可以为eclipse的xml配置自动提示功能
+- 数据库连接属性 驱动，url，用户名，密码
+- 数据库方言 
+- 辅助配置
+- POJO类配置文件的映射
+- etc/hibernate.properties里可以看到更多配置，数据库连接池，SQL优化等
+- 在：project/core/src/main/resources/org/hibernate/下有各种dtd文件，
+	- 可以为eclipse的xml配置自动提示功能
 ### 3.5日志文件的配置：
 	在etc下复制log4j.properties到src下，就可以了，本人ssh下复制log4j.xml就可以了
 
@@ -141,6 +143,8 @@
 		<key column="外码"></key><!-- 外码 是必须的 -->
 		<element column="号码" type="string"/>
 	</set>
+
+---
 * List集合:
 
 ---
@@ -149,6 +153,8 @@
 			<index></index>
 			<element></element>
 	</list>
+
+---
 * 查询列 属性：
 `<property name="" formula="(select sum() from 选修表 as u where u.id=id)"></property>`
 
@@ -163,28 +169,31 @@
 		<key column="这是外键"></key>
 		<one-to-many class="多方的类"></one-to-many>
 	</set>
+
+---
 * 多方：
 `<many-to-one name="" class="一方的类" column="外键，key要一致" />`
 * 双向的关联，会有update的SQL语句的执行来维护关系，影响效率
 * 多方维护：一方中set标签加inverse="true"一方就不会维护，代码一定要多方执行set**(*)
 * 一方维护：一方代码一定要执行**.add*()
 
-1.在一的一方，修改xml文件，添加一个set 属性，表示 多方 的一个集合
+####  **注意 ：**
+- 1.在一的一方，修改xml文件，添加一个set 属性，表示 多方 的一个集合
 `<set name="类中属性名（集合）" inverse="true">`
 	`<key>< column name="数据库列名"/></key>`
 	`<one-to-many class="多方类路径"/>`
 `</set>`
 
-2.在一的一方，修改POJO持久类文件，添加一个hashset，用来存储多方，添加setget方法，名字就是配置文件里添加的那个名字 注意修改构造器
+- 2.在一的一方，修改POJO持久类文件，添加一个hashset，用来存储多方，添加setget方法，名字就是配置文件里添加的那个名字 注意修改构造器
 
-3.在多的一方，修改xml文件，置换掉那个外键，换成many-to-one标签，里面写上外键的列
+- 3.在多的一方，修改xml文件，置换掉那个外键，换成many-to-one标签，里面写上外键的列
 `<many-to-one name="类中属性名（对象）" class="一方的类路径" column="数据库中列名"></many-to-one>`
 
-4.在多的一方，修改POJO持久类文件，添加一个一方的对象添加setget方法，名字就是配置文件里添加的那个名字  注意修改构造器
-* 一方的set集合中有inverse属性，多方是没有的，Hibernate中inverse是和外键对应的，一方配置了inverse是false，一方就不会维护关系（外键），一般是给多方维护，因为效率高
-* cascade是对象和对象之间的操作，和外键没有关系
-* 处于持久化状态的对象在Session中，客户端不需要做Session的save/update 操作，Hibernate会自动的去检查处于持久化的对象的状态的属性是否发生改变，改变了就发送update语句。
-	* 如果该对象是一方，在一的一方映射文件中有cascade=all时，Hibernate内部还会检查该持久化对象关联的集合，对此集合进行update操作，但是该操作和外键没有关系，只有当通过多方建立关系后，才能使外键有值。
+- 4.在多的一方，修改POJO持久类文件，添加一个一方的对象添加setget方法，名字就是配置文件里添加的那个名字  注意修改构造器
+	* 一方的set集合中有inverse属性，多方是没有的，Hibernate中inverse是和外键对应的，一方配置了inverse是false，一方就不会维护关系（外键），一般是给多方维护，因为效率高
+	* cascade是对象和对象之间的操作，和外键没有关系
+	* 处于持久化状态的对象在Session中，客户端不需要做Session的save/update 操作，Hibernate会自动的去检查处于持久化的对象的状态的属性是否发生改变，改变了就发送update语句。
+		* 如果该对象是一方，在一的一方映射文件中有cascade=all时，Hibernate内部还会检查该持久化对象关联的集合，对此集合进行update操作，但是该操作和外键没有关系，只有当通过多方建立关系后，才能使外键有值。
 	
 
 ### 4.2【多对多的配置】
@@ -203,13 +212,20 @@
 		<key column="cid"></key>
 		<many-to-many class="Student" column="stu_id"></many-to-many>
 	</set>
+
+---
 #### 4.2.2 课程方 配置
+
 ---
 	<set name="courses" table="student_course">
 		<key column="stu_id"></key>
 		<many-to-many class="Course" column="cid"></many-to-many>
 	</set>
-*************************************************************************
+
+---
+
+***********************************
+
 ### 4.3 【一对一的配置】
 * 单向
 	只要配置单向的配置文件添加：
@@ -283,17 +299,17 @@
 	* 持久态delete后就成了删除态
 
 #### 4.7.1 Session的方法。
-	- save
-	- update
-	- delete 
-	- saveOrUpdate 由入参的OID来自动选择是要save还是update
-	- merge 形参：临时态的对象。形参和Session没有任何关系，返回对象Object2（持久化对象），所以在Session关闭的时候Object2的更改会同步到数据库中
-	- get 将数据库中指定对象获取为持久态，查不到就是返回null
-	- load 懒加载。使用代理对象，延迟加载。用到了别的属性就去查数据库。查不到就抛异常
-	- flush 刷新Session
-	- evict 定点清除 将指定的对象从Session中移除，变成游离态
-	- clear 全部清除   
-	- close
+- save
+- update
+- delete 
+- saveOrUpdate 由入参的OID来自动选择是要save还是update
+- merge 形参：临时态的对象。形参和Session没有任何关系，返回对象Object2（持久化对象），所以在Session关闭的时候Object2的更改会同步到数据库中
+- get 将数据库中指定对象获取为持久态，查不到就是返回null
+- load 懒加载。使用代理对象，延迟加载。用到了别的属性就去查数据库。查不到就抛异常
+- flush 刷新Session
+- evict 定点清除 将指定的对象从Session中移除，变成游离态
+- clear 全部清除   
+- close
 
 #### 4.7.2 特别注意：
 * 一个对象（内存）不能存在于多个Session中，一个存，一个改的情况是会错误的
@@ -419,6 +435,7 @@
 		session = sessionFactory.openSession();
 		return session;
 	}
+
 ---
 
 #### maven Spring-mybaits 配置
@@ -453,7 +470,7 @@
     
 ---
 
-##### SessionFactory类，使用Spring注入一个工厂类，然后使用本地线程组，节省Session开销
+#####  **SessionFactory类，使用Spring注入一个工厂类，然后使用本地线程组，节省Session开销**
 
 ---
 
@@ -505,20 +522,22 @@
 	<foreach collection="param_list 自定义的话就是Map中的key，或者使用 @Param("")来指定 " item="params" index="currentIndex 当前索引"  separator="循环分隔符" open="在循环前加上字符" close="循环结束后加上字符">
 		${params}
 	</foreach>
+
 ---
 ##### collection 有 arry list map 几种 还有item是必写，其他的是可选的
-#### if 判断语句
-<if test=""></if>
+#### if 判断语句:
+- `<if test=""></if>`
+
 #### set 方便书写update语句
-<set>
-<if test="col!=null">col=#{col},</if>
-</set>
-会自动去除多余的逗号，书写要写逗号
+- `<set><if test="col!=null">col=#{col},</if></set>`
+
+> mybatis会自动去除多余的逗号，但是每一行书写要写逗号
+
 #### choose 相当于switch语句
-<choose>
-	<when test=""></when>
-</choose>
-- $ 会有SQL注入的漏洞，#则没有
+- `<choose><when test=""></when></choose>`
+
+#### $和#的区别：
+- \$ 会有SQL注入的漏洞，#则没有
 - 使用$ 是SQL进行String的拼接，使用#是preparstatement的预处理然后注入
 - 使用#的时候出现这个问题
 2017-01-22 11:16:11.046 [main] DEBUG myth.book.getAll_Param_BookType - ==>  Preparing: select * from book_type where ? and ? and 1=1; 
@@ -548,7 +567,7 @@
       <properties>
        <spring.version>4.1.7.RELEASE</spring.version>
       </properties>
-     .....
+      .....
       <!-- 核心 -->
        <dependency>
          <groupId>org.springframework</groupId>
@@ -616,6 +635,7 @@
 
 ---
     ApplicationContext context = WebApplicationContextUtils.getWebApplicationContext(config.getServletContext());
+
 ---
 
 ### 8.3 注解方式：
@@ -634,6 +654,7 @@
         <!-- 对使用了注解的包进行扫描 -->
 	    <context:component-scan base-package="cn.spring.aop"></context:component-scan>
     </beans>
+
 ---
 >**【注意】**只需要这个配置文件就可以使用注解来使用Spring框架
 
@@ -649,39 +670,40 @@
 - 只用到bean的头，主要配置内容：`<bean><property></property></bean>`
 
 ---
-    <!-- 一般而言，bean都是单实例的 -->
-	<bean id="person" class="cn.spring.entity.Person">	
-		<property name="name" value="myth"/>
-		<property name="addr" value="vol"/>
-	</bean>
-<!-- ********************************************* -->
-	<bean id="construct" class="cn.spring.entity.ConstructorEntity">
-	<!-- 如果是不同的类型的参数 顺序可以随意，但是数据类型一样的话就要严格按顺序了-->
-		<constructor-arg type="java.lang.String" value="String_1"></constructor-arg>
-		<!-- 注意引用类型是要写全路径，基本数据类型是可以直接写小写 -->
-		<constructor-arg type="int" value="2"></constructor-arg>
-		<!-- <constructor-arg type="java.lang.String" value="String_2"></constructor-arg> -->
-	</bean>
-	<bean id="TestConstruct" class="cn.spring.entity.TestConstruct">
-		<property name="entity" ref="construct"></property>
-	</bean>
-<!-- ********************************************* -->
-	<!-- 加载属性文件 -->
-	<bean id="property_config" class="org.springframework.beans.factory.config.PreferencesPlaceholderConfigurer">
-		<property name="locations">
-			<list>
-				<value>cn/spring/entity/db.properties</value>
-			</list>
-		</property>
-	</bean>
-	<!-- 测试获取属性文件 -->
-	<bean id="show_db" class="cn.spring.entity.TestProperties">
-		<!-- 特别注意大小写问题 -->
-		<property name="driver" value="${driver}"/>
-		<property name="username" value="${username}"/>
-		<property name="password" value="${password}"/>
-		<property name="url" value="${url}"/>
-	</bean>
+       <!-- 一般而言，bean都是单实例的 -->
+   	<bean id="person" class="cn.spring.entity.Person">	
+   		<property name="name" value="myth"/>
+   		<property name="addr" value="vol"/>
+   	</bean>
+   	
+   	<bean id="construct" class="cn.spring.entity.ConstructorEntity">
+   	<!-- 如果是不同的类型的参数 顺序可以随意，但是数据类型一样的话就要严格按顺序了-->
+   		<constructor-arg type="java.lang.String" value="String_1"></constructor-arg>
+   		<!-- 注意引用类型是要写全路径，基本数据类型是可以直接写小写 -->
+   		<constructor-arg type="int" value="2"></constructor-arg>
+   		<!-- <constructor-arg type="java.lang.String" value="String_2"></constructor-arg> -->
+   	</bean>
+   	<bean id="TestConstruct" class="cn.spring.entity.TestConstruct">
+   		<property name="entity" ref="construct"></property>
+   	</bean>
+   	
+   	<!-- 加载属性文件 -->
+   	<bean id="property_config" class="org.springframework.beans.factory.config.PreferencesPlaceholderConfigurer">
+   		<property name="locations">
+   			<list>
+   				<value>cn/spring/entity/db.properties</value>
+   			</list>
+   		</property>
+   	</bean>
+   	<!-- 测试获取属性文件 -->
+   	<bean id="show_db" class="cn.spring.entity.TestProperties">
+   		<!-- 特别注意大小写问题 -->
+   		<property name="driver" value="${driver}"/>
+   		<property name="username" value="${username}"/>
+   		<property name="password" value="${password}"/>
+   		<property name="url" value="${url}"/>
+   	</bean>
+
 ---
 
 ### 8.5 IOC / DI：控制反转
@@ -708,6 +730,7 @@
          http://www.springframework.org/schema/aop
          http://www.springframework.org/schema/aop/spring-aop-3.0.xsd">
          </beans>
+
 ---
 
 - 方法级别的添加代理，Servlet中的过滤器也类似（但是那个是类级别的）
@@ -741,6 +764,7 @@
 			<aop:around method="around" pointcut-ref="needAdd"/>
 		</aop:aspect>
 	</aop:config>
+
 ---	
 
 #### 8.6.3 JDBC
@@ -759,18 +783,19 @@ Spring中有封装的关于JDBC操作的类 JDBCSupport 只要传入datasource�
 ### 8.7 Spring-Websocket 配置
 
 ##### maven配置jar环境
+
 ---
 
-   <dependency>
-      <groupId>org.springframework</groupId>
-      <artifactId>spring-websocket</artifactId>
-      <version>${spring.version}</version>
-    </dependency>
-    <dependency>
-      <groupId>org.springframework</groupId>
-      <artifactId>spring-messaging</artifactId>
-      <version>${spring.version}</version>
-    </dependency>
+      <dependency>
+         <groupId>org.springframework</groupId>
+         <artifactId>spring-websocket</artifactId>
+         <version>${spring.version}</version>
+       </dependency>
+       <dependency>
+         <groupId>org.springframework</groupId>
+         <artifactId>spring-messaging</artifactId>
+         <version>${spring.version}</version>
+       </dependency>
     
 ---
 
@@ -813,19 +838,21 @@ XML风格有两个缺点。第一是它不能完全将需求实现的地方封�
 明。 例如，在@AspectJ风格中我们可以编写如下的内容：
 
 ---
-    @Pointcut(execution(* get*()))  
-    public void propertyAccess() {} 
-    @Pointcut(execution(org.xyz.Account+ *(..)) 
-    public void operationReturningAnAccount() {}  
-    @Pointcut(propertyAccess() && operationReturningAnAccount())  
-    public void accountPropertyAccess() {}
+       @Pointcut(execution(* get*()))  
+       public void propertyAccess() {} 
+       @Pointcut(execution(org.xyz.Account+ *(..)) 
+       public void operationReturningAnAccount() {}  
+       @Pointcut(propertyAccess() && operationReturningAnAccount())  
+       public void accountPropertyAccess() {}
+
 ---
 
 在XML风格中能声明开头的两个连接点：
 
 ---
-  <aop:pointcut id="propertyAccess" expression="execution(* get*())"/>  
-  <aop:pointcut id="operationReturningAnAccount"  expression="execution(org.xyz.Account+ *(..))"/>
+      <aop:pointcut id="propertyAccess" expression="execution(* get*())"/>  
+      <aop:pointcut id="operationReturningAnAccount"  expression="execution(org.xyz.Account+ *(..))"/>
+
 ---
 
 但是不能通过组合这些来定义accountPropertyAccess连接点
@@ -879,6 +906,7 @@ XML风格有两个缺点。第一是它不能完全将需求实现的地方封�
 			</set>
 		</property>
 	</bean>
+	
 ---
 
 
@@ -899,6 +927,7 @@ XML风格有两个缺点。第一是它不能完全将需求实现的地方封�
         view.addObject("",e.getMessage());
         return view;
     }
+    
 ---
 
 #### 拦截器机制
@@ -913,19 +942,18 @@ XML风格有两个缺点。第一是它不能完全将需求实现的地方封�
     
     配置文件，需要配置：
     ？如果这个路径大于springmvc拦截的路径？
-    
-<mvc:interceptors>
-    <mvc:interceptor>
-        <bean class=""></bean>
-        <mvc:mapping path="/**"/>
-    </mvc:interceptor>
-</mvc:interceptor>
+      <mvc:interceptors>
+       <mvc:interceptor>
+           <bean class=""></bean>
+           <mvc:mapping path="/**"/>
+       </mvc:interceptor>
+
 ---
 
 #### 上传下载
 jar包：
-common-upload
-common-io
+- common-upload
+- common-io
 
 ---
 配置文件
@@ -951,4 +979,6 @@ common-io
 
 
 ## 11.【SSM框架的整合】
+
+
 
