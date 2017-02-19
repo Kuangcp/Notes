@@ -5,6 +5,7 @@
 ### 使用类eclipse快捷键
 
 ### IDEA快捷键
+Ctrl Alt L 快速格式化代码
 
 # 常识
 -  project 就是一个工作空间，一个Module就是一个项目

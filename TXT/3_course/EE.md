@@ -23,13 +23,14 @@
    
 -  3、在第2步的代码段中加入如下标签内容并保存： 
     
----
+    
+``` xml
 
     <nature>org.eclipse.wst.common.project.facet.core.nature</nature>  
     <nature>org.eclipse.wst.common.modulecore.ModuleCoreNature</nature>  
     <nature>org.eclipse.jem.workbench.JavaEMFNature</nature>  
 
----
+```
     
 - 4、在eclipse的项目上点右键，刷新项目。  
    
@@ -138,23 +139,23 @@
 ### 3.9 【非普通类型】
 * Set集合：
 
----
+```xml
 	<set name="Nos" table="表">
 		<key column="外码"></key><!-- 外码 是必须的 -->
 		<element column="号码" type="string"/>
 	</set>
 
----
+```
 * List集合:
 
----
+```xml
 	<list>
 			<key></key>
 			<index></index>
 			<element></element>
 	</list>
 
----
+```
 * 查询列 属性：
 `<property name="" formula="(select sum() from 选修表 as u where u.id=id)"></property>`
 
@@ -164,13 +165,13 @@
 * 注意：一定要两个都有oid的情况才能配置一对多的映射,不能是依赖于另一个主键类
 * 一方：
 
----
+```xml
 	<set name="" [cascade=""]> 
 		<key column="这是外键"></key>
 		<one-to-many class="多方的类"></one-to-many>
 	</set>
 
----
+```
 * 多方：
 `<many-to-one name="" class="一方的类" column="外键，key要一致" />`
 * 双向的关联，会有update的SQL语句的执行来维护关系，影响效率
@@ -179,11 +180,12 @@
 
 ####  **注意 ：**
 - 1.在一的一方，修改xml文件，添加一个set 属性，表示 多方 的一个集合
-`<set name="类中属性名（集合）" inverse="true">`
-	`<key>< column name="数据库列名"/></key>`
-	`<one-to-many class="多方类路径"/>`
-`</set>`
-
+```xml
+<set name="类中属性名（集合）" inverse="true">
+	<key>< column name="数据库列名"/></key>
+	<one-to-many class="多方类路径"/>
+</set>
+```
 - 2.在一的一方，修改POJO持久类文件，添加一个hashset，用来存储多方，添加setget方法，名字就是配置文件里添加的那个名字 注意修改构造器
 
 - 3.在多的一方，修改xml文件，置换掉那个外键，换成many-to-one标签，里面写上外键的列
@@ -207,22 +209,22 @@
 * ！！如果双方都级联了，必须要有一方inverse，不然会有重复维护的错误发生
 
 #### 4.2.1 学生方 配置
----
+```xml
 	<set name="students" table="student_course">
 		<key column="cid"></key>
 		<many-to-many class="Student" column="stu_id"></many-to-many>
 	</set>
 
----
+```
 #### 4.2.2 课程方 配置
 
----
+```xml
 	<set name="courses" table="student_course">
 		<key column="stu_id"></key>
 		<many-to-many class="Course" column="cid"></many-to-many>
 	</set>
 
----
+```
 
 ***********************************
 
@@ -253,7 +255,7 @@
 
 *****************************************
 ### 4.5 【继承关系的配置】 分两种，一般使用前者：
----
+```xml
 	<!-- 将子类插入到父类的配置文件 需要使用key来关联的-->
 		<joined-subclass name="cn.hibernate.extend.Student" table="extend_student">
 			<key column="id"></key>
@@ -268,7 +270,7 @@
 		<union-subclass name="cn.hibernate.extend.Student" table="union_student">
 			<property name="sru_id" type="long"></property>
 		</union-subclass>
-
+```
 *******************************************************
 ### 4.6.【Hibernate 异常】
 #### 4.6.1 could not find a getter for ...
@@ -334,7 +336,7 @@
     - 是各种操作的配置，一个操作对应一个SQL的配置
 
 #### 主配置文件：
----
+```xml
     <?xml version="1.0" encoding="UTF-8" ?>
     <!DOCTYPE configuration
     PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
@@ -364,9 +366,9 @@
     </mappers>  
     </configuration>
     
----
+```
 ##### 操作配置文件：
----
+```xml
     <?xml version="1.0" encoding="UTF-8" ?>  
     <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">  
     <mapper namespace="cn.mybatis.test">  
@@ -402,8 +404,7 @@
         	update inserts set name=#{name} where id=#{id}
         </update>
     </mapper>  
-
----
+```
 ### 7.2 导入JAR包：
 - **核心包**
 - mybatis-3.4.1.jar 主包
@@ -413,7 +414,7 @@
 - slf4j-log4j12.jar
 
 ### 7.3 创建SqlSessionFactory类 内容：
----
+```java
     private static SqlSessionFactory sessionFactory;
 	static{
 		try {
@@ -435,14 +436,13 @@
 		session = sessionFactory.openSession();
 		return session;
 	}
-
----
+```
 
 #### maven Spring-mybaits 配置
 - 使用Spring自动注入对象,方便别名和SessionFactory的管理
 - pom引入必须的JAR包就可以了
 
----
+```xml
       <!--基本属性-->
       <bean id="dataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource">
            <property name="driverClass" value="${driver}"/>
@@ -467,12 +467,11 @@
        <bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
            <property name="dataSource" ref="dataSource"/>
        </bean>
-    
----
+```
 
 #####  **SessionFactory类，使用Spring注入一个工厂类，然后使用本地线程组，节省Session开销**
 
----
+```java
 
     @Component
     public class MybatisSessionFactory {
@@ -512,18 +511,16 @@
            this.sessionFactory = sessionFactory;
        }
     }
-   
----
+```
 
 ### 7.4 流程控制
 
 #### foreach 循环语句
----
+```xml
 	<foreach collection="param_list 自定义的话就是Map中的key，或者使用 @Param("")来指定 " item="params" index="currentIndex 当前索引"  separator="循环分隔符" open="在循环前加上字符" close="循环结束后加上字符">
 		${params}
 	</foreach>
-
----
+```
 ##### collection 有 arry list map 几种 还有item是必写，其他的是可选的
 #### if 判断语句:
 - `<if test=""></if>`
@@ -563,7 +560,7 @@
 
 ##### maven配置Spring包
 
----
+```xml
       <properties>
        <spring.version>4.1.7.RELEASE</spring.version>
       </properties>
@@ -625,23 +622,36 @@
          <groupId>org.springframework</groupId>
          <artifactId>spring-test</artifactId>
          <version>${spring.version}</version>
-       </dependency>
-    
----
+       </dependency> 
+```
 
 ### 8.2 Spring技巧
 #### 8.2.1 获取Spring已有的Context环境
 ##### 【在JSP或Servlet中】
 
----
+```
     ApplicationContext context = WebApplicationContextUtils.getWebApplicationContext(config.getServletContext());
 
----
+```
+
+#### Spring 和 ServletContextList
+- 想要启动Tomcat之后，初始化运行一些方法，把数据从数据库拿出放入redis中，然后使用了ServletContextListener
+    - 然后还是按照往常一样的使用Spring自动注入的便利，来使用service层获取数据，但是忽略了启动顺序
+    - **context-param -> listener -> filter -> servlet**
+    - 所以在启动这个初始化方法的时候，其实Spring的环境是还没有加载的，所以没有扫描，也就没有了自动注入，也就有了空指针异常
+    - 所以要使用如下方法得到Spring的Context（上下文），获取bean，再操作
+  
+```
+    public void contextInitialized(ServletContextEvent event) {  
+        ApplicationContext context = WebApplicationContextUtils.getWebApplicationContext(event.getServletContext());
+        ....
+    }
+```  
 
 ### 8.3 注解方式：
 
 #### 8.3.1 Application.xml中配置头部分
----
+```xml
     头部分要添加Context
     <?xml version="1.0" encoding="UTF-8"?>
     <beans xmlns="http://www.springframework.org/schema/beans"
@@ -654,8 +664,7 @@
         <!-- 对使用了注解的包进行扫描 -->
 	    <context:component-scan base-package="cn.spring.aop"></context:component-scan>
     </beans>
-
----
+```
 >**【注意】**只需要这个配置文件就可以使用注解来使用Spring框架
 
 #### 8.3.2 常用的注解：
@@ -669,7 +678,7 @@
 ### 8.4 xml方式：
 - 只用到bean的头，主要配置内容：`<bean><property></property></bean>`
 
----
+```xml
        <!-- 一般而言，bean都是单实例的 -->
    	<bean id="person" class="cn.spring.entity.Person">	
    		<property name="name" value="myth"/>
@@ -704,7 +713,7 @@
    		<property name="url" value="${url}"/>
    	</bean>
 
----
+```
 
 ### 8.5 IOC / DI：控制反转
 - DI 译为依赖注入 所有的bean都在IOC容器中（单例的）多例的不在该容器中进行管理
@@ -717,7 +726,7 @@
        - 针对一个方面编写一个InvocationHandler，然后借用JDK反射包中的Proxy类为各种接口动态生成相应的代理类 
 
 ### 8.6 AOP：
----
+```xml
     <?xml version="1.0" encoding="UTF-8"?>
     <beans xmlns="http://www.springframework.org/schema/beans"
      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
@@ -731,7 +740,7 @@
          http://www.springframework.org/schema/aop/spring-aop-3.0.xsd">
          </beans>
 
----
+```
 
 - 方法级别的添加代理，Servlet中的过滤器也类似（但是那个是类级别的）
 
@@ -747,7 +756,7 @@
 - Introduction 引介（为类添加属性和方法） 用的较少因为破坏了OOP思想
 
 #### 8.6.2 基本配置
----
+```xml
     <!-- 基本类 提供切点 -->
 	<bean id="student" class="cn.spring.aop.Student"></bean>
 	<!-- 增强部分 -->
@@ -765,7 +774,7 @@
 		</aop:aspect>
 	</aop:config>
 
----	
+```
 
 #### 8.6.3 JDBC
 Spring中有封装的关于JDBC操作的类 JDBCSupport 只要传入datasource对象即可
@@ -784,7 +793,7 @@ Spring中有封装的关于JDBC操作的类 JDBCSupport 只要传入datasource�
 
 ##### maven配置jar环境
 
----
+```xml
 
       <dependency>
          <groupId>org.springframework</groupId>
@@ -797,7 +806,7 @@ Spring中有封装的关于JDBC操作的类 JDBCSupport 只要传入datasource�
          <version>${spring.version}</version>
        </dependency>
     
----
+```
 
 - java代码: 
     - (handle.java)[] (systemHandle.java)[]
@@ -837,7 +846,7 @@ XML风格有两个缺点。第一是它不能完全将需求实现的地方封�
 信息被封装了起来。 第二是XML风格同@AspectJ风格所能表达的内容相比有更多的限制：仅仅支持"singleton"切面实例模型，并且不能在XML中组合命名连接点的声
 明。 例如，在@AspectJ风格中我们可以编写如下的内容：
 
----
+```java
        @Pointcut(execution(* get*()))  
        public void propertyAccess() {} 
        @Pointcut(execution(org.xyz.Account+ *(..)) 
@@ -845,15 +854,15 @@ XML风格有两个缺点。第一是它不能完全将需求实现的地方封�
        @Pointcut(propertyAccess() && operationReturningAnAccount())  
        public void accountPropertyAccess() {}
 
----
+```
 
 在XML风格中能声明开头的两个连接点：
 
----
+```xml
       <aop:pointcut id="propertyAccess" expression="execution(* get*())"/>  
       <aop:pointcut id="operationReturningAnAccount"  expression="execution(org.xyz.Account+ *(..))"/>
 
----
+```
 
 但是不能通过组合这些来定义accountPropertyAccess连接点
 
@@ -895,7 +904,7 @@ XML风格有两个缺点。第一是它不能完全将需求实现的地方封�
 
 #### 9.3.1类型转换（也可以使用Hibernate的convert）
 
----
+```xml
     <mvc:annotation-driven conversion-service="conversionService" />
 	<!--配置ConversionService -->
 	<bean id="conversionService"
@@ -907,7 +916,7 @@ XML风格有两个缺点。第一是它不能完全将需求实现的地方封�
 		</property>
 	</bean>
 	
----
+```
 
 
 ##### SpringMVC的内置代理
@@ -916,7 +925,7 @@ XML风格有两个缺点。第一是它不能完全将需求实现的地方封�
 
 #### Controller层的异常处理（一般处理自定义异常）
 
----
+```java
     处理所有接收到的的异常
     @ControllerAdvice
     public class ExceptionHandle{
@@ -928,11 +937,11 @@ XML风格有两个缺点。第一是它不能完全将需求实现的地方封�
         return view;
     }
     
----
+```
 
 #### 拦截器机制
 
----
+```xml
     implements HandleInterceptor 有三个方法
     
     preHandle 返回true就继续往后，false就被拦截
@@ -948,7 +957,7 @@ XML风格有两个缺点。第一是它不能完全将需求实现的地方封�
            <mvc:mapping path="/**"/>
        </mvc:interceptor>
 
----
+```
 
 #### 上传下载
 jar包：
