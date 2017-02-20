@@ -129,3 +129,6 @@ File f=new File("/information.xml");这个写法是错的，空指针异常。
 
 request.getParameter返回字符串，如果表单里面是空的，就返回长度为零的字符串。
 ---
+
+### Use Tips
+-  servletContextLisner 和Spring环境的加载顺序要注意

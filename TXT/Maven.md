@@ -4,6 +4,8 @@
 * 在eclipse或Myeclipse中add，并采用自己的setting文件
 
 *****
+## setting.xml配置
+
 ### 1.1 Maven常用命令:
 * mvn archetype:generate ：创建 Maven 项目
     * -DgroupId=组织名/公司网址的反写+项目名

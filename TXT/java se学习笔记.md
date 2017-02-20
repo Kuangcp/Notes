@@ -1,3 +1,5 @@
+#Tips
+
 线程中使用旗帜布尔变量来终止线程
 	加上volatile关键字来声明变量
  	join方法是让其他线程等待调用join方法的那个线程结束
@@ -43,12 +45,12 @@ int 	到 Integer 	new Integer(a)
 
 
 找不到或无法加载主类：最前面加分号。
-
 应该先添加元素再创建迭代器。
-
 假设整型变量x的当前值为2，则复合赋值语句x/=x+1执行后x值为多少？答案为0.
-switch 中不要丢掉break
 
+*******************
+
+# 注意：
 0.button改名用button.setLabel("")。
 1。set不允许重复元素
 根目录：“cd\”
@@ -158,10 +160,11 @@ Serializable接口没有任何的方法，为标记接口。序列化中最有�
 9． 用两次序列化把两个对象写到文件中去（以追加的方式），和用一次序列化把两个对象写进文件的大小是不一样的。因为每次追加时都会要在文件中加入一个开始标记和结束标记。所以对于对象的序列化不能以追加的方式写到文件中。
 10/-3=1；
    
+ **************
  
- 
-JavaAPI总结:application programming interface应用程序编程接口 sun公司提供给我们用的程序
-一、String、StringBuffer、StringBuilder
+# JavaAPI总结:application programming interface应用程序编程接口 
+
+## 一、String、StringBuffer、StringBuilder
 1、String类是字符串常量
 2、String池：String s = "abc" 和String s = new String("abc")的区别
 3、String类的常用方法：charAt、indexOf、toCharArray、substring、split、compareTo、equals
@@ -169,7 +172,7 @@ JavaAPI总结:application programming interface应用程序编程接口 sun公�
 String s = "abc"; s = s + "xxx";//String长度不可变，因为是常量
 5、StringBuilder线程不安全，StringBuffer线程安全
 
-二、集合类
+## 二、集合类
 |-Iterable：实现增强for循环
 |--Collection:单列，按照一种或多种规则来存储一系列元素
 |---List:有序，允许有重复元素
@@ -200,24 +203,27 @@ Collections：集合工具类，sort、binarySearch、reverse
 Arrays：数组工具类，sort。。。。
 
 
-三、包装类
+## 三、包装类
 1、Integer x = 0;x = x + 1; 装箱-拆箱-装箱（jdk1.5）
 2、Interger.parseInt(String)将字符串转为int型
 
-四、System类
+## 四、System类
 1、System类的常用方法：gc()垃圾回收、exit(0)终止程序、currentTimeMillis()获得自1970年1月1日零时
  以来的毫秒数、getProperty方法获得系统属性。
 2、两个静态成员变量：in和out
 in：标准输入流，InputStreamReader类型
 out：标准打印流，PrintStream类型
 
-五、Runtime类
+## 五、Runtime类
 表示运行时，exec方法，在后台新开启一个窗口运行命令，是当前窗口的子窗口，继承所有窗口属性
 
-六、日期对象
+## 六、日期对象
 1、Date：大部分方法已过时，用new Date()创建日期对象表示当前时间
 2、DateFormat：将日期格式化，抽象类
- DateFormat df = DateFormat.getInstance(); String dateStr = df.format(new Date);
+-  DateFormat df = DateFormat.getInstance(); 
+	-  String dateStr = df.format(new Date);
+-  SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+	- sdf.format(new Date());
 3、Calendar对象：
  Calendar c = Calendar.getInstance();
 可以将类中定义的常量当做参数传入get和set方法来获得和设置时间。
