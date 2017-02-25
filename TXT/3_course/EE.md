@@ -1,15 +1,15 @@
 # Myth 关于 Java EE的认识
 ## 1.【JSP/Servlet 】
-*	1、JSP页面上的SQL标签以及EL标签是优先于文件头的那些JavaServlet语句运行的，所以要保证非法进入页面时重定向的问题
-*	2、如果想要获取异常来据此返回参数到页面弹窗提示，那么就要对一层层的方法调用，进行查找，所有的try catch 块 都要检查
+*   1、JSP页面上的SQL标签以及EL标签是优先于文件头的那些JavaServlet语句运行的，所以要保证非法进入页面时重定向的问题
+*   2、如果想要获取异常来据此返回参数到页面弹窗提示，那么就要对一层层的方法调用，进行查找，所有的try catch 块 都要检查
 > 因为一般我的习惯就是把异常当场就处理了，而要实现这个要求就必须将异常层层上抛！！！！
 
 
-*	3、中文乱码问题：
-	- **接收**
-		- 使用get方法，需要转换成gbk :`newString(s.getBytes("ISO-88511-1","gbk");`
-		- post方法需要转换成UTF-8
-	- **回应** 均使用UTF-8
+*   3、中文乱码问题：
+    - **接收**
+        - 使用get方法，需要转换成gbk :`newString(s.getBytes("ISO-88511-1","gbk");`
+        - post方法需要转换成UTF-8
+    - **回应** 均使用UTF-8
 
 *  4、查询数据： 使用set集合，查询对象是否存在，使用contians
 *  5、Servlet 是单例多线程的
@@ -40,17 +40,17 @@
 
 ## 2.【几大框架简述】
 * MVC设计模式：
-	* M
-		* hibernarte （相应操作的SQL语句由Hibernate框架生成）
-		* mybatis（SQL用户根据需要去写的）
-		* JPA 和Hibernate是相同的内核，由Hibernate派生而来
-	* C
-		* struts1.x
-		* struts2.x
-		* springmvc  
-		* spring  模块的整合
-	* V:
-		视图层
+    * M
+        * hibernarte （相应操作的SQL语句由Hibernate框架生成）
+        * mybatis（SQL用户根据需要去写的）
+        * JPA 和Hibernate是相同的内核，由Hibernate派生而来
+    * C
+        * struts1.x
+        * struts2.x
+        * springmvc  
+        * spring  模块的整合
+    * V:
+        视图层
 
 - **再度理解** Dao service模式的概念
     * dao : 基础单笔业务的功能模块
@@ -58,13 +58,13 @@
     * 如果要实现AOP或者规范化，dao和service分别要有接口的存在（为了多态，代理，严谨）
 
 
-*************************************************************************************	
+*************************************************************************************   
 ## 3.【Hibernate基础配置】
 ### 3.1【JDBC 和 Hibernate 比较】
 * JDBC
-	*	使用其简洁精悍，最快，但是使用时接收数据以及多方面的比较麻烦
+    *   使用其简洁精悍，最快，但是使用时接收数据以及多方面的比较麻烦
 * Hibernate
-	*	单表操作是很便捷的，但是涉及到多表复杂操作时比较麻烦
+    *   单表操作是很便捷的，但是涉及到多表复杂操作时比较麻烦
 
 #### 3.1.1【配置流程】如果后续需要添加表的话，就这个顺序
 - **1 :**  先有数据库和表，建立cfg.xml文件配置好数据库的基本参数
@@ -78,9 +78,9 @@
 - required目录下所有JAR都要导入
 - jpa的JAR包（做注解用）
 - 日志包：
-	- slf4j-api-* .jar	该包是一个日志接口，需要一个JAR包的实现：
-	- slf4j-log4j12.jar	该包是转换的JAR包
-	- log4j-1.2.11.jar	实现的JAR包
+    - slf4j-api-* .jar  该包是一个日志接口，需要一个JAR包的实现：
+    - slf4j-log4j12.jar 该包是转换的JAR包
+    - log4j-1.2.11.jar  实现的JAR包
 - 数据库驱动包  mysql-connector-java-5.1.7-bin.jar
 - 在src同级目录下新建一个lib目录，把JAR包复制进去，然后右击将jar文件  Add to build path 加入到类搜索路径里
 
@@ -94,24 +94,24 @@
 - POJO类配置文件的映射
 - etc/hibernate.properties里可以看到更多配置，数据库连接池，SQL优化等
 - 在：project/core/src/main/resources/org/hibernate/下有各种dtd文件，
-	- 可以为eclipse的xml配置自动提示功能
+    - 可以为eclipse的xml配置自动提示功能
 ### 3.5日志文件的配置：
-	在etc下复制log4j.properties到src下，就可以了，本人ssh下复制log4j.xml就可以了
+    在etc下复制log4j.properties到src下，就可以了，本人ssh下复制log4j.xml就可以了
 
 ### 3.6 SessionFactory 和 Session 比较：
 * 【SessionFactory】 
 >   重量级容器：消耗大量资源，不能有太多实例,二级缓存
-	通常将该工厂类是单例模式，一个工厂类实例表示一个数据库
-	所以Hibernate一般是不能跨数据库来做事务操作。但是EJB和JPA可以实现
-	>> 这个配置选项：
-	hibernate.hbm2ddl.auto create-drop 在一个数据库中创建，然后使用完关闭实例时就删除所有建立的表
-	hibernate.hbm2ddl.auto create 清除数据库的表及数据，重新创建表
-	hibernate.hbm2ddl.auto update 更改配置文件，能够在数据库进行操作（更新，建立）
-	hibernate.hbm2ddl.auto validate
+    通常将该工厂类是单例模式，一个工厂类实例表示一个数据库
+    所以Hibernate一般是不能跨数据库来做事务操作。但是EJB和JPA可以实现
+    >> 这个配置选项：
+    hibernate.hbm2ddl.auto create-drop 在一个数据库中创建，然后使用完关闭实例时就删除所有建立的表
+    hibernate.hbm2ddl.auto create 清除数据库的表及数据，重新创建表
+    hibernate.hbm2ddl.auto update 更改配置文件，能够在数据库进行操作（更新，建立）
+    hibernate.hbm2ddl.auto validate
 
 * 【session】
->	轻量级的容器，一级缓存
-	是非线程安全的对象
+>   轻量级的容器，一级缓存
+    是非线程安全的对象
 
 ### 3.7 OID的作用：
 > 在Hibernate中唯一标识对象的属性，每个实体都是必须要有OID的
@@ -125,35 +125,35 @@
 * uuid.hex :32位字符
 * uuid:
 * hilo：类型为数值型（long） [实际开发中推荐使用]
->	id = hi+lo (高位和低位进行组合)
-	sessionFactory实例化，高位就会加一，生成算法是：hi*(max lo +1)+lo;
+>   id = hi+lo (高位和低位进行组合)
+    sessionFactory实例化，高位就会加一，生成算法是：hi*(max lo +1)+lo;
     `<generator class="hilo" >`
-	`<param name="table">stu_hilo</param>`
-	`<!-- 放高值的表名 最好是一个对象对应于一个高低值的表避免了并发-->`
-	`<param name="cloumn">next_hi</param>`
-	`<!-- 高的值放在表的哪个字段 -->`
-	`<param name="max_lo">100</ param>`
-	`<!-- 每个轮回值的上限是多少 虚拟机启动频繁就设小一些，避免编码的浪费-->`
-	`</generator>`
+    `<param name="table">stu_hilo</param>`
+    `<!-- 放高值的表名 最好是一个对象对应于一个高低值的表避免了并发-->`
+    `<param name="cloumn">next_hi</param>`
+    `<!-- 高的值放在表的哪个字段 -->`
+    `<param name="max_lo">100</ param>`
+    `<!-- 每个轮回值的上限是多少 虚拟机启动频繁就设小一些，避免编码的浪费-->`
+    `</generator>`
 
 ### 3.9 【非普通类型】
 * Set集合：
 
 ```xml
-	<set name="Nos" table="表">
-		<key column="外码"></key><!-- 外码 是必须的 -->
-		<element column="号码" type="string"/>
-	</set>
+    <set name="Nos" table="表">
+        <key column="外码"></key><!-- 外码 是必须的 -->
+        <element column="号码" type="string"/>
+    </set>
 
 ```
 * List集合:
 
 ```xml
-	<list>
-			<key></key>
-			<index></index>
-			<element></element>
-	</list>
+    <list>
+            <key></key>
+            <index></index>
+            <element></element>
+    </list>
 
 ```
 * 查询列 属性：
@@ -166,10 +166,10 @@
 * 一方：
 
 ```xml
-	<set name="" [cascade=""]> 
-		<key column="这是外键"></key>
-		<one-to-many class="多方的类"></one-to-many>
-	</set>
+    <set name="" [cascade=""]> 
+        <key column="这是外键"></key>
+        <one-to-many class="多方的类"></one-to-many>
+    </set>
 
 ```
 * 多方：
@@ -182,8 +182,8 @@
 - 1.在一的一方，修改xml文件，添加一个set 属性，表示 多方 的一个集合
 ```xml
 <set name="类中属性名（集合）" inverse="true">
-	<key>< column name="数据库列名"/></key>
-	<one-to-many class="多方类路径"/>
+    <key>< column name="数据库列名"/></key>
+    <one-to-many class="多方类路径"/>
 </set>
 ```
 - 2.在一的一方，修改POJO持久类文件，添加一个hashset，用来存储多方，添加setget方法，名字就是配置文件里添加的那个名字 注意修改构造器
@@ -192,11 +192,11 @@
 `<many-to-one name="类中属性名（对象）" class="一方的类路径" column="数据库中列名"></many-to-one>`
 
 - 4.在多的一方，修改POJO持久类文件，添加一个一方的对象添加setget方法，名字就是配置文件里添加的那个名字  注意修改构造器
-	* 一方的set集合中有inverse属性，多方是没有的，Hibernate中inverse是和外键对应的，一方配置了inverse是false，一方就不会维护关系（外键），一般是给多方维护，因为效率高
-	* cascade是对象和对象之间的操作，和外键没有关系
-	* 处于持久化状态的对象在Session中，客户端不需要做Session的save/update 操作，Hibernate会自动的去检查处于持久化的对象的状态的属性是否发生改变，改变了就发送update语句。
-		* 如果该对象是一方，在一的一方映射文件中有cascade=all时，Hibernate内部还会检查该持久化对象关联的集合，对此集合进行update操作，但是该操作和外键没有关系，只有当通过多方建立关系后，才能使外键有值。
-	
+    * 一方的set集合中有inverse属性，多方是没有的，Hibernate中inverse是和外键对应的，一方配置了inverse是false，一方就不会维护关系（外键），一般是给多方维护，因为效率高
+    * cascade是对象和对象之间的操作，和外键没有关系
+    * 处于持久化状态的对象在Session中，客户端不需要做Session的save/update 操作，Hibernate会自动的去检查处于持久化的对象的状态的属性是否发生改变，改变了就发送update语句。
+        * 如果该对象是一方，在一的一方映射文件中有cascade=all时，Hibernate内部还会检查该持久化对象关联的集合，对此集合进行update操作，但是该操作和外键没有关系，只有当通过多方建立关系后，才能使外键有值。
+    
 
 ### 4.2【多对多的配置】
 
@@ -210,19 +210,19 @@
 
 #### 4.2.1 学生方 配置
 ```xml
-	<set name="students" table="student_course">
-		<key column="cid"></key>
-		<many-to-many class="Student" column="stu_id"></many-to-many>
-	</set>
+    <set name="students" table="student_course">
+        <key column="cid"></key>
+        <many-to-many class="Student" column="stu_id"></many-to-many>
+    </set>
 
 ```
 #### 4.2.2 课程方 配置
 
 ```xml
-	<set name="courses" table="student_course">
-		<key column="stu_id"></key>
-		<many-to-many class="Course" column="cid"></many-to-many>
-	</set>
+    <set name="courses" table="student_course">
+        <key column="stu_id"></key>
+        <many-to-many class="Course" column="cid"></many-to-many>
+    </set>
 
 ```
 
@@ -230,75 +230,75 @@
 
 ### 4.3 【一对一的配置】
 * 单向
-	只要配置单向的配置文件添加：
-	`<many-to-one name=""class="映射的类" column="数据库字段" unique="true"></many-to-one>`
+    只要配置单向的配置文件添加：
+    `<many-to-one name=""class="映射的类" column="数据库字段" unique="true"></many-to-one>`
 * 双向
-	* 一方 甲：
-	`<many-to-one name="" class="乙方类"column="数据库字段" unique="true"></many-to-one>`
-	* 一方 乙：
-	`<one-to-one name="" class="甲方类" property-ref="甲方配置的标签的name"></one-to-one>`
+    * 一方 甲：
+    `<many-to-one name="" class="乙方类"column="数据库字段" unique="true"></many-to-one>`
+    * 一方 乙：
+    `<one-to-one name="" class="甲方类" property-ref="甲方配置的标签的name"></one-to-one>`
 
 ********************
 ### 4.4【使用多对一的技巧】
 #### 4.4.1.添加记录：
-	1.1.当需要添加一个多方时，一看成课程，多看成成绩。当然的首先得有相关课程，再添加成绩记录。
-	1.2.那就先实例化一个课程对象，配置好信息
-	1.3.实例化多个成绩实例，再 课程对象.get**Set().add(成绩对象); 将成绩对象添加到集合中，
-	1.4.session.save(课程对象)；
+    1.1.当需要添加一个多方时，一看成课程，多看成成绩。当然的首先得有相关课程，再添加成绩记录。
+    1.2.那就先实例化一个课程对象，配置好信息
+    1.3.实例化多个成绩实例，再 课程对象.get**Set().add(成绩对象); 将成绩对象添加到集合中，
+    1.4.session.save(课程对象)；
 注意：既然实现了这样的操作，那就说明了在实例化成绩的时候，不需要指定课程的值，那就需要添加一个构造器
 #### 4.4.2.删除记录
-	2.1.如果删除一方，那就会将一删除，如果没有配置级联，就会将多方的外键置空，不会删除多方表
-	2.2.如何通过一方修改多方的一条
-			把一方的set中的要修改的一条，（查找之前需要对象 = session.load(对象.class,主键名)将多方的数据加载进来）
-			注意多方不能有空列必须指定一个默认值（是和构造器有关么？）
-			再查找出来，修改再update，新增也是如此增加多的一方的时候，就是在一方的set中新增一条记录，多方的操作都体现在了一方那里
+    2.1.如果删除一方，那就会将一删除，如果没有配置级联，就会将多方的外键置空，不会删除多方表
+    2.2.如何通过一方修改多方的一条
+            把一方的set中的要修改的一条，（查找之前需要对象 = session.load(对象.class,主键名)将多方的数据加载进来）
+            注意多方不能有空列必须指定一个默认值（是和构造器有关么？）
+            再查找出来，修改再update，新增也是如此增加多的一方的时候，就是在一方的set中新增一条记录，多方的操作都体现在了一方那里
 
 *****************************************
 ### 4.5 【继承关系的配置】 分两种，一般使用前者：
 ```xml
-	<!-- 将子类插入到父类的配置文件 需要使用key来关联的-->
-		<joined-subclass name="cn.hibernate.extend.Student" table="extend_student">
-			<key column="id"></key>
-			<property name="sru_id" type="long"></property>
-		</joined-subclass>
-	<!--
-		union是相当于将父类的所有属性复制到子类里，是共享父类的OID，
-		所以父类的OID是不能和子类的OID重复的
-		不然 查询的时候就会报错,
-		所以就需要改父类的主键生成策略是高低值（或者是手动set），可以手动配置高低值的表的生成
-	-->
-		<union-subclass name="cn.hibernate.extend.Student" table="union_student">
-			<property name="sru_id" type="long"></property>
-		</union-subclass>
+    <!-- 将子类插入到父类的配置文件 需要使用key来关联的-->
+        <joined-subclass name="cn.hibernate.extend.Student" table="extend_student">
+            <key column="id"></key>
+            <property name="sru_id" type="long"></property>
+        </joined-subclass>
+    <!--
+        union是相当于将父类的所有属性复制到子类里，是共享父类的OID，
+        所以父类的OID是不能和子类的OID重复的
+        不然 查询的时候就会报错,
+        所以就需要改父类的主键生成策略是高低值（或者是手动set），可以手动配置高低值的表的生成
+    -->
+        <union-subclass name="cn.hibernate.extend.Student" table="union_student">
+            <property name="sru_id" type="long"></property>
+        </union-subclass>
 ```
 *******************************************************
 ### 4.6.【Hibernate 异常】
 #### 4.6.1 could not find a getter for ...
-	原因：1 可能真的没写get方法，或者get方法不合规范 setget方法中不允许两个连续大写字母
-		 2 *.hmb.xml文件中的属性名和pojo持久类中属性名不一致（一定不能在表名中添加下划线）
-		 3 方法名写错（基本不可能，都是自动生成的）
-		
+    原因：1 可能真的没写get方法，或者get方法不合规范 setget方法中不允许两个连续大写字母
+         2 *.hmb.xml文件中的属性名和pojo持久类中属性名不一致（一定不能在表名中添加下划线）
+         3 方法名写错（基本不可能，都是自动生成的）
+        
 #### 4.6.2 个人总结：
-	当使用了没有 主键的表，使用Myeclipse自动创建配置文件，使用自己的Table2Class来生成POJO持久类，
-	就要继承对应的自动创建的抽象类，因为没有主键的表默认是将所有列看成一个主键，并且还会有添加一个id属性，
-	这样也说明还有一点就是，这种表的字段不能有叫做id的列
+    当使用了没有 主键的表，使用Myeclipse自动创建配置文件，使用自己的Table2Class来生成POJO持久类，
+    就要继承对应的自动创建的抽象类，因为没有主键的表默认是将所有列看成一个主键，并且还会有添加一个id属性，
+    这样也说明还有一点就是，这种表的字段不能有叫做id的列
 
-	是不是可以不用手动去使用那个类，好像这里自动生成的一切都有，
+    是不是可以不用手动去使用那个类，好像这里自动生成的一切都有，
 
-	自动生成会生成：
-		对应POJO的抽象类，hbm配置文件，以及默认的几个类，HibernateSessionFactory，IBaseHibernateDao，
-		对应的Dao（添加的时候默认是没有使用事务，所以需要手动修改）,添加，删除，都是依据主键的，
-		至少要初始化主键，当然还得满足数据库的要求
+    自动生成会生成：
+        对应POJO的抽象类，hbm配置文件，以及默认的几个类，HibernateSessionFactory，IBaseHibernateDao，
+        对应的Dao（添加的时候默认是没有使用事务，所以需要手动修改）,添加，删除，都是依据主键的，
+        至少要初始化主键，当然还得满足数据库的要求
 
 ### 4.7.【Hibernate 对象的状态】
 
 1. 临时态：刚实例化对象。对象在数据库中不存在，Session中也不存在
 1. 游离态：刚实例化的对象，但是该对象手动指定了OID并且OID在数据库中已经存在，并且是没有绑定Session的（特殊的临时态）
-	* 保存两个有关联关系的对象，update时，如果配置文件中配置了级联，就会一起保存，一般建议在一方级联
+    * 保存两个有关联关系的对象，update时，如果配置文件中配置了级联，就会一起保存，一般建议在一方级联
 1. 持久态：该对象在数据库中存在，该对象绑定在Session（一级缓存）中
 1. 删除态：session.delete(对象)，删除后对象从数据库和Session中都移除了，但是OID还在内存中。
-	* 游离态delete后就成了删除态
-	* 持久态delete后就成了删除态
+    * 游离态delete后就成了删除态
+    * 持久态delete后就成了删除态
 
 #### 4.7.1 Session的方法。
 - save
@@ -318,11 +318,11 @@
 * 但是数据库中同一条记录可以实例化为多个对象（内存），那么这些对象（内存）放在不同的Session中是可以的
 
 * get：
-	* 只延迟加载有外键关联的那部分属性，没有使用就不会查询，只有用到了才会查询
-	* 多方：立即加载就要在配置文件中将对应的属性中添加 fetch="join"
-	* 一方：配置文件中set标签 加上lazy="false"（两条SQL），再添加 fetch="join"后就只有一条SQL语句，但是这个一方是不能做分页查询的
+    * 只延迟加载有外键关联的那部分属性，没有使用就不会查询，只有用到了才会查询
+    * 多方：立即加载就要在配置文件中将对应的属性中添加 fetch="join"
+    * 一方：配置文件中set标签 加上lazy="false"（两条SQL），再添加 fetch="join"后就只有一条SQL语句，但是这个一方是不能做分页查询的
 * load：
-	* 在你确定OID是一定有的时候使用load提高效率，但是实际开发过程中用的少，因为实际上没有这么确定。
+    * 在你确定OID是一定有的时候使用load提高效率，但是实际开发过程中用的少，因为实际上没有这么确定。
 
 * 懒加载如果Session关闭了或者是对象游离态。就会有懒加载初始化的异常
 
@@ -343,23 +343,23 @@
     "http://mybatis.org/dtd/mybatis-3-config.dtd">
 
     <configuration>
-	<!-- 配置别名 为了方便配置操作文件-->  
+    <!-- 配置别名 为了方便配置操作文件-->  
     <typeAliases>  
         <typeAlias type="cn.mybatis.test.Human" alias="Human" />  
     </typeAliases>  
        
     <!-- 配置环境变量 -->  
-	<environments default="development">
-		<environment id="development">
-			<transactionManager type="JDBC"/>
-			<dataSource type="POOLED">
-				<property name="driver" value="com.mysql.jdbc.Driver"/>
-				<property name="url" value="jdbc:mysql://localhost:3306/test?characterEncoding=UTF-8"/>
-				<property name="username" value="root"/>
-				<property name="password" value="123456"/>
-			</dataSource>
-		</environment>
-	</environments>
+    <environments default="development">
+        <environment id="development">
+            <transactionManager type="JDBC"/>
+            <dataSource type="POOLED">
+                <property name="driver" value="com.mysql.jdbc.Driver"/>
+                <property name="url" value="jdbc:mysql://localhost:3306/test?characterEncoding=UTF-8"/>
+                <property name="username" value="root"/>
+                <property name="password" value="123456"/>
+            </dataSource>
+        </environment>
+    </environments>
     <!-- 配置mappers -->  
     <mappers>  
         <mapper resource="cn/mybatis/test/HumanDao.xml" />  
@@ -372,7 +372,7 @@
     <?xml version="1.0" encoding="UTF-8" ?>  
     <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">  
     <mapper namespace="cn.mybatis.test">  
-    	<!-- 按id查询 -->
+        <!-- 按id查询 -->
         <select id="queryUsersById" parameterType="Human" resultType="Human">  
             <!-- useCache="false" -->
             <![CDATA[ 
@@ -381,27 +381,27 @@
         </select>  
         <!-- 查询全部 -->
         <select id="queryUsers" resultType="Human">
-        	select * from inserts
+            select * from inserts
         </select>
-    	<!-- 插入记录 -->    
+        <!-- 插入记录 -->    
         <insert id="insertUser" parameterType="Human" >
         <!-- 该字段是必须要在数据库中自增长的
-        	可能会有并发问题
-        	useGeneratedKeys="true" keyProperty="id"
-        	所以用查询方式好点， 写语句就不要考虑主键了
+            可能会有并发问题
+            useGeneratedKeys="true" keyProperty="id"
+            所以用查询方式好点， 写语句就不要考虑主键了
          -->
-        	<selectKey resultType="int" keyProperty="id">
-        		select LAST_INSERT_ID()
-        	</selectKey>
-        	insert into inserts (name) values(#{name})
+            <selectKey resultType="int" keyProperty="id">
+                select LAST_INSERT_ID()
+            </selectKey>
+            insert into inserts (name) values(#{name})
         </insert>
         <!-- 删除记录 -->
         <delete id="deleteUser" parameterType="String">
-        	delete from inserts where id=#{id}
+            delete from inserts where id=#{id}
         </delete>
         <!-- 更新记录 -->
         <update id="updateUserById" parameterType="Human">
-        	update inserts set name=#{name} where id=#{id}
+            update inserts set name=#{name} where id=#{id}
         </update>
     </mapper>  
 ```
@@ -416,26 +416,26 @@
 ### 7.3 创建SqlSessionFactory类 内容：
 ```java
     private static SqlSessionFactory sessionFactory;
-	static{
-		try {
-			String resource = "cn/mybatis/test/mybatis-config.xml";
-			InputStream inputStream = Resources.getResourceAsStream(resource);
-			sessionFactory = new SqlSessionFactoryBuilder().build(inputStream);
-		} catch (Exception e) {
-			// TODO: handle exception
-			System.out.println("获取Session失败");
-		}
-	}
-	
-	/**
-	 * 获取Session
-	 * @return
-	 */
-	public static SqlSession getSession(){
-		SqlSession session = null;
-		session = sessionFactory.openSession();
-		return session;
-	}
+    static{
+        try {
+            String resource = "cn/mybatis/test/mybatis-config.xml";
+            InputStream inputStream = Resources.getResourceAsStream(resource);
+            sessionFactory = new SqlSessionFactoryBuilder().build(inputStream);
+        } catch (Exception e) {
+            // TODO: handle exception
+            System.out.println("获取Session失败");
+        }
+    }
+    
+    /**
+     * 获取Session
+     * @return
+     */
+    public static SqlSession getSession(){
+        SqlSession session = null;
+        session = sessionFactory.openSession();
+        return session;
+    }
 ```
 
 #### maven Spring-mybaits 配置
@@ -517,9 +517,9 @@
 
 #### foreach 循环语句
 ```xml
-	<foreach collection="param_list 自定义的话就是Map中的key，或者使用 @Param("")来指定 " item="params" index="currentIndex 当前索引"  separator="循环分隔符" open="在循环前加上字符" close="循环结束后加上字符">
-		${params}
-	</foreach>
+    <foreach collection="param_list 自定义的话就是Map中的key，或者使用 @Param("")来指定 " item="params" index="currentIndex 当前索引"  separator="循环分隔符" open="在循环前加上字符" close="循环结束后加上字符">
+        ${params}
+    </foreach>
 ```
 ##### collection 有 arry list map 几种 还有item是必写，其他的是可选的
 #### if 判断语句:
@@ -540,7 +540,7 @@
 2017-01-22 11:16:11.046 [main] DEBUG myth.book.getAll_Param_BookType - ==>  Preparing: select * from book_type where ? and ? and 1=1; 
 2017-01-22 11:16:11.136 [main] DEBUG myth.book.getAll_Param_BookType - ==> Parameters:  book_type<10 (String),  'father_type='2 (String)
 - 条件不能使用数值，
-	条件是单独使用时也是String但是是有效的
+    条件是单独使用时也是String但是是有效的
 
 *********************************************************
 
@@ -662,7 +662,7 @@
              http://www.springframework.org/schema/context
              http://www.springframework.org/schema/context/spring-context-3.0.xsd">
         <!-- 对使用了注解的包进行扫描 -->
-	    <context:component-scan base-package="cn.spring.aop"></context:component-scan>
+        <context:component-scan base-package="cn.spring.aop"></context:component-scan>
     </beans>
 ```
 >**【注意】**只需要这个配置文件就可以使用注解来使用Spring框架
@@ -680,38 +680,38 @@
 
 ```xml
        <!-- 一般而言，bean都是单实例的 -->
-   	<bean id="person" class="cn.spring.entity.Person">	
-   		<property name="name" value="myth"/>
-   		<property name="addr" value="vol"/>
-   	</bean>
-   	
-   	<bean id="construct" class="cn.spring.entity.ConstructorEntity">
-   	<!-- 如果是不同的类型的参数 顺序可以随意，但是数据类型一样的话就要严格按顺序了-->
-   		<constructor-arg type="java.lang.String" value="String_1"></constructor-arg>
-   		<!-- 注意引用类型是要写全路径，基本数据类型是可以直接写小写 -->
-   		<constructor-arg type="int" value="2"></constructor-arg>
-   		<!-- <constructor-arg type="java.lang.String" value="String_2"></constructor-arg> -->
-   	</bean>
-   	<bean id="TestConstruct" class="cn.spring.entity.TestConstruct">
-   		<property name="entity" ref="construct"></property>
-   	</bean>
-   	
-   	<!-- 加载属性文件 -->
-   	<bean id="property_config" class="org.springframework.beans.factory.config.PreferencesPlaceholderConfigurer">
-   		<property name="locations">
-   			<list>
-   				<value>cn/spring/entity/db.properties</value>
-   			</list>
-   		</property>
-   	</bean>
-   	<!-- 测试获取属性文件 -->
-   	<bean id="show_db" class="cn.spring.entity.TestProperties">
-   		<!-- 特别注意大小写问题 -->
-   		<property name="driver" value="${driver}"/>
-   		<property name="username" value="${username}"/>
-   		<property name="password" value="${password}"/>
-   		<property name="url" value="${url}"/>
-   	</bean>
+    <bean id="person" class="cn.spring.entity.Person">  
+        <property name="name" value="myth"/>
+        <property name="addr" value="vol"/>
+    </bean>
+    
+    <bean id="construct" class="cn.spring.entity.ConstructorEntity">
+    <!-- 如果是不同的类型的参数 顺序可以随意，但是数据类型一样的话就要严格按顺序了-->
+        <constructor-arg type="java.lang.String" value="String_1"></constructor-arg>
+        <!-- 注意引用类型是要写全路径，基本数据类型是可以直接写小写 -->
+        <constructor-arg type="int" value="2"></constructor-arg>
+        <!-- <constructor-arg type="java.lang.String" value="String_2"></constructor-arg> -->
+    </bean>
+    <bean id="TestConstruct" class="cn.spring.entity.TestConstruct">
+        <property name="entity" ref="construct"></property>
+    </bean>
+    
+    <!-- 加载属性文件 -->
+    <bean id="property_config" class="org.springframework.beans.factory.config.PreferencesPlaceholderConfigurer">
+        <property name="locations">
+            <list>
+                <value>cn/spring/entity/db.properties</value>
+            </list>
+        </property>
+    </bean>
+    <!-- 测试获取属性文件 -->
+    <bean id="show_db" class="cn.spring.entity.TestProperties">
+        <!-- 特别注意大小写问题 -->
+        <property name="driver" value="${driver}"/>
+        <property name="username" value="${username}"/>
+        <property name="password" value="${password}"/>
+        <property name="url" value="${url}"/>
+    </bean>
 
 ```
 
@@ -758,21 +758,21 @@
 #### 8.6.2 基本配置
 ```xml
     <!-- 基本类 提供切点 -->
-	<bean id="student" class="cn.spring.aop.Student"></bean>
-	<!-- 增强部分 -->
-	<bean id="adder" class="cn.spring.aop.NewDeal"></bean>
-	<!-- 使用aop的自动提示也要配置上面的头文件声明 -->
-	<aop:config>
-		<!--aspect表示切面 ref 标明增强方法的类来源 -->
-		<aop:aspect id="myAop" ref="adder">
-			<!-- execution 是表达式（正则一样的功能）匹配的是具体的切点 -->
-			<aop:pointcut expression="execution(* cn.spring.aop.Student.run(..))" id="needAdd"/>
-			<!-- 织入 的过程 将增强和切入点结合 -->
-			<aop:before method="add" pointcut-ref="needAdd"/>
-			<aop:after method="af" pointcut-ref="needAdd"/>
-			<aop:around method="around" pointcut-ref="needAdd"/>
-		</aop:aspect>
-	</aop:config>
+    <bean id="student" class="cn.spring.aop.Student"></bean>
+    <!-- 增强部分 -->
+    <bean id="adder" class="cn.spring.aop.NewDeal"></bean>
+    <!-- 使用aop的自动提示也要配置上面的头文件声明 -->
+    <aop:config>
+        <!--aspect表示切面 ref 标明增强方法的类来源 -->
+        <aop:aspect id="myAop" ref="adder">
+            <!-- execution 是表达式（正则一样的功能）匹配的是具体的切点 -->
+            <aop:pointcut expression="execution(* cn.spring.aop.Student.run(..))" id="needAdd"/>
+            <!-- 织入 的过程 将增强和切入点结合 -->
+            <aop:before method="add" pointcut-ref="needAdd"/>
+            <aop:after method="af" pointcut-ref="needAdd"/>
+            <aop:around method="around" pointcut-ref="needAdd"/>
+        </aop:aspect>
+    </aop:config>
 
 ```
 
@@ -900,22 +900,22 @@ XML风格有两个缺点。第一是它不能完全将需求实现的地方封�
    - @RequestMapping("/WebApplicationRootURL")
 - 方法
     - @RequestMapping("/ActionURL")
+        - @RequestMapping("/action/{id}") 方法要使用(@PathVariable("id") String id)
     - @ResponseBody 返回对象，自动解析成JSON
 
 #### 9.3.1类型转换（也可以使用Hibernate的convert）
 
 ```xml
     <mvc:annotation-driven conversion-service="conversionService" />
-	<!--配置ConversionService -->
-	<bean id="conversionService"
-		class="org.springframework.context.support.ConversionServiceFactoryBean">
-		<property name="converters">
-			<set>
-				<ref bean="DateConverter" />
-			</set>
-		</property>
-	</bean>
-	
+    <!--配置ConversionService -->
+    <bean id="conversionService"
+        class="org.springframework.context.support.ConversionServiceFactoryBean">
+        <property name="converters">
+            <set>
+                <ref bean="DateConverter" />
+            </set>
+        </property>
+    </bean>
 ```
 
 
@@ -956,9 +956,16 @@ XML风格有两个缺点。第一是它不能完全将需求实现的地方封�
            <bean class=""></bean>
            <mvc:mapping path="/**"/>
        </mvc:interceptor>
-
 ```
-
+#### 视图解析
+```java
+    ModelAndView view = ModelAndView("index"); 
+    使用这种写法是进入配置好的视图解析器，进行路径的拼接然后转发
+    ModelAndView("redirect:/l/login.jsp");
+    就是使用重定向方式，注意路径要写全，因为不会拼接
+ ```
+ 
+ 
 #### 上传下载
 jar包：
 - common-upload
@@ -1017,31 +1024,31 @@ jar包：
 - Spring配置文件 
 ```xml
     <!--
-		加载redis配置文件 
-		如果已经加载了一个文件，那么第一个就要写这个配置项，
-		<property name="ignoreUnresolvablePlaceholders" value="true"/>
-		第二个要加 后面的配置 
-		不然就只会加载前面那个文件
-	-->
+        加载redis配置文件 
+        如果已经加载了一个文件，那么第一个就要写这个配置项，
+        <property name="ignoreUnresolvablePlaceholders" value="true"/>
+        第二个要加 后面的配置 
+        不然就只会加载前面那个文件
+    -->
     <context:property-placeholder location="classpath:redis.properties" ignore-unresolvable="true"/>
     <!-- redis连接池的配置 -->
-	  <bean id="jedisPoolConfig" class="redis.clients.jedis.JedisPoolConfig">
-		  <property name="maxActive" value="${redis.pool.maxActive}"/>
-		  <property name="maxIdle" value="${redis.pool.maxIdle}"/>
-		  <property name="minIdle" value="${redis.pool.minIdle}"/>
-		  <property name="maxWait" value="${redis.pool.maxWait}"/>
-		  <property name="testOnBorrow" value="${redis.pool.testOnBorrow}"/>
-		  <property name="testOnReturn" value="${redis.pool.testOnReturn}"/>
-	  </bean>
-	  
-	  <!-- redis的连接池pool，不是必选项：timeout/password  -->
-	  <bean id = "jedisPool" class="redis.clients.jedis.JedisPool">
-		  <constructor-arg index="0" ref="jedisPoolConfig"/>
-		  <constructor-arg index="1" value="${redis.host}"/>
-		  <constructor-arg index="2" value="${redis.port}" type="int"/>
-		  <constructor-arg index="3" value="${redis.timeout}" type="int"/>
-		  <constructor-arg index="4" value="${redis.password}"/>
-	  </bean>
+      <bean id="jedisPoolConfig" class="redis.clients.jedis.JedisPoolConfig">
+          <property name="maxActive" value="${redis.pool.maxActive}"/>
+          <property name="maxIdle" value="${redis.pool.maxIdle}"/>
+          <property name="minIdle" value="${redis.pool.minIdle}"/>
+          <property name="maxWait" value="${redis.pool.maxWait}"/>
+          <property name="testOnBorrow" value="${redis.pool.testOnBorrow}"/>
+          <property name="testOnReturn" value="${redis.pool.testOnReturn}"/>
+      </bean>
+      
+      <!-- redis的连接池pool，不是必选项：timeout/password  -->
+      <bean id = "jedisPool" class="redis.clients.jedis.JedisPool">
+          <constructor-arg index="0" ref="jedisPoolConfig"/>
+          <constructor-arg index="1" value="${redis.host}"/>
+          <constructor-arg index="2" value="${redis.port}" type="int"/>
+          <constructor-arg index="3" value="${redis.timeout}" type="int"/>
+          <constructor-arg index="4" value="${redis.password}"/>
+      </bean>
 ```
 
 - java 实际测试
@@ -1055,3 +1062,5 @@ jar包：
 - 版本对不上，要Spring和Spring-data-redis 和 redis和commons-lang3对应
 - 目前是4.1.7 + 1.6.0 + 2.9.0 + 3.3.2 编译通过了
 
+### redis命令行常规使用
+- List集合

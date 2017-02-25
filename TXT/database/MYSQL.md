@@ -36,7 +36,7 @@ show table status like 'assitant' 可以看到当前自动增长的id当前值 d
 - 问题：假设当前是5月19 且（提前月份）i=1 就是计算从4月19到今天的天数
     - 解答：
 
----
+```
       -- 时间格式的简单操作：
       select DATE_FORMAT(produceDate, '%Y') as yeahr from historybarcodesort
          where DATE_FORMAT(produceDate, '%Y')='2013'
@@ -46,10 +46,10 @@ show table status like 'assitant' 可以看到当前自动增长的id当前值 d
       get_date = "2006-12-07"
       SELECT count(*) FROM t_get_video_temp Where DATE_FORMAT(get_date, '%Y-%d')='2006-07';
       SELECT count(*) FROM t_get_video_temp Where get_date like '2006%-07%';
----
+```
 ##### 1.8.3 【datetime 和 timestamp 区别】
 
----
+```
       - 问题：为什么 5.5的环境下运行两句命令得到不同的结果（5.6不会有错误）
       -- 没错误
       creata table test1(one_time timestamp not null default current_timestamp,two_time timestamp);
@@ -58,7 +58,7 @@ show table status like 'assitant' 可以看到当前自动增长的id当前值 d
       或者 将timestamp 改成datetime 也不会有错，那么问题来了 区别是什么？
       -- 上面报错原因不明，大意是只能有一个timestamp的列有默认值
       
----
+```
 
 **DATETIME、DATE 和 TIMESTAMP 区别：**
 - **DATETIME** 类型可用于需要同时包含日期和时间信息的值。MySQL 以 'YYYY-MM-DD HH:MM:SS' 格式检索与显示 DATETIME 类型。
@@ -116,11 +116,11 @@ TIMESTAMP(5) -> TIMESTAMP(6)
 - set @a= select * from User；执行这句话就会报出 operand should contain 1 column(s)错误，就是说多值赋值的错误
 
 ## 3.【基本流程语法】
-
+```
 	if ... then 
 	elseif ... then (注意elseif中间没有空格)
 	end if;
-
+```
 
 ## 4.【触发器】
 #### 4.1【创建单语句的触发器】
@@ -129,13 +129,13 @@ TIMESTAMP(5) -> TIMESTAMP(6)
 - CREATE TRIGGER trigger_name trigger_time trigger_event ON tbl_name FOR EACH ROW trigger_stmt
 
 #### 4.2【创建多语句的触发器】
----
+```
       CREATE TRIGGER trigger_name trigger_time trigger_event
           ON tbl_name FOR EACH ROW
       BEGIN
           .......
       END
----
+```
 #### 4.3【NEW 和 OLD关键字】
 - 使用OLD和NEW关键字，能够访问受触发程序影响的行中的列（OLD和NEW不区分大小写）。在INSERT触发程序中，仅能使用NEW.col_name，没有旧行。
 - 在DELETE触发程序中，仅能使用OLD.col_name，没有新行。在UPDATE触发程序中，可以使用OLD.col_name来引用更新前的某一行的列，也能使用NEW.col_name来引用更新后的行中的列。
@@ -146,7 +146,7 @@ TIMESTAMP(5) -> TIMESTAMP(6)
 
 ## 5.【存储过程】
 #### 基本结构示例：
----
+```
        【loop】 要有iterate 和leave才是完整的
         CREATE PROCEDURE doiterate(p1 INT)
       BEGIN
@@ -160,13 +160,13 @@ TIMESTAMP(5) -> TIMESTAMP(6)
       
       call doiterate(7);
       select @x;
----
+```
 
 
 ## 6. 【函数】
 ##### 【简单示例】
 
----
+```
       ---函数部分,修改定界符 
       delimiter //
       CREATE FUNCTION hello (s CHAR(20)) RETURNS CHAR(50)
@@ -177,24 +177,34 @@ TIMESTAMP(5) -> TIMESTAMP(6)
       
       select hello('Myth ');
       drop function hello;
----
 
-create function fun_test(var1 int,var2 varchar(16)) returns int
-begin 
-   declare temp int;
-   select count(*) into temp from test;
-   return temp;
-end;
+-- 函数
+		create function fun_test(var1 int,var2 varchar(16)) returns int
+		begin 
+		   declare temp int;
+		   select count(*) into temp from test;
+		   return temp;
+		end;
 
 select fun_test(8,'d');
-
+```
 ## 7.【异常】
 
 ## 8.【用户管理】
-### 【创建用户】
-- CREATE USER 'username'@'host' IDENTIFIED BY 'password'; 
-    - 改密: SET PASSWORD FOR 'username'@'%' = PASSWORD("123456"); 
-    - 删除: drop user 'username'@'host'
+####创建用户
+```
+	CREATE USER 'username'@'host' IDENTIFIED BY 'password'; 
+```
+####改密:
+```
+	 SET PASSWORD FOR 'username'@'%' = PASSWORD("123456"); 
+	 
+```
+####删除:
+```
+	 drop user 'username'@'host'
+ ```
+
 - 注意： host是比较重要的如果写了localhost就只能本地登录，% 就是任意
 ### 【授权】
 - GRANT select  ON databasename.tablename TO 'username'@'host' 
