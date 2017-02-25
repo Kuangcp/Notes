@@ -6,6 +6,7 @@
 
 ### IDEA快捷键
 Ctrl Alt L 快速格式化代码
+这时我们只需敲Ctrl+Shift+Enter就能自动补全末尾的字符。而且不只是括号，例如敲完if/for时也可以自动补上{}花括号。
 
 # 常识
 -  project 就是一个工作空间，一个Module就是一个项目

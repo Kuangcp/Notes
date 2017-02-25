@@ -236,3 +236,460 @@ select fun_test(8,'d');
     - usage
 
 ### 
+
+
+
+一，mysql命令行参数
+
+Usage: mysql [OPTIONS] [database] //命令方式
+  -?, --help //显示帮助信息并退出
+  -I, --help //显示帮助信息并退出
+  --auto-rehash //自动补全功能，就像linux里面，按Tab键出提示差不多，下面有例子
+
+  -A, --no-auto-rehash //默认状态是没有自动补全功能的。-A就是不要自动补全功能
+  -B, --batch //ysql不使用历史文件，禁用交互
+  (Enables --silent)
+  --character-sets-dir=name //字体集的安装目录 
+  --default-character-set=name //设置数据库的默认字符集
+  -C, --compress //在客户端和服务器端传递信息时使用压缩
+  -#, --debug[=#] //bug调用功能
+  -D, --database=name //使用哪个数据库
+  --delimiter=name //mysql默认命令结束符是分号，下面有例子
+  -e, --execute=name //执行mysql的sql语句
+  -E, --vertical //垂直打印查询输出
+  -f, --force //如果有错误跳过去，继续执行下面的
+  -G, --named-commands
+  /*Enable named commands. Named commands mean this program's
+  internal commands; see mysql> help . When enabled, the
+  named commands can be used from any line of the query,
+  otherwise only from the first line, before an enter.
+  Disable with --disable-named-commands. This option is
+  disabled by default.*/
+  -g, --no-named-commands
+  /*Named commands are disabled. Use \* form only, or use
+  named commands only in the beginning of a line ending
+  with a semicolon (;) Since version 10.9 the client now
+  starts with this option ENABLED by default! Disable with
+  '-G'. Long format commands still work from the first
+  line. WARNING: option deprecated; use
+  --disable-named-commands instead.*/
+  -i, --ignore-spaces //忽视函数名后面的空格.
+  --local-infile //启动/禁用 LOAD DATA LOCAL INFILE.
+  -b, --no-beep //sql错误时，禁止嘟的一声
+  -h, --host=name //设置连接的服务器名或者Ip
+  -H, --html //以html的方式输出
+  -X, --xml //以xml的方式输出
+  --line-numbers //显示错误的行号
+  -L, --skip-line-numbers //忽略错误的行号
+  -n, --unbuffered //每执行一次sql后，刷新缓存
+  --column-names //查寻时显示列信息，默认是加上的
+  -N, --skip-column-names //不显示列信息
+  -O, --set-variable=name //设置变量用法是--set-variable=var_name=var_value
+  --sigint-ignore //忽视SIGINT符号(登录退出时Control-C的结果)
+  -o, --one-database //忽视除了为命令行中命名的默认数据库的语句。可以帮跳过日志中的其它数据库的更新。
+  --pager[=name] //使用分页器来显示查询输出，这个要在linux可以用more,less等。
+  --no-pager //不使用分页器来显示查询输出。
+  -p, --password[=name] //输入密码
+  -P, --port=# //设置端口
+  --prompt=name //设置mysql提示符
+  --protocol=name //使用什么协议
+  -q, --quick //不缓存查询的结果，顺序打印每一行。如果输出被挂起，服务器会慢下来，mysql不使用历史文件。
+  -r, --raw //写列的值而不转义转换。通常结合--batch选项使用。
+  --reconnect //如果与服务器之间的连接断开，自动尝试重新连接。禁止重新连接，使用--disable-reconnect。
+  -s, --silent //一行一行输出，中间有tab分隔
+  -S, --socket=name //连接服务器的sockey文件
+  --ssl //激活ssl连接，不激活--skip-ssl
+  --ssl-ca=name //CA证书
+  --ssl-capath=name //CA路径
+  --ssl-cert=name //X509 证书
+  --ssl-cipher=name //SSL cipher to use (implies --ssl).
+  --ssl-key=name //X509 密钥名
+  --ssl-verify-server-cert //连接时审核服务器的证书
+  -t, --table //以表格的形势输出
+  --tee=name //将输出拷贝添加到给定的文件中，禁时用--disable-tee
+  --no-tee //根--disable-tee功能一样
+  -u, --user=name //用户名
+  -U, --safe-updates //Only allow UPDATE and DELETE that uses keys.
+  -U, --i-am-a-dummy //Synonym for option --safe-updates, -U.
+  -v, --verbose //输出mysql执行的语句
+  -V, --version //版本信息
+  -w, --wait //服务器down后，等待到重起的时间
+  --connect_timeout=# //连接前要等待的时间
+  --max_allowed_packet=# //服务器接收／发送包的最大长度
+  --net_buffer_length=# //TCP / IP和套接字通信缓冲区大小。
+  --select_limit=# //使用--safe-updates时SELECT语句的自动限制
+  --max_join_size=# //使用--safe-updates时联接中的行的自动限制
+  --secure-auth //拒绝用(pre-4.1.1)的方式连接到数据库
+  --server-arg=name //Send embedded server this as a parameter.
+  --show-warnings //显示警告
+
+
+二，mysql命令行实例
+
+1，auto-rehash自动补全
+
+说例子前，先说一下，你到google或baidu上面搜一下mysql auto-rehash，然后会出来结果，绝大部分都是一样的，并且内容里面有明显错误。
+mysqld_safe –user=mysql –auto-rehash &，这个根本就不对，为什么抄袭的人不知道自己测试一下，对于这种人，我也是很无语的。你自己写着玩到也无所谓，但是你会害人的。
+
+[root@BlackGhost zhangy]# mysqld_safe –help |grep rehash
+
+参数选项中根本没有auto-rehash
+
+二种方法可以实现自动补全功能
+－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－
+[mysql]
+#no-auto-rehash
+auto-rehash
+－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－
+mysql -u root –auto-rehash
+－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－ 
+
+mysql> use test
+  Database changed
+  mysql> select acc //这里自动补全，只是提示表名，和表里面的字段名，不像php可以提示函数名
+  account account.acct_num account.amount acct_num2，－B的用法
+
+D:\xampp\mysql\bin>mysql.exe -uroot -D bak_test -e "show tables;" -B
+Tables_in_bak_test
+comment
+user3，－E的用法
+
+D:\xampp\mysql\bin>mysql.exe -uroot bak_test -e "show tables;" -E
+*************************** 1. row ***************************
+Tables_in_bak_test: comment
+*************************** 2. row ***************************
+Tables_in_bak_test: user4，－D的用法
+
+[root@BlackGhost zhangy]# mysql -u root -D test进入后默认就在test数据库里面，不要用use test;
+
+5，–default-character-set设置默认字符集
+
+[root@BlackGhost zhangy]# mysql -u root -D test --default-character-set=utf86，–delimiter设置mysql命令结束符
+
+[root@BlackGhost zhangy]# mysql -u root -D test --delimiter=\|mysql默认的命令结束符是分号，现在把它设置成竖杠，要注意｜前面的\
+
+7，-e的用法
+
+D:\xampp\mysql\bin>mysql.exe -uroot -D bak_test -e "show tables;"
+这个很有用的，因为我不用进入mysql客户里面去，就能把我要的数据取出来，这个可以配合shell脚本的话，能发挥很大的功能
+
+8，-f的用法
+
+D:\xampp\mysql\bin>mysql.exe -uroot bak_test -e "show databaseds;show tables;" -
+f
+ERROR 1064 (42000) at line 1: You have an error in your SQL syntax; check the ma
+nual that corresponds to your MySQL server version for the right syntax to use n
+ear 'databaseds' at line 1
++--------------------+
+| Tables_in_bak_test |
++--------------------+
+| comment |
+| user |
++--------------------+忽略mysql的错误，继续向下执行
+
+9，-N的用法
+
+D:\xampp\mysql\bin>mysql.exe -uroot bak_test -e "select * from user" -N
++---+------+---+
+| 1 | bb | 0 |
+| 2 | tank | 0 |
++---+------+---+10，-p的用法
+
+[root@BlackGhost zhangy]# mysql -u root -o test -p -S /tmp/mysql.sock
+Enter password11，-h的用法
+
+[root@BlackGhost zhangy]# mysql -u root -h 192.168.1.102服务器可能不只一个，这个时间我们可以用-h来指定连接哪里
+
+12，-H的用法
+
+D:\xampp\mysql\bin>mysql.exe -uroot bak_test -e "show tables " -H
+<TABLE BORDER=1><TR><TH>Tables_in_bak_test</TH></TR><TR><TD>comment</TD></TR><TR
+><TD>user</TD></TR></TABLE>13，-X的用法
+
+D:\xampp\mysql\bin>mysql.exe -uroot bak_test -e "show tables " -X
+<?xml version="1.0"?> 
+
+<resultset statement="show tables
+" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <row>
+  <field name="Tables_in_bak_test">comment</field>
+  </row> 
+
+  <row>
+  <field name="Tables_in_bak_test">user</field>
+  </row>
+</resultset>14，–prompt的用法
+
+[root@BlackGhost zhangy]# mysql -u root --prompt=\^\_\^
+^_^show databases;
++--------------------+
+| Database |
++--------------------+
+| information_schema |
+| biztojie |mysql的提示符，我把它设置成笑脸了。
+
+15，-S的用法
+
+[root@BlackGhost zhangy]# mysql -u root -D test -S /tmp/mysql.sock
+当我们一台服务器启动了二个不同mysql版本的时候，存放socket的文件是不能一样的，－S用来指定连接到那个
+
+16，-v的用法
+
+[root@BlackGhost zhangy]# mysql -u root -D test -e "show tables;" -v
+--------------
+show tables
+--------------内容不止这么点，只说重点
+
+17，-P的用法
+
+[root@BlackGhost zhangy]# mysql -u root -o test -P 13306 -S /tmp/mysql.sock
+
+=======================================【常用功能概览】==============================================================================
+
+tee output.txt 保存运行结果到文件
+Logging to file 'output.txt'同上
+如果select出来的结果集超过几个屏幕，那么前面的结果一晃而过无法看到。
+使用pager可以设置调用os的more或者less等显示查询结果，
+和在os中使用more或者less查看大文件的效果一样。
+ pager more或者
+PAGER set to ‘more’
+字符编码
+show full fields from tableName;show create table TableName 来检查当前表中字段的字符集设置。
+set name 'gbk';同时修改 character_set_client,character_set_connection,character_set_results
+ set names 'gbk';
+  java.util.Properties prop = new java.util.Properties();
+       prop.put( " charSet " , " Big5 " );
+       prop.put( " user " , username);
+       prop.put( " password " , password);
+
+       // Connect to the database 
+       con = DriverManager.getConnection(url, prop);
+存储过程参数乱码create procedure t ( aa char(10) charset 'gbk')
+
+设置方法2{
+
+设置为gbk即可.可以写一个my.ini来自动设置:
+在Windows的系统安装目录下 (如：C:\WINDOWS\my.ini) 新建一个“my.ini”文件，注意后缀名是“ini”。内容如下：
+[WinMySQLAdmin]
+   Server=c:/apps/mysql/bin/mysqld-nt.exe
+[mysqld]
+   basedir=c:/apps/mysql
+   datadir=c:/dev/mysql data/data
+default-character-set=gbk
+[client]
+   default-character-set=gbk
+上面“Server”指向MySQL的执行主程序，“basedir”指向MySQL的安装目录，“datadir”指向MySQL的数据存放目录（因为我改变了它，所以需要特别指定），
+设置”default-charseter-set=gbk”是为了支持默认为中文。然后把“c:\apps\mysql\bin”追加到“环境变量”的“path”变量中 。 
+}
+
+    将原来的数据连接:
+<property name="connection.url">
+    jdbc:mysql://localhost:3306/db
+</property>
+    修改成:
+<property name="connection.url">
+    <![CDATA[jdbc:mysql://localhost:3306/db?useUnicode=true&characterEncoding=utf-8]]>
+</property>
+ 注意，在将连接字符串放到CDATA中，因为&是XML中的转义字符。不然会提示错误:
+    Error parsing XML: /hibernate.cfg.xml(12) The reference to entity "characterEncoding" must end with the ';' delimiter.
+
+    也可以直接把&修改为&amp;
+    即:
+    jdbc:mysql://localhost:3306/db?useUnicode=true&amp;characterEncoding=utf-8
+
+
+mysql排错指南。
+乱码：是否指定java，url,数据库相同的编码
+
+输出检查确定url是否拼接正确
+输出确定sql语句是否正确。
+
+常用五类约束：
+not null：非空约束，指定某列不为空 
+unique： 唯一约束，指定某列和几列组合的数据不能重复 
+primary key：主键约束，指定某列的数据不能重复、唯一 
+foreign key：外键，指定该列记录属于主表中的一条记录，参照另一条数据 
+check：检查，指定一个表达式，用于检验指定数据 
+注意： MySQL不支持check约束，但可以使用check约束，而没有任何效果；  
+
+mysql正确卸载：删除数据文件夹，删除安装文件夹，删除c盘下的programData下的文件夹。
+命令行窗口输入和显示中文乱码:
+改my.ini，defauslt- chdaracter -set=gbk
+null与其他值做运算结果是null,开发中把null作为零处理，用函数ifnull（english，0）处理。
+
+root密码重置：
+停止服务y
+命令行 -
+
+数据类型有：
+auto_increment
+	字符：char,varchar
+	小数：dec,decimal,float,double,
+	整数：bigint, int,mediumint,smallint,tinyint,integer
+	布尔：bit,boolean
+	二进制数据：blob（4G最多）,longblob,mediumblob,tinyblob,varbinary,binary
+	文本：text,longtext,mediumtext,tinytext,
+	日期：date,time,timestamp,datetime
+	
+
+like ‘关_’ like%分别匹配一个或者多个字。
+not取反
+is null;is not null
+between and 还有in(,)都包括=
+order by asc desc默认asc升序。也可以使用order by +别名
+select count(name) 
+select sum(english)
+select avg(math) 
+select max(math)
+select name ,sum(price) from products groutp by name[having price> [200] having是过滤操作
+select form talbe where groutp by having order by asc desc
+
+内连接，用于关联列有关联的表。
+select * from emp join dept  on emp.id_dept=dept.id;消除笛卡尔积。这是显式内连接效果等于下句。
+select * from emp ,dept where emp.id_dept=dept.id;这是隐式内连接。效果等于上句。
+
+外连接，相反。
+mysql不支持全外连接。
+左外连接：select * from emp left outer join dept on emp.id_dept=dept.id;
+区分左外还是右外连接的写法。可以看left/right outer join 的左边或右边的表名。
+
+设置环境变量。一般,访问mysql数据库时，首先需要使用telnet远程登录安装数据库系统的服务器，然后再进入mysql数据库
+运行：mysql -h110.110.110.110 -u -p 数据库名；hostname为装有mysql数据库的服务器名称		||mysql -hlocalhost -uroot -p
+终止:\q   quit  exit
+指定数据库：use student;
+执行外部文件：source a.txt
+查看指定数据库的定义信息： show create database mydb;
+
+查字符集：show variables like '%char%'
+查看数据库引擎：show engines;
+查看默认引擎：show variables like '%storage_engine%';
+查用户：select user();
+查数据库：show databases;
+查当前数据库：select database();
+查表：show tables;
+查看当前表引擎：show create table a;
+查字段和 select name,math+enlish+chinese  from score; 
+
+结果列别名：select name as newName,(math+enlish+chinese) as total  from score;as可省略
+
+
+
+去重复查询：select distinct name from student;
+查建表信息：show create table student;
+查表明细：show table status from student;
+描述表：describe class;		||desc class;		||show columns from class;
+查索引：show index from class;
+查数据：select * from class order by id limit 0,2;  查看排序最前的两行数据
+查触发器：SELECT * FROM information_schema.`TRIGGERS`;
+查约束：SELECT * FROM information_schema.`TABLE_CONSTRAINTS`;
+	SELECT  CONSTRAINT_CATALOG,  CONSTRAINT_SCHEMA,  CONSTRAINT_NAME,  TABLE_SCHEMA,  TABLE_NAME,  CONSTRAINT_TYPE 
+	FROM  information_schema.TABLE_CONSTRAINTS 
+ 	WHERE  TABLE_NAME='t_org';
+
+
+主键表主键值被外键表参照时，主键表记录不允许被删除。
+? ON DELETE CASCADE： 指当主键表中的行被删除时，
+外键表中相依赖的行也将被级联删除。
+? ON DELETE SET NULL： 当主键表中的行被删除时，
+把涉及到外键表的外键值设置为空。
+
+
+
+增数据库：create database student;
+增数据库并设置字符集：create database student character set utf8;
+增临时表 temporary
+复制表：create table class2 select ...(不复制主键、自增等属性);||	create table class2 like class;	(完全复制) 
+增表：create table class(id int(9) auto_increment  primary key ,
+				name char(20) not null ,
+				birthday date default 19870218,
+				constraint c1 unique(name,id));
+增列：alter table class add column sex char(4) default 'man' first   /after ...;
+增约束：alter table class add unique(name);
+增主键:alter table class add primary key(id);
+	alter table class add constraint 主键 primary key 表名(主键字段)
+增外键：alter table student add foreign key(classes_name, classes_number) references classes(name, number) ;
+	alter table class add constraint c1 foreign key 从表(字段) references 主表(字段) [on delete cascade];
+增数据：insert into class set name='';		||insert into class (,) values(,),(,);	//字符中包含引用标志时用\。
+增重复数据：insert LOW_PRIORITY | DELAYED | HIGH_PRIORITY] into class...	
+		||insert into class values ... on duplicate key update name=''...	
+		||replace into...
+增索引：alter table class add index(name);	||alter table class add fulltext index (hisBlog);
+增索引：create index i on class(id(10));在id列的头10个数据建立索引。	||create index ii on class(hisWords(10));以前10字为索引关键字
+增本地用户：grant all privileges on student.* to newUser@localhost identified by '123456';
+增特定地址登陆用户：grant select on student.* to custom@weiqiong.com identified by '123456';
+增任意登陆的超级用户：grant all privileges on *.* to newUser@"%" identified by '' with grant option;
+导入数据：load data local infile 'c:\\a.sql' into table class;		||source a.sql;	（数据要顶行，null代表空，tab代表列之间的间隔）
+
+
+更改为 SkillID 和 SkillName 列的组合，必须首先删除已创建的主键，然后添加新的主键：
+
+改引擎：alter table a engine=innodb;
+该数据库字符集：alter database db character set utf8;
+改字符集：set character_set_database=gbk；	||mysql --default-character-set=gbk -uname -p;
+改密码：set password for administer =password("123456");
+改表名：rename table class to class1;||	alter table class rename （to） classes;
+改表型 ：alter table class type=innoDB;
+改列型、属性：alter table class modify/change name newName int unsigned/null/not null/unique/primary key+auto_increment default 'man'
+
+改数据：update class set age=100 where age=21;	
+
+
+
+删除外键先把包含外键的那个表中的外键全部删掉，置为null，或者直接将那列删掉，这样就没有地方引用这些外键
+删列：alter table class drop column sex;
+删主键：alter table class drop primary key;
+删外键：alter table class drop foreign key 外键;
+删索引：alter table class drop index i;		||drop index i on class;
+删数据：delete from class where id=01245;
+删全部：delete * from class;	||truncate table class;	//后者重建表，速度快，清零auto_increment,但事务不安全
+删表：drop table if exists class;
+删数据库：drop database student;	||drop database if exists student;
+删用户：revoke all privileges on *.* from userName@"%"	->use mysql	->delete from user where User='newUser' and host="%";	
+	->flush privileges;
+删除约束：alter table class drop constraint c1;
+
+外键约束是保证一个或两个表之间的参照完整性，外键是构建于一个表的两个字段或是两个表的两个字段之间的参照关系。 
+也就是说从表的外键值必须在主表中能找到或者为空。 当主表的记录被从表参照时，主表的记录将不允许删除，如果要删除数据，需要先删除从表中依赖该记录的数据，
+然后才可以删除主表的数据。还有一种就是级联删除子表数据。
+注意：
+	外键约束的参照列，在主表中引用的只能是主键或唯一键约束的列，假定引用的主表列不是唯一的记录， 那么从表引用的数据就不确定记录的位置。
+	同一个表可以有多个外键约束。通常先建主表，然后再建从表，这样从表的参照引用的表才存在。
+
+主表 create table classes( id int auto_increment primary key,name varchar(20) ); 
+从表 create table student( id int auto_increment,name varchar(22), constraint pk_id primary key(id),classes_id int references classes(id));   
+
+create table student( id int auto_increment primary key, name varchar(25),classes_id int,foreign key(classes_id) references classes(id) ); 
+上面的创建外键的方法没有指定约束名称，系统会默认给外键约束分配外键约束名称，命名为student_ibfk_n， 其中student是表名，n是当前约束从1开始的整数。  
+指定约束名称： 
+create table student(  id int auto_increment primary key,name varchar(25), classes_id int,constraint fk_classes_id foreign key(classes_id) references classes(id) [on delete cascade]);   
+多列外键组合，必须用表级别约束语法： 
+create table student(id int auto_increment primary key, name varchar(20),classes_name varchar(20),classes_number int,                
+foreign key(classes_name, classes_number) references classes(name, number));   
+  
+自引用、自关联（递归表、树状表） 
+create table tree(id int auto_increment primary key,name varchar(50),  parent_id int, foreign key(parent_id) references tree(id) );   
+级联删除：删除主表的数据时，关联的从表数据也删除，则需要在建立外键约束的后面增加on delete cascade 或on delete set null，前者是级联删除，后者是将从表的关联列的值设置为null。
+create table student(         
+id int auto_increment primary key,         
+name varchar(20),         
+classes_name varchar(20),         
+classes_number int,         /*表级别联合外键*/         
+foreign key(classes_name, classes_number) references classes(name, number) on delete cascade
+);  
+
+
+区分大小写的比较关键字是binary.
+放弃之前的语句：\c
+
+（var）char最大长度为255，char数据类型的处理速度更快，有时甚至可以超出varchar处理速度的50%。
+int 4个字节，- 2147483647 到2147483648。unsigned类型0-4294967295
+float (4,2)
+text/blob 255-65535 后者大小写敏感
+mysql语句不区分大小写。
+存储过程格式如下：
+delimiter //
+create procedure sam2()
+begin
+update class set birthday=19530302;
+end//
+delimiter ;
