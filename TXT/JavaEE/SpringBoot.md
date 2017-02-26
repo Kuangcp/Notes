@@ -136,3 +136,12 @@ public class Reader implements UserDetails {
 ```
 
 ## 数据库模块
+
+
+## 测试模块
+- 可以使用MockMvc来测试Controller层的代码
+- 可以使用MockMvc的SpringSecurity支持来测试安全模块
+- 使用 WebIntegraionTest 测试运行中的Web容器
+	- 启动嵌入式的Servlet容器来进行测试，下断言
+- 使用随机端口启动服务器 配置local.server.port=0
+- 使用Selenium来测试HTML页面，模拟浏览器的动作，查看系统运行状态
