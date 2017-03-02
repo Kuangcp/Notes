@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>  
+<!DOCTYPE log4j:configuration SYSTEM "log4j.dtd">
+<log4j:configuration xmlns:log4j="http://jakarta.apache.org/log4j/">
+
+	<!-- 控制台输出 -->
+	<appender name="cmd" class="org.apache.log4j.ConsoleAppender">
+		<param name="Encoding" value="GBK" />
+		<param name="Threshold" value="debug" />
+		<param name="Target" value="System.out" />
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern" value="%d [%t] %-5p %c %x - %m%n" />
+		</layout>
+		<filter class="org.apache.log4j.varia.LevelRangeFilter">
+			<param name="levelMin" value="DEBUG" />
+			<param name="levelMax" value="DEBUG" />
+		</filter>
+		<!-- <filter class="org.apache.log4j.varia.StringMatchFilter">
+			<param name="StringToMatch" value="需要过滤的信息片段" />
+			<param name="AcceptOnMatch" value="false" />
+		</filter> -->
+	</appender>
+
+	<!-- 文件输出 -->
+	<appender name="file" class="org.apache.log4j.RollingFileAppender">
+		<param name="File" value="logs/log.log" />
+		<param name="Encoding" value="UTF-8" />
+		<param name="Threshold" value="debug" />
+		<param name="Append" value="true" />
+		<param name="MaxFileSize" value="50mb" />
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern" value="%-d{yyyy-MM-dd HH:mm:ss} [%t] %p %c %x - %m%n" />
+		</layout>
+	</appender>
+
+	<!-- 针对任务处理程序的日志文件输出  此处目录是和src同级-->
+	<appender name="taskFile" class="org.apache.log4j.RollingFileAppender">
+		<param name="File"  value="logs/task-log.log" />
+		<param name="Encoding" value="UTF-8" />
+		<param name="Threshold" value="debug" />
+		<param name="Append" value="true" />
+		<param name="MaxFileSize" value="500kb" />
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern" value="%-d{yyyy-MM-dd HH:mm:ss} [%t] %p %c %x - %m%n" />
+		</layout>
+	</appender>
+
+	<!-- 任务处理程序，设置输出的方式 -->
+	<logger name="com.ecard.task" additivity="true">
+		<level value="debug" />
+		<appender-ref ref="cmd" />
+		<appender-ref ref="file" />
+		<appender-ref ref="taskFile" />
+	</logger>
+
+	<!-- 全局输出的方式 -->
+	<root>
+		<priority value="debug" />
+		<appender-ref ref="cmd" /> <!--这是在eclipse的控制台输出，不必要就关了吧，反正也看不懂，没这鸟时间 -->
+		<appender-ref ref="file" />
+		<appender-ref ref="taskFile" />
+	</root>
+
+</log4j:configuration>

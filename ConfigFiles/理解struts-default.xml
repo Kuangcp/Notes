@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+    "http://struts.apache.org/dtds/struts-2.3.dtd">
+
+<struts>
+	<!-- 
+		package：是struts2框架底层提供出来的
+			* name：用于让其他包来继承的
+			* abstract：设置为抽象包，下面不能定义action标签
+	 -->
+    <package name="struts-default" abstract="true">
+        <!-- 
+        	result-types：声明结果类型
+        		* name：结果类型的名称
+        		* class：结果类型对应类的完整路径
+        		* default：设置其为默认，true是默认
+         -->
+        <result-types>
+            <!-- 转发到action -->
+            <result-type name="chain" class="com.opensymphony.xwork2.ActionChainResult"/>
+            <!-- 转发到jsp -->
+            <result-type name="dispatcher" class="org.apache.struts2.dispatcher.ServletDispatcherResult" default="true"/>
+            <result-type name="freemarker" class="org.apache.struts2.views.freemarker.FreemarkerResult"/>
+            <result-type name="httpheader" class="org.apache.struts2.dispatcher.HttpHeaderResult"/>
+            <!-- 重定向到jsp -->
+            <result-type name="redirect" class="org.apache.struts2.dispatcher.ServletRedirectResult"/>
+            <!-- 重定向到action -->											  
+            <result-type name="redirectAction" class="org.apache.struts2.dispatcher.ServletActionRedirectResult"/>
+            <!-- 用于下载 -->
+            <result-type name="stream" class="org.apache.struts2.dispatcher.StreamResult"/>
+            <result-type name="velocity" class="org.apache.struts2.dispatcher.VelocityResult"/>
+            <result-type name="xslt" class="org.apache.struts2.views.xslt.XSLTResult"/>
+            <result-type name="plainText" class="org.apache.struts2.dispatcher.PlainTextResult" />
+        </result-types>
+
+		<!-- 
+			interceptors
+				* interceptor：声明拦截器
+					* name：拦截器的名称
+					* class：对应拦截器类的完整路径
+		 -->
+        <interceptors>
+            <interceptor name="alias" class="com.opensymphony.xwork2.interceptor.AliasInterceptor"/>
+            <interceptor name="autowiring" class="com.opensymphony.xwork2.spring.interceptor.ActionAutowiringInterceptor"/>
+            <interceptor name="chain" class="com.opensymphony.xwork2.interceptor.ChainingInterceptor"/>
+            <interceptor name="conversionError" class="org.apache.struts2.interceptor.StrutsConversionErrorInterceptor"/>
+            <interceptor name="cookie" class="org.apache.struts2.interceptor.CookieInterceptor"/>
+            <interceptor name="clearSession" class="org.apache.struts2.interceptor.ClearSessionInterceptor" />
+            <interceptor name="createSession" class="org.apache.struts2.interceptor.CreateSessionInterceptor" />
+            <interceptor name="debugging" class="org.apache.struts2.interceptor.debugging.DebuggingInterceptor" />
+            <interceptor name="execAndWait" class="org.apache.struts2.interceptor.ExecuteAndWaitInterceptor"/>
+            <interceptor name="exception" class="com.opensymphony.xwork2.interceptor.ExceptionMappingInterceptor"/>
+            <interceptor name="fileUpload" class="org.apache.struts2.interceptor.FileUploadInterceptor"/>
+            <interceptor name="i18n" class="com.opensymphony.xwork2.interceptor.I18nInterceptor"/>
+            <interceptor name="logger" class="com.opensymphony.xwork2.interceptor.LoggingInterceptor"/>
+            <interceptor name="modelDriven" class="com.opensymphony.xwork2.interceptor.ModelDrivenInterceptor"/>
+            <interceptor name="scopedModelDriven" class="com.opensymphony.xwork2.interceptor.ScopedModelDrivenInterceptor"/>
+            <interceptor name="params" class="com.opensymphony.xwork2.interceptor.ParametersInterceptor"/>
+            <interceptor name="actionMappingParams" class="org.apache.struts2.interceptor.ActionMappingParametersInteceptor"/>
+            <interceptor name="prepare" class="com.opensymphony.xwork2.interceptor.PrepareInterceptor"/>
+            <interceptor name="staticParams" class="com.opensymphony.xwork2.interceptor.StaticParametersInterceptor"/>
+            <interceptor name="scope" class="org.apache.struts2.interceptor.ScopeInterceptor"/>
+            <interceptor name="servletConfig" class="org.apache.struts2.interceptor.ServletConfigInterceptor"/>
+            <interceptor name="timer" class="com.opensymphony.xwork2.interceptor.TimerInterceptor"/>
+            <interceptor name="token" class="org.apache.struts2.interceptor.TokenInterceptor"/>
+            <interceptor name="tokenSession" class="org.apache.struts2.interceptor.TokenSessionStoreInterceptor"/>
+            <interceptor name="validation" class="org.apache.struts2.interceptor.validation.AnnotationValidationInterceptor"/>
+            <interceptor name="workflow" class="com.opensymphony.xwork2.interceptor.DefaultWorkflowInterceptor"/>
+            <interceptor name="store" class="org.apache.struts2.interceptor.MessageStoreInterceptor" />
+            <interceptor name="checkbox" class="org.apache.struts2.interceptor.CheckboxInterceptor" />
+            <interceptor name="profiling" class="org.apache.struts2.interceptor.ProfilingActivationInterceptor" />
+            <interceptor name="roles" class="org.apache.struts2.interceptor.RolesInterceptor" />
+            <interceptor name="annotationWorkflow" class="com.opensymphony.xwork2.interceptor.annotations.AnnotationWorkflowInterceptor" />
+            <interceptor name="multiselect" class="org.apache.struts2.interceptor.MultiselectInterceptor" />
+            
+            <!-- 声明自定义拦截器 -->
+            <interceptor name="expessionInterceptor" class="cn.itcast.aop.ExpessionInterceptor"></interceptor>
+
+            <!-- Basic stack -->
+            <interceptor-stack name="basicStack">
+                <interceptor-ref name="exception"/>
+                <interceptor-ref name="servletConfig"/>
+                <interceptor-ref name="prepare"/>
+                <interceptor-ref name="checkbox"/>
+                <interceptor-ref name="multiselect"/>
+                <interceptor-ref name="actionMappingParams"/>
+                <interceptor-ref name="params">
+                    <param name="excludeParams">dojo\..*,^struts\..*,^session\..*,^request\..*,^application\..*,^servlet(Request|Response)\..*,parameters\...*</param>
+                </interceptor-ref>
+                <interceptor-ref name="conversionError"/>
+            </interceptor-stack>
+
+            <!-- 
+            	interceptor-stack：拦截器栈
+            		* struts2框架通过使用拦截器栈，进而使用上面声明好的拦截器
+            		* 在拦截器栈里面，存放了一些上面声明好的拦截器
+            		* 拦截器栈相当于一个list集合，执行的时候是按照存放的先后顺序来执行
+             -->
+            <interceptor-stack name="defaultStack">
+                <interceptor-ref name="exception"/>
+                <interceptor-ref name="alias"/>
+                <interceptor-ref name="servletConfig"/>
+                <interceptor-ref name="i18n"/>
+                <interceptor-ref name="prepare"/>
+                <interceptor-ref name="chain"/>
+                <interceptor-ref name="scopedModelDriven"/>
+                <interceptor-ref name="modelDriven"/>
+                <interceptor-ref name="fileUpload">
+                	<param name="maximumSize">20971520</param>
+                	<param name="allowedTypes">text/plain</param>
+                	<param name="allowedExtensions">.txt</param>
+                </interceptor-ref>
+                <interceptor-ref name="checkbox"/>
+                <interceptor-ref name="multiselect"/>
+                <interceptor-ref name="staticParams"/>
+                <interceptor-ref name="actionMappingParams"/>
+                <interceptor-ref name="params">
+                    <param name="excludeParams">dojo\..*,^struts\..*,^session\..*,^request\..*,^application\..*,^servlet(Request|Response)\..*,parameters\...*</param>
+                </interceptor-ref>
+                <interceptor-ref name="conversionError"/>
+                <interceptor-ref name="validation">
+                    <param name="excludeMethods">input,back,cancel,browse</param>
+                </interceptor-ref>
+                <interceptor-ref name="workflow">
+                    <param name="excludeMethods">input,back,cancel,browse</param>
+                </interceptor-ref>
+                <interceptor-ref name="debugging"/>
+                
+                <!-- 配置使用自定义拦截器 -->
+                <interceptor-ref name="expessionInterceptor"/>
+                
+            </interceptor-stack>
+
+       </interceptors>
+
+		<!-- 配置在struts2框架运行时，默认要执行的是哪个拦截器栈，defaultStack -->
+        <default-interceptor-ref name="defaultStack"/>
+
+		<!-- 配置在struts2框架运行时，如果没有为action指定class的话，默认要执行的class的类名 -->
+        <default-class-ref class="com.opensymphony.xwork2.ActionSupport" />
+    </package>
+
+</struts>
