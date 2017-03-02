@@ -1,3 +1,5 @@
+2017-3-2 22:31:24 运行最新的choco得到的结果：
+
 Chocolatey v0.10.3
 gols 1.0.0.2 [Approved] Downloads cached for licensed users
 lhaca 0.76 [Approved] - Possibly broken
