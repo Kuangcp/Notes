@@ -1,5 +1,18 @@
+# Mysql 基本数据类型
+##  decimal 
+-  The declaration syntax for a DECIMAL column is DECIMAL(M,D). The ranges of values for the arguments are as follows:
+   - M is the maximum number of digits (the precision). It has a range of 1 to 65.
+   - D is the number of digits to the right of the decimal point (the scale). It has a range of 0 to 30 and must be no larger than M. 
+- 在MySQL 3.23 及以后的版本中，DECIMAL(M, D) 的取值范围等于早期版本中的DECIMAL(M + 2, D) 的取值范围。 - 1、当插入的整数部分的值超过了其表示范围后就直接忽略了小数部分的值，并以最大值填充。 
+- 2、当整数部分合法，小数部分多余的位数，直接截断。
+
+## LongBlob
+- 这种数据类型可以直接把图像文件存到数据库中！
+
+
+
 # 1.mysql常用命令集合
-### 1.1【自增长】
+#### 1.1【自增长】
 - 【创建表时设置自增长，并设置起始值】
     - create table cc( id int auto_increment,name varchar(20),primary key(id) ) auto_increment=1000;
 - 【设置已有字段自增长】 
@@ -9,7 +22,7 @@
 - 【自增长字段溢出】
     - 设置自动增长的列，只能是int类型（包含了各种int），当出现了溢出就可以改成bigint 但是如果有外键约束，可能就会更改失败，还不如删库重建，实在太大了就删约束再建约束
 
-### 1.2【主键约束的修改】
+#### 1.2【主键约束的修改】
 alter table 表名  add constraint (PK_表名) primary key (j,k,l); 关于一些约束条件constraint好像没有起到作用比如 check
 #### 1.3【修改表名】
 rename table table1 to table2; 	切记不可随便修改表名，改了就要修改相应的 外键，触发器，函数，存储过程！！！
