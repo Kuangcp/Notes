@@ -17,3 +17,6 @@
 
 ## 2017-2-21 21:40:30
 使用chrome的插件更省资源，内存真不够用
+
+## 2017-3-10 21:08:06
+图片的示例 ：![ER图](https://raw.githubusercontent.com/Kuangcp/Notes/master/TXT/Images/ER.png)
