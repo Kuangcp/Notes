@@ -1,5 +1,4 @@
-#Spring Boot 框架
-
+# Spring Boot 框架
 ## 安装Spring Boot
 - 安装SDKMAN
     - 使用git bash运行  `curl -s get.sdkman.io | bash`
@@ -10,8 +9,81 @@
 - 得到的项目中有俩个类，一个是引导入口类，一个是测试类
 - 新建一个 Controller 并且新建视图对应的HTML
 - **注意 controller类要和引导类同包或子包**
+- [起点项目]()
+***************
 
-[起点项目]()
+## IDEA 新建一个Springboot web项目并使用Gradle构建
+-  安装好Gradle 3.0+
+-  new Module 选initial那个，选好需要的模块 web，jdbc mysql mybabtis freemake redis Security 
+-  指定项目基本信息，选择Gradle Project war
+- 新建一个application.yml 文件，配置数据库连接数据
+
+```
+	spring:
+  profiles:
+    active: development //选用开发模式
+  thymeleaf:
+    cache: false
+  datasource:
+      url: jdbc:mysql://localhost/test
+      username: root
+      password: mysql1104
+      dbcp2:
+        driver-class-name: com.mysql.jdbc.Driver
+        max-conn-lifetime-millis: 30000
+        max-idle: 10
+        max-total: 100
+        min-idle: 6
+        max-wait-millis: 10000
+
+#server:
+#  port: 8443
+#  ssl:
+#    key-store: classpath:key/keystore.p12
+#    key-store-password: kuang1104
+#    keyStoreType: PKCS12
+#    keyAlias: tomcat
+
+logging:
+  level:
+    root: info
+
+# 开发模式相关的配置
+---
+
+spring:
+  profiles: development
+
+logging:
+  level:
+    root: info
+    org:
+      springframwork:
+        security: debug
+  path: classpath:/logs/
+  file: Demo.log
+
+# 发行时采用的配置信息
+---
+
+spring:
+  profiles: production
+
+logging:
+  level:
+    root: warn
+    org:
+      springframwork:
+        security: warn
+  path: classpath:logs/
+  file: Demo.log
+```
+- 新建一个 groovy包和java并列，目的是使用groovy简洁的构建实体对象简化代码
+- 要将groovy和java 共同编译 就要加入`sourceSets.main.java.srcDirs=['src/main/java','src/main/groovy']`
+- 然后使用gradle内置的bootrun即可运行项目，切换模式可以看到控制台的输出信息，没有错误即可
+- 如果想要打包出来运行，就配置一个manifest 配置一个main类，就可以使用java -jar 命令运行war包了
+
+********
 
 ## 安全模块
 - 添加依赖
@@ -135,8 +207,11 @@ public class Reader implements UserDetails {
 }
 ```
 
+*********
+
 ## 数据库模块
 
+*******
 
 ## 测试模块
 - 可以使用MockMvc来测试Controller层的代码
@@ -145,3 +220,5 @@ public class Reader implements UserDetails {
 	- 启动嵌入式的Servlet容器来进行测试，下断言
 - 使用随机端口启动服务器 配置local.server.port=0
 - 使用Selenium来测试HTML页面，模拟浏览器的动作，查看系统运行状态
+
+**********

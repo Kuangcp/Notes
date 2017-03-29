@@ -20,4 +20,4 @@
 
 ## 2017-3-10 21:08:06
 图片的示例 ：![ER图](https://raw.githubusercontent.com/Kuangcp/Notes/master/TXT/Images/ER.png)
--`![ER图](https://raw.githubusercontent.com/Kuangcp/Notes/master/TXT/Images/ER.png)`前面大致一样，就是项目和路径会不同。
+-`![ER图](https://raw.githubusercontent.com/Kuangcp/Notes/master/TXT/Images/ER.png)`前面大致一样，就是项目和路径会不同。 

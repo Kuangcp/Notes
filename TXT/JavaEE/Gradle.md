@@ -127,5 +127,182 @@ Chocolatey在安装包的时候，默认路径是按照系统的默认路径来�
         - 但是实际得到的是，改动了properties或者是构建文件都会引起task运行，两者都不改动就不会运行task，而且不会有输出提示up-to-date，要自己手动logger
 
 ## 编写和使用自定义task
+- 自定义task包含两个组件：
+    - 自定义的task类，封装了逻辑行为，也被称为任务类型
+    - 真实的task 提供了用于配置行为的task类所暴露的属性值
 
+- 这个task就是做到了改配置文件，确保是RELEASE版本
+```
+//先要实例化version属性对象的存在
+   version = new ProjectVersion(0,1,true)
+   //继承DefaultTask类型的自定义task类
+   class ReleaseVersionTask extends DefaultTask{
+    @Input Boolean release
+    @OutputFile File destFile
+
+    ReleaseVersionTask(){
+        group = 'versioning'
+        description = 'Make Project a release version'
+
+    }
+    //task的行为逻辑
+    @TaskAction
+    void start (){
+        project.version.release = true;
+        ant.propertyfile(file:destFile){
+            entry(key:'release',type:'string',operation:'=',value:'true')
+        }
+        println "$project.version"
+    }
+}
+//version的POGO类
+class ProjectVersion{
+    Integer major
+	Integer minor
+    Boolean release
+    ProjectVersion (Integer major ,Integer minor){
+		this.major = major
+		this.minor = minor
+	}
+    ProjectVersion (Integer major ,Integer minor,Boolean release){
+		this(major,minor)
+		this.release = release
+	}
+    @Override
+    String toString(){
+        "$major.$minor${release?'-RELEASE':'-SNAPSHOT'}"
+    }
+}
+//真实的task，用来操作自定义类暴露的几个属性
+//使用命令来运行，本质是运行真实的task但是行为逻辑在自定义类中编写
+//gradle -b UserDefineTask.gradle -q makeReleaseVersion
+//如果要改动一些数据可以直接更改暴露的task而不用去改自定义的task类
+task makeReleaseVersion(type:ReleaseVersionTask){
+    release = 'true'
+    destFile = file('version.properties')
+    
+}
+
+```
+- 书上写的不完全，调试要死人
+
+## 声明task规则
+```
+   //All used property must define and initial first
+   version = new ProjectVersion(0,1,true)
+   ext.versionFile = file('version.properties')
+   class ProjectVersion{
+       Integer major
+   	Integer minor
+       Boolean release
+       ProjectVersion (Integer major ,Integer minor){
+   		this.major = major
+   		this.minor = minor
+   	}
+       ProjectVersion (Integer major ,Integer minor,Boolean release){
+   		this(major,minor)
+   		this.release = release
+   	}
+       @Override
+       String toString(){
+           "$major.$minor${release?'-RELEASE':'-SNAPSHOT'}"
+       }
+   }
+   // task规则的定义
+   tasks.addRule("Pattern: increment<Classifier>Version - Increment the project version classifier." ){
+   //根据预定义模式来检查task的名称
+    String taskName -> if(taskName.startsWith('increment') && taskName.endsWith('Version')){
+        //根据符合命名模式的task动态添加一个doLast的方法
+        task(taskName)<<{
+         //从完整的task名称中提取类型字符串，
+         //字面意思是将字符串中increment和Version两个串去除掉然后转小写再赋值
+            String classifier = (taskName - 'increment' - 'Version').toLowerCase()
+            String currentVersion = version.toString()
+            switch (classifier){
+                case 'major':++version.major
+                    break
+                case 'minor':++version.minor
+                    break
+                default : throw new GradleException("Invalid version type '$classifier' . Allow types :['Major','Minor']")
+
+            }
+            String newVersion = version.toString()
+            logger.info "Increment $classifier project version: $currentVersion -> $newVersion"
+            ant.propertyfile(file:versionFile){
+                entry(key:classifier,type:'int',operation:'+',value:1)
+            }
+        }
+    }
+}
+```
+- 运行 `gradle -b RulesTask.gradle -q incrementMinorVersion`就可以增加版本号了，就是一个动态的执行命令的机制
+    - 使用 incrementMajorVersion就可以增加主版本号
+- 如果运行 `gradle -b RulesTask.gradle -q tasks` 就会得到一个具体的tasks的组Rules
+
+## 代码目录结构
+
+- **groovy 在以下目录，Java在main.java的目录下，一般别人直接放在src下，buildSrc好像没有普及使用**
+- build.gradle
+- buildSrc
+    - src
+        - main
+            - groovy
+                - com
+                    - myth
+                        - test
+                            - ProjectVersion.groovy
+- src
+- version.properties
  
+ 
+********
+测试优于业务逻辑实行
+
+*******
+
+# Gradle 自动测试
+## 自动化测试理论
+## 测试java应用程序
+### 项目布局，目录树
+
+## 单元测试
+### 使用JUnit
+### 使用其他框架 TestNG Spock
+## 配置测试执行
+## 集成测试
+## 功能测试
+
+**************************
+
+# Gradle插件
+ 
+
+**************
+
+# 多语言编程
+## 处理javascript
+### 压缩javascript
+- 调用Google Closure Compiler 的task 来压缩javascript文件 将所有的javascript压缩成一个javascript文件
+- 执行该task  gradle :web :taskname
+- 执行之后就能得到一个优化的js文件，现在就要在页面中修改原来的js引用
+
+### Java 和 Groovy的联合编译
+- src 下 main 下 java 和groovy 的一个目录结构，直接编译就会发生Java无法依赖groovy的类
+- 需要配置 ` sourceSets.main.java.srcDirs=[]` ` sourceSets.main.groovy.srcDirs=['src/main/java','src/main/groovy']`
+- 配置好后就能把groovy当普通Java类直接使用了
+- 实际： `sourceSets.main.java.srcDirs=['src/main/java','src/main/groovy']`才正确，上面的会报错
+
+************
+
+### Java 和 Scala
+-  联合双向编译 Java和scala
+- ` sourceSets.main.scala.srcDirs` ` sourceSets.main.groovy.srcDirs=['src/main/java','src/main/scala']`
+- 那么问题来了，如果是有了java groovy scala 呢怎么配置编译，直接就加上就好了嘛？
+
+
+## Jenkin 使用
+### 下载安装和配置
+- 官网下载war包后，直接使用Java命令运行 或者放在web容器中运行
+- 配置下载插件（位置在C盘用户目录下， 其实第一次运行后也是会解压在.jenkin 目录下 插件就在plugin目录下）
+- 
+
