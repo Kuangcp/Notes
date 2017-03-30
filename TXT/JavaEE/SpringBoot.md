@@ -13,6 +13,8 @@
 ***************
 
 ## IDEA 新建一个Springboot web项目并使用Gradle构建
+-  安装sdkman 包管理器 或者chocolatey  
+-  使用包管理器来安装 gradle groovy Springboot
 -  安装好Gradle 3.0+
 -  new Module 选initial那个，选好需要的模块 web，jdbc mysql mybabtis freemake redis Security 
 -  指定项目基本信息，选择Gradle Project war
@@ -78,6 +80,57 @@ logging:
   path: classpath:logs/
   file: Demo.log
 ```
+```
+	buildscript {
+	ext {
+		springBootVersion = '1.5.1.RELEASE'
+	}
+	repositories {
+		mavenCentral()
+	}
+	dependencies {
+		classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
+	}
+}
+
+apply plugin: 'java'
+apply plugin: 'eclipse-wtp'
+apply plugin: 'org.springframework.boot'
+apply plugin: 'war'
+
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = 1.8
+
+repositories {
+	mavenCentral()
+}
+
+configurations {
+	providedRuntime
+}
+
+dependencies {
+
+	compile('org.springframework.boot:spring-boot-starter-data-redis')
+	compile('org.springframework.boot:spring-boot-starter-freemarker')
+	compile('org.springframework.boot:spring-boot-starter-jdbc')
+	compile('org.mybatis.spring.boot:mybatis-spring-boot-starter:1.2.0')
+	compile('org.springframework.boot:spring-boot-starter-security')
+	compile('org.springframework.boot:spring-boot-starter-web')
+	runtime('mysql:mysql-connector-java')
+	providedRuntime('org.springframework.boot:spring-boot-starter-tomcat')
+	testCompile('org.springframework.boot:spring-boot-starter-test')
+}
+sourceSets.main.java.srcDirs=['src/main/java','src/main/groovy']
+配置main
+jar{
+	manifest{
+		attributes 'Main-Class' : 'com.myth.MythApplication'
+	}
+}
+```
+
+
 - 新建一个 groovy包和java并列，目的是使用groovy简洁的构建实体对象简化代码
 - 要将groovy和java 共同编译 就要加入`sourceSets.main.java.srcDirs=['src/main/java','src/main/groovy']`
 - 然后使用gradle内置的bootrun即可运行项目，切换模式可以看到控制台的输出信息，没有错误即可
