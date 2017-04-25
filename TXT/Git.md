@@ -10,15 +10,23 @@
 		git checkout 自己的分支
 		git merge --no-ff 对方的分支
 		git push （自己的源+分支）origin master
-* **git bash下记住密码 ： **
-    * 新建环境变量 HOME 值：%USERPROFILE%
-    * 在C盘User下你的当前用户目录下新建 _netrc 文本文件：
-        * machine https://github.com/Kuangcp/
-        * login ***
-        * password ***
-
+		
+-  Windows下记住密码 ： 
+    * 新建环境变量 HOME 值：`%USERPROFILE%`
+    * 在C盘User下你的当前用户目录下新建` _netrc `文本文件： 
+        * `machine https://github.com/Kuangcp/`
+        * `login ***`
+        * `password ***` 
     * 成功配置，测试便知
-
+- Linux下记住密码：
+	* `touch .git-credentials`
+	* `vim .git-credentials`
+	* 输入： ` http://{username}:{password}@github.com` 或者是https开头
+	* `git config --global credential.helper store`
+	* ~/.gitconfig 文件中多了以下内容即可
+		* [credential]
+		* helper = store
+	
 ## 【目前使用git的方法】 
 
 - 1.在GitHub上新建一个项目，不勾选初始化，复制下URL
