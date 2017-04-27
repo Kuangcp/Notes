@@ -13,7 +13,7 @@
 ***************
 
 ## IDEA 新建一个Springboot web项目并使用Gradle构建
--  安装sdkman 包管理器 或者chocolatey  
+-  安装sdkman 包管理器 或者chocolatey
 -  使用包管理器来安装 gradle groovy Springboot
 -  安装好Gradle 3.0+
 -  new Module 选initial那个，选好需要的模块 web，jdbc mysql mybabtis freemake redis Security 
@@ -275,3 +275,15 @@ public class Reader implements UserDetails {
 - 使用Selenium来测试HTML页面，模拟浏览器的动作，查看系统运行状态
 
 **********
+
+## 部署为war必须的类
+```
+    public class ServletInitializer extends SpringBootServletInitializer {
+
+        @Override
+        protected SpringApplicationBuilder configure(SpringApplicationBuilder application) {
+            return application.sources(DemoApplication.class);
+        }
+
+    }
+```

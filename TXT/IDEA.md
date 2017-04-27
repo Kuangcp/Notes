@@ -35,7 +35,7 @@ Ctrl+Alt+Space 类名或接口名提示
 Ctrl+P 方法参数提示
 
 Ctrl+Shift+Alt+N 查找类中的方法或变量
-
+Ctrl+Shift+Alt+? 进行一些设置，找到编译自动部署，就能热加载
 Alt+Shift+C 对比最近修改的代码
 
 Shift+F6 重构-重命名
