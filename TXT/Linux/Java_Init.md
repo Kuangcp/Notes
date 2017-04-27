@@ -25,3 +25,30 @@
 - 重启MySQL ：`sudo systemctl restart mysql`
 - 再次查看编码确认是utf8
 
+## 配置redis
+```
+    官网下载解压后，进入解压目录：
+
+    cd redis-***
+    make
+    sudo make install
+    下载配置文件和init启动脚本：
+    wget https://github.com/ijonas/dotfiles/raw/master/etc/init.d/redis-server
+    sudo mv redis-server /etc/init.d/redis-server
+    sudo chmod +x /etc/init.d/redis-server
+    sudo mv redis.conf /etc/redis.conf
+    初始化用户和日志路径
+    sudo useradd redis
+    sudo mkdir -p /var/lib/redis
+    sudo mkdir -p /var/log/redis
+    sudo chown redis.redis /var/lib/redis
+    sudo chown redis.redis /var/log/redis
+    设置开机自动启动，关机自动关闭
+    sudo update-rc.d redis-server defaults
+    Redis操作：
+    sudo /etc/init.d/redis-server start
+    sudo /etc/init.d/redis-server restart
+    sudo /etc/init.d/redis-server stop
+    退出失败？？？？
+    
+```

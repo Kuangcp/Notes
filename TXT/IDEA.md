@@ -13,10 +13,10 @@
 ## IDEA快捷键
 ### 使用类eclipse快捷键
 ### IDEA快捷键
-- Ctrl Alt L 快速格式化代码
-- 这时我们只需敲Ctrl+Shift+Enter就能自动补全末尾的字符。而且不只是括号，例如敲完if/for时也可以自动补上{}花括号。
-
-- Alt+回车 导入包,自动修正
+- Ctrl Alt L 快速格式化代码 
+- 这时我们只需敲Ctrl+Shift+Enter就能自动补全末尾的字符。
+    - 而且不只是括号，例如敲完if/for时也可以自动补上{}花括号。
+- Alt+回车 在错误地方自动导包/自动修正
 - Ctrl+N 查找类
 Ctrl+Shift+N 查找文件
 Ctrl+Alt+L 格式化代码
@@ -40,8 +40,8 @@ Alt+Shift+C 对比最近修改的代码
 
 Shift+F6 重构-重命名
 Ctrl+Shift+先上键
-Ctrl+X 删除行
-Ctrl+D 复制行
+Ctrl+X 剪切行
+Ctrl+D 复制行到下一行
 Ctrl+/ 或 Ctrl+Shift+/ 注释（// 或者/*...*/ ）
 Ctrl+J 自动代码
 Ctrl+E 最近打开的文件
@@ -75,7 +75,7 @@ Ctrl+B 快速打开光标处的类或方法
 
 最常用快捷键
 1.Ctrl＋E，可以显示最近编辑的文件列表
-2.Shift＋Click可以关闭文件
+2.Shift＋单击标签页 可以关闭文件
 3.Ctrl＋[或]可以跳到大括号的开头结尾
 4.Ctrl＋Shift＋Backspace可以跳转到上次编辑的地方
 5.Ctrl＋F12，可以显示当前文件的结构
@@ -184,5 +184,5 @@ String s = ( <caret is here>
 47 、在使用代码完成时，用 Tab 键可以输入弹出列表里的高亮显示部分。
 不像用 Enter 键接受输入，这个选中的名字会覆盖掉脱字符右边名字的其它部分。这一点在用一个方法或者变量名替换另一个时特别有用。
 48 、在声明一个变量时代码完成特性会给你显示一个建议名。比如，开始键入“ private FileOutputStream ”然后按 Ctrl-Space 
-
+###### 使用Python进行添加格式布局
 

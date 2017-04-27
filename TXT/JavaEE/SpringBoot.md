@@ -80,6 +80,7 @@ logging:
   path: classpath:logs/
   file: Demo.log
 ```
+build.gradle
 ```
 	buildscript {
 	ext {
@@ -192,6 +193,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
    }
 ```
 ```
+    //登录实体类
    @Entity
 public class Reader implements UserDetails {
 
@@ -275,8 +277,9 @@ public class Reader implements UserDetails {
 - 使用Selenium来测试HTML页面，模拟浏览器的动作，查看系统运行状态
 
 **********
-
-## 部署为war必须的类
+## 部署
+### war
+部署为war必须的类
 ```
     public class ServletInitializer extends SpringBootServletInitializer {
 
@@ -287,3 +290,5 @@ public class Reader implements UserDetails {
 
     }
 ```
+
+### jar

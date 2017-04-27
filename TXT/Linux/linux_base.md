@@ -6,7 +6,7 @@
     - [端口占用](#查看端口占用情况)
 - [文件管理](#文件管理)
     - [创建快捷方式](#创建桌面快捷方式)
-    - [文件编辑器](#文本编辑器)
+    - [文本编辑器](#文本编辑器)
 
 
 ## 软件管理
@@ -40,15 +40,23 @@
 ## 网络管理
 #### 查看端口占用情况
 - `lsof -i`:端口号 用于查看某一端口的占用情况，比如查看8000端口使用情况，`lsof -i:8000`
-- `netstat -tunlp |grep` 端口号，用于查看指定的端口号的进程情况，如查看8000端口的情况，`netstat -tunlp |grep 8000`
+- `netstat -tunlp |grep` 端口号，用于查看指定的端口号的进程情况
+    - 例如： `netstat -tunlp |grep 8000`
     - `-t` (tcp) 仅显示tcp相关选项
     - `-u` (udp)仅显示udp相关选项
     - `-n` 拒绝显示别名，能显示数字的全部转化为数字
     - `-l` 仅列出在Listen(监听)的服务状态
     - `-p` 显示建立相关链接的程序名
+- [扫描端口的Python](https://github.com/Kuangcp/Notes/blob/master/Python/net/netstatus.py)
 - Ubuntu与Windows10时间相差8小时的解决
     - `timedatectl set-local-rtc true `
- 
+- 查询端口占用的pid 三种：
+    - `netstat -aonp |grep "^[a-z]\+[ ]\+0[ ]\+0[ ]\+[0-9\.]\+:80[ ]\+"|awk -F" "   {'print $0'}`
+    - `netstat -aonp |grep ":80[ ]\+"|awk -F" "   {'print $0'}`
+    - `sudo netstat -aonp |grep ":6379[ ]\+"|awk -F" "   {'print $0'}`
+    - 杀掉：
+    - `sudo kill -9 pid`
+
 ## 文件管理
 #### 创建桌面快捷方式
 ```
