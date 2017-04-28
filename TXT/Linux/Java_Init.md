@@ -25,7 +25,18 @@
 - 重启MySQL ：`sudo systemctl restart mysql`
 - 再次查看编码确认是utf8
 
-## 配置redis
+## 配置Redis
+### 如果要运行make test
+新建文件夹运行，然后就可以将该目录删除
+```
+wget http://downloads.sourceforge.net/tcl/tcl8.6.1-src.tar.gz
+sudo tar xzvf tcl8.6.1-src.tar.gz  -C /usr/local/
+cd  /usr/local/tcl8.6.1/unix/
+sudo ./configure
+sudo make
+sudo make install
+```
+### 使用make install安装redis并作为一个服务来使用
 ```
     官网下载解压后，进入解压目录：
 
@@ -49,6 +60,33 @@
     sudo /etc/init.d/redis-server start
     sudo /etc/init.d/redis-server restart
     sudo /etc/init.d/redis-server stop
-    退出失败？？？？
+    退出失败？？？？ 
+    尚未解决，于是卸载两遍后，使用绿色方式2017-04-28 10:53:32
     
 ```
+
+### 绿色安装 redis
+- 只要下载源码包，解压
+- 在解压根目录执行 `make`
+- 打开src目录 复制以下文件
+    - `redis-server`
+    - `redis-cli`
+    - `redis-benchmark` ：性能测试工具，测试redis的读写性能
+    - 解压根目录的 `redis.conf`
+- 随意新建一个目录，将四个文件拷过来，就可以直接运行了
+- `./redis-server redis.conf`
+- 再配置下启动脚本就很方便了 
+    - deepin终端可以配置快捷键 `Alt+<`和`Alt+>`分别启动服务端和客户端
+ 客户端脚本
+ ```
+    basepath=$(cd `dirname $0`; pwd)
+    $basepath/redis-cli
+ ```
+ 服务端脚本
+ ```
+    basepath=$(cd `dirname $0`; pwd)
+    $basepath/redis-server $basepath/redis.conf
+ ```
+ 
+ 
+
