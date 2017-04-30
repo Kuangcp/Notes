@@ -77,6 +77,7 @@ sudo make install
 - `./redis-server redis.conf`
 - 再配置下启动脚本就很方便了 
     - deepin终端可以配置快捷键 `Alt+<`和`Alt+>`分别启动服务端和客户端
+ 
  客户端脚本
  ```
     basepath=$(cd `dirname $0`; pwd)

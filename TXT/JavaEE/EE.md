@@ -14,27 +14,27 @@
 *  4、查询数据： 使用set集合，查询对象是否存在，使用contians
 *  5、Servlet 是单例多线程的
 *  6、**eclipse中将java项目转成web项目**
-    *  经常在eclipse中导入web项目时，出现转不了项目类型的问题，导入后就是一个java项目，有过很多次经历，今天也有同事遇到类似问题，就把这个解决方法记下来吧，免得以后再到处去搜索。  
-    **解决步骤**：  
+    *  经常在eclipse中导入web项目时，出现转不了项目类型的问题，导入后就是一个java项目，有过很多次经历，今天也有同事遇到类似问题，就把这个解决方法记下来吧，免得以后再到处去搜索。 
+    **解决步骤**： 
   
--  1、进入项目目录，可看到.project文件，打开。  
+-  1、进入项目目录，可看到.project文件，打开。
    
--  2、找到`<natures>...</natures>`代码段。  
+-  2、找到`<natures>...</natures>`代码段。
    
 -  3、在第2步的代码段中加入如下标签内容并保存： 
     
     
 ``` xml
 
-    <nature>org.eclipse.wst.common.project.facet.core.nature</nature>  
-    <nature>org.eclipse.wst.common.modulecore.ModuleCoreNature</nature>  
-    <nature>org.eclipse.jem.workbench.JavaEMFNature</nature>  
+    <nature>org.eclipse.wst.common.project.facet.core.nature</nature>
+    <nature>org.eclipse.wst.common.modulecore.ModuleCoreNature</nature> 
+    <nature>org.eclipse.jem.workbench.JavaEMFNature</nature> 
 
 ```
     
-- 4、在eclipse的项目上点右键，刷新项目。  
+- 4、在eclipse的项目上点右键，刷新项目。 
    
-- 5、在项目上点右键，进入属性（properties）  
+- 5、在项目上点右键，进入属性（properties） 
    
 - 6、在左侧列表项目中点击选择“Project Facets”，在右侧选择“Dynamic Web Module”和"Java"，点击OK保存即可。
 
@@ -310,7 +310,7 @@
 - load 懒加载。使用代理对象，延迟加载。用到了别的属性就去查数据库。查不到就抛异常
 - flush 刷新Session
 - evict 定点清除 将指定的对象从Session中移除，变成游离态
-- clear 全部清除   
+- clear 全部清除 
 - close
 
 #### 4.7.2 特别注意：
@@ -343,12 +343,12 @@
     "http://mybatis.org/dtd/mybatis-3-config.dtd">
 
     <configuration>
-    <!-- 配置别名 为了方便配置操作文件-->  
-    <typeAliases>  
+    <!-- 配置别名 为了方便配置操作文件--> 
+    <typeAliases> 
         <typeAlias type="cn.mybatis.test.Human" alias="Human" />  
-    </typeAliases>  
+    </typeAliases> 
        
-    <!-- 配置环境变量 -->  
+    <!-- 配置环境变量 --> 
     <environments default="development">
         <environment id="development">
             <transactionManager type="JDBC"/>
@@ -360,18 +360,18 @@
             </dataSource>
         </environment>
     </environments>
-    <!-- 配置mappers -->  
-    <mappers>  
+    <!-- 配置mappers --> 
+    <mappers> 
         <mapper resource="cn/mybatis/test/HumanDao.xml" />  
-    </mappers>  
+    </mappers> 
     </configuration>
     
 ```
 ##### 操作配置文件：
 ```xml
-    <?xml version="1.0" encoding="UTF-8" ?>  
-    <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">  
-    <mapper namespace="cn.mybatis.test">  
+    <?xml version="1.0" encoding="UTF-8" ?> 
+    <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd"> 
+    <mapper namespace="cn.mybatis.test"> 
         <!-- 按id查询 -->
         <select id="queryUsersById" parameterType="Human" resultType="Human">  
             <!-- useCache="false" -->
@@ -403,7 +403,7 @@
         <update id="updateUserById" parameterType="Human">
             update inserts set name=#{name} where id=#{id}
         </update>
-    </mapper>  
+    </mapper> 
 ```
 ### 7.2 导入JAR包：
 - **核心包**
@@ -642,11 +642,11 @@
     - 所以要使用如下方法得到Spring的Context（上下文），获取bean，再操作
   
 ```
-    public void contextInitialized(ServletContextEvent event) {  
+    public void contextInitialized(ServletContextEvent event) { 
         ApplicationContext context = WebApplicationContextUtils.getWebApplicationContext(event.getServletContext());
         ....
     }
-```  
+``` 
 
 ### 8.3 注解方式：
 
@@ -680,7 +680,7 @@
 
 ```xml
        <!-- 一般而言，bean都是单实例的 -->
-    <bean id="person" class="cn.spring.entity.Person">  
+    <bean id="person" class="cn.spring.entity.Person"> 
         <property name="name" value="myth"/>
         <property name="addr" value="vol"/>
     </bean>
@@ -847,11 +847,11 @@ XML风格有两个缺点。第一是它不能完全将需求实现的地方封�
 明。 例如，在@AspectJ风格中我们可以编写如下的内容：
 
 ```java
-       @Pointcut(execution(* get*()))  
+       @Pointcut(execution(* get*())) 
        public void propertyAccess() {} 
        @Pointcut(execution(org.xyz.Account+ *(..)) 
-       public void operationReturningAnAccount() {}  
-       @Pointcut(propertyAccess() && operationReturningAnAccount())  
+       public void operationReturningAnAccount() {} 
+       @Pointcut(propertyAccess() && operationReturningAnAccount()) 
        public void accountPropertyAccess() {}
 
 ```
@@ -859,7 +859,7 @@ XML风格有两个缺点。第一是它不能完全将需求实现的地方封�
 在XML风格中能声明开头的两个连接点：
 
 ```xml
-      <aop:pointcut id="propertyAccess" expression="execution(* get*())"/>  
+      <aop:pointcut id="propertyAccess" expression="execution(* get*())"/> 
       <aop:pointcut id="operationReturningAnAccount"  expression="execution(org.xyz.Account+ *(..))"/>
 
 ```
