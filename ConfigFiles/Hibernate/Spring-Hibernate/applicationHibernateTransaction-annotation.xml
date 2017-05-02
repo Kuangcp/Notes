@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:aop="http://www.springframework.org/schema/aop" xmlns:tx="http://www.springframework.org/schema/tx"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+         http://www.springframework.org/schema/beans/spring-beans.xsd
+         http://www.springframework.org/schema/context
+         http://www.springframework.org/schema/context/spring-context-3.0.xsd
+         http://www.springframework.org/schema/aop
+         http://www.springframework.org/schema/aop/spring-aop-3.2.xsd
+         http://www.springframework.org/schema/tx
+         http://www.springframework.org/schema/tx/spring-tx-3.2.xsd">
+<context:component-scan base-package="dao,serviceDao" />
+	<!-- <context:property-placeholder location="classpath:jdbc.properties" 
+		/> -->
+	<!-- 配置连接池 -->
+	<bean id="dataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource"
+		destroy-method="close">
+		<!-- 指定连接数据库的驱动 -->
+		<property name="driverClass" value="org.gjt.mm.mysql.Driver" />
+		<!-- 指定连接数据库的URL -->
+		<property name="jdbcUrl" value="jdbc:mysql://localhost:3306/学生库" />
+		<!-- 指定连接数据库的用户名 -->
+		<property name="user" value="root" />
+		<!-- 指定连接数据库的密码 -->
+		<property name="password" value="123" />
+		<!-- 指定连接数据库连接池的最大连接数 -->
+		<property name="maxPoolSize" value="10" />
+		<!-- 指定连接数据库连接池的最小连接数 -->
+		<property name="minPoolSize" value="1" />
+		<!-- 指定连接数据库连接池的初始化连接数 -->
+		<property name="initialPoolSize" value="1" />
+		<!--最大空闲时间,1800秒内未使用则连接被丢弃。若为0则永不丢弃。Default: 0 用它来解决mysql 8小时自动释放连接的问题 -->
+		<property name="maxIdleTime" value="28000" />
+	</bean>
+
+	<!-- 配置sessionfFactory -->
+	<!-- 配置 dataSource -->
+	<!-- hibernateProperties (注意一定要配置 数据库的方言 ) -->
+	<!-- mappingResources pojo类的映射文件 -->
+	<bean id="sessionFactory"
+		class="org.springframework.orm.hibernate3.LocalSessionFactoryBean">
+		<property name="dataSource" ref="dataSource" />
+		<property name="hibernateProperties">
+			<props>
+				<prop key="hibernate.dialect">org.hibernate.dialect.MySQLDialect</prop>
+				<prop key="hibernate.show_sql">true</prop>
+				<prop key="hibernate.hbm2ddl.auto">update</prop>
+			</props>
+		</property>
+		<property name="mappingResources">
+			<list>
+				<value>pojo/student.hbm.xml</value>
+				<value>pojo/dom.hbm.xml</value>
+			</list>
+		</property>
+	</bean>
+	
+	<bean id="txManage"
+		class="org.springframework.orm.hibernate3.HibernateTransactionManager">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+<tx:annotation-driven transaction-manager="txManage"/>
+</beans>

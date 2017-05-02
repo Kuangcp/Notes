@@ -15,6 +15,11 @@
 	- ` sudo  dpkg  -i  *.deb`
 -  2,apt-get
 	- `sudo apt-get install xxx`
+	- 若不能添加私有源ppa：
+	- debain：`sudo apt-get install software-properties-common`
+	- Ubuntu `sudo apt-get install python-software-properties`
+	- 例如：`sudo add-apt-repository ppa:dotcloud/lxc-docker `
+	- 删除ppa `cd  /etc/apt/sources.list.d/` 打开该目录下文件把对应的ppa的一行注释掉或删掉就行了
 - 3,make install 源代码安装
 	    //1.解压缩
 		`tar -zxf nagios-4.0.2.tar.gz ` 

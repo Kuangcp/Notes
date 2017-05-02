@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:context="http://www.springframework.org/schema/context"
+    xmlns:aop="http://www.springframework.org/schema/aop"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+         http://www.springframework.org/schema/beans/spring-beans.xsd
+         http://www.springframework.org/schema/context
+         http://www.springframework.org/schema/context/spring-context-3.0.xsd
+         http://www.springframework.org/schema/aop
+         http://www.springframework.org/schema/aop/spring-aop-3.2.xsd"> 
+  <!-- 实例化目标对象 -->       
+    <bean id="s_student" class="services.studentService"/>   
+    <bean id="s_teacher" class="services.teacherService"/>     
+  <!-- 将增强类也实例化 -->
+   <bean id="a_advise" class="aop.advise"/>
+  <!-- 通过aop的命名空间中的config标记来配置aop -->
+ <aop:config>
+   <!-- aop:aspect表示定义了一个切面 ,
+   ref表示当前切面中使用的增强来自id为a_advise的bean实例
+  -->
+     <aop:aspect ref="a_advise">
+     <!-- 定义切点,expression的作用就是将方法筛选出来-->
+     <!-- boolean package.class.method(int x) -->
+     <aop:pointcut expression="execution(* services.*.save*(..))" id="log_point"/>
+     <!-- 定义织入方式 -->
+     <!-- method表示增强的方法，pointcut-ref表示切点 -->
+     <aop:before method="startDisp" pointcut-ref="log_point"/>
+     <aop:pointcut expression="execution(* services..*.*(..))" id="ar_point"/>
+     <aop:around method="around" pointcut-ref="ar_point" />
+     </aop:aspect> 
+ </aop:config>
+
+
+
+</beans>
