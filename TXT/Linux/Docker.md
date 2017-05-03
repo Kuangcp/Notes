@@ -1,4 +1,20 @@
 # Docker 
+## Catalog
+- [简介](#简介)
+    - [个人理解](#个人理解)
+- [docker安装与卸载](#docker安装与卸载)
+                - [通过deb文件方式来安装：](#通过deb文件方式来安装：)
+                - [开始安装](#开始安装)
+                - [卸载docker](#卸载docker)
+- [常规使用](#常规使用)
+        - [镜像命令](#镜像命令)
+        - [容器命令](#容器命令)
+    - [Dockerfile使用](#Dockerfile使用)
+            - [使用入门案例](#使用入门案例)
+        - [RUN](#RUN)
+    - [.dockerignore 文件的使用](#.dockerignore 文件的使用)
+    - [安装 redis](#安装 redis)
+             
 ## 简介
 - `Docker 是一个开源的应用容器引擎` 理解为加强版虚拟机
 - 让开发者可以打包他们的应用以及依赖包到一个可移植的容器中，然后发布到任何流行的 Linux 机器上，也可以实现虚拟化。容器是完全使用沙箱机制，相互之间不会有任何接口。
@@ -89,15 +105,6 @@ docker pull mongo
 docker pull cloudesire/activemq
 docker pull rabbitmq
 socker pull rabbitmq:3-management
-
-
-
-
-
-
-
-
-
 
 
 
