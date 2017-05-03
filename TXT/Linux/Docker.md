@@ -23,7 +23,7 @@
 - `sudo apt-get purge docker-ce`
 - `sudo rm -rf /var/lib/docker`
 
-*********************
+**************************************
 
 ## 常规使用
 - 如果出现命令执行失败，可以登录docker的控制台直接执行 `boot2docker ssh`
@@ -39,15 +39,33 @@
 - 
 
 ### Dockerfile使用
-- Dockerfile是一个镜像的表示，可以通过Dockerfile来描述构建镜像的步骤，并自动构建一个容器
-- 所有的 Dockerfile 命令格式都是: `INSTRUCTION arguments`
-- 最好在运行这个配置文件的时候新建一个空目录，不要使用根目录，不然全部的东西都传到守护进程里去了
-- 同样的可以使用.dockerignore文件来忽略不要上传的文件
-- docker build 
-    - -f 指向任意位置的文件进行配置 `docker build -f /path/to/a/Dockerfile .`
-    - -t 
-#### RUN
+##### 使用入门案例
+- 新建目录然后 `touch Dockerfile` `gedit Dockerfile`
+```
+    #随意写的
+    FROM redis
+    MAINTAINER Mythos
+    ENV DIRPATH /path
+    WORKDIR $DIRPATH/$DIRNAME
+    RUN pwd
+```
+- `docker build .` 如果之前得到一个没有名字的镜像
+- `docker build -t repository/tag .` 给镜像指定名字
+- `docker run --name ContainerName -d repository/tag` 新建容器来运行镜像
 
+***************************
+- Dockerfile是一个`镜像`的表示，可以通过Dockerfile来描述构建镜像的步骤，且可以自动构建一个容器
+- 所有的 Dockerfile 命令格式都是: `INSTRUCTION arguments`
+- 最好在运行这个配置文件的时候新建一个空目录目录下放dockerfile，不要使用根目录，不然全部的东西都传到守护进程里去了
+    - 因为生成过程的第一件事是将整个上下文 (递归) 发送到守护进程。
+- 同样的可以使用`.dockerignore`文件来忽略不要上传的文件
+- `docker build` 
+    - `-f` 指向任意位置的文件进行配置 `docker build -f /path/to/a/Dockerfile .`
+    - 您使用docker构建的-f标志指向文件系统中任何位置的Dockerfile。
+    - `-t`如果构建成功 可以指定保存新镜像的repository和tag (多个的话就多个 -t就行了，例如 `docker build -t shykes/myapp:1.0.2 -t shykes/myapp:latest .`)
+#### RUN
+### .dockerignore 文件的使用
+- .dockerignore文件是依据 Go的PathMatch规范来的，使用和.gitignore类似
 ### 安装 redis
 - 获取镜像：`docker pull redis `
 - 运行默认配置的容器：`docker run --name test-redis -d redis`
@@ -62,6 +80,7 @@
     - 删除所有容器：`docker rm ${docker -a -q}`
 - 容器日志：`docker logs 容器name或id`
 - 登录容器：`docker exec -it 容器name或id bash `
+
 ************************
 
 docker pull wnameless/oracle-xe-11g

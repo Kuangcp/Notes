@@ -13,6 +13,7 @@
 ```
 - 并且运行最后两句命令是为了指定jdk版本
 
+********************************
 ## 配置MySQL
 - 更新列表` sudo apt-get update `
 - 安装MySQL `sudo apt-get install mysql-server mysql-client`
@@ -21,10 +22,11 @@
 - 启动服务 ： `sudo /etc/init.d/mysql restart `
 - 查看编码 ： `show variables like 'character_set_%`
 - 打开配置文件： `sudo gedit /etc/mysql/mysql.conf.d/mysqld.cnf`
-- [mysqld]块下添加一行： `character-set-server=utf8`
+- `[mysqld]`块下添加一行： `character-set-server=utf8`
 - 重启MySQL ：`sudo systemctl restart mysql`
 - 再次查看编码确认是utf8
 
+**************************************
 ## 配置Redis
 ### 如果要运行make test
 新建文件夹运行，然后就可以将该目录删除
@@ -89,5 +91,9 @@ sudo make install
     $basepath/redis-server $basepath/redis.conf
  ```
  
+### docker安装redis
+- [docker-install-redis](https://github.com/Kuangcp/Notes/blob/master/TXT/Linux/Docker.md)
+
+*********************************
  
 
