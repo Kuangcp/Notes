@@ -31,16 +31,17 @@ elif(choose == "2"):
             for i in range(weight-1):
                 tab+="    "
             line = line.replace("#","").strip()
+            line = line.replace(".","").strip()
             #result = []
             #result.append(tab).append("- [").append(line).append("](#").append(line.encode('utf-8')).append(")")
             print(tab+"- ["+line+"](#"+line+")")
-            file.write(tab+"- ["+line+"](#"+urllib.parse.quote_from_bytes(line.encode('utf-8'))+")\n")
+            file.write(tab+"- ["+line+"](#"+urllib.parse.quote_from_bytes(line.lower().encode('utf-8'))+")\n")
             #file.write(tab+"- ["+line+"](#")
             #file.write(str(line.encode('utf-8')))
             #file.write(")\n")
             #print(result)
 elif(choose == "3"):
-    print(urllib.parse.quote_from_bytes("资料篇".encode('utf-8'))) 
+    print(urllib.parse.quote_from_bytes(".Redis资料篇".lower().encode('utf-8'))) 
     #temp = "资料篇".encode('utf-8')
     #print(temp)
     #print(temp.encode('utf-8'))

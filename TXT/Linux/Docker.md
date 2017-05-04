@@ -1,6 +1,5 @@
 # Docker 
-
-- [Docker](#Docker)
+- [Docker](#docker)
     - [简介](#%E7%AE%80%E4%BB%8B)
     - [个人理解](#%E4%B8%AA%E4%BA%BA%E7%90%86%E8%A7%A3)
     - [docker安装与卸载](#docker%E5%AE%89%E8%A3%85%E4%B8%8E%E5%8D%B8%E8%BD%BD)
@@ -10,17 +9,17 @@
     - [常规使用](#%E5%B8%B8%E8%A7%84%E4%BD%BF%E7%94%A8)
         - [镜像命令](#%E9%95%9C%E5%83%8F%E5%91%BD%E4%BB%A4)
         - [容器命令](#%E5%AE%B9%E5%99%A8%E5%91%BD%E4%BB%A4)
-        - [Dockerfile使用](#Dockerfile%E4%BD%BF%E7%94%A8)
+        - [Dockerfile使用](#dockerfile%E4%BD%BF%E7%94%A8)
             - [使用入门案例](#%E4%BD%BF%E7%94%A8%E5%85%A5%E9%97%A8%E6%A1%88%E4%BE%8B)
-            - [RUN命令](#RUN%E5%91%BD%E4%BB%A4)
-        - [.dockerignore文件的使用](#.dockerignore%E6%96%87%E4%BB%B6%E7%9A%84%E4%BD%BF%E7%94%A8)
+            - [RUN命令](#run%E5%91%BD%E4%BB%A4)
+        - [.dockerignore文件的使用](#dockerignore%E6%96%87%E4%BB%B6%E7%9A%84%E4%BD%BF%E7%94%A8)
     - [安装redis](#%E5%AE%89%E8%A3%85redis)
 ## 简介
 - `Docker 是一个开源的应用容器引擎` 理解为加强版虚拟机
 - 让开发者可以打包他们的应用以及依赖包到一个可移植的容器中，然后发布到任何流行的 Linux 机器上，也可以实现虚拟化。容器是完全使用沙箱机制，相互之间不会有任何接口。
 ********************************************
 
-### 个人理解
+## 个人理解
 - docker中的容器是动态的，随时创建和销毁，只有镜像是持久化的
 - 而且容器是一个虚拟出来的功能完备的Linux操作系统可以进行登录运行命令
 - `docker images`来得到所有的本地镜像名，使用`docker run --name {name} -d {image-name} `以某容器来启动某个镜像
@@ -105,7 +104,6 @@
 - docker pull cloudesire/activemq
 - docker pull rabbitmq
 - socker pull rabbitmq:3-management
-
 
 
 
