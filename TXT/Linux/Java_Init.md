@@ -1,5 +1,14 @@
 # 安装好deepin后配置Java开发环境
 
+- [安装好deepin后配置Java开发环境](#%E5%AE%89%E8%A3%85%E5%A5%BDdeepin%E5%90%8E%E9%85%8D%E7%BD%AEjava%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83)
+    - [配置JDK](#%E9%85%8D%E7%BD%AEjdk)
+    - [配置MySQL](#%E9%85%8D%E7%BD%AEmysql)
+    - [配置Redis](#%E9%85%8D%E7%BD%AEredis)
+        - [如果要运行make test](#%E5%A6%82%E6%9E%9C%E8%A6%81%E8%BF%90%E8%A1%8Cmaketest)
+        - [使用make install安装redis并作为一个服务来使用](#%E4%BD%BF%E7%94%A8makeinstall%E5%AE%89%E8%A3%85redis%E5%B9%B6%E4%BD%9C%E4%B8%BA%E4%B8%80%E4%B8%AA%E6%9C%8D%E5%8A%A1%E6%9D%A5%E4%BD%BF%E7%94%A8)
+        - [绿色安装 redis](#%E7%BB%BF%E8%89%B2%E5%AE%89%E8%A3%85redis)
+        - [docker安装redis](#docker%E5%AE%89%E8%A3%85redis)
+
 ## 配置JDK
 - 打开配置文件 ： `sudo gedit /etc/profile`
 ```
@@ -96,4 +105,5 @@ sudo make install
 
 *********************************
  
+
 
