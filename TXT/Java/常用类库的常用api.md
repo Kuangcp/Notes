@@ -5,24 +5,15 @@ Guava工程包含了若干被Google的 Java项目广泛依赖 的核心库，例
 并发库 [concurrency libraries] 、通用注解 [common annotations] 、字符串处理 [string processing] 、I/O 等等。 所有这些工具每天都在被Google的工程师应用在产品服务中。
 
 ```
-
-
     com.google.common.annotations
-
     com.google.common.base
-
     com.google.common.collect
-
     com.google.common.io
-
     com.google.common.net
-
     com.google.common.primitives
-
     com.google.common.util.concurrent
 
 ```
-
 
 ```
     [Google Guava] 7-原生类型
@@ -37,7 +28,22 @@ Guava工程包含了若干被Google的 Java项目广泛依赖 的核心库，例
     [Google Guava] 1.1-使用和避免null
     [Google Guava] 8-区间
     [Google Guava] 2.4-集合扩展工具类
-    [Google Guava] 1.3-常见Object方法
+    [Google Guava] 1.3-常见Object方法    @Bean
+    public RedisTemplate<Object,Object> redisTemplate(RedisConnectionFactory factory) {
+        RedisTemplate<Object,Object> template = new RedisTemplate<>();
+        Jackson2JsonRedisSerializer jackson2JsonRedisSerializer = new Jackson2JsonRedisSerializer<>(Object.class);
+        template.setConnectionFactory(factory);
+        ObjectMapper om = new ObjectMapper();
+        om.setVisibility(PropertyAccessor.ALL, JsonAutoDetect.Visibility.ANY);
+        om.enableDefaultTyping(ObjectMapper.DefaultTyping.NON_FINAL);
+        jackson2JsonRedisSerializer.setObjectMapper(om);
+        // 值序列化采用 jackson2JsonRedisSerializer
+        template.setValueSerializer(jackson2JsonRedisSerializer);
+        // 键序列化采用 StringRedisSerializer
+        template.setKeySerializer(new StringRedisSerializer());
+        template.afterPropertiesSet();
+        return template;
+    }
     google Guava包的ListenableFuture解析
     [Google Guava] 11-事件总线
 ```
@@ -45,5 +51,21 @@ Guava工程包含了若干被Google的 Java项目广泛依赖 的核心库，例
 #### Guava的使用
 
 
-
 ***************************************************
+
+## lombok
+### lombok的安装及其使用
+- 直接在IDEA的默认插件中心搜索lombok然后点安装即可
+- lombok 注解：
+- lombok 提供的注解不多，可以参考官方视频的讲解和官方文档。
+- Lombok 注解在线帮助文档：http://projectlombok.org/features/index.
+- 常用的 lombok 注解：
+    - `@Data` ：注解在类上；提供类所有属性的 getting 和 setting 方法，此外还提供了equals、canEqual、hashCode、toString 方法
+        - 功能上被包含于`Data注解`
+        - `@Setter`：注解在属性上；为属性提供 setting 方法
+        - `@Getter`：注解在属性上；为属性提供 getting 方法
+    - `@Log4j` ：注解在类上；为类提供一个 属性名为log 的 log4j 日志对象
+    - `@NoArgsConstructor`：注解在类上；为类提供一个无参的构造方法
+    - `@AllArgsConstructor`：注解在类上；为类提供一个全参的构造方法
+
+

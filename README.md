@@ -28,3 +28,6 @@
 ## 2017-05-04 08:51:58
 - 使用Python的脚本生成目录（URL编码），但是要注意不能有空格，不能以.开头，没有大写字母
 - 关于数据类型和基本运算都要系统学习才行
+
+## 2017-05-06 20:02:33
+- 关于markdown互相引用的路径：` https://github.com/Kuangcp/Notes/blob/master/TXT/Java/EE.md`

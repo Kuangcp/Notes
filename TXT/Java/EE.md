@@ -1062,5 +1062,3 @@ jar包：
 - 版本对不上，要Spring和Spring-data-redis 和 redis和commons-lang3对应
 - 目前是4.1.7 + 1.6.0 + 2.9.0 + 3.3.2 编译通过了
 
-### redis命令行常规使用
-- List集合

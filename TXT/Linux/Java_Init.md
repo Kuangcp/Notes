@@ -103,7 +103,7 @@ sudo make install
 ### docker安装redis
 - [docker-install-redis](https://github.com/Kuangcp/Notes/blob/master/TXT/Linux/Docker.md)
 
-*********************************
+******** *************************
  
 
 
