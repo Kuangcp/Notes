@@ -1,4 +1,5 @@
-# Docker 
+# Docker
+## 目录 
 - [Docker](#docker)
     - [简介](#%E7%AE%80%E4%BB%8B)
     - [个人理解](#%E4%B8%AA%E4%BA%BA%E7%90%86%E8%A7%A3)
@@ -14,6 +15,9 @@
             - [RUN命令](#run%E5%91%BD%E4%BB%A4)
         - [.dockerignore文件的使用](#dockerignore%E6%96%87%E4%BB%B6%E7%9A%84%E4%BD%BF%E7%94%A8)
     - [安装redis](#%E5%AE%89%E8%A3%85redis)
+
+*****************************************
+
 ## 简介
 - `Docker 是一个开源的应用容器引擎` 理解为加强版虚拟机
 - 让开发者可以打包他们的应用以及依赖包到一个可移植的容器中，然后发布到任何流行的 Linux 机器上，也可以实现虚拟化。容器是完全使用沙箱机制，相互之间不会有任何接口。
@@ -56,7 +60,7 @@
 
 ### Dockerfile使用
 ##### 使用入门案例
-- 新建目录然后 `touch Dockerfile` `gedit Dockerfile`
+- 新建目录然后 `touch Dockerfile` `gedit Dockerfile` 输入如下文本
 ```
     #随意写的
     FROM redis
@@ -65,13 +69,13 @@
     WORKDIR $DIRPATH/$DIRNAME
     RUN pwd
 ```
-- `docker build .` 如果之前得到一个没有名字的镜像
+- `docker build .` 如果成功则会得到一个没有名字的镜像
 - `docker build -t repository/tag .` 给镜像指定名字
 - `docker run --name ContainerName -d repository/tag` 新建容器来运行镜像
 
 ***************************
 - Dockerfile是一个`镜像`的表示，可以通过Dockerfile来描述构建镜像的步骤，且可以自动构建一个容器
-- 所有的 Dockerfile 命令格式都是: `INSTRUCTION arguments`
+- 所有的 Dockerfile 命令格式都是: `INSTRUCTION arguments` 
 - 最好在运行这个配置文件的时候新建一个空目录目录下放dockerfile，不要使用根目录，不然全部的东西都传到守护进程里去了
     - 因为生成过程的第一件事是将整个上下文 (递归) 发送到守护进程。
 - 同样的可以使用`.dockerignore`文件来忽略不要上传的文件
@@ -82,6 +86,9 @@
 #### RUN命令
 ### .dockerignore文件的使用
 - .dockerignore文件是依据 Go的PathMatch规范来的，使用和.gitignore类似
+
+************************************
+
 ## 安装redis
 - 获取镜像：`docker pull redis `
 - 运行默认配置的容器：`docker run --name test-redis -d redis`
@@ -108,4 +115,4 @@
 
 
 
-
+

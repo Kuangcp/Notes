@@ -1,5 +1,12 @@
 # 【Redis的使用】
-
+## 【windows上的基本配置】
+- 注册为服务
+	- redis-server --service-install redis.windows.conf --loglevel verbose
+- 使用cmder
+	- cmd 中运行 `E:/redis/redis-server.exe E:/redis/redis.windows.conf`
+- 配置密码
+	- requirepass redis1104
+	- 客户端登录 auth redis1104
 ##【Java 使用 redis 配置】
 - maven依赖(Spring 4.1.7)：
 ```xml
@@ -95,32 +102,32 @@ requirepass foobared            #连接密码（注释）
 maxclients                      #最大客户端连接数，默认不限制（注释）
 maxmemory                       #设置最大内存，达到最大内存设置后，Redis会先尝试清除已到期或即将到期的Key，当此方法处理后，任到达最大内存设置，将无法再进行写入操作。（注释）
 ```
-缩减版配置文件
+*缩减版配置文件*
 ```
-daemonize yes
-pidfile /var/run/redis.pid
-port 6379
-timeout 315360000
-loglevel notice
-logfile /data/redis_logs/redis.log
-databases 16
-save 3600 10000
-save 86400 1
-rdbcompression yes
-dbfilename dump.rdb
-dir /data/redis/
-appendonly no
-appendfsync everysec
-vm-enabled no
-vm-swap-file /tmp/redis.swap
-vm-max-memory 0
-vm-page-size 32
-vm-pages 134217728
-vm-max-threads 4
-glueoutputbuf yes
-hash-max-zipmap-entries 64
-hash-max-zipmap-value 512
-activerehashing yes
+    daemonize yes
+    pidfile /var/run/redis.pid
+    port 6379
+    timeout 315360000
+    loglevel notice
+    logfile /data/redis_logs/redis.log
+    databases 16
+    save 3600 10000
+    save 86400 1
+    rdbcompression yes
+    dbfilename dump.rdb
+    dir /data/redis/
+    appendonly no
+    appendfsync everysec
+    vm-enabled no
+    vm-swap-file /tmp/redis.swap
+    vm-max-memory 0
+    vm-page-size 32
+    vm-pages 134217728
+    vm-max-threads 4
+    glueoutputbuf yes
+    hash-max-zipmap-entries 64
+    hash-max-zipmap-value 512
+    activerehashing yes
 ```
 ## redis命令行常规使用
 ### 常用的数据结构

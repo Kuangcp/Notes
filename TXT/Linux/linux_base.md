@@ -8,7 +8,11 @@
     - [创建快捷方式](#创建桌面快捷方式)
     - [文本编辑器](#文本编辑器)
 
-*********************8
+*********************
+## 系统管理
+- 更新密码：`passwd username`
+
+************************
 ## 软件管理
 ### 安装命令
 - 1,deb 安装deb包
@@ -62,6 +66,18 @@
     - 杀掉：
     - `sudo kill -9 pid`
 
+#### SSH登录
+##### 客户端配置
+- `sudo spt-get install openssh-client`
+- `ssh-keygen` 可以设置密码，为了方便也可以全部采用默认
+- 进入.ssh文件夹下 `gedit id_rsa.pub` 然后复制该公钥内容
+
+##### 服务端配置
+- 安装：`sudo apt-get install openssh-server`
+- 进入.ssh文件夹下 `sudo vim authorized_keys` 粘贴客户端公钥内容
+- 更改文件权限 `sudo chmod 600 authorized_keys`
+
+- 客户端登录 `ssh -p22 username@ip`
 *******************************************
 ## 文件管理
 #### 创建桌面快捷方式
