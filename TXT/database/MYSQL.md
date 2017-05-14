@@ -17,7 +17,7 @@
     - create table cc( id int auto_increment,name varchar(20),primary key(id) ) auto_increment=1000;
 - 【设置已有字段自增长】 
     - alter table test MODIFY id INT UNSIGNED AUTO_INCREMENT;
-- 【自增长的修改】  
+- 【自增长的修改】 
     - alter table test auto_increment=10； 注意只能改的比当前的值大，不可以改的比当前小
 - 【自增长字段溢出】
     - 设置自动增长的列，只能是int类型（包含了各种int），当出现了溢出就可以改成bigint 但是如果有外键约束，可能就会更改失败，还不如删库重建，实在太大了就删约束再建约束

@@ -1,26 +1,26 @@
 # 【Redis的使用】
 ## 【windows上的基本配置】
 - 注册为服务
-	- redis-server --service-install redis.windows.conf --loglevel verbose
+	- `redis-server --service-install redis.windows.conf --loglevel verbose`
 - 使用cmder
 	- cmd 中运行 `E:/redis/redis-server.exe E:/redis/redis.windows.conf`
 - 配置密码
-	- requirepass redis1104
-	- 客户端登录 auth redis1104
+	- `requirepass redis1104`
+	- 客户端登录 `auth redis1104`
 ##【Java使用redis配置】
 [Java使用Redis：详见此处末尾](https://github.com/Kuangcp/Notes/blob/master/TXT/Java/EE.md)
 ****************************
 ## redis配置
 
 ```
-   ` daemonize `      #是否以后台daemon方式运行
-   ` pidfile   `      #pid文件位置
+    `daemonize `      #是否以后台daemon方式运行
+    `pidfile   `      #pid文件位置
     `port      `      #监听的端口号
     `timeout   `      #请求超时时间 默认为300(秒)
     `loglevel   `     #log信息级别  有4个可选值，debug，verbose（默认值），notice，warning
     `logfile    `     #log文件位置
     `databases `      #开启数据库的数量
-   ` save * *   `     #保存快照的频率，第一个*表示多长时间，第三个*表示执行多少次写操作。在一定时间内执行一定数量的写操作时，自动保存快照。可设置多个条件。
+    `save * *   `     #保存快照的频率，第一个*表示多长时间，第三个*表示执行多少次写操作。在一定时间内执行一定数量的写操作时，自动保存快照。可设置多个条件。
     `rdbcompression`  #是否使用压缩
     `dbfilename `     #数据快照文件名（只是文件名，不包括目录）
     `dir   `          #数据快照的保存目录（这个是目录）
@@ -85,12 +85,12 @@
 	- rpop
 	
 - 集合 (类似无序的Set)
-	- sadd 
-	- smembers 获取某Set所有元素
-	- sismember 查询某Set是否含某元素，返回类型是 0 1
-	- srem 删除指定Set中指定元素
+	- sadd 添加一个对象`asdd key member`
+	- smembers 获取某Set所有元素 `smembers key`
+	- sismember 查询某Set是否含某元素，返回类型是 0 1 `sismember key member`
+	- srem 删除指定Set中指定元素 `srem key member`
 	
-- 散列 ( 类似Map 嵌套，一个内置的微型redis)
+- 散列 (类似Map 嵌套，一个内置的微型redis)
 	- hget
 	- hset
 	- hgetall 获取某散列所有k-v
@@ -101,15 +101,22 @@
 	- zadd 将一个给定分值的成员添加到有序集合里
 	- zrange 根据元素在有序集合中的位置，从有序集合中获取多个元素
 		- zrange name 0 -1 withscores 获取所有并获取分值
-		- zrange name 2 30 withscores 
+		- zrange name 2 30 wi thscores 
 	- zrevrange 从大到小排序的获取集合元素
 	- zrangebyscore 获取有序集合在给定范围中的所有元素
 		- zrangebyscore name 0 200 withscores 
 	- zrem
 	- zincrby 自增
 	- zinterstore 进行集合之间的并集（可以看作是多表连接）
-	
-	
+	 	
+##### 过期策略
+- `expire key seconds` 设置键的过期时间
+- `TTL key ` 查看键剩余过期时间（生存时间）
+- 
+
+##### 字符串
+- 字符串就是字节组成的序列 可以放字节串，整数，浮点数
+- 
 	
 
 	
@@ -123,5 +130,70 @@
 	
 	
 	
-	
+## 【Redis的使用】
+### 【Java 使用 redis 配置】
+- maven依赖(Spring 4.1.7)：
+```xml
+    <dependency>
+        <groupId>org.springframework.data</groupId>
+        <artifactId>spring-data-redis</artifactId>
+        <version>1.6.0.RELEASE</version>
+    </dependency>
+
+    <dependency>
+        <groupId>redis.clients</groupId>
+        <artifactId>jedis</artifactId>
+        <version>2.9.0</version>
+        <type>jar</type>
+    <scope>compile</scope>
+    </dependency>
+    <dependency>
+        <groupId>org.apache.commons</groupId>
+        <artifactId>commons-lang3</artifactId>
+        <version>3.3.2</version>
+    </dependency>
+```
+- Spring配置文件 
+```xml
+    <!--
+        加载redis配置文件 
+        如果已经加载了一个文件，那么第一个就要写这个配置项，
+        <property name="ignoreUnresolvablePlaceholders" value="true"/>
+        第二个要加 后面的配置 
+        不然就只会加载前面那个文件
+    -->
+    <context:property-placeholder location="classpath:redis.properties" ignore-unresolvable="true"/>
+    <!-- redis连接池的配置 -->
+      <bean id="jedisPoolConfig" class="redis.clients.jedis.JedisPoolConfig">
+          <property name="maxActive" value="${redis.pool.maxActive}"/>
+          <property name="maxIdle" value="${redis.pool.maxIdle}"/>
+          <property name="minIdle" value="${redis.pool.minIdle}"/>
+          <property name="maxWait" value="${redis.pool.maxWait}"/>
+          <property name="testOnBorrow" value="${redis.pool.testOnBorrow}"/>
+          <property name="testOnReturn" value="${redis.pool.testOnReturn}"/>
+      </bean>
+      
+      <!-- redis的连接池pool，不是必选项：timeout/password  -->
+      <bean id = "jedisPool" class="redis.clients.jedis.JedisPool">
+          <constructor-arg index="0" ref="jedisPoolConfig"/>
+          <constructor-arg index="1" value="${redis.host}"/>
+          <constructor-arg index="2" value="${redis.port}" type="int"/>
+          <constructor-arg index="3" value="${redis.timeout}" type="int"/>
+          <constructor-arg index="4" value="${redis.password}"/>
+      </bean>
+```
+
+- java 实际测试
+- [JedisUtilsTest.java](https://github.com/Kuangcp/Maven_SSM/blob/master/src/test/java/redis/JedisUtilTest.java)
+
+#### redis 使用后要disconnect释放连接
+#### redis 事务 exec释放事务
+
+### jedis遇到的异常
+- Invocation of init method failed; nested exception is java.lang.NoSuchMethodError: org.springframework.core.serializer.support.DeserializingConverter
+- 版本对不上，要Spring和Spring-data-redis 和 redis和commons-lang3对应
+- 目前是4.1.7 + 1.6.0 + 2.9.0 + 3.3.2 编译通过了	
+
+### SpringBoot使用Redis
+[SpringBoot配置Redis](https://github.com/Kuangcp/Notes/blob/master/TXT/Java/Spring/SpringBootDatabase.md)	
 	

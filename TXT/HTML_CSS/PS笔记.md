@@ -1,24 +1,24 @@
 #快捷键
 
 ###Ctrl
-Ctrl+N 新建文件
-Ctrl+H 隐藏辅助线   视图菜单栏有清除所有辅助线
-Ctrl+D 取消选框
-Ctrl+Alt+Z 一直撤销
-Ctrl+Z 只撤销上一步
-Ctrl+T 拖放选框大小，若锁定当前比例 加上shift
-Ctrl+R 标尺
-Ctrl+J 通过拷贝的图层
-Ctrl+Alt 复制当前选择框
-Ctrl 剪切当前选择框
-Ctrl+Del 填充背景
-Ctrl+Enter 路径变选框
-Ctrl+Shift+N 新建图层
+- Ctrl+N 新建文件
+- Ctrl+H 隐藏辅助线   视图菜单栏有清除所有辅助线
+- Ctrl+D 取消选框
+- Ctrl+Alt+Z 一直撤销
+- Ctrl+Z 只撤销上一步
+- Ctrl+T 拖放选框大小，若锁定当前比例 加上shift
+- Ctrl+R 标尺
+- Ctrl+J 通过拷贝的图层
+- Ctrl+Alt 复制当前选择框
+- Ctrl 剪切当前选择框
+- Ctrl+Del 填充背景
+- Ctrl+Enter 路径变选框
+- Ctrl+Shift+N 新建图层
 ###Alt
-Alt  移动当前选择框
-Alt+Del 填充前景
-Alt+鼠标 去掉钢笔的手柄
-
+- Alt  移动当前选择框
+- Alt+Del 填充前景
+- Alt+鼠标 去掉钢笔的手柄
+ 
 * 使用时间轴可以制作gif动图
 * 先羽化再抠图或者填充
 * 渐变工具的使用

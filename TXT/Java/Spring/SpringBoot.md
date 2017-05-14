@@ -49,7 +49,7 @@
 ```
 4.启动应用，控制台有如下输出
 
-- ![示例图片]()
+- ![输出](https://raw.githubusercontent.com/Kuangcp/Notes/master/TXT/Images/Spring/output.png)
 - 可以清楚的看到有关路径的使用方法
     - GET 查询单个 /repo/id 成功：200 失败404
     - GET查询所有 /repo 成功200 失败404

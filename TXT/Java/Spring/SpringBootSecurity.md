@@ -173,3 +173,8 @@
     Table not found: reader_roles
     Table not found: reader_roles
 ```
+
+- 所以这个是要查询多张表了
+    - （除非UserDetailService接口的loadUserByUsername能收到表类别的参数）
+    - 也可以考虑使用一个字符串，然后用`特殊字符`把类型放进去，然后正则取出来
+    - 登录页面就需要自定义一个函数进行拼接（或者使用校验来拼接？）

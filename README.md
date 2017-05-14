@@ -20,7 +20,8 @@
 - 使用chrome的插件更省资源，内存真不够用
 
 ## 2017-3-10 21:08:06
--`![ER图](https://raw.githubusercontent.com/Kuangcp/Notes/master/TXT/Images/ER.png)`前面大致一样，就是项目和路径会不同。
+- `![ER图](https://raw.githubusercontent.com/Kuangcp/Notes/master/TXT/Images/ER.png)`图片链接地址
+- `[](https://github.com/Kuangcp/Notes/blob/master/TXT/Java/EE.md)`文本链接地址
 
 ## 2017-04-27 15:16:17
 - 转移到了Linux平台进行开发，工具使用方便了些
@@ -29,5 +30,10 @@
 - 使用Python的脚本生成目录（URL编码），但是要注意不能有空格，不能以.开头，没有大写字母
 - 关于数据类型和基本运算都要系统学习才行
 
-## 2017-05-06 20:02:33
-- 关于markdown互相引用的路径：` https://github.com/Kuangcp/Notes/blob/master/TXT/Java/EE.md`
+## 2017-05-07 10:21:17
+- `特殊字符表` 方便用来做协议控制符，正则切分
+```
+╭   ─   ╳  ╬  ┇  ╧   ♀   ♂   ♡    ▽   △   □   ◇   ♢   ○   ☆    ☒   ★
+ ◆  ■  ▲  ▼  ◀  ▶  ♠  ♣  ♥  ▁  ▂  ▃  ▄  ▅  ▆  ▇  █  ▉  ▊  ▋  ▌  ▍  ▎  ▏
+ 
+ ```
