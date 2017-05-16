@@ -98,3 +98,14 @@
 - 如果出现小bug，就直接删除 ～.config 下的 sublime文件夹注意注册证书拷出来
 - 
 
+## 常见问题
+- ubunbu/deepin错误提示音 临时关闭：`rmmod pcspkr`临时开启：`modprobe pcspkr`
+- 使用bash时，在~/.bashrc文件末尾添加如下
+```
+    setterm -blength 0
+    　　xset -b
+```
+****
+
+
+

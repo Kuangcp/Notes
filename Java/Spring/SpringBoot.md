@@ -2,7 +2,7 @@
 ## 目录
 
 
-*************************************
+**********************************************************
 
 ## 安装SpringBootCLI
 - 安装SDKMAN
@@ -10,7 +10,7 @@
     - `source "/Users/{yourname}/.sdkman/bin/sdkman-init.sh" `根据实际目录去运行
     - spring --version
 
-- *注意：所有Controller类要和*Application类同包或子包*
+- *注意：所有`Controller`类要和`*Application`类*同包或子包*
 
 
 ## Springboot的测试模块
@@ -21,7 +21,8 @@
 - 使用随机端口启动服务器 配置local.server.port=0
 - 使用Selenium来测试HTML页面，模拟浏览器的动作，查看系统运行状态
 
-****************************************
+**********************************************
+
 ## Web模块
 ### REST的使用
 1.添加依赖
@@ -39,10 +40,17 @@
         public RepositoryRestConfiguration config() {
             return super.config();
         }
-        // 还可以重写Config开头的方法
+        @Override
+        public ProfileResourceProcessor profileResourceProcessor(RepositoryRestConfiguration config) {
+            // 设置rest根目录是应用路径下的路径
+            config.setBasePath("/rest");
+            return super.profileResourceProcessor(config);
+
+        }
+        
     }
 ```
-3.配置repository的名字例如：
+3.配置repository的名字例如：（只要配置repository就能用REST了）
 ```
     @RepositoryRestResource(path = "book")
     public interface BookDao extends JpaRepository<Book,Long>{

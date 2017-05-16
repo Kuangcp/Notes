@@ -114,9 +114,30 @@
 - `TTL key ` 查看键剩余过期时间（生存时间）
 - 
 
-##### 字符串
+##### 字符串 操作
 - 字符串就是字节组成的序列 可以放字节串，整数，浮点数
-- 
+- `set key newval nx `存在则set失败
+- `set key newval xx `不存在则set失败
+- 存入的String能被解析为数值 就能使用 incr incrby decr decrby 
+- `incr` 是原子操作即并发的情况下不会有脏读(可用于主键生成策略)
+- `getset key val`  set新值，get旧值
+- `mset mget `
+	- `mset key val key val` 
+	- `mget key key key` 返回值组成的数组
+- `exists key` 有该值就返回1否则0
+- `del key` 返回1被删除，0 key不存在
+- `type key` 返回值的类型
+- `expire key secondes` 设置或改变超时时间，精度是秒或毫秒
+	- `set key val ex secondes` set时设置超时时间
+- `persist key` 去除超时时间
+- `ttl key` 查看剩余存活时间 -1表示永久 -2表示没有该key
+
+##### List 操作
+- `rpush key val val val `右/尾添加元素 lpush是左/头
+- `rpop key` 从list右/尾端中删除元素返回元素值 没有了就返回null
+- `lrange key 0 -1` 取指定长度的list -1表示全部
+-  `ltrim key 0 2` 截取当前的list
+
 	
 
 	
