@@ -105,7 +105,9 @@
     setterm -blength 0
     　　xset -b
 ```
-****
+********************
+### Tips
+- `cat ~/.ssh/id_rsa.pub | xclip -sel clip` 将文件复制到剪贴板
 
 
 

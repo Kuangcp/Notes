@@ -27,7 +27,9 @@
 	* ~/.gitconfig 文件中多了以下内容即可
 		* [credential]
 		* helper = store
-	
+
+***************************************************************	
+
 ## 【目前使用git的方法】 
 
 - 1.在GitHub上新建一个项目，不勾选初始化，复制下URL
@@ -50,27 +52,72 @@
 	
 ```
 
+*************************************************
+## 常用命令
 #### 【git commit】
-```
-	git commit 不带命令：进入VI编辑器
-	第一行：用一行文字简述提交的更改内容
-	第二行：空行
-	第三行：记述更改的原因和详细内容
-	使用下面方法关闭退出
-```
+- `git commit -am "init" `: a git库已有文件的修改进行添加, m 注释
+    - `git add * ` 如果有新建立文件就要add 后面就不要a参数了 `git commit -m ""`
+    - 如果只是修改文件没有新建 `git commit -am ""`
+- `git commit ` 会自动进入VI编辑器
+    - 第一行：用一行文字简述提交的更改内容
+    - 第二行：空行
+    - 第三行：记述更改的原因和详细内容
+    - 使用下面方法关闭退出
+
 #### 【git remote】
-* 添加远程关联仓库 git remote add origin URL地址
-* 修改关联仓库 git remote set-url origin URL地址
+
+- `git remote add origin URL地址` 添加远程关联仓库 不唯一，可以关联多个
+- `git remote set-url origin URL地址` 修改关联仓库 可以不叫origin
+- `git remote rm URL` 删除和远程文档库的关系
+- `git remote rename origin myth` 更改远程文档库的名称
+- `git ls-remote` 输出所有关联的remote库 还会输出库的分支
+- `git remote -v` 输出push和pull的URL
+- `git push 远程URL的名称 --delete 分支名称` 删除远程库某分支
+
+#### 【fork 相关操作】
+- fork之后，想要更新原作者的分支：`git remote add 名称 原作者URL`
+- 拉取更新 ：`git fetch 名称`
 
 #### 【git push】
 - 出现RPC failed; result=22, HTTP code = 411 的错误
     - 就是因为一次提交的文件太大，需要改大缓冲区 例如改成500m
     - git config http.postBuffer 524288000
-- 
 
+#### 【git merge】
+`配置mergetool工具：`
+- `git config --global merge.tool kdiff3`
+- `git config --global mergetool.kdiff3.cmd "'D:/kdiff3.exe' \"\$BASE\" \"\$LOCAL\" \"\$REMOTE\" -o \"\$MERGED\""`
+- `git config --global mergetool.prompt false`
+- `git config --global mergetool.kdiff3.trustExitCode true`
+- `git config --global mergetool.keepBackup false`
+
+****************************
+
+- 简单的与master合并 `git merge master `
+- `git merge--no-ff feature-D` 将当前分支与分支feature-D 合并
+- 如果遇到冲突：
+    - `git mergetool` 使用工具进行分析冲突文件方便修改
+    
+#### 【git rebase】
+
+- 效果和merge差不多，但是分支图更清晰
+- 与master合并：`git merge master` 换成 `git rebase master`
+- 当遇到冲突：
+    - `git rebase --abort` 放弃rebase
+    - `git rebase --continue` 修改好冲突后继续
+
+#### 【git log】
+
+- `git log --author='A' `输出所有A开头的作者日志
+- `git log 文件名 文件名` 输出更改指定文件的所有commit 要文件在当前路径才可
+- `git log --after='2016-03-23 9:20' --before='2017-05-10 12:00' ` 输出指定日期的日志
+- `git shortlog` 按字母顺序输出每个人的日志 加上`--numbered` 参数就是按提交数排序
+- `git ls-files` 列出文件列表
+- `git ls-files | xargs wc -l` 计算文件中程序代码行数 通过工具：`xargs` `wc`
+- `git ls-files | xargs cat | wc -l` 计算行数总和
+    
 **************************************************
 
-# Git Bash下的操作
 ## 【git初始化】 
 ```
 	$git config --global user.name " "
@@ -90,7 +137,7 @@
 ```
 ## 【GitHub 】 
 ```
-	【Markdown语法】:  
+	【Markdown语法】: 
 		@用户名， @组织名 ；#编号 会连接到该仓库对应的Issue编号 。
 		通过 用户名/仓库名 #编号 来指定仓库的指定Issue
 	【将Bash和GitHub绑定起来】：
@@ -100,10 +147,10 @@
 		4.测试SSH $ssh -T git@github.com  输入yes 输入 密码  ****
 ```	
 ### 【 .gitingnore 文件】 :
-- `test.txt  忽略该文件`
-- `*.html  忽略所有HTML文件`
-- `*[o/a]  忽略所有o和a后缀的文件`
-- `!foo.html  不忽略该文件`
+- `test.txt`  忽略该文件
+- `*.html`  忽略所有HTML文件
+- `*[o/a]`  忽略所有o和a后缀的文件
+- `!foo.html`  不忽略该文件
 - 示例文件
 ```
       # maven #
@@ -121,83 +168,45 @@
       .project
       Servers/
 ```
-#### 克隆项目： $git clone URL 
 
 ## 【从空白建立仓库：】
 
-- 1.先在GitHub上创建一个仓库，不勾选Initialize...（原因是等会连远程仓库还得pull一下才能push）
-- 2.若在某已有仓库下：在那个目录下运行Git Bash
-	- 2.1 mkdir 库名 创建一个文件夹，最好和远程的库同名
-	- 2.2 git init 初始化（建立  .git  相关文件） touch 一个README.md
-	- 2.3 git remote add origin master URL 连上远程仓库
-	- 2.4 git push -u origin master 输入用户名，密码（若因为没有上游节点就按提示输入命令建立初始节点即可）
+- 1.先在GitHub上创建一个仓库，不勾选README（不然添加远程仓库还得pull一下README文件才能push）
+- 如果本地没有则 `mkdir 库名 `创建一个文件夹，最好和远程的库同名
+- 2.在某本地项目根目录下运行 `Git Bash`
+    - 2.1 `git init` 初始化（建立 `.git` 目录）
+    - 2.2 `touch README.md`
+    - 2.3 `git remote add origin master URL` 连上远程仓库
+    - 2.4 `git push -u origin master` 输入用户名，密码（若因为没有上游节点就按提示输入命令建立初始节点即可）
 
-## 【常用命令】 
+## 【基础命令】 
+
+- `git touch file1 file2 ` 新建三个文件
+- `echo "  ">>file1 ` 修改文件file1
+- `git rm 文件名 ` ： 删除文件至缓存区
+- `git commit -am " " `从缓存提交（切记要先 commit 才能 push）
+- `git diff`  ： 查看当前工作树和暂存区的差别
+- `git diff --cached `：查看缓存中文件修改的痕迹和对比 输入q 退出
+- `git log --graph `：查看（图形化）提交日志 输入q退出
+- `git banrch `分支名 ：创建新的分支
+- `git branch -a`查看当前分支信息
+- `git checkout -b`：创建一个分支，并立即切换
+- `git checkout -b feature-D origin/feature-D` 新建一个分支来接收同步后面那个远程仓库的分支
+- `git pull `：获取最新的远程仓库分支
+- `git pull origin feature-D `：只把本地的feature-D分支更新到最新
+- `git reset --hard 哈希值`：数据库的回滚操作似的
+- `git reflog `  查看仓库的操作日志
+- `git mv -k oldName  newName` :更改文件名字
+
 ```
-	git touch file1 file2  新建三个文件
-	echo "  ">>file1  修改文件file1
-	git rm 文件名  ： 删除文件至缓存区
-	vi 文件名  ： 使用VI编辑器来新建文件  要特别注意其退出
-
-	git commit -am " " 从缓存提交（切记要先 commit 才能 push）
-	git diff  ： 查看当前工作树和暂存区的差别
-	git diff --cached ：查看缓存中文件修改的痕迹和对比 输入q 退出
-	git log --graph ：查看（图形化）提交日志 输入q退出
-	git banrch 分支名 ：创建新的分支
-	git branch -a 查看当前分支信息
-	git checkout -b：创建一个分支，并立即切换
-	git checkout -b feature-D origin/feature-D 新建一个分支来接收同步后面那个远程仓库的分支
-	git pull ：获取最新的远程仓库分支
-	git pull origin feature-D ：只把本地的feature-D分支更新到最新
-	git merge--no-ff feature-D 将当前分支与分支feature-D 合并
-	git reset --hard 哈希值：数据库的回滚操作似的
-	git reflog 查看仓库的操作日志
-	git mv -k oldName  newName :更改文件名字
-
 	usage: git [--version] [--help] [-C <path>] [-c name=value]
            [--exec-path[=<path>]] [--html-path] [--man-path] [--info-path]
            [-p | --paginate | --no-pager] [--no-replace-objects] [--bare]
            [--git-dir=<path>] [--work-tree=<path>] [--namespace=<name>]
            <command> [<args>]
 ```
-### API文档
-```
-These are common Git commands used in various situations:
-start a working area (see also: git help tutorial)
-   clone      Clone a repository into a new directory
-   init       Create an empty Git repository or reinitialize an existing one
 
-work on the current change (see also: git help everyday)
-   add        Add file contents to the index
-   mv         Move or rename a file, a directory, or a symlink
-   reset      Reset current HEAD to the specified state
-   rm         Remove files from the working tree and from the index
 
-examine the history and state (see also: git help revisions)
-   bisect     Use binary search to find the commit that introduced a bug
-   grep       Print lines matching a pattern
-   log        Show commit logs
-   show       Show various types of objects
-   status     Show the working tree status
-
- grow, mark and tweak your common history
-   branch     List, create, or delete branches
-   checkout   Switch branches or restore working tree files
-   commit     Record changes to the repository
-   diff       Show changes between commits, commit and working tree, etc
-   merge      Join two or more development histories together
-   rebase     Forward-port local commits to the updated upstream head
-   tag        Create, list, delete or verify a tag object signed with GPG
-
- collaborate (see also: git help workflows)
-   fetch      Download objects and refs from another repository
-   pull       Fetch from and integrate with another repository or a local branch
-   push       Update remote refs along with associated objects
-
-'git help -a' and 'git help -g' list available subcommands and some
-concept guides. See 'git help < command>' or 'git help < concept>'
-to read about a specific subcommand or concept.
-```
 ## 【git reset常用方式】
 ### （1）：回滚add操作
 ```
@@ -299,6 +308,43 @@ git commit -am "Commit files inindex"  (2)
 - 9.3 此时你可以使用reset --keep 把在start之后的commit清除掉，但是保持了working tree的不变
 
 
+### API文档
+```
+These are common Git commands used in various situations:
+start a working area (see also: git help tutorial)
+   clone      Clone a repository into a new directory
+   init       Create an empty Git repository or reinitialize an existing one
 
+work on the current change (see also: git help everyday)
+   add        Add file contents to the index
+   mv         Move or rename a file, a directory, or a symlink
+   reset      Reset current HEAD to the specified state
+   rm         Remove files from the working tree and from the index
+
+examine the history and state (see also: git help revisions)
+   bisect     Use binary search to find the commit that introduced a bug
+   grep       Print lines matching a pattern
+   log        Show commit logs
+   show       Show various types of objects
+   status     Show the working tree status
+
+ grow, mark and tweak your common history
+   branch     List, create, or delete branches
+   checkout   Switch branches or restore working tree files
+   commit     Record changes to the repository
+   diff       Show changes between commits, commit and working tree, etc
+   merge      Join two or more development histories together
+   rebase     Forward-port local commits to the updated upstream head
+   tag        Create, list, delete or verify a tag object signed with GPG
+
+ collaborate (see also: git help workflows)
+   fetch      Download objects and refs from another repository
+   pull       Fetch from and integrate with another repository or a local branch
+   push       Update remote refs along with associated objects
+
+'git help -a' and 'git help -g' list available subcommands and some
+concept guides. See 'git help < command>' or 'git help < concept>'
+to read about a specific subcommand or concept.
+```
 
 
