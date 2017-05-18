@@ -99,7 +99,7 @@
     - 查看所有容器 ：`docker ps -a`
 - 停止容器：`docker stop 容器name或id`
 - 启动容器：`docker start 容器name或id`
-- port-redis容器的端口映射：`sudo docker run -d -p 6379:6379 --name port-redis redis`
+- port-redis容器的端口映射：`sudo docker run -d -p 6379:6379 --name port-redis redis` 左本机右容器
 - 删除容器：`docker rm 容器id`
     - 删除所有容器：`docker rm ${docker -a -q}`
 - 容器日志：`docker logs 容器name或id`

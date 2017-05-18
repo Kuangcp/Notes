@@ -11,10 +11,8 @@
 ```
    @Configuration
     public class SecurityConfig extends WebSecurityConfigurerAdapter {
-
       @Autowired
       private ReaderRepository readerRepository;
-
 
       @Override
       protected void configure(HttpSecurity http) throws Exception {
@@ -47,7 +45,7 @@
 
     }
 ```
-
+`Repository类`
 ```
    public interface ReaderRepository extends JpaRepository<Reader, String> {
    }
@@ -56,12 +54,9 @@
     //登录实体类
    @Entity
     public class Reader implements UserDetails {
-
       private static final long serialVersionUID = 1L;
-
       @Id
       private String username;
-      
       private String fullname;
       private String password;
 
@@ -185,6 +180,8 @@
 - 角色表（序列id，用户编码，角色） 
 这样的话扩展就只要加表，使用同一个主键生成策略就可以了
 
+- 思考：
+    - 其实这个安全框架使用的是角色控制，而不是权限控制，目前的了解，达不到Oracle那样的权限加角色控制
 
 
 

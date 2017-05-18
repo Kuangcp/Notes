@@ -257,7 +257,7 @@ to read about a specific subcommand or concept.
 	6.1 即使在本地已经更改了tree，导致了index的变化，也可以放心的pull，前提是你知道将要pull的内容不会覆盖你的working tree中的内容
 	6.2 git pull 之后，你发现这次pull的有问题，想要撤销操作，如果使用git reset --hard ORIG_HEAD也可以，但是这会删除add的代码
 			使用 git reset --merge ORIG_HEAD 就可以避免回滚操作时删除add的代码
-```			
+```	
 #### （7）：被中断的工作流程
 ```
 在实际开发中经常出现这样的情形：你正在开发一个大的feature，此时来了一个紧急的BUG需要修复，但是目前在working tree 中的内容还不足以commit
@@ -293,11 +293,12 @@ git commit -am "Commit files inindex"  (2)
 		编写
 		git checkout -b branch2 (2)
 		git reset --keep start (3)
-	9.1 这次是把branch1中的改变提交了
-	9.2 此时发现，之前的提交不属于这个branch，此时你新建了branch2，并切换到了该branch上
-	9.3 此时你可以使用reset --keep 把在start之后的commit清除掉，但是保持了working tree的不变
-
 ```
+- 9.1 这次是把branch1中的改变提交了
+- 9.2 此时发现，之前的提交不属于这个branch，此时你新建了branch2，并切换到了该branch上
+- 9.3 此时你可以使用reset --keep 把在start之后的commit清除掉，但是保持了working tree的不变
+
+
 
 
 
