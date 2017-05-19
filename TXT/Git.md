@@ -51,7 +51,11 @@
    	git push -u origin master
 	
 ```
-
+## 实验楼使用Github
+- `git clone URL` 复制下来，默认是master
+- `git branch 新分支名` 新建一个分支，切换过去，使用的就是这个新分支放代码
+- `git push origin 新分支名` add commit 之后就push
+- `git fetch origin 已有分支` 下拉别的分支代码
 *************************************************
 ## 常用命令
 #### 【git commit】
