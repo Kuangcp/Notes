@@ -125,14 +125,13 @@
 	$git config --global color.ui  auto 
 ```
 ## 【VI编辑器的使用】
-
- git 在pull或者合并分支的时候有时会遇到打开 VI编辑器 的状态  可以不管(直接下面3,4步)
- 如果要输入解释的话就需要:
+- git 在pull或者合并分支的时候有时会遇到打开 VI编辑器 的状态  可以不管(直接下面3,4步)
+`如果要输入解释的话就需要:`
 ```
 	1.按键盘字母 i 进入insert模式
 	2.修改最上面那行黄色合并信息,可以不修改
 	3.按键盘左上角"Esc"
-	4.输入":wq",注意是冒号+wq,按回车键即可 
+	4.输入`:wq`,按回车键即可 
 	Ctrl + Z +Z 也能退出
 ```
 ## 【GitHub 】 
@@ -169,8 +168,7 @@
       Servers/
 ```
 
-## 【从空白建立仓库：】
-
+### 【建立本地仓库并关联到远程仓库：】
 - 1.先在GitHub上创建一个仓库，不勾选README（不然添加远程仓库还得pull一下README文件才能push）
 - 如果本地没有则 `mkdir 库名 `创建一个文件夹，最好和远程的库同名
 - 2.在某本地项目根目录下运行 `Git Bash`
@@ -178,6 +176,56 @@
     - 2.2 `touch README.md`
     - 2.3 `git remote add origin master URL` 连上远程仓库
     - 2.4 `git push -u origin master` 输入用户名，密码（若因为没有上游节点就按提示输入命令建立初始节点即可）
+
+### 【使用git daemon搭建本地简易Git Server】
+- 先创建一个目录结构
+- Repository
+    - Project1
+    - Project2
+    - Project3
+- 每个Project下都有`.git` 文件夹
+- Repository目录下执行：`git daemon --export-all --base-path='/home/mythos/Code/test/' --port=8096`
+    - `--export-all` 开放当前目录下所有项目
+    - `--enable=receive-pack` 为了安全，默认是仓库不能被修改，添加这个参数就可以push了
+    - `--base-path=''` 指定开放的基本目录（指定开放别的路径）
+    - `--port=8096` 指定开放的端口
+    - `--verbose` 启动看到的日志信息更多
+    - ` &` 末尾加上表示后台运行，默认是阻塞了当前git bash命令行
+- 运行起来后 使用`Ctrl+C`  退出这个程序，如果使用的是后台方式，则：
+    - `ps`： 查看到pid 
+    - `sudo kill -9 pid`： 杀掉指定pid
+- 在别的目录下` git clone git://localhost:8096/Project1` 即可克隆
+
+### 【HTTP访问Git Server】
+- 安装Apache： Web服务器
+- 配置Apache服务器的开放的目录以及Git的路径 
+```
+<Location /git>
+    AuthType Basic 
+    AuthName "GIT Repository" 
+    AuthUserFile "/home/mythos/GitRemoteRepo/htpassed"
+    Require valid-user
+</Location>
+```
+- 切换到Apache的bin目录下：`htpasswd -cmb /home/mythos/GitRemoteRepo/htpsswd 账号名 密码`
+- 到仓库目录下 `git init --bare 程序项目名称`
+- `git clone http://localhost/git/程序项目名称` 输入用户名密码即可
+#### 【配置 https】
+- 切换到Apache主目录下 `bin\openssl genrsa -des3 -out server.key 2048 -config conf\openssl.cnf` 输入密码
+- `bin\openssl req -new -key server.key -out server.csr -config conf\openssl.cnf` 输入之前密码
+- `bin\openssl x509 -req -days 3650 -in server.csr -signkey server.key -out server.crt` 输入之前密码
+- 把server.key 更名为server.key.old :`bin\openssl rsa -in server.key.old -out server.key`
+- 将 server.key server.crt 移动到conf
+- 修改 httpd.conf 去掉如下三行的注释 #
+```
+    LoadModule socache_shmcb_module..
+    LoadModule ssl_module..
+    Include conf/extra...
+```
+- 因为是自己建立的SSL证书 所以要去掉SSL验证 `git -c http.sslVerify=false clone URL `
+- 或者直接改配置文件，省的每次输这么多 `git config http.sslVerify false`
+
+#### 【使用SSH登录GitServer】
 
 ## 【基础命令】 
 

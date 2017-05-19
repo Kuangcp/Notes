@@ -8,7 +8,7 @@
     - [创建快捷方式](#创建桌面快捷方式)
     - [文本编辑器](#文本编辑器)
 
-*********************
+*********************************
 ## 系统管理
 - 更新密码：`passwd username`
 
@@ -17,7 +17,7 @@
 ### 安装命令
 - 1,deb 安装deb包
 	- ` sudo  dpkg  -i  *.deb`
--  2,apt-get
+- 2,apt-get
 	- `sudo apt-get install xxx`
 	- 若不能添加私有源ppa：
 	- debain：`sudo apt-get install software-properties-common`
@@ -25,27 +25,19 @@
 	- 例如：`sudo add-apt-repository ppa:dotcloud/lxc-docker `
 	- 删除ppa `cd  /etc/apt/sources.list.d/` 打开该目录下文件把对应的ppa的一行注释掉或删掉就行了
 - 3,make install 源代码安装
-	    //1.解压缩
-		`tar -zxf nagios-4.0.2.tar.gz ` 
-		//2.进入目录
-		`cd nagios-4.0.2`
-		//3.配置
-		`./configure --prefix=/usr/local/nagios  `   
-		//4.编译
-		`make all`
-		//5.安装
-		`make install && make install-init && make install-commandmode && make install-config`
-		
-- 1，以root权限打开文件管理
-	-  `sudo nautilus`
-- 2，查看已安装的应用
+    - 1.解压缩 `tar -zxf nagios-4.0.2.tar.gz ` 
+    - 2.进入目录 `cd nagios-4.0.2`
+    - 3.配置 `./configure --prefix=/usr/local/nagios  ` 
+    - 4.编译 `make all`
+    - 5.安装 `make install && make install-init && make install-commandmode && make install-config`
+- 查看已安装的应用
 	- `dpkg --list`
-- 3,彻底卸载应用
+- 彻底卸载应用
 	- `sudo apt-get --purge remove 应用名`
-- 4，只卸载程序，保留配置文件
+- 只卸载程序，保留配置文件
 	- `sudo apt-get remove 应用名`
 
-*********************
+**************************************
 ## 网络管理
 #### 查看端口占用情况
 - `lsof -i`:端口号 用于查看某一端口的占用情况，比如查看8000端口使用情况，`lsof -i:8000`
@@ -63,8 +55,8 @@
     - `netstat -aonp |grep "^[a-z]\+[ ]\+0[ ]\+0[ ]\+[0-9\.]\+:80[ ]\+"|awk -F" "   {'print $0'}`
     - `netstat -aonp |grep ":80[ ]\+"|awk -F" "   {'print $0'}`
     - `sudo netstat -aonp |grep ":6379[ ]\+"|awk -F" "   {'print $0'}`
-    - 杀掉：
-    - `sudo kill -9 pid`
+    - `sudo kill -9 pid` 杀掉指定pid
+    - `ps` 查看当前执行中的程序
 
 #### SSH登录
 ##### 客户端配置
@@ -93,18 +85,26 @@
 	Type = Application #desktop的类型（必选），常见值有“Application”和“Link”
 	Categories = GNOME;Application;Network; #注明在菜单栏中显示的类别（可选）
 ```
-#### 文本编辑器
-##### sublime 
+### 文本编辑器
+#### sublime 
 - 如果出现小bug，就直接删除 ～.config 下的 sublime文件夹注意注册证书拷出来
 - 
+#### vi/vim
+- `i` 进入编辑
+- `:wq` 保存退出，注意是英文的 `:`才可以退出
 
-## 常见问题
+### 常见问题
 - ubunbu/deepin错误提示音 临时关闭：`rmmod pcspkr`临时开启：`modprobe pcspkr`
 - 使用bash时，在~/.bashrc文件末尾添加如下
 ```
     setterm -blength 0
     　　xset -b
 ```
+### cd 
+- `cd - ` 跳转到上一个目录
+- `cd !$` 把上个命令的参数作为cd参数使用。
+- `cd //` 系统根目录
+
 ********************
 ### Tips
 - `cat ~/.ssh/id_rsa.pub | xclip -sel clip` 将文件复制到剪贴板
