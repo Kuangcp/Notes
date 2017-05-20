@@ -72,7 +72,7 @@
 - 客户端登录 `ssh -p22 username@ip`
 *******************************************
 ## 文件管理
-#### 创建桌面快捷方式
+`自定义桌面快捷方式文件`
 ```
 	[Desktop Entry] #每个desktop文件都以这个标签开始，说明这是一个Desktop Entry文件
 	Version = 1.0 #标明Desktop Entry的版本（可选）
