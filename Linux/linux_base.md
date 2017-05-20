@@ -93,6 +93,8 @@
 - `i` 进入编辑
 - `:wq` 保存退出，注意是英文的 `:`才可以退出
 
+#### gedit
+- 安装markdown预览插件 
 ### 常见问题
 - ubunbu/deepin错误提示音 临时关闭：`rmmod pcspkr`临时开启：`modprobe pcspkr`
 - 使用bash时，在~/.bashrc文件末尾添加如下
@@ -108,6 +110,19 @@
 ********************
 ### Tips
 - `cat ~/.ssh/id_rsa.pub | xclip -sel clip` 将文件复制到剪贴板
-
-
+- `桌面快捷方式图标文件`
+```
+    [Desktop Entry]
+    Exec=/home/mythos/Application/Story/Story-writer
+    Icon=/home/mythos/Application/Story/Story-writer.png
+    Type=Application
+    Terminal=false
+    Name=Story
+    GenericName=Story
+    Categories=Story
+    Name[en_US]=Story
+    GenericName[en_US.UTF-8]=Story
+    Name[zh_CN]=Story
+```
+- 
 
