@@ -60,7 +60,7 @@
 - `git tag -d tagname` 删除标签
 - `git tag -a v1.2.4 commit-id` 标签可以不在当前head上打，也可以打以前的commit
 - `git push origin tagname` 默认不提交tag，所以提交指定的tag
-- `git push -tags` 提交所有的tag
+- `git push --tags` 提交所有的tag
 
 ### 分支操作
 #### 【git checkout】
