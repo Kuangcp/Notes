@@ -22,12 +22,12 @@
 * mvn deploy：将jar包发布到远程仓库
 * mvn eclipse:eclipse ：生成 Eclipse 项目文件
 
----
+```
 mvn install:install-file -Dfile=D:\mvn\spring-context-support-3.1.0.RELEASE.jar 
 -DgroupId=org.springframework -DartifactId=spring-context-support 
 -Dversion=3.1.0.RELEASE -Dpackaging=jar
 
----
+```
 ## 2.maven配置
 ### 2.1 eclipse中配置：
 高版本自带maven，需要注意的是eclipse的JRE环境目录要选择jdk下的JRE
@@ -35,7 +35,7 @@ mvn install:install-file -Dfile=D:\mvn\spring-context-support-3.1.0.RELEASE.jar
 ### 2.2 配置插件 [插件地址](http://maven.apache.org/plugins/index.html)
 
 ### 2.3 配置文件的详解
----
+```
       <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
      <!--当前pom的版本号-->
@@ -99,33 +99,10 @@ mvn install:install-file -Dfile=D:\mvn\spring-context-support-3.1.0.RELEASE.jar
      <modules>
          <module></module>
      </modules>
----
+```
 
 #### 2.3.1配置:源码package成JAR包：(pom.xml中配置)
----
-      <project>
-
-      ......
-      
-      <build>
-       <plugins>
-         <plugin>
-           <groupId>org.apache.maven.plugins</groupId>
-           <artifactId>maven-source-plugin</artifactId>
-           <version>3.0.1</version>
-           <executions>
-           	<execution>
-           	<phase>package</phase>
-           	<goals>
-           		<goal>jar-no-fork</goal>
-           	</goals>
-           	</execution>
-           </executions>
-         </plugin>
-       </plugins>
-      </build>
-      </project>
----
+`<packaging>jar</packaging>`
 
 ## 3. maven概念
 - 坐标：三个标签唯一的标识了项目
@@ -152,11 +129,47 @@ A 项目 compile
 新建一个项目作为父项目，可以删除Test目录（无用）
 然后在需要引用父项目pom文件的地方加上parent 标签里面写上 父项目的三要素
 
+#### 关于适用git idea 多模块的项目的构建
+`.gitignore文件` 没有特别的地方
+```
+    .idea/
+    *.iml
+    target/
+```
+`父项目pom文件`
+``` 
+    <groupId>com.github.kuangcp</groupId>
+    <artifactId>Modules</artifactId>
+    <version>1.0-SNAPSHOT</version>
+    <packaging>pom</packaging>
+    <modules>
+        <module>repository</module>
+        <module>service</module>
+        <module>website</module>
+    </modules>
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <java.version>1.8</java.version>
+    </properties>
+```
+`子项目pom文件`
+```
+    <artifactId>website</artifactId>
+    <version>1.0-SNAPSHOT</version>
+    <packaging>jar</packaging>
+
+    <parent>
+        <groupId>com.github.kuangcp</groupId>
+        <artifactId>Modules</artifactId>
+        <version>1.0-SNAPSHOT</version>
+    </parent>
+```
+- 子项目编译打包各自独立，怎么整合成一个
 ## 5.使用maven新建Web3.0项目 [网络maven仓库](http://mvnrepository.com/)
 - 新建maven 选择webapp 然后输入三要素
 - 但是因为模板默认的是web2.3，所以要手动修改成3.0
 - 1. pom文件中添加插件 编译部分
----
+```
       <plugin>
        <artifactId>maven-compiler-plugin</artifactId>
        <version>3.0</version>
@@ -165,7 +178,7 @@ A 项目 compile
         <target>1.8</target>
        </configuration>
       </plugin>
----
+```
 - 2.navigator目录模式下 修改相关文件，把2.3改成3.0
 - 3.eclipse中右击改动Facets 然后maven-update一下就可以了
 
@@ -175,7 +188,7 @@ A 项目 compile
 特别注意 NIO的原因，静态文件在服务器启动的时候不能更改，需要找到maven仓库下的org/eclipse/jettyjetty-webapp/ 
 下的jar包中的default配置文件，把useFileBuffer标签的 true 改成false
 
----
+```
       <plugin>
 				<groupId>org.mortbay.jetty</groupId>
 				<artifactId>jetty-maven-plugin</artifactId>
@@ -209,13 +222,13 @@ A 项目 compile
 				</configuration>
 			</plugin>
 
----
+```
 - 部署成功后，使用jetty:run 即可运行起服务器
 
 ##### Tomcat
 - 去Tomcat官网 找到maven plugins进入找到想要的版本即可
 
----
+```
       <plugin>
 				<groupId>org.apache.tomcat.maven</groupId>
 				<artifactId>tomcat6-maven-plugin</artifactId>
@@ -236,18 +249,18 @@ A 项目 compile
 					<path>/mavenProject</path> <!-- 此处的名字是项目发布的工程名 -->
 				</configuration>
 			</plugin>
----
+```
 - 部署完成后 tomcat7:deploy 运行服务器
 
 ### 5.1 加入Servlet的API包:
----
+```
 <dependency>
     <groupId>javax.servlet</groupId>
     <artifactId>javax.servlet-api</artifactId>
     <version>3.0.1</version>
     <scope>provided</scope>
 	</dependency>
----
+```
 
 
 ## Maven和Ant的区别一:
@@ -269,5 +282,5 @@ A 项目 compile
 - 减少冗余，减少出错的可能。
 - 中心资源库管理，能减低源码库的大小，中心资源库可以统一定期备份。
 - 目录结构规范，让开发者从一个maven项目过度到另一maven项目很容易。
-- 大量的开源项目使用了maven。     
+- 大量的开源项目使用了maven。
 

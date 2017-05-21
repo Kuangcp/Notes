@@ -63,6 +63,7 @@
 - `sudo spt-get install openssh-client`
 - `ssh-keygen` 可以设置密码，为了方便也可以全部采用默认
 - 进入.ssh文件夹下 `gedit id_rsa.pub` 然后复制该公钥内容
+- 在各种平台服务上添加这个公钥即可免密登录
 
 ##### 服务端配置
 - 安装：`sudo apt-get install openssh-server`
@@ -124,5 +125,18 @@
     GenericName[en_US.UTF-8]=Story
     Name[zh_CN]=Story
 ```
-- 
-
+********
+- ssh认证
+    - 只要在电脑上生成了秘钥对，之后在各个平台上复制公钥内容即可，是不是为方便就可以复制所需文件夹 `.ssh/`
+    - 就能在任意电脑上连接，当然这是不安全的行为。。。。都把私钥公开了
+    - 安全一点的就是重新生成秘钥对，然后添加到各个平台上去，不用了还可以删除
+- `sudo spt-get install openssh-client`
+- `ssh-keygen` 可以设置密码，为了方便也可以全部采用默认，为了安全就设置密码
+- 进入.ssh文件夹下 `gedit id_rsa.pub` 然后复制该公钥内容即可
+********   
+### 快捷键
+- 终端：
+    - `Ctrl L` 清屏，Mysql也适用
+    - `Ctrl ；` 显示最近五条剪贴板内容
+    - `Ctrl Shift Q/W`自定义的新建关闭标签页
+**********

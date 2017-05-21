@@ -28,7 +28,11 @@
 	* ~/.gitconfig 文件中多了以下内容即可
 		* [credential]
 		* helper = store
-
+- 关于许可证 [Github许可证网](https://choosealicense.com/licenses/)
+    - 新建项目的时候可以选择 添加.gitignore和许可证类别 许可证大致分为 MIT Apache2.0 GPL 
+    - `MIT` 简单宽松的许可证，任何人可以拿代码做任何事与我无关` eg: jQuery、Rails` 
+    - `Apache` 关注于专利，这类似于MIT许可证，但它同时还包含了贡献者向用户提供专利授权相关的条款。 `Apache、SVN和NuGet`
+    - `GPL` 关注于共享改进，这是一种copyleft许可证，要求修改项目代码的用户再次分发源码或二进制代码时，必须公布他的相关修改。 `Linux、Git`
 ***************************************************************	
 
 ## 【目前使用git的方法】 
@@ -133,7 +137,7 @@
     - `--port=8096` 指定开放的端口
     - `--verbose` 启动看到的日志信息更多
     - ` &` 末尾加上表示后台运行，默认是阻塞了当前git bash命令行
-- 运行起来后 使用`Ctrl+C`  退出这个程序，如果使用的是后台方式，则：
+- 运行起来后 使用`Ctrl+Z`  退出这个程序，如果使用的是后台方式，则：
     - `ps`： 查看到pid 
     - `sudo kill -9 pid`： 杀掉指定pid
 - 在别的目录下` git clone git://localhost:8096/Project1` 即可克隆

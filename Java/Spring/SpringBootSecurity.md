@@ -143,6 +143,13 @@
 - JSR-250的@RolesAllowed Java标准定义的注解，与上面的注解是差不多的
 - 但是都是有局限性，只能判断请求是否有权限，不能进行更多的自定义判断
 #### SpringSecurity3.0 开始提供了 SpEL表达式
+`需要先配置这个配置类，后面的注解才会生效`
+```
+    @Configuration
+    @EnableGlobalMethodSecurity(prePostEnabled = true)
+    public class MethodSecurityConfig extends GlobalMethodSecurityConfiguration{}
+```
+
 - `@PreAuthorize` 方法调用前，基于表达式的计算结果来限制方法的访问
 - `@PostAuthorize` 允许方法调用，如果表达式是false 抛出安全异常
 - `@PostFilter` 允许方法调用，按照表达式来过滤方法的结果
