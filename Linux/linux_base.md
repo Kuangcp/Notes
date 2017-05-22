@@ -1,4 +1,4 @@
-# Linux 系统
+# 【Linux 系统】
 ## Catalog
 - [软件管理](#软件管理)
     - [安装命令](#安装命令)
@@ -9,11 +9,11 @@
     - [文本编辑器](#文本编辑器)
 
 *********************************
-## 系统管理
+## 【系统管理】
 - 更新密码：`passwd username`
 
-************************
-## 软件管理
+*********************************
+## 【软件管理】
 ### 安装命令
 - 1,deb 安装deb包
 	- ` sudo  dpkg  -i  *.deb`
@@ -38,7 +38,7 @@
 	- `sudo apt-get remove 应用名`
 
 **************************************
-## 网络管理
+## 【网络管理】
 #### 查看端口占用情况
 - `lsof -i`:端口号 用于查看某一端口的占用情况，比如查看8000端口使用情况，`lsof -i:8000`
 - `netstat -tunlp |grep` 端口号，用于查看指定的端口号的进程情况
@@ -63,16 +63,16 @@
 - `sudo spt-get install openssh-client`
 - `ssh-keygen` 可以设置密码，为了方便也可以全部采用默认
 - 进入.ssh文件夹下 `gedit id_rsa.pub` 然后复制该公钥内容
+- 或者 `cat ~/.ssh/id_rsa.pub | xclip -sel clip` 将文件复制到剪贴板
 - 在各种平台服务上添加这个公钥即可免密登录
 
 ##### 服务端配置
 - 安装：`sudo apt-get install openssh-server`
 - 进入.ssh文件夹下 `sudo vim authorized_keys` 粘贴客户端公钥内容
 - 更改文件权限 `sudo chmod 600 authorized_keys`
-
 - 客户端登录 `ssh -p22 username@ip`
 *******************************************
-## 文件管理
+## 【文件管理】
 `自定义桌面快捷方式文件`
 ```
 	[Desktop Entry] #每个desktop文件都以这个标签开始，说明这是一个Desktop Entry文件
@@ -96,19 +96,28 @@
 
 #### gedit
 - 安装markdown预览插件 
-### 常见问题
-- ubunbu/deepin错误提示音 临时关闭：`rmmod pcspkr`临时开启：`modprobe pcspkr`
-- 使用bash时，在~/.bashrc文件末尾添加如下
+
+************************
+### 【常见问题】
+##### ubunbu/deepin错误提示音
+- 临时关闭：`rmmod pcspkr`临时开启：`modprobe pcspkr`
+- 如果是使用bash，在`~/.bashrc`文件末尾添加如下（deepin无效）
 ```
     setterm -blength 0
-    　　xset -b
+    xset -b
 ```
+- 对于Debian/Ubuntu系统，使用root身份执行：
+    - `sudo echo "blacklist pcspkr" >> /etc/modprobe.d/blacklist`
+- 对于CentOS/Redhat/RHEL/Fedora系统，使用root身份执行：
+    - `echo "alias pcspkr off" >> /etc/modprobe.conf `
+
+*************************
 ### cd 
 - `cd - ` 跳转到上一个目录
 - `cd !$` 把上个命令的参数作为cd参数使用。
 - `cd //` 系统根目录
 
-********************
+*********************************
 ### Tips
 - `cat ~/.ssh/id_rsa.pub | xclip -sel clip` 将文件复制到剪贴板
 - `桌面快捷方式图标文件`
@@ -125,7 +134,14 @@
     GenericName[en_US.UTF-8]=Story
     Name[zh_CN]=Story
 ```
-********
+- *rename命令的使用(基于perl)*
+    - `rename "s/.html/.php/" * ` //把.html 后缀的改成 .php后缀
+    - `rename "s/$/.txt/" *  `   //把所有的文件名都以txt结尾
+    - `rename "s/.txt//" *  `   //把所有以.txt结尾的文件名的.txt删掉
+    - `rename "s/AA/aa/" * `  //把文件名中的AA替换成aa
+    - `rename "s/ - 副本/_bak/" *` 将文件`-副本`结尾改成`_bak`结尾
+    
+*********************
 - ssh认证
     - 只要在电脑上生成了秘钥对，之后在各个平台上复制公钥内容即可，是不是为方便就可以复制所需文件夹 `.ssh/`
     - 就能在任意电脑上连接，当然这是不安全的行为。。。。都把私钥公开了
@@ -133,7 +149,8 @@
 - `sudo spt-get install openssh-client`
 - `ssh-keygen` 可以设置密码，为了方便也可以全部采用默认，为了安全就设置密码
 - 进入.ssh文件夹下 `gedit id_rsa.pub` 然后复制该公钥内容即可
-********   
+- 或者`cat ~/.ssh/id_rsa.pub | xclip -sel clip` 将文件复制到剪贴板
+ 
 ### 快捷键
 - 终端：
     - `Ctrl L` 清屏，Mysql也适用
