@@ -38,7 +38,10 @@
 ### 序列
 序列通用操作（字符串，列表，元组）
 - `​索引`，从左至右：`0,1,2...n` 从右至左：`-1,-2...-n`
-- `切片`（截取序列的部分） `temp[:]` 返回一个副本 `temp[2:4]`就是[2,4) `temp[1:]`1到最后
+- `切片`（截取序列的部分） `temp[:]` 返回一个副本
+    - `temp[2:4]`就是`[2,4)` 
+    - `temp[1:]`1到最后 `temp[-3:]` *[-3,-1]*
+    - `temp[:4]` *[0,4)* `temp[:-3]` *[0,-3]*
 - `加 `：lista+listb 直接连接
 - `乘`：lista*4
 - `判断是否存在`：`in` `not int`
@@ -47,9 +50,12 @@
 列表：
 - 元素可包含 字符串，浮点，整型，列表，布尔
 - 操作：
-    - 增加 + ，`append()/extend()`尾部加入元素/列表  `insert(index, "")` 元素插入到任意位置
+    - 增加 + ，`append()/extend()`尾部加入元素/列表  `insert(index, "")` 元素插入到任意位置,其后元素后移
     - 检索 count() in 
-    - 删除 ：`del list[2] ` `remove("apple")` pop(index) index为空指最后一个
+    - 删除 ：`del list[2] `/ `remove("apple")` /`pop(index) index为空指最后一个`
+    - 永久性排序：sort() a-z ` sort(reverse=True) z-a` 列表全是字符串才可
+    - 临时性排序：sorted() 也可以使用上面的参数   列表全是字符串才可
+    - 永久性的逆序列表:reverse() 
 *****
 元组：
 - 元组和列表类似但是元组是创建不可更改的 
@@ -79,8 +85,9 @@
     - `*` 重复序列  例如 print "-"*20 就会输出20个 - 
     - `b = "www.github.com" `  `c = b.split(".")` `"#".join(c)` 实现了将字符串的 . 换成了#
     - `"i am %s %d" % ("python",67)  `%s %d %f 和C语言一样占位符
-    - 新的方式 `"i am {0} {1} ..".format(23,"ret")`  或者`"i am {name} {age} ..".format(age=23,name="ret")`
-    - 字典方式 
+        - 新的方式 `"i am {0} {1} ..".format(23,"ret")`  或者`"i am {name} {age} ..".format(age=23,name="ret")`
+        - 字典方式 
+    - title() 首字母大写 
 **************
 字符串，列表，元组相互转换：
 - 字符串-列表 ： list("python")
@@ -102,8 +109,24 @@
     import codecs
     codecs.open('filename',encoding='utf-8')
 ``` 
+- 因为文件不是UTF8：`UnicodeDecodeError: 'utf-8' codec can't decode byte 0xb9 in position 2: invalid start byte `
+
 ### 字典（键值对）
- 
+- 通过用空间来换取时间，与列表相比，键的增加不影响查找插入速度，需要占用大量内存 
+- 特性：
+    - 值是可以是任意的，甚至是字典嵌套
+    - 键必须不可变，只能由 数，字符串，元组，不能用列表
+- 操作：
+    - keys() 返回所有key
+    - has_key() 查询是否有这个键 
+    - get() keys() values() 显然的
+    - items() 转化元组并返回
+    - del() `del dict['name']` 删除指定键
+    - clear() 删除所有
+    - pop() 删除指定键并返回值
+    - update() 合并另一个字典
+    - in
+  
 ***********
 ### 基本运行结构 
 - 选择：
@@ -112,7 +135,7 @@
     - `for in ` `while ` 例如：`for i in range(1,10,2):`[1,10) 增量为2
     - pass 语句，当某个子句没有任何操作，，用pass保持程序结构完整性 不影响下一句 
 ```
-    if True :
+    if (b==0) and (a==1) :
         pass
         print("pass")
     else:
