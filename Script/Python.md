@@ -125,10 +125,10 @@
     - clear() 删除所有
     - pop() 删除指定键并返回值
     - update() 合并另一个字典
-    - in
+    - in 
   
 ***********
-### 基本运行结构 
+### 基本运行结构
 - 选择：
     - if elif else
 - 循环：
@@ -145,6 +145,32 @@
 
 ### 类
 ### 文件
+- 为写打开新文本文件只读 `file = open('a.txt','w+'[,coding='utf-8'])` 打开删空
+- `file.write('')`
+`使用with来操作`
+```
+    with open('filename') as name: 
+        name.read()
+```
+- 使用os模块
+    - `os.rename('filename1','filename2') ` mv 
+    - `os.remove('filename.py')` rm
+    - `os.listdir(path)` ls 
+    - `os.getcwd()` pwd
+    - `os.makedirs(r'path')` mkdir
+    - `os.chdir('')` 改变一个目录
+    - `os.rmdir('')` 删除该目录，前提是空目录
+- os.path模块
+    - abspath('') 获取绝对路径
+    - exists('')
+    - isdir('')
+    - isfile('') 
+    - islink('')
+    - getsize()
+    
+- shutil模块
+    - dir() 复制单个文件
+    - shultil.copytree(r'',r'') 复制目录树 
 ### GUI
 ### 绘图
 ### 数据库
@@ -171,6 +197,8 @@
 
 ## 常见库
 - import codecs 编码
+- import os 
+
 
 ## pygame
 ### 安装
