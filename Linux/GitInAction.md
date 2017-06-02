@@ -20,7 +20,7 @@
         * `login ***`
         * `password ***` 
     * 成功配置，测试便知
-- Linux下记住密码：
+- Linux下记住密码：(如果使用了多个github账号，设置这个后只能使用一个账号的自动登录，另一个账号将完全连不上github，ssh也只能一个账号配一个，不能多个账号用一个ssh)
 	* `touch .git-credentials`
 	* `vim .git-credentials`
 	* 输入： ` http://{username}:{password}@github.com` 或者是https开头
