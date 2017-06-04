@@ -106,6 +106,7 @@
     setterm -blength 0
     xset -b
 ```
+`set bell-style none`
 - 对于Debian/Ubuntu系统，使用root身份执行：
     - `sudo echo "blacklist pcspkr" >> /etc/modprobe.d/blacklist`
 - 对于CentOS/Redhat/RHEL/Fedora系统，使用root身份执行：
