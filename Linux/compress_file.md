@@ -30,6 +30,7 @@
 - `tar -xf all.tar` 这条命令是解出all.tar包中所有文件，
     - `-t`是解开的意思
 
+*******************
 ### 压缩
 
 - `tar -cvf jpg.tar *.jpg` //将目录里所有jpg文件打包成tar.jpg 
