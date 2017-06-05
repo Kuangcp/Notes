@@ -1,4 +1,3 @@
-> Git简易上手篇,最初的入门笔记
 # Tips:
 * 1 、虽然在物理上本地仓库中所有文件是放在一起的，但是分支之间是互不能访问以及操作的
 * 2 、在本地的每次commit都是有index的，上传到github可以不用那么频繁，反正都是有记录的
@@ -12,7 +11,7 @@
 		git merge --no-ff 对方的分支
 		git push （自己的源+分支）origin master
 ```
-
+**********
 -  Windows下记住密码 ： 
     * 新建环境变量 HOME 值：`%USERPROFILE%`
     * 在C盘User下你的当前用户目录下新建` _netrc `文本文件： 
@@ -28,11 +27,16 @@
 	* ~/.gitconfig 文件中多了以下内容即可
 		* [credential]
 		* helper = store
+- ssh 方法：（推荐）
+    - `ssh-keygen` 不设置密码
+    - `cat ~/.ssh/id_rsa.pub | xclip -sel clip`  添加即可
+********    
 - 关于许可证 [Github许可证网](https://choosealicense.com/licenses/)
     - 新建项目的时候可以选择 添加.gitignore和许可证类别 许可证大致分为 MIT Apache2.0 GPL 
     - `MIT` 简单宽松的许可证，任何人可以拿代码做任何事与我无关` eg: jQuery、Rails` 
     - `Apache` 关注于专利，这类似于MIT许可证，但它同时还包含了贡献者向用户提供专利授权相关的条款。 `Apache、SVN和NuGet`
     - `GPL` 关注于共享改进，这是一种copyleft许可证，要求修改项目代码的用户再次分发源码或二进制代码时，必须公布他的相关修改。 `Linux、Git`
+
 ***************************************************************	
 
 ## 【目前使用git的方法】 
@@ -61,7 +65,7 @@
 - `git branch 新分支名` 新建一个分支，切换过去，使用的就是这个新分支放代码
 - `git push origin 新分支名` add commit 之后就push
 - `git fetch origin 已有分支` 下拉别的分支代码
-*************************************************
+
 **************************************************
 
 ## 【git初始化】 

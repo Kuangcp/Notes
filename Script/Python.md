@@ -27,7 +27,7 @@
     - \f   换页
     - \  续行符（行尾）
 ## 基础语法
-单行注释：`#` 多行注释：`''' '''`
+单行注释：`#` 多行注释：''' '''
 空行的重要性，代码段之间有空行
 
 ************
@@ -202,18 +202,18 @@
 
 ## pygame
 ### 安装
-`python2 安装 pygame`
+*python2 安装 pygame*
 - `sudo apt install python-pygame`
-`python3 安装 pygame`
+*python3 安装 pygame*
 - `sudo apt install python3-dev mercurial`
 - `sudo apt install libsdl-image1.2-dev libsdl2-dev libsdl-ttf2.0-dev`
-`安装一些声音的功能`
+*安装一些声音的功能*
 - `sudo apt install libsdl-mixer1.2-dev libimportmidi-dev`
 - `sudo apt install libswscale-dev libsmpeg-dev libavformat-dev libavcode-dev`
 - `sudo apt install python-numpy`
-`执行这个安装pygame 如果必要换成 pip3`
+*执行这个安装pygame 如果必要换成 pip3*
 - `pip install --user hg+http://bitbucket.org/pygame/pygame`
-`个人安装报错，使用这个完成了安装`
+*我使用上面的方式安装报错，使用这个完成了安装*
 - `sudo pip install pygame`
 *********
 `检验是否安装成功`
