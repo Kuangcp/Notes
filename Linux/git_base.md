@@ -30,7 +30,7 @@
 #### 【git push】
 - 出现RPC failed; result=22, HTTP code = 411 的错误
     - 就是因为一次提交的文件太大，需要改大缓冲区 例如改成500m
-    - git config http.postBuffer 524288000
+    - `git config http.postBuffer 524288000`
 
 #### 【git rebase】
 

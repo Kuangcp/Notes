@@ -129,6 +129,42 @@ A 项目 compile
 新建一个项目作为父项目，可以删除Test目录（无用）
 然后在需要引用父项目pom文件的地方加上parent 标签里面写上 父项目的三要素
 
+### 构建
+#### 打包成可执行 jar
+```
+<plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-assembly-plugin</artifactId>
+        <version>2.3</version>
+        <configuration>
+            <appendAssemblyId>false</appendAssemblyId>
+            <descriptorRefs>
+                <descriptorRef>jar-with-dependencies</descriptorRef>
+            </descriptorRefs>
+            <archive>
+                <manifest>
+                    <mainClass>cn.zhouyafeng.itchat4j.main.TulingRobot</mainClass>
+                    <mainClass>cn.zhouyafeng.itchat4j.main.MyTest</mainClass>
+                </manifest>
+            </archive>
+        </configuration>
+        <executions>
+            <execution>
+                <id>make-assembly</id>
+                <phase>package</phase>
+                <goals>
+                    <goal>assembly</goal>
+                </goals>
+            </execution>
+        </executions>
+    </plugin>
+```
+- 多个main的情况下 `java -cp example03-1.0-SNAPSHOT.jar cn.zhouyafeng.itchat4j.main.TulingRobot`
+
+#### war包当jar使用
+- Springboot项目能够
+
+*****************
 #### 关于适用git idea 多模块的项目的构建
 `.gitignore文件` 没有特别的地方
 ```
@@ -165,6 +201,9 @@ A 项目 compile
     </parent>
 ```
 - 子项目编译打包各自独立，怎么整合成一个
+
+*************************
+
 ## 5.使用maven新建Web3.0项目 [网络maven仓库](http://mvnrepository.com/)
 - 新建maven 选择webapp 然后输入三要素
 - 但是因为模板默认的是web2.3，所以要手动修改成3.0
@@ -262,7 +301,15 @@ A 项目 compile
 	</dependency>
 ```
 
+****************************
 
+
+
+
+
+
+
+**********************
 ## Maven和Ant的区别一:
 
 1.ant脚本是可以直接运行在maven中的。maven和ant最大的差别就是在于maven的编译以及所有的脚本都有一个基础，就是POM（project object model）。这个模型定义了项目的方方面面，然后各式各样的脚本在这个模型上工作，而ant完全是自己定义，显然maven更胜一筹。

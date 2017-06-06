@@ -56,4 +56,4 @@
 
 ## 2017-06-05 20:23:29
 - 使用微信的个人公众号来进行系统的监测，可以部署在百度BAE上
-- ![ER图](https://raw.githubusercontent.com/Kuangcp/Notes/master/TXT/Images/8.jpg)
+- ![公众号](https://raw.githubusercontent.com/Kuangcp/Notes/master/TXT/Images/8.jpg)
