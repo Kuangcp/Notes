@@ -70,7 +70,7 @@
     activerehashing yes
 ```
 ## redis命令行常规使用
-### 常用的数据结构
+### 常用的数据类型操作
 - 字符串
 	- get 
 	- set
@@ -114,6 +114,8 @@
 - `TTL key ` 查看键剩余过期时间（生存时间）
 - 
 
+*******************
+### 各数据类型的高级操作
 ##### 字符串 操作
 - 字符串就是字节组成的序列 可以放字节串，整数，浮点数
 - `set key newval nx `存在则set失败
@@ -132,14 +134,22 @@
 - `persist key` 去除超时时间
 - `ttl key` 查看剩余存活时间 -1表示永久 -2表示没有该key
 
-##### List 操作
+##### 列表 操作
 - `rpush key val val val `右/尾添加元素 lpush是左/头
 - `rpop key` 从list右/尾端中删除元素返回元素值 没有了就返回null
+- 阻塞式的列表弹出命令(block) 队列很有用
+    - blpop
+    - brpop
+    - bpoplpush
+    - brpoplpush
 - `lrange key 0 -1` 取指定长度的list -1表示全部
 -  `ltrim key 0 2` 截取当前的list
+- `lindex key offset`   返回偏移量为offset的元素
 
-	
+##### 集合
+##### 散列	
 
+**********************
 	
 ### Run Configuration	
 - *slaveof*
@@ -148,10 +158,22 @@
     - 从服务变成主服务 `slaveof no one` (同步的数据集不会丢失，迅速替换主服务器)
 - *loglevel*
     - `./redis-server /etc/redis/6379.conf --loglevel debug	`
-	
+### 数据安全和性能
+#### 持久化策略
+#### 复制
+#### 事务	
 	
 	
 ## 【Redis的使用】
+### 作为日志记录
+### 作为网站统计数据
+### 存储配置信息
+### 自动补全
+- 搜索建议
+### 构建锁
+### 任务队列
+- 发送邮件
+### 订阅发送结构
 ### 【Java 使用 redis 配置】
 - maven依赖(Spring 4.1.7)：
 ```xml

@@ -270,7 +270,22 @@ task makeReleaseVersion(type:ReleaseVersionTask){
 ### 使用其他框架 TestNG Spock
 ## 配置测试执行
 ## 集成测试
+### 多模块构建
+
+`树级结构的项目就这样配置`
+- RedisClient
+    - Core
+    - Website
+    
+``` 
+    rootProject.name = 'RedisClient'
+    include 'Core'
+    include 'Website'
+``` 
+- 如果只是同级的目录，就直接新建，无需配置，引用类时添加下依赖即可
+
 ## 功能测试
+
 
 **************************
 
