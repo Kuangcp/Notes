@@ -90,6 +90,26 @@
 	Type = Application #desktop的类型（必选），常见值有“Application”和“Link”
 	Categories = GNOME;Application;Network; #注明在菜单栏中显示的类别（可选）
 ```
+************
+- du 和 df 命令
+    - `df -h ` 查看挂载文件系统信息
+    - `du -sh` 文件夹 查看总大小
+    - `du --max-depth` 一级子目录使用情况
+    du -sm * | sort -n //统计当前目录大小 并安大小 排序
+    du -sk * | sort -n
+    du -sk * | grep guojf //看一个人的大小
+    du -m | cut -d "/" -f 2 //看第二个/ 字符前的文字
+    查看此文件夹有多少文件 /*/*/* 有多少文件
+    du xmldb/
+    du xmldb/*/*/* |wc -l
+    40752
+    解释：
+    wc [-lmw]
+    参数说明：
+    -l :多少行
+    -m:多少字符
+    -w:多少字
+    
 ### 文本编辑器
 #### sublime 
 - 如果出现小bug，就直接删除 ～.config 下的 sublime文件夹注意注册证书拷出来
@@ -115,7 +135,10 @@
     - `sudo echo "blacklist pcspkr" >> /etc/modprobe.d/blacklist`
 - 对于CentOS/Redhat/RHEL/Fedora系统，使用root身份执行：
     - `echo "alias pcspkr off" >> /etc/modprobe.conf `
-
+##### Picked up _JAVA_OPTIONS: -Dawt.useSystemAAFontSettings=gasp
+- 原因是linux自带的OpenJDK影响了安装的java
+    - `sudo mv /etc/profile.d/java-awt-font-gasp.sh /etc/profile.d/java-awt-font-gasp.sh.bak`
+    - 重启或注销即可
 *************************
 ### cd 
 - `cd - ` 跳转到上一个目录

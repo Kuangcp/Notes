@@ -1,0 +1,307 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>Myth</groupId>
+  <artifactId>ReadBookPlatform</artifactId>
+  <packaging>war</packaging>
+  <version>1.0-SNAPSHOT</version>
+  <name>ReadBookPlatform Maven Webapp</name>
+  <url>http://maven.apache.org</url>
+  <properties>
+    <spring.version>4.1.7.RELEASE</spring.version>
+    <mybatis.version>3.3.0</mybatis.version>
+
+  </properties>
+  <dependencies>
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <version>4.11</version>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.slf4j</groupId>
+      <artifactId>slf4j-api</artifactId>
+      <version>1.7.12</version>
+    </dependency>
+    <dependency>
+      <groupId>ch.qos.logback</groupId>
+      <artifactId>logback-core</artifactId>
+      <version>1.1.1</version>
+    </dependency>
+    <!-- slf4j实现并整合 -->
+    <dependency>
+      <groupId>ch.qos.logback</groupId>
+      <artifactId>logback-classic</artifactId>
+      <version>1.1.1</version>
+    </dependency>
+    <dependency>
+      <groupId>org.logback-extensions</groupId>
+      <artifactId>logback-ext-spring</artifactId>
+      <version>0.1.3</version>
+    </dependency>
+    <dependency>
+      <groupId>mysql</groupId>
+      <artifactId>mysql-connector-java</artifactId>
+      <version>5.1.35</version>
+      <scope>runtime</scope>
+    </dependency>
+    <dependency>
+      <groupId>c3p0</groupId>
+      <artifactId>c3p0</artifactId>
+      <version>0.9.1.2</version>
+    </dependency>
+    <!-- dao层框架  mybatis-->
+    <dependency>
+      <groupId>org.mybatis</groupId>
+      <artifactId>mybatis</artifactId>
+      <version>${mybatis.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>org.mybatis.generator</groupId>
+      <artifactId>mybatis-generator-core</artifactId>
+      <version>1.3.5</version>
+    </dependency>
+
+    <!-- mybatis自身实现的Spring依赖 -->
+    <dependency>
+      <groupId>org.mybatis</groupId>
+      <artifactId>mybatis-spring</artifactId>
+      <version>1.2.3</version>
+    </dependency>
+    <!-- 3.web依赖 -->
+    <dependency>
+      <groupId>javax.servlet</groupId>
+      <artifactId>javax.servlet-api</artifactId>
+      <version>3.1.0</version>
+      <scope>provided</scope>
+    </dependency>
+    <dependency>
+      <groupId>taglibs</groupId>
+      <artifactId>standard</artifactId>
+      <version>1.1.2</version>
+    </dependency>
+    <dependency>
+      <groupId>jstl</groupId>
+      <artifactId>jstl</artifactId>
+      <version>1.2</version>
+    </dependency>
+
+    <dependency>
+      <groupId>com.fasterxml.jackson.core</groupId>
+      <artifactId>jackson-databind</artifactId>
+      <version>2.5.4</version>
+    </dependency>
+    <dependency>
+      <groupId>com.fasterxml.jackson.core</groupId>
+      <artifactId>jackson-core</artifactId>
+      <version>2.5.4</version>
+    </dependency>
+    <dependency>
+      <groupId>com.fasterxml.jackson.core</groupId>
+      <artifactId>jackson-annotations</artifactId>
+      <version>2.5.4</version>
+    </dependency>
+
+    <!--<dependency>
+      <groupId>javax</groupId>
+      <artifactId>javaee-api</artifactId>
+      <version>7.0</version>
+      <scope>provided</scope>
+    </dependency>-->
+
+    <!--
+
+      4.Spring 依赖
+
+    -->
+
+    <!-- 核心 -->
+    <dependency>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-core</artifactId>
+      <version>${spring.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-beans</artifactId>
+      <version>${spring.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-context</artifactId>
+      <version>${spring.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-aop</artifactId>
+      <version>${spring.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-websocket</artifactId>
+      <version>${spring.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-messaging</artifactId>
+      <version>${spring.version}</version>
+    </dependency>
+
+    <!--<dependency>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-aspects</artifactId>
+      <version>${spring.version}</version>
+    </dependency>-->
+    <!-- dao层框架 -->
+    <dependency>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-jdbc</artifactId>
+      <version>${spring.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-tx</artifactId>
+      <version>${spring.version}</version>
+    </dependency>
+    <!-- web依赖 -->
+    <!--<dependency>
+      <groupId>org.eclipse.jetty</groupId>
+      <artifactId>jetty-server</artifactId>
+      <version>9.4.0.v20161208</version>
+    </dependency>-->
+    <dependency>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-web</artifactId>
+      <version>${spring.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-webmvc</artifactId>
+      <version>${spring.version}</version>
+    </dependency>
+    <!-- Spring test 相关依赖 -->
+    <dependency>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-test</artifactId>
+      <version>${spring.version}</version>
+    </dependency>
+
+    <!--redis的依赖-->
+    <dependency>
+        <groupId>org.springframework.data</groupId>
+        <artifactId>spring-data-redis</artifactId>
+        <version>1.6.0.RELEASE</version>
+    </dependency>
+
+    <dependency>
+        <groupId>redis.clients</groupId>
+        <artifactId>jedis</artifactId>
+        <version>2.9.0</version>
+        <type>jar</type>
+    <scope>compile</scope>
+    </dependency>
+    <dependency>
+        <groupId>org.apache.commons</groupId>
+        <artifactId>commons-lang3</artifactId>
+        <version>3.3.2</version>
+    </dependency>
+
+    <!--Spring的quartz-->
+    <!--<dependency>
+      <groupId>org.quartz-scheduler</groupId>
+      <artifactId>quartz</artifactId>
+      <version>2.2.1</version>
+    </dependency>
+    <dependency>
+      <groupId>org.quartz-scheduler</groupId>
+      <artifactId>quartz-jobs</artifactId>
+      <version>2.2.1</version>
+    </dependency>-->
+
+  </dependencies>
+
+  <build>
+    <finalName>ReadBookPlatform</finalName>
+    <plugins>
+      <!-- 配置web3.0 和jdk -->
+      <plugin>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <version>3.0</version>
+        <configuration>
+          <source>1.8</source>
+          <target>1.8</target>
+        </configuration>
+      </plugin>
+
+     <!-- mybatis逆向工程的插件-->
+      <plugin>
+        <groupId>org.mybatis.generator</groupId>
+        <artifactId>mybatis-generator-maven-plugin</artifactId>
+        <version>1.3.2</version>
+        <configuration>
+          <verbose>true</verbose>
+          <overwrite>true</overwrite>
+        </configuration>
+      </plugin>
+
+      <!--
+      jetty8.1版本的web容器
+    <groupId>org.eclipse.jetty</groupId>
+        <artifactId>jetty-server</artifactId>
+        <version>9.4.0.v20161208</version>
+
+      <groupId>org.mortbay.jetty</groupId>
+        <artifactId>jetty-maven-plugin</artifactId>
+        <version>8.1.16.v20140903</version>
+      -->
+      <!--<plugin>
+
+        <groupId>org.mortbay.jetty</groupId>
+        <artifactId>jetty-maven-plugin</artifactId>
+        <version>8.1.16.v20140903</version>
+        <executions>
+          <execution>
+            &lt;!&ndash; 在打包成功后使用jetty:run来运行 &ndash;&gt;
+            <phase>package</phase>
+            <goals>
+              <goal>run</goal>
+            </goals>
+          </execution>
+        </executions>
+        <configuration>
+          <stopKey>stop</stopKey>
+          <stopPort>9999</stopPort>
+          <scanIntervalSeconds>1</scanIntervalSeconds>
+          <webApp>
+            <contextPath>/Book</contextPath>
+          </webApp>
+          <connectors>
+            <connector implementation="org.eclipse.jetty.server.nio.SelectChannelConnector">
+              <port>80</port>
+              <maxIdleTime>60000</maxIdleTime>
+            </connector>
+          </connectors>
+        </configuration>
+      </plugin>-->
+
+      <!--
+        Tomcat的插件
+      -->
+      <!--<plugin>
+        <groupId>org.apache.tomcat.maven</groupId>
+        <artifactId>tomcat6-maven-plugin</artifactId>
+        <version>2.2</version>
+        <configuration>
+          <port>80</port>
+          <username>myth</username>
+          <password>ad</password>
+          <url>http://localhost:80/Book/</url>
+          <server>tomcat6</server> &lt;!&ndash; 此处的名字必须和setting.xml中配置的ID一致 &ndash;&gt;
+          <path>/Book</path> &lt;!&ndash; 此处的名字是项目发布的工程名 &ndash;&gt;
+        </configuration>
+      </plugin>-->
+
+    </plugins>
+  </build>
+</project>

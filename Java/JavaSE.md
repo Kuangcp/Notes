@@ -1,9 +1,22 @@
 # JavaSE 知识点梳理
+
 ## IO
 - maven格式路径，会从resources下获取文件例如 /a.xml
 - `InputStream is = this.getClass().getResourceAsStream(path);`
     - 读取properties文件 ：`new Properties().load(is);`
     - 按行读取文件 `BufferedReader bf = new BufferedReader(new InputStreamReader(is));`
+
+**************
+- jar读取外部配置文件
+```
+    Properties properties = new Properties();
+    File file = new File("something.properties");
+    FileInputStream fis = new FileInputStream(file);
+    properties.load(fis);
+    System.out.println(properties.getProperty("v"));
+    fis.close();
+``` 
+- 只要配置文件和jar同级即可
 ## JDBC
 - 基础的批量操作SQL ` pstmt.executeBatch(); //批量执行`
 

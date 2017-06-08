@@ -641,7 +641,7 @@
 ### 8.3 注解方式：
 
 #### 8.3.1 Application.xml中配置头部分
-```xml
+```
     头部分要添加Context
     <?xml version="1.0" encoding="UTF-8"?>
     <beans xmlns="http://www.springframework.org/schema/beans"

@@ -269,20 +269,23 @@ task makeReleaseVersion(type:ReleaseVersionTask){
 ### 使用JUnit
 ### 使用其他框架 TestNG Spock
 ## 配置测试执行
+
+************************
 ## 集成测试
 ### 多模块构建
 
-`树级结构的项目就这样配置`
+`树级结构的多模块项目就这样配置`
 - RedisClient
     - Core
     - Website
     
 ``` 
     rootProject.name = 'RedisClient'
-    include 'Core'
-    include 'Website'
+    include 'Core','Website'
 ``` 
-- 如果只是同级的目录，就直接新建，无需配置，引用类时添加下依赖即可
+- 如果只是同级的目录，就直接新建，无需配置，引用类时添加下依赖即可，但是这样只能运行，不能打包构建
+- [有关多模块的构建详情参考这里](https://github.com/Kuangcp/GradleIntegrationMultipleModules)
+- [还有这里，别人系统化的构建](https://github.com/someok/gradle-multi-project-example)
 
 ## 功能测试
 
