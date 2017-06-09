@@ -135,10 +135,7 @@
     - `sudo echo "blacklist pcspkr" >> /etc/modprobe.d/blacklist`
 - 对于CentOS/Redhat/RHEL/Fedora系统，使用root身份执行：
     - `echo "alias pcspkr off" >> /etc/modprobe.conf `
-##### Picked up _JAVA_OPTIONS: -Dawt.useSystemAAFontSettings=gasp
-- 原因是linux自带的OpenJDK影响了安装的java
-    - `sudo mv /etc/profile.d/java-awt-font-gasp.sh /etc/profile.d/java-awt-font-gasp.sh.bak`
-    - 重启或注销即可
+
 *************************
 ### cd 
 - `cd - ` 跳转到上一个目录

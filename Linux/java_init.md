@@ -16,11 +16,10 @@
     export JRE_HOME=${JAVA_HOME}/jre
 	export CLASSPATH=.:${JAVA_HOME}/lib:${JRE_HOME}/lib
 	export PATH=${JAVA_HOME}/bin:$PATH
-	sudo update-alternatives --install /usr/bin/javac javac /opt/jvm/jdk1.8.0_102/bin/javac 300
-	sudo update-alternatives --install /usr/bin/java java /opt/jvm/jdk1.8.0_102/bin/java 300
-	
 ```
-- 并且运行最后两句命令是为了指定jdk版本
+- `sudo update-alternatives --install /usr/bin/javac javac /opt/jvm/jdk1.8.0_102/bin/javac 300`
+- `sudo update-alternatives --install /usr/bin/java java /opt/jvm/jdk1.8.0_102/bin/java 300`
+- 并且运行最后两句命令是为了指定默认的jdk，因为系统预装了openJdk
 
 ********************************
 ## 配置MySQL
@@ -34,6 +33,8 @@
 - `[mysqld]`块下添加一行： `character-set-server=utf8`
 - 重启MySQL ：`sudo systemctl restart mysql`
 - 再次查看编码确认是utf8
+### 使用docker安装mysql
+- [官方文档](https://hub.docker.com/_/mysql/)
 
 **************************************
 ## 配置Redis
@@ -104,6 +105,10 @@ sudo make install
 - [docker-install-redis](https://github.com/Kuangcp/Notes/blob/master/TXT/Linux/Docker.md)
 
 ******** *************************
- 
+## 问题以及解决方案：
+##### Picked up _JAVA_OPTIONS: -Dawt.useSystemAAFontSettings=gasp
+- 原因是linux自带的OpenJDK影响了安装的java
+    - `sudo mv /etc/profile.d/java-awt-font-gasp.sh /etc/profile.d/java-awt-font-gasp.sh.bak`
+    - 重启或注销即可
 
 
