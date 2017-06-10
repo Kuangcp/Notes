@@ -68,4 +68,27 @@ Guava工程包含了若干被Google的 Java项目广泛依赖 的核心库，例
     - `@NoArgsConstructor`：注解在类上；为类提供一个无参的构造方法
     - `@AllArgsConstructor`：注解在类上；为类提供一个全参的构造方法
 
+### maven引入
+```
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>1.16.10</version>
+            <scope>provided</scope>
+        </dependency>
+```
+### gradle引入
+```
+        buildscript {
+          repositories {
+            maven {
+              url "https://plugins.gradle.org/m2/"
+            }
+          }
+          dependencies {
+            classpath "info.robotbrain.gradle.lombok:lombok-gradle:1.1"
+          }
+        }
 
+        apply plugin: "info.robotbrain.lombok"
+```
