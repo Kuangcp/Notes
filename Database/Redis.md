@@ -71,12 +71,12 @@
 ```
 ## redis命令行常规使用
 ### 常用的数据类型操作
-- 字符串
+- 【`字符串`】
 	- get 
 	- set
 	- del 
 	
-- 列表 (类似队列)
+- 【`列表 (类似队列)`】
 	- rpush 右入队列，末端
 	- lpush 左
 	- lrange 获取范围 0，-1 表示获取全部
@@ -84,20 +84,20 @@
 	- lpop 左出队列
 	- rpop
 	
-- 集合 (类似无序的Set)
+- 【`集合 (类似无序的Set)`】
 	- sadd 添加一个对象`asdd key member`
 	- smembers 获取某Set所有元素 `smembers key`
 	- sismember 查询某Set是否含某元素，返回类型是 0 1 `sismember key member`
 	- srem 删除指定Set中指定元素 `srem key member`
 	
-- 散列 (类似Map 嵌套，一个内置的微型redis)
+- 【`散列 (类似Map 嵌套，一个内置的微型redis)`】
 	- hget
 	- hset
 	- hgetall 获取某散列所有k-v
 	- hdel 删除散列中指定k
 	- hincrby 自增
 	
-- 有序集合(键是member成员，值是score分值必须是浮点数)
+- 【`有序集合(键是member成员，值是score分值必须是浮点数)`】
 	- zadd 将一个给定分值的成员添加到有序集合里
 	- zrange 根据元素在有序集合中的位置，从有序集合中获取多个元素
 		- zrange name 0 -1 withscores 获取所有并获取分值
@@ -146,10 +146,10 @@
 -  `ltrim key 0 2` 截取当前的list
 - `lindex key offset`   返回偏移量为offset的元素
 
-##### 集合
-##### 散列	
+##### 集合 操作
+##### 散列	 操作
 
-**********************
+*****************************************************************
 	
 ### Run Configuration	
 - *slaveof*
