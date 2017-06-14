@@ -200,6 +200,15 @@
 - import codecs 编码
 - import os 
 
+## QT
+在Terminal中输入:sudo apt-get install qt4-dev-tools qt4-doc qt4-qtconfig qt4-demos qt4-designer
+
+    qt4-dev-tools 中包括了Qt Assistant,Qt Linguist,Qt Creator
+    qt4-doc 这个是帮助文档
+    qt4-qtconfig Qt的配置工具,这个装好默认好
+    qt4-demos 官方的一些Demo
+    qt4-designer 可视化窗体设置工具
+
 
 ## pygame
 ### 安装
