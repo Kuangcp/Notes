@@ -12,6 +12,7 @@
 		git push （自己的源+分支）origin master
 ```
 * 6. 当不想把隐私的配置文件上传github时，就可以.gitignore中忽略掉配置文件，然后建立模板文件夹放待配置的文件即可
+* 7.`cat ~/.ssh/id_rsa.pub | xclip -sel clip` 复制公钥
 **********
 -  Windows下记住密码 ： 
     * 新建环境变量 HOME 值：`%USERPROFILE%`

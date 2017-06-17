@@ -1,9 +1,8 @@
 ## 【文件管理】
 ### 基本命令
 -` rm` 删除` -f `空目录` -rf `有文件也强制删除
-- `true > a.txt ` 清空文件内容
-- rzsz:
-    - 上传下载文件的工具 sudo apt install lrzsz
+- 清空文件内容 `true > a.txt ` 
+- 上传下载文件的工具 `sudo apt install lrzsz`
 *************
 `自定义桌面快捷方式文件`
 ```
