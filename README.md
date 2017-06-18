@@ -14,23 +14,30 @@
 *******
 ### 索引
 
-- [ariticle](https://github.com/Kuangcp/Notes/tree/master/article)
+- [ariticle](https://github.com/Kuangcp/Notes/tree/master/article) `文章`
 
-- [ConfigFiles](https://github.com/Kuangcp/Notes/tree/master/ConfigFiles)
+- [ConfigFiles](https://github.com/Kuangcp/Notes/tree/master/ConfigFiles) `配置文件`
+    - [Database](https://github.com/Kuangcp/Notes/tree/master/ConfigFiles/Database)
+    - [git](https://github.com/Kuangcp/Notes/tree/master/ConfigFiles/git)
+    - [Hibernate](https://github.com/Kuangcp/Notes/tree/master/ConfigFiles/Hibernate)
+    - [maven](https://github.com/Kuangcp/Notes/tree/master/ConfigFiles/maven)
+    - [Mybatis](https://github.com/Kuangcp/Notes/tree/master/ConfigFiles/Mybatis)
+    - [Spring](https://github.com/Kuangcp/Notes/tree/master/ConfigFiles/Spring)
+    - [Struts2](https://github.com/Kuangcp/Notes/tree/master/ConfigFiles/Struts2)
 
-- [Database](https://github.com/Kuangcp/Notes/tree/master/Database)
+- [Database](https://github.com/Kuangcp/Notes/tree/master/Database) `数据库笔记`
     - [SQL](https://github.com/Kuangcp/Notes/tree/master/Database/SQL)
     
-- [Java](https://github.com/Kuangcp/Notes/tree/master/Java)
+- [Java](https://github.com/Kuangcp/Notes/tree/master/Java) `Java笔记`
     - [Spring](https://github.com/Kuangcp/Notes/tree/master/Java/Spring)
     
-- [Linux](https://github.com/Kuangcp/Notes/tree/master/Linux)
+- [Linux](https://github.com/Kuangcp/Notes/tree/master/Linux) `Linux笔记`
 
-- [Script](https://github.com/Kuangcp/Notes/tree/master/Script)
+- [Script](https://github.com/Kuangcp/Notes/tree/master/Script) `脚本笔记`
     - [Shell](https://github.com/Kuangcp/Notes/tree/master/Script/Shell)
     - [bat](https://github.com/Kuangcp/Notes/tree/master/Script/bat)
     
-- [TXT](https://github.com/Kuangcp/Notes/tree/master/TXT) 
+- [TXT](https://github.com/Kuangcp/Notes/tree/master/TXT) `未归类`
     - [HTML_CSS](https://github.com/Kuangcp/Notes/tree/master/TXT/HTML_CSS) 
     - [Images](https://github.com/Kuangcp/Notes/tree/master/TXT/Images) 
     
