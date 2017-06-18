@@ -83,11 +83,11 @@
 ##### 列表 操作
 - `rpush key val val val `右/尾添加元素 lpush是左/头
 - `rpop key` 从list右/尾端中删除元素返回元素值 没有了就返回null
-- 阻塞式的列表弹出命令(block) 队列很有用
-    - blpop
-    - brpop
-    - bpoplpush
-    - brpoplpush
+- 阻塞式的列表弹出命令(block) `队列很有用`
+    - `blpop`
+    - `brpop`
+    - `bpoplpush`
+    - `brpoplpush` 阻塞式先右弹再左进
 - `lrange key 0 -1` 取指定长度的list -1表示全部
 -  `ltrim key 0 2` 截取当前的list
 - `lindex key offset`   返回偏移量为offset的元素

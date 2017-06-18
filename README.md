@@ -23,7 +23,7 @@
     - [maven](https://github.com/Kuangcp/Notes/tree/master/ConfigFiles/maven)
     - [Mybatis](https://github.com/Kuangcp/Notes/tree/master/ConfigFiles/Mybatis)
     - [Spring](https://github.com/Kuangcp/Notes/tree/master/ConfigFiles/Spring)
-    - [Struts2](https://github.com/Kuangcp/Notes/tree/master/ConfigFiles/Struts2)
+    - [Struts2](https://github.com/Kuangcp/Notes/tree/master/ConfigFiles/Struts)
 
 - [Database](https://github.com/Kuangcp/Notes/tree/master/Database) `数据库笔记`
     - [SQL](https://github.com/Kuangcp/Notes/tree/master/Database/SQL)
