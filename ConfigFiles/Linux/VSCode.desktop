@@ -1,0 +1,7 @@
+#!/usr/bin/env xdg-open
+[Desktop Entry]
+Exec=/home/kcp/Application/Text/VsCode/VSCode-linux-x64/code
+Icon=/home/kcp/Application/Text/VsCode/VSCode-linux-x64/resources/app/resources/linux/code.png
+Name=VSCode
+Terminal=false
+Type=Application

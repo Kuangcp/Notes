@@ -31,15 +31,19 @@
 
 ***************************************
 ## docker安装与卸载
-###### 通过deb文件方式来安装：
+#### 通过snap安装
+- 安装snap `sudo apt install snapd`
+- 查看适用于当前系统的包：`snap install find`
+- 安装： `snap install docker`
+#### 通过deb文件方式来安装：
 - [点击选择文件](https://download.docker.com/linux/debian/dists/)
 - 进去后选择debain的版本，deepin15.4 的版本是stretch 然后pool/stable/amd64/选版本即可 
 - 例如：[Deepin 15.4直接点这里](https://download.docker.com/linux/debian/dists/stretch/pool/stable/amd64/)
-###### 开始安装
-- `sudo dpkg -i deb文件`
+- `这两种方式装的是同一个版本号`
+- 双击或者`sudo dpkg -i deb文件`
 - 测试安装成功 `sudo docker run hello-world`
 
-###### 卸载docker
+#### 卸载docker
 - `sudo apt-get purge docker-ce`
 - `sudo rm -rf /var/lib/docker`
 

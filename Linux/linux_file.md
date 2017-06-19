@@ -17,6 +17,9 @@
 	Type = Application #desktop的类型（必选），常见值有“Application”和“Link”
 	Categories = GNOME;Application;Network; #注明在菜单栏中显示的类别（可选）
 ```
+- [示例文件](https://github.com/Kuangcp/Notes/tree/master/ConfigFiles/Linux)
+- 如要将快捷方式放在启动菜单内 将desktop文件放在 `/usr/share/applications/` 目录下即可
+
 ************
 #### 【查看文件大小】du 和 df 命令 
 - `df -h ` 查看挂载文件系统信息

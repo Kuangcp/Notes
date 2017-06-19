@@ -57,7 +57,8 @@
 	 	
 ##### 过期策略
 - `expire key seconds` 设置键的过期时间
-- `TTL key ` 查看键剩余过期时间（生存时间）
+- `PTTL/TTL key ` 查看键剩余过期时间（生存时间） ms/s
+    -  -1表示永久 -2表示没有该key
 - 
 
 *******************
@@ -78,7 +79,7 @@
 - `expire key secondes` 设置或改变超时时间，精度是秒或毫秒
 	- `set key val ex secondes` set时设置超时时间
 - `persist key` 去除超时时间
-- `ttl key` 查看剩余存活时间 -1表示永久 -2表示没有该key
+
 
 ##### 列表 操作
 - `rpush key val val val `右/尾添加元素 lpush是左/头
