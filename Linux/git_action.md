@@ -13,6 +13,7 @@
 ```
 * 6. 当不想把隐私的配置文件上传github时，就可以.gitignore中忽略掉配置文件，然后建立模板文件夹放待配置的文件即可
 * 7.`cat ~/.ssh/id_rsa.pub | xclip -sel clip` 复制公钥
+* 8.java代码质量监测平台 codacy特别在意test里用断言 codebeat特别在意类和方法的长度
 **********
 -  Windows下记住密码 ： 
     * 新建环境变量 HOME 值：`%USERPROFILE%`
