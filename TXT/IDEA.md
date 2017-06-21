@@ -13,6 +13,22 @@
 ## IDEA快捷键
 ### 使用类eclipse快捷键
 ### IDEA快捷键
+#### 【正在使用】
+> Alt:A  Ctrl:C  Shift:S
+
+- A Enter 自动修复
+- C Q 显示doc
+- C B 显示定义处
+- C A B 显示实现处
+- C S T 自动创建JunitTest
+
+`coding`
+- C O 选择要重写的方法
+- C L 选择要实现的方法 
+- A Insert 选择要自动完成的setget构造器等
+
+
+********
 
 - Ctrl Alt L 快速格式化代码 
 - 这时我们只需敲Ctrl+Shift+Enter就能自动补全末尾的字符。
