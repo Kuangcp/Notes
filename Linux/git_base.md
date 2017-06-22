@@ -53,14 +53,16 @@
 #### 【git tag】
 - [官方文档](https://git-scm.com/docs/git-tag/2.10.2)
 - `git tag` 查看所有标签
-- `git tag -a v1.0.0 -m "初始版本"` 新建一个标签并打上注释
+- 新建一个标签并打上注释 `git tag -a v1.0.0 -m "初始版本"` 
 - `git checkout tagname` 和切换分支一样的切换标签，但是标签只是一个镜像，不能修改
-    - 如果要在某tag上新建一个分支， `git checkout -b branchname tagname`
+- 如果要在某tag上新建一个分支， `git checkout -b branchname tagname`
 - `git show tagname` 展示标签注释信息
-- `git tag -d tagname` 删除标签
-- `git tag -a v1.2.4 commit-id` 标签可以不在当前head上打，也可以打以前的commit
-- `git push origin tagname` 默认不提交tag，所以提交指定的tag
-- `git push --tags` 提交所有的tag
+- 删除本地标签 `git tag -d tagname` 
+- 由指定的commit打标签  `git tag -a v1.2.4 commit-id` 
+- 提交指定的tag `git push origin tagname` （默认不会自动提交标签）
+- 提交所有的tag `git push --tags` 
+
+- 删除远程的tag `git push origin --delete tag <tagname>` 
 
 ### 分支操作
 #### 【git checkout】
@@ -92,7 +94,8 @@
 - `git checkout -b fixbug-0.1 master` 新建修复bug的分支 
 - `git checkout master ``git merge --no-ff fixbug-0.1 ``git tag -a 0.1.1` 修补结束后合并到master分支
 - `git checkout develop` `　git merge --no-ff fixbug-0.1` 再合并到develop分支
-- `git branch -d fixbug-0.1` 删除分支
+- 删除分支 `git branch -d fixbug-0.1` 
+- 删除远程没有本地有的分支`git fetch -p`
 #### 【git merge】
 - [官方文档](https://git-scm.com/docs/git-merge)
 `配置mergetool工具：`
