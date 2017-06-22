@@ -47,8 +47,9 @@
 - `git log --after='2016-03-23 9:20' --before='2017-05-10 12:00' ` 输出指定日期的日志
 - `git shortlog` 按字母顺序输出每个人的日志 加上`--numbered` 参数就是按提交数排序
 - `git ls-files` 列出文件列表
-- `git ls-files | xargs wc -l` 计算文件中程序代码行数 通过工具：`xargs` `wc`
-- `git ls-files | xargs cat | wc -l` 计算行数总和
+    - `git ls-files | xargs wc -l` 计算文件中程序代码行数 通过工具：`xargs` `wc`
+    - `git ls-files | xargs cat | wc -l` 计算行数总和
+        - `|` 表示前一个命令的输出作为下一个命令的输入
 
 #### 【git tag】
 - [官方文档](https://git-scm.com/docs/git-tag/2.10.2)
