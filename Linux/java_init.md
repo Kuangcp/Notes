@@ -111,4 +111,8 @@ sudo make install
     - `sudo mv /etc/profile.d/java-awt-font-gasp.sh /etc/profile.d/java-awt-font-gasp.sh.bak`
     - 重启或注销即可
 
+`QQ:`
+- `sudo apt-get install deepin-crossover deepinwine-qq`
+- [安装QQ](https://www.findhao.net/easycoding/1748)
+
 

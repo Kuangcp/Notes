@@ -87,12 +87,9 @@
 ### 【常见问题】
 ##### ubunbu/deepin错误提示音
 - 临时关闭：`rmmod pcspkr`临时开启：`modprobe pcspkr`
-- 如果是使用bash，在`~/.bashrc`文件末尾添加如下（deepin无效）
-```
-    setterm -blength 0
-    xset -b
-```
-`set bell-style none`
+- 编辑 `/etc/inputrc`，找到`#set bell-style none`这一行，去掉前面的注释符号
+
+`下面的方法不敢试`
 - 对于Debian/Ubuntu系统，使用root身份执行：
     - `sudo echo "blacklist pcspkr" >> /etc/modprobe.d/blacklist`
 - 对于CentOS/Redhat/RHEL/Fedora系统，使用root身份执行：
