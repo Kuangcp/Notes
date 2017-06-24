@@ -128,7 +128,10 @@
     - 2.1 `git init` 初始化（建立 `.git` 目录）
     - 2.2 `touch README.md`
     - 2.3 `git remote add origin master URL` 连上远程仓库
-    - 2.4 `git push -u origin master` 输入用户名，密码（若因为没有上游节点就按提示输入命令建立初始节点即可）
+    - 2.4 `git push -u origin master` 输入用户名，密码
+    （若因为没有上游节点就按提示输入命令建立初始节点即可）
+    原因是没有指定本地dev分支与远程origin/dev分支的链接，根据提示，设置dev和origin/dev的链接：
+    `git branch --set-upstream dev origin/dev` master同理
 
 ### 【使用git daemon搭建本地简易Git Server】
 - 先创建一个目录结构

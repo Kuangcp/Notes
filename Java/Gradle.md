@@ -285,7 +285,9 @@ task makeReleaseVersion(type:ReleaseVersionTask){
 ``` 
 - 如果只是同级的目录，就直接新建，无需配置，引用类时添加下依赖即可，但是这样只能运行，不能打包构建
 - [有关多模块的构建详情参考这里](https://github.com/Kuangcp/GradleIntegrationMultipleModules)
-- [还有这里，别人系统化的构建](https://github.com/someok/gradle-multi-project-example)
+- [参考更为规范的多项目构建](https://github.com/someok/gradle-multi-project-example)
+    - 统一一个文件管理依赖
+    - 依赖另一个模块的代码 `compile project(":redis_core")` 
 
 ## 功能测试
 
