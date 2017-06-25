@@ -14,3 +14,4 @@
 ### 本地和远程
 - 指定本地开发分支和远程的绑定关系 `git branch --set-upstream dev origin/dev` master同理
 
+- [分支图复杂的一个项目](https://github.com/Netflix/eureka/network)

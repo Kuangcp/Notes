@@ -13,7 +13,10 @@ int compareTo(T o)
 
 
 ## String
-- 编码转换 `str = new String(str.getBytes("iso8859-1"), "gb2312"); ` 
+- 常见编码转换
+    - 一般Windows文件默认编码：`str = new String(str.getBytes("iso8859-1"), "gb2312"); ` 
+    - properties文件中获取中文 `str = new String(str.getBytes("utf-8"), "utf-8"); `
+    
 ## IO
 - maven格式路径，会从resources下获取文件例如 /a.xml
 - `InputStream is = this.getClass().getResourceAsStream(path);`
