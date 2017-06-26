@@ -7,13 +7,11 @@
 - windows 上安装 chocolate
 - PowerShell中运行 `wr https://chocolatey.org/install.ps1 -UseBasicParsing | iex`
 - 若操作系统默认禁止执行脚本，执行一次`set-executionpolicy remotesigned`后脚本顺利执行
-Chocolatey在安装包的时候，默认路径是按照系统的默认路径来的，如果想修改安装路径可以这样处理：
-
+- Chocolatey在安装包的时候，默认路径是按照系统的默认路径来的，如果想修改安装路径可以这样处理：
 1. 执行“开始/运行”命令（或者WIN + R），输入“regedit”，打开注册表。
-
 2. 展开注册表到下面的分支[HKEY＿LOCAL＿MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion]，在右侧窗口中找到名为“ProgramFilesDir”的字符串，双击把数值“C:\Program Files”修改为“D：\ProgramFiles”，确定退出后,即可更改常用软件的安装路径了。
 
-## 命令行选项
+### 命令行选项
 - gradle 加构建文件中的task名，直接运行task
 - -b,--build-file test.gradle 指定运行哪一个文件
 - --offline 离线模式
@@ -29,6 +27,8 @@ Chocolatey在安装包的时候，默认路径是按照系统的默认路径来�
 - 守护进程会在空闲3小时后销毁
 - 手动 gadle --stop
 - 构建时不采用守护进程 --no--daemon
+
+***************************************
 
 ## 第一个 build.gradle
 ```
@@ -46,7 +46,9 @@ Chocolatey在安装包的时候，默认路径是按照系统的默认路径来�
 -  运行：`gradle -q helloworld`
 
 
-## 配置Gradle包管理器
+#### 配置Gradle包管理器 Wrapper
+> 在使用IDE生成项目的时候，可以选择gradle的执行目录，可以选`gradle wrapper` 也可以选自己下载解压的完整包
+> 如果使用的不是这个wrapper，那么别人在下载项目后，运行gradle命令就要先安装gradle，使用wrapper更好
 ```
    task wrapper(type: Wrapper){
       gradleVersion = '1.7'
@@ -55,7 +57,7 @@ Chocolatey在安装包的时候，默认路径是按照系统的默认路径来�
    }
 ```
 - 运行 gradle wrapper 一次即可开始使用包装器的脚本来构建项目了
-
+- 生成gradle包管理器：`gradle wrapper --gradle-version 2.0`
 
 ## Gradle进阶知识
 
@@ -110,9 +112,10 @@ Chocolatey在安装包的时候，默认路径是按照系统的默认路径来�
 -  因为Gradle的构建生命周期阶段如下: 初始化、配置和执行 读取文件就属于配置阶段
 	- **注意** : 项目的每一次构建都会运行属于配置阶段的代码，即使你只是运行了 gradle tasks
 
-****
 
-## 增量式构建特性
+***************************
+
+### 增量式构建特性
 - 如果Java源文件与最后一次运行的构建不同的话，运行 `compileJava task` 将充分提高构建的性能
 
 ### task 的inputs 和 outputs
@@ -125,6 +128,8 @@ Chocolatey在安装包的时候，默认路径是按照系统的默认路径来�
     - IOReleaseVersion : 通过inputs/outputs来添加增量式构建支持 
         - 发现并不能得到书上的预期效果，书上是说改动了properties文件才会让这个task运行，没有改就会说 up-to-date
         - 但是实际得到的是，改动了properties或者是构建文件都会引起task运行，两者都不改动就不会运行task，而且不会有输出提示up-to-date，要自己手动logger
+
+***************
 
 ## 编写和使用自定义task
 - 自定义task包含两个组件：
@@ -254,7 +259,6 @@ task makeReleaseVersion(type:ReleaseVersionTask){
 - src
 - version.properties
  
- 
 ********
 测试优于业务逻辑实行
 
@@ -269,6 +273,14 @@ task makeReleaseVersion(type:ReleaseVersionTask){
 ### 使用JUnit
 ### 使用其他框架 TestNG Spock
 ## 配置测试执行
+
+********************
+# 打包
+## War包
+## Jar包
+- Gradle默认是只会打包源码，并不会打包依赖（为了更方便依赖的作用）
+- [shadow插件官网文档](http://imperceptiblethoughts.com/shadow/)
+
 
 ************************
 ## 集成测试

@@ -1,1 +1,5 @@
+# 学习Linux Shell
+
+
+
 - 获取当前shell绝对路径 `basepath=$(cd `dirname $0`; pwd)`
