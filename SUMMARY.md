@@ -52,16 +52,17 @@
     * [ 代码整洁.md ](./Article/代码整洁.md)
     * [ CSDN的Markdown案例.md ](./Article/CSDN的Markdown案例.md)
     * [ SomeOneLikeYou歌词.md ](./Article/SomeOneLikeYou歌词.md)
-* TXT
-    * TXT/View
-        * [ Learn_PS.md ](./TXT/View/Learn_PS.md)
-        * [ Learn_JQuery.md ](./TXT/View/Learn_JQuery.md)
-        * [ Learn_HTML.md ](./TXT/View/Learn_HTML.md)
-        * [ Learn_CSS3.md ](./TXT/View/Learn_CSS3.md)
-    * [ 软考知识点.md ](./TXT/软考知识点.md)
-    * [ 正则表达式学习.md ](./TXT/正则表达式学习.md)
-    * [ 软考错题集.md ](./TXT/软考错题集.md)
-    * [ 面试技巧.md ](./TXT/面试技巧.md)
-    * [ 编程感想.md ](./TXT/编程感想.md)
-    * [ 软件使用手册.md ](./TXT/软件使用手册.md)
+* Skills
+    * Skills/View
+        * [ Learn_PS.md ](./Skills/View/Learn_PS.md)
+        * [ Learn_JQuery.md ](./Skills/View/Learn_JQuery.md)
+        * [ Learn_HTML.md ](./Skills/View/Learn_HTML.md)
+        * [ Learn_CSS3.md ](./Skills/View/Learn_CSS3.md)
+    * [ 软考知识点.md ](./Skills/软考知识点.md)
+    * [ 正则表达式学习.md ](./Skills/正则表达式学习.md)
+    * [ 软考错题集.md ](./Skills/软考错题集.md)
+    * [ 面试技巧.md ](./Skills/面试技巧.md)
+    * [ 编程感想.md ](./Skills/编程感想.md)
+    * [ 软件使用手册.md ](./Skills/软件使用手册.md)
+
 

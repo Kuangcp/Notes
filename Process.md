@@ -57,3 +57,8 @@
 
 ## 2017-06-15 00:01:37
 - 遇到bug不要轻言放弃，到处找解决方案，就会有希望的
+
+## 2017-06-27 21:14:08
+- 使用了Gitbook来展示笔记，文件夹的命名不能随意，放在互联网上，指不定就有啥bug，至少不能使用 HTML CSS JS等网络资源的直接命名
+- 使用了脚本来生成目录，为了方便以后的使用 [Python文件](https://github.com/Kuangcp/Notes/blob/master/create_tree.py)
+
