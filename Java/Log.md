@@ -282,7 +282,7 @@ SizeBasedTriggeringPolicy： 查看当前活动文件的大小，如果超过指
         <pattern>%-4relative [%thread] %-5level %logger{35} - %msg%n</pattern>   
     </encoder>
 ```
-![](https://raw.githubusercontent.com/Kuangcp/Notes/master/TXT/Images/pattern_type.jpg)
+![](https://raw.githubusercontent.com/Kuangcp/Notes/master/Skills/Images/pattern_type.jpg)
 
 
 

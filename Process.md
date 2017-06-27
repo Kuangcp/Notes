@@ -22,8 +22,8 @@
 - `back：chrome更费内存，Firefox省内存，使用Linux后更直观的感受到`
 
 ## 2017-3-10 21:08:06
-- `![ER图](https://raw.githubusercontent.com/Kuangcp/Notes/master/TXT/Images/ER.png)`图片链接地址
-- `[](https://github.com/Kuangcp/Notes/blob/master/TXT/Java/EE.md)`文本链接地址
+- `![ER图](https://raw.githubusercontent.com/Kuangcp/Notes/master/Skills/Images/ER.png)`图片链接地址
+- `[](https://github.com/Kuangcp/Notes/blob/master/Java/EE.md)`文本链接地址
 
 ## 2017-04-27 15:16:17
 - 转移到了Linux平台进行开发，工具使用方便了些
@@ -49,7 +49,7 @@
 
 ## 2017-06-05 20:23:29
 - 使用微信的个人公众号来进行系统的监测，可以部署在百度BAE上
-- ![公众号](https://raw.githubusercontent.com/Kuangcp/Notes/master/TXT/Images/8.jpg)
+- ![公众号](https://raw.githubusercontent.com/Kuangcp/Notes/master/Skills/Images/8.jpg)
 - [ ] 公众号还没做完，待系统完成后使用上公众号
 
 ## 2017-06-08 21:17:56
