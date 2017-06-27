@@ -1,9 +1,9 @@
---关于Oracle的一些配置文件的语句
+--鍏充簬Oracle鐨勪竴浜涢厤缃枃浠剁殑璇彞
 create table emp_subquery as
 select employee_id,first_name,salary from employees;
 
 create view emp_view_subquery as select *from employees where salary >2000;
---习题
+--涔犻
 --1
 create user usera_exer identified by usera default tablespace users quota 10m 
 on users account lock;
@@ -34,7 +34,7 @@ grant insert ,delete on hr.employees to rolea;
 grant connect ,resource to roleb;
 --9
 grant rolea,roleb to  userb_exer3;
---10 创建概要文件
+--10 鍒涘缓姒傝鏂囦欢
 create  profile pwd_file limit connect_time 30
 idle_time 10 failed_login_attempts 4
 password_lock_time 10
@@ -48,26 +48,3 @@ conn as sysdba
 
 
 select name from v$database;
-
-
-
-
-
-
-
-
-
-
-  
-
-
-  
-  
- 
-  
-  
-  
-    
-  
- 
- 

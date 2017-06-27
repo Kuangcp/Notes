@@ -1,128 +1,128 @@
-# ¡¾RedisµÄÊ¹ÓÃ¡¿
-## ¡¾windowsÉÏµÄ»ù±¾ÅäÖÃ¡¿
-- ×¢²áÎª·şÎñ
+# ã€Redisçš„ä½¿ç”¨ã€‘
+## ã€windowsä¸Šçš„åŸºæœ¬é…ç½®ã€‘
+- æ³¨å†Œä¸ºæœåŠ¡
 	- `redis-server --service-install redis.windows.conf --loglevel verbose`
-- Ê¹ÓÃcmder
-	- cmd ÖĞÔËĞĞ `E:/redis/redis-server.exe E:/redis/redis.windows.conf`
-- ÅäÖÃÃÜÂë
+- ä½¿ç”¨cmder
+	- cmd ä¸­è¿è¡Œ `E:/redis/redis-server.exe E:/redis/redis.windows.conf`
+- é…ç½®å¯†ç 
 	- `requirepass redis1104`
-	- ¿Í»§¶ËµÇÂ¼ `auth redis1104`
-##¡¾JavaÊ¹ÓÃredisÅäÖÃ¡¿
-[JavaÊ¹ÓÃRedis£ºÏê¼û´Ë´¦Ä©Î²](https://github.com/Kuangcp/Notes/blob/master/TXT/Java/EE.md)
+	- å®¢æˆ·ç«¯ç™»å½• `auth redis1104`
+##ã€Javaä½¿ç”¨redisé…ç½®ã€‘
+[Javaä½¿ç”¨Redisï¼šè¯¦è§æ­¤å¤„æœ«å°¾](https://github.com/Kuangcp/Notes/blob/master/TXT/Java/EE.md)
 ****************************
-## redisÅäÖÃ
-- [ÅäÖÃÎÄ¼ş½²½â](https://github.com/Kuangcp/Notes/blob/master/ConfigFiles/Database/redis/explain_redis.conf)
-- [Ô­Ê¼ÅäÖÃÎÄ¼ş](https://github.com/Kuangcp/Notes/blob/master/ConfigFiles/Database/redis/redis.conf)
-- `[¡Á]Ê¹ÓÃing`[¼ò»¯ÅäÖÃÎÄ¼ş](https://github.com/Kuangcp/Notes/blob/master/ConfigFiles/Database/redis/simple_redis.conf) 
+## redisé…ç½®
+- [é…ç½®æ–‡ä»¶è®²è§£](https://github.com/Kuangcp/Notes/blob/master/ConfigFiles/Database/redis/explain_redis.conf)
+- [åŸå§‹é…ç½®æ–‡ä»¶](https://github.com/Kuangcp/Notes/blob/master/ConfigFiles/Database/redis/redis.conf)
+- `[Ã—]ä½¿ç”¨ing`[ç®€åŒ–é…ç½®æ–‡ä»¶](https://github.com/Kuangcp/Notes/blob/master/ConfigFiles/Database/redis/simple_redis.conf) 
 
-## redisÃüÁîĞĞ³£¹æÊ¹ÓÃ
-### ³£ÓÃµÄÊı¾İÀàĞÍ²Ù×÷
-- ¡¾`×Ö·û´®`¡¿
+## rediså‘½ä»¤è¡Œå¸¸è§„ä½¿ç”¨
+### å¸¸ç”¨çš„æ•°æ®ç±»å‹æ“ä½œ
+- ã€`å­—ç¬¦ä¸²`ã€‘
 	- get 
 	- set
 	- del 
 	
-- ¡¾`ÁĞ±í (ÀàËÆ¶ÓÁĞ)`¡¿
-	- rpush ÓÒÈë¶ÓÁĞ£¬Ä©¶Ë
-	- lpush ×ó
-	- lrange »ñÈ¡·¶Î§ 0£¬-1 ±íÊ¾»ñÈ¡È«²¿
-	- lindex »ñÈ¡Ö¸¶¨indexµÄÔªËØ
-	- lpop ×ó³ö¶ÓÁĞ
+- ã€`åˆ—è¡¨ (ç±»ä¼¼é˜Ÿåˆ—)`ã€‘
+	- rpush å³å…¥é˜Ÿåˆ—ï¼Œæœ«ç«¯
+	- lpush å·¦
+	- lrange è·å–èŒƒå›´ 0ï¼Œ-1 è¡¨ç¤ºè·å–å…¨éƒ¨
+	- lindex è·å–æŒ‡å®šindexçš„å…ƒç´ 
+	- lpop å·¦å‡ºé˜Ÿåˆ—
 	- rpop
 	
-- ¡¾`¼¯ºÏ (ÀàËÆÎŞĞòµÄSet)`¡¿
-	- sadd Ìí¼ÓÒ»¸ö¶ÔÏó`asdd key member`
-	- smembers »ñÈ¡Ä³SetËùÓĞÔªËØ `smembers key`
-	- sismember ²éÑ¯Ä³SetÊÇ·ñº¬Ä³ÔªËØ£¬·µ»ØÀàĞÍÊÇ 0 1 `sismember key member`
-	- srem É¾³ıÖ¸¶¨SetÖĞÖ¸¶¨ÔªËØ `srem key member`
+- ã€`é›†åˆ (ç±»ä¼¼æ— åºçš„Set)`ã€‘
+	- sadd æ·»åŠ ä¸€ä¸ªå¯¹è±¡`asdd key member`
+	- smembers è·å–æŸSetæ‰€æœ‰å…ƒç´  `smembers key`
+	- sismember æŸ¥è¯¢æŸSetæ˜¯å¦å«æŸå…ƒç´ ï¼Œè¿”å›ç±»å‹æ˜¯ 0 1 `sismember key member`
+	- srem åˆ é™¤æŒ‡å®šSetä¸­æŒ‡å®šå…ƒç´  `srem key member`
 	
-- ¡¾`É¢ÁĞ (ÀàËÆMap Ç¶Ì×£¬Ò»¸öÄÚÖÃµÄÎ¢ĞÍredis)`¡¿
+- ã€`æ•£åˆ— (ç±»ä¼¼Map åµŒå¥—ï¼Œä¸€ä¸ªå†…ç½®çš„å¾®å‹redis)`ã€‘
 	- hget
 	- hset
-	- hgetall »ñÈ¡Ä³É¢ÁĞËùÓĞk-v
-	- hdel É¾³ıÉ¢ÁĞÖĞÖ¸¶¨k
-	- hincrby ×ÔÔö
+	- hgetall è·å–æŸæ•£åˆ—æ‰€æœ‰k-v
+	- hdel åˆ é™¤æ•£åˆ—ä¸­æŒ‡å®šk
+	- hincrby è‡ªå¢
 	
-- ¡¾`ÓĞĞò¼¯ºÏ(¼üÊÇmember³ÉÔ±£¬ÖµÊÇscore·ÖÖµ±ØĞëÊÇ¸¡µãÊı)`¡¿
-	- zadd ½«Ò»¸ö¸ø¶¨·ÖÖµµÄ³ÉÔ±Ìí¼Óµ½ÓĞĞò¼¯ºÏÀï
-	- zrange ¸ù¾İÔªËØÔÚÓĞĞò¼¯ºÏÖĞµÄÎ»ÖÃ£¬´ÓÓĞĞò¼¯ºÏÖĞ»ñÈ¡¶à¸öÔªËØ
-		- zrange name 0 -1 withscores »ñÈ¡ËùÓĞ²¢»ñÈ¡·ÖÖµ
+- ã€`æœ‰åºé›†åˆ(é”®æ˜¯memberæˆå‘˜ï¼Œå€¼æ˜¯scoreåˆ†å€¼å¿…é¡»æ˜¯æµ®ç‚¹æ•°)`ã€‘
+	- zadd å°†ä¸€ä¸ªç»™å®šåˆ†å€¼çš„æˆå‘˜æ·»åŠ åˆ°æœ‰åºé›†åˆé‡Œ
+	- zrange æ ¹æ®å…ƒç´ åœ¨æœ‰åºé›†åˆä¸­çš„ä½ç½®ï¼Œä»æœ‰åºé›†åˆä¸­è·å–å¤šä¸ªå…ƒç´ 
+		- zrange name 0 -1 withscores è·å–æ‰€æœ‰å¹¶è·å–åˆ†å€¼
 		- zrange name 2 30 wi thscores 
-	- zrevrange ´Ó´óµ½Ğ¡ÅÅĞòµÄ»ñÈ¡¼¯ºÏÔªËØ
-	- zrangebyscore »ñÈ¡ÓĞĞò¼¯ºÏÔÚ¸ø¶¨·¶Î§ÖĞµÄËùÓĞÔªËØ
+	- zrevrange ä»å¤§åˆ°å°æ’åºçš„è·å–é›†åˆå…ƒç´ 
+	- zrangebyscore è·å–æœ‰åºé›†åˆåœ¨ç»™å®šèŒƒå›´ä¸­çš„æ‰€æœ‰å…ƒç´ 
 		- zrangebyscore name 0 200 withscores 
 	- zrem
-	- zincrby ×ÔÔö
-	- zinterstore ½øĞĞ¼¯ºÏÖ®¼äµÄ²¢¼¯£¨¿ÉÒÔ¿´×÷ÊÇ¶à±íÁ¬½Ó£©
+	- zincrby è‡ªå¢
+	- zinterstore è¿›è¡Œé›†åˆä¹‹é—´çš„å¹¶é›†ï¼ˆå¯ä»¥çœ‹ä½œæ˜¯å¤šè¡¨è¿æ¥ï¼‰
 	 	
-##### ¹ıÆÚ²ßÂÔ
-- `expire key seconds` ÉèÖÃ¼üµÄ¹ıÆÚÊ±¼ä
-- `PTTL/TTL key ` ²é¿´¼üÊ£Óà¹ıÆÚÊ±¼ä£¨Éú´æÊ±¼ä£© ms/s
-    -  -1±íÊ¾ÓÀ¾Ã -2±íÊ¾Ã»ÓĞ¸Ãkey
+##### è¿‡æœŸç­–ç•¥
+- `expire key seconds` è®¾ç½®é”®çš„è¿‡æœŸæ—¶é—´
+- `PTTL/TTL key ` æŸ¥çœ‹é”®å‰©ä½™è¿‡æœŸæ—¶é—´ï¼ˆç”Ÿå­˜æ—¶é—´ï¼‰ ms/s
+    -  -1è¡¨ç¤ºæ°¸ä¹… -2è¡¨ç¤ºæ²¡æœ‰è¯¥key
 - 
 
 *******************
-### ¸÷Êı¾İÀàĞÍµÄ¸ß¼¶²Ù×÷
-##### ×Ö·û´® ²Ù×÷
-- ×Ö·û´®¾ÍÊÇ×Ö½Ú×é³ÉµÄĞòÁĞ ¿ÉÒÔ·Å×Ö½Ú´®£¬ÕûÊı£¬¸¡µãÊı
-- `set key newval nx `´æÔÚÔòsetÊ§°Ü
-- `set key newval xx `²»´æÔÚÔòsetÊ§°Ü
-- ´æÈëµÄStringÄÜ±»½âÎöÎªÊıÖµ ¾ÍÄÜÊ¹ÓÃ incr incrby decr decrby 
-- `incr` ÊÇÔ­×Ó²Ù×÷¼´²¢·¢µÄÇé¿öÏÂ²»»áÓĞÔà¶Á(¿ÉÓÃÓÚÖ÷¼üÉú³É²ßÂÔ)
-- `getset key val`  setĞÂÖµ£¬get¾ÉÖµ
+### å„æ•°æ®ç±»å‹çš„é«˜çº§æ“ä½œ
+##### å­—ç¬¦ä¸² æ“ä½œ
+- å­—ç¬¦ä¸²å°±æ˜¯å­—èŠ‚ç»„æˆçš„åºåˆ— å¯ä»¥æ”¾å­—èŠ‚ä¸²ï¼Œæ•´æ•°ï¼Œæµ®ç‚¹æ•°
+- `set key newval nx `å­˜åœ¨åˆ™setå¤±è´¥
+- `set key newval xx `ä¸å­˜åœ¨åˆ™setå¤±è´¥
+- å­˜å…¥çš„Stringèƒ½è¢«è§£æä¸ºæ•°å€¼ å°±èƒ½ä½¿ç”¨ incr incrby decr decrby 
+- `incr` æ˜¯åŸå­æ“ä½œå³å¹¶å‘çš„æƒ…å†µä¸‹ä¸ä¼šæœ‰è„è¯»(å¯ç”¨äºä¸»é”®ç”Ÿæˆç­–ç•¥)
+- `getset key val`  setæ–°å€¼ï¼Œgetæ—§å€¼
 - `mset mget `
 	- `mset key val key val` 
-	- `mget key key key` ·µ»ØÖµ×é³ÉµÄÊı×é
-- `exists key` ÓĞ¸ÃÖµ¾Í·µ»Ø1·ñÔò0
-- `del key` ·µ»Ø1±»É¾³ı£¬0 key²»´æÔÚ
-- `type key` ·µ»ØÖµµÄÀàĞÍ
-- `expire key secondes` ÉèÖÃ»ò¸Ä±ä³¬Ê±Ê±¼ä£¬¾«¶ÈÊÇÃë»òºÁÃë
-	- `set key val ex secondes` setÊ±ÉèÖÃ³¬Ê±Ê±¼ä
-- `persist key` È¥³ı³¬Ê±Ê±¼ä
+	- `mget key key key` è¿”å›å€¼ç»„æˆçš„æ•°ç»„
+- `exists key` æœ‰è¯¥å€¼å°±è¿”å›1å¦åˆ™0
+- `del key` è¿”å›1è¢«åˆ é™¤ï¼Œ0 keyä¸å­˜åœ¨
+- `type key` è¿”å›å€¼çš„ç±»å‹
+- `expire key secondes` è®¾ç½®æˆ–æ”¹å˜è¶…æ—¶æ—¶é—´ï¼Œç²¾åº¦æ˜¯ç§’æˆ–æ¯«ç§’
+	- `set key val ex secondes` setæ—¶è®¾ç½®è¶…æ—¶æ—¶é—´
+- `persist key` å»é™¤è¶…æ—¶æ—¶é—´
 
 
-##### ÁĞ±í ²Ù×÷
-- `rpush key val val val `ÓÒ/Î²Ìí¼ÓÔªËØ lpushÊÇ×ó/Í·
-- `rpop key` ´ÓlistÓÒ/Î²¶ËÖĞÉ¾³ıÔªËØ·µ»ØÔªËØÖµ Ã»ÓĞÁË¾Í·µ»Ønull
-- ×èÈûÊ½µÄÁĞ±íµ¯³öÃüÁî(block) `¶ÓÁĞºÜÓĞÓÃ`
+##### åˆ—è¡¨ æ“ä½œ
+- `rpush key val val val `å³/å°¾æ·»åŠ å…ƒç´  lpushæ˜¯å·¦/å¤´
+- `rpop key` ä»listå³/å°¾ç«¯ä¸­åˆ é™¤å…ƒç´ è¿”å›å…ƒç´ å€¼ æ²¡æœ‰äº†å°±è¿”å›null
+- é˜»å¡å¼çš„åˆ—è¡¨å¼¹å‡ºå‘½ä»¤(block) `é˜Ÿåˆ—å¾ˆæœ‰ç”¨`
     - `blpop`
     - `brpop`
     - `bpoplpush`
-    - `brpoplpush` ×èÈûÊ½ÏÈÓÒµ¯ÔÙ×ó½ø
-- `lrange key 0 -1` È¡Ö¸¶¨³¤¶ÈµÄlist -1±íÊ¾È«²¿
--  `ltrim key 0 2` ½ØÈ¡µ±Ç°µÄlist
-- `lindex key offset`   ·µ»ØÆ«ÒÆÁ¿ÎªoffsetµÄÔªËØ
+    - `brpoplpush` é˜»å¡å¼å…ˆå³å¼¹å†å·¦è¿›
+- `lrange key 0 -1` å–æŒ‡å®šé•¿åº¦çš„list -1è¡¨ç¤ºå…¨éƒ¨
+-  `ltrim key 0 2` æˆªå–å½“å‰çš„list
+- `lindex key offset`   è¿”å›åç§»é‡ä¸ºoffsetçš„å…ƒç´ 
 
-##### ¼¯ºÏ ²Ù×÷
-##### É¢ÁĞ	 ²Ù×÷
+##### é›†åˆ æ“ä½œ
+##### æ•£åˆ—	 æ“ä½œ
 
 *****************************************************************
 	
 ### Run Configuration	
 - *slaveof*
-    - `redis-server --port 9999 --slaveof 127.0.0.1 6379` Æô¶¯Ò»¸ö9999¶Ë¿Ú×÷Îª6379µÄ´Ó·şÎñÆ÷½øĞĞÍ¬²½
-    - »òÕß·şÎñÆô¶¯ºóÖ´ĞĞ `slaveof host port`£¨Èç¹ûÒÑ¾­ÊÇ´Ó·şÎñÆ÷£¬¾Í¶ªÈ¥¾É·şÎñÆ÷µÄÊı¾İ¼¯£¬×ª¶ø¶ÔĞÂµÄÖ÷·şÎñÆ÷½øĞĞÍ¬²½£©
-    - ´Ó·şÎñ±ä³ÉÖ÷·şÎñ `slaveof no one` (Í¬²½µÄÊı¾İ¼¯²»»á¶ªÊ§£¬Ñ¸ËÙÌæ»»Ö÷·şÎñÆ÷)
+    - `redis-server --port 9999 --slaveof 127.0.0.1 6379` å¯åŠ¨ä¸€ä¸ª9999ç«¯å£ä½œä¸º6379çš„ä»æœåŠ¡å™¨è¿›è¡ŒåŒæ­¥
+    - æˆ–è€…æœåŠ¡å¯åŠ¨åæ‰§è¡Œ `slaveof host port`ï¼ˆå¦‚æœå·²ç»æ˜¯ä»æœåŠ¡å™¨ï¼Œå°±ä¸¢å»æ—§æœåŠ¡å™¨çš„æ•°æ®é›†ï¼Œè½¬è€Œå¯¹æ–°çš„ä¸»æœåŠ¡å™¨è¿›è¡ŒåŒæ­¥ï¼‰
+    - ä»æœåŠ¡å˜æˆä¸»æœåŠ¡ `slaveof no one` (åŒæ­¥çš„æ•°æ®é›†ä¸ä¼šä¸¢å¤±ï¼Œè¿…é€Ÿæ›¿æ¢ä¸»æœåŠ¡å™¨)
 - *loglevel*
     - `./redis-server /etc/redis/6379.conf --loglevel debug	`
-### Êı¾İ°²È«ºÍĞÔÄÜ
-#### ³Ö¾Ã»¯²ßÂÔ
-#### ¸´ÖÆ
-#### ÊÂÎñ	
+### æ•°æ®å®‰å…¨å’Œæ€§èƒ½
+#### æŒä¹…åŒ–ç­–ç•¥
+#### å¤åˆ¶
+#### äº‹åŠ¡	
 	
 	
-## ¡¾RedisµÄÊ¹ÓÃ¡¿
-### ×÷ÎªÈÕÖ¾¼ÇÂ¼
-### ×÷ÎªÍøÕ¾Í³¼ÆÊı¾İ
-### ´æ´¢ÅäÖÃĞÅÏ¢
-### ×Ô¶¯²¹È«
-- ËÑË÷½¨Òé
-### ¹¹½¨Ëø
-### ÈÎÎñ¶ÓÁĞ
-- ·¢ËÍÓÊ¼ş
-### ¶©ÔÄ·¢ËÍ½á¹¹
-### ¡¾Java Ê¹ÓÃ redis ÅäÖÃ¡¿
-- mavenÒÀÀµ(Spring 4.1.7)£º
+## ã€Redisçš„ä½¿ç”¨ã€‘
+### ä½œä¸ºæ—¥å¿—è®°å½•
+### ä½œä¸ºç½‘ç«™ç»Ÿè®¡æ•°æ®
+### å­˜å‚¨é…ç½®ä¿¡æ¯
+### è‡ªåŠ¨è¡¥å…¨
+- æœç´¢å»ºè®®
+### æ„å»ºé”
+### ä»»åŠ¡é˜Ÿåˆ—
+- å‘é€é‚®ä»¶
+### è®¢é˜…å‘é€ç»“æ„
+### ã€Java ä½¿ç”¨ redis é…ç½®ã€‘
+- mavenä¾èµ–(Spring 4.1.7)ï¼š
 ```xml
     <dependency>
         <groupId>org.springframework.data</groupId>
@@ -143,17 +143,17 @@
         <version>3.3.2</version>
     </dependency>
 ```
-- SpringÅäÖÃÎÄ¼ş 
+- Springé…ç½®æ–‡ä»¶ 
 ```xml
     <!--
-        ¼ÓÔØredisÅäÖÃÎÄ¼ş 
-        Èç¹ûÒÑ¾­¼ÓÔØÁËÒ»¸öÎÄ¼ş£¬ÄÇÃ´µÚÒ»¸ö¾ÍÒªĞ´Õâ¸öÅäÖÃÏî£¬
+        åŠ è½½redisé…ç½®æ–‡ä»¶ 
+        å¦‚æœå·²ç»åŠ è½½äº†ä¸€ä¸ªæ–‡ä»¶ï¼Œé‚£ä¹ˆç¬¬ä¸€ä¸ªå°±è¦å†™è¿™ä¸ªé…ç½®é¡¹ï¼Œ
         <property name="ignoreUnresolvablePlaceholders" value="true"/>
-        µÚ¶ş¸öÒª¼Ó ºóÃæµÄÅäÖÃ 
-        ²»È»¾ÍÖ»»á¼ÓÔØÇ°ÃæÄÇ¸öÎÄ¼ş
+        ç¬¬äºŒä¸ªè¦åŠ  åé¢çš„é…ç½® 
+        ä¸ç„¶å°±åªä¼šåŠ è½½å‰é¢é‚£ä¸ªæ–‡ä»¶
     -->
     <context:property-placeholder location="classpath:redis.properties" ignore-unresolvable="true"/>
-    <!-- redisÁ¬½Ó³ØµÄÅäÖÃ -->
+    <!-- redisè¿æ¥æ± çš„é…ç½® -->
       <bean id="jedisPoolConfig" class="redis.clients.jedis.JedisPoolConfig">
           <property name="maxActive" value="${redis.pool.maxActive}"/>
           <property name="maxIdle" value="${redis.pool.maxIdle}"/>
@@ -163,7 +163,7 @@
           <property name="testOnReturn" value="${redis.pool.testOnReturn}"/>
       </bean>
       
-      <!-- redisµÄÁ¬½Ó³Øpool£¬²»ÊÇ±ØÑ¡Ïî£ºtimeout/password  -->
+      <!-- redisçš„è¿æ¥æ± poolï¼Œä¸æ˜¯å¿…é€‰é¡¹ï¼štimeout/password  -->
       <bean id = "jedisPool" class="redis.clients.jedis.JedisPool">
           <constructor-arg index="0" ref="jedisPoolConfig"/>
           <constructor-arg index="1" value="${redis.host}"/>
@@ -173,17 +173,17 @@
       </bean>
 ```
 
-- java Êµ¼Ê²âÊÔ
+- java å®é™…æµ‹è¯•
 - [JedisUtilsTest.java](https://github.com/Kuangcp/Maven_SSM/blob/master/src/test/java/redis/JedisUtilTest.java)
 
-#### redis Ê¹ÓÃºóÒªdisconnectÊÍ·ÅÁ¬½Ó
-#### redis ÊÂÎñ execÊÍ·ÅÊÂÎñ
+#### redis ä½¿ç”¨åè¦disconnecté‡Šæ”¾è¿æ¥
+#### redis äº‹åŠ¡ execé‡Šæ”¾äº‹åŠ¡
 
-### jedisÓöµ½µÄÒì³£
+### jedisé‡åˆ°çš„å¼‚å¸¸
 - Invocation of init method failed; nested exception is java.lang.NoSuchMethodError: org.springframework.core.serializer.support.DeserializingConverter
-- °æ±¾¶Ô²»ÉÏ£¬ÒªSpringºÍSpring-data-redis ºÍ redisºÍcommons-lang3¶ÔÓ¦
-- Ä¿Ç°ÊÇ4.1.7 + 1.6.0 + 2.9.0 + 3.3.2 ±àÒëÍ¨¹ıÁË	
+- ç‰ˆæœ¬å¯¹ä¸ä¸Šï¼Œè¦Springå’ŒSpring-data-redis å’Œ rediså’Œcommons-lang3å¯¹åº”
+- ç›®å‰æ˜¯4.1.7 + 1.6.0 + 2.9.0 + 3.3.2 ç¼–è¯‘é€šè¿‡äº†	
 
-### SpringBootÊ¹ÓÃRedis
-[SpringBootÅäÖÃRedis](https://github.com/Kuangcp/Notes/blob/master/TXT/Java/Spring/SpringBootDatabase.md)	
+### SpringBootä½¿ç”¨Redis
+[SpringBooté…ç½®Redis](https://github.com/Kuangcp/Notes/blob/master/TXT/Java/Spring/SpringBootDatabase.md)	
 	

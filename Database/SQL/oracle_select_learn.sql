@@ -5,12 +5,12 @@ insert into datess values (to_date('2018-02-02 19:23:45','yyyy-mm-dd hh24:mi:ss'
 select hj from datess;
 
 select table_name from user_tables;
---²éÕÒ¹ÜÀíÕßÃû×Ö
+--æŸ¥æ‰¾ç®¡ç†è€…åå­—
 select e.last_name,e.EMPLOYEE_ID,t.last_name,t.EMPLOYEE_ID from employees e,employees t where e.manager_id =t.employee_id and t.last_name='Hunold';
---ÈëÖ°Äê·İÅÅĞò
+--å…¥èŒå¹´ä»½æ’åº
 select e.*,t.*from employees e ,EMPLOYEES t where e.MANAGER_ID = t.EMPLOYEE_ID and 
    e.HIRE_DATE<t.hire_date;
---¹ÜÀíÕßµØÖ·
+--ç®¡ç†è€…åœ°å€
 select d.*,l.STREET_ADDRESS from departments d ,locations l,employees e 
 where d.manager_id = e.employee_id and d.location_id = l.LOCATION_ID;
 
@@ -18,7 +18,7 @@ select d.*,e.* from DEPARTMENTS d left join EMPLOYEES e on d.DEPARTMENT_ID=e.DEP
 
 select e.*,d.* from EMPLOYEES e left join DEPARTMENTS d on d.DEPARTMENT_ID=e.DEPARTMENT_ID;
 
-select e.EMPLOYEE_ID,e.LAST_NAME,e.SALARY,e.SALARY*nvl(e.COMMISSION_PCT,0) ½±½ğ,j.JOB_TITLE,d.DEPARTMENT_NAME from JOBS j ,EMPLOYEES e left join DEPARTMENTS d on  e.DEPARTMENT_ID=d.DEPARTMENT_ID  where e.JOB_ID=j.JOB_ID;
+select e.EMPLOYEE_ID,e.LAST_NAME,e.SALARY,e.SALARY*nvl(e.COMMISSION_PCT,0) å¥–é‡‘,j.JOB_TITLE,d.DEPARTMENT_NAME from JOBS j ,EMPLOYEES e left join DEPARTMENTS d on  e.DEPARTMENT_ID=d.DEPARTMENT_ID  where e.JOB_ID=j.JOB_ID;
 
 select d.* from departments d where department_id in (select department_id from employees group by department_id);
 
@@ -33,10 +33,10 @@ select e.DEPARTMENT_ID,count(*),avg(e.salary) from EMPLOYEES e GROUP by e.DEPART
 select e.job_id,min(e.salary) from employees e  group by e.job_id having min(e.salary)>5000;
 
 select e.department_id,avg(e.salary) from employees e group by e.department_id having avg(e.salary)<10000 and department_id is not null;--
---²éÑ¯Æ½¾ù¹¤×ÊµÍÓÚ6000µÄ²¿ÃÅ¼°ÆäÔ±¹¤ĞÅÏ¢
---1 Ê¹ÓÃ×óÍâÁ¬½Ó Ğ§ÂÊÂÔ¸ß ×¢Òâ×ó±íµÄ¿ÕÖµ
+--æŸ¥è¯¢å¹³å‡å·¥èµ„ä½äº6000çš„éƒ¨é—¨åŠå…¶å‘˜å·¥ä¿¡æ¯
+--1 ä½¿ç”¨å·¦å¤–è¿æ¥ æ•ˆç‡ç•¥é«˜ æ³¨æ„å·¦è¡¨çš„ç©ºå€¼
 select * from  (select e.department_id from employees e group by e.department_id having avg(e.salary)<10000) s left join EMPLOYEES t  on s.department_id=t.department_id;
---2 µÈÖµÁ¬½Ó
+--2 ç­‰å€¼è¿æ¥
 select a.*,b.* from EMPLOYEES a,DEPARTMENTS b where a.department_id in (select department_id from employees group by department_id having avg(salary)<10000 ) and a.department_id =b.department_id;
 --------
 select last_name from EMPLOYEES e,DEPARTMENTS d where e.department_id = d.department_id and d.DEPARTMENT_NAME='Sales';
@@ -44,30 +44,30 @@ select last_name from EMPLOYEES e,DEPARTMENTS d where e.department_id = d.depart
 select * from EMPLOYEES where job_id = (select job_id from EMPLOYEES where employee_id=140);
 
 select last_name,salary from employees where salary >(select max(salary) from employees where department_id=30);
---¸÷¸ö²¿ÃÅµÄÆ½¾ùÈëÖ°Äê·İ
-select department_id,count(*) ÈËÊı,avg(salary),avg((select to_char(sysdate,'yyyy') from dual)- to_char(hire_date,'yyyy')) from EMPLOYEES group by department_id ;
+--å„ä¸ªéƒ¨é—¨çš„å¹³å‡å…¥èŒå¹´ä»½
+select department_id,count(*) äººæ•°,avg(salary),avg((select to_char(sysdate,'yyyy') from dual)- to_char(hire_date,'yyyy')) from EMPLOYEES group by department_id ;
 
 select hire_date from EMPLOYEES;
 
 select to_char(sysdate,'yyyy')- to_char(hire_date,'yyyy') from dual,EMPLOYEES;
---¹¤×ÊÓëÄ³²¿ÃÅÆ½¾ù¹¤×ÊÏàµÈ
+--å·¥èµ„ä¸æŸéƒ¨é—¨å¹³å‡å·¥èµ„ç›¸ç­‰
 select * from employees where salary in (select avg(salary) from employees group by department_id) ;
---¹¤×ÊÓë±¾²¿ÃÅÆ½¾ù¹¤×ÊÏàµÈ ÏÈ²åÈë¸öÊı¾İ
+--å·¥èµ„ä¸æœ¬éƒ¨é—¨å¹³å‡å·¥èµ„ç›¸ç­‰ å…ˆæ’å…¥ä¸ªæ•°æ®
 insert into employees values(210,'r','e','32',34,sysdate,'AD_ASST',2200,0.3,134,210);
 select *from EMPLOYEES e where e.salary = (select avg(t.salary) from EMPLOYEES t group by department_id having t.department_id = e.department_id);
 
---²éÑ¯´óÓÚ5000µÄ²¿ÃÅºÍÔ±¹¤ĞÅÏ¢
---ÕıÈ·µÄ
+--æŸ¥è¯¢å¤§äº5000çš„éƒ¨é—¨å’Œå‘˜å·¥ä¿¡æ¯
+--æ­£ç¡®çš„
 select d.*,s.* from departments d ,employees s where 5000<all(select salary from employees e where d.department_id = e.department_id) and d.department_id = s.department_id;
---ÕıÈ·µÄ
+--æ­£ç¡®çš„
 select * from (select d.* from departments d  where 5000<all(select salary from employees e where d.department_id = e.department_id)) d , EMPLOYEES s where d.department_id = s.department_id;
 
---²éÑ¯ËùÓĞÔ±¹¤¹¤×Ê´óÓÚ10000µÄ²¿ÃÅ  any ºÍall µÄÊ¹ÓÃ<any Ğ¡ÓÚÄ³Ò»¸öÖµ£¨Ğ¡ÓÚ×î´óÖµ£©<all Ğ¡ÓÚ×îĞ¡Öµ
+--æŸ¥è¯¢æ‰€æœ‰å‘˜å·¥å·¥èµ„å¤§äº10000çš„éƒ¨é—¨  any å’Œall çš„ä½¿ç”¨<any å°äºæŸä¸€ä¸ªå€¼ï¼ˆå°äºæœ€å¤§å€¼ï¼‰<all å°äºæœ€å°å€¼
 
 select distinct  d.* from DEPARTMENTS d ,employees e where 10000<all(select salary from employees e where d.department_id = e.department_id)  and d.department_id = e.department_id;
 
---4000 µ½ 8000 µÄ²¿ÃÅÔ±¹¤ È¥³ı¿Õ²¿ÃÅ
---Ö®Ç°ÊÇÂß¼­´íÎóÁË 
+--4000 åˆ° 8000 çš„éƒ¨é—¨å‘˜å·¥ å»é™¤ç©ºéƒ¨é—¨
+--ä¹‹å‰æ˜¯é€»è¾‘é”™è¯¯äº† 
 select * from departments f,employees em
 where not exists  (
             select d.* from departments d
@@ -81,26 +81,26 @@ where not exists  (
 select * from employees where department_id in (10);
 
 commit;
---²éÑ¯ÈËÊı×î¶àµÄ²¿ÃÅ
-select * from (select department_id,count(*) ÈËÊı from employees group by department_id order by count(*) desc ) r where rownum <2;
+--æŸ¥è¯¢äººæ•°æœ€å¤šçš„éƒ¨é—¨
+select * from (select department_id,count(*) äººæ•° from employees group by department_id order by count(*) desc ) r where rownum <2;
 
 select * from (select * from employees where department_id = 30  order by salary desc) e where rownum <4;
 
---²éÑ¯ÅÅÃûÎª5-10µÄÔ±¹¤
+--æŸ¥è¯¢æ’åä¸º5-10çš„å‘˜å·¥
 select * from employees order by salary desc;
 
---ĞĞºÅÒÑ¾­
+--è¡Œå·å·²ç»
 select * from (select salary,rownum ee from employees e order by salary desc ) r where ee between 5 and 10;
 
---ÊéÉÏ£º
+--ä¹¦ä¸Šï¼š
 select * from (
           select rownum ee ,es.* from (
-          --ÏÈÅÅĞò£¬ÔÙÖØÖÃĞĞºÅ£¬ÔÙÑ¡È¡ÅÅÃû²ÅÊÇ¶ÔµÄ£¬ ÏÈÖØÖÃĞĞºÅ£¬ÔÙÅÅĞò£¬ÔÙÈ¡ÅÅÃû¾ÍÊÇÎ´ÅÅĞòµÄË³ĞòÁË
+          --å…ˆæ’åºï¼Œå†é‡ç½®è¡Œå·ï¼Œå†é€‰å–æ’åæ‰æ˜¯å¯¹çš„ï¼Œ å…ˆé‡ç½®è¡Œå·ï¼Œå†æ’åºï¼Œå†å–æ’åå°±æ˜¯æœªæ’åºçš„é¡ºåºäº†
               select * from employees order by salary desc
               ) es --employee_id,first_name,last_name,salary
 ) ew where ee between 5 and 10;
 
---½«ËùÓĞÔ±¹¤¹¤×ÊÍ³Ò»ĞŞ¸ÄÎª²¿ÃÅÆ½¾ù¹¤×Ê¼ÓÉÏ1000 ×¢ÒâÒª×ö»Ø¹öµã£¬²»È»Êı¾İ¾ÍÈ«ÍæÁË
+--å°†æ‰€æœ‰å‘˜å·¥å·¥èµ„ç»Ÿä¸€ä¿®æ”¹ä¸ºéƒ¨é—¨å¹³å‡å·¥èµ„åŠ ä¸Š1000 æ³¨æ„è¦åšå›æ»šç‚¹ï¼Œä¸ç„¶æ•°æ®å°±å…¨ç©äº†
 savepoint a;
 select department_id,avg(salary)+1000 from employees group by department_id order by department_id desc;
 select * from employees order by department_id desc;
@@ -110,11 +110,11 @@ update employees e set salary =((select avg(salary) from employees s group by de
 rollback to a;
 commit;
 
----»ñÈ¡Ò»¸öÈÕÆÚµÄµ±ÔÂ×îºóÒ»ÌìµÄÈÕÆÚ  ÔÙÓÃÒ»¸ö»ñÈ¡ÌìÊıµÄº¯Êı£¬µÃµ½ÌìÊı
+---è·å–ä¸€ä¸ªæ—¥æœŸçš„å½“æœˆæœ€åä¸€å¤©çš„æ—¥æœŸ  å†ç”¨ä¸€ä¸ªè·å–å¤©æ•°çš„å‡½æ•°ï¼Œå¾—åˆ°å¤©æ•°
 select extract(day from last_day(hire_date)) from employees;
---µ±Ç°ÔÂµ¹ÊıµÚ¶şÌìÈëÖ°µÄÈËÔ±
+--å½“å‰æœˆå€’æ•°ç¬¬äºŒå¤©å…¥èŒçš„äººå‘˜
 select  * from employees where extract (day from (last_day (hire_date)))-2 = extract (day from hire_date);
---²éÑ¯¹¤Áä´óÓÚÊ®ÄêµÄÔ±¹¤
+--æŸ¥è¯¢å·¥é¾„å¤§äºåå¹´çš„å‘˜å·¥
 select * from employees where extract (year from sysdate) - extract(year from hire_date)>=10;
 
 select employee_id,FIRST_NAME,initcap(last_name) from employees ;
@@ -122,6 +122,6 @@ select employee_id,FIRST_NAME,initcap(last_name) from employees ;
 select * from  employees where first_name like '_e%';
 select  employee_id,replace(first_name,'s','S') from employees ;
 commit;
---²éÑ¯¹¤×Ê¸ßÓÚ±¾²¿ÃÅµÄÔ±¹¤¼°Æä²¿ÃÅÆ½¾ù¹¤×Ê
-select * from (select department_id,avg(salary) Æ½¾ù¹¤×Ê from employees group by department_id) d,employees e where e.department_id=d.department_id and e.salary>d.Æ½¾ù¹¤×Ê; 
+--æŸ¥è¯¢å·¥èµ„é«˜äºæœ¬éƒ¨é—¨çš„å‘˜å·¥åŠå…¶éƒ¨é—¨å¹³å‡å·¥èµ„
+select * from (select department_id,avg(salary) å¹³å‡å·¥èµ„ from employees group by department_id) d,employees e where e.department_id=d.department_id and e.salary>d.å¹³å‡å·¥èµ„; 
 commit;

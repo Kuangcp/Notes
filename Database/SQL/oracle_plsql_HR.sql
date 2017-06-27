@@ -1,23 +1,23 @@
 
 set serveroutput on 
---¸ù¾İÓÃ»§ÊäÈëµÄ²¿ÃÅºÅÀ´²éÑ¯  ÓÎ±ê
+--æ ¹æ®ç”¨æˆ·è¾“å…¥çš„éƒ¨é—¨å·æ¥æŸ¥è¯¢  æ¸¸æ ‡
 declare 
   v_deptno employees.department_id%TYPE;
   cursor c_emp is select * from employees where department_id = v_deptno;
-  v_emp c_emp%ROWTYPE;--ÓÎ±ê¼ÇÂ¼ÀàĞÍÒ»ÖÂµÄ±äÁ¿
+  v_emp c_emp%ROWTYPE;--æ¸¸æ ‡è®°å½•ç±»å‹ä¸€è‡´çš„å˜é‡
 begin 
   v_deptno:=&x;
   open c_emp;
   Loop 
     dbms_output.put_line('id'||'_'||'name'||'_'||'name'||'_'||'sal'||'_'||'deptno');
-    fetch c_emp into v_emp;--°ÑÓÎ±êÖ¸ÏòµÄÊı¾İ·ÅÈë±äÁ¿Àï
+    fetch c_emp into v_emp;--æŠŠæ¸¸æ ‡æŒ‡å‘çš„æ•°æ®æ”¾å…¥å˜é‡é‡Œ
     exit when c_emp%NOTFOUND;
     dbms_output.put_line(v_emp.employee_id||'_'||v_emp.first_name||'_'||v_emp.last_name||'_'||v_emp.salary||'_'||v_deptno);
     end Loop;
     close c_emp;
 end;
 
--- °´¹¤×ÊµÄ¶àÉÙÀ´·Ö±ğĞŞ¸Ä¹¤×Ê 
+-- æŒ‰å·¥èµ„çš„å¤šå°‘æ¥åˆ†åˆ«ä¿®æ”¹å·¥èµ„ 
 savepoint A;
 declare 
   v_sal employees.salary%type;
@@ -46,31 +46,31 @@ commit;
 --  v_emp employees%rowtype;
 --  v_deptno employees.department
 
--- ²éÑ¯Ä³ÈËµÄ¹¤×Ê£¬ÓĞÒì³£²¶×½
+-- æŸ¥è¯¢æŸäººçš„å·¥èµ„ï¼Œæœ‰å¼‚å¸¸æ•æ‰
 declare 
 	v_sal employees.salary%type;
 begin 
-  dbms_output.put_line('½øÈëbegin');
+  dbms_output.put_line('è¿›å…¥begin');
 	select salary into v_sal from employees where last_name='Khoo';
-	dbms_output.put_line('¹¤×Ê:');
+	dbms_output.put_line('å·¥èµ„:');
   dbms_output.put_line(v_sal);
-  dbms_output.put_line('ÍË³öbegin');
+  dbms_output.put_line('é€€å‡ºbegin');
 EXCEPTION
 
 	when no_data_found then 
 		dbms_output.put_line(v_sal);
-    dbms_output.put_line('½øÈëÒì³£1');
+    dbms_output.put_line('è¿›å…¥å¼‚å¸¸1');
 	when too_many_rows then 
 		for v_emp in (select * from employees where last_name='Khoo') loop
 			dbms_output.put_line(v_emp.employee_id||''||v_emp.first_name);
 		end loop;
-    dbms_output.put_line('½øÈëÒì³£2');
+    dbms_output.put_line('è¿›å…¥å¼‚å¸¸2');
 end;
 --
 declare begin dbms_output.put_line('9'); end;
 
   
---------------- ¸ø²»Í¬²¿ÃÅºÅµÄÄ³Ô±¹¤¼Ó²»Í¬µÄ¹¤×Ê  ---------------
+--------------- ç»™ä¸åŒéƒ¨é—¨å·çš„æŸå‘˜å·¥åŠ ä¸åŒçš„å·¥èµ„  ---------------
 create or replace procedure test22(
 	id employees.employee_id%type)
 	as 
@@ -86,14 +86,14 @@ create or replace procedure test22(
 		update employees set salary=salary+plus where employee_id=id;
 	exception
 		when no_data_found then 
-			dbms_output.put_line('Ã»ÓĞÕÒµ½²¿ÃÅºÅ');
+			dbms_output.put_line('æ²¡æœ‰æ‰¾åˆ°éƒ¨é—¨å·');
 end test22;
---Ö´ĞĞ´æ´¢¹ı³Ì
+--æ‰§è¡Œå­˜å‚¨è¿‡ç¨‹
 execute test22(100);
 ----------------------------------------------------------------
-set serveroutput on --Ã¿´ÎÆô¶¯·şÎñºó¶¼ÒªÖ´ĞĞÕâ¾ä»°²Å¿ÉÒÔ¿´µ½Êä³ö
+set serveroutput on --æ¯æ¬¡å¯åŠ¨æœåŠ¡åéƒ½è¦æ‰§è¡Œè¿™å¥è¯æ‰å¯ä»¥çœ‹åˆ°è¾“å‡º
 
---Êä³öËùÓĞ±È±¾²¿ÃÅÆ½¾ù¹¤×Ê¸ßµÄÔ±¹¤ĞÅÏ¢
+--è¾“å‡ºæ‰€æœ‰æ¯”æœ¬éƒ¨é—¨å¹³å‡å·¥èµ„é«˜çš„å‘˜å·¥ä¿¡æ¯
 declare 
 	avg_sal employees.salary%type;
   cursor deptno is  select distinct department_id from employees ;
@@ -101,7 +101,7 @@ declare
 begin
 	for dept in deptno loop
 --  dbms_output.put_line(dept.department_id);
---×¢Òâ´¦Àí¿ÕÖµÇé¿ö
+--æ³¨æ„å¤„ç†ç©ºå€¼æƒ…å†µ
     if dept.department_id is not null then
       select avg(salary)into avg_sal from employees where department_id=dept.department_id;
       for emp in avg_dept loop
@@ -110,7 +110,7 @@ begin
     end if;
 	end loop;
 end;
---ÏÔÊ¾Ê±¼ä´Á
+--æ˜¾ç¤ºæ—¶é—´æˆ³
 declare
 
 begin
@@ -118,7 +118,7 @@ begin
 end;
 
 
--- ·ÖÀà¼Ó¹¤×Ê
+-- åˆ†ç±»åŠ å·¥èµ„
 savepoint  a;
 declare
 	v_plus employees.salary%type;
@@ -141,7 +141,7 @@ end;
 rollback to a;  
 commit;
 
------------------------ º¯Êı ²ÎÊı£¨²¿ÃÅ£©·µ»Ø²¿ÃÅ×î¸ß¹¤×Ê ---------------
+----------------------- å‡½æ•° å‚æ•°ï¼ˆéƒ¨é—¨ï¼‰è¿”å›éƒ¨é—¨æœ€é«˜å·¥èµ„ ---------------
 set serveroutput on
 create or replace function fun_dept_max(
   p_deptno departments.department_id%type)
@@ -157,7 +157,7 @@ begin
       dbms_output.put_line('the deptno is invalid');
   end fun_dept_max;
 
---  ×Ô¶¨Òåº¯ÊıµÄÊ¹ÓÃ ·Ç³£·½±ã£¬¸´ÔÓÂß¼­µÄÔËËã¾Í¿ÉÒÔÔÚÊı¾İ¿âÀïÖ´ĞĞÁË¶ø²»ÊÇÔÚÓ¦ÓÃ³ÌĞò¶ËÖ´ĞĞÅĞ¶ÏÊ²Ã´µÄ
+--  è‡ªå®šä¹‰å‡½æ•°çš„ä½¿ç”¨ éå¸¸æ–¹ä¾¿ï¼Œå¤æ‚é€»è¾‘çš„è¿ç®—å°±å¯ä»¥åœ¨æ•°æ®åº“é‡Œæ‰§è¡Œäº†è€Œä¸æ˜¯åœ¨åº”ç”¨ç¨‹åºç«¯æ‰§è¡Œåˆ¤æ–­ä»€ä¹ˆçš„
 select fun_dept_max(50) from employees;
   
   
@@ -294,7 +294,7 @@ dbms_output.put_line('the department doesn''t exists!');
 end proc_show_emp;
 
 execute proc_show_emp(100);
-------------------------- ²¿ÃÅ²ÎÊı ·µ»Ø²¿ÃÅÆ½¾ù¹¤×Ê
+------------------------- éƒ¨é—¨å‚æ•° è¿”å›éƒ¨é—¨å¹³å‡å·¥èµ„
 create or replace procedure proc_return_deptinfo(
     p_deptno employees.department_id%type,
     p_avgsal out employees.salary%type,
@@ -318,14 +318,14 @@ begin
  proc_return_deptinfo(10,v_avgsal,v_count);
  dbms_output.put_line(v_avgsal||' '||v_count);
  end ;
- set serveroutput on --Ã¿´ÎÆô¶¯·şÎñºó¶¼ÒªÖ´ĞĞÕâ¾ä»°²Å¿ÉÒÔ¿´µ½Êä³ö
+ set serveroutput on --æ¯æ¬¡å¯åŠ¨æœåŠ¡åéƒ½è¦æ‰§è¡Œè¿™å¥è¯æ‰å¯ä»¥çœ‹åˆ°è¾“å‡º
  --------------------------------------------------------------------
 create or replace procedure proc_secure_dml
 is
 begin
   if to_char(sysdate,'hh24:MI')not between '08:00'and '18:00'or
   to_char(sysdate,'DY','NLS_DATE_LANGUAGE=AMERICAN')IN ('SAT','SUN')THEN
-    RAISE_APPLICATION_ERROR(-20205,'Ö»ÄÜÔÚÕı³£µÄ¹¤×÷Ê±¼äÄÚ½øĞĞ¸Ä±ä¡£');
+    RAISE_APPLICATION_ERROR(-20205,'åªèƒ½åœ¨æ­£å¸¸çš„å·¥ä½œæ—¶é—´å†…è¿›è¡Œæ”¹å˜ã€‚');
     end if;
     end proc_secure_dml;
 
@@ -375,7 +375,7 @@ begin
  end loop;
  end;
  set SERVEROUTPUT ON
- --´´½¨°ü¹æ·¶
+ --åˆ›å»ºåŒ…è§„èŒƒ
  create or replace package pkg_emp
  as
   minsal number;
@@ -385,7 +385,7 @@ begin
   procedure add_employee(p_empno number,p_sal number);
 end pkg_emp;
 
---´´½¨°üÌå
+--åˆ›å»ºåŒ…ä½“
  create or replace package body pkg_emp
  as
   procedure update_sal(p_empno number,p_sal number)
@@ -420,19 +420,19 @@ end pkg_emp;
      dbms_output.put_line('the salary is beyond bound!');
   end add_employee;
 end pkg_emp;
-  --µ÷ÓÃupdate_sal,add_employee
+  --è°ƒç”¨update_sal,add_employee
 begin
   pkg_emp.update_sal(141,8000);
   pkg_emp.add_employee(217,9000);
 end;
 commit;
---´¥·¢Æ÷
+--è§¦å‘å™¨
 create or replace trigger trg_secure_ep
 before insert or update or delete on employees
 begin
   if to_char(sysdate,'DY','NLS_DATE_LANGUAGE=AMERICAN')IN('SAT','SUN')
   THEN
-    RAISE_APPLICATION_ERROR(-20005,'Ö»ÄÜÔÚÕı³£µÄ¹¤×÷µÄÊ±¼äÄÚ½øĞĞ¸Ä±ä¡£');
+    RAISE_APPLICATION_ERROR(-20005,'åªèƒ½åœ¨æ­£å¸¸çš„å·¥ä½œçš„æ—¶é—´å†…è¿›è¡Œæ”¹å˜ã€‚');
   end if;
 end trg_secure_emp;
 set SERVEROUTPUT ON
@@ -455,9 +455,9 @@ begin
     end loop;
   end if;
 end trg_emp_dept_stat;
---¸üĞÂ¹¤×ÊºóÏÔÊ¾²¿ÃÅºÅ¼°Æ½¾ù¹¤×Ê
+--æ›´æ–°å·¥èµ„åæ˜¾ç¤ºéƒ¨é—¨å·åŠå¹³å‡å·¥èµ„
 update employees set salary=salary+100;
---´´½¨ĞĞ¼¶´¥·¢Æ÷
+--åˆ›å»ºè¡Œçº§è§¦å‘å™¨
 create or replace trigger trg_emp_dml_row
 before insert or update or delete on employees
 for each row
@@ -475,7 +475,7 @@ end trg_emp_dml_row;
 
  update employees  set salary=salary+100;
  delete from employees where employee_id=102;
- --±äÒì±í´¥·¢Æ÷
+ --å˜å¼‚è¡¨è§¦å‘å™¨
 create or replace package mutate_pkg
 as
   v_deptno number(2);
@@ -505,7 +505,7 @@ end;
 insert into employees(employee_id,first_name,last_name,email,hire_date,job_id,
 department_id)values(300,'Jason','Simth','jason@neusoft.edu.cn',
 'AC_ACCOUNT',50);
---Ë÷Òı±íÖĞÔªËØµÄÉ¾³ı¼°¼¯ºÏÀàĞÍµÄÊôĞÔºÍ·½·¨
+--ç´¢å¼•è¡¨ä¸­å…ƒç´ çš„åˆ é™¤åŠé›†åˆç±»å‹çš„å±æ€§å’Œæ–¹æ³•
 DECLARE
   CURSOR all_emps is select employee_id,first_name,last_name from employees
   order by employee_id;
@@ -521,16 +521,16 @@ begin
   emps_index:=emps_index+1;
   emps(emps_index):=emp;
 end loop;
-dbms_output.put_line('there are '||emps.count||'employee.');--Êä³öË÷Òı±íÔªËØ¸öÊı
-dbms_output.put_line('the min index values is:'||emps.first);--×îĞ¡Ë÷ÒıÖµ
-dbms_output.put_line('the max index values is:'||emps.last);--×î´óË÷ÒıÖµ
-emps.delete(2);--É¾³ıË÷ÒıÖµÎª2µÄÖµ
-emps.delete(6,10);--É¾³ıË÷ÒıÖµ´Ó6µ½10µÄËùÓĞÔªËØ
-dbms_output.put_line('at last,there are '||emps.count||'elements.');--Ê£ÓàÔªËØ¸öÊı
+dbms_output.put_line('there are '||emps.count||'employee.');--è¾“å‡ºç´¢å¼•è¡¨å…ƒç´ ä¸ªæ•°
+dbms_output.put_line('the min index values is:'||emps.first);--æœ€å°ç´¢å¼•å€¼
+dbms_output.put_line('the max index values is:'||emps.last);--æœ€å¤§ç´¢å¼•å€¼
+emps.delete(2);--åˆ é™¤ç´¢å¼•å€¼ä¸º2çš„å€¼
+emps.delete(6,10);--åˆ é™¤ç´¢å¼•å€¼ä»6åˆ°10çš„æ‰€æœ‰å…ƒç´ 
+dbms_output.put_line('at last,there are '||emps.count||'elements.');--å‰©ä½™å…ƒç´ ä¸ªæ•°
 for i in emps.first..emps.last loop
  if emps.exists(i)then
   dbms_output.put_line(emps(i).empno||' '||emps(i).fname||' '||
-  emps(i).lname);--Êä³öÊ£ÓàÔªËØ
+  emps(i).lname);--è¾“å‡ºå‰©ä½™å…ƒç´ 
  end if;
  end loop;
 end;
@@ -540,7 +540,7 @@ declare
   type t
 
 commit;
---°¸ÀıÊı¾İ¿â´¥·¢Æ÷µÄ´´½¨£¬µ±Ô±¹¤Ö°Î»»òĞèÇó±ä¶¯Ê±£¬Ïà¹ØĞÅÏ¢Ğ´Èëjob_history±íÖĞ
+--æ¡ˆä¾‹æ•°æ®åº“è§¦å‘å™¨çš„åˆ›å»ºï¼Œå½“å‘˜å·¥èŒä½æˆ–éœ€æ±‚å˜åŠ¨æ—¶ï¼Œç›¸å…³ä¿¡æ¯å†™å…¥job_historyè¡¨ä¸­
 create or replace trigger trg_update_job_history
 after update of job_id,department_id on employees
 for each row
@@ -560,14 +560,14 @@ end if;
  values(:old.employee_id,v_start_date,sysdate,:old.job_id,
  :old.department_id);
 end trg_update_job_history;
---½«Ô±¹¤ĞÅÏ¢±£´æµ½Ò»¸öÇ¶Ì×±í±äÁ¿ÖĞ£¬²¢ÏÔÊ¾Ô±¹¤ºÅ£¬Ô±¹¤ĞÕÃû£¬¹¤×ÊÓë²¿ÃÅºÅ
+--å°†å‘˜å·¥ä¿¡æ¯ä¿å­˜åˆ°ä¸€ä¸ªåµŒå¥—è¡¨å˜é‡ä¸­ï¼Œå¹¶æ˜¾ç¤ºå‘˜å·¥å·ï¼Œå‘˜å·¥å§“åï¼Œå·¥èµ„ä¸éƒ¨é—¨å·
 set SERVEROUTPUT ON
 declare
 
   cursor all_emps is select*from employees;
   type t_empnested is table of employees%rowtype;
   v_emp t_empnested  :=t_empnested();
-  indexvalue binary_integer£º=1£»
+  indexvalue binary_integerï¼š=1ï¼›
 begin
  for emp in all_emps loop
   v_emp.extend;
@@ -589,7 +589,7 @@ connect myth/ad @orcl;
 
 connect as sysdba
 
---²é¿´µ±Ç°ÓÃ»§ 
+--æŸ¥çœ‹å½“å‰ç”¨æˆ· 
 select user from dual;
 
 create user  hr1 identified by  123;
@@ -609,7 +609,7 @@ select department_id,avg(salary)avgsal from employees group by
 department_id) d where employees.department_id=d.department_id;
 
 select  d.department_id,department_name,ds.amount,ds.avgsal from departments d,(
-select department_id,count(*£©amount,avg(salary)avgsal from employees
+select department_id,count(*ï¼‰amount,avg(salary)avgsal from employees
 group by department_id)ds where d.department_id=ds.department_id;
 
 select *from(

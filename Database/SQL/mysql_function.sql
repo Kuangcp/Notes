@@ -1,9 +1,9 @@
----º¯Êı²¿·Ö,ĞŞ¸Ä¶¨½ç·û 
+---å‡½æ•°éƒ¨åˆ†,ä¿®æ”¹å®šç•Œç¬¦ 
 delimiter //
 CREATE FUNCTION hello (s CHAR(20)) RETURNS CHAR(50)
  RETURN CONCAT('Hello, ',s,'!');
 //
---½«¶¨½ç·û¸Ä»ØÀ´£¬ÊÇµÚ¶ş¾äSQLÓï¾ä
+--å°†å®šç•Œç¬¦æ”¹å›æ¥ï¼Œæ˜¯ç¬¬äºŒå¥SQLè¯­å¥
 delimiter ;
 
 select hello('Myth ');
@@ -17,7 +17,7 @@ create table temp as (select a.sno,sname,a.grade c_20002,a.credit f_20002,b.grad
        student 
        where a.sno=b.sno and a.sno=student.sno and b.sno=c.sno
 );
------------------------------------------------´æ´¢¹ı³Ì Ê¹ÓÃcall¹Ø¼ü×Öµ÷ÓÃ-----------------------------------------
+-----------------------------------------------å­˜å‚¨è¿‡ç¨‹ ä½¿ç”¨callå…³é”®å­—è°ƒç”¨-----------------------------------------
 delimiter //
 create procedure getGrade(classid varchar(20),years varchar(20),terms int)
 	begin 
