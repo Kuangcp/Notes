@@ -7,7 +7,7 @@
        
 
 * Java
-    * Java/Spring
+    * Spring
         * [ SpringbootDatabase.md ](./Java/Spring/SpringbootDatabase.md)
         * [ Spring远程服务.md ](./Java/Spring/Spring远程服务.md)
         * [ SpringBootSecurity.md ](./Java/Spring/SpringBootSecurity.md)
@@ -57,7 +57,7 @@
     * [ CSDN的Markdown案例.md ](./Article/CSDN的Markdown案例.md)
     * [ SomeOneLikeYou歌词.md ](./Article/SomeOneLikeYou歌词.md)
 * TXT
-    * TXT/HTML_CSS
+    * HTML_CSS
         * [ CSS.md ](./TXT/HTML_CSS/CSS.md)
         * [ JQuery.md ](./TXT/HTML_CSS/JQuery.md)
         * [ PS笔记.md ](./TXT/HTML_CSS/PS笔记.md)
