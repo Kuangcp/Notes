@@ -1,8 +1,52 @@
 ## 【文件管理】
-### 基本命令
+### 基本命令 
+
+`rename命令的使用(基于perl)`
+- `rename "s/.html/.php/" * ` //把.html 后缀的改成 .php后缀
+- `rename "s/$/.txt/" *  `   //把所有的文件名都以txt结尾
+- `rename "s/.txt//" *  `   //把所有以.txt结尾的文件名的.txt删掉
+- `rename "s/AA/aa/" * `  //把文件名中的AA替换成aa
+- `rename "s/ - 副本/_bak/" *` 将文件`-副本`结尾改成`_bak`结尾
+
+`cd 命令的灵活使用`
+- `cd - ` 跳转到上一个目录
+- `cd !$` 把上个命令的参数作为cd参数使用。
+- `cd //` 系统根目录 
+
+
+`time`
+- bash内置简易time `time` 和 /usr/bin/time `\time`
+    - \time -v ls -al
+    - 
+
+`file`
+- file a.txt 查看文件类型
+    - -i 输出文件的MIME类型
+    - -F "#" 修改输出分隔符
+    
+`ln`
+- `ln -s 文件或目录 link` 生成软链接（快捷方式）
+
+`find`
+- `find . -name "*.txt"` 查找当前目录的txt后缀的文件
+- `find -type f -name README.md` 默认当前目录查找
+    - d 文件夹 f 普通文件 l 符号链接文件 b 块设备 c 字符设备 p 管道文件 s 套接字
+
 -` rm` 删除` -f `空目录` -rf `有文件也强制删除
 - 清空文件内容 `true > a.txt ` 
 - 上传下载文件的工具 `sudo apt install lrzsz`
+
+#### 善用 ～/.bashrc 文件
+`Alias`
+```
+    if [ -f ~/.bash_aliases ]; then
+        . ~/.bash_aliases
+    fi
+```
+- 在`~/.bashrc`添加这段，然后在 `.bash_aliases` 文件中设置别名
+    - 例如 ： `alias Kgit-notes='cd ~/Documents/Notes/Code_Notes/'` 
+    - 更改文件后，想当前终端就生效就 `source ~/.bashrc` 不执行命令就重启终端即可
+
 *************
 `自定义桌面快捷方式文件`
 ```
@@ -17,26 +61,31 @@
 	Type = Application #desktop的类型（必选），常见值有“Application”和“Link”
 	Categories = GNOME;Application;Network; #注明在菜单栏中显示的类别（可选）
 ```
-- [示例文件](https://github.com/Kuangcp/Notes/tree/master/ConfigFiles/Linux)
+- [示例文件](https://github.com/Kuangcp/Notes/tree/master/ConfigFiles/Linux/VSCode.desktop)
 - 如要将快捷方式放在启动菜单内 将desktop文件放在 `/usr/share/applications/` 目录下即可
 
 ************
 #### 【查看文件大小】du 和 df 命令 
-- `df -h ` 查看挂载文件系统信息
-- `du -sh` 文件夹 查看总大小
+`df -h ` 查看挂载文件系统信息
+
+`du`
+- `du -sh 目录` 查看磁盘占用总大小 h 自动搭配单位
 - `du --max-depth` 一级子目录使用情况
-    du -sm * | sort -n //统计当前目录大小 并安大小 排序
-    du -sk * | sort -n
-    du -sk * | grep guojf //看一个人的大小
-    du -m | cut -d "/" -f 2 //看第二个/ 字符前的文字
-    查看此文件夹有多少文件 /*/*/* 有多少文件
-    du xmldb/
-    du xmldb/*/*/* |wc -l
-    40752
+- du -sm * | sort -n //统计当前目录大小 并安大小 排序
+- du -sk * | sort -n
+- du -sk * | grep guojf //看一个人的大小
+- du -m | cut -d "/" -f 2 //看第二个/ 字符前的文字
+查看此文件夹有多少文件 /*/*/* 有多少文件
+du xmldb/
+du xmldb/*/*/* |wc -l
+40752
     
--  `wc [-lmw] ` 参数说明： -l :多少行-m:多少字符 -w:多少字
-    - cat mul.sh | wc -l
-    - wc -l mul.sh
+`wc [-lmw] ` 参数说明： -l :多少行-m:多少字符 -w:多少字
+- cat mul.sh | wc -l
+- wc -l mul.sh
+    
+`ls`    
+- `ls -hl ` 查看当前目录的各个文件或目录大小 h自动搭配单位
 ***********
 #### 【文件操作】
 - cp   `cp -ri 目录或正则 目录` 目录所有文件复制过去

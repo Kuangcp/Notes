@@ -1,21 +1,21 @@
-Ò»¡¢ORACLEµÄÆô¶¯ºÍ¹Ø±Õ
-1¡¢ÔÚµ¥»ú»·¾³ÏÂ
-ÒªÏëÆô¶¯»ò¹Ø±ÕORACLEÏµÍ³±ØĞëÊ×ÏÈÇĞ»»µ½ORACLEÓÃ»§£¬ÈçÏÂ
+ä¸€ã€ORACLEçš„å¯åŠ¨å’Œå…³é—­
+1ã€åœ¨å•æœºç¯å¢ƒä¸‹
+è¦æƒ³å¯åŠ¨æˆ–å…³é—­ORACLEç³»ç»Ÿå¿…é¡»é¦–å…ˆåˆ‡æ¢åˆ°ORACLEç”¨æˆ·ï¼Œå¦‚ä¸‹
 su - oracle
 
-a¡¢Æô¶¯ORACLEÏµÍ³
+aã€å¯åŠ¨ORACLEç³»ç»Ÿ
 oracle>svrmgrl
 SVRMGR>connect internal
 SVRMGR>startup
 SVRMGR>quit
 
-b¡¢¹Ø±ÕORACLEÏµÍ³
+bã€å…³é—­ORACLEç³»ç»Ÿ
 oracle>svrmgrl
 SVRMGR>connect internal
 SVRMGR>shutdown
 SVRMGR>quit
 
-Æô¶¯oracle9iÊı¾İ¿âÃüÁî£º
+å¯åŠ¨oracle9iæ•°æ®åº“å‘½ä»¤ï¼š
 $ sqlplus /nolog
 
 SQL*Plus: Release 9.2.0.1.0 - Production on Fri Oct 31 13:53:53 2003
@@ -30,164 +30,164 @@ SQL> startup
 ORACLE instance started.
 
 
-2¡¢ÔÚË«»ú»·¾³ÏÂ
-ÒªÏëÆô¶¯»ò¹Ø±ÕORACLEÏµÍ³±ØĞëÊ×ÏÈÇĞ»»µ½rootÓÃ»§£¬ÈçÏÂ
-su £­ root
+2ã€åœ¨åŒæœºç¯å¢ƒä¸‹
+è¦æƒ³å¯åŠ¨æˆ–å…³é—­ORACLEç³»ç»Ÿå¿…é¡»é¦–å…ˆåˆ‡æ¢åˆ°rootç”¨æˆ·ï¼Œå¦‚ä¸‹
+su ï¼ root
 
-a¡¢Æô¶¯ORACLEÏµÍ³
-hareg £­y oracle
+aã€å¯åŠ¨ORACLEç³»ç»Ÿ
+hareg ï¼y oracle
 
-b¡¢¹Ø±ÕORACLEÏµÍ³
-hareg £­n oracle
+bã€å…³é—­ORACLEç³»ç»Ÿ
+hareg ï¼n oracle
 
-OracleÊı¾İ¿âÓĞÄÄ¼¸ÖÖÆô¶¯·½Ê½
+Oracleæ•°æ®åº“æœ‰å“ªå‡ ç§å¯åŠ¨æ–¹å¼
 
 25418925
 
 
-ËµÃ÷£º
+è¯´æ˜ï¼š
 
-ÓĞÒÔÏÂ¼¸ÖÖÆô¶¯·½Ê½£º
-1¡¢startup nomount
-·Ç°²×°Æô¶¯£¬ÕâÖÖ·½Ê½Æô¶¯ÏÂ¿ÉÖ´ĞĞ£ºÖØ½¨¿ØÖÆÎÄ¼ş¡¢ÖØ½¨Êı¾İ¿â
+æœ‰ä»¥ä¸‹å‡ ç§å¯åŠ¨æ–¹å¼ï¼š
+1ã€startup nomount
+éå®‰è£…å¯åŠ¨ï¼Œè¿™ç§æ–¹å¼å¯åŠ¨ä¸‹å¯æ‰§è¡Œï¼šé‡å»ºæ§åˆ¶æ–‡ä»¶ã€é‡å»ºæ•°æ®åº“
 
-¶ÁÈ¡init.oraÎÄ¼ş£¬Æô¶¯instance£¬¼´Æô¶¯SGAºÍºóÌ¨½ø³Ì£¬ÕâÖÖÆô¶¯Ö»ĞèÒªinit.oraÎÄ¼ş¡£
-
-
-2¡¢startup mount dbname
-°²×°Æô¶¯£¬ÕâÖÖ·½Ê½Æô¶¯ÏÂ¿ÉÖ´ĞĞ£º
-Êı¾İ¿âÈÕÖ¾¹éµµ¡¢
-Êı¾İ¿â½éÖÊ»Ö¸´¡¢
-Ê¹Êı¾İÎÄ¼şÁª»ú»òÍÑ»ú£¬
-ÖØĞÂ¶¨Î»Êı¾İÎÄ¼ş¡¢ÖØ×öÈÕÖ¾ÎÄ¼ş¡£
-
-Ö´ĞĞ¡°nomount¡±£¬È»ºó´ò¿ª¿ØÖÆÎÄ¼ş£¬È·ÈÏÊı¾İÎÄ¼şºÍÁª»úÈÕÖ¾ÎÄ¼şµÄÎ»ÖÃ£¬
-µ«´ËÊ±²»¶ÔÊı¾İÎÄ¼şºÍÈÕÖ¾ÎÄ¼ş½øĞĞĞ£Ñé¼ì²é¡£
+è¯»å–init.oraæ–‡ä»¶ï¼Œå¯åŠ¨instanceï¼Œå³å¯åŠ¨SGAå’Œåå°è¿›ç¨‹ï¼Œè¿™ç§å¯åŠ¨åªéœ€è¦init.oraæ–‡ä»¶ã€‚
 
 
-3¡¢startup open dbname
-ÏÈÖ´ĞĞ¡°nomount¡±£¬È»ºóÖ´ĞĞ¡°mount¡±£¬ÔÙ´ò¿ª°üÀ¨Redo logÎÄ¼şÔÚÄÚµÄËùÓĞÊı¾İ¿âÎÄ¼ş£¬
-ÕâÖÖ·½Ê½ÏÂ¿É·ÃÎÊÊı¾İ¿âÖĞµÄÊı¾İ¡£
+2ã€startup mount dbname
+å®‰è£…å¯åŠ¨ï¼Œè¿™ç§æ–¹å¼å¯åŠ¨ä¸‹å¯æ‰§è¡Œï¼š
+æ•°æ®åº“æ—¥å¿—å½’æ¡£ã€
+æ•°æ®åº“ä»‹è´¨æ¢å¤ã€
+ä½¿æ•°æ®æ–‡ä»¶è”æœºæˆ–è„±æœºï¼Œ
+é‡æ–°å®šä½æ•°æ®æ–‡ä»¶ã€é‡åšæ—¥å¿—æ–‡ä»¶ã€‚
+
+æ‰§è¡Œâ€œnomountâ€ï¼Œç„¶åæ‰“å¼€æ§åˆ¶æ–‡ä»¶ï¼Œç¡®è®¤æ•°æ®æ–‡ä»¶å’Œè”æœºæ—¥å¿—æ–‡ä»¶çš„ä½ç½®ï¼Œ
+ä½†æ­¤æ—¶ä¸å¯¹æ•°æ®æ–‡ä»¶å’Œæ—¥å¿—æ–‡ä»¶è¿›è¡Œæ ¡éªŒæ£€æŸ¥ã€‚
 
 
-4¡¢startup£¬µÈÓÚÒÔÏÂÈı¸öÃüÁî
+3ã€startup open dbname
+å…ˆæ‰§è¡Œâ€œnomountâ€ï¼Œç„¶åæ‰§è¡Œâ€œmountâ€ï¼Œå†æ‰“å¼€åŒ…æ‹¬Redo logæ–‡ä»¶åœ¨å†…çš„æ‰€æœ‰æ•°æ®åº“æ–‡ä»¶ï¼Œ
+è¿™ç§æ–¹å¼ä¸‹å¯è®¿é—®æ•°æ®åº“ä¸­çš„æ•°æ®ã€‚
+
+
+4ã€startupï¼Œç­‰äºä»¥ä¸‹ä¸‰ä¸ªå‘½ä»¤
 startup nomount
 alter database mount
 alter database open
 
 
-5¡¢startup restrict
-Ô¼Êø·½Ê½Æô¶¯
-ÕâÖÖ·½Ê½ÄÜ¹»Æô¶¯Êı¾İ¿â£¬µ«Ö»ÔÊĞí¾ßÓĞÒ»¶¨ÌØÈ¨µÄÓÃ»§·ÃÎÊ
-·ÇÌØÈ¨ÓÃ»§·ÃÎÊÊ±£¬»á³öÏÖÒÔÏÂÌáÊ¾£º
-ERROR£º
-ORA-01035: ORACLE Ö»ÔÊĞí¾ßÓĞ RESTRICTED SESSION È¨ÏŞµÄÓÃ»§Ê¹ÓÃ
+5ã€startup restrict
+çº¦æŸæ–¹å¼å¯åŠ¨
+è¿™ç§æ–¹å¼èƒ½å¤Ÿå¯åŠ¨æ•°æ®åº“ï¼Œä½†åªå…è®¸å…·æœ‰ä¸€å®šç‰¹æƒçš„ç”¨æˆ·è®¿é—®
+éç‰¹æƒç”¨æˆ·è®¿é—®æ—¶ï¼Œä¼šå‡ºç°ä»¥ä¸‹æç¤ºï¼š
+ERRORï¼š
+ORA-01035: ORACLE åªå…è®¸å…·æœ‰ RESTRICTED SESSION æƒé™çš„ç”¨æˆ·ä½¿ç”¨
 
 
-6¡¢startup force
-Ç¿ÖÆÆô¶¯·½Ê½
-µ±²»ÄÜ¹Ø±ÕÊı¾İ¿âÊ±£¬¿ÉÒÔÓÃstartup forceÀ´Íê³ÉÊı¾İ¿âµÄ¹Ø±Õ
-ÏÈ¹Ø±ÕÊı¾İ¿â£¬ÔÙÖ´ĞĞÕı³£Æô¶¯Êı¾İ¿âÃüÁî
+6ã€startup force
+å¼ºåˆ¶å¯åŠ¨æ–¹å¼
+å½“ä¸èƒ½å…³é—­æ•°æ®åº“æ—¶ï¼Œå¯ä»¥ç”¨startup forceæ¥å®Œæˆæ•°æ®åº“çš„å…³é—­
+å…ˆå…³é—­æ•°æ®åº“ï¼Œå†æ‰§è¡Œæ­£å¸¸å¯åŠ¨æ•°æ®åº“å‘½ä»¤
 
 
-7¡¢startup pfile=²ÎÊıÎÄ¼şÃû
-´ø³õÊ¼»¯²ÎÊıÎÄ¼şµÄÆô¶¯·½Ê½
-ÏÈ¶ÁÈ¡²ÎÊıÎÄ¼ş£¬ÔÙ°´²ÎÊıÎÄ¼şÖĞµÄÉèÖÃÆô¶¯Êı¾İ¿â
-Àı£ºstartup pfile=E:Oracleadminoradbpfileinit.ora
+7ã€startup pfile=å‚æ•°æ–‡ä»¶å
+å¸¦åˆå§‹åŒ–å‚æ•°æ–‡ä»¶çš„å¯åŠ¨æ–¹å¼
+å…ˆè¯»å–å‚æ•°æ–‡ä»¶ï¼Œå†æŒ‰å‚æ•°æ–‡ä»¶ä¸­çš„è®¾ç½®å¯åŠ¨æ•°æ®åº“
+ä¾‹ï¼šstartup pfile=E:Oracleadminoradbpfileinit.ora
 
 
-8¡¢startup EXCLUSIVE
-¶ş¡¢ÓÃ»§ÈçºÎÓĞĞ§µØÀûÓÃÊı¾İ×Öµä
-  ¡¡ORACLEµÄÊı¾İ×ÖµäÊÇÊı¾İ¿âµÄÖØÒª×é³É²¿·ÖÖ®Ò»£¬ËüËæ×ÅÊı¾İ¿âµÄ²úÉú¶ø²úÉú, Ëæ×ÅÊı¾İ¿âµÄ±ä»¯¶ø±ä»¯,
-ÌåÏÖÎªsysÓÃ»§ÏÂµÄÒ»Ğ©±íºÍÊÓÍ¼¡£Êı¾İ×ÖµäÃû³ÆÊÇ´óĞ´µÄÓ¢ÎÄ×Ö·û¡£
+8ã€startup EXCLUSIVE
+äºŒã€ç”¨æˆ·å¦‚ä½•æœ‰æ•ˆåœ°åˆ©ç”¨æ•°æ®å­—å…¸
+  ã€€ORACLEçš„æ•°æ®å­—å…¸æ˜¯æ•°æ®åº“çš„é‡è¦ç»„æˆéƒ¨åˆ†ä¹‹ä¸€ï¼Œå®ƒéšç€æ•°æ®åº“çš„äº§ç”Ÿè€Œäº§ç”Ÿ, éšç€æ•°æ®åº“çš„å˜åŒ–è€Œå˜åŒ–,
+ä½“ç°ä¸ºsysç”¨æˆ·ä¸‹çš„ä¸€äº›è¡¨å’Œè§†å›¾ã€‚æ•°æ®å­—å…¸åç§°æ˜¯å¤§å†™çš„è‹±æ–‡å­—ç¬¦ã€‚
 
-    Êı¾İ×ÖµäÀï´æÓĞÓÃ»§ĞÅÏ¢¡¢ÓÃ»§µÄÈ¨ÏŞĞÅÏ¢¡¢ËùÓĞÊı¾İ¶ÔÏóĞÅÏ¢¡¢±íµÄÔ¼ÊøÌõ¼ş¡¢Í³¼Æ·ÖÎöÊı¾İ¿âµÄÊÓÍ¼µÈ¡£
-ÎÒÃÇ²»ÄÜÊÖ¹¤ĞŞ¸ÄÊı¾İ×ÖµäÀïµÄĞÅÏ¢¡£
+    æ•°æ®å­—å…¸é‡Œå­˜æœ‰ç”¨æˆ·ä¿¡æ¯ã€ç”¨æˆ·çš„æƒé™ä¿¡æ¯ã€æ‰€æœ‰æ•°æ®å¯¹è±¡ä¿¡æ¯ã€è¡¨çš„çº¦æŸæ¡ä»¶ã€ç»Ÿè®¡åˆ†ææ•°æ®åº“çš„è§†å›¾ç­‰ã€‚
+æˆ‘ä»¬ä¸èƒ½æ‰‹å·¥ä¿®æ”¹æ•°æ®å­—å…¸é‡Œçš„ä¿¡æ¯ã€‚
 
-¡¡¡¡ºÜ¶àÊ±ºò£¬Ò»°ãµÄORACLEÓÃ»§²»ÖªµÀÈçºÎÓĞĞ§µØÀûÓÃËü¡£
+ã€€ã€€å¾ˆå¤šæ—¶å€™ï¼Œä¸€èˆ¬çš„ORACLEç”¨æˆ·ä¸çŸ¥é“å¦‚ä½•æœ‰æ•ˆåœ°åˆ©ç”¨å®ƒã€‚
 
-¡¡¡¡dictionary¡¡¡¡¡¡È«²¿Êı¾İ×Öµä±íµÄÃû³ÆºÍ½âÊÍ£¬ËüÓĞÒ»¸öÍ¬Òå´Êdict
-    dict_column¡¡¡¡ È«²¿Êı¾İ×Öµä±íÀï×Ö¶ÎÃû³ÆºÍ½âÊÍ
+ã€€ã€€dictionaryã€€ã€€ã€€å…¨éƒ¨æ•°æ®å­—å…¸è¡¨çš„åç§°å’Œè§£é‡Šï¼Œå®ƒæœ‰ä¸€ä¸ªåŒä¹‰è¯dict
+    dict_columnã€€ã€€ å…¨éƒ¨æ•°æ®å­—å…¸è¡¨é‡Œå­—æ®µåç§°å’Œè§£é‡Š
 
-    Èç¹ûÎÒÃÇÏë²éÑ¯¸úË÷ÒıÓĞ¹ØµÄÊı¾İ×ÖµäÊ±£¬¿ÉÒÔÓÃÏÂÃæÕâÌõSQLÓï¾ä:
+    å¦‚æœæˆ‘ä»¬æƒ³æŸ¥è¯¢è·Ÿç´¢å¼•æœ‰å…³çš„æ•°æ®å­—å…¸æ—¶ï¼Œå¯ä»¥ç”¨ä¸‹é¢è¿™æ¡SQLè¯­å¥:
 
     SQL>select * from dictionary where instr(comments,'index')>0;
 
-    Èç¹ûÎÒÃÇÏëÖªµÀuser_indexes±í¸÷×Ö¶ÎÃû³ÆµÄÏêÏ¸º¬Òå£¬¿ÉÒÔÓÃÏÂÃæÕâÌõSQLÓï¾ä:
+    å¦‚æœæˆ‘ä»¬æƒ³çŸ¥é“user_indexesè¡¨å„å­—æ®µåç§°çš„è¯¦ç»†å«ä¹‰ï¼Œå¯ä»¥ç”¨ä¸‹é¢è¿™æ¡SQLè¯­å¥:
 
     SQL>select column_name,comments from dict_columns where table_name='USER_INDEXES';
 
-    ÒÀ´ËÀàÍÆ£¬¾Í¿ÉÒÔÇáËÉÖªµÀÊı¾İ×ÖµäµÄÏêÏ¸Ãû³ÆºÍ½âÊÍ£¬²»ÓÃ²é¿´ORACLEµÄÆäËüÎÄµµ×ÊÁÏÁË¡£
+    ä¾æ­¤ç±»æ¨ï¼Œå°±å¯ä»¥è½»æ¾çŸ¥é“æ•°æ®å­—å…¸çš„è¯¦ç»†åç§°å’Œè§£é‡Šï¼Œä¸ç”¨æŸ¥çœ‹ORACLEçš„å…¶å®ƒæ–‡æ¡£èµ„æ–™äº†ã€‚
 
-    ÏÂÃæ°´Àà±ğÁĞ³öÒ»Ğ©ORACLEÓÃ»§³£ÓÃÊı¾İ×ÖµäµÄ²éÑ¯Ê¹ÓÃ·½·¨¡£
+    ä¸‹é¢æŒ‰ç±»åˆ«åˆ—å‡ºä¸€äº›ORACLEç”¨æˆ·å¸¸ç”¨æ•°æ®å­—å…¸çš„æŸ¥è¯¢ä½¿ç”¨æ–¹æ³•ã€‚
 
-    1¡¢ÓÃ»§
+    1ã€ç”¨æˆ·
 
-            ²é¿´µ±Ç°ÓÃ»§µÄÈ±Ê¡±í¿Õ¼ä
+            æŸ¥çœ‹å½“å‰ç”¨æˆ·çš„ç¼ºçœè¡¨ç©ºé—´
             SQL>select username,default_tablespace from user_users;
 
-        ²é¿´µ±Ç°ÓÃ»§µÄ½ÇÉ«
+        æŸ¥çœ‹å½“å‰ç”¨æˆ·çš„è§’è‰²
         SQL>select * from user_role_privs;
 
-        ²é¿´µ±Ç°ÓÃ»§µÄÏµÍ³È¨ÏŞºÍ±í¼¶È¨ÏŞ
+        æŸ¥çœ‹å½“å‰ç”¨æˆ·çš„ç³»ç»Ÿæƒé™å’Œè¡¨çº§æƒé™
         SQL>select * from user_sys_privs;
         SQL>select * from user_tab_privs;
 
-    2¡¢±í
+    2ã€è¡¨
 
-            ²é¿´ÓÃ»§ÏÂËùÓĞµÄ±í
+            æŸ¥çœ‹ç”¨æˆ·ä¸‹æ‰€æœ‰çš„è¡¨
             SQL>select * from user_tables;
 
                            select table_name from user_tables;
-            ²é¿´Ãû³Æ°üº¬log×Ö·ûµÄ±í
+            æŸ¥çœ‹åç§°åŒ…å«logå­—ç¬¦çš„è¡¨
             SQL>select object_name,object_id from user_objects
                 where instr(object_name,'LOG')>0;
 
-            ²é¿´Ä³±íµÄ´´½¨Ê±¼ä
+            æŸ¥çœ‹æŸè¡¨çš„åˆ›å»ºæ—¶é—´
             SQL>select object_name,created from user_objects where object_name=upper('&table_name');
 
-            ²é¿´Ä³±íµÄ´óĞ¡
+            æŸ¥çœ‹æŸè¡¨çš„å¤§å°
             SQL>select sum(bytes)/(1024*1024) as "size(M)" from user_segments
                 where segment_name=upper('&table_name');
 
-            ²é¿´·ÅÔÚORACLEµÄÄÚ´æÇøÀïµÄ±í
+            æŸ¥çœ‹æ”¾åœ¨ORACLEçš„å†…å­˜åŒºé‡Œçš„è¡¨
             SQL>select table_name,cache from user_tables where instr(cache,'Y')>0;
 
-    3¡¢Ë÷Òı
+    3ã€ç´¢å¼•
 
-            ²é¿´Ë÷Òı¸öÊıºÍÀà±ğ
+            æŸ¥çœ‹ç´¢å¼•ä¸ªæ•°å’Œç±»åˆ«
             SQL>select index_name,index_type,table_name from user_indexes order by table_name;
 
-            ²é¿´Ë÷Òı±»Ë÷ÒıµÄ×Ö¶Î
+            æŸ¥çœ‹ç´¢å¼•è¢«ç´¢å¼•çš„å­—æ®µ
             SQL>select * from user_ind_columns where index_name=upper('&index_name');
 
-            ²é¿´Ë÷ÒıµÄ´óĞ¡
+            æŸ¥çœ‹ç´¢å¼•çš„å¤§å°
             SQL>select sum(bytes)/(1024*1024) as "size(M)" from user_segments
                 where segment_name=upper('&index_name');
 
-    4¡¢ĞòÁĞºÅ
+    4ã€åºåˆ—å·
 
-            ²é¿´ĞòÁĞºÅ£¬last_numberÊÇµ±Ç°Öµ
+            æŸ¥çœ‹åºåˆ—å·ï¼Œlast_numberæ˜¯å½“å‰å€¼
             SQL>select * from user_sequences;
 
-    5¡¢ÊÓÍ¼
+    5ã€è§†å›¾
 
-            ²é¿´ÊÓÍ¼µÄÃû³Æ
+            æŸ¥çœ‹è§†å›¾çš„åç§°
             SQL>select view_name from user_views;
 
-            ²é¿´´´½¨ÊÓÍ¼µÄselectÓï¾ä
+            æŸ¥çœ‹åˆ›å»ºè§†å›¾çš„selectè¯­å¥
             SQL>set view_name,text_length from user_views;
-            SQL>set long 2000;                ËµÃ÷£º¿ÉÒÔ¸ù¾İÊÓÍ¼µÄtext_lengthÖµÉè¶¨set long µÄ´óĞ¡
+            SQL>set long 2000;                è¯´æ˜ï¼šå¯ä»¥æ ¹æ®è§†å›¾çš„text_lengthå€¼è®¾å®šset long çš„å¤§å°
             SQL>select text from user_views where view_name=upper('&view_name');
 
-    6¡¢Í¬Òå´Ê
+    6ã€åŒä¹‰è¯
 
-            ²é¿´Í¬Òå´ÊµÄÃû³Æ
+            æŸ¥çœ‹åŒä¹‰è¯çš„åç§°
             SQL>select * from user_synonyms;
 
-    7¡¢Ô¼ÊøÌõ¼ş
+    7ã€çº¦æŸæ¡ä»¶
 
-            ²é¿´Ä³±íµÄÔ¼ÊøÌõ¼ş
+            æŸ¥çœ‹æŸè¡¨çš„çº¦æŸæ¡ä»¶
             SQL>select constraint_name, constraint_type,search_condition, r_constraint_name
                 from user_constraints where table_name = upper('&table_name');
 
@@ -197,32 +197,32 @@ ORA-01035: ORACLE Ö»ÔÊĞí¾ßÓĞ RESTRICTED SESSION È¨ÏŞµÄÓÃ»§Ê¹ÓÃ
             and c.owner = cc.owner and c.constraint_name = cc.constraint_name
             order by cc.position;
 
-    8¡¢´æ´¢º¯ÊıºÍ¹ı³Ì
+    8ã€å­˜å‚¨å‡½æ•°å’Œè¿‡ç¨‹
 
-            ²é¿´º¯ÊıºÍ¹ı³ÌµÄ×´Ì¬
+            æŸ¥çœ‹å‡½æ•°å’Œè¿‡ç¨‹çš„çŠ¶æ€
             SQL>select object_name,status from user_objects where object_type='FUNCTION';
             SQL>select object_name,status from user_objects where object_type='PROCEDURE';
 
-            ²é¿´º¯ÊıºÍ¹ı³ÌµÄÔ´´úÂë
+            æŸ¥çœ‹å‡½æ•°å’Œè¿‡ç¨‹çš„æºä»£ç 
             SQL>select text from all_source where owner=user and name=upper('&plsql_name');
 
 
-Èı¡¢²é¿´Êı¾İ¿âµÄSQL
-1¡¢²é¿´±í¿Õ¼äµÄÃû³Æ¼°´óĞ¡
+ä¸‰ã€æŸ¥çœ‹æ•°æ®åº“çš„SQL
+1ã€æŸ¥çœ‹è¡¨ç©ºé—´çš„åç§°åŠå¤§å°
 
     select t.tablespace_name, round(sum(bytes/(1024*1024)),0) ts_size
     from dba_tablespaces t, dba_data_files d
     where t.tablespace_name = d.tablespace_name
     group by t.tablespace_name;
 
-2¡¢²é¿´±í¿Õ¼äÎïÀíÎÄ¼şµÄÃû³Æ¼°´óĞ¡
+2ã€æŸ¥çœ‹è¡¨ç©ºé—´ç‰©ç†æ–‡ä»¶çš„åç§°åŠå¤§å°
 
     select tablespace_name, file_id, file_name,
     round(bytes/(1024*1024),0) total_space
     from dba_data_files
     order by tablespace_name;
 
-3¡¢²é¿´»Ø¹ö¶ÎÃû³Æ¼°´óĞ¡
+3ã€æŸ¥çœ‹å›æ»šæ®µåç§°åŠå¤§å°
 
     select segment_name, tablespace_name, r.status,
     (initial_extent/1024) InitialExtent,(next_extent/1024) NextExtent,
@@ -231,15 +231,15 @@ ORA-01035: ORACLE Ö»ÔÊĞí¾ßÓĞ RESTRICTED SESSION È¨ÏŞµÄÓÃ»§Ê¹ÓÃ
     Where r.segment_id = v.usn(+)
     order by segment_name ;
 
-4¡¢²é¿´¿ØÖÆÎÄ¼ş
+4ã€æŸ¥çœ‹æ§åˆ¶æ–‡ä»¶
 
     select name from v$controlfile;
 
-5¡¢²é¿´ÈÕÖ¾ÎÄ¼ş
+5ã€æŸ¥çœ‹æ—¥å¿—æ–‡ä»¶
 
     select member from v$logfile;
 
-6¡¢²é¿´±í¿Õ¼äµÄÊ¹ÓÃÇé¿ö
+6ã€æŸ¥çœ‹è¡¨ç©ºé—´çš„ä½¿ç”¨æƒ…å†µ
 
     select sum(bytes)/(1024*1024) as free_space,tablespace_name
     from dba_free_space
@@ -250,126 +250,126 @@ ORA-01035: ORACLE Ö»ÔÊĞí¾ßÓĞ RESTRICTED SESSION È¨ÏŞµÄÓÃ»§Ê¹ÓÃ
     FROM SYS.SM$TS_AVAIL A,SYS.SM$TS_USED B,SYS.SM$TS_FREE C
     WHERE A.TABLESPACE_NAME=B.TABLESPACE_NAME AND A.TABLESPACE_NAME=C.TABLESPACE_NAME;
 
-7¡¢²é¿´Êı¾İ¿â¿â¶ÔÏó
+7ã€æŸ¥çœ‹æ•°æ®åº“åº“å¯¹è±¡
 
     select owner, object_type, status, count(*) count# from all_objects group by owner, object_type, status;
 
-8¡¢²é¿´Êı¾İ¿âµÄ°æ±¾
+8ã€æŸ¥çœ‹æ•°æ®åº“çš„ç‰ˆæœ¬
 
     Select version FROM Product_component_version
     Where SUBSTR(PRODUCT,1,6)='Oracle';
 
-9¡¢²é¿´Êı¾İ¿âµÄ´´½¨ÈÕÆÚºÍ¹éµµ·½Ê½
+9ã€æŸ¥çœ‹æ•°æ®åº“çš„åˆ›å»ºæ—¥æœŸå’Œå½’æ¡£æ–¹å¼
 
     Select Created, Log_Mode, Log_Mode From V$Database;
-ËÄ¡¢ORACLEÓÃ»§Á¬½ÓµÄ¹ÜÀí
+å››ã€ORACLEç”¨æˆ·è¿æ¥çš„ç®¡ç†
 
-ÓÃÏµÍ³¹ÜÀíÔ±£¬²é¿´µ±Ç°Êı¾İ¿âÓĞ¼¸¸öÓÃ»§Á¬½Ó£º
+ç”¨ç³»ç»Ÿç®¡ç†å‘˜ï¼ŒæŸ¥çœ‹å½“å‰æ•°æ®åº“æœ‰å‡ ä¸ªç”¨æˆ·è¿æ¥ï¼š
 
 SQL> select username,sid,serial# from v$session;
 
-Èç¹ûÒªÍ£Ä³¸öÁ¬½ÓÓÃ
+å¦‚æœè¦åœæŸä¸ªè¿æ¥ç”¨
 
 SQL> alter system kill session 'sid,serial#';
 
-Èç¹ûÕâÃüÁî²»ĞĞ,ÕÒËüUNIXµÄ½ø³ÌÊı
+å¦‚æœè¿™å‘½ä»¤ä¸è¡Œ,æ‰¾å®ƒUNIXçš„è¿›ç¨‹æ•°
 
 SQL> select pro.spid from v$session ses,v$process pro where ses.sid=21 and ses.paddr=pro.addr;
 
-ËµÃ÷£º21ÊÇÄ³¸öÁ¬½ÓµÄsidÊı
+è¯´æ˜ï¼š21æ˜¯æŸä¸ªè¿æ¥çš„sidæ•°
 
-È»ºóÓÃ kill ÃüÁîÉ±´Ë½ø³ÌºÅ¡£
+ç„¶åç”¨ kill å‘½ä»¤æ€æ­¤è¿›ç¨‹å·ã€‚
 
 
-Îå¡¢SQL*PLUSÊ¹ÓÃ
-a¡¢½üÈëSQL*Plus
-$sqlplus ÓÃ»§Ãû/ÃÜÂë
+äº”ã€SQL*PLUSä½¿ç”¨
+aã€è¿‘å…¥SQL*Plus
+$sqlplus ç”¨æˆ·å/å¯†ç 
 
-   ÍË³öSQL*Plus
+   é€€å‡ºSQL*Plus
 SQL>exit
 
-b¡¢ÔÚsqlplusÏÂµÃµ½°ïÖúĞÅÏ¢
-ÁĞ³öÈ«²¿SQLÃüÁîºÍSQL*PlusÃüÁî
+bã€åœ¨sqlplusä¸‹å¾—åˆ°å¸®åŠ©ä¿¡æ¯
+åˆ—å‡ºå…¨éƒ¨SQLå‘½ä»¤å’ŒSQL*Pluså‘½ä»¤
 SQL>help
-ÁĞ³öÄ³¸öÌØ¶¨µÄÃüÁîµÄĞÅÏ¢
-SQL>help ÃüÁîÃû
+åˆ—å‡ºæŸä¸ªç‰¹å®šçš„å‘½ä»¤çš„ä¿¡æ¯
+SQL>help å‘½ä»¤å
 
-c¡¢ÏÔÊ¾±í½á¹¹ÃüÁîDESCRIBE
-SQL>DESC ±íÃû
+cã€æ˜¾ç¤ºè¡¨ç»“æ„å‘½ä»¤DESCRIBE
+SQL>DESC è¡¨å
 
-d¡¢SQL*PlusÖĞµÄ±à¼­ÃüÁî
-ÏÔÊ¾SQL»º³åÇøÃüÁî
+dã€SQL*Plusä¸­çš„ç¼–è¾‘å‘½ä»¤
+æ˜¾ç¤ºSQLç¼“å†²åŒºå‘½ä»¤
 SQL>L
 
-ĞŞ¸ÄSQLÃüÁî
-Ê×ÏÈÒª½«´ı¸ÄÕıĞĞ±äÎªµ±Ç°ĞĞ
+ä¿®æ”¹SQLå‘½ä»¤
+é¦–å…ˆè¦å°†å¾…æ”¹æ­£è¡Œå˜ä¸ºå½“å‰è¡Œ
 SQL>n
-ÓÃCHANGEÃüÁîĞŞ¸ÄÄÚÈİ
-SQL>c/¾É/ĞÂ
-ÖØĞÂÈ·ÈÏÊÇ·ñÒÑÕıÈ·
+ç”¨CHANGEå‘½ä»¤ä¿®æ”¹å†…å®¹
+SQL>c/æ—§/æ–°
+é‡æ–°ç¡®è®¤æ˜¯å¦å·²æ­£ç¡®
 SQL>L
 
-Ê¹ÓÃINPUTÃüÁî¿ÉÒÔÔÚSQL»º³åÇøÖĞÔö¼ÓÒ»ĞĞ»ò¶àĞĞ
+ä½¿ç”¨INPUTå‘½ä»¤å¯ä»¥åœ¨SQLç¼“å†²åŒºä¸­å¢åŠ ä¸€è¡Œæˆ–å¤šè¡Œ
 SQL>i
-SQL>ÊäÈëÄÚÈİ
+SQL>è¾“å…¥å†…å®¹
 
-e¡¢µ÷ÓÃÍâ²¿ÏµÍ³±à¼­Æ÷
-SQL>edit ÎÄ¼şÃû
-¿ÉÒÔÊ¹ÓÃDEFINEÃüÁîÉèÖÃÏµÍ³±äÁ¿EDITORÀ´¸Ä±äÎÄ±¾±à¼­Æ÷µÄÀàĞÍ£¬ÔÚlogin.sqlÎÄ¼şÖĞ¶¨ÒåÈçÏÂÒ»ĞĞ
+eã€è°ƒç”¨å¤–éƒ¨ç³»ç»Ÿç¼–è¾‘å™¨
+SQL>edit æ–‡ä»¶å
+å¯ä»¥ä½¿ç”¨DEFINEå‘½ä»¤è®¾ç½®ç³»ç»Ÿå˜é‡EDITORæ¥æ”¹å˜æ–‡æœ¬ç¼–è¾‘å™¨çš„ç±»å‹ï¼Œåœ¨login.sqlæ–‡ä»¶ä¸­å®šä¹‰å¦‚ä¸‹ä¸€è¡Œ
 DEFINE_EDITOR=vi
 
-f¡¢ÔËĞĞÃüÁîÎÄ¼ş
+fã€è¿è¡Œå‘½ä»¤æ–‡ä»¶
 SQL>START test
 SQL>@test
 
-³£ÓÃSQL*PlusÓï¾ä
-a¡¢±íµÄ´´½¨¡¢ĞŞ¸Ä¡¢É¾³ı
-´´½¨±íµÄÃüÁî¸ñÊ½ÈçÏÂ£º
-create table ±íÃû £¨ÁĞËµÃ÷ÁĞ±í£©£»
+å¸¸ç”¨SQL*Plusè¯­å¥
+aã€è¡¨çš„åˆ›å»ºã€ä¿®æ”¹ã€åˆ é™¤
+åˆ›å»ºè¡¨çš„å‘½ä»¤æ ¼å¼å¦‚ä¸‹ï¼š
+create table è¡¨å ï¼ˆåˆ—è¯´æ˜åˆ—è¡¨ï¼‰ï¼›
 
-Îª»ù±íÔö¼ÓĞÂÁĞÃüÁîÈçÏÂ£º
-ALTER TABLE ±íÃû ADD £¨ÁĞËµÃ÷ÁĞ±í£©
-Àı£ºÎªtest±íÔö¼ÓÒ»ÁĞAge£¬ÓÃÀ´´æ·ÅÄêÁä
+ä¸ºåŸºè¡¨å¢åŠ æ–°åˆ—å‘½ä»¤å¦‚ä¸‹ï¼š
+ALTER TABLE è¡¨å ADD ï¼ˆåˆ—è¯´æ˜åˆ—è¡¨ï¼‰
+ä¾‹ï¼šä¸ºtestè¡¨å¢åŠ ä¸€åˆ—Ageï¼Œç”¨æ¥å­˜æ”¾å¹´é¾„
     sql>alter table test
-        add £¨Age number(3)£©£»
+        add ï¼ˆAge number(3)ï¼‰ï¼›
 
-ĞŞ¸Ä»ù±íÁĞ¶¨ÒåÃüÁîÈçÏÂ£º
-ALTER TABLE ±íÃû
-MODIFY £¨ÁĞÃû Êı¾İÀàĞÍ£©
-Àı£º½«test±íÖĞµÄCountÁĞ¿í¶È¼Ó³¤Îª10¸ö×Ö·û
+ä¿®æ”¹åŸºè¡¨åˆ—å®šä¹‰å‘½ä»¤å¦‚ä¸‹ï¼š
+ALTER TABLE è¡¨å
+MODIFY ï¼ˆåˆ—å æ•°æ®ç±»å‹ï¼‰
+ä¾‹ï¼šå°†testè¡¨ä¸­çš„Countåˆ—å®½åº¦åŠ é•¿ä¸º10ä¸ªå­—ç¬¦
     sql>alter atble test
-        modify £¨County char(10)£©£»
+        modify ï¼ˆCounty char(10)ï¼‰ï¼›
 
-b¡¢½«Ò»ÕÅ±íÉ¾³ıÓï¾äµÄ¸ñÊ½ÈçÏÂ£º
-DORP TABLE ±íÃû£»
-Àı£º±íÉ¾³ı½«Í¬Ê±É¾³ı±íµÄÊı¾İºÍ±íµÄ¶¨Òå
+bã€å°†ä¸€å¼ è¡¨åˆ é™¤è¯­å¥çš„æ ¼å¼å¦‚ä¸‹ï¼š
+DORP TABLE è¡¨åï¼›
+ä¾‹ï¼šè¡¨åˆ é™¤å°†åŒæ—¶åˆ é™¤è¡¨çš„æ•°æ®å’Œè¡¨çš„å®šä¹‰
 sql>drop table test
 
-c¡¢±í¿Õ¼äµÄ´´½¨¡¢É¾³ı
+cã€è¡¨ç©ºé—´çš„åˆ›å»ºã€åˆ é™¤
 
 
-Áù¡¢ORACLEÂß¼­±¸·İµÄSHÎÄ¼ş
+å…­ã€ORACLEé€»è¾‘å¤‡ä»½çš„SHæ–‡ä»¶
 
-ÍêÈ«±¸·İµÄSHÎÄ¼ş£ºexp_comp.sh
+å®Œå…¨å¤‡ä»½çš„SHæ–‡ä»¶ï¼šexp_comp.sh
 
 rq=` date +"%m%d" `
 
 su - oracle -c "exp system/manager full=y inctype=complete file=/oracle/export/db_comp$rq.dmp"
 
-ÀÛ¼Æ±¸·İµÄSHÎÄ¼ş£ºexp_cumu.sh
+ç´¯è®¡å¤‡ä»½çš„SHæ–‡ä»¶ï¼šexp_cumu.sh
 
 rq=` date +"%m%d" `
 
 su - oracle -c "exp system/manager full=y inctype=cumulative file=/oracle/export/db_cumu$rq.dmp"
 
-ÔöÁ¿±¸·İµÄSHÎÄ¼ş: exp_incr.sh
+å¢é‡å¤‡ä»½çš„SHæ–‡ä»¶: exp_incr.sh
 
 rq=` date +"%m%d" `
 
 su - oracle -c "exp system/manager full=y inctype=incremental file=/oracle/export/db_incr$rq.dmp"
 
-rootÓÃ»§crontabÎÄ¼ş
-/var/spool/cron/crontabs/rootÔö¼ÓÒÔÏÂÄÚÈİ
+rootç”¨æˆ·crontabæ–‡ä»¶
+/var/spool/cron/crontabs/rootå¢åŠ ä»¥ä¸‹å†…å®¹
 
 0 2 1 * * /oracle/exp_comp.sh
 
@@ -377,276 +377,276 @@ rootÓÃ»§crontabÎÄ¼ş
 
 45 2 * * 6 /oracle/exp_cumu.sh
 
-µ±È»Õâ¸öÊ±¼ä±í¿ÉÒÔ¸ù¾İ²»Í¬µÄĞèÇóÀ´¸Ä±äµÄ£¬ÕâÖ»ÊÇÒ»¸öÀı×Ó¡£
+å½“ç„¶è¿™ä¸ªæ—¶é—´è¡¨å¯ä»¥æ ¹æ®ä¸åŒçš„éœ€æ±‚æ¥æ”¹å˜çš„ï¼Œè¿™åªæ˜¯ä¸€ä¸ªä¾‹å­ã€‚
 
 
-Æß¡¢ORACLE ³£ÓÃµÄSQLÓï·¨ºÍÊı¾İ¶ÔÏó
+ä¸ƒã€ORACLE å¸¸ç”¨çš„SQLè¯­æ³•å’Œæ•°æ®å¯¹è±¡
 
-Ò».Êı¾İ¿ØÖÆÓï¾ä (DML) ²¿·Ö
+ä¸€.æ•°æ®æ§åˆ¶è¯­å¥ (DML) éƒ¨åˆ†
 
-1.INSERT  (ÍùÊı¾İ±íÀï²åÈë¼ÇÂ¼µÄÓï¾ä)
+1.INSERT  (å¾€æ•°æ®è¡¨é‡Œæ’å…¥è®°å½•çš„è¯­å¥)
 
-INSERT INTO ±íÃû(×Ö¶ÎÃû1, ×Ö¶ÎÃû2, ¡­¡­) VALUES ( Öµ1, Öµ2, ¡­¡­);
-INSERT INTO ±íÃû(×Ö¶ÎÃû1, ×Ö¶ÎÃû2, ¡­¡­)  SELECT (×Ö¶ÎÃû1, ×Ö¶ÎÃû2, ¡­¡­) FROM ÁíÍâµÄ±íÃû;
+INSERT INTO è¡¨å(å­—æ®µå1, å­—æ®µå2, â€¦â€¦) VALUES ( å€¼1, å€¼2, â€¦â€¦);
+INSERT INTO è¡¨å(å­—æ®µå1, å­—æ®µå2, â€¦â€¦)  SELECT (å­—æ®µå1, å­—æ®µå2, â€¦â€¦) FROM å¦å¤–çš„è¡¨å;
 
-×Ö·û´®ÀàĞÍµÄ×Ö¶ÎÖµ±ØĞëÓÃµ¥ÒıºÅÀ¨ÆğÀ´, ÀıÈç: ¡¯GOOD DAY¡¯
-Èç¹û×Ö¶ÎÖµÀï°üº¬µ¥ÒıºÅ¡¯ ĞèÒª½øĞĞ×Ö·û´®×ª»», ÎÒÃÇ°ÑËüÌæ»»³ÉÁ½¸öµ¥ÒıºÅ''.
-×Ö·û´®ÀàĞÍµÄ×Ö¶ÎÖµ³¬¹ı¶¨ÒåµÄ³¤¶È»á³ö´í, ×îºÃÔÚ²åÈëÇ°½øĞĞ³¤¶ÈĞ£Ñé.
+å­—ç¬¦ä¸²ç±»å‹çš„å­—æ®µå€¼å¿…é¡»ç”¨å•å¼•å·æ‹¬èµ·æ¥, ä¾‹å¦‚: â€™GOOD DAYâ€™
+å¦‚æœå­—æ®µå€¼é‡ŒåŒ…å«å•å¼•å·â€™ éœ€è¦è¿›è¡Œå­—ç¬¦ä¸²è½¬æ¢, æˆ‘ä»¬æŠŠå®ƒæ›¿æ¢æˆä¸¤ä¸ªå•å¼•å·''.
+å­—ç¬¦ä¸²ç±»å‹çš„å­—æ®µå€¼è¶…è¿‡å®šä¹‰çš„é•¿åº¦ä¼šå‡ºé”™, æœ€å¥½åœ¨æ’å…¥å‰è¿›è¡Œé•¿åº¦æ ¡éªŒ.
 
-ÈÕÆÚ×Ö¶ÎµÄ×Ö¶ÎÖµ¿ÉÒÔÓÃµ±Ç°Êı¾İ¿âµÄÏµÍ³Ê±¼äSYSDATE, ¾«È·µ½Ãë
-»òÕßÓÃ×Ö·û´®×ª»»³ÉÈÕÆÚĞÍº¯ÊıTO_DATE(¡®2001-08-01¡¯,¡¯YYYY-MM-DD¡¯)
-TO_DATE()»¹ÓĞºÜ¶àÖÖÈÕÆÚ¸ñÊ½, ¿ÉÒÔ²Î¿´ORACLE DOC.
-Äê-ÔÂ-ÈÕ Ğ¡Ê±:·ÖÖÓ:Ãë µÄ¸ñÊ½YYYY-MM-DD HH24:MI:SS
+æ—¥æœŸå­—æ®µçš„å­—æ®µå€¼å¯ä»¥ç”¨å½“å‰æ•°æ®åº“çš„ç³»ç»Ÿæ—¶é—´SYSDATE, ç²¾ç¡®åˆ°ç§’
+æˆ–è€…ç”¨å­—ç¬¦ä¸²è½¬æ¢æˆæ—¥æœŸå‹å‡½æ•°TO_DATE(â€˜2001-08-01â€™,â€™YYYY-MM-DDâ€™)
+TO_DATE()è¿˜æœ‰å¾ˆå¤šç§æ—¥æœŸæ ¼å¼, å¯ä»¥å‚çœ‹ORACLE DOC.
+å¹´-æœˆ-æ—¥ å°æ—¶:åˆ†é’Ÿ:ç§’ çš„æ ¼å¼YYYY-MM-DD HH24:MI:SS
 
-INSERTÊ±×î´ó¿É²Ù×÷µÄ×Ö·û´®³¤¶ÈĞ¡ÓÚµÈÓÚ4000¸öµ¥×Ö½Ú, Èç¹ûÒª²åÈë¸ü³¤µÄ×Ö·û´®, Çë¿¼ÂÇ×Ö¶ÎÓÃCLOBÀàĞÍ,
-·½·¨½èÓÃORACLEÀï×Ô´øµÄDBMS_LOB³ÌĞò°ü.
+INSERTæ—¶æœ€å¤§å¯æ“ä½œçš„å­—ç¬¦ä¸²é•¿åº¦å°äºç­‰äº4000ä¸ªå•å­—èŠ‚, å¦‚æœè¦æ’å…¥æ›´é•¿çš„å­—ç¬¦ä¸², è¯·è€ƒè™‘å­—æ®µç”¨CLOBç±»å‹,
+æ–¹æ³•å€Ÿç”¨ORACLEé‡Œè‡ªå¸¦çš„DBMS_LOBç¨‹åºåŒ….
 
-INSERTÊ±Èç¹ûÒªÓÃµ½´Ó1¿ªÊ¼×Ô¶¯Ôö³¤µÄĞòÁĞºÅ, Ó¦¸ÃÏÈ½¨Á¢Ò»¸öĞòÁĞºÅ
-CREATE SEQUENCE ĞòÁĞºÅµÄÃû³Æ (×îºÃÊÇ±íÃû+ĞòÁĞºÅ±ê¼Ç) INCREMENT BY 1  START  WITH  1
+INSERTæ—¶å¦‚æœè¦ç”¨åˆ°ä»1å¼€å§‹è‡ªåŠ¨å¢é•¿çš„åºåˆ—å·, åº”è¯¥å…ˆå»ºç«‹ä¸€ä¸ªåºåˆ—å·
+CREATE SEQUENCE åºåˆ—å·çš„åç§° (æœ€å¥½æ˜¯è¡¨å+åºåˆ—å·æ ‡è®°) INCREMENT BY 1  START  WITH  1
 MAXVALUE  99999  CYCLE  NOCACHE;
-ÆäÖĞ×î´óµÄÖµ°´×Ö¶ÎµÄ³¤¶ÈÀ´¶¨, Èç¹û¶¨ÒåµÄ×Ô¶¯Ôö³¤µÄĞòÁĞºÅ NUMBER(6) , ×î´óÖµÎª999999
-INSERT Óï¾ä²åÈëÕâ¸ö×Ö¶ÎÖµÎª: ĞòÁĞºÅµÄÃû³Æ.NEXTVAL
+å…¶ä¸­æœ€å¤§çš„å€¼æŒ‰å­—æ®µçš„é•¿åº¦æ¥å®š, å¦‚æœå®šä¹‰çš„è‡ªåŠ¨å¢é•¿çš„åºåˆ—å· NUMBER(6) , æœ€å¤§å€¼ä¸º999999
+INSERT è¯­å¥æ’å…¥è¿™ä¸ªå­—æ®µå€¼ä¸º: åºåˆ—å·çš„åç§°.NEXTVAL
 
-2.DELETE  (É¾³ıÊı¾İ±íÀï¼ÇÂ¼µÄÓï¾ä)
+2.DELETE  (åˆ é™¤æ•°æ®è¡¨é‡Œè®°å½•çš„è¯­å¥)
 
-DELETE FROM±íÃû WHERE Ìõ¼ş;
+DELETE FROMè¡¨å WHERE æ¡ä»¶;
 
-×¢Òâ£ºÉ¾³ı¼ÇÂ¼²¢²»ÄÜÊÍ·ÅORACLEÀï±»Õ¼ÓÃµÄÊı¾İ¿é±í¿Õ¼ä. ËüÖ»°ÑÄÇĞ©±»É¾³ıµÄÊı¾İ¿é±ê³Éunused.
+æ³¨æ„ï¼šåˆ é™¤è®°å½•å¹¶ä¸èƒ½é‡Šæ”¾ORACLEé‡Œè¢«å ç”¨çš„æ•°æ®å—è¡¨ç©ºé—´. å®ƒåªæŠŠé‚£äº›è¢«åˆ é™¤çš„æ•°æ®å—æ ‡æˆunused.
 
-Èç¹ûÈ·ÊµÒªÉ¾³ıÒ»¸ö´ó±íÀïµÄÈ«²¿¼ÇÂ¼, ¿ÉÒÔÓÃ TRUNCATE ÃüÁî, Ëü¿ÉÒÔÊÍ·ÅÕ¼ÓÃµÄÊı¾İ¿é±í¿Õ¼ä
-TRUNCATE TABLE ±íÃû;
-´Ë²Ù×÷²»¿É»ØÍË.
+å¦‚æœç¡®å®è¦åˆ é™¤ä¸€ä¸ªå¤§è¡¨é‡Œçš„å…¨éƒ¨è®°å½•, å¯ä»¥ç”¨ TRUNCATE å‘½ä»¤, å®ƒå¯ä»¥é‡Šæ”¾å ç”¨çš„æ•°æ®å—è¡¨ç©ºé—´
+TRUNCATE TABLE è¡¨å;
+æ­¤æ“ä½œä¸å¯å›é€€.
 
-3.UPDATE  (ĞŞ¸ÄÊı¾İ±íÀï¼ÇÂ¼µÄÓï¾ä)
+3.UPDATE  (ä¿®æ”¹æ•°æ®è¡¨é‡Œè®°å½•çš„è¯­å¥)
 
-UPDATE±íÃû SET ×Ö¶ÎÃû1=Öµ1, ×Ö¶ÎÃû2=Öµ2, ¡­¡­ WHERE Ìõ¼ş;
+UPDATEè¡¨å SET å­—æ®µå1=å€¼1, å­—æ®µå2=å€¼2, â€¦â€¦ WHERE æ¡ä»¶;
 
-Èç¹ûĞŞ¸ÄµÄÖµNÃ»ÓĞ¸³Öµ»ò¶¨ÒåÊ±, ½«°ÑÔ­À´µÄ¼ÇÂ¼ÄÚÈİÇåÎªNULL, ×îºÃÔÚĞŞ¸ÄÇ°½øĞĞ·Ç¿ÕĞ£Ñé;
-ÖµN³¬¹ı¶¨ÒåµÄ³¤¶È»á³ö´í, ×îºÃÔÚ²åÈëÇ°½øĞĞ³¤¶ÈĞ£Ñé..
+å¦‚æœä¿®æ”¹çš„å€¼Næ²¡æœ‰èµ‹å€¼æˆ–å®šä¹‰æ—¶, å°†æŠŠåŸæ¥çš„è®°å½•å†…å®¹æ¸…ä¸ºNULL, æœ€å¥½åœ¨ä¿®æ”¹å‰è¿›è¡Œéç©ºæ ¡éªŒ;
+å€¼Nè¶…è¿‡å®šä¹‰çš„é•¿åº¦ä¼šå‡ºé”™, æœ€å¥½åœ¨æ’å…¥å‰è¿›è¡Œé•¿åº¦æ ¡éªŒ..
 
-×¢ÒâÊÂÏî:
-A.        ÒÔÉÏSQLÓï¾ä¶Ô±í¶¼¼ÓÉÏÁËĞĞ¼¶Ëø,
-        È·ÈÏÍê³Éºó, ±ØĞë¼ÓÉÏÊÂÎï´¦Àí½áÊøµÄÃüÁî COMMIT ²ÅÄÜÕıÊ½ÉúĞ§,
-        ·ñÔò¸Ä±ä²»Ò»¶¨Ğ´ÈëÊı¾İ¿âÀï.
-        Èç¹ûÏë³·»ØÕâĞ©²Ù×÷, ¿ÉÒÔÓÃÃüÁî ROLLBACK ¸´Ô­.
+æ³¨æ„äº‹é¡¹:
+A.        ä»¥ä¸ŠSQLè¯­å¥å¯¹è¡¨éƒ½åŠ ä¸Šäº†è¡Œçº§é”,
+        ç¡®è®¤å®Œæˆå, å¿…é¡»åŠ ä¸Šäº‹ç‰©å¤„ç†ç»“æŸçš„å‘½ä»¤ COMMIT æ‰èƒ½æ­£å¼ç”Ÿæ•ˆ,
+        å¦åˆ™æ”¹å˜ä¸ä¸€å®šå†™å…¥æ•°æ®åº“é‡Œ.
+        å¦‚æœæƒ³æ’¤å›è¿™äº›æ“ä½œ, å¯ä»¥ç”¨å‘½ä»¤ ROLLBACK å¤åŸ.
 
-B.        ÔÚÔËĞĞINSERT, DELETE ºÍ UPDATE Óï¾äÇ°×îºÃ¹ÀËãÒ»ÏÂ¿ÉÄÜ²Ù×÷µÄ¼ÇÂ¼·¶Î§,
-        Ó¦¸Ã°ÑËüÏŞ¶¨ÔÚ½ÏĞ¡ (Ò»ÍòÌõ¼ÇÂ¼) ·¶Î§ÄÚ,. ·ñÔòORACLE´¦ÀíÕâ¸öÊÂÎïÓÃµ½ºÜ´óµÄ»ØÍË¶Î.
-        ³ÌĞòÏìÓ¦ÂıÉõÖÁÊ§È¥ÏìÓ¦. Èç¹û¼ÇÂ¼ÊıÉÏÊ®ÍòÒÔÉÏÕâĞ©²Ù×÷, ¿ÉÒÔ°ÑÕâĞ©SQLÓï¾ä·Ö¶Î·Ö´ÎÍê³É,
-        Æä¼ä¼ÓÉÏCOMMIT È·ÈÏÊÂÎï´¦Àí.
-¶ş.Êı¾İ¶¨Òå (DDL) ²¿·Ö
+B.        åœ¨è¿è¡ŒINSERT, DELETE å’Œ UPDATE è¯­å¥å‰æœ€å¥½ä¼°ç®—ä¸€ä¸‹å¯èƒ½æ“ä½œçš„è®°å½•èŒƒå›´,
+        åº”è¯¥æŠŠå®ƒé™å®šåœ¨è¾ƒå° (ä¸€ä¸‡æ¡è®°å½•) èŒƒå›´å†…,. å¦åˆ™ORACLEå¤„ç†è¿™ä¸ªäº‹ç‰©ç”¨åˆ°å¾ˆå¤§çš„å›é€€æ®µ.
+        ç¨‹åºå“åº”æ…¢ç”šè‡³å¤±å»å“åº”. å¦‚æœè®°å½•æ•°ä¸Šåä¸‡ä»¥ä¸Šè¿™äº›æ“ä½œ, å¯ä»¥æŠŠè¿™äº›SQLè¯­å¥åˆ†æ®µåˆ†æ¬¡å®Œæˆ,
+        å…¶é—´åŠ ä¸ŠCOMMIT ç¡®è®¤äº‹ç‰©å¤„ç†.
+äºŒ.æ•°æ®å®šä¹‰ (DDL) éƒ¨åˆ†
 
-1.CREATE (´´½¨±í, Ë÷Òı, ÊÓÍ¼, Í¬Òå´Ê, ¹ı³Ì, º¯Êı, Êı¾İ¿âÁ´½ÓµÈ)
+1.CREATE (åˆ›å»ºè¡¨, ç´¢å¼•, è§†å›¾, åŒä¹‰è¯, è¿‡ç¨‹, å‡½æ•°, æ•°æ®åº“é“¾æ¥ç­‰)
 
-ORACLE³£ÓÃµÄ×Ö¶ÎÀàĞÍÓĞ
-CHAR                        ¹Ì¶¨³¤¶ÈµÄ×Ö·û´®
-VARCHAR2                ¿É±ä³¤¶ÈµÄ×Ö·û´®
-NUMBER(M,N)                Êı×ÖĞÍMÊÇÎ»Êı×Ü³¤¶È, NÊÇĞ¡ÊıµÄ³¤¶È
-DATE                        ÈÕÆÚÀàĞÍ
+ORACLEå¸¸ç”¨çš„å­—æ®µç±»å‹æœ‰
+CHAR                        å›ºå®šé•¿åº¦çš„å­—ç¬¦ä¸²
+VARCHAR2                å¯å˜é•¿åº¦çš„å­—ç¬¦ä¸²
+NUMBER(M,N)                æ•°å­—å‹Mæ˜¯ä½æ•°æ€»é•¿åº¦, Næ˜¯å°æ•°çš„é•¿åº¦
+DATE                        æ—¥æœŸç±»å‹
 
-´´½¨±íÊ±Òª°Ñ½ÏĞ¡µÄ²»Îª¿ÕµÄ×Ö¶Î·ÅÔÚÇ°Ãæ, ¿ÉÄÜÎª¿ÕµÄ×Ö¶Î·ÅÔÚºóÃæ
+åˆ›å»ºè¡¨æ—¶è¦æŠŠè¾ƒå°çš„ä¸ä¸ºç©ºçš„å­—æ®µæ”¾åœ¨å‰é¢, å¯èƒ½ä¸ºç©ºçš„å­—æ®µæ”¾åœ¨åé¢
 
-´´½¨±íÊ±¿ÉÒÔÓÃÖĞÎÄµÄ×Ö¶ÎÃû, µ«×îºÃ»¹ÊÇÓÃÓ¢ÎÄµÄ×Ö¶ÎÃû
+åˆ›å»ºè¡¨æ—¶å¯ä»¥ç”¨ä¸­æ–‡çš„å­—æ®µå, ä½†æœ€å¥½è¿˜æ˜¯ç”¨è‹±æ–‡çš„å­—æ®µå
 
-´´½¨±íÊ±¿ÉÒÔ¸ø×Ö¶Î¼ÓÉÏÄ¬ÈÏÖµ, ÀıÈç DEFAULT SYSDATE
-ÕâÑùÃ¿´Î²åÈëºÍĞŞ¸ÄÊ±, ²»ÓÃ³ÌĞò²Ù×÷Õâ¸ö×Ö¶Î¶¼ÄÜµÃµ½¶¯×÷µÄÊ±¼ä
+åˆ›å»ºè¡¨æ—¶å¯ä»¥ç»™å­—æ®µåŠ ä¸Šé»˜è®¤å€¼, ä¾‹å¦‚ DEFAULT SYSDATE
+è¿™æ ·æ¯æ¬¡æ’å…¥å’Œä¿®æ”¹æ—¶, ä¸ç”¨ç¨‹åºæ“ä½œè¿™ä¸ªå­—æ®µéƒ½èƒ½å¾—åˆ°åŠ¨ä½œçš„æ—¶é—´
 
-´´½¨±íÊ±¿ÉÒÔ¸ø×Ö¶Î¼ÓÉÏÔ¼ÊøÌõ¼ş
-ÀıÈç ²»ÔÊĞíÖØ¸´ UNIQUE, ¹Ø¼ü×Ö PRIMARY KEY
+åˆ›å»ºè¡¨æ—¶å¯ä»¥ç»™å­—æ®µåŠ ä¸Šçº¦æŸæ¡ä»¶
+ä¾‹å¦‚ ä¸å…è®¸é‡å¤ UNIQUE, å…³é”®å­— PRIMARY KEY
 
-2.ALTER        (¸Ä±ä±í, Ë÷Òı, ÊÓÍ¼µÈ)
+2.ALTER        (æ”¹å˜è¡¨, ç´¢å¼•, è§†å›¾ç­‰)
 
-¸Ä±ä±íµÄÃû³Æ
-ALTER TABLE ±íÃû1  TO ±íÃû2;
+æ”¹å˜è¡¨çš„åç§°
+ALTER TABLE è¡¨å1  TO è¡¨å2;
 
-ÔÚ±íµÄºóÃæÔö¼ÓÒ»¸ö×Ö¶Î
-ALTER TABLE±íÃû ADD ×Ö¶ÎÃû ×Ö¶ÎÃûÃèÊö;
+åœ¨è¡¨çš„åé¢å¢åŠ ä¸€ä¸ªå­—æ®µ
+ALTER TABLEè¡¨å ADD å­—æ®µå å­—æ®µåæè¿°;
 
-ĞŞ¸Ä±íÀï×Ö¶ÎµÄ¶¨ÒåÃèÊö
-ALTER TABLE±íÃû MODIFY×Ö¶ÎÃû ×Ö¶ÎÃûÃèÊö;
+ä¿®æ”¹è¡¨é‡Œå­—æ®µçš„å®šä¹‰æè¿°
+ALTER TABLEè¡¨å MODIFYå­—æ®µå å­—æ®µåæè¿°;
 
-¸ø±íÀïµÄ×Ö¶Î¼ÓÉÏÔ¼ÊøÌõ¼ş
-ALTER TABLE ±íÃû ADD CONSTRAINT Ô¼ÊøÃû PRIMARY KEY (×Ö¶ÎÃû);
-ALTER TABLE ±íÃû ADD CONSTRAINT Ô¼ÊøÃû UNIQUE (×Ö¶ÎÃû);
+ç»™è¡¨é‡Œçš„å­—æ®µåŠ ä¸Šçº¦æŸæ¡ä»¶
+ALTER TABLE è¡¨å ADD CONSTRAINT çº¦æŸå PRIMARY KEY (å­—æ®µå);
+ALTER TABLE è¡¨å ADD CONSTRAINT çº¦æŸå UNIQUE (å­—æ®µå);
 
-°Ñ±í·ÅÔÚ»òÈ¡³öÊı¾İ¿âµÄÄÚ´æÇø
-ALTER TABLE ±íÃû CACHE;
-ALTER TABLE ±íÃû NOCACHE;
+æŠŠè¡¨æ”¾åœ¨æˆ–å–å‡ºæ•°æ®åº“çš„å†…å­˜åŒº
+ALTER TABLE è¡¨å CACHE;
+ALTER TABLE è¡¨å NOCACHE;
 
-3.DROP        (É¾³ı±í, Ë÷Òı, ÊÓÍ¼, Í¬Òå´Ê, ¹ı³Ì, º¯Êı, Êı¾İ¿âÁ´½ÓµÈ)
+3.DROP        (åˆ é™¤è¡¨, ç´¢å¼•, è§†å›¾, åŒä¹‰è¯, è¿‡ç¨‹, å‡½æ•°, æ•°æ®åº“é“¾æ¥ç­‰)
 
-É¾³ı±íºÍËüËùÓĞµÄÔ¼ÊøÌõ¼ş
-DROP TABLE ±íÃû CASCADE CONSTRAINTS;
+åˆ é™¤è¡¨å’Œå®ƒæ‰€æœ‰çš„çº¦æŸæ¡ä»¶
+DROP TABLE è¡¨å CASCADE CONSTRAINTS;
 
-4.TRUNCATE (Çå¿Õ±íÀïµÄËùÓĞ¼ÇÂ¼, ±£Áô±íµÄ½á¹¹)
+4.TRUNCATE (æ¸…ç©ºè¡¨é‡Œçš„æ‰€æœ‰è®°å½•, ä¿ç•™è¡¨çš„ç»“æ„)
 
-TRUNCATE ±íÃû;
+TRUNCATE è¡¨å;
 
-Èı.²éÑ¯Óï¾ä (SELECT) ²¿·Ö
+ä¸‰.æŸ¥è¯¢è¯­å¥ (SELECT) éƒ¨åˆ†
 
-SELECT×Ö¶ÎÃû1, ×Ö¶ÎÃû2, ¡­¡­ FROM ±íÃû1, [±íÃû2, ¡­¡­] WHERE Ìõ¼ş;
+SELECTå­—æ®µå1, å­—æ®µå2, â€¦â€¦ FROM è¡¨å1, [è¡¨å2, â€¦â€¦] WHERE æ¡ä»¶;
 
-×Ö¶ÎÃû¿ÉÒÔ´øÈëº¯Êı
-  ÀıÈç:  COUNT(*), MIN(×Ö¶ÎÃû),  MAX(×Ö¶ÎÃû),  AVG(×Ö¶ÎÃû), DISTINCT(×Ö¶ÎÃû),
-           TO_CHAR(DATE×Ö¶ÎÃû,'YYYY-MM-DD HH24:MI:SS')
+å­—æ®µåå¯ä»¥å¸¦å…¥å‡½æ•°
+  ä¾‹å¦‚:  COUNT(*), MIN(å­—æ®µå),  MAX(å­—æ®µå),  AVG(å­—æ®µå), DISTINCT(å­—æ®µå),
+           TO_CHAR(DATEå­—æ®µå,'YYYY-MM-DD HH24:MI:SS')
 
-NVL(EXPR1, EXPR2)º¯Êı
-½âÊÍ:
+NVL(EXPR1, EXPR2)å‡½æ•°
+è§£é‡Š:
 IF EXPR1=NULL
                 RETURN EXPR2
 ELSE
                        RETURN EXPR1
 
-DECODE(AA©oV1©oR1©oV2©oR2....)º¯Êı
-½âÊÍ:
+DECODE(AAï¹V1ï¹R1ï¹V2ï¹R2....)å‡½æ•°
+è§£é‡Š:
 IF AA=V1 THEN RETURN R1
 IF AA=V2 THEN RETURN R2
-..¡­
+..â€¦
 ELSE
 RETURN NULL
 
-LPAD(char1,n,char2)º¯Êı
-½âÊÍ:
-×Ö·ûchar1°´ÖÆ¶¨µÄÎ»ÊınÏÔÊ¾£¬²»×ãµÄÎ»ÊıÓÃchar2×Ö·û´®Ìæ»»×ó±ßµÄ¿ÕÎ»
+LPAD(char1,n,char2)å‡½æ•°
+è§£é‡Š:
+å­—ç¬¦char1æŒ‰åˆ¶å®šçš„ä½æ•°næ˜¾ç¤ºï¼Œä¸è¶³çš„ä½æ•°ç”¨char2å­—ç¬¦ä¸²æ›¿æ¢å·¦è¾¹çš„ç©ºä½
 
-×Ö¶ÎÃûÖ®¼ä¿ÉÒÔ½øĞĞËãÊõÔËËã
-ÀıÈç:  (×Ö¶ÎÃû1*×Ö¶ÎÃû1)/3
+å­—æ®µåä¹‹é—´å¯ä»¥è¿›è¡Œç®—æœ¯è¿ç®—
+ä¾‹å¦‚:  (å­—æ®µå1*å­—æ®µå1)/3
 
-²éÑ¯Óï¾ä¿ÉÒÔÇ¶Ì×
-ÀıÈç: SELECT ¡­¡­ FROM
-(SELECT ¡­¡­ FROM±íÃû1, [±íÃû2, ¡­¡­] WHERE Ìõ¼ş) WHERE Ìõ¼ş2;
+æŸ¥è¯¢è¯­å¥å¯ä»¥åµŒå¥—
+ä¾‹å¦‚: SELECT â€¦â€¦ FROM
+(SELECT â€¦â€¦ FROMè¡¨å1, [è¡¨å2, â€¦â€¦] WHERE æ¡ä»¶) WHERE æ¡ä»¶2;
 
-Á½¸ö²éÑ¯Óï¾äµÄ½á¹û¿ÉÒÔ×ö¼¯ºÏ²Ù×÷
-ÀıÈç: ²¢¼¯UNION(È¥µôÖØ¸´¼ÇÂ¼), ²¢¼¯UNION ALL(²»È¥µôÖØ¸´¼ÇÂ¼), ²î¼¯MINUS,  ½»¼¯INTERSECT
+ä¸¤ä¸ªæŸ¥è¯¢è¯­å¥çš„ç»“æœå¯ä»¥åšé›†åˆæ“ä½œ
+ä¾‹å¦‚: å¹¶é›†UNION(å»æ‰é‡å¤è®°å½•), å¹¶é›†UNION ALL(ä¸å»æ‰é‡å¤è®°å½•), å·®é›†MINUS,  äº¤é›†INTERSECT
 
-·Ö×é²éÑ¯
-SELECT×Ö¶ÎÃû1, ×Ö¶ÎÃû2, ¡­¡­ FROM ±íÃû1, [±íÃû2, ¡­¡­] GROUP BY×Ö¶ÎÃû1
-[HAVING Ìõ¼ş] ;
+åˆ†ç»„æŸ¥è¯¢
+SELECTå­—æ®µå1, å­—æ®µå2, â€¦â€¦ FROM è¡¨å1, [è¡¨å2, â€¦â€¦] GROUP BYå­—æ®µå1
+[HAVING æ¡ä»¶] ;
 
-Á½¸öÒÔÉÏ±íÖ®¼äµÄÁ¬½Ó²éÑ¯
+ä¸¤ä¸ªä»¥ä¸Šè¡¨ä¹‹é—´çš„è¿æ¥æŸ¥è¯¢
 
-SELECT×Ö¶ÎÃû1, ×Ö¶ÎÃû2, ¡­¡­ FROM ±íÃû1, [±íÃû2, ¡­¡­] WHERE
-                ±íÃû1.×Ö¶ÎÃû = ±íÃû2. ×Ö¶ÎÃû [ AND ¡­¡­] ;
+SELECTå­—æ®µå1, å­—æ®µå2, â€¦â€¦ FROM è¡¨å1, [è¡¨å2, â€¦â€¦] WHERE
+                è¡¨å1.å­—æ®µå = è¡¨å2. å­—æ®µå [ AND â€¦â€¦] ;
 
-SELECT×Ö¶ÎÃû1, ×Ö¶ÎÃû2, ¡­¡­ FROM ±íÃû1, [±íÃû2, ¡­¡­] WHERE
-                ±íÃû1.×Ö¶ÎÃû = ±íÃû2. ×Ö¶ÎÃû(+) [ AND ¡­¡­] ;
+SELECTå­—æ®µå1, å­—æ®µå2, â€¦â€¦ FROM è¡¨å1, [è¡¨å2, â€¦â€¦] WHERE
+                è¡¨å1.å­—æ®µå = è¡¨å2. å­—æ®µå(+) [ AND â€¦â€¦] ;
 
-ÓĞ(+)ºÅµÄ×Ö¶ÎÎ»ÖÃ×Ô¶¯²¹¿ÕÖµ
+æœ‰(+)å·çš„å­—æ®µä½ç½®è‡ªåŠ¨è¡¥ç©ºå€¼
 
-²éÑ¯½á¹û¼¯µÄÅÅĞò²Ù×÷, Ä¬ÈÏµÄÅÅĞòÊÇÉıĞòASC, ½µĞòÊÇDESC
+æŸ¥è¯¢ç»“æœé›†çš„æ’åºæ“ä½œ, é»˜è®¤çš„æ’åºæ˜¯å‡åºASC, é™åºæ˜¯DESC
 
-SELECT×Ö¶ÎÃû1, ×Ö¶ÎÃû2, ¡­¡­ FROM ±íÃû1, [±íÃû2, ¡­¡­]
-ORDER BY×Ö¶ÎÃû1, ×Ö¶ÎÃû2 DESC;
+SELECTå­—æ®µå1, å­—æ®µå2, â€¦â€¦ FROM è¡¨å1, [è¡¨å2, â€¦â€¦]
+ORDER BYå­—æ®µå1, å­—æ®µå2 DESC;
 
-×Ö·û´®Ä£ºı±È½ÏµÄ·½·¨
+å­—ç¬¦ä¸²æ¨¡ç³Šæ¯”è¾ƒçš„æ–¹æ³•
 
-INSTR(×Ö¶ÎÃû, ¡®×Ö·û´®¡¯)>0
-×Ö¶ÎÃû LIKE  ¡®×Ö·û´®%¡¯  [¡®%×Ö·û´®%¡¯]
+INSTR(å­—æ®µå, â€˜å­—ç¬¦ä¸²â€™)>0
+å­—æ®µå LIKE  â€˜å­—ç¬¦ä¸²%â€™  [â€˜%å­—ç¬¦ä¸²%â€™]
 
-Ã¿¸ö±í¶¼ÓĞÒ»¸öÒşº¬µÄ×Ö¶ÎROWID, Ëü±ê¼Ç×Å¼ÇÂ¼µÄÎ¨Ò»ĞÔ.
+æ¯ä¸ªè¡¨éƒ½æœ‰ä¸€ä¸ªéšå«çš„å­—æ®µROWID, å®ƒæ ‡è®°ç€è®°å½•çš„å”¯ä¸€æ€§.
 
-ËÄ.ORACLEÀï³£ÓÃµÄÊı¾İ¶ÔÏó (SCHEMA)
+å››.ORACLEé‡Œå¸¸ç”¨çš„æ•°æ®å¯¹è±¡ (SCHEMA)
 
-1.Ë÷Òı (INDEX)
+1.ç´¢å¼• (INDEX)
 
-CREATE INDEX Ë÷ÒıÃûON ±íÃû ( ×Ö¶Î1, [×Ö¶Î2, ¡­¡­] );
-ALTER INDEX Ë÷ÒıÃû REBUILD;
+CREATE INDEX ç´¢å¼•åON è¡¨å ( å­—æ®µ1, [å­—æ®µ2, â€¦â€¦] );
+ALTER INDEX ç´¢å¼•å REBUILD;
 
-Ò»¸ö±íµÄË÷Òı×îºÃ²»Òª³¬¹ıÈı¸ö (ÌØÊâµÄ´ó±í³ıÍâ), ×îºÃÓÃµ¥×Ö¶ÎË÷Òı, ½áºÏSQLÓï¾äµÄ·ÖÎöÖ´ĞĞÇé¿ö,
-Ò²¿ÉÒÔ½¨Á¢¶à×Ö¶ÎµÄ×éºÏË÷ÒıºÍ»ùÓÚº¯ÊıµÄË÷Òı
+ä¸€ä¸ªè¡¨çš„ç´¢å¼•æœ€å¥½ä¸è¦è¶…è¿‡ä¸‰ä¸ª (ç‰¹æ®Šçš„å¤§è¡¨é™¤å¤–), æœ€å¥½ç”¨å•å­—æ®µç´¢å¼•, ç»“åˆSQLè¯­å¥çš„åˆ†ææ‰§è¡Œæƒ…å†µ,
+ä¹Ÿå¯ä»¥å»ºç«‹å¤šå­—æ®µçš„ç»„åˆç´¢å¼•å’ŒåŸºäºå‡½æ•°çš„ç´¢å¼•
 
-ORACLE8.1.7×Ö·û´®¿ÉÒÔË÷ÒıµÄ×î´ó³¤¶ÈÎª1578 µ¥×Ö½Ú
-ORACLE8.0.6×Ö·û´®¿ÉÒÔË÷ÒıµÄ×î´ó³¤¶ÈÎª758 µ¥×Ö½Ú
+ORACLE8.1.7å­—ç¬¦ä¸²å¯ä»¥ç´¢å¼•çš„æœ€å¤§é•¿åº¦ä¸º1578 å•å­—èŠ‚
+ORACLE8.0.6å­—ç¬¦ä¸²å¯ä»¥ç´¢å¼•çš„æœ€å¤§é•¿åº¦ä¸º758 å•å­—èŠ‚
 
-2.ÊÓÍ¼ (VIEW)
+2.è§†å›¾ (VIEW)
 
-CREATE VIEW ÊÓÍ¼ÃûAS SELECT ¡­. FROM ¡­..;
-ALTER VIEWÊÓÍ¼Ãû COMPILE;
+CREATE VIEW è§†å›¾åAS SELECT â€¦. FROM â€¦..;
+ALTER VIEWè§†å›¾å COMPILE;
 
-ÊÓÍ¼½öÊÇÒ»¸öSQL²éÑ¯Óï¾ä, Ëü¿ÉÒÔ°Ñ±íÖ®¼ä¸´ÔÓµÄ¹ØÏµ¼ò½à»¯.
+è§†å›¾ä»…æ˜¯ä¸€ä¸ªSQLæŸ¥è¯¢è¯­å¥, å®ƒå¯ä»¥æŠŠè¡¨ä¹‹é—´å¤æ‚çš„å…³ç³»ç®€æ´åŒ–.
 
-3.Í¬Òå´Ê (SYNONMY)
-CREATE SYNONYMÍ¬Òå´ÊÃûFOR ±íÃû;
-CREATE SYNONYMÍ¬Òå´ÊÃûFOR ±íÃû@Êı¾İ¿âÁ´½ÓÃû;
+3.åŒä¹‰è¯ (SYNONMY)
+CREATE SYNONYMåŒä¹‰è¯åFOR è¡¨å;
+CREATE SYNONYMåŒä¹‰è¯åFOR è¡¨å@æ•°æ®åº“é“¾æ¥å;
 
-4.Êı¾İ¿âÁ´½Ó (DATABASE LINK)
-CREATE DATABASE LINKÊı¾İ¿âÁ´½ÓÃûCONNECT TO ÓÃ»§Ãû IDENTIFIED BY ÃÜÂë USING ¡®Êı¾İ¿âÁ¬½Ó×Ö·û´®¡¯;
+4.æ•°æ®åº“é“¾æ¥ (DATABASE LINK)
+CREATE DATABASE LINKæ•°æ®åº“é“¾æ¥åCONNECT TO ç”¨æˆ·å IDENTIFIED BY å¯†ç  USING â€˜æ•°æ®åº“è¿æ¥å­—ç¬¦ä¸²â€™;
 
-Êı¾İ¿âÁ¬½Ó×Ö·û´®¿ÉÒÔÓÃNET8 EASY CONFIG»òÕßÖ±½ÓĞŞ¸ÄTNSNAMES.ORAÀï¶¨Òå.
+æ•°æ®åº“è¿æ¥å­—ç¬¦ä¸²å¯ä»¥ç”¨NET8 EASY CONFIGæˆ–è€…ç›´æ¥ä¿®æ”¹TNSNAMES.ORAé‡Œå®šä¹‰.
 
-Êı¾İ¿â²ÎÊıglobal_name=trueÊ±ÒªÇóÊı¾İ¿âÁ´½ÓÃû³Æ¸úÔ¶¶ËÊı¾İ¿âÃû³ÆÒ»Ñù
+æ•°æ®åº“å‚æ•°global_name=trueæ—¶è¦æ±‚æ•°æ®åº“é“¾æ¥åç§°è·Ÿè¿œç«¯æ•°æ®åº“åç§°ä¸€æ ·
 
-Êı¾İ¿âÈ«¾ÖÃû³Æ¿ÉÒÔÓÃÒÔÏÂÃüÁî²é³ö
+æ•°æ®åº“å…¨å±€åç§°å¯ä»¥ç”¨ä»¥ä¸‹å‘½ä»¤æŸ¥å‡º
 SELECT * FROM GLOBAL_NAME;
 
-²éÑ¯Ô¶¶ËÊı¾İ¿âÀïµÄ±í
-SELECT ¡­¡­ FROM ±íÃû@Êı¾İ¿âÁ´½ÓÃû;
+æŸ¥è¯¢è¿œç«¯æ•°æ®åº“é‡Œçš„è¡¨
+SELECT â€¦â€¦ FROM è¡¨å@æ•°æ®åº“é“¾æ¥å;
 
-Îå.È¨ÏŞ¹ÜÀí (DCL) Óï¾ä
+äº”.æƒé™ç®¡ç† (DCL) è¯­å¥
 
-1.GRANT        ¸³ÓÚÈ¨ÏŞ
-³£ÓÃµÄÏµÍ³È¨ÏŞ¼¯ºÏÓĞÒÔÏÂÈı¸ö:
-CONNECT(»ù±¾µÄÁ¬½Ó), RESOURCE(³ÌĞò¿ª·¢), DBA(Êı¾İ¿â¹ÜÀí)
-³£ÓÃµÄÊı¾İ¶ÔÏóÈ¨ÏŞÓĞÒÔÏÂÎå¸ö:
-ALL         ON Êı¾İ¶ÔÏóÃû,         SELECT ON Êı¾İ¶ÔÏóÃû,         UPDATE ON Êı¾İ¶ÔÏóÃû,
-DELETE         ON Êı¾İ¶ÔÏóÃû,  INSERT ON Êı¾İ¶ÔÏóÃû,   ALTER  ON Êı¾İ¶ÔÏóÃû
+1.GRANT        èµ‹äºæƒé™
+å¸¸ç”¨çš„ç³»ç»Ÿæƒé™é›†åˆæœ‰ä»¥ä¸‹ä¸‰ä¸ª:
+CONNECT(åŸºæœ¬çš„è¿æ¥), RESOURCE(ç¨‹åºå¼€å‘), DBA(æ•°æ®åº“ç®¡ç†)
+å¸¸ç”¨çš„æ•°æ®å¯¹è±¡æƒé™æœ‰ä»¥ä¸‹äº”ä¸ª:
+ALL         ON æ•°æ®å¯¹è±¡å,         SELECT ON æ•°æ®å¯¹è±¡å,         UPDATE ON æ•°æ®å¯¹è±¡å,
+DELETE         ON æ•°æ®å¯¹è±¡å,  INSERT ON æ•°æ®å¯¹è±¡å,   ALTER  ON æ•°æ®å¯¹è±¡å
 
-GRANT CONNECT, RESOURCE TO ÓÃ»§Ãû;
-GRANT SELECT ON ±íÃû TO ÓÃ»§Ãû;
-GRANT SELECT, INSERT, DELETE ON±íÃû TO ÓÃ»§Ãû1, ÓÃ»§Ãû2;
+GRANT CONNECT, RESOURCE TO ç”¨æˆ·å;
+GRANT SELECT ON è¡¨å TO ç”¨æˆ·å;
+GRANT SELECT, INSERT, DELETE ONè¡¨å TO ç”¨æˆ·å1, ç”¨æˆ·å2;
 
-2.REVOKE »ØÊÕÈ¨ÏŞ
+2.REVOKE å›æ”¶æƒé™
 
-REVOKE CONNECT, RESOURCE FROM ÓÃ»§Ãû;
-REVOKE SELECT ON ±íÃû FROM ÓÃ»§Ãû;
-REVOKE SELECT, INSERT, DELETE ON±íÃû FROM ÓÃ»§Ãû1, ÓÃ»§Ãû2;
+REVOKE CONNECT, RESOURCE FROM ç”¨æˆ·å;
+REVOKE SELECT ON è¡¨å FROM ç”¨æˆ·å;
+REVOKE SELECT, INSERT, DELETE ONè¡¨å FROM ç”¨æˆ·å1, ç”¨æˆ·å2;
 
 
-²éÑ¯Êı¾İ¿âÖĞµÚ63ºÅ´íÎó£º
+æŸ¥è¯¢æ•°æ®åº“ä¸­ç¬¬63å·é”™è¯¯ï¼š
 select orgaddr,destaddr from sm_histable0116 where error_code='63';
 
-²éÑ¯Êı¾İ¿âÖĞ¿ª»§ÓÃ»§×î´óÌá½»ºÍ×î´óÏÂ·¢Êı£º select MSISDN,TCOS,OCOS from ms_usertable£»
+æŸ¥è¯¢æ•°æ®åº“ä¸­å¼€æˆ·ç”¨æˆ·æœ€å¤§æäº¤å’Œæœ€å¤§ä¸‹å‘æ•°ï¼š select MSISDN,TCOS,OCOS from ms_usertableï¼›
 
 
-²éÑ¯Êı¾İ¿âÖĞ¸÷ÖÖ´íÎó´úÂëµÄ×ÜºÍ£º
+æŸ¥è¯¢æ•°æ®åº“ä¸­å„ç§é”™è¯¯ä»£ç çš„æ€»å’Œï¼š
 select error_code,count(*) from sm_histable0513 group by error_code order
 by error_code;
 
-²éÑ¯±¨±íÊı¾İ¿âÖĞ»°µ¥Í³¼ÆÖÖÀà²éÑ¯¡£
+æŸ¥è¯¢æŠ¥è¡¨æ•°æ®åº“ä¸­è¯å•ç»Ÿè®¡ç§ç±»æŸ¥è¯¢ã€‚
 select sum(Successcount) from tbl_MiddleMt0411 where ServiceType2=111
 select sum(successcount),servicetype from tbl_middlemt0411 group by servicetype
 
 
-Ô­ÎÄµØÖ·£ºhttp://www.cnoug.org/viewthread.php?tid=60293
+åŸæ–‡åœ°å€ï¼šhttp://www.cnoug.org/viewthread.php?tid=60293
 
-//´´½¨Ò»¸ö¿ØÖÆÎÄ¼şÃüÁîµ½¸ú×ÙÎÄ¼ş 
+//åˆ›å»ºä¸€ä¸ªæ§åˆ¶æ–‡ä»¶å‘½ä»¤åˆ°è·Ÿè¸ªæ–‡ä»¶ 
 alter database backup controlfile to trace; 
 
-//Ôö¼ÓÒ»¸öĞÂµÄÈÕÖ¾ÎÄ¼ş×éµÄÓï¾ä 
+//å¢åŠ ä¸€ä¸ªæ–°çš„æ—¥å¿—æ–‡ä»¶ç»„çš„è¯­å¥ 
 connect internal as sysdba 
 alter database 
 add logfile group 4 
-(¡¯/db01/oracle/CC1/log_1c.dbf¡¯, 
- ¡¯/db02/oracle/CC1/log_2c.dbf¡¯) size 5M; 
+(â€™/db01/oracle/CC1/log_1c.dbfâ€™, 
+ â€™/db02/oracle/CC1/log_2c.dbfâ€™) size 5M; 
 
 alter database 
-add logfile member ¡¯/db03/oracle/CC1/log_3c.dbf¡¯ 
+add logfile member â€™/db03/oracle/CC1/log_3c.dbfâ€™ 
 to group 4; 
-//ÔÚServer ManagerÉÏMOUNT²¢´ò¿ªÒ»¸öÊı¾İ¿â: 
+//åœ¨Server Managerä¸ŠMOUNTå¹¶æ‰“å¼€ä¸€ä¸ªæ•°æ®åº“: 
 connect internal as sysdba 
 startup mount ORA1 exclusive; 
 alter database open; 
 
-//Éú³ÉÊı¾İ×Öµä 
+//ç”Ÿæˆæ•°æ®å­—å…¸ 
 @catalog 
 @catproc 
 
-//ÔÚinit.ora ÖĞ±¸·İÊı¾İ¿âµÄÎ»ÖÃ 
-log_archive_dest_1 = ¡¯/db00/arch¡¯ 
+//åœ¨init.ora ä¸­å¤‡ä»½æ•°æ®åº“çš„ä½ç½® 
+log_archive_dest_1 = â€™/db00/archâ€™ 
 log_archive_dest_state_1 = enable 
 log_archive_dest_2 = "service=stby.world mandatory reopen=60" 
 log_archive_dest_state_2 = enable 
-//¶ÔÓÃ»§µÄ±í¿Õ¼äµÄÖ¸¶¨ºÍ¹ÜÀíÏà¹ØµÄÓï¾ä 
+//å¯¹ç”¨æˆ·çš„è¡¨ç©ºé—´çš„æŒ‡å®šå’Œç®¡ç†ç›¸å…³çš„è¯­å¥ 
 create user USERNAME identified by PASSWORD 
 default tablespace TABLESPACE_NAME; 
 alter user USERNAME default tablespace TABLESPACE_NAME; 
@@ -657,52 +657,52 @@ default tablespace DATA
 temporary tablespace TEMP; 
 alter user USERNAME temporary tablespace TEMP; 
 
-//ÖØĞÂÖ¸¶¨Ò»¸öÊı¾İÎÄ¼şµÄ´óĞ¡ : 
+//é‡æ–°æŒ‡å®šä¸€ä¸ªæ•°æ®æ–‡ä»¶çš„å¤§å° : 
 alter database 
-datafile ¡¯/db05/oracle/CC1/data01.dbf¡¯ resize 200M; 
+datafile â€™/db05/oracle/CC1/data01.dbfâ€™ resize 200M; 
 
-//´´½¨Ò»¸ö×Ô¶¯À©Õ¹µÄÊı¾İÎÄ¼ş: 
+//åˆ›å»ºä¸€ä¸ªè‡ªåŠ¨æ‰©å±•çš„æ•°æ®æ–‡ä»¶: 
 create tablespace DATA 
-datafile ¡¯/db05/oracle/CC1/data01.dbf¡¯ size 200M 
+datafile â€™/db05/oracle/CC1/data01.dbfâ€™ size 200M 
 autoextend ON 
 next 10M 
 maxsize 250M; 
 
-//ÔÚ±í¿Õ¼äÉÏÔö¼ÓÒ»¸ö×Ô¶¯À©Õ¹µÄÊı¾İÎÄ¼ş: 
+//åœ¨è¡¨ç©ºé—´ä¸Šå¢åŠ ä¸€ä¸ªè‡ªåŠ¨æ‰©å±•çš„æ•°æ®æ–‡ä»¶: 
 alter tablespace DATA 
-add datafile ¡¯/db05/oracle/CC1/data02.dbf¡¯ 
+add datafile â€™/db05/oracle/CC1/data02.dbfâ€™ 
 size 50M 
 autoextend ON 
 maxsize 300M; 
 
-//ĞŞ¸Ä²ÎÊı: 
+//ä¿®æ”¹å‚æ•°: 
 alter database 
-datafile ¡¯/db05/oracle/CC1/data01.dbf¡¯ 
+datafile â€™/db05/oracle/CC1/data01.dbfâ€™ 
 autoextend ON 
 maxsize 300M; 
 
-//ÔÚÊı¾İÎÄ¼şÒÆ¶¯ÆÚ¼äÖØĞÂÃüÃû: 
+//åœ¨æ•°æ®æ–‡ä»¶ç§»åŠ¨æœŸé—´é‡æ–°å‘½å: 
 alter database rename file 
- ¡¯/db01/oracle/CC1/data01.dbf¡¯ to 
- ¡¯/db02/oracle/CC1/data01.dbf¡¯; 
+ â€™/db01/oracle/CC1/data01.dbfâ€™ to 
+ â€™/db02/oracle/CC1/data01.dbfâ€™; 
 
 alter tablespace DATA rename datafile 
- ¡¯/db01/oracle/CC1/data01.dbf¡¯ to 
- ¡¯/db02/oracle/CC1/data01.dbf¡¯; 
+ â€™/db01/oracle/CC1/data01.dbfâ€™ to 
+ â€™/db02/oracle/CC1/data01.dbfâ€™; 
 
 alter database rename file  
- ¡¯/db05/oracle/CC1/redo01CC1.dbf¡¯ to 
- ¡¯/db02/oracle/CC1/redo01CC1.dbf¡¯; 
+ â€™/db05/oracle/CC1/redo01CC1.dbfâ€™ to 
+ â€™/db02/oracle/CC1/redo01CC1.dbfâ€™; 
 
-alter database datafile ¡¯/db05/oracle/CC1/data01.dbf¡¯  
+alter database datafile â€™/db05/oracle/CC1/data01.dbfâ€™  
 resize 80M; 
 
-//´´½¨ºÍÊ¹ÓÃ½ÇÉ«: 
+//åˆ›å»ºå’Œä½¿ç”¨è§’è‰²: 
 create role APPLICATION_USER; 
 grant CREATE SESSION to APPLICATION_USER; 
 grant APPLICATION_USER to username; 
 
- //»Ø¹ö¶ÎµÄ¹ÜÀí 
+ //å›æ»šæ®µçš„ç®¡ç† 
 create rollback segment SEGMENT_NAME 
 tablespace RBS; 
 
@@ -711,26 +711,26 @@ alter rollback segment SEGMENT_NAME offline;
 drop rollback segment SEGMENT_NAME; 
 
 alter rollback segment SEGMENT_NAME online; 
-//»Ø¹ö¶ÎÉÏÖ¸¶¨ÊÂÎñ 
+//å›æ»šæ®µä¸ŠæŒ‡å®šäº‹åŠ¡ 
 commit; 
 set transaction use rollback segment ROLL_BATCH; 
 insert into TABLE_NAME 
 select * from DATA_LOAD_TABLE; 
 commit; 
 
-//²éÑ¯»Ø¹ö¶ÎµÄ ´óĞ¡ºÍÓÅ»¯²ÎÊı 
+//æŸ¥è¯¢å›æ»šæ®µçš„ å¤§å°å’Œä¼˜åŒ–å‚æ•° 
 select * from DBA_SEGMENTS 
- where Segment_Type = ¡¯ROLLBACK¡¯; 
+ where Segment_Type = â€™ROLLBACKâ€™; 
 select N.Name,         /* rollback segment name */ 
        S.OptSize       /* rollback segment OPTIMAL size */ 
 from V$ROLLNAME N, V$ROLLSTAT S 
 where N.USN=S.USN; 
 
-//»ØÊÕ»Ø¹ö¶Î 
+//å›æ”¶å›æ»šæ®µ 
 alter rollback segment R1 shrink to 15M; 
 alter rollback segment R1 shrink; 
 
-//Àı×Ó 
+//ä¾‹å­ 
 set transaction use rollback segment SEGMENT_NAME 
 
 alter tablespace RBS 
@@ -744,7 +744,7 @@ alter rollback segment R4 online;
 select Sessions_Highwater from V$LICENSE; 
 grant select on EMPLOYEE to PUBLIC; 
 
-//ÓÃ»§ºÍ½ÇÉ«  
+//ç”¨æˆ·å’Œè§’è‰²  
 create role ACCOUNT_CREATOR; 
 grant CREATE SESSION, CREATE USER, ALTER USER  
    to ACCOUNT_CREATOR; 
@@ -770,7 +770,7 @@ PASSWORD_LIFE_TIME 30;
 
 alter user jane password expire; 
 
-//´´½¨²Ù×÷ÏµÍ³ÓÃ»§ 
+//åˆ›å»ºæ“ä½œç³»ç»Ÿç”¨æˆ· 
 REM  Creating OPS$ accounts 
 create user OPS$FARMER 
 identified by SOME_PASSWORD 
@@ -783,7 +783,7 @@ identified externally
 default tablespace USERS 
 temporary tablespace TEMP; 
 
-//Ö´ĞĞORAPWD 
+//æ‰§è¡ŒORAPWD 
 ORAPWD FILE=filename PASSWORD=password ENTRIES=max_users 
 
 create role APPLICATION_USER; 
@@ -796,15 +796,15 @@ grant APPLICATION_USER to DATA_ENTRY_CLERK;
 grant DATA_ENTRY_CLERK to MCGREGOR; 
 grant DATA_ENTRY_CLERK to BPOTTER with admin option; 
 
-//ÉèÖÃ½ÇÉ« 
+//è®¾ç½®è§’è‰² 
 set role DATA_ENTRY_CLERK; 
 set role NONE; 
 
-//»ØÊÕÈ¨Àû: 
+//å›æ”¶æƒåˆ©: 
 revoke delete on EMPLOYEE from PETER; 
 revoke all on EMPLOYEE from MCGREGOR; 
 
-//»ØÊÕ½ÇÉ«: 
+//å›æ”¶è§’è‰²: 
 revoke ACCOUNT_CREATOR from HELPDESK; 
 
 drop user USERNAME cascade; 
@@ -813,22 +813,22 @@ grant SELECT on EMPLOYEE to MCGREGOR with grant option;
 grant SELECT on THUMPER.EMPLOYEE to BPOTTER with grant option; 
 revoke SELECT on EMPLOYEE from MCGREGOR; 
 
-create user MCGREGOR identified by VALUES ¡¯1A2DD3CCEE354DFA¡¯; 
+create user MCGREGOR identified by VALUES â€™1A2DD3CCEE354DFAâ€™; 
 
-alter user OPS$FARMER identified by VALUES ¡¯no way¡¯; 
+alter user OPS$FARMER identified by VALUES â€™no wayâ€™; 
 
-//±¸·İÓë»Ö¸´ 
-Ê¹ÓÃ export ³ÌĞò 
+//å¤‡ä»½ä¸æ¢å¤ 
+ä½¿ç”¨ export ç¨‹åº 
 exp system/manager file=expdat.dmp compress=Y owner=(HR,THUMPER) 
 exp system/manager file=hr.dmp owner=HR indexes=Y compress=Y 
 imp system/manager file=hr.dmp full=Y buffer=64000 commit=Y 
 
-//±¸·İ±í 
+//å¤‡ä»½è¡¨ 
 exp system/manager FILE=expdat.dmp TABLES=(Thumper.SALES) 
-//±¸·İ·ÖÇø 
+//å¤‡ä»½åˆ†åŒº 
 exp system/manager FILE=expdat.dmp TABLES=(Thumper.SALES:Part1) 
 
-//ÊäÈëÀı×Ó 
+//è¾“å…¥ä¾‹å­ 
 imp system/manager file=expdat.dmp 
 imp system/manager file=expdat.dmp buffer=64000 commit=Y 
 
@@ -839,13 +839,13 @@ imp system/manager file=thumper.dat FROMUSER=thumper TOUSER=flower
 imp system/manager file=expdat.dmp full=Y commit=Y buffer=64000 
 imp system/manager file=expdat.dmp ignore=N rows=N commit=Y buffer=64000 
 
-//Ê¹ÓÃ²Ù×÷ÏµÍ³±¸·İÃüÁî 
+//ä½¿ç”¨æ“ä½œç³»ç»Ÿå¤‡ä»½å‘½ä»¤ 
 REM  TAR examples 
 tar -cvf /dev/rmt/0hc /db0[1-9]/oracle/CC1 
 tar -rvf /dev/rmt/0hc /orasw/app/oracle/CC1/pfile/initcc1.ora 
 tar -rvf /dev/rmt/0hc /db0[1-9]/oracle/CC1 /orasw/app/oracle/CC1/pfile/initcc1.ora 
 
-//ÀëÏß±¸·İµÄshell½Å±¾ 
+//ç¦»çº¿å¤‡ä»½çš„shellè„šæœ¬ 
 ORACLE_SID=cc1; export ORACLE_SID 
 ORAENV_ASK=NO; export ORAENV_ASK 
 . oraenv 
@@ -860,14 +860,14 @@ connect internal as sysdba
 startup 
 EOF2 
 
-//ÔÚServer ManagerÉÏÉèÖÃÎªarchivelog mode: 
+//åœ¨Server Managerä¸Šè®¾ç½®ä¸ºarchivelog mode: 
 connect internal as sysdba 
 startup mount cc1; 
 alter database archivelog; 
 archive log start; 
 alter database open; 
 
-//ÔÚServer ManagerÉÏÉèÖÃÎªarchivelog mode: 
+//åœ¨Server Managerä¸Šè®¾ç½®ä¸ºarchivelog mode: 
 connect internal as sysdba 
 startup mount cc1; 
 alter database noarchivelog; 
@@ -876,9 +876,9 @@ alter database open;
 select Name, 
        Value 
   from V$PARAMETER 
- where Name like ¡¯log_archive%¡¯; 
+ where Name like â€™log_archive%â€™; 
 
-//Áª»ú±¸·İµÄ½Å±¾ 
+//è”æœºå¤‡ä»½çš„è„šæœ¬ 
 # 
 # Sample Hot Backup Script for a UNIX File System database 
 # 
@@ -889,7 +889,7 @@ ORAENV_ASK=NO; export ORAENV_ASK
 svrmgrl <<EOFarch1 
 connect internal as sysdba 
 REM 
-REM   ±¸·İ SYSTEM tablespace 
+REM   å¤‡ä»½ SYSTEM tablespace 
 REM 
 alter tablespace SYSTEM begin backup; 
 !tar -cvf /dev/rmt/0hc /db01/oracle/CC1/sys01.dbf 
@@ -900,13 +900,13 @@ REM   tar saveset on the tape device /dev/rmt/0hc.  The
 REM   rest of the tars must use the "-rvf" clause to append 
 REM   to that saveset. 
 REM 
-REM   ±¸·İ  RBS tablespace 
+REM   å¤‡ä»½  RBS tablespace 
 REM 
 alter tablespace RBS begin backup; 
 !tar -rvf /dev/rmt/0hc /db02/oracle/CC1/rbs01.dbf 
 alter tablespace RBS end backup; 
 REM 
-REM   ±¸·İ  DATA tablespace 
+REM   å¤‡ä»½  DATA tablespace 
 REM   For the purposes of this example, this tablespace 
 REM   will contain two files, data01.dbf and data02.dbf. 
 REM   The * wildcard will be used in the filename. 
@@ -915,13 +915,13 @@ alter tablespace DATA begin backup;
 !tar -rvf /dev/rmt/0hc /db03/oracle/CC1/data0*.dbf 
 alter tablespace DATA end backup; 
 REM 
-REM   ±¸·İ INDEXES tablespace 
+REM   å¤‡ä»½ INDEXES tablespace 
 REM 
 alter tablespace INDEXES begin backup; 
 !tar -rvf /dev/rmt/0hc /db04/oracle/CC1/indexes01.dbf 
 alter tablespace INDEXES end backup; 
 REM 
-REM   ±¸·İ  TEMP tablespace 
+REM   å¤‡ä»½  TEMP tablespace 
 REM 
 alter tablespace TEMP begin backup; 
 !tar -rvf /dev/rmt/0hc /db05/oracle/CC1/temp01.dbf 
@@ -931,7 +931,7 @@ REM   Follow the same pattern to back up the rest
 REM   of the tablespaces. 
 REM 
 REM     
-REM  Step 2.  ±¸·İ¹éµµÈÕÖ¾ÎÄ¼ş. 
+REM  Step 2.  å¤‡ä»½å½’æ¡£æ—¥å¿—æ–‡ä»¶. 
 archive log stop 
 REM 
 REM   Exit Server Manager, using the indicator set earlier. 
@@ -965,41 +965,41 @@ EOFarch2
 tar -rvf /dev/rmt/0hc $FILES 
 rm -f $FILES 
 # 
-#     Step 3.  ±¸·İ¿ØÖÆÎÄ¼şµ½´ÅÅÌ. 
+#     Step 3.  å¤‡ä»½æ§åˆ¶æ–‡ä»¶åˆ°ç£ç›˜. 
 # 
 svrmgrl <<EOFarch3 
 connect internal 
 alter database backup controlfile to 
-   ¡¯db01/oracle/CC1/CC1controlfile.bck¡¯; 
+   â€™db01/oracle/CC1/CC1controlfile.bckâ€™; 
 exit 
 EOFarch3 
 # 
-#  ±¸·İ¿ØÖÆÎÄ¼şµ½´Å´ø. 
+#  å¤‡ä»½æ§åˆ¶æ–‡ä»¶åˆ°ç£å¸¦. 
 # 
 tar -rvf /dev/rmt/0hc /db01/oracle/CC1/CC1controlfile.bck 
 # 
 #  End of hot backup script. 
-//×Ô¶¯Éú³É¿ªÊ¼±¸·İµÄ½Å±¾ 
+//è‡ªåŠ¨ç”Ÿæˆå¼€å§‹å¤‡ä»½çš„è„šæœ¬ 
 set pagesize 0 feedback off 
 select  
-    ¡¯alter tablespace ¡¯||Tablespace_Name||¡¯ begin backup;¡¯ 
+    â€™alter tablespace â€™||Tablespace_Name||â€™ begin backup;â€™ 
   from DBA_TABLESPACES 
- where Status <> ¡¯INVALID¡¯ 
+ where Status <> â€™INVALIDâ€™ 
 spool alter_begin.sql 
 / 
 spool off 
 
-//×Ô¶¯Éú³É±¸·İ½áÊøµÄ½Å±¾ 
+//è‡ªåŠ¨ç”Ÿæˆå¤‡ä»½ç»“æŸçš„è„šæœ¬ 
 set pagesize 0 feedback off 
 select  
-    ¡¯alter tablespace ¡¯||Tablespace_Name||¡¯ end backup;¡¯ 
+    â€™alter tablespace â€™||Tablespace_Name||â€™ end backup;â€™ 
   from DBA_TABLESPACES 
- where Status <> ¡¯INVALID¡¯ 
+ where Status <> â€™INVALIDâ€™ 
 spool alter_end.sql 
 / 
 spool off 
 
-//±¸·İ¹éµµÈÕÖ¾ÎÄ¼şµÄ½Å±¾. 
+//å¤‡ä»½å½’æ¡£æ—¥å¿—æ–‡ä»¶çš„è„šæœ¬. 
 REM  See text for alternatives. 
 #     Step 1: Stop the archiving process. This will keep 
 #     additional archived redo log files from being written 
@@ -1046,7 +1046,7 @@ rm -f $FILES
 # 
 #     End of archived redo log file backup script. 
 
-REM  ´ÅÅÌµ½´ÅÅÌµÄ±¸·İ 
+REM  ç£ç›˜åˆ°ç£ç›˜çš„å¤‡ä»½ 
 REM 
 REM   Back up the RBS tablespace - to another disk (UNIX) 
 REM 
@@ -1055,7 +1055,7 @@ alter tablespace RBS begin backup;
 alter tablespace RBS end backup; 
 REM 
 
-REM  ÒÆ¶¯¹éµµÈÕÖ¾ÎÄ¼şµÄshell½Å±¾ 
+REM  ç§»åŠ¨å½’æ¡£æ—¥å¿—æ–‡ä»¶çš„shellè„šæœ¬ 
 # 
 # Procedure for moving archived redo logs to another device 
 # 
@@ -1069,24 +1069,24 @@ EOFarch2
 # 
 # end of archived redo log directory move. 
 
-//Éú³É´´½¨¿ØÖÆÎÄ¼şÃüÁî 
+//ç”Ÿæˆåˆ›å»ºæ§åˆ¶æ–‡ä»¶å‘½ä»¤ 
 alter database backup controlfile to trace; 
 
-//Ê±¼äµã»Ö¸´µÄÀı×Ó 
+//æ—¶é—´ç‚¹æ¢å¤çš„ä¾‹å­ 
 connect internal as sysdba 
 startup mount instance_name; 
-recover database until time ¡¯1999-08-07:14:40:00¡¯; 
+recover database until time â€™1999-08-07:14:40:00â€™; 
 
-//´´½¨»Ö¸´Ä¿Â¼ 
+//åˆ›å»ºæ¢å¤ç›®å½• 
 rman rcvcat rman/rman@<database_service_name> 
 
-// ÔÚ(UNIX)ÏÂ´´½¨»Ö¸´Ä¿Â¼ 
+// åœ¨(UNIX)ä¸‹åˆ›å»ºæ¢å¤ç›®å½• 
 RMAN> create catalog tablespace rcvcat; 
 
-// ÔÚ(NT)ÏÂ´´½¨»Ö¸´Ä¿Â¼ 
+// åœ¨(NT)ä¸‹åˆ›å»ºæ¢å¤ç›®å½• 
 RMAN> create catalog tablespace "RCVCAT"; 
 
-//Á¬½ÓÃèÊö·û·¶Àı  
+//è¿æ¥æè¿°ç¬¦èŒƒä¾‹  
 (DESCRIPTION= 
       (ADDRESS= 
             (PROTOCOL=TCP) 
@@ -1095,9 +1095,9 @@ RMAN> create catalog tablespace "RCVCAT";
       (CONNECT DATA= 
             (SID=loc))) 
 
-// listener.ora µÄÌõÄ¿entry 
+// listener.ora çš„æ¡ç›®entry 
 
-// listener.ora µÄÌõÄ¿entry 
+// listener.ora çš„æ¡ç›®entry 
 LISTENER = 
 (ADDRESS_LIST = 
 (ADDRESS= 
@@ -1113,7 +1113,7 @@ SID_LIST_LISTENER =
 ) 
 ) 
 
-// tnsnames.ora µÄÌõÄ¿ 
+// tnsnames.ora çš„æ¡ç›® 
 LOC= 
 (DESCRIPTION= 
 (ADDRESS = 
@@ -1127,7 +1127,7 @@ LOC=
 ) 
 ) 
 
-//Á¬½Ó²ÎÊıµÄÉèÖÃ£¨sql*net£© 
+//è¿æ¥å‚æ•°çš„è®¾ç½®ï¼ˆsql*netï¼‰ 
 LOC =(DESCRIPTION= 
 (ADDRESS= 
 (COMMUNITY=TCP.HQ.COMPANY) 
@@ -1136,7 +1136,7 @@ LOC =(DESCRIPTION=
 (PORT=1521)) 
 (CONNECT DATA= 
 (SID=loc))) 
-//²ÎÊıÎÄ¼şÅäÖÃ·¶Àı 
+//å‚æ•°æ–‡ä»¶é…ç½®èŒƒä¾‹ 
 // tnsnames.ora 
 HQ =(DESCRIPTION= 
 (ADDRESS= 
@@ -1176,7 +1176,7 @@ LOC=
 ) 
 ) 
 
-//Ê¹ÓÃ COPY ÊµÏÖÊı¾İ¿âÖ®¼äµÄ¸´ÖÆ 
+//ä½¿ç”¨ COPY å®ç°æ•°æ®åº“ä¹‹é—´çš„å¤åˆ¶ 
 copy from 
 remote_username/remote_password@service_name 
 to 
@@ -1194,26 +1194,26 @@ using -
 select * from EMPLOYEE 
 
 
-//¼àÊÓÆ÷µÄ¹ÜÀí 
+//ç›‘è§†å™¨çš„ç®¡ç† 
 lsnrctl start 
 lsnrctl start my_lsnr 
 lsnrctl status 
 lsnrctl status hq 
 
-¼ì²é¼àÊÓÆ÷µÄ½ø³Ì 
+æ£€æŸ¥ç›‘è§†å™¨çš„è¿›ç¨‹ 
 ps -ef | grep tnslsnr 
-//ÔÚ lsnrctl ÄÚÍ£Ö¹¼àÊÓÆ÷ 
+//åœ¨ lsnrctl å†…åœæ­¢ç›‘è§†å™¨ 
 set password lsnr_password 
 stop 
 
-//ÔÚlsnrctl ÄÚÁĞ³öËùÓĞµÄ·şÎñ 
+//åœ¨lsnrctl å†…åˆ—å‡ºæ‰€æœ‰çš„æœåŠ¡ 
 set password lsnr_password 
 services 
-//Æô¶¯»òÍ£Ö¹Ò»¸öNTµÄlistener 
+//å¯åŠ¨æˆ–åœæ­¢ä¸€ä¸ªNTçš„listener 
 net start Oracle<version_name>TNSListener 
 net stop Oracle<version_name>TNSListener 
 
-// tnsnames.ora ÎÄ¼şµÄÄÚÈİ 
+// tnsnames.ora æ–‡ä»¶çš„å†…å®¹ 
 fld1 = 
 (DESCRIPTION = 
 (ADDRESS_LIST = 
@@ -1224,49 +1224,49 @@ fld1 =
 (SID = fld1) 
 ) 
 ) 
-//²Ù×÷ÏµÍ³ÍøÂçµÄ¹ÜÀí 
+//æ“ä½œç³»ç»Ÿç½‘ç»œçš„ç®¡ç† 
 
 telnet host_name 
 ping host_name 
-/etc/hosts ÎÄ¼ş 
+/etc/hosts æ–‡ä»¶ 
 130.110.238.109 nmhost 
 130.110.238.101 txhost 
 130.110.238.102 azhost arizona 
-//oratab ±íÏî 
+//oratab è¡¨é¡¹ 
 loc:/orasw/app/oracle/product/8.1.5.1:Y 
 cc1:/orasw/app/oracle/product/8.1.5.1:N 
 old:/orasw/app/oracle/product/8.1.5.0:Y
 
  
 
-//´´½¨Ò»¸ö¿ØÖÆÎÄ¼şÃüÁîµ½¸ú×ÙÎÄ¼ş 
+//åˆ›å»ºä¸€ä¸ªæ§åˆ¶æ–‡ä»¶å‘½ä»¤åˆ°è·Ÿè¸ªæ–‡ä»¶ 
 alter database backup controlfile to trace; 
 
-//Ôö¼ÓÒ»¸öĞÂµÄÈÕÖ¾ÎÄ¼ş×éµÄÓï¾ä 
+//å¢åŠ ä¸€ä¸ªæ–°çš„æ—¥å¿—æ–‡ä»¶ç»„çš„è¯­å¥ 
 connect internal as sysdba 
 alter database 
 add logfile group 4 
-(¡¯/db01/oracle/CC1/log_1c.dbf¡¯, 
- ¡¯/db02/oracle/CC1/log_2c.dbf¡¯) size 5M; 
+(â€™/db01/oracle/CC1/log_1c.dbfâ€™, 
+ â€™/db02/oracle/CC1/log_2c.dbfâ€™) size 5M; 
 
 alter database 
-add logfile member ¡¯/db03/oracle/CC1/log_3c.dbf¡¯ 
+add logfile member â€™/db03/oracle/CC1/log_3c.dbfâ€™ 
 to group 4; 
-//ÔÚServer ManagerÉÏMOUNT²¢´ò¿ªÒ»¸öÊı¾İ¿â: 
+//åœ¨Server Managerä¸ŠMOUNTå¹¶æ‰“å¼€ä¸€ä¸ªæ•°æ®åº“: 
 connect internal as sysdba 
 startup mount ORA1 exclusive; 
 alter database open; 
 
-//Éú³ÉÊı¾İ×Öµä 
+//ç”Ÿæˆæ•°æ®å­—å…¸ 
 @catalog 
 @catproc 
 
-//ÔÚinit.ora ÖĞ±¸·İÊı¾İ¿âµÄÎ»ÖÃ 
-log_archive_dest_1 = ¡¯/db00/arch¡¯ 
+//åœ¨init.ora ä¸­å¤‡ä»½æ•°æ®åº“çš„ä½ç½® 
+log_archive_dest_1 = â€™/db00/archâ€™ 
 log_archive_dest_state_1 = enable 
 log_archive_dest_2 = "service=stby.world mandatory reopen=60" 
 log_archive_dest_state_2 = enable 
-//¶ÔÓÃ»§µÄ±í¿Õ¼äµÄÖ¸¶¨ºÍ¹ÜÀíÏà¹ØµÄÓï¾ä 
+//å¯¹ç”¨æˆ·çš„è¡¨ç©ºé—´çš„æŒ‡å®šå’Œç®¡ç†ç›¸å…³çš„è¯­å¥ 
 create user USERNAME identified by PASSWORD 
 default tablespace TABLESPACE_NAME; 
 alter user USERNAME default tablespace TABLESPACE_NAME; 
@@ -1277,52 +1277,52 @@ default tablespace DATA
 temporary tablespace TEMP; 
 alter user USERNAME temporary tablespace TEMP; 
 
-//ÖØĞÂÖ¸¶¨Ò»¸öÊı¾İÎÄ¼şµÄ´óĞ¡ : 
+//é‡æ–°æŒ‡å®šä¸€ä¸ªæ•°æ®æ–‡ä»¶çš„å¤§å° : 
 alter database 
-datafile ¡¯/db05/oracle/CC1/data01.dbf¡¯ resize 200M; 
+datafile â€™/db05/oracle/CC1/data01.dbfâ€™ resize 200M; 
 
-//´´½¨Ò»¸ö×Ô¶¯À©Õ¹µÄÊı¾İÎÄ¼ş: 
+//åˆ›å»ºä¸€ä¸ªè‡ªåŠ¨æ‰©å±•çš„æ•°æ®æ–‡ä»¶: 
 create tablespace DATA 
-datafile ¡¯/db05/oracle/CC1/data01.dbf¡¯ size 200M 
+datafile â€™/db05/oracle/CC1/data01.dbfâ€™ size 200M 
 autoextend ON 
 next 10M 
 maxsize 250M; 
 
-//ÔÚ±í¿Õ¼äÉÏÔö¼ÓÒ»¸ö×Ô¶¯À©Õ¹µÄÊı¾İÎÄ¼ş: 
+//åœ¨è¡¨ç©ºé—´ä¸Šå¢åŠ ä¸€ä¸ªè‡ªåŠ¨æ‰©å±•çš„æ•°æ®æ–‡ä»¶: 
 alter tablespace DATA 
-add datafile ¡¯/db05/oracle/CC1/data02.dbf¡¯ 
+add datafile â€™/db05/oracle/CC1/data02.dbfâ€™ 
 size 50M 
 autoextend ON 
 maxsize 300M; 
 
-//ĞŞ¸Ä²ÎÊı: 
+//ä¿®æ”¹å‚æ•°: 
 alter database 
-datafile ¡¯/db05/oracle/CC1/data01.dbf¡¯ 
+datafile â€™/db05/oracle/CC1/data01.dbfâ€™ 
 autoextend ON 
 maxsize 300M; 
 
-//ÔÚÊı¾İÎÄ¼şÒÆ¶¯ÆÚ¼äÖØĞÂÃüÃû: 
+//åœ¨æ•°æ®æ–‡ä»¶ç§»åŠ¨æœŸé—´é‡æ–°å‘½å: 
 alter database rename file 
- ¡¯/db01/oracle/CC1/data01.dbf¡¯ to 
- ¡¯/db02/oracle/CC1/data01.dbf¡¯; 
+ â€™/db01/oracle/CC1/data01.dbfâ€™ to 
+ â€™/db02/oracle/CC1/data01.dbfâ€™; 
 
 alter tablespace DATA rename datafile 
- ¡¯/db01/oracle/CC1/data01.dbf¡¯ to 
- ¡¯/db02/oracle/CC1/data01.dbf¡¯; 
+ â€™/db01/oracle/CC1/data01.dbfâ€™ to 
+ â€™/db02/oracle/CC1/data01.dbfâ€™; 
 
 alter database rename file  
- ¡¯/db05/oracle/CC1/redo01CC1.dbf¡¯ to 
- ¡¯/db02/oracle/CC1/redo01CC1.dbf¡¯; 
+ â€™/db05/oracle/CC1/redo01CC1.dbfâ€™ to 
+ â€™/db02/oracle/CC1/redo01CC1.dbfâ€™; 
 
-alter database datafile ¡¯/db05/oracle/CC1/data01.dbf¡¯  
+alter database datafile â€™/db05/oracle/CC1/data01.dbfâ€™  
 resize 80M; 
 
-//´´½¨ºÍÊ¹ÓÃ½ÇÉ«: 
+//åˆ›å»ºå’Œä½¿ç”¨è§’è‰²: 
 create role APPLICATION_USER; 
 grant CREATE SESSION to APPLICATION_USER; 
 grant APPLICATION_USER to username; 
 
- //»Ø¹ö¶ÎµÄ¹ÜÀí 
+ //å›æ»šæ®µçš„ç®¡ç† 
 create rollback segment SEGMENT_NAME 
 tablespace RBS; 
 
@@ -1331,26 +1331,26 @@ alter rollback segment SEGMENT_NAME offline;
 drop rollback segment SEGMENT_NAME; 
 
 alter rollback segment SEGMENT_NAME online; 
-//»Ø¹ö¶ÎÉÏÖ¸¶¨ÊÂÎñ 
+//å›æ»šæ®µä¸ŠæŒ‡å®šäº‹åŠ¡ 
 commit; 
 set transaction use rollback segment ROLL_BATCH; 
 insert into TABLE_NAME 
 select * from DATA_LOAD_TABLE; 
 commit; 
 
-//²éÑ¯»Ø¹ö¶ÎµÄ ´óĞ¡ºÍÓÅ»¯²ÎÊı 
+//æŸ¥è¯¢å›æ»šæ®µçš„ å¤§å°å’Œä¼˜åŒ–å‚æ•° 
 select * from DBA_SEGMENTS 
- where Segment_Type = ¡¯ROLLBACK¡¯; 
+ where Segment_Type = â€™ROLLBACKâ€™; 
 select N.Name,         /* rollback segment name */ 
        S.OptSize       /* rollback segment OPTIMAL size */ 
 from V$ROLLNAME N, V$ROLLSTAT S 
 where N.USN=S.USN; 
 
-//»ØÊÕ»Ø¹ö¶Î 
+//å›æ”¶å›æ»šæ®µ 
 alter rollback segment R1 shrink to 15M; 
 alter rollback segment R1 shrink; 
 
-//Àı×Ó 
+//ä¾‹å­ 
 set transaction use rollback segment SEGMENT_NAME 
 
 alter tablespace RBS 
@@ -1364,7 +1364,7 @@ alter rollback segment R4 online;
 select Sessions_Highwater from V$LICENSE; 
 grant select on EMPLOYEE to PUBLIC; 
 
-//ÓÃ»§ºÍ½ÇÉ«  
+//ç”¨æˆ·å’Œè§’è‰²  
 create role ACCOUNT_CREATOR; 
 grant CREATE SESSION, CREATE USER, ALTER USER  
    to ACCOUNT_CREATOR; 
@@ -1390,7 +1390,7 @@ PASSWORD_LIFE_TIME 30;
 
 alter user jane password expire; 
 
-//´´½¨²Ù×÷ÏµÍ³ÓÃ»§ 
+//åˆ›å»ºæ“ä½œç³»ç»Ÿç”¨æˆ· 
 REM  Creating OPS$ accounts 
 create user OPS$FARMER 
 identified by SOME_PASSWORD 
@@ -1403,7 +1403,7 @@ identified externally
 default tablespace USERS 
 temporary tablespace TEMP; 
 
-//Ö´ĞĞORAPWD 
+//æ‰§è¡ŒORAPWD 
 ORAPWD FILE=filename PASSWORD=password ENTRIES=max_users 
 
 create role APPLICATION_USER; 
@@ -1416,15 +1416,15 @@ grant APPLICATION_USER to DATA_ENTRY_CLERK;
 grant DATA_ENTRY_CLERK to MCGREGOR; 
 grant DATA_ENTRY_CLERK to BPOTTER with admin option; 
 
-//ÉèÖÃ½ÇÉ« 
+//è®¾ç½®è§’è‰² 
 set role DATA_ENTRY_CLERK; 
 set role NONE; 
 
-//»ØÊÕÈ¨Àû: 
+//å›æ”¶æƒåˆ©: 
 revoke delete on EMPLOYEE from PETER; 
 revoke all on EMPLOYEE from MCGREGOR; 
 
-//»ØÊÕ½ÇÉ«: 
+//å›æ”¶è§’è‰²: 
 revoke ACCOUNT_CREATOR from HELPDESK; 
 
 drop user USERNAME cascade; 
@@ -1433,22 +1433,22 @@ grant SELECT on EMPLOYEE to MCGREGOR with grant option;
 grant SELECT on THUMPER.EMPLOYEE to BPOTTER with grant option; 
 revoke SELECT on EMPLOYEE from MCGREGOR; 
 
-create user MCGREGOR identified by VALUES ¡¯1A2DD3CCEE354DFA¡¯; 
+create user MCGREGOR identified by VALUES â€™1A2DD3CCEE354DFAâ€™; 
 
-alter user OPS$FARMER identified by VALUES ¡¯no way¡¯; 
+alter user OPS$FARMER identified by VALUES â€™no wayâ€™; 
 
-//±¸·İÓë»Ö¸´ 
-Ê¹ÓÃ export ³ÌĞò 
+//å¤‡ä»½ä¸æ¢å¤ 
+ä½¿ç”¨ export ç¨‹åº 
 exp system/manager file=expdat.dmp compress=Y owner=(HR,THUMPER) 
 exp system/manager file=hr.dmp owner=HR indexes=Y compress=Y 
 imp system/manager file=hr.dmp full=Y buffer=64000 commit=Y 
 
-//±¸·İ±í 
+//å¤‡ä»½è¡¨ 
 exp system/manager FILE=expdat.dmp TABLES=(Thumper.SALES) 
-//±¸·İ·ÖÇø 
+//å¤‡ä»½åˆ†åŒº 
 exp system/manager FILE=expdat.dmp TABLES=(Thumper.SALES:Part1) 
 
-//ÊäÈëÀı×Ó 
+//è¾“å…¥ä¾‹å­ 
 imp system/manager file=expdat.dmp 
 imp system/manager file=expdat.dmp buffer=64000 commit=Y 
 
@@ -1459,13 +1459,13 @@ imp system/manager file=thumper.dat FROMUSER=thumper TOUSER=flower
 imp system/manager file=expdat.dmp full=Y commit=Y buffer=64000 
 imp system/manager file=expdat.dmp ignore=N rows=N commit=Y buffer=64000 
 
-//Ê¹ÓÃ²Ù×÷ÏµÍ³±¸·İÃüÁî 
+//ä½¿ç”¨æ“ä½œç³»ç»Ÿå¤‡ä»½å‘½ä»¤ 
 REM  TAR examples 
 tar -cvf /dev/rmt/0hc /db0[1-9]/oracle/CC1 
 tar -rvf /dev/rmt/0hc /orasw/app/oracle/CC1/pfile/initcc1.ora 
 tar -rvf /dev/rmt/0hc /db0[1-9]/oracle/CC1 /orasw/app/oracle/CC1/pfile/initcc1.ora 
 
-//ÀëÏß±¸·İµÄshell½Å±¾ 
+//ç¦»çº¿å¤‡ä»½çš„shellè„šæœ¬ 
 ORACLE_SID=cc1; export ORACLE_SID 
 ORAENV_ASK=NO; export ORAENV_ASK 
 . oraenv 
@@ -1480,14 +1480,14 @@ connect internal as sysdba
 startup 
 EOF2 
 
-//ÔÚServer ManagerÉÏÉèÖÃÎªarchivelog mode: 
+//åœ¨Server Managerä¸Šè®¾ç½®ä¸ºarchivelog mode: 
 connect internal as sysdba 
 startup mount cc1; 
 alter database archivelog; 
 archive log start; 
 alter database open; 
 
-//ÔÚServer ManagerÉÏÉèÖÃÎªarchivelog mode: 
+//åœ¨Server Managerä¸Šè®¾ç½®ä¸ºarchivelog mode: 
 connect internal as sysdba 
 startup mount cc1; 
 alter database noarchivelog; 
@@ -1496,9 +1496,9 @@ alter database open;
 select Name, 
        Value 
   from V$PARAMETER 
- where Name like ¡¯log_archive%¡¯; 
+ where Name like â€™log_archive%â€™; 
 
-//Áª»ú±¸·İµÄ½Å±¾ 
+//è”æœºå¤‡ä»½çš„è„šæœ¬ 
 # 
 # Sample Hot Backup Script for a UNIX File System database 
 # 
@@ -1509,7 +1509,7 @@ ORAENV_ASK=NO; export ORAENV_ASK
 svrmgrl <<EOFarch1 
 connect internal as sysdba 
 REM 
-REM   ±¸·İ SYSTEM tablespace 
+REM   å¤‡ä»½ SYSTEM tablespace 
 REM 
 alter tablespace SYSTEM begin backup; 
 !tar -cvf /dev/rmt/0hc /db01/oracle/CC1/sys01.dbf 
@@ -1520,13 +1520,13 @@ REM   tar saveset on the tape device /dev/rmt/0hc.  The
 REM   rest of the tars must use the "-rvf" clause to append 
 REM   to that saveset. 
 REM 
-REM   ±¸·İ  RBS tablespace 
+REM   å¤‡ä»½  RBS tablespace 
 REM 
 alter tablespace RBS begin backup; 
 !tar -rvf /dev/rmt/0hc /db02/oracle/CC1/rbs01.dbf 
 alter tablespace RBS end backup; 
 REM 
-REM   ±¸·İ  DATA tablespace 
+REM   å¤‡ä»½  DATA tablespace 
 REM   For the purposes of this example, this tablespace 
 REM   will contain two files, data01.dbf and data02.dbf. 
 REM   The * wildcard will be used in the filename. 
@@ -1535,13 +1535,13 @@ alter tablespace DATA begin backup;
 !tar -rvf /dev/rmt/0hc /db03/oracle/CC1/data0*.dbf 
 alter tablespace DATA end backup; 
 REM 
-REM   ±¸·İ INDEXES tablespace 
+REM   å¤‡ä»½ INDEXES tablespace 
 REM 
 alter tablespace INDEXES begin backup; 
 !tar -rvf /dev/rmt/0hc /db04/oracle/CC1/indexes01.dbf 
 alter tablespace INDEXES end backup; 
 REM 
-REM   ±¸·İ  TEMP tablespace 
+REM   å¤‡ä»½  TEMP tablespace 
 REM 
 alter tablespace TEMP begin backup; 
 !tar -rvf /dev/rmt/0hc /db05/oracle/CC1/temp01.dbf 
@@ -1551,7 +1551,7 @@ REM   Follow the same pattern to back up the rest
 REM   of the tablespaces. 
 REM 
 REM     
-REM  Step 2.  ±¸·İ¹éµµÈÕÖ¾ÎÄ¼ş. 
+REM  Step 2.  å¤‡ä»½å½’æ¡£æ—¥å¿—æ–‡ä»¶. 
 archive log stop 
 REM 
 REM   Exit Server Manager, using the indicator set earlier. 
@@ -1585,41 +1585,41 @@ EOFarch2
 tar -rvf /dev/rmt/0hc $FILES 
 rm -f $FILES 
 # 
-#     Step 3.  ±¸·İ¿ØÖÆÎÄ¼şµ½´ÅÅÌ. 
+#     Step 3.  å¤‡ä»½æ§åˆ¶æ–‡ä»¶åˆ°ç£ç›˜. 
 # 
 svrmgrl <<EOFarch3 
 connect internal 
 alter database backup controlfile to 
-   ¡¯db01/oracle/CC1/CC1controlfile.bck¡¯; 
+   â€™db01/oracle/CC1/CC1controlfile.bckâ€™; 
 exit 
 EOFarch3 
 # 
-#  ±¸·İ¿ØÖÆÎÄ¼şµ½´Å´ø. 
+#  å¤‡ä»½æ§åˆ¶æ–‡ä»¶åˆ°ç£å¸¦. 
 # 
 tar -rvf /dev/rmt/0hc /db01/oracle/CC1/CC1controlfile.bck 
 # 
 #  End of hot backup script. 
-//×Ô¶¯Éú³É¿ªÊ¼±¸·İµÄ½Å±¾ 
+//è‡ªåŠ¨ç”Ÿæˆå¼€å§‹å¤‡ä»½çš„è„šæœ¬ 
 set pagesize 0 feedback off 
 select  
-    ¡¯alter tablespace ¡¯||Tablespace_Name||¡¯ begin backup;¡¯ 
+    â€™alter tablespace â€™||Tablespace_Name||â€™ begin backup;â€™ 
   from DBA_TABLESPACES 
- where Status <> ¡¯INVALID¡¯ 
+ where Status <> â€™INVALIDâ€™ 
 spool alter_begin.sql 
 / 
 spool off 
 
-//×Ô¶¯Éú³É±¸·İ½áÊøµÄ½Å±¾ 
+//è‡ªåŠ¨ç”Ÿæˆå¤‡ä»½ç»“æŸçš„è„šæœ¬ 
 set pagesize 0 feedback off 
 select  
-    ¡¯alter tablespace ¡¯||Tablespace_Name||¡¯ end backup;¡¯ 
+    â€™alter tablespace â€™||Tablespace_Name||â€™ end backup;â€™ 
   from DBA_TABLESPACES 
- where Status <> ¡¯INVALID¡¯ 
+ where Status <> â€™INVALIDâ€™ 
 spool alter_end.sql 
 / 
 spool off 
 
-//±¸·İ¹éµµÈÕÖ¾ÎÄ¼şµÄ½Å±¾. 
+//å¤‡ä»½å½’æ¡£æ—¥å¿—æ–‡ä»¶çš„è„šæœ¬. 
 REM  See text for alternatives. 
 #     Step 1: Stop the archiving process. This will keep 
 #     additional archived redo log files from being written 
@@ -1666,7 +1666,7 @@ rm -f $FILES
 # 
 #     End of archived redo log file backup script. 
 
-REM  ´ÅÅÌµ½´ÅÅÌµÄ±¸·İ 
+REM  ç£ç›˜åˆ°ç£ç›˜çš„å¤‡ä»½ 
 REM 
 REM   Back up the RBS tablespace - to another disk (UNIX) 
 REM 
@@ -1675,7 +1675,7 @@ alter tablespace RBS begin backup;
 alter tablespace RBS end backup; 
 REM 
 
-REM  ÒÆ¶¯¹éµµÈÕÖ¾ÎÄ¼şµÄshell½Å±¾ 
+REM  ç§»åŠ¨å½’æ¡£æ—¥å¿—æ–‡ä»¶çš„shellè„šæœ¬ 
 # 
 # Procedure for moving archived redo logs to another device 
 # 
@@ -1689,24 +1689,24 @@ EOFarch2
 # 
 # end of archived redo log directory move. 
 
-//Éú³É´´½¨¿ØÖÆÎÄ¼şÃüÁî 
+//ç”Ÿæˆåˆ›å»ºæ§åˆ¶æ–‡ä»¶å‘½ä»¤ 
 alter database backup controlfile to trace; 
 
-//Ê±¼äµã»Ö¸´µÄÀı×Ó 
+//æ—¶é—´ç‚¹æ¢å¤çš„ä¾‹å­ 
 connect internal as sysdba 
 startup mount instance_name; 
-recover database until time ¡¯1999-08-07:14:40:00¡¯; 
+recover database until time â€™1999-08-07:14:40:00â€™; 
 
-//´´½¨»Ö¸´Ä¿Â¼ 
+//åˆ›å»ºæ¢å¤ç›®å½• 
 rman rcvcat rman/rman@<database_service_name> 
 
-// ÔÚ(UNIX)ÏÂ´´½¨»Ö¸´Ä¿Â¼ 
+// åœ¨(UNIX)ä¸‹åˆ›å»ºæ¢å¤ç›®å½• 
 RMAN> create catalog tablespace rcvcat; 
 
-// ÔÚ(NT)ÏÂ´´½¨»Ö¸´Ä¿Â¼ 
+// åœ¨(NT)ä¸‹åˆ›å»ºæ¢å¤ç›®å½• 
 RMAN> create catalog tablespace "RCVCAT"; 
 
-//Á¬½ÓÃèÊö·û·¶Àı  
+//è¿æ¥æè¿°ç¬¦èŒƒä¾‹  
 (DESCRIPTION= 
       (ADDRESS= 
             (PROTOCOL=TCP) 
@@ -1715,41 +1715,41 @@ RMAN> create catalog tablespace "RCVCAT";
       (CONNECT DATA= 
             (SID=loc))) 
 
-// listener.ora µÄÌõÄ¿entry 
+// listener.ora çš„æ¡ç›®entry 
 
  
 
  
 
-//´´½¨Ò»¸ö¿ØÖÆÎÄ¼şÃüÁîµ½¸ú×ÙÎÄ¼ş 
+//åˆ›å»ºä¸€ä¸ªæ§åˆ¶æ–‡ä»¶å‘½ä»¤åˆ°è·Ÿè¸ªæ–‡ä»¶ 
 alter database backup controlfile to trace; 
 
-//Ôö¼ÓÒ»¸öĞÂµÄÈÕÖ¾ÎÄ¼ş×éµÄÓï¾ä 
+//å¢åŠ ä¸€ä¸ªæ–°çš„æ—¥å¿—æ–‡ä»¶ç»„çš„è¯­å¥ 
 connect internal as sysdba 
 alter database 
 add logfile group 4 
-(¡¯/db01/oracle/CC1/log_1c.dbf¡¯,
+(â€™/db01/oracle/CC1/log_1c.dbfâ€™,
 
-¡¯/db02/oracle/CC1/log_2c.dbf¡¯) size 5M; 
+â€™/db02/oracle/CC1/log_2c.dbfâ€™) size 5M; 
 
 alter database 
-add logfile member ¡¯/db03/oracle/CC1/log_3c.dbf¡¯ 
+add logfile member â€™/db03/oracle/CC1/log_3c.dbfâ€™ 
 to group 4; 
-//ÔÚServer ManagerÉÏMOUNT²¢´ò¿ªÒ»¸öÊı¾İ¿â: 
+//åœ¨Server Managerä¸ŠMOUNTå¹¶æ‰“å¼€ä¸€ä¸ªæ•°æ®åº“: 
 connect internal as sysdba 
 startup mount ORA1 exclusive; 
 alter database open; 
 
-//Éú³ÉÊı¾İ×Öµä 
+//ç”Ÿæˆæ•°æ®å­—å…¸ 
 @catalog 
 @catproc 
 
-//ÔÚinit.ora ÖĞ±¸·İÊı¾İ¿âµÄÎ»ÖÃ 
-log_archive_dest_1 = ¡¯/db00/arch¡¯ 
+//åœ¨init.ora ä¸­å¤‡ä»½æ•°æ®åº“çš„ä½ç½® 
+log_archive_dest_1 = â€™/db00/archâ€™ 
 log_archive_dest_state_1 = enable 
 log_archive_dest_2 = "service=stby.world mandatory reopen=60" 
 log_archive_dest_state_2 = enable 
-//¶ÔÓÃ»§µÄ±í¿Õ¼äµÄÖ¸¶¨ºÍ¹ÜÀíÏà¹ØµÄÓï¾ä 
+//å¯¹ç”¨æˆ·çš„è¡¨ç©ºé—´çš„æŒ‡å®šå’Œç®¡ç†ç›¸å…³çš„è¯­å¥ 
 create user USERNAME identified by PASSWORD 
 default tablespace TABLESPACE_NAME; 
 alter user USERNAME default tablespace TABLESPACE_NAME; 
@@ -1760,51 +1760,51 @@ default tablespace DATA
 temporary tablespace TEMP; 
 alter user USERNAME temporary tablespace TEMP; 
 
-//ÖØĞÂÖ¸¶¨Ò»¸öÊı¾İÎÄ¼şµÄ´óĞ¡ : 
+//é‡æ–°æŒ‡å®šä¸€ä¸ªæ•°æ®æ–‡ä»¶çš„å¤§å° : 
 alter database 
-datafile ¡¯/db05/oracle/CC1/data01.dbf¡¯ resize 200M; 
+datafile â€™/db05/oracle/CC1/data01.dbfâ€™ resize 200M; 
 
-//´´½¨Ò»¸ö×Ô¶¯À©Õ¹µÄÊı¾İÎÄ¼ş: 
+//åˆ›å»ºä¸€ä¸ªè‡ªåŠ¨æ‰©å±•çš„æ•°æ®æ–‡ä»¶: 
 create tablespace DATA 
-datafile ¡¯/db05/oracle/CC1/data01.dbf¡¯ size 200M 
+datafile â€™/db05/oracle/CC1/data01.dbfâ€™ size 200M 
 autoextend ON 
 next 10M 
 maxsize 250M; 
 
-//ÔÚ±í¿Õ¼äÉÏÔö¼ÓÒ»¸ö×Ô¶¯À©Õ¹µÄÊı¾İÎÄ¼ş: 
+//åœ¨è¡¨ç©ºé—´ä¸Šå¢åŠ ä¸€ä¸ªè‡ªåŠ¨æ‰©å±•çš„æ•°æ®æ–‡ä»¶: 
 alter tablespace DATA 
-add datafile ¡¯/db05/oracle/CC1/data02.dbf¡¯ 
+add datafile â€™/db05/oracle/CC1/data02.dbfâ€™ 
 size 50M 
 autoextend ON 
 maxsize 300M; 
 
-//ĞŞ¸Ä²ÎÊı: 
+//ä¿®æ”¹å‚æ•°: 
 alter database 
-datafile ¡¯/db05/oracle/CC1/data01.dbf¡¯ 
+datafile â€™/db05/oracle/CC1/data01.dbfâ€™ 
 autoextend ON 
 maxsize 300M; 
 
-//ÔÚÊı¾İÎÄ¼şÒÆ¶¯ÆÚ¼äÖØĞÂÃüÃû: 
+//åœ¨æ•°æ®æ–‡ä»¶ç§»åŠ¨æœŸé—´é‡æ–°å‘½å: 
 alter database rename file 
- ¡¯/db01/oracle/CC1/data01.dbf¡¯ to 
- ¡¯/db02/oracle/CC1/data01.dbf¡¯; 
+ â€™/db01/oracle/CC1/data01.dbfâ€™ to 
+ â€™/db02/oracle/CC1/data01.dbfâ€™; 
 
 alter tablespace DATA rename datafile 
- ¡¯/db01/oracle/CC1/data01.dbf¡¯ to 
- ¡¯/db02/oracle/CC1/data01.dbf¡¯; 
+ â€™/db01/oracle/CC1/data01.dbfâ€™ to 
+ â€™/db02/oracle/CC1/data01.dbfâ€™; 
 
 alter database rename file  
- ¡¯/db05/oracle/CC1/redo01CC1.dbf¡¯ to 
- ¡¯/db02/oracle/CC1/redo01CC1.dbf¡¯; 
+ â€™/db05/oracle/CC1/redo01CC1.dbfâ€™ to 
+ â€™/db02/oracle/CC1/redo01CC1.dbfâ€™; 
 
-alter database datafile ¡¯/db05/oracle/CC1/data01.dbf¡¯  
+alter database datafile â€™/db05/oracle/CC1/data01.dbfâ€™  
 resize 80M; 
-//´´½¨ºÍÊ¹ÓÃ½ÇÉ«: 
+//åˆ›å»ºå’Œä½¿ç”¨è§’è‰²: 
 create role APPLICATION_USER; 
 grant CREATE SESSION to APPLICATION_USER; 
 grant APPLICATION_USER to username; 
 
- //»Ø¹ö¶ÎµÄ¹ÜÀí 
+ //å›æ»šæ®µçš„ç®¡ç† 
 create rollback segment SEGMENT_NAME
 
 tablespace RBS; 
@@ -1814,26 +1814,26 @@ alter rollback segment SEGMENT_NAME offline;
 drop rollback segment SEGMENT_NAME; 
 
 alter rollback segment SEGMENT_NAME online; 
-//»Ø¹ö¶ÎÉÏÖ¸¶¨ÊÂÎñ 
+//å›æ»šæ®µä¸ŠæŒ‡å®šäº‹åŠ¡ 
 commit; 
 set transaction use rollback segment ROLL_BATCH; 
 insert into TABLE_NAME 
 select * from DATA_LOAD_TABLE; 
 commit; 
 
-//²éÑ¯»Ø¹ö¶ÎµÄ ´óĞ¡ºÍÓÅ»¯²ÎÊı 
+//æŸ¥è¯¢å›æ»šæ®µçš„ å¤§å°å’Œä¼˜åŒ–å‚æ•° 
 select * from DBA_SEGMENTS 
- where Segment_Type = ¡¯ROLLBACK¡¯; 
+ where Segment_Type = â€™ROLLBACKâ€™; 
 select N.Name,         /* rollback segment name */ 
        S.OptSize       /* rollback segment OPTIMAL size */ 
 from V$ROLLNAME N, V$ROLLSTAT S 
 where N.USN=S.USN; 
 
-//»ØÊÕ»Ø¹ö¶Î 
+//å›æ”¶å›æ»šæ®µ 
 alter rollback segment R1 shrink to 15M; 
 alter rollback segment R1 shrink; 
 
-//Àı×Ó 
+//ä¾‹å­ 
 set transaction use rollback segment SEGMENT_NAME 
 
 alter tablespace RBS 
@@ -1847,7 +1847,7 @@ alter rollback segment R4 online;
 select Sessions_Highwater from V$LICENSE; 
 grant select on EMPLOYEE to PUBLIC; 
 
-//ÓÃ»§ºÍ½ÇÉ«  
+//ç”¨æˆ·å’Œè§’è‰²  
 create role ACCOUNT_CREATOR; 
 grant CREATE SESSION, CREATE USER, ALTER USER  
    to ACCOUNT_CREATOR; 
@@ -1873,7 +1873,7 @@ PASSWORD_LIFE_TIME 30;
 
 alter user jane password expire; 
 
-//´´½¨²Ù×÷ÏµÍ³ÓÃ»§ 
+//åˆ›å»ºæ“ä½œç³»ç»Ÿç”¨æˆ· 
 REM  Creating OPS$ accounts 
 create user OPS$FARMER 
 identified by SOME_PASSWORD 
@@ -1887,7 +1887,7 @@ identified externally
 default tablespace USERS 
 temporary tablespace TEMP; 
 
-//Ö´ĞĞORAPWD 
+//æ‰§è¡ŒORAPWD 
 ORAPWD FILE=filename PASSWORD=password ENTRIES=max_users 
 
 create role APPLICATION_USER; 
@@ -1900,15 +1900,15 @@ grant APPLICATION_USER to DATA_ENTRY_CLERK;
 grant DATA_ENTRY_CLERK to MCGREGOR; 
 grant DATA_ENTRY_CLERK to BPOTTER with admin option; 
 
-//ÉèÖÃ½ÇÉ« 
+//è®¾ç½®è§’è‰² 
 set role DATA_ENTRY_CLERK; 
 set role NONE; 
 
-//»ØÊÕÈ¨Àû: 
+//å›æ”¶æƒåˆ©: 
 revoke delete on EMPLOYEE from PETER; 
 revoke all on EMPLOYEE from MCGREGOR; 
 
-//»ØÊÕ½ÇÉ«: 
+//å›æ”¶è§’è‰²: 
 revoke ACCOUNT_CREATOR from HELPDESK; 
 
 drop user USERNAME cascade; 
@@ -1917,22 +1917,22 @@ grant SELECT on EMPLOYEE to MCGREGOR with grant option;
 grant SELECT on THUMPER.EMPLOYEE to BPOTTER with grant option; 
 revoke SELECT on EMPLOYEE from MCGREGOR; 
 
-create user MCGREGOR identified by VALUES ¡¯1A2DD3CCEE354DFA¡¯; 
+create user MCGREGOR identified by VALUES â€™1A2DD3CCEE354DFAâ€™; 
 
-alter user OPS$FARMER identified by VALUES ¡¯no way¡¯; 
+alter user OPS$FARMER identified by VALUES â€™no wayâ€™; 
 
-//±¸·İÓë»Ö¸´ 
-Ê¹ÓÃ export ³ÌĞò 
+//å¤‡ä»½ä¸æ¢å¤ 
+ä½¿ç”¨ export ç¨‹åº 
 exp system/manager file=expdat.dmp compress=Y owner=(HR,THUMPER) 
 exp system/manager file=hr.dmp owner=HR indexes=Y compress=Y 
 imp system/manager file=hr.dmp full=Y buffer=64000 commit=Y 
 
-//±¸·İ±í 
+//å¤‡ä»½è¡¨ 
 exp system/manager FILE=expdat.dmp TABLES=(Thumper.SALES) 
-//±¸·İ·ÖÇø 
+//å¤‡ä»½åˆ†åŒº 
 exp system/manager FILE=expdat.dmp TABLES=(Thumper.SALES:Part1) 
 
-//ÊäÈëÀı×Ó 
+//è¾“å…¥ä¾‹å­ 
 imp system/manager file=expdat.dmp 
 imp system/manager file=expdat.dmp buffer=64000 commit=Y 
 
@@ -1943,14 +1943,14 @@ imp system/manager file=thumper.dat FROMUSER=thumper TOUSER=flower
 imp system/manager file=expdat.dmp full=Y commit=Y buffer=64000 
 imp system/manager file=expdat.dmp ignore=N rows=N commit=Y buffer=64000 
 
-//Ê¹ÓÃ²Ù×÷ÏµÍ³±¸·İÃüÁî 
+//ä½¿ç”¨æ“ä½œç³»ç»Ÿå¤‡ä»½å‘½ä»¤ 
 REM  TAR examples
 
 tar -cvf /dev/rmt/0hc /db0[1-9]/oracle/CC1 
 tar -rvf /dev/rmt/0hc /orasw/app/oracle/CC1/pfile/initcc1.ora 
 tar -rvf /dev/rmt/0hc /db0[1-9]/oracle/CC1 /orasw/app/oracle/CC1/pfile/initcc1.ora 
 
-//ÀëÏß±¸·İµÄshell½Å±¾ 
+//ç¦»çº¿å¤‡ä»½çš„shellè„šæœ¬ 
 ORACLE_SID=cc1; export ORACLE_SID 
 ORAENV_ASK=NO; export ORAENV_ASK 
 . oraenv 
@@ -1965,14 +1965,14 @@ connect internal as sysdba
 startup 
 EOF2 
 
-//ÔÚServer ManagerÉÏÉèÖÃÎªarchivelog mode: 
+//åœ¨Server Managerä¸Šè®¾ç½®ä¸ºarchivelog mode: 
 connect internal as sysdba 
 startup mount cc1; 
 alter database archivelog; 
 archive log start; 
 alter database open; 
 
-//ÔÚServer ManagerÉÏÉèÖÃÎªarchivelog mode: 
+//åœ¨Server Managerä¸Šè®¾ç½®ä¸ºarchivelog mode: 
 connect internal as sysdba 
 startup mount cc1; 
 alter database noarchivelog; 
@@ -1981,9 +1981,9 @@ alter database open;
 select Name, 
        Value 
   from V$PARAMETER 
- where Name like ¡¯log_archive%¡¯; 
+ where Name like â€™log_archive%â€™; 
 
-//Áª»ú±¸·İµÄ½Å±¾ 
+//è”æœºå¤‡ä»½çš„è„šæœ¬ 
 # 
 # Sample Hot Backup Script for a UNIX File System database 
 # 
@@ -1994,7 +1994,7 @@ ORAENV_ASK=NO; export ORAENV_ASK
 svrmgrl <<EOFarch1 
 connect internal as sysdba 
 REM 
-REM   ±¸·İ SYSTEM tablespace 
+REM   å¤‡ä»½ SYSTEM tablespace 
 REM 
 alter tablespace SYSTEM begin backup; 
 !tar -cvf /dev/rmt/0hc /db01/oracle/CC1/sys01.dbf 
@@ -2005,13 +2005,13 @@ REM   tar saveset on the tape device /dev/rmt/0hc.  The
 REM   rest of the tars must use the "-rvf" clause to append 
 REM   to that saveset. 
 REM 
-REM   ±¸·İ  RBS tablespace 
+REM   å¤‡ä»½  RBS tablespace 
 REM 
 alter tablespace RBS begin backup; 
 !tar -rvf /dev/rmt/0hc /db02/oracle/CC1/rbs01.dbf 
 alter tablespace RBS end backup; 
 REM 
-REM   ±¸·İ  DATA tablespace
+REM   å¤‡ä»½  DATA tablespace
 
 REM   For the purposes of this example, this tablespace 
 REM   will contain two files, data01.dbf and data02.dbf. 
@@ -2022,13 +2022,13 @@ alter tablespace DATA begin backup;
 !tar -rvf /dev/rmt/0hc /db03/oracle/CC1/data0*.dbf 
 alter tablespace DATA end backup; 
 REM 
-REM   ±¸·İ INDEXES tablespace 
+REM   å¤‡ä»½ INDEXES tablespace 
 REM 
 alter tablespace INDEXES begin backup; 
 !tar -rvf /dev/rmt/0hc /db04/oracle/CC1/indexes01.dbf 
 alter tablespace INDEXES end backup; 
 REM 
-REM   ±¸·İ  TEMP tablespace 
+REM   å¤‡ä»½  TEMP tablespace 
 REM 
 alter tablespace TEMP begin backup; 
 !tar -rvf /dev/rmt/0hc /db05/oracle/CC1/temp01.dbf 
@@ -2038,7 +2038,7 @@ REM   Follow the same pattern to back up the rest
 REM   of the tablespaces. 
 REM 
 REM     
-REM  Step 2.  ±¸·İ¹éµµÈÕÖ¾ÎÄ¼ş. 
+REM  Step 2.  å¤‡ä»½å½’æ¡£æ—¥å¿—æ–‡ä»¶. 
 archive log stop 
 REM 
 REM   Exit Server Manager, using the indicator set earlier. 
@@ -2072,42 +2072,42 @@ EOFarch2
 tar -rvf /dev/rmt/0hc $FILES 
 rm -f $FILES 
 # 
-#     Step 3.  ±¸·İ¿ØÖÆÎÄ¼şµ½´ÅÅÌ. 
+#     Step 3.  å¤‡ä»½æ§åˆ¶æ–‡ä»¶åˆ°ç£ç›˜. 
 # 
 svrmgrl <<EOFarch3 
 connect internal 
 alter database backup controlfile to 
-   ¡¯db01/oracle/CC1/CC1controlfile.bck¡¯;
+   â€™db01/oracle/CC1/CC1controlfile.bckâ€™;
 
 exit 
 EOFarch3 
 # 
-#  ±¸·İ¿ØÖÆÎÄ¼şµ½´Å´ø. 
+#  å¤‡ä»½æ§åˆ¶æ–‡ä»¶åˆ°ç£å¸¦. 
 # 
 tar -rvf /dev/rmt/0hc /db01/oracle/CC1/CC1controlfile.bck 
 # 
 #  End of hot backup script. 
-//×Ô¶¯Éú³É¿ªÊ¼±¸·İµÄ½Å±¾ 
+//è‡ªåŠ¨ç”Ÿæˆå¼€å§‹å¤‡ä»½çš„è„šæœ¬ 
 set pagesize 0 feedback off 
 select  
-    ¡¯alter tablespace ¡¯||Tablespace_Name||¡¯ begin backup;¡¯ 
+    â€™alter tablespace â€™||Tablespace_Name||â€™ begin backup;â€™ 
   from DBA_TABLESPACES 
- where Status <> ¡¯INVALID¡¯ 
+ where Status <> â€™INVALIDâ€™ 
 spool alter_begin.sql 
 / 
 spool off 
 
-//×Ô¶¯Éú³É±¸·İ½áÊøµÄ½Å±¾ 
+//è‡ªåŠ¨ç”Ÿæˆå¤‡ä»½ç»“æŸçš„è„šæœ¬ 
 set pagesize 0 feedback off 
 select  
-    ¡¯alter tablespace ¡¯||Tablespace_Name||¡¯ end backup;¡¯ 
+    â€™alter tablespace â€™||Tablespace_Name||â€™ end backup;â€™ 
   from DBA_TABLESPACES 
- where Status <> ¡¯INVALID¡¯ 
+ where Status <> â€™INVALIDâ€™ 
 spool alter_end.sql 
 / 
 spool off 
 
-//±¸·İ¹éµµÈÕÖ¾ÎÄ¼şµÄ½Å±¾. 
+//å¤‡ä»½å½’æ¡£æ—¥å¿—æ–‡ä»¶çš„è„šæœ¬. 
 REM  See text for alternatives. 
 #     Step 1: Stop the archiving process. This will keep 
 #     additional archived redo log files from being written 
@@ -2154,7 +2154,7 @@ rm -f $FILES
 # 
 #     End of archived redo log file backup script. 
 
-REM  ´ÅÅÌµ½´ÅÅÌµÄ±¸·İ 
+REM  ç£ç›˜åˆ°ç£ç›˜çš„å¤‡ä»½ 
 REM 
 REM   Back up the RBS tablespace - to another disk (UNIX) 
 REM 
@@ -2163,7 +2163,7 @@ alter tablespace RBS begin backup;
 alter tablespace RBS end backup; 
 REM 
 
-REM  ÒÆ¶¯¹éµµÈÕÖ¾ÎÄ¼şµÄshell½Å±¾ 
+REM  ç§»åŠ¨å½’æ¡£æ—¥å¿—æ–‡ä»¶çš„shellè„šæœ¬ 
 # 
 # Procedure for moving archived redo logs to another device 
 # 
@@ -2177,24 +2177,24 @@ EOFarch2
 # 
 # end of archived redo log directory move. 
 
-//Éú³É´´½¨¿ØÖÆÎÄ¼şÃüÁî 
+//ç”Ÿæˆåˆ›å»ºæ§åˆ¶æ–‡ä»¶å‘½ä»¤ 
 alter database backup controlfile to trace; 
 
-//Ê±¼äµã»Ö¸´µÄÀı×Ó 
+//æ—¶é—´ç‚¹æ¢å¤çš„ä¾‹å­ 
 connect internal as sysdba 
 startup mount instance_name; 
-recover database until time ¡¯1999-08-07:14:40:00¡¯; 
+recover database until time â€™1999-08-07:14:40:00â€™; 
 
-//´´½¨»Ö¸´Ä¿Â¼ 
+//åˆ›å»ºæ¢å¤ç›®å½• 
 rman rcvcat rman/rman@<database_service_name> 
 
-// ÔÚ(UNIX)ÏÂ´´½¨»Ö¸´Ä¿Â¼ 
+// åœ¨(UNIX)ä¸‹åˆ›å»ºæ¢å¤ç›®å½• 
 RMAN> create catalog tablespace rcvcat; 
 
-// ÔÚ(NT)ÏÂ´´½¨»Ö¸´Ä¿Â¼ 
+// åœ¨(NT)ä¸‹åˆ›å»ºæ¢å¤ç›®å½• 
 RMAN> create catalog tablespace "RCVCAT"; 
 
-//Á¬½ÓÃèÊö·û·¶Àı  
+//è¿æ¥æè¿°ç¬¦èŒƒä¾‹  
 (DESCRIPTION= 
       (ADDRESS= 
             (PROTOCOL=TCP) 
@@ -2203,12 +2203,12 @@ RMAN> create catalog tablespace "RCVCAT";
       (CONNECT DATA= 
             (SID=loc))) 
 
-// listener.ora µÄÌõÄ¿entry 
+// listener.ora çš„æ¡ç›®entry 
 LISTENER = 
   (ADDRESS_LIST = 
         (ADDRESS= 
           (PROTOCOL=IPC) 
-×ªÌùÓÚ Ñ§Éú´ó¶ÁÊéÍø http://
+è½¬è´´äº å­¦ç”Ÿå¤§è¯»ä¹¦ç½‘ http://
 
  (KEY= loc.world) 
         ) 
@@ -2222,7 +2222,7 @@ SID_LIST_LISTENER =
    ) 
  ) 
 
-//  tnsnames.ora µÄÌõÄ¿ 
+//  tnsnames.ora çš„æ¡ç›® 
 LOC= 
   (DESCRIPTION=   
    (ADDRESS = 
@@ -2236,7 +2236,7 @@ LOC=
     ) 
 ) 
 
-//Á¬½Ó²ÎÊıµÄÉèÖÃ£¨sql*net£© 
+//è¿æ¥å‚æ•°çš„è®¾ç½®ï¼ˆsql*netï¼‰ 
 LOC =(DESCRIPTION= 
       (ADDRESS= 
             (COMMUNITY=TCP.HQ.COMPANY) 
@@ -2245,7 +2245,7 @@ LOC =(DESCRIPTION=
             (PORT=1521)) 
       (CONNECT DATA= 
             (SID=loc))) 
-//²ÎÊıÎÄ¼şÅäÖÃ·¶Àı 
+//å‚æ•°æ–‡ä»¶é…ç½®èŒƒä¾‹ 
 // tnsnames.ora  
 HQ =(DESCRIPTION= 
       (ADDRESS= 
@@ -2286,7 +2286,7 @@ LOC=
     ) 
 )  
 
-//Ê¹ÓÃ COPY ÊµÏÖÊı¾İ¿âÖ®¼äµÄ¸´ÖÆ 
+//ä½¿ç”¨ COPY å®ç°æ•°æ®åº“ä¹‹é—´çš„å¤åˆ¶ 
 copy from 
 remote_username/remote_password@service_name 
 to 
@@ -2304,26 +2304,26 @@ using -
 select * from EMPLOYEE 
 
 
-//¼àÊÓÆ÷µÄ¹ÜÀí 
+//ç›‘è§†å™¨çš„ç®¡ç† 
 lsnrctl start 
 lsnrctl start my_lsnr 
 lsnrctl status 
 lsnrctl status hq 
 
-¼ì²é¼àÊÓÆ÷µÄ½ø³Ì 
+æ£€æŸ¥ç›‘è§†å™¨çš„è¿›ç¨‹ 
 ps -ef | grep tnslsnr 
-//ÔÚ lsnrctl  ÄÚÍ£Ö¹¼àÊÓÆ÷ 
+//åœ¨ lsnrctl  å†…åœæ­¢ç›‘è§†å™¨ 
 set password lsnr_password 
 stop 
 
-//ÔÚlsnrctl ÄÚÁĞ³öËùÓĞµÄ·şÎñ 
+//åœ¨lsnrctl å†…åˆ—å‡ºæ‰€æœ‰çš„æœåŠ¡ 
 set password lsnr_password 
 services 
-//Æô¶¯»òÍ£Ö¹Ò»¸öNTµÄlistener 
+//å¯åŠ¨æˆ–åœæ­¢ä¸€ä¸ªNTçš„listener 
 net start Oracle<version_name>TNSListener 
 net stop Oracle<version_name>TNSListener 
 
-// tnsnames.ora ÎÄ¼şµÄÄÚÈİ 
+// tnsnames.ora æ–‡ä»¶çš„å†…å®¹ 
 fld1 = 
   (DESCRIPTION = 
     (ADDRESS_LIST = 
@@ -2334,40 +2334,40 @@ fld1 =
       (SID = fld1) 
     ) 
   ) 
-//²Ù×÷ÏµÍ³ÍøÂçµÄ¹ÜÀí 
+//æ“ä½œç³»ç»Ÿç½‘ç»œçš„ç®¡ç† 
 
 telnet host_name 
 ping host_name 
-/etc/hosts ÎÄ¼ş 
+/etc/hosts æ–‡ä»¶ 
 130.110.238.109 nmhost 
 130.110.238.101 txhost 
 130.110.238.102 azhost  arizona  
-//oratab ±íÏî 
+//oratab è¡¨é¡¹ 
 loc:/orasw/app/oracle/product/8.1.5.1:Y 
 cc1:/orasw/app/oracle/product/8.1.5.1:N 
 old:/orasw/app/oracle/product/8.1.5.0:Y
 
 
-ORACLE³£ÓÃÃüÁî
+ORACLEå¸¸ç”¨å‘½ä»¤
 
-Ò»¡¢ORACLEµÄÆô¶¯ºÍ¹Ø±Õ
-1¡¢ÔÚµ¥»ú»·¾³ÏÂ
-ÒªÏëÆô¶¯»ò¹Ø±ÕORACLEÏµÍ³±ØĞëÊ×ÏÈÇĞ»»µ½ORACLEÓÃ»§£¬ÈçÏÂ
+ä¸€ã€ORACLEçš„å¯åŠ¨å’Œå…³é—­
+1ã€åœ¨å•æœºç¯å¢ƒä¸‹
+è¦æƒ³å¯åŠ¨æˆ–å…³é—­ORACLEç³»ç»Ÿå¿…é¡»é¦–å…ˆåˆ‡æ¢åˆ°ORACLEç”¨æˆ·ï¼Œå¦‚ä¸‹
 su - oracle
 
-a¡¢Æô¶¯ORACLEÏµÍ³
+aã€å¯åŠ¨ORACLEç³»ç»Ÿ
 oracle>svrmgrl
 SVRMGR>connect internal
 SVRMGR>startup
 SVRMGR>quit
 
-b¡¢¹Ø±ÕORACLEÏµÍ³
+bã€å…³é—­ORACLEç³»ç»Ÿ
 oracle>svrmgrl
 SVRMGR>connect internal
 SVRMGR>shutdown
 SVRMGR>quit
 
-Æô¶¯oracle9iÊı¾İ¿âÃüÁî£º
+å¯åŠ¨oracle9iæ•°æ®åº“å‘½ä»¤ï¼š
 $ sqlplus /nolog
 
 SQL*Plus: Release 9.2.0.1.0 - Production on Fri Oct 31 13:53:53 2003
@@ -2382,161 +2382,161 @@ SQL> startup
 ORACLE instance started.
 
 
-2¡¢ÔÚË«»ú»·¾³ÏÂ
-ÒªÏëÆô¶¯»ò¹Ø±ÕORACLEÏµÍ³±ØĞëÊ×ÏÈÇĞ»»µ½rootÓÃ»§£¬ÈçÏÂ
-su £­ root
+2ã€åœ¨åŒæœºç¯å¢ƒä¸‹
+è¦æƒ³å¯åŠ¨æˆ–å…³é—­ORACLEç³»ç»Ÿå¿…é¡»é¦–å…ˆåˆ‡æ¢åˆ°rootç”¨æˆ·ï¼Œå¦‚ä¸‹
+su ï¼ root
 
-a¡¢Æô¶¯ORACLEÏµÍ³
-hareg £­y oracle
+aã€å¯åŠ¨ORACLEç³»ç»Ÿ
+hareg ï¼y oracle
 
-b¡¢¹Ø±ÕORACLEÏµÍ³
-hareg £­n oracle
+bã€å…³é—­ORACLEç³»ç»Ÿ
+hareg ï¼n oracle
 
-OracleÊı¾İ¿âÓĞÄÄ¼¸ÖÖÆô¶¯·½Ê½
-
-
-ËµÃ÷£º
-
-ÓĞÒÔÏÂ¼¸ÖÖÆô¶¯·½Ê½£º
-1¡¢startup nomount
-·Ç°²×°Æô¶¯£¬ÕâÖÖ·½Ê½Æô¶¯ÏÂ¿ÉÖ´ĞĞ£ºÖØ½¨¿ØÖÆÎÄ¼ş¡¢ÖØ½¨Êı¾İ¿â
-
-¶ÁÈ¡init.oraÎÄ¼ş£¬Æô¶¯instance£¬¼´Æô¶¯SGAºÍºóÌ¨½ø³Ì£¬ÕâÖÖÆô¶¯Ö»ĞèÒªinit.oraÎÄ¼ş¡£
+Oracleæ•°æ®åº“æœ‰å“ªå‡ ç§å¯åŠ¨æ–¹å¼
 
 
-2¡¢startup mount dbname
-°²×°Æô¶¯£¬ÕâÖÖ·½Ê½Æô¶¯ÏÂ¿ÉÖ´ĞĞ£º
-Êı¾İ¿âÈÕÖ¾¹éµµ¡¢
-Êı¾İ¿â½éÖÊ»Ö¸´¡¢
-Ê¹Êı¾İÎÄ¼şÁª»ú»òÍÑ»ú£¬
-ÖØĞÂ¶¨Î»Êı¾İÎÄ¼ş¡¢ÖØ×öÈÕÖ¾ÎÄ¼ş¡£
+è¯´æ˜ï¼š
 
-Ö´ĞĞ¡°nomount¡±£¬È»ºó´ò¿ª¿ØÖÆÎÄ¼ş£¬È·ÈÏÊı¾İÎÄ¼şºÍÁª»úÈÕÖ¾ÎÄ¼şµÄÎ»ÖÃ£¬
-µ«´ËÊ±²»¶ÔÊı¾İÎÄ¼şºÍÈÕÖ¾ÎÄ¼ş½øĞĞĞ£Ñé¼ì²é¡£
+æœ‰ä»¥ä¸‹å‡ ç§å¯åŠ¨æ–¹å¼ï¼š
+1ã€startup nomount
+éå®‰è£…å¯åŠ¨ï¼Œè¿™ç§æ–¹å¼å¯åŠ¨ä¸‹å¯æ‰§è¡Œï¼šé‡å»ºæ§åˆ¶æ–‡ä»¶ã€é‡å»ºæ•°æ®åº“
+
+è¯»å–init.oraæ–‡ä»¶ï¼Œå¯åŠ¨instanceï¼Œå³å¯åŠ¨SGAå’Œåå°è¿›ç¨‹ï¼Œè¿™ç§å¯åŠ¨åªéœ€è¦init.oraæ–‡ä»¶ã€‚
 
 
-3¡¢startup open dbname
-ÏÈÖ´ĞĞ¡°nomount¡±£¬È»ºóÖ´ĞĞ¡°mount¡±£¬ÔÙ´ò¿ª°üÀ¨Redo logÎÄ¼şÔÚÄÚµÄËùÓĞÊı¾İ¿âÎÄ¼ş£¬
-ÕâÖÖ·½Ê½ÏÂ¿É·ÃÎÊÊı¾İ¿âÖĞµÄÊı¾İ¡£
+2ã€startup mount dbname
+å®‰è£…å¯åŠ¨ï¼Œè¿™ç§æ–¹å¼å¯åŠ¨ä¸‹å¯æ‰§è¡Œï¼š
+æ•°æ®åº“æ—¥å¿—å½’æ¡£ã€
+æ•°æ®åº“ä»‹è´¨æ¢å¤ã€
+ä½¿æ•°æ®æ–‡ä»¶è”æœºæˆ–è„±æœºï¼Œ
+é‡æ–°å®šä½æ•°æ®æ–‡ä»¶ã€é‡åšæ—¥å¿—æ–‡ä»¶ã€‚
+
+æ‰§è¡Œâ€œnomountâ€ï¼Œç„¶åæ‰“å¼€æ§åˆ¶æ–‡ä»¶ï¼Œç¡®è®¤æ•°æ®æ–‡ä»¶å’Œè”æœºæ—¥å¿—æ–‡ä»¶çš„ä½ç½®ï¼Œ
+ä½†æ­¤æ—¶ä¸å¯¹æ•°æ®æ–‡ä»¶å’Œæ—¥å¿—æ–‡ä»¶è¿›è¡Œæ ¡éªŒæ£€æŸ¥ã€‚
 
 
-4¡¢startup£¬µÈÓÚÒÔÏÂÈı¸öÃüÁî
+3ã€startup open dbname
+å…ˆæ‰§è¡Œâ€œnomountâ€ï¼Œç„¶åæ‰§è¡Œâ€œmountâ€ï¼Œå†æ‰“å¼€åŒ…æ‹¬Redo logæ–‡ä»¶åœ¨å†…çš„æ‰€æœ‰æ•°æ®åº“æ–‡ä»¶ï¼Œ
+è¿™ç§æ–¹å¼ä¸‹å¯è®¿é—®æ•°æ®åº“ä¸­çš„æ•°æ®ã€‚
+
+
+4ã€startupï¼Œç­‰äºä»¥ä¸‹ä¸‰ä¸ªå‘½ä»¤
 startup nomount
 alter database mount
 alter database open
 
 
-5¡¢startup restrict
-Ô¼Êø·½Ê½Æô¶¯
-ÕâÖÖ·½Ê½ÄÜ¹»Æô¶¯Êı¾İ¿â£¬µ«Ö»ÔÊĞí¾ßÓĞÒ»¶¨ÌØÈ¨µÄÓÃ»§·ÃÎÊ
-·ÇÌØÈ¨ÓÃ»§·ÃÎÊÊ±£¬»á³öÏÖÒÔÏÂÌáÊ¾£º
-ERROR£º
-ORA-01035: ORACLE Ö»ÔÊĞí¾ßÓĞ RESTRICTED SESSION È¨ÏŞµÄÓÃ»§Ê¹ÓÃ
+5ã€startup restrict
+çº¦æŸæ–¹å¼å¯åŠ¨
+è¿™ç§æ–¹å¼èƒ½å¤Ÿå¯åŠ¨æ•°æ®åº“ï¼Œä½†åªå…è®¸å…·æœ‰ä¸€å®šç‰¹æƒçš„ç”¨æˆ·è®¿é—®
+éç‰¹æƒç”¨æˆ·è®¿é—®æ—¶ï¼Œä¼šå‡ºç°ä»¥ä¸‹æç¤ºï¼š
+ERRORï¼š
+ORA-01035: ORACLE åªå…è®¸å…·æœ‰ RESTRICTED SESSION æƒé™çš„ç”¨æˆ·ä½¿ç”¨
 
 
-6¡¢startup force
-Ç¿ÖÆÆô¶¯·½Ê½
-µ±²»ÄÜ¹Ø±ÕÊı¾İ¿âÊ±£¬¿ÉÒÔÓÃstartup forceÀ´Íê³ÉÊı¾İ¿âµÄ¹Ø±Õ
-ÏÈ¹Ø±ÕÊı¾İ¿â£¬ÔÙÖ´ĞĞÕı³£Æô¶¯Êı¾İ¿âÃüÁî
+6ã€startup force
+å¼ºåˆ¶å¯åŠ¨æ–¹å¼
+å½“ä¸èƒ½å…³é—­æ•°æ®åº“æ—¶ï¼Œå¯ä»¥ç”¨startup forceæ¥å®Œæˆæ•°æ®åº“çš„å…³é—­
+å…ˆå…³é—­æ•°æ®åº“ï¼Œå†æ‰§è¡Œæ­£å¸¸å¯åŠ¨æ•°æ®åº“å‘½ä»¤
 
 
-7¡¢startup pfile=²ÎÊıÎÄ¼şÃû
-´ø³õÊ¼»¯²ÎÊıÎÄ¼şµÄÆô¶¯·½Ê½
-ÏÈ¶ÁÈ¡²ÎÊıÎÄ¼ş£¬ÔÙ°´²ÎÊıÎÄ¼şÖĞµÄÉèÖÃÆô¶¯Êı¾İ¿â
-Àı£ºstartup pfile=E:Oracleadminoradbpfileinit.ora
+7ã€startup pfile=å‚æ•°æ–‡ä»¶å
+å¸¦åˆå§‹åŒ–å‚æ•°æ–‡ä»¶çš„å¯åŠ¨æ–¹å¼
+å…ˆè¯»å–å‚æ•°æ–‡ä»¶ï¼Œå†æŒ‰å‚æ•°æ–‡ä»¶ä¸­çš„è®¾ç½®å¯åŠ¨æ•°æ®åº“
+ä¾‹ï¼šstartup pfile=E:Oracleadminoradbpfileinit.ora
 
 
-8¡¢startup EXCLUSIVE
-¶ş¡¢ÓÃ»§ÈçºÎÓĞĞ§µØÀûÓÃÊı¾İ×Öµä
-  ¡¡ORACLEµÄÊı¾İ×ÖµäÊÇÊı¾İ¿âµÄÖØÒª×é³É²¿·ÖÖ®Ò»£¬ËüËæ×ÅÊı¾İ¿âµÄ²úÉú¶ø²úÉú, Ëæ×ÅÊı¾İ¿âµÄ±ä»¯¶ø±ä»¯,
-ÌåÏÖÎªsysÓÃ»§ÏÂµÄÒ»Ğ©±íºÍÊÓÍ¼¡£Êı¾İ×ÖµäÃû³ÆÊÇ´óĞ´µÄÓ¢ÎÄ×Ö·û¡£
+8ã€startup EXCLUSIVE
+äºŒã€ç”¨æˆ·å¦‚ä½•æœ‰æ•ˆåœ°åˆ©ç”¨æ•°æ®å­—å…¸
+  ã€€ORACLEçš„æ•°æ®å­—å…¸æ˜¯æ•°æ®åº“çš„é‡è¦ç»„æˆéƒ¨åˆ†ä¹‹ä¸€ï¼Œå®ƒéšç€æ•°æ®åº“çš„äº§ç”Ÿè€Œäº§ç”Ÿ, éšç€æ•°æ®åº“çš„å˜åŒ–è€Œå˜åŒ–,
+ä½“ç°ä¸ºsysç”¨æˆ·ä¸‹çš„ä¸€äº›è¡¨å’Œè§†å›¾ã€‚æ•°æ®å­—å…¸åç§°æ˜¯å¤§å†™çš„è‹±æ–‡å­—ç¬¦ã€‚
 
-    Êı¾İ×ÖµäÀï´æÓĞÓÃ»§ĞÅÏ¢¡¢ÓÃ»§µÄÈ¨ÏŞĞÅÏ¢¡¢ËùÓĞÊı¾İ¶ÔÏóĞÅÏ¢¡¢±íµÄÔ¼ÊøÌõ¼ş¡¢Í³¼Æ·ÖÎöÊı¾İ¿âµÄÊÓÍ¼µÈ¡£
-ÎÒÃÇ²»ÄÜÊÖ¹¤ĞŞ¸ÄÊı¾İ×ÖµäÀïµÄĞÅÏ¢¡£
+    æ•°æ®å­—å…¸é‡Œå­˜æœ‰ç”¨æˆ·ä¿¡æ¯ã€ç”¨æˆ·çš„æƒé™ä¿¡æ¯ã€æ‰€æœ‰æ•°æ®å¯¹è±¡ä¿¡æ¯ã€è¡¨çš„çº¦æŸæ¡ä»¶ã€ç»Ÿè®¡åˆ†ææ•°æ®åº“çš„è§†å›¾ç­‰ã€‚
+æˆ‘ä»¬ä¸èƒ½æ‰‹å·¥ä¿®æ”¹æ•°æ®å­—å…¸é‡Œçš„ä¿¡æ¯ã€‚
 
-¡¡¡¡ºÜ¶àÊ±ºò£¬Ò»°ãµÄORACLEÓÃ»§²»ÖªµÀÈçºÎÓĞĞ§µØÀûÓÃËü¡£
+ã€€ã€€å¾ˆå¤šæ—¶å€™ï¼Œä¸€èˆ¬çš„ORACLEç”¨æˆ·ä¸çŸ¥é“å¦‚ä½•æœ‰æ•ˆåœ°åˆ©ç”¨å®ƒã€‚
 
-¡¡¡¡dictionary¡¡¡¡¡¡È«²¿Êı¾İ×Öµä±íµÄÃû³ÆºÍ½âÊÍ£¬ËüÓĞÒ»¸öÍ¬Òå´Êdict
-    dict_column¡¡¡¡ È«²¿Êı¾İ×Öµä±íÀï×Ö¶ÎÃû³ÆºÍ½âÊÍ
+ã€€ã€€dictionaryã€€ã€€ã€€å…¨éƒ¨æ•°æ®å­—å…¸è¡¨çš„åç§°å’Œè§£é‡Šï¼Œå®ƒæœ‰ä¸€ä¸ªåŒä¹‰è¯dict
+    dict_columnã€€ã€€ å…¨éƒ¨æ•°æ®å­—å…¸è¡¨é‡Œå­—æ®µåç§°å’Œè§£é‡Š
 
-    Èç¹ûÎÒÃÇÏë²éÑ¯¸úË÷ÒıÓĞ¹ØµÄÊı¾İ×ÖµäÊ±£¬¿ÉÒÔÓÃÏÂÃæÕâÌõSQLÓï¾ä:
+    å¦‚æœæˆ‘ä»¬æƒ³æŸ¥è¯¢è·Ÿç´¢å¼•æœ‰å…³çš„æ•°æ®å­—å…¸æ—¶ï¼Œå¯ä»¥ç”¨ä¸‹é¢è¿™æ¡SQLè¯­å¥:
 
     SQL>select * from dictionary where instr(comments,'index')>0;
 
-    Èç¹ûÎÒÃÇÏëÖªµÀuser_indexes±í¸÷×Ö¶ÎÃû³ÆµÄÏêÏ¸º¬Òå£¬¿ÉÒÔÓÃÏÂÃæÕâÌõSQLÓï¾ä:
+    å¦‚æœæˆ‘ä»¬æƒ³çŸ¥é“user_indexesè¡¨å„å­—æ®µåç§°çš„è¯¦ç»†å«ä¹‰ï¼Œå¯ä»¥ç”¨ä¸‹é¢è¿™æ¡SQLè¯­å¥:
 
     SQL>select column_name,comments from dict_columns where table_name='USER_INDEXES';
 
-    ÒÀ´ËÀàÍÆ£¬¾Í¿ÉÒÔÇáËÉÖªµÀÊı¾İ×ÖµäµÄÏêÏ¸Ãû³ÆºÍ½âÊÍ£¬²»ÓÃ²é¿´ORACLEµÄÆäËüÎÄµµ×ÊÁÏÁË¡£
+    ä¾æ­¤ç±»æ¨ï¼Œå°±å¯ä»¥è½»æ¾çŸ¥é“æ•°æ®å­—å…¸çš„è¯¦ç»†åç§°å’Œè§£é‡Šï¼Œä¸ç”¨æŸ¥çœ‹ORACLEçš„å…¶å®ƒæ–‡æ¡£èµ„æ–™äº†ã€‚
 
-    ÏÂÃæ°´Àà±ğÁĞ³öÒ»Ğ©ORACLEÓÃ»§³£ÓÃÊı¾İ×ÖµäµÄ²éÑ¯Ê¹ÓÃ·½·¨¡£
+    ä¸‹é¢æŒ‰ç±»åˆ«åˆ—å‡ºä¸€äº›ORACLEç”¨æˆ·å¸¸ç”¨æ•°æ®å­—å…¸çš„æŸ¥è¯¢ä½¿ç”¨æ–¹æ³•ã€‚
 
-    1¡¢ÓÃ»§
+    1ã€ç”¨æˆ·
 
-            ²é¿´µ±Ç°ÓÃ»§µÄÈ±Ê¡±í¿Õ¼ä
+            æŸ¥çœ‹å½“å‰ç”¨æˆ·çš„ç¼ºçœè¡¨ç©ºé—´
             SQL>select username,default_tablespace from user_users;
 
-        ²é¿´µ±Ç°ÓÃ»§µÄ½ÇÉ«
+        æŸ¥çœ‹å½“å‰ç”¨æˆ·çš„è§’è‰²
         SQL>select * from user_role_privs;
 
-        ²é¿´µ±Ç°ÓÃ»§µÄÏµÍ³È¨ÏŞºÍ±í¼¶È¨ÏŞ
+        æŸ¥çœ‹å½“å‰ç”¨æˆ·çš„ç³»ç»Ÿæƒé™å’Œè¡¨çº§æƒé™
         SQL>select * from user_sys_privs;
         SQL>select * from user_tab_privs;
 
-    2¡¢±í
+    2ã€è¡¨
 
-            ²é¿´ÓÃ»§ÏÂËùÓĞµÄ±í
+            æŸ¥çœ‹ç”¨æˆ·ä¸‹æ‰€æœ‰çš„è¡¨
             SQL>select * from user_tables;
 
-            ²é¿´Ãû³Æ°üº¬log×Ö·ûµÄ±í
+            æŸ¥çœ‹åç§°åŒ…å«logå­—ç¬¦çš„è¡¨
             SQL>select object_name,object_id from user_objects
                 where instr(object_name,'LOG')>0;
 
-            ²é¿´Ä³±íµÄ´´½¨Ê±¼ä
+            æŸ¥çœ‹æŸè¡¨çš„åˆ›å»ºæ—¶é—´
             SQL>select object_name,created from user_objects where object_name=upper('&table_name');
 
-            ²é¿´Ä³±íµÄ´óĞ¡
+            æŸ¥çœ‹æŸè¡¨çš„å¤§å°
             SQL>select sum(bytes)/(1024*1024) as "size(M)" from user_segments
                 where segment_name=upper('&table_name');
 
-            ²é¿´·ÅÔÚORACLEµÄÄÚ´æÇøÀïµÄ±í
+            æŸ¥çœ‹æ”¾åœ¨ORACLEçš„å†…å­˜åŒºé‡Œçš„è¡¨
             SQL>select table_name,cache from user_tables where instr(cache,'Y')>0;
 
-    3¡¢Ë÷Òı
+    3ã€ç´¢å¼•
 
-            ²é¿´Ë÷Òı¸öÊıºÍÀà±ğ
+            æŸ¥çœ‹ç´¢å¼•ä¸ªæ•°å’Œç±»åˆ«
             SQL>select index_name,index_type,table_name from user_indexes order by table_name;
 
-            ²é¿´Ë÷Òı±»Ë÷ÒıµÄ×Ö¶Î
+            æŸ¥çœ‹ç´¢å¼•è¢«ç´¢å¼•çš„å­—æ®µ
             SQL>select * from user_ind_columns where index_name=upper('&index_name');
 
-            ²é¿´Ë÷ÒıµÄ´óĞ¡
+            æŸ¥çœ‹ç´¢å¼•çš„å¤§å°
             SQL>select sum(bytes)/(1024*1024) as "size(M)" from user_segments
                 where segment_name=upper('&index_name');
 
-    4¡¢ĞòÁĞºÅ
+    4ã€åºåˆ—å·
 
-            ²é¿´ĞòÁĞºÅ£¬last_numberÊÇµ±Ç°Öµ
+            æŸ¥çœ‹åºåˆ—å·ï¼Œlast_numberæ˜¯å½“å‰å€¼
             SQL>select * from user_sequences;
 
-    5¡¢ÊÓÍ¼
+    5ã€è§†å›¾
 
-            ²é¿´ÊÓÍ¼µÄÃû³Æ
+            æŸ¥çœ‹è§†å›¾çš„åç§°
             SQL>select view_name from user_views;
 
-            ²é¿´´´½¨ÊÓÍ¼µÄselectÓï¾ä
+            æŸ¥çœ‹åˆ›å»ºè§†å›¾çš„selectè¯­å¥
             SQL>set view_name,text_length from user_views;
-            SQL>set long 2000;                ËµÃ÷£º¿ÉÒÔ¸ù¾İÊÓÍ¼µÄtext_lengthÖµÉè¶¨set long µÄ´óĞ¡
+            SQL>set long 2000;                è¯´æ˜ï¼šå¯ä»¥æ ¹æ®è§†å›¾çš„text_lengthå€¼è®¾å®šset long çš„å¤§å°
             SQL>select text from user_views where view_name=upper('&view_name');
 
-    6¡¢Í¬Òå´Ê
+    6ã€åŒä¹‰è¯
 
-            ²é¿´Í¬Òå´ÊµÄÃû³Æ
+            æŸ¥çœ‹åŒä¹‰è¯çš„åç§°
             SQL>select * from user_synonyms;
 
-    7¡¢Ô¼ÊøÌõ¼ş
+    7ã€çº¦æŸæ¡ä»¶
 
-            ²é¿´Ä³±íµÄÔ¼ÊøÌõ¼ş
+            æŸ¥çœ‹æŸè¡¨çš„çº¦æŸæ¡ä»¶
             SQL>select constraint_name, constraint_type,search_condition, r_constraint_name
                 from user_constraints where table_name = upper('&table_name');
 
@@ -2546,32 +2546,32 @@ ORA-01035: ORACLE Ö»ÔÊĞí¾ßÓĞ RESTRICTED SESSION È¨ÏŞµÄÓÃ»§Ê¹ÓÃ
             and c.owner = cc.owner and c.constraint_name = cc.constraint_name
             order by cc.position;
 
-    8¡¢´æ´¢º¯ÊıºÍ¹ı³Ì
+    8ã€å­˜å‚¨å‡½æ•°å’Œè¿‡ç¨‹
 
-            ²é¿´º¯ÊıºÍ¹ı³ÌµÄ×´Ì¬
+            æŸ¥çœ‹å‡½æ•°å’Œè¿‡ç¨‹çš„çŠ¶æ€
             SQL>select object_name,status from user_objects where object_type='FUNCTION';
             SQL>select object_name,status from user_objects where object_type='PROCEDURE';
 
-            ²é¿´º¯ÊıºÍ¹ı³ÌµÄÔ´´úÂë
+            æŸ¥çœ‹å‡½æ•°å’Œè¿‡ç¨‹çš„æºä»£ç 
             SQL>select text from all_source where owner=user and name=upper('&plsql_name');
 
 
-Èı¡¢²é¿´Êı¾İ¿âµÄSQL
-1¡¢²é¿´±í¿Õ¼äµÄÃû³Æ¼°´óĞ¡
+ä¸‰ã€æŸ¥çœ‹æ•°æ®åº“çš„SQL
+1ã€æŸ¥çœ‹è¡¨ç©ºé—´çš„åç§°åŠå¤§å°
 
     select t.tablespace_name, round(sum(bytes/(1024*1024)),0) ts_size
     from dba_tablespaces t, dba_data_files d
     where t.tablespace_name = d.tablespace_name
     group by t.tablespace_name;
 
-2¡¢²é¿´±í¿Õ¼äÎïÀíÎÄ¼şµÄÃû³Æ¼°´óĞ¡
+2ã€æŸ¥çœ‹è¡¨ç©ºé—´ç‰©ç†æ–‡ä»¶çš„åç§°åŠå¤§å°
 
     select tablespace_name, file_id, file_name,
     round(bytes/(1024*1024),0) total_space
     from dba_data_files
     order by tablespace_name;
 
-3¡¢²é¿´»Ø¹ö¶ÎÃû³Æ¼°´óĞ¡
+3ã€æŸ¥çœ‹å›æ»šæ®µåç§°åŠå¤§å°
 
     select segment_name, tablespace_name, r.status,
     (initial_extent/1024) InitialExtent,(next_extent/1024) NextExtent,
@@ -2580,15 +2580,15 @@ ORA-01035: ORACLE Ö»ÔÊĞí¾ßÓĞ RESTRICTED SESSION È¨ÏŞµÄÓÃ»§Ê¹ÓÃ
     Where r.segment_id = v.usn(+)
     order by segment_name ;
 
-4¡¢²é¿´¿ØÖÆÎÄ¼ş
+4ã€æŸ¥çœ‹æ§åˆ¶æ–‡ä»¶
 
     select name from v$controlfile;
 
-5¡¢²é¿´ÈÕÖ¾ÎÄ¼ş
+5ã€æŸ¥çœ‹æ—¥å¿—æ–‡ä»¶
 
     select member from v$logfile;
 
-6¡¢²é¿´±í¿Õ¼äµÄÊ¹ÓÃÇé¿ö
+6ã€æŸ¥çœ‹è¡¨ç©ºé—´çš„ä½¿ç”¨æƒ…å†µ
 
     select sum(bytes)/(1024*1024) as free_space,tablespace_name
     from dba_free_space
@@ -2599,126 +2599,126 @@ ORA-01035: ORACLE Ö»ÔÊĞí¾ßÓĞ RESTRICTED SESSION È¨ÏŞµÄÓÃ»§Ê¹ÓÃ
     FROM SYS.SM$TS_AVAIL A,SYS.SM$TS_USED B,SYS.SM$TS_FREE C
     WHERE A.TABLESPACE_NAME=B.TABLESPACE_NAME AND A.TABLESPACE_NAME=C.TABLESPACE_NAME;
 
-7¡¢²é¿´Êı¾İ¿â¿â¶ÔÏó
+7ã€æŸ¥çœ‹æ•°æ®åº“åº“å¯¹è±¡
 
     select owner, object_type, status, count(*) count# from all_objects group by owner, object_type, status;
 
-8¡¢²é¿´Êı¾İ¿âµÄ°æ±¾
+8ã€æŸ¥çœ‹æ•°æ®åº“çš„ç‰ˆæœ¬
 
     Select version FROM Product_component_version
     Where SUBSTR(PRODUCT,1,6)='Oracle';
 
-9¡¢²é¿´Êı¾İ¿âµÄ´´½¨ÈÕÆÚºÍ¹éµµ·½Ê½
+9ã€æŸ¥çœ‹æ•°æ®åº“çš„åˆ›å»ºæ—¥æœŸå’Œå½’æ¡£æ–¹å¼
 
     Select Created, Log_Mode, Log_Mode From V$Database;
-ËÄ¡¢ORACLEÓÃ»§Á¬½ÓµÄ¹ÜÀí
+å››ã€ORACLEç”¨æˆ·è¿æ¥çš„ç®¡ç†
 
-ÓÃÏµÍ³¹ÜÀíÔ±£¬²é¿´µ±Ç°Êı¾İ¿âÓĞ¼¸¸öÓÃ»§Á¬½Ó£º
+ç”¨ç³»ç»Ÿç®¡ç†å‘˜ï¼ŒæŸ¥çœ‹å½“å‰æ•°æ®åº“æœ‰å‡ ä¸ªç”¨æˆ·è¿æ¥ï¼š
 
 SQL> select username,sid,serial# from v$session;
 
-Èç¹ûÒªÍ£Ä³¸öÁ¬½ÓÓÃ
+å¦‚æœè¦åœæŸä¸ªè¿æ¥ç”¨
 
 SQL> alter system kill session 'sid,serial#';
 
-Èç¹ûÕâÃüÁî²»ĞĞ,ÕÒËüUNIXµÄ½ø³ÌÊı
+å¦‚æœè¿™å‘½ä»¤ä¸è¡Œ,æ‰¾å®ƒUNIXçš„è¿›ç¨‹æ•°
 
 SQL> select pro.spid from v$session ses,v$process pro where ses.sid=21 and ses.paddr=pro.addr;
 
-ËµÃ÷£º21ÊÇÄ³¸öÁ¬½ÓµÄsidÊı
+è¯´æ˜ï¼š21æ˜¯æŸä¸ªè¿æ¥çš„sidæ•°
 
-È»ºóÓÃ kill ÃüÁîÉ±´Ë½ø³ÌºÅ¡£
+ç„¶åç”¨ kill å‘½ä»¤æ€æ­¤è¿›ç¨‹å·ã€‚
 
 
-Îå¡¢SQL*PLUSÊ¹ÓÃ
-a¡¢½üÈëSQL*Plus
-$sqlplus ÓÃ»§Ãû/ÃÜÂë
+äº”ã€SQL*PLUSä½¿ç”¨
+aã€è¿‘å…¥SQL*Plus
+$sqlplus ç”¨æˆ·å/å¯†ç 
 
-   ÍË³öSQL*Plus
+   é€€å‡ºSQL*Plus
 SQL>exit
 
-b¡¢ÔÚsqlplusÏÂµÃµ½°ïÖúĞÅÏ¢
-ÁĞ³öÈ«²¿SQLÃüÁîºÍSQL*PlusÃüÁî
+bã€åœ¨sqlplusä¸‹å¾—åˆ°å¸®åŠ©ä¿¡æ¯
+åˆ—å‡ºå…¨éƒ¨SQLå‘½ä»¤å’ŒSQL*Pluså‘½ä»¤
 SQL>help
-ÁĞ³öÄ³¸öÌØ¶¨µÄÃüÁîµÄĞÅÏ¢
-SQL>help ÃüÁîÃû
+åˆ—å‡ºæŸä¸ªç‰¹å®šçš„å‘½ä»¤çš„ä¿¡æ¯
+SQL>help å‘½ä»¤å
 
-c¡¢ÏÔÊ¾±í½á¹¹ÃüÁîDESCRIBE
-SQL>DESC ±íÃû
+cã€æ˜¾ç¤ºè¡¨ç»“æ„å‘½ä»¤DESCRIBE
+SQL>DESC è¡¨å
 
-d¡¢SQL*PlusÖĞµÄ±à¼­ÃüÁî
-ÏÔÊ¾SQL»º³åÇøÃüÁî
+dã€SQL*Plusä¸­çš„ç¼–è¾‘å‘½ä»¤
+æ˜¾ç¤ºSQLç¼“å†²åŒºå‘½ä»¤
 SQL>L
 
-ĞŞ¸ÄSQLÃüÁî
-Ê×ÏÈÒª½«´ı¸ÄÕıĞĞ±äÎªµ±Ç°ĞĞ
+ä¿®æ”¹SQLå‘½ä»¤
+é¦–å…ˆè¦å°†å¾…æ”¹æ­£è¡Œå˜ä¸ºå½“å‰è¡Œ
 SQL>n
-ÓÃCHANGEÃüÁîĞŞ¸ÄÄÚÈİ
-SQL>c/¾É/ĞÂ
-ÖØĞÂÈ·ÈÏÊÇ·ñÒÑÕıÈ·
+ç”¨CHANGEå‘½ä»¤ä¿®æ”¹å†…å®¹
+SQL>c/æ—§/æ–°
+é‡æ–°ç¡®è®¤æ˜¯å¦å·²æ­£ç¡®
 SQL>L
 
-Ê¹ÓÃINPUTÃüÁî¿ÉÒÔÔÚSQL»º³åÇøÖĞÔö¼ÓÒ»ĞĞ»ò¶àĞĞ
+ä½¿ç”¨INPUTå‘½ä»¤å¯ä»¥åœ¨SQLç¼“å†²åŒºä¸­å¢åŠ ä¸€è¡Œæˆ–å¤šè¡Œ
 SQL>i
-SQL>ÊäÈëÄÚÈİ
+SQL>è¾“å…¥å†…å®¹
 
-e¡¢µ÷ÓÃÍâ²¿ÏµÍ³±à¼­Æ÷
-SQL>edit ÎÄ¼şÃû
-¿ÉÒÔÊ¹ÓÃDEFINEÃüÁîÉèÖÃÏµÍ³±äÁ¿EDITORÀ´¸Ä±äÎÄ±¾±à¼­Æ÷µÄÀàĞÍ£¬ÔÚlogin.sqlÎÄ¼şÖĞ¶¨ÒåÈçÏÂÒ»ĞĞ
+eã€è°ƒç”¨å¤–éƒ¨ç³»ç»Ÿç¼–è¾‘å™¨
+SQL>edit æ–‡ä»¶å
+å¯ä»¥ä½¿ç”¨DEFINEå‘½ä»¤è®¾ç½®ç³»ç»Ÿå˜é‡EDITORæ¥æ”¹å˜æ–‡æœ¬ç¼–è¾‘å™¨çš„ç±»å‹ï¼Œåœ¨login.sqlæ–‡ä»¶ä¸­å®šä¹‰å¦‚ä¸‹ä¸€è¡Œ
 DEFINE_EDITOR=vi
 
-f¡¢ÔËĞĞÃüÁîÎÄ¼ş
+fã€è¿è¡Œå‘½ä»¤æ–‡ä»¶
 SQL>START test
 SQL>@test
 
-³£ÓÃSQL*PlusÓï¾ä
-a¡¢±íµÄ´´½¨¡¢ĞŞ¸Ä¡¢É¾³ı
-´´½¨±íµÄÃüÁî¸ñÊ½ÈçÏÂ£º
-create table ±íÃû £¨ÁĞËµÃ÷ÁĞ±í£©£»
+å¸¸ç”¨SQL*Plusè¯­å¥
+aã€è¡¨çš„åˆ›å»ºã€ä¿®æ”¹ã€åˆ é™¤
+åˆ›å»ºè¡¨çš„å‘½ä»¤æ ¼å¼å¦‚ä¸‹ï¼š
+create table è¡¨å ï¼ˆåˆ—è¯´æ˜åˆ—è¡¨ï¼‰ï¼›
 
-Îª»ù±íÔö¼ÓĞÂÁĞÃüÁîÈçÏÂ£º
-ALTER TABLE ±íÃû ADD £¨ÁĞËµÃ÷ÁĞ±í£©
-Àı£ºÎªtest±íÔö¼ÓÒ»ÁĞAge£¬ÓÃÀ´´æ·ÅÄêÁä
+ä¸ºåŸºè¡¨å¢åŠ æ–°åˆ—å‘½ä»¤å¦‚ä¸‹ï¼š
+ALTER TABLE è¡¨å ADD ï¼ˆåˆ—è¯´æ˜åˆ—è¡¨ï¼‰
+ä¾‹ï¼šä¸ºtestè¡¨å¢åŠ ä¸€åˆ—Ageï¼Œç”¨æ¥å­˜æ”¾å¹´é¾„
     sql>alter table test
-        add £¨Age number(3)£©£»
+        add ï¼ˆAge number(3)ï¼‰ï¼›
 
-ĞŞ¸Ä»ù±íÁĞ¶¨ÒåÃüÁîÈçÏÂ£º
-ALTER TABLE ±íÃû
-MODIFY £¨ÁĞÃû Êı¾İÀàĞÍ£©
-Àı£º½«test±íÖĞµÄCountÁĞ¿í¶È¼Ó³¤Îª10¸ö×Ö·û
+ä¿®æ”¹åŸºè¡¨åˆ—å®šä¹‰å‘½ä»¤å¦‚ä¸‹ï¼š
+ALTER TABLE è¡¨å
+MODIFY ï¼ˆåˆ—å æ•°æ®ç±»å‹ï¼‰
+ä¾‹ï¼šå°†testè¡¨ä¸­çš„Countåˆ—å®½åº¦åŠ é•¿ä¸º10ä¸ªå­—ç¬¦
     sql>alter atble test
-        modify £¨County char(10)£©£»
+        modify ï¼ˆCounty char(10)ï¼‰ï¼›
 
-b¡¢½«Ò»ÕÅ±íÉ¾³ıÓï¾äµÄ¸ñÊ½ÈçÏÂ£º
-DORP TABLE ±íÃû£»
-Àı£º±íÉ¾³ı½«Í¬Ê±É¾³ı±íµÄÊı¾İºÍ±íµÄ¶¨Òå
+bã€å°†ä¸€å¼ è¡¨åˆ é™¤è¯­å¥çš„æ ¼å¼å¦‚ä¸‹ï¼š
+DORP TABLE è¡¨åï¼›
+ä¾‹ï¼šè¡¨åˆ é™¤å°†åŒæ—¶åˆ é™¤è¡¨çš„æ•°æ®å’Œè¡¨çš„å®šä¹‰
 sql>drop table test
 
-c¡¢±í¿Õ¼äµÄ´´½¨¡¢É¾³ı
+cã€è¡¨ç©ºé—´çš„åˆ›å»ºã€åˆ é™¤
 
 
-Áù¡¢ORACLEÂß¼­±¸·İµÄSHÎÄ¼ş
+å…­ã€ORACLEé€»è¾‘å¤‡ä»½çš„SHæ–‡ä»¶
 
-ÍêÈ«±¸·İµÄSHÎÄ¼ş£ºexp_comp.sh
+å®Œå…¨å¤‡ä»½çš„SHæ–‡ä»¶ï¼šexp_comp.sh
 
 rq=` date +"%m%d" `
 
 su - oracle -c "exp system/manager full=y inctype=complete file=/oracle/export/db_comp$rq.dmp"
 
-ÀÛ¼Æ±¸·İµÄSHÎÄ¼ş£ºexp_cumu.sh
+ç´¯è®¡å¤‡ä»½çš„SHæ–‡ä»¶ï¼šexp_cumu.sh
 
 rq=` date +"%m%d" `
 
 su - oracle -c "exp system/manager full=y inctype=cumulative file=/oracle/export/db_cumu$rq.dmp"
 
-ÔöÁ¿±¸·İµÄSHÎÄ¼ş: exp_incr.sh
+å¢é‡å¤‡ä»½çš„SHæ–‡ä»¶: exp_incr.sh
 
 rq=` date +"%m%d" `
 
 su - oracle -c "exp system/manager full=y inctype=incremental file=/oracle/export/db_incr$rq.dmp"
 
-rootÓÃ»§crontabÎÄ¼ş
-/var/spool/cron/crontabs/rootÔö¼ÓÒÔÏÂÄÚÈİ
+rootç”¨æˆ·crontabæ–‡ä»¶
+/var/spool/cron/crontabs/rootå¢åŠ ä»¥ä¸‹å†…å®¹
 
 0 2 1 * * /oracle/exp_comp.sh
 
@@ -2726,276 +2726,276 @@ rootÓÃ»§crontabÎÄ¼ş
 
 45 2 * * 6 /oracle/exp_cumu.sh
 
-µ±È»Õâ¸öÊ±¼ä±í¿ÉÒÔ¸ù¾İ²»Í¬µÄĞèÇóÀ´¸Ä±äµÄ£¬ÕâÖ»ÊÇÒ»¸öÀı×Ó¡£
+å½“ç„¶è¿™ä¸ªæ—¶é—´è¡¨å¯ä»¥æ ¹æ®ä¸åŒçš„éœ€æ±‚æ¥æ”¹å˜çš„ï¼Œè¿™åªæ˜¯ä¸€ä¸ªä¾‹å­ã€‚
 
 
-Æß¡¢ORACLE ³£ÓÃµÄSQLÓï·¨ºÍÊı¾İ¶ÔÏó
+ä¸ƒã€ORACLE å¸¸ç”¨çš„SQLè¯­æ³•å’Œæ•°æ®å¯¹è±¡
 
-Ò».Êı¾İ¿ØÖÆÓï¾ä (DML) ²¿·Ö
+ä¸€.æ•°æ®æ§åˆ¶è¯­å¥ (DML) éƒ¨åˆ†
 
-1.INSERT  (ÍùÊı¾İ±íÀï²åÈë¼ÇÂ¼µÄÓï¾ä)
+1.INSERT  (å¾€æ•°æ®è¡¨é‡Œæ’å…¥è®°å½•çš„è¯­å¥)
 
-INSERT INTO ±íÃû(×Ö¶ÎÃû1, ×Ö¶ÎÃû2, ¡­¡­) VALUES ( Öµ1, Öµ2, ¡­¡­);
-INSERT INTO ±íÃû(×Ö¶ÎÃû1, ×Ö¶ÎÃû2, ¡­¡­)  SELECT (×Ö¶ÎÃû1, ×Ö¶ÎÃû2, ¡­¡­) FROM ÁíÍâµÄ±íÃû;
+INSERT INTO è¡¨å(å­—æ®µå1, å­—æ®µå2, â€¦â€¦) VALUES ( å€¼1, å€¼2, â€¦â€¦);
+INSERT INTO è¡¨å(å­—æ®µå1, å­—æ®µå2, â€¦â€¦)  SELECT (å­—æ®µå1, å­—æ®µå2, â€¦â€¦) FROM å¦å¤–çš„è¡¨å;
 
-×Ö·û´®ÀàĞÍµÄ×Ö¶ÎÖµ±ØĞëÓÃµ¥ÒıºÅÀ¨ÆğÀ´, ÀıÈç: ¡¯GOOD DAY¡¯
-Èç¹û×Ö¶ÎÖµÀï°üº¬µ¥ÒıºÅ¡¯ ĞèÒª½øĞĞ×Ö·û´®×ª»», ÎÒÃÇ°ÑËüÌæ»»³ÉÁ½¸öµ¥ÒıºÅ''.
-×Ö·û´®ÀàĞÍµÄ×Ö¶ÎÖµ³¬¹ı¶¨ÒåµÄ³¤¶È»á³ö´í, ×îºÃÔÚ²åÈëÇ°½øĞĞ³¤¶ÈĞ£Ñé.
+å­—ç¬¦ä¸²ç±»å‹çš„å­—æ®µå€¼å¿…é¡»ç”¨å•å¼•å·æ‹¬èµ·æ¥, ä¾‹å¦‚: â€™GOOD DAYâ€™
+å¦‚æœå­—æ®µå€¼é‡ŒåŒ…å«å•å¼•å·â€™ éœ€è¦è¿›è¡Œå­—ç¬¦ä¸²è½¬æ¢, æˆ‘ä»¬æŠŠå®ƒæ›¿æ¢æˆä¸¤ä¸ªå•å¼•å·''.
+å­—ç¬¦ä¸²ç±»å‹çš„å­—æ®µå€¼è¶…è¿‡å®šä¹‰çš„é•¿åº¦ä¼šå‡ºé”™, æœ€å¥½åœ¨æ’å…¥å‰è¿›è¡Œé•¿åº¦æ ¡éªŒ.
 
-ÈÕÆÚ×Ö¶ÎµÄ×Ö¶ÎÖµ¿ÉÒÔÓÃµ±Ç°Êı¾İ¿âµÄÏµÍ³Ê±¼äSYSDATE, ¾«È·µ½Ãë
-»òÕßÓÃ×Ö·û´®×ª»»³ÉÈÕÆÚĞÍº¯ÊıTO_DATE(¡®2001-08-01¡¯,¡¯YYYY-MM-DD¡¯)
-TO_DATE()»¹ÓĞºÜ¶àÖÖÈÕÆÚ¸ñÊ½, ¿ÉÒÔ²Î¿´ORACLE DOC.
-Äê-ÔÂ-ÈÕ Ğ¡Ê±:·ÖÖÓ:Ãë µÄ¸ñÊ½YYYY-MM-DD HH24:MI:SS
+æ—¥æœŸå­—æ®µçš„å­—æ®µå€¼å¯ä»¥ç”¨å½“å‰æ•°æ®åº“çš„ç³»ç»Ÿæ—¶é—´SYSDATE, ç²¾ç¡®åˆ°ç§’
+æˆ–è€…ç”¨å­—ç¬¦ä¸²è½¬æ¢æˆæ—¥æœŸå‹å‡½æ•°TO_DATE(â€˜2001-08-01â€™,â€™YYYY-MM-DDâ€™)
+TO_DATE()è¿˜æœ‰å¾ˆå¤šç§æ—¥æœŸæ ¼å¼, å¯ä»¥å‚çœ‹ORACLE DOC.
+å¹´-æœˆ-æ—¥ å°æ—¶:åˆ†é’Ÿ:ç§’ çš„æ ¼å¼YYYY-MM-DD HH24:MI:SS
 
-INSERTÊ±×î´ó¿É²Ù×÷µÄ×Ö·û´®³¤¶ÈĞ¡ÓÚµÈÓÚ4000¸öµ¥×Ö½Ú, Èç¹ûÒª²åÈë¸ü³¤µÄ×Ö·û´®, Çë¿¼ÂÇ×Ö¶ÎÓÃCLOBÀàĞÍ,
-·½·¨½èÓÃORACLEÀï×Ô´øµÄDBMS_LOB³ÌĞò°ü.
+INSERTæ—¶æœ€å¤§å¯æ“ä½œçš„å­—ç¬¦ä¸²é•¿åº¦å°äºç­‰äº4000ä¸ªå•å­—èŠ‚, å¦‚æœè¦æ’å…¥æ›´é•¿çš„å­—ç¬¦ä¸², è¯·è€ƒè™‘å­—æ®µç”¨CLOBç±»å‹,
+æ–¹æ³•å€Ÿç”¨ORACLEé‡Œè‡ªå¸¦çš„DBMS_LOBç¨‹åºåŒ….
 
-INSERTÊ±Èç¹ûÒªÓÃµ½´Ó1¿ªÊ¼×Ô¶¯Ôö³¤µÄĞòÁĞºÅ, Ó¦¸ÃÏÈ½¨Á¢Ò»¸öĞòÁĞºÅ
-CREATE SEQUENCE ĞòÁĞºÅµÄÃû³Æ (×îºÃÊÇ±íÃû+ĞòÁĞºÅ±ê¼Ç) INCREMENT BY 1  START  WITH  1
+INSERTæ—¶å¦‚æœè¦ç”¨åˆ°ä»1å¼€å§‹è‡ªåŠ¨å¢é•¿çš„åºåˆ—å·, åº”è¯¥å…ˆå»ºç«‹ä¸€ä¸ªåºåˆ—å·
+CREATE SEQUENCE åºåˆ—å·çš„åç§° (æœ€å¥½æ˜¯è¡¨å+åºåˆ—å·æ ‡è®°) INCREMENT BY 1  START  WITH  1
 MAXVALUE  99999  CYCLE  NOCACHE;
-ÆäÖĞ×î´óµÄÖµ°´×Ö¶ÎµÄ³¤¶ÈÀ´¶¨, Èç¹û¶¨ÒåµÄ×Ô¶¯Ôö³¤µÄĞòÁĞºÅ NUMBER(6) , ×î´óÖµÎª999999
-INSERT Óï¾ä²åÈëÕâ¸ö×Ö¶ÎÖµÎª: ĞòÁĞºÅµÄÃû³Æ.NEXTVAL
+å…¶ä¸­æœ€å¤§çš„å€¼æŒ‰å­—æ®µçš„é•¿åº¦æ¥å®š, å¦‚æœå®šä¹‰çš„è‡ªåŠ¨å¢é•¿çš„åºåˆ—å· NUMBER(6) , æœ€å¤§å€¼ä¸º999999
+INSERT è¯­å¥æ’å…¥è¿™ä¸ªå­—æ®µå€¼ä¸º: åºåˆ—å·çš„åç§°.NEXTVAL
 
-2.DELETE  (É¾³ıÊı¾İ±íÀï¼ÇÂ¼µÄÓï¾ä)
+2.DELETE  (åˆ é™¤æ•°æ®è¡¨é‡Œè®°å½•çš„è¯­å¥)
 
-DELETE FROM±íÃû WHERE Ìõ¼ş;
+DELETE FROMè¡¨å WHERE æ¡ä»¶;
 
-×¢Òâ£ºÉ¾³ı¼ÇÂ¼²¢²»ÄÜÊÍ·ÅORACLEÀï±»Õ¼ÓÃµÄÊı¾İ¿é±í¿Õ¼ä. ËüÖ»°ÑÄÇĞ©±»É¾³ıµÄÊı¾İ¿é±ê³Éunused.
+æ³¨æ„ï¼šåˆ é™¤è®°å½•å¹¶ä¸èƒ½é‡Šæ”¾ORACLEé‡Œè¢«å ç”¨çš„æ•°æ®å—è¡¨ç©ºé—´. å®ƒåªæŠŠé‚£äº›è¢«åˆ é™¤çš„æ•°æ®å—æ ‡æˆunused.
 
-Èç¹ûÈ·ÊµÒªÉ¾³ıÒ»¸ö´ó±íÀïµÄÈ«²¿¼ÇÂ¼, ¿ÉÒÔÓÃ TRUNCATE ÃüÁî, Ëü¿ÉÒÔÊÍ·ÅÕ¼ÓÃµÄÊı¾İ¿é±í¿Õ¼ä
-TRUNCATE TABLE ±íÃû;
-´Ë²Ù×÷²»¿É»ØÍË.
+å¦‚æœç¡®å®è¦åˆ é™¤ä¸€ä¸ªå¤§è¡¨é‡Œçš„å…¨éƒ¨è®°å½•, å¯ä»¥ç”¨ TRUNCATE å‘½ä»¤, å®ƒå¯ä»¥é‡Šæ”¾å ç”¨çš„æ•°æ®å—è¡¨ç©ºé—´
+TRUNCATE TABLE è¡¨å;
+æ­¤æ“ä½œä¸å¯å›é€€.
 
-3.UPDATE  (ĞŞ¸ÄÊı¾İ±íÀï¼ÇÂ¼µÄÓï¾ä)
+3.UPDATE  (ä¿®æ”¹æ•°æ®è¡¨é‡Œè®°å½•çš„è¯­å¥)
 
-UPDATE±íÃû SET ×Ö¶ÎÃû1=Öµ1, ×Ö¶ÎÃû2=Öµ2, ¡­¡­ WHERE Ìõ¼ş;
+UPDATEè¡¨å SET å­—æ®µå1=å€¼1, å­—æ®µå2=å€¼2, â€¦â€¦ WHERE æ¡ä»¶;
 
-Èç¹ûĞŞ¸ÄµÄÖµNÃ»ÓĞ¸³Öµ»ò¶¨ÒåÊ±, ½«°ÑÔ­À´µÄ¼ÇÂ¼ÄÚÈİÇåÎªNULL, ×îºÃÔÚĞŞ¸ÄÇ°½øĞĞ·Ç¿ÕĞ£Ñé;
-ÖµN³¬¹ı¶¨ÒåµÄ³¤¶È»á³ö´í, ×îºÃÔÚ²åÈëÇ°½øĞĞ³¤¶ÈĞ£Ñé..
+å¦‚æœä¿®æ”¹çš„å€¼Næ²¡æœ‰èµ‹å€¼æˆ–å®šä¹‰æ—¶, å°†æŠŠåŸæ¥çš„è®°å½•å†…å®¹æ¸…ä¸ºNULL, æœ€å¥½åœ¨ä¿®æ”¹å‰è¿›è¡Œéç©ºæ ¡éªŒ;
+å€¼Nè¶…è¿‡å®šä¹‰çš„é•¿åº¦ä¼šå‡ºé”™, æœ€å¥½åœ¨æ’å…¥å‰è¿›è¡Œé•¿åº¦æ ¡éªŒ..
 
-×¢ÒâÊÂÏî:
-A.        ÒÔÉÏSQLÓï¾ä¶Ô±í¶¼¼ÓÉÏÁËĞĞ¼¶Ëø,
-        È·ÈÏÍê³Éºó, ±ØĞë¼ÓÉÏÊÂÎï´¦Àí½áÊøµÄÃüÁî COMMIT ²ÅÄÜÕıÊ½ÉúĞ§,
-        ·ñÔò¸Ä±ä²»Ò»¶¨Ğ´ÈëÊı¾İ¿âÀï.
-        Èç¹ûÏë³·»ØÕâĞ©²Ù×÷, ¿ÉÒÔÓÃÃüÁî ROLLBACK ¸´Ô­.
+æ³¨æ„äº‹é¡¹:
+A.        ä»¥ä¸ŠSQLè¯­å¥å¯¹è¡¨éƒ½åŠ ä¸Šäº†è¡Œçº§é”,
+        ç¡®è®¤å®Œæˆå, å¿…é¡»åŠ ä¸Šäº‹ç‰©å¤„ç†ç»“æŸçš„å‘½ä»¤ COMMIT æ‰èƒ½æ­£å¼ç”Ÿæ•ˆ,
+        å¦åˆ™æ”¹å˜ä¸ä¸€å®šå†™å…¥æ•°æ®åº“é‡Œ.
+        å¦‚æœæƒ³æ’¤å›è¿™äº›æ“ä½œ, å¯ä»¥ç”¨å‘½ä»¤ ROLLBACK å¤åŸ.
 
-B.        ÔÚÔËĞĞINSERT, DELETE ºÍ UPDATE Óï¾äÇ°×îºÃ¹ÀËãÒ»ÏÂ¿ÉÄÜ²Ù×÷µÄ¼ÇÂ¼·¶Î§,
-        Ó¦¸Ã°ÑËüÏŞ¶¨ÔÚ½ÏĞ¡ (Ò»ÍòÌõ¼ÇÂ¼) ·¶Î§ÄÚ,. ·ñÔòORACLE´¦ÀíÕâ¸öÊÂÎïÓÃµ½ºÜ´óµÄ»ØÍË¶Î.
-        ³ÌĞòÏìÓ¦ÂıÉõÖÁÊ§È¥ÏìÓ¦. Èç¹û¼ÇÂ¼ÊıÉÏÊ®ÍòÒÔÉÏÕâĞ©²Ù×÷, ¿ÉÒÔ°ÑÕâĞ©SQLÓï¾ä·Ö¶Î·Ö´ÎÍê³É,
-        Æä¼ä¼ÓÉÏCOMMIT È·ÈÏÊÂÎï´¦Àí.
-¶ş.Êı¾İ¶¨Òå (DDL) ²¿·Ö
+B.        åœ¨è¿è¡ŒINSERT, DELETE å’Œ UPDATE è¯­å¥å‰æœ€å¥½ä¼°ç®—ä¸€ä¸‹å¯èƒ½æ“ä½œçš„è®°å½•èŒƒå›´,
+        åº”è¯¥æŠŠå®ƒé™å®šåœ¨è¾ƒå° (ä¸€ä¸‡æ¡è®°å½•) èŒƒå›´å†…,. å¦åˆ™ORACLEå¤„ç†è¿™ä¸ªäº‹ç‰©ç”¨åˆ°å¾ˆå¤§çš„å›é€€æ®µ.
+        ç¨‹åºå“åº”æ…¢ç”šè‡³å¤±å»å“åº”. å¦‚æœè®°å½•æ•°ä¸Šåä¸‡ä»¥ä¸Šè¿™äº›æ“ä½œ, å¯ä»¥æŠŠè¿™äº›SQLè¯­å¥åˆ†æ®µåˆ†æ¬¡å®Œæˆ,
+        å…¶é—´åŠ ä¸ŠCOMMIT ç¡®è®¤äº‹ç‰©å¤„ç†.
+äºŒ.æ•°æ®å®šä¹‰ (DDL) éƒ¨åˆ†
 
-1.CREATE (´´½¨±í, Ë÷Òı, ÊÓÍ¼, Í¬Òå´Ê, ¹ı³Ì, º¯Êı, Êı¾İ¿âÁ´½ÓµÈ)
+1.CREATE (åˆ›å»ºè¡¨, ç´¢å¼•, è§†å›¾, åŒä¹‰è¯, è¿‡ç¨‹, å‡½æ•°, æ•°æ®åº“é“¾æ¥ç­‰)
 
-ORACLE³£ÓÃµÄ×Ö¶ÎÀàĞÍÓĞ
-CHAR                        ¹Ì¶¨³¤¶ÈµÄ×Ö·û´®
-VARCHAR2                ¿É±ä³¤¶ÈµÄ×Ö·û´®
-NUMBER(M,N)                Êı×ÖĞÍMÊÇÎ»Êı×Ü³¤¶È, NÊÇĞ¡ÊıµÄ³¤¶È
-DATE                        ÈÕÆÚÀàĞÍ
+ORACLEå¸¸ç”¨çš„å­—æ®µç±»å‹æœ‰
+CHAR                        å›ºå®šé•¿åº¦çš„å­—ç¬¦ä¸²
+VARCHAR2                å¯å˜é•¿åº¦çš„å­—ç¬¦ä¸²
+NUMBER(M,N)                æ•°å­—å‹Mæ˜¯ä½æ•°æ€»é•¿åº¦, Næ˜¯å°æ•°çš„é•¿åº¦
+DATE                        æ—¥æœŸç±»å‹
 
-´´½¨±íÊ±Òª°Ñ½ÏĞ¡µÄ²»Îª¿ÕµÄ×Ö¶Î·ÅÔÚÇ°Ãæ, ¿ÉÄÜÎª¿ÕµÄ×Ö¶Î·ÅÔÚºóÃæ
+åˆ›å»ºè¡¨æ—¶è¦æŠŠè¾ƒå°çš„ä¸ä¸ºç©ºçš„å­—æ®µæ”¾åœ¨å‰é¢, å¯èƒ½ä¸ºç©ºçš„å­—æ®µæ”¾åœ¨åé¢
 
-´´½¨±íÊ±¿ÉÒÔÓÃÖĞÎÄµÄ×Ö¶ÎÃû, µ«×îºÃ»¹ÊÇÓÃÓ¢ÎÄµÄ×Ö¶ÎÃû
+åˆ›å»ºè¡¨æ—¶å¯ä»¥ç”¨ä¸­æ–‡çš„å­—æ®µå, ä½†æœ€å¥½è¿˜æ˜¯ç”¨è‹±æ–‡çš„å­—æ®µå
 
-´´½¨±íÊ±¿ÉÒÔ¸ø×Ö¶Î¼ÓÉÏÄ¬ÈÏÖµ, ÀıÈç DEFAULT SYSDATE
-ÕâÑùÃ¿´Î²åÈëºÍĞŞ¸ÄÊ±, ²»ÓÃ³ÌĞò²Ù×÷Õâ¸ö×Ö¶Î¶¼ÄÜµÃµ½¶¯×÷µÄÊ±¼ä
+åˆ›å»ºè¡¨æ—¶å¯ä»¥ç»™å­—æ®µåŠ ä¸Šé»˜è®¤å€¼, ä¾‹å¦‚ DEFAULT SYSDATE
+è¿™æ ·æ¯æ¬¡æ’å…¥å’Œä¿®æ”¹æ—¶, ä¸ç”¨ç¨‹åºæ“ä½œè¿™ä¸ªå­—æ®µéƒ½èƒ½å¾—åˆ°åŠ¨ä½œçš„æ—¶é—´
 
-´´½¨±íÊ±¿ÉÒÔ¸ø×Ö¶Î¼ÓÉÏÔ¼ÊøÌõ¼ş
-ÀıÈç ²»ÔÊĞíÖØ¸´ UNIQUE, ¹Ø¼ü×Ö PRIMARY KEY
+åˆ›å»ºè¡¨æ—¶å¯ä»¥ç»™å­—æ®µåŠ ä¸Šçº¦æŸæ¡ä»¶
+ä¾‹å¦‚ ä¸å…è®¸é‡å¤ UNIQUE, å…³é”®å­— PRIMARY KEY
 
-2.ALTER        (¸Ä±ä±í, Ë÷Òı, ÊÓÍ¼µÈ)
+2.ALTER        (æ”¹å˜è¡¨, ç´¢å¼•, è§†å›¾ç­‰)
 
-¸Ä±ä±íµÄÃû³Æ
-ALTER TABLE ±íÃû1  TO ±íÃû2;
+æ”¹å˜è¡¨çš„åç§°
+ALTER TABLE è¡¨å1  TO è¡¨å2;
 
-ÔÚ±íµÄºóÃæÔö¼ÓÒ»¸ö×Ö¶Î
-ALTER TABLE±íÃû ADD ×Ö¶ÎÃû ×Ö¶ÎÃûÃèÊö;
+åœ¨è¡¨çš„åé¢å¢åŠ ä¸€ä¸ªå­—æ®µ
+ALTER TABLEè¡¨å ADD å­—æ®µå å­—æ®µåæè¿°;
 
-ĞŞ¸Ä±íÀï×Ö¶ÎµÄ¶¨ÒåÃèÊö
-ALTER TABLE±íÃû MODIFY×Ö¶ÎÃû ×Ö¶ÎÃûÃèÊö;
+ä¿®æ”¹è¡¨é‡Œå­—æ®µçš„å®šä¹‰æè¿°
+ALTER TABLEè¡¨å MODIFYå­—æ®µå å­—æ®µåæè¿°;
 
-¸ø±íÀïµÄ×Ö¶Î¼ÓÉÏÔ¼ÊøÌõ¼ş
-ALTER TABLE ±íÃû ADD CONSTRAINT Ô¼ÊøÃû PRIMARY KEY (×Ö¶ÎÃû);
-ALTER TABLE ±íÃû ADD CONSTRAINT Ô¼ÊøÃû UNIQUE (×Ö¶ÎÃû);
+ç»™è¡¨é‡Œçš„å­—æ®µåŠ ä¸Šçº¦æŸæ¡ä»¶
+ALTER TABLE è¡¨å ADD CONSTRAINT çº¦æŸå PRIMARY KEY (å­—æ®µå);
+ALTER TABLE è¡¨å ADD CONSTRAINT çº¦æŸå UNIQUE (å­—æ®µå);
 
-°Ñ±í·ÅÔÚ»òÈ¡³öÊı¾İ¿âµÄÄÚ´æÇø
-ALTER TABLE ±íÃû CACHE;
-ALTER TABLE ±íÃû NOCACHE;
+æŠŠè¡¨æ”¾åœ¨æˆ–å–å‡ºæ•°æ®åº“çš„å†…å­˜åŒº
+ALTER TABLE è¡¨å CACHE;
+ALTER TABLE è¡¨å NOCACHE;
 
-3.DROP        (É¾³ı±í, Ë÷Òı, ÊÓÍ¼, Í¬Òå´Ê, ¹ı³Ì, º¯Êı, Êı¾İ¿âÁ´½ÓµÈ)
+3.DROP        (åˆ é™¤è¡¨, ç´¢å¼•, è§†å›¾, åŒä¹‰è¯, è¿‡ç¨‹, å‡½æ•°, æ•°æ®åº“é“¾æ¥ç­‰)
 
-É¾³ı±íºÍËüËùÓĞµÄÔ¼ÊøÌõ¼ş
-DROP TABLE ±íÃû CASCADE CONSTRAINTS;
+åˆ é™¤è¡¨å’Œå®ƒæ‰€æœ‰çš„çº¦æŸæ¡ä»¶
+DROP TABLE è¡¨å CASCADE CONSTRAINTS;
 
-4.TRUNCATE (Çå¿Õ±íÀïµÄËùÓĞ¼ÇÂ¼, ±£Áô±íµÄ½á¹¹)
+4.TRUNCATE (æ¸…ç©ºè¡¨é‡Œçš„æ‰€æœ‰è®°å½•, ä¿ç•™è¡¨çš„ç»“æ„)
 
-TRUNCATE ±íÃû;
+TRUNCATE è¡¨å;
 
-Èı.²éÑ¯Óï¾ä (SELECT) ²¿·Ö
+ä¸‰.æŸ¥è¯¢è¯­å¥ (SELECT) éƒ¨åˆ†
 
-SELECT×Ö¶ÎÃû1, ×Ö¶ÎÃû2, ¡­¡­ FROM ±íÃû1, [±íÃû2, ¡­¡­] WHERE Ìõ¼ş;
+SELECTå­—æ®µå1, å­—æ®µå2, â€¦â€¦ FROM è¡¨å1, [è¡¨å2, â€¦â€¦] WHERE æ¡ä»¶;
 
-×Ö¶ÎÃû¿ÉÒÔ´øÈëº¯Êı
-  ÀıÈç:  COUNT(*), MIN(×Ö¶ÎÃû),  MAX(×Ö¶ÎÃû),  AVG(×Ö¶ÎÃû), DISTINCT(×Ö¶ÎÃû),
-           TO_CHAR(DATE×Ö¶ÎÃû,'YYYY-MM-DD HH24:MI:SS')
+å­—æ®µåå¯ä»¥å¸¦å…¥å‡½æ•°
+  ä¾‹å¦‚:  COUNT(*), MIN(å­—æ®µå),  MAX(å­—æ®µå),  AVG(å­—æ®µå), DISTINCT(å­—æ®µå),
+           TO_CHAR(DATEå­—æ®µå,'YYYY-MM-DD HH24:MI:SS')
 
-NVL(EXPR1, EXPR2)º¯Êı
-½âÊÍ:
+NVL(EXPR1, EXPR2)å‡½æ•°
+è§£é‡Š:
 IF EXPR1=NULL
                 RETURN EXPR2
 ELSE
                        RETURN EXPR1
 
-DECODE(AA©oV1©oR1©oV2©oR2....)º¯Êı
-½âÊÍ:
+DECODE(AAï¹V1ï¹R1ï¹V2ï¹R2....)å‡½æ•°
+è§£é‡Š:
 IF AA=V1 THEN RETURN R1
 IF AA=V2 THEN RETURN R2
-..¡­
+..â€¦
 ELSE
 RETURN NULL
 
-LPAD(char1,n,char2)º¯Êı
-½âÊÍ:
-×Ö·ûchar1°´ÖÆ¶¨µÄÎ»ÊınÏÔÊ¾£¬²»×ãµÄÎ»ÊıÓÃchar2×Ö·û´®Ìæ»»×ó±ßµÄ¿ÕÎ»
+LPAD(char1,n,char2)å‡½æ•°
+è§£é‡Š:
+å­—ç¬¦char1æŒ‰åˆ¶å®šçš„ä½æ•°næ˜¾ç¤ºï¼Œä¸è¶³çš„ä½æ•°ç”¨char2å­—ç¬¦ä¸²æ›¿æ¢å·¦è¾¹çš„ç©ºä½
 
-×Ö¶ÎÃûÖ®¼ä¿ÉÒÔ½øĞĞËãÊõÔËËã
-ÀıÈç:  (×Ö¶ÎÃû1*×Ö¶ÎÃû1)/3
+å­—æ®µåä¹‹é—´å¯ä»¥è¿›è¡Œç®—æœ¯è¿ç®—
+ä¾‹å¦‚:  (å­—æ®µå1*å­—æ®µå1)/3
 
-²éÑ¯Óï¾ä¿ÉÒÔÇ¶Ì×
-ÀıÈç: SELECT ¡­¡­ FROM
-(SELECT ¡­¡­ FROM±íÃû1, [±íÃû2, ¡­¡­] WHERE Ìõ¼ş) WHERE Ìõ¼ş2;
+æŸ¥è¯¢è¯­å¥å¯ä»¥åµŒå¥—
+ä¾‹å¦‚: SELECT â€¦â€¦ FROM
+(SELECT â€¦â€¦ FROMè¡¨å1, [è¡¨å2, â€¦â€¦] WHERE æ¡ä»¶) WHERE æ¡ä»¶2;
 
-Á½¸ö²éÑ¯Óï¾äµÄ½á¹û¿ÉÒÔ×ö¼¯ºÏ²Ù×÷
-ÀıÈç: ²¢¼¯UNION(È¥µôÖØ¸´¼ÇÂ¼), ²¢¼¯UNION ALL(²»È¥µôÖØ¸´¼ÇÂ¼), ²î¼¯MINUS,  ½»¼¯INTERSECT
+ä¸¤ä¸ªæŸ¥è¯¢è¯­å¥çš„ç»“æœå¯ä»¥åšé›†åˆæ“ä½œ
+ä¾‹å¦‚: å¹¶é›†UNION(å»æ‰é‡å¤è®°å½•), å¹¶é›†UNION ALL(ä¸å»æ‰é‡å¤è®°å½•), å·®é›†MINUS,  äº¤é›†INTERSECT
 
-·Ö×é²éÑ¯
-SELECT×Ö¶ÎÃû1, ×Ö¶ÎÃû2, ¡­¡­ FROM ±íÃû1, [±íÃû2, ¡­¡­] GROUP BY×Ö¶ÎÃû1
-[HAVING Ìõ¼ş] ;
+åˆ†ç»„æŸ¥è¯¢
+SELECTå­—æ®µå1, å­—æ®µå2, â€¦â€¦ FROM è¡¨å1, [è¡¨å2, â€¦â€¦] GROUP BYå­—æ®µå1
+[HAVING æ¡ä»¶] ;
 
-Á½¸öÒÔÉÏ±íÖ®¼äµÄÁ¬½Ó²éÑ¯
+ä¸¤ä¸ªä»¥ä¸Šè¡¨ä¹‹é—´çš„è¿æ¥æŸ¥è¯¢
 
-SELECT×Ö¶ÎÃû1, ×Ö¶ÎÃû2, ¡­¡­ FROM ±íÃû1, [±íÃû2, ¡­¡­] WHERE
-                ±íÃû1.×Ö¶ÎÃû = ±íÃû2. ×Ö¶ÎÃû [ AND ¡­¡­] ;
+SELECTå­—æ®µå1, å­—æ®µå2, â€¦â€¦ FROM è¡¨å1, [è¡¨å2, â€¦â€¦] WHERE
+                è¡¨å1.å­—æ®µå = è¡¨å2. å­—æ®µå [ AND â€¦â€¦] ;
 
-SELECT×Ö¶ÎÃû1, ×Ö¶ÎÃû2, ¡­¡­ FROM ±íÃû1, [±íÃû2, ¡­¡­] WHERE
-                ±íÃû1.×Ö¶ÎÃû = ±íÃû2. ×Ö¶ÎÃû(+) [ AND ¡­¡­] ;
+SELECTå­—æ®µå1, å­—æ®µå2, â€¦â€¦ FROM è¡¨å1, [è¡¨å2, â€¦â€¦] WHERE
+                è¡¨å1.å­—æ®µå = è¡¨å2. å­—æ®µå(+) [ AND â€¦â€¦] ;
 
-ÓĞ(+)ºÅµÄ×Ö¶ÎÎ»ÖÃ×Ô¶¯²¹¿ÕÖµ
+æœ‰(+)å·çš„å­—æ®µä½ç½®è‡ªåŠ¨è¡¥ç©ºå€¼
 
-²éÑ¯½á¹û¼¯µÄÅÅĞò²Ù×÷, Ä¬ÈÏµÄÅÅĞòÊÇÉıĞòASC, ½µĞòÊÇDESC
+æŸ¥è¯¢ç»“æœé›†çš„æ’åºæ“ä½œ, é»˜è®¤çš„æ’åºæ˜¯å‡åºASC, é™åºæ˜¯DESC
 
-SELECT×Ö¶ÎÃû1, ×Ö¶ÎÃû2, ¡­¡­ FROM ±íÃû1, [±íÃû2, ¡­¡­]
-ORDER BY×Ö¶ÎÃû1, ×Ö¶ÎÃû2 DESC;
+SELECTå­—æ®µå1, å­—æ®µå2, â€¦â€¦ FROM è¡¨å1, [è¡¨å2, â€¦â€¦]
+ORDER BYå­—æ®µå1, å­—æ®µå2 DESC;
 
-×Ö·û´®Ä£ºı±È½ÏµÄ·½·¨
+å­—ç¬¦ä¸²æ¨¡ç³Šæ¯”è¾ƒçš„æ–¹æ³•
 
-INSTR(×Ö¶ÎÃû, ¡®×Ö·û´®¡¯)>0
-×Ö¶ÎÃû LIKE  ¡®×Ö·û´®%¡¯  [¡®%×Ö·û´®%¡¯]
+INSTR(å­—æ®µå, â€˜å­—ç¬¦ä¸²â€™)>0
+å­—æ®µå LIKE  â€˜å­—ç¬¦ä¸²%â€™  [â€˜%å­—ç¬¦ä¸²%â€™]
 
-Ã¿¸ö±í¶¼ÓĞÒ»¸öÒşº¬µÄ×Ö¶ÎROWID, Ëü±ê¼Ç×Å¼ÇÂ¼µÄÎ¨Ò»ĞÔ.
+æ¯ä¸ªè¡¨éƒ½æœ‰ä¸€ä¸ªéšå«çš„å­—æ®µROWID, å®ƒæ ‡è®°ç€è®°å½•çš„å”¯ä¸€æ€§.
 
-ËÄ.ORACLEÀï³£ÓÃµÄÊı¾İ¶ÔÏó (SCHEMA)
+å››.ORACLEé‡Œå¸¸ç”¨çš„æ•°æ®å¯¹è±¡ (SCHEMA)
 
-1.Ë÷Òı (INDEX)
+1.ç´¢å¼• (INDEX)
 
-CREATE INDEX Ë÷ÒıÃûON ±íÃû ( ×Ö¶Î1, [×Ö¶Î2, ¡­¡­] );
-ALTER INDEX Ë÷ÒıÃû REBUILD;
+CREATE INDEX ç´¢å¼•åON è¡¨å ( å­—æ®µ1, [å­—æ®µ2, â€¦â€¦] );
+ALTER INDEX ç´¢å¼•å REBUILD;
 
-Ò»¸ö±íµÄË÷Òı×îºÃ²»Òª³¬¹ıÈı¸ö (ÌØÊâµÄ´ó±í³ıÍâ), ×îºÃÓÃµ¥×Ö¶ÎË÷Òı, ½áºÏSQLÓï¾äµÄ·ÖÎöÖ´ĞĞÇé¿ö,
-Ò²¿ÉÒÔ½¨Á¢¶à×Ö¶ÎµÄ×éºÏË÷ÒıºÍ»ùÓÚº¯ÊıµÄË÷Òı
+ä¸€ä¸ªè¡¨çš„ç´¢å¼•æœ€å¥½ä¸è¦è¶…è¿‡ä¸‰ä¸ª (ç‰¹æ®Šçš„å¤§è¡¨é™¤å¤–), æœ€å¥½ç”¨å•å­—æ®µç´¢å¼•, ç»“åˆSQLè¯­å¥çš„åˆ†ææ‰§è¡Œæƒ…å†µ,
+ä¹Ÿå¯ä»¥å»ºç«‹å¤šå­—æ®µçš„ç»„åˆç´¢å¼•å’ŒåŸºäºå‡½æ•°çš„ç´¢å¼•
 
-ORACLE8.1.7×Ö·û´®¿ÉÒÔË÷ÒıµÄ×î´ó³¤¶ÈÎª1578 µ¥×Ö½Ú
-ORACLE8.0.6×Ö·û´®¿ÉÒÔË÷ÒıµÄ×î´ó³¤¶ÈÎª758 µ¥×Ö½Ú
+ORACLE8.1.7å­—ç¬¦ä¸²å¯ä»¥ç´¢å¼•çš„æœ€å¤§é•¿åº¦ä¸º1578 å•å­—èŠ‚
+ORACLE8.0.6å­—ç¬¦ä¸²å¯ä»¥ç´¢å¼•çš„æœ€å¤§é•¿åº¦ä¸º758 å•å­—èŠ‚
 
-2.ÊÓÍ¼ (VIEW)
+2.è§†å›¾ (VIEW)
 
-CREATE VIEW ÊÓÍ¼ÃûAS SELECT ¡­. FROM ¡­..;
-ALTER VIEWÊÓÍ¼Ãû COMPILE;
+CREATE VIEW è§†å›¾åAS SELECT â€¦. FROM â€¦..;
+ALTER VIEWè§†å›¾å COMPILE;
 
-ÊÓÍ¼½öÊÇÒ»¸öSQL²éÑ¯Óï¾ä, Ëü¿ÉÒÔ°Ñ±íÖ®¼ä¸´ÔÓµÄ¹ØÏµ¼ò½à»¯.
+è§†å›¾ä»…æ˜¯ä¸€ä¸ªSQLæŸ¥è¯¢è¯­å¥, å®ƒå¯ä»¥æŠŠè¡¨ä¹‹é—´å¤æ‚çš„å…³ç³»ç®€æ´åŒ–.
 
-3.Í¬Òå´Ê (SYNONMY)
-CREATE SYNONYMÍ¬Òå´ÊÃûFOR ±íÃû;
-CREATE SYNONYMÍ¬Òå´ÊÃûFOR ±íÃû@Êı¾İ¿âÁ´½ÓÃû;
+3.åŒä¹‰è¯ (SYNONMY)
+CREATE SYNONYMåŒä¹‰è¯åFOR è¡¨å;
+CREATE SYNONYMåŒä¹‰è¯åFOR è¡¨å@æ•°æ®åº“é“¾æ¥å;
 
-4.Êı¾İ¿âÁ´½Ó (DATABASE LINK)
-CREATE DATABASE LINKÊı¾İ¿âÁ´½ÓÃûCONNECT TO ÓÃ»§Ãû IDENTIFIED BY ÃÜÂë USING ¡®Êı¾İ¿âÁ¬½Ó×Ö·û´®¡¯;
+4.æ•°æ®åº“é“¾æ¥ (DATABASE LINK)
+CREATE DATABASE LINKæ•°æ®åº“é“¾æ¥åCONNECT TO ç”¨æˆ·å IDENTIFIED BY å¯†ç  USING â€˜æ•°æ®åº“è¿æ¥å­—ç¬¦ä¸²â€™;
 
-Êı¾İ¿âÁ¬½Ó×Ö·û´®¿ÉÒÔÓÃNET8 EASY CONFIG»òÕßÖ±½ÓĞŞ¸ÄTNSNAMES.ORAÀï¶¨Òå.
+æ•°æ®åº“è¿æ¥å­—ç¬¦ä¸²å¯ä»¥ç”¨NET8 EASY CONFIGæˆ–è€…ç›´æ¥ä¿®æ”¹TNSNAMES.ORAé‡Œå®šä¹‰.
 
-Êı¾İ¿â²ÎÊıglobal_name=trueÊ±ÒªÇóÊı¾İ¿âÁ´½ÓÃû³Æ¸úÔ¶¶ËÊı¾İ¿âÃû³ÆÒ»Ñù
+æ•°æ®åº“å‚æ•°global_name=trueæ—¶è¦æ±‚æ•°æ®åº“é“¾æ¥åç§°è·Ÿè¿œç«¯æ•°æ®åº“åç§°ä¸€æ ·
 
-Êı¾İ¿âÈ«¾ÖÃû³Æ¿ÉÒÔÓÃÒÔÏÂÃüÁî²é³ö
+æ•°æ®åº“å…¨å±€åç§°å¯ä»¥ç”¨ä»¥ä¸‹å‘½ä»¤æŸ¥å‡º
 SELECT * FROM GLOBAL_NAME;
 
-²éÑ¯Ô¶¶ËÊı¾İ¿âÀïµÄ±í
-SELECT ¡­¡­ FROM ±íÃû@Êı¾İ¿âÁ´½ÓÃû;
+æŸ¥è¯¢è¿œç«¯æ•°æ®åº“é‡Œçš„è¡¨
+SELECT â€¦â€¦ FROM è¡¨å@æ•°æ®åº“é“¾æ¥å;
 
-Îå.È¨ÏŞ¹ÜÀí (DCL) Óï¾ä
+äº”.æƒé™ç®¡ç† (DCL) è¯­å¥
 
-1.GRANT        ¸³ÓÚÈ¨ÏŞ
-³£ÓÃµÄÏµÍ³È¨ÏŞ¼¯ºÏÓĞÒÔÏÂÈı¸ö:
-CONNECT(»ù±¾µÄÁ¬½Ó), RESOURCE(³ÌĞò¿ª·¢), DBA(Êı¾İ¿â¹ÜÀí)
-³£ÓÃµÄÊı¾İ¶ÔÏóÈ¨ÏŞÓĞÒÔÏÂÎå¸ö:
-ALL         ON Êı¾İ¶ÔÏóÃû,         SELECT ON Êı¾İ¶ÔÏóÃû,         UPDATE ON Êı¾İ¶ÔÏóÃû,
-DELETE         ON Êı¾İ¶ÔÏóÃû,  INSERT ON Êı¾İ¶ÔÏóÃû,   ALTER  ON Êı¾İ¶ÔÏóÃû
+1.GRANT        èµ‹äºæƒé™
+å¸¸ç”¨çš„ç³»ç»Ÿæƒé™é›†åˆæœ‰ä»¥ä¸‹ä¸‰ä¸ª:
+CONNECT(åŸºæœ¬çš„è¿æ¥), RESOURCE(ç¨‹åºå¼€å‘), DBA(æ•°æ®åº“ç®¡ç†)
+å¸¸ç”¨çš„æ•°æ®å¯¹è±¡æƒé™æœ‰ä»¥ä¸‹äº”ä¸ª:
+ALL         ON æ•°æ®å¯¹è±¡å,         SELECT ON æ•°æ®å¯¹è±¡å,         UPDATE ON æ•°æ®å¯¹è±¡å,
+DELETE         ON æ•°æ®å¯¹è±¡å,  INSERT ON æ•°æ®å¯¹è±¡å,   ALTER  ON æ•°æ®å¯¹è±¡å
 
-GRANT CONNECT, RESOURCE TO ÓÃ»§Ãû;
-GRANT SELECT ON ±íÃû TO ÓÃ»§Ãû;
-GRANT SELECT, INSERT, DELETE ON±íÃû TO ÓÃ»§Ãû1, ÓÃ»§Ãû2;
+GRANT CONNECT, RESOURCE TO ç”¨æˆ·å;
+GRANT SELECT ON è¡¨å TO ç”¨æˆ·å;
+GRANT SELECT, INSERT, DELETE ONè¡¨å TO ç”¨æˆ·å1, ç”¨æˆ·å2;
 
-2.REVOKE »ØÊÕÈ¨ÏŞ
+2.REVOKE å›æ”¶æƒé™
 
-REVOKE CONNECT, RESOURCE FROM ÓÃ»§Ãû;
-REVOKE SELECT ON ±íÃû FROM ÓÃ»§Ãû;
-REVOKE SELECT, INSERT, DELETE ON±íÃû FROM ÓÃ»§Ãû1, ÓÃ»§Ãû2;
+REVOKE CONNECT, RESOURCE FROM ç”¨æˆ·å;
+REVOKE SELECT ON è¡¨å FROM ç”¨æˆ·å;
+REVOKE SELECT, INSERT, DELETE ONè¡¨å FROM ç”¨æˆ·å1, ç”¨æˆ·å2;
 
 
-²éÑ¯Êı¾İ¿âÖĞµÚ63ºÅ´íÎó£º
+æŸ¥è¯¢æ•°æ®åº“ä¸­ç¬¬63å·é”™è¯¯ï¼š
 select orgaddr,destaddr from sm_histable0116 where error_code='63';
 
-²éÑ¯Êı¾İ¿âÖĞ¿ª»§ÓÃ»§×î´óÌá½»ºÍ×î´óÏÂ·¢Êı£º select MSISDN,TCOS,OCOS from ms_usertable£»
+æŸ¥è¯¢æ•°æ®åº“ä¸­å¼€æˆ·ç”¨æˆ·æœ€å¤§æäº¤å’Œæœ€å¤§ä¸‹å‘æ•°ï¼š select MSISDN,TCOS,OCOS from ms_usertableï¼›
 
 
-²éÑ¯Êı¾İ¿âÖĞ¸÷ÖÖ´íÎó´úÂëµÄ×ÜºÍ£º
+æŸ¥è¯¢æ•°æ®åº“ä¸­å„ç§é”™è¯¯ä»£ç çš„æ€»å’Œï¼š
 select error_code,count(*) from sm_histable0513 group by error_code order
 by error_code;
 
-²éÑ¯±¨±íÊı¾İ¿âÖĞ»°µ¥Í³¼ÆÖÖÀà²éÑ¯¡£
+æŸ¥è¯¢æŠ¥è¡¨æ•°æ®åº“ä¸­è¯å•ç»Ÿè®¡ç§ç±»æŸ¥è¯¢ã€‚
 select sum(Successcount) from tbl_MiddleMt0411 where ServiceType2=111
 select sum(successcount),servicetype from tbl_middlemt0411 group by servicetype
 
 
-Ô­ÎÄµØÖ·£ºhttp://www.cnoug.org/viewthread.php?tid=60293
+åŸæ–‡åœ°å€ï¼šhttp://www.cnoug.org/viewthread.php?tid=60293
 
-//´´½¨Ò»¸ö¿ØÖÆÎÄ¼şÃüÁîµ½¸ú×ÙÎÄ¼ş 
+//åˆ›å»ºä¸€ä¸ªæ§åˆ¶æ–‡ä»¶å‘½ä»¤åˆ°è·Ÿè¸ªæ–‡ä»¶ 
 alter database backup controlfile to trace; 
 
-//Ôö¼ÓÒ»¸öĞÂµÄÈÕÖ¾ÎÄ¼ş×éµÄÓï¾ä 
+//å¢åŠ ä¸€ä¸ªæ–°çš„æ—¥å¿—æ–‡ä»¶ç»„çš„è¯­å¥ 
 connect internal as sysdba 
 alter database 
 add logfile group 4 
-(¡¯/db01/oracle/CC1/log_1c.dbf¡¯, 
- ¡¯/db02/oracle/CC1/log_2c.dbf¡¯) size 5M; 
+(â€™/db01/oracle/CC1/log_1c.dbfâ€™, 
+ â€™/db02/oracle/CC1/log_2c.dbfâ€™) size 5M; 
 
 alter database 
-add logfile member ¡¯/db03/oracle/CC1/log_3c.dbf¡¯ 
+add logfile member â€™/db03/oracle/CC1/log_3c.dbfâ€™ 
 to group 4; 
-//ÔÚServer ManagerÉÏMOUNT²¢´ò¿ªÒ»¸öÊı¾İ¿â: 
+//åœ¨Server Managerä¸ŠMOUNTå¹¶æ‰“å¼€ä¸€ä¸ªæ•°æ®åº“: 
 connect internal as sysdba 
 startup mount ORA1 exclusive; 
 alter database open; 
 
-//Éú³ÉÊı¾İ×Öµä 
+//ç”Ÿæˆæ•°æ®å­—å…¸ 
 @catalog 
 @catproc 
 
-//ÔÚinit.ora ÖĞ±¸·İÊı¾İ¿âµÄÎ»ÖÃ 
-log_archive_dest_1 = ¡¯/db00/arch¡¯ 
+//åœ¨init.ora ä¸­å¤‡ä»½æ•°æ®åº“çš„ä½ç½® 
+log_archive_dest_1 = â€™/db00/archâ€™ 
 log_archive_dest_state_1 = enable 
 log_archive_dest_2 = "service=stby.world mandatory reopen=60" 
 log_archive_dest_state_2 = enable 
-//¶ÔÓÃ»§µÄ±í¿Õ¼äµÄÖ¸¶¨ºÍ¹ÜÀíÏà¹ØµÄÓï¾ä 
+//å¯¹ç”¨æˆ·çš„è¡¨ç©ºé—´çš„æŒ‡å®šå’Œç®¡ç†ç›¸å…³çš„è¯­å¥ 
 create user USERNAME identified by PASSWORD 
 default tablespace TABLESPACE_NAME; 
 alter user USERNAME default tablespace TABLESPACE_NAME; 
@@ -3006,52 +3006,52 @@ default tablespace DATA
 temporary tablespace TEMP; 
 alter user USERNAME temporary tablespace TEMP; 
 
-//ÖØĞÂÖ¸¶¨Ò»¸öÊı¾İÎÄ¼şµÄ´óĞ¡ : 
+//é‡æ–°æŒ‡å®šä¸€ä¸ªæ•°æ®æ–‡ä»¶çš„å¤§å° : 
 alter database 
-datafile ¡¯/db05/oracle/CC1/data01.dbf¡¯ resize 200M; 
+datafile â€™/db05/oracle/CC1/data01.dbfâ€™ resize 200M; 
 
-//´´½¨Ò»¸ö×Ô¶¯À©Õ¹µÄÊı¾İÎÄ¼ş: 
+//åˆ›å»ºä¸€ä¸ªè‡ªåŠ¨æ‰©å±•çš„æ•°æ®æ–‡ä»¶: 
 create tablespace DATA 
-datafile ¡¯/db05/oracle/CC1/data01.dbf¡¯ size 200M 
+datafile â€™/db05/oracle/CC1/data01.dbfâ€™ size 200M 
 autoextend ON 
 next 10M 
 maxsize 250M; 
 
-//ÔÚ±í¿Õ¼äÉÏÔö¼ÓÒ»¸ö×Ô¶¯À©Õ¹µÄÊı¾İÎÄ¼ş: 
+//åœ¨è¡¨ç©ºé—´ä¸Šå¢åŠ ä¸€ä¸ªè‡ªåŠ¨æ‰©å±•çš„æ•°æ®æ–‡ä»¶: 
 alter tablespace DATA 
-add datafile ¡¯/db05/oracle/CC1/data02.dbf¡¯ 
+add datafile â€™/db05/oracle/CC1/data02.dbfâ€™ 
 size 50M 
 autoextend ON 
 maxsize 300M; 
 
-//ĞŞ¸Ä²ÎÊı: 
+//ä¿®æ”¹å‚æ•°: 
 alter database 
-datafile ¡¯/db05/oracle/CC1/data01.dbf¡¯ 
+datafile â€™/db05/oracle/CC1/data01.dbfâ€™ 
 autoextend ON 
 maxsize 300M; 
 
-//ÔÚÊı¾İÎÄ¼şÒÆ¶¯ÆÚ¼äÖØĞÂÃüÃû: 
+//åœ¨æ•°æ®æ–‡ä»¶ç§»åŠ¨æœŸé—´é‡æ–°å‘½å: 
 alter database rename file 
- ¡¯/db01/oracle/CC1/data01.dbf¡¯ to 
- ¡¯/db02/oracle/CC1/data01.dbf¡¯; 
+ â€™/db01/oracle/CC1/data01.dbfâ€™ to 
+ â€™/db02/oracle/CC1/data01.dbfâ€™; 
 
 alter tablespace DATA rename datafile 
- ¡¯/db01/oracle/CC1/data01.dbf¡¯ to 
- ¡¯/db02/oracle/CC1/data01.dbf¡¯; 
+ â€™/db01/oracle/CC1/data01.dbfâ€™ to 
+ â€™/db02/oracle/CC1/data01.dbfâ€™; 
 
 alter database rename file  
- ¡¯/db05/oracle/CC1/redo01CC1.dbf¡¯ to 
- ¡¯/db02/oracle/CC1/redo01CC1.dbf¡¯; 
+ â€™/db05/oracle/CC1/redo01CC1.dbfâ€™ to 
+ â€™/db02/oracle/CC1/redo01CC1.dbfâ€™; 
 
-alter database datafile ¡¯/db05/oracle/CC1/data01.dbf¡¯  
+alter database datafile â€™/db05/oracle/CC1/data01.dbfâ€™  
 resize 80M; 
 
-//´´½¨ºÍÊ¹ÓÃ½ÇÉ«: 
+//åˆ›å»ºå’Œä½¿ç”¨è§’è‰²: 
 create role APPLICATION_USER; 
 grant CREATE SESSION to APPLICATION_USER; 
 grant APPLICATION_USER to username; 
 
- //»Ø¹ö¶ÎµÄ¹ÜÀí 
+ //å›æ»šæ®µçš„ç®¡ç† 
 create rollback segment SEGMENT_NAME 
 tablespace RBS; 
 
@@ -3060,26 +3060,26 @@ alter rollback segment SEGMENT_NAME offline;
 drop rollback segment SEGMENT_NAME; 
 
 alter rollback segment SEGMENT_NAME online; 
-//»Ø¹ö¶ÎÉÏÖ¸¶¨ÊÂÎñ 
+//å›æ»šæ®µä¸ŠæŒ‡å®šäº‹åŠ¡ 
 commit; 
 set transaction use rollback segment ROLL_BATCH; 
 insert into TABLE_NAME 
 select * from DATA_LOAD_TABLE; 
 commit; 
 
-//²éÑ¯»Ø¹ö¶ÎµÄ ´óĞ¡ºÍÓÅ»¯²ÎÊı 
+//æŸ¥è¯¢å›æ»šæ®µçš„ å¤§å°å’Œä¼˜åŒ–å‚æ•° 
 select * from DBA_SEGMENTS 
- where Segment_Type = ¡¯ROLLBACK¡¯; 
+ where Segment_Type = â€™ROLLBACKâ€™; 
 select N.Name,         /* rollback segment name */ 
        S.OptSize       /* rollback segment OPTIMAL size */ 
 from V$ROLLNAME N, V$ROLLSTAT S 
 where N.USN=S.USN; 
 
-//»ØÊÕ»Ø¹ö¶Î 
+//å›æ”¶å›æ»šæ®µ 
 alter rollback segment R1 shrink to 15M; 
 alter rollback segment R1 shrink; 
 
-//Àı×Ó 
+//ä¾‹å­ 
 set transaction use rollback segment SEGMENT_NAME 
 
 alter tablespace RBS 
@@ -3093,7 +3093,7 @@ alter rollback segment R4 online;
 select Sessions_Highwater from V$LICENSE; 
 grant select on EMPLOYEE to PUBLIC; 
 
-//ÓÃ»§ºÍ½ÇÉ«  
+//ç”¨æˆ·å’Œè§’è‰²  
 create role ACCOUNT_CREATOR; 
 grant CREATE SESSION, CREATE USER, ALTER USER  
    to ACCOUNT_CREATOR; 
@@ -3119,7 +3119,7 @@ PASSWORD_LIFE_TIME 30;
 
 alter user jane password expire; 
 
-//´´½¨²Ù×÷ÏµÍ³ÓÃ»§ 
+//åˆ›å»ºæ“ä½œç³»ç»Ÿç”¨æˆ· 
 REM  Creating OPS$ accounts 
 create user OPS$FARMER 
 identified by SOME_PASSWORD 
@@ -3132,7 +3132,7 @@ identified externally
 default tablespace USERS 
 temporary tablespace TEMP; 
 
-//Ö´ĞĞORAPWD 
+//æ‰§è¡ŒORAPWD 
 ORAPWD FILE=filename PASSWORD=password ENTRIES=max_users 
 
 create role APPLICATION_USER; 
@@ -3145,15 +3145,15 @@ grant APPLICATION_USER to DATA_ENTRY_CLERK;
 grant DATA_ENTRY_CLERK to MCGREGOR; 
 grant DATA_ENTRY_CLERK to BPOTTER with admin option; 
 
-//ÉèÖÃ½ÇÉ« 
+//è®¾ç½®è§’è‰² 
 set role DATA_ENTRY_CLERK; 
 set role NONE; 
 
-//»ØÊÕÈ¨Àû: 
+//å›æ”¶æƒåˆ©: 
 revoke delete on EMPLOYEE from PETER; 
 revoke all on EMPLOYEE from MCGREGOR; 
 
-//»ØÊÕ½ÇÉ«: 
+//å›æ”¶è§’è‰²: 
 revoke ACCOUNT_CREATOR from HELPDESK; 
 
 drop user USERNAME cascade; 
@@ -3162,22 +3162,22 @@ grant SELECT on EMPLOYEE to MCGREGOR with grant option;
 grant SELECT on THUMPER.EMPLOYEE to BPOTTER with grant option; 
 revoke SELECT on EMPLOYEE from MCGREGOR; 
 
-create user MCGREGOR identified by VALUES ¡¯1A2DD3CCEE354DFA¡¯; 
+create user MCGREGOR identified by VALUES â€™1A2DD3CCEE354DFAâ€™; 
 
-alter user OPS$FARMER identified by VALUES ¡¯no way¡¯; 
+alter user OPS$FARMER identified by VALUES â€™no wayâ€™; 
 
-//±¸·İÓë»Ö¸´ 
-Ê¹ÓÃ export ³ÌĞò 
+//å¤‡ä»½ä¸æ¢å¤ 
+ä½¿ç”¨ export ç¨‹åº 
 exp system/manager file=expdat.dmp compress=Y owner=(HR,THUMPER) 
 exp system/manager file=hr.dmp owner=HR indexes=Y compress=Y 
 imp system/manager file=hr.dmp full=Y buffer=64000 commit=Y 
 
-//±¸·İ±í 
+//å¤‡ä»½è¡¨ 
 exp system/manager FILE=expdat.dmp TABLES=(Thumper.SALES) 
-//±¸·İ·ÖÇø 
+//å¤‡ä»½åˆ†åŒº 
 exp system/manager FILE=expdat.dmp TABLES=(Thumper.SALES:Part1) 
 
-//ÊäÈëÀı×Ó 
+//è¾“å…¥ä¾‹å­ 
 imp system/manager file=expdat.dmp 
 imp system/manager file=expdat.dmp buffer=64000 commit=Y 
 
@@ -3188,13 +3188,13 @@ imp system/manager file=thumper.dat FROMUSER=thumper TOUSER=flower
 imp system/manager file=expdat.dmp full=Y commit=Y buffer=64000 
 imp system/manager file=expdat.dmp ignore=N rows=N commit=Y buffer=64000 
 
-//Ê¹ÓÃ²Ù×÷ÏµÍ³±¸·İÃüÁî 
+//ä½¿ç”¨æ“ä½œç³»ç»Ÿå¤‡ä»½å‘½ä»¤ 
 REM  TAR examples 
 tar -cvf /dev/rmt/0hc /db0[1-9]/oracle/CC1 
 tar -rvf /dev/rmt/0hc /orasw/app/oracle/CC1/pfile/initcc1.ora 
 tar -rvf /dev/rmt/0hc /db0[1-9]/oracle/CC1 /orasw/app/oracle/CC1/pfile/initcc1.ora 
 
-//ÀëÏß±¸·İµÄshell½Å±¾ 
+//ç¦»çº¿å¤‡ä»½çš„shellè„šæœ¬ 
 ORACLE_SID=cc1; export ORACLE_SID 
 ORAENV_ASK=NO; export ORAENV_ASK 
 . oraenv 
@@ -3209,14 +3209,14 @@ connect internal as sysdba
 startup 
 EOF2 
 
-//ÔÚServer ManagerÉÏÉèÖÃÎªarchivelog mode: 
+//åœ¨Server Managerä¸Šè®¾ç½®ä¸ºarchivelog mode: 
 connect internal as sysdba 
 startup mount cc1; 
 alter database archivelog; 
 archive log start; 
 alter database open; 
 
-//ÔÚServer ManagerÉÏÉèÖÃÎªarchivelog mode: 
+//åœ¨Server Managerä¸Šè®¾ç½®ä¸ºarchivelog mode: 
 connect internal as sysdba 
 startup mount cc1; 
 alter database noarchivelog; 
@@ -3225,9 +3225,9 @@ alter database open;
 select Name, 
        Value 
   from V$PARAMETER 
- where Name like ¡¯log_archive%¡¯; 
+ where Name like â€™log_archive%â€™; 
 
-//Áª»ú±¸·İµÄ½Å±¾ 
+//è”æœºå¤‡ä»½çš„è„šæœ¬ 
 # 
 # Sample Hot Backup Script for a UNIX File System database 
 # 
@@ -3238,7 +3238,7 @@ ORAENV_ASK=NO; export ORAENV_ASK
 svrmgrl <<EOFarch1 
 connect internal as sysdba 
 REM 
-REM   ±¸·İ SYSTEM tablespace 
+REM   å¤‡ä»½ SYSTEM tablespace 
 REM 
 alter tablespace SYSTEM begin backup; 
 !tar -cvf /dev/rmt/0hc /db01/oracle/CC1/sys01.dbf 
@@ -3249,13 +3249,13 @@ REM   tar saveset on the tape device /dev/rmt/0hc.  The
 REM   rest of the tars must use the "-rvf" clause to append 
 REM   to that saveset. 
 REM 
-REM   ±¸·İ  RBS tablespace 
+REM   å¤‡ä»½  RBS tablespace 
 REM 
 alter tablespace RBS begin backup; 
 !tar -rvf /dev/rmt/0hc /db02/oracle/CC1/rbs01.dbf 
 alter tablespace RBS end backup; 
 REM 
-REM   ±¸·İ  DATA tablespace 
+REM   å¤‡ä»½  DATA tablespace 
 REM   For the purposes of this example, this tablespace 
 REM   will contain two files, data01.dbf and data02.dbf. 
 REM   The * wildcard will be used in the filename. 
@@ -3264,13 +3264,13 @@ alter tablespace DATA begin backup;
 !tar -rvf /dev/rmt/0hc /db03/oracle/CC1/data0*.dbf 
 alter tablespace DATA end backup; 
 REM 
-REM   ±¸·İ INDEXES tablespace 
+REM   å¤‡ä»½ INDEXES tablespace 
 REM 
 alter tablespace INDEXES begin backup; 
 !tar -rvf /dev/rmt/0hc /db04/oracle/CC1/indexes01.dbf 
 alter tablespace INDEXES end backup; 
 REM 
-REM   ±¸·İ  TEMP tablespace 
+REM   å¤‡ä»½  TEMP tablespace 
 REM 
 alter tablespace TEMP begin backup; 
 !tar -rvf /dev/rmt/0hc /db05/oracle/CC1/temp01.dbf 
@@ -3280,7 +3280,7 @@ REM   Follow the same pattern to back up the rest
 REM   of the tablespaces. 
 REM 
 REM     
-REM  Step 2.  ±¸·İ¹éµµÈÕÖ¾ÎÄ¼ş. 
+REM  Step 2.  å¤‡ä»½å½’æ¡£æ—¥å¿—æ–‡ä»¶. 
 archive log stop 
 REM 
 REM   Exit Server Manager, using the indicator set earlier. 
@@ -3314,41 +3314,41 @@ EOFarch2
 tar -rvf /dev/rmt/0hc $FILES 
 rm -f $FILES 
 # 
-#     Step 3.  ±¸·İ¿ØÖÆÎÄ¼şµ½´ÅÅÌ. 
+#     Step 3.  å¤‡ä»½æ§åˆ¶æ–‡ä»¶åˆ°ç£ç›˜. 
 # 
 svrmgrl <<EOFarch3 
 connect internal 
 alter database backup controlfile to 
-   ¡¯db01/oracle/CC1/CC1controlfile.bck¡¯; 
+   â€™db01/oracle/CC1/CC1controlfile.bckâ€™; 
 exit 
 EOFarch3 
 # 
-#  ±¸·İ¿ØÖÆÎÄ¼şµ½´Å´ø. 
+#  å¤‡ä»½æ§åˆ¶æ–‡ä»¶åˆ°ç£å¸¦. 
 # 
 tar -rvf /dev/rmt/0hc /db01/oracle/CC1/CC1controlfile.bck 
 # 
 #  End of hot backup script. 
-//×Ô¶¯Éú³É¿ªÊ¼±¸·İµÄ½Å±¾ 
+//è‡ªåŠ¨ç”Ÿæˆå¼€å§‹å¤‡ä»½çš„è„šæœ¬ 
 set pagesize 0 feedback off 
 select  
-    ¡¯alter tablespace ¡¯||Tablespace_Name||¡¯ begin backup;¡¯ 
+    â€™alter tablespace â€™||Tablespace_Name||â€™ begin backup;â€™ 
   from DBA_TABLESPACES 
- where Status <> ¡¯INVALID¡¯ 
+ where Status <> â€™INVALIDâ€™ 
 spool alter_begin.sql 
 / 
 spool off 
 
-//×Ô¶¯Éú³É±¸·İ½áÊøµÄ½Å±¾ 
+//è‡ªåŠ¨ç”Ÿæˆå¤‡ä»½ç»“æŸçš„è„šæœ¬ 
 set pagesize 0 feedback off 
 select  
-    ¡¯alter tablespace ¡¯||Tablespace_Name||¡¯ end backup;¡¯ 
+    â€™alter tablespace â€™||Tablespace_Name||â€™ end backup;â€™ 
   from DBA_TABLESPACES 
- where Status <> ¡¯INVALID¡¯ 
+ where Status <> â€™INVALIDâ€™ 
 spool alter_end.sql 
 / 
 spool off 
 
-//±¸·İ¹éµµÈÕÖ¾ÎÄ¼şµÄ½Å±¾. 
+//å¤‡ä»½å½’æ¡£æ—¥å¿—æ–‡ä»¶çš„è„šæœ¬. 
 REM  See text for alternatives. 
 #     Step 1: Stop the archiving process. This will keep 
 #     additional archived redo log files from being written 
@@ -3395,7 +3395,7 @@ rm -f $FILES
 # 
 #     End of archived redo log file backup script. 
 
-REM  ´ÅÅÌµ½´ÅÅÌµÄ±¸·İ 
+REM  ç£ç›˜åˆ°ç£ç›˜çš„å¤‡ä»½ 
 REM 
 REM   Back up the RBS tablespace - to another disk (UNIX) 
 REM 
@@ -3404,7 +3404,7 @@ alter tablespace RBS begin backup;
 alter tablespace RBS end backup; 
 REM 
 
-REM  ÒÆ¶¯¹éµµÈÕÖ¾ÎÄ¼şµÄshell½Å±¾ 
+REM  ç§»åŠ¨å½’æ¡£æ—¥å¿—æ–‡ä»¶çš„shellè„šæœ¬ 
 # 
 # Procedure for moving archived redo logs to another device 
 # 
@@ -3418,24 +3418,24 @@ EOFarch2
 # 
 # end of archived redo log directory move. 
 
-//Éú³É´´½¨¿ØÖÆÎÄ¼şÃüÁî 
+//ç”Ÿæˆåˆ›å»ºæ§åˆ¶æ–‡ä»¶å‘½ä»¤ 
 alter database backup controlfile to trace; 
 
-//Ê±¼äµã»Ö¸´µÄÀı×Ó 
+//æ—¶é—´ç‚¹æ¢å¤çš„ä¾‹å­ 
 connect internal as sysdba 
 startup mount instance_name; 
-recover database until time ¡¯1999-08-07:14:40:00¡¯; 
+recover database until time â€™1999-08-07:14:40:00â€™; 
 
-//´´½¨»Ö¸´Ä¿Â¼ 
+//åˆ›å»ºæ¢å¤ç›®å½• 
 rman rcvcat rman/rman@<database_service_name> 
 
-// ÔÚ(UNIX)ÏÂ´´½¨»Ö¸´Ä¿Â¼ 
+// åœ¨(UNIX)ä¸‹åˆ›å»ºæ¢å¤ç›®å½• 
 RMAN> create catalog tablespace rcvcat; 
 
-// ÔÚ(NT)ÏÂ´´½¨»Ö¸´Ä¿Â¼ 
+// åœ¨(NT)ä¸‹åˆ›å»ºæ¢å¤ç›®å½• 
 RMAN> create catalog tablespace "RCVCAT"; 
 
-//Á¬½ÓÃèÊö·û·¶Àı  
+//è¿æ¥æè¿°ç¬¦èŒƒä¾‹  
 (DESCRIPTION= 
       (ADDRESS= 
             (PROTOCOL=TCP) 
@@ -3444,9 +3444,9 @@ RMAN> create catalog tablespace "RCVCAT";
       (CONNECT DATA= 
             (SID=loc))) 
 
-// listener.ora µÄÌõÄ¿entry 
+// listener.ora çš„æ¡ç›®entry 
 
-// listener.ora µÄÌõÄ¿entry 
+// listener.ora çš„æ¡ç›®entry 
 LISTENER = 
 (ADDRESS_LIST = 
 (ADDRESS= 
@@ -3462,7 +3462,7 @@ SID_LIST_LISTENER =
 ) 
 ) 
 
-// tnsnames.ora µÄÌõÄ¿ 
+// tnsnames.ora çš„æ¡ç›® 
 LOC= 
 (DESCRIPTION= 
 (ADDRESS = 
@@ -3476,7 +3476,7 @@ LOC=
 ) 
 ) 
 
-//Á¬½Ó²ÎÊıµÄÉèÖÃ£¨sql*net£© 
+//è¿æ¥å‚æ•°çš„è®¾ç½®ï¼ˆsql*netï¼‰ 
 LOC =(DESCRIPTION= 
 (ADDRESS= 
 (COMMUNITY=TCP.HQ.COMPANY) 
@@ -3485,7 +3485,7 @@ LOC =(DESCRIPTION=
 (PORT=1521)) 
 (CONNECT DATA= 
 (SID=loc))) 
-//²ÎÊıÎÄ¼şÅäÖÃ·¶Àı 
+//å‚æ•°æ–‡ä»¶é…ç½®èŒƒä¾‹ 
 // tnsnames.ora 
 HQ =(DESCRIPTION= 
 (ADDRESS= 
@@ -3525,7 +3525,7 @@ LOC=
 ) 
 ) 
 
-//Ê¹ÓÃ COPY ÊµÏÖÊı¾İ¿âÖ®¼äµÄ¸´ÖÆ 
+//ä½¿ç”¨ COPY å®ç°æ•°æ®åº“ä¹‹é—´çš„å¤åˆ¶ 
 copy from 
 remote_username/remote_password@service_name 
 to 
@@ -3543,26 +3543,26 @@ using -
 select * from EMPLOYEE 
 
 
-//¼àÊÓÆ÷µÄ¹ÜÀí 
+//ç›‘è§†å™¨çš„ç®¡ç† 
 lsnrctl start 
 lsnrctl start my_lsnr 
 lsnrctl status 
 lsnrctl status hq 
 
-¼ì²é¼àÊÓÆ÷µÄ½ø³Ì 
+æ£€æŸ¥ç›‘è§†å™¨çš„è¿›ç¨‹ 
 ps -ef | grep tnslsnr 
-//ÔÚ lsnrctl ÄÚÍ£Ö¹¼àÊÓÆ÷ 
+//åœ¨ lsnrctl å†…åœæ­¢ç›‘è§†å™¨ 
 set password lsnr_password 
 stop 
 
-//ÔÚlsnrctl ÄÚÁĞ³öËùÓĞµÄ·şÎñ 
+//åœ¨lsnrctl å†…åˆ—å‡ºæ‰€æœ‰çš„æœåŠ¡ 
 set password lsnr_password 
 services 
-//Æô¶¯»òÍ£Ö¹Ò»¸öNTµÄlistener 
+//å¯åŠ¨æˆ–åœæ­¢ä¸€ä¸ªNTçš„listener 
 net start Oracle<version_name>TNSListener 
 net stop Oracle<version_name>TNSListener 
 
-// tnsnames.ora ÎÄ¼şµÄÄÚÈİ 
+// tnsnames.ora æ–‡ä»¶çš„å†…å®¹ 
 fld1 = 
 (DESCRIPTION = 
 (ADDRESS_LIST = 
@@ -3573,49 +3573,49 @@ fld1 =
 (SID = fld1) 
 ) 
 ) 
-//²Ù×÷ÏµÍ³ÍøÂçµÄ¹ÜÀí 
+//æ“ä½œç³»ç»Ÿç½‘ç»œçš„ç®¡ç† 
 
 telnet host_name 
 ping host_name 
-/etc/hosts ÎÄ¼ş 
+/etc/hosts æ–‡ä»¶ 
 130.110.238.109 nmhost 
 130.110.238.101 txhost 
 130.110.238.102 azhost arizona 
-//oratab ±íÏî 
+//oratab è¡¨é¡¹ 
 loc:/orasw/app/oracle/product/8.1.5.1:Y 
 cc1:/orasw/app/oracle/product/8.1.5.1:N 
 old:/orasw/app/oracle/product/8.1.5.0:Y
 
  
 
-//´´½¨Ò»¸ö¿ØÖÆÎÄ¼şÃüÁîµ½¸ú×ÙÎÄ¼ş 
+//åˆ›å»ºä¸€ä¸ªæ§åˆ¶æ–‡ä»¶å‘½ä»¤åˆ°è·Ÿè¸ªæ–‡ä»¶ 
 alter database backup controlfile to trace; 
 
-//Ôö¼ÓÒ»¸öĞÂµÄÈÕÖ¾ÎÄ¼ş×éµÄÓï¾ä 
+//å¢åŠ ä¸€ä¸ªæ–°çš„æ—¥å¿—æ–‡ä»¶ç»„çš„è¯­å¥ 
 connect internal as sysdba 
 alter database 
 add logfile group 4 
-(¡¯/db01/oracle/CC1/log_1c.dbf¡¯, 
- ¡¯/db02/oracle/CC1/log_2c.dbf¡¯) size 5M; 
+(â€™/db01/oracle/CC1/log_1c.dbfâ€™, 
+ â€™/db02/oracle/CC1/log_2c.dbfâ€™) size 5M; 
 
 alter database 
-add logfile member ¡¯/db03/oracle/CC1/log_3c.dbf¡¯ 
+add logfile member â€™/db03/oracle/CC1/log_3c.dbfâ€™ 
 to group 4; 
-//ÔÚServer ManagerÉÏMOUNT²¢´ò¿ªÒ»¸öÊı¾İ¿â: 
+//åœ¨Server Managerä¸ŠMOUNTå¹¶æ‰“å¼€ä¸€ä¸ªæ•°æ®åº“: 
 connect internal as sysdba 
 startup mount ORA1 exclusive; 
 alter database open; 
 
-//Éú³ÉÊı¾İ×Öµä 
+//ç”Ÿæˆæ•°æ®å­—å…¸ 
 @catalog 
 @catproc 
 
-//ÔÚinit.ora ÖĞ±¸·İÊı¾İ¿âµÄÎ»ÖÃ 
-log_archive_dest_1 = ¡¯/db00/arch¡¯ 
+//åœ¨init.ora ä¸­å¤‡ä»½æ•°æ®åº“çš„ä½ç½® 
+log_archive_dest_1 = â€™/db00/archâ€™ 
 log_archive_dest_state_1 = enable 
 log_archive_dest_2 = "service=stby.world mandatory reopen=60" 
 log_archive_dest_state_2 = enable 
-//¶ÔÓÃ»§µÄ±í¿Õ¼äµÄÖ¸¶¨ºÍ¹ÜÀíÏà¹ØµÄÓï¾ä 
+//å¯¹ç”¨æˆ·çš„è¡¨ç©ºé—´çš„æŒ‡å®šå’Œç®¡ç†ç›¸å…³çš„è¯­å¥ 
 create user USERNAME identified by PASSWORD 
 default tablespace TABLESPACE_NAME; 
 alter user USERNAME default tablespace TABLESPACE_NAME; 
@@ -3626,52 +3626,52 @@ default tablespace DATA
 temporary tablespace TEMP; 
 alter user USERNAME temporary tablespace TEMP; 
 
-//ÖØĞÂÖ¸¶¨Ò»¸öÊı¾İÎÄ¼şµÄ´óĞ¡ : 
+//é‡æ–°æŒ‡å®šä¸€ä¸ªæ•°æ®æ–‡ä»¶çš„å¤§å° : 
 alter database 
-datafile ¡¯/db05/oracle/CC1/data01.dbf¡¯ resize 200M; 
+datafile â€™/db05/oracle/CC1/data01.dbfâ€™ resize 200M; 
 
-//´´½¨Ò»¸ö×Ô¶¯À©Õ¹µÄÊı¾İÎÄ¼ş: 
+//åˆ›å»ºä¸€ä¸ªè‡ªåŠ¨æ‰©å±•çš„æ•°æ®æ–‡ä»¶: 
 create tablespace DATA 
-datafile ¡¯/db05/oracle/CC1/data01.dbf¡¯ size 200M 
+datafile â€™/db05/oracle/CC1/data01.dbfâ€™ size 200M 
 autoextend ON 
 next 10M 
 maxsize 250M; 
 
-//ÔÚ±í¿Õ¼äÉÏÔö¼ÓÒ»¸ö×Ô¶¯À©Õ¹µÄÊı¾İÎÄ¼ş: 
+//åœ¨è¡¨ç©ºé—´ä¸Šå¢åŠ ä¸€ä¸ªè‡ªåŠ¨æ‰©å±•çš„æ•°æ®æ–‡ä»¶: 
 alter tablespace DATA 
-add datafile ¡¯/db05/oracle/CC1/data02.dbf¡¯ 
+add datafile â€™/db05/oracle/CC1/data02.dbfâ€™ 
 size 50M 
 autoextend ON 
 maxsize 300M; 
 
-//ĞŞ¸Ä²ÎÊı: 
+//ä¿®æ”¹å‚æ•°: 
 alter database 
-datafile ¡¯/db05/oracle/CC1/data01.dbf¡¯ 
+datafile â€™/db05/oracle/CC1/data01.dbfâ€™ 
 autoextend ON 
 maxsize 300M; 
 
-//ÔÚÊı¾İÎÄ¼şÒÆ¶¯ÆÚ¼äÖØĞÂÃüÃû: 
+//åœ¨æ•°æ®æ–‡ä»¶ç§»åŠ¨æœŸé—´é‡æ–°å‘½å: 
 alter database rename file 
- ¡¯/db01/oracle/CC1/data01.dbf¡¯ to 
- ¡¯/db02/oracle/CC1/data01.dbf¡¯; 
+ â€™/db01/oracle/CC1/data01.dbfâ€™ to 
+ â€™/db02/oracle/CC1/data01.dbfâ€™; 
 
 alter tablespace DATA rename datafile 
- ¡¯/db01/oracle/CC1/data01.dbf¡¯ to 
- ¡¯/db02/oracle/CC1/data01.dbf¡¯; 
+ â€™/db01/oracle/CC1/data01.dbfâ€™ to 
+ â€™/db02/oracle/CC1/data01.dbfâ€™; 
 
 alter database rename file  
- ¡¯/db05/oracle/CC1/redo01CC1.dbf¡¯ to 
- ¡¯/db02/oracle/CC1/redo01CC1.dbf¡¯; 
+ â€™/db05/oracle/CC1/redo01CC1.dbfâ€™ to 
+ â€™/db02/oracle/CC1/redo01CC1.dbfâ€™; 
 
-alter database datafile ¡¯/db05/oracle/CC1/data01.dbf¡¯  
+alter database datafile â€™/db05/oracle/CC1/data01.dbfâ€™  
 resize 80M; 
 
-//´´½¨ºÍÊ¹ÓÃ½ÇÉ«: 
+//åˆ›å»ºå’Œä½¿ç”¨è§’è‰²: 
 create role APPLICATION_USER; 
 grant CREATE SESSION to APPLICATION_USER; 
 grant APPLICATION_USER to username; 
 
- //»Ø¹ö¶ÎµÄ¹ÜÀí 
+ //å›æ»šæ®µçš„ç®¡ç† 
 create rollback segment SEGMENT_NAME 
 tablespace RBS; 
 
@@ -3680,26 +3680,26 @@ alter rollback segment SEGMENT_NAME offline;
 drop rollback segment SEGMENT_NAME; 
 
 alter rollback segment SEGMENT_NAME online; 
-//»Ø¹ö¶ÎÉÏÖ¸¶¨ÊÂÎñ 
+//å›æ»šæ®µä¸ŠæŒ‡å®šäº‹åŠ¡ 
 commit; 
 set transaction use rollback segment ROLL_BATCH; 
 insert into TABLE_NAME 
 select * from DATA_LOAD_TABLE; 
 commit; 
 
-//²éÑ¯»Ø¹ö¶ÎµÄ ´óĞ¡ºÍÓÅ»¯²ÎÊı 
+//æŸ¥è¯¢å›æ»šæ®µçš„ å¤§å°å’Œä¼˜åŒ–å‚æ•° 
 select * from DBA_SEGMENTS 
- where Segment_Type = ¡¯ROLLBACK¡¯; 
+ where Segment_Type = â€™ROLLBACKâ€™; 
 select N.Name,         /* rollback segment name */ 
        S.OptSize       /* rollback segment OPTIMAL size */ 
 from V$ROLLNAME N, V$ROLLSTAT S 
 where N.USN=S.USN; 
 
-//»ØÊÕ»Ø¹ö¶Î 
+//å›æ”¶å›æ»šæ®µ 
 alter rollback segment R1 shrink to 15M; 
 alter rollback segment R1 shrink; 
 
-//Àı×Ó 
+//ä¾‹å­ 
 set transaction use rollback segment SEGMENT_NAME 
 
 alter tablespace RBS 
@@ -3713,7 +3713,7 @@ alter rollback segment R4 online;
 select Sessions_Highwater from V$LICENSE; 
 grant select on EMPLOYEE to PUBLIC; 
 
-//ÓÃ»§ºÍ½ÇÉ«  
+//ç”¨æˆ·å’Œè§’è‰²  
 create role ACCOUNT_CREATOR; 
 grant CREATE SESSION, CREATE USER, ALTER USER  
    to ACCOUNT_CREATOR; 
@@ -3739,7 +3739,7 @@ PASSWORD_LIFE_TIME 30;
 
 alter user jane password expire; 
 
-//´´½¨²Ù×÷ÏµÍ³ÓÃ»§ 
+//åˆ›å»ºæ“ä½œç³»ç»Ÿç”¨æˆ· 
 REM  Creating OPS$ accounts 
 create user OPS$FARMER 
 identified by SOME_PASSWORD 
@@ -3752,7 +3752,7 @@ identified externally
 default tablespace USERS 
 temporary tablespace TEMP; 
 
-//Ö´ĞĞORAPWD 
+//æ‰§è¡ŒORAPWD 
 ORAPWD FILE=filename PASSWORD=password ENTRIES=max_users 
 
 create role APPLICATION_USER; 
@@ -3765,15 +3765,15 @@ grant APPLICATION_USER to DATA_ENTRY_CLERK;
 grant DATA_ENTRY_CLERK to MCGREGOR; 
 grant DATA_ENTRY_CLERK to BPOTTER with admin option; 
 
-//ÉèÖÃ½ÇÉ« 
+//è®¾ç½®è§’è‰² 
 set role DATA_ENTRY_CLERK; 
 set role NONE; 
 
-//»ØÊÕÈ¨Àû: 
+//å›æ”¶æƒåˆ©: 
 revoke delete on EMPLOYEE from PETER; 
 revoke all on EMPLOYEE from MCGREGOR; 
 
-//»ØÊÕ½ÇÉ«: 
+//å›æ”¶è§’è‰²: 
 revoke ACCOUNT_CREATOR from HELPDESK; 
 
 drop user USERNAME cascade; 
@@ -3782,22 +3782,22 @@ grant SELECT on EMPLOYEE to MCGREGOR with grant option;
 grant SELECT on THUMPER.EMPLOYEE to BPOTTER with grant option; 
 revoke SELECT on EMPLOYEE from MCGREGOR; 
 
-create user MCGREGOR identified by VALUES ¡¯1A2DD3CCEE354DFA¡¯; 
+create user MCGREGOR identified by VALUES â€™1A2DD3CCEE354DFAâ€™; 
 
-alter user OPS$FARMER identified by VALUES ¡¯no way¡¯; 
+alter user OPS$FARMER identified by VALUES â€™no wayâ€™; 
 
-//±¸·İÓë»Ö¸´ 
-Ê¹ÓÃ export ³ÌĞò 
+//å¤‡ä»½ä¸æ¢å¤ 
+ä½¿ç”¨ export ç¨‹åº 
 exp system/manager file=expdat.dmp compress=Y owner=(HR,THUMPER) 
 exp system/manager file=hr.dmp owner=HR indexes=Y compress=Y 
 imp system/manager file=hr.dmp full=Y buffer=64000 commit=Y 
 
-//±¸·İ±í 
+//å¤‡ä»½è¡¨ 
 exp system/manager FILE=expdat.dmp TABLES=(Thumper.SALES) 
-//±¸·İ·ÖÇø 
+//å¤‡ä»½åˆ†åŒº 
 exp system/manager FILE=expdat.dmp TABLES=(Thumper.SALES:Part1) 
 
-//ÊäÈëÀı×Ó 
+//è¾“å…¥ä¾‹å­ 
 imp system/manager file=expdat.dmp 
 imp system/manager file=expdat.dmp buffer=64000 commit=Y 
 
@@ -3808,13 +3808,13 @@ imp system/manager file=thumper.dat FROMUSER=thumper TOUSER=flower
 imp system/manager file=expdat.dmp full=Y commit=Y buffer=64000 
 imp system/manager file=expdat.dmp ignore=N rows=N commit=Y buffer=64000 
 
-//Ê¹ÓÃ²Ù×÷ÏµÍ³±¸·İÃüÁî 
+//ä½¿ç”¨æ“ä½œç³»ç»Ÿå¤‡ä»½å‘½ä»¤ 
 REM  TAR examples 
 tar -cvf /dev/rmt/0hc /db0[1-9]/oracle/CC1 
 tar -rvf /dev/rmt/0hc /orasw/app/oracle/CC1/pfile/initcc1.ora 
 tar -rvf /dev/rmt/0hc /db0[1-9]/oracle/CC1 /orasw/app/oracle/CC1/pfile/initcc1.ora 
 
-//ÀëÏß±¸·İµÄshell½Å±¾ 
+//ç¦»çº¿å¤‡ä»½çš„shellè„šæœ¬ 
 ORACLE_SID=cc1; export ORACLE_SID 
 ORAENV_ASK=NO; export ORAENV_ASK 
 . oraenv 
@@ -3829,14 +3829,14 @@ connect internal as sysdba
 startup 
 EOF2 
 
-//ÔÚServer ManagerÉÏÉèÖÃÎªarchivelog mode: 
+//åœ¨Server Managerä¸Šè®¾ç½®ä¸ºarchivelog mode: 
 connect internal as sysdba 
 startup mount cc1; 
 alter database archivelog; 
 archive log start; 
 alter database open; 
 
-//ÔÚServer ManagerÉÏÉèÖÃÎªarchivelog mode: 
+//åœ¨Server Managerä¸Šè®¾ç½®ä¸ºarchivelog mode: 
 connect internal as sysdba 
 startup mount cc1; 
 alter database noarchivelog; 
@@ -3845,9 +3845,9 @@ alter database open;
 select Name, 
        Value 
   from V$PARAMETER 
- where Name like ¡¯log_archive%¡¯; 
+ where Name like â€™log_archive%â€™; 
 
-//Áª»ú±¸·İµÄ½Å±¾ 
+//è”æœºå¤‡ä»½çš„è„šæœ¬ 
 # 
 # Sample Hot Backup Script for a UNIX File System database 
 # 
@@ -3858,7 +3858,7 @@ ORAENV_ASK=NO; export ORAENV_ASK
 svrmgrl <<EOFarch1 
 connect internal as sysdba 
 REM 
-REM   ±¸·İ SYSTEM tablespace 
+REM   å¤‡ä»½ SYSTEM tablespace 
 REM 
 alter tablespace SYSTEM begin backup; 
 !tar -cvf /dev/rmt/0hc /db01/oracle/CC1/sys01.dbf 
@@ -3869,13 +3869,13 @@ REM   tar saveset on the tape device /dev/rmt/0hc.  The
 REM   rest of the tars must use the "-rvf" clause to append 
 REM   to that saveset. 
 REM 
-REM   ±¸·İ  RBS tablespace 
+REM   å¤‡ä»½  RBS tablespace 
 REM 
 alter tablespace RBS begin backup; 
 !tar -rvf /dev/rmt/0hc /db02/oracle/CC1/rbs01.dbf 
 alter tablespace RBS end backup; 
 REM 
-REM   ±¸·İ  DATA tablespace 
+REM   å¤‡ä»½  DATA tablespace 
 REM   For the purposes of this example, this tablespace 
 REM   will contain two files, data01.dbf and data02.dbf. 
 REM   The * wildcard will be used in the filename. 
@@ -3884,13 +3884,13 @@ alter tablespace DATA begin backup;
 !tar -rvf /dev/rmt/0hc /db03/oracle/CC1/data0*.dbf 
 alter tablespace DATA end backup; 
 REM 
-REM   ±¸·İ INDEXES tablespace 
+REM   å¤‡ä»½ INDEXES tablespace 
 REM 
 alter tablespace INDEXES begin backup; 
 !tar -rvf /dev/rmt/0hc /db04/oracle/CC1/indexes01.dbf 
 alter tablespace INDEXES end backup; 
 REM 
-REM   ±¸·İ  TEMP tablespace 
+REM   å¤‡ä»½  TEMP tablespace 
 REM 
 alter tablespace TEMP begin backup; 
 !tar -rvf /dev/rmt/0hc /db05/oracle/CC1/temp01.dbf 
@@ -3900,7 +3900,7 @@ REM   Follow the same pattern to back up the rest
 REM   of the tablespaces. 
 REM 
 REM     
-REM  Step 2.  ±¸·İ¹éµµÈÕÖ¾ÎÄ¼ş. 
+REM  Step 2.  å¤‡ä»½å½’æ¡£æ—¥å¿—æ–‡ä»¶. 
 archive log stop 
 REM 
 REM   Exit Server Manager, using the indicator set earlier. 
@@ -3934,41 +3934,41 @@ EOFarch2
 tar -rvf /dev/rmt/0hc $FILES 
 rm -f $FILES 
 # 
-#     Step 3.  ±¸·İ¿ØÖÆÎÄ¼şµ½´ÅÅÌ. 
+#     Step 3.  å¤‡ä»½æ§åˆ¶æ–‡ä»¶åˆ°ç£ç›˜. 
 # 
 svrmgrl <<EOFarch3 
 connect internal 
 alter database backup controlfile to 
-   ¡¯db01/oracle/CC1/CC1controlfile.bck¡¯; 
+   â€™db01/oracle/CC1/CC1controlfile.bckâ€™; 
 exit 
 EOFarch3 
 # 
-#  ±¸·İ¿ØÖÆÎÄ¼şµ½´Å´ø. 
+#  å¤‡ä»½æ§åˆ¶æ–‡ä»¶åˆ°ç£å¸¦. 
 # 
 tar -rvf /dev/rmt/0hc /db01/oracle/CC1/CC1controlfile.bck 
 # 
 #  End of hot backup script. 
-//×Ô¶¯Éú³É¿ªÊ¼±¸·İµÄ½Å±¾ 
+//è‡ªåŠ¨ç”Ÿæˆå¼€å§‹å¤‡ä»½çš„è„šæœ¬ 
 set pagesize 0 feedback off 
 select  
-    ¡¯alter tablespace ¡¯||Tablespace_Name||¡¯ begin backup;¡¯ 
+    â€™alter tablespace â€™||Tablespace_Name||â€™ begin backup;â€™ 
   from DBA_TABLESPACES 
- where Status <> ¡¯INVALID¡¯ 
+ where Status <> â€™INVALIDâ€™ 
 spool alter_begin.sql 
 / 
 spool off 
 
-//×Ô¶¯Éú³É±¸·İ½áÊøµÄ½Å±¾ 
+//è‡ªåŠ¨ç”Ÿæˆå¤‡ä»½ç»“æŸçš„è„šæœ¬ 
 set pagesize 0 feedback off 
 select  
-    ¡¯alter tablespace ¡¯||Tablespace_Name||¡¯ end backup;¡¯ 
+    â€™alter tablespace â€™||Tablespace_Name||â€™ end backup;â€™ 
   from DBA_TABLESPACES 
- where Status <> ¡¯INVALID¡¯ 
+ where Status <> â€™INVALIDâ€™ 
 spool alter_end.sql 
 / 
 spool off 
 
-//±¸·İ¹éµµÈÕÖ¾ÎÄ¼şµÄ½Å±¾. 
+//å¤‡ä»½å½’æ¡£æ—¥å¿—æ–‡ä»¶çš„è„šæœ¬. 
 REM  See text for alternatives. 
 #     Step 1: Stop the archiving process. This will keep 
 #     additional archived redo log files from being written 
@@ -4015,7 +4015,7 @@ rm -f $FILES
 # 
 #     End of archived redo log file backup script. 
 
-REM  ´ÅÅÌµ½´ÅÅÌµÄ±¸·İ 
+REM  ç£ç›˜åˆ°ç£ç›˜çš„å¤‡ä»½ 
 REM 
 REM   Back up the RBS tablespace - to another disk (UNIX) 
 REM 
@@ -4024,7 +4024,7 @@ alter tablespace RBS begin backup;
 alter tablespace RBS end backup; 
 REM 
 
-REM  ÒÆ¶¯¹éµµÈÕÖ¾ÎÄ¼şµÄshell½Å±¾ 
+REM  ç§»åŠ¨å½’æ¡£æ—¥å¿—æ–‡ä»¶çš„shellè„šæœ¬ 
 # 
 # Procedure for moving archived redo logs to another device 
 # 
@@ -4038,24 +4038,24 @@ EOFarch2
 # 
 # end of archived redo log directory move. 
 
-//Éú³É´´½¨¿ØÖÆÎÄ¼şÃüÁî 
+//ç”Ÿæˆåˆ›å»ºæ§åˆ¶æ–‡ä»¶å‘½ä»¤ 
 alter database backup controlfile to trace; 
 
-//Ê±¼äµã»Ö¸´µÄÀı×Ó 
+//æ—¶é—´ç‚¹æ¢å¤çš„ä¾‹å­ 
 connect internal as sysdba 
 startup mount instance_name; 
-recover database until time ¡¯1999-08-07:14:40:00¡¯; 
+recover database until time â€™1999-08-07:14:40:00â€™; 
 
-//´´½¨»Ö¸´Ä¿Â¼ 
+//åˆ›å»ºæ¢å¤ç›®å½• 
 rman rcvcat rman/rman@<database_service_name> 
 
-// ÔÚ(UNIX)ÏÂ´´½¨»Ö¸´Ä¿Â¼ 
+// åœ¨(UNIX)ä¸‹åˆ›å»ºæ¢å¤ç›®å½• 
 RMAN> create catalog tablespace rcvcat; 
 
-// ÔÚ(NT)ÏÂ´´½¨»Ö¸´Ä¿Â¼ 
+// åœ¨(NT)ä¸‹åˆ›å»ºæ¢å¤ç›®å½• 
 RMAN> create catalog tablespace "RCVCAT"; 
 
-//Á¬½ÓÃèÊö·û·¶Àı  
+//è¿æ¥æè¿°ç¬¦èŒƒä¾‹  
 (DESCRIPTION= 
       (ADDRESS= 
             (PROTOCOL=TCP) 
@@ -4064,41 +4064,41 @@ RMAN> create catalog tablespace "RCVCAT";
       (CONNECT DATA= 
             (SID=loc))) 
 
-// listener.ora µÄÌõÄ¿entry 
+// listener.ora çš„æ¡ç›®entry 
 
  
 
  
 
-//´´½¨Ò»¸ö¿ØÖÆÎÄ¼şÃüÁîµ½¸ú×ÙÎÄ¼ş 
+//åˆ›å»ºä¸€ä¸ªæ§åˆ¶æ–‡ä»¶å‘½ä»¤åˆ°è·Ÿè¸ªæ–‡ä»¶ 
 alter database backup controlfile to trace; 
 
-//Ôö¼ÓÒ»¸öĞÂµÄÈÕÖ¾ÎÄ¼ş×éµÄÓï¾ä 
+//å¢åŠ ä¸€ä¸ªæ–°çš„æ—¥å¿—æ–‡ä»¶ç»„çš„è¯­å¥ 
 connect internal as sysdba 
 alter database 
 add logfile group 4 
-(¡¯/db01/oracle/CC1/log_1c.dbf¡¯,
+(â€™/db01/oracle/CC1/log_1c.dbfâ€™,
 
-¡¯/db02/oracle/CC1/log_2c.dbf¡¯) size 5M; 
+â€™/db02/oracle/CC1/log_2c.dbfâ€™) size 5M; 
 
 alter database 
-add logfile member ¡¯/db03/oracle/CC1/log_3c.dbf¡¯ 
+add logfile member â€™/db03/oracle/CC1/log_3c.dbfâ€™ 
 to group 4; 
-//ÔÚServer ManagerÉÏMOUNT²¢´ò¿ªÒ»¸öÊı¾İ¿â: 
+//åœ¨Server Managerä¸ŠMOUNTå¹¶æ‰“å¼€ä¸€ä¸ªæ•°æ®åº“: 
 connect internal as sysdba 
 startup mount ORA1 exclusive; 
 alter database open; 
 
-//Éú³ÉÊı¾İ×Öµä 
+//ç”Ÿæˆæ•°æ®å­—å…¸ 
 @catalog 
 @catproc 
 
-//ÔÚinit.ora ÖĞ±¸·İÊı¾İ¿âµÄÎ»ÖÃ 
-log_archive_dest_1 = ¡¯/db00/arch¡¯ 
+//åœ¨init.ora ä¸­å¤‡ä»½æ•°æ®åº“çš„ä½ç½® 
+log_archive_dest_1 = â€™/db00/archâ€™ 
 log_archive_dest_state_1 = enable 
 log_archive_dest_2 = "service=stby.world mandatory reopen=60" 
 log_archive_dest_state_2 = enable 
-//¶ÔÓÃ»§µÄ±í¿Õ¼äµÄÖ¸¶¨ºÍ¹ÜÀíÏà¹ØµÄÓï¾ä 
+//å¯¹ç”¨æˆ·çš„è¡¨ç©ºé—´çš„æŒ‡å®šå’Œç®¡ç†ç›¸å…³çš„è¯­å¥ 
 create user USERNAME identified by PASSWORD 
 default tablespace TABLESPACE_NAME; 
 alter user USERNAME default tablespace TABLESPACE_NAME; 
@@ -4109,51 +4109,51 @@ default tablespace DATA
 temporary tablespace TEMP; 
 alter user USERNAME temporary tablespace TEMP; 
 
-//ÖØĞÂÖ¸¶¨Ò»¸öÊı¾İÎÄ¼şµÄ´óĞ¡ : 
+//é‡æ–°æŒ‡å®šä¸€ä¸ªæ•°æ®æ–‡ä»¶çš„å¤§å° : 
 alter database 
-datafile ¡¯/db05/oracle/CC1/data01.dbf¡¯ resize 200M; 
+datafile â€™/db05/oracle/CC1/data01.dbfâ€™ resize 200M; 
 
-//´´½¨Ò»¸ö×Ô¶¯À©Õ¹µÄÊı¾İÎÄ¼ş: 
+//åˆ›å»ºä¸€ä¸ªè‡ªåŠ¨æ‰©å±•çš„æ•°æ®æ–‡ä»¶: 
 create tablespace DATA 
-datafile ¡¯/db05/oracle/CC1/data01.dbf¡¯ size 200M 
+datafile â€™/db05/oracle/CC1/data01.dbfâ€™ size 200M 
 autoextend ON 
 next 10M 
 maxsize 250M; 
 
-//ÔÚ±í¿Õ¼äÉÏÔö¼ÓÒ»¸ö×Ô¶¯À©Õ¹µÄÊı¾İÎÄ¼ş: 
+//åœ¨è¡¨ç©ºé—´ä¸Šå¢åŠ ä¸€ä¸ªè‡ªåŠ¨æ‰©å±•çš„æ•°æ®æ–‡ä»¶: 
 alter tablespace DATA 
-add datafile ¡¯/db05/oracle/CC1/data02.dbf¡¯ 
+add datafile â€™/db05/oracle/CC1/data02.dbfâ€™ 
 size 50M 
 autoextend ON 
 maxsize 300M; 
 
-//ĞŞ¸Ä²ÎÊı: 
+//ä¿®æ”¹å‚æ•°: 
 alter database 
-datafile ¡¯/db05/oracle/CC1/data01.dbf¡¯ 
+datafile â€™/db05/oracle/CC1/data01.dbfâ€™ 
 autoextend ON 
 maxsize 300M; 
 
-//ÔÚÊı¾İÎÄ¼şÒÆ¶¯ÆÚ¼äÖØĞÂÃüÃû: 
+//åœ¨æ•°æ®æ–‡ä»¶ç§»åŠ¨æœŸé—´é‡æ–°å‘½å: 
 alter database rename file 
- ¡¯/db01/oracle/CC1/data01.dbf¡¯ to 
- ¡¯/db02/oracle/CC1/data01.dbf¡¯; 
+ â€™/db01/oracle/CC1/data01.dbfâ€™ to 
+ â€™/db02/oracle/CC1/data01.dbfâ€™; 
 
 alter tablespace DATA rename datafile 
- ¡¯/db01/oracle/CC1/data01.dbf¡¯ to 
- ¡¯/db02/oracle/CC1/data01.dbf¡¯; 
+ â€™/db01/oracle/CC1/data01.dbfâ€™ to 
+ â€™/db02/oracle/CC1/data01.dbfâ€™; 
 
 alter database rename file  
- ¡¯/db05/oracle/CC1/redo01CC1.dbf¡¯ to 
- ¡¯/db02/oracle/CC1/redo01CC1.dbf¡¯; 
+ â€™/db05/oracle/CC1/redo01CC1.dbfâ€™ to 
+ â€™/db02/oracle/CC1/redo01CC1.dbfâ€™; 
 
-alter database datafile ¡¯/db05/oracle/CC1/data01.dbf¡¯  
+alter database datafile â€™/db05/oracle/CC1/data01.dbfâ€™  
 resize 80M; 
-//´´½¨ºÍÊ¹ÓÃ½ÇÉ«: 
+//åˆ›å»ºå’Œä½¿ç”¨è§’è‰²: 
 create role APPLICATION_USER; 
 grant CREATE SESSION to APPLICATION_USER; 
 grant APPLICATION_USER to username; 
 
- //»Ø¹ö¶ÎµÄ¹ÜÀí 
+ //å›æ»šæ®µçš„ç®¡ç† 
 create rollback segment SEGMENT_NAME
 
 tablespace RBS; 
@@ -4163,26 +4163,26 @@ alter rollback segment SEGMENT_NAME offline;
 drop rollback segment SEGMENT_NAME; 
 
 alter rollback segment SEGMENT_NAME online; 
-//»Ø¹ö¶ÎÉÏÖ¸¶¨ÊÂÎñ 
+//å›æ»šæ®µä¸ŠæŒ‡å®šäº‹åŠ¡ 
 commit; 
 set transaction use rollback segment ROLL_BATCH; 
 insert into TABLE_NAME 
 select * from DATA_LOAD_TABLE; 
 commit; 
 
-//²éÑ¯»Ø¹ö¶ÎµÄ ´óĞ¡ºÍÓÅ»¯²ÎÊı 
+//æŸ¥è¯¢å›æ»šæ®µçš„ å¤§å°å’Œä¼˜åŒ–å‚æ•° 
 select * from DBA_SEGMENTS 
- where Segment_Type = ¡¯ROLLBACK¡¯; 
+ where Segment_Type = â€™ROLLBACKâ€™; 
 select N.Name,         /* rollback segment name */ 
        S.OptSize       /* rollback segment OPTIMAL size */ 
 from V$ROLLNAME N, V$ROLLSTAT S 
 where N.USN=S.USN; 
 
-//»ØÊÕ»Ø¹ö¶Î 
+//å›æ”¶å›æ»šæ®µ 
 alter rollback segment R1 shrink to 15M; 
 alter rollback segment R1 shrink; 
 
-//Àı×Ó 
+//ä¾‹å­ 
 set transaction use rollback segment SEGMENT_NAME 
 
 alter tablespace RBS 
@@ -4196,7 +4196,7 @@ alter rollback segment R4 online;
 select Sessions_Highwater from V$LICENSE; 
 grant select on EMPLOYEE to PUBLIC; 
 
-//ÓÃ»§ºÍ½ÇÉ«  
+//ç”¨æˆ·å’Œè§’è‰²  
 create role ACCOUNT_CREATOR; 
 grant CREATE SESSION, CREATE USER, ALTER USER  
    to ACCOUNT_CREATOR; 
@@ -4222,7 +4222,7 @@ PASSWORD_LIFE_TIME 30;
 
 alter user jane password expire; 
 
-//´´½¨²Ù×÷ÏµÍ³ÓÃ»§ 
+//åˆ›å»ºæ“ä½œç³»ç»Ÿç”¨æˆ· 
 REM  Creating OPS$ accounts 
 create user OPS$FARMER 
 identified by SOME_PASSWORD 
@@ -4236,7 +4236,7 @@ identified externally
 default tablespace USERS 
 temporary tablespace TEMP; 
 
-//Ö´ĞĞORAPWD 
+//æ‰§è¡ŒORAPWD 
 ORAPWD FILE=filename PASSWORD=password ENTRIES=max_users 
 
 create role APPLICATION_USER; 
@@ -4249,15 +4249,15 @@ grant APPLICATION_USER to DATA_ENTRY_CLERK;
 grant DATA_ENTRY_CLERK to MCGREGOR; 
 grant DATA_ENTRY_CLERK to BPOTTER with admin option; 
 
-//ÉèÖÃ½ÇÉ« 
+//è®¾ç½®è§’è‰² 
 set role DATA_ENTRY_CLERK; 
 set role NONE; 
 
-//»ØÊÕÈ¨Àû: 
+//å›æ”¶æƒåˆ©: 
 revoke delete on EMPLOYEE from PETER; 
 revoke all on EMPLOYEE from MCGREGOR; 
 
-//»ØÊÕ½ÇÉ«: 
+//å›æ”¶è§’è‰²: 
 revoke ACCOUNT_CREATOR from HELPDESK; 
 
 drop user USERNAME cascade; 
@@ -4266,22 +4266,22 @@ grant SELECT on EMPLOYEE to MCGREGOR with grant option;
 grant SELECT on THUMPER.EMPLOYEE to BPOTTER with grant option; 
 revoke SELECT on EMPLOYEE from MCGREGOR; 
 
-create user MCGREGOR identified by VALUES ¡¯1A2DD3CCEE354DFA¡¯; 
+create user MCGREGOR identified by VALUES â€™1A2DD3CCEE354DFAâ€™; 
 
-alter user OPS$FARMER identified by VALUES ¡¯no way¡¯; 
+alter user OPS$FARMER identified by VALUES â€™no wayâ€™; 
 
-//±¸·İÓë»Ö¸´ 
-Ê¹ÓÃ export ³ÌĞò 
+//å¤‡ä»½ä¸æ¢å¤ 
+ä½¿ç”¨ export ç¨‹åº 
 exp system/manager file=expdat.dmp compress=Y owner=(HR,THUMPER) 
 exp system/manager file=hr.dmp owner=HR indexes=Y compress=Y 
 imp system/manager file=hr.dmp full=Y buffer=64000 commit=Y 
 
-//±¸·İ±í 
+//å¤‡ä»½è¡¨ 
 exp system/manager FILE=expdat.dmp TABLES=(Thumper.SALES) 
-//±¸·İ·ÖÇø 
+//å¤‡ä»½åˆ†åŒº 
 exp system/manager FILE=expdat.dmp TABLES=(Thumper.SALES:Part1) 
 
-//ÊäÈëÀı×Ó 
+//è¾“å…¥ä¾‹å­ 
 imp system/manager file=expdat.dmp 
 imp system/manager file=expdat.dmp buffer=64000 commit=Y 
 
@@ -4292,14 +4292,14 @@ imp system/manager file=thumper.dat FROMUSER=thumper TOUSER=flower
 imp system/manager file=expdat.dmp full=Y commit=Y buffer=64000 
 imp system/manager file=expdat.dmp ignore=N rows=N commit=Y buffer=64000 
 
-//Ê¹ÓÃ²Ù×÷ÏµÍ³±¸·İÃüÁî 
+//ä½¿ç”¨æ“ä½œç³»ç»Ÿå¤‡ä»½å‘½ä»¤ 
 REM  TAR examples
 
 tar -cvf /dev/rmt/0hc /db0[1-9]/oracle/CC1 
 tar -rvf /dev/rmt/0hc /orasw/app/oracle/CC1/pfile/initcc1.ora 
 tar -rvf /dev/rmt/0hc /db0[1-9]/oracle/CC1 /orasw/app/oracle/CC1/pfile/initcc1.ora 
 
-//ÀëÏß±¸·İµÄshell½Å±¾ 
+//ç¦»çº¿å¤‡ä»½çš„shellè„šæœ¬ 
 ORACLE_SID=cc1; export ORACLE_SID 
 ORAENV_ASK=NO; export ORAENV_ASK 
 . oraenv 
@@ -4314,14 +4314,14 @@ connect internal as sysdba
 startup 
 EOF2 
 
-//ÔÚServer ManagerÉÏÉèÖÃÎªarchivelog mode: 
+//åœ¨Server Managerä¸Šè®¾ç½®ä¸ºarchivelog mode: 
 connect internal as sysdba 
 startup mount cc1; 
 alter database archivelog; 
 archive log start; 
 alter database open; 
 
-//ÔÚServer ManagerÉÏÉèÖÃÎªarchivelog mode: 
+//åœ¨Server Managerä¸Šè®¾ç½®ä¸ºarchivelog mode: 
 connect internal as sysdba 
 startup mount cc1; 
 alter database noarchivelog; 
@@ -4330,9 +4330,9 @@ alter database open;
 select Name, 
        Value 
   from V$PARAMETER 
- where Name like ¡¯log_archive%¡¯; 
+ where Name like â€™log_archive%â€™; 
 
-//Áª»ú±¸·İµÄ½Å±¾ 
+//è”æœºå¤‡ä»½çš„è„šæœ¬ 
 # 
 # Sample Hot Backup Script for a UNIX File System database 
 # 
@@ -4343,7 +4343,7 @@ ORAENV_ASK=NO; export ORAENV_ASK
 svrmgrl <<EOFarch1 
 connect internal as sysdba 
 REM 
-REM   ±¸·İ SYSTEM tablespace 
+REM   å¤‡ä»½ SYSTEM tablespace 
 REM 
 alter tablespace SYSTEM begin backup; 
 !tar -cvf /dev/rmt/0hc /db01/oracle/CC1/sys01.dbf 
@@ -4354,13 +4354,13 @@ REM   tar saveset on the tape device /dev/rmt/0hc.  The
 REM   rest of the tars must use the "-rvf" clause to append 
 REM   to that saveset. 
 REM 
-REM   ±¸·İ  RBS tablespace 
+REM   å¤‡ä»½  RBS tablespace 
 REM 
 alter tablespace RBS begin backup; 
 !tar -rvf /dev/rmt/0hc /db02/oracle/CC1/rbs01.dbf 
 alter tablespace RBS end backup; 
 REM 
-REM   ±¸·İ  DATA tablespace
+REM   å¤‡ä»½  DATA tablespace
 
 REM   For the purposes of this example, this tablespace 
 REM   will contain two files, data01.dbf and data02.dbf. 
@@ -4371,13 +4371,13 @@ alter tablespace DATA begin backup;
 !tar -rvf /dev/rmt/0hc /db03/oracle/CC1/data0*.dbf 
 alter tablespace DATA end backup; 
 REM 
-REM   ±¸·İ INDEXES tablespace 
+REM   å¤‡ä»½ INDEXES tablespace 
 REM 
 alter tablespace INDEXES begin backup; 
 !tar -rvf /dev/rmt/0hc /db04/oracle/CC1/indexes01.dbf 
 alter tablespace INDEXES end backup; 
 REM 
-REM   ±¸·İ  TEMP tablespace 
+REM   å¤‡ä»½  TEMP tablespace 
 REM 
 alter tablespace TEMP begin backup; 
 !tar -rvf /dev/rmt/0hc /db05/oracle/CC1/temp01.dbf 
@@ -4387,7 +4387,7 @@ REM   Follow the same pattern to back up the rest
 REM   of the tablespaces. 
 REM 
 REM     
-REM  Step 2.  ±¸·İ¹éµµÈÕÖ¾ÎÄ¼ş. 
+REM  Step 2.  å¤‡ä»½å½’æ¡£æ—¥å¿—æ–‡ä»¶. 
 archive log stop 
 REM 
 REM   Exit Server Manager, using the indicator set earlier. 
@@ -4421,42 +4421,42 @@ EOFarch2
 tar -rvf /dev/rmt/0hc $FILES 
 rm -f $FILES 
 # 
-#     Step 3.  ±¸·İ¿ØÖÆÎÄ¼şµ½´ÅÅÌ. 
+#     Step 3.  å¤‡ä»½æ§åˆ¶æ–‡ä»¶åˆ°ç£ç›˜. 
 # 
 svrmgrl <<EOFarch3 
 connect internal 
 alter database backup controlfile to 
-   ¡¯db01/oracle/CC1/CC1controlfile.bck¡¯;
+   â€™db01/oracle/CC1/CC1controlfile.bckâ€™;
 
 exit 
 EOFarch3 
 # 
-#  ±¸·İ¿ØÖÆÎÄ¼şµ½´Å´ø. 
+#  å¤‡ä»½æ§åˆ¶æ–‡ä»¶åˆ°ç£å¸¦. 
 # 
 tar -rvf /dev/rmt/0hc /db01/oracle/CC1/CC1controlfile.bck 
 # 
 #  End of hot backup script. 
-//×Ô¶¯Éú³É¿ªÊ¼±¸·İµÄ½Å±¾ 
+//è‡ªåŠ¨ç”Ÿæˆå¼€å§‹å¤‡ä»½çš„è„šæœ¬ 
 set pagesize 0 feedback off 
 select  
-    ¡¯alter tablespace ¡¯||Tablespace_Name||¡¯ begin backup;¡¯ 
+    â€™alter tablespace â€™||Tablespace_Name||â€™ begin backup;â€™ 
   from DBA_TABLESPACES 
- where Status <> ¡¯INVALID¡¯ 
+ where Status <> â€™INVALIDâ€™ 
 spool alter_begin.sql 
 / 
 spool off 
 
-//×Ô¶¯Éú³É±¸·İ½áÊøµÄ½Å±¾ 
+//è‡ªåŠ¨ç”Ÿæˆå¤‡ä»½ç»“æŸçš„è„šæœ¬ 
 set pagesize 0 feedback off 
 select  
-    ¡¯alter tablespace ¡¯||Tablespace_Name||¡¯ end backup;¡¯ 
+    â€™alter tablespace â€™||Tablespace_Name||â€™ end backup;â€™ 
   from DBA_TABLESPACES 
- where Status <> ¡¯INVALID¡¯ 
+ where Status <> â€™INVALIDâ€™ 
 spool alter_end.sql 
 / 
 spool off 
 
-//±¸·İ¹éµµÈÕÖ¾ÎÄ¼şµÄ½Å±¾. 
+//å¤‡ä»½å½’æ¡£æ—¥å¿—æ–‡ä»¶çš„è„šæœ¬. 
 REM  See text for alternatives. 
 #     Step 1: Stop the archiving process. This will keep 
 #     additional archived redo log files from being written 
@@ -4503,7 +4503,7 @@ rm -f $FILES
 # 
 #     End of archived redo log file backup script. 
 
-REM  ´ÅÅÌµ½´ÅÅÌµÄ±¸·İ 
+REM  ç£ç›˜åˆ°ç£ç›˜çš„å¤‡ä»½ 
 REM 
 REM   Back up the RBS tablespace - to another disk (UNIX) 
 REM 
@@ -4512,7 +4512,7 @@ alter tablespace RBS begin backup;
 alter tablespace RBS end backup; 
 REM 
 
-REM  ÒÆ¶¯¹éµµÈÕÖ¾ÎÄ¼şµÄshell½Å±¾ 
+REM  ç§»åŠ¨å½’æ¡£æ—¥å¿—æ–‡ä»¶çš„shellè„šæœ¬ 
 # 
 # Procedure for moving archived redo logs to another device 
 # 
@@ -4526,24 +4526,24 @@ EOFarch2
 # 
 # end of archived redo log directory move. 
 
-//Éú³É´´½¨¿ØÖÆÎÄ¼şÃüÁî 
+//ç”Ÿæˆåˆ›å»ºæ§åˆ¶æ–‡ä»¶å‘½ä»¤ 
 alter database backup controlfile to trace; 
 
-//Ê±¼äµã»Ö¸´µÄÀı×Ó 
+//æ—¶é—´ç‚¹æ¢å¤çš„ä¾‹å­ 
 connect internal as sysdba 
 startup mount instance_name; 
-recover database until time ¡¯1999-08-07:14:40:00¡¯; 
+recover database until time â€™1999-08-07:14:40:00â€™; 
 
-//´´½¨»Ö¸´Ä¿Â¼ 
+//åˆ›å»ºæ¢å¤ç›®å½• 
 rman rcvcat rman/rman@<database_service_name> 
 
-// ÔÚ(UNIX)ÏÂ´´½¨»Ö¸´Ä¿Â¼ 
+// åœ¨(UNIX)ä¸‹åˆ›å»ºæ¢å¤ç›®å½• 
 RMAN> create catalog tablespace rcvcat; 
 
-// ÔÚ(NT)ÏÂ´´½¨»Ö¸´Ä¿Â¼ 
+// åœ¨(NT)ä¸‹åˆ›å»ºæ¢å¤ç›®å½• 
 RMAN> create catalog tablespace "RCVCAT"; 
 
-//Á¬½ÓÃèÊö·û·¶Àı  
+//è¿æ¥æè¿°ç¬¦èŒƒä¾‹  
 (DESCRIPTION= 
       (ADDRESS= 
             (PROTOCOL=TCP) 
@@ -4552,12 +4552,12 @@ RMAN> create catalog tablespace "RCVCAT";
       (CONNECT DATA= 
             (SID=loc))) 
 
-// listener.ora µÄÌõÄ¿entry 
+// listener.ora çš„æ¡ç›®entry 
 LISTENER = 
   (ADDRESS_LIST = 
         (ADDRESS= 
           (PROTOCOL=IPC) 
-×ªÌùÓÚ Ñ§Éú´ó¶ÁÊéÍø http://
+è½¬è´´äº å­¦ç”Ÿå¤§è¯»ä¹¦ç½‘ http://
 
  (KEY= loc.world) 
         ) 
@@ -4571,7 +4571,7 @@ SID_LIST_LISTENER =
    ) 
  ) 
 
-//  tnsnames.ora µÄÌõÄ¿ 
+//  tnsnames.ora çš„æ¡ç›® 
 LOC= 
   (DESCRIPTION=   
    (ADDRESS = 
@@ -4585,7 +4585,7 @@ LOC=
     ) 
 ) 
 
-//Á¬½Ó²ÎÊıµÄÉèÖÃ£¨sql*net£© 
+//è¿æ¥å‚æ•°çš„è®¾ç½®ï¼ˆsql*netï¼‰ 
 LOC =(DESCRIPTION= 
       (ADDRESS= 
             (COMMUNITY=TCP.HQ.COMPANY) 
@@ -4594,7 +4594,7 @@ LOC =(DESCRIPTION=
             (PORT=1521)) 
       (CONNECT DATA= 
             (SID=loc))) 
-//²ÎÊıÎÄ¼şÅäÖÃ·¶Àı 
+//å‚æ•°æ–‡ä»¶é…ç½®èŒƒä¾‹ 
 // tnsnames.ora  
 HQ =(DESCRIPTION= 
       (ADDRESS= 
@@ -4637,7 +4637,7 @@ LOC=
     ) 
 )  
 
-//Ê¹ÓÃ COPY ÊµÏÖÊı¾İ¿âÖ®¼äµÄ¸´ÖÆ 
+//ä½¿ç”¨ COPY å®ç°æ•°æ®åº“ä¹‹é—´çš„å¤åˆ¶ 
 copy from 
 remote_username/remote_password@service_name 
 to 
@@ -4655,26 +4655,26 @@ using -
 select * from EMPLOYEE 
 
 
-//¼àÊÓÆ÷µÄ¹ÜÀí 
+//ç›‘è§†å™¨çš„ç®¡ç† 
 lsnrctl start 
 lsnrctl start my_lsnr 
 lsnrctl status 
 lsnrctl status hq 
 
-¼ì²é¼àÊÓÆ÷µÄ½ø³Ì 
+æ£€æŸ¥ç›‘è§†å™¨çš„è¿›ç¨‹ 
 ps -ef | grep tnslsnr 
-//ÔÚ lsnrctl  ÄÚÍ£Ö¹¼àÊÓÆ÷ 
+//åœ¨ lsnrctl  å†…åœæ­¢ç›‘è§†å™¨ 
 set password lsnr_password 
 stop 
 
-//ÔÚlsnrctl ÄÚÁĞ³öËùÓĞµÄ·şÎñ 
+//åœ¨lsnrctl å†…åˆ—å‡ºæ‰€æœ‰çš„æœåŠ¡ 
 set password lsnr_password 
 services 
-//Æô¶¯»òÍ£Ö¹Ò»¸öNTµÄlistener 
+//å¯åŠ¨æˆ–åœæ­¢ä¸€ä¸ªNTçš„listener 
 net start Oracle<version_name>TNSListener 
 net stop Oracle<version_name>TNSListener 
 
-// tnsnames.ora ÎÄ¼şµÄÄÚÈİ 
+// tnsnames.ora æ–‡ä»¶çš„å†…å®¹ 
 fld1 = 
   (DESCRIPTION = 
     (ADDRESS_LIST = 
@@ -4685,4 +4685,4 @@ fld1 =
       (SID = fld1) 
     ) 
   ) 
-//²Ù×÷ÏµÍ³ÍøÂçµÄ¹ÜÀí 
+//æ“ä½œç³»ç»Ÿç½‘ç»œçš„ç®¡ç† 

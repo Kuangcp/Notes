@@ -1,24 +1,25 @@
 # 在Linux上操作压缩文件的命令
 > Linux默认自带ZIP压缩，最大支持4GB压缩，RAR的压缩比大于4GB.
 ## tar 归档
-```
-    tar
-        -c: 建立压缩档案
-        -x：解压
-        -t：查看内容
-        -r：向压缩归档文件末尾追加文件
-        -u：更新原压缩包中的文件
-``` 
-- `-f是必须的,-f: 使用档案名字，切记，这个参数是最后一个参数，后面只能接档案名。`
-- 这五个是独立的命令，压缩解压都要用到其中一个，可以和别的命令连用但只能用其中一个。
-- 下面的参数是根据需要在压缩或解压档案时可选的。
-```
-    -z：有gzip属性的
-    -j：有bz2属性的
-    -Z：有compress属性的
-    -v：显示所有过程
-    -O：将文件解开到标准输出
-```
+
+`tar`
+`这五个是独立的命令，压缩解压都要用到其中一个，可以和别的命令连用但只能用其中一个。`
+- c: 打包 压缩
+- x：解压
+- t：查看内容 不解压
+- r：向压缩归档文件末尾追加文件
+- u：更新原压缩包中的文件
+***
+`下面的参数是根据需要在压缩或解压档案时可选的。`
+-z：有gzip属性的
+-j：有bz2属性的
+-Z：有compress属性的
+-v：显示所有过程
+-O：将文件解开到标准输出
+***
+- `-v 可选` 将压缩或解压的过程输出
+- `-f是必须的,-f: 使用档案名字，切记，这个参数是最后一个参数，后面只能接文件或目录`
+***
 - `tar -cf all.tar *.jpg`这条命令是将所有.jpg的文件打成一个名为all.tar的包。
     - `-c`是表示产生新的包，`-f`指定包的文件名。
 - `tar -rf all.tar *.gif`这条命令是将所有.gif的文件增加到all.tar的包里面去。
@@ -30,13 +31,14 @@
 - `tar -xf all.tar` 这条命令是解出all.tar包中所有文件，
     - `-t`是解开的意思
 
-*******************
+********************
+
 ### 压缩
 
 - `tar -cvf jpg.tar *.jpg` //将目录里所有jpg文件打包成tar.jpg 
-- `tar -czf jpg.tar.gz *.jpg `  //将目录里所有jpg文件打包成jpg.tar后，gzip压缩，生成一个gzip压缩过的包，命名为jpg.tar.gz
-- `tar -cjf jpg.tar.bz2 *.jpg `//将目录里所有jpg文件打包成jpg.tar后，bzip2压缩，生成一个bzip2压缩过的包，命名为jpg.tar.bz2
-- `tar -cZf jpg.tar.Z *.jpg `  //将目录里所有jpg文件打包成jpg.tar后，compress压缩，生成一个umcompress压缩过的包，命名为jpg.tar.Z
+- `tar -czf jpg.tar.gz *.jpg `  //将目录里所有jpg文件打包成jpg.tar后 生成gzip压缩的包，命名为jpg.tar.gz
+- `tar -cjf jpg.tar.bz2 *.jpg `//将目录里所有jpg文件打包成jpg.tar后 生成bzip2压缩的包，命名为jpg.tar.bz2
+- `tar -cZf jpg.tar.Z *.jpg ` //将目录里所有jpg文件打包成jpg.tar后 生成umcompress压缩的包，命名为jpg.tar.Z
 ******
 - `rar a jpg.rar *.jpg` //rar格式的压缩，需要先下载rar for linux
 ******
@@ -53,6 +55,7 @@
 - `unrar e file.rar` //解压rar
 ***
 - `unzip file.zip `//解压zip
+
 
 ### 总结
 ```
