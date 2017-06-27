@@ -55,9 +55,9 @@
 * Skills
     * Skills/View
         * [ Learn_PS.md ](./Skills/View/Learn_PS.md)
-        * [ Learn_JQuery.md ](./Skills/View/Learn_JQuery.md)
-        * [ Learn_HTML.md ](./Skills/View/Learn_HTML.md)
-        * [ Learn_CSS3.md ](./Skills/View/Learn_CSS3.md)
+        * [ LearnCSS3.md ](./Skills/View/LearnCSS3.md)
+        * [ LearnJQuery.md ](./Skills/View/LearnJQuery.md)
+        * [ LearnHtml5.md ](./Skills/View/LearnHtml5.md)
     * [ 软考知识点.md ](./Skills/软考知识点.md)
     * [ 正则表达式学习.md ](./Skills/正则表达式学习.md)
     * [ 软考错题集.md ](./Skills/软考错题集.md)
