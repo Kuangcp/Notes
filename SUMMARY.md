@@ -54,10 +54,7 @@
     * [ SomeOneLikeYou歌词.md ](./Article/SomeOneLikeYou歌词.md)
 * Skills
     * Skills/View
-        * [ Learn_PS.md ](./Skills/View/Learn_PS.md)
-        * [ LearnCSS3.md ](./Skills/View/LearnCSS3.md)
-        * [ LearnJQuery.md ](./Skills/View/LearnJQuery.md)
-        * [ LearnHtml5.md ](./Skills/View/LearnHtml5.md)
+        * [ PS笔记 ](./Skills/View/Learn_PS.md)
     * [ 软考知识点.md ](./Skills/软考知识点.md)
     * [ 正则表达式学习.md ](./Skills/正则表达式学习.md)
     * [ 软考错题集.md ](./Skills/软考错题集.md)
