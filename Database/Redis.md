@@ -43,8 +43,8 @@
 	- hdel 删除散列中指定k
 	- hincrby 自增
 	
-- 【`有序集合(键是member成员，值是score分值必须是浮点数)`】
-	- zadd 将一个给定分值的成员添加到有序集合里
+- 【`有序集合(元素是键值对，键是member成员，值是score分值必须是浮点数)`】
+	- zadd 将一个给定分值的成员添加到有序集合里 `zadd key 3.3 member` 
 	- zrange 根据元素在有序集合中的位置，从有序集合中获取多个元素
 		- zrange name 0 -1 withscores 获取所有并获取分值
 		- zrange name 2 30 wi thscores 
@@ -54,7 +54,7 @@
 	- zrem
 	- zincrby 自增
 	- zinterstore 进行集合之间的并集（可以看作是多表连接）
-	 	
+	- `精度丢失问题`	
 ##### 过期策略
 - `expire key seconds` 设置键的过期时间
 - `PTTL/TTL key ` 查看键剩余过期时间（生存时间） ms/s

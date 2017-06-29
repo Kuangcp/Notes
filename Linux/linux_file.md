@@ -19,6 +19,19 @@
     - \time -v ls -al
     - 
 
+`ls`
+- i详情 a全部 l 列
+    - 输出类型：d 目录 l 软链接 b 块设备 c 字符设备 s socket p 管道 - 普通文件
+    - 输出权限信息：r 读权限 w 写权限 x 执行权限
+    - rwx有三个，是因为 `拥有者，所属用户组 其他用户` 代表的rwx权限
+    ![权限输出图](https://dn-anything-about-doc.qbox.me/linux_base/3-10.png/logoblackfont)
+![权限计算图](https://dn-anything-about-doc.qbox.me/linux_base/3-14.png/logoblackfont)
+    - `chmod 700 文件` 就是只设置拥有者具有读写权限
+    - 加减权限操作 `chmod go-rw 文件` `g group` `o others` `u user` `+- 增减权限`
+- `ls -ASsh` 显示所有文件大小， 便于阅读的形式输出
+- `ls -dl 目录` 查看一个目录的完整属性
+
+
 `file`
 - file a.txt 查看文件类型
     - -i 输出文件的MIME类型
@@ -29,6 +42,7 @@
 
 `find`
 - `find . -name "*.txt"` 查找当前目录的txt后缀的文件
+- `sudo find / -name a.java` 全盘查找
 - `find -type f -name README.md` 默认当前目录查找
     - d 文件夹 f 普通文件 l 符号链接文件 b 块设备 c 字符设备 p 管道文件 s 套接字
 
@@ -69,7 +83,7 @@
 `df -h ` 查看挂载文件系统信息
 
 `du`
-- `du -sh 目录` 查看磁盘占用总大小 h 自动搭配单位
+- `du -sh 目录` 查看磁盘占用总大小 h 自动搭配单位（human read ）
 - `du --max-depth` 一级子目录使用情况
 - du -sm * | sort -n //统计当前目录大小 并安大小 排序
 - du -sk * | sort -n

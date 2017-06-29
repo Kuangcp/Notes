@@ -34,7 +34,7 @@ def print_title(name,count):
 	for i in range(1,count,1):
 		temp = temp+'    '
 	temp = temp+'* '
-	#print(temp,name)
+	print(temp,name.split('/'))
 	result.append(temp+name)      
 # 递归
 def create(name,count):
@@ -62,6 +62,7 @@ for fold in Folders:
  
 for res in result:
 	print(res)     
-    
+
+## 要不要直接输出到文件中去呢，这样就不用复制粘贴了，不过为了自由添加 ，还是暂时不去动吧
 
 

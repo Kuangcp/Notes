@@ -11,14 +11,18 @@
 *********************************
 ## 【系统管理】
 ### 【用户管理】
-- 添加用户 `adduser username`
+- 添加用户 `sudo adduser username`
     - 添加到sudoers文件中才能使用sudo
-    - chmod 777 /etc/sudoers
-    - vi /etc/sudoers
-    - kuang  ALL=(ALL:ALL)ALL
-    - chmod 440 /etc/sudoers
+    - `chmod 777 /etc/sudoers`
+    - 添加 ：`kuang  ALL=(ALL:ALL)ALL`
+    - `chmod 440 /etc/sudoers`
+- 或者不更改文件，使用命令更安全 `sudo usermod -G sudo username`
+- 查看是否设置成功 ： `groups username`
 - 更新密码：`passwd username`
-- su user 切换用户
+- `su username` 切换用户
+- `su -l username` 登录用户
+
+- 删除用户以及home目录：`sudo deluser username --remove-home` 
 *********************************
 ## 【软件管理】
 ### 安装命令
