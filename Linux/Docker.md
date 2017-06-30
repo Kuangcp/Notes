@@ -31,6 +31,7 @@
 
 ***************************************
 ## docker安装与卸载
+> [daocloud安装帮助](http://get.daocloud.io/#install-docker)
 #### 通过snap安装
 - 安装snap `sudo apt install snapd`
 - 查看适用于当前系统的包：`snap install find`
@@ -39,9 +40,15 @@
 - [点击选择文件](https://download.docker.com/linux/debian/dists/)
 - 进去后选择debain的版本，deepin15.4 的版本是stretch 然后pool/stable/amd64/选版本即可 
 - 例如：[Deepin 15.4直接点这里](https://download.docker.com/linux/debian/dists/stretch/pool/stable/amd64/)
-- `这两种方式装的是同一个版本号`
+- `这两种方式装的是同一个版本号` 
 - 双击或者`sudo dpkg -i deb文件`
 - 测试安装成功 `sudo docker run hello-world`
+
+`不加sudo 执行docker命令`
+- 添加用户组 `sudo groupadd docker `
+- 将当前用户加入用户组 `sudo gpasswd -a $USER docker`
+- 或者?? ：`sudo usermod -aG docker $USER`
+- 然后重新登录下就好了 ？ 注销登录
 
 #### 卸载docker
 - `sudo apt-get purge docker-ce`
@@ -109,13 +116,23 @@
 - 容器日志：`docker logs 容器name或id`
 - 登录容器：`docker exec -it 容器name或id bash `
 
+## 安装 Jenkins
+- `sudo docker pull jenkins` 下拉镜像
+- `sudo docker run --name myjenkins -p 8080:8080 -p 50000:50000 -v /home/kcp/docker/jenkins:/var/jenkins_home jenkins` 构建容器
+- 确保目录是开放了权限的 直接 `chmod 777 jenkins` 了事
+- 然后就是正常的容器的启动关闭了
+
+## 安装 PostgreSQL
+## 安装 Oracle
+
 ************************
 
 - docker pull wnameless/oracle-xe-11g
 - docker pull mongo
 - docker pull cloudesire/activemq
 - docker pull rabbitmq
-- socker pull rabbitmq:3-management
+- docker pull rabbitmq:3-management
+- docker pull jenkins
 
 
 

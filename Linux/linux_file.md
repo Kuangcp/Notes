@@ -36,7 +36,7 @@
 - file a.txt 查看文件类型
     - -i 输出文件的MIME类型
     - -F "#" 修改输出分隔符
-    
+
 `ln`
 - `ln -s 文件或目录 link` 生成软链接（快捷方式）
 
@@ -49,6 +49,28 @@
 -` rm` 删除` -f `空目录` -rf `有文件也强制删除
 - 清空文件内容 `true > a.txt ` 
 - 上传下载文件的工具 `sudo apt install lrzsz`
+
+### 【磁盘管理】
+
+- 创建一个空文件 `dd if=/dev/zero of=virtual.img bs=1M count=256` 查看大小 `du -h virtual.img`
+- 将虚拟磁盘镜像格式化为指定的文件系统 `sudo mkfs.ext4 virtual.img`
+- 查看支持的文件系统 `ls -l /lib/modules/$(uname -r)/kernel/fs`
+- 挂载这个镜像到`/mnt`：`mount -o loop -t ext4 virtual.img /mnt`
+- 只读方式挂载 `mount -o loop --ro virtual.img /mnt`
+- 卸载挂载的磁盘 `sudo umount /mnt`
+
+`dd`
+- 
+
+`mount`
+- `mount [options] [source] [directory] `
+- `mount [-o [操作选项]] [-t 文件系统类型] [-w|--rw|--ro] [文件系统源] [挂载点]`
+- 查看已挂载信息 `mount`
+
+`fdisk`
+- 查看磁盘分区表信息 ：`sudo fdisk -l `
+- 
+##### 设置交换分区
 
 #### 善用 ～/.bashrc 文件
 `Alias`

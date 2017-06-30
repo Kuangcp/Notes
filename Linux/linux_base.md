@@ -11,18 +11,29 @@
 *********************************
 ## 【系统管理】
 ### 【用户管理】
-- 添加用户 `sudo adduser username`
-    - 添加到sudoers文件中才能使用sudo
+- 添加用户 `sudo adduser username` 对比 `useradd`只是新建一个用户不会创建主目录
+- 添加到sudoers文件中才能使用sudo
     - `chmod 777 /etc/sudoers`
     - 添加 ：`kuang  ALL=(ALL:ALL)ALL`
     - `chmod 440 /etc/sudoers`
+    - `rwx 对应一个三位的二进制数， 1/0 表示开关`
 - 或者不更改文件，使用命令更安全 `sudo usermod -G sudo username`
 - 查看是否设置成功 ： `groups username`
-- 更新密码：`passwd username`
+
 - `su username` 切换用户
-- `su -l username` 登录用户
+- `su -l username` 当前用户的环境下登录用户（当成一个程序一样可以退出登录）
 
 - 删除用户以及home目录：`sudo deluser username --remove-home` 
+
+- `usermod` 修改相关信息
+    - `-s 更改shell环境` `-g 更改用户组` `-l 新用户名`
+- `passwd 选项 用户名` 更改口令
+    - `-l 锁定口令，禁用账号`  `-u 口令解锁` `-d 账号无口令` `-f 强迫用户下次登录时修改口令`
+    - 当前用户 `passwd` 就是修改当前用户口令 超级用户就可以命令后接用户名，修改任意用户
+### 【用户组管理】
+- sudo groupadd 
+
+
 *********************************
 ## 【软件管理】
 ### 安装命令
