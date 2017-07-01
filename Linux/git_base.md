@@ -112,6 +112,14 @@
 - `git merge--no-ff develop` 将当前分支与分支Develop合并，在Master分支上生成一个新节点(有一个环的线)
 - 如果遇到冲突：
     - `git mergetool` 使用工具进行分析冲突文件方便修改
+
+#### 【git grep 】    
+- 搜索文字 `git grep docker`
+    - `-n`搜索并显示行号 
+    - `--name-only` 只显示文件名，不显示内容
+    - `-c` 查看每个文件里有多少行匹配内容(line matches):
+    - 查找git仓库里某个特定版本里的内容, 在命令行末尾加上标签名(tag reference):  `git grep xmmap v1.5.0`
+    - `git grep --all-match -e '#define' -e SORT_DIRENT` 匹配两个字符串
     
 ******************************
 

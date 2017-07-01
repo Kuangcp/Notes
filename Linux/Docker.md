@@ -83,7 +83,7 @@
 ```
 - `docker build .` 如果成功则会得到一个没有名字的镜像
 - `docker build -t repository/tag .` 给镜像指定名字
-- `docker run --name ContainerName -d repository/tag` 新建容器来运行镜像
+- 创建镜像成功后 `docker run --name ContainerName -d repository/tag` 新建容器来运行镜像
 
 ***************************
 - Dockerfile是一个`镜像`的表示，可以通过Dockerfile来描述构建镜像的步骤，且可以自动构建一个容器

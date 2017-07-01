@@ -48,7 +48,8 @@
 
 -` rm` 删除` -f `空目录` -rf `有文件也强制删除
 - 清空文件内容 `true > a.txt ` 
-- 上传下载文件的工具 `sudo apt install lrzsz`
+- 安装上传下载文件的工具 `sudo apt install lrzsz`
+- `cat ~/.ssh/id_rsa.pub | xclip -sel clip` 将文件复制到剪贴板
 
 ### 【磁盘管理】
 
@@ -71,6 +72,15 @@
 - 查看磁盘分区表信息 ：`sudo fdisk -l `
 - 
 ##### 设置交换分区
+- `free -h` 查看内存
+- `dd if=/dev/zero of=/swapfile bs=1024k count=4096` 创建一个4g 交换文件
+- `mkswap /swapfile` 格式化成交换文件的格式
+- ` swapon /swapfile` 启用该文件作为交换分区的文件
+- `/swapfile swap swap defaults 0 0` 写入`/etc/fstab`文件中，让交换分区的设置开机自启
+- `sudo sysctl vm.swappiness=15` 临时修改重启注销失效， 查看：`cat /proc/sys/vm/swappiness`
+- 永久修改：`/etc/sysctl.conf ` 文件中设置开始使用交换分区的触发值： `vm.swappiness=10`
+    - 表示物理内存剩余`10%` 才会开始使用交换分区
+- `建议，笔记本的硬盘低于 7200 转的不要设置太高的交换分区使用，大大影响性能，因为交换分区就是在硬盘上，频繁的交换数据`
 
 #### 善用 ～/.bashrc 文件
 `Alias`
@@ -153,19 +163,3 @@ du xmldb/*/*/* |wc -l
 - 安装markdown预览插件 
 
 ************************
-
-#### `cat ~/.ssh/id_rsa.pub | xclip -sel clip` 将文件复制到剪贴板
-- `桌面快捷方式图标文件`
-```
-    [Desktop Entry]
-    Exec=/home/mythos/Application/Story/Story-writer
-    Icon=/home/mythos/Application/Story/Story-writer.png
-    Type=Application
-    Terminal=false
-    Name=Story
-    GenericName=Story
-    Categories=Story
-    Name[en_US]=Story
-    GenericName[en_US.UTF-8]=Story
-    Name[zh_CN]=Story
-``` 
