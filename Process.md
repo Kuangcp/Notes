@@ -62,3 +62,6 @@
 - 使用了Gitbook来展示笔记，文件夹的命名不能随意，放在互联网上，指不定就有啥bug，至少不能使用 HTML CSS JS等网络资源的直接命名
 - 使用了脚本来生成目录，为了方便以后的使用 [Python文件](https://github.com/Kuangcp/Notes/blob/master/create_tree.py)
 
+## 2017-07-02 15:49:06
+- 一开始将代码编写的尽可能简单，并在项目越来越复杂时，进行重构
+

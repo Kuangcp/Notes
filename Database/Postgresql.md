@@ -36,7 +36,7 @@
 - 构建容器 `docker build --rm=true -t mypostgresql:9.4 .`
 - 运行容器 `docker run --name mypostgre -i -t -p 5432:5432 mypostgresql:9.4`
 - 安装客户端 `sudo apt-get install postgresql-client`
-- 使用客户端连接`psql -h localhost -p 5432 -U pger -W pgerdb`
+- 使用客户端连接`psql -h localhost -p 5432 -U pger -W pgerdb` 口令：`pger`
 - 连接后 输入`\l` 列出数据库即可查看连接成功与否
 
 #### 解释Dockerfile文件
