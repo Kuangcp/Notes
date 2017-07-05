@@ -72,17 +72,18 @@
 
 ## 【网络管理】
 #### 查看端口占用情况
-- `lsof -i`:端口号 用于查看某一端口的占用情况，比如查看8000端口使用情况，`lsof -i:8000`
-- `netstat -tunlp |grep` 端口号，用于查看指定的端口号的进程情况
-    - 例如： `netstat -tunlp |grep 8000`
+- `先安装lsof` `lsof -i:端口号` 用于查看某一端口的占用情况，缺省端口号显示全部
+
+- `netstat -tunlp |grep 端口号` 用于查看指定的端口号的进程情况
     - `-t` (tcp) 仅显示tcp相关选项
     - `-u` (udp)仅显示udp相关选项
     - `-n` 拒绝显示别名，能显示数字的全部转化为数字
     - `-l` 仅列出在Listen(监听)的服务状态
     - `-p` 显示建立相关链接的程序名
+    
 - [扫描端口的Python](https://github.com/Kuangcp/Notes/blob/master/Python/net/netstatus.py)
-- Ubuntu与Windows10时间相差8小时的解决
-    - `timedatectl set-local-rtc true `
+
+
 - 查询端口占用的pid 三种：
     - `netstat -aonp |grep "^[a-z]\+[ ]\+0[ ]\+0[ ]\+[0-9\.]\+:80[ ]\+"|awk -F" "   {'print $0'}`
     - `netstat -aonp |grep ":80[ ]\+"|awk -F" "   {'print $0'}`
@@ -122,10 +123,11 @@
 - 对于CentOS/Redhat/RHEL/Fedora系统，使用root身份执行：
     - `echo "alias pcspkr off" >> /etc/modprobe.conf `
 
-*****
+##### Ubuntu与Windows10时间相差8小时的解决
+- `timedatectl set-local-rtc true `
+
+*****************************************************
 ### 【技巧】
-
-
 #### 一行执行多条命令 
 - ` && ` 第2条命令只有在第1条命令成功执行之后才执行 根据命令产生的退出码判断是否执行成功（0成功，非0失败）
 -  `|| ` 执行不成功（产生了一个非0的退出码）时，才执行后面的命令
@@ -133,7 +135,9 @@
 - `&`
 - `|`
 
-
+#### 修改主机名
+- `sudo hostname linux` 重启终端即可看到修改
+- 但是重启电脑会恢复原有名字修改如下文件永久： `sudo gedit /etc/hostname` `/etc/hosts`
 ### 快捷键
 - 终端：
     - `Ctrl L` 清屏，Mysql也适用

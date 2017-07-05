@@ -36,7 +36,7 @@
 - python2 raw_input() 输入字符串 input() 输入数字
 
 ### 序列
-序列通用操作（字符串，列表，元组）
+`序列通用操作（包含：字符串，列表，元组）`
 - `​索引`，从左至右：`0,1,2...n` 从右至左：`-1,-2...-n`
 - `切片`（截取序列的部分） `temp[:]` 返回一个副本
     - `temp[2:4]`就是`[2,4)` 
@@ -97,7 +97,7 @@
 
 
 ***************************************
-#### 编码问题(python 2问题)：
+#### 字符串编码问题(python 2问题)：
 
 - encode("utf-8")
 - decode()
@@ -114,6 +114,7 @@
 ```
 - 因为文件不是UTF8：`UnicodeDecodeError: 'utf-8' codec can't decode byte 0xb9 in position 2: invalid start byte `
 
+*************************************
 ### 字典（键值对）
 - 通过用空间来换取时间，与列表相比，键的增加不影响查找插入速度，需要占用大量内存 
 - 特性：
@@ -154,22 +155,24 @@
     else:
         print("Hi")
 ```
+
+*****************************************
 ### 函数
 
 - 形参赋值传递方式
     - 按位置 `就是直接用看起来和Java一样，但不是按类型和位置，只是位置`
     - 按指定名称 调用的时候 `create(name='df')`
-    - 缺省默认值（参数缺省之后，调用可以不传这个参数，否则必须要传） 定义的时候 `create(name='df')`
+    - 缺省默认值（参数缺省之后，调用可以不传这个参数，否则必须要传） `def create(name='df')`
     - 列表类型，不想形参改变实参 传递副本过去即可 `list[:]`
-    - 以下两中情况，都必须放在形参列表的最后 
+    - `以下两种情况（* 和 **），都必须放在形参列表的最后 (两者同时使用时：* 只能在 ** 前 )`
     - 多个实参 `create(age, *name)` `create(12, 's','d')`
         - 所以这是名为name的元组 不能指定没有的名称 错误：create(12，d=2, 2,3,4)
     - 多个指定名称实参 `create(age, **name)` `create(12, name='d', lo=23)` 必须要指定名称 这是名为name的键值对字典
         - 错误：create(12,d=23,3,3,3)
 
     - 注意：
-        - `def hi(name, age=0, *names, **s)` `hi('d', 23,34, d=6) `age会被赋值  * 可以在 ** 之前，反之不可
-        - `def hi(name, *names, age=0, **s)` 这样写age就不会赋值
+        - `def hi(name, age=0, *names, **s)` `hi('d', 23,34, d=6) ` age会被赋值23
+        - `def hi(name, *names, age=0, **s)` `hi('d', 23,34, d=6)` 这样写age就不会赋值，除非指定名称 age=23
 - 返回值
     - 返不返回 看需求
 
@@ -177,8 +180,9 @@
     -  还可以加别名 `import creat as fun` 给模块加别名
     -  导入指定的函数 `from create import create_aliens, type_button` 多个就，分隔 同理 as给函数加别名 * 通配所有
 
+************************************
 ### 类
-`Python 不存在多态`
+`Python 不存在多态，存在鸭子类型` [博客介绍](http://blog.csdn.net/shangzhihaohao/article/details/7065675)
 - 写在一个py文件里，默认构造器，可以加参数 `def __init__(self):`
 - 类属性只要在任何的方法，构造器中`self`为前缀声明过的
 - self 代表了自身引用 类似Java的this
@@ -261,7 +265,7 @@ json.dump()持久化 和 load() 装载
 - 也可以在块中写 pass 意思是不做处理
 
 ### 测试
-
+- 文件名test开头就当做是测试类，不会直接运行
 - 类继承 unittest.TestCase, 所有test_开头的方法都将自动运行
 - 断言 self.assertEqual assertNotEquals assertIn(item, list)
 - 直接运行 unittest.main()
@@ -276,8 +280,23 @@ json.dump()持久化 和 load() 装载
 
 ### 网络编程
 
-### 绘图
+### 绘图 matplotlib
+`python 3.5 安装`
+sudo apt install python3-matplotlib 
+sudo apt install python3.5-dev python3.5-tk tk-dev
+sudo apt install libfreetype6-dev g++
+
+
 ### Django
+`python3.5 建立虚拟环境`
+- `sudo apt install python3-venv`
+- 在某目录 `python3 -m venv first_env`
+- 激活环境 `source first_env/bin/activate`
+- 停用环境 `deactivate`
+- 安装Django `pip install Django`
+- 创建项目 `django-admin.py startproject first_pro . ` `ls first_pro`查看到创建的默认文件
+- 启动项目`python3 manage.py runserver`
+
 
 ************
 ## 代码风格
