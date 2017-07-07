@@ -63,11 +63,12 @@
 - 搜索 ： `docker search 镜像名`
 - 安装 ： `docker pull 镜像名`
 - 查看 ： `docker images`
-- 删除 ：`docker rmi image-id`
+- 删除 ： `docker rmi 镜像名`
 #### 容器命令
 - 运行：`docker run --name conrainer-name -d image-name`
-    - --name 后配置容器名字
-    - -d image 名字
+    - --name 配置容器名字
+    - -d detach后台启动程序
+    - 最后写 image 名字
 - 
 
 ### Dockerfile使用
@@ -99,8 +100,9 @@
 ### .dockerignore文件的使用
 - .dockerignore文件是依据 Go的PathMatch规范来的，使用和.gitignore类似
 
-************************************
 
+
+************************************
 ## 安装redis
 - 获取镜像：`docker pull redis `
 - 运行默认配置的容器：`docker run --name test-redis -d redis`
