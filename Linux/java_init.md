@@ -10,6 +10,7 @@
         - [docker安装redis](#docker%E5%AE%89%E8%A3%85redis)
 
 ## 配置JDK
+### 解压方式
 - 打开配置文件 ： `sudo gedit /etc/profile`
 ```
 	export JAVA_HOME= 真实目录例如： /home/mythos/Code/java/jdk1.8.0_131
@@ -17,9 +18,29 @@
 	export CLASSPATH=.:${JAVA_HOME}/lib:${JRE_HOME}/lib
 	export PATH=${JAVA_HOME}/bin:$PATH
 ```
-- `sudo update-alternatives --install /usr/bin/javac javac $JAVA_HOME/bin/javac 300`
-- `sudo update-alternatives --install /usr/bin/java java $JAVA_HOME/bin/java 300`
-- 并且运行最后两句命令是为了指定默认的jdk，因为系统预装了openJdk
+- `sudo update-alternatives --install /usr/bin/javac javac /home/mythos/Code/java/jdk1.8.0_131/bin/javac 300`
+- `sudo update-alternatives --install /usr/bin/java java /home/mythos/Code/java/jdk1.8.0_131/bin/java 300`
+- 并且运行最后两句命令是为了指定默认的jdk，因为系统预装了openJdk 本来想直接使用环境变量引用，但是由于没有重启？ 所以环境变量暂时未生效
+### sdkman方式
+- 安装sdkman `curl -s "https://get.sdkman.io" | bash`
+```
+    Looking for a previous installation of SDKMAN...
+    Looking for unzip...
+    Not found.
+    ======================================================================================================
+     Please install unzip on your system using your favourite package manager.
+
+     Restart after installing unzip.
+    ======================================================================================================
+
+```
+- 遇到这种提示就是需要安装zip `sudo apt install zip` 然后重新执行命令
+- 执行脚本：`source "/home/kuang/.sdkman/bin/sdkman-init.sh"` 或者重启终端就可以使用 `sdk` 了
+- 查看sdkman 版本 ：`sdk version`
+- 查看可用版本 `sdk list java ` 
+- 不指定版本就是安装最新版 `sdk install java` 
+- 指定默认版本 `sdk default java 8u131-zulu`
+- 验证是否成功：`java -version`
 
 ********************************
 ## 配置MySQL
@@ -104,7 +125,9 @@ sudo make install
 ### docker安装redis
 - [docker-install-redis](https://github.com/Kuangcp/Notes/blob/master/TXT/Linux/Docker.md)
 
-******** *************************
+
+*********************************
+
 ## 问题以及解决方案：
 ##### Picked up _JAVA_OPTIONS: -Dawt.useSystemAAFontSettings=gasp
 - 原因是linux自带的OpenJDK影响了安装的java

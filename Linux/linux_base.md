@@ -12,12 +12,12 @@
 ## 【系统管理】
 ### 【用户管理】
 - 添加用户 `sudo adduser username` 对比 `useradd`只是新建一个用户不会创建主目录
-- 添加到sudoers文件中才能使用sudo
+- 添加到sudo组 ，使用命令更安全：`sudo gpasswd -a $USER docker`
+    -  使用修改文件的方式：（不推荐）
     - `chmod 777 /etc/sudoers`
     - 添加 ：`kuang  ALL=(ALL:ALL)ALL`
     - `chmod 440 /etc/sudoers`
     - `rwx 对应一个三位的二进制数， 1/0 表示开关`
-- 或者不更改文件，使用命令更安全 `sudo usermod -G sudo username`
 - 查看是否设置成功 ： `groups username`
 
 - `su username` 切换用户
@@ -32,10 +32,12 @@
     - 当前用户 `passwd` 就是修改当前用户口令 超级用户就可以命令后接用户名，修改任意用户
 ### 【用户组管理】
 > [相关总结网页](http://www.runoob.com/linux/linux-user-manage.html)
-- ` groupadd 选项 用户组`
+- 修改用户所在组 `sudo usermod -G sudo username`
+
+- 添加用户组：` groupadd 选项 用户组`
     - `-g GID` 指定新用户组的组标识号GID 
     - `-o` 一般和g共用 表示新用户组的GID可以与系统已有用户组的GID相同。
-- groupdel 
+- 删除用户组：`groupdel` 
 - groupmod 选项 用户组
     - -g GID 为用户组指定新的组标识号。
     - -o 与-g选项同时使用，用户组的新GID可以与系统已有用户组的GID相同。

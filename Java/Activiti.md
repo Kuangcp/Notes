@@ -4,6 +4,7 @@
 
 
 ## 流程图
+[案例视频](http://www.jikexueyuan.com/course/1777_2.html?ss=1)
 ![最简单示例图](https://gitlab.com/Kuangcp/ImageRepo/raw/master/Tech/activiti/activiti-first.png)
 `bpmn是最原始的单纯的流程定义文件，与Springboot整合就是bpmn20.xml文件(区别在于动态注入)`
 

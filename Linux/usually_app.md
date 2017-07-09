@@ -84,3 +84,21 @@
     8、*.rar 用 unrar e解压
     9、*.zip 用 unzip 解压
 ```
+
+*******************************************************************
+
+### sdkman的使用 
+`安装`
+- 安装sdkman `curl -s "https://get.sdkman.io" | bash`
+- 遇到提示zip 就是需要安装zip `sudo apt install zip` 然后重新执行命令
+- 执行脚本：`source "/home/kuang/.sdkman/bin/sdkman-init.sh"` 或者重启终端就可以使用 `sdk` 了
+- 查看sdkman 版本 ：`sdk version`
+
+`使用`
+- 查看可用版本 `sdk list java ` 
+- 不指定版本就是安装最新版 `sdk install java` 
+- 指定默认版本 `sdk default java 8u131-zulu`
+- 使用指定版本 `sdk use scala 2.12.1`
+- 查看当前版本 `sdk current java`
+- 验证是否成功：`java -version`
+- 移除 `sdk uninstall scala 2.11.6`
