@@ -17,9 +17,9 @@
 - [Gitbook网页版](https://kuangcp.gitbooks.io/notes/)
 - `浏览器的 Octotree 插件` 也方便查阅
 
-## 2016.07.04 入门Java
-## 2017.03.05 入门Python
-## 2017.05.25 入门Linux
+#### 2016.07.04 入门Java
+#### 2017.03.05 入门Python
+#### 2017.05.25 入门Linux
 
     
     

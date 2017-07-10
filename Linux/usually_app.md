@@ -1,6 +1,10 @@
-# 在Linux上操作压缩文件的命令
+# 常用的工具软件
+
+
+## 在Linux上操作压缩文件的命令
 > Linux默认自带ZIP压缩，最大支持4GB压缩，RAR的压缩比大于4GB.
-## tar 归档 打包
+
+### tar 归档 打包
 
 `tar`
 `这五个是独立的命令，压缩解压都要用到其中一个，可以和别的命令连用但只能用其中一个。`
@@ -11,11 +15,11 @@
 - u：更新原压缩包中的文件
 ***
 `下面的参数是根据需要在压缩或解压档案时可选的。`
--z：有gzip属性的
--j：有bz2属性的
--Z：有compress属性的
--v：显示所有过程
--O：将文件解开到标准输出
+- z：有gzip属性的
+- j：有bz2属性的
+- Z：有compress属性的
+- v：显示所有过程
+- O：将文件解开到标准输出
 ***
 - `-v 可选` 将压缩或解压的过程输出
 - `-f是必须的,-f: 使用档案名字，切记，这个参数是最后一个参数，后面只能接文件或目录`
@@ -36,7 +40,7 @@
 
 ********************
 
-### 压缩
+#### 压缩
 - tar -cvf a.tar *.txt
     - z tar.gz
     - j tar.bz2
@@ -59,7 +63,7 @@
     - `-q 终端不输出` `-o 输出文件`  `-r 表示递归` `-l 兼容Windows的换行符`
     - -e 加密 
 
-### 解压
+#### 解压
 
 - `tar -xvf file.tar` //解压 tar包
 - `tar -xzvf file.tar.gz` //解压tar.gz
@@ -72,22 +76,22 @@
     - -q 终端不输出 -d 指定目录 -l 查看不解压 -O 指定编码
 
 
-### 总结
+#### 总结
 ```
-    1、*.tar 用 tar -xvf 解压
-    2、*.gz 用 gzip -d或者gunzip 解压
-    3、*.tar.gz和*.tgz 用 tar -xzf 解压
-    4、*.bz2 用 bzip2 -d或者用bunzip2 解压
-    5、*.tar.bz2用tar -xjf 解压
-    6、*.Z 用 uncompress 解压
-    7、*.tar.Z 用tar -xZf 解压
-    8、*.rar 用 unrar e解压
-    9、*.zip 用 unzip 解压
+    *.tar 用 tar -xvf 解压
+    *.gz 用 gzip -d或者gunzip 解压
+    *.tar.gz和*.tgz 用 tar -xzf 解压
+    *.bz2 用 bzip2 -d或者用bunzip2 解压
+    *.tar.bz2用tar -xjf 解压
+    *.Z 用 uncompress 解压
+    *.tar.Z 用tar -xZf 解压
+    *.rar 用 unrar e解压
+    *.zip 用 unzip 解压
 ```
 
 *******************************************************************
 
-### sdkman的使用 
+## sdkman的使用 
 `安装`
 - 安装sdkman `curl -s "https://get.sdkman.io" | bash`
 - 遇到提示zip 就是需要安装zip `sudo apt install zip` 然后重新执行命令
@@ -95,10 +99,15 @@
 - 查看sdkman 版本 ：`sdk version`
 
 `使用`
-- 查看可用版本 `sdk list java ` 
+> [详情见官网](http://sdkman.io/usage.html)
+
+- 查看所有 `sdk list`
+    - 查看某sdk的版本 `sdk list java ` 
 - 不指定版本就是安装最新版 `sdk install java` 
 - 指定默认版本 `sdk default java 8u131-zulu`
-- 使用指定版本 `sdk use scala 2.12.1`
+- 开始使用指定版本(for the current shell only) `sdk use scala 2.12.1`
 - 查看当前版本 `sdk current java`
 - 验证是否成功：`java -version`
 - 移除 `sdk uninstall scala 2.11.6`
+
+
