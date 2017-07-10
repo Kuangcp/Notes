@@ -9,14 +9,17 @@ result = []
 def listfiles(name):
 	#print('_________',name,not os.path.isdir(name))
 	lists = []
+	dir_list = []
 	temp = os.listdir(name)
 	for r in temp:
 		if(not os.path.isdir(name+'/'+r)):
 			lists.append(r)
 		else:
 			#print("是目录:::::::::::",r)
-			lists.insert(0,r)
-	
+			dir_list.insert(0, r)
+			#lists.insert(0,r)
+	lists.sort()
+	lists = dir_list + lists
 	return lists 
         
 # 输出行
@@ -34,7 +37,8 @@ def print_title(name,count):
 	for i in range(1,count,1):
 		temp = temp+'    '
 	temp = temp+'* '
-	print(temp,name.split('/'))
+	# 输出文件夹目录
+	#print(temp,name.split('/'))
 	result.append(temp+name)      
 # 递归
 def create(name,count):
@@ -54,6 +58,7 @@ def create(name,count):
 
 # 得到根目录下所有文件夹
 Folders = os.listdir('./')
+Folders.sort()
 for fold in Folders:
     if(os.path.isdir(fold)):
         if(fold in dirs):

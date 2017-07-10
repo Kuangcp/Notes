@@ -11,6 +11,7 @@
 
 ## 配置JDK
 ### 解压方式
+[下载地址](http://www.oracle.com/technetwork/java/javase/downloads/index.html)
 - 打开配置文件 ： `sudo gedit /etc/profile`
 ```
 	export JAVA_HOME= 真实目录例如： /home/mythos/Code/java/jdk1.8.0_131
@@ -21,17 +22,17 @@
 - `sudo update-alternatives --install /usr/bin/javac javac /home/mythos/Code/java/jdk1.8.0_131/bin/javac 300`
 - `sudo update-alternatives --install /usr/bin/java java /home/mythos/Code/java/jdk1.8.0_131/bin/java 300`
 - 并且运行最后两句命令是为了指定默认的jdk，因为系统预装了openJdk 本来想直接使用环境变量引用，但是由于没有重启？ 所以环境变量暂时未生效
-### sdkman方式
+
+### sdkman方式 
+> jdk不推荐使用sdkman安装，这里的jdk是开源版估计，会少包 认准这个版本才是完整的(Oracle Corporation 25.131-b11)
+
 - 安装sdkman `curl -s "https://get.sdkman.io" | bash`
 ```
     Looking for a previous installation of SDKMAN...
     Looking for unzip...
     Not found.
-    ======================================================================================================
-     Please install unzip on your system using your favourite package manager.
-
-     Restart after installing unzip.
-    ======================================================================================================
+    Please install unzip on your system using your favourite package manager.
+    Restart after installing unzip.
 
 ```
 - 遇到这种提示就是需要安装zip `sudo apt install zip` 然后重新执行命令
@@ -43,6 +44,8 @@
 - 验证是否成功：`java -version`
 
 ********************************
+
+
 ## 配置MySQL
 - 更新列表` sudo apt-get update `
 - 安装MySQL `sudo apt-get install mysql-server mysql-client`
