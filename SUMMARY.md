@@ -60,8 +60,6 @@
 * Skills
     * Skills/View
         * [ Hexo.md ](./Skills/View/Hexo.md)
-        * [ Learn_C3.md ](./Skills/View/Learn_C3.md)
-        * [ Learn_H5.md ](./Skills/View/Learn_H5.md)
         * [ Learn_PS.md ](./Skills/View/Learn_PS.md)
     * [ 正则表达式学习.md ](./Skills/正则表达式学习.md)
     * [ 编程感想.md ](./Skills/编程感想.md)
