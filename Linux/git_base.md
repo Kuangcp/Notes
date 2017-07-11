@@ -31,7 +31,7 @@
 - 出现RPC failed; result=22, HTTP code = 411 的错误
     - 就是因为一次提交的文件太大，需要改大缓冲区 例如改成500m
     - `git config http.postBuffer 524288000`
-
+- 提交本地所有分支 `git push --all` pull 同理
 #### 【git rebase】
 
 - 效果和merge差不多，但是分支图更清晰
@@ -97,6 +97,7 @@
 - `git checkout develop` `　git merge --no-ff fixbug-0.1` 再合并到develop分支
 - 删除分支 `git branch -d fixbug-0.1` 
 - 删除远程没有本地有的分支`git fetch -p`
+
 #### 【git merge】
 - [官方文档](https://git-scm.com/docs/git-merge)
 `配置mergetool工具：`

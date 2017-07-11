@@ -32,10 +32,14 @@
 ***************************************
 ## docker安装与卸载
 > [daocloud安装帮助](http://get.daocloud.io/#install-docker)
-#### 通过snap安装
+#### 通过命令安装
+`snap`
 - 安装snap `sudo apt install snapd`
 - 查看适用于当前系统的包：`snap install find`
 - 安装： `snap install docker`
+
+`apt`
+- `sudo apt install docker.io`
 #### 通过deb文件方式来安装：
 - [点击选择文件](https://download.docker.com/linux/debian/dists/)
 - 进去后选择debain的版本，deepin15.4 的版本是stretch 然后pool/stable/amd64/选版本即可 

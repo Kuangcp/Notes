@@ -27,13 +27,39 @@
     - \f   换页
     - \  续行符（行尾）
 ## 基础语法
-单行注释：`#` 多行注释：''' '''
-空行的重要性，代码段之间有空行
+- 单行注释：`#` 多行注释：''' '''
+- 空行的重要性，代码段之间有空行，Python之禅
 
 ************
-### 输入输出
+## 输入输出
+#### 读取命令行参数
+> [参考博客](http://www.sharejs.com/codes/python/6121)
+`只有输入参数，没有选项`
+```
+    import sys
+    print("脚本名：", sys.argv[0])
+    for i in range(1, len(sys.argv)):
+        print("参数", i, sys.argv[i])
+```
+`python tree.py hi op ` 结果>> `脚本名 tree.py 参数1 hi 参数2 op`
 
-- python2 raw_input() 输入字符串 input() 输入数字
+`有选项`
+`getopt.getopt(args, options[, long_options])`
+```
+    import sys, getopt
+    opts, args = getopt.getopt(sys.argv[1:], "hi:o:")
+    for op, value in opts:
+    
+```
+- sys.argv[1:]为要处理的参数列表，sys.argv[0]为脚本名，所以用sys.argv[1:]过滤掉脚本名。
+- "hi:o:": 当一个选项只是表示开关状态时，即后面不带附加参数时，在分析串中写入选项字符。当选项后面是带一个附加参数时，在分析串中写入选项字符同时后面加一个":"号。所以"hi:o:"就表示"h"是一个开关选项；"i:"和"o:"则表示后面应该带一个参数。
+- 调用getopt函数。函数返回两个列表：opts和args。opts为分析出的格式信息。args为不属于格式信息的剩余的命令行参数。opts是一个两元组的列表。每个元素为：(选项串,附加参数)。如果没有附加参数则为空串''。
+getopt函数的第三个参数[, long_options]为可选的长选项参数，上面例子中的都为短选项(如-i -o)
+长选项格式举例:
+--version
+--file=error.txt
+让一个脚本同时支持短选项和长选项
+getopt.getopt(sys.argv[1:], "hi:o:", ["version", "file="])
 
 ### 序列
 `序列通用操作（包含：字符串，列表，元组）`
