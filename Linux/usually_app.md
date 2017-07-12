@@ -110,4 +110,18 @@
 - 验证是否成功：`java -version`
 - 移除 `sdk uninstall scala 2.11.6`
 
+***************************
+## 文本编辑器
+### Kate
+- [安装markdown预览插件](https://github.com/antonizoon/kate-markdown)
 
+### sublime 
+- 如果出现小bug，就直接删除 ～.config 下的 sublime文件夹注意注册证书拷出来
+- 
+
+### vi/vim
+- `i` 进入编辑
+- `:wq` 保存退出，注意是英文的 `:`才可以退出
+
+### gedit
+- 安装markdown预览插件 

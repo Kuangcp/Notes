@@ -1,4 +1,5 @@
 ## 【网络管理】
+
 #### 查看端口占用情况
 - `先安装lsof` `lsof -i:端口号` 用于查看某一端口的占用情况，缺省端口号显示全部
 
@@ -65,3 +66,56 @@
 
 - 格式化返回的json：`curl xxxx|python -m json.tool `
 
+### 邮件服务器 postfix devecot
+
+### FTP 服务器
+- `sudo apt-get install vsftpd -y`
+- `sudo systemctl start vsftpd.service`
+- 创建用户 `sudo useradd -d /home/uftp -s /bin/bash uftp`
+- 设置密码 `sudo passwd uftp`
+- 删除掉 pam.d 中 vsftpd，因为该配置文件会导致使用用户名登录 ftp 失败：`sudo rm /etc/pam.d/vsftpd`
+- 限制用户 uftp 只能通过 FTP 访问服务器，而不能直接登录服务器 `sudo usermod -s /sbin/nologin` uftp
+- 修改配置文件 `sudo chmod a+w /etc/vsftpd.conf`
+
+`/etc/vsftpd.conf `
+```
+    # 限制用户对主目录以外目录访问
+    chroot_local_user=YES
+
+    # 指定一个 userlist 存放允许访问 ftp 的用户列表
+    userlist_deny=NO
+    userlist_enable=YES
+
+    # 记录允许访问 ftp 用户列表
+    userlist_file=/etc/vsftpd.user_list
+
+    # 不配置可能导致莫名的530问题
+    seccomp_sandbox=NO
+
+    # 允许文件上传
+    write_enable=YES
+
+    # 使用utf8编码
+    utf8_filesystem=YES
+```
+- 新建文件 sudo touch /etc/vsftpd.user_list
+- 修改权限 `sudo chmod a+w /etc/vsftpd.user_list`
+- 添加用户名 `uftp`
+- 设置用户目录只读 `sudo chmod a-w /home/common`
+- 新建公共目录 设置权限 `mkdir /home/common/public && sudo chmod 777 -R /home/common/public`
+- 重启服务 `sudo systemctl restart vsftpd.service`
+
+```
+     ~$ sudo mkdir /home/common
+     ~$ sudo touch /home/common/welcome.txt
+     ~$ sudo useradd -d /home/common -s /bin/bash common
+     ~$ sudo passwd common
+     ~$ sudo rm /etc/pam.d/vsftpd
+     ~$ sudo usermod -s /sbin/nologin common
+     ~$ sudo chmod a+w /etc/vsftpd.conf
+     ~$ sudo vim /etc/vsftpd.conf
+     ~$ sudo vim /etc/vsftpd.user_list
+     ~$ sudo chmod a-w /home/common
+     ~$ sudo mkdir /home/common/public && sudo chmod 777 -R /home/common/public
+     ~$ sudo systemctl restart vsftpd.service
+```

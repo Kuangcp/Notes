@@ -145,22 +145,26 @@ getopt.getopt(sys.argv[1:], "hi:o:", ["version", "file="])
 - 通过用空间来换取时间，与列表相比，键的增加不影响查找插入速度，需要占用大量内存 
 - 特性：
     - 值是可以是任意的，甚至是字典嵌套
-    - 键必须不可变，只能由 数，字符串，元组，不能用列表
+    - 键必须不可变，只能由 数值，字符串，元组，不能用列表
 - 操作：
-    - keys() 返回所有key
-    - has_key() 查询是否有这个键 
-    - get() keys() values() 显然的
-    - items() 转化元组并返回
-    - del() `del dict['name']` 删除指定键
-    - clear() 删除所有
-    - pop() 删除指定键并返回值
-    - update() 合并另一个字典
+    - 定义字典 dict={}
+    - 添加 ： dict['a'] = 2323 
+    - 返回所有key：keys() 
+    - 查询是否有这个键 ：has_key() 
+    - get() keys() values() 
+    - 转化元组并返回 ：items() 
+    - 删除指定键：del() `del dict['name']` 
+    - 删除所有：clear() 
+    - 删除指定键并返回值 ：pop() 
+    - 合并另一个字典：update() 
     - in 
 - 嵌套
     - 字典套列表 `{'d':['we','e']}` 
     - 列表套字典，当成普通类型包含即可
     - 字典套字典
+
 ***********
+
 ### 基本运行结构
 - 输入输出
     - input("") 默认当成字符串输入 数值：int() 强转一下
@@ -168,7 +172,7 @@ getopt.getopt(sys.argv[1:], "hi:o:", ["version", "file="])
 - 选择：
     - if elif else
 - for循环：
-    - `for in ` `while ` 例如：`for i in range(1,10,2):`[1,10) 增量为2
+    - `for in ` `while ` 例如：`for i in range(1,10,2):`  范围 [1,10) 增量为2
     - pass 语句，当某个子句没有任何操作，，用pass保持程序结构完整性 不影响下一句 不像continue
 - while 循环;
     - `while True:`` while ‘2’ in nums:`` while num<2:`  
