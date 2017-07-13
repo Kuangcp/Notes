@@ -13,3 +13,8 @@ dash
     - `tmux ls` 显示所有 `tmux a -t myth` 连上指定名字的就继续了
 
 - 获取当前shell绝对路径 `basepath=$(cd `dirname $0`; pwd)`
+
+## 结构
+
+### 循环
+- [参考博客](http://www.cnblogs.com/fhefh/archive/2011/04/15/2017233.html)

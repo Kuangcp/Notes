@@ -13,7 +13,7 @@
 
 > [参考博客](http://blog.csdn.net/kkgbn/article/details/52071109)
 
-`配置管理账号`
+`配置管理账号 tomcat-users.xml`
 ```
     <role rolename="manager"/>　  
     <role rolename="manager-gui"/>　  
@@ -79,6 +79,19 @@
     File f=new File("/information.xml");这个写法是错的，空指针异常。
     request.getParameter返回字符串，如果表单里面是空的，就返回长度为零的字符串。
 ```
+#### 配置 GZip压缩
+> [tomcat nginx开启Gzip原博客](http://www.imooc.com/article/15304)
+
+- 修改配置文件：/conf/server.xml
+`原文件`
+```
+    <Connector port="8080" protocol="HTTP/1.1" connectionTimeout="20000" redirectPort="8443" />
+```
+`修改成`
+```
+    <Connector port="8080" protocol="HTTP/1.1" connectionTimeout="20000" redirectPort="8443" compression="on" compressionMinSize="2048" noCompressionUserAgents="gozilla,traviata" compressableMimeType="text/html,text/xml,text/javascript,application/x-javascript,application/javascript,text/css,text/plain"/>
+```
+
 
 **************************
 

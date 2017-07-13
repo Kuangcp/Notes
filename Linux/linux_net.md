@@ -63,7 +63,7 @@
 ## 工具
 
 ### curl
-
+- 不输出，重定向到*黑洞*  ` curl -s -o /dev/null URL`
 - 格式化返回的json：`curl xxxx|python -m json.tool `
 
 ### 邮件服务器 postfix devecot

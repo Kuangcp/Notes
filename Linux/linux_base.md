@@ -30,8 +30,10 @@
 - `passwd 选项 用户名` 更改口令
     - `-l 锁定口令，禁用账号`  `-u 口令解锁` `-d 账号无口令` `-f 强迫用户下次登录时修改口令`
     - 当前用户 `passwd` 就是修改当前用户口令 超级用户就可以命令后接用户名，修改任意用户
+
 ### 【用户组管理】
 > [相关总结网页](http://www.runoob.com/linux/linux-user-manage.html)
+
 - 修改用户所在组 `sudo usermod -G sudo username`
 
 - 添加用户组：` groupadd 选项 用户组`
@@ -90,6 +92,7 @@
 ******************************************************
 ### Tips
 > 个人使用的一些方便的操作和配置
+
 ### 【常见问题】
 ##### ubunbu/deepin错误提示音
 - 临时关闭：`rmmod pcspkr`临时开启：`modprobe pcspkr`
@@ -113,9 +116,20 @@
 - `&`
 - `|`
 
+#### 让命令在后台运行
+> [原博客](https://www.ibm.com/developerworks/cn/linux/l-cn-nohup/)
+
+##### 关闭ssh回话不能运行
+##### 关闭ssh回话仍能运行
+- 后台运行，输出到nohup.out `nohup 命令 &`
+    - 修改重定向文件  `nohup 命令>/dev/null 2>&1`
+- `(命令 &)`    
+
+
 #### 修改主机名
 - `sudo hostname linux` 重启终端即可看到修改
 - 但是重启电脑会恢复原有名字修改如下文件永久： `sudo gedit /etc/hostname` `/etc/hosts`
+
 ### 快捷键
 - 终端：
     - `Ctrl L` 清屏，Mysql也适用
