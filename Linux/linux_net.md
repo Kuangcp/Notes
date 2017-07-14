@@ -75,6 +75,7 @@
 > 代替 netstat 的强大工具
 
 `替代方案`
+
 用途 | net-tool | iproute2
 :----:|:------:|:-----:
 地址和链路配置 | ifconfig | ip addr, ip link
@@ -94,6 +95,7 @@ VLAN | vconfig | ip link
 - 隧道术： 网络协议的数据包被封装在另一种网络协议的数据包之中 `这是VPN的技术理论基础`
 
 `net-tools 和 iproute 对应关系`
+
 作用 | net-tools用法 | iproute2用法
 :-----: | :-----: | :-----:
 展示本机所有网络接口 | ifconfig | ip link [show]
