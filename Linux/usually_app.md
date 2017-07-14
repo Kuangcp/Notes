@@ -13,6 +13,7 @@
 - t：查看内容 不解压
 - r：向压缩归档文件末尾追加文件
 - u：更新原压缩包中的文件
+
 ***
 `下面的参数是根据需要在压缩或解压档案时可选的。`
 - z：有gzip属性的
@@ -20,9 +21,10 @@
 - Z：有compress属性的
 - v：显示所有过程
 - O：将文件解开到标准输出
+
 ***
 - `-v 可选` 将压缩或解压的过程输出
-- `-f是必须的,-f: 使用档案名字，切记，这个参数是最后一个参数，后面只能接文件或目录`
+- `-f 是必须的,-f: 使用档案名字，切记，这个参数是最后一个参数，后面只能接文件或目录`
 
 ***
 - `tar -rf all.tar *.gif`这条命令是将所有.gif的文件增加到all.tar的包里面去。
@@ -39,7 +41,6 @@
     - `tar -cphf etc.tar /etc`
 
 ********************
-
 #### 压缩
 - tar -cvf a.tar *.txt
     - z tar.gz
@@ -53,24 +54,23 @@
 - `tar -cZf jpg.tar.Z *.jpg ` //将所有jpg打包成jpg.tar后 生成umcompress压缩的包，命名为jpg.tar.Z
 
 ******
-
 - `rar a jpg.rar *.jpg` //rar格式的压缩，需要先下载rar for linux
 
 ******
-
 - `zip jpg.zip *.jpg` //zip格式的压缩，需要先下载zip for linux
 - `zip -r file.zip code/*` 压缩code目录下所有文件
     - `-q 终端不输出` `-o 输出文件`  `-r 表示递归` `-l 兼容Windows的换行符`
     - -e 加密 
 
 #### 解压
-
 - `tar -xvf file.tar` //解压 tar包
 - `tar -xzvf file.tar.gz` //解压tar.gz
 - `tar -xjvf file.tar.bz2`   //解压 tar.bz2
 - `tar -xZvf file.tar.Z `  //解压tar.Z
+
 ***
 - `unrar e file.rar` //解压rar
+
 ***
 - `unzip file.zip `//解压zip
     - -q 终端不输出 -d 指定目录 -l 查看不解压 -O 指定编码
