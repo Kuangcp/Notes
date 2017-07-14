@@ -10,12 +10,12 @@
      - 递归加迭代， 区别在于，先迭代根， 得到下级一级服务器节点后，下级就是递归的入口和出口
 
 - 授权和非授权， 还是上面那个URL， 其他的都不是授权的， 只有离URL最近的DNS才是授权的 即 `bupt.deu.cn`
-`nslookup ` 强大的调试DNS工具
+  `nslookup ` 强大的调试DNS工具
 - nslookup - 8.8.8.8 进入循环模式， 方便调试 8.8.8.8 是Google开放的DNS 备选 8.8.4.4
     - 结果解释：Non-authoritative answer: 表示这是从缓存得到的结果，不一定准确
     - Server：上连DNS服务器的IP， Address：`上连DNS的IP#端口` 通常是53
     - canonical name 即CNAME 别名
-`dig` 比nslookup更强大 Domain Information Groper
+      `dig` 比nslookup更强大 Domain Information Groper
 - 例如：`dig +tcp @8.8.8.8 www.baidu.com` 采用TCP进行DNS通信（默认UDP）
     - ＋short 精简输出
     - +nocmd+nocomment+nostat 输出最核心内容
@@ -40,7 +40,7 @@
     - `-n` 拒绝显示别名，能显示数字的全部转化为数字
     - `-l` 仅列出在Listen(监听)的服务状态
     - `-p` 显示建立相关链接的程序名
-    
+
 - [扫描端口的Python](https://github.com/Kuangcp/Notes/blob/master/Python/net/netstatus.py)
 
 
@@ -76,15 +76,15 @@
 
 `替代方案`
 
-用途 | net-tool | iproute2
-:----:|:------:|:-----:
-地址和链路配置 | ifconfig | ip addr, ip link
-路由表 | route | ip route
-ARP表 | arp | ip neigh
-VLAN | vconfig | ip link
-隧道 | iptunnel | ip tunnel
-组播 | ipmaddr | ip maddr
-统计 | netstat | ss
+|   用途    | net-tool |     iproute2     |
+| :-----: | :------: | :--------------: |
+| 地址和链路配置 | ifconfig | ip addr, ip link |
+|   路由表   |  route   |     ip route     |
+|  ARP表   |   arp    |     ip neigh     |
+|  VLAN   | vconfig  |     ip link      |
+|   隧道    | iptunnel |    ip tunnel     |
+|   组播    | ipmaddr  |     ip maddr     |
+|   统计    | netstat  |        ss        |
 
 `ss`
 - 查看网络连接统计 `ss -s`
@@ -96,17 +96,17 @@ VLAN | vconfig | ip link
 
 `net-tools 和 iproute 对应关系`
 
-作用 | net-tools用法 | iproute2用法
-:-----: | :-----: | :-----:
-展示本机所有网络接口 | ifconfig | ip link [show]
-开启/停止某个网络接口 | ifconfig ech0 up/down | ip link up/down eth0
-给网络接口设置/删除IP | ipconfig eth0 10.0.0.0.1/24 / ifconfig eth0 0  | ip addr add/del 10.0.0.1/24 dev eth0
-显示某个网络接口的IP | ifconfig eth0 | ip addr show dev eth0
-显示路由表 | route -n | ip route show
-添加删除默认网关 | route add/del default gw 192.168.1.2 eth0 | ip route default via 192.168.1.2 eth0 / ip route replace default via 192.168.1.2 dev eth0
-添加ARP | arp -s 192.168.1.100 00:0c:29:c5:5a:ed | ip neigh add 192.168.1.100 lladdr 00:0c:29:c5:5a:ed dev eth0 
-删除ARP | arp -d 192.168.1.100 | ip neigh del 192.168.1.100 dev eth0
-展示套接字状态 | netstat -l | ss -l
+|      作用      |               net-tools用法                |                iproute2用法                |
+| :----------: | :--------------------------------------: | :--------------------------------------: |
+|  展示本机所有网络接口  |                 ifconfig                 |              ip link [show]              |
+| 开启/停止某个网络接口  |          ifconfig ech0 up/down           |           ip link up/down eth0           |
+| 给网络接口设置/删除IP | ipconfig eth0 10.0.0.0.1/24 / ifconfig eth0 0 |   ip addr add/del 10.0.0.1/24 dev eth0   |
+| 显示某个网络接口的IP  |              ifconfig eth0               |          ip addr show dev eth0           |
+|    显示路由表     |                 route -n                 |              ip route show               |
+|   添加删除默认网关   | route add/del default gw 192.168.1.2 eth0 | ip route default via 192.168.1.2 eth0 / ip route replace default via 192.168.1.2 dev eth0 |
+|    添加ARP     |  arp -s 192.168.1.100 00:0c:29:c5:5a:ed  | ip neigh add 192.168.1.100 lladdr 00:0c:29:c5:5a:ed dev eth0 |
+|    删除ARP     |           arp -d 192.168.1.100           |   ip neigh del 192.168.1.100 dev eth0    |
+|   展示套接字状态    |                netstat -l                |                  ss -l                   |
 
 - 默认网关： 如果主机找不到准发规则， 就把数据包发给默认的网关
 - 增加/删除一条路由规则 `ip route add/del 192.168.2.0/24 via 192.168.1.254`
@@ -152,6 +152,46 @@ VLAN | vconfig | ip link
     - 客户端 `nc -n host port | tar -xvPf -`
     - 这是未压缩的， 压缩再加上参数即可 例如 `gzip -czvPf -xzvPf`
 
+### rsync 
+> 同步 个人倾向于称为本地远程， 书籍上是称为 源端 目的端
+
+- 同步到 `rsync file user@host:path` 上， 是将这里的file文件覆盖远程的目录下的file文件，不像git那样
+    - 同步当前目录 将file 换成 \`ls\`
+    - -t 不加该参数：不会同步文件的修改时间，采用的`quick check策略`。使用后：让修改时间也同步，如果修改时间一致，就不同步（它不考虑文件内容，这是个坑）。
+    - -I 就能解决上面的问题，每个文件都进行同步，代价是速度慢
+    - -v 输出更多信息 v可以多个，v越多输出的日志信息也越多
+    - -r 文件夹递归同步，这种是采用`上面的I策略`的
+    - -l 同步软链接文件，默认是忽略该类文件的
+    - -L 同步软链接文件及其目标文件
+    - -z 压缩数据，提高传输速度
+    - -p 缺省该参数时，如果远程没有该文件，权限会和本地的文件一致， 如果远程已经有该文件，权限和本地的不同， 那么命令不作更改。使用参数后，就会让权限尽力保持一致
+    - -a 这个命令等价于 -rlptgoD 归档选项，采用递归方式，尽可能保持各方面的一致，但是不能同步硬链接，得加上 `-H`
+
+- 只要文件不一样，就会触发同步，该命令确保远程的是和本地的一致，本地的直接覆盖远程的   
+- 只要rsync命令对本地有读权限，对远程有写权限，就能确保目录是一致的
+- rsync只能以登录远程的账号来创建文件，它不可能将文件的组信息，用户信息也一致，除非是root用户可以做到
+
+`其他特别参数`
+
+- --delete 如果本地没有该文件 远程就会删掉
+    - --delete-exclude 删除远程指定的文件
+    - --delete-after 默认是先清理远程文件再同步，使用该选项就相反了先同步再删除需要删除文件
+- --exclude 排除掉某些文件不同步 可以使用多次
+    - --excule-from 如果要排除的文件很多，可以将文件名放在一个文本文件里，然后使用该选项读取该文件
+- --partial 断点续传 可以简写-P
+- --progress 显示传输进度信息
+
+
+### wget
+
+> 特性和优势：支持 HTTP HTTPS FTP协议
+>
+> - 能够跟踪 HTML 和 XHTML 即可以下载整站，但是注意wget会不停的去下载HTML中的外链，无休无止
+> - 遵守 robots.txt 标准的工具
+> - 支持慢速网路和不稳定的下载，当下载失败就会不断重试，直到下载成功
+> - 支持断点续传
+
+- wget 配置文件 `/etc/wgetrc` `~/.wgetrc` 两个文件配置wget的默认行为
 
 ****************************
 
@@ -219,10 +259,11 @@ VLAN | vconfig | ip link
 - 关闭服务 `/etc/init.d/ssh stop`
 
 ##### 2.复制粘贴建立连接关系的方法
+`客户端`
 - 进入.ssh文件夹下 `gedit id_rsa.pub` 然后复制该公钥内容
     - 或者 `cat ~/.ssh/id_rsa.pub | xclip -sel clip` 将文件复制到剪贴板
 - 在各种平台服务上添加这个公钥即可免密登录
-
+  `服务器端`
 - 进入.ssh文件夹下 `sudo vim authorized_keys` 粘贴客户端公钥内容
 - 更改文件权限 `sudo chmod 600 authorized_keys` 确保 其 group和other位没有 w 权限
 
@@ -230,7 +271,6 @@ VLAN | vconfig | ip link
 - 两方安装好软件 客户端生成好了秘钥对之后
 - 直接运行`ssh-copy-id "username@host"` 输密码就可以了
     - 指定端口 `ssh-copy-id ”-p port username@host“`
-
 - 客户端登录 `ssh -p22 username@ip`
 *******************************************
 
