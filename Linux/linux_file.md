@@ -101,9 +101,10 @@
     fi
 ```
 - 在`~/.bashrc`添加这段，然后在 `.bash_aliases` 文件中设置别名
-    - 例如 ： `alias Kgit-notes='cd ~/Documents/Notes/Code_Notes/'` 
+    - 例如 ： `alias Kgit.notes='cd ~/Documents/Notes/Code_Notes/'` 
     - 更改文件后，想当前终端就生效就 `source ~/.bashrc` 不执行命令就重启终端即可
 
+- 如我的文件 [.bash_aliases]()
 *************
 `自定义桌面快捷方式文件`
 ```

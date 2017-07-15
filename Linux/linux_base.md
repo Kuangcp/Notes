@@ -94,7 +94,7 @@
 
 ### 【常见问题】
 ##### ubunbu/deepin错误提示音
-- 临时关闭：`rmmod pcspkr`临时开启：`modprobe pcspkr`
+- 临时关闭：`rmmod pcspkr` 临时开启：`modprobe pcspkr`
 - 编辑 `/etc/inputrc`，找到`#set bell-style none`这一行，去掉前面的注释符号
 
 `下面的方法不敢试`

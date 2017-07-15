@@ -71,7 +71,9 @@ getopt.getopt(sys.argv[1:], "hi:o:", ["version", "file="])
 - `加 `：lista+listb 直接连接
 - `乘`：lista*4
 - `判断是否存在`：`in` `not int`
-- len() min() max() sum()要求元素全是数值
+- len() 
+- min() max() sum()要求元素全是数值
+
 *****
 【列表】
 - 元素可包含 字符串，浮点，整型，列表，布尔
@@ -82,6 +84,7 @@ getopt.getopt(sys.argv[1:], "hi:o:", ["version", "file="])
     - 永久性排序：sort() a-z ` sort(reverse=True) z-a` 列表全是字符串才可
     - 临时性排序：sorted() 也可以使用上面的参数   列表全是字符串才可
     - 永久性的逆序列表:reverse() 
+
 *****
 【元组】
 - 元组和列表类似但是元组是创建不可更改的 
@@ -92,6 +95,7 @@ getopt.getopt(sys.argv[1:], "hi:o:", ["version", "file="])
     - 访问： 和列表一样的索引和分片，
     - 连接：+ 连接得到新的元组
     - 删除：del 删除整个元组
+
 *****
 【字符串】
 - str() 将对象转化成字符串 （注：Python中不能像Java一样字符串和数值直接+）
@@ -115,6 +119,7 @@ getopt.getopt(sys.argv[1:], "hi:o:", ["version", "file="])
         - 或者`"i am {name} {age} ..".format(age=23,name="ret")`
         - 字典方式 
     - `title()` 首字母大写 
+
 ****
 字符串，列表，元组相互转换：
 - 字符串-列表 ： list("python")
