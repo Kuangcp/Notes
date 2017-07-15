@@ -191,8 +191,19 @@
 > - 支持慢速网路和不稳定的下载，当下载失败就会不断重试，直到下载成功
 > - 支持断点续传
 
-- wget 配置文件 `/etc/wgetrc` `~/.wgetrc` 两个文件配置wget的默认行为
+- wget 配置文件 `/etc/wgetrc` `~/.wgetrc` 两个文件配置（区别是全局和当前用户）wget的默认行为
+- 例如 -X配置：`wget  -X js,css URL` 排除两个文件夹不下载
+    - 如果要默认排除，到`.wgetrc`文件里配置 `exclude_directories=js,css` 
+    - 这时候就出了一个问题，你不知道配置文件的情况时，发现总有目录下载不下来，就可以排除两个文件的作用：
+    - `wget -X '' -X js,css URL`
+    - 注意：`-X`，两个配置文件。这三者的配置，wget是取并集的， 使用了`-X ''` 后就只看后面的`-X 参数`   
+- 目录下载 -r 递归选项
+- 后台下载 --background 即使 你Ctrl D/exit也不会中断执行
+- -o 指定日志输出。默认当前目录的 wget-log
+- 避开robots.txt 协议 `--execute robots=off`
+- 尝试使用tomcat构建一个有robots协议的网站，然后wget还是绕过了协议。。。。。。
 
+    
 ****************************
 
 ## 【常用网络服务】

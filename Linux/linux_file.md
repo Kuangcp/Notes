@@ -82,6 +82,7 @@
 `fdisk`
 - 查看磁盘分区表信息 ：`sudo fdisk -l `
 - 
+
 ##### 设置交换分区
 - `free -h` 查看内存
 - `dd if=/dev/zero of=/swapfile bs=1024k count=4096` 创建一个4g 交换文件
