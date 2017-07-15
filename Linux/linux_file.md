@@ -104,8 +104,8 @@
     - 例如 ： `alias Kgit.notes='cd ~/Documents/Notes/Code_Notes/'` 
     - 更改文件后，想当前终端就生效就 `source ~/.bashrc` 不执行命令就重启终端即可
 
-- 如我的文件 [.bash_aliases](./ConfigFiles/Linux/.bash_aliases)
-    - K.h就能显示出每个命令的说明 其实现脚本： [python3文件](./Script/python/show_alias_help.py)  
+- 如我的文件 [.bash_aliases](/ConfigFiles/Linux/.bash_aliases)
+    - K.h就能显示出每个命令的说明 其实现脚本： [python3文件](/Script/python/show_alias_help.py)  
 
 *************
 `自定义桌面快捷方式文件`
