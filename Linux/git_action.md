@@ -14,6 +14,7 @@
 * 6. 当不想把隐私的配置文件上传github时，就可以.gitignore中忽略掉配置文件，然后建立模板文件夹放待配置的文件即可
 * 7.`cat ~/.ssh/id_rsa.pub | xclip -sel clip` 复制公钥
 * 8.java代码质量监测平台 codacy特别在意test里用断言 codebeat特别在意类和方法的长度
+
 **********
 -  Windows下记住密码 ： 
     * 新建环境变量 HOME 值：`%USERPROFILE%`
@@ -33,6 +34,7 @@
 - ssh 方法：（推荐）
     - `ssh-keygen` 不设置密码
     - `cat ~/.ssh/id_rsa.pub | xclip -sel clip`  添加即可
+
 ********    
 - 关于许可证 [Github许可证网](https://choosealicense.com/licenses/)
     - 新建项目的时候可以选择 添加.gitignore和许可证类别 许可证大致分为 MIT Apache2.0 GPL 
@@ -77,7 +79,8 @@
 	$git config --global user.email " "
 	$git config --global color.ui  auto 
 ```
-> 如果是多个账号使用同一台电脑就不要配置这个，单独配置仓库的名字，邮箱即可 `git config user.name ""`
+> 如果是多个账号使用同一台电脑就不要配置这个，单独配置仓库的名字，邮箱即可<br/>
+> `git config user.name ""`
 ## 【VI编辑器的使用】
 - git 在pull或者合并分支的时候有时会遇到打开 VI编辑器 的状态  可以不管(直接下面3,4步)
 `如果要输入解释的话就需要:`
@@ -139,8 +142,8 @@
     - Project1
     - Project2
     - Project3
-- 每个Project下都有`.git` 文件夹
-- Repository目录下执行：`git daemon --export-all --base-path='/home/mythos/Code/test/' --port=8096`
+    - 每个Project下都有`.git` 文件夹
+- Repository目录下执行：`git daemon --export-all --base-path='Repository目录' --port=8096`
     - `--export-all` 开放当前目录下所有项目
     - `--enable=receive-pack` 为了安全，默认是仓库不能被修改，添加这个参数就可以push了
     - `--base-path=''` 指定开放的基本目录（指定开放别的路径）

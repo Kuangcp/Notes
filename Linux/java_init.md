@@ -11,14 +11,16 @@
 
 ## 配置JDK
 ### 解压方式
-[下载地址](http://www.oracle.com/technetwork/java/javase/downloads/index.html)
+- [下载地址](http://www.oracle.com/technetwork/java/javase/downloads/index.html)
 - 打开配置文件 ： `sudo gedit /etc/profile`
+
 ```
 	export JAVA_HOME= 真实目录例如： /home/mythos/Code/java/jdk1.8.0_131
     export JRE_HOME=${JAVA_HOME}/jre
 	export CLASSPATH=.:${JAVA_HOME}/lib:${JRE_HOME}/lib
 	export PATH=${JAVA_HOME}/bin:$PATH
 ```
+
 - `sudo update-alternatives --install /usr/bin/javac javac /home/mythos/Code/java/jdk1.8.0_131/bin/javac 300`
 - `sudo update-alternatives --install /usr/bin/java java /home/mythos/Code/java/jdk1.8.0_131/bin/java 300`
 - 并且运行最后两句命令是为了指定默认的jdk，因为系统预装了openJdk 本来想直接使用环境变量引用，但是由于没有重启？ 所以环境变量暂时未生效
@@ -27,6 +29,7 @@
 > jdk不推荐使用sdkman安装，这里的jdk是开源版估计，会少包 认准这个版本才是完整的(Oracle Corporation 25.131-b11)
 
 - 安装sdkman `curl -s "https://get.sdkman.io" | bash`
+
 ```
     Looking for a previous installation of SDKMAN...
     Looking for unzip...
@@ -35,6 +38,7 @@
     Restart after installing unzip.
 
 ```
+
 - 遇到这种提示就是需要安装zip `sudo apt install zip` 然后重新执行命令
 - 执行脚本：`source "/home/kuang/.sdkman/bin/sdkman-init.sh"` 或者重启终端就可以使用 `sdk` 了
 - 查看sdkman 版本 ：`sdk version`
@@ -50,13 +54,14 @@
 - 更新列表` sudo apt-get update `
 - 安装MySQL `sudo apt-get install mysql-server mysql-client`
 - 检查服务是否已经开启 ： `sudo netstat -tap | grep mysql `
-	- （启动显示cp 0 0 localhost.localdomain:mysql *:* LISTEN - ）
+  - （启动显示cp 0 0 localhost.localdomain:mysql *:* LISTEN - ）
 - 启动服务 ： `sudo /etc/init.d/mysql restart `
 - 查看编码 ： `show variables like 'character_set_%`
 - 打开配置文件： `sudo gedit /etc/mysql/mysql.conf.d/mysqld.cnf`
 - `[mysqld]`块下添加一行： `character-set-server=utf8`
 - 重启MySQL ：`sudo systemctl restart mysql`
 - 再次查看编码确认是utf8
+
 ### 使用docker安装mysql
 - [官方文档](https://hub.docker.com/_/mysql/)
 
@@ -64,15 +69,18 @@
 ## 配置Redis
 ### 如果要运行make test
 新建文件夹运行，然后就可以将该目录删除
+
 ```
-wget http://downloads.sourceforge.net/tcl/tcl8.6.1-src.tar.gz
-sudo tar xzvf tcl8.6.1-src.tar.gz  -C /usr/local/
-cd  /usr/local/tcl8.6.1/unix/
-sudo ./configure
-sudo make
-sudo make install
+    wget http://downloads.sourceforge.net/tcl/tcl8.6.1-src.tar.gz
+    sudo tar xzvf tcl8.6.1-src.tar.gz  -C /usr/local/
+    cd  /usr/local/tcl8.6.1/unix/
+    sudo ./configure
+    sudo make
+    sudo make install
 ```
+
 ### 使用make install安装redis并作为一个服务来使用
+
 ```
     官网下载解压后，进入解压目录：
 
@@ -113,18 +121,21 @@ sudo make install
 - `./redis-server redis.conf`
 - 再配置下启动脚本就很方便了 
     - deepin终端可以配置快捷键 `Alt+<`和`Alt+>`分别启动服务端和客户端
- 
- 客户端脚本
- ```
+
+`客户端脚本`
+
+```
     basepath=$(cd `dirname $0`; pwd)
     $basepath/redis-cli
- ```
- 服务端脚本
- ```
+```
+
+`服务端脚本`
+
+```
     basepath=$(cd `dirname $0`; pwd)
     $basepath/redis-server $basepath/redis.conf
- ```
- 
+```
+
 ### docker安装redis
 - [docker-install-redis](https://github.com/Kuangcp/Notes/blob/master/TXT/Linux/Docker.md)
 
