@@ -1,1 +1,0 @@
-. ~/.sdkman/candidates/springboot/current/shell-completion/bash/spring
