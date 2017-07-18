@@ -1,6 +1,7 @@
 # Git系统化学习基础
 ## Git常用命令
 > [中文教程](https://git-scm.com/book/zh/v2)
+
 #### 【git commit】
 - [官方文档](https://git-scm.com/docs/git-commit)
 - `git commit -am "init" `: a git库已有文件的修改进行添加, m 注释
@@ -11,7 +12,7 @@
     - 第二行：空行
     - 第三行：记述更改的原因和详细内容
     - 使用下面方法关闭退出
- 
+
 #### 【git remote】
 - [官方文档](https://git-scm.com/docs/git-remote)
 - `git remote add origin URL地址` 添加远程关联仓库 不唯一，可以关联多个
@@ -23,6 +24,7 @@
 - `git push 远程URL的名称 --delete 分支名称` 删除远程库某分支
 - `git remote show origin` 查看远程分支的状态
 - [删除，重命名远程分支](http://zengrong.net/post/1746.htm)
+
 #### 【fork 相关操作】
 - fork之后，想要更新原作者的分支：`git remote add 名称 原作者URL`
 - 拉取更新 ：`git fetch 名称`
@@ -32,6 +34,8 @@
     - 就是因为一次提交的文件太大，需要改大缓冲区 例如改成500m
     - `git config http.postBuffer 524288000`
 - 提交本地所有分支 `git push --all` pull 同理
+- 第一次与远程建立连接 `git push -u origin master ` `git push --set-uptream master` `git push -all` 这几个都是可以的,最后那个简单, 还能将别的分支一起推上去
+
 #### 【git rebase】
 
 - 效果和merge差不多，但是分支图更清晰
@@ -74,6 +78,9 @@
 - `git checkout commit 节点标识符或者标签 文件名 文件名。。。` 
     - 取出指定节点状态的某文件，而且执行完命令后，取出的那个状态会成为head状态，
     - 需要执行  ` git reset HEAD` 来清除这种状态
+- `git pull --all` 推送本地所有的分支
+- `git clone branchname URL` 克隆指定分支
+
 
 #### 开发流程的常用分支操作
 - 一般的开发过程中会使用到三种临时分支（用完就删）和两个主分支 master develop

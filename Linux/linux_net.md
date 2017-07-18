@@ -181,6 +181,9 @@
 - --partial 断点续传 可以简写-P
 - --progress 显示传输进度信息
 
+### curl
+
+
 
 ### wget
 
