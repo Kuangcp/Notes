@@ -9,7 +9,7 @@
      - 迭代：本机->上连，上连->根，根->cn cn->edu.cn, edu.cn->bupt.deu.cn 最终返回了结果 到上连
      - 递归加迭代， 区别在于，先迭代根， 得到下级一级服务器节点后，下级就是递归的入口和出口
 
-- 授权和非授权， 还是上面那个URL， 其他的都不是授权的， 只有离URL最近的DNS才是授权的 即 `bupt.deu.cn`
+- 授权和非授权， 还是上面那个URL， 其他的都不是授权的， 只有离URL最近的DNS才是授权的 即 `bupt.deu.cn` 
   `nslookup ` 强大的调试DNS工具
 - nslookup - 8.8.8.8 进入循环模式， 方便调试 8.8.8.8 是Google开放的DNS 备选 8.8.4.4
     - 结果解释：Non-authoritative answer: 表示这是从缓存得到的结果，不一定准确
@@ -70,6 +70,8 @@
 ### curl
 - 不输出，重定向到*黑洞*  ` curl -s -o /dev/null URL`
 - 格式化返回的json：`curl xxxx|python -m json.tool `
+
+
 
 ### iproute2
 > 代替 netstat 的强大工具
@@ -181,7 +183,6 @@
 - --partial 断点续传 可以简写-P
 - --progress 显示传输进度信息
 
-### curl
 
 
 

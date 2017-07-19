@@ -138,12 +138,106 @@
 > 这个命令使用时最好是 sudo或者root用户, 不然就会警告说显示信息不完全
 
 - 查看打开标准错误输出的进程 `lsof -d 3`
-- 查看打开某文件的进程 `lsof filename `
+- 查看打开某文件或目录(不关注子文件夹)的进程 `lsof filename/catalog `
 - 通过进程查询打开的文件 `ps aux | grep mysqld` `sudo lsof -p pid` 就能看到mysql服务打开的文件了
 - 查看某一用户打开的文件 `sudo lsof -u username`
-- 端口占用查询 ` `
+- 输出结果:
+    - Command 进程名过长会简略显示, PID 进程标识符, USER 进程拥有者
+    - FD 一般是文件描述符:
+        - 两类: 一.文件描述符,二.描述文件特征的标识
+        - 第一类:
+            - 0 表示标准输入, 1 标准输出, 2 标准错误输出, n 其他文件描述符
+        - 第二类:
+            - cwd 应用程序的当前工作目录
+            - txt 程序代码或是数据
+            - mem 内存映射文件
+            - pd 父目录
+            - rtd 根目录
+            - DEL 文件已经被进程删除, 但是还在内存中存在
+    - TYPE 文件类型:
+        - DIR 目录, REG 普通文件, CHR 字符类型, BLK 块设备, UNIX unix域套接字
+        - FIFO 先进先出 队列, IPv4/Ipv6 网际协议套接字
+    - DEVICE 磁盘的名称, SIZE 文件大小, NODE 索引节点(文件在磁盘上的标识), NAME 打开文件的确切名字
+
+- 端口占用查询 ` lsof -i [4/6] [protocol][@hostname|hostaddr] [:service|port] `
+    - 4/6 IPv4/Ipv6
+    - protocol TCP/UDP 缺省TCP
+    - :service 服务名 可以多个 逗号分隔
+    - :port 端口 可以多个 逗号分隔
+
+##### 删除文件的问题
+- 创建一个0填充的1g文件 `dd if=/dev/zero bs=1024 count=1000000 of=./1gb.file` 
+    - 就能看到硬盘的显著变化 `df -h`
+- 然后写一个简单的程序一直占用他, 例如 python
+    - `rm -rf` 删除他,ls 文件不见了, 但是硬盘的占用还在
+- 原因就是,Linux系统中,rm命令删除文件实际上只是减少文件的link数, 当link数为0时,文件才会被删掉,当进程打开某文件,该文件link就加1, 因为脚本一直占用着文件,所以删除没有看到硬盘的占用下降,只是目录中找不到该文件而已
+- `lsof | grep 1gb.file`或者 `lsof 1gb.file` 就能找到占用该文件的进程了,杀掉就能真正的删除文件了
+    - 可以试试两个多个Python脚本同时占用, 那么要将进程全部杀掉,才有用
 
 #### fuser
+> 和lsof功能差不多,但是这个是符合posix标准的命令 POSIX:可移植操作系统接口
+
+- `fuser -v /home/kuang/sdk` 列出正在打开这个目录的进程(和lsof一样不关注子文件夹)
+- 输出信息:
+    - USER 用户, PID 进程号, COMMAND 程序名
+    - ACCESS 访问关系:
+        - c 作为当前目录使用
+        - e 作为可执行对象使用
+        - r 作为根目录使用
+        - s 作为共享库或其他装载对象 使用
+        - m 作为映射文件或共享库 使用
+        - f 打开文件, 默认不显示
+        - F 打开文件,用于写操作 默认不显示
+
+- `-m` 查询指定文件夹,以及子文件夹,子文件 `fuser -m /home/kuang` 
+- 查询占用端口 `fuser -v -n tcp 22` 或者 `fuser -v 22/tcp` fuser中含三种协议, file默认, tcp, udp
+- 还能发送信号 `fuser -v -k /home/kuang/sdk` 就把占用该文件夹的进程全部杀掉了(如果是ssh登录的服务器,当前目录就是这个的话, 就直接下线了)
+
+#### ps
+
+- 直接运行 `ps` 就会显示当前会话中的进程
+- `ps aux` 显示系统中所有进程的状态信息 `可根据需要自由组合`
+    - a 显示各终端(会话)上的所有进程, u 会展示进程所属用户, x 对于没有关联到终端运行的进程也展示出来
+
+`ps aux`和`ps -aux`的区别:
+    
+    - 虽然执行结果看起来是一模一样的, 但是 `ps -aux ` 其实应该理解为 `ps -a -u x` 显示用户名为 x 的用户的所有进程
+    - 当 x 用户不存在时ps就将其理解为 `ps aux`
+    - 原因,因为他的三种格式:
+        - BSD 选项前不加短横线 - `ps aux`
+        - UNIX 选项前加短横线 - `ps -aux `
+        - GNU 选项前加双短横线 -- `ps --format`
+    - BSD格式的 `ps aux` 等价于 `ps -eF`
+        - e 显示全部进程, 包含了未在终端运行的进程
+        - F 显示详尽的进程信息
+        
+- `-o` 输出指定列 `ps -eo pid,user,cmd,start` 
+    - `man ps` 可以看到可以指定的列 
+    - 若要取别名 `pid=进程号`
+
+- 对范围进行筛选 
+    - 根据用户 `ps -u root`
+    - `ps -U root -u root u`
+        - -U 实际用户 RUID 
+        - -u 有效用户 EUID
+        - u 按用户名和进程号的顺序来显示进程, 多列构成
+    - 根据命令名称 `ps -C sshd` 这个实用!!! 
+    
+- 排序 :
+    - `ps aux --sort -pcpu/+pcpu/` 按CPU使用率,进行降序/升序排列
+    - 多个条件 `--sort=+pcpu, -pmem` CPU升序,内存降序排列
+
+- 查询线程信息:
+    - `ps -ef | grep mysql` 
+    - `ps -L pid` 显示某id的线程的具体信息 其中的LWP (轻量级进程, 可以理解为用户进程) Light Weight Process
+    - `ps -T pid` 显示 将-L的LWP替换为SPID (系统中的线程ID)
+
+- 进程树:
+    - BSD
+    - UNIX
+
+
+
 #### kill
 - 杀掉指定id（需要sudo） `kill -9 pid`
 - 杀掉指定名字 不需要sudo `killall -9 name`
