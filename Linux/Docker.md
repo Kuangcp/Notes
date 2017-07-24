@@ -40,6 +40,7 @@
 
 `apt`
 - `sudo apt install docker.io`
+
 #### 通过deb文件方式来安装：
 - [点击选择文件](https://download.docker.com/linux/debian/dists/)
 - 进去后选择debain的版本，deepin15.4 的版本是stretch 然后pool/stable/amd64/选版本即可 
@@ -100,6 +101,7 @@
     - `-f` 指向任意位置的文件进行配置 `docker build -f /path/to/a/Dockerfile .`
     - 您使用docker构建的-f标志指向文件系统中任何位置的Dockerfile。
     - `-t`如果构建成功 可以指定保存新镜像的repository和tag (多个的话就多个 -t就行了，例如 `docker build -t shykes/myapp:1.0.2 -t shykes/myapp:latest .`)
+
 #### RUN命令
 ### .dockerignore文件的使用
 - .dockerignore文件是依据 Go的PathMatch规范来的，使用和.gitignore类似

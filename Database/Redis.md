@@ -18,43 +18,44 @@
 ## redis命令行常规使用
 ### 常用的数据类型操作
 - 【`字符串`】
-	- get 
-	- set
-	- del 
-	
-- 【`列表 (类似队列)`】
-	- rpush 右入队列，末端
-	- lpush 左
-	- lrange 获取范围 0，-1 表示获取全部
-	- lindex 获取指定index的元素
-	- lpop 左出队列
-	- rpop
-	
-- 【`集合 (类似无序的Set)`】
-	- sadd 添加一个对象`asdd key member`
-	- smembers 获取某Set所有元素 `smembers key`
-	- sismember 查询某Set是否含某元素，返回类型是 0 1 `sismember key member`
-	- srem 删除指定Set中指定元素 `srem key member`
-	
-- 【`散列 (类似Map 嵌套，一个内置的微型redis)`】
-	- hget
-	- hset
-	- hgetall 获取某散列所有k-v
-	- hdel 删除散列中指定k
-	- hincrby 自增
-	
-- 【`有序集合(元素是键值对，键是member成员，值是score分值必须是浮点数)`】
-	- zadd 将一个给定分值的成员添加到有序集合里 `zadd key 3.3 member` 
-	- zrange 根据元素在有序集合中的位置，从有序集合中获取多个元素
-		- zrange name 0 -1 withscores 获取所有并获取分值
-		- zrange name 2 30 wi thscores 
-	- zrevrange 从大到小排序的获取集合元素
-	- zrangebyscore 获取有序集合在给定范围中的所有元素
-		- zrangebyscore name 0 200 withscores 
-	- zrem
-	- zincrby 自增
-	- zinterstore 进行集合之间的并集（可以看作是多表连接）
-	- `精度丢失问题`	
+    - get 
+    - set
+    - del 
+
+- 【`list 列表 (类似队列)`】
+    - rpush 右入队列，末端
+    - lpush 左
+    - lrange 获取范围 0，-1 表示获取全部
+    - lindex 获取指定index的元素
+    - lpop 左出队列
+    - rpop
+
+- 【`set 集合 (类似无序的Set)`】
+    - sadd 添加一个对象`asdd key member`
+    - smembers 获取某Set所有元素 `smembers key`
+    - sismember 查询某Set是否含某元素，返回类型是 0 1 `sismember key member`
+    - srem 删除指定Set中指定元素 `srem key member`
+
+- 【`hash 散列 (类似Map 嵌套，一个内置的微型redis)`】
+    - hget
+    - hset
+    - hgetall 获取某散列所有k-v
+    - hdel 删除散列中指定k
+    - hincrby 自增
+
+- 【`zset 有序集合(元素是键值对，键是member成员，值是score分值必须是浮点数)`】
+    - zadd 将一个给定分值的成员添加到有序集合里 `zadd key 3.3 member` 
+    - zrange 根据元素在有序集合中的位置，从有序集合中获取多个元素
+        - zrange name 0 -1 withscores 获取所有并获取分值
+        - zrange name 2 30 wi thscores 
+    - zrevrange 从大到小排序的获取集合元素
+    - zrangebyscore 获取有序集合在给定范围中的所有元素
+        - zrangebyscore name 0 200 withscores 
+    - zrem
+    - zincrby 自增
+    - zinterstore 进行集合之间的并集（可以看作是多表连接）
+    - `精度丢失问题`	
+
 ##### 过期策略
 - `expire key seconds` 设置键的过期时间
 - `PTTL/TTL key ` 查看键剩余过期时间（生存时间） ms/s

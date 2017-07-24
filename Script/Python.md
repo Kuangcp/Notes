@@ -130,8 +130,8 @@ getopt.getopt(sys.argv[1:], "hi:o:", ["version", "file="])
 ***************************************
 #### 字符串编码问题(python 2问题)：
 
-- encode("utf-8")
-- decode()
+- encode("utf-8") str -> bytes
+- decode() bytes -> str
 
 ```
     # coding:utf-8

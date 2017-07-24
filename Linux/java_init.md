@@ -141,6 +141,7 @@
 
 
 *********************************
+> 系统装完后kcp用户的组： kcp lp sudo users netdev lpadmin scanner sambashare docker
 
 ## 问题以及解决方案：
 ##### Picked up _JAVA_OPTIONS: -Dawt.useSystemAAFontSettings=gasp
@@ -152,4 +153,8 @@
 - `sudo apt-get install deepin-crossover deepinwine-qq`
 - [安装QQ](https://www.findhao.net/easycoding/1748)
 
+
+### 联想G4070 安装 deepin 15.4.1 显卡兼容失败（15.4还能正常用）
+- 因为合上盖子休眠就会导致打开电脑直接死机， 找了半天原因是驱动问题， 安装nvidia-driver 即可解决、
+- 手残，按到关闭窗口特效后，就无法打开了，各种用着不爽， 然后重装了最新版系统，然后就装驱动，重启就不能开特效了。。。。。
 
