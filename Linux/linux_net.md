@@ -300,6 +300,7 @@
 - 进入.ssh文件夹下 `gedit id_rsa.pub` 然后复制该公钥内容
     - 或者 `cat ~/.ssh/id_rsa.pub | xclip -sel clip` 将文件复制到剪贴板
 - 在各种平台服务上添加这个公钥即可免密登录
+
   `服务器端`
 - 进入.ssh文件夹下 `sudo vim authorized_keys` 粘贴客户端公钥内容
 - 更改文件权限 `sudo chmod 600 authorized_keys` 确保 其 group和other位没有 w 权限

@@ -14,6 +14,7 @@
 * 6. 当不想把隐私的配置文件上传github时，就可以.gitignore中忽略掉配置文件，然后建立模板文件夹放待配置的文件即可
 * 7.`cat ~/.ssh/id_rsa.pub | xclip -sel clip` 复制公钥
 * 8.java代码质量监测平台 codacy特别在意test里用断言 codebeat特别在意类和方法的长度
+* 9. 当大量文件出现mode的变化（因为你的目录移动，文件权限变化等影响的）可以设置忽略掉 git config core.fileMode false
 
 **********
 -  Windows下记住密码 ： 
@@ -85,21 +86,21 @@
 - git 在pull或者合并分支的时候有时会遇到打开 VI编辑器 的状态  可以不管(直接下面3,4步)
 `如果要输入解释的话就需要:`
 ```
-	1.按键盘字母 i 进入insert模式
-	2.修改最上面那行黄色合并信息,可以不修改
-	3.按键盘左上角"Esc"
-	4.输入`:wq`,按回车键即可 
+    1.按键盘字母 i 进入insert模式
+    2.修改最上面那行黄色合并信息,可以不修改
+    3.按键盘左上角"Esc"
+    4.输入`:wq`,按回车键即可 
 ```
 ## 【GitHub 】 
 ```
-	【Markdown语法】: 
-		@用户名， @组织名 ；#编号 会连接到该仓库对应的Issue编号 。
-		通过 用户名/仓库名 #编号 来指定仓库的指定Issue
-	【将Bash和GitHub绑定起来】：
-		1.在GItHub上设置SSH key， 有一个即可
-		2.$ssh-keygen -t rsa -C "Kuangchengping@outlook.com" 回车 
-		3.设置密码 ad14293366
-		4.测试SSH $ssh -T git@github.com  输入yes 输入 密码  ****
+    【Markdown语法】: 
+        @用户名， @组织名 ；#编号 会连接到该仓库对应的Issue编号 。
+        通过 用户名/仓库名 #编号 来指定仓库的指定Issue
+    【将Bash和GitHub绑定起来】：
+        1.在GItHub上设置SSH key， 有一个即可
+        2.$ssh-keygen -t rsa -C "Kuangchengping@outlook.com" 回车 
+        3.设置密码 ad14293366
+        4.测试SSH $ssh -T git@github.com  输入yes 输入 密码  ****
 ```	
 ### 【 .gitingnore 文件】 :
 - `test.txt`  忽略该文件
@@ -131,11 +132,10 @@
     - 2.1 `git init` 初始化（建立 `.git` 目录）
     - 2.2 `touch README.md`
     - 2.3 `git remote add origin master URL` 连上远程仓库
-    - 2.4 `git push -u origin master` 输入用户名，密码
-    （若因为没有上游节点就按提示输入命令建立初始节点即可）
-    原因是没有指定本地dev分支与远程origin/dev分支的链接，根据提示，设置dev和origin/dev的链接：
-    `git branch --set-upstream dev origin/dev` master同理
+    - 2.4 `git push -u origin master` 输入用户名，密码 （若因为没有上游节点就按提示输入命令建立初始节点即可 git push --setupstream origin master）
+    - 原因是没有指定本地dev分支与远程origin/dev分支的链接，根据提示，设置dev和origin/dev的链接：`git branch --set-upstream dev origin/dev` master同理
 
+    
 ### 【使用git daemon搭建本地简易Git Server】
 - 先创建一个目录结构
 - Repository
@@ -150,10 +150,9 @@
     - `--port=8096` 指定开放的端口
     - `--verbose` 启动看到的日志信息更多
     - ` &` 末尾加上表示后台运行，默认是阻塞了当前git bash命令行
-- 运行起来后 使用`Ctrl+Z`  退出这个程序，如果使用的是后台方式，则：
-    - `ps`： 查看到pid 
-    - `sudo kill -9 pid`： 杀掉指定pid
-- 在别的目录下` git clone git://localhost:8096/Project1` 即可克隆
+
+- 使用退出程序的操作即可， Ctrl+Shift+C 放在了后台就jobs或者ps 然后kill
+- 在需要克隆的目录下` git clone git://localhost:8096/Project1` 
 
 ### 【HTTP访问Git Server】
 - 安装Apache： Web服务器
@@ -169,6 +168,7 @@
 - 切换到Apache的bin目录下：`htpasswd -cmb /home/mythos/GitRemoteRepo/htpsswd 账号名 密码`
 - 到仓库目录下 `git init --bare 程序项目名称`
 - `git clone http://localhost/git/程序项目名称` 输入用户名密码即可
+
 #### 【配置 https】
 - 切换到Apache主目录下 `bin\openssl genrsa -des3 -out server.key 2048 -config conf\openssl.cnf` 输入密码
 - `bin\openssl req -new -key server.key -out server.csr -config conf\openssl.cnf` 输入之前密码
@@ -253,6 +253,7 @@
 ```
 #### （4）：永久删除最近几次
 - `commit git reset --hard HEAD~3`
+
 #### （5）：回滚merge和pull操作
 ```
 		git pull URL (1)
@@ -267,6 +268,7 @@
 	5.4 但是此时又觉得将topic/branch合并过来又太早了，决定回滚merge操作，执行4语句  之前有说过，git reset操作会备份一个ORIG_HEAD，
 			pull和merge操作同样会，为了回滚操作
 ```
+
 #### （6）：在被污染的working tree中回滚merge或者pull
 ```
 		git pull (1)
@@ -275,6 +277,7 @@
 	6.2 git pull 之后，你发现这次pull的有问题，想要撤销操作，如果使用git reset --hard ORIG_HEAD也可以，但是这会删除add的代码
 			使用 git reset --merge ORIG_HEAD 就可以避免回滚操作时删除add的代码
 ```	
+
 #### （7）：被中断的工作流程
 ```
 在实际开发中经常出现这样的情形：你正在开发一个大的feature，此时来了一个紧急的BUG需要修复，但是目前在working tree 中的内容还不足以commit
@@ -292,6 +295,7 @@
 	7.2 这次reset删除了OO的commit，并且把working tree设置成提交OO之前的状态
 	7.3 此时，在index中仍然留有OO提交时所做的uncommit changes，git reset 将会清理index成为尚未提交时的状态，便于之后的工作
 ```
+
 #### （8）：Reset 一个单独的文件
 ```
 git reset -- a.txt (1)	
