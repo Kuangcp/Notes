@@ -15,6 +15,7 @@
 * 7.`cat ~/.ssh/id_rsa.pub | xclip -sel clip` 复制公钥
 * 8.java代码质量监测平台 codacy特别在意test里用断言 codebeat特别在意类和方法的长度
 * 9. 当大量文件出现mode的变化（因为你的目录移动，文件权限变化等影响的）可以设置忽略掉 git config core.fileMode false
+    * 当复制备份出去，然后重装系统粘贴回来，权限就变了，mode也变了，可以设置忽略掉改变，继续使用仓库，看着不爽的话就不备份，提交好后，新系统克隆即可，不过网速就。。。。。
 
 **********
 -  Windows下记住密码 ： 
