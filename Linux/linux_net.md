@@ -29,6 +29,7 @@
 
 ### 【Tips】
 #### 【查看端口占用情况】
+> netstat lsof fuser ps 都有一定效果 [ linux_performance ](./Linux/linux_performance.md)
 
 `netstat 工具` 更好用的 iproute2往下翻
 
@@ -49,7 +50,7 @@
     - `netstat -aonp |grep ":80[ ]\+"|awk -F" "   {'print $0'}`
     - `sudo netstat -aonp |grep ":6379[ ]\+"|awk -F" "   {'print $0'}`
     - `sudo kill -9 pid` 杀掉指定pid
-    - `ps -aux` 查看当前执行中的程序
+    - `ps aux` 查看当前执行中的程序
 - `netstat -antlp | grep 127.0.0.1` 
 
 ***************************
@@ -58,7 +59,7 @@
 > 参考书籍 《Linux 大棚命令百篇》
 
 #### ping
-- ping URL Linux是默认无休止的
+- ping URL ： Linux是默认无休止的
     - -c 次数
     - -q 安静模式 不输出
     - -s 默认64字节， 可以指定大小
@@ -69,7 +70,7 @@
 
 ### curl
 - 不输出，重定向到*黑洞*  ` curl -s -o /dev/null URL`
-- 格式化返回的json：`curl xxxx|python -m json.tool `
+- 格式化返回的json数据：`curl xxxx|python -m json.tool `
 
 
 

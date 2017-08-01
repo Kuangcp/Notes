@@ -34,32 +34,25 @@
 ```
 
 ### 编码
+- 编辑conf/下的server.xml，配置Connector项 `URIEncoding="UTF-8"`
 - 浏览器表单utf-8     xml utf-8  乱码 服务器   浏览器  乱码  使用response.setContentType("text/html; charset=utf-8");。
 - 无效方法response.setChaoactorEncoding; xml文件里面有乱码，saxreader会生成document错误。
-- 修改tomcat的端口号 conf/server.xml 找到connector 8080
 - 浏览器表单get方式：需要重新编码获得字符串    浏览器表单post方式 request.setCharactorEncoding(utf-8);
 - 自己建立的工程里面的web.xml继承了conf/web.xml.只需要重写自己的web.xml相关的配置的参数就可以覆盖其功能
 
 
 ### 虚拟目录
 指定webapp目录外的可访问的文件
-- 方法1.conf/server.xml找到host
-`value旁边增加,< Context path="/hello" docBase="c:/mydsadf"/>`
+- 方法1：conf/server.xml
+    - 当中找到host标签里 添加一行 `<Context path="/hello" docBase="c:/mydsadf"/>`
 
 - 方法2：conf/catalina/localhost/myxml.xml
-`context放置进来< Context  docBase="c:/mydsadf"/>`
-`访问方式http://localhsot:8080/myxml/`
+    - `context放置进来< Context  docBase="c:/mydsadf"/>`
+    - `访问方式http://localhsot:8080/myxml/`
 
-`虚拟目录设置`
-```
-    con/server.xml
-    <host>
-    <Context path="/abc" docBase="d:/webA"
-```
 #### 默认主页
-
+`web.xml`
 ```
-    个人web下的web.xml中设置 
     < welcome-file-list>
     < welcome-file>index.html< /welcome-file>
     < /welcome-file-list>
@@ -76,9 +69,10 @@
     < Context path="/" docBase="d:/webA" />
     >
 
-    File f=new File("/information.xml");这个写法是错的，空指针异常。
-    request.getParameter返回字符串，如果表单里面是空的，就返回长度为零的字符串。
 ```
+File f=new File("/information.xml");这个写法是错的，空指针异常。
+request.getParameter返回字符串，如果表单里面是空的，就返回长度为零的字符串。
+
 #### 配置 GZip压缩
 > [tomcat nginx开启Gzip原博客](http://www.imooc.com/article/15304)
 
@@ -92,13 +86,11 @@
     <Connector port="8080" protocol="HTTP/1.1" connectionTimeout="20000" redirectPort="8443" compression="on" compressionMinSize="2048" noCompressionUserAgents="gozilla,traviata" compressableMimeType="text/html,text/xml,text/javascript,application/x-javascript,application/javascript,text/css,text/plain"/>
 ```
 
-
-**************************
-
 ###  Tips
 -  servletContextLisner 和Spring环境的加载顺序要注意
 
-*****************************8
+*************
+
 ##	Web容器和Web服务器的区别
 ### 【web 容器】 
 
