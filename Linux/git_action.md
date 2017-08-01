@@ -6,10 +6,10 @@
 	最好是，在github上修改了就在本地pull之后再修改文件，万一出错了回退也简单
 * 5、出现了冲突，从而无法自动merge：
 ```
-		git pull 对方的分支
-		git checkout 自己的分支
-		git merge --no-ff 对方的分支
-		git push （自己的源+分支）origin master
+        git pull 对方的分支
+        git checkout 自己的分支
+        git merge --no-ff 对方的分支
+        git push （自己的源+分支）origin master
 ```
 * 6. 当不想把隐私的配置文件上传github时，就可以.gitignore中忽略掉配置文件，然后建立模板文件夹放待配置的文件即可
 * 7.`cat ~/.ssh/id_rsa.pub | xclip -sel clip` 复制公钥
@@ -25,14 +25,15 @@
         * `login ***`
         * `password ***` 
     * 成功配置，测试便知
+
 - Linux下记住密码：(如果使用了多个github账号，设置这个后只能使用一个账号的自动登录，另一个账号将完全连不上github，ssh也只能一个账号配一个，不能多个账号用一个ssh)
-	* `touch .git-credentials`
-	* `vim .git-credentials`
-	* 输入： ` http://{username}:{password}@github.com` 或者是https开头
-	* `git config --global credential.helper store`
-	* ~/.gitconfig 文件中多了以下内容即可
-		* [credential]
-		* helper = store
+    * `touch .git-credentials`
+    * `vim .git-credentials`
+    * 输入： ` http://{username}:{password}@github.com` 或者是https开头
+    * `git config --global credential.helper store`
+    * ~/.gitconfig 文件中多了以下内容即可
+        * [credential]
+        * helper = store
 - ssh 方法：（推荐）
     - `ssh-keygen` 不设置密码
     - `cat ~/.ssh/id_rsa.pub | xclip -sel clip`  添加即可
@@ -83,6 +84,7 @@
 ```
 > 如果是多个账号使用同一台电脑就不要配置这个，单独配置仓库的名字，邮箱即可<br/>
 > `git config user.name ""`
+
 ## 【VI编辑器的使用】
 - git 在pull或者合并分支的时候有时会遇到打开 VI编辑器 的状态  可以不管(直接下面3,4步)
 `如果要输入解释的话就需要:`
@@ -92,6 +94,7 @@
     3.按键盘左上角"Esc"
     4.输入`:wq`,按回车键即可 
 ```
+
 ## 【GitHub 】 
 ```
     【Markdown语法】: 

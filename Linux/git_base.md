@@ -1,11 +1,27 @@
-# Git系统化学习基础
+# Git基础
 ## Git常用命令
 > [中文教程](https://git-scm.com/book/zh/v2)
+
+#### 【Tips】
+- `git ls-files` 列出文件列表
+    - `git ls-files | xargs wc -l` 计算文件中程序代码行数 通过工具：`xargs` `wc` (中文命名的文件编码问题无法计算行数)
+    - `git ls-files | xargs cat | wc -l` 计算行数总和
+        - `|` 表示前一个命令的输出作为下一个命令的输入 【流】
+
+****************
+
+        
+        
+#### 【git config】
+- `git config user.email ***`  和   `git config user.name ***` 这两个是必须的，
+    - 如果想统一配置不想每个仓库单独配置就 `git config --global user.name` email同理
+- `git config http.postBuffer 524288000` 设置缓存区大小为 500m
+- `git config core.fileMode false` 忽略文件的mode变化，一般发生在文件的复制粘贴之后（跨系统?）
 
 #### 【git commit】
 - [官方文档](https://git-scm.com/docs/git-commit)
 - `git commit -am "init" `: a git库已有文件的修改进行添加, m 注释
-    - `git add * ` 如果有新建立文件就要add 后面就不要a参数了 `git commit -m ""`
+    - `git add * ` 如果有新建立文件就要add 再之后commit就不要a参数了 `git commit -m ""`
     - 如果只是修改文件没有新建 `git commit -am ""`
 - `git commit ` 会自动进入VI编辑器
     - 第一行：用一行文字简述提交的更改内容
@@ -31,10 +47,10 @@
 
 #### 【git push】
 - 出现RPC failed; result=22, HTTP code = 411 的错误
-    - 就是因为一次提交的文件太大，需要改大缓冲区 例如改成500m
-    - `git config http.postBuffer 524288000`
+    - 就是因为一次提交的文件太大，需要改大缓冲区 例如改成500m  `git config http.postBuffer 524288000`
 - 提交本地所有分支 `git push --all` pull 同理
-- 第一次与远程建立连接 `git push -u origin master ` `git push --set-uptream master` `git push -all` 这几个都是可以的,最后那个简单, 还能将别的分支一起推上去
+- 第一次与远程建立连接 `git push -u origin master ` 、`git push --set-uptream master` 、`git push -all` 
+    - 这几个都是可以的,最后那个简单, 还能将别的分支一起推上去
 
 #### 【git rebase】
 
@@ -50,10 +66,6 @@
 - `git log 文件名 文件名` 输出更改指定文件的所有commit 要文件在当前路径才可
 - `git log --after='2016-03-23 9:20' --before='2017-05-10 12:00' ` 输出指定日期的日志
 - `git shortlog` 按字母顺序输出每个人的日志 加上`--numbered` 参数就是按提交数排序
-- `git ls-files` 列出文件列表
-    - `git ls-files | xargs wc -l` 计算文件中程序代码行数 通过工具：`xargs` `wc`
-    - `git ls-files | xargs cat | wc -l` 计算行数总和
-        - `|` 表示前一个命令的输出作为下一个命令的输入
 
 #### 【git tag】
 - [官方文档](https://git-scm.com/docs/git-tag/2.10.2)
@@ -129,10 +141,13 @@
     - 查找git仓库里某个特定版本里的内容, 在命令行末尾加上标签名(tag reference):  `git grep xmmap v1.5.0`
     - `git grep --all-match -e '#define' -e SORT_DIRENT` 匹配两个字符串
     
+
 ******************************
 
 ## CVS工具的区别以及优缺点
 ### Git
 ### SVN
+
+## 加强版 repos的使用
 
 
