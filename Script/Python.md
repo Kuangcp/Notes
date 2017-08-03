@@ -41,7 +41,8 @@
     for i in range(1, len(sys.argv)):
         print("参数", i, sys.argv[i])
 ```
-`python tree.py hi op ` 结果>> `脚本名 tree.py 参数1 hi 参数2 op`
+`python tree.py hi op ` 顺序是python，第一个参数是文件，之后才是别的参数
+ 结果>> `脚本名 tree.py 参数1 hi 参数2 op`
 
 `有选项`
 `getopt.getopt(args, options[, long_options])`
@@ -51,15 +52,16 @@
     for op, value in opts:
     
 ```
-- sys.argv[1:]为要处理的参数列表，sys.argv[0]为脚本名，所以用sys.argv[1:]过滤掉脚本名。
-- "hi:o:": 当一个选项只是表示开关状态时，即后面不带附加参数时，在分析串中写入选项字符。当选项后面是带一个附加参数时，在分析串中写入选项字符同时后面加一个":"号。所以"hi:o:"就表示"h"是一个开关选项；"i:"和"o:"则表示后面应该带一个参数。
-- 调用getopt函数。函数返回两个列表：opts和args。opts为分析出的格式信息。args为不属于格式信息的剩余的命令行参数。opts是一个两元组的列表。每个元素为：(选项串,附加参数)。如果没有附加参数则为空串''。
+- `sys.argv[1:]`为要处理的参数列表，`sys.argv[0]`为脚本名，所以用`sys.argv[1:]`过滤掉脚本名。
+- `"hi:o:"`: 当一个选项只是表示开关状态时，即后面不带附加参数时，在分析串中写入选项字符。当选项后面是带一个附加参数时，在分析串中写入选项字符同时后面加一个":"号。
+    - 所以"hi:o:"就表示"h"是一个开关选项(单单的-h)；"i:"和"o:"则表示后面应该带一个参数。
+- 调用getopt函数。函数返回两个列表：`opts和args`。opts为分析出的格式信息。args为不属于格式信息的剩余的命令行参数。
+    - opts是一个两元组的列表。每个元素为：(选项串,附加参数)。如果没有附加参数则为空串''。
 getopt函数的第三个参数[, long_options]为可选的长选项参数，上面例子中的都为短选项(如-i -o)
-长选项格式举例:
---version
---file=error.txt
-让一个脚本同时支持短选项和长选项
-getopt.getopt(sys.argv[1:], "hi:o:", ["version", "file="])
+- 长选项格式举例:
+    - `--version`
+    - `--file=error.txt`
+- 让一个脚本同时支持短选项和长选项 `getopt.getopt(sys.argv[1:], "hi:o:", ["version", "file="]) `
 
 ### 序列
 `序列通用操作（包含：字符串，列表，元组）`
