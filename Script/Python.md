@@ -86,6 +86,14 @@ getopt函数的第三个参数[, long_options]为可选的长选项参数，上�
     - 永久性排序：sort() a-z ` sort(reverse=True) z-a` 列表全是字符串才可
     - 临时性排序：sorted() 也可以使用上面的参数   列表全是字符串才可
     - 永久性的逆序列表:reverse() 
+- 类似数组的操作，例如声明数组：[参考博客](http://blog.csdn.net/minsenwu/article/details/7872679)
+    - 原始的定义就是 lists = [1, 2, 4]
+    - 若要定义连续列表 lists = range(0, 100)
+    - 若要定义大小1000全为0列表 lists = [0 for x in range(0, 1000)]
+- 二维数组的定义：
+    - 原始： lists = [[1, 2], [3, 4]]
+    - 仿造一维的定义： lists = [[0 for x in range(10)] for y in range(10)] 10*10 初始为0的列表
+    - 简便但是不可行的方法： lists = [[0]*10]*10 这是个坑， 只是声明了一维数组，然后多次引用， 虽然看起来是二维， 引用数据就会发现是一维
 
 *****
 【元组】
@@ -204,18 +212,21 @@ getopt函数的第三个参数[, long_options]为可选的长选项参数，上�
     - `以下两种情况（* 和 **），都必须放在形参列表的最后 (两者同时使用时：* 只能在 ** 前 )`
     - 多个实参 `create(age, *name)` `create(12, 's','d')`
         - 所以这是名为name的元组 不能指定没有的名称 错误：create(12，d=2, 2,3,4)
-    - 多个指定名称实参 `create(age, **name)` `create(12, name='d', lo=23)` 必须要指定名称 这是名为name的键值对字典
+    - 多个指定名称实参 `create(age, **name)` `create(12, name='d', lo=23)` 
+        - 必须要指定名称 这是名为name的键值对字典
         - 错误：create(12,d=23,3,3,3)
 
     - 注意：
         - `def hi(name, age=0, *names, **s)` `hi('d', 23,34, d=6) ` age会被赋值23
         - `def hi(name, *names, age=0, **s)` `hi('d', 23,34, d=6)` 这样写age就不会赋值，除非指定名称 age=23
 - 返回值
-    - 返不返回 看需求
+    - 返不返回 看需求 没有像Java一样的强制性约束类型
 
 - 将函数写在一个py文件里，然后导入 `import 文件名`，名曰导入模块
     -  还可以加别名 `import creat as fun` 给模块加别名
     -  导入指定的函数 `from create import create_aliens, type_button` 多个就，分隔 同理 as给函数加别名 * 通配所有
+
+
 
 ************************************
 ### 类
