@@ -30,6 +30,11 @@
 - 单行注释：`#` 多行注释：''' '''
 - 空行的重要性，代码段之间有空行，Python之禅
 
+### import
+> [参考博客](http://blog.csdn.net/hansel/article/details/8975663)
+
+- 关于同级，子级目录是比较方便的，涉及到上级目录的就麻烦点了
+
 ************
 ## 输入输出
 #### 读取命令行参数
@@ -88,8 +93,9 @@ getopt函数的第三个参数[, long_options]为可选的长选项参数，上�
     - 永久性的逆序列表:reverse() 
 - 类似数组的操作，例如声明数组：[参考博客](http://blog.csdn.net/minsenwu/article/details/7872679)
     - 原始的定义就是 lists = [1, 2, 4]
-    - 若要定义连续列表 lists = range(0, 100)
+    - 若要定义连续列表 lists = range(0, 100) 得到的是range对象不是列表对象
     - 若要定义大小1000全为0列表 lists = [0 for x in range(0, 1000)]
+
 - 二维数组的定义：
     - 原始： lists = [[1, 2], [3, 4]]
     - 仿造一维的定义： lists = [[0 for x in range(10)] for y in range(10)] 10*10 初始为0的列表
@@ -225,7 +231,7 @@ getopt函数的第三个参数[, long_options]为可选的长选项参数，上�
 - 将函数写在一个py文件里，然后导入 `import 文件名`，名曰导入模块
     -  还可以加别名 `import creat as fun` 给模块加别名
     -  导入指定的函数 `from create import create_aliens, type_button` 多个就，分隔 同理 as给函数加别名 * 通配所有
-
+- 注意：递归深度，Python中递归默认深度是 989， 要么更改实现，要么就 `sys.setrecursionlimit(10000000)`
 
 
 ************************************
@@ -360,6 +366,7 @@ sudo apt install libfreetype6-dev g++
 - 对输入的数据进行合法性检查
 
 `巨坑: tab和空格不能混用,如果你复制别人的代码是tab,自己敲空格,就会缩进错误!!!!, 天灭tab空格保平安, 要不是kate编辑器显示了tab字符,找半天都不知道错在哪`
+
 ********
 ## 常见函数
 
@@ -381,22 +388,5 @@ sudo apt install libfreetype6-dev g++
     qt4-designer 可视化窗体设置工具
 
 
-## pygame
-### 安装
-*python2 安装 pygame*
-- `sudo apt install python-pygame`
-  *python3 安装 pygame*
-- `sudo apt install python3-dev mercurial`
-- `sudo apt install libsdl-image1.2-dev libsdl2-dev libsdl-ttf2.0-dev`
-  *安装一些声音的功能*
-- `sudo apt install libsdl-mixer1.2-dev libimportmidi-dev`
-- `sudo apt install libswscale-dev libsmpeg-dev libavformat-dev libavcode-dev`
-- `sudo apt install python-numpy`
-  *执行这个安装pygame 如果必要换成 pip3*
-- `pip install --user hg+http://bitbucket.org/pygame/pygame`
-  *我使用上面的方式安装报错，使用这个完成了安装*
-- `sudo pip install pygame`
-*********
-`检验是否安装成功`
-- `import pygame ` 查看版本 `pygame.ver`
+
 
