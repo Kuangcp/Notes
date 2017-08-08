@@ -1,31 +1,56 @@
-# Python学习
+# Python
 ## 简介
-### 关于Python2.7与3.5的使用
+
+### 关于Python2.x与3.x的使用
+> 摘自 Python核心编程 第三版 Wesley Chun著
+
+- print 变为 print()
+- 默认字符的编码是 Unicode
+- 增加单类 类型
+- 更新异常的语法
+- 更新了整数
+- 迭代无处不在
+
 ## 基础数据类型
 - 数值类型
     - 整数 各种进制 `0 八` `0x 十六` `0b 二`
     - 浮点数 `1.2e2` `13.34e-2`
     - 复数  `3+4j` `0.1-0.5j`
 - 布尔型
-    - 0或0.0 看成false
-    - `""` `''` false
-    - () [] {} false
+    - 0或0.0 :看成false
+    - `""` `''` :false
+    - () [] {} :false
 - 字符串
-    - 单引号 双引号 单行字符串
+    - 单引号 双引号: 单行字符串
     - 三引号 多行字符串
 - 空值 None
-*****************
+
+#### 运算符
+- 算术运算符
+    - 加减一样，`*` 乘,不仅可以用于数字，还可以用于字符串 ，`/` 除，和Java不一样，整数相除也会得到浮点数
+    - `//` 取整除，得到商的整数部分 ，`%` 取余数 ，`**` 幂运算 可以用来开根
+- 关系运算符
+    - 都是和Java一致
+- 逻辑运算符
+    - and or not 
+- 身份运算符 
+    - is : `a is b` 就是比较 id(a) id(b) 相同则是返回1
+    - is not 比较id 不相同返回1
+
+- 位运算符
+    - `<< >>` 左右移 
+    - ` & | `按位与或
+    - `^  ~` 按位异或 按位翻转 
 - 算术运算符优先级 `** / // % +`
     - // 取整数部分除法
     - ** 幂运算
-- 位运算符
-    - `<< >>` 左右移 ` & | `且或 `^  ~` 按位异或 按位翻转 
-- 转移字符：
+- 转义字符：
     - \a 响铃
     - \b  退格 backspace
     - \000  空
     - \f   换页
     - \  续行符（行尾）
+
 ## 基础语法
 - 单行注释：`#` 多行注释：''' '''
 - 空行的重要性，代码段之间有空行，Python之禅
@@ -251,6 +276,53 @@ getopt函数的第三个参数[, long_options]为可选的长选项参数，上�
     - 3.× `super().__init__(参数)`
 
 重写父类方法：只需要定义一个和父类方法同名的方法即可，因为没有多态，覆盖时形参不作考虑    
+
+******************************************
+### 异常
+```
+    try:
+        print(5/0)
+    except ZeroDivisionError:
+        print("0 不能做除数")
+    else:
+        print("成功")
+    finally:
+        print('finally')
+```
+- 基本语法 `try except else finally`
+    - else是无异常执行
+    - 有异常就执行 except， except 超类Exception，也可以多个except （和Java一致）
+    - 最终执行finally 和 Java的结构是一致的
+
+| except 分句使用形式 |  说明 |
+| :---: | :---:|
+|except | 捕获所有类型|
+|except name| 只捕获指定类型|
+|except name, value|捕获指定类型，并获得抛出的异常对象|
+|except (name1, name2)|捕获列出的异常|
+|except (name1, name2), value |捕获列出的异常，获得抛出的异常对象|
+
+- raise 语句 和Java的throw关键字 一致 ， 不过raise只是抛出一个通用异常类型 Exception
+- dir(exceptions) 查看所有异常类型
+    - raise name 手动引发异常
+    - raise name,data 传递一个附加的数据
+- 同样的也是可以自定义异常类型的，`class MyExcetion(Exception):`
+- with 语句 在异常处理中，将 try except finally 关键字以及与资源分配释放相关的代码省略掉。
+    - 文件打开 `with open('a.py') as files:`
+
+| 常见异常类 | 描述 |
+|:---:|:---:|
+|NameError/UnboundLocalError | 引用不存在的变量/或者引用在声明之前|
+|ZeroDivisionError|除数为0|
+|SyntaxError|语法错误|
+|IndexError|索引错误|
+|KeyError|使用不存在的字典关键字|
+|IOError|输入输出错误|
+|ValueError|搜索列表中不存在的值|
+|AtrributeError|调用不存在的方法|
+|TypeError|未强制转换就混用数据类型|
+|EOPError|文件结束标识错误|
+
 ### 文件
 - 注意路径，Windows系统中要使用反斜杠 \ 
   最简单：`file = open('')` 只读打开
@@ -306,33 +378,25 @@ getopt函数的第三个参数[, long_options]为可选的长选项参数，上�
         json.dump(alien, o)
 ```
 json.dump()持久化 和 load() 装载
-### 异常
-```
-    try:
-        print(5/0)
-    except ZeroDivisionError:
-        print("0 不能做除数")
-    else:
-        print("成功")
-```
-- 基本具有 `try except else` 块 else是当try成功就执行else 有异常就执行 except
-- 也可以在块中写 pass 意思是不做处理
 
+******************************
 ### 测试
 - 文件名test开头就当做是测试类，不会直接运行
 - 类继承 unittest.TestCase, 所有test_开头的方法都将自动运行
 - 断言 self.assertEqual assertNotEquals assertIn(item, list)
 - 直接运行 unittest.main()
 - 输出结果，`. 测试通过` `E 测试运行错误` `F 测试断言不通过`
+
 ### GUI
 
 ### 数据库
 #### MySQL
 - python3环境下： `sudo apt install python3-mysqldb`
 
+#### Redis
+- python2 `sudo pip install redis`
+- python3 `sudo pip3 install redis`
 
-
-### 网络编程
 
 ### 绘图 matplotlib
 `python 3.5 安装`
@@ -341,17 +405,7 @@ sudo apt install python3.5-dev python3.5-tk tk-dev
 sudo apt install libfreetype6-dev g++
 
 
-### Django
-`python3.5 建立虚拟环境`
-- `sudo apt install python3-venv`
-- 在某目录 `python3 -m venv first_env`
-- 激活环境 `source first_env/bin/activate`
-    - 停用环境 `deactivate`
-- 安装Django `pip install Django`
-- 创建项目 `django-admin.py startproject first_pro . `
-    - `ls first_pro`查看到创建的默认文件
-- 创建SQLite数据库 `python manage.py migrate`    
-- 启动项目`python3 manage.py runserver`
+
 
 
 ************
