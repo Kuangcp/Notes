@@ -50,23 +50,14 @@
 ## 【目前使用git的方法】 
 
 - 1.在GitHub上新建一个项目，不勾选初始化，复制下URL
-- 2.在eclipse新建项目，git到本地某文件夹下
-- 3 然后在eclipse里添加git remote
-- 4.commit -》push 完成
-- 5.打开Git Bash 使用命令行再查看一下，虽然有时候问题比较奇怪，但是一般不会有啥问题
-- *执行了1、2步骤后：直接*
+- 2.在eclipse新建项目然后在eclipse里添加git remote
+- 3.commit -》push 完成
+- 4.打开Git Bash 使用命令行再查看一下，虽然有时候问题比较奇怪，但是一般不会有啥问题
 
+*本地关联远程*
 ```
    	git remote add origin https://github.com/Kuangcp/StudentManager.git
    	git push -u origin master
-   	=====或者：=====
-   	echo "# StudentManager" >> README.md
-   	git init
-   	git add README.md
-   	git commit -m "first commit"
-   	git remote add origin https://github.com/Kuangcp/StudentManager.git
-   	git push -u origin master
-	
 ```
 ## 实验楼使用Github
 - `git clone URL` 复制下来，默认是master
@@ -75,7 +66,6 @@
 - `git fetch origin 已有分支` 下拉别的分支代码
 
 **************************************************
-
 ## 【git初始化】 
 ```
 	$git config --global user.name " "
@@ -190,8 +180,8 @@
 
 #### 【使用SSH登录GitServer】
 
-## 【基础命令】 
 
+## 【基础命令】 
 - `git touch file1 file2 ` 新建三个文件
 - `echo "  ">>file1 ` 修改文件file1
 - `git rm 文件名 ` ： 删除文件至缓存区
@@ -218,7 +208,6 @@
 ```
 
 ****************************************
-
 ## 【git reset常用方式】
 ### （1）：回滚add操作
 ```

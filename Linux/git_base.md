@@ -8,10 +8,23 @@
     - `git ls-files | xargs cat | wc -l` 计算行数总和
         - `|` 表示前一个命令的输出作为下一个命令的输入 【流】
 
-****************
+`清理仓库`
+- 因为删除的文件是会留在仓库，以便以后恢复，这样的话仓库就会越来越大了
+- git gc 清理，不知道有没有用
+- 强制删除，并且从git索引中也去掉，相当于彻底删除 
+    - [参考博客1 彻底删除](http://www.itwendao.com/article/detail/413282.html) 
+    - [参考博客2 彻底删除](http://blog.csdn.net/meteor1113/article/details/4407209)
+    - [参考博客3 删除大文件](http://www.gzhphb.com/article/78/784131.html)
+    - [参考博客4 减小磁盘占用](http://zhongmingmao.me/2017/04/19/git-reduce/)
+    - `git filter-branch --force --index-filter 'git rm --cached --ignore-unmatch 文件的路径' --prune-empty --tag-name-filter cat -- --all`
+    - `git push origin --force --all`
+    - `git push origin --force --tags`
+    - 使用`git rebase`来更新分支，而不是 `git merge` 不然文件又回来了
 
-        
-        
+- 然而，因为这个笔记仓库，改动太多，之前加入的图片文件，删除之前也改动了名字，现在根本找不到文件了， 删除不了了，如果要减小仓库大小只能重建了
+- 猜测他的文件都在 `.git/objects/pack/` 里留有备份
+
+****************
 #### 【git config】
 - `git config user.email ***`  和   `git config user.name ***` 这两个是必须的，
     - 如果想统一配置不想每个仓库单独配置就 `git config --global user.name` email同理
