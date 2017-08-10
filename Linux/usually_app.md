@@ -90,8 +90,8 @@
 ```
 
 *******************************************************************
-
-## sdkman的使用 
+## 包管理
+### sdkman的使用 
 `安装`
 - 安装sdkman `curl -s "https://get.sdkman.io" | bash`
 - 遇到提示zip 就是需要安装zip `sudo apt install zip` 然后重新执行命令
@@ -110,14 +110,26 @@
 - 验证是否成功：`java -version`
 - 移除 `sdk uninstall scala 2.11.6`
 
+### 文件结构展示 tree
+
 ***************************
 ## 文本编辑器
-### Kate
+### Ghex
+- 十六进制文件编辑器
+
+### Kate KWrite(阉割版)
 - [安装markdown预览插件](https://github.com/antonizoon/kate-markdown)
+- 码Python也挺方便，也有常用快捷键，自动提示，终端整合，而且是自动切目录
+
+### Geany
+- 码c 方便
 
 ### sublime 
 - 如果出现小bug，就直接删除 ～.config 下的 sublime文件夹注意注册证书拷出来
-- 
+- 还是挺好的，小巧，但是中文硬伤 用来阅读代码比较合适
+
+### VSCode
+- 码笔记，码Python 比较方便，目录树，预览，整合终端
 
 ### vi/vim
 - `i` 进入编辑
@@ -125,3 +137,6 @@
 
 ### gedit
 - 安装markdown预览插件 
+
+### Moediter Typora CuteMarkEd 
+- 书写单个md文件方便，美观，没有目录树是硬伤

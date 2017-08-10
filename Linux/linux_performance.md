@@ -234,6 +234,8 @@
     - `man ps` 可以看到可以指定的列 
     - 若要取别名 `pid=进程号`
 
+- ![p200](https://raw.githubusercontent.com/Kuangcp/ImageRepos/master/Tech/Book/Linux_DaPeng_mingling100/p200.jpg)
+
 - 对范围进行筛选 
     - 根据用户 `ps -u root`
     - `ps -U root -u root u`
@@ -256,6 +258,7 @@
         - a 所有进程, x 显示没有控制终端的进程, j 任务格式显示进程, f ascaii字符显示树状结果
     - UNIX : `ps -ejH`
         - e 显示所有进程, j 任务格式来显示进程, H 显示数状结构 
+
 
 #### kill
 - `kill -l` 显示kill可以向进程发送的信号, kill是通过发送信号让进程自己决定做什么
@@ -300,7 +303,6 @@
 #### killall
 > 通过名字来发送信号,其他和kill是一致的
 
-
 - 杀掉指定名字 不需要sudo `killall -9 name`
 
 #### 作业控制
@@ -334,5 +336,5 @@
 
 > 也就是说,这个匹配也是只能匹配一个作业,不能通配
 
-
-
+#### trap
+捕捉信号并响应

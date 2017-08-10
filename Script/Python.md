@@ -11,7 +11,7 @@
 - 更新了整数
 - 迭代无处不在
 
-## 基础数据类型
+## 【基础数据类型】
 - 数值类型
     - 整数 各种进制 `0 八` `0x 十六` `0b 二`
     - 浮点数 `1.2e2` `13.34e-2`
@@ -51,18 +51,18 @@
     - \f   换页
     - \  续行符（行尾）
 
-## 基础语法
+## 【基础语法】
 - 单行注释：`#` 多行注释：''' '''
 - 空行的重要性，代码段之间有空行，Python之禅
 
-### import
+### 【import】
 > [参考博客](http://blog.csdn.net/hansel/article/details/8975663)
 
 - 关于同级，子级目录是比较方便的，涉及到上级目录的就麻烦点了
 
 ************
-## 输入输出
-#### 读取命令行参数
+## 【输入输出】
+### 读取命令行参数
 > [参考博客](http://www.sharejs.com/codes/python/6121)
 `只有输入参数，没有选项`
 ```
@@ -93,7 +93,7 @@ getopt函数的第三个参数[, long_options]为可选的长选项参数，上�
     - `--file=error.txt`
 - 让一个脚本同时支持短选项和长选项 `getopt.getopt(sys.argv[1:], "hi:o:", ["version", "file="]) `
 
-### 序列
+### 【序列】
 `序列通用操作（包含：字符串，列表，元组）`
 - `​索引`，从左至右：`0,1,2...n` 从右至左：`-1,-2...-n`
 - `切片`（截取序列的部分） `temp[:]` 返回一个副本
@@ -107,7 +107,7 @@ getopt函数的第三个参数[, long_options]为可选的长选项参数，上�
 - min() max() sum()要求元素全是数值
 
 *****
-【列表】
+#### 【列表】
 - 元素可包含 字符串，浮点，整型，列表，布尔
 - 操作：
     - 增加 + ，`append()/extend()`尾部加入元素/列表  `insert(index, "")` 元素插入到任意位置,其后元素后移
@@ -127,7 +127,7 @@ getopt函数的第三个参数[, long_options]为可选的长选项参数，上�
     - 简便但是不可行的方法： lists = [[0]*10]*10 这是个坑， 只是声明了一维数组，然后多次引用， 虽然看起来是二维， 引用数据就会发现是一维
 
 *****
-【元组】
+#### 【元组】
 - 元组和列表类似但是元组是创建不可更改的 
     - 和列表相比，相同点：按定义的顺序排序，负索引一致，可以使用分片
     - 不同点：元组使用的是()，不能增加删除元素，没有index方法但是有in，可以在字典中作为键列表不可以，
@@ -138,7 +138,7 @@ getopt函数的第三个参数[, long_options]为可选的长选项参数，上�
     - 删除：del 删除整个元组
 
 *****
-【字符串】
+#### 【字符串】
 - str() 将对象转化成字符串 （注：Python中不能像Java一样字符串和数值直接+）
 - repr() 注意和str()的区别
 - `r"d:\python27\"` r前缀表示转义字符看成普通字符
@@ -187,7 +187,7 @@ getopt函数的第三个参数[, long_options]为可选的长选项参数，上�
 - 因为文件不是UTF8：`UnicodeDecodeError: 'utf-8' codec can't decode byte 0xb9 in position 2: invalid start byte `
 
 *************************************
-### 字典（键值对）
+#### 字典（键值对）
 - 通过用空间来换取时间，与列表相比，键的增加不影响查找插入速度，需要占用大量内存 
 - 特性：
     - 值是可以是任意的，甚至是字典嵌套
@@ -211,7 +211,7 @@ getopt函数的第三个参数[, long_options]为可选的长选项参数，上�
 
 ***********
 
-### 基本运行结构
+### 【基本运行结构】
 - 输入输出
     - input("") 默认当成字符串输入 数值：int() 强转一下
     - print("")      
@@ -233,7 +233,7 @@ getopt函数的第三个参数[, long_options]为可选的长选项参数，上�
 ```
 
 *****************************************
-### 函数
+### 【函数】
 
 - 形参赋值传递方式
     - 按位置 `就是直接用看起来和Java一样，但不是按类型和位置，只是位置`
@@ -242,9 +242,9 @@ getopt函数的第三个参数[, long_options]为可选的长选项参数，上�
     - 列表类型，不想形参改变实参 传递副本过去即可 `list[:]`
     - `以下两种情况（* 和 **），都必须放在形参列表的最后 (两者同时使用时：* 只能在 ** 前 )`
     - 多个实参 `create(age, *name)` `create(12, 's','d')`
-        - 所以这是名为name的元组 不能指定没有的名称 错误：create(12，d=2, 2,3,4)
+        - 所以这是名为name的`元组` 不能指定没有的名称 错误：create(12，d=2, 2,3,4)
     - 多个指定名称实参 `create(age, **name)` `create(12, name='d', lo=23)` 
-        - 必须要指定名称 这是名为name的键值对字典
+        - 必须要指定名称 这是名为name的键值对`字典`
         - 错误：create(12,d=23,3,3,3)
 
     - 注意：
@@ -258,27 +258,76 @@ getopt函数的第三个参数[, long_options]为可选的长选项参数，上�
     -  导入指定的函数 `from create import create_aliens, type_button` 多个就，分隔 同理 as给函数加别名 * 通配所有
 - 注意：递归深度，Python中递归默认深度是 989， 要么更改实现，要么就 `sys.setrecursionlimit(10000000)`
 
+### 变量
+- 局部变量：
+- 全局变量：定义在函数外的变量，也称公用变量，函数中 `global x` 声明引用全局变量x
 
 ************************************
-### 类
+### 【类】
 `Python 不存在多态，存在鸭子类型` [博客介绍](http://blog.csdn.net/shangzhihaohao/article/details/7065675)
 - 写在一个py文件里，默认构造器，可以加参数 `def __init__(self):`
-- 类属性只要在任何的方法，构造器中`self`为前缀声明过的
+
+- 属性：
+    - 实例属性 形如`self.name`，在任何方法中声明过即可
+    - 类属性 不加self前缀，`__name`私有的类属性， 类不能访问对象属性
+    - 类属性可以修改，但是实际上只能修改实例属性（这个修改只是声明了同名的实例属性，引用的时候就会覆盖类属性，看起来就是修改了
+        - 可以删除实例属性，然后就能看到原有的类属性了 
+
+```
+    class People:
+        name = 'md'
+    p = People()
+    p.name = 'gh' # 声明了实例属性覆盖了类属性
+    del p.name # 删除实例属性，恢复类属性引用
+```
+- 方法：
+    - 对象方法，类方法，静态方法
+    - 对象方法，同样的 `__`开头是私有的，只能在对象的公有方法中`self.__`引用
+    - 静态方法，之中只能引用类成员，不能访问对象成员
+
+- 构造函数和析构函数：
+    - `def __init__(self)`
+    - `def __del__(self)`
+
+
+```
+    class Person:
+        # 对象方法， 将对象作为参数self传进去
+        def say(self):
+            print('hi')
+        # 静态方法
+        @staticmethod
+        def drink():
+            print('static method')
+        # 类方法，将类作为参数cls传进去
+        @classmethod
+        def eat(cls):
+            print('class method')
+```
+
 - self 代表了自身引用 类似Java的this
 - 特别不舒服 __init__ 这种命名 不像Java的构造函数重载，这个就是后面覆盖前面定义的__init__ 不管形参列表
-    - 就是说不能多个构造函数的书写了。。。
+    - 因为不存在重载，就是说不能多个构造函数的书写了。。。
 
 - 导入和函数一样 注意继承中类的依赖
-#### 继承
-父类定义要在子类之前，
-使用父类构造器
-    - 2.× `super(子类名, self).__init__(参数)`
-    - 3.× `super().__init__(参数)`
 
-重写父类方法：只需要定义一个和父类方法同名的方法即可，因为没有多态，覆盖时形参不作考虑    
+#### 继承
+- Python是支持多重继承的
+
+- 同文件 父类定义要在子类之前
+- 父类的构造器不会自动调用，需要显式使用父类构造器：
+    - 2.×版本： `super(子类名, self).__init__(参数)`
+    - 3.×版本： `super().__init__(参数)`
+    - 或者 `父类名.__init__()`
+
+- 重写父类方法：只需要定义一个和父类方法同名的方法即可，因为没有多态，覆盖时形参不作考虑    
+
+- 多态：
+    - 方法重载： 子类覆盖父类的方法
+    - 运算符重载： 加`__add__(self, x)` 减`__sub__(self, x)`
 
 ******************************************
-### 异常
+### 【异常】
 ```
     try:
         print(5/0)
@@ -295,7 +344,7 @@ getopt函数的第三个参数[, long_options]为可选的长选项参数，上�
     - 最终执行finally 和 Java的结构是一致的
 
 | except 分句使用形式 |  说明 |
-| :---: | :---:|
+| :--- | :---|
 |except | 捕获所有类型|
 |except name| 只捕获指定类型|
 |except name, value|捕获指定类型，并获得抛出的异常对象|
@@ -311,7 +360,7 @@ getopt函数的第三个参数[, long_options]为可选的长选项参数，上�
     - 文件打开 `with open('a.py') as files:`
 
 | 常见异常类 | 描述 |
-|:---:|:---:|
+|:---|:---|
 |NameError/UnboundLocalError | 引用不存在的变量/或者引用在声明之前|
 |ZeroDivisionError|除数为0|
 |SyntaxError|语法错误|
@@ -323,7 +372,8 @@ getopt函数的第三个参数[, long_options]为可选的长选项参数，上�
 |TypeError|未强制转换就混用数据类型|
 |EOPError|文件结束标识错误|
 
-### 文件
+*****************
+### 【文件】
 - 注意路径，Windows系统中要使用反斜杠 \ 
   最简单：`file = open('')` 只读打开
   `使用with来操作 好处是Python自动关闭文件`
@@ -380,25 +430,34 @@ getopt函数的第三个参数[, long_options]为可选的长选项参数，上�
 json.dump()持久化 和 load() 装载
 
 ******************************
-### 测试
+### 【测试】
 - 文件名test开头就当做是测试类，不会直接运行
 - 类继承 unittest.TestCase, 所有test_开头的方法都将自动运行
 - 断言 self.assertEqual assertNotEquals assertIn(item, list)
 - 直接运行 unittest.main()
 - 输出结果，`. 测试通过` `E 测试运行错误` `F 测试断言不通过`
 
-### GUI
+### 【GUI】
+#### Tkinter
+`安装`
+- python2: `sudo apt install python-tk`
+- python3: `sudo apt install python3-tk`
+`引入`
+- python2：`import Tkinter` `import Tkinter as tk` `from Tkinter import *`
+- 但是python3.5的环境下，`import tkinter` 才是正确的
 
-### 数据库
-#### MySQL
+
+
+### 【数据库】
+#### 【MySQL】
 - python3环境下： `sudo apt install python3-mysqldb`
 
-#### Redis
+#### 【Redis】
 - python2 `sudo pip install redis`
 - python3 `sudo pip3 install redis`
 
 
-### 绘图 matplotlib
+### 【绘图】 matplotlib
 `python 3.5 安装`
 sudo apt install python3-matplotlib 
 sudo apt install python3.5-dev python3.5-tk tk-dev
@@ -409,7 +468,7 @@ sudo apt install libfreetype6-dev g++
 
 
 ************
-## 代码风格
+## 【代码风格】
 - 一行只写一句
 - 表达式尽量不要省略括号，有助于理解
 - 函数的行数不要超过100行
@@ -422,13 +481,13 @@ sudo apt install libfreetype6-dev g++
 `巨坑: tab和空格不能混用,如果你复制别人的代码是tab,自己敲空格,就会缩进错误!!!!, 天灭tab空格保平安, 要不是kate编辑器显示了tab字符,找半天都不知道错在哪`
 
 ********
-## 常见函数
+## 【常见函数】
 
 - `id()` 查看内存地址
 - `help(方法名)` 展示方法的说明文档
 - `dir(对象)` 展示对象的方法API
 
-## 常见库
+## 【常见库】
 - import codecs 编码
 - import os 
 

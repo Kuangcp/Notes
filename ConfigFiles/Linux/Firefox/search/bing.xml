@@ -1,4 +1,7 @@
-<!-- 在这个火狐的目录下 /usr/lib/firefox-zh/distribution/searchplugins/locale/zh-CN/ 添加这个文件 bing.xml 只要更改URL 即可-->
+<!-- 
+安装方式就是：/usr/lib/firefox-zh/distribution/searchplugins/locale/zh-CN/ 
+解压方式就是：/distribution/searchplugins/locale/zh-CN/
+ 复制这个文件 bing.xml 过去 即可， 修改URL就可以加入另一个搜索引擎URL了-->
 <SearchPlugin xmlns="http://www.mozilla.org/2006/browser/search/">
 <ShortName>myth必应</ShortName>
 <Description>myth必应搜索</Description>
