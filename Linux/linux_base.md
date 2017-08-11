@@ -110,11 +110,18 @@
 #### 让命令在后台运行
 > [原博客](https://www.ibm.com/developerworks/cn/linux/l-cn-nohup/)
 
+- 命令后接 & （只是让进程躲到当前终端的后台去了 hup信号仍然影响）
+
+- 运行的命令不因 用户注销，网络中断等因素而中断
+    - 让进程对hup信号免疫 nohup disown
+    - 让进程在新的会话中运行 setid screen
+
 ##### 关闭ssh回话不能运行
 ##### 关闭ssh回话仍能运行
-- 后台运行，输出到nohup.out `nohup 命令 &`
+
+- 使用`nohup`屏蔽hup信号 后台运行，输出到nohup.out `nohup 命令 &`
     - 修改重定向文件  `nohup 命令>/dev/null 2>&1`
-- `(命令 &)`    
+- `(命令 &)` 屏蔽了hup信号
 
 *************
 

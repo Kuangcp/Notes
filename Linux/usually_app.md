@@ -113,11 +113,23 @@
 ### 文件结构展示 tree
 
 ***************************
+## 文件管理器
+> 有单窗口，双列，命令，简洁轻量，笨重完整 各种各样的选择
+
+- `nautilus` Gnome默认 挺好用，但是不能自动挂载分区
+- `deepin-filemanager` deepin默认，较为方便，但是打开手机会卡根本打不开
+- `pcmanfm` 左边侧栏目录树 会同步nautilus的配置`5m`
+- `rox-filer` 特别小，单击打开，迅速定位文件，适合找东西用
+- `thunar` 解决了nautilus的缺点，内存也很省 `21M`
+- `dolphin` 多标签页，目录树方式查看
+- `nemo` mint默认的，功能齐全，会同步nautilus的配置，同样有目录树而且是两边都有 `21M`
+- `tuxcmd` Tux Commander 双列，小，直接的目录树，学习成本高点 `2M`
+
 ## 文本编辑器
 ### Ghex
 - 十六进制文件编辑器
 
-### Kate KWrite(阉割版)
+### Kate KWrite(Kate的轻量版)
 - [安装markdown预览插件](https://github.com/antonizoon/kate-markdown)
 - 码Python也挺方便，也有常用快捷键，自动提示，终端整合，而且是自动切目录
 
