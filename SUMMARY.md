@@ -2,6 +2,7 @@
 
 * [Introduction](README.md)
 
+
 * 【 Article 】
     * [ CSDN的Markdown案例 ](./Article/CSDN的Markdown案例.md)
     * [ Java世界观 ](./Article/Java世界观.md)
@@ -32,6 +33,7 @@
     * [ Activiti ](./Java/Activiti.md)
     * [ EE ](./Java/EE.md)
     * [ Gradle ](./Java/Gradle.md)
+    * [ Groovy ](./Java/Groovy.md)
     * [ IDEA ](./Java/IDEA.md)
     * [ JavaSE ](./Java/JavaSE.md)
     * [ Log ](./Java/Log.md)
@@ -58,6 +60,9 @@
     * [ usually_app ](./Linux/usually_app.md)
 * 【 Script 】
     * [ Python ](./Script/Python.md)
+    * [ Python_Frame ](./Script/Python_Frame.md)
+    * [ Python_Net ](./Script/Python_Net.md)
+    * [ Python_Pygame ](./Script/Python_Pygame.md)
     * [ dos ](./Script/dos.md)
 * 【 Skills 】
     * 【 Skills/View 】

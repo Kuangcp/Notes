@@ -354,8 +354,8 @@
     - `trap "" INT` 屏蔽中断信号
     - `trap INT` 恢复
 
-
 *************
+### 后台运行
 - 运行的命令不因 用户注销，网络中断等因素而中断
     - 让进程对hup信号免疫 nohup disown
     - 让进程在新的会话中运行 setid screen
@@ -380,10 +380,94 @@
 
 ##### setid
 - 命令前 `setid 命令` 就会让进程在一个新的会话运行
+
 ##### screen
-> 在一个真实的终端运行多个伪终端，认为是开启了多个新会话
+> 在一个真实的终端运行多个伪终端，认为是开启了多个新会话 [命令参考](http://man.linuxde.net/screen)
 
-只要Screen本身没有终止，在其内部运行的会话都可以恢复。这一点对于远程登录的用户特别有用——即使网络连接中断，用户也不会失去对已经打开的命令行会话的控制。只要再次登录到主机上执行screen -r就可以恢复会话的运行。同样在暂时离开的时候，也可以执行分离命令detach，在保证里面的程序正常运行的情况下让Screen挂起（切换到后台）。这一点和图形界面下的VNC很相似。
+- 会话恢复
+    - 只要Screen本身没有终止，在其内部运行的会话都可以恢复。这一点对于远程登录的用户特别有用——即使网络连接中断，用户也不会失去对已经打开的命令行会话的控制。
+    - 只要再次登录到主机上执行screen -r就可以恢复会话的运行。同样在暂时离开的时候，也可以执行分离命令detach，在保证里面的程序正常运行的情况下让Screen挂起（切换到后台）。这一点和图形界面下的VNC很相似。
+- 多窗口
+    - 在Screen环境下，所有的会话都独立的运行，并拥有各自的编号、输入、输出和窗口缓存。用户可以通过快捷键在不同的窗口下切换，并可以自由的重定向各个窗口的输入和输出。Screen实现了基本的文本操作，如复制粘贴等；
+    - 还提供了类似滚动条的功能，可以查看窗口状况的历史记录。窗口还可以被分区和命名，还可以监视后台窗口的活动。 会话共享 Screen可以让一个或多个用户从不同终端多次登录一个会话，
+    - 并共享会话的所有特性（比如可以看到完全相同的输出）。它同时提供了窗口访问权限的机制，可以对窗口进行密码保护。
 
+```
+    -A 　将所有的视窗都调整为目前终端机的大小。 
+    -d <作业名称> 　将指定的screen作业离线。 
+    -h <行数> 　指定视窗的缓冲区行数。 
+    -m 　即使目前已在作业中的screen作业，仍强制建立新的screen作业。 
+    -r <作业名称> 　恢复离线的screen作业。 
+    -R 　先试图恢复离线的作业。若找不到离线的作业，即建立新的screen作业。 
+    -s 　指定建立新视窗时，所要执行的shell。 
+    -S <作业名称> 　指定screen作业的名称。 
+    -v 　显示版本信息。 
+    -x 　恢复之前离线的screen作业。 
+    -ls或--list 　显示目前所有的screen作业。 
+    -wipe 　检查目前所有的screen作业，并删除已经无法使用的screen作业。
+```
 
 ****************
+### 系统管理
+#### uname 
+- `uname -a` 输出所有信息
+    - -s 内核名称
+    - -n 主机名称
+    - -r 内核发行版号
+    - -v 操作系统具体版本
+    - -m 机器硬件名称
+    - -p 处理器名称
+    - -i 硬件平台名称
+    - -o 操作系统名称
+
+#### who
+- `who` 和 `w`  who是按照不同tty来显示信息
+- `whoami` 查看有效用户，就是当前会话的拥有者
+- `who am i` 查看系统的真实用户，例如普通用户 su 切换用户，这条命令就显示了真正的用户，而不是su切换的用户
+    - who 后面有俩参数就行了都能达到相同的效果
+- `groups` 查看所有组
+
+#### service
+- `service 服务名 status/start/stop/restart`
+    - `cd /etc/init.d/ && ls -F` 查看所有service掌控的服务名
+- `which service` 结果显示这是个脚本 `service 服务名 stop` 等价于 `/etc/init.d/服务名 stop`
+
+#### chkconfig
+> 掌控等级制度 LSB 
+
+#### dmidecode 
+> 输出机器的 BIOS CPU 内存等硬件信息 （DMTF DMI）
+
+- 运行 `dmidecode -t `就会提示你后接类别
+
+#### lsmod
+#### chroot
+> change root directory 更改root目录 最古老的容器技术
+
+- `mkdir 目录 ` 复制相关目录过来，就能把系统迁移过来了
+- ![p262](https://raw.githubusercontent.com/Kuangcp/ImageRepos/master/Tech/Book/Linux_DaPeng_mingling100/p262.jpg)
+- ![p263](https://raw.githubusercontent.com/Kuangcp/ImageRepos/master/Tech/Book/Linux_DaPeng_mingling100/p263.jpg)
+- ![p264](https://raw.githubusercontent.com/Kuangcp/ImageRepos/master/Tech/Book/Linux_DaPeng_mingling100/p264.jpg)
+- ![p265](https://raw.githubusercontent.com/Kuangcp/ImageRepos/master/Tech/Book/Linux_DaPeng_mingling100/p265.jpg)
+
+
+### 关机重启
+- shutdown reboot halt poweroff init
+
+|命令|作用|
+|:---|:---|
+|shutdown| 可用于关机，重启，支持定时和通知|
+|reboot|重启系统|
+|halt|停止系统|
+|poweroff|断电源关机|
+|init|init 0 关机，init 6 重启|
+
+- shutdown -h now 立即关机
+- shutdown -r now 立即重启
+- shutdown -h 23:30 设置定时关机
+- shutdown -h +15 15分钟之后关机
+- halt -p 关机并关闭电源
+- halt -d 关机但不在日志留下任何关机的痕迹
+- halt -w 不真关机，只是把关机的事件记录到 `/var/log/wtmp`
+
+
