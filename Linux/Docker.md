@@ -74,7 +74,15 @@
     - --name 配置容器名字
     - -d detach后台启动程序
     - 最后写 image 名字
-- 
+- 查看当前运行的容器：`docker ps `
+    - 查看所有容器 ：`docker ps -a`
+- 停止容器：`docker stop 容器name或id`
+- 启动容器：`docker start 容器name或id`
+- 删除容器：`docker rm 容器id`
+    - 删除所有容器：`docker rm ${docker -a -q}`
+- 容器日志：`docker logs 容器name或id`
+- 登录容器：`docker exec -it 容器name或id bash `
+
 
 ### Dockerfile使用
 ##### 使用入门案例
@@ -103,6 +111,7 @@
     - `-t`如果构建成功 可以指定保存新镜像的repository和tag (多个的话就多个 -t就行了，例如 `docker build -t shykes/myapp:1.0.2 -t shykes/myapp:latest .`)
 
 #### RUN命令
+
 ### .dockerignore文件的使用
 - .dockerignore文件是依据 Go的PathMatch规范来的，使用和.gitignore类似
 
@@ -114,15 +123,8 @@
 - 运行默认配置的容器：`docker run --name test-redis -d redis`
 - 使用本地配置文件启动redis容器
 - `sudo docker run -v /myredis/conf/redis.conf:/usr/local/etc/redis/redis.conf --name myredis redis redis-server /usr/local/etc/redis/redis.conf`
-- 查看当前运行的容器：`docker ps `
-    - 查看所有容器 ：`docker ps -a`
-- 停止容器：`docker stop 容器name或id`
-- 启动容器：`docker start 容器name或id`
 - port-redis容器的端口映射：`sudo docker run -d -p 6379:6379 --name port-redis redis` 左本机右容器
-- 删除容器：`docker rm 容器id`
-    - 删除所有容器：`docker rm ${docker -a -q}`
-- 容器日志：`docker logs 容器name或id`
-- 登录容器：`docker exec -it 容器name或id bash `
+
 
 ## 安装 Jenkins
 - `sudo docker pull jenkins` 下拉镜像
@@ -132,6 +134,7 @@
 
 ## 安装 PostgreSQL
 - [Docker 安装 PostgreSQL](https://github.com/Kuangcp/Notes/blob/master/Database/Postgresql.md)
+
 ## 安装 Oracle
 
 ************************
