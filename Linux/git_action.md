@@ -1,7 +1,8 @@
 # Tips:
 * 1 、虽然在物理上本地仓库中所有文件是放在一起的，但是分支之间是互不能访问以及操作的
 * 2 、在本地的每次commit都是有index的，上传到github可以不用那么频繁，反正都是有记录的
-* 3、 在github上修改了项目后，或者以后是和别人一起开发，就要先git pull origin （master）将别人的分支和自己的分支都拉下来确保是最新，再进行git push -u origin master 才能正确提交代码，如果不pull，提交是注定失败的，还会扰乱分支图
+* 3、 在github上修改了项目后，或者以后是和别人一起开发，就要先git pull origin （master）将别人的分支和自己的分支都拉下来确保是最新，
+    * 再进行git push -u origin master 才能正确提交代码，如果不pull，提交是注定失败的，还会扰乱分支图
 * 4、在github上修改文件，容易引起编码的变化，这时候没有pull就修改文件再commit也是会在push的时候很麻烦，最好在本地修改文件
 	最好是，在github上修改了就在本地pull之后再修改文件，万一出错了回退也简单
 * 5、出现了冲突，从而无法自动merge：
@@ -95,7 +96,8 @@
         2.$ssh-keygen -t rsa -C "Kuangchengping@outlook.com" 回车 
         3.设置密码 ad14293366
         4.测试SSH $ssh -T git@github.com  输入yes 输入 密码  ****
-```	
+```
+
 ### 【 .gitingnore 文件】 :
 - `test.txt`  忽略该文件
 - `*.html`  忽略所有HTML文件

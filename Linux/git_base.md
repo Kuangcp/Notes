@@ -59,7 +59,7 @@
 - 拉取更新 ：`git fetch 名称`
 
 #### 【git push】
-- 出现RPC failed; result=22, HTTP code = 411 的错误
+- 出现 `RPC failed; result=22, HTTP code = 411` 的错误
     - 就是因为一次提交的文件太大，需要改大缓冲区 例如改成500m  `git config http.postBuffer 524288000`
 - 提交本地所有分支 `git push --all` pull 同理
 - 第一次与远程建立连接 `git push -u origin master ` 、`git push --set-uptream master` 、`git push -all` 
@@ -95,6 +95,11 @@
 - 删除远程的tag `git push origin --delete tag <tagname>` 
 
 ### 分支操作
+
+#### 【git clone】
+- `git clone branchname URL` 克隆指定分支
+- `git clone 目录` 克隆下来后更名为指定目录
+
 #### 【git checkout】
 - [官方文档](https://git-scm.com/docs/git-checkout)
 - `git checkout 文件名 文件名` git会在索引中找文件，有就取出，没有就从最新的commit回找，取出第一个找到的版本，
@@ -104,7 +109,7 @@
     - 取出指定节点状态的某文件，而且执行完命令后，取出的那个状态会成为head状态，
     - 需要执行  ` git reset HEAD` 来清除这种状态
 - `git pull --all` 推送本地所有的分支
-- `git clone branchname URL` 克隆指定分支
+
 
 
 #### 开发流程的常用分支操作
@@ -112,17 +117,20 @@
     - 功能分支 `feature-*` 
     - 预发布分支 `release`
     - 修复bug `fixbug`
+
 *******
 - `git checkout -b feature-x develop` 从develop的分支生成一个功能分支，并切换过去
 - 完成功能后：`git checkout develop `
     - 合并： `git merge --no-ff feature-x`
     - 删除： `git branch -d feature-x`
+
 *******
 - `git checkout -b release-1.2 develop` 新建一个预发布分支
     - `git checkout master` 确认没有问题后 `git merge --no-ff release-1.2` 合并到master分支
     - `git tag -a 1.2` 打标签，这就是github上软件的版本控制
     - 没有问题后 合并到develop分支`git checkout develop` `git merge --no-ff release-1.2`
     - 删除预发布分支 `git branch -d release-1.2`
+
 *******
 - `git checkout -b fixbug-0.1 master` 新建修复bug的分支 
 - `git checkout master ``git merge --no-ff fixbug-0.1 ``git tag -a 0.1.1` 修补结束后合并到master分支

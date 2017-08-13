@@ -2,6 +2,9 @@
 
 ## 概述
 - 严格SQL标准
+- Schemas 和表，用户的关系：
+    - 
+
 ## 安装
 ### Postgresql 的安装（Docker方式）
 
@@ -49,10 +52,12 @@
 #### 解释Dockerfile文件
 > 待学习解释
 
+
+
 ## Postgresql终端命令行使用
 `用熟悉的MySQL命令来解释`
 - `\l` show databases
-- `\c dbname` 切换数据库
+- `\c dbname [user]` 切换数据库
 - `\dt` show tables
 - `\d tablename` desc tablename
 - `\di` 查看索引
@@ -74,10 +79,23 @@
 - `createuser -P -D -R -e playboy`  //创建一个用户,-P要设置密码，-R,不参创建其他用户，-D不能创建数据库
 - `create user myth` 不带login属性
 - `create role myth` 具有login属性
-
-- `psql -U playboy -d playboy` 登录用户，一般默认是用户同名要有数据库才能登录
+- `psql -U playboy -d playboy` 登录用户，一般默认是有用户同名数据库才能登录
 
 - [修改默认登录不需要密码的配置](http://www.linuxidc.com/Linux/2013-04/83564p2.htm)
 
 ### 修改权限
-- `ALTER ROLE david LOGIN` 
+> [参考博客](http://blog.csdn.net/beiigang/article/details/8604578)
+> [参考博客_角色](http://www.cnblogs.com/stephen-liu74/archive/2012/05/18/2302639.html)
+> [配置](http://www.linuxidc.com/Linux/2013-04/83564p2.htm)
+
+- `ALTER ROLE rolename LOGIN;`  设置登录权限
+- `ALTER ROLE david WITH PASSWORD 'ufo456';` 设置密码登录权限
+    - 但是，默认是不需要密码 查看pg_hba.conf 文件，发现local 的METHOD 为trust，所以不需要输入密码
+    - 将local 的METHOD 更改为password，然后保存重启postgresql。
+    - [博客](http://www.linuxidc.com/Linux/2014-02/96886.htm)
+- ` ALTER ROLE sandy VALID UNTIL '2014-04-24';` 设置角色有效期
+- `SELECT * from pg_roles ;` 查看所有角色
+
+- `CREATE ROLE father login nosuperuser nocreatedb nocreaterole noinherit encrypted password 'abc123';` 
+    - 在PostgreSQL中，首先需要创建一个代表组的角色，之后再将该角色的membership 权限赋给独立的角色即可。
+- `GRANT CONNECT ON DATABASE test to father;` 角色赋予数据库test 连接权限和相关表的查询权限。

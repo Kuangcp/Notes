@@ -1,3 +1,7 @@
+## 2017-08-13 16:48:04
+- `https://raw.githubusercontent.com/Kuangcp/ImageRepos/maste/Tech/8.jpg`
+    - `https://raw.githubusercontent.com/用户/仓库/分支/文件的相对目录`
+
 ## 2017-08-01 16:42:49
 - 使用逆序来写记录，更利于查看
 - 分区当时就应该分 / 和 /home 这样的话，换系统几乎没有太大影响（用户名一致）
