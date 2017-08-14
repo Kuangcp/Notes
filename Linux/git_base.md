@@ -98,7 +98,7 @@
 
 #### 【git clone】
 - `git clone branchname URL` 克隆指定分支
-- `git clone 目录` 克隆下来后更名为指定目录
+- `git clone URL 目录` 克隆下来后更名为指定目录
 
 #### 【git checkout】
 - [官方文档](https://git-scm.com/docs/git-checkout)

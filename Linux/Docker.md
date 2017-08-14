@@ -70,13 +70,14 @@
 - 查看 ： `docker images`
 - 删除 ： `docker rmi 镜像名`
 #### 容器命令
-- 运行：`docker run --name conrainer-name -d image-name`
+- 运行：`docker run -d --name conrainer-name image-name`
     - --name 配置容器名字
     - -d detach后台启动程序
     - -i 交互模式运行容器 `docker run  -i -t ubuntu /bin/bash`
     - -t 容器启动后进入其命令行
     - -v 将本地文件夹建立映射到容器内
     - -p 端口映射 左本机右容器 `-p 80:8080` 如果相同就直接 `-p 22`
+    - --env name="tanky" 设置环境变量
 
 - 查看当前运行的容器：`docker ps `
     - 查看所有容器 ：`docker ps -a`
@@ -114,6 +115,10 @@
     - `-f` 指向任意位置的文件进行配置 `docker build -f /path/to/a/Dockerfile .`
     - `-t`如果构建成功 可以指定保存新镜像的repository和tag (多个的话就多个 -t就行了，例如 `docker build -t shykes/myapp:1.0.2 -t shykes/myapp:latest .`)
 
+
+##### MAINTAINER
+- 留开发者名字 例如 `MAINTAINER kuangcp myth.kuang@gmail.com`
+
 ##### FROM 
 > 基于某镜像构建
 
@@ -125,17 +130,61 @@
 - `RUN ["executable", "param1", "param2" ... ]`
 
 ##### ENTRYPOINT
-- 命令设置在容器启动时执行命令 `ENTRYPOINT echo "Welcome!"` 那么每次启动容器都有这个输出
+- 命令设置在容器启动时执行命令 一般用来做初始化容器，或者运行持久软件
+- `ENTRYPOINT echo "Welcome!"` 那么每次启动容器都有这个输出
 - `ENTRYPOINT cmd param1 param2 ...`
 - `ENTRYPOINT ["cmd", "param1", "param2"...]`
 
-##### MAINTAINER
-- 留开发者名字 例如 `MAINTAINER kuangcp myth.kuang@gmail.com`
+##### USER
+- 如果指定 mysql 的运行用户 `ENTRYPOINT ["mysql", "-u", "daemon"]`
+- 更好的方式是：
+```
+    ENTRYPOINT ["memcached"]
+    USER daemon
+```
+
+##### EXPOSE
+> 开放端口 例如 EXPOSE 22
+
+##### ENV
+- 设置环境变量 `ENV <key> <value>`
+- 设置了后，后续的RUN命令都设置了后，后续的RUN命令都可以使用可以使用
+
+##### ADD
+- `ADD <src> <dest>` 
+    - src 是Dockerfile的相对目录，可以是本地也可以是远程URI
+    - dest 容器中的绝对路径
+
+##### VOLUME
+- `VOLUME ["<mountpoint>"]` `VOLUME ["/data"]` 创建挂载点 用于共享目录
+
+##### WORKDIR
+- `WORKDIR /path/to/workdir`
+- 配置RUN, CMD, ENTRYPOINT 命令设置当前工作路径
+- 可以设置多次，如果是相对路径，则相对前一个 WORKDIR 命令
+    - 例如：`WORKDIR /a WORKDIR b WORKDIR c RUN pwd` 其实是在 /a/b/c 下执行 pwd
+    
+##### CMD
+`三种格式`
+- CMD ["executable","param1","param2"] (like an exec, preferred form)
+- CMD ["param1","param2"] (as default parameters to ENTRYPOINT)
+- CMD command param1 param2 (as a shell)
+- `一个Dockerfile里只能有一个CMD，如果有多个，只有最后一个生效。`
+
+##### ONBUILD
+- 
+
+***********
+`案例`
+[docker-wordpress-nginx](https://github.com/eugeneware/docker-wordpress-nginx)
+[rails-meets-docker](https://github.com/gemnasium/rails-meets-docker)
+
+[官方文档 dockerfile](https://www.docker.io/learn/dockerfile/)
+[官方文档 builder](http://docs.docker.io/reference/builder/)
 
 *********************
 ### dockerignore文件的使用
 - .dockerignore文件是依据 Go的PathMatch规范来的，使用和.gitignore类似
-
 
 
 ************************************
@@ -170,7 +219,8 @@
 
 ## Docker中构建一个Ubuntu
 - 最为简单的是：`docker run  -i -t --name ubuntu17 -p 9990:22 -p 9991:8080 -p 9992:6379 ubuntu /bin/bash`
-- 直接跑一个Ubuntu出来,预留出要用的端口，然后进去之后就 `apt update` 才能安装软件，现在才知道这个命令的重要性
+    - 直接跑一个Ubuntu出来,预留出要用的端口，容器运行不会退出
+    - 进终端之后就 `apt update` 才能安装软件，现在才知道这个命令的重要性
 - 特点：
     - 这个Ubuntu root用户直接用，新建用户用不了sudo，重启？不可以
 

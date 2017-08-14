@@ -51,18 +51,23 @@ export PATH=${JAVA_HOME}/bin:$PATH
 
 ********************************
 
-
 ## 配置MySQL
 - 更新列表` sudo apt-get update `
 - 安装MySQL `sudo apt-get install mysql-server mysql-client`
 - 检查服务是否已经开启 ： `sudo netstat -tap | grep mysql `
   - （启动显示cp 0 0 localhost.localdomain:mysql *:* LISTEN - ）
 - 启动服务 ： `sudo /etc/init.d/mysql restart `
-- 查看编码 ： `show variables like 'character_set_%`
+- 查看编码 ： `status` 或者 `show variables like 'character_set_%`
 - 打开配置文件： `sudo gedit /etc/mysql/mysql.conf.d/mysqld.cnf`
-- `[mysqld]`块下添加一行： `character-set-server=utf8`
+    - `[mysqld]`块下添加一行： `character-set-server=utf8`
 - 重启MySQL ：`sudo systemctl restart mysql`
-- 再次查看编码确认是utf8
+
+*************
+- 5.7.18 全是utf8， 5.7.19 客户端以及连接就变成了拉丁，不知道会不会有问题,,不能输入中文？！！！！
+    -  [mysql] 下添加 `default-character-set=utf8` [mysql]没有就加在mysqld前面
+
+- 如果是服务器要配置远程访问 就 bind-address=服务器IP
+    - 确保skip-networking被删除或者屏蔽，否则不支持TCP/IP 访问
 
 ### 使用docker安装mysql
 - [官方文档](https://hub.docker.com/_/mysql/)
