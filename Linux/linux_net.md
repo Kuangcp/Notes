@@ -132,6 +132,8 @@
 - 列出可以选择的抓包对象 `tcpdump -D`（USB设备也能抓？）
 
 ### netcat
+> sudo apt install netcat
+
 - 开始监听端口 ： `nc -l 11044`
     - 建立连接 `nc 127.0.0.1 11044` 任一方退出nc 就终止了连接
 
@@ -146,14 +148,36 @@
 
 - 传输文件 （相同的还有 ftp scp）
     - 服务端开启端口，准备好发送的文件 `nc -v -l 12345 < temp_out.md`
-    - 客户端：`nc -v -n host port > temp_in.md`
+    - 客户端接收文件：`nc -v -n host port > temp_in.md`
     - 单次连接，传输完毕自动断开 服务端也可以是接收文件，将`< >`互换即可
-    - 没有进度提示。。。。
+    - 没有进度提示,大文件也不支持
 
 - 传输文件夹 
     - 服务端 `tar -cvPf - /root/book/ | nc -l 12345`
     - 客户端 `nc -n host port | tar -xvPf -`
     - 这是未压缩的， 压缩再加上参数即可 例如 `gzip -czvPf -xzvPf`
+
+### scp
+> scp命令用于在Linux下进行远程拷贝文件的命令，和它类似的命令有cp，认证用的是ssh
+
+```
+    -1：使用ssh协议版本1； 
+    -2：使用ssh协议版本2； 
+    -4：使用ipv4； 
+    -6：使用ipv6； 
+    -B：以批处理模式运行； 
+    -C：使用压缩； 
+    -F：指定ssh配置文件； 
+    -l：指定宽带限制； 
+    -o：指定使用的ssh选项； 
+    -P：指定远程主机的端口号； 
+    -p：保留文件的最后修改时间，最后访问时间和权限模式； 
+    -q：不显示复制进度； 
+    -r：以递归方式复制。
+```
+- 远程到本地`scp root@10.10.10.10:/opt/soft/nginx-0.5.38.tar.gz /opt/soft/`
+- 本地到远程`scp /opt/soft/nginx-0.5.38.tar.gz root@10.10.10.10:/opt/soft/scptest`
+
 
 ### rsync 
 > 同步 个人倾向于称为本地远程， 书籍上是称为 源端 目的端
@@ -310,7 +334,29 @@
 - 默认端口:`ssh-copy-id "username@host"` 输密码就可以了
 - 指定端口 `ssh-copy-id ”-p port username@host“` 或者:`ssh-copy-id " username@host" -p port`
     
-- 客户端登录 `ssh -p 22 username@ip`
+- 成功后 客户端登录 `ssh -p 22 username@ip`
+    - root用户似乎不能这样登录
+##### 使用别名登录
+`vim ~/.ssh/config`
+```    
+    Host aliyun
+        HostName www.ttlsa.com
+        Port 22
+        User root
+        IdentityFile  ~/.ssh/id_rsa.pub
+        IdentitiesOnly yes
+```
+`参数解释`
+```
+    HostName 指定登录的主机名或IP地址
+    Port 指定登录的端口号
+    User 登录用户名
+    IdentityFile 登录的公钥文件
+    IdentitiesOnly 只接受SSH key 登录
+    PubkeyAuthentication
+```
+- `ssh aliyun` 即可登录 但是要输入 pub的密码，
+    - 如果生成公钥时没设置密码就要错三次，然后输入用户密码，不觉得有多方便，还不如 alias
 
 *******************************************
 

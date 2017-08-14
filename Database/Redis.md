@@ -1,4 +1,4 @@
-# 【Redis的使用】
+# Redis
 ## 【windows上的基本配置】
 - 注册为服务
 	- `redis-server --service-install redis.windows.conf --loglevel verbose`
@@ -7,15 +7,35 @@
 - 配置密码
 	- `requirepass redis1104`
 	- 客户端登录 `auth redis1104`
+
+## Linux下的使用
+- 下载源码，make编译， 复制src编译结果 其中的 redis-cli redis-server就可以用了，redis-benchmark可选，测性能
+    - 再复制下面的简化配置文件，或者使用源码中的配置文件自己配置下
+- 再创建以下两个脚本就可以便捷的使用redis了
+`server_redis.sh`
+```
+    basepath=$(cd `dirname $0`; pwd)
+    echo $basepath
+    $basepath/redis-server $basepath/redis.conf
+```
+`client_redis.sh`
+```
+    basepath=$(cd `dirname $0`; pwd)
+    $basepath/redis-cli -p 6379
+```
+
 ##【Java使用redis配置】
 [Java使用Redis：详见此处末尾](https://github.com/Kuangcp/Notes/blob/master/TXT/Java/EE.md)
+
 ****************************
-## redis配置
+## redis配置文件
 - [配置文件讲解](https://github.com/Kuangcp/Notes/blob/master/ConfigFiles/Database/redis/explain_redis.conf)
 - [原始配置文件](https://github.com/Kuangcp/Notes/blob/master/ConfigFiles/Database/redis/redis.conf)
 - `[×]使用ing`[简化配置文件](https://github.com/Kuangcp/Notes/blob/master/ConfigFiles/Database/redis/simple_redis.conf) 
 
-## redis命令行常规使用
+
+*********
+## Redis命令行常规使用
 ### 常用的数据类型操作
 - 【`字符串`】
     - get 
@@ -106,6 +126,7 @@
     - 从服务变成主服务 `slaveof no one` (同步的数据集不会丢失，迅速替换主服务器)
 - *loglevel*
     - `./redis-server /etc/redis/6379.conf --loglevel debug	`
+
 ### 数据安全和性能
 #### 持久化策略
 #### 复制
@@ -118,10 +139,15 @@
 ### 存储配置信息
 ### 自动补全
 - 搜索建议
+
 ### 构建锁
+
 ### 任务队列
 - 发送邮件
+
 ### 订阅发送结构
+
+
 ### 【Java 使用 redis 配置】
 - maven依赖(Spring 4.1.7)：
 ```xml
@@ -177,8 +203,8 @@
 - java 实际测试
 - [JedisUtilsTest.java](https://github.com/Kuangcp/Maven_SSM/blob/master/src/test/java/redis/JedisUtilTest.java)
 
-#### redis 使用后要disconnect释放连接
-#### redis 事务 exec释放事务
+- jedis 使用后要disconnect释放连接,最新版本close就不用了，使用连接池就不用
+- jedis 的事务 使用exec释放事务
 
 ### jedis遇到的异常
 - Invocation of init method failed; nested exception is java.lang.NoSuchMethodError: org.springframework.core.serializer.support.DeserializingConverter

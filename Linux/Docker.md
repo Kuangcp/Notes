@@ -4,17 +4,17 @@
     - [简介](#简介)
     - [个人理解](#个人理解)
     - [安装与卸载](#安装与卸载)
-        - [通过deb文件方式来安装：](#通过deb文件方式来安装)
-        - [开始安装](#开始安装)
+        - [通过deb文件安装](#通过deb文件安装)
         - [卸载](#卸载)
     - [常规使用](#常规使用)
         - [镜像命令](#镜像命令)
         - [容器命令](#容器命令)
-        - [Dockerfile使用](#dockerfile%E4%BD%BF%E7%94%A8)
+        - [Dockerfile](#Dockerfile)
             - [使用入门案例](#使用入门案例)
-            - [RUN命令](#run%E5%91%BD%E4%BB%A4)
-        - [.dockerignore文件的使用](#dockerignore%E6%96%87%E4%BB%B6%E7%9A%84%E4%BD%BF%E7%94%A8)
-    - [安装redis](#%E5%AE%89%E8%A3%85redis)
+            - [RUN命令](#RUN)
+        - [.dockerignore文件的使用](#dockerignore文件的使用)
+    - [安装redis](#安装redis)
+    - [Docker中构建一个Ubuntu](Docker中构建一个Ubuntu)
 
 *****************************************
 ## 简介
@@ -41,7 +41,7 @@
 `apt`
 - `sudo apt install docker.io`
 
-#### 通过deb文件方式来安装：
+#### 通过deb文件安装
 - [点击选择文件](https://download.docker.com/linux/debian/dists/)
 - 进去后选择debain的版本，deepin15.4 的版本是stretch 然后pool/stable/amd64/选版本即可 
 - 例如：[Deepin 15.4直接点这里](https://download.docker.com/linux/debian/dists/stretch/pool/stable/amd64/)
@@ -49,7 +49,7 @@
 - 双击或者`sudo dpkg -i deb文件`
 - 测试安装成功 `sudo docker run hello-world`
 
-#### 不加sudo 执行docker命令
+#### 不加sudo执行docker命令
 - 如果没有docker组，添加组 `sudo groupadd docker `
 - 将当前用户加入用户组 `sudo gpasswd -a $USER docker`
     - 或者?? ：`sudo usermod -aG docker $USER` 会有问题
@@ -87,9 +87,9 @@
 - 容器日志：`docker logs 容器name或id`
 - 登录容器：`docker exec -it 容器name或id bash `
 
-
-### Dockerfile使用
-##### 使用入门案例
+******************
+### Dockerfile
+#### 使用入门案例
 - 新建目录然后 `touch Dockerfile` `gedit Dockerfile` 输入如下文本
 ```
     #随意写的
@@ -104,6 +104,7 @@
 - 创建镜像成功后 `docker run --name ContainerName -d repository/tag` 新建容器来运行镜像
 
 ***************************
+#### Dockerfile命令理解
 - Dockerfile是一个`镜像`的表示，可以通过Dockerfile来描述构建镜像的步骤，且可以自动构建一个容器
 - 所有的 Dockerfile 命令格式都是: `INSTRUCTION arguments` 
 - 最好在运行这个配置文件的时候新建一个空目录目录下放dockerfile，不要使用根目录，不然全部的东西都传到守护进程里去了
@@ -113,25 +114,26 @@
     - `-f` 指向任意位置的文件进行配置 `docker build -f /path/to/a/Dockerfile .`
     - `-t`如果构建成功 可以指定保存新镜像的repository和tag (多个的话就多个 -t就行了，例如 `docker build -t shykes/myapp:1.0.2 -t shykes/myapp:latest .`)
 
-#### FROM 
+##### FROM 
 > 基于某镜像构建
 
 - `FROM image`
 - `FROM image:tag`
 
-#### RUN
+##### RUN
 - `RUN command` command是shell `/bin/sh -c` 命令 例如 `RUN apt update`  
 - `RUN ["executable", "param1", "param2" ... ]`
 
-#### ENTRYPOINT
+##### ENTRYPOINT
 - 命令设置在容器启动时执行命令 `ENTRYPOINT echo "Welcome!"` 那么每次启动容器都有这个输出
 - `ENTRYPOINT cmd param1 param2 ...`
 - `ENTRYPOINT ["cmd", "param1", "param2"...]`
 
-#### MAINTAINER
+##### MAINTAINER
 - 留开发者名字 例如 `MAINTAINER kuangcp myth.kuang@gmail.com`
 
-### .dockerignore文件的使用
+*********************
+### dockerignore文件的使用
 - .dockerignore文件是依据 Go的PathMatch规范来的，使用和.gitignore类似
 
 
@@ -187,7 +189,7 @@
     ADD id_rsa.pub /root/.ssh/authorized_keys
 
     RUN apt-get update; 
-    RUN apt-get install -y debconf-utils iputils-ping wget curl mc htop ssh; 
+    RUN apt-get install -y apt-utils debconf-utils iputils-ping wget curl mc htop ssh; 
     RUN chmod 700 /root/.ssh; chmod 600 /root/.ssh/authorized_keys;
     RUN service ssh start
 
