@@ -7,6 +7,9 @@
 ## setting.xml配置
 
 ### 1.1 Maven常用命令:
+> mvn [插件]:[目标] [参数]
+> mvn [阶段]
+
 * mvn archetype:generate ：创建 Maven 项目
     * -DgroupId=组织名/公司网址的反写+项目名
     * -DartifactId=项目名-模块名
@@ -23,9 +26,9 @@
 * mvn eclipse:eclipse ：生成 Eclipse 项目文件
 
 ```
-mvn install:install-file -Dfile=D:\mvn\spring-context-support-3.1.0.RELEASE.jar 
--DgroupId=org.springframework -DartifactId=spring-context-support 
--Dversion=3.1.0.RELEASE -Dpackaging=jar
+    mvn install:install-file -Dfile=D:\mvn\spring-context-support-3.1.0.RELEASE.jar\
+     -DgroupId=org.springframework -DartifactId=spring-context-support\
+     -Dversion=3.1.0.RELEASE -Dpackaging=jar
 
 ```
 ## 2.maven配置
@@ -304,12 +307,6 @@ A 项目 compile
 ****************************
 
 
-
-
-
-
-
-**********************
 ## Maven和Ant的区别一:
 
 1.ant脚本是可以直接运行在maven中的。maven和ant最大的差别就是在于maven的编译以及所有的脚本都有一个基础，就是POM（project object model）。这个模型定义了项目的方方面面，然后各式各样的脚本在这个模型上工作，而ant完全是自己定义，显然maven更胜一筹。

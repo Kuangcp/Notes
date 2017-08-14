@@ -308,9 +308,9 @@
 ##### 2.【更简单的做法 推荐！！！】
 - 两方安装好软件 客户端生成好了秘钥对之后
 - 默认端口:`ssh-copy-id "username@host"` 输密码就可以了
-- 指定端口 `ssh-copy-id ”-p port username@host“` 或者:`ssh-copy-id ” username@host“ -p port`
+- 指定端口 `ssh-copy-id ”-p port username@host“` 或者:`ssh-copy-id " username@host" -p port`
     
-- 客户端登录 `ssh -p22 username@ip`
+- 客户端登录 `ssh -p 22 username@ip`
 
 *******************************************
 

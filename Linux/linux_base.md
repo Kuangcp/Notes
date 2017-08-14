@@ -3,22 +3,26 @@
 
 ### 【用户管理】
 - 添加用户 `sudo adduser username` 对比 `useradd`只是新建一个用户不会创建主目录
-- 添加到sudo组 ，使用命令更安全：`sudo gpasswd -a $USER docker`
+- 添加到sudo组 ，使用命令更安全：`sudo gpasswd -a $USER sudo`
     -  使用修改文件的方式：（不推荐）
     - `chmod 777 /etc/sudoers`
     - 添加 ：`kuang  ALL=(ALL:ALL)ALL`
     - `chmod 440 /etc/sudoers`
     - `rwx 对应一个三位的二进制数， 1/0 表示开关`
 - 查看是否设置成功 ： `groups username`
+- 删除用户以及对应的home目录：`sudo deluser username --remove-home` 
 
+*****
 - `su username` 切换用户
 - `su -l username` 当前用户的环境下登录用户（当成一个程序一样可以退出登录）
 
-- 删除用户以及home目录：`sudo deluser username --remove-home` 
-
 - `usermod` 修改相关信息
-    - `-s 更改shell环境` `-g 更改用户组` `-l 新用户名`
-- `passwd 选项 用户名` 更改口令
+    - `-s 更改shell环境`
+    - `-g 更改用户组`
+    - `-l 新用户名`
+
+******
+- `passwd 选项 用户名` 更改口令(密码)
     - `-l 锁定口令，禁用账号`  `-u 口令解锁` `-d 账号无口令` `-f 强迫用户下次登录时修改口令`
     - 当前用户 `passwd` 就是修改当前用户口令 超级用户就可以命令后接用户名，修改任意用户
 

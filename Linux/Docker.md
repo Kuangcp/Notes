@@ -1,23 +1,22 @@
 # Docker
 ## 目录 
 - [Docker](#docker)
-    - [简介](#%E7%AE%80%E4%BB%8B)
-    - [个人理解](#%E4%B8%AA%E4%BA%BA%E7%90%86%E8%A7%A3)
-    - [docker安装与卸载](#docker%E5%AE%89%E8%A3%85%E4%B8%8E%E5%8D%B8%E8%BD%BD)
-        - [通过deb文件方式来安装：](#%E9%80%9A%E8%BF%87deb%E6%96%87%E4%BB%B6%E6%96%B9%E5%BC%8F%E6%9D%A5%E5%AE%89%E8%A3%85%EF%BC%9A)
-        - [开始安装](#%E5%BC%80%E5%A7%8B%E5%AE%89%E8%A3%85)
-        - [卸载docker](#%E5%8D%B8%E8%BD%BDdocker)
-    - [常规使用](#%E5%B8%B8%E8%A7%84%E4%BD%BF%E7%94%A8)
-        - [镜像命令](#%E9%95%9C%E5%83%8F%E5%91%BD%E4%BB%A4)
-        - [容器命令](#%E5%AE%B9%E5%99%A8%E5%91%BD%E4%BB%A4)
+    - [简介](#简介)
+    - [个人理解](#个人理解)
+    - [安装与卸载](#安装与卸载)
+        - [通过deb文件方式来安装：](#通过deb文件方式来安装)
+        - [开始安装](#开始安装)
+        - [卸载](#卸载)
+    - [常规使用](#常规使用)
+        - [镜像命令](#镜像命令)
+        - [容器命令](#容器命令)
         - [Dockerfile使用](#dockerfile%E4%BD%BF%E7%94%A8)
-            - [使用入门案例](#%E4%BD%BF%E7%94%A8%E5%85%A5%E9%97%A8%E6%A1%88%E4%BE%8B)
+            - [使用入门案例](#使用入门案例)
             - [RUN命令](#run%E5%91%BD%E4%BB%A4)
         - [.dockerignore文件的使用](#dockerignore%E6%96%87%E4%BB%B6%E7%9A%84%E4%BD%BF%E7%94%A8)
     - [安装redis](#%E5%AE%89%E8%A3%85redis)
 
 *****************************************
-
 ## 简介
 - `Docker 是一个开源的应用容器引擎` 理解为加强版虚拟机
 - 让开发者可以打包他们的应用以及依赖包到一个可移植的容器中，然后发布到任何流行的 Linux 机器上，也可以实现虚拟化。容器是完全使用沙箱机制，相互之间不会有任何接口。
@@ -30,8 +29,9 @@
 - 然后`docker ps`查看运行状况
 
 ***************************************
-## docker安装与卸载
+## 安装与卸载
 > [daocloud安装帮助](http://get.daocloud.io/#install-docker)
+
 #### 通过命令安装
 `snap`
 - 安装snap `sudo apt install snapd`
@@ -49,13 +49,13 @@
 - 双击或者`sudo dpkg -i deb文件`
 - 测试安装成功 `sudo docker run hello-world`
 
-`不加sudo 执行docker命令`
-- 添加用户组 `sudo groupadd docker `
+#### 不加sudo 执行docker命令
+- 如果没有docker组，添加组 `sudo groupadd docker `
 - 将当前用户加入用户组 `sudo gpasswd -a $USER docker`
-- 或者?? ：`sudo usermod -aG docker $USER`
-- 然后重新登录下就好了 ？ 注销登录
+    - 或者?? ：`sudo usermod -aG docker $USER` 会有问题
+- 然后重新注销登录
 
-#### 卸载docker
+#### 卸载
 - `sudo apt-get purge docker-ce`
 - `sudo rm -rf /var/lib/docker`
 
@@ -73,7 +73,11 @@
 - 运行：`docker run --name conrainer-name -d image-name`
     - --name 配置容器名字
     - -d detach后台启动程序
-    - 最后写 image 名字
+    - -i 交互模式运行容器 `docker run  -i -t ubuntu /bin/bash`
+    - -t 容器启动后进入其命令行
+    - -v 将本地文件夹建立映射到容器内
+    - -p 端口映射 左本机右容器 `-p 80:8080` 如果相同就直接 `-p 22`
+
 - 查看当前运行的容器：`docker ps `
     - 查看所有容器 ：`docker ps -a`
 - 停止容器：`docker stop 容器name或id`
@@ -96,7 +100,7 @@
     RUN pwd
 ```
 - `docker build .` 如果成功则会得到一个没有名字的镜像
-- `docker build -t repository/tag .` 给镜像指定名字
+    - `docker build -t repository/tag .` 给镜像指定名字
 - 创建镜像成功后 `docker run --name ContainerName -d repository/tag` 新建容器来运行镜像
 
 ***************************
@@ -107,10 +111,25 @@
 - 同样的可以使用`.dockerignore`文件来忽略不要上传的文件
 - `docker build` 
     - `-f` 指向任意位置的文件进行配置 `docker build -f /path/to/a/Dockerfile .`
-    - 您使用docker构建的-f标志指向文件系统中任何位置的Dockerfile。
     - `-t`如果构建成功 可以指定保存新镜像的repository和tag (多个的话就多个 -t就行了，例如 `docker build -t shykes/myapp:1.0.2 -t shykes/myapp:latest .`)
 
-#### RUN命令
+#### FROM 
+> 基于某镜像构建
+
+- `FROM image`
+- `FROM image:tag`
+
+#### RUN
+- `RUN command` command是shell `/bin/sh -c` 命令 例如 `RUN apt update`  
+- `RUN ["executable", "param1", "param2" ... ]`
+
+#### ENTRYPOINT
+- 命令设置在容器启动时执行命令 `ENTRYPOINT echo "Welcome!"` 那么每次启动容器都有这个输出
+- `ENTRYPOINT cmd param1 param2 ...`
+- `ENTRYPOINT ["cmd", "param1", "param2"...]`
+
+#### MAINTAINER
+- 留开发者名字 例如 `MAINTAINER kuangcp myth.kuang@gmail.com`
 
 ### .dockerignore文件的使用
 - .dockerignore文件是依据 Go的PathMatch规范来的，使用和.gitignore类似
@@ -147,6 +166,36 @@
 - docker pull jenkins
 
 
+## Docker中构建一个Ubuntu
+- 最为简单的是：`docker run  -i -t --name ubuntu17 -p 9990:22 -p 9991:8080 -p 9992:6379 ubuntu /bin/bash`
+- 直接跑一个Ubuntu出来,预留出要用的端口，然后进去之后就 `apt update` 才能安装软件，现在才知道这个命令的重要性
+- 特点：
+    - 这个Ubuntu root用户直接用，新建用户用不了sudo，重启？不可以
+
+- 现在的问题是：能不能在已经运行的容器中添加端口映射？？要是用到途中发现端口少了就麻烦了
+    
+
+****************
+- 自己写构建文件，安装相应的软件
+```
+    FROM ubuntu
+    MAINTAINER kuangcp myth.kuang@gmail.com
+    ENTRYPOINT echo "Welcome login server by ssh"
+
+    ENV DEBIAN_FRONTEND noninteractive
+
+    ADD id_rsa.pub /root/.ssh/authorized_keys
+
+    RUN apt-get update; 
+    RUN apt-get install -y debconf-utils iputils-ping wget curl mc htop ssh; 
+    RUN chmod 700 /root/.ssh; chmod 600 /root/.ssh/authorized_keys;
+    RUN service ssh start
+
+    EXPOSE 22
+```
+- `docker build . -t myth:ssh`
+- `docker run -d -t --name myth -p 8989:22 myth:ssh`
+- `docker start myth`
 
 
 
