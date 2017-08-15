@@ -1,3 +1,8 @@
+## 2017-08-15 21:00:20
+- 并不总是有好书的，别人的好评又如何，还是要自己去看，去思考去验证，例如 ：
+- [读后感](./Article/ReadBook.md) 里面发表的对于 《Python从入门到实践》 和《Java程序员修炼之道》的看法
+
+
 ## 2017-08-13 16:48:04
 - `https://raw.githubusercontent.com/Kuangcp/ImageRepos/maste/Tech/8.jpg`
     - `https://raw.githubusercontent.com/用户/仓库/分支/文件的相对目录`
