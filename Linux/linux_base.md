@@ -5,8 +5,8 @@
 ### 【用户管理】
 - 添加用户 `sudo adduser username` 对比 `useradd`只是新建一个用户不会创建主目录
 - 添加到sudo组 ，使用命令更安全：`sudo gpasswd -a $USER sudo` 但是要注销或者重启才生效貌似
-    -  使用修改文件的方式：（不推荐） 但是在docker中跑Ubuntu新建用户时很有用
-    - `chmod 777 /etc/sudoers`
+    -  使用修改文件的方式：（不推荐） 但是在docker中跑Ubuntu新建用户时很有用，也可以不用动文件，添加进组是有效的，看情况吧
+    - `chmod 777 /etc/sudoers` 找不到文件说明没有安装sudo root用户 `apt install sudo `
     - 添加 ：`kuang  ALL=(ALL:ALL)ALL`
     - `chmod 440 /etc/sudoers`
     - `rwx 对应一个三位的二进制数， 1/0 表示开关`
