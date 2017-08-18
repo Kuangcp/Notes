@@ -64,11 +64,15 @@
 ## 常规使用
 - 如果出现命令执行失败，可以登录docker的控制台直接执行 `boot2docker ssh`
 - 可以将镜像看成真正运行的程序，容器就是具体的一些配置，所以镜像是可以重复利用，容器出问题删掉就是了
+#### 基础命令
+- 登录hub.docker ：`docker login ` 或者 `docker login -u username -p password`
+
 #### 镜像命令
 - 搜索 ： `docker search 镜像名`
 - 安装 ： `docker pull 镜像名`
 - 查看 ： `docker images`
 - 删除 ： `docker rmi 镜像名`
+
 #### 容器命令
 - 运行：`docker run -d --name conrainer-name image-name`
     - --name 配置容器名字
@@ -83,10 +87,12 @@
     - 查看所有容器 ：`docker ps -a`
 - 停止容器：`docker stop 容器name或id`
 - 启动容器：`docker start 容器name或id`
+    - -i 交互模式，也可以进入终端
 - 删除容器：`docker rm 容器id`
     - 删除所有容器：`docker rm ${docker -a -q}`
 - 容器日志：`docker logs 容器name或id`
 - 登录容器：`docker exec -it 容器name或id bash `
+- `docker commit id name` 将容器为id的当前容器 保存为name镜像
 
 ******************
 ### Dockerfile
@@ -174,7 +180,7 @@
 ##### ONBUILD
 - 
 
-***********
+****
 `案例`
 [docker-wordpress-nginx](https://github.com/eugeneware/docker-wordpress-nginx)
 [rails-meets-docker](https://github.com/gemnasium/rails-meets-docker)
@@ -182,7 +188,7 @@
 [官方文档 dockerfile](https://www.docker.io/learn/dockerfile/)
 [官方文档 builder](http://docs.docker.io/reference/builder/)
 
-*********************
+
 ### dockerignore文件的使用
 - .dockerignore文件是依据 Go的PathMatch规范来的，使用和.gitignore类似
 
