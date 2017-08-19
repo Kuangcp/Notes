@@ -110,7 +110,7 @@
 - 验证是否成功：`java -version`
 - 移除 `sdk uninstall scala 2.11.6`
 
-### 文件结构展示 tree
+### 文件结构展示 tree 命令
 
 ***************************
 ## 文件管理器
@@ -152,3 +152,22 @@
 
 ### Moediter Typora CuteMarkEd 
 - 书写单个md文件方便，美观，没有目录树是硬伤
+
+### Vim
+> [Vim 学习笔记](./Linux/vim.md)
+
+************
+## 浏览器
+### FireFox
+- 分为正式版， beta， Nightly
+- 如果要配置多个火狐在电脑上 终端中 `./firefox -P` 就会进入配置文件的编辑，新建一个就好了，之后就用新建的打开该火狐`./firefox -P name`
+- 如果要同时开多个火狐 加上`--no-remote`参数，但是我这个deepin不要诶，但是Ubuntu mint加上也没有用
+
+### Chrome
+- 的确快，就是内存占用高
+
+### Vivaldi
+- 感觉采用的是chrome内核，做的更漂亮了，而且是内置了很多常用插件，的确很方便，相比于chrome更符合国内使用
+
+
+
