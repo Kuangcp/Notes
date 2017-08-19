@@ -1,5 +1,5 @@
 ## 2016.08.11 新的开始
-- 这是用来记录我的笔记的仓库，用上git来管理，促使我熟悉git命令，习惯电子笔记
+- 这是用来记录我的笔记的仓库，用上git来管理，促使我熟悉git命令，习惯记录电子笔记
 
 > 我曾七次鄙视自己的灵魂：<br/>
 > 第一次,当它本可进取时，却故作谦卑；<br/>
@@ -9,11 +9,19 @@
 > 第六次,当它鄙夷一张丑恶的嘴脸时，却不知那正是自己面具中的一副；<br/>
 > 第七次,它侧身于生活的污泥中虽不甘心，却又畏首畏尾。
 
-- [Emoji表情代码](https://github.com/Kuangcp/Notes/blob/master/ConfigFiles/emojis.md)
-- [阿里Java编程规范](https://github.com/Kuangcp/Notes/blob/master/Java/%E9%98%BF%E9%87%8C%E5%B7%B4%E5%B7%B4java%E8%A7%84%E8%8C%832017-02-09.md)
+***
+> 逃跑总是比面对容易，但好的改变却往往只能伴随着面对发生。
+
+****
+> 被追赶时不要逃跑
+
+******
+> 我生来便和我所见到的任何人都不同，甚至于我敢自信全世界也找不到一个生来象我这样的人。虽然我不比别人好，至少和他们不一样。大自然塑造了我，然后把模子打碎了。（卢梭）
+
 
 ### 开始查阅
-- [Gitbook网页版](https://kuangcp.gitbooks.io/notes/)
+- [Gitbook 网址](https://kuangcp.gitbooks.io/notes/)
+- [笔记所有文件的目录](./SUMMARY.md)
 - `浏览器的 Octotree 插件` 也方便查阅
 
 **************
@@ -22,9 +30,15 @@
 
 |     时间     |  语言或工具   |
 | :--------: | :------: |
-| 2016.07.04 |  入门Java  |
-| 2016.03.05 | 入门Groovy |
-| 2017.03.05 | 入门Python |
-| 2017.05.25 | 入门Linux  |
-| 2017.07.13 | 入门kotlin |
+| 2015.07 |  入门Java  |
+| 2016.02 | 入门Maven |
+| 2016.03 | 入门Gradle |
+| 2017.03 | 入门Python |
+| 2016.04 | 入门Groovy |
+| 2017.05 | 入门Linux  |
+| 2017.07 | 入门Kotlin |
+| 2017.08 | 入门Docker |
 
+## 个人备忘
+- [Emoji表情代码](https://github.com/Kuangcp/Notes/blob/master/ConfigFiles/emojis.md)
+- [阿里Java编程规范](https://github.com/Kuangcp/Notes/blob/master/Java/%E9%98%BF%E9%87%8C%E5%B7%B4%E5%B7%B4java%E8%A7%84%E8%8C%832017-02-09.md)
