@@ -1,9 +1,8 @@
 # JavaSE 知识点梳理
-
+`目录`
 - [【线程】](#线程)
 - [【常用接口】](#常用接口)
 
-<a name="线程"></a>
 ## 【线程】
 - [线程基础学习](https://github.com/Kuangcp/JavaBase/tree/master/src/main/java/com/threads)
 - [concurrent并发包常用类的学习](https://github.com/Kuangcp/JavaBase/tree/master/src/main/java/com/concurrents)
@@ -43,7 +42,6 @@ fis.close();
     - 快速解决，不使用小于1024的端口即可，或者提权
    
 *********************
-<a name="常用接口"></a>
 ## 【常用接口】
 `Comparable接口`
 - 此接口强行对实现它的每个类的对象进行整体排序。此排序被称为该类的自然排序，类的`compareTo`方法被称为它的自然比较方法。实现此接口的对象列表或数组可以通过`Collections.sort` 和`Arrays.sort`进行自动排序。
