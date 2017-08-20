@@ -44,14 +44,16 @@
 
 #### 【git remote】
 - [官方文档](https://git-scm.com/docs/git-remote)
-- `git remote add origin URL地址` 添加远程关联仓库 不唯一，可以关联多个
-- `git remote set-url origin URL地址` 修改关联仓库 可以不叫origin
+- `git remote add name URL地址` 添加远程关联仓库 不唯一，可以关联多个一般默认有个origin
+        - `git remote`  可以看到添加的远程URL的名字
+- `git remote set-url name URL地址` 修改关联仓库 预定默认的叫origin
 - `git remote rm URL` 删除和远程文档库的关系
 - `git remote rename origin myth` 更改远程文档库的名称
 - `git ls-remote` 输出所有关联的remote库 还会输出库的分支
 - `git remote -v` 输出push和pull的URL
 - `git push 远程URL的名称 --delete 分支名称` 删除远程库某分支
 - `git remote show origin` 查看远程分支的状态
+
 - [删除，重命名远程分支](http://zengrong.net/post/1746.htm)
 
 #### 【fork 相关操作】

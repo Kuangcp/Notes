@@ -1,6 +1,6 @@
 # Myth Define Alias
-# ln -s /home/kcp/Documents/Notes/Notes/ConfigFiles/Linux/.bash_aliases .bash_aliases
 
+alias K.link='ln -s .bash_aliases ~/.bash_aliases' # 将当前目录的该配置文件映射到当前用户目录下
 alias K.h=' python3 ~/Application/Script/python/show_alias_help.py' #获取帮助文档
 alias Kalias="gedit ~/.bash_aliases" # 打开alias设置文件
 alias Kalias.update="source ~/.bashrc" # 重新加载bash配置文件
@@ -21,12 +21,13 @@ alias Kg.javabase='cd ~/IdeaProjects/BaseLearn/JavaBase' #Java基础项目
 
 # Git__Python
 alias Kg.python.learn='cd ~/PycharmProjects/PythonMythLearn/' #python学习项目
+alias Kg.script='cd ~/Application/Script/' # 实用脚本
 
 # Git__Other
 alias Kg.images='cd ~/Pictures/ImageRepo' # 图片仓库
 alias Kg.notes='cd ~/Documents/Notes/Notes/' # 笔记仓库
+alias Kg.diary='cd ~/Documents/Notes/diary/' # 个人日记目录
 alias Kg.io='cd ~/Documents/Notes/Kuangcp.github.io/' # github io 项目
-alias Kg.script='cd ~/Application/Script/' # 实用脚本
 alias Kg.apps='cd ~/Application/Apps/' # 小工具
 
 

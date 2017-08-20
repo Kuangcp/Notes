@@ -336,6 +336,7 @@
     
 - 成功后 客户端登录 `ssh -p 22 username@ip`
     - root用户似乎不能这样登录
+
 ##### 使用别名登录
 `vim ~/.ssh/config`
 ```    
@@ -357,6 +358,15 @@
 ```
 - `ssh aliyun` 即可登录 但是要输入 pub的密码，
     - 如果生成公钥时没设置密码就要错三次，然后输入用户密码，不觉得有多方便，还不如 alias
+
+## 访问图形化
+
+在`/etc/ssh/sshd_config`添加以下信息，然后重启ssh服务
+```
+X11Forwarding yes
+X11DisplayOffset 10
+```
+- `ssh -X -p port user@host` 登录即可
 
 *******************************************
 
