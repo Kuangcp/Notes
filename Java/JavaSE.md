@@ -3,6 +3,8 @@
 - [【线程】](#线程)
 - [【常用接口】](#常用接口)
 
+
+*******************************
 ## 【类文件和反射】
 - [类文件详细](https://github.com/Kuangcp/JavaBase/tree/master/src/main/java/com/classfile)
 
@@ -56,4 +58,10 @@ fis.close();
 
 
 *****************************    
+## 【Tips】
+#### 命令打包出一个可执行jar
+- `javac -d *.java `编译文件
+- `jar -cvf hello.jar com/test/*.*` 打包字节码成jar
+- `jar -cvfm hello.jar mainfest *.*` 打包成可执行jar
+    - 其中：`mainfest` 文本文件： `Main-Class: com.test.Main` 冒号后一定要有空格，文件最后一行一定留空行
 
