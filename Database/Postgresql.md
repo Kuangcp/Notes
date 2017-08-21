@@ -7,6 +7,7 @@
 
 ## 安装
 ### Postgresql 的安装（Docker方式）
+- 安装客户端 `sudo apt-get install postgresql-client`
 
 `Dockerfile`
 ```
@@ -35,17 +36,30 @@
     CMD ["/usr/lib/postgresql/9.4/bin/postgres", "-D", "/var/lib/postgresql/9.4/main", "-c", "config_file=/etc/postgresql/9.4/main/postgresql.conf"]
 
 ```
-- 安装客户端 `sudo apt-get install postgresql-client`
+
 
 `Dockerfile构建`
 - 构建容器 `docker build --rm=true -t mypostgresql:9.4 .`
     - 运行容器 `docker run --name mypostgre -i -t -p 5432:5432 mypostgresql:9.4`
     - 使用客户端连接`psql -h localhost -p 5432 -U pger -W pgerdb` 口令：`pger`
+    
 
-`下拉`
+`pull 完整版`
 - 或者： `docker pull postgres` [官方镜像](https://hub.docker.com/_/postgres/)
     - 运行容器 `docker run --name mypostgre -i -t -p 5432:5432 postgres`
     - 客户端连接 `psql -h localhost -p 5432 -U postgres`
+
+`pull 精简版`
+- 下拉镜像：`docker pull postgres:alpine`
+- 构建容器：
+````
+docker run -d --name gitea-db \
+-e POSTGRES_PASSWORD=ad \
+-v gitea-db-data:/var/lib/postgresql/data \
+-p 5432:5432 \
+postgres:alpine
+```  
+- 进入postgresql终端 `docker exec -it gitea-db psql -U postgres`
 
 - 连接后 输入`\l` 列出所有数据库 即可查看连接成功与否
 

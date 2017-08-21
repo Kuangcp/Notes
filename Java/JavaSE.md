@@ -3,6 +3,9 @@
 - [【线程】](#线程)
 - [【常用接口】](#常用接口)
 
+## 【类文件和反射】
+- [类文件详细](https://github.com/Kuangcp/JavaBase/tree/master/src/main/java/com/classfile)
+
 ## 【线程】
 - [线程基础学习](https://github.com/Kuangcp/JavaBase/tree/master/src/main/java/com/threads)
 - [concurrent并发包常用类的学习](https://github.com/Kuangcp/JavaBase/tree/master/src/main/java/com/concurrents)
@@ -31,7 +34,7 @@ properties.load(fis);
 System.out.println(properties.getProperty("v"));
 fis.close();
 ``` 
-- 只要配置文件和jar同级即可
+- 只要配置文件和打包的jar同级即可
 
 ## 【JDBC】
 - 基础的批量操作SQL ` pstmt.executeBatch(); //批量执行`
