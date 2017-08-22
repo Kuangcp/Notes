@@ -8,17 +8,18 @@
      - 递归： 本机->上连->根->cn->edu.cn->bupt.deu.cn 然后得到解析结果后，递归返回到上连，上连DNS服务器会进行缓存该结果，再返回本机
      - 迭代：本机->上连，上连->根，根->cn cn->edu.cn, edu.cn->bupt.deu.cn 最终返回了结果 到上连
      - 递归加迭代， 区别在于，先迭代根， 得到下级一级服务器节点后，下级就是递归的入口和出口
-
 - 授权和非授权， 还是上面那个URL， 其他的都不是授权的， 只有离URL最近的DNS才是授权的 即 `bupt.deu.cn` 
-  `nslookup ` 强大的调试DNS工具
+
+`nslookup ` 强大的调试DNS工具
 - nslookup - 8.8.8.8 进入循环模式， 方便调试 8.8.8.8 是Google开放的DNS 备选 8.8.4.4
     - 结果解释：Non-authoritative answer: 表示这是从缓存得到的结果，不一定准确
     - Server：上连DNS服务器的IP， Address：`上连DNS的IP#端口` 通常是53
     - canonical name 即CNAME 别名
       `dig` 比nslookup更强大 Domain Information Groper
 - 例如：`dig +tcp @8.8.8.8 www.baidu.com` 采用TCP进行DNS通信（默认UDP）
-    - ＋short 精简输出
+    - +short 精简输出
     - +nocmd+nocomment+nostat 输出最核心内容
+
 
 ## IPv4 和 IPv6
 - IPv4 只有32bit IPv6 有128bit
@@ -52,6 +53,14 @@
     - `sudo kill -9 pid` 杀掉指定pid
     - `ps aux` 查看当前执行中的程序
 - `netstat -antlp | grep 127.0.0.1` 
+
+#### 【修改DNS】
+- `sudo vim /etc/resolv.conf` 添加Google的DNS 
+```
+nameserver 8.8.8.8 
+nameserver 8.8.8.4
+```
+
 
 ***************************
 ## 工具
