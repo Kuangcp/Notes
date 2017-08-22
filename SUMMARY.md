@@ -20,6 +20,11 @@
     * [ Postgresql ](./Database/Postgresql.md)
     * [ Redis ](./Database/Redis.md)
     * [ 数据库的使用体会 ](./Database/数据库的使用体会.md)
+* 【 Functional 】
+    * [ Clojure ](./Functional/Clojure.md)
+    * [ FPBase ](./Functional/FPBase.md)
+    * [ Groovy ](./Functional/Groovy.md)
+    * [ Scala ](./Functional/Scala.md)
 * 【 Java 】
     * 【 Java/Spring 】
         * [ SpringBase ](./Java/Spring/SpringBase.md)
@@ -31,12 +36,13 @@
         * [ Spring消息 ](./Java/Spring/Spring消息.md)
         * [ Spring远程服务 ](./Java/Spring/Spring远程服务.md)
     * 【 Java/进阶 】
+        * [ MultipleLanguage ](./Java/进阶/MultipleLanguage.md)
         * [ 开发思想 ](./Java/进阶/开发思想.md)
     * [ Activiti ](./Java/Activiti.md)
     * [ EE ](./Java/EE.md)
     * [ Gradle ](./Java/Gradle.md)
-    * [ Groovy ](./Java/Groovy.md)
     * [ IDEA ](./Java/IDEA.md)
+    * [ JavaPerformance ](./Java/JavaPerformance.md)
     * [ JavaSE ](./Java/JavaSE.md)
     * [ Log ](./Java/Log.md)
     * [ Maven ](./Java/Maven.md)

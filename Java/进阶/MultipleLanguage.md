@@ -31,18 +31,49 @@
     
 ## JVM上的多语言编程
 - 非Java技术的作用可以分为三个层次 特定领域层，动态层，稳定层，多语言编程金字塔：
-![]()
+![p178金字塔](https://raw.githubusercontent.com/Kuangcp/ImageRepos/master/Tech/Book/Java7Developer/p178.jpg)
 
 - 静态类型语言更倾向于稳定层的任务，能力不是那么强，通用性较低的技术在金字塔的顶部更好用
 
 `为什么非要用Java语言`
+- Java 作为一种通用，静态类型的编译型语言，实现稳定层方便，但是放到金字塔上层就成为负担
+    - 编译耗时
+    - 静态类型不够灵活，重构时间长
+    - 部署麻烦
+    - 语法不适合生产DSL（领域专用语言 domain specific language）
 
 `最有影响力的JVM语言`
 - Groovy
+    - James Strachan 于2003年发明，可以看作动态层语言，擅长DSL构建
 - Scala
+    - Martin Odersky 于2003年意外产生，一门支持函数式编程的面向对象语言
+    - 有一个非常好的ScalaTest测试框架，比Junit更简洁，
 - clojure
+    - Rich Hickey设计的属于Lisp家族的语言，动态类型的函数式语言，编译型语言但是通常以源码发布
+    
+![p180 分类](https://raw.githubusercontent.com/Kuangcp/ImageRepos/master/Tech/Book/Java7Developer/p180.jpg)
 
 
+`JVM对备选语言的支持`
+- 一种语言要在JVM上运行的两种方式：
+    - 一个产生类文件的编译器
+    - 一个用JVM字节码实现的解释器
+![p183.jpg](https://raw.githubusercontent.com/Kuangcp/ImageRepos/master/Tech/Book/Java7Developer/p183.jpg)
+- 有一种评估语言运行时环境复杂度的简单方法，看运行实现中Jar的大小，Clojure相对较轻量，JRuby就显得重
+
+### 编译器小说
+> 语言的某些特性是由编程环境和高层语言合成的，在底层JVM中不存在，这种特性就称为编译器小说
+
+- Java中的编译器小说还包括检查型异常和内部类（通常内部类都会转换成带有特殊合成访问方法的顶层类），如果jar -cvf看jar包，能看到很多含`$`的类，这些就是被取出转换成`常规类`的内部类
+`备选语言的编译器小说`
+![p184.jpg](https://raw.githubusercontent.com/Kuangcp/ImageRepos/master/Tech/Book/Java7Developer/p184.jpg)
+- 函数一等值：
+    - 这个就是说可以将函数当成其他普通值一样操作，Java只能把类当做最小的代码和功能单元。解决这种差异的方法是，因为对象只是把数据和操作数据的方法绑定在一起，只要有一个没有状态只有一个方法的对象。
+    - 这似乎就是Java8的lambda表达式的存在条件，单方法的实现用操作符 `->`
+- 多继承：
+    - 在Java和JVM中无法实现多继承，只能使用接口，但是接口又没有任何具体的方法
+    - 在Scala中特性机制 trait 允许将方法的实现混合到类中，所以提供了不同的继承视图，这种行为必须由Scala编译器和运行时合成，在VM层面不提供这种特性
+  
 
 
 
