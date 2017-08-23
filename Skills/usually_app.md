@@ -16,6 +16,21 @@
 - 验证是否成功：`java -version`
 - 移除 `sdk uninstall scala 2.11.6`
 
+## 【服务管理】
+### oneinstack
+> [官方文档](https://oneinstack.com/install/)
+
+- `apt -y install wget screen curl python`
+- 下载源码：
+    - `wget http://aliyun-oss.linuxeye.com/oneinstack-full.tar.gz` #阿里云经典网络下载
+    - `wget http://mirrors.linuxeye.com/oneinstack-full.tar.gz` #包含源码，国内外均可下载
+    - `wget http://mirrors.linuxeye.com/oneinstack.tar.gz` #不包含源码，建议仅国外主机下载
+- `tar xzf oneinstack-full.tar.gz`
+- `cd oneinstack` #如果需要修改目录(安装、数据存储、Nginx日志)，请修改options.conf文件
+- `screen -S oneinstack` #如果网路出现中断，可以执行命令`screen -R oneinstack`重新连接安装窗口
+- `sudo ./install.sh` #注：请勿sh install.sh或者bash install.sh这样执行
+
+
 
 ***************************
 ## 【文件管理器】

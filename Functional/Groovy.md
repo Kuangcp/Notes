@@ -59,23 +59,65 @@ import java.util.*
     - 映射：`maps = [Java:"2", A:2]` 声明Maps
     - [列表和映射的学习代码](https://github.com/kuangcp/JavaBase/blob/master/src/main/groovy/com/learn/base/LearnListAndMap.groovy)
 
+************
 ### 与Java的差异
+
+- 简化输出语句：`println()` `print()` `printf()`
 - Groovy的省略语法:
-    - 语句结束处的分号： 结束的分号是可选的，除非一行多条语句
-    - 返回语句 return： 方法中返回对象不必使用return，会默认返回最后一个表达式的计算结果
-    - 方法参数两边的括号： 如果方法里的方法调用至少有一个参数，且没有二义性，则可以省略括号 
-    - public访问限定符： 默认是public修饰符, 只有private public protected
-    - 这类设计是为了让源码更为简洁，快速原型设计时体现出优势
+    - `语句结束处的分号`： 结束的分号是可选的，除非一行多条语句
+    - `返回语句 return`： 方法中返回对象可以不使用return，会默认返回最后一个表达式的计算结果
+    - `方法参数两边的括号`： 如果方法里的方法调用至少有一个参数，且没有二义性，则可以省略括号 
+    - `public访问限定符`： 默认是public修饰符, 只有private public protected
+    - 这类设计是为了让源码更为简洁，快速原型设计时体现出优势 
 
+`脚本文件和类文件的差异`
 - 一个文件定义了文件同名class 类（默认加上public） 就不能当脚本运行
-    - 因为作为一个脚本文件运行的时候，是创建一个与文件同名的类 并且 继承了 groovy.lang.Script 将你写的语句封装起来
-    - 当你显式的定义了同名类 也会隐性继承于Groovy超类 groovy.lang.GroovyObject 类似与Java的Object，就会当一个正常的类文件，不能写脚本了
-- 脚本方法不能命名为 run，类没有限制和Java一样使用
+    - 因为作为一个脚本文件运行的时候，是创建一个与文件同名的类 并且 继承了 `groovy.lang.Script` 将你写的语句封装起来
+    - 当你显式的定义了同名类 也会隐性继承于Groovy超类 `groovy.lang.GroovyObject` 类似与Java的Object，就会当一个正常的类文件，不能写脚本了
+- 脚本文件中方法不能命名为 run，对于类是没有限制，和Java一样使用
 
-***************
-- 输出：`println()` `print()` `printf()`
+`异常处理`
+- Groovy不区分已检查异常和未检查异常。Groovy会忽略方法签名中的所有throws
+
+`Groovy中的相等`
+- Groovy把 == 当做equals方法，检查真实对象是否相等需要使用Groovy的内置函数 is。但是仍然可以使用 == 来判断 null
+    - 两种方式对于基本类型是一样的， == 用于对象时就是比较内存了，equals是比较值
+
+`内部类`
+- Groovy支持内部类，但大多数情况下我们应该使用函数字面值（下面有更为详细的学习）替代它。
+
+> [示例代码](https://github.com/kuangcp/JavaBase/blob/master/src/main/groovy/com/learn/base/DiverseFromJava.groovy)
+
+*******
+### Java不具备的Groovy特性
+- GroovyBean，更简单的bean
+- 用操作符`?.`实现null对象的安全访问
+- 猫王操作符(Elvis operator)，更短的if/else结构
+- Groovy字符串，更强的字符串抽象
+- 函数字面值（闭包），函数当值传递
+- 对正则表达式的本地支持
+- 更简单的XML处理
+
+
+`GroovyBean`
+- 虽然很像JavaBean但是省略了显式声明的getset方法，提供了自动构造方法（采用映射来作为入参，很方便），允许使用`.`引用私有成员变量。修改默认行为显式重定义即可
+- 封装性得以保留，语法更精简
+
+`安全解引用 ?.`
+- 如果对象是null，就什么都不做，理解为当做该次调用不存在。
+- 函数也是支持这种安全解引用，所以Groovy的默认集合方法，例如max() 能自动处理好null引用
+
+`猫王操作符`
+- 可以把带有默认值的 if/else 结构写的极其短小，因为这个符号看起来很像猫王鼎盛时期梳的大背头。用猫王操作符不用检查null，也不用重复变量。
+
+`增强型字符串`
+- Groovy有一个GString类，他比String要灵活
+- 特别注意，这个GString和String没有任何继承关系，不能将GString作为映射中的键，或者用来比较相等，这些使用的结果都是不可预料的
+- 和Python一样的有个 三引号多行字符串
 
 ### Java调用Groovy
 > [参考博客](http://www.tuicool.com/articles/i6raAv)
+
+
 
 
