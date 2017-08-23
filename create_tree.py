@@ -8,6 +8,8 @@ import getopt
 '''
 # 忽略的文件夹
 dirs=['.git','Images','Shell','bat','SQL','ConfigFiles']
+# 忽略的文件
+files=['CODE_OF_CONDUCT.md', 'README.md']
 flag_show=False
 flag_append=False
 result = []
@@ -78,14 +80,27 @@ for op,value in opts:
     elif op == "-h":
         show_help()
 
-# 得到根目录下所有文件夹
+
 Folders = os.listdir('./')
 Folders.sort()
+
+# 处理根目录下的md文件
+for fold in Folders:
+    if fold.endswith('.md'):
+        if fold in files:
+            continue
+        #print("md::::"+fold)
+        result.append("* [ "+fold[:-3]+" ](./"+fold+")")
+
+# 得到根目录下所有文件夹，然后开始递归得到所有文件       
 for fold in Folders:
     if(os.path.isdir(fold)):
         if(fold in dirs):
             continue
         create(fold,1)
+
+
+    
 
 # 终端输出
 if flag_show : 

@@ -72,7 +72,7 @@
 - 书写单个md文件方便，美观，没有目录树是硬伤
 
 ### Vi/Vim
-> [Vim 学习笔记](./Linux/vim.md)
+> [Vim 学习笔记](/Linux/vim.md)
 
 ### Nano
 - 模式没有vi系列复杂，使用简单，安装占用小
