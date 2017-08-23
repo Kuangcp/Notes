@@ -115,6 +115,10 @@ import java.util.*
 - 特别注意，这个GString和String没有任何继承关系，不能将GString作为映射中的键，或者用来比较相等，这些使用的结果都是不可预料的
 - 和Python一样的有个 三引号多行字符串
 
+`函数字面值`
+- 
+
+
 ### Java调用Groovy
 > [参考博客](http://www.tuicool.com/articles/i6raAv)
 
