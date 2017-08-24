@@ -33,7 +33,7 @@ import java.math.BigInteger
 import java.net.*
 import java.util.*
 ```
-- 添加额外的Jar可以使用@Grab注解或者和Java一样加入到ClassPath中去
+- 添加额外的JAR可以使用@Grab注解或者和Java一样加入到ClassPath中去
 
 #### 数字处理
 - Groovy默认浮点数使用BigDecimal，Java中BigDecimal构造器入参是字符串，Groovy是数值，底层转换了一下，看起来更自然
@@ -116,11 +116,54 @@ import java.util.*
 - 和Python一样的有个 三引号多行字符串
 
 `函数字面值`
+- 函数当成一等类型可以赋值等操作，要活用就没这么简单了
+
+`内置集合操作`
+- 集合内置函数
+    - each : 遍历集合，对其中的每一项应用函数字面值 
+    - collect : 收集在集合中每一项应用函数字面值的返回结果 相当于其他语言 map/reduce的map函数
+    - inject : 用函数字面值处理集合并构建返回值 相当于其他语言 map/reduce的reduce函数
+    - findAll : 找到集合中所有与函数字面值匹配的元素
+    - max : 返回集合中的最大值
+    - min : 返回集合中的最小值
+
+`对正则表达式的内置支持`
+- `~`   创建一个模式 （创建一个编译的Java Pattern）
+- `=~`  创建一个匹配器 （创建一个Java Matcher对象）
+- `==~` 计算字符串  （相当于在Pattern上调用Java match()方法）
+
+`对XML的处理`
+> XML是一个卓越的详细的数据交换语言，这不是一个图灵完备(必须能做条件判断，修改内存数据)的语言，所以只能用来交换数据
+
+- Groovy有构建器的概念，用其原生语法可以处理任何树形结构的数据 HTML XML JSON等
+- 解析XML：
+    - XMLParser   支持XML文档的GPath表达式 GPath是一种表达式语言
+    - XMLSlurper  跟XMLParser类似，但是以懒加载的方式工作
+    - DOMCategory 用一些语法支持DOM的底层解析
+
+> [示例代码](https://github.com/kuangcp/JavaBase/blob/master/src/main/groovy/com/learn/base/ModernGroovy.groovy)
+
+
+### Groovy和Java的交互
+
+#### Groovy调用Java
+- 只要将JAR放入classpath中，只要java能调用到，groovy也能调用到，也就是说直接用，无需特别配置
+- 也可以使用@Grab注解，来加载JAR
+
+#### Java调用Groovy
+> [参考博客](http://www.tuicool.com/articles/i6raAv)
+
+- 从Java调用Groovy需要将Groovy及其相关的JAR放到这个程序的CLASSPATH下
+- Java调用Groovy代码的几种方法
+    - 使用Bean Scripting Framework(BSF) 即JSR223
+    - 使用GroovyShell
+    - 使用GroovyClassLoader
+    - 使用GroovyScriptEngine
+    - 使用嵌入式的Groovy控制台
+
+`GroovyShell`
 - 
 
-
-### Java调用Groovy
-> [参考博客](http://www.tuicool.com/articles/i6raAv)
 
 
 
