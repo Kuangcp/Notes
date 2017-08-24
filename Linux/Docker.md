@@ -223,15 +223,17 @@
 - docker pull jenkins
 
 
-## Docker中构建一个Ubuntu
-- 最为简单的是：`docker run  -i -t --name ubuntu17 -p 9990:22 -p 9991:8080 -p 9992:6379 ubuntu /bin/bash`
+## Docker中构建一个可外登录的完整单一Ubuntu
+- 最为简单的是：`docker run  -i -t --name ubuntu17 -p 34433:22 ubuntu /bin/bash`
+    - 为这些软件预留端口 `ssh tomcat mysql postgresql mysql oracle nginx reids`
     - 直接跑一个Ubuntu出来,预留出要用的端口，容器运行不会退出
     - 进终端之后就 `apt update` 才能安装软件，现在才知道这个命令的重要性
 - 特点：
     - 这个Ubuntu root用户直接用，新建用户用不了sudo，重启？不可以
 
-- 现在的问题是：能不能在已经运行的容器中添加端口映射？？要是用到途中发现端口少了就麻烦了
-    
+- 现在的问题是：能不能在已经运行的容器中添加端口映射？？要是用到途中发现端口少了就麻烦了，解决方法可以是commit成镜像再跑出一个容器出来，
+- 最好是一个服务（应用）一个容器
+
 
 ****************
 - 自己写构建文件，安装相应的软件

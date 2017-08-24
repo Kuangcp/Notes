@@ -31,7 +31,6 @@
 - `sudo ./install.sh` #注：请勿sh install.sh或者bash install.sh这样执行
 
 
-
 ***************************
 ## 【文件管理器】
 > 有单窗口，双列，命令，简洁轻量，笨重完整 各种各样的选择
@@ -44,6 +43,19 @@
 - `dolphin` 多标签页，目录树方式查看
 - `nemo` mint默认的，功能齐全，会同步nautilus的配置，同样有目录树而且是两边都有 `21M`
 - `tuxcmd` Tux Commander 双列，小，直接的目录树，学习成本高点 `2M`
+
+**************************************
+## 【工具】
+### Autojump
+> 统计cd 目录，方便目录跳转
+
+- `apt install autojump` 设置为自动运行 `echo '. /usr/share/autojump/autojump.sh' >> ~/.bashrc`
+    - `j -v` 查看安装版本
+    - `j --stat` 查看统计信息
+    - `j --help`
+    - `jo code` 打开code文件夹
+    - `jco c` 打开子目录
+- `ls -l ~/.local/share/autojump/` 统计信息的目录，清除就相当于卸载重装了
 
 **************************************
 ## 【文本编辑器】

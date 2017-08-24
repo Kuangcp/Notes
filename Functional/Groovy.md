@@ -161,8 +161,7 @@ import java.util.*
     - 使用GroovyScriptEngine
     - 使用嵌入式的Groovy控制台
 
-`GroovyShell`
-- 
+> [示例代码](https://github.com/kuangcp/JavaBase/blob/master/src/main/java/com/classfile/JavaUseGroovy.java)
 
 
 
