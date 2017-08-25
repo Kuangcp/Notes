@@ -458,16 +458,11 @@ json.dump()持久化 和 load() 装载
 - python2 `sudo pip install redis`
 - python3 `sudo pip3 install redis`
 
-
 ### 【绘图】 matplotlib
 `python 3.5 安装`
 sudo apt install python3-matplotlib 
 sudo apt install python3.5-dev python3.5-tk tk-dev
 sudo apt install libfreetype6-dev g++
-
-
-
-
 
 ************
 ## 【代码风格】

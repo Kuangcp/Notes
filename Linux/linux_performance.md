@@ -460,7 +460,6 @@
 - ![p264](https://raw.githubusercontent.com/Kuangcp/ImageRepos/master/Tech/Book/Linux_DaPeng_mingling100/p264.jpg)
 - ![p265](https://raw.githubusercontent.com/Kuangcp/ImageRepos/master/Tech/Book/Linux_DaPeng_mingling100/p265.jpg)
 
-
 ### 关机重启
 - shutdown reboot halt poweroff init
 
