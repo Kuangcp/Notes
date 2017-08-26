@@ -40,5 +40,4 @@
 | 2017.08 | 入门Docker |
 
 ## 个人备忘
-- [Emoji表情代码](https://github.com/Kuangcp/Notes/blob/master/ConfigFiles/emojis.md)
 - [阿里Java编程规范](https://github.com/Kuangcp/Notes/blob/master/Java/%E9%98%BF%E9%87%8C%E5%B7%B4%E5%B7%B4java%E8%A7%84%E8%8C%832017-02-09.md)
