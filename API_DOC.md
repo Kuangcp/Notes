@@ -25,6 +25,7 @@
 
 ## Java
 - [Mockito](http://www.vogella.com/tutorials/Mockito/article.html#when-thenreturn-and-when-thenthrow) `Java测试框架`
+
 ## 前端
 - [前端 LayUI 框架](http://www.layui.com/doc/)
 
@@ -33,6 +34,7 @@
 
 ## Python
 - [python-gtk3](https://python-gtk-3-tutorial.readthedocs.io/en/latest/introduction.html) `python-gtk3的开发`
+
 ## Database
 - [Redis中文文档](http://redisdoc.com/index.html)
 

@@ -5,6 +5,8 @@
 
 ## Database
 
+- [sssdb](https://github.com/ideawu/ssdb) `键值对数据库`
+
 
 ********************************
 # 常用的网站
