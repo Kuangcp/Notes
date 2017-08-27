@@ -4,7 +4,7 @@
 - 上面都是可选的，然后安装好Gradle 3.0+
 - new Module 选initial那个，选好需要的模块 web，jdbc mysql mybabtis freemake redis Security 下一步
 - 指定项目基本信息，选择Gradle Project war 下一步
-- 新建一个application.yml 文件，配置数据库连接数据
+- 新建一个`application.yml` 文件，配置数据库连接数据
 
 #### 配置文件
 `配置文件 application.yml`

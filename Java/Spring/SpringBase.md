@@ -13,13 +13,12 @@
 - spring-expression-3.2.6.RELEASE.jar
 
 ****
-
 ##### maven配置Spring依赖
 
 ```
-          <properties>
-           <spring.version>4.1.7.RELEASE</spring.version>
-          </properties>
+      <properties>
+       <spring.version>4.1.7.RELEASE</spring.version>
+      </properties>
       .....
       <!-- 核心 -->
        <dependency>
@@ -84,7 +83,6 @@
 ###  Spring技巧
 ####  获取Spring已有的Context上下文环境
 ##### 【在JSP或Servlet中】
-
 ```
     ApplicationContext context = WebApplicationContextUtils.getWebApplicationContext(config.getServletContext());
 
@@ -103,24 +101,24 @@
         ....
     }
 ``` 
+
 ****************************
 ## Spring使用
 ### 注解方式：
-
 #### Application.xml中配置头部分
 ```
-        头部分要添加Context
-        <?xml version="1.0" encoding="UTF-8"?>
-        <beans xmlns="http://www.springframework.org/schema/beans"
-             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-             xmlns:context="http://www.springframework.org/schema/context"
-             xsi:schemaLocation="http://www.springframework.org/schema/beans
-                 http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
-                 http://www.springframework.org/schema/context
-                 http://www.springframework.org/schema/context/spring-context-3.0.xsd">
-            <!-- 对使用了注解的包进行扫描 -->
-            <context:component-scan base-package="cn.spring.aop"></context:component-scan>
-        </beans>
+    头部分要添加Context
+    <?xml version="1.0" encoding="UTF-8"?>
+    <beans xmlns="http://www.springframework.org/schema/beans"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xmlns:context="http://www.springframework.org/schema/context"
+         xsi:schemaLocation="http://www.springframework.org/schema/beans
+             http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+             http://www.springframework.org/schema/context
+             http://www.springframework.org/schema/context/spring-context-3.0.xsd">
+        <!-- 对使用了注解的包进行扫描 -->
+        <context:component-scan base-package="cn.spring.aop"></context:component-scan>
+    </beans>
 ```
 >**【注意】**只需要这个配置文件就可以使用注解来使用Spring框架
 
@@ -147,41 +145,41 @@
 - 只用到bean的头，主要配置内容：`<bean><property></property></bean>`
 
 ```
-        <!-- 对使用了注解的包进行扫描 -->
-    	<context:component-scan base-package="cn.spring.aop"></context:component-scan>
-           <!-- 一般而言，bean都是单实例的 -->
-        <bean id="person" class="cn.spring.entity.Person"> 
-            <property name="name" value="myth"/>
-            <property name="addr" value="vol"/>
-        </bean>
-        
-        <bean id="construct" class="cn.spring.entity.ConstructorEntity">
-        <!-- 如果是不同的类型的参数 顺序可以随意，但是数据类型一样的话就要严格按顺序了-->
-            <constructor-arg type="java.lang.String" value="String_1"></constructor-arg>
-            <!-- 注意引用类型是要写全路径，基本数据类型是可以直接写小写 -->
-            <constructor-arg type="int" value="2"></constructor-arg>
-            <!-- <constructor-arg type="java.lang.String" value="String_2"></constructor-arg> -->
-        </bean>
-        <bean id="TestConstruct" class="cn.spring.entity.TestConstruct">
-            <property name="entity" ref="construct"></property>
-        </bean>
-        
-        <!-- 加载属性文件 -->
-        <bean id="property_config" class="org.springframework.beans.factory.config.PreferencesPlaceholderConfigurer">
-            <property name="locations">
-                <list>
-                    <value>cn/spring/entity/db.properties</value>
-                </list>
-            </property>
-        </bean>
-        <!-- 测试获取属性文件 -->
-        <bean id="show_db" class="cn.spring.entity.TestProperties">
-            <!-- 特别注意大小写问题 -->
-            <property name="driver" value="${driver}"/>
-            <property name="username" value="${username}"/>
-            <property name="password" value="${password}"/>
-            <property name="url" value="${url}"/>
-        </bean>
+    <!-- 对使用了注解的包进行扫描 -->
+	<context:component-scan base-package="cn.spring.aop"></context:component-scan>
+       <!-- 一般而言，bean都是单实例的 -->
+    <bean id="person" class="cn.spring.entity.Person"> 
+        <property name="name" value="myth"/>
+        <property name="addr" value="vol"/>
+    </bean>
+    
+    <bean id="construct" class="cn.spring.entity.ConstructorEntity">
+    <!-- 如果是不同的类型的参数 顺序可以随意，但是数据类型一样的话就要严格按顺序了-->
+        <constructor-arg type="java.lang.String" value="String_1"></constructor-arg>
+        <!-- 注意引用类型是要写全路径，基本数据类型是可以直接写小写 -->
+        <constructor-arg type="int" value="2"></constructor-arg>
+        <!-- <constructor-arg type="java.lang.String" value="String_2"></constructor-arg> -->
+    </bean>
+    <bean id="TestConstruct" class="cn.spring.entity.TestConstruct">
+        <property name="entity" ref="construct"></property>
+    </bean>
+    
+    <!-- 加载属性文件 -->
+    <bean id="property_config" class="org.springframework.beans.factory.config.PreferencesPlaceholderConfigurer">
+        <property name="locations">
+            <list>
+                <value>cn/spring/entity/db.properties</value>
+            </list>
+        </property>
+    </bean>
+    <!-- 测试获取属性文件 -->
+    <bean id="show_db" class="cn.spring.entity.TestProperties">
+        <!-- 特别注意大小写问题 -->
+        <property name="driver" value="${driver}"/>
+        <property name="username" value="${username}"/>
+        <property name="password" value="${password}"/>
+        <property name="url" value="${url}"/>
+    </bean>
 
 ```
 
@@ -197,17 +195,17 @@
 
 ###  AOP：
 ``` 
-        <beans xmlns="http://www.springframework.org/schema/beans"
-         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xmlns:context="http://www.springframework.org/schema/context"
-         xmlns:aop="http://www.springframework.org/schema/aop"
-         xsi:schemaLocation="http://www.springframework.org/schema/beans
-             http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
-             http://www.springframework.org/schema/context
-             http://www.springframework.org/schema/context/spring-context-3.0.xsd
-             http://www.springframework.org/schema/aop
-             http://www.springframework.org/schema/aop/spring-aop-3.0.xsd">
-             </beans>
+    <beans xmlns="http://www.springframework.org/schema/beans"
+     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+     xmlns:context="http://www.springframework.org/schema/context"
+     xmlns:aop="http://www.springframework.org/schema/aop"
+     xsi:schemaLocation="http://www.springframework.org/schema/beans
+         http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+         http://www.springframework.org/schema/context
+         http://www.springframework.org/schema/context/spring-context-3.0.xsd
+         http://www.springframework.org/schema/aop
+         http://www.springframework.org/schema/aop/spring-aop-3.0.xsd">
+         </beans>
 
 ```
 
@@ -226,22 +224,22 @@
 
 #### 8.6.2 基本配置
 ``` 
-        <!-- 基本类 提供切点 -->
-        <bean id="student" class="cn.spring.aop.Student"></bean>
-        <!-- 增强部分 -->
-        <bean id="adder" class="cn.spring.aop.NewDeal"></bean>
-        <!-- 使用aop的自动提示也要配置上面的头文件声明 -->
-        <aop:config>
-            <!--aspect表示切面 ref 标明增强方法的类来源 -->
-            <aop:aspect id="myAop" ref="adder">
-                <!-- execution 是表达式（正则一样的功能）匹配的是具体的切点 -->
-                <aop:pointcut expression="execution(* cn.spring.aop.Student.run(..))" id="needAdd"/>
-                <!-- 织入 的过程 将增强和切入点结合 -->
-                <aop:before method="add" pointcut-ref="needAdd"/>
-                <aop:after method="af" pointcut-ref="needAdd"/>
-                <aop:around method="around" pointcut-ref="needAdd"/>
-            </aop:aspect>
-        </aop:config>
+    <!-- 基本类 提供切点 -->
+    <bean id="student" class="cn.spring.aop.Student"></bean>
+    <!-- 增强部分 -->
+    <bean id="adder" class="cn.spring.aop.NewDeal"></bean>
+    <!-- 使用aop的自动提示也要配置上面的头文件声明 -->
+    <aop:config>
+        <!--aspect表示切面 ref 标明增强方法的类来源 -->
+        <aop:aspect id="myAop" ref="adder">
+            <!-- execution 是表达式（正则一样的功能）匹配的是具体的切点 -->
+            <aop:pointcut expression="execution(* cn.spring.aop.Student.run(..))" id="needAdd"/>
+            <!-- 织入 的过程 将增强和切入点结合 -->
+            <aop:before method="add" pointcut-ref="needAdd"/>
+            <aop:after method="af" pointcut-ref="needAdd"/>
+            <aop:around method="around" pointcut-ref="needAdd"/>
+        </aop:aspect>
+    </aop:config>
 
 ```
 
@@ -262,18 +260,17 @@ Spring中有封装的关于JDBC操作的类 JDBCSupport 只要传入datasource�
 
 ##### maven配置jar环境
 
-```xml
-
-      <dependency>
-         <groupId>org.springframework</groupId>
-         <artifactId>spring-websocket</artifactId>
-         <version>${spring.version}</version>
-       </dependency>
-       <dependency>
-         <groupId>org.springframework</groupId>
-         <artifactId>spring-messaging</artifactId>
-         <version>${spring.version}</version>
-       </dependency>
+```
+  <dependency>
+     <groupId>org.springframework</groupId>
+     <artifactId>spring-websocket</artifactId>
+     <version>${spring.version}</version>
+   </dependency>
+   <dependency>
+     <groupId>org.springframework</groupId>
+     <artifactId>spring-messaging</artifactId>
+     <version>${spring.version}</version>
+   </dependency>
     
 ```
 
@@ -315,21 +312,21 @@ XML风格有两个缺点。第一是它不能完全将需求实现的地方封�
 信息被封装了起来。 第二是XML风格同@AspectJ风格所能表达的内容相比有更多的限制：仅仅支持"singleton"切面实例模型，并且不能在XML中组合命名连接点的声
 明。 例如，在@AspectJ风格中我们可以编写如下的内容：
 
-```java
-       @Pointcut(execution(* get*())) 
-       public void propertyAccess() {} 
-       @Pointcut(execution(org.xyz.Account+ *(..)) 
-       public void operationReturningAnAccount() {} 
-       @Pointcut(propertyAccess() && operationReturningAnAccount()) 
-       public void accountPropertyAccess() {}
+```
+   @Pointcut(execution(* get*())) 
+   public void propertyAccess() {} 
+   @Pointcut(execution(org.xyz.Account+ *(..)) 
+   public void operationReturningAnAccount() {} 
+   @Pointcut(propertyAccess() && operationReturningAnAccount()) 
+   public void accountPropertyAccess() {}
 
 ```
 
 在XML风格中能声明开头的两个连接点：
 
-```xml
-      <aop:pointcut id="propertyAccess" expression="execution(* get*())"/> 
-      <aop:pointcut id="operationReturningAnAccount"  expression="execution(org.xyz.Account+ *(..))"/>
+```
+  <aop:pointcut id="propertyAccess" expression="execution(* get*())"/> 
+  <aop:pointcut id="operationReturningAnAccount"  expression="execution(org.xyz.Account+ *(..))"/>
 
 ```
 

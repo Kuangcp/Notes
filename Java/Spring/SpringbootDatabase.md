@@ -41,7 +41,7 @@ jpa在创建表时会把驼峰命名改成数据库风格的形式
 
 `在一个配置类中引入以下代码即可直接使用`
 ```
-     @Bean
+    @Bean
     public RedisTemplate<Object,Object> redisTemplate(RedisConnectionFactory factory) {
         RedisTemplate<Object,Object> template = new RedisTemplate<>();
         Jackson2JsonRedisSerializer jackson2JsonRedisSerializer = new Jackson2JsonRedisSerializer<>(Object.class);
@@ -58,10 +58,10 @@ jpa在创建表时会把驼峰命名改成数据库风格的形式
         return template;
     }
 
-        @Bean
-        StringRedisTemplate template(RedisConnectionFactory connectionFactory) {
-            return new StringRedisTemplate(connectionFactory);
-        }
+    @Bean
+    StringRedisTemplate template(RedisConnectionFactory connectionFactory) {
+        return new StringRedisTemplate(connectionFactory);
+    }
 ``` 
 `使用`
 ```
@@ -82,3 +82,12 @@ jpa在创建表时会把驼峰命名改成数据库风格的形式
 - opsForList() 操作含有list的数据
 - opsForZSet() 操作含有zset（有序）的数据
 - opsForSet() 操作含有set的数据
+
+
+
+
+
+
+
+
+

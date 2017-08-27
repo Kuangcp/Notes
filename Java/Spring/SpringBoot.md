@@ -1,16 +1,15 @@
-# Spring Boot 框架
+# SpringBoot
 ## 目录
 
 
-**********************************************************
-
+***********************************
 ## 安装SpringBootCLI
 - 安装SDKMAN
     - 使用git bash运行  `curl -s get.sdkman.io | bash`
     - `source "/Users/{yourname}/.sdkman/bin/sdkman-init.sh" `根据实际目录去运行
     - spring --version
 
-- *注意：所有`Controller`类要和`*Application`类*同包或子包*
+- *注意：所有`Controller`类要和`*Application`类 *同包或子包*
 
 
 ## Springboot的测试模块

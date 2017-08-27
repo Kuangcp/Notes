@@ -11,11 +11,10 @@
 ```
 
 ```
-   @Configuration
+    @Configuration
     public class SecurityConfig extends WebSecurityConfigurerAdapter {
       @Autowired
       private ReaderRepository readerRepository;
-
       @Override
       protected void configure(HttpSecurity http) throws Exception {
         http
@@ -30,8 +29,7 @@
       @Override
       protected void configure(
                   AuthenticationManagerBuilder auth) throws Exception {
-        auth
-          .userDetailsService(new UserDetailsService() {//定义自定义的UserDetailService
+        auth.userDetailsService(new UserDetailsService() {//定义自定义的UserDetailService
             @Override
             public UserDetails loadUserByUsername(String username)
                 throws UsernameNotFoundException {
@@ -43,7 +41,6 @@
             }
           });
       }
-
     }
 ```
 `Repository类`
@@ -52,7 +49,7 @@
 ```
 ```
     //登录实体类
-   @Entity
+    @Entity
     public class Reader implements UserDetails {
       private static final long serialVersionUID = 1L;
       @Id
