@@ -49,6 +49,19 @@ export PATH=${JAVA_HOME}/bin:$PATH
 - 指定默认版本 `sdk default java 8u131-zulu`
 - 验证是否成功：`java -version`
 
+## 配置其他sdk
+
+- 下载压缩包然后解压到统一的文件夹下，建立一个软链接current在文件夹里，
+- 然后配置 .bashrc 或者 别名文件，这样的话，更改版本只要更改软链接就可以了
+```
+SDK_DIR=/home/kcp/.sdkman/candidates
+GRADLE_HOME=$SDK_DIR/gradle/current
+GRAILS_HOME=$SDK_DIR/grails/current
+GROOVY_HOME=$SDK_DIR/groovy/current
+KOTLIN_HOME=$SDK_DIR/kotlin/current
+SCALA_HOME=$SDK_DIR/scala/current
+export PATH=$PATH:$GRADLE_HOME/bin:$GRAILS_HOME/bin:$GROOVY_HOME/bin:$SCALA_HOME/bin:$KOTLIN_HOME/bin
+```
 ********************************
 
 ## 配置MySQL

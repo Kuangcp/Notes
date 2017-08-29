@@ -2,6 +2,8 @@
 
 ## 【包管理】
 ### 使用sdkman
+> 但是总会莫名其妙的冒出问题，sdk命令掉线始终连不上网，终端打开巨慢
+
 `安装`
 - 安装sdkman `curl -s "https://get.sdkman.io" | bash` 遇到提示zip 就是需要安装zip `sudo apt install zip` 然后重新执行命令
 - 执行脚本：`source "/home/kuang/.sdkman/bin/sdkman-init.sh"` 或者重启终端就可以使用了，查看sdkman 版本:`sdk version`
