@@ -41,6 +41,7 @@
 ## Tools
 - [docker 安装 gitea](https://docs.gitea.io/en-us/install-with-docker/) `gitea是一个自助git服务，基于git`
 - [git](https://git-scm.com/docs) `git`
+- [tig](http://jonas.nitro.dk/tig/manual.html) `tig命令，git的加强版`
 
 
 

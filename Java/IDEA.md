@@ -10,6 +10,11 @@
 - File -> project structure ->artifact 里面设置好 引入的库，设置Main类，引用的jar包的相对classpath
 - Build artifact -> Build
 
+### Springboot热加载
+- Ctrl Shift A 快捷搜索 automatically Build下的 Compiler，打开自动构建
+- Ctrl Shift A 快捷搜索 Registry 进入后找到 compiler.automake.allow.when.app.running 勾选
+- 加入devtools依赖
+
 ## IDEA快捷键
 ### 使用类eclipse快捷键
 ### IDEA快捷键

@@ -12,6 +12,7 @@
 
 ### BuildTool
 - [Gradle构建多模块项目](http://blog.javachen.com/2015/01/07/build-multi-module-project-with-gradle.html)
+- [tig](http://blog.csdn.net/willwcw/article/details/46517331)
 
 ## Python
 - [Python中的多态](http://blog.csdn.net/shangzhihaohao/article/details/7065675)

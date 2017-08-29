@@ -203,12 +203,13 @@ select fun_test(8,'d');
 ## 7.【异常】
 
 ## 8.【用户管理】
+> 创建本地超级用户： CREATE USER 'myth'@'localhost' IDENTIFIED BY 'ad'; 
+> 授予所有权限 GRANT all privileges  ON *.* TO 'myth'@'localhost';
 
 - 创建用户 `CREATE USER 'username'@'host' IDENTIFIED BY 'password'; `
 - 设置密码 `SET PASSWORD FOR 'username'@'%' = PASSWORD("123456"); `
 - 删除用户 `drop user 'username'@'host'`
-
-- 注意： `host`如果写了localhost就只能本地登录，% 就是任意
+- 注意： `host`如果写了localhost就只能本地登录，`%` 就是任意
 
 ### 【授权】
 - GRANT all privileges  ON databasename.tablename TO 'username'@'host' 
@@ -240,7 +241,7 @@ select fun_test(8,'d');
     - update
     - usage
 
-*************************8
+*************************
 
 
 
