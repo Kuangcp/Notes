@@ -123,7 +123,8 @@ package com.runoob {
 - 定义无类型 变量 `var name` 常量 `val name`
 - 定义变量加上类型 `var VariableName : DataType [=  Initial Value]` 常量同理
 - 如果在没有指明数据类型的情况下声明变量或常量必须要给出其初始值，否则将会报错。
-    - 变量`var myVar = 10;`常量`val myVal = "Hello, Scala!";`
+    - 变量`var myVar = 10;`
+    - 常量`val myVal = "Hello, Scala!";`
 - 声明多个变量 `val xmax, ymax = 100  // xmax, ymax都声明为100`
 
 - Scala 访问修饰符基本和Java的一样，分别有：`private，protected，public`

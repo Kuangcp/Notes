@@ -139,7 +139,121 @@
 
 ##### 有序集合 zset
 
+- ZADD
+- ZCARD
+- ZCOUNT
+- ZINCRBY
+- ZRANGE
+- ZRANGEBYSCORE
+- ZRANK
+- ZREM
+- ZREMRANGEBYRANK
+- ZREMRANGEBYSCORE
+- ZREVRANGE
+- ZREVRANGEBYSCORE
+- ZREVRANK
+- ZSCORE
+- ZUNIONSTORE
+- ZINTERSTORE
+- ZSCAN
+- ZRANGEBYLEX
+- ZLEXCOUNT
+- ZREMRANGEBYLEX
+
+
 ##### 散列 hash
+
+- HDEL
+- HEXISTS
+- HGET
+- HGETALL
+- HINCRBY
+- HINCRBYFLOAT
+- HKEYS
+- HLEN
+- HMGET
+- HMSET
+- HSET
+- HSETNX
+- HVALS
+- HSCAN
+- HSTRLEN
+
+##### HyperLogLog
+PFADD
+PFCOUNT
+PFMERGE
+
+##### GEO（地理位置）
+GEOADD
+GEOPOS
+GEODIST
+GEORADIUS
+GEORADIUSBYMEMBER
+GEOHASH
+
+### Pub/Sub 发布订阅
+
+- `PSUBSCRIBE pattern [pattern ...]`
+    - 订阅一个或多个符合给定模式的频道。每个模式以 * 作为匹配符，比如 it* 匹配所有以 it 开头的频道( it.news 、 it.blog 、 it.tweets 等等)，
+    -  news.* 匹配所有以 news. 开头的频道( news.it 、 news.global.today 等等)，诸如此类。
+- `PUBLISH channel message`
+    - 将信息 message 发送到指定的频道 channel 。
+- `PUBSUB <subcommand> [argument [argument ...]]`
+    - PUBSUB 是一个查看订阅与发布系统状态的内省命令， 它由数个不同格式的子命令组成， 以下将分别对这些子命令进行介绍。
+    - `PUBSUB CHANNELS [pattern]` 列出当前的活跃频道。设置pattern参数就会匹配活跃频道，否则是列出所有频道
+    - `PUBSUB NUMSUB [channel-1 ... channel-N]` 返回给定频道的订阅者数量， 订阅模式的客户端不计算在内。
+    - `PUBSUB NUMPAT` 返回订阅模式的数量。注意， 这个命令返回的不是订阅模式的客户端的数量， 而是客户端订阅的所有模式的数量总和。
+- `PUNSUBSCRIBE [pattern [pattern ...]]`
+    - 指示客户端退订所有给定模式。如果没有模式被指定，也即是，一个无参数的 PUNSUBSCRIBE 调用被执行，
+    - 那么客户端使用 PSUBSCRIBE 命令订阅的所有模式都会被退订。在这种情况下，命令会返回一个信息，告知客户端所有被退订的模式。
+- `SUBSCRIBE channel [channel ...]`
+    - 订阅给定的一个或多个频道的信息。
+- `UNSUBSCRIBE [channel [channel ...]]`
+    - 指示客户端退订给定的频道。如果没有频道被指定，也即是，一个无参数的 UNSUBSCRIBE 调用被执行，
+    - 那么客户端使用 SUBSCRIBE 命令订阅的所有频道都会被退订。在这种情况下，命令会返回一个信息，告知客户端所有被退订的频道。
+
+### 事务
+
+- `DISCARD` 取消事务，放弃执行事务块内的所有命令。
+- `EXEC`
+    - 执行所有事务块内的命令。假如某个(或某些) key 正处于 WATCH 命令的监视之下，且事务块中有和这个(或这些) key 相关的命令，
+    - 那么 EXEC 命令只在这个(或这些) key 没有被其他命令所改动的情况下执行并生效，否则该事务被打断(abort)。
+- `MULTI` 标记一个事务块的开始。事务块内的多条命令会按照先后顺序被放进一个队列当中，最后由 EXEC 命令原子性(atomic)地执行。
+- `UNWATCH` 
+    - 取消 WATCH 命令对所有 key 的监视。如果在执行 WATCH 命令之后， EXEC 命令或 DISCARD 命令先被执行了的话，那么就不需要再执行 UNWATCH 了。
+    - 因为 EXEC 命令会执行事务，因此 WATCH 命令的效果已经产生了；而 DISCARD 命令在取消事务的同时也会取消所有对 key 的监视，因此这两个命令执行之后，就没有必要执行 UNWATCH 了。
+- `WATCH key [key ...]`
+    - 监视一个(或多个) key ，如果在事务执行之前这个(或这些) key 被其他命令所改动，那么事务将被打断。
+
+### 服务器
+
+BGREWRITEAOF
+BGSAVE
+CLIENT GETNAME
+CLIENT KILL
+CLIENT LIST
+CLIENT SETNAME
+CONFIG GET
+CONFIG RESETSTAT
+CONFIG REWRITE
+CONFIG SET
+DBSIZE
+DEBUG OBJECT
+DEBUG SEGFAULT
+FLUSHALL
+FLUSHDB
+INFO
+LASTSAVE
+MONITOR
+PSYNC
+SAVE
+SHUTDOWN
+SLAVEOF
+SLOWLOG
+SYNC
+TIME
+
 
 *****************************************************************
 	
@@ -154,7 +268,7 @@
 ### 数据安全和性能
 #### 持久化策略
 #### 复制
-#### 事务	
+
 	
 	
 ## 【Redis的使用】
@@ -169,9 +283,7 @@
 ### 任务队列
 - 发送邮件
 
-### 订阅发送结构
-
-
+***************************
 ### 【Java 使用 redis 配置】
 - maven依赖(Spring 4.1.7)：
 ```xml

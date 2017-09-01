@@ -99,8 +99,8 @@
 - 检查 .bashrc 文件, 这次就是因为sdkman的原因导致巨慢,那上次是什么原因呢?
 
 ##### 命令找不到
-- sudo 安装sudo
-- locale-gen 安装locales
+- sudo 安装 sudo
+- locale-gen 安装locales 使用`locale-gen --purge`命令进行更新编码
 
 *****************************************************
 ### 【Tips】
