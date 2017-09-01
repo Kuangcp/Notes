@@ -52,7 +52,7 @@
 `pull 精简版`
 - 下拉镜像：`docker pull postgres:alpine`
 - 构建容器：
-````
+```
 docker run -d --name gitea-db \
 -e POSTGRES_PASSWORD=ad \
 -v gitea-db-data:/var/lib/postgresql/data \

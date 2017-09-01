@@ -420,14 +420,18 @@ getopt函数的第三个参数[, long_options]为可选的长选项参数，上�
 |wb+ |写打开新可读 |打开删空 |新建打开  |
 |ab+ |追加打开可读 |打开   |新建打开  |
 
+
 `json `
 ```
     alien = {'color': 'green', 'age': '23'}
     files = 'a.json'
     with open(files, 'w') as o:
         json.dump(alien, o)
+    data = json.load(files)
+    # 引用
+    data['root']['name']
 ```
-json.dump()持久化 和 load() 装载
+- json.dump()持久化 和 load() 装载
 
 ******************************
 ### 【测试】
@@ -488,15 +492,46 @@ sudo apt install libfreetype6-dev g++
 - import codecs 编码
 - import os 
 
+```
+    import time
+    import shlex
+    import datetime
+    import subprocess
+    def execute_command(cmdstring, cwd=None, timeout=None, shell=False):
+        """执行一个SHELL命令
+                封装了subprocess的Popen方法, 支持超时判断，支持读取stdout和stderr
+            参数:
+            cwd: 运行命令时更改路径，如果被设定，子进程会直接先更改当前路径到cwd
+            timeout: 超时时间，秒，支持小数，精度0.1秒
+            shell: 是否通过shell运行
+        Returns: return_code
+        Raises:  Exception: 执行超时"""
+        if shell:
+            cmdstring_list = cmdstring
+        else:
+            cmdstring_list = shlex.split(cmdstring)
+        if timeout:
+            end_time = datetime.datetime.now() + datetime.timedelta(seconds=timeout)
+        #没有指定标准输出和错误输出的管道，因此会打印到屏幕上；
+        sub = subprocess.Popen(cmdstring_list, cwd=cwd, stdin=subprocess.PIPE,shell=shell,bufsize=4096)
+        #subprocess.poll()方法：检查子进程是否结束了，如果结束了，设定并返回码，放在subprocess.returncode变量中 
+        while sub.poll() is None:
+            time.sleep(0.1)
+            if timeout:
+                if end_time <= datetime.datetime.now():
+                    raise Exception("Timeout：%s"%cmdstring)
+        return str(sub.returncode)
+```
+
 ## QT
-在Terminal中输入:sudo apt-get install qt4-dev-tools qt4-doc qt4-qtconfig qt4-demos qt4-designer
-
-    qt4-dev-tools 中包括了Qt Assistant,Qt Linguist,Qt Creator
-    qt4-doc 这个是帮助文档
-    qt4-qtconfig Qt的配置工具,这个装好默认好
-    qt4-demos 官方的一些Demo
-    qt4-designer 可视化窗体设置工具
-
+- 在Terminal中输入:sudo apt-get install qt4-dev-tools qt4-doc qt4-qtconfig qt4-demos qt4-designer
+```
+qt4-dev-tools 中包括了Qt Assistant,Qt Linguist,Qt Creator
+qt4-doc 这个是帮助文档
+qt4-qtconfig Qt的配置工具,这个装好默认好
+qt4-demos 官方的一些Demo
+qt4-designer 可视化窗体设置工具
+```
 
 
 

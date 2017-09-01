@@ -11,6 +11,7 @@
 
 
 ## Python
+- [redis文档](https://pypi.python.org/pypi/redis/) `python操作redis的库的文档`
 
 ## Linux
 

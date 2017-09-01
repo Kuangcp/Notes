@@ -84,7 +84,9 @@
 
 *******************
 ### 各数据类型的高级操作
-##### 字符串 操作
+> [中文文档](http://redisdoc.com/index.html)
+
+##### 字符串 String
 - 字符串就是字节组成的序列 可以放字节串，整数，浮点数
 - `set key newval nx `存在则set失败
 - `set key newval xx `不存在则set失败
@@ -102,8 +104,9 @@
 - `persist key` 去除超时时间
 
 
-##### 列表 操作
-- `rpush key val val val `右/尾添加元素 lpush是左/头
+##### 列表 list
+- `rpush key val val val `右/尾添加元素 lpush是左/头，若表不存在就新建
+- `rpushx key value` 若表不存在就什么都不做，否则尾插元素
 - `rpop key` 从list右/尾端中删除元素返回元素值 没有了就返回null
 - 阻塞式的列表弹出命令(block) `队列很有用`
     - `blpop`
@@ -111,11 +114,32 @@
     - `bpoplpush`
     - `brpoplpush` 阻塞式先右弹再左进
 - `lrange key 0 -1` 取指定长度的list -1表示全部
--  `ltrim key 0 2` 截取当前的list
+- `ltrim key 0 2` 截取当前的list
 - `lindex key offset`   返回偏移量为offset的元素
+- `LINSERT key BEFORE|AFTER pivot value` 将值 value 插入到列表 key 当中，位于值 pivot 之前或之后。
+    - 当 pivot 不存在于列表 key 时，不执行任何操作。当 key 不存在时， key 被视为空列表，不执行任何操作。如果 key 不是列表类型，返回一个错误。
+- `LREM key count value` 根据参数 count 的值，移除列表中与参数 value 相等的元素。
 
-##### 集合 操作
-##### 散列	 操作
+##### 集合 set
+- `SADD key member [member ...]`
+- `SCARD key` 返回集合 key 的基数(集合中元素的数量)。
+- `SDIFF key [key ...]`  返回一个集合的全部成员，该集合是所有给定集合之间的差集。不存在的 key 被视为空集。
+- `SDIFFSTORE destination key [key ...]`  这个命令的作用和 SDIFF 类似，但它将结果保存到 destination 集合，而不是简单地返回结果集。如果 destination 集合已经存在，则将其覆盖。destination 可以是 key 本身。
+- `SINTER key [key ...]` 返回一个集合的全部成员，该集合是所有给定集合的交集。不存在的 key 被视为空集。当给定集合当中有一个空集时，结果也为空集(根据集合运算定律)。
+- `SINTERSTORE destination key [key ...]` 与sdiffstore类似
+- `SISMEMBER key member` 判断 member 元素是否集合 key 的成员。
+- `SMEMBERS key` 
+- `SMOVE source destination member` 将 member 元素从 source 集合移动到 destination 集合。 SMOVE 是原子性操作。
+- `SPOP key` 移除并返回集合中的一个随机元素
+- `SRANDMEMBER key [count]` 如果命令执行时，只提供了 key 参数，那么返回集合中的一个随机元素
+- `SREM key member [member ...]` 移除集合 key 中的一个或多个 member 元素，不存在的 member 元素会被忽略。
+- `SUNION key [key ...]` 返回一个集合的全部成员，该集合是所有给定集合的并集。
+- `SUNIONSTORE destination key [key ...]`
+- `SSCAN key cursor [MATCH pattern] [COUNT count]` 参考 SCAN 命令
+
+##### 有序集合 zset
+
+##### 散列 hash
 
 *****************************************************************
 	

@@ -41,4 +41,7 @@
 
 ## 个人备忘
 - [阿里Java编程规范](https://github.com/Kuangcp/Notes/blob/master/Java/%E9%98%BF%E9%87%8C%E5%B7%B4%E5%B7%B4java%E8%A7%84%E8%8C%832017-02-09.md)
-- [常用SDK下载](https://pan.baidu.com/s/1i48uER7)
+- [常用SDK自动下载配置工具 mythsdk](https://github.com/Kuangcp/Script/tree/master/python/mythsdk) `功能仿sdkman，但简单，不过是提供自行搭建使用的，毕竟七牛云下载超量了是要收费的`
+
+
+
