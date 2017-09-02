@@ -64,6 +64,7 @@
 ## 常规使用
 - 如果出现命令执行失败，可以登录docker的控制台直接执行 `boot2docker ssh`
 - 可以将镜像看成真正运行的程序，容器就是具体的一些配置，所以镜像是可以重复利用，容器出问题删掉就是了
+
 #### 基础命令
 - 登录hub.docker ：`docker login ` 或者 `docker login -u username -p password`
 
@@ -94,10 +95,12 @@
 - 登录容器：`docker exec -it 容器name或id bash `
 - `docker commit id name` 将容器为id的当前容器 保存为name镜像
 
+
+
 ******************
 ### Dockerfile
 #### 使用入门案例
-- 新建目录然后 `touch Dockerfile` `gedit Dockerfile` 输入如下文本
+- `mkdir test && cd test && touch Dockerfile ` 输入如下文本
 ```
     #随意写的
     FROM redis
@@ -108,6 +111,7 @@
 ```
 - `docker build .` 如果成功则会得到一个没有名字的镜像
     - `docker build -t repository/tag .` 给镜像指定名字
+    - 如果文件名是`Dockerfile` 使用 `.` 否则就是文件名
 - 创建镜像成功后 `docker run --name ContainerName -d repository/tag` 新建容器来运行镜像
 
 ***************************

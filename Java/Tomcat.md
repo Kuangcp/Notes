@@ -42,7 +42,7 @@
 
 
 ### 虚拟目录
-指定webapp目录外的可访问的文件
+`指定webapp目录外的可访问的文件`
 - 方法1：conf/server.xml
     - 当中找到host标签里 添加一行 `<Context path="/hello" docBase="c:/mydsadf"/>`
 
@@ -88,6 +88,7 @@ request.getParameter返回字符串，如果表单里面是空的，就返回长
 
 ###  Tips
 -  servletContextLisner 和Spring环境的加载顺序要注意
+- 配置好的tomcat [SDK 下的tomcat下的myth-tomcat-8.5.14.zip](https://pan.baidu.com/s/1i48uER7)
 
 *************
 
