@@ -47,6 +47,10 @@
     - `GPL` 关注于共享改进，这是一种copyleft许可证，要求修改项目代码的用户再次分发源码或二进制代码时，必须公布他的相关修改。 `Linux、Git`
 
 ***************************************************************	
+## 安装最新版git
+- `sudo add-apt-repository ppa:git-core/ppa` 如果命令找不到就先安装这个 `sudo apt-get install software-properties-common`
+- `sudo apt update`
+- `sudo apt-get install git`
 
 ## 【目前使用git的方法】 
 

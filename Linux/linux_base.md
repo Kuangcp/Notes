@@ -2,6 +2,28 @@
 ## 【系统管理】
 > sudo 其实是软件 早该意识到的，所有的命令都是可执行文件
 
+### 【发行版之别】
+- debain
+- ubuntu
+- fedora
+- openSUSE
+- freeBSD
+- Solaris
+- Alpine 特别小
+- centos
+- arch 
+- ubuntu mint
+- deepin
+- mageia
+- gentoo
+
+### 【桌面环境之别】
+- gnome
+- xfce
+- kde
+- 
+
+
 ### 【用户管理】
 - 添加用户 `sudo adduser username` 对比 `useradd`只是新建一个用户不会创建主目录
 - 添加到sudo组 ，使用命令更安全：`sudo gpasswd -a $USER sudo` 但是要注销或者重启才生效貌似
@@ -49,11 +71,12 @@
 	- ` sudo  dpkg  -i  *.deb`
 - 2,apt-get
 	- `sudo apt-get install xxx`
-	- 若不能添加私有源ppa：
-	- debain：`sudo apt-get install software-properties-common`
-	- Ubuntu `sudo apt-get install python-software-properties`
-	- 例如：`sudo add-apt-repository ppa:dotcloud/lxc-docker `
+- 若不能添加私有源ppa：
+    - debain：`  `
+    - Ubuntu `sudo apt-get install python-software-properties`
+- 例如：`sudo add-apt-repository ppa:dotcloud/lxc-docker `
 	- 删除ppa `cd  /etc/apt/sources.list.d/` 打开该目录下文件把对应的ppa的一行注释掉或删掉就行了
+
 - 3,make install 源代码安装
     - 1.解压缩 `tar -zxf nagios-4.0.2.tar.gz ` 
     - 2.进入目录 `cd nagios-4.0.2`
@@ -95,6 +118,7 @@
 ##### Ubuntu与Windows10时间相差8小时的解决
 - `timedatectl set-local-rtc true `
 
+
 ##### 终端开启慢 
 - 检查 .bashrc 文件, 这次就是因为sdkman的原因导致巨慢,那上次是什么原因呢?
 
@@ -124,8 +148,9 @@
     - 让进程在新的会话中运行 setid screen
 
 ##### 关闭ssh回话不能运行
-##### 关闭ssh回话仍能运行
 
+##### 关闭ssh回话仍能运行
+nohup， disown screen setid 
 - 使用`nohup`屏蔽hup信号 后台运行，输出到nohup.out `nohup 命令 &`
     - 修改重定向文件  `nohup 命令>/dev/null 2>&1`
 - `(命令 &)` 屏蔽了hup信号

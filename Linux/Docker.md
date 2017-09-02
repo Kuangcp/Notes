@@ -83,6 +83,7 @@
     - -t 容器启动后进入其命令行
     - -v 将本地文件夹建立映射到容器内 `-v 本机:容器`
     - -p 端口映射 左本机右容器 `-p 80:8080` 如果相同就直接 `-p 22`
+    - -f 文件？
     - --env name="tanky" 设置环境变量
     - --memory 限制最大内存
     - --cpu-shares 设置CPU的相对权重，只在link之间容器的权重比例
@@ -144,15 +145,14 @@
     - `-f` 指向任意位置的文件进行配置 `docker build -f /path/to/a/Dockerfile .`
     - `-t`如果构建成功 可以指定保存新镜像的repository和tag (多个的话就多个 -t就行了，例如 `docker build -t shykes/myapp:1.0.2 -t shykes/myapp:latest .`)
 
-
-##### MAINTAINER
-- 留开发者名字 例如 `MAINTAINER kuangcp myth.kuang@gmail.com`
-
 ##### FROM 
 > 基于某镜像构建,这是整个文件的第一条指令，一定是基于某镜像构建的，如果是空镜像就使用特殊的 FROM scratch
 
 - `FROM image`
 - `FROM image:tag`
+
+##### MAINTAINER
+- 留开发者名字 例如 `MAINTAINER kuangcp myth.kuang@gmail.com`
 
 ##### RUN
 - `RUN command` command是shell `/bin/sh -c` 命令 例如 `RUN apt update`  
@@ -165,7 +165,9 @@
 - `ENTRYPOINT ["cmd", "param1", "param2"...]`
 
 ##### USER
-- 如果指定 mysql 的运行用户 `ENTRYPOINT ["mysql", "-u", "daemon"]`
+- 限定了当前镜像的默认用户，如果在这个镜像上的容器需要安装软件就会需要提权，就要至少创建额外的两个层，层限制是42,
+    - 更好的方法是在基础镜像中创建用户和用户组，然后在完成构建时再设置默认的用户
+- 指定 mysql 的运行用户 `ENTRYPOINT ["mysql", "-u", "daemon"]`
 - 更好的方式是：
 ```
     ENTRYPOINT ["memcached"]
@@ -173,15 +175,24 @@
 ```
 
 ##### EXPOSE
-> 开放端口 例如 EXPOSE 22
+- 创建一个层，对外开放端口 例如 EXPOSE 22
+
 
 ##### ENV
 - 设置环境变量 `ENV <key> <value>`
 - 设置了后，后续的RUN命令都设置了后，后续的RUN命令都可以使用可以使用
 
+##### LABEL
+- 用来定义键值对，只能出现一次，相当于是一个内置的配置文件
+
+##### COPY
+- copy ["./log", "${APPROOT}"]
+- 类似于entrypoint，同样的copy也支持Shell和exec格式，但是如果任何一个参数包含了空格，就必须要使用exec。
+
 ##### ADD
+- 相当于copy命令
 - `ADD <src> <dest>` 
-    - src 是Dockerfile的相对目录，可以是本地也可以是远程URI
+    - src 是Dockerfile的相对目录，可以是本地也可以是远程URL
     - dest 容器中的绝对路径
 
 ##### VOLUME
@@ -189,7 +200,7 @@
 
 ##### WORKDIR
 - `WORKDIR /path/to/workdir`
-- 配置RUN, CMD, ENTRYPOINT 命令设置当前工作路径
+- 配置RUN, CMD, ENTRYPOINT 命令设置当前工作路径，如果目录不存在就新建
 - 可以设置多次，如果是相对路径，则相对前一个 WORKDIR 命令
     - 例如：`WORKDIR /a WORKDIR b WORKDIR c RUN pwd` 其实是在 /a/b/c 下执行 pwd
     
@@ -201,7 +212,7 @@
 - `一个Dockerfile里只能有一个CMD，如果有多个，只有最后一个生效。`
 
 ##### ONBUILD
-- 
+- 注入下游镜像。如果生成的镜像是作为另一个镜像的基础镜像，则该指令定义了需要被执行的那些指令
 
 ******************************************
 #### 案例
@@ -211,14 +222,25 @@
 - [官方文档 dockerfile](https://www.docker.io/learn/dockerfile/)
 - [官方文档 builder](http://docs.docker.io/reference/builder/)
 
-`打包软件 git`
+`打包软件 最新版git`
+```
 FROM ubuntu
 MAINTAINER "youtemail"
-RUN apt install -y git
+RUN apt-get update
+RUN apt-get install -ysoftware-properties-common
+RUN add-apt-repository ppa:git-core/ppa
+RUN apt-get update && apt-get install -y git
 ENTRYPOINT ["git"]
+```
+- 构建镜像`docker build -t git:new .`
+- 将镜像容器化执行命令后自动删除容器`docker run --rm git:new`
+- 注意其运行环境是容器内，不是宿主机，入口点的命令运行完了就退出了，不能当成宿主机上的git使用，只能说是听个响
+    - 所以不可能说在容器中安装软件然后在宿主机上交互运行
 
 ### dockerignore文件的使用
 - .dockerignore文件是依据 Go的PathMatch规范来的，使用和.gitignore类似
+
+### 使用启动脚本和多进程容器
 
 
 ***************************************************
