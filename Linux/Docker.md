@@ -75,29 +75,48 @@
 - 删除 ： `docker rmi 镜像名`
 
 #### 容器命令
-- 运行：`docker run -d --name conrainer-name image-name`
+`docker run `
+- 根据镜像运行一个指定名称的容器 `docker run -d --name conrainer-name image-name touch a.md` ，如果镜像本地没有会自动pull
     - --name 配置容器名字
     - -d detach后台启动程序
-    - -i 交互模式运行容器 `docker run  -i -t ubuntu /bin/bash`
+    - -i 交互模式运行容器(标准输入和标准输出) `docker run  -i -t ubuntu /bin/bash`
     - -t 容器启动后进入其命令行
-    - -v 将本地文件夹建立映射到容器内
+    - -v 将本地文件夹建立映射到容器内 `-v 本机:容器`
     - -p 端口映射 左本机右容器 `-p 80:8080` 如果相同就直接 `-p 22`
     - --env name="tanky" 设置环境变量
+    - --memory 限制最大内存
+    - --cpu-shares 设置CPU的相对权重，只在link之间容器的权重比例
+    - --cpuset-cpus 限制只能运行在某标号的CPU上
+    - --user -u 限制用户
+    - --cap-drop 去除能力
+    - --link 链接其他容器
+    - -rm 容器退出就自动删除
+
+********************
+`docker create`
+> [官方文档](https://docs.docker.com/engine/reference/commandline/create)
+
+- docker create 是创建一个容器，不会运行，docker run是运行命令在一个新容器里
 
 - 查看当前运行的容器：`docker ps `
     - 查看所有容器 ：`docker ps -a`
+
 - 停止容器：`docker stop 容器name或id`
 - 启动容器：`docker start 容器name或id`
     - -i 交互模式，也可以进入终端
+
 - 删除容器：`docker rm 容器id`
     - 删除所有容器：`docker rm ${docker -a -q}`
 - 容器日志：`docker logs 容器name或id`
 - 登录容器：`docker exec -it 容器name或id bash `
-- `docker commit id name` 将容器为id的当前容器 保存为name镜像
 
+`docker commit `
+- `docker commit 容器id 镜像name` 将容器为id的当前容器 保存为name镜像
+- 
 
+### 跨容器依赖
 
-******************
+*******************************************
 ### Dockerfile
 #### 使用入门案例
 - `mkdir test && cd test && touch Dockerfile ` 输入如下文本
@@ -130,7 +149,7 @@
 - 留开发者名字 例如 `MAINTAINER kuangcp myth.kuang@gmail.com`
 
 ##### FROM 
-> 基于某镜像构建
+> 基于某镜像构建,这是整个文件的第一条指令，一定是基于某镜像构建的，如果是空镜像就使用特殊的 FROM scratch
 
 - `FROM image`
 - `FROM image:tag`
@@ -140,7 +159,7 @@
 - `RUN ["executable", "param1", "param2" ... ]`
 
 ##### ENTRYPOINT
-- 命令设置在容器启动时执行命令 一般用来做初始化容器，或者运行持久软件
+- `容器入口点` 命令设置在容器启动时执行命令 一般用来做初始化容器，或者运行持久软件
 - `ENTRYPOINT echo "Welcome!"` 那么每次启动容器都有这个输出
 - `ENTRYPOINT cmd param1 param2 ...`
 - `ENTRYPOINT ["cmd", "param1", "param2"...]`
@@ -184,20 +203,29 @@
 ##### ONBUILD
 - 
 
-****
-`案例`
-[docker-wordpress-nginx](https://github.com/eugeneware/docker-wordpress-nginx)
-[rails-meets-docker](https://github.com/gemnasium/rails-meets-docker)
+******************************************
+#### 案例
+- [docker-wordpress-nginx](https://github.com/eugeneware/docker-wordpress-nginx)
+- [rails-meets-docker](https://github.com/gemnasium/rails-meets-docker)
 
-[官方文档 dockerfile](https://www.docker.io/learn/dockerfile/)
-[官方文档 builder](http://docs.docker.io/reference/builder/)
+- [官方文档 dockerfile](https://www.docker.io/learn/dockerfile/)
+- [官方文档 builder](http://docs.docker.io/reference/builder/)
 
+`打包软件 git`
+FROM ubuntu
+MAINTAINER "youtemail"
+RUN apt install -y git
+ENTRYPOINT ["git"]
 
 ### dockerignore文件的使用
 - .dockerignore文件是依据 Go的PathMatch规范来的，使用和.gitignore类似
 
 
-************************************
+***************************************************
+## 轻量镜像
+frolvlad/alpine-oraclejdk8   slim
+postgres                     alpine
+
 ## 安装redis
 - 获取镜像：`docker pull redis `
 - 运行默认配置的容器：`docker run --name test-redis -d redis`

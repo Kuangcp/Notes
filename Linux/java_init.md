@@ -1,4 +1,5 @@
 # 安装好deepin后配置Java开发环境
+> oneinstack
 
 - [安装好deepin后配置Java开发环境](#%E5%AE%89%E8%A3%85%E5%A5%BDdeepin%E5%90%8E%E9%85%8D%E7%BD%AEjava%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83)
     - [配置JDK](#%E9%85%8D%E7%BD%AEjdk)
@@ -136,19 +137,15 @@ export PATH=$PATH:$GRADLE_HOME/bin:$GRAILS_HOME/bin:$GROOVY_HOME/bin:$SCALA_HOME
     - `redis-server`
     - `redis-cli`
     - `redis-benchmark` ：性能测试工具，测试redis的读写性能
-    - 解压根目录的 `redis.conf`
+    - 根目录的 `redis.conf`
 - 随意新建一个目录，将四个文件拷过来，就可以直接运行了
 - `./redis-server redis.conf`
-- 再配置下启动脚本就很方便了 
-    - deepin终端可以配置快捷键 `Alt+<`和`Alt+>`分别启动服务端和客户端
 
 `客户端脚本`
-
 ```
     basepath=$(cd `dirname $0`; pwd)
     $basepath/redis-cli
 ```
-
 `服务端脚本`
 
 ```
@@ -157,7 +154,7 @@ export PATH=$PATH:$GRADLE_HOME/bin:$GRAILS_HOME/bin:$GROOVY_HOME/bin:$SCALA_HOME
 ```
 
 ### docker安装redis
-- [docker-install-redis](https://github.com/Kuangcp/Notes/blob/master/TXT/Linux/Docker.md)
+- [docker-install-redis](/Linux/Docker.md)
 
 
 *********************************
@@ -177,4 +174,3 @@ export PATH=$PATH:$GRADLE_HOME/bin:$GRAILS_HOME/bin:$GROOVY_HOME/bin:$SCALA_HOME
 ### 联想G4070 安装 deepin 15.4.1 显卡兼容失败（15.4还能正常用）
 - 因为合上盖子休眠就会导致打开电脑直接死机， 找了半天原因是驱动问题， 安装nvidia-driver 即可解决、
 - 手残，按到关闭窗口特效后，就无法打开了，各种用着不爽， 然后重装了最新版系统，然后就装驱动，重启就不能开特效了。。。。。
-

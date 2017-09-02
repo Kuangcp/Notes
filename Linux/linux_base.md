@@ -112,8 +112,7 @@
 -  ` ; ` 顺序执行多条命令，当;号前的命令执行完（不管是否执行成功），才执行;后的命令。 
 - ` & `  并行执行命令，没有顺序
 
-
-
+- [tty 虚拟终端等概念](https://www.ibm.com/developerworks/cn/linux/l-cn-termi-hanzi/)
 **************
 #### 让命令在后台运行
 > [原博客](https://www.ibm.com/developerworks/cn/linux/l-cn-nohup/)
@@ -139,8 +138,23 @@
 
 ## 快捷键
 - 终端：
-    - `Ctrl L` 清屏，Mysql也适用 但是没有clear命令干净彻底
+    - `Ctrl L` 清屏，Mysql也适用
     - `Ctrl ；` 显示最近五条剪贴板内容
     - Ctrl backspace 删除单词
+```
+Ctrl + d       删除一个字符，相当于通常的Delete键（命令行若无任何字符，则相当于exit；处理多行标准输入时也表示EOF ）
+Ctrl + h       退格删除一个字符，相当于通常的Backspace键
+Ctrl + u       删除光标之前到行首的字符
+Ctrl + k       删除光标之前到行尾的字符
+Ctrl + c       取消当前行输入的命令，相当于Ctrl + Break
+Ctrl + a       光标移动到行首（Ahead of line），相当于通常的Home键
+Ctrl + e       光标移动到行尾（End of line）
+Ctrl + f       光标向前(Forward)移动一个字符位置
+Ctrl + b       光标往回(Backward)移动一个字符位置
+Ctrl + l       清屏，相当于执行clear命令
+Ctrl + p       调出命令历史中的前一条（Previous）命令，相当于通常的上箭头
+Ctrl + n       调出命令历史中的下一条（Next）命令，相当于通常的下箭头
+Ctrl + r       显示：号提示，根据用户输入查找相关历史命令（reverse-i-search）
+```
 - htop 终端的任务管理器显示
 - lsof 便捷的查看端口情况
