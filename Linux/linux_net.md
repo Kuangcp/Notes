@@ -20,6 +20,7 @@
     - +short 精简输出
     - +nocmd+nocomment+nostat 输出最核心内容
 
+`drill`
 
 ## IPv4 和 IPv6
 - IPv4 只有32bit IPv6 有128bit

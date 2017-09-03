@@ -8,6 +8,7 @@
 - [rabbitmq](https://github.com/chwshuang/rabbitmq)`入门学习代码`
 - [webmagic](https://github.com/code4craft/webmagic) `爬虫框架`
 
+- [Java设计模式](https://github.com/iluwatar/java-design-patterns)
 ## Python
 - [PythonWeb开发](https://github.com/dongweiming/web_develop) `书籍相关源码`
 
@@ -24,6 +25,7 @@
 
 ## Docker
 - [Docker官方github组织](https://github.com/docker-library) `docker的官方Dockerfile以及doc文档`
+- [openoffice in docker](https://github.com/tobegit3hub/dockerized-openoffice)
 
 **********************************************
 # Book

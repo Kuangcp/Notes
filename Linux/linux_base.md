@@ -160,7 +160,7 @@ nohup， disown screen setid
 #### 修改主机名
 - `sudo hostname linux` 重启终端即可看到修改
 - 但是重启电脑会恢复原有名字修改如下文件永久： `sudo gedit /etc/hostname` `/etc/hosts`
-
+- 立即生效 `hostname -F /etc/hostname `
 ## 快捷键
 - 终端：
     - `Ctrl L` 清屏，Mysql也适用
