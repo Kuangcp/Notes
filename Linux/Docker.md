@@ -242,11 +242,22 @@ ENTRYPOINT ["git"]
 
 ### 使用启动脚本和多进程容器
 
+## Docker-Compose
+> 声明式环境，管理多容器依赖
+
+## Docker-Machine
+> 创建一个docker集群环境 [官方文档安装](https://docs.docker.com/machine/install-machine)
+
+Error with pre-create check: "VBoxManage not found. Make sure VirtualBox is installed and VBoxManage is in the path
+Error with pre-create check: "This computer doesn't have VT-X/AMD-v enabled. Enabling it in the BIOS is mandatory"
+
+## Docker-Swarm
 
 ***************************************************
 ## 轻量镜像
 frolvlad/alpine-oraclejdk8   slim
 postgres                     alpine
+alpine
 
 ## 安装redis
 - 获取镜像：`docker pull redis `
