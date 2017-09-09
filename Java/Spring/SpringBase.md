@@ -12,9 +12,7 @@
 - spring-core-3.2.6.RELEASE.jar
 - spring-expression-3.2.6.RELEASE.jar
 
-****
 ##### maven配置Spring依赖
-
 ```
       <properties>
        <spring.version>4.1.7.RELEASE</spring.version>
@@ -344,3 +342,6 @@ XML风格有两个缺点。第一是它不能完全将需求实现的地方封�
 
 
 
+### Web开发上的一些优秀的习惯
+- 使用AOP来简化开发MVC的代码
+- 繁杂的代码如何简化
