@@ -33,6 +33,9 @@
 ## Linux
 - [snap](https://snapcraft.io/docs/core/usage) `snap 软件包管理器`
 
+## Go
+- [go官方文档](https://golang.org/doc/)
+
 ## Python
 - [python-gtk3](https://python-gtk-3-tutorial.readthedocs.io/en/latest/introduction.html) `python-gtk3的开发`
 

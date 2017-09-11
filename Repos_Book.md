@@ -10,6 +10,10 @@
 
 - [Java设计模式](https://github.com/iluwatar/java-design-patterns)
 
+## Go
+- [build-web-application-with-golang](https://github.com/astaxie/build-web-application-with-golang)
+
+
 ## Python
 - [PythonWeb开发](https://github.com/dongweiming/web_develop) `书籍相关源码`
 
@@ -36,6 +40,7 @@
 > 在线书籍
 ## Go
 - [《Go入门指南》](https://github.com/Unknwon/the-way-to-go_ZH_CN)
+- [学习Go](https://github.com/mikespook/Learning-Go-zh-cn)
 
 
 ## Tools

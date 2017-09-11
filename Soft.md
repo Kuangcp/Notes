@@ -25,6 +25,8 @@
 - [RUNOOB.COM](http://www.runoob.com) `各种技术学习 文档资源`
 - [asciinema](https://asciinema.org) `终端屏幕录制和分享网`
 
-### 
+### Go
+- [go](http://www.runoob.com/go/go-tutorial.html)
+- [在线编译执行 学习go](http://www.vaikan.com/go/a-tour-of-go/#1) `在线编辑运行`
 
 

@@ -12,13 +12,18 @@
 - [Docker图形化管理](http://blog.liuker.cn/index.php/docker/31.html)
 - [程序员你为什么这么累？](https://zhuanlan.zhihu.com/p/28705206)
 
+## Go
+- [Go语言资料收集](https://github.com/wonderfo/wonderfogo/wiki)
+- [学习Go的知乎话题](https://www.zhihu.com/question/23486344)
+- [Go相关书籍的知乎话题](https://www.zhihu.com/question/30461290)
+
+## Python
+- [Python中的多态](http://blog.csdn.net/shangzhihaohao/article/details/7065675)
+- [python输出带颜色的字体](http://www.cnblogs.com/oleli/p/5228880.html)
 
 ### BuildTool
 - [Gradle构建多模块项目](http://blog.javachen.com/2015/01/07/build-multi-module-project-with-gradle.html)
 - [tig](http://blog.csdn.net/willwcw/article/details/46517331)
 
-## Python
-- [Python中的多态](http://blog.csdn.net/shangzhihaohao/article/details/7065675)
-- [python输出带颜色的字体](http://www.cnblogs.com/oleli/p/5228880.html)
 
 

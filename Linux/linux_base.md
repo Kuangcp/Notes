@@ -150,7 +150,7 @@
 ##### 关闭ssh回话不能运行
 
 ##### 关闭ssh回话仍能运行
-nohup， disown screen setid 
+nohup， disown, screen, setid 
 - 使用`nohup`屏蔽hup信号 后台运行，输出到nohup.out `nohup 命令 &`
     - 修改重定向文件  `nohup 命令>/dev/null 2>&1`
 - `(命令 &)` 屏蔽了hup信号
@@ -161,6 +161,10 @@ nohup， disown screen setid
 - `sudo hostname linux` 重启终端即可看到修改
 - 但是重启电脑会恢复原有名字修改如下文件永久： `sudo gedit /etc/hostname` `/etc/hosts`
 - 立即生效 `hostname -F /etc/hostname `
+
+#### 字符雨
+- `sudo apt-get update;sudo apt-get install cmatrix` 然后 运行 cmatrix
+*************************
 ## 快捷键
 - 终端：
     - `Ctrl L` 清屏，Mysql也适用
