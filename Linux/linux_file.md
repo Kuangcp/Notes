@@ -242,8 +242,10 @@ du xmldb/*/*/* |wc -l
 ******
 - `zip jpg.zip *.jpg` //zip格式的压缩，需要先下载zip for linux
 - `zip -r file.zip code/*` 压缩code目录下所有文件
-    - `-q 终端不输出` `-o 输出文件`  `-r 表示递归` `-l 兼容Windows的换行符`
-    - -e 加密 
+    - `zip -r ./a.zip ./*` 压缩当前目录所有文件
+    - `-q`终端不输出 `-o` 输出文件`
+    -  `-r` 表示递归 `-l` 兼容Windows的换行符
+    -  `-e` 加密
 
 #### 解压
 - `tar -xvf file.tar` //解压 tar包
