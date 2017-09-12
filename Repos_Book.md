@@ -1,4 +1,4 @@
-# GitRepos
+# 【GitRepos】
 > 收集的一些优秀的git仓库
 
 ## Java
@@ -36,11 +36,11 @@
 - [ui-for-docker](https://github.com/kevana/ui-for-docker) `docker 简单易用图形化`
 
 **********************************************
-# Book
+# 【Book】
 > 在线书籍
 ## Go
 - [《Go入门指南》](https://github.com/Unknwon/the-way-to-go_ZH_CN)
-- [学习Go](https://github.com/mikespook/Learning-Go-zh-cn)
+- [Learning-Go](https://github.com/mikespook/Learning-Go-zh-cn)
 
 
 ## Tools
