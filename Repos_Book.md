@@ -8,7 +8,10 @@
 - [rabbitmq](https://github.com/chwshuang/rabbitmq)`入门学习代码`
 - [webmagic](https://github.com/code4craft/webmagic) `爬虫框架`
 
-- [Java设计模式](https://github.com/iluwatar/java-design-patterns)
+- [Java设计模式](https://github.com/iluwatar/java-design-patterns) `设计模式详解`
+- [Springboot实战](https://github.com/lianggzone/springboot-action)
+- [activiti实战源码](https://github.com/henryyan/activiti-in-action-codes)
+- [activiti示例](https://github.com/henryyan/kft-activiti-demo)
 
 ## Go
 - [build-web-application-with-golang](https://github.com/astaxie/build-web-application-with-golang)

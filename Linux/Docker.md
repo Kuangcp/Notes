@@ -32,6 +32,7 @@
 ## 安装与卸载
 > [daocloud安装帮助](http://get.daocloud.io/#install-docker)
 
+### 【Linux】
 #### 通过命令安装
 `snap`
 - 安装snap `sudo apt install snapd`
@@ -58,6 +59,12 @@
 #### 卸载
 - `sudo apt-get purge docker-ce`
 - `sudo rm -rf /var/lib/docker`
+
+### 【Windows】
+- [参考博客](http://www.cnblogs.com/linjj/p/5606687.html)
+- [官方toolbox 下载](https://www.docker.com/products/docker-toolbox)
+- 然后双击安装，勾选上virtualbox 记住cpu要开虚拟化
+- 安装完成后就会有三个图标在桌面上，然后进入Docker Quickstart Terminal后 `docker run hello-world` 有正常输出即可
 
 **************************************
 
