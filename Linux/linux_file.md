@@ -182,6 +182,7 @@ du xmldb/*/*/* |wc -l
 ```
 - [示例文件](https://github.com/Kuangcp/Notes/tree/master/ConfigFiles/Linux/VSCode.desktop)
 - 如要将快捷方式放在启动菜单内 将desktop文件放在 `/usr/share/applications/` 目录下即可
+- 注意：目录不能有空格 等特殊字符
 
 ************************************
 ## 在Linux上操作压缩文件的命令

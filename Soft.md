@@ -1,5 +1,8 @@
 #【 常用的软件网址】
 
+## IDE
+- [IDEA](https://www.jetbrains.com/idea/)
+
 ## SDK
 - [Gradle官方下载地址](http://services.gradle.org/distributions/)
 
