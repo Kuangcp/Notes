@@ -7,7 +7,7 @@ import getopt
     使用： python3 create_tree -h 查看帮助
 '''
 # 忽略的文件夹
-dirs=['.git','Images','Shell','bat','SQL','ConfigFiles']
+dirs=['.git','SQL','Docker']
 # 忽略的文件
 files=['CODE_OF_CONDUCT.md', 'README.md']
 flag_show=False
@@ -110,7 +110,7 @@ if flag_show :
 # 追加到gitbook的目录文件中
 if flag_append :
     with open('SUMMARY.md','a') as dest:
-        dest.write('\n\n')
+        dest.write('\n\n\n############################################')
         for res in result:
             dest.write(res+'\n')
         

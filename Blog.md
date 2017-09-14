@@ -35,3 +35,6 @@
 
 
 
+### Tool
+
+- [genymotion 4.2.2 windows版](http://blog.csdn.net/c_s_d_n_luckyq/article/details/48437789)

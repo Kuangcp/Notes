@@ -8,6 +8,7 @@
 
 ## Tools
 - [git](https://git-scm.com/)
+- [genymotion](https://www.genymotion.com/) `安卓模拟器`
 
 ### UML
 - [免费UML软件统计博客](http://blog.csdn.net/s464036801/article/details/8469166)
