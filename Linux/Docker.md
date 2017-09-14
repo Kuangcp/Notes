@@ -120,7 +120,6 @@
     - 导入： `docker import [-c |--change=[]] [-m | --message=[]] file|URL - [repository]:[tag]`
     - -c | --change=[] 选项在导入的同时执行对容器就行修改的Dockerfile指令。
 
-- docker create 是创建一个容器，不会运行，docker run是运行命令在一个新容器里
 `docker create`
 > [官方文档](https://docs.docker.com/engine/reference/commandline/create)
 
@@ -142,6 +141,7 @@
     - `--cap-drop` 去除能力
     - `--link` 链接其他容器
     - `-rm` 容器退出就自动删除
+- docker create 是创建一个容器，不会运行，docker run是运行命令在一个新容器里
 
 `docker exec`
 - 登录容器：`docker exec -it 容器name或id bash `
