@@ -71,56 +71,93 @@
 ## 常规使用
 - 如果出现命令执行失败，可以登录docker的控制台直接执行 `boot2docker ssh`
 - 可以将镜像看成真正运行的程序，容器就是具体的一些配置，所以镜像是可以重复利用，容器出问题删掉就是了
+### Docker仓库
+- 使用其他源进行拉取 `docker pull index.tenxcloud.com/docker_library/node:lastest` 时速云
+    - 下载后可以用别名 `docker tag index.tenxcloud.com/docker_library/node:lastest node:lastest`
 
-#### 基础命令
+- 搭建私有仓库
+    - 服务器上运行 并映射到本地目录 `docker run -d -p 5000:5000 -v /opt/data/registry:/tmp/registry registry`
+    - 对服务器中docker已经有的镜像 设置别名 `docker tag 镜像 ip:port/名字`
+    - docker push 别名
+    - 查看服务器上仓库的镜像 `curl http://IP:5000/v1/search `
+    - 这个需要SSL证书，所以要使用要么修改 docker daemon启动参数 要么手动生成SSL证书，或者申请真正SSL证书
+        - 添加参数 DOCKER_OPTS="--insecure-registry ip:port" 重启docker服务
+
+### 【基础命令】
 - 登录hub.docker ：`docker login ` 或者 `docker login -u username -p password`
 
-#### 镜像命令
+#### 【镜像命令】
 - 搜索 ： `docker search 镜像名`
 - 安装 ： `docker pull 镜像名`
-- 查看 ： `docker images`
+- 查看所有 ： `docker images`
 - 删除 ： `docker rmi 镜像名`
+- 查看详细： `docker inspect [-f {{".Architesture"}}]`  -f 查看JSON格式的具体节点的数据值
+- 查看历史：`docker history imagename`
+- 添加标签（别名）： `docker tag originname newname`
+- 导入导出：`docker save -o ubuntu.tar  ubuntu:14.04`
+    - 导入： `docker load --input ubuntu.tar`或 `docker load < ubuntu.tar`
+- 上传镜像： `docker push mythos/test:lastest`
 
-#### 容器命令
-`docker run `
-- 根据镜像运行一个指定名称的容器 `docker run -d --name conrainer-name image-name touch a.md` ，如果镜像本地没有会自动pull
-    - --name 配置容器名字
-    - -d detach后台启动程序
-    - -i 交互模式运行容器(标准输入和标准输出) `docker run  -i -t ubuntu /bin/bash`
-    - -t 容器启动后进入其命令行
-    - -v 将本地文件夹建立映射到容器内 `-v 本机:容器`
-    - -p 端口映射 左本机右容器 `-p 80:8080` 如果相同就直接 `-p 22`
-    - -f 文件？
-    - --env name="tanky" 设置环境变量
-    - --memory 限制最大内存
-    - --cpu-shares 设置CPU的相对权重，只在link之间容器的权重比例
-    - --cpuset-cpus 限制只能运行在某标号的CPU上
-    - --user -u 限制用户
-    - --cap-drop 去除能力
-    - --link 链接其他容器
-    - -rm 容器退出就自动删除
-
-********************
-`docker create`
-> [官方文档](https://docs.docker.com/engine/reference/commandline/create)
-
-- docker create 是创建一个容器，不会运行，docker run是运行命令在一个新容器里
+#### 【容器命令】
 
 - 查看当前运行的容器：`docker ps `
     - 查看所有容器 ：`docker ps -a`
 
 - 停止容器：`docker stop 容器name或id`
+- 重启容器：`docker restart 容器name`
 - 启动容器：`docker start 容器name或id`
     - -i 交互模式，也可以进入终端
 
 - 删除容器：`docker rm 容器id`
+    - -f 强行停止正在运行的容器并删除 
+    - -l 删除容器的连接，但是保留容器
+    - -v 删除容器挂载的数据卷
     - 删除所有容器：`docker rm ${docker -a -q}`
 - 容器日志：`docker logs 容器name或id`
+
+- 导入导出 （容器快照）：
+    - 导出： `docker export -o test.tar 容器名` `docker export 容器name > test.tar`
+    - 导入： `docker import [-c |--change=[]] [-m | --message=[]] file|URL - [repository]:[tag]`
+    - -c | --change=[] 选项在导入的同时执行对容器就行修改的Dockerfile指令。
+
+- docker create 是创建一个容器，不会运行，docker run是运行命令在一个新容器里
+`docker create`
+> [官方文档](https://docs.docker.com/engine/reference/commandline/create)
+
+`docker run `
+- 等价于 docker create 再 docker start
+- `docker run -d --name conrainer-name image-name touch a.md` ，如果镜像本地没有会自动pull
+    - `--name` 配置容器名字
+    - `-d` detach后台启动程序
+    - `-i` 交互模式运行容器(标准输入和标准输出) `docker run  -i -t ubuntu /bin/bash`
+    - `-t` 容器启动后进入其命令行
+    - `-v` 将本地文件夹建立映射到容器内 `-v 本机:容器`
+    - `-p` 端口映射 左本机右容器 `-p 80:8080` 如果相同就直接 `-p 22`
+    - `-f` 文件？
+    - `--env name="tanky"` 设置环境变量
+    - `--memory` 限制最大内存
+    - `--cpu-shares` 设置CPU的相对权重，只在link之间容器的权重比例
+    - `--cpuset-cpus` 限制只能运行在某标号的CPU上
+    - `--user` -u 限制用户
+    - `--cap-drop` 去除能力
+    - `--link` 链接其他容器
+    - `-rm` 容器退出就自动删除
+
+`docker exec`
 - 登录容器：`docker exec -it 容器name或id bash `
+- 这些选项不加就是默认值，加上短参数形式就是设为另一个值 如 -t
+    - `-i `，`--interactive=ture|false` 打开标准输入接受用户输入命令
+    - `--privileged=true|false` 是否给以最高权限
+    - `-t`，`--tty=true|false` 是否分配伪终端
+    - `-u`，`--user=""` 执行命令的用户或ID
+- 使用 nsenter 连接到容器:
+    - PID=${docker-pid 容器id}
+    - nsenter --target $PID --mount --uts --ipc --net --pid
 
 `docker commit `
 - `docker commit 容器id 镜像name` 将容器为id的当前容器 保存为name镜像
 - 
+
 
 ### 跨容器依赖
 

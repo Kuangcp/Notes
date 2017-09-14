@@ -1,6 +1,0 @@
-FROM ubuntu
-MAINTAINER Mythos
-ENV DIRPATH /path
-WORKDIR $DIRPATH/$DIRNAME
-RUN pwd
-CMD echo "This is a test." | wc -

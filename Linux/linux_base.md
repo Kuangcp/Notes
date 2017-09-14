@@ -5,6 +5,7 @@
 ### 【发行版之别】
 - debain
 - ubuntu
+- ubuntu mint
 - fedora
 - openSUSE
 - freeBSD
@@ -12,7 +13,6 @@
 - Alpine 特别小
 - centos
 - arch 
-- ubuntu mint
 - deepin
 - mageia
 - gentoo
@@ -164,6 +164,7 @@ nohup， disown, screen, setid
 
 #### 字符雨
 - `sudo apt-get update;sudo apt-get install cmatrix` 然后 运行 cmatrix
+
 *************************
 ## 快捷键
 - 终端：
@@ -187,3 +188,4 @@ Ctrl + r       显示：号提示，根据用户输入查找相关历史命令�
 ```
 - htop 终端的任务管理器显示
 - lsof 便捷的查看端口情况
+- w | uptime 查看启动情况
