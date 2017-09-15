@@ -159,11 +159,6 @@
 - `docker commit 容器id 镜像name` 将容器为id的当前容器 保存为name镜像
 - 
 
-
-### 跨容器依赖
-
-TODO
-
 ### 数据卷
 - 数据卷是一个可供容器使用的特殊目录，它将宿主机操作系统目录映射进容器 类似于 mount操作
     - 数据卷可以在容器之间共享重用
@@ -192,6 +187,19 @@ TODO
     - 这个就是实现了将本地的归档数据放到指定的容器内，如果要从数据卷容器中恢复到别的容器就只要挂载对应的数据卷容器然后进目录直接解压即可
 
 ### 端口映射
+- 当不指定对应的参数容器默认不开放任何端口给外部，可以使用 -P -p 参数来开放
+    - -P 随机映射一个 49000-49900 的端口到容器开放的端口
+    - -p  `IP:HostPort:ContainerPort | IP::ContainerPort | HostPort:ContainerPort`
+        - 映射到指定IP的指定端口`IP:HostPort:ContainerPort` 
+        - 映射到指定IP的任意端口`IP::ContainerPort`
+        - 映射到所有接口的地址的指定端口`HostPort:ContainerPort`
+    - 还可以使用 udp来标记为udp类型 `docker run -d -p 127.0.0.1::5000/udp ubuntu apt update`
+- 查看端口
+    - 查看容器内5000对应的外端口 `docker port ubuntu17 5000`
+    - 查看容器的具体信息 `docker inspect 容器id` 
+
+#### 容器互联
+> 让多个容器中应用快速交互的方式
 
 *******************************************
 ### Dockerfile
