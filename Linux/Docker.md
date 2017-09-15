@@ -72,6 +72,7 @@
 - 如果出现命令执行失败，可以登录docker的控制台直接执行 `boot2docker ssh`
 - 可以将镜像看成真正运行的程序，容器就是具体的一些配置，所以镜像是可以重复利用，容器出问题删掉就是了
 ### Docker仓库
+- `sudo docker pull index.tenxcloud.com/<namespace>/<repository>:<tag>`
 - 使用其他源进行拉取 `docker pull index.tenxcloud.com/docker_library/node:lastest` 时速云
     - 下载后可以用别名 `docker tag index.tenxcloud.com/docker_library/node:lastest node:lastest`
 
@@ -85,7 +86,7 @@
 
 ### 【基础命令】
 - 登录hub.docker ：`docker login ` 或者 `docker login -u username -p password`
-
+- 登录时速云：`sudo docker login index.tenxcloud.com`
 #### 【镜像命令】
 - 搜索 ： `docker search 镜像名`
 - 安装 ： `docker pull 镜像名`
@@ -163,6 +164,34 @@
 
 TODO
 
+### 数据卷
+- 数据卷是一个可供容器使用的特殊目录，它将宿主机操作系统目录映射进容器 类似于 mount操作
+    - 数据卷可以在容器之间共享重用
+    - 数据卷内数据的修改会立马生效，无论是容器内操作还是本地操作
+    - 对数据卷的更新不会影响镜像，解耦了应用和数据
+    - 卷会一直存在，直到没有容器使用，才可以安全的卸载
+
+- `docker run -v dir:dir[:ro]` 一般是创建容器时使用，和-p类似可以多个，左本机右容器 默认rw权限可以指定 ro只读
+    - 可以将一个文件挂载为数据卷，但是文件夹更好，文件可能会有问题出现
+
+#### 数据卷容器
+- `docker run -it -v /test --name data ubuntu ` 运行一个挂载了数据卷的容器
+- 引用数据卷容器 来挂载数据卷：`docker run -it --volumes-from data --name db1 ubuntu `
+- 从已经挂载了数据卷容器的容器 来挂载数据卷：`docker run -it --volumes-from db1 --name db2 ubuntu `
+- 使用 `--volumes-from` 参数所挂载数据卷的容器并不需要保持在运行状态
+- 如果删除了挂载的容器，数据卷并不会自动删除，而是要在删除最后一个容器时 使用 `docker rm -v` 来声明删除容器并删除关联的数据卷
+
+`利用数据卷容器来迁移数据`
+- 备份：
+    - `docker run --volumes-from data -v $(pwd):/backup --name worker ubuntu tar cvf /backup/backup.tar /data`
+    - 先基于Ubuntu创建一个worker容器并引用了数据卷容器data，然后将当前目录作为数据卷挂载进去，并执行tar命令，打包到数据卷容器的目录下
+    - 实现了将当前目录归档到数据卷容器下
+- 恢复：
+    - 创建一个带有数据卷的容器（目标容器）`docker run -v /data --name reuse ubuntu /bin/bash`
+    - 解压当前目录的tar文件到数据卷容器中 `docker run --volumes-from reuse -v $(pwd):/backup busybox tar xvf /backup/backup.tar`
+    - 这个就是实现了将本地的归档数据放到指定的容器内，如果要从数据卷容器中恢复到别的容器就只要挂载对应的数据卷容器然后进目录直接解压即可
+
+### 端口映射
 *******************************************
 ### Dockerfile
 #### 使用入门案例

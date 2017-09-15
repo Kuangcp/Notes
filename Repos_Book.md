@@ -2,17 +2,29 @@
 > 收集的一些优秀的git仓库
 
 ## Java
-- [Java-learing](https://github.com/brianway/java-learning) `基础学习仓库`
-- [durid](https://github.com/alibaba/druid) `阿里数据库连接池`
-- [Java后台管理](https://github.com/chwshuang/web)`集成Spring4.x+SpringMVC+Mybatis`
-- [rabbitmq](https://github.com/chwshuang/rabbitmq)`入门学习代码`
-- [webmagic](https://github.com/code4craft/webmagic) `爬虫框架`
 
+- [durid](https://github.com/alibaba/druid) `阿里数据库连接池`
+- [dubbo](https://github.com/alibaba/dubbo) `RPC 框架`
+- [elasticsearch](https://github.com/elastic/elasticsearch) `分布式全局搜索`
+- [webmagic](https://github.com/code4craft/webmagic) `爬虫框架`
+- [interview](https://github.com/kdn251/interviews)`面试所需算法练习`
 - [Java设计模式](https://github.com/iluwatar/java-design-patterns) `设计模式详解`
-- [Springboot实战](https://github.com/lianggzone/springboot-action)
+
+### Demo
+- [Java-learing](https://github.com/brianway/java-learning) `基础学习仓库`
 - [activiti实战源码](https://github.com/henryyan/activiti-in-action-codes)
 - [activiti示例](https://github.com/henryyan/kft-activiti-demo)
+- [rabbitmq](https://github.com/chwshuang/rabbitmq)`入门学习代码`
 
+### Web
+- [Springboot实战](https://github.com/lianggzone/springboot-action) `Springboot的案例`
+- [zheng](https://github.com/shuzheng/zheng) `SSM框架整合的一个丰富解决方案`
+- [Java后台管理](https://github.com/chwshuang/web)`集成Spring4.x+SpringMVC+Mybatis`
+
+### Tool
+- [lanproxy](https://github.com/ffay/lanproxy) `将局域网个人电脑、服务器代理到公网的内网穿透工具`
+
+***************************
 ## Go
 - [build-web-application-with-golang](https://github.com/astaxie/build-web-application-with-golang)
 
@@ -49,6 +61,7 @@
 ## Tools
 - [Pro Git](https://git-scm.com/book/zh/v2) `git 学习的书籍`
 
-
+## 前端
+- [Web前端开发](http://caibaojian.com/gitbook/format/cover.html) `gitbook的使用以及相关技术的索引页`
 
 
