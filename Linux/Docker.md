@@ -128,8 +128,8 @@
 - 等价于 docker create 再 docker start
 - `docker run -d --name conrainer-name image-name touch a.md` ，如果镜像本地没有会自动pull
     - `--name` 配置容器名字
-    - `-d` detach后台启动程序
-    - `-i` 交互模式运行容器(标准输入和标准输出) `docker run  -i -t ubuntu /bin/bash`
+    - `-d` 后台启动程序
+    - `-i` 交互模式运行容器(标准输入和标准输出) `docker run  -it ubuntu /bin/bash`
     - `-t` 容器启动后进入其命令行
     - `-v` 将本地文件夹建立映射到容器内 `-v 本机:容器`
     - `-p` 端口映射 左本机右容器 `-p 80:8080` 如果相同就直接 `-p 22`
@@ -141,11 +141,13 @@
     - `--user` -u 限制用户
     - `--cap-drop` 去除能力
     - `--link` 链接其他容器
-    - `-rm` 容器退出就自动删除
-- docker create 是创建一个容器，不会运行，docker run是运行命令在一个新容器里
+    - `-rm` 容器运行结束退出就自动删除该容器 注意和`-d`不能共存
+- `docker create` 是创建一个容器，不会运行，`docker run`是运行命令在一个新容器里
 
 `docker exec`
-- 登录容器：`docker exec -it 容器name或id bash `
+- 登录容器：
+    - `docker exec -it 容器name或id bash `
+    - `docker attach 容器id` 这个命令虽然简单，但是退出会话就自动关闭了容器
 - 这些选项不加就是默认值，加上短参数形式就是设为另一个值 如 -t
     - `-i `，`--interactive=ture|false` 打开标准输入接受用户输入命令
     - `--privileged=true|false` 是否给以最高权限
@@ -199,7 +201,16 @@
     - 查看容器的具体信息 `docker inspect 容器id` 
 
 #### 容器互联
-> 让多个容器中应用快速交互的方式
+> 让多个容器中应用快速安全交互的方式
+
+- 例如: 创建一个MySQL容器供一个Ubuntu容器使用
+    - 创建MySQL容器 `docker run --name mysql2 -e MYSQL_ROOT_PASSWORD=ad -d mysql`
+    - 创建Ubuntu容器 `docker run -d --name test --link mysql2:db ubuntu`
+        - link参数说明 ：`--link name:alias` 在父容器中会以别名代称
+    - docker会连接两个容器，而不用通过暴露端口来实现，web容器的host文件以及环境变量都会追加上mysql2的配置
+    - 所以在Ubuntu容器中连接MySQL容器，首先得到IP就查看 `cat /etc/hosts` 中myslq容器别名为db值的IP地址 或者直接 `ping db`
+    - 然后 `mysql -h IP -u root -pad` 即可连接上mysql
+
 
 *******************************************
 ### Dockerfile
@@ -358,19 +369,14 @@ alpine
 - 然后就是正常的容器的启动关闭了
 
 ## 安装 PostgreSQL
-- [Docker 安装 PostgreSQL](https://github.com/Kuangcp/Notes/blob/master/Database/Postgresql.md)
+- [Docker 安装 PostgreSQL](/Database/Postgresql.md)
 
 ## 安装 Oracle
+- [社区文档](https://hub.docker.com/r/wnameless/oracle-xe-11g/)
 
-************************
-
-- docker pull wnameless/oracle-xe-11g
-- docker pull mongo
-- docker pull cloudesire/activemq
-- docker pull rabbitmq
-- docker pull rabbitmq:3-management
-- docker pull jenkins
-
+## 安装 MySQL
+- [官方文档](https://hub.docker.com/_/mysql/)
+- `docker run --name some-mysql -e MYSQL_ROOT_PASSWORD=my-secret-pw -d mysql:tag`
 
 ## Docker中构建一个可外登录的完整单一Ubuntu
 - 最为简单的是：`docker run  -i -t --name ubuntu17 -p 34433:22 ubuntu /bin/bash`
@@ -382,7 +388,6 @@ alpine
 
 - 现在的问题是：能不能在已经运行的容器中添加端口映射？？要是用到途中发现端口少了就麻烦了，解决方法可以是commit成镜像再跑出一个容器出来，
 - 最好是一个服务（应用）一个容器
-
 
 ****************
 - 自己写构建文件，安装相应的软件
