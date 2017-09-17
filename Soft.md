@@ -5,6 +5,7 @@
 
 ## SDK
 - [Gradle官方下载地址](http://services.gradle.org/distributions/)
+- [openjdk](http://openjdk.java.net/)
 
 ## Tools
 - [git](https://git-scm.com/)
