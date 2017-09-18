@@ -105,17 +105,18 @@
 - 查看当前运行的容器：`docker ps `
     - 查看所有容器 ：`docker ps -a`
 
-- 停止容器：`docker stop 容器name或id`
+- 停止容器：`docker stop 容器name`
 - 重启容器：`docker restart 容器name`
-- 启动容器：`docker start 容器name或id`
+- 启动容器：`docker start 容器name`
     - -i 交互模式，也可以进入终端
 
-- 删除容器：`docker rm 容器id`
+- 删除容器：`docker rm 容器name`
     - -f 强行停止正在运行的容器并删除 
     - -l 删除容器的连接，但是保留容器
     - -v 删除容器挂载的数据卷
     - 删除所有容器：`docker rm ${docker -a -q}`
 - 容器日志：`docker logs 容器name或id`
+- 重命名 ： `docker rename origin new`
 
 - 导入导出 （容器快照）：
     - 导出： `docker export -o test.tar 容器名` `docker export 容器name > test.tar`
@@ -202,7 +203,7 @@
     - 查看容器的具体信息 `docker inspect 容器id` 
 
 #### 容器互联
-> 让多个容器中应用快速安全交互的方式
+> 让多个容器中应用快速安全交互的方式，特别注意这是双向互联的
 
 - 例如: 创建一个MySQL容器供一个Ubuntu容器使用
     - 创建MySQL容器 `docker run --name mysql2 -e MYSQL_ROOT_PASSWORD=ad -d mysql`
@@ -234,6 +235,8 @@ Error with pre-create check: "This computer doesn't have VT-X/AMD-v enabled. Ena
 ***************************************************
 
 ## 轻量镜像
+```
 frolvlad/alpine-oraclejdk8   slim
 postgres                     alpine
 alpine
+```

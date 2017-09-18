@@ -15,7 +15,7 @@
 - 创建镜像成功后 `docker run --name ContainerName -d repository/tag` 新建容器来运行镜像
 
 ***************************
-## Dockerfile命令理解
+## 【Dockerfile命令理解】
 - Dockerfile是一个`镜像`的表示，可以通过Dockerfile来描述构建镜像的步骤，且可以自动构建一个容器
 - 所有的 Dockerfile 命令格式都是: `INSTRUCTION arguments` 
 - 最好在运行这个配置文件的时候新建一个空目录目录下放dockerfile，不要使用根目录，不然全部的东西都传到守护进程里去了
@@ -35,8 +35,19 @@
 - 留开发者名字 例如 `MAINTAINER kuangcp myth.kuang@gmail.com`
 
 ### RUN
+> 每条RUN命令在当前镜像的基础上执行指定命令，并提交为新的镜像，所以不要一条命令就一个RUN，避免层太多
+
 - `RUN command` command是shell `/bin/sh -c` 命令 例如 `RUN apt update`  
 - `RUN ["executable", "param1", "param2" ... ]`
+
+### CMD
+> 指定容器启动时默认执行的命令
+
+- `三种格式`
+    - `CMD ["executable","param1","param2"]` (like an exec, preferred form) `推荐`
+    - `CMD ["param1","param2"]` (as default parameters to ENTRYPOINT)
+    - `CMD command param1 param2` (as a shell)
+- 一个Dockerfile里只能有一个CMD，如果有多个，只有最后一个生效。如果用户在docker run 中带了运行的命令，就会覆盖CMD命令
 
 ### ENTRYPOINT
 - `容器入口点` 命令设置在容器启动时执行命令 一般用来做初始化容器，或者运行持久软件
@@ -59,14 +70,23 @@
 
 ### ENV
 - 设置环境变量 `ENV <key> <value>`
-- 设置了后，后续的RUN命令都设置了后，后续的RUN命令都可以使用可以使用
+- 设置之后的RUN命令都可以使用该环境变量，如果`docker run --env <key>=<value>`则会覆盖dockerfile中同名key的值
 
 ### LABEL
 - 用来定义键值对，只能出现一次，相当于是一个内置的配置文件
+- LABEL version="1.0"
+
+### ARG
+> 用来指定一些镜像中使用的参数，例如版本信息 
+
+-  `ARG <name> [=<default value>]`
+- 使用`docker build --build=-arg<name>=<value>` 来传入值
 
 ### COPY
-- copy ["./log", "${APPROOT}"]
-- 相比于add copy更好
+- `copy <src> <dest>`
+    - `copy ["./log", "${APPROOT}"]`
+
+- 当复制本地目录时，推荐使用copy
 
 ### ADD
 - 相当于copy命令
@@ -82,13 +102,9 @@
 - 配置RUN, CMD, ENTRYPOINT 命令设置当前工作路径，如果目录不存在就新建
 - 可以设置多次，如果是相对路径，则相对前一个 WORKDIR 命令
     - 例如：`WORKDIR /a WORKDIR b WORKDIR c RUN pwd` 其实是在 /a/b/c 下执行 pwd
-    
-### CMD
-`三种格式`
-- CMD ["executable","param1","param2"] (like an exec, preferred form)
-- CMD ["param1","param2"] (as default parameters to ENTRYPOINT)
-- CMD command param1 param2 (as a shell)
-- `一个Dockerfile里只能有一个CMD，如果有多个，只有最后一个生效。`
+
+### STOPSIGNAL
+
 
 ### ONBUILD
 - 注入下游镜像。如果生成的镜像是作为另一个镜像的基础镜像，则该指令定义了需要被执行的那些指令
