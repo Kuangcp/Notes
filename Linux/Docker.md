@@ -1,18 +1,33 @@
 # Docker
 ## 目录 
 - [Docker](#docker)
+    - [目录](#目录)
     - [简介](#简介)
     - [个人理解](#个人理解)
     - [安装与卸载](#安装与卸载)
-        - [通过deb文件安装](#通过deb文件安装)
-        - [卸载](#卸载)
+        - [【Linux】](#【linux】)
+            - [通过命令安装](#通过命令安装)
+            - [通过deb文件安装](#通过deb文件安装)
+            - [不加sudo执行docker命令](#不加sudo执行docker命令)
+            - [卸载](#卸载)
+        - [【Windows】](#【windows】)
     - [常规使用](#常规使用)
-        - [镜像命令](#镜像命令)
-        - [容器命令](#容器命令)
-        - [Dockerfile](#Dockerfile)
-            - [使用入门案例](#使用入门案例)
-            - [RUN命令](#RUN)
-        - [.dockerignore文件的使用](#dockerignore文件的使用)
+        - [Docker仓库](#docker仓库)
+        - [【基础命令】](#【基础命令】)
+            - [【镜像命令】](#【镜像命令】)
+            - [【容器命令】](#【容器命令】)
+        - [数据卷](#数据卷)
+            - [数据卷容器](#数据卷容器)
+        - [端口映射](#端口映射)
+            - [容器互联](#容器互联)
+        - [Dockerfile](#dockerfile)
+        - [dockerignore文件的使用](#dockerignore文件的使用)
+        - [使用启动脚本和多进程容器](#使用启动脚本和多进程容器)
+    - [Docker-Compose](#docker-compose)
+    - [Docker-Machine](#docker-machine)
+    - [Docker-Swarm](#docker-swarm)
+    - [轻量镜像](#轻量镜像)
+
 
 *****************************************
 ## 简介
@@ -175,8 +190,8 @@
 
 #### 数据卷容器
 - `docker run -it -v /test --name data ubuntu ` 运行一个挂载了数据卷的容器
-- 引用数据卷容器 来挂载数据卷：`docker run -it --volumes-from data --name db1 ubuntu `
-- 从已经挂载了数据卷容器的容器 来挂载数据卷：`docker run -it --volumes-from db1 --name db2 ubuntu `
+- 引用数据卷容器 来挂载数据卷：`docker run -it --volumes-from data --name db1 ubuntu`
+- 从已经挂载了数据卷容器的容器 来挂载数据卷：`docker run -it --volumes-from db1 --name db2 ubuntu`
 - 使用 `--volumes-from` 参数所挂载数据卷的容器并不需要保持在运行状态
 - 如果删除了挂载的容器，数据卷并不会自动删除，而是要在删除最后一个容器时 使用 `docker rm -v` 来声明删除容器并删除关联的数据卷
 
