@@ -1,7 +1,39 @@
-## 【文件管理】
-### 基本命令 
+`目录`
+- [【文件管理】](#文件管理)
+    - [基本命令](#基本命令)
+        - [rename](#rename)
+        - [cd](#cd)
+        - [time](#time)
+        - [ls](#ls)
+        - [chown](#chown)
+        - [chgrp](#chgrp)
+        - [file](#file)
+        - [ln](#ln)
+        - [find](#find)
+        - [cp](#cp)
+        - [rm](#rm)
+        - [mv](#mv)
+        - [wc](#wc)
+        - [tail](#tail)
+    - [【磁盘管理】](#磁盘管理)
+        - [dd](#dd)
+        - [mount](#mount)
+        - [fdisk](#fdisk)
+        - [df](#df)
+        - [du](#du)
+    - [Tips](#tips)
+        - [设置交换分区](#设置交换分区)
+        - [善用.bashrc文件](#善用bashrc文件)
+    - [在Linux上操作压缩文件的命令](#在linux上操作压缩文件的命令)
+        - [tar 归档 打包](#tar归档打包)
+            - [压缩](#压缩)
+            - [解压](#解压)
+            - [总结](#总结)
 
-##### rename
+# 【文件管理】
+## 基本命令 
+
+### rename
 `rename命令的使用(基于perl)`
 - `rename "s/.html/.php/" * ` //把.html 后缀的改成 .php后缀
 - `rename "s/$/.txt/" *  `   //把所有的文件名都以txt结尾
@@ -9,16 +41,16 @@
 - `rename "s/AA/aa/" * `  //把文件名中的AA替换成aa
 - `rename "s/ - 副本/_bak/" *` 将文件`-副本`结尾改成`_bak`结尾
 
-##### cd
+### cd
 - `cd - ` 跳转到上一个目录
 - `cd !$` 把上个命令的参数作为cd参数使用。
 - `cd //` 系统根目录 
 
-##### time
+### time
 - bash内置简易time `time` 和 /usr/bin/time `\time`
     - `\time -v ls -al`
 
-##### ls
+### ls
 - i详情 a全部 l 列
     - 输出类型：d 目录 l 软链接 b 块设备 c 字符设备 s socket p 管道 - 普通文件
     - 输出权限信息：r 读权限 w 写权限 x 执行权限
@@ -30,29 +62,29 @@
 - `ls -ASsh` 显示所有文件大小， 便于阅读的形式输出
 - `ls -dl 目录` 查看一个目录的完整属性
 
-##### chown
+### chown
 - `chown [-R] 账号名称 文件或目录`
 - `chown [-R] 账号名称:用户组名称 文件或目录`
 
-##### chgrp
+### chgrp
 - 更改文件所属用户组 `chgrp group file`
     - -R 递归子目录
     
-##### file
+### file
 - file a.txt 查看文件类型
     - -i 输出文件的MIME类型
     - -F "#" 修改输出分隔符
 
-##### ln
+### ln
 - `ln -s 文件或目录 link` 生成软链接（快捷方式）
 
-##### find
+### find
 - `find . -name "*.txt"` 查找当前目录的txt后缀的文件
 - `sudo find / -name a.java` 全盘查找
 - `find -type f -name README.md` 默认当前目录查找
     - d 文件夹 f 普通文件 l 符号链接文件 b 块设备 c 字符设备 p 管道文件 s 套接字
 
-##### cp
+### cp
 - cp   `cp -ri 目录或正则 目录` 目录所有文件复制过去
     - a 该选项通常在拷贝目录时使用。它保留链接、文件属性，并递归地拷贝目录，其作用等于dpR选项的组合。
     - d 拷贝时保留链接。
@@ -62,7 +94,7 @@
     - r 若给出的源文件是一目录文件，此时cp将递归复制该目录下所有的子目录和文件。此时目标文件必须为一个目录名。
     - l 不作拷贝，只是链接文件。
 
-##### rm
+### rm
 - rm  `rm -rf 目录` 不提示性删除
     - f 忽略不存在的文件，从不给出提示。
     - r 指示rm将参数中列出的全部目录和子目录均递归地删除。
@@ -71,17 +103,17 @@
 - 安装上传下载文件的工具 `sudo apt install lrzsz`
 - `cat ~/.ssh/id_rsa.pub | xclip -sel clip` 将文件复制到剪贴板
 
-##### mv
+### mv
 - mv `mv 目录或正则 目录` 移动
     - I 交互方式操作。如果mv操作将导致对已存在的目标文件的覆盖，此时系统询问要求用户回答y或n，这样可以避免误覆盖文件。
     - f 禁止交互操作。在mv操作要覆盖某已有的目标文件时不给任何指示，指定此选项后，i选项将不再起作用。
 
-##### wc
+### wc
 - `wc [-lmw] ` 参数说明： -l :多少行-m:多少字符 -w:多少字
 - cat mul.sh | wc -l
 - wc -l mul.sh
 
-##### tail
+### tail
 > tail命令用于输入文件中的尾部内容。tail命令默认在屏幕上显示指定文件的末尾10行。 来自: http://man.linuxde.net/tail
 
 - `--retry`：即是在tail命令启动时，文件不可访问或者文件稍后变得不可访问，都始终尝试打开文件。此选项需要与选项“——follow=name”连用； 
@@ -101,7 +133,7 @@
 ```
 
 *****************************
-### 【磁盘管理】
+## 【磁盘管理】
 
 - 创建一个空文件 `dd if=/dev/zero of=virtual.img bs=1M count=256` 查看大小 `du -h virtual.img`
 - 将虚拟磁盘镜像格式化为指定的文件系统 `sudo mkfs.ext4 virtual.img`
@@ -110,23 +142,23 @@
 - 只读方式挂载 `mount -o loop --ro virtual.img /mnt`
 - 卸载挂载的磁盘 `sudo umount /mnt`
 
-##### dd
+### dd
 - 
 
-##### mount
+### mount
 - `mount [options] [source] [directory] `
 - `mount [-o [操作选项]] [-t 文件系统类型] [-w|--rw|--ro] [文件系统源] [挂载点]`
 - 查看已挂载信息 `mount`
 
-##### fdisk
+### fdisk
 - 查看磁盘分区表信息 ：`sudo fdisk -l `
 - 
 
 
-##### df 
+### df 
 - `df -h ` 查看挂载文件系统信息
 
-##### du
+### du
 - `du -sh 目录` 查看磁盘占用总大小 h 自动搭配单位（human read ）
 - `du --max-depth` 一级子目录使用情况
 - du -sm * | sort -n //统计当前目录大小 并安大小 排序
@@ -139,8 +171,8 @@ du xmldb/*/*/* |wc -l
 40752
 
 *******************************
-### Tips
-#### 设置交换分区
+## Tips
+### 设置交换分区
 - `free -h` 查看内存
 - `dd if=/dev/zero of=/swapfile bs=1024k count=4096` 创建一个4g 交换文件
 - `mkswap /swapfile` 格式化成交换文件的格式
@@ -151,7 +183,7 @@ du xmldb/*/*/* |wc -l
     - 表示物理内存剩余`10%` 才会开始使用交换分区
 - `建议，笔记本的硬盘低于 7200 转的不要设置太高的交换分区使用，大大影响性能，因为交换分区就是在硬盘上，频繁的交换数据`
 
-#### 善用 ～/.bashrc 文件
+### 善用.bashrc文件
 `Alias`
 ```
     if [ -f ~/.bash_aliases ]; then

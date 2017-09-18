@@ -20,12 +20,13 @@
         - [FTP 服务器](#ftp服务器)
             - [【SSH 的使用】](#ssh的使用)
                 - [1.安装软件](#1安装软件)
-                - [2.复制粘贴建立连接关系的方法](#2复制粘贴建立连接关系的方法)
-                - [2.【更简单的做法 推荐！！！】](#2更简单的做法推荐！！！)
+                - [2.复制粘贴建立密钥对](#2复制粘贴建立密钥对)
+                - [2.【使用脚本更简单】](#2使用脚本更简单)
                 - [使用别名登录](#使用别名登录)
     - [访问图形化](#访问图形化)
         - [【vpn】](#vpn)
             - [shadowsocks](#shadowsocks)
+
 
 # 【网络管理】
 
@@ -358,7 +359,7 @@ nameserver 8.8.8.4
 - 查看对否启动sshd`ps -e |grep ssh`
 - 关闭服务 `/etc/init.d/ssh stop`
 
-##### 2.复制粘贴建立连接关系的方法
+##### 2.复制粘贴建立密钥对
 `客户端`
 - 进入.ssh文件夹下 `gedit id_rsa.pub` 然后复制该公钥内容
     - 或者 `cat ~/.ssh/id_rsa.pub | xclip -sel clip` 将文件复制到剪贴板
@@ -368,7 +369,7 @@ nameserver 8.8.8.4
 - 进入.ssh文件夹下 `sudo vim authorized_keys` 粘贴客户端公钥内容
 - 更改文件权限 `sudo chmod 600 authorized_keys` 确保 其 group和other位没有 w 权限
 
-##### 2.【更简单的做法 推荐！！！】
+##### 2.【使用脚本更简单】
 - 两方安装好软件 客户端生成好了秘钥对之后
 - 默认端口:`ssh-copy-id "username@host"` 输密码就可以了
 - 指定端口 `ssh-copy-id ”-p port username@host“` 或者:`ssh-copy-id " username@host" -p port`

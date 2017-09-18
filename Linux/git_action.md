@@ -17,7 +17,7 @@
     - [【reset命令常用方式】](#reset命令常用方式)
         - [1.回滚add操作](#1回滚add操作)
         - [2.回滚最近一次commit](#2回滚最近一次commit)
-        - [3.回滚最近几次的commit，并添加到一个新建的分支上去](#3回滚最近几次的commit，并添加到一个新建的分支上去)
+        - [3.回滚最近几次的commit并添加到一个新建的分支上去](#3回滚最近几次的commit并添加到一个新建的分支上去)
         - [4.永久删除最近几次](#4永久删除最近几次)
         - [5.回滚merge和pull操作](#5回滚merge和pull操作)
         - [6.在被污染的working_tree中回滚merge或者pull](#6在被污染的working_tree中回滚merge或者pull)
@@ -267,7 +267,7 @@
 		-c 表示 拿已经提交的commit对象中的信息来做这次的提交
 	这条命令就是，将所有更改的文件加入到stage area中，并使用上次的提交信息来提交
 ```
-### 3.回滚最近几次的commit，并添加到一个新建的分支上去
+### 3.回滚最近几次的commit并添加到一个新建的分支上去
 ```
 		git branch myth/test (1)
 		git reset --hard HEAD^3 (2)
