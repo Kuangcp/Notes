@@ -94,7 +94,7 @@
 - 注入下游镜像。如果生成的镜像是作为另一个镜像的基础镜像，则该指令定义了需要被执行的那些指令
 
 ******************************************
-#### 案例
+#### Dockerfile案例
 - [alpine构建ssh](/Linux/Docker/alpine/Dockerfile)
 - [docker-wordpress-nginx](https://github.com/eugeneware/docker-wordpress-nginx)
 - [rails-meets-docker](https://github.com/gemnasium/rails-meets-docker)

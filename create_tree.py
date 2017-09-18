@@ -110,7 +110,7 @@ if flag_show :
 # 追加到gitbook的目录文件中
 if flag_append :
     with open('SUMMARY.md','a') as dest:
-        dest.write('\n\n\n############################################')
+        dest.write('\n\n############################################\n')
         for res in result:
             dest.write(res+'\n')
         
