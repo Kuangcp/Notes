@@ -1,3 +1,30 @@
+# Git实际使用的记录
+`目录`
+- [Tips:](#tips:)
+    - [安装最新版git](#安装最新版git)
+    - [【目前使用git的方法】](#目前使用git的方法)
+    - [实验楼使用Github](#实验楼使用github)
+    - [【git初始化】](#git初始化)
+    - [【VI编辑器的使用】](#vi编辑器的使用)
+    - [【GitHub】](#github)
+        - [【.gitingnore文件】](#gitingnore文件)
+        - [【建立本地仓库并关联到远程仓库】](#建立本地仓库并关联到远程仓库)
+        - [【使用git daemon搭建本地简易Git_Server】](#使用gitdaemon搭建本地简易git_server)
+        - [【HTTP访问Git_Server】](#http访问git_server)
+            - [【配置HTTPS】](#配置https)
+            - [【使用SSH登录GitServer】](#使用ssh登录gitserver)
+    - [【基础命令】](#基础命令)
+    - [【reset命令常用方式】](#reset命令常用方式)
+        - [1.回滚add操作](#1回滚add操作)
+        - [2.回滚最近一次commit](#2回滚最近一次commit)
+        - [3.回滚最近几次的commit，并添加到一个新建的分支上去](#3回滚最近几次的commit，并添加到一个新建的分支上去)
+        - [4.永久删除最近几次](#4永久删除最近几次)
+        - [5.回滚merge和pull操作](#5回滚merge和pull操作)
+        - [6.在被污染的working_tree中回滚merge或者pull](#6在被污染的working_tree中回滚merge或者pull)
+        - [7.被中断的工作流程](#7被中断的工作流程)
+        - [8.Reset一个单独的文件](#8reset一个单独的文件)
+        - [9.保留working_tree并且丢弃一些commit](#9保留working_tree并且丢弃一些commit)
+
 # Tips:
 * 1 、虽然在物理上本地仓库中所有文件是放在一起的，但是分支之间是互不能访问以及操作的
 * 2 、在本地的每次commit都是有index的，上传到github可以不用那么频繁，反正都是有记录的
@@ -214,7 +241,7 @@
 
 ****************************************
 ## 【reset命令常用方式】
-#### 1.回滚add操作
+### 1.回滚add操作
 ```
 	edit  (1)
 		git add a.txt b.txt
@@ -227,7 +254,7 @@
 		到a.txt 和 b.txt，因此你可以revert这两个文件的改变，revert后，那些改变依然在working directory中，因此需要执行git reset
 	1.4 然后，执行了pull后 自动merge，两个文件依然在working directory中
 ```
-#### 2.回滚最近一次commit
+### 2.回滚最近一次commit
 ```
 	git commit ...
 		git reset --soft HEAD^(1)
@@ -240,7 +267,7 @@
 		-c 表示 拿已经提交的commit对象中的信息来做这次的提交
 	这条命令就是，将所有更改的文件加入到stage area中，并使用上次的提交信息来提交
 ```
-#### 3.回滚最近几次的commit，并添加到一个新建的分支上去
+### 3.回滚最近几次的commit，并添加到一个新建的分支上去
 ```
 		git branch myth/test (1)
 		git reset --hard HEAD^3 (2)
@@ -249,10 +276,10 @@
 	3.2 然后回滚掉最近三次提交（删除）
 	3.3 切换到新分支上就能对代码进行润色了，等待之后的merge
 ```
-#### 4.永久删除最近几次
+### 4.永久删除最近几次
 - `commit git reset --hard HEAD~3`
 
-#### 5.回滚merge和pull操作
+### 5.回滚merge和pull操作
 ```
 		git pull URL (1)
 		git reset --hard (2)
@@ -267,7 +294,7 @@
 			pull和merge操作同样会，为了回滚操作
 ```
 
-#### 6.在被污染的working_tree中回滚merge或者pull
+### 6.在被污染的working_tree中回滚merge或者pull
 ```
 		git pull (1)
 		git reset --merge ORIG_HEAD (2)
@@ -276,7 +303,7 @@
 			使用 git reset --merge ORIG_HEAD 就可以避免回滚操作时删除add的代码
 ```	
 
-#### 7.被中断的工作流程
+### 7.被中断的工作流程
 ```
 在实际开发中经常出现这样的情形：你正在开发一个大的feature，此时来了一个紧急的BUG需要修复，但是目前在working tree 中的内容还不足以commit
 		，但是又必须切换到另外的branch去 fix bug
@@ -294,7 +321,7 @@
 	7.3 此时，在index中仍然留有OO提交时所做的uncommit changes，git reset 将会清理index成为尚未提交时的状态，便于之后的工作
 ```
 
-#### 8.Reset一个单独的文件
+### 8.Reset一个单独的文件
 ```
 git reset -- a.txt (1)	
 git commit -am "Commit files inindex"  (2)
@@ -303,7 +330,7 @@ git commit -am "Commit files inindex"  (2)
 	8.2 将index中的文件提交
 	8.3 再次添加回文件
 ```
-#### 9.保留working_tree并且丢弃一些commit
+### 9.保留working_tree并且丢弃一些commit
 ```
 	git tag start
 		git checkout -b branch 1
@@ -316,41 +343,3 @@ git commit -am "Commit files inindex"  (2)
 - 9.1 这次是把branch1中的改变提交了
 - 9.2 此时发现，之前的提交不属于这个branch，此时你新建了branch2，并切换到了该branch上
 - 9.3 此时你可以使用reset --keep 把在start之后的commit清除掉，但是保持了working tree的不变
-
-
-- [Tips:](#tips:)
-    - [安装最新版git](#安装最新版git)
-    - [【目前使用git的方法】](#目前使用git的方法)
-    - [实验楼使用Github](#实验楼使用github)
-    - [【git初始化】](#git初始化)
-    - [【VI编辑器的使用】](#vi编辑器的使用)
-    - [【GitHub】](#github)
-        - [【.gitingnore文件】](#gitingnore文件)
-        - [【建立本地仓库并关联到远程仓库】](#建立本地仓库并关联到远程仓库)
-        - [【使用git daemon搭建本地简易Git_Server】](#使用gitdaemon搭建本地简易git_server)
-        - [【HTTP访问Git_Server】](#http访问git_server)
-
-- [Tips:](#tips:)
-    - [安装最新版git](#安装最新版git)
-    - [【目前使用git的方法】](#目前使用git的方法)
-    - [实验楼使用Github](#实验楼使用github)
-    - [【git初始化】](#git初始化)
-    - [【VI编辑器的使用】](#vi编辑器的使用)
-    - [【GitHub】](#github)
-        - [【.gitingnore文件】](#gitingnore文件)
-        - [【建立本地仓库并关联到远程仓库】](#建立本地仓库并关联到远程仓库)
-        - [【使用git daemon搭建本地简易Git_Server】](#使用gitdaemon搭建本地简易git_server)
-        - [【HTTP访问Git_Server】](#http访问git_server)
-            - [【配置HTTPS】](#配置https)
-            - [【使用SSH登录GitServer】](#使用ssh登录gitserver)
-    - [【基础命令】](#基础命令)
-    - [【reset命令常用方式】](#reset命令常用方式)
-            - [1.回滚add操作](#1回滚add操作)
-            - [2.回滚最近一次commit](#2回滚最近一次commit)
-            - [3.回滚最近几次的commit，并添加到一个新建的分支上去](#3回滚最近几次的commit，并添加到一个新建的分支上去)
-            - [4.永久删除最近几次](#4永久删除最近几次)
-            - [5.回滚merge和pull操作](#5回滚merge和pull操作)
-            - [6.在被污染的working_tree中回滚merge或者pull](#6在被污染的working_tree中回滚merge或者pull)
-            - [7.被中断的工作流程](#7被中断的工作流程)
-            - [8.Reset一个单独的文件](#8reset一个单独的文件)
-            - [9.保留working_tree并且丢弃一些commit](#9保留working_tree并且丢弃一些commit)
