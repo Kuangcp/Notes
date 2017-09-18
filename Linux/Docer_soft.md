@@ -1,14 +1,13 @@
 # 使用Docker安装软件
 `目录`
-- [使用Docker安装软件](#使用Docker安装软件)
+- [使用Docker安装软件](#使用docker安装软件)
     - [安装redis](#安装redis)
-    - [安装Jenkins](#安装Jenkins)
-    - [安装PostgreSQL](#安装PostgreSQL)
-    - [安装Oracle](#安装Oracle)
-    - [安装MySQL](#安装MySQL)
-    - [Docker中构建一个可外登录的完整单一Ubuntu](#Docker中构建一个可外登录的完整单一Ubuntu)
+    - [安装Jenkins](#安装jenkins)
+    - [安装PostgreSQL](#安装postgresql)
+    - [安装Oracle](#安装oracle)
+    - [安装MySQL](#安装mysql)
+    - [Docker中构建一个可外登录的完整单一Ubuntu](#docker中构建一个可外登录的完整单一ubuntu)
     - [创建一个alpine的ssh](#创建一个alpine的ssh)
-
 *****
 
 ## 安装redis
