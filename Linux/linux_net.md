@@ -1,3 +1,32 @@
+`目录`
+- [【网络管理】](#网络管理)
+    - [DNS](#dns)
+    - [IPv4 和 IPv6](#ipv4和ipv6)
+        - [【Tips】](#tips)
+            - [【查看端口占用情况】](#查看端口占用情况)
+            - [【修改DNS】](#修改dns)
+    - [工具](#工具)
+        - [常用命令工具](#常用命令工具)
+            - [ping](#ping)
+        - [curl](#curl)
+        - [iproute2](#iproute2)
+        - [tcpdump](#tcpdump)
+        - [netcat](#netcat)
+        - [scp](#scp)
+        - [rsync](#rsync)
+        - [wget](#wget)
+    - [【常用网络服务】](#常用网络服务)
+        - [邮件服务器 postfix devecot](#邮件服务器postfixdevecot)
+        - [FTP 服务器](#ftp服务器)
+            - [【SSH 的使用】](#ssh的使用)
+                - [1.安装软件](#1安装软件)
+                - [2.复制粘贴建立连接关系的方法](#2复制粘贴建立连接关系的方法)
+                - [2.【更简单的做法 推荐！！！】](#2更简单的做法推荐！！！)
+                - [使用别名登录](#使用别名登录)
+    - [访问图形化](#访问图形化)
+        - [【vpn】](#vpn)
+            - [shadowsocks](#shadowsocks)
+
 # 【网络管理】
 
 ## DNS
@@ -380,8 +409,8 @@ X11DisplayOffset 10
 
 *******************************************
 
-#### 【vpn】
-##### shadowsocks
+### 【vpn】
+#### shadowsocks
 `服务端`
 - 安装服务端`sudo pip install shadowsocks`
 - 启动服务`sudo ssserver -p 443 -k sd -m aes-256-cfb`     

@@ -3,7 +3,7 @@
 ## 概述
 - 严格SQL标准
 - Schemas 和表，用户的关系：
-    - 
+    - Schemas相当于是一个数据库进行分类的文件夹
 
 ## 安装
 ### Postgresql 的安装（Docker方式）

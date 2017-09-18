@@ -1,29 +1,120 @@
-# 【Linux 系统】
+`目录`
+- [【Linux系统】](#linux系统)
+    - [【系统管理】](#系统管理)
+        - [【发行版之别】](#发行版之别)
+        - [【桌面环境之别】](#桌面环境之别)
+        - [【文件管理器之别】](#文件管理器之别)
+        - [【终端模拟器之别】](#终端模拟器之别)
+        - [【用户管理】](#用户管理)
+        - [【用户组管理】](#用户组管理)
+    - [【软件管理】](#软件管理)
+        - [安装命令](#安装命令)
+    - [安装Linux发行版](#安装linux发行版)
+        - [【常见问题】](#常见问题)
+                - [终端错误提示音](#终端错误提示音)
+                - [Ubuntu与Windows10时间相差8小时的解决](#ubuntu与windows10时间相差8小时的解决)
+                - [终端开启慢](#终端开启慢)
+                - [命令找不到](#命令找不到)
+        - [【Tips】](#tips)
+            - [一行执行多条命令](#一行执行多条命令)
+            - [让命令在后台运行](#让命令在后台运行)
+                - [关闭ssh回话不能运行](#关闭ssh回话不能运行)
+                - [关闭ssh回话仍能运行](#关闭ssh回话仍能运行)
+            - [修改主机名](#修改主机名)
+            - [字符雨](#字符雨)
+    - [快捷键](#快捷键)
+    
+# 【Linux系统】
 ## 【系统管理】
 > sudo 其实是软件 早该意识到的，所有的命令都是可执行文件
 
 ### 【发行版之别】
-- debain
-- ubuntu
-- ubuntu mint
-- fedora
-- openSUSE
-- freeBSD
-- Solaris
-- Alpine 特别小
-- centos
-- arch 
-- deepin
-- mageia
-- gentoo
+- debain 挺老的发行版
+- ubuntu 建立在debain之上，许多人入门的系统
+- ubuntu mint 个人喜欢这个系统
+- fedora redhat的试验场 不太感冒
+- openSUSE 
+- freeBSD 
+- Solaris 
+- Alpine 特别小，在docker中使用有优势，但是坑多
+- centos 
+- arch 滚动发行，包管理机制优秀
+- deepin 建立在debain上的国产操作系统，简洁美观使用方便，就是没有特别稳定
+- mageia 
+- gentoo 入门难度大，适合资深玩家，据说是特能折腾的系统，处于鄙视链顶端
 
 ### 【桌面环境之别】
-- gnome
-- xfce
-- kde
-- 
+- gnome 占用资源中等，个人对该桌面不感冒
+- xfce 占用资源少，操作类似于xp
+- kde 功能强大，占用资源中等
+- dde deepin设计的桌面环境，小bug略多，但是美观操作方便
 
+***************************
+### 【文件管理器之别】
+> 有单窗口，双列，命令，简洁轻量，笨重完整 各种各样的选择
 
+- `nautilus` Gnome默认 挺好用，但是不能自动挂载分区
+- `deepin-filemanager` deepin默认，较为方便，但是打开手机会卡根本打不开
+- `pcmanfm` 左边侧栏目录树 会同步nautilus的配置`5m`
+- `rox-filer` 特别小，单击打开，迅速定位文件，适合找东西用
+- `thunar` 解决了nautilus的缺点，内存也很省 `21M`
+- `dolphin` 多标签页，目录树方式查看
+- `nemo` mint默认的，功能齐全，会同步nautilus的配置，同样有目录树而且是两边都有 `21M`
+- `tuxcmd` Tux Commander 双列，小，直接的目录树，学习成本高点 `2M`
+
+*******************************
+### 【终端模拟器之别】
+- `qterminal` 可定制标签页位置以及透明度，很简洁
+- `mate-terminal` 和gnome-terminal 基本配置什么的几乎一样，只是标题栏简洁一丢丢，跨标签页复制粘贴有bug
+- `gnome-terminal` 很简洁，但是多标签时，标签页太大
+- `sakura` 外观上和前两个几乎一样，标签页可以更简洁，但是设置不好调
+- `deepin-terminal` 功能很多，主题很多，功能最为强大，但是字体可以选的很少
+- `terminator` 可以定制背景图片，但是在我这deppin系统里有bug，多标签是假的，命令全是在共享的，不能用。。
+
+```
+搜索到的终端模拟器：
+  terminology 0.7.0-1+deb8u1build0.16.04.1
+  lxterminal 0.2.0-1ubuntu0.1
+  xvt 2.1-20.1ubuntu1
+  xiterm+thai 1.10-2
+  xfce4-terminal 0.6.3-2ubuntu1
+  vala-terminal 1.3-6
+  termit 2.10.0-2-gb8280ed-1
+  terminator 0.98-1
+  terminal.app 0.9.8-1+nmu1build2
+  stterm 0.5+20140606+gitc2fd275-1
+  sakura 3.3.4-2
+  rxvt-unicode-lite 9.21-1build1
+  rxvt-unicode-256color 9.21-1build1
+  rxvt-unicode 9.21-1build1
+  rxvt-ml 1:2.7.10-6
+  rxvt 1:2.7.10-6
+  roxterm 3.3.2-1
+  qterminal 0.6.0+20160104-1
+  pterm 0.67-2
+  mrxvt-mini 0.5.4-1.2
+  mrxvt-cjk 0.5.4-1.2
+  mrxvt 0.5.4-1.2
+  mlterm-tiny 3.5.0-1build1
+  mlterm 3.5.0-1build1
+  lilyterm 0.9.9.4+git20150208.f600c0-3
+  kterm 6.2.0-46.1build1
+  konsole 4:15.12.3-0ubuntu1
+  guake 0.8.4-1
+  evilvte 0.5.1-1
+  eterm 0.9.6-4
+  aterm-ml 1.0.1-8
+  aterm 1.0.1-8
+  xterm:i386 322-1ubuntu1
+  xterm 322-1ubuntu1
+  mate-terminal:i386 1.18.1-1+sonya
+  mate-terminal 1.18.1-1+sonya
+  gnome-terminal:i386 3.18.3-linuxmint2
+  gnome-terminal 3.18.3-linuxmint2
+请您明确地选择安装其中一个。
+```
+
+**************************************
 ### 【用户管理】
 - 添加用户 `sudo adduser username` 对比 `useradd`只是新建一个用户不会创建主目录
 - 添加到sudo组 ，使用命令更安全：`sudo gpasswd -a $USER sudo` 但是要注销或者重启才生效貌似
@@ -100,12 +191,8 @@
 - 如果是要双系统，直接全部` / `就行了，再加个交换分区    
 - 特别注意不要随意用sudo 更改配置文件，容易导致系统crash（除非你明确的知道这个更改的作用）
 
-******************************************************
-### 【Q&A】
-> 个人使用的一些方便的操作和配置
-
 ### 【常见问题】
-##### ubunbu/deepin错误提示音
+##### 终端错误提示音
 - 临时关闭：`rmmod pcspkr` 临时开启：`modprobe pcspkr`
 - 编辑 `/etc/inputrc`，找到`#set bell-style none`这一行，去掉前面的注释符号
 
@@ -132,11 +219,12 @@
 
 #### 一行执行多条命令 
 - ` && ` 第2条命令只有在第1条命令成功执行之后才执行 根据命令产生的退出码判断是否执行成功（0成功，非0失败）
--  `|| ` 执行不成功（产生了一个非0的退出码）时，才执行后面的命令
--  ` ; ` 顺序执行多条命令，当;号前的命令执行完（不管是否执行成功），才执行;后的命令。 
+- `|| ` 执行不成功（产生了一个非0的退出码）时，才执行后面的命令
+- ` ; ` 顺序执行多条命令，当;号前的命令执行完（不管是否执行成功），才执行;后的命令。 
 - ` & `  并行执行命令，没有顺序
 
 - [tty 虚拟终端等概念](https://www.ibm.com/developerworks/cn/linux/l-cn-termi-hanzi/)
+
 **************
 #### 让命令在后台运行
 > [原博客](https://www.ibm.com/developerworks/cn/linux/l-cn-nohup/)

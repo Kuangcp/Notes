@@ -1,22 +1,38 @@
-- [Linux 性能分析和管理](#linux%E6%80%A7%E8%83%BD%E5%88%86%E6%9E%90%E5%92%8C%E7%AE%A1%E7%90%86)
-    - [常用工具](#%E5%B8%B8%E7%94%A8%E5%B7%A5%E5%85%B7)
-        - [运行状况信息](#%E8%BF%90%E8%A1%8C%E7%8A%B6%E5%86%B5%E4%BF%A1%E6%81%AF)
-        - [内存情况](#%E5%86%85%E5%AD%98%E6%83%85%E5%86%B5)
-        - [性能监测](#%E6%80%A7%E8%83%BD%E7%9B%91%E6%B5%8B)
+`目录`
+- [Linux 性能分析和管理](#linux性能分析和管理)
+    - [常用工具](#常用工具)
+        - [运行状况信息](#运行状况信息)
+        - [内存情况](#内存情况)
+        - [性能监测](#性能监测)
             - [vmstat](#vmstat)
             - [mpstat](#mpstat)
             - [top](#top)
             - [iostat](#iostat)
-        - [进程管理](#%E8%BF%9B%E7%A8%8B%E7%AE%A1%E7%90%86)
+        - [进程管理](#进程管理)
             - [pidof](#pidof)
             - [sar](#sar)
             - [lsof](#lsof)
-                - [删除文件的问题](#%E5%88%A0%E9%99%A4%E6%96%87%E4%BB%B6%E7%9A%84%E9%97%AE%E9%A2%98)
+                - [删除文件的问题，利用lsof解决](#删除文件的问题，利用lsof解决)
             - [fuser](#fuser)
             - [ps](#ps)
             - [kill](#kill)
             - [killall](#killall)
-            - [作业控制](#%E4%BD%9C%E4%B8%9A%E6%8E%A7%E5%88%B6)
+            - [作业控制](#作业控制)
+            - [trap](#trap)
+        - [后台运行](#后台运行)
+            - [nohup](#nohup)
+            - [disown](#disown)
+            - [setid](#setid)
+            - [screen](#screen)
+        - [系统管理](#系统管理)
+            - [uname](#uname)
+            - [who](#who)
+            - [service](#service)
+            - [chkconfig](#chkconfig)
+            - [dmidecode](#dmidecode)
+            - [lsmod](#lsmod)
+            - [chroot](#chroot)
+        - [关机重启](#关机重启)
 
 # Linux 性能分析和管理
 ## 常用工具
@@ -289,7 +305,7 @@
 > QUIT/KILL 信号是强制退出<br/>
 > STOP 信号就是暂停挂在后台<br/>
 
-- kill命令格式 `kill [选项] [进程号]`
+- kill命令格式`kill [选项] [进程号]`
     - 选项:
         - -l 列出所有的信号,如果-l后加上信号名称看到对应的数字,反之亦然
         - -s 可以指定发出的信号,等同于 -信号 向目标进程发送指定的信号类型
@@ -303,7 +319,7 @@
 - 9号信号:
     - 能对所有的进程起作用, 除了1号init进程
     - 副作用:进程运行中,突然终止,可能会导致系统资源无法释放, 数据没有同步到磁盘等情况(3信号就好点)
-    - 杀掉指定id（需要sudo） `kill -9 pid`
+    - 杀掉指定id（需要sudo）`kill -9 pid`
     
 - 0号信号:
     - 测试信号,测试目标进程是否存在,测试是否具有向指定进程发送信号的权限
@@ -370,7 +386,7 @@
     - 让进程对hup信号免疫 nohup disown
     - 让进程在新的会话中运行 setid screen
 
-##### nohup
+#### nohup
 - 在命令前 加上hohup 
     - 忽略所有hup信号 并将标准输出重定向到 nohup.out 若当前目录不可写，就会重定向到 $HOME/nohup.out 
 - nohup 命令>result.txt 2>&1
@@ -384,14 +400,14 @@
     - 126 指定命令能找到，但是不能调用
     - 127 找不到指定命令
 
-##### disown
+#### disown
 - 执行中的命令，Ctrl+Z 暂停到后台去了 jobs查看作业编号
 - `disown %作业号` 就能在后台运行，且屏蔽hup信号了
 
-##### setid
+#### setid
 - 命令前 `setid 命令` 就会让进程在一个新的会话运行
 
-##### screen
+#### screen
 > 在一个真实的终端运行多个伪终端，认为是开启了多个新会话 [命令参考](http://man.linuxde.net/screen)
 
 - 会话恢复
@@ -468,15 +484,5 @@
 |shutdown| 可用于关机，重启，支持定时和通知|
 |reboot|重启系统|
 |halt|停止系统|
-|poweroff|断电源关机|
-|init|init 0 关机，init 6 重启|
-
-- shutdown -h now 立即关机
-- shutdown -r now 立即重启
-- shutdown -h 23:30 设置定时关机
-- shutdown -h +15 15分钟之后关机
-- halt -p 关机并关闭电源
-- halt -d 关机但不在日志留下任何关机的痕迹
-- halt -w 不真关机，只是把关机的事件记录到 `/var/log/wtmp`
 
 

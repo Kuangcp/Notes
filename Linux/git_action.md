@@ -1,6 +1,6 @@
 # Git实际使用的记录
 `目录`
-- [Tips:](#tips:)
+- [Tips](#tips)
     - [安装最新版git](#安装最新版git)
     - [【目前使用git的方法】](#目前使用git的方法)
     - [实验楼使用Github](#实验楼使用github)
@@ -25,7 +25,7 @@
         - [8.Reset一个单独的文件](#8reset一个单独的文件)
         - [9.保留working_tree并且丢弃一些commit](#9保留working_tree并且丢弃一些commit)
 
-# Tips:
+# Tips
 * 1 、虽然在物理上本地仓库中所有文件是放在一起的，但是分支之间是互不能访问以及操作的
 * 2 、在本地的每次commit都是有index的，上传到github可以不用那么频繁，反正都是有记录的
 * 3、 在github上修改了项目后，或者以后是和别人一起开发，就要先git pull origin （master）将别人的分支和自己的分支都拉下来确保是最新，
