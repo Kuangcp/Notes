@@ -1,13 +1,13 @@
 # 使用Docker安装软件
 `目录`
-- [使用Docker安装软件](#%E4%BD%BF%E7%94%A8docker%E5%AE%89%E8%A3%85%E8%BD%AF%E4%BB%B6)
-    - [安装redis](#%E5%AE%89%E8%A3%85redis)
-    - [安装 Jenkins](#%E5%AE%89%E8%A3%85jenkins)
-    - [安装 PostgreSQL](#%E5%AE%89%E8%A3%85postgresql)
-    - [安装 Oracle](#%E5%AE%89%E8%A3%85oracle)
-    - [安装 MySQL](#%E5%AE%89%E8%A3%85mysql)
-    - [Docker中构建一个可外登录的完整单一Ubuntu](#docker%E4%B8%AD%E6%9E%84%E5%BB%BA%E4%B8%80%E4%B8%AA%E5%8F%AF%E5%A4%96%E7%99%BB%E5%BD%95%E7%9A%84%E5%AE%8C%E6%95%B4%E5%8D%95%E4%B8%80ubuntu)
-    - [创建一个alpine的ssh](#%E5%88%9B%E5%BB%BA%E4%B8%80%E4%B8%AAalpine%E7%9A%84ssh)
+- [使用Docker安装软件](#使用Docker安装软件)
+    - [安装redis](#安装redis)
+    - [安装Jenkins](#安装Jenkins)
+    - [安装PostgreSQL](#安装PostgreSQL)
+    - [安装Oracle](#安装Oracle)
+    - [安装MySQL](#安装MySQL)
+    - [Docker中构建一个可外登录的完整单一Ubuntu](#Docker中构建一个可外登录的完整单一Ubuntu)
+    - [创建一个alpine的ssh](#创建一个alpine的ssh)
 
 *****
 
@@ -18,19 +18,19 @@
 - `sudo docker run -v /myredis/conf/redis.conf:/usr/local/etc/redis/redis.conf --name myredis redis redis-server /usr/local/etc/redis/redis.conf`
 - port-redis容器的端口映射：`sudo docker run -d -p 6379:6379 --name port-redis redis` 左本机右容器
 
-## 安装 Jenkins
+## 安装Jenkins
 - `sudo docker pull jenkins` 下拉镜像
 - `sudo docker run --name myjenkins -p 8080:8080 -p 50000:50000 -v /home/kcp/docker/jenkins:/var/jenkins_home jenkins` 构建容器
 - 确保目录是开放了权限的 直接 `chmod 777 jenkins` 了事
 - 然后就是正常的容器的启动关闭了
 
-## 安装 PostgreSQL
+## 安装PostgreSQL
 - [Docker 安装 PostgreSQL](/Database/Postgresql.md)
 
-## 安装 Oracle
+## 安装Oracle
 - [社区文档](https://hub.docker.com/r/wnameless/oracle-xe-11g/)
 
-## 安装 MySQL
+## 安装MySQL
 - [官方文档](https://hub.docker.com/_/mysql/)
 - `docker run --name some-mysql -e MYSQL_ROOT_PASSWORD=my-secret-pw -d mysql:tag`
 
@@ -66,5 +66,4 @@
 
 ## 创建一个alpine的ssh
 - [alpine-ssh](/Linux/Docker/alpine/Docerfile)
-
 
