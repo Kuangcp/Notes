@@ -13,8 +13,6 @@
             - [使用入门案例](#使用入门案例)
             - [RUN命令](#RUN)
         - [.dockerignore文件的使用](#dockerignore文件的使用)
-    - [安装redis](#安装redis)
-    - [Docker中构建一个Ubuntu](Docker中构建一个Ubuntu)
 
 *****************************************
 ## 简介
@@ -72,11 +70,13 @@
 - 如果出现命令执行失败，可以登录docker的控制台直接执行 `boot2docker ssh`
 - 可以将镜像看成真正运行的程序，容器就是具体的一些配置，所以镜像是可以重复利用，容器出问题删掉就是了
 ### Docker仓库
-- `sudo docker pull index.tenxcloud.com/<namespace>/<repository>:<tag>`
-- 使用其他源进行拉取 `docker pull index.tenxcloud.com/docker_library/node:lastest` 时速云
-    - 下载后可以用别名 `docker tag index.tenxcloud.com/docker_library/node:lastest node:lastest`
 
-- 搭建私有仓库
+- 时速云：`sudo docker pull index.tenxcloud.com/<namespace>/<repository>:<tag>`
+    - 下载后可以用别名 `docker tag index.tenxcloud.com/docker_library/node:lastest node:lastest`
+- 阿里云：[开发者平台](https://dev.aliyun.com/search.html)
+    - 配置命名空间，仓库，然后使用文档的配置即可
+
+- 在服务器上搭建私有仓库
     - 服务器上运行 并映射到本地目录 `docker run -d -p 5000:5000 -v /opt/data/registry:/tmp/registry registry`
     - 对服务器中docker已经有的镜像 设置别名 `docker tag 镜像 ip:port/名字`
     - docker push 别名
@@ -212,126 +212,8 @@
     - 所以在Ubuntu容器中连接MySQL容器，首先得到IP就查看 `cat /etc/hosts` 中myslq容器别名为db值的IP地址 或者直接 `ping db`
     - 然后 `mysql -h IP -u root -pad` 即可连接上mysql
 
-
-*******************************************
 ### Dockerfile
-#### 使用入门案例
-- `mkdir test && cd test && touch Dockerfile ` 输入如下文本
-```
-    #随意写的
-    FROM redis
-    MAINTAINER Mythos
-    ENV DIRPATH /path
-    WORKDIR $DIRPATH/$DIRNAME
-    RUN pwd
-```
-- `docker build .` 如果成功则会得到一个没有名字的镜像
-    - `docker build -t repository/tag .` 给镜像指定名字
-    - 如果文件名是`Dockerfile` 使用 `.` 否则就是文件名
-- 创建镜像成功后 `docker run --name ContainerName -d repository/tag` 新建容器来运行镜像
-
-***************************
-#### Dockerfile命令理解
-- Dockerfile是一个`镜像`的表示，可以通过Dockerfile来描述构建镜像的步骤，且可以自动构建一个容器
-- 所有的 Dockerfile 命令格式都是: `INSTRUCTION arguments` 
-- 最好在运行这个配置文件的时候新建一个空目录目录下放dockerfile，不要使用根目录，不然全部的东西都传到守护进程里去了
-    - 因为生成过程的第一件事是将整个上下文 (递归) 发送到守护进程。
-- 同样的可以使用`.dockerignore`文件来忽略不要上传的文件
-- `docker build` 
-    - `-f` 指向任意位置的文件进行配置 `docker build -f /path/to/a/Dockerfile .`
-    - `-t`如果构建成功 可以指定保存新镜像的repository和tag (多个的话就多个 -t就行了，例如 `docker build -t shykes/myapp:1.0.2 -t shykes/myapp:latest .`)
-
-##### FROM 
-> 基于某镜像构建,这是整个文件的第一条指令，一定是基于某镜像构建的，如果是空镜像就使用特殊的 FROM scratch
-
-- `FROM image`
-- `FROM image:tag`
-
-##### MAINTAINER
-- 留开发者名字 例如 `MAINTAINER kuangcp myth.kuang@gmail.com`
-
-##### RUN
-- `RUN command` command是shell `/bin/sh -c` 命令 例如 `RUN apt update`  
-- `RUN ["executable", "param1", "param2" ... ]`
-
-##### ENTRYPOINT
-- `容器入口点` 命令设置在容器启动时执行命令 一般用来做初始化容器，或者运行持久软件
-- `ENTRYPOINT echo "Welcome!"` 那么每次启动容器都有这个输出
-- `ENTRYPOINT cmd param1 param2 ...`
-- `ENTRYPOINT ["cmd", "param1", "param2"...]`
-
-##### USER
-- 限定了当前镜像的默认用户，如果在这个镜像上的容器需要安装软件就会需要提权，就要至少创建额外的两个层，层限制是42,
-    - 更好的方法是在基础镜像中创建用户和用户组，然后在完成构建时再设置默认的用户
-- 指定 mysql 的运行用户 `ENTRYPOINT ["mysql", "-u", "daemon"]`
-- 更好的方式是：
-```
-    ENTRYPOINT ["memcached"]
-    USER daemon
-```
-
-##### EXPOSE
-- 创建一个层，对外开放端口 例如 EXPOSE 22
-
-
-##### ENV
-- 设置环境变量 `ENV <key> <value>`
-- 设置了后，后续的RUN命令都设置了后，后续的RUN命令都可以使用可以使用
-
-##### LABEL
-- 用来定义键值对，只能出现一次，相当于是一个内置的配置文件
-
-##### COPY
-- copy ["./log", "${APPROOT}"]
-- 类似于entrypoint，同样的copy也支持Shell和exec格式，但是如果任何一个参数包含了空格，就必须要使用exec。
-
-##### ADD
-- 相当于copy命令
-- `ADD <src> <dest>` 
-    - src 是Dockerfile的相对目录，可以是本地也可以是远程URL
-    - dest 容器中的绝对路径
-
-##### VOLUME
-- `VOLUME ["<mountpoint>"]` `VOLUME ["/data"]` 创建挂载点 用于共享目录
-
-##### WORKDIR
-- `WORKDIR /path/to/workdir`
-- 配置RUN, CMD, ENTRYPOINT 命令设置当前工作路径，如果目录不存在就新建
-- 可以设置多次，如果是相对路径，则相对前一个 WORKDIR 命令
-    - 例如：`WORKDIR /a WORKDIR b WORKDIR c RUN pwd` 其实是在 /a/b/c 下执行 pwd
-    
-##### CMD
-`三种格式`
-- CMD ["executable","param1","param2"] (like an exec, preferred form)
-- CMD ["param1","param2"] (as default parameters to ENTRYPOINT)
-- CMD command param1 param2 (as a shell)
-- `一个Dockerfile里只能有一个CMD，如果有多个，只有最后一个生效。`
-
-##### ONBUILD
-- 注入下游镜像。如果生成的镜像是作为另一个镜像的基础镜像，则该指令定义了需要被执行的那些指令
-
-******************************************
-#### 案例
-- [docker-wordpress-nginx](https://github.com/eugeneware/docker-wordpress-nginx)
-- [rails-meets-docker](https://github.com/gemnasium/rails-meets-docker)
-
-- [官方文档 dockerfile](https://www.docker.io/learn/dockerfile/)
-- [官方文档 builder](http://docs.docker.io/reference/builder/)
-
-`打包软件 最新版git`
-```
-FROM ubuntu
-MAINTAINER "youtemail"
-RUN apt-get update
-RUN apt-get install -ysoftware-properties-common
-RUN add-apt-repository ppa:git-core/ppa
-RUN apt-get update && apt-get install -y git
-ENTRYPOINT ["git"]
-```
-- 构建镜像`docker build -t git:new .`
-- 将镜像容器化执行命令后自动删除容器`docker run --rm git:new`
-- 注意其运行环境是容器内，不是宿主机，入口点的命令运行完了就退出了，不能当成宿主机上的git使用，只能说是听个响
-    - 所以不可能说在容器中安装软件然后在宿主机上交互运行
+>[Dockerfile文件学习](/Linux/Docker_file.md)
 
 ### dockerignore文件的使用
 - .dockerignore文件是依据 Go的PathMatch规范来的，使用和.gitignore类似
@@ -350,67 +232,8 @@ Error with pre-create check: "This computer doesn't have VT-X/AMD-v enabled. Ena
 ## Docker-Swarm
 
 ***************************************************
+
 ## 轻量镜像
 frolvlad/alpine-oraclejdk8   slim
 postgres                     alpine
 alpine
-
-## 安装redis
-- 获取镜像：`docker pull redis `
-- 运行默认配置的容器：`docker run --name test-redis -d redis`
-- 使用本地配置文件启动redis容器
-- `sudo docker run -v /myredis/conf/redis.conf:/usr/local/etc/redis/redis.conf --name myredis redis redis-server /usr/local/etc/redis/redis.conf`
-- port-redis容器的端口映射：`sudo docker run -d -p 6379:6379 --name port-redis redis` 左本机右容器
-
-
-## 安装 Jenkins
-- `sudo docker pull jenkins` 下拉镜像
-- `sudo docker run --name myjenkins -p 8080:8080 -p 50000:50000 -v /home/kcp/docker/jenkins:/var/jenkins_home jenkins` 构建容器
-- 确保目录是开放了权限的 直接 `chmod 777 jenkins` 了事
-- 然后就是正常的容器的启动关闭了
-
-## 安装 PostgreSQL
-- [Docker 安装 PostgreSQL](/Database/Postgresql.md)
-
-## 安装 Oracle
-- [社区文档](https://hub.docker.com/r/wnameless/oracle-xe-11g/)
-
-## 安装 MySQL
-- [官方文档](https://hub.docker.com/_/mysql/)
-- `docker run --name some-mysql -e MYSQL_ROOT_PASSWORD=my-secret-pw -d mysql:tag`
-
-## Docker中构建一个可外登录的完整单一Ubuntu
-- 最为简单的是：`docker run  -i -t --name ubuntu17 -p 34433:22 ubuntu /bin/bash`
-    - 为这些软件预留端口 `ssh tomcat mysql postgresql mysql oracle nginx reids`
-    - 直接跑一个Ubuntu出来,预留出要用的端口，容器运行不会退出
-    - 进终端之后就 `apt update` 才能安装软件，现在才知道这个命令的重要性
-- 特点：
-    - 这个Ubuntu root用户直接用，新建用户用不了sudo，重启？不可以
-
-- 现在的问题是：能不能在已经运行的容器中添加端口映射？？要是用到途中发现端口少了就麻烦了，解决方法可以是commit成镜像再跑出一个容器出来，
-- 最好是一个服务（应用）一个容器
-
-****************
-- 自己写构建文件，安装相应的软件
-```
-    FROM ubuntu
-    MAINTAINER kuangcp myth.kuang@gmail.com
-    ENTRYPOINT echo "Welcome login server by ssh"
-
-    ENV DEBIAN_FRONTEND noninteractive
-
-    ADD id_rsa.pub /root/.ssh/authorized_keys
-
-    RUN apt-get update; 
-    RUN apt-get install -y apt-utils debconf-utils iputils-ping wget curl mc htop ssh; 
-    RUN chmod 700 /root/.ssh; chmod 600 /root/.ssh/authorized_keys;
-    RUN service ssh start
-
-    EXPOSE 22
-```
-- `docker build . -t myth:ssh`
-- `docker run -d -t --name myth -p 8989:22 myth:ssh`
-- `docker start myth`
-
-
-
