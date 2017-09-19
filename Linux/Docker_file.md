@@ -1,3 +1,26 @@
+`目录`
+- [Dockerfile](#dockerfile)
+    - [使用入门案例](#使用入门案例)
+    - [【Dockerfile命令理解】](#dockerfile命令理解)
+        - [FROM](#from)
+        - [MAINTAINER](#maintainer)
+        - [RUN](#run)
+        - [CMD](#cmd)
+        - [ENTRYPOINT](#entrypoint)
+        - [USER](#user)
+        - [EXPOSE](#expose)
+        - [ENV](#env)
+        - [LABEL](#label)
+        - [ARG](#arg)
+        - [COPY](#copy)
+        - [ADD](#add)
+        - [VOLUME](#volume)
+        - [WORKDIR](#workdir)
+        - [STOPSIGNAL](#stopsignal)
+        - [ONBUILD](#onbuild)
+            - [Dockerfile案例](#dockerfile案例)
+            - [打包最新版git](#打包最新版git)
+
 # Dockerfile
 ## 使用入门案例
 - `mkdir test && cd test && touch Dockerfile ` 输入如下文本
@@ -118,7 +141,7 @@
 - [官方文档 dockerfile](https://www.docker.io/learn/dockerfile/)
 - [官方文档 builder](http://docs.docker.io/reference/builder/)
 
-#### 打包软件 最新版git
+#### 打包最新版git
 ```
 FROM ubuntu
 MAINTAINER "youtemail"

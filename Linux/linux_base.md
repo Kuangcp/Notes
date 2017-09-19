@@ -11,10 +11,10 @@
         - [安装命令](#安装命令)
     - [安装Linux发行版](#安装linux发行版)
         - [【常见问题】](#常见问题)
-                - [终端错误提示音](#终端错误提示音)
-                - [Ubuntu与Windows10时间相差8小时的解决](#ubuntu与windows10时间相差8小时的解决)
-                - [终端开启慢](#终端开启慢)
-                - [命令找不到](#命令找不到)
+            - [终端错误提示音](#终端错误提示音)
+            - [Ubuntu与Windows10时间相差8小时的解决](#ubuntu与windows10时间相差8小时的解决)
+            - [终端开启慢](#终端开启慢)
+            - [命令找不到](#命令找不到)
         - [【Tips】](#tips)
             - [一行执行多条命令](#一行执行多条命令)
             - [让命令在后台运行](#让命令在后台运行)
@@ -154,7 +154,6 @@
     - -o 与-g选项同时使用，用户组的新GID可以与系统已有用户组的GID相同。
     - -n 新用户组 将用户组的名字改为新名字
 
-
 *********************************
 ## 【软件管理】
 ### 安装命令
@@ -192,7 +191,7 @@
 - 特别注意不要随意用sudo 更改配置文件，容易导致系统crash（除非你明确的知道这个更改的作用）
 
 ### 【常见问题】
-##### 终端错误提示音
+#### 终端错误提示音
 - 临时关闭：`rmmod pcspkr` 临时开启：`modprobe pcspkr`
 - 编辑 `/etc/inputrc`，找到`#set bell-style none`这一行，去掉前面的注释符号
 
@@ -202,14 +201,14 @@
 - 对于CentOS/Redhat/RHEL/Fedora系统，使用root身份执行：
     - `echo "alias pcspkr off" >> /etc/modprobe.conf `
 
-##### Ubuntu与Windows10时间相差8小时的解决
+#### Ubuntu与Windows10时间相差8小时的解决
 - `timedatectl set-local-rtc true `
 
 
-##### 终端开启慢 
+#### 终端开启慢 
 - 检查 .bashrc 文件, 这次就是因为sdkman的原因导致巨慢,那上次是什么原因呢?
 
-##### 命令找不到
+#### 命令找不到
 - sudo 安装 sudo
 - locale-gen 安装locales 使用`locale-gen --purge`命令进行更新编码
 
@@ -258,7 +257,6 @@ nohup， disown, screen, setid
 - 终端：
     - `Ctrl L` 清屏，Mysql也适用
     - `Ctrl ；` 显示最近五条剪贴板内容
-    - Ctrl backspace 删除单词
 ```
 Ctrl + d       删除一个字符，相当于通常的Delete键（命令行若无任何字符，则相当于exit；处理多行标准输入时也表示EOF ）
 Ctrl + h       退格删除一个字符，相当于通常的Backspace键
@@ -278,3 +276,8 @@ Ctrl + r       显示：号提示，根据用户输入查找相关历史命令�
 - lsof 便捷的查看端口情况
 - ps | clorm 20 30 `colrm`删除输出的20 到30 列
 - w | uptime 查看启动情况
+`convert`
+- [参考博客](http://blog.csdn.net/mybelief321/article/details/9969949)
+- 将图片转换成指定大小 这是保持比例的 `convert -resize 600X600 src.jpg dst.jpg` 中间是字母X
+- 如果不保持比例，就在宽高后加上感叹号 
+- 可以只指定高度，那么宽度会等比例缩放 `convert -resize 400 src.jpg dst.jpg`

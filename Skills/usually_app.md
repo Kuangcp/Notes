@@ -69,7 +69,6 @@
 ### VSCode
 - 码笔记，码Python 比较方便，目录树，预览，整合终端
 
-
 ### Gedit
 - 安装markdown预览插件 
 

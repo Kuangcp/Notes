@@ -1,7 +1,7 @@
 `目录`
 - [【网络管理】](#网络管理)
     - [DNS](#dns)
-    - [IPv4 和 IPv6](#ipv4和ipv6)
+    - [IPv4和IPv6](#ipv4和ipv6)
         - [【Tips】](#tips)
             - [【查看端口占用情况】](#查看端口占用情况)
             - [【修改DNS】](#修改dns)
@@ -16,20 +16,18 @@
         - [rsync](#rsync)
         - [wget](#wget)
     - [【常用网络服务】](#常用网络服务)
-        - [邮件服务器 postfix devecot](#邮件服务器postfixdevecot)
-        - [FTP 服务器](#ftp服务器)
-            - [【SSH 的使用】](#ssh的使用)
+        - [邮件服务器postfix和devecot](#邮件服务器postfix和devecot)
+        - [FTP服务器](#ftp服务器)
+            - [【SSH的使用】](#ssh的使用)
                 - [1.安装软件](#1安装软件)
                 - [2.复制粘贴建立密钥对](#2复制粘贴建立密钥对)
-                - [2.【使用脚本更简单】](#2使用脚本更简单)
+                - [2.使用脚本更简单](#2使用脚本更简单)
                 - [使用别名登录](#使用别名登录)
     - [访问图形化](#访问图形化)
         - [【vpn】](#vpn)
             - [shadowsocks](#shadowsocks)
 
-
 # 【网络管理】
-
 ## DNS
 - 域名和资源转换的服务
 - 解析域名的顺序一般是， 先在本机找，找不到去找上连DNS服务器， 然后根域DNS服务器
@@ -52,7 +50,7 @@
 
 `drill`
 
-## IPv4 和 IPv6
+## IPv4和IPv6
 - IPv4 只有32bit IPv6 有128bit
 
 `IPv6`
@@ -297,8 +295,8 @@ nameserver 8.8.8.4
 ****************************
 
 ## 【常用网络服务】
-### 邮件服务器 postfix devecot
-### FTP 服务器
+### 邮件服务器postfix和devecot
+### FTP服务器
 - `sudo apt-get install vsftpd -y`
 - `sudo systemctl start vsftpd.service`
 - 创建用户 `sudo useradd -d /home/uftp -s /bin/bash uftp`
@@ -346,7 +344,7 @@ nameserver 8.8.8.4
 ```
 
 ******************************
-#### 【SSH 的使用】
+#### 【SSH的使用】
 ##### 1.安装软件
 `客户端安装软件`
 - `sudo spt-get install openssh-client`
@@ -369,7 +367,7 @@ nameserver 8.8.8.4
 - 进入.ssh文件夹下 `sudo vim authorized_keys` 粘贴客户端公钥内容
 - 更改文件权限 `sudo chmod 600 authorized_keys` 确保 其 group和other位没有 w 权限
 
-##### 2.【使用脚本更简单】
+##### 2.使用脚本更简单
 - 两方安装好软件 客户端生成好了秘钥对之后
 - 默认端口:`ssh-copy-id "username@host"` 输密码就可以了
 - 指定端口 `ssh-copy-id ”-p port username@host“` 或者:`ssh-copy-id " username@host" -p port`

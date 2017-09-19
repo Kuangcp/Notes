@@ -170,6 +170,8 @@ getopt函数的第三个参数[, long_options]为可选的长选项参数，上�
 
 ***************************************
 #### 字符串编码问题(python 2问题)：
+- [ Python 3的bytes/str之别 ](http://www.ituring.com.cn/article/1116)
+![str和bytes的关系](https://raw.githubusercontent.com/Kuangcp/ImageRepos/masters/Tech/python/str_bytes.jpeg)
 
 - encode("utf-8") str -> bytes
 - decode() bytes -> str
