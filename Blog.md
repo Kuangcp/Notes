@@ -37,3 +37,4 @@
 ### Tool
 - [genymotion 4.2.2 windows版](http://blog.csdn.net/c_s_d_n_luckyq/article/details/48437789)
 - [使用gitbook打造电子书](http://www.cnblogs.com/wangchaoyuana/p/7507504.html)
+- [Apache Benchmark 的使用的个人浅薄经验](https://ruby-china.org/topics/13870)
