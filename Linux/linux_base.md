@@ -212,6 +212,10 @@
 - sudo 安装 sudo
 - locale-gen 安装locales 使用`locale-gen --purge`命令进行更新编码
 
+#### Deepin的NVIDIA驱动问题
+- [论坛博客](https://bbs.deepin.org/forum.php?mod=viewthread&tid=132312)
+    - `sudo apt-get install bumblebee-nvidia nvidia-driver nvidia-settings`
+
 *****************************************************
 ### 【Tips】
 > man help 后接使用的命令，就可以得到用户手册和帮助文档
