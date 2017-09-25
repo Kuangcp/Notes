@@ -64,7 +64,7 @@
 
 *******************************
 ### 【终端模拟器之别】
-- `qterminal` 可定制标签页位置以及透明度，很简洁
+- `qterminal` 可定制标签页位置以及透明度，很简洁,挺好用
 - `mate-terminal` 和gnome-terminal 基本配置什么的几乎一样，只是标题栏简洁一丢丢，跨标签页复制粘贴有bug
 - `gnome-terminal` 很简洁，但是多标签时，标签页太大
 - `sakura` 外观上和前两个几乎一样，标签页可以更简洁，但是设置不好调
@@ -116,7 +116,8 @@
 
 **************************************
 ### 【用户管理】
-- 添加用户 `sudo adduser username` 对比 `useradd`只是新建一个用户不会创建主目录
+- 添加用户 `sudo adduser username` 
+    - 对比 `useradd`只是新建一个用户不会创建主目录
 - 添加到sudo组 ，使用命令更安全：`sudo gpasswd -a $USER sudo` 但是要注销或者重启才生效貌似
     -  使用修改文件的方式：（不推荐） 但是在docker中跑Ubuntu新建用户时很有用，也可以不用动文件，添加进组是有效的，看情况吧
     - `chmod 777 /etc/sudoers` 找不到文件说明没有安装sudo root用户 `apt install sudo `
@@ -251,7 +252,7 @@ nohup， disown, screen, setid
 #### 修改主机名
 - `sudo hostname linux` 重启终端即可看到修改
 - 但是重启电脑会恢复原有名字修改如下文件永久： `sudo gedit /etc/hostname` `/etc/hosts`
-- 立即生效 `hostname -F /etc/hostname `
+- 立即生效,也要重新登录 `hostname -F /etc/hostname `
 
 #### 字符雨
 - `sudo apt-get update;sudo apt-get install cmatrix` 然后 运行 cmatrix
