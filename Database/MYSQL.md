@@ -243,10 +243,8 @@ select fun_test(8,'d');
 
 *************************
 
-
-
-一，mysql命令行参数
-
+## mysql命令行参数
+```
 Usage: mysql [OPTIONS] [database] //命令方式
   -?, --help //显示帮助信息并退出
   -I, --help //显示帮助信息并退出
@@ -328,61 +326,54 @@ Usage: mysql [OPTIONS] [database] //命令方式
   --secure-auth //拒绝用(pre-4.1.1)的方式连接到数据库
   --server-arg=name //Send embedded server this as a parameter.
   --show-warnings //显示警告
+```
 
-
-二，mysql命令行实例
+## mysql命令行实例
 
 1，auto-rehash自动补全
 
 说例子前，先说一下，你到google或baidu上面搜一下mysql auto-rehash，然后会出来结果，绝大部分都是一样的，并且内容里面有明显错误。
 mysqld_safe –user=mysql –auto-rehash &，这个根本就不对，为什么抄袭的人不知道自己测试一下，对于这种人，我也是很无语的。你自己写着玩到也无所谓，但是你会害人的。
 
-[root@BlackGhost zhangy]# mysqld_safe –help |grep rehash
-
+`[root@BlackGhost zhangy]# mysqld_safe –help |grep rehash`
 参数选项中根本没有auto-rehash
-
 二种方法可以实现自动补全功能
-－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－
-[mysql]
-#no-auto-rehash
-auto-rehash
-－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－
-mysql -u root –auto-rehash
-－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－ 
-
+```
+    －－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－
+    [mysql]
+    #no-auto-rehash
+    auto-rehash
+    －－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－
+    mysql -u root –auto-rehash
+    －－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－ 
+```
 mysql> use test
   Database changed
-  mysql> select acc //这里自动补全，只是提示表名，和表里面的字段名，不像php可以提示函数名
+mysql> select acc //这里自动补全，只是提示表名，和表里面的字段名，不像php可以提示函数名
   account account.acct_num account.amount acct_num2，－B的用法
 
-D:\xampp\mysql\bin>mysql.exe -uroot -D bak_test -e "show tables;" -B
+`D:\xampp\mysql\bin>mysql.exe -uroot -D bak_test -e "show tables;" -B`
 Tables_in_bak_test
 comment
 user3，－E的用法
 
-D:\xampp\mysql\bin>mysql.exe -uroot bak_test -e "show tables;" -E
+`D:\xampp\mysql\bin>mysql.exe -uroot bak_test -e "show tables;" -E`
 *************************** 1. row ***************************
 Tables_in_bak_test: comment
 *************************** 2. row ***************************
 Tables_in_bak_test: user4，－D的用法
 
-[root@BlackGhost zhangy]# mysql -u root -D test进入后默认就在test数据库里面，不要用use test;
+`[root@BlackGhost zhangy]# mysql -u root -D test `进入后默认就在test数据库里面，不要用use test;
 
 5，–default-character-set设置默认字符集
-
-[root@BlackGhost zhangy]# mysql -u root -D test --default-character-set=utf86，–delimiter设置mysql命令结束符
-
-[root@BlackGhost zhangy]# mysql -u root -D test --delimiter=\|mysql默认的命令结束符是分号，现在把它设置成竖杠，要注意｜前面的\
-
+`[root@BlackGhost zhangy]# mysql -u root -D test --default-character-set=utf86`，–delimiter设置mysql命令结束符
+`[root@BlackGhost zhangy]# mysql -u root -D test --delimiter=\|mysql` 默认的命令结束符是分号，现在把它设置成竖杠，要注意｜前面的\
 7，-e的用法
-
-D:\xampp\mysql\bin>mysql.exe -uroot -D bak_test -e "show tables;"
+`D:\xampp\mysql\bin>mysql.exe -uroot -D bak_test -e "show tables;"`
 这个很有用的，因为我不用进入mysql客户里面去，就能把我要的数据取出来，这个可以配合shell脚本的话，能发挥很大的功能
 
 8，-f的用法
-
-D:\xampp\mysql\bin>mysql.exe -uroot bak_test -e "show databaseds;show tables;" -
-f
+`D:\xampp\mysql\bin>mysql.exe -uroot bak_test -e "show databaseds;show tables;" -f`
 ERROR 1064 (42000) at line 1: You have an error in your SQL syntax; check the ma
 nual that corresponds to your MySQL server version for the right syntax to use n
 ear 'databaseds' at line 1
@@ -391,24 +382,21 @@ ear 'databaseds' at line 1
 +--------------------+
 | comment |
 | user |
-+--------------------+忽略mysql的错误，继续向下执行
++--------------------+
+忽略mysql的错误，继续向下执行
 
 9，-N的用法
-
-D:\xampp\mysql\bin>mysql.exe -uroot bak_test -e "select * from user" -N
+`D:\xampp\mysql\bin>mysql.exe -uroot bak_test -e "select * from user" -N`
 +---+------+---+
 | 1 | bb | 0 |
 | 2 | tank | 0 |
 +---+------+---+10，-p的用法
-
-[root@BlackGhost zhangy]# mysql -u root -o test -p -S /tmp/mysql.sock
+`[root@BlackGhost zhangy]# mysql -u root -o test -p -S /tmp/mysql.sock`
 Enter password11，-h的用法
-
-[root@BlackGhost zhangy]# mysql -u root -h 192.168.1.102服务器可能不只一个，这个时间我们可以用-h来指定连接哪里
+`[root@BlackGhost zhangy]# mysql -u root -h 192.168.1.102` 服务器可能不只一个，这个时间我们可以用-h来指定连接哪里
 
 12，-H的用法
-
-D:\xampp\mysql\bin>mysql.exe -uroot bak_test -e "show tables " -H
+`D:\xampp\mysql\bin>mysql.exe -uroot bak_test -e "show tables " -H`
 <TABLE BORDER=1><TR><TH>Tables_in_bak_test</TH></TR><TR><TD>comment</TD></TR><TR
 ><TD>user</TD></TR></TABLE>13，-X的用法
 
@@ -424,9 +412,9 @@ D:\xampp\mysql\bin>mysql.exe -uroot bak_test -e "show tables " -X
   <row>
   <field name="Tables_in_bak_test">user</field>
   </row>
-</resultset>14，–prompt的用法
-
-[root@BlackGhost zhangy]# mysql -u root --prompt=\^\_\^
+</resultset>
+14，–prompt的用法
+`[root@BlackGhost zhangy]# mysql -u root --prompt=\^\_\^`
 ^_^show databases;
 +--------------------+
 | Database |
@@ -435,22 +423,18 @@ D:\xampp\mysql\bin>mysql.exe -uroot bak_test -e "show tables " -X
 | biztojie |mysql的提示符，我把它设置成笑脸了。
 
 15，-S的用法
-
-[root@BlackGhost zhangy]# mysql -u root -D test -S /tmp/mysql.sock
+`[root@BlackGhost zhangy]# mysql -u root -D test -S /tmp/mysql.sock`
 当我们一台服务器启动了二个不同mysql版本的时候，存放socket的文件是不能一样的，－S用来指定连接到那个
 
 16，-v的用法
-
-[root@BlackGhost zhangy]# mysql -u root -D test -e "show tables;" -v
+`[root@BlackGhost zhangy]# mysql -u root -D test -e "show tables;" -v`
 --------------
 show tables
 --------------内容不止这么点，只说重点
 
 17，-P的用法
-
-[root@BlackGhost zhangy]# mysql -u root -o test -P 13306 -S /tmp/mysql.sock
-
-=======================================【常用功能概览】==============================================================================
+`[root@BlackGhost zhangy]# mysql -u root -o test -P 13306 -S /tmp/mysql.sock`
+***************
 
 tee output.txt 保存运行结果到文件
 Logging to file 'output.txt'同上
@@ -473,17 +457,16 @@ set name 'gbk';同时修改 character_set_client,character_set_connection,charac
 存储过程参数乱码create procedure t ( aa char(10) charset 'gbk')
 
 设置方法2{
-
 设置为gbk即可.可以写一个my.ini来自动设置:
 在Windows的系统安装目录下 (如：C:\WINDOWS\my.ini) 新建一个“my.ini”文件，注意后缀名是“ini”。内容如下：
 [WinMySQLAdmin]
-   Server=c:/apps/mysql/bin/mysqld-nt.exe
+Server=c:/apps/mysql/bin/mysqld-nt.exe
 [mysqld]
-   basedir=c:/apps/mysql
-   datadir=c:/dev/mysql data/data
+basedir=c:/apps/mysql
+datadir=c:/dev/mysql data/data
 default-character-set=gbk
 [client]
-   default-character-set=gbk
+default-character-set=gbk
 上面“Server”指向MySQL的执行主程序，“basedir”指向MySQL的安装目录，“datadir”指向MySQL的数据存放目录（因为我改变了它，所以需要特别指定），
 设置”default-charseter-set=gbk”是为了支持默认为中文。然后把“c:\apps\mysql\bin”追加到“环境变量”的“path”变量中 。 
 }
@@ -498,19 +481,10 @@ default-character-set=gbk
 </property>
  注意，在将连接字符串放到CDATA中，因为&是XML中的转义字符。不然会提示错误:
     Error parsing XML: /hibernate.cfg.xml(12) The reference to entity "characterEncoding" must end with the ';' delimiter.
+    也可以直接把&修改为&amp; 
+    即: jdbc:mysql://localhost:3306/db?useUnicode=true&amp;characterEncoding=utf-8
 
-    也可以直接把&修改为&amp;
-    即:
-    jdbc:mysql://localhost:3306/db?useUnicode=true&amp;characterEncoding=utf-8
-
-
-mysql排错指南。
-乱码：是否指定java，url,数据库相同的编码
-
-输出检查确定url是否拼接正确
-输出确定sql语句是否正确。
-
-常用五类约束：
+### 常用五类约束
 not null：非空约束，指定某列不为空 
 unique： 唯一约束，指定某列和几列组合的数据不能重复 
 primary key：主键约束，指定某列的数据不能重复、唯一 
@@ -518,26 +492,22 @@ foreign key：外键，指定该列记录属于主表中的一条记录，参照
 check：检查，指定一个表达式，用于检验指定数据 
 注意： MySQL不支持check约束，但可以使用check约束，而没有任何效果；  
 
-mysql正确卸载：删除数据文件夹，删除安装文件夹，删除c盘下的programData下的文件夹。
+### mysql正确卸载
+删除数据文件夹，删除安装文件夹，删除c盘下的programData下的文件夹。
 命令行窗口输入和显示中文乱码:
 改my.ini，defauslt- chdaracter -set=gbk
 null与其他值做运算结果是null,开发中把null作为零处理，用函数ifnull（english，0）处理。
 
-root密码重置：
-停止服务y
-命令行 -
-
-数据类型有：
-auto_increment
-	字符：char,varchar
-	小数：dec,decimal,float,double,
-	整数：bigint, int,mediumint,smallint,tinyint,integer
-	布尔：bit,boolean
-	二进制数据：blob（4G最多）,longblob,mediumblob,tinyblob,varbinary,binary
-	文本：text,longtext,mediumtext,tinytext,
-	日期：date,time,timestamp,datetime
+### 数据类型
+字符：char,varchar
+小数：dec,decimal,float,double,
+整数：bigint, int,mediumint,smallint,tinyint,integer
+布尔：bit,boolean
+二进制数据：blob（4G最多）,longblob,mediumblob,tinyblob,varbinary,binary
+文本：text,longtext,mediumtext,tinytext,
+日期：date,time,timestamp,datetime
 	
-
+### 常见函数
 like ‘关_’ like%分别匹配一个或者多个字。
 not取反
 is null;is not null
@@ -578,8 +548,6 @@ mysql不支持全外连接。
 
 结果列别名：select name as newName,(math+enlish+chinese) as total  from score;as可省略
 
-
-
 去重复查询：select distinct name from student;
 查建表信息：show create table student;
 查表明细：show table status from student;
@@ -592,13 +560,11 @@ mysql不支持全外连接。
 	FROM  information_schema.TABLE_CONSTRAINTS 
  	WHERE  TABLE_NAME='t_org';
 
-
 主键表主键值被外键表参照时，主键表记录不允许被删除。
 ? ON DELETE CASCADE： 指当主键表中的行被删除时，
 外键表中相依赖的行也将被级联删除。
 ? ON DELETE SET NULL： 当主键表中的行被删除时，
 把涉及到外键表的外键值设置为空。
-
 
 
 增数据库：create database student;
@@ -682,7 +648,6 @@ classes_name varchar(20),
 classes_number int,         /*表级别联合外键*/         
 foreign key(classes_name, classes_number) references classes(name, number) on delete cascade
 );  
-
 
 区分大小写的比较关键字是binary.
 放弃之前的语句：\c
