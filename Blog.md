@@ -42,3 +42,6 @@
 ## Tool
 - [genymotion 4.2.2 windows版](http://blog.csdn.net/c_s_d_n_luckyq/article/details/48437789)
 - [使用gitbook打造电子书](http://www.cnblogs.com/wangchaoyuana/p/7507504.html)
+
+## 团队开发
+- [团队开发工作流项目](http://www.cnblogs.com/foundation/archive/2009/10/17/1584875.html)

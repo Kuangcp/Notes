@@ -2,14 +2,24 @@
 > 主要是采用的JPA，极大的缩减了代码量，但是要注意不要过度依赖框架，丧失了基本的能力
 
 ### JPA_SQL
-1.引入依赖
-2.继承接口，打好实体类的注解
-3.自动注入直接使用
-4.*切记 属性名不能使用下划线（数据库风格）不然写声明方法就会报错，jpa只是看下划线前半部分，会说找不到属性*
-jpa在创建表时会把驼峰命名改成数据库风格的形式
+#### Mysql
+- 1.引入依赖
+```
+	compile('org.springframework.boot:spring-boot-starter-data-jpa')
+	compile('org.springframework.boot:spring-boot-starter-jdbc')
+	runtime('mysql:mysql-connector-java')
+```
+- 2.继承接口，打好实体类的注解 @Entity 
 
-- jpa是声明特定方法的接口，让jpa来实现并自动注入，如果是没有的方法，就可以使用@Query注解
+- 3.*切记 属性名不能使用下划线（数据库风格）不然写声明方法就会报错，jpa只是看下划线前半部分，会说找不到属性*
+    - jpa在创建表时会把驼峰命名改成数据库风格的形式
+
+- 4.jpa是声明特定方法的接口，让jpa来实现并自动注入，如果是没有的方法，就可以使用@Query注解
     - 默认使用的是HQL（HQL是基于类的所以使用的是类的名字不是表的名字），可以设置下使用原生SQL
+
+#### Restful
+
+
 #### 数据库上的事务支持
 - JPA对所有默认方法都开启了事务支持，查询类事务默认启用readOnly=true
 
