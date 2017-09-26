@@ -13,19 +13,27 @@
 ## 配置JDK
 ### 解压方式
 - [下载地址](http://www.oracle.com/technetwork/java/javase/downloads/index.html)
-- 打开配置文件 ： `sudo gedit /etc/profile`
 
+- 打开配置文件 ： `sudo gedit /etc/profile`
 ```
 export JAVA_HOME= 真实目录例如： /home/mythos/Code/java/jdk1.8.0_131
 export JRE_HOME=${JAVA_HOME}/jre
 export CLASSPATH=.:${JAVA_HOME}/lib:${JRE_HOME}/lib
 export PATH=${JAVA_HOME}/bin:$PATH
 ```
-
 - 让修改立即生效`source /etc/profile`
+`或者修改 .bash_aliases`
+```
+JAVA_HOME=/home/kcp/Application/sdk/jdk1.8.0_131
+export JRE_HOME=${JAVA_HOME}/jre
+export CLASSPATH=.:${JAVA_HOME}/lib:${JRE_HOME}/lib
+export PATH=${JAVA_HOME}/bin:$PATH
+```
+- source ~/.bash_aliases
+
+- *一定要执行*: 指定默认的jdk，因为系统预装了openJdk 
 - `sudo update-alternatives --install /usr/bin/javac javac /home/mythos/Code/java/jdk1.8.0_131/bin/javac 300`
 - `sudo update-alternatives --install /usr/bin/java java /home/mythos/Code/java/jdk1.8.0_131/bin/java 300`
-- 并且运行最后两句命令是为了指定默认的jdk，因为系统预装了openJdk 本来想直接使用环境变量引用，但是由于没有重启？ 所以环境变量暂时未生效
 
 ### sdkman方式 
 > jdk不推荐使用sdkman安装，这里的jdk是开源版估计，会少包 认准这个版本才是完整的(Oracle Corporation 25.131-b11)
