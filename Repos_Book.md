@@ -1,6 +1,11 @@
 # 【GitRepos】
 > 收集的一些优秀的git仓库
 
+## User
+> 一些值得学习的人
+
+- [waylau](https://github.com/waylau) `擅长 Maven Gradle netty Spring`
+
 ## Java
 
 - [durid](https://github.com/alibaba/druid) `阿里数据库连接池`
@@ -15,6 +20,7 @@
 - [activiti实战源码](https://github.com/henryyan/activiti-in-action-codes)
 - [activiti示例](https://github.com/henryyan/kft-activiti-demo)
 - [rabbitmq](https://github.com/chwshuang/rabbitmq)`入门学习代码`
+- [docker-demos](https://github.com/waylau/docker-demos) `Maven和Gradle结合docker使用`
 
 ### Web
 - [Springboot实战](https://github.com/lianggzone/springboot-action) `Springboot的案例`

@@ -1,8 +1,7 @@
 # SpringBoot
 ## 目录
 
-
-***********************************
+*****
 ## 安装SpringBootCLI
 - 安装SDKMAN
     - 使用git bash运行  `curl -s get.sdkman.io | bash`
@@ -20,8 +19,7 @@
 - 使用随机端口启动服务器 配置local.server.port=0
 - 使用Selenium来测试HTML页面，模拟浏览器的动作，查看系统运行状态
 
-**********************************************
-
+*****
 ## Web模块
 ### REST的使用
 1.添加依赖
@@ -69,9 +67,10 @@
 
 
 ***************************************
-## 部署
-### war
-部署为war必须的类
+## 项目部署
+### 生成指定文件
+#### war
+- 部署为war必须的类，一般在创建项目时选war就会自动生成，选jar就要手动添加
 ```
     public class ServletInitializer extends SpringBootServletInitializer {
 
@@ -82,9 +81,13 @@
 
     }
 ```
+- maven： `mvn war` 即可
+- gradle: `gradle war` 然后 `gradle bootRepackage` 即可
 
-### jar
+#### jar
+- 没有特殊的配置，打包即用
+    - maven: `mvn package` 即可生成可执行的jar
+    - gradle:`gradle jar` 然后 `gradle bootRepackage` 也生成可执行jar
 
-
-
-
+### 构建docker镜像
+> 方便监控应用状态，cpu 内存 流量

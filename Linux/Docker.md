@@ -119,6 +119,10 @@
 
 - 查看当前运行的容器：`docker ps `
     - 查看所有容器 ：`docker ps -a`
+- 查看所有容器的状态：`docker stats` 能看到正在运行的容器内存 cpu io net等信息
+    - `-a` 所有容器
+    - `--no-stream` 不阻塞标准输出流，只输出一次信息
+
 
 - 停止容器：`docker stop 容器name`
 - 重启容器：`docker restart 容器name`
@@ -130,7 +134,7 @@
     - -l 删除容器的连接，但是保留容器
     - -v 删除容器挂载的数据卷
     - 删除所有容器：`docker rm ${docker -a -q}`
-- 容器日志：`docker logs 容器name或id`
+- 容器日志(终端所有输入输出)：`docker logs 容器name或id`
 - 重命名 ： `docker rename origin new`
 
 - 导入导出 （容器快照）：
@@ -170,6 +174,7 @@
     - `--privileged=true|false` 是否给以最高权限
     - `-t`，`--tty=true|false` 是否分配伪终端
     - `-u`，`--user=""` 执行命令的用户或ID
+
 - 使用 nsenter 连接到容器:
     - PID=${docker-pid 容器id}
     - nsenter --target $PID --mount --uts --ipc --net --pid
