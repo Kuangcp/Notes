@@ -202,43 +202,50 @@ select fun_test(8,'d');
 ## 7.【异常】
 
 ## 8.【用户管理】
+> [参考博客](http://www.cnblogs.com/fslnet/p/3143344.html)
+
+### 查看
+- 查询用户信息 `select host,user,password from user ;`
+- 查看权限 `show grants for zx_root;`
+
+### 创建
 > 创建本地超级用户： CREATE USER 'myth'@'localhost' IDENTIFIED BY 'ad'; 
+
 > 授予所有权限 GRANT all privileges  ON *.* TO 'myth'@'localhost';
 
-- 创建用户 `CREATE USER 'username'@'host' IDENTIFIED BY 'password'; `
-- 设置密码 `SET PASSWORD FOR 'username'@'%' = PASSWORD("123456"); `
+> 创建远程访问指定数据库用户 ： CREATE USER 'myth'@'%' IDENTIFIED BY 'ad'; 
+
+> 授予数据库db的所有权限 GRANT all privileges  ON db.* TO 'myth'@'%';
+
+- 创建用户 `CREATE USER 'username'@'host' IDENTIFIED BY 'password';`
+- 设置密码 `SET PASSWORD FOR 'username'@'%' = PASSWORD("123456");`
 - 删除用户 `drop user 'username'@'host'`
-- 注意： `host`如果写了localhost就只能本地登录，`%` 就是任意
+    - 如果服务器需要远程访问 修改配置文件`/etc/mysql/mysql.conf.d/mysqld.cnf`，注释掉 bind_address 一行
+```
+    %            匹配所有主机
+    localhost    localhost不会被解析成IP地址，直接通过UNIXsocket连接
+    127.0.0.1    会通过TCP/IP协议连接，并且只能在本机访问；
+    ::1          ::1就是兼容支持ipv6的，表示同ipv4的127.0.0.1
+```
+### 修改
+- 修改名字：`rename   user  feng  to   newuser；`
 
 ### 【授权】
-- GRANT all privileges  ON databasename.tablename TO 'username'@'host' 
+- grant all privileges  ON databasename.tablename TO 'username'@'host' 
     - all privileges 所有权限
-    - alter
-    - alter routine
-    - create
-    - create routine
-    - create temporary table
-    - create user
-    - create view
-    - delete 
-    - drop
-    - execute
-    - file
-    - index
-    - insert
-    - lock table
-    - process
-    - reload
-    - replication
-    - client
-    - replication slave
-    - select 
-    - show databases
-    - show view
-    - shutdown
-    - super
-    - update
-    - usage
+    - alter | alter routine
+    - create | create routine | create temporary table | create user | create view
+    - delete | drop
+    - execute | file
+    - index | insert
+    - lock table | process | reload
+    - replication | client | replication slave
+    - select | show databases | show view
+    - shutdown | super
+    - update | usage
+- revoke 回收权限用法和grant一样
+
+- 刷新权限缓存 `flush privileges;`
 
 *************************
 

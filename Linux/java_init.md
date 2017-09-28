@@ -82,6 +82,7 @@ export PATH=$PATH:$GRADLE_HOME/bin:$GRAILS_HOME/bin:$GROOVY_HOME/bin:$SCALA_HOME
 - 查看编码 ： `status` 或者 `show variables like 'character_set_%`
 - 打开配置文件： `sudo gedit /etc/mysql/mysql.conf.d/mysqld.cnf`
     - `[mysqld]`块下添加一行： `character-set-server=utf8`
+    - 如果要允许远程访问，就注释掉 `bind-address`
 - 重启MySQL ：`sudo systemctl restart mysql`
 
 *************

@@ -163,6 +163,11 @@
     - `--cap-drop` 去除能力
     - `--link` 链接其他容器
     - `-rm` 容器运行结束退出就自动删除该容器 注意和`-d`不能共存
+    - `--restart=always` 设置该容器随dokcer 服务自启动
+    - `--hostname 容器hostname` 指定容器的hostname
+    - `-e TZ="Asia/Shanghai"` 指定时区
+    - `-v /etc/localtime:/etc/localtime:ro` 设置容器的时钟和宿主机一致
+    
 - `docker create` 是创建一个容器，不会运行，`docker run`是运行命令在一个新容器里
 
 `docker exec`

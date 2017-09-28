@@ -17,7 +17,48 @@
 - 4.jpa是声明特定方法的接口，让jpa来实现并自动注入，如果是没有的方法，就可以使用@Query注解
     - 默认使用的是HQL（HQL是基于类的所以使用的是类的名字不是表的名字），可以设置下使用原生SQL
 
-#### Restful
+#### Restful设计
+- 1.添加依赖
+
+```
+    <dependency>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-data-rest</artifactId>
+    </dependency>
+```
+- 2.引入自动配置类
+
+```
+    @Configuration
+    public class RestConfiguration extends RepositoryRestMvcConfiguration {
+        @Override
+        public RepositoryRestConfiguration config() {
+            return super.config();
+        }
+        @Override
+        public ProfileResourceProcessor profileResourceProcessor(RepositoryRestConfiguration config) {
+            // 设置rest根目录是应用路径下的路径
+            config.setBasePath("/rest");
+            return super.profileResourceProcessor(config);
+
+        }
+        
+    }
+```
+- 3.配置repository的名字例如：（只要配置repository就能用REST了）
+
+```
+    @RepositoryRestResource(path = "book")
+    public interface BookDao extends JpaRepository<Book,Long>{
+```
+- 4.启动应用，控制台有如下输出
+- ![输出](https://raw.githubusercontent.com/Kuangcp/ImageRepos/master/Tech/Spring/output.png)
+- 可以清楚的看到有关路径的使用方法
+    - `GET` 查询单个 `/repo/id` 成功：200 失败404
+    - `GET` 查询所有 `/repo` 成功200 失败404
+    - `POST` 新增 `/repo` json数据发送 成功 201 失败404
+    - `DELETE` 删除 `/repo/id` json数据 成功204 失败404
+    - `PUT` 更新 `/repo/id` json 更新成功200 没有该id就插入201 失败404（使用主键自动增长就不会遇到404）
 
 
 #### 数据库上的事务支持

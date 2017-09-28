@@ -33,7 +33,7 @@
 ```
 ## 2.maven配置
 ### 2.1 eclipse中配置：
-高版本自带maven，需要注意的是eclipse的JRE环境目录要选择jdk下的JRE
+- 高版本自带maven，需要注意的是eclipse的JRE环境目录要选择jdk下的JRE
 
 ### 2.2 配置插件 [插件地址](http://maven.apache.org/plugins/index.html)
 
@@ -162,10 +162,13 @@ A 项目 compile
         </executions>
     </plugin>
 ```
-- 多个main的情况下 `java -cp example03-1.0-SNAPSHOT.jar cn.zhouyafeng.itchat4j.main.TulingRobot`
+- 多个main的情况下运行指定的main `java -cp example03-1.0-SNAPSHOT.jar cn.zhouyafeng.itchat4j.main.TulingRobot`
 
 #### war包当jar使用
 - Springboot项目能够
+
+- [通过Maven构建打包Spring boot，并将config配置文件提取到jar文件外](http://lib.csdn.net/article/java/65574)
+
 
 *****************
 #### 关于适用git idea 多模块的项目的构建

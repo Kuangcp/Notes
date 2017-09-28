@@ -20,47 +20,9 @@
 - 使用Selenium来测试HTML页面，模拟浏览器的动作，查看系统运行状态
 
 *****
+## 配置文件
+> [配置文件的使用](http://www.itwendao.com/article/detail/391009.html)
 ## Web模块
-### REST的使用
-1.添加依赖
-```
-    <dependency>
-        <groupId>org.springframework.boot</groupId>
-        <artifactId>spring-boot-starter-data-rest</artifactId>
-    </dependency>
-```
-2.引入自动配置类
-```
-    @Configuration
-    public class RestConfiguration extends RepositoryRestMvcConfiguration {
-        @Override
-        public RepositoryRestConfiguration config() {
-            return super.config();
-        }
-        @Override
-        public ProfileResourceProcessor profileResourceProcessor(RepositoryRestConfiguration config) {
-            // 设置rest根目录是应用路径下的路径
-            config.setBasePath("/rest");
-            return super.profileResourceProcessor(config);
-
-        }
-        
-    }
-```
-3.配置repository的名字例如：（只要配置repository就能用REST了）
-```
-    @RepositoryRestResource(path = "book")
-    public interface BookDao extends JpaRepository<Book,Long>{
-```
-4.启动应用，控制台有如下输出
-
-- ![输出](https://raw.githubusercontent.com/Kuangcp/ImageRepos/master/Tech/Spring/output.png)
-- 可以清楚的看到有关路径的使用方法
-    - `GET` 查询单个 `/repo/id` 成功：200 失败404
-    - `GET` 查询所有 `/repo` 成功200 失败404
-    - `POST` 新增 `/repo` json数据发送 成功 201 失败404
-    - `DELETE` 删除 `/repo/id` json数据 成功204 失败404
-    - `PUT` 更新 `/repo/id` json 更新成功200 没有该id就插入201 失败404（使用主键自动增长就不会遇到404）
 
 ### 上传下载文件
 > 第一种直接上传到应用的webroot或者resources目录下，第二种上传到数据库中，第三种使用ftp。
@@ -91,3 +53,27 @@
 
 ### 构建docker镜像
 > 方便监控应用状态，cpu 内存 流量
+
+#### gradle结合docker
+`build.gradle`
+```
+apply plugin: 'docker'
+task buildDocker(type: Docker, dependsOn: build) {
+    push = true
+    applicationName = jar.baseName
+    dockerfile = file('src/main/docker/Dockerfile')
+    doFirst {
+        copy {
+            from war
+            into stageDir
+        }
+    }
+}
+```
+`Dockerfile`
+```
+FROM frolvlad/alpine-oraclejdk8:slim
+VOLUME /tmp
+ADD weixin-1.0.0.war app.war
+ENTRYPOINT ["java","-jar","/app.war"]
+```

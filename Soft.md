@@ -7,23 +7,31 @@
 - [Gradle官方下载地址](http://services.gradle.org/distributions/)
 - [openjdk](http://openjdk.java.net/)
 
+*****
 ## Tools
-- [git](https://git-scm.com/)
+- [git](https://git-scm.com/) `最好用的vcs`
 - [genymotion](https://www.genymotion.com/) `安卓模拟器`
 - [ngrok](https://ngrok.com/)`内网映射 ngrok http 8080`
+
+### 文档处理
+- [pandoc](https://github.com/jgm/pandoc) `一个文档格式转换的软件，markdown docx`
+
+### 压力测试
+- [jmeter](http://jmeter.apache.org/download_jmeter.cgi) `apache 下的开源压测工具`
+- [ab](https://httpd.apache.org/docs/2.4/programs/ab.html) `apt安装这个包即可apache2-utils`
 
 ### UML
 - [免费UML软件统计 博客](http://blog.csdn.net/s464036801/article/details/8469166)
 - [bouml](http://www.bouml.fr/download.html#Debian) `官方网站下载`
 - [argouml](http://argouml.tigris.org/) `argouml官网`
 
+*****
 ## Database
 - [sssdb](https://github.com/ideawu/ssdb) `键值对数据库`
 - [Mysql-Font](https://github.com/NilsHoyer/MySQL-Front) `连接Mysql的客户端`
 
-## Tools
-### 压力测试
-- [jmeter](http://jmeter.apache.org/download_jmeter.cgi) `apache 下的开源压测工具`
+
+
 
 ********************************
 # 【常用的网站】

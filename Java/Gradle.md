@@ -320,9 +320,9 @@ task makeReleaseVersion(type:ReleaseVersionTask){
 
 ### Java 和 Groovy的联合编译
 - src 下 main 下 java 和groovy 的一个目录结构，直接编译就会发生Java无法依赖groovy的类
-- 需要配置 ` sourceSets.main.java.srcDirs=[]` ` sourceSets.main.groovy.srcDirs=['src/main/java','src/main/groovy']`
+- 错误：需要配置 ` sourceSets.main.java.srcDirs=[]` ` sourceSets.main.groovy.srcDirs=['src/main/java','src/main/groovy']`
+    - 正确： `sourceSets.main.java.srcDirs=['src/main/java','src/main/groovy']` 上面的会报错
 - 配置好后就能把groovy当普通Java类直接使用了
-- 实际： `sourceSets.main.java.srcDirs=['src/main/java','src/main/groovy']`才正确，上面的会报错
 
 ************
 
