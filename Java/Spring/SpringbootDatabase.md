@@ -37,12 +37,10 @@
         }
         @Override
         public ProfileResourceProcessor profileResourceProcessor(RepositoryRestConfiguration config) {
-            // 设置rest根目录是应用路径下的路径
+            // 设置rest根目录是应用路径下的路径 : localhost:8080/myth/rest
             config.setBasePath("/rest");
             return super.profileResourceProcessor(config);
-
         }
-        
     }
 ```
 - 3.配置repository的名字例如：（只要配置repository就能用REST了）
@@ -53,13 +51,19 @@
 ```
 - 4.启动应用，控制台有如下输出
 - ![输出](https://raw.githubusercontent.com/Kuangcp/ImageRepos/master/Tech/Spring/output.png)
-- 可以清楚的看到有关路径的使用方法
+- 所有路径的使用方法：
     - `GET` 查询单个 `/repo/id` 成功：200 失败404
     - `GET` 查询所有 `/repo` 成功200 失败404
     - `POST` 新增 `/repo` json数据发送 成功 201 失败404
     - `DELETE` 删除 `/repo/id` json数据 成功204 失败404
     - `PUT` 更新 `/repo/id` json 更新成功200 没有该id就插入201 失败404（使用主键自动增长就不会遇到404）
 
+#### Jpa数据分页
+> [参考博客](https://www.tianmaying.com/tutorial/spring-jpa-page-sort)
+
+- 分页 page 从0开始 size是个数 sort可以不需要（如果本来就是id排序就没必要了） 
+    - 原理就是 预编译SQL然后查询总数，然后再执行 必须有两条SQL执行
+- 查询的结果不包含实体的id属性
 
 #### 数据库上的事务支持
 - JPA对所有默认方法都开启了事务支持，查询类事务默认启用readOnly=true

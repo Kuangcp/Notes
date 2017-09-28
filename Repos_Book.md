@@ -14,6 +14,7 @@
 - [webmagic](https://github.com/code4craft/webmagic) `爬虫框架`
 - [interview](https://github.com/kdn251/interviews)`面试所需算法练习`
 - [Java设计模式](https://github.com/iluwatar/java-design-patterns) `设计模式详解`
+- [zxing](https://github.com/zxing/zxing) `二维码处理的项目`
 
 ### Demo
 - [Java-learing](https://github.com/brianway/java-learning) `基础学习仓库`
@@ -29,6 +30,7 @@
 
 ### Tool
 - [lanproxy](https://github.com/ffay/lanproxy) `将局域网个人电脑、服务器代理到公网的内网穿透工具`
+- [weixin-java-tools](https://github.com/chanjarster/weixin-java-tools) `微信的java工具项目`
 
 ## Docker
 - [openjdk](https://github.com/docker-library/openjdk) `openjdk的dockerfile仓库`
