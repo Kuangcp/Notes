@@ -1,15 +1,21 @@
-# Mysql 基本数据类型
-##  decimal 
+# Mysql
+
+## 安装
+
+
+## 基本数据类型
+###  decimal 
 -  The declaration syntax for a DECIMAL column is DECIMAL(M,D). The ranges of values for the arguments are as follows:
    - M is the maximum number of digits (the precision). It has a range of 1 to 65.
    - D is the number of digits to the right of the decimal point (the scale). It has a range of 0 to 30 and must be no larger than M. 
 - 在MySQL 3.23 及以后的版本中，DECIMAL(M, D) 的取值范围等于早期版本中的DECIMAL(M + 2, D) 的取值范围。 - 1、当插入的整数部分的值超过了其表示范围后就直接忽略了小数部分的值，并以最大值填充。 
 - 2、当整数部分合法，小数部分多余的位数，直接截断。
 
-## LongBlob
+### LongBlob
 - 这种数据类型可以直接把图像文件存到数据库中！
 
-# 1.mysql常用命令集合
+
+### 1.mysql常用命令集合
 #### 1.1【自增长】
 - 【创建表时设置自增长，并设置起始值】
     - create table cc( id int auto_increment,name varchar(20),primary key(id) ) auto_increment=1000;

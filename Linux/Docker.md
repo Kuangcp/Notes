@@ -84,6 +84,7 @@
 ## 常规使用
 - 如果出现命令执行失败，可以登录docker的控制台直接执行 `boot2docker ssh`
 - 可以将镜像看成真正运行的程序，容器就是具体的一些配置，所以镜像是可以重复利用，容器出问题删掉就是了
+
 ### Docker仓库
 
 - 时速云：`sudo docker pull index.tenxcloud.com/<namespace>/<repository>:<tag>`
@@ -119,6 +120,7 @@
 
 - 查看当前运行的容器：`docker ps `
     - 查看所有容器 ：`docker ps -a`
+    - 查看占用 :`docker ps -s`
 - 查看所有容器的状态：`docker stats` 能看到正在运行的容器内存 cpu io net等信息
     - `-a` 所有容器
     - `--no-stream` 不阻塞标准输出流，只输出一次信息

@@ -16,6 +16,7 @@
     - [异常处理规范](https://zhuanlan.zhihu.com/p/29005176)
     - [参数校验和国际化规范](https://zhuanlan.zhihu.com/p/29129469)
     - [配置文件的定义](https://zhuanlan.zhihu.com/p/29191233)
+- [持续集成](http://www.ruanyifeng.com/blog/2015/09/continuous-integration.html)
 
 ### BuildTool
 - [Gradle构建多模块项目](http://blog.javachen.com/2015/01/07/build-multi-module-project-with-gradle.html)
