@@ -5,6 +5,7 @@
 > 一些值得学习的人
 
 - [waylau](https://github.com/waylau) `擅长 Maven Gradle netty Spring`
+- [anapsix](https://github.com/anapsix)`擅长docker`
 
 ## Java
 
@@ -32,11 +33,15 @@
 - [lanproxy](https://github.com/ffay/lanproxy) `将局域网个人电脑、服务器代理到公网的内网穿透工具`
 - [weixin-java-tools](https://github.com/chanjarster/weixin-java-tools) `微信的java工具项目`
 
+
+
+********
 ## Docker
 - [openjdk](https://github.com/docker-library/openjdk) `openjdk的dockerfile仓库`
 - [docker-alpine-java](https://github.com/anapsix/docker-alpine-java) `java 运行环境 alpine为基础镜像`
+### web
+- [webdis](https://github.com/anapsix/docker-webdis) `基于redis构建的使用http请求存取数据`
 
-***************************
 ## Go
 - [build-web-application-with-golang](https://github.com/astaxie/build-web-application-with-golang)
 

@@ -1,7 +1,7 @@
-# docker build -t alpine:ssh .
-# 运行容器 docker create --name sshd -p 8989:22 alpine:ssh
+# docker build -t alpine-ssh .
+# 运行容器 docker create --name sshd -p 8989:22 alpine-ssh
 # 建议构建运行后修改口令 docker exec -it sshd passwd
-FROM alpine:3.6
+FROM alpine
 MAINTAINER mythos "kuang.myth@foxmail.com"
 
 RUN apk update

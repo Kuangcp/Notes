@@ -79,11 +79,11 @@
     * [ shell_learn ](./Linux/shell_learn.md)
     * [ vim ](./Linux/vim.md)
 * 【 Script 】
+    * [ Dos ](./Script/Dos.md)
     * [ Python ](./Script/Python.md)
     * [ Python_Frame ](./Script/Python_Frame.md)
     * [ Python_Net ](./Script/Python_Net.md)
     * [ Python_Pygame ](./Script/Python_Pygame.md)
-    * [ dos ](./Script/dos.md)
 * 【 Skills 】
     * 【 Skills/View 】
         * [ Hexo ](./Skills/View/Hexo.md)

@@ -9,6 +9,10 @@
 
 ## 邮件
 
+## Web工具
+- `pip3 install httpie`
+    - `http --json URL` 格式化输出json
+- `curl URL|python -m json.tool ` 格式化输出JSON
 
 # 爬虫
 ### 安装所需模块

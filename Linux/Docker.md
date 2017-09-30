@@ -38,8 +38,13 @@
 ## 个人理解
 - docker中的容器是动态的，随时创建和销毁，只有镜像是持久化的
 - 而且容器是一个虚拟出来的功能完备的Linux操作系统可以进行登录运行命令
-- `docker images`来得到所有的本地镜像名，使用`docker run --name {name} -d {image-name} `以某容器来启动某个镜像
-- 然后`docker ps`查看运行状况
+- `docker images`来得到所有的本地镜像名
+    - 使用`docker run --name {name} -d {image-name} `新命名一个容器来启动某个镜像
+    - 然后`docker ps`查看容器运行状况
+- 镜像的命名：
+    - 如果要push到仓库就要遵循这个规范，本地用就无所谓了，而且以后也可以取新的名字 `docker tag 原名 新名` 
+    - 官方的hub： `用户名/镜像名：tag`
+    - 非官方的例如阿里 `registry.cn-hangzhou.aliyuncs.com/myth/jdk8:alpine` jdk8是镜像名，前面的是仓库地址
 
 ***************************************
 ## 安装与卸载
