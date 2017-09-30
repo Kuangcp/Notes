@@ -6,6 +6,7 @@
 
 - [waylau](https://github.com/waylau) `擅长 Maven Gradle netty Spring`
 - [anapsix](https://github.com/anapsix)`擅长docker`
+- [aleen42](https://github.com/aleen42) `写了好几个方便的gitbook插件`
 
 ## Java
 
@@ -82,4 +83,5 @@
 ## 前端
 - [Web前端开发](http://caibaojian.com/gitbook/format/cover.html) `gitbook的使用以及相关技术的索引页`
 
-
+## Docker
+- [Docker — 从入门到实践](https://www.gitbook.com/book/yeasy/docker_practice/details)

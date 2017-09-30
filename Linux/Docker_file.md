@@ -34,7 +34,8 @@
 ```
 - `docker build .` 如果成功则会得到一个没有名字的镜像
     - `docker build -t repository/tag .` 给镜像指定名字
-    - 如果文件名是`Dockerfile` 使用 `.` 否则就是文件名
+    - 如果文件名是`Dockerfile` 使用 `.` 
+    - 否则就是 `docker build -t 仓库/镜像:tag- < 文件`
 - 创建镜像成功后 `docker run --name ContainerName -d repository/tag` 新建容器来运行镜像
 
 ***************************
@@ -49,7 +50,7 @@
     - `-t`如果构建成功 可以指定保存新镜像的repository和tag (多个的话就多个 -t就行了，例如 `docker build -t shykes/myapp:1.0.2 -t shykes/myapp:latest .`)
 
 ### FROM 
-> 基于某镜像构建,这是整个文件的第一条指令，一定是基于某镜像构建的，如果是空镜像就使用特殊的 FROM scratch
+> 基于某镜像构建,这是整个文件的第一条指令，一定是基于某镜像构建的，如果是空镜像就使用特殊的 `FROM scratch`
 
 - `FROM image`
 - `FROM image:tag`

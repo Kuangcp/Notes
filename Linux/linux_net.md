@@ -374,6 +374,13 @@ nameserver 8.8.8.4
     
 - 成功后 客户端登录 `ssh -p 22 username@ip`
     - root用户似乎不能这样登录
+    - /etc/ssh/sshd_confg中PermitRootLogin  no 改为yes 重新启动ssh服务。
+- 注意 一个端口和IP如果之前记录过相关信息 再次连接新的系统（docker中可能出现）按着提示来运行一条命令即可
+- `ssh_exchange_identification: Connection closed by remote host` 问题：
+```
+echo "PermitRootLogin without-password" >> /etc/ssh/sshd_config ;\
+echo "PermitRootLogin yes" >> /etc/ssh/sshd_config ;\
+```
 
 ##### 使用别名登录
 `vim ~/.ssh/config`

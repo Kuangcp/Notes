@@ -59,7 +59,7 @@
     * `vim .git-credentials`
     * 输入： ` http://{username}:{password}@github.com` 或者是https开头
     * `git config --global credential.helper store`
-    * ~/.gitconfig 文件中多了以下内容即可
+    * `~/.gitconfig` 文件中多了以下内容即可
         * [credential]
         * helper = store
 - ssh 方法：（推荐）

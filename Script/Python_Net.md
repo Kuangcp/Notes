@@ -10,8 +10,9 @@
 ## 邮件
 
 ## Web工具
-- `pip3 install httpie`
+- `pip3 install httpie` 我的用不了，奇怪？？ 这个`sudo apt install httpie`才能用
     - `http --json URL` 格式化输出json
+    - URL会转小写。。。
 - `curl URL|python -m json.tool ` 格式化输出JSON
 
 # 爬虫

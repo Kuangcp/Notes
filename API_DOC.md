@@ -37,6 +37,7 @@
 
 ## Python
 - [python-gtk3](https://python-gtk-3-tutorial.readthedocs.io/en/latest/introduction.html) `python-gtk3的开发`
+- [httpie](http://python.ctolib.com/httpie.html) `好用的类curl工具 文档` 
 
 ## Database
 - [Redis中文文档](http://redisdoc.com/index.html)

@@ -113,13 +113,18 @@
   gnome-terminal 3.18.3-linuxmint2
 请您明确地选择安装其中一个。
 ```
+### 软件源列表
+- [参考博客 阿里云的软件源](https://hacpai.com/article/1482807364546?p=1&m=0)
+- [wiki-源列表说明](http://wiki.ubuntu.com.cn/%E6%BA%90%E5%88%97%E8%A1%A8)
+
 
 **************************************
 ### 【用户管理】
 - 添加用户 `sudo adduser username` 
     - 对比 `useradd`只是新建一个用户不会创建主目录
 - 添加到sudo组 ，使用命令更安全：`sudo gpasswd -a $USER sudo` 但是要注销或者重启才生效貌似
-    -  使用修改文件的方式：（不推荐） 但是在docker中跑Ubuntu新建用户时很有用，也可以不用动文件，添加进组是有效的，看情况吧
+- 或者：添加用户到用户组：`adduser user group`
+    -  或者：使用修改文件的方式：（不推荐） 但是在docker中跑Ubuntu新建用户时很有用，也可以不用动文件，添加进组是有效的，看情况吧
     - `chmod 777 /etc/sudoers` 找不到文件说明没有安装sudo root用户 `apt install sudo `
     - 添加 ：`kuang  ALL=(ALL:ALL)ALL`
     - `chmod 440 /etc/sudoers`
@@ -131,6 +136,9 @@
 - `su username` 切换用户
 - `su -l username` 当前用户的环境下登录用户（当成一个程序一样可以退出登录）
 
+- 修改密码：
+    - `passwd user`
+    - `echo "root:caishi" | chpasswd` 如果是普通用户就是 sudo chpasswd
 - `usermod` 修改相关信息
     - `-s 更改shell环境`
     - `-g 更改用户组`
@@ -150,7 +158,8 @@
     - `-g GID` 指定新用户组的组标识号GID 
     - `-o` 一般和g共用 表示新用户组的GID可以与系统已有用户组的GID相同。
 - 删除用户组：`groupdel` 
-- groupmod 选项 用户组
+
+- `groupmod 选项 用户组`
     - -g GID 为用户组指定新的组标识号。
     - -o 与-g选项同时使用，用户组的新GID可以与系统已有用户组的GID相同。
     - -n 新用户组 将用户组的名字改为新名字
