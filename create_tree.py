@@ -1,6 +1,7 @@
 import os
 import sys
 import getopt
+import subprocess
 
 '''
     通过运行脚本，读取文件夹的文件生成目录，为了gitbook
@@ -8,7 +9,7 @@ import getopt
 '''
 # 忽略的文件夹
 dirs=['.git','SQL','Docker']
-# 忽略的文件
+# 忽略根目录下的文件
 files=['CODE_OF_CONDUCT.md', 'README.md']
 flag_show=False
 flag_append=False
@@ -100,8 +101,6 @@ for fold in Folders:
         create(fold,1)
 
 
-    
-
 # 终端输出
 if flag_show : 
     for res in result:
@@ -109,11 +108,12 @@ if flag_show :
 
 # 追加到gitbook的目录文件中
 if flag_append :
-    with open('SUMMARY.md','a') as dest:
-        dest.write('\n\n############################################\n')
+    subprocess.call('mv SUMMARY.md SUMMARY.md.bak',shell=True)
+    with open('SUMMARY.md','w+') as dest:
+        dest.write('# Summary\n\n* [Introduction](README.md)\n\n')
         for res in result:
             dest.write(res+'\n')
         
 ## 要不要直接输出到文件中去呢，这样就不用复制粘贴了，不过为了自由添加 ，还是暂时不去动吧
 
-
+# 将原文件重命名 ， 然后忽略追踪，然后输出到新文件 就这样

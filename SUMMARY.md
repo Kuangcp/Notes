@@ -42,7 +42,9 @@
         * [ SpringbootDatabase ](./Java/Spring/SpringbootDatabase.md)
         * [ SpringbootDemoCreate ](./Java/Spring/SpringbootDemoCreate.md)
     * 【 Java/AdvancedLearning 】
+        * [ ContinuousIntegration ](./Java/AdvancedLearning/ContinuousIntegration.md)
         * [ MultipleLanguage ](./Java/AdvancedLearning/MultipleLanguage.md)
+        * [ WebPerformance ](./Java/AdvancedLearning/WebPerformance.md)
         * [ 开发思想 ](./Java/AdvancedLearning/开发思想.md)
     * [ Activiti ](./Java/Activiti.md)
     * [ EE ](./Java/EE.md)
@@ -62,9 +64,9 @@
 * 【 Linux 】
     * 【 Linux/Alpine 】
         * [ alpine_base ](./Linux/Alpine/alpine_base.md)
-    * [ Docer_soft ](./Linux/Docer_soft.md)
     * [ Docker ](./Linux/Docker.md)
     * [ Docker_file ](./Linux/Docker_file.md)
+    * [ Docker_soft ](./Linux/Docker_soft.md)
     * [ Nginx ](./Linux/Nginx.md)
     * [ git_action ](./Linux/git_action.md)
     * [ git_base ](./Linux/git_base.md)
@@ -85,6 +87,7 @@
 * 【 Skills 】
     * 【 Skills/View 】
         * [ Hexo ](./Skills/View/Hexo.md)
+        * [ Learn_Js ](./Skills/View/Learn_Js.md)
         * [ Learn_PS ](./Skills/View/Learn_PS.md)
     * [ Web安全 ](./Skills/Web安全.md)
     * [ usually_app ](./Skills/usually_app.md)
