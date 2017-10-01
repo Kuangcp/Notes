@@ -1,4 +1,4 @@
-FROM ubuntu
+FROM ubuntu:16.04
 
 #  apt-utils wget curl htop 
 # 镜像源列表是 16.04的代号 还是失败了

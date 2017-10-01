@@ -156,3 +156,11 @@ ENTRYPOINT ["git"]
 - 将镜像容器化执行命令后自动删除容器`docker run --rm git:new`
 - 注意其运行环境是容器内，不是宿主机，入口点的命令运行完了就退出了，不能当成宿主机上的git使用，只能说是听个响
     - 所以不可能说在容器中安装软件然后在宿主机上交互运行
+
+#### Dockerfile中新建用户
+```
+RUN useradd -ms /bin/bash mythos;\
+    echo "mythos:jiushi" | chpasswd;
+USER mythos
+WORKDIR /home/mythos
+```
