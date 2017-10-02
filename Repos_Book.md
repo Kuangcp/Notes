@@ -17,8 +17,10 @@
 - [interview](https://github.com/kdn251/interviews)`面试所需算法练习`
 - [Java设计模式](https://github.com/iluwatar/java-design-patterns) `设计模式详解`
 - [zxing](https://github.com/zxing/zxing) `二维码处理的项目`
+- [easypoi](https://gitee.com/lemur/easypoi) `虽然代码非常不规范，也没人维护的样子，但是这个开源精神要学习以及一些思想`
 
 ### Demo
+- [springboof-action](https://github.com/lianggzone/springboot-action) `Springboot常见的模块都有,文档也多`
 - [Java-learing](https://github.com/brianway/java-learning) `基础学习仓库`
 - [activiti实战源码](https://github.com/henryyan/activiti-in-action-codes)
 - [activiti示例](https://github.com/henryyan/kft-activiti-demo)
