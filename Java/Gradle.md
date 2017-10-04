@@ -307,7 +307,7 @@ task makeReleaseVersion(type:ReleaseVersionTask){
 **************************
 
 # Gradle插件
- 
+- shadowJar
 
 **************
 
