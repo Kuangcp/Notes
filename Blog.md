@@ -5,6 +5,10 @@
 ********************************************
 # 【Blog】
 ## Java
+### SE
+- [Java异常浅谈](http://www.cnblogs.com/focusj/archive/2011/12/26/2301524.html)
+
+****
 - [Java动态代理](http://blog.csdn.net/luanlouis/article/details/24589193)
 - [使用JMockit编写java单元测试](http://blog.csdn.net/chjttony/article/details/17838693)
 - [Java(Android)线程池](http://www.trinea.cn/android/java-android-thread-pool/)
