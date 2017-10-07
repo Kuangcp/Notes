@@ -1,7 +1,4 @@
-# JavaSE 知识点梳理
-`目录`
-- [【线程】](#线程)
-- [【常用接口】](#常用接口)
+# JavaSE
 
 
 *******************************
@@ -42,6 +39,10 @@ fis.close();
 - 基础的批量操作SQL ` pstmt.executeBatch(); //批量执行`
 
 ## 【Net】
+
+- 得到URL文件的输入流
+    - `new URL(url).openStream()`
+
 - 使用Linux编程开启web容器时`java.net.SocketException: 权限不够`
     - [参考博客](http://www.xuebuyuan.com/1432737.html)
     - 快速解决，不使用小于1024的端口即可，或者提权

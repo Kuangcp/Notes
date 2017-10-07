@@ -27,6 +27,7 @@
 ### 上传下载文件
 > 第一种直接上传到应用的webroot或者resources目录下，第二种上传到数据库中，第三种使用ftp。
 
+- [Springboot上传文件](http://www.cnblogs.com/studyCenter/p/6665171.html)
 
 ***************************************
 ## 项目部署
