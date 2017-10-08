@@ -50,28 +50,39 @@
     - `-t`如果构建成功 可以指定保存新镜像的repository和tag (多个的话就多个 -t就行了，例如 `docker build -t shykes/myapp:1.0.2 -t shykes/myapp:latest .`)
 
 ### FROM 
-> 基于某镜像构建,这是整个文件的第一条指令，一定是基于某镜像构建的，如果是空镜像就使用特殊的 `FROM scratch`
+> 基于某镜像构建,这是整个文件的第一条指令，一定是基于某镜像构建的，如果是空镜像就使用特殊的 `FROM scratch` <br/>
+> 允许多个FROM命令，其后的命令就是基于该FROM的镜像构建的，但是一个dockerfile只能得到一个有名字的镜像(最后一个FROM构建的镜像)，之前的FROM就是none:none
 
 - `FROM image`
 - `FROM image:tag`
+- `FROM image@digest`
 
 ### MAINTAINER
 - 留开发者名字 例如 `MAINTAINER kuangcp myth.kuang@gmail.com`
+- 可以放多个信息，但是建议只有开发者信息，其他的放在Labels里 
 
 ### RUN
-> 每条RUN命令在当前镜像的基础上执行指定命令，并提交为新的镜像，所以不要一条命令就一个RUN，避免层太多
+> 每条RUN命令在当前镜像的基础上执行指定命令，并提交为新的镜像层，所以尽量将所有命令放在一个RUN里
 
-- `RUN command` command是shell `/bin/sh -c` 命令 例如 `RUN apt update`  
-- `RUN ["executable", "param1", "param2" ... ]`
+- `RUN command` 
+    - 这种写法中的command是shell `/bin/sh -C`负责执行，所以就会有限制，必须要有 /bin/sh
+- `RUN ["executable", "param1", "param2" ... ]`  一定要双引号（JSON字符串的格式来解析的）
+    - 这种写法适用任意一个二进制程序 例如bash执行 `RUN ["/bin/bash", "-C", "echo hello"]`
+    - 环境变量的问题： `RUN ["echo","$HOME"]` 是不会正常输出的，因为此时不会加载环境变量中的数据
+        - `RUN ["sh", "-c", "echo", "$HOME"]` 就可以正常输出了
+- 当RUN命令执行完毕后，就会生成一个新的文件层。这个文件层会保存在缓存中作为下一个指令的基础镜像存在，如果不需要缓存就加上 `--no-cache`
+
 
 ### CMD
-> 指定容器启动时默认执行的命令
+> 指定 容器启动时默认执行的命令
 
 - `三种格式`
     - `CMD ["executable","param1","param2"]` (like an exec, preferred form) `推荐`
-    - `CMD ["param1","param2"]` (as default parameters to ENTRYPOINT)
-    - `CMD command param1 param2` (as a shell)
-- 一个Dockerfile里只能有一个CMD，如果有多个，只有最后一个生效。如果用户在docker run 中带了运行的命令，就会覆盖CMD命令
+    - `CMD ["param1","param2"]` (as default parameters to ENTRYPOINT) 作为默认参数提供给ENTRYPOINT
+    - `CMD command param1 param2` (as a shell) 作为shell命令 依靠`bin/sh -C`执行
+- 一个Dockerfile里只能有一个CMD，如果有多个，只有最后一个生效。
+- 如果用户在`docker run` 中带了运行的命令，就会覆盖CMD命令
+- 与RUN命令一样如果要环境变量就要使用 `sh -C`
 
 ### ENTRYPOINT
 - `容器入口点` 命令设置在容器启动时执行命令 一般用来做初始化容器，或者运行持久软件
@@ -80,7 +91,9 @@
 - `ENTRYPOINT ["cmd", "param1", "param2"...]`
 
 ### USER
-- 限定了当前镜像的默认用户，如果在这个镜像上的容器需要安装软件就会需要提权，就要至少创建额外的两个层，层限制是42,
+- 切换用户，其后的命令都将以该用户执行
+    - 如果在这个镜像上的容器需要安装软件就会需要提权，就要至少创建额外的两个层，层限制是42,
+        - 所以，所有其他的操作在root用户执行 减少层数
     - 更好的方法是在基础镜像中创建用户和用户组，然后在完成构建时再设置默认的用户
 - 指定 mysql 的运行用户 `ENTRYPOINT ["mysql", "-u", "daemon"]`
 - 更好的方式是：
@@ -90,15 +103,29 @@
 ```
 
 ### EXPOSE
-- 创建一个层，对外开放端口 例如 EXPOSE 22
+- 对外开放端口 例如 EXPOSE 22
+- 但是还不能被外部访问到，只能被容器内或主机的其他容器访问，加上-p 开放端口才可以
 
 ### ENV
-- 设置环境变量 `ENV <key> <value>`
-- 设置之后的RUN命令都可以使用该环境变量，如果`docker run --env <key>=<value>`则会覆盖dockerfile中同名key的值
+> 设置环境变量 
+
+- `ENV <key> <value>`
+    - 这种方式会将第一个字符串看作key，后面所有的字符串看成value，所以只能设置一个变量 `ENV name kuang cheng ping`
+- `ENV <key>=<value>`
+    - 可以设置多个，但是空格要转义 `ENV name=myth\ kuang`
+
+- ENV命令之后的RUN命令都可以使用这里配置的环境变量
+- 如果`docker run --env <key>=<value>`则会覆盖dockerfile中同名key的值
+    - `docker run -e` 重设环境变量
+- 一个ENV命令一个新层，所以也是尽量使用一个ENV命令
 
 ### LABEL
-- 用来定义键值对，只能出现一次，相当于是一个内置的配置文件
-- LABEL version="1.0"
+> 用来定义键值对， 相当于是一个内置的配置文件
+
+- `LABEL key=value`
+    - 两种方式 前者更好，可以使用空格`LABEL version="java 1.8"` `LABEL test=other`
+- 同样的 一个LABEL命令就会构建一个新的层，所以建议一个LABEL
+- 旧镜像中LABEL设置的key会被新镜像中的相同的key的值进行覆盖
 
 ### ARG
 > 用来指定一些镜像中使用的参数，例如版本信息 
