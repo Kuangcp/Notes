@@ -11,7 +11,7 @@
 - Build artifact -> Build
 
 ### Springboot热加载
-- Ctrl Shift A 快捷搜索 automatically Build下的 Compiler，打开自动构建
+- Ctrl Shift A 快捷搜索 automatically 在Build下的 Compiler，打开自动构建
 - Ctrl Shift A 快捷搜索 Registry 进入后找到 compiler.automake.allow.when.app.running 勾选
 - 加入devtools依赖
 

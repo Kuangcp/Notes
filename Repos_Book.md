@@ -22,7 +22,7 @@
 ### Demo
 - [springboof-action](https://github.com/lianggzone/springboot-action) `Springboot常见的模块都有,文档也多`
 - [Java-learing](https://github.com/brianway/java-learning) `基础学习仓库`
-- [activiti实战源码](https://github.com/henryyan/activiti-in-action-codes)
+- [activiti实战源码](https://github.com/henryyan/activiti-in-action-codes) `activiti实战这本书的源码`
 - [activiti示例](https://github.com/henryyan/kft-activiti-demo)
 - [rabbitmq](https://github.com/chwshuang/rabbitmq)`入门学习代码`
 - [docker-demos](https://github.com/waylau/docker-demos) `Maven和Gradle结合docker使用`

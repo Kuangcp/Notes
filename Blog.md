@@ -49,6 +49,9 @@
 - [genymotion 4.2.2 windows版](http://blog.csdn.net/c_s_d_n_luckyq/article/details/48437789)
 - [使用gitbook打造电子书](http://www.cnblogs.com/wangchaoyuana/p/7507504.html)
 
+### Nginx
+- [nginx基本配置](https://segmentfault.com/a/1190000002797601)
+
 ## Docker
 - [ 具有中国特色的docker折腾记（上）](http://blog.csdn.net/Raptor/article/details/18305299)
     - [ 具有中国特色的docker折腾记（下）](http://blog.csdn.net/raptor/article/details/18405569)
