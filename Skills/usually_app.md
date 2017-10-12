@@ -19,7 +19,7 @@
 
 ## 【服务管理】
 ### oneinstack
-> [官方文档](https://oneinstack.com/install/)
+- [官方文档](https://oneinstack.com/install/)
 
 - `apt -y install wget screen curl python`
 - 下载源码：
@@ -65,6 +65,28 @@
 ### Sublime 
 - 如果出现小bug，就直接删除 ～.config 下的 sublime文件夹注意注册证书拷出来
 - 还是挺好的，小巧，但是中文硬伤 用来阅读代码比较合适
+- 中文不兼容解决方法： 3143版本号下：
+    - 搜索安装插件 ChineseLocalizations 就能汉化 
+    - 修改配置文件 添加`"font_face": "DeJaVu Sans Mono",` 就解决了字体错位的问题
+    - 保存为项目来切换管理更为方便
+- [参考博客](http://www.cnblogs.com/hollow/p/6496469.html)
+`3143 注册码`
+```
+—– BEGIN LICENSE —–
+TwitterInc
+200 User License
+EA7E-890007
+1D77F72E 390CDD93 4DCBA022 FAF60790
+61AA12C0 A37081C5 D0316412 4584D136
+94D7F7D4 95BC8C1C 527DA828 560BB037
+D1EDDD8C AE7B379F 50C9D69D B35179EF
+2FE898C4 8E4277A8 555CE714 E1FB0E43
+D5D52613 C3D12E98 BC49967F 7652EED2
+9D2D2E61 67610860 6D338B72 5CF95C69
+E36B85CC 84991F19 7575D828 470A92AB
+—— END LICENSE ——
+```
+- 主题安装 Boxy Theme 以及  A File Icon 就能切换多种主题了 [参考博客](https://www.zhihu.com/question/46266742)
 
 ### VSCode
 - 码笔记，码Python 比较方便，目录树，预览，整合终端

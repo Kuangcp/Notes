@@ -18,11 +18,13 @@
 - [Java设计模式](https://github.com/iluwatar/java-design-patterns) `设计模式详解`
 - [zxing](https://github.com/zxing/zxing) `二维码处理的项目`
 - [easypoi](https://gitee.com/lemur/easypoi) `虽然代码非常不规范，也没人维护的样子，但是这个开源精神要学习以及一些思想`
+- [uflo](https://gitee.com/youseries/uflo) `国内的流程引擎`
 
 ### Demo
-- [springboof-action](https://github.com/lianggzone/springboot-action) `Springboot常见的模块都有,文档也多`
+- [springboot-action](https://github.com/lianggzone/springboot-action) `Springboot常见的模块都有,文档也多`
 - [Java-learing](https://github.com/brianway/java-learning) `基础学习仓库`
 - [activiti实战源码](https://github.com/henryyan/activiti-in-action-codes) `activiti实战这本书的源码`
+- [springboot-activiti](https://gitee.com/wyy396731037/springboot-activiti) `整合activiti的Springboot示例`
 - [activiti示例](https://github.com/henryyan/kft-activiti-demo)
 - [rabbitmq](https://github.com/chwshuang/rabbitmq)`入门学习代码`
 - [docker-demos](https://github.com/waylau/docker-demos) `Maven和Gradle结合docker使用`
