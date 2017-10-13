@@ -64,6 +64,7 @@
 `netstat 工具` 更好用的 iproute2往下翻
 
 - `先安装lsof` `lsof -i:端口号` 用于查看某一端口的占用情况，缺省端口号显示全部
+    - 或者 `cat /etc/services` 查看系统以及使用的端口
 
 - `netstat -tunlp |grep 端口号` 用于查看指定的端口号的进程情况
     - `-t` (tcp) 仅显示tcp相关选项

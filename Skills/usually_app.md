@@ -87,6 +87,7 @@ E36B85CC 84991F19 7575D828 470A92AB
 —— END LICENSE ——
 ```
 - 主题安装 Boxy Theme 以及  A File Icon 就能切换多种主题了 [参考博客](https://www.zhihu.com/question/46266742)
+- [sublime的常用快捷键](http://www.cnblogs.com/kristen-zou/p/7641158.html)
 
 ### VSCode
 - 码笔记，码Python 比较方便，目录树，预览，整合终端
