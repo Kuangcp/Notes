@@ -133,7 +133,6 @@
     tail -c 10 file （显示文件file的最后10个字符）
 ```
 
-
 ### sed
 > 参数 命令 文件
 
@@ -278,7 +277,6 @@ du xmldb/*/*/* |wc -l
     - j tar.bz2
     - Z tar.Z
     - J tar.xz
-
 - `tar -cvf jpg.tar *.jpg` //将所有jpg打包成tar.jpg 
 - `tar -czf jpg.tar.gz *.jpg `  //将所有jpg打包成jpg.tar后 生成gzip压缩的包，命名为jpg.tar.gz
 - `tar -cjf jpg.tar.bz2 *.jpg `//将所有jpg打包成jpg.tar后 生成bzip2压缩的包，命名为jpg.tar.bz2

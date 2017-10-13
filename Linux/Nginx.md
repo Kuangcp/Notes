@@ -57,7 +57,7 @@ server {
   proxy_redirect off;
  }
 
-}}
+}
 ```
 - 测试配置文件`sudo nginx -t`
 - 重启sudo `nginx -s reload`
