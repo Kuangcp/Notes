@@ -8,6 +8,7 @@
 - [Groovy](http://www.groovy-lang.org/api.html)
 - [Jedis 2.1.0](http://tool.oschina.net/apidocs/apidoc?api=jedis-2.1.0)
 - [Jedis 2.7.3](https://mavenbrowse.pauldoo.com/central/redis/clients/jedis/2.7.3/jedis-2.7.3-javadoc.jar/-/overview-summary.html)
+- [okhttp](https://github.com/square/okhttp/wiki/Recipes) `okhttp的入门代码示例`
 
 
 ## Python
