@@ -109,7 +109,7 @@
     - `git checkout . `取出文档库中所有文件的最新版本
 - `git checkout commit 节点标识符或者标签 文件名 文件名。。。` 
     - 取出指定节点状态的某文件，而且执行完命令后，取出的那个状态会成为head状态，
-    - 需要执行  ` git reset HEAD` 来清除这种状态
+    - 需要执行  `git reset HEAD` 来清除这种状态
 - `git pull --all` 推送本地所有的分支
 
 

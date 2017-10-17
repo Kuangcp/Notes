@@ -53,7 +53,6 @@
         * `login ***`
         * `password ***` 
     * 成功配置，测试便知
-
 - Linux下记住密码：(如果使用了多个github账号，设置这个后只能使用一个账号的自动登录，另一个账号将完全连不上github，ssh也只能一个账号配一个，不能多个账号用一个ssh)
     * `touch .git-credentials`
     * `vim .git-credentials`
@@ -166,6 +165,7 @@
 - 先创建一个目录结构
 - Repository
     - Project1
+        - .git
     - Project2
     - Project3
     - 每个Project下都有`.git` 文件夹
@@ -175,7 +175,7 @@
     - `--base-path=''` 指定开放的基本目录（指定开放别的路径）
     - `--port=8096` 指定开放的端口
     - `--verbose` 启动看到的日志信息更多
-    - ` &` 末尾加上表示后台运行，默认是阻塞了当前git bash命令行
+    - `&` 末尾加上表示后台运行，默认是阻塞了当前git bash命令行
 
 - 使用退出程序的操作即可， Ctrl+Shift+C 放在了后台就jobs或者ps 然后kill
 - 在需要克隆的目录下` git clone git://localhost:8096/Project1` 

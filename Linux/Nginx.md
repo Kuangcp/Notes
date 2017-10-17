@@ -3,11 +3,10 @@
 ## Nginx的安装
 
 ### 命令安装
+
 - 安装`sudo apt install nginx`
 - 启动服务 `sudo nginx`或者`sudo /etc/init.d/nginx start`
 - 关闭 `sudo nginx -s quit` 或者 `sudo /etc/init.d/nginx stop`
-
-
 
 
 ### 编译安装

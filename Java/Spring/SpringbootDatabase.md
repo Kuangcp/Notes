@@ -138,7 +138,8 @@
 - opsForZSet() 操作含有zset（有序）的数据
 - opsForSet() 操作含有set的数据
 
-
+#### 注意
+- 使用StringRedisTemplate操作redis时，一定要注意：使用get方法得到的string都是iso编码的，发送的都是默认utf8的
 
 
 
