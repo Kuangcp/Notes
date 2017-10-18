@@ -34,16 +34,16 @@
 	最好是，在github上修改了就在本地pull之后再修改文件，万一出错了回退也简单
 * 5、出现了冲突，从而无法自动merge：
 ```
-        git pull 对方的分支
-        git checkout 自己的分支
-        git merge --no-ff 对方的分支
-        git push （自己的源+分支）origin master
+    git pull 对方的分支
+    git checkout 自己的分支
+    git merge --no-ff 对方的分支
+    git push （自己的源+分支）origin master
 ```
 * 6. 当不想把隐私的配置文件上传github时，就可以.gitignore中忽略掉配置文件，然后建立模板文件夹放待配置的文件即可
 * 7.`cat ~/.ssh/id_rsa.pub | xclip -sel clip` 复制公钥
 * 8.java代码质量监测平台 codacy特别在意test里用断言 codebeat特别在意类和方法的长度
-* 9. 当大量文件出现mode的变化（因为你的目录移动，文件权限变化等影响的）可以设置忽略掉 git config core.fileMode false
-    * 当复制备份出去，然后重装系统粘贴回来，权限就变了，mode也变了，可以设置忽略掉改变，继续使用仓库，看着不爽的话就不备份，提交好后，新系统克隆即可，不过网速就。。。。。
+* 9. 当大量文件出现mode的变化（因为你的目录移动，文件权限变化等影响的）可以设置忽略掉 `git config core.fileMode false`
+    * 当将目录备份出去，然后重装系统粘贴回来，权限就变了，mode也变了，可以设置忽略掉改变，继续使用仓库，看着不爽的话就提交到远程，新系统克隆即可，不过网速就...
 
 **********
 -  Windows下记住密码 ： 
@@ -65,14 +65,14 @@
     - `ssh-keygen` 不设置密码
     - `cat ~/.ssh/id_rsa.pub | xclip -sel clip`  添加即可
 
-********    
+*********
 - 关于许可证 [Github许可证网](https://choosealicense.com/licenses/)
     - 新建项目的时候可以选择 添加.gitignore和许可证类别 许可证大致分为 MIT Apache2.0 GPL 
     - `MIT` 简单宽松的许可证，任何人可以拿代码做任何事与我无关` eg: jQuery、Rails` 
     - `Apache` 关注于专利，这类似于MIT许可证，但它同时还包含了贡献者向用户提供专利授权相关的条款。 `Apache、SVN和NuGet`
     - `GPL` 关注于共享改进，这是一种copyleft许可证，要求修改项目代码的用户再次分发源码或二进制代码时，必须公布他的相关修改。 `Linux、Git`
 
-***************************************************************	
+**********
 ## 安装最新版git
 - `sudo add-apt-repository ppa:git-core/ppa` 如果命令找不到就先安装这个 `sudo apt-get install software-properties-common`
 - `sudo apt update`
@@ -96,7 +96,7 @@
 - `git push origin 新分支名` add commit 之后就push
 - `git fetch origin 已有分支` 下拉别的分支代码
 
-**************************************************
+********************************
 ## 【git初始化】 
 ```
 	$git config --global user.name " "
@@ -239,7 +239,7 @@
            <command> [<args>]
 ```
 
-****************************************
+**************************
 ## 【reset命令常用方式】
 ### 1.回滚add操作
 ```

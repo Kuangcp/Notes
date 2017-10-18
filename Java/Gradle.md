@@ -247,17 +247,21 @@ task makeReleaseVersion(type:ReleaseVersionTask){
 ## 代码目录结构
 
 - **groovy 在以下目录，Java在main.java的目录下，一般别人直接放在src下，buildSrc好像没有普及使用**
-- build.gradle
-- buildSrc
+
+```
+    - build.gradle
+    - buildSrc
+        - src
+            - main
+                - groovy
+                    - com
+                        - myth
+                            - test
+                                - ProjectVersion.groovy
+                - java
     - src
-        - main
-            - groovy
-                - com
-                    - myth
-                        - test
-                            - ProjectVersion.groovy
-- src
-- version.properties
+    - version.properties
+```
  
 ********
 测试优于业务逻辑实行

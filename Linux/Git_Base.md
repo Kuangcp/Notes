@@ -96,8 +96,8 @@
 
 - 删除远程的tag `git push origin --delete tag <tagname>` 
 
+******
 ### 分支操作
-
 #### 【git clone】
 - `git clone branchname URL` 克隆指定分支
 - `git clone URL 目录` 克隆下来后更名为指定目录
@@ -112,7 +112,8 @@
     - 需要执行  `git reset HEAD` 来清除这种状态
 - `git pull --all` 推送本地所有的分支
 
-
+#### 【git fetch】
+- `git fetch origin dev-test` 下拉远程的分支
 
 #### 开发流程的常用分支操作
 - 一般的开发过程中会使用到三种临时分支（用完就删）和两个主分支 master develop
@@ -126,14 +127,14 @@
     - 合并： `git merge --no-ff feature-x`
     - 删除： `git branch -d feature-x`
 
-*******
+*****
 - `git checkout -b release-1.2 develop` 新建一个预发布分支
     - `git checkout master` 确认没有问题后 `git merge --no-ff release-1.2` 合并到master分支
     - `git tag -a 1.2` 打标签，这就是github上软件的版本控制
     - 没有问题后 合并到develop分支`git checkout develop` `git merge --no-ff release-1.2`
     - 删除预发布分支 `git branch -d release-1.2`
 
-*******
+*****
 - `git checkout -b fixbug-0.1 master` 新建修复bug的分支 
 - `git checkout master ``git merge --no-ff fixbug-0.1 ``git tag -a 0.1.1` 修补结束后合并到master分支
 - `git checkout develop` `　git merge --no-ff fixbug-0.1` 再合并到develop分支
@@ -149,7 +150,7 @@
 - `git config --global mergetool.kdiff3.trustExitCode true`
 - `git config --global mergetool.keepBackup false`
 
-****************************
+*********
 
 - `git merge develop `默认会直接将master分支指向Develop分支。(一条拐弯的线)
 - `git merge--no-ff develop` 将当前分支与分支Develop合并，在Master分支上生成一个新节点(有一个环的线)
@@ -165,11 +166,14 @@
     - `git grep --all-match -e '#define' -e SORT_DIRENT` 匹配两个字符串
     
 
-******************************
+*************
 
 ## CVS工具的区别以及优缺点
+
 ### Git
+
 ### SVN
+
 
 ## 加强版 repos的使用
 

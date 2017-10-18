@@ -39,6 +39,8 @@
         public ProfileResourceProcessor profileResourceProcessor(RepositoryRestConfiguration config) {
             // 设置rest根目录是应用路径下的路径 : localhost:8080/myth/rest
             config.setBasePath("/rest");
+            // 允许输出id
+            config.exposeIdsFor(Goods.class);
             return super.profileResourceProcessor(config);
         }
     }
@@ -49,14 +51,21 @@
     @RepositoryRestResource(path = "book")
     public interface BookDao extends JpaRepository<Book,Long>{
 ```
+
 - 4.启动应用，控制台有如下输出
-- ![输出](https://raw.githubusercontent.com/Kuangcp/ImageRepos/master/Tech/Spring/output.png)
+
+![输出](https://raw.githubusercontent.com/Kuangcp/ImageRepos/master/Tech/Spring/output.png)
+
 - 所有路径的使用方法：
     - `GET` 查询单个 `/repo/id` 成功：200 失败404
     - `GET` 查询所有 `/repo` 成功200 失败404
     - `POST` 新增 `/repo` json数据发送 成功 201 失败404
     - `DELETE` 删除 `/repo/id` json数据 成功204 失败404
     - `PUT` 更新 `/repo/id` json 更新成功200 没有该id就插入201 失败404（使用主键自动增长就不会遇到404）
+
+##### 【特别注意】
+- rest得到的数据没有id
+    - 添加配置 `config.exposeIdsFor(Goods.class);` 即可查看到id [参考博客](http://tommyziegler.com/how-to-expose-the-resourceid-with-spring-data-rest/)
 
 #### Jpa数据分页
 > [参考博客](https://www.tianmaying.com/tutorial/spring-jpa-page-sort)

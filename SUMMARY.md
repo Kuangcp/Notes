@@ -4,6 +4,7 @@
 
 * [ API_DOC ](./API_DOC.md)
 * [ Blog ](./Blog.md)
+* [ Problem ](./Problem.md)
 * [ Process ](./Process.md)
 * [ Repos_Book ](./Repos_Book.md)
 * [ SUMMARY ](./SUMMARY.md)
@@ -19,6 +20,7 @@
     * [ 游戏为何会让人着魔 ](./Article/游戏为何会让人着魔.md)
 * 【 Database 】
     * [ MYSQL ](./Database/MYSQL.md)
+    * [ MySQL_Advance ](./Database/MySQL_Advance.md)
     * [ Oracle ](./Database/Oracle.md)
     * [ Oracle_list1 ](./Database/Oracle_list1.md)
     * [ Oracle_list2 ](./Database/Oracle_list2.md)
@@ -64,6 +66,8 @@
 * 【 Linux 】
     * 【 Linux/Alpine 】
         * [ alpine_base ](./Linux/Alpine/alpine_base.md)
+    * 【 Linux/Centos 】
+        * [ Centos_Base ](./Linux/Centos/Centos_Base.md)
     * [ Docker ](./Linux/Docker.md)
     * [ Docker_File ](./Linux/Docker_File.md)
     * [ Docker_Soft ](./Linux/Docker_Soft.md)
