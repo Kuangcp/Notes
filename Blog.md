@@ -49,6 +49,11 @@
 - [genymotion 4.2.2 windows版](http://blog.csdn.net/c_s_d_n_luckyq/article/details/48437789)
 - [使用gitbook打造电子书](http://www.cnblogs.com/wangchaoyuana/p/7507504.html)
 
+## 编辑器
+### VSCode
+- [使用vscocd进行python开发](http://www.cnblogs.com/bloglkl/archive/2016/08/23/5797805.html)
+
+
 ### Nginx
 - [nginx基本配置](https://segmentfault.com/a/1190000002797601)
 

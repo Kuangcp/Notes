@@ -93,8 +93,7 @@
     spring.redis.timeout=0
 ```
 
-
-`在一个配置类中引入以下代码即可直接使用`
+`在一个配置类中复制如下代码即可使用 StringRedisTemplate RedisTemplate 的实例`
 ```
     @Bean
     public RedisTemplate<Object,Object> redisTemplate(RedisConnectionFactory factory) {
@@ -118,7 +117,7 @@
         return new StringRedisTemplate(connectionFactory);
     }
 ``` 
-`使用`
+`两个对象的简单使用`
 ```
     stringRedisTemplate.opsForValue().set("aaa", "hello");
     String result = stringRedisTemplate.opsForValue().get("aaa");
@@ -129,17 +128,20 @@
     }
 ```
 - 以上配置的template都是只是建立在最简单的键值对上，String-String，所以对象使用的是json来存储
-- 但是使用的时候如同使用MySQL一样
+- 但是使用的时候如同使用MySQL一样，是ORM框架自动处理数据的转换
 
 #### 关于StringRedisTemplate的方法使用
-- opsForValue() 操作简单键值对数据
-- opsForHash() 操作含有hash的数据
-- opsForList() 操作含有list的数据
-- opsForZSet() 操作含有zset（有序）的数据
-- opsForSet() 操作含有set的数据
+- 常见数据类型的中间对象
+    - opsForValue() 操作简单键值对数据
+    - opsForHash() 操作含有hash的数据
+    - opsForList() 操作含有list的数据
+    - opsForZSet() 操作含有zset（有序）的数据
+    - opsForSet() 操作含有set的数据
+- 设置超时时间
+    - `redisTemplate.expire("max",tempTime,TimeUnit.SECONDS);`
 
 #### 注意
-- 使用StringRedisTemplate操作redis时，一定要注意：使用get方法得到的string都是iso编码的，发送的都是默认utf8的
+
 
 
 

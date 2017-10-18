@@ -37,7 +37,7 @@
 
 ### Tool
 - [lanproxy](https://github.com/ffay/lanproxy) `将局域网个人电脑、服务器代理到公网的内网穿透工具`
-- [weixin-java-tools](https://github.com/chanjarster/weixin-java-tools) `微信的java工具项目`
+- [weixin-java-tools](https://github.com/chanjarster/weixin-java-tools) `微信的java工具项目 包含企业号 微信支付 小程序`
 
 
 
