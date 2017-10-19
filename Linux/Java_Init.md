@@ -141,10 +141,9 @@ export PATH=$PATH:$GRADLE_HOME/bin:$GRAILS_HOME/bin:$GROOVY_HOME/bin:$SCALA_HOME
     sudo /etc/init.d/redis-server stop
     退出失败？？？？ 
     尚未解决，于是卸载两遍后，使用绿色方式2017-04-28 10:53:32
-    
 ```
 
-### 绿色安装 redis
+### 绿色安装Redis
 - 只要下载源码包，解压
 - 在解压根目录执行 `make`
 - 打开src目录 复制以下文件
@@ -161,7 +160,6 @@ export PATH=$PATH:$GRADLE_HOME/bin:$GRAILS_HOME/bin:$GROOVY_HOME/bin:$SCALA_HOME
     $basepath/redis-cli
 ```
 `服务端脚本`
-
 ```
     basepath=$(cd `dirname $0`; pwd)
     $basepath/redis-server $basepath/redis.conf

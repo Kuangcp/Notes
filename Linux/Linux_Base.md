@@ -125,10 +125,11 @@
 - 添加到sudo组 ，使用命令更安全：`sudo gpasswd -a $USER sudo` 但是要注销或者重启才生效貌似
 - 或者：添加用户到用户组：`adduser user group`
     -  或者：使用修改文件的方式：（不推荐） 但是在docker中跑Ubuntu新建用户时很有用，也可以不用动文件，添加进组是有效的，看情况吧
-    - `chmod 777 /etc/sudoers` 找不到文件说明没有安装sudo root用户 `apt install sudo `
-    - 添加 ：`kuang  ALL=(ALL:ALL)ALL`
+    - `chmod 777 /etc/sudoers` 
+        - 找不到文件说明没有安装sudo -> root用户 `apt install sudo `
+    - 添加一行 `kuang  ALL=(ALL:ALL)ALL`
     - `chmod 440 /etc/sudoers`
-    - `rwx 对应一个三位的二进制数， 1/0 表示开关`
+        - `rwx 对应一个三位的二进制数， 1/0 表示开关`
 - 查看是否设置成功 ： `groups username`
 - 删除用户以及对应的home目录：`sudo deluser username --remove-home` 
 
