@@ -6,6 +6,7 @@
 ## SDK
 - [Gradle官方下载地址](http://services.gradle.org/distributions/)
 - [openjdk](http://openjdk.java.net/)
+- [oracle-jdk](http://www.oracle.com/technetwork/cn/java/javase/downloads/index.html)
 
 *****
 ## Tools
