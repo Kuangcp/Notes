@@ -110,7 +110,10 @@ E36B85CC 84991F19 7575D828 470A92AB
 ************
 ## 【IDE】
 ### Idea
-
+#### 插件
+##### lombok
+- 插件商店中搜索 lombok 安装重启idea即可
+- 配置 Build,Execution > Compiler > Annotation Processors 勾选上即可使用lombok的注解
 ### eclipse
 
 

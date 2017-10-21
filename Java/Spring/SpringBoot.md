@@ -29,6 +29,11 @@
 
 - [Springboot上传文件](http://www.cnblogs.com/studyCenter/p/6665171.html)
 
+## 线程池
+- [参考博客](https://hacpai.com/article/1501152977477?p=1&m=0)
+- 多线程以及异常处理 [参考博客](http://www.liuhaihua.cn/archives/496733.html)
+    - 因为多线程的特性，所以异常只能在子线程中处理不能抛出到主线程里，但是 Spring实现的线程池可以返回一个异常信息对象
+
 ***************************************
 ## 项目部署
 ### 生成指定文件

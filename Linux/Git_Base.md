@@ -110,10 +110,10 @@
 - `git checkout commit 节点标识符或者标签 文件名 文件名。。。` 
     - 取出指定节点状态的某文件，而且执行完命令后，取出的那个状态会成为head状态，
     - 需要执行  `git reset HEAD` 来清除这种状态
-- `git pull --all` 推送本地所有的分支
+- `git pull --all` 下拉远程所有的分支到本地
 
 #### 【git fetch】
-- `git fetch origin dev-test` 下拉远程的分支
+- `git fetch origin dev-test` 下拉远程的分支新建到本地（本地没有）
 
 #### 开发流程的常用分支操作
 - 一般的开发过程中会使用到三种临时分支（用完就删）和两个主分支 master develop
@@ -153,7 +153,8 @@
 *********
 
 - `git merge develop `默认会直接将master分支指向Develop分支。(一条拐弯的线)
-- `git merge--no-ff develop` 将当前分支与分支Develop合并，在Master分支上生成一个新节点(有一个环的线)
+- `git merge--no-ff develop` 将当前master分支与分支Develop合并，在Master分支上生成一个新节点(有一个环的线)
+    - 也就是说master将develop分支拉取下来然后合并 develop向master合并
 - 如果遇到冲突：
     - `git mergetool` 使用工具进行分析冲突文件方便修改
 

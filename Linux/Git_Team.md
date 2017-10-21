@@ -25,3 +25,19 @@
     - 然后各个开发者 ｀git push｀ 就行了
     - 管理员需要 `git fetch origin 分支`针对每个分支进行拉取，然后选择合并，集中处理冲突
 
+- `git fetch --all` 获取远程所有分支（新分支）
+- `git pull --all` 获取所有分支最新提交 这个就会自动合并？？？越来越不理解了
+
+- dev-test 分支进行修改，然后提交一次，然后push 
+- master： `git merge --no-ff dev-test` 进行合并，就会在分支图上得到一个环
+    - master 分支本地会多出2个提交
+
+- dev-test 进行修改，然后1次提交，push
+- master : `git pull origin dev-test ` 执行merge命令就会提示没有可以合并的修改。
+    - 这是为什么？？？？
+
+- dev-test 进行修改提交1次
+- master进行修改，提交一次
+    - git merge --no-ff dev-test 然后 就有了两个提交，然后push （得到了dev-test的改动）
+- dev-test 分支 git pull origin master 获取到master改动的代码
+- `只要master不pull 分支代码， 那么分支图就不会乱`
