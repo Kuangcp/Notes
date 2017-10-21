@@ -47,6 +47,7 @@
 - [docker 安装 gitea](https://docs.gitea.io/en-us/install-with-docker/) `gitea是一个自助git服务，基于git`
 - [git](https://git-scm.com/docs) `git`
 - [tig](http://jonas.nitro.dk/tig/manual.html) `tig命令，git的加强版`
+- [VSCode编辑器快捷键文档](https://code.visualstudio.com/shortcuts/keyboard-shortcuts-linux.pdf)
 
 ## Docker
 - [java的官方镜像](https://hub.docker.com/_/java/) `基于openjdk的，和oraclejdk相比资源翻番有点不能理解`

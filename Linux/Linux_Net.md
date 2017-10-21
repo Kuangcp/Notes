@@ -417,8 +417,15 @@ X11DisplayOffset 10
 ```
 - `ssh -X -p port user@host` 登录即可
 
-*******************************************
+## ssh登录并执行一系列命令
+```
+ssh user@host 'cmd \
+    && cmd \
+    && cmd \
+    '
+```
 
+***********
 ### 【vpn】
 #### shadowsocks
 `服务端`

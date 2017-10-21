@@ -80,7 +80,6 @@
     * [ Linux_Net ](./Linux/Linux_Net.md)
     * [ Linux_Performance ](./Linux/Linux_Performance.md)
     * [ Nginx ](./Linux/Nginx.md)
-    * [ Shell_Learn ](./Linux/Shell_Learn.md)
     * [ Vim ](./Linux/Vim.md)
 * 【 Script 】
     * [ Dos ](./Script/Dos.md)
@@ -88,6 +87,7 @@
     * [ Python_Frame ](./Script/Python_Frame.md)
     * [ Python_Net ](./Script/Python_Net.md)
     * [ Python_Pygame ](./Script/Python_Pygame.md)
+    * [ Shell_Learn ](./Script/Shell_Learn.md)
 * 【 Skills 】
     * 【 Skills/View 】
         * [ Hexo ](./Skills/View/Hexo.md)

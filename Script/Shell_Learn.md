@@ -5,6 +5,7 @@ sh
 bash
 zsh
 dash
+
 ### tmux 
 - `tmux new -s myth`  新建一个窗口 
 - `Ctrl B`  再 `C`  新建一个窗口 `Ctrl B` `数字键`切换指定窗口
