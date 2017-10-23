@@ -28,6 +28,18 @@
 > 第一种直接上传到应用的webroot或者resources目录下，第二种上传到数据库中，第三种使用ftp。
 
 - [Springboot上传文件](http://www.cnblogs.com/studyCenter/p/6665171.html)
+- 上传文件有大小限制，使用如下方法进行配置 [参考博客](http://makaidong.com/studyDetail/11882_45833.html)
+```
+    @Bean
+    public MultipartConfigElement multipartConfigElement() {
+        MultipartConfigFactory factory = new MultipartConfigFactory();
+        //单个文件最大
+        factory.setMaxFileSize("80MB"); //KB,MB
+        /// 设置总上传数据总大小
+        factory.setMaxRequestSize("102400KB");
+        return factory.createMultipartConfig();
+    }
+```
 
 ## 线程池
 - [参考博客](https://hacpai.com/article/1501152977477?p=1&m=0)
@@ -59,6 +71,13 @@
 
 ### 构建docker镜像
 > 方便监控应用状态，cpu 内存 流量
+
+- 先构建得到war或jar，然后根据dockerfile构建一个镜像
+```Dockerfile
+FROM frolvlad/alpine-oraclejdk8:slim
+ADD weixin-1.0.0.war app.war
+ENTRYPOINT ["java","-jar","/app.war"]
+```
 
 #### gradle结合docker
 `build.gradle`

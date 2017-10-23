@@ -17,8 +17,11 @@
 - 验证是否成功：`java -version`
 - 移除 `sdk uninstall scala 2.11.6`
 
+******************
 ## 【服务管理】
 ### oneinstack
+> 一键配置环境
+
 - [官方文档](https://oneinstack.com/install/)
 
 - `apt -y install wget screen curl python`
@@ -31,7 +34,8 @@
 - `screen -S oneinstack` #如果网路出现中断，可以执行命令`screen -R oneinstack`重新连接安装窗口
 - `sudo ./install.sh` #注：请勿sh install.sh或者bash install.sh这样执行
 
-## 【工具】
+******************
+## 【常用工具】
 ### Autojump
 > 统计cd 目录，方便目录跳转
 
@@ -49,6 +53,16 @@
 
 ### qgit
 - git查看仓库的图形化界面
+
+### tmux
+> 好用的管理会话的软件
+
+- [tmux 入门](http://blog.jobbole.com/87278/)
+
+`入门使用`
+- 新建会话 `tmux new -s test`
+- 断开会话但是后台运行 `ctrl-b d`
+- 连接会话 `tmux a -s test`
 
 **************************************
 ## 【文本编辑器】
@@ -107,7 +121,7 @@ E36B85CC 84991F19 7575D828 470A92AB
 ### fte-terminal
 - 文件树浏览，快速打开文件进行修改是比较方便的
 
-************
+******************************
 ## 【IDE】
 ### Idea
 #### 插件
@@ -117,7 +131,7 @@ E36B85CC 84991F19 7575D828 470A92AB
 ### eclipse
 
 
-****************
+**********************************
 ## 【浏览器】
 ### FireFox
 - 分为正式版， beta， Nightly
@@ -130,7 +144,7 @@ E36B85CC 84991F19 7575D828 470A92AB
 ### Vivaldi
 - 感觉采用的是chrome内核，做的更漂亮了，而且是内置了很多常用插件，的确很方便，相比于chrome更符合国内使用
 
-*****************
+*****************************
 ## 【平台】
 ### Github
 `github仓库 URL规则`

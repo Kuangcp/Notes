@@ -12,21 +12,21 @@
 2. 展开注册表到下面的分支[HKEY＿LOCAL＿MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion]，在右侧窗口中找到名为“ProgramFilesDir”的字符串，双击把数值“C:\Program Files”修改为“D：\ProgramFiles”，确定退出后,即可更改常用软件的安装路径了。
 
 ### 命令行选项
-- gradle 加构建文件中的task名，直接运行task
-- -b,--build-file test.gradle 指定运行哪一个文件
-- --offline 离线模式
-- -P ,--project-prop:配置参数 -Pmyprop=value
-- -i,--info : 打印info级别的输出
-- -s,--stacktrace: 输出错误栈
-- -q,--quiet:减少构建出错时打印的错误信息
-- tasks : 输出所有建立的task
-- properties : 输出所有可用的配置属性
+- `gradle 构建文件中的task名`： 直接运行task
+- `-b，--build-file test.gradle` 指定运行脚本文件
+- `--offline` 离线模式
+- `-P ,--project-prop`:配置参数 -Pmyprop=value
+- `-i,--info` : 打印info级别的输出
+- `-s,--stacktrace`: 输出错误栈
+- `-q,--quiet`:减少构建出错时打印的错误信息
+- `tasks` : 输出所有建立的task
+- `properties` : 输出所有可用的配置属性
 
 ### 守护进程
-- 命令加上 --daemon就会开启一个守护进程，只会开启一次，
+- 命令加上 `--daemon`就会开启一个守护进程，只会开启一次，
 - 守护进程会在空闲3小时后销毁
-- 手动 gadle --stop
-- 构建时不采用守护进程 --no--daemon
+- 手动关闭 `gadle --stop `
+- 构建时不采用守护进程 `--no--daemon`
 
 ***************************************
 

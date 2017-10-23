@@ -41,6 +41,7 @@
 
 
 
+
 ********
 ## Docker
 - [openjdk](https://github.com/docker-library/openjdk) `openjdk的dockerfile仓库`
@@ -86,6 +87,7 @@
 
 ## Tools
 - [Pro Git](https://git-scm.com/book/zh/v2) `git 学习的书籍`
+- [Gradle User Guide](https://www.gitbook.com/book/dongchuan/gradle-user-guide-/details)
 
 ## 前端
 - [Web前端开发](http://caibaojian.com/gitbook/format/cover.html) `gitbook的使用以及相关技术的索引页`

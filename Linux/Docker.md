@@ -72,7 +72,7 @@
 - 如果没有docker组，添加组 `sudo groupadd docker `
 - 将当前用户加入用户组 `sudo gpasswd -a $USER docker`
     - 或者?? ：`sudo usermod -aG docker $USER` 会有问题
-- 然后重新注销登录
+- 然后重新注销登录，或者退出会话重新登录即可
 
 #### 卸载
 - `sudo apt-get purge docker-ce`
