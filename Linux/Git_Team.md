@@ -39,8 +39,11 @@
 - master : `git pull origin dev-test ` 执行merge命令就会提示没有可以合并的修改。
     - 这是为什么？？？？
 
+##### 最终方案？
 - dev-test 进行修改提交1次
-- master进行修改，提交一次
-    - git merge --no-ff dev-test 然后 就有了两个提交，然后push （得到了dev-test的改动）
-- dev-test 分支 git pull origin master 获取到master改动的代码
+- master 进行修改，提交一次
+    - `git merge --no-ff dev-test` 然后 就有了两个提交，然后push （得到了dev-test的改动）
+- dev-test 分支 
+    - `git pull origin master` 获取到master改动的代码 不需要再次merge
 - `只要master不pull 分支代码， 那么分支图就不会乱`
+    - 或者说所有的分支不要在merge之前pull代码就不会乱，一定要先merge 再pull， 谁发起的merge，谁就是主分支将对方合并进来
