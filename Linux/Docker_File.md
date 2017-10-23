@@ -24,7 +24,7 @@
 # Dockerfile
 ## 使用入门案例
 - `mkdir test && cd test && touch Dockerfile ` 输入如下文本
-```
+```Dockerfile
     #随意写的
     FROM redis
     MAINTAINER Mythos
@@ -170,7 +170,7 @@
 - [官方文档 builder](http://docs.docker.io/reference/builder/)
 
 #### 打包最新版git
-```
+```Dockerfile
 FROM ubuntu
 MAINTAINER "youtemail"
 RUN apt-get update
@@ -185,7 +185,7 @@ ENTRYPOINT ["git"]
     - 所以不可能说在容器中安装软件然后在宿主机上交互运行
 
 #### Dockerfile中新建用户
-```
+```Dockerfile
 RUN useradd -ms /bin/bash mythos;\
     echo "mythos:jiushi" | chpasswd;
 USER mythos
