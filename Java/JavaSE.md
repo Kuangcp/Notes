@@ -3,12 +3,16 @@
 
 *************
 ## 【类文件和反射】
-- [类文件详细](https://github.com/Kuangcp/JavaBase/tree/master/src/main/java/com/classfile) `项目中的笔记`
+- [类与字节码笔记](Java/AdvancedLearning/ClassFile.md)
+    - [代码](https://github.com/Kuangcp/JavaBase/tree/master/src/main/java/com/classfile) `项目`
 
 **********
 ## 【线程】
-- [线程基础学习](https://github.com/Kuangcp/JavaBase/tree/master/src/main/java/com/threads) `项目中笔记`
-- [concurrent并发包常用类的学习](https://github.com/Kuangcp/JavaBase/tree/master/src/main/java/com/concurrents)
+- [线程基础学习笔记](Java/AdvancedLearning/Thread.md)
+    - [代码](https://github.com/Kuangcp/JavaBase/tree/master/src/main/java/com/threads) `项目`
+
+- [并发笔记](Java/AdvancedLearning/Concurrents.md)
+    - [代码](https://github.com/Kuangcp/JavaBase/tree/master/src/main/java/com/concurrents)
 
 ******
 ## 【String】
