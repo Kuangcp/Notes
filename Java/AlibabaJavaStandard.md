@@ -24,17 +24,40 @@
 - [安全规约](#安全规约)
     - [注意](#注意)
 
+# 阿里巴巴Java开发手册终极版
 # 【编程规约】
 ## 命名规约
-- 所有命名不能以美元符和下划线开始和结尾
-- 禁止拼音加英文
-- 类用UserDao..方法，变量，参数用userDao
-- 常量名全部大写，下划线隔开
-- 抽象类使用Abstract或者Base开头，异常类使用Exception结尾
-- boolean属性命名不能使用is开头
-- 如果使用到了设计模式，建议在类名中体现出具体模式。LoginProxy
-- 接口类中方法不加权限修饰符
-- 接口和实现类 实现类以Impl结尾
+`强制`
+- 所有命名不能以`美元符和下划线`开始和结尾
+- 禁止拼音混合英文，更不允许直接使用中文的方式。
+- 类用UserDao `UpperCamelCase风格` 但以下情形例外： DO / BO / DTO / VO / AO 例如：`UserDO`
+- 方法，变量，参数用userDao `lowerCamelCase风格`
+- 常量名全部大写，下划线隔开，力求语义表达完整清楚，不要嫌名字长。
+- 抽象类使用`Abstract或者Base`开头，异常类使用Exception结尾
+- 数组定义 `String[] name` 而不是 `String name[]`
+- POJO 类中布尔类型的变量不能is开头，否则部分框架解析会引起序列化错误。 
+- 包名统一使用小写，点分隔符之间有且仅有一个自然语义的英语单词。包名统一使用单数形式，但是类名如果有复数含义，类名可以使用复数形式。
+    - 正例： 应用工具类包名为 com.alibaba.open.util、类名为 MessageUtils（ 此规则参考spring 的框架结构）
+- 杜绝完全不规范的缩写， 避免望文不知义。
+    - 反例： AbstractClass“ 缩写” 命名成 AbsClass； condition“ 缩写” 命名成 condi，此类随意缩写严重降低了代码的可阅读性。
+
+`推荐`
+- 为了达到代码自解释的目标，任何自定义编程元素在命名时，使用尽量完整的单词组合来表达其意。
+    - 正例： 从远程仓库拉取代码的类命名为 PullCodeFromRemoteRepository。
+- 如果使用到了设计模式，建议在类名中体现出具体模式。 将设计模式体现在名字中，有利于阅读者快速理解架构设计理念。 `LoginProxy`
+- 接口类中的方法和属性不要加任何修饰符号（ public 也不要加） ，保持代码的简洁性，并加上有效的 Javadoc 注释。
+    - 尽量不要在接口里定义变量，如果一定要定义变量，肯定是与接口方法相关，并且是整个应用的基础常量。
+
+`接口和实现类的命名有两套规则`
+- `强制` 对于 Service 和 DAO 类，基于 SOA 的理念，暴露出来的服务一定是接口，内部的实现类用 Impl 的后缀与接口区别。
+    - 正例： CacheServiceImpl 实现 CacheService 接口。
+- `推荐` 如果是形容能力的接口名称，取对应的形容词做接口名 （ 通常是–able 的形式）。
+    - 正例： AbstractTranslator 实现 Translatable。
+
+`参考`
+- 枚举类名建议带上 Enum 后缀，枚举成员名称需要全大写，单词间用下划线隔开。
+    - 说明： 枚举其实就是特殊的常量类，且构造方法被默认强制是私有。
+    - 正例： 枚举名字为 ProcessStatusEnum 的成员名称： SUCCESS / UNKOWN_REASON。
 - MVC各层命名规约
     - Service/Dao层
         - 获取单个对象 get 前缀
@@ -132,7 +155,7 @@
    - 说明：苹果装箱后返回一个<?  extends Fruits >对象，此对象就不能往里加任何水果，包括苹果。
 - 不要在 foreach 循环里进行元素的 remove / add 操作。 remove 元素请使用 Iterator方式，如果并发操作，需要对 Iterator 对象加锁。
 
-```
+```java
    List<String> a = new ArrayList<String>();
       a.add("1");
       a.add("2");
