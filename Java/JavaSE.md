@@ -1,20 +1,22 @@
 # JavaSE
+> Java基础，根基
 
-
-*******************************
+*************
 ## 【类文件和反射】
-- [类文件详细](https://github.com/Kuangcp/JavaBase/tree/master/src/main/java/com/classfile)
+- [类文件详细](https://github.com/Kuangcp/JavaBase/tree/master/src/main/java/com/classfile) `项目中的笔记`
 
+**********
 ## 【线程】
-- [线程基础学习](https://github.com/Kuangcp/JavaBase/tree/master/src/main/java/com/threads)
+- [线程基础学习](https://github.com/Kuangcp/JavaBase/tree/master/src/main/java/com/threads) `项目中笔记`
 - [concurrent并发包常用类的学习](https://github.com/Kuangcp/JavaBase/tree/master/src/main/java/com/concurrents)
 
-
+******
 ## 【String】
 - 常见编码转换
     - 一般Windows文件默认编码：`str = new String(str.getBytes("iso8859-1"), "gb2312"); ` 
     - properties文件中获取中文 `str = new String(str.getBytes("utf-8"), "utf-8"); `
-    
+
+*******    
 ## 【IO】
 - [IO流的相关学习](https://github.com/Kuangcp/JavaBase/tree/master/src/main/java/com/io)
 
@@ -25,7 +27,7 @@
 
 **************
 - jar读取外部配置文件
-```
+```java
 Properties properties = new Properties();
 File file = new File("something.properties");
 FileInputStream fis = new FileInputStream(file);
@@ -69,23 +71,21 @@ fis.close();
     - 多个jar运行 `java -cp jline-0.9.94.jar;clojure.jar jline.ConsoleRunner clojure.main`
 
 
-******************************    
+********************   
 ## 编程习惯
 
 ### 接口定义
-先有统一的接口定义规范，然后有AOP实现。先有思想再有技术。
-现在知道为什么要返回统一的一个ResultBean了：
-
-    为了统一格式
-    为了应用AOP
-    为了包装异常信息
+- 先有统一的接口定义规范，然后有AOP实现。先有思想再有技术。
+- 现在知道为什么要返回统一的一个ResultBean了：
+    - 为了统一格式
+    - 为了应用AOP
+    - 为了包装异常信息
 
 ### 日志规范
 
 ### 异常处理
-所以，我对开发人员的要求就是，绝大部分场景，不允许捕获异常，不要乱加空判断。只有明显不需要关心的异常，如关闭资源的时候的io异常，可以捕获然后什么都不干，其他时候，不允许捕获异常，都抛出去，到controller处理。空判断大部分时候不需要，你如果写了空判断，你就必须测试为空和不为空二种场景，要么就不要写空判断。
-强调，有些空判断是要的，如：参数是用户输入的情况下。但是，大部分场景是不需要的（我们的IT系统里面，一半以上不需要），如参数是其它系统传过来，或者其他地方获取的传过来的，99.99%都不会为空，你判断来干嘛？就抛一个空指针到前台怎么啦？何况基本上不会出现。
-
+- 所以，我对开发人员的要求就是，绝大部分场景，不允许捕获异常，不要乱加空判断。只有明显不需要关心的异常，如关闭资源的时候的io异常，可以捕获然后什么都不干，其他时候，不允许捕获异常，都抛出去，到controller处理。空判断大部分时候不需要，你如果写了空判断，你就必须测试为空和不为空二种场景，要么就不要写空判断。
+- 强调，有些空判断是要的，如：参数是用户输入的情况下。但是，大部分场景是不需要的（我们的IT系统里面，一半以上不需要），如参数是其它系统传过来，或者其他地方获取的传过来的，99.99%都不会为空，你判断来干嘛？就抛一个空指针到前台怎么啦？何况基本上不会出现。
 - 总结：
     - 开发组长定义好异常，异常继承RuntimeException。
     - 不允许开发人员捕获异常。（异常上对开发人员就这点要求！异常都抛出到controller上用AOP处理）

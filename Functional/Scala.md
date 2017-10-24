@@ -16,8 +16,8 @@
 - 如果方法体只是一条语句或表达式， 那就没有必要用大括号括起来
 - Scala不像Java一样有原始类型。数字类型也是对象
 
-*******************************
-```
+*****************
+```scala
 object HelloWorld {
     def main(args:Array[String]){
         val hello = "Hello World!"
@@ -43,7 +43,7 @@ object HelloWorld {
 
 `match表达式`
 - 最简单的match用法跟Java的switch差不多，但是match表达力更强
-```
+```scala
 var transFer = args(0) match{
     case "one" => "1"
     case "Two" => "2"
@@ -59,7 +59,7 @@ println(transFer)
 - 默认case 就是case _
 - Scala支持间接方法调用，所以可以把args(0).match({...}) 写成 args(0) match({...})
 
-```
+```scala
 def autoType(obj: Any) = obj match{
     case s: String => s.length
     case i: Int  => 4
@@ -90,12 +90,12 @@ def autoType(obj: Any) = obj match{
 
 `包`
 - 第一种方法和 Java 一样，在文件的头定义包名，这种方法就后续所有代码都放在该包中。 比如：
-```
+```scala
 package com.runoob
 class HelloWorld
 ```
 - 第二种方法有些类似 C#，如：
-```
+```scala
 package com.runoob {
   class HelloWorld 
 }
@@ -226,9 +226,18 @@ for(factx <- xs) println(factx)
 ### actor
 
 
+********
+`何时以及如何开始使用Scala`
+- 有信心评估所需的工作量
+- 问题域边界明确，定义清晰
+- 需求说明明确
+- 与其他组件的互操作需求已知
+- 确定了愿意学习新语言的开发人员
 
-
-
-
-
+`可能不适合当前项目的迹象`
+- 受到了业务小组和其他程序支持小组的抵制或缺乏动力
+- 开发团队没有明显的学习Scala的动力
+- 小组中存在分帮结派或政治上存在巨大分歧
+- 小组中高级技术人员的支持力度不够
+- 截止日期太紧张
 

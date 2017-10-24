@@ -92,7 +92,7 @@ int      与  str
 	33.注意同步修饰的代码范围。注意同步函数被静态修饰后，使用的锁是Class.
 	34.Runnable的作用：1，避免单继承的局限性。2.实现synchronized的同步处理。
 	35.懒汉单例设计模式代码。
-```
+```java
 class LazyMan{
 	public static LazyMan single=null;
 	public static LazyMan getInstance(){

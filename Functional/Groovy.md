@@ -23,7 +23,7 @@
 
 #### 默认导入
 `这一些导入是默认隐含在Groovy代码中`
-```
+```groovy
 import groovy.lang.*
 import groovy.util.*
 import java.lang.*
