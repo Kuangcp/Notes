@@ -37,7 +37,7 @@
         }
         @Override
         public ProfileResourceProcessor profileResourceProcessor(RepositoryRestConfiguration config) {
-            // 设置rest根目录是应用路径下的路径 : localhost:8080/myth/rest
+            // 设置rest根目录是应用路径下的路径 : localhost:8080/rest
             config.setBasePath("/rest");
             // 允许输出id
             config.exposeIdsFor(Goods.class);

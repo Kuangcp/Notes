@@ -53,6 +53,7 @@
         * [ WebPerformance ](./Java/AdvancedLearning/WebPerformance.md)
         * [ 开发思想 ](./Java/AdvancedLearning/开发思想.md)
     * [ Activiti ](./Java/Activiti.md)
+    * [ AlibabaJavaStandard ](./Java/AlibabaJavaStandard.md)
     * [ EE ](./Java/EE.md)
     * [ Gradle ](./Java/Gradle.md)
     * [ IDEA ](./Java/IDEA.md)
@@ -66,7 +67,6 @@
     * [ UnitTest ](./Java/UnitTest.md)
     * [ 常用类库的常用api ](./Java/常用类库的常用api.md)
     * [ 模式之禅 ](./Java/模式之禅.md)
-    * [ 阿里巴巴java规范2017-02-09 ](./Java/阿里巴巴java规范2017-02-09.md)
 * 【 Linux 】
     * 【 Linux/Alpine 】
         * [ alpine_base ](./Linux/Alpine/alpine_base.md)
