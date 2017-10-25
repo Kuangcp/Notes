@@ -16,7 +16,7 @@
 ```
     basepath=$(cd `dirname $0`; pwd)
     echo $basepath
-    $basepath/redis-server $basepath/redis.conf
+    $basepath/redis-server $basepath/redis.conf>redis.log &
 ```
 `client_redis.sh`
 ```
@@ -25,7 +25,7 @@
 ```
 
 ##【Java使用redis配置】
-[Java使用Redis：详见此处末尾](https://github.com/Kuangcp/Notes/blob/master/TXT/Java/EE.md)
+[Java使用Redis：详见此处末尾](/Java/EE.md)
 
 ****************************
 ## redis配置文件
@@ -269,6 +269,7 @@ TIME
 #### 持久化策略
 #### 复制
 
+#### 数据迁移
 	
 	
 ## 【Redis的使用】

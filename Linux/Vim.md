@@ -2,7 +2,8 @@
 > 学习曲线很高，但是学会熟练使用后就效率很高
 
 ## 基本配置
-- 在文件 全局：`/etc/vim/vimrc` 或者 当前用户：`~/.vimrc` 中添加如下内容就差不多了
+- 在文件 全局：`/etc/vim/vimrc` 先备份一下 `sudo cp /etc/vim/vimrc /etc/vim/vimrc.bak`
+	- 或者当前用户：`~/.vimrc` 中添加如下内容就差不多了（但是高亮不见了）
 ```
 set showcmd		" Show (partial) command in status line.
 set autowrite		" Automatically save before commands like :next and :make
