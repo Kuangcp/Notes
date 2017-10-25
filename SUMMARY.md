@@ -66,7 +66,7 @@
     * [ Struts ](./Java/Struts.md)
     * [ Tomcat ](./Java/Tomcat.md)
     * [ UnitTest ](./Java/UnitTest.md)
-    * [ 常用类库的常用api ](./Java/常用类库的常用api.md)
+    * [ UsuallyLibAPI ](./Java/UsuallyLibAPI.md)
     * [ 模式之禅 ](./Java/模式之禅.md)
 * 【 Linux 】
     * 【 Linux/Alpine 】
@@ -98,6 +98,8 @@
         * [ Hexo ](./Skills/View/Hexo.md)
         * [ Learn_Js ](./Skills/View/Learn_Js.md)
         * [ Learn_PS ](./Skills/View/Learn_PS.md)
+    * 【 Skills/Base 】
+        * [ Arithmetic ](./Skills/Base/Arithmetic.md)
     * [ Web安全 ](./Skills/Web安全.md)
     * [ usually_app ](./Skills/usually_app.md)
     * [ 正则表达式学习 ](./Skills/正则表达式学习.md)

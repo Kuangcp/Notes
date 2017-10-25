@@ -65,7 +65,7 @@
 ### 读取命令行参数
 > [参考博客](http://www.sharejs.com/codes/python/6121)
 `只有输入参数，没有选项`
-```
+```python
     import sys
     print("脚本名：", sys.argv[0])
     for i in range(1, len(sys.argv)):
@@ -76,7 +76,7 @@
 
 `有选项`
 `getopt.getopt(args, options[, long_options])`
-```
+```python
     import sys, getopt
     opts, args = getopt.getopt(sys.argv[1:], "hi:o:")
     for op, value in opts:
@@ -176,13 +176,13 @@ getopt函数的第三个参数[, long_options]为可选的长选项参数，上�
 - encode("utf-8") str -> bytes
 - decode() bytes -> str
 
-```
+```python
     # coding:utf-8
     unicode_str = unicode('使用',encoding='utf-8')
     print unicode_str.encode('utf-8')
 ```
 
-```
+```python
     import codecs
     codecs.open('filename',encoding='utf-8')
 ```
@@ -226,7 +226,7 @@ getopt函数的第三个参数[, long_options]为可选的长选项参数，上�
     - `while True:`` while ‘2’ in nums:`` while num<2:`  
     - `while 列表: ` 直到列表为空退出循环
 
-```
+```python
     if (b==0) and (a==1) :
         pass
         print("pass")
@@ -266,7 +266,7 @@ getopt函数的第三个参数[, long_options]为可选的长选项参数，上�
 - 局部变量：
 - 全局变量：定义在函数外的变量，也称公用变量，函数中 `global x` 声明引用全局变量x
 
-************************************
+*******************
 ### 【类】
 `Python 不存在多态，存在鸭子类型` [博客介绍](http://blog.csdn.net/shangzhihaohao/article/details/7065675)
 - 写在一个py文件里，默认构造器，可以加参数 `def __init__(self):`
@@ -277,7 +277,7 @@ getopt函数的第三个参数[, long_options]为可选的长选项参数，上�
     - 类属性可以修改，但是实际上只能修改实例属性（这个修改只是声明了同名的实例属性，引用的时候就会覆盖类属性，看起来就是修改了
         - 可以删除实例属性，然后就能看到原有的类属性了 
 
-```
+```python
     class People:
         name = 'md'
     p = People()
@@ -294,7 +294,7 @@ getopt函数的第三个参数[, long_options]为可选的长选项参数，上�
     - `def __del__(self)`
 
 
-```
+```python
     class Person:
         # 对象方法， 将对象作为参数self传进去
         def say(self):
@@ -332,7 +332,7 @@ getopt函数的第三个参数[, long_options]为可选的长选项参数，上�
 
 ******************************************
 ### 【异常】
-```
+```python
     try:
         print(5/0)
     except ZeroDivisionError:
@@ -381,7 +381,7 @@ getopt函数的第三个参数[, long_options]为可选的长选项参数，上�
 - 注意路径，Windows系统中要使用反斜杠 \ 
   最简单：`file = open('')` 只读打开
   `使用with来操作 好处是Python自动关闭文件`
-```
+```python
     with open('filename') as name: 
         name.read()
 ```
@@ -426,7 +426,7 @@ getopt函数的第三个参数[, long_options]为可选的长选项参数，上�
 
 
 `json `
-```
+```python
     alien = {'color': 'green', 'age': '23'}
     files = 'a.json'
     with open(files, 'w') as o:
@@ -496,7 +496,7 @@ sudo apt install libfreetype6-dev g++
 - import codecs 编码
 - import os 
 
-```
+```python
     import time
     import shlex
     import datetime
@@ -527,14 +527,15 @@ sudo apt install libfreetype6-dev g++
         return str(sub.returncode)
 ```
 
+********************
 ## QT
 - 在Terminal中输入:sudo apt-get install qt4-dev-tools qt4-doc qt4-qtconfig qt4-demos qt4-designer
 ```
-qt4-dev-tools 中包括了Qt Assistant,Qt Linguist,Qt Creator
-qt4-doc 这个是帮助文档
-qt4-qtconfig Qt的配置工具,这个装好默认好
-qt4-demos 官方的一些Demo
-qt4-designer 可视化窗体设置工具
+    qt4-dev-tools 中包括了Qt Assistant,Qt Linguist,Qt Creator
+    qt4-doc 这个是帮助文档
+    qt4-qtconfig Qt的配置工具,这个装好默认好
+    qt4-demos 官方的一些Demo
+    qt4-designer 可视化窗体设置工具
 ```
 
 
