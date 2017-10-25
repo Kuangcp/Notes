@@ -133,6 +133,7 @@
 - `*.html`  忽略所有HTML文件
 - `*[o/a]`  忽略所有o和a后缀的文件
 - `!foo.html`  不忽略该文件
+
 - 示例文件
 ```
       # maven #
@@ -183,7 +184,7 @@
 ### 【HTTP访问Git_Server】
 - 安装Apache： Web服务器
 - 配置Apache服务器的开放的目录以及Git的路径 
-```
+```xml
 <Location /git>
     AuthType Basic 
     AuthName "GIT Repository" 

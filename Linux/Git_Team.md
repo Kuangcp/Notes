@@ -47,3 +47,8 @@
     - `git pull origin master` 获取到master改动的代码 不需要再次merge
 - `只要master不pull 分支代码， 那么分支图就不会乱`
     - 或者说所有的分支不要在merge之前pull代码就不会乱，一定要先merge 再pull， 谁发起的merge，谁就是主分支将对方合并进来
+
+##### 最终方案
+- 开发人员提交完后，主分支管理人员，切换到开发人员的分支上然后 `git pull 开发人员分支`，然后切换回主分支上 `git merge --no-ff 开发人员分支`（填写注释）
+    - 然后开发人员分支上执行 `git merge master` 然后推送 `git push`
+    - 然后通知开发人员下拉 其开发分支即可
