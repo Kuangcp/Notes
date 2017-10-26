@@ -30,7 +30,7 @@
 ## Database
 - [sssdb](https://github.com/ideawu/ssdb) `键值对数据库`
 - [Mysql-Font](https://github.com/NilsHoyer/MySQL-Front) `连接Mysql的客户端`
-
+- [sqlectron](https://github.com/sqlectron/sqlectron-gui) `简单直观的数据库图形化软件`
 
 ## 前端
 - [Framework7](http://framework7.cn/)`开发类似ios7的web应用（HTML）`

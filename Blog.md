@@ -4,6 +4,12 @@
 
 ***************
 # 【Blog】
+## 算法
+
+### 匹配算法
+- [字符串相似度匹配](http://zjwyhll.blog.163.com/blog/static/75149781201281142630851/)
+
+************
 ## Java
 ### SE
 - [Java异常浅谈](http://www.cnblogs.com/focusj/archive/2011/12/26/2301524.html)

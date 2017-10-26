@@ -26,13 +26,13 @@
         - [9.保留working_tree并且丢弃一些commit](#9保留working_tree并且丢弃一些commit)
 
 # Tips
-* 1 、虽然在物理上本地仓库中所有文件是放在一起的，但是分支之间是互不能访问以及操作的
-* 2 、在本地的每次commit都是有index的，上传到github可以不用那么频繁，反正都是有记录的
-* 3、 在github上修改了项目后，或者以后是和别人一起开发，就要先git pull origin （master）将别人的分支和自己的分支都拉下来确保是最新，
-    * 再进行git push -u origin master 才能正确提交代码，如果不pull，提交是注定失败的，还会扰乱分支图
-* 4、在github上修改文件，容易引起编码的变化，这时候没有pull就修改文件再commit也是会在push的时候很麻烦，最好在本地修改文件
-	最好是，在github上修改了就在本地pull之后再修改文件，万一出错了回退也简单
-* 5、出现了冲突，从而无法自动merge：
+- 1 、虽然在物理上本地仓库中所有文件是放在一起的，但是分支之间是互不能访问以及操作的
+- 2 、在本地的每次commit都是有index的，上传到github可以不用那么频繁，反正都是有记录的
+- 3、 在github上修改了项目后，或者以后是和别人一起开发，就要先git pull origin （master）将别人的分支和自己的分支都拉下来确保是最新，
+    - 再进行git push -u origin master 才能正确提交代码，如果不pull，提交是注定失败的，还会扰乱分支图
+- 4、在github上修改文件，容易引起编码的变化，这时候没有pull就修改文件再commit也是会在push的时候很麻烦，最好在本地修改文件
+    - 最好是，在github上修改了就在本地pull之后再修改文件，万一出错了回退也简单
+- 5、出现了冲突，从而无法自动merge：
 ```
     git pull 对方的分支
     git checkout 自己的分支
@@ -46,14 +46,15 @@
     * 当将目录备份出去，然后重装系统粘贴回来，权限就变了，mode也变了，可以设置忽略掉改变，继续使用仓库，看着不爽的话就提交到远程，新系统克隆即可，不过网速就...
 
 **********
--  Windows下记住密码 ： 
+-  `Windows下记住密码` ： 
     * 新建环境变量 HOME 值：`%USERPROFILE%`
     * 在C盘User下你的当前用户目录下新建` _netrc `文本文件： 
         * `machine https://github.com/Kuangcp/`
         * `login ***`
         * `password ***` 
     * 成功配置，测试便知
-- Linux下记住密码：(如果使用了多个github账号，设置这个后只能使用一个账号的自动登录，另一个账号将完全连不上github，ssh也只能一个账号配一个，不能多个账号用一个ssh)
+
+- `Linux下记住密码`：(如果使用了多个github账号，设置这个后只能使用一个账号的自动登录，另一个账号将完全连不上github，ssh也只能一个账号配一个，不能多个账号用一个ssh)
     * `touch .git-credentials`
     * `vim .git-credentials`
     * 输入： ` http://{username}:{password}@github.com` 或者是https开头
@@ -61,7 +62,8 @@
     * `~/.gitconfig` 文件中多了以下内容即可
         * [credential]
         * helper = store
-- ssh 方法：（推荐）
+
+- `ssh 方法：（推荐）`
     - `ssh-keygen` 不设置密码
     - `cat ~/.ssh/id_rsa.pub | xclip -sel clip`  添加即可
 
@@ -74,10 +76,12 @@
 
 **********
 ## 安装最新版git
-- `sudo add-apt-repository ppa:git-core/ppa` 如果命令找不到就先安装这个 `sudo apt-get install software-properties-common`
+- `sudo add-apt-repository ppa:git-core/ppa` 
+    - 如果命令找不到就先安装这个 `sudo apt-get install software-properties-common`
 - `sudo apt update`
 - `sudo apt-get install git`
 
+**************
 ## 【目前使用git的方法】 
 
 - 1.在GitHub上新建一个项目，不勾选初始化，复制下URL
@@ -90,6 +94,8 @@
    	git remote add origin https://github.com/Kuangcp/StudentManager.git
    	git push -u origin master
 ```
+
+*********************
 ## 实验楼使用Github
 - `git clone URL` 复制下来，默认是master
 - `git branch 新分支名` 新建一个分支，切换过去，使用的就是这个新分支放代码
@@ -99,12 +105,12 @@
 ********************************
 ## 【git初始化】 
 ```
-	$git config --global user.name " "
-	$git config --global user.email " "
-	$git config --global color.ui  auto 
+	git config --global user.name " "
+	git config --global user.email " "
+	git config --global color.ui  auto 
 ```
 > 如果是多个账号使用同一台电脑就不要配置这个，单独配置仓库的名字，邮箱即可<br/>
-> `git config user.name ""`
+`git config user.name ""`
 
 ## 【VI编辑器的使用】
 - git 在pull或者合并分支的时候有时会遇到打开 VI编辑器 的状态  可以不管(直接下面3,4步)
@@ -201,8 +207,8 @@
 - `bin\openssl req -new -key server.key -out server.csr -config conf\openssl.cnf` 输入之前密码
 - `bin\openssl x509 -req -days 3650 -in server.csr -signkey server.key -out server.crt` 输入之前密码
 - 把server.key 更名为server.key.old :`bin\openssl rsa -in server.key.old -out server.key`
-- 将 server.key server.crt 移动到conf
-- 修改 httpd.conf 去掉如下三行的注释 #
+- 将server.key server.crt 移动到conf
+- 修改 httpd.conf 去掉如下三行的注释 # 字符
 ```
     LoadModule socache_shmcb_module..
     LoadModule ssl_module..
@@ -214,6 +220,7 @@
 #### 【使用SSH登录GitServer】
 
 
+*********************
 ## 【基础命令】 
 - `git touch file1 file2 ` 新建三个文件
 - `echo "  ">>file1 ` 修改文件file1

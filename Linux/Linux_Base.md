@@ -166,7 +166,7 @@
     - -o 与-g选项同时使用，用户组的新GID可以与系统已有用户组的GID相同。
     - -n 新用户组 将用户组的名字改为新名字
 
-*********************************
+******************
 ## 【软件管理】
 ### 安装命令
 - 1,deb 安装deb包
@@ -221,7 +221,7 @@
 - 检查 .bashrc 文件, 这次就是因为sdkman的原因导致巨慢,那上次是什么原因呢?
 
 #### 命令找不到
-- sudo 安装 sudo
+- `sudo找不到` 就安装 sudo
 - locale-gen 安装locales 使用`locale-gen --purge`命令进行更新编码
 
 #### Deepin的NVIDIA驱动问题
@@ -253,7 +253,7 @@
 ##### 关闭ssh回话不能运行
 
 ##### 关闭ssh回话仍能运行
-nohup， disown, screen, setid 
+`nohup， disown, screen, setid `
 - 使用`nohup`屏蔽hup信号 后台运行，输出到nohup.out `nohup 命令 &`
     - 修改重定向文件  `nohup 命令>/dev/null 2>&1`
 - `(命令 &)` 屏蔽了hup信号
@@ -273,11 +273,12 @@ nohup， disown, screen, setid
 - 终端：
     - `Ctrl L` 清屏，Mysql也适用
     - `Ctrl ；` 显示最近五条剪贴板内容
+
 ```
 Ctrl + d       删除一个字符，相当于通常的Delete键（命令行若无任何字符，则相当于exit；处理多行标准输入时也表示EOF ）
 Ctrl + h       退格删除一个字符，相当于通常的Backspace键
-Ctrl + u       删除光标之前到行首的字符
-Ctrl + k       删除光标之前到行尾的字符
+Ctrl + u       删除光标之前到 行首 的字符
+Ctrl + k       删除光标之前到 行尾 的字符
 Ctrl + c       取消当前行输入的命令，相当于Ctrl + Break
 Ctrl + a       光标移动到行首（Ahead of line），相当于通常的Home键
 Ctrl + e       光标移动到行尾（End of line）
@@ -288,12 +289,32 @@ Ctrl + p       调出命令历史中的前一条（Previous）命令，相当于
 Ctrl + n       调出命令历史中的下一条（Next）命令，相当于通常的下箭头
 Ctrl + r       显示：号提示，根据用户输入查找相关历史命令（reverse-i-search）
 ```
+
 - htop 终端的任务管理器显示
 - lsof 便捷的查看端口情况
 - ps | clorm 20 30 `colrm`删除输出的20 到30 列
 - w | uptime 查看启动情况
-`convert`
+
+`convert`图片转换
 - [参考博客](http://blog.csdn.net/mybelief321/article/details/9969949)
 - 将图片转换成指定大小 这是保持比例的 `convert -resize 600X600 src.jpg dst.jpg` 中间是字母X
 - 如果不保持比例，就在宽高后加上感叹号 
 - 可以只指定高度，那么宽度会等比例缩放 `convert -resize 400 src.jpg dst.jpg`
+
+`.git-prompt.sh`Bash下显示当前分支
+- `wget https://raw.githubusercontent.com/git/git/master/contrib/completion/git-prompt.sh -O ~/.git-prompt.sh` 下载脚本
+- `chmod +x ~/.git-prompt.sh` 赋予可执行权限
+- 在 .bash_alases文件中添加
+```sh
+lightgreen='\[\033[1;32m\]'
+lightcyan='\[\033[1;36m\]'
+lightpurple='\[\033[1;35m\]'
+yellow='\[\033[1;33m\]'
+nocolor='\[\033[0m\]'
+source ~/.git-prompt.sh
+set_bash_prompt(){
+    #PS1="[e[32m]u[e[m]@[e[33m]W[e[36m]$(__git_ps1 ' (%s)')[e[31m]$[e[m]"
+    PS1="${lightcyan}\t${lightgreen}\w${lightpurple}$(__git_ps1 ' (%s)')${yellow} → \[\e[m\]"
+}
+PROMPT_COMMAND="set_bash_prompt; $PROMPT_COMMAND"
+```

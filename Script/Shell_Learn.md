@@ -19,6 +19,7 @@ dash
 ### 参数读取
 - [参考博客](http://www.cnblogs.com/FrankTan/archive/2010/03/01/1634516.html)`命令行选项 参数处理`
 - 脚本退出运行 `exit 0`
+- 得到脚本所在的目录 `basepath=$(cd `dirname $0`; pwd)`
 
 ### 判断
 #### if
