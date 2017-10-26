@@ -22,6 +22,10 @@
     --with-openssl=/home/kuang/openssl \
     --with-zlib=/home/kuang/zlib-1.2.11
 ```
+
+### docker安装
+
+
 ## 配置使用
 ### 基础配置
 
