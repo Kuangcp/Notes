@@ -20,7 +20,7 @@
 #### Restful设计
 - 1.添加依赖
 
-```
+```xml
     <dependency>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-data-rest</artifactId>
@@ -28,7 +28,7 @@
 ```
 - 2.引入自动配置类
 
-```
+```java
     @Configuration
     public class RestConfiguration extends RepositoryRestMvcConfiguration {
         @Override
@@ -47,9 +47,9 @@
 ```
 - 3.配置repository的名字例如：（只要配置repository就能用REST了）
 
-```
+```java
     @RepositoryRestResource(path = "book")
-    public interface BookDao extends JpaRepository<Book,Long>{
+    public interface BookDao extends JpaRepository<Book,Long>{}
 ```
 
 - 4.启动应用，控制台有如下输出
@@ -98,12 +98,12 @@
     spring.redis.pool.max-idle=8
     # 连接池中的最小空闲连接
     spring.redis.pool.min-idle=0
-    # 连接超时时间（毫秒）
+    # 连接超时时间（毫秒）0不超时
     spring.redis.timeout=0
 ```
 
 `在一个配置类中复制如下代码即可使用 StringRedisTemplate RedisTemplate 的实例`
-```
+```java
     @Bean
     public RedisTemplate<Object,Object> redisTemplate(RedisConnectionFactory factory) {
         RedisTemplate<Object,Object> template = new RedisTemplate<>();
@@ -127,7 +127,7 @@
     }
 ``` 
 `两个对象的简单使用`
-```
+```java
     stringRedisTemplate.opsForValue().set("aaa", "hello");
     String result = stringRedisTemplate.opsForValue().get("aaa");
     //获取所有
@@ -150,11 +150,3 @@
     - `redisTemplate.expire("max",tempTime,TimeUnit.SECONDS);`
 
 #### 注意
-
-
-
-
-
-
-
-

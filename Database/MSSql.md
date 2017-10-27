@@ -8,3 +8,12 @@ docker run -d -e SA_PASSWORD=<passord> -e SQLSERVER_DATABASE=<db name> -e SQLSER
 SQLSERVER_PASSWORD=<password> -p <local port>:1433 exoplatform/sqlserver:ctp2-1-1
 
 docker run -d -e SA_PASSWORD=ad -e SQLSERVER_DATABASE=mythos -e SQLSERVER_USER=myth -e SQLSERVER_PASSWORD=jiushi -p 1433:1433 mssql
+
+
+docker run --name mssql -e ACCEPT_EULA=Y -e SA_PASSWORD=docker888 -e SQLSERVER_USER=myth -e SQLSERVER_PASSWORD=jiushi -p 1433:1433 -d microsoft/mssql-server-linux:latest
+
+docker run -e 'SA_PASSWORD=docker888' -p 1433:1433 -it --rm microsoft/mssql-server-linux:latest /opt/mssql/bin/sqlservr --accept-eula
+
+
+查看控制台输出
+docker run --name mssql -e ACCEPT_EULA=Y -e SA_PASSWORD=docker888 -e SQLSERVER_USER=myth -e SQLSERVER_PASSWORD=jiushi -p 1433:1433 -it microsoft/mssql-server-linux:2017-GA
