@@ -294,7 +294,6 @@ TIME
         <artifactId>spring-data-redis</artifactId>
         <version>1.6.0.RELEASE</version>
     </dependency>
-
     <dependency>
         <groupId>redis.clients</groupId>
         <artifactId>jedis</artifactId>
@@ -327,7 +326,6 @@ TIME
           <property name="testOnBorrow" value="${redis.pool.testOnBorrow}"/>
           <property name="testOnReturn" value="${redis.pool.testOnReturn}"/>
       </bean>
-      
       <!-- redis的连接池pool，不是必选项：timeout/password  -->
       <bean id = "jedisPool" class="redis.clients.jedis.JedisPool">
           <constructor-arg index="0" ref="jedisPoolConfig"/>

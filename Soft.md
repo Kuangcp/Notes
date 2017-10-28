@@ -9,6 +9,9 @@
 - [oracle-jdk](http://www.oracle.com/technetwork/cn/java/javase/downloads/index.html)
 
 *****
+## Plugin
+- [gradle-tomcat-plugin](https://github.com/bmuschko/gradle-tomcat-plugin)`gradle中tomcat插件`
+
 ## Tools
 - [git](https://git-scm.com/) `最好用的vcs`
 - [genymotion](https://www.genymotion.com/) `安卓模拟器`

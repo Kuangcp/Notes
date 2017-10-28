@@ -18,9 +18,17 @@
 - 使用随机端口启动服务器 配置local.server.port=0
 - 使用Selenium来测试HTML页面，模拟浏览器的动作，查看系统运行状态
 
+**********
+## 参考博客
+- [Springboot探索](https://juejin.im/post/598dd709f265da3e213f0c57)
+
 ***********
 ## 配置文件
-> [配置文件的使用](http://www.itwendao.com/article/detail/391009.html)
+- [配置文件的使用](http://www.itwendao.com/article/detail/391009.html)
+- [Spring boot配置文件 application.properties](https://www.tuicool.com/articles/veUjQba)
+- [SpringBoot常用配置](https://my.oschina.net/wangnian/blog/666641)
+
+- [使用Gradle整合SpringBoot+Vue.js-开发调试与打包](https://segmentfault.com/a/1190000008968295)
 
 ************
 ## Web模块

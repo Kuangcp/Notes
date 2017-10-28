@@ -26,6 +26,7 @@
 
 ## Java
 - [Mockito](http://www.vogella.com/tutorials/Mockito/article.html#when-thenreturn-and-when-thenthrow) `Java测试框架`
+- [gradle](https://docs.gradle.org/current/userguide/userguide.html)
 
 ## 前端
 - [前端 LayUI 框架](http://www.layui.com/doc/)

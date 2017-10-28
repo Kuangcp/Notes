@@ -55,6 +55,7 @@
 - `git push 远程URL的名称 --delete 分支名称` 删除远程库某分支
 - `git remote show origin` 查看远程分支的状态
 
+*******
 - [删除，重命名远程分支](http://zengrong.net/post/1746.htm)
 
 #### 【fork 相关操作】

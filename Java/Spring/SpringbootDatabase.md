@@ -1,7 +1,18 @@
 ## 数据库模块
 > 主要是采用的JPA，极大的缩减了代码量，但是要注意不要过度依赖框架，丧失了基本的能力
 
+### 连接池
+
+#### c3p0
+- [参考博客](http://www.cnblogs.com/520playboy/p/7526252.html)
+
+#### druid
+- [druid连接池的配置](http://makaidong.com/L_Sail/1/40930_11573921.html)
+
+
 ### JPA_SQL
+> 默认是tomcat-jdbc连接池
+
 #### Mysql
 - 1.引入依赖
 ```
