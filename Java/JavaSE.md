@@ -1,16 +1,13 @@
 # JavaSE
 > Java基础 根基
 
-*************
-## 【类文件和反射】
-- [类与字节码笔记](/Java/AdvancedLearning/ClassFile.md)
-    - [代码](https://github.com/Kuangcp/JavaBase/tree/master/src/main/java/com/classfile) `项目`
+*********
+## 【语法】
+### 判断
+### 循环
+- for each循环里面 `for(item:list){}` list对象如果是一个对象的方法返回的，那么只会调用一次
 
-
-## 【自定义注解】
-### 【元注解】
-
-**********
+*******
 ## 【线程】
 - [线程基础学习笔记](/Java/AdvancedLearning/Thread.md)
     - [代码](https://github.com/Kuangcp/JavaBase/tree/master/src/main/java/com/threads) `项目`
@@ -23,6 +20,17 @@
 - 常见编码转换
     - 一般Windows文件默认编码：`str = new String(str.getBytes("iso8859-1"), "gb2312"); ` 
     - properties文件中获取中文 `str = new String(str.getBytes("utf-8"), "utf-8"); `
+
+
+******
+## 【集合】
+### 【Map】
+
+### 【List】
+
+### 【Set】
+> 显然是无序的，但是StringRedisTemplate的对象操作返回的set竟然是有序的！！
+
 
 *******    
 ## 【IO】
@@ -45,11 +53,22 @@ fis.close();
 ``` 
 - 只要配置文件和打包的jar同级即可
 
+*************
+## 【类文件和反射】
+- [类与字节码笔记](/Java/AdvancedLearning/ClassFile.md)
+    - [代码](https://github.com/Kuangcp/JavaBase/tree/master/src/main/java/com/classfile) `项目`
+
+
+*********
+## 【自定义注解】
+### 【元注解】
+
+************
 ## 【JDBC】
 - 基础的批量操作SQL ` pstmt.executeBatch(); //批量执行`
 
+*************
 ## 【Net】
-
 - 得到URL文件的输入流
     - `new URL(url).openStream()`
 

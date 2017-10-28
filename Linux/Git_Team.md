@@ -3,6 +3,9 @@
 ### 介绍关于git在多人协作的使用
 > [原博客](http://nvie.com/posts/a-successful-git-branching-model/)
 
+`规范的分支图`
+[规范的分支图](https://raw.githubusercontent.com/Kuangcp/ImageRepos/masters/Tech/Git/git-team-model.png)
+
 `主要的分支`
 - master 稳定发行分支
 - dev 开发分支

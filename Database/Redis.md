@@ -67,7 +67,7 @@
     - zadd 将一个给定分值的成员添加到有序集合里 `zadd key 3.3 member` 
     - zrange 根据元素在有序集合中的位置，从有序集合中获取多个元素
         - zrange name 0 -1 withscores 获取所有并获取分值
-        - zrange name 2 30 wi thscores 
+        - zrange name 2 30 withscores 
     - zrevrange 从大到小排序的获取集合元素
     - zrangebyscore 获取有序集合在给定范围中的所有元素
         - zrangebyscore name 0 200 withscores 
@@ -307,7 +307,7 @@ TIME
         <version>3.3.2</version>
     </dependency>
 ```
-- Spring配置文件 
+`Spring配置文件`
 ```xml
     <!--
         加载redis配置文件 
@@ -348,5 +348,5 @@ TIME
 - 目前是4.1.7 + 1.6.0 + 2.9.0 + 3.3.2 编译通过了	
 
 ### SpringBoot使用Redis
-[SpringBoot配置Redis](https://github.com/Kuangcp/Notes/blob/master/TXT/Java/Spring/SpringBootDatabase.md)	
+[SpringBoot配置Redis](/Java/Spring/SpringBootDatabase.md)	
 	

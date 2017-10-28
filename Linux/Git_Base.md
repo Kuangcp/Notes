@@ -11,7 +11,7 @@
 ******
 `清理仓库`
 - 因为删除的文件是会留在仓库，以便以后恢复，这样的话仓库就会越来越大了
-- git gc 清理，不知道有没有用
+- `git gc` 清理，不知道有没有用
 - 强制删除，并且从git索引中也去掉，相当于彻底删除 
     - [参考博客1 彻底删除](http://www.itwendao.com/article/detail/413282.html) 
     - [参考博客2 彻底删除](http://blog.csdn.net/meteor1113/article/details/4407209)

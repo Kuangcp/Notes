@@ -65,7 +65,7 @@
 
 - 4.启动应用，控制台有如下输出
 
-![输出](https://raw.githubusercontent.com/Kuangcp/ImageRepos/master/Tech/Spring/output.png)
+![输出](https://raw.githubusercontent.com/Kuangcp/ImageRepos/master/Tech/Java/Spring/output.png)
 
 - 所有路径的使用方法：
     - `GET` 查询单个 `/repo/id` 成功：200 失败404
@@ -131,7 +131,6 @@
         template.afterPropertiesSet();
         return template;
     }
-
     @Bean
     StringRedisTemplate template(RedisConnectionFactory connectionFactory) {
         return new StringRedisTemplate(connectionFactory);
@@ -153,11 +152,15 @@
 #### 关于StringRedisTemplate的方法使用
 - 常见数据类型的中间对象
     - opsForValue() 操作简单键值对数据
+        - hasKey()
     - opsForHash() 操作含有hash的数据
     - opsForList() 操作含有list的数据
     - opsForZSet() 操作含有zset（有序）的数据
+        - range()方法返回指定范围的数据 Java中Set类型的（诡异的是顺序保持了一致）
     - opsForSet() 操作含有set的数据
+
 - 设置超时时间
     - `redisTemplate.expire("max",tempTime,TimeUnit.SECONDS);`
+
 
 #### 注意
