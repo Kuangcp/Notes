@@ -29,9 +29,9 @@
 
 ****************************
 ## redis配置文件
-- [配置文件讲解](https://github.com/Kuangcp/Notes/blob/master/ConfigFiles/Database/redis/explain_redis.conf)
-- [原始配置文件](https://github.com/Kuangcp/Notes/blob/master/ConfigFiles/Database/redis/redis.conf)
-- `[×]使用ing`[简化配置文件](https://github.com/Kuangcp/Notes/blob/master/ConfigFiles/Database/redis/simple_redis.conf) 
+- [配置文件讲解](https://github.com/Kuangcp/Configs/blob/master/Database/redis/explain_redis.conf)
+- [原始配置文件](https://github.com/Kuangcp/Configs/blob/master/Database/redis/redis.conf)
+- `[×]使用ing`[简化配置文件](https://github.com/Kuangcp/Configs/blob/master/Database/redis/simple_redis.conf) 
 
 
 *********

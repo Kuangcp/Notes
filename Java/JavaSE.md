@@ -19,8 +19,7 @@
 ## 【String】
 - 常见编码转换
     - 一般Windows文件默认编码：`str = new String(str.getBytes("iso8859-1"), "gb2312"); ` 
-    - properties文件中获取中文 `str = new String(str.getBytes("utf-8"), "utf-8"); `
-
+    - properties文件中获取中文 `str = new String(str.getBytes("utf-8"), "utf-8");`
 
 ******
 ## 【集合】
@@ -29,8 +28,8 @@
 ### 【List】
 
 ### 【Set】
-> 显然是无序的，但是StringRedisTemplate的对象操作返回的set竟然是有序的！！
-
+- Set是无序的，但是StringRedisTemplate的对象操作返回的set竟然是有序的
+    - 因为有一个类是SortSet，顾名思义，所以是有序的，要继续多学习和使用Java原生的集合对象了
 
 *******    
 ## 【IO】
