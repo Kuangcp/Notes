@@ -193,8 +193,13 @@ RegionId cn-qingdao	cn-beijing cn-zhangjiakou cn-hangzhou cn-shanghai cn-shenzhe
 
 ### 没有提交的原因
 
+- `2017-10-31`
+    - 这几天都是忙于项目的开始准备，新入职人员的融入
+    - 还要忙于准备考研
+
 - `2017-10-15 >16`
     - 这两天都是忙手上的项目，没有时间做自己的事情
+    
 - `2017-10-11`
 	- ？？做别的事去了，笔记也没有提交
 - `2017-10-05`
@@ -203,8 +208,6 @@ RegionId cn-qingdao	cn-beijing cn-zhangjiakou cn-hangzhou cn-shanghai cn-shenzhe
 - `2017-09-24`
     - 生日
 
-- `2017-09-05`
-
 - `2017-09-04 -> 2017-09-05`
     - 在摆摊
 
@@ -212,8 +215,5 @@ RegionId cn-qingdao	cn-beijing cn-zhangjiakou cn-hangzhou cn-shanghai cn-shenzhe
 
 - `2017-07-21 -> 2017-07-29`
     - 因为回家了，好多事情，太累了就不想码代码，而且那个时期很迷茫
-
-
-
 
 
