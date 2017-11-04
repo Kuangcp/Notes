@@ -238,15 +238,38 @@
 #### 容器互联
 > 让多个容器中应用快速安全交互的方式，特别注意这是双向互联的
 
-- 例如: 创建一个MySQL容器供一个Ubuntu容器使用
+- 例如: `创建一个MySQL容器供一个Ubuntu容器使用`
     - 创建MySQL容器 `docker run --name mysql2 -e MYSQL_ROOT_PASSWORD=ad -d mysql`
     - 创建Ubuntu容器 `docker run -d --name test --link mysql2:db ubuntu`
         - link参数说明 ：`--link name:alias` 在父容器中会以别名代称
     - docker会连接两个容器，而不用通过暴露端口来实现，web容器的host文件以及环境变量都会追加上mysql2的配置
-    - 所以在Ubuntu容器中连接MySQL容器，首先得到IP就查看 `cat /etc/hosts` 中myslq容器别名为db值的IP地址 或者直接 `ping db`
+    - 所以在Ubuntu容器中连接MySQL容器，首先得到IP就查看 `cat /etc/hosts` 中myslq容器别名为db值的IP地址 或者直接 `ping db` `apt install  inetutils-ping` `ifconfig就要安装net-tools`
     - 然后 `mysql -h IP -u root -pad` 即可连接上mysql
 
-docker run --name youhuigo -d -p 80:80 -v /home/kuang/nginx/conf/:/etc/nginx/conf.d/:ro --link you:web nginx
+- 例如：`创建一个Nginx和一个Springboot搭建的web服务`
+    - 构建Springboot应用镜像，构建应用容器 开放8888端口
+    - 新建nginx容器：`docker run --name youhuigo -d -p 80:80 -v /home/kuang/nginx/conf/:/etc/nginx/conf.d/:ro --link you:web nginx`
+- 配置文件：`一样的cat /etc/hosts 查看容器的IP`
+```
+upstream youhui {
+  server 172.17.0.4:8888;
+}
+
+server {
+  listen 80;
+  server_name youhui;
+
+  location / {
+    proxy_set_header X-Real-IP $remote_addr;
+    proxy_set_header X-Forward-For $proxy_add_x_forwarded_for;
+    proxy_set_header Host $http_host;
+    proxy_set_header X-Nginx-Proxt true;
+
+    proxy_pass http://youhui;
+    proxy_redirect off;
+  }
+}
+```
 
 ### Dockerfile
 >[Dockerfile文件学习](/Linux/Docker_file.md)
