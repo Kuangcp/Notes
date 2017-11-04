@@ -1,8 +1,6 @@
 # Mysql
 
 ## 安装
-
-
 ## 基本数据类型
 ###  decimal 
 -  The declaration syntax for a DECIMAL column is DECIMAL(M,D). The ranges of values for the arguments are as follows:
@@ -49,7 +47,7 @@ show table status like 'assitant' 可以看到当前自动增长的id当前值 d
    - insert into data values ('Myth','4','2016-03-10',curtime());//年月日，时间
    - select datediff(curdate(), date_sub(curdate(), interval i month)); 
 - 一般函数是不能作为 default默认值的，使用只能在插入修改数据时使用
-##### 1.8.2【获取当前时间与i个月之间的天数 】
+##### 1.8.2【获取当前时间与i个月之间的天数】
 - 问题：假设当前是5月19 且（提前月份）i=1 就是计算从4月19到今天的天数
     - 解答：
 
@@ -225,6 +223,7 @@ select fun_test(8,'d');
 
 - 创建用户 `CREATE USER 'username'@'host' IDENTIFIED BY 'password';`
 - 设置密码 `SET PASSWORD FOR 'username'@'%' = PASSWORD("123456");`
+    - 修改密码也是这个语句注意的是要  `flush privileges;`
 - 删除用户 `drop user 'username'@'host'`
     - 如果服务器需要远程访问 修改配置文件`/etc/mysql/mysql.conf.d/mysqld.cnf`，注释掉 bind_address 一行
 ```

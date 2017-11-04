@@ -169,11 +169,12 @@
     - `--user` -u 限制用户
     - `--cap-drop` 去除能力
     - `--link` 链接其他容器
-    - `-rm` 容器运行结束退出就自动删除该容器 注意和`-d`不能共存
+    - `--rm` 容器运行结束退出就自动删除该容器 注意和`-d`不能共存
     - `--restart=always` 设置该容器随dokcer 服务自启动
     - `--hostname 容器hostname` 指定容器的hostname
-    - `-e TZ="Asia/Shanghai"` 指定时区
-    - `-v /etc/localtime:/etc/localtime:ro` 设置容器的时钟和宿主机一致
+- 常用的参数    
+    - `-e TZ="Asia/Shanghai"` 指定时区，可以解决时间不一致
+    - `-v /etc/localtime:/etc/localtime:ro` 设置容器的时钟和宿主机一致，不一定有用
     
 - `docker create` 是创建一个容器，不会运行，`docker run`是运行命令在一个新容器里
 
@@ -244,6 +245,8 @@
     - docker会连接两个容器，而不用通过暴露端口来实现，web容器的host文件以及环境变量都会追加上mysql2的配置
     - 所以在Ubuntu容器中连接MySQL容器，首先得到IP就查看 `cat /etc/hosts` 中myslq容器别名为db值的IP地址 或者直接 `ping db`
     - 然后 `mysql -h IP -u root -pad` 即可连接上mysql
+
+docker run --name youhuigo -d -p 80:80 -v /home/kuang/nginx/conf/:/etc/nginx/conf.d/:ro --link you:web nginx
 
 ### Dockerfile
 >[Dockerfile文件学习](/Linux/Docker_file.md)
