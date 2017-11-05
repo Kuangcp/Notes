@@ -12,6 +12,7 @@
 ### LongBlob
 - 这种数据类型可以直接把图像文件存到数据库中！
 
+创建UTF8编码数据库 `CREATE DATABASE `test2` DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci`
 
 ### 1.mysql常用命令集合
 #### 1.1【自增长】
