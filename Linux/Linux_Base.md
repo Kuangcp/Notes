@@ -104,13 +104,9 @@
   guake 0.8.4-1
   evilvte 0.5.1-1
   eterm 0.9.6-4
-  aterm-ml 1.0.1-8
   aterm 1.0.1-8
-  xterm:i386 322-1ubuntu1
   xterm 322-1ubuntu1
-  mate-terminal:i386 1.18.1-1+sonya
   mate-terminal 1.18.1-1+sonya
-  gnome-terminal:i386 3.18.3-linuxmint2
   gnome-terminal 3.18.3-linuxmint2
 请您明确地选择安装其中一个。
 ```
@@ -294,27 +290,4 @@ Ctrl + r       显示：号提示，根据用户输入查找相关历史命令�
 - lsof 便捷的查看端口情况
 - ps | clorm 20 30 `colrm`删除输出的20 到30 列
 - w | uptime 查看启动情况
-
-`convert`图片转换
-- [参考博客](http://blog.csdn.net/mybelief321/article/details/9969949)
-- 将图片转换成指定大小 这是保持比例的 `convert -resize 600X600 src.jpg dst.jpg` 中间是字母X
-- 如果不保持比例，就在宽高后加上感叹号 
-- 可以只指定高度，那么宽度会等比例缩放 `convert -resize 400 src.jpg dst.jpg`
-
-`.git-prompt.sh`Bash下显示当前分支
-- `wget https://raw.githubusercontent.com/git/git/master/contrib/completion/git-prompt.sh -O ~/.git-prompt.sh` 下载脚本
-- `chmod +x ~/.git-prompt.sh` 赋予可执行权限
-- 在 .bash_alases文件中添加
-```sh
-lightgreen='\[\033[1;32m\]'
-lightcyan='\[\033[1;36m\]'
-lightpurple='\[\033[1;35m\]'
-yellow='\[\033[1;33m\]'
-nocolor='\[\033[0m\]'
-source ~/.git-prompt.sh
-set_bash_prompt(){
-    #PS1="[e[32m]u[e[m]@[e[33m]W[e[36m]$(__git_ps1 ' (%s)')[e[31m]$[e[m]"
-    PS1="${lightcyan}\t${lightgreen}\w${lightpurple}$(__git_ps1 ' (%s)')${yellow} → \[\e[m\]"
-}
-PROMPT_COMMAND="set_bash_prompt; $PROMPT_COMMAND"
-```
+- wc -l 统计行数

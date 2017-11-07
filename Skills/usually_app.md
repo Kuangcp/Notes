@@ -58,11 +58,36 @@
 > 好用的管理会话的软件
 
 - [tmux 入门](http://blog.jobbole.com/87278/)
-
 `入门使用`
 - 新建会话 `tmux new -s test`
 - 断开会话但是后台运行 `ctrl-b d`
 - 连接会话 `tmux a -t test`
+
+### convert
+- [参考博客](http://blog.csdn.net/mybelief321/article/details/9969949)
+- 将图片转换成指定大小 这是保持比例的 `convert -resize 600X600 src.jpg dst.jpg` 中间是字母X
+- 如果不保持比例，就在宽高后加上感叹号 
+- 可以只指定高度，那么宽度会等比例缩放 `convert -resize 400 src.jpg dst.jpg`
+
+### .git-prompt.sh
+> Bash下显示当前分支
+
+- `wget https://raw.githubusercontent.com/git/git/master/contrib/completion/git-prompt.sh -O ~/.git-prompt.sh` 下载脚本
+- `chmod +x ~/.git-prompt.sh` 赋予可执行权限
+- 在 .bash_alases文件中添加
+```sh
+lightgreen='\[\033[1;32m\]'
+lightcyan='\[\033[1;36m\]'
+lightpurple='\[\033[1;35m\]'
+yellow='\[\033[1;33m\]'
+nocolor='\[\033[0m\]'
+source ~/.git-prompt.sh
+set_bash_prompt(){
+    #PS1="[e[32m]u[e[m]@[e[33m]W[e[36m]$(__git_ps1 ' (%s)')[e[31m]$[e[m]"
+    PS1="${lightcyan}\t${lightgreen}\w${lightpurple}$(__git_ps1 ' (%s)')${yellow} → \[\e[m\]"
+}
+PROMPT_COMMAND="set_bash_prompt; $PROMPT_COMMAND"
+```
 
 **************************************
 ## 【文本编辑器】
