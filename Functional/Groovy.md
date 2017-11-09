@@ -13,7 +13,10 @@
 
 - 新建文件 `println "Hello World!"` 然后 `groovy 文件`
     - 或者`groovy -e "println 'Hello World!'"`
-    
+
+### Maven引入Groovy
+- [参考博客](http://www.cnblogs.com/xiziyin/archive/2010/03/29/1699860.html)
+
 ## Groovy基础
 > 作为一个脚本语言，和Python Ruby Smalltalk语法相似
 
@@ -101,7 +104,13 @@ import java.util.*
 
 `GroovyBean`
 - 虽然很像JavaBean但是省略了显式声明的getset方法，提供了自动构造方法（采用映射来作为入参，很方便），允许使用`.`引用私有成员变量。修改默认行为显式重定义即可
-- 封装性得以保留，语法更精简
+- 封装性得以保留，语法更精简, `new Person().name="myth"`，其实就是隐式调用了set方法
+```groovy
+class Person{
+    String name
+    int age
+}
+```
 
 `安全解引用 ?.`
 - 如果对象是null，就什么都不做，理解为当做该次调用不存在。
@@ -164,6 +173,7 @@ import java.util.*
 > [示例代码](https://github.com/kuangcp/JavaBase/blob/master/src/main/java/com/classfile/JavaUseGroovy.java)
 
 
-
+### Grails
+- [入门博客](http://www.jianshu.com/p/32c9b45a788f)
 
 

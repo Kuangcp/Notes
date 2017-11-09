@@ -3,14 +3,14 @@
 ### 快速上手-初步入门：
 #### 创建单用户单角色的安全控制
 - 添加依赖
-```
+```xml
    <dependency>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-security</artifactId>
 	</dependency>
 ```
 
-```
+```java
     @Configuration
     public class SecurityConfig extends WebSecurityConfigurerAdapter {
       @Autowired
@@ -44,10 +44,10 @@
     }
 ```
 `Repository类`
-```
+```java
    public interface ReaderRepository extends JpaRepository<Reader, String> {}
 ```
-```
+```java
     //登录实体类
     @Entity
     public class Reader implements UserDetails {
@@ -88,7 +88,7 @@
     
 - `Author` `Admin` `Reader` 三个类
 `继承了UserDetails接口的实体类的配置`
-```
+```java
     //配置多对多的关系，用户和角色（权限）之间的关系,是通用的改下属性名即可
     @ManyToMany(cascade = {CascadeType.REFRESH},fetch = FetchType.EAGER)
     private List<AllRoles> roles ;
@@ -141,7 +141,7 @@
 - 但是都是有局限性，只能判断请求是否有权限，不能进行更多的自定义判断
 #### SpringSecurity3.0 开始提供了 SpEL表达式
 `需要先配置这个配置类，后面的注解才会生效`
-```
+```java
     @Configuration
     @EnableGlobalMethodSecurity(prePostEnabled = true)
     public class MethodSecurityConfig extends GlobalMethodSecurityConfiguration{}
