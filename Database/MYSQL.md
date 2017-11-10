@@ -1,6 +1,27 @@
 # Mysql
 
 ## 安装
+### Ubuntu安装配置MySQL
+- 更新列表` sudo apt-get update `
+- 安装MySQL `sudo apt-get install mysql-server mysql-client`
+- 检查服务是否已经开启 ： `sudo netstat -tap | grep mysql `
+  - （启动显示cp 0 0 localhost.localdomain:mysql *:* LISTEN - ）
+- 启动服务 ： `sudo /etc/init.d/mysql restart `
+- 查看编码 ： `status` 或者 `show variables like 'character_set_%`
+`配置`
+- 打开配置文件： `sudo gedit /etc/mysql/mysql.conf.d/mysqld.cnf`
+    - `[mysqld]`下添加一行： `character-set-server=utf8`
+    - `[client]`下添加 `efault-character-set = utf8`
+    - 如果要允许远程访问，就注释掉 `bind-address`
+    - 如果是服务器要配置远程访问 就 bind-address=服务器IP
+    - 确保skip-networking被删除或者屏蔽，否则不支持TCP/IP 访问
+`重启`
+- 重启MySQL ：`sudo systemctl restart mysql`
+
+### Docker安装
+>[Docker安装MySQL](/Linux/Docker_Soft.md)
+
+***********
 ## 基本数据类型
 ###  decimal 
 -  The declaration syntax for a DECIMAL column is DECIMAL(M,D). The ranges of values for the arguments are as follows:

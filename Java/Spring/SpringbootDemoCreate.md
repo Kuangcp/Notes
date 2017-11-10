@@ -8,7 +8,7 @@
 
 #### 配置文件
 `配置文件 application.yml`
-```
+```yml
 	spring:
   profiles:
     active: development # 选用开发模式
@@ -71,7 +71,7 @@
 
 - 也可以将上面的开发部分，上线部分的配置创建两个配置文件 `application-dev.properties` 和 `application-prod.properties`
 - 在主配置文件中指明
-```
+```yml
     spring:
       profiles:
         active: dev或者是prod
@@ -145,7 +145,7 @@
 
 `build.gradle`
 
-```
+```groovy
 	buildscript {
 	ext {
 		springBootVersion = '1.5.1.RELEASE'
@@ -202,7 +202,7 @@
 
 
 `如果要放在tomcat等web容器中运行，就要和Application同级目录下新建该类`
-```
+```java
     public class ServletInitializer extends SpringBootServletInitializer {
 
         @Override

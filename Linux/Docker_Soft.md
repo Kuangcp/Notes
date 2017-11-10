@@ -9,8 +9,7 @@
     - [Docker中构建一个可外登录的完整单一Ubuntu](#docker中构建一个可外登录的完整单一ubuntu)
     - [创建一个alpine的ssh](#创建一个alpine的ssh)
     
-*****
-
+*************
 ## 安装redis
 - 获取镜像：`docker pull redis `
 - 运行默认配置的容器：`docker run --name test-redis -d redis`
@@ -18,6 +17,7 @@
 - `sudo docker run -v /myredis/conf/redis.conf:/usr/local/etc/redis/redis.conf --name myredis redis redis-server /usr/local/etc/redis/redis.conf`
 - port-redis容器的端口映射：`sudo docker run -d -p 6379:6379 --name port-redis redis` 左本机右容器
 
+***********
 ## 安装Jenkins
 - `sudo docker pull jenkins` 下拉镜像
 - `sudo docker run --name myjenkins -p 8080:8080 -p 50000:50000 -v /home/kcp/docker/jenkins:/var/jenkins_home jenkins` 构建容器
@@ -27,13 +27,19 @@
 ## 安装PostgreSQL
 - [Docker 安装 PostgreSQL](/Database/Postgresql.md)
 
+***********
 ## 安装Oracle
 - [社区文档](https://hub.docker.com/r/wnameless/oracle-xe-11g/)
 
+************
 ## 安装MySQL
 - [官方文档](https://hub.docker.com/_/mysql/)
 - `docker run --name some-mysql -e MYSQL_ROOT_PASSWORD=my-secret-pw -d mysql:tag`
+- 挂载自定义配置文件 主要是配置编码 以及设定时区
+    - `docker run --name mysql-5.6 -v 配置文件目录:/etc/mysql/conf.d  -e MYSQL_ROOT_PASSWORD=mythos1104 -e TZ=Asia/Shanghai -p 3360:3306 -d mysql:5.6`
+- 连接`mysql -h 127.0.0.1 -P 3360 -uroot -pmythos1104`
 
+*************
 ## Docker中构建一个可外登录的完整单一Ubuntu
 - 最为简单的是：`docker run  -i -t --name ubuntu17 -p 34433:22 ubuntu /bin/bash`
     - 为这些软件预留端口 `ssh tomcat mysql postgresql mysql oracle nginx reids`
@@ -44,11 +50,10 @@
 
 ****************
 - 自己写构建文件，安装相应的软件
-```
+```Dockerfile
     FROM ubuntu
     MAINTAINER kuangcp myth.kuang@gmail.com
     ENTRYPOINT echo "Welcome login server by ssh"
-
     ENV DEBIAN_FRONTEND noninteractive
 
     ADD id_rsa.pub /root/.ssh/authorized_keys
@@ -64,9 +69,11 @@
 - `docker run -d -t --name myth -p 8989:22 myth:ssh`
 - `docker start myth`
 
+***********
 ## 创建一个alpine的ssh
 - [alpine-ssh](/Linux/Docker/alpine/Docerfile)
 
+**************
 ## Java
 - 基础镜像：
     - [官方镜像](https://hub.docker.com/_/java/)

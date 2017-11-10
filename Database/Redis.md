@@ -9,23 +9,24 @@
 	- 客户端登录 `auth redis1104`
 
 ## Linux下的使用
-- 下载源码，make编译， 复制src编译结果 其中的 redis-cli redis-server就可以用了，redis-benchmark可选，测性能
-    - 再复制下面的简化配置文件，或者使用源码中的配置文件自己配置下
+- 下载源码，执行`make`进行编译，复制src编译结果中的`redis-cli redis-server`就可以用了，redis-benchmark可选，测性能
+    - 再复制下面的简化配置文件，或者使用源码中根目录下的配置文件自己配置下
+    - [简化配置文件](https://raw.githubusercontent.com/Kuangcp/Configs/master/Database/redis/simple_redis.conf)
 - 再创建以下两个脚本就可以便捷的使用redis了
 `server_redis.sh`
-```
+```sh
     basepath=$(cd `dirname $0`; pwd)
     echo $basepath
     $basepath/redis-server $basepath/redis.conf>redis.log &
 ```
 `client_redis.sh`
-```
+```sh
     basepath=$(cd `dirname $0`; pwd)
     $basepath/redis-cli -p 6379
 ```
 
-##【Java使用redis配置】
-[Java使用Redis：详见此处末尾](/Java/EE.md)
+## docker安装redis
+- [docker-install-redis](/Linux/Docker.md)
 
 ****************************
 ## redis配置文件
@@ -34,7 +35,8 @@
 - `[×]使用ing`[简化配置文件](https://github.com/Kuangcp/Configs/blob/master/Database/redis/simple_redis.conf) 
 
 
-*********
+
+********
 ## Redis命令行常规使用
 ### 常用的数据类型操作
 - 【`字符串`】
@@ -184,7 +186,7 @@ PFADD
 PFCOUNT
 PFMERGE
 
-##### GEO（地理位置）
+##### GEO【地理位置】
 GEOADD
 GEOPOS
 GEODIST
@@ -192,7 +194,8 @@ GEORADIUS
 GEORADIUSBYMEMBER
 GEOHASH
 
-### Pub/Sub 发布订阅
+***************
+### Pub/Sub发布订阅
 
 - `PSUBSCRIBE pattern [pattern ...]`
     - 订阅一个或多个符合给定模式的频道。每个模式以 * 作为匹配符，比如 it* 匹配所有以 it 开头的频道( it.news 、 it.blog 、 it.tweets 等等)，
@@ -213,6 +216,7 @@ GEOHASH
     - 指示客户端退订给定的频道。如果没有频道被指定，也即是，一个无参数的 UNSUBSCRIBE 调用被执行，
     - 那么客户端使用 SUBSCRIBE 命令订阅的所有频道都会被退订。在这种情况下，命令会返回一个信息，告知客户端所有被退订的频道。
 
+**************
 ### 事务
 
 - `DISCARD` 取消事务，放弃执行事务块内的所有命令。
@@ -226,6 +230,7 @@ GEOHASH
 - `WATCH key [key ...]`
     - 监视一个(或多个) key ，如果在事务执行之前这个(或这些) key 被其他命令所改动，那么事务将被打断。
 
+*************
 ### 服务器
 
 BGREWRITEAOF
@@ -255,7 +260,7 @@ SYNC
 TIME
 
 
-*****************************************************************
+*****************************
 	
 ### Run Configuration	
 - *slaveof*
@@ -271,8 +276,8 @@ TIME
 
 #### 数据迁移
 - 使用主从复制来进行数据
-	
-	
+
+*******
 ## 【Redis的使用】
 ### 作为日志记录
 ### 作为网站统计数据
@@ -286,7 +291,7 @@ TIME
 - 发送邮件
 
 ***************************
-### 【Java 使用 redis 配置】
+### 【Java使用redis】
 - maven依赖(Spring 4.1.7)：
 ```xml
     <dependency>
@@ -318,26 +323,25 @@ TIME
     -->
     <context:property-placeholder location="classpath:redis.properties" ignore-unresolvable="true"/>
     <!-- redis连接池的配置 -->
-      <bean id="jedisPoolConfig" class="redis.clients.jedis.JedisPoolConfig">
-          <property name="maxActive" value="${redis.pool.maxActive}"/>
-          <property name="maxIdle" value="${redis.pool.maxIdle}"/>
-          <property name="minIdle" value="${redis.pool.minIdle}"/>
-          <property name="maxWait" value="${redis.pool.maxWait}"/>
-          <property name="testOnBorrow" value="${redis.pool.testOnBorrow}"/>
-          <property name="testOnReturn" value="${redis.pool.testOnReturn}"/>
-      </bean>
-      <!-- redis的连接池pool，不是必选项：timeout/password  -->
-      <bean id = "jedisPool" class="redis.clients.jedis.JedisPool">
-          <constructor-arg index="0" ref="jedisPoolConfig"/>
-          <constructor-arg index="1" value="${redis.host}"/>
-          <constructor-arg index="2" value="${redis.port}" type="int"/>
-          <constructor-arg index="3" value="${redis.timeout}" type="int"/>
-          <constructor-arg index="4" value="${redis.password}"/>
-      </bean>
+    <bean id="jedisPoolConfig" class="redis.clients.jedis.JedisPoolConfig">
+        <property name="maxActive" value="${redis.pool.maxActive}"/>
+        <property name="maxIdle" value="${redis.pool.maxIdle}"/>
+        <property name="minIdle" value="${redis.pool.minIdle}"/>
+        <property name="maxWait" value="${redis.pool.maxWait}"/>
+        <property name="testOnBorrow" value="${redis.pool.testOnBorrow}"/>
+        <property name="testOnReturn" value="${redis.pool.testOnReturn}"/>
+    </bean>
+    <!-- redis的连接池pool，不是必选项：timeout/password  -->
+    <bean id = "jedisPool" class="redis.clients.jedis.JedisPool">
+        <constructor-arg index="0" ref="jedisPoolConfig"/>
+        <constructor-arg index="1" value="${redis.host}"/>
+        <constructor-arg index="2" value="${redis.port}" type="int"/>
+        <constructor-arg index="3" value="${redis.timeout}" type="int"/>
+        <constructor-arg index="4" value="${redis.password}"/>
+    </bean>
 ```
 
-- java 实际测试
-- [JedisUtilsTest.java](https://github.com/Kuangcp/Maven_SSM/blob/master/src/test/java/redis/JedisUtilTest.java)
+- java实际测试类[JedisUtilsTest.java](https://github.com/Kuangcp/Maven_SSM/blob/master/src/test/java/redis/JedisUtilTest.java)
 
 - jedis 使用后要disconnect释放连接,最新版本close就不用了，使用连接池就不用
 - jedis 的事务 使用exec释放事务
