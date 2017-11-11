@@ -28,6 +28,9 @@
     - [配置文件的定义](https://zhuanlan.zhihu.com/p/29191233)
 - [持续集成](http://www.ruanyifeng.com/blog/2015/09/continuous-integration.html)
 
+*****
+- [Springboot启动dubbo](https://coderknock.com/blog/2017/03/01/spring%20boot%E5%90%AF%E5%8A%A8dubbo.html)`等一系列文章`
+
 ### BuildTool
 - [Gradle构建多模块项目](http://blog.javachen.com/2015/01/07/build-multi-module-project-with-gradle.html)
 - [tig](http://blog.csdn.net/willwcw/article/details/46517331)

@@ -23,11 +23,32 @@
     --with-zlib=/home/kuang/zlib-1.2.11
 ```
 
-### docker安装
+### Docker安装并做反向代理
+`docker run --name youhuigo -d -p 80:80 -v /home/kuang/nginx/conf/:/etc/nginx/conf.d/:ro --link you:web nginx`
+```
+upstream youhui {
+  server 172.17.0.4:8888;
+}
 
+server {
+  listen 80;
+  server_name youhui;
 
+  location / {
+    proxy_set_header X-Real-IP $remote_addr;
+    proxy_set_header X-Forward-For $proxy_add_x_forwarded_for;
+    proxy_set_header Host $http_host;
+    proxy_set_header X-Nginx-Proxt true;
+
+    proxy_pass http://youhui;
+    proxy_redirect off;
+  }
+}
+```
+***************
 ## 配置使用
 ### 基础配置
+> [知乎专栏](https://zhuanlan.zhihu.com/p/24524057)
 
 - 修改默认配置文件 `/etc/nginx/nginx.conf`
 - 或者更好的就是在 `/etc/nginx/conf.d/`下新建 *.conf 文件，文件名任意
@@ -109,6 +130,8 @@ server {
 
 ```
 
+### 问题
+- 文件上传报错413 http{}中添加 `client_max_body_size 80M;`
 
 ## 学习使用
 - [实验楼课程](https://www.shiyanlou.com/courses/95)

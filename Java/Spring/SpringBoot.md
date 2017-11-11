@@ -27,12 +27,39 @@
 - [配置文件的使用](http://www.itwendao.com/article/detail/391009.html)
 - [Spring boot配置文件 application.properties](https://www.tuicool.com/articles/veUjQba)
 - [SpringBoot常用配置](https://my.oschina.net/wangnian/blog/666641)
-
 - [使用Gradle整合SpringBoot+Vue.js-开发调试与打包](https://segmentfault.com/a/1190000008968295)
+- [配置文件加密](https://yq.aliyun.com/articles/182720)
+
+### 多种配置文件并切换
+#### yml方式
+- 单文件`配置文件 application.yml`
+```yml
+	spring:
+      profiles:
+        active: development # 选用开发模式
+    ---
+    spring:
+      profiles: development
+      //一系列配置
+    ---
+    spring:
+      profiles: production
+      //一系列配置
+```
+- 或者 多文件放 `application-{profile}.yml`
+
+#### yml和Properties结合
+- 格式：`application-{profile}.properties`
+- 将上面的开发部分，发行部分的配置创建两个配置文件 `application-dev.properties` 和 `application-prod.properties`
+- 在主配置文件`application.yml`中指明
+```yml
+    spring:
+      profiles:
+        active: dev或者是prod
+```
 
 ************
 ## Web模块
-
 ### 上传下载文件
 > 第一种直接上传到应用的webroot或者resources目录下，第二种上传到数据库中，第三种使用ftp。
 

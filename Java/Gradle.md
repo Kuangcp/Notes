@@ -31,7 +31,7 @@
 ***************************************
 
 ## 第一个 build.gradle
-```
+```groovy
    task helloworld{
       doLast {
          printf 'Hello World!'
@@ -49,7 +49,7 @@
 #### 配置Gradle包管理器 Wrapper
 > 在使用IDE生成项目的时候，可以选择gradle的执行目录，可以选`gradle wrapper` 也可以选自己下载解压的完整包
 > 如果使用的不是这个wrapper，那么别人在下载项目后，运行gradle命令就要先安装gradle，使用wrapper更好
-```
+```groovy
    task wrapper(type: Wrapper){
       gradleVersion = '1.7'
       distributionUrl = '限定访问内网的URL'
@@ -69,7 +69,7 @@
 
 ### task 的依赖
 
-```
+```groovy
    version = '0.1-SNAPSHOT'
    task first {
    	println 'First Run !'
@@ -98,12 +98,12 @@
     - 如果 是`gradle -b tasksL.gradle -q printVersion` 就会只运行 printVersion 如果整个文件有编译错误也是不运行的
 
 ### 终结器 task
-```
+```Groovy
    task f<<{println 'first'}
    task s<<{println 'second'}
    f.finalizedBy s
-   当运行 gradle f 就会自动触发 s
-   如果gradle s 就和f没有任何关系了
+   //当运行 gradle f 就会自动触发 s
+   //如果gradle s 就和f没有任何关系了
 ```
 ### Groovy的POGO类管理配置文件上的版本号
 - [taskL.gradle](https://github.com/Kuangcp/LearnGradle/blob/master/demo/tasksL.gradle)
@@ -137,7 +137,7 @@
     - 真实的task 提供了用于配置行为的task类所暴露的属性值
 
 - 这个task就是做到了改配置文件，确保是RELEASE版本
-```
+```Groovy
 //先要实例化version属性对象的存在
    version = new ProjectVersion(0,1,true)
    //继承DefaultTask类型的自定义task类
@@ -187,12 +187,11 @@ task makeReleaseVersion(type:ReleaseVersionTask){
     destFile = file('version.properties')
     
 }
-
 ```
 - 书上写的不完全，调试要死人
 
 ## 声明task规则
-```
+```groovy
    //All used property must define and initial first
    version = new ProjectVersion(0,1,true)
    ext.versionFile = file('version.properties')
@@ -295,7 +294,7 @@ task makeReleaseVersion(type:ReleaseVersionTask){
     - Core
     - Website
     
-``` 
+``` groovy
     rootProject.name = 'RedisClient'
     include 'Core','Website'
 ``` 

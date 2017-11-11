@@ -25,19 +25,9 @@
         max-total: 100
         min-idle: 6
         max-wait-millis: 10000
-    # 上面是配置使用了DBCP数据连接池
-    #server:
-    #  port: 8443
-    #  ssl:
-    #    key-store: classpath:key/keystore.p12
-    #    key-store-password: kuang1104
-    #    keyStoreType: PKCS12
-    #    keyAlias: tomcat
-
     logging:
       level:
         root: info
-
     # 开发模式相关的配置
     ---
 
@@ -55,7 +45,6 @@
 
     # 发行时采用的配置信息
     ---
-
     spring:
       profiles: production
 
@@ -70,7 +59,7 @@
 ```
 
 - 也可以将上面的开发部分，上线部分的配置创建两个配置文件 `application-dev.properties` 和 `application-prod.properties`
-- 在主配置文件中指明
+- 在主配置文件`application.yml`中指明
 ```yml
     spring:
       profiles:
@@ -96,18 +85,12 @@
           base-path: /rest
     server:
       context-path: /myth
-    #  ssl:
-    #    key-store: classpath:static/keystore.p12
-    #    key-store-password: demo1429336
-    #    key-store-type: PKCS12
-    #    key-alias: tomcat 
 ```
 `application-dev.properties` 文件
 ```
     # Servlet contain
     server.port=8888
     server.session.timeout=300
-
 
     # Log Config
     logging.file=log/myth.log
@@ -144,7 +127,6 @@
 ##### 构建文件
 
 `build.gradle`
-
 ```groovy
 	buildscript {
 	ext {

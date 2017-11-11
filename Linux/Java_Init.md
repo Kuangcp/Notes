@@ -52,23 +52,20 @@ export PATH=${JAVA_HOME}/bin:$PATH
     Not found.
     Please install unzip on your system using your favourite package manager.
     Restart after installing unzip.
-
 ```
-
-- 遇到这种提示就是需要安装zip `sudo apt install zip` 然后重新执行命令
-- 执行脚本：`source "/home/kuang/.sdkman/bin/sdkman-init.sh"` 或者重启终端就可以使用 `sdk` 了
+- 遇到这种提示就是需要安装zip `sudo apt install zip unzip` 然后重新执行命令
+- 执行脚本：`source "/home/kuang/.sdkman/bin/sdkman-init.sh"` 或者重启终端就可以使用 `sdk`命令了
 - 查看sdkman 版本 ：`sdk version`
-- 查看可用版本 `sdk list java ` 
+- 查看可用版本 `sdk list java` 
 - 不指定版本就是安装最新版 `sdk install java` 
 - 指定默认版本 `sdk default java 8u131-zulu`
 - 验证是否成功：`java -version`
 
 *************
 ## 配置其他sdk
-
 - 下载压缩包然后解压到统一的文件夹下，建立一个软链接current在文件夹里，
 - 然后配置 .bashrc 或者 别名文件，这样的话，更改版本只要更改软链接就可以了
-```
+```sh
 SDK_DIR=/home/kcp/.sdkman/candidates
 GRADLE_HOME=$SDK_DIR/gradle/current
 GRAILS_HOME=$SDK_DIR/grails/current
@@ -84,6 +81,8 @@ export PATH=$PATH:$GRADLE_HOME/bin:$GRAILS_HOME/bin:$GROOVY_HOME/bin:$SCALA_HOME
 
 **************************************
 ## 配置Redis
+> [安装Redis](/Database/Redis.md)
+
 ### 如果要运行make test
 新建文件夹运行，然后就可以将该目录删除
 
@@ -95,12 +94,6 @@ export PATH=$PATH:$GRADLE_HOME/bin:$GRAILS_HOME/bin:$GROOVY_HOME/bin:$SCALA_HOME
     sudo make
     sudo make install
 ```
-
-### 绿色安装Redis
-> [安装Redis](/Database/Redis.md)
-
-*********************************
-> 系统装完后kcp用户的组： kcp lp sudo users netdev lpadmin scanner sambashare docker
 
 **************
 ## 问题以及解决方案：
