@@ -163,9 +163,13 @@ E36B85CC 84991F19 7575D828 470A92AB
 ## 【浏览器】
 ### FireFox
 - 分为 正式版， beta， Nightly
-- 如果要配置多个火狐在电脑上 终端中 `./firefox -P` 就会进入配置文件的编辑
+- 如果要配置多个火狐在电脑上 终端中 `./firefox -P` 就会进入配置文件的编辑（关闭所有火狐的情况下）
     - 新建一个就好了，之后就用新建的打开该火狐`./firefox -P name`
 - 如果要同时开多个火狐 加上`--no-remote`参数，但是我这个deepin不要诶，但是Ubuntu mint加上也没有用
+
+#### 必备插件
+- FoxyTab
+- New Tab Tools
 
 ### Chrome
 - 的确快，就是内存占用高

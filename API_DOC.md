@@ -49,7 +49,7 @@
 - [git](https://git-scm.com/docs) `git`
 - [tig](http://jonas.nitro.dk/tig/manual.html) `tig命令，git的加强版`
 - [VSCode编辑器快捷键文档](https://code.visualstudio.com/shortcuts/keyboard-shortcuts-linux.pdf)
-
+- [七牛云命令行工具文档](https://github.com/qiniu/qshell)
 ## Docker
 - [java的官方镜像](https://hub.docker.com/_/java/) `基于openjdk的，和oraclejdk相比资源翻番有点不能理解`
 
