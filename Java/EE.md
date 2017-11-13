@@ -20,7 +20,6 @@
 -  3、在第2步的代码段中加入如下标签内容并保存： 
  
 ``` xml
-
     <nature>org.eclipse.wst.common.project.facet.core.nature</nature>
     <nature>org.eclipse.wst.common.modulecore.ModuleCoreNature</nature> 
     <nature>org.eclipse.jem.workbench.JavaEMFNature</nature> 
@@ -29,6 +28,8 @@
 - 4、在eclipse的项目上点右键，刷新项目。 
 - 5、在项目上点右键，进入属性（properties） 
 - 6、在左侧列表项目中点击选择“Project Facets”，在右侧选择“Dynamic Web Module”和"Java"，点击OK保存即可。
+
+*******************
 ## 2.【几大框架简述】
 * MVC设计模式：
     * M
@@ -134,7 +135,6 @@
         <key column="外码"></key><!-- 外码 是必须的 -->
         <element column="号码" type="string"/>
     </set>
-
 ```
 * List集合:
 
@@ -144,7 +144,6 @@
             <index></index>
             <element></element>
     </list>
-
 ```
 * 查询列 属性：
 `<property name="" formula="(select sum() from 选修表 as u where u.id=id)"></property>`
@@ -631,7 +630,7 @@
     - 所以在启动这个初始化方法的时候，其实Spring的环境是还没有加载的，所以没有扫描，也就没有了自动注入，也就有了空指针异常
     - 所以要使用如下方法得到Spring的Context（上下文），获取bean，再操作
   
-```
+```java
     public void contextInitialized(ServletContextEvent event) { 
         ApplicationContext context = WebApplicationContextUtils.getWebApplicationContext(event.getServletContext());
         ....
@@ -641,7 +640,7 @@
 ### 8.3 注解方式：
 
 #### 8.3.1 Application.xml中配置头部分
-```
+```xml
     头部分要添加Context
     <?xml version="1.0" encoding="UTF-8"?>
     <beans xmlns="http://www.springframework.org/schema/beans"

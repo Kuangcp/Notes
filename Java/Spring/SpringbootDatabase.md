@@ -28,6 +28,31 @@
 - 4.jpa是声明特定方法的接口，让jpa来实现并自动注入，如果是没有的方法，就可以使用@Query注解
     - 默认使用的是HQL（HQL是基于类的所以使用的是类的名字不是表的名字），可以设置下使用原生SQL
 
+#### 映射关系
+`一对多`
+- 一方的配置是当前类的id，多方则按基本ER的规则来，直接采用的是外键的名字
+```java
+    // 一方
+public class TestOne{
+    @Id
+    private String testOneId;
+    @OneToMany
+    @JoinColumn(name = "testOneId")//这个名字可以重复，最终会有一个随机码生成
+    private Set<TestMany> testManySet;
+}
+    // 多方
+public class TestMany {    
+    @Id
+    private String testManyId;
+    @ManyToOne
+    @JoinColumn(name = "testOneId")
+    private TestOne testOneId;
+}
+```
+*************
+
+`多对多`
+
 #### Restful设计
 - 1.添加依赖
 
