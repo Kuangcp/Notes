@@ -62,6 +62,7 @@
 - [scrapy-redis](https://github.com/rmax/scrapy-redis) `爬虫框架结合redis使用`
 
 ## Linux
+- [Java程序员眼中的Linux](https://github.com/judasn/Linux-Tutorial)
 
 ## Database
 - [ssdb](https://github.com/ideawu/ssdb) `一个类似redis的键值对数据库`

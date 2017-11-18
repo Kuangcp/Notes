@@ -32,9 +32,7 @@
 ## redis配置文件
 - [配置文件讲解](https://github.com/Kuangcp/Configs/blob/master/Database/redis/explain_redis.conf)
 - [原始配置文件](https://github.com/Kuangcp/Configs/blob/master/Database/redis/redis.conf)
-- `[×]使用ing`[简化配置文件](https://github.com/Kuangcp/Configs/blob/master/Database/redis/simple_redis.conf) 
-
-
+- `使用ing`[简化配置文件](https://github.com/Kuangcp/Configs/blob/master/Database/redis/simple_redis.conf) 
 
 ********
 ## Redis命令行常规使用
@@ -162,7 +160,6 @@
 - ZLEXCOUNT
 - ZREMRANGEBYLEX
 
-
 ##### 散列 hash
 
 - HDEL
@@ -258,7 +255,6 @@ SLAVEOF
 SLOWLOG
 SYNC
 TIME
-
 
 *****************************
 	

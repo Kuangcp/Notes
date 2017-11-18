@@ -180,7 +180,8 @@ Options:
   - quit 退出
   - reopen 重新打开
   - reload 重载（修改配置文件常使用）
-
+- `-t` 测试配置
+  - 使用 指定配置文件，或者默认配置文件 进行测试
 
 ### 问题
 - 文件上传报错413 http{}中添加 `client_max_body_size 80M;`
