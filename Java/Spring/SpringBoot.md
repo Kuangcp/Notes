@@ -76,7 +76,25 @@
         return factory.createMultipartConfig();
     }
 ```
+### 错误页面跳转配置
+```java
+@Configuration
+public class MvcConfig extends WebMvcConfigurerAdapter {
 
+    @Bean
+    public EmbeddedServletContainerCustomizer containerCustomizer() {
+
+        return (container -> {
+            ErrorPage error401Page = new ErrorPage(HttpStatus.FORBIDDEN, "/403.html");
+            ErrorPage error404Page = new ErrorPage(HttpStatus.NOT_FOUND, "/404.html");
+            ErrorPage error500Page = new ErrorPage(HttpStatus.INTERNAL_SERVER_ERROR, "/500.html");
+            container.addErrorPages(error401Page, error404Page, error500Page);
+        });
+    }
+}
+```
+
+*******************
 ## HTTPS的配置
 > [参考博客](https://www.drissamri.be/blog/java/enable-https-in-spring-boot/)
 

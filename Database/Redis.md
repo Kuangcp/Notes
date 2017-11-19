@@ -9,7 +9,7 @@
 	- 客户端登录 `auth redis1104`
 
 ## Linux下的使用
-- 下载源码，执行`make`进行编译，复制src编译结果中的`redis-cli redis-server`就可以用了，redis-benchmark可选，测性能
+- 下载源码，执行`make`进行编译，编译完成后，复制src目录中的`redis-cli redis-server`就可以用了，redis-benchmark可选，测性能
     - 再复制下面的简化配置文件，或者使用源码中根目录下的配置文件自己配置下
     - [简化配置文件](https://raw.githubusercontent.com/Kuangcp/Configs/master/Database/redis/simple_redis.conf)
 - 再创建以下两个脚本就可以便捷的使用redis了

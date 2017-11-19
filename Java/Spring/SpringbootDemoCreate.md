@@ -87,7 +87,7 @@
       context-path: /myth
 ```
 `application-dev.properties` 文件
-```
+```properties
     # Servlet contain
     server.port=8888
     server.session.timeout=300
@@ -169,7 +169,7 @@
 	    testCompile('org.springframework.boot:spring-boot-starter-test')
     }
     sourceSets.main.java.srcDirs=['src/main/java','src/main/groovy']
-    配置main
+    //配置main
     jar{
 	    manifest{
 		    attributes 'Main-Class' : 'com.myth.MythApplication'
