@@ -73,6 +73,16 @@
 ## 创建一个alpine的ssh
 - [alpine-ssh](/Linux/Docker/alpine/Docerfile)
 
+***********
+## git服务器
+### 简易git-daemon
+- [直接使用git-daemon命令](/Linux/Git_Action.md)
+- 创建一个挂载了本地文件夹的git仓库，并关联到nginx，目录结构和上文一致`docker run --name git-repos -it -v /home/kuang/Repository/:/root/Repository/ --link mynginx:mynginx alpine`
+apk update
+apk add git git-daemon
+`git daemon --export-all --base-path="/root/Repository" --port=55443`
+
+
 **************
 ## Java
 - 基础镜像：

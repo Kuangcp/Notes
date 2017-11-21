@@ -191,6 +191,21 @@ E36B85CC 84991F19 7575D828 470A92AB
 `md文件 目录规则（页内跳转）`
 - `[](#标题名)` 即可，注意标题名不可有空格，`【Name】`看成Name 忽略这个符号
 
+**************
+### Gitea
+> [官网](https://gitea.io/zh-cn/) 
+
+- 使用docker安装比较简单
+    - 配置数据库，一定要是外网的。或者容器互联
+
+`/data/gitea/conf/app.ini` 要修改的配置，都是改成对外的配置
+```conf
+ROOT_URL         = http://git.kuangcp.top/
+DOMAIN           = git.kuangcp.top
+SSH_PORT         = 10022
+SSH_DOMAIN       = kuangcp.top
+```
+
 
 ### 百度开发平台
 ### 腾讯微信公众号

@@ -149,10 +149,10 @@
     - 导入： `docker import [-c |--change=[]] [-m | --message=[]] file|URL - [repository]:[tag]`
     - -c | --change=[] 选项在导入的同时执行对容器就行修改的Dockerfile指令。
 
-`docker create`
+##### docker create
 > [官方文档](https://docs.docker.com/engine/reference/commandline/create)
 
-`docker run `
+##### docker run 
 - 等价于 docker create 再 docker start
 - `docker run -d --name conrainer-name image-name touch a.md` ，如果镜像本地没有会自动pull
     - `--name` 配置容器名字
@@ -176,9 +176,9 @@
     - `-e TZ="Asia/Shanghai"` 指定时区，可以解决时间不一致
     - `-v /etc/localtime:/etc/localtime:ro` 设置容器的时钟和宿主机一致，不一定有用
     
-- `docker create` 是创建一个容器，不会运行，`docker run`是运行命令在一个新容器里
+> `docker create` 是创建一个容器，不会运行，`docker run`是运行命令在一个新容器里
 
-`docker exec`
+##### docker exec
 - 登录容器：
     - `docker exec -it 容器name或id bash `
     - `docker attach 容器id` 这个命令虽然简单，但是退出会话就自动关闭了容器
@@ -192,7 +192,7 @@
     - PID=${docker-pid 容器id}
     - nsenter --target $PID --mount --uts --ipc --net --pid
 
-`docker commit `
+##### docker commit
 - `docker commit 容器id 镜像name` 将容器为id的当前容器 保存为name镜像
 - 
 
@@ -237,6 +237,7 @@
 
 #### 容器互联
 > 让多个容器中应用快速安全交互的方式，特别注意这是双向互联的
+> 特别容易出现锁，一个没有启动，其他的都启动不了 尝试？`sudo service docker restart`
 
 - 例如: `创建一个MySQL容器供一个Ubuntu容器使用`
     - 创建MySQL容器 `docker run --name mysql2 -e MYSQL_ROOT_PASSWORD=ad -d mysql`

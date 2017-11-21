@@ -169,6 +169,8 @@
     - 原因是没有指定本地dev分支与远程origin/dev分支的链接，根据提示，设置dev和origin/dev的链接：`git branch --set-upstream dev origin/dev` master同理
 
 ### 【使用git daemon搭建本地简易Git_Server】
+> daemon可能要安装一下 `sudo apt install git-daemon`
+
 - 先创建一个目录结构
 - Repository
     - Project1

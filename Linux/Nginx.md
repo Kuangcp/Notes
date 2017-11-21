@@ -45,6 +45,7 @@ server {
   }
 }
 ```
+- [配置多域名反向代理](http://www.ttlsa.com/nginx/use-nginx-proxy/)
 
 ***************
 ## 配置使用
