@@ -1,9 +1,11 @@
 # Gradle
 ## 安装配置
+### SDKMAN方式
 - 先安装sdkman
 - 使用Bash运行`curl -s "https://get.sdkman.io" | bash`
 - `sdk install gradle` 即可安装
 
+### Chocolate
 - windows 上安装 chocolate
 - PowerShell中运行 `wr https://chocolatey.org/install.ps1 -UseBasicParsing | iex`
 - 若操作系统默认禁止执行脚本，执行一次`set-executionpolicy remotesigned`后脚本顺利执行
@@ -27,6 +29,16 @@
 - 守护进程会在空闲3小时后销毁
 - 手动关闭 `gadle --stop `
 - 构建时不采用守护进程 `--no--daemon`
+
+****************************
+## 构建依赖
+### dependency
+- 和Maven用的是同一种方式 三个基本坐标
+- 本地依赖 `compile files('lib/ojdbc-14.jar')` 相对的根目录是src同级目录
+
+### 常用插件
+- lombok
+    - `compile 'org.projectlombok:lombok:1.16.16'`
 
 ***************************************
 
@@ -65,9 +77,9 @@
 - 三个基本块 project task property， 使用DDD（领域驱动设计）
 - 一个真实的项目包含多个project 而 Project又包含多个task ，task之间通过依赖来确保执行顺序
 - build.gradle 和 pom.xml 作用是一致的，但是gradle可以使用一份源码 构建出多种想要的目标程序
-- gradle 也方便构建多模块
+- gradle 也方便构建多模块项目
 
-### task 的依赖
+### task的依赖关系
 
 ```groovy
    version = '0.1-SNAPSHOT'
