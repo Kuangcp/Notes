@@ -19,6 +19,7 @@
 - [ngrok](https://ngrok.com/)`内网映射 ngrok http 8080`
 - [gogs](https://github.com/gogits/gogs) `自建git服务器`
 - [gitea](https://github.com/go-gitea/gitea) `gogs加强`
+    - [docker安装](https://docs.gitea.io/zh-cn/install-with-docker/)
 
 ### 文档处理
 - [pandoc](https://github.com/jgm/pandoc) `一个文档格式转换的软件，markdown docx`
