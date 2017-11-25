@@ -39,6 +39,9 @@
 
 ******************
 ## 【常用工具】
+### xclip
+- `cat README.md | xclip -sel clip` 将文件复制到剪贴板
+
 ### Autojump
 > 统计cd 目录，方便目录跳转
 
