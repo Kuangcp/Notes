@@ -3,7 +3,9 @@
 ## 【国内的资源镜像站】
 - [网易](http://mirrors.163.com/)`下载系统是 *-cd`
 
+************************
 ## 【包管理】
+
 ### 使用sdkman
 > 但是总会莫名其妙的冒出问题，sdk命令掉线始终连不上网，终端打开巨慢
 
@@ -40,8 +42,14 @@
 ******************
 ## 【常用工具】
 ### xclip
+> 便捷的文本复制
 - `cat README.md | xclip -sel clip` 将文件复制到剪贴板
 
+***********
+### zssh
+> 便捷的文件传输
+
+********
 ### Autojump
 > 统计cd 目录，方便目录跳转
 
@@ -53,13 +61,18 @@
     - `jco c` 打开子目录
 - `ls -l ~/.local/share/autojump/` 统计信息的目录，清除就相当于卸载重装了
 
+********
 ### asciinema
-- 终端录制工具 执行 `asciinema`或`asciinema rec` 即可开始录制
+> 终端录制工具
+
+- 执行 `asciinema`或`asciinema rec` 即可开始录制
 - 要注册就运行 `asciinema auth` 进入输出的网址，填邮箱和名字即可（每次登录都要这样。或者使用邮件来确认，麻烦ing）
 
+********
 ### qgit
 - git查看仓库的图形化界面
 
+********
 ### tmux
 > 好用的管理会话的软件
 
@@ -69,12 +82,14 @@
 - 断开会话但是后台运行 `ctrl-b d`
 - 连接会话 `tmux a -t test`
 
+********
 ### convert
 - [参考博客](http://blog.csdn.net/mybelief321/article/details/9969949)
 - 将图片转换成指定大小 这是保持比例的 `convert -resize 600X600 src.jpg dst.jpg` 中间是字母X
 - 如果不保持比例，就在宽高后加上感叹号 
 - 可以只指定高度，那么宽度会等比例缩放 `convert -resize 400 src.jpg dst.jpg`
 
+********
 ### .git-prompt.sh
 > Bash下显示当前分支
 
@@ -100,13 +115,16 @@ PROMPT_COMMAND="set_bash_prompt; $PROMPT_COMMAND"
 ### Ghex
 - 十六进制文件编辑器
 
+************
 ### Kate/KWrite(Kate的轻量版)
 - [安装markdown预览插件](https://github.com/antonizoon/kate-markdown)
 - 码Python也挺方便，也有常用快捷键，自动提示，终端整合，而且是自动切目录
 
+************
 ### Geany
 - 码C 编译方便 有Ctag辅助
 
+************
 ### Sublime 
 - 如果出现小bug，就直接删除 ～.config 下的 sublime文件夹注意注册证书拷出来
 - 还是挺好的，小巧，但是中文硬伤 用来阅读代码比较合适
@@ -134,21 +152,32 @@ E36B85CC 84991F19 7575D828 470A92AB
 - 主题安装 Boxy Theme 以及  A File Icon 就能切换多种主题了 [参考博客](https://www.zhihu.com/question/46266742)
 - [sublime的常用快捷键](http://www.cnblogs.com/kristen-zou/p/7641158.html)
 
+************
 ### VSCode
 - 码笔记，码Python 比较方便，目录树，预览，整合终端
+- [快捷键](https://code.visualstudio.com/shortcuts/keyboard-shortcuts-linux.pdf)
+    - C P 快速打开
+    - C S P 命令模式
+    - Ctrl+K Ctrl+S 设置快捷键 Keyboard Shortcuts
 
+************
 ### Gedit
 - 安装markdown预览插件 
 
+************
 ### Moediter Typora CuteMarkEd 
 - 书写单个md文件方便，美观，没有目录树是硬伤
 
+************
 ### Vi/Vim
 > [Vim 学习笔记](/Linux/vim.md)
 
+************
 ### Nano
 - 模式没有vi系列复杂，使用简单，安装占用小
 
+
+************
 ### fte-terminal
 - 文件树浏览，快速打开文件进行修改是比较方便的
 
@@ -170,13 +199,16 @@ E36B85CC 84991F19 7575D828 470A92AB
     - 新建一个就好了，之后就用新建的打开该火狐`./firefox -P name`
 - 如果要同时开多个火狐 加上`--no-remote`参数，但是我这个deepin不要诶，但是Ubuntu mint加上也没有用
 
+************
 #### 必备插件
 - FoxyTab
 - New Tab Tools
 
+************
 ### Chrome
 - 的确快，就是内存占用高
 
+************
 ### Vivaldi
 - 感觉采用的是chrome内核，做的更漂亮了，而且是内置了很多常用插件，的确很方便，相比于chrome更符合国内使用
 

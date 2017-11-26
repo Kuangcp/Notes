@@ -55,6 +55,14 @@
 
 
 ***************
+## 操作系统
+### Windows
+
+### Linux
+- [Ubuntu放弃战斗, Linux桌面的悲哀](http://www.jianshu.com/p/86dd6e34ce91)`deepin王总`
+- [一些工具软件](https://bbs.deepin.org/forum.php?mod=viewthread&tid=134241&extra=)
+
+***************
 ## Web性能
 - [ab: Apache Benchmark 的使用的个人浅薄经验](https://ruby-china.org/topics/13870)
 - [1M带宽的服务器并发问题](http://www.cnblogs.com/zikai/p/4971426.html)

@@ -1,3 +1,8 @@
+# 传统部署
+- 打包成jar或者war，下载JDK或者JRE 绿色解压即用，将jar/war文件复制到bin目录下
+    - 后台运行 `start /b java -jar fileName`
+
+
 # 持续集成
 > 使用jenkins 结合gradle docker ，一键上传代码之后自动构建得到镜像
 

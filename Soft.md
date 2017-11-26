@@ -53,6 +53,7 @@
 # 【常用的网站】
 ## 学习网站
 ### Linux
+- [IBM社区](https://www.ibm.com/developerworks/cn/)
 - [杭电ACM题库](http://acm.hdu.edu.cn/listproblem.php?vol=1)
 - [linux命令大全](http://man.linuxde.net/)
 - [RUNOOB.COM](http://www.runoob.com) `各种技术学习 文档资源`
