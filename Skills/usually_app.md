@@ -107,6 +107,12 @@ PROMPT_COMMAND="set_bash_prompt; $PROMPT_COMMAND"
 - 断开会话但是后台运行 `ctrl-b d`
 - 连接会话 `tmux a -t test`
 
+- `tmux new -s myth`  新建一个窗口 
+- `Ctrl B`  再 `C`  新建一个窗口 `Ctrl B` `数字键`切换指定窗口
+- 连接远程服务器，运行一个阻塞命令
+    - `Ctrl B` `D` 可以合上电脑（休眠）
+    - `tmux ls` 显示所有 `tmux a -t myth` 连上指定名字的就继续了
+
 ********
 ## 其他工具
 ### qgit

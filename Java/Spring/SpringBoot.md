@@ -29,6 +29,7 @@
 - [SpringBoot常用配置](https://my.oschina.net/wangnian/blog/666641)
 - [使用Gradle整合SpringBoot+Vue.js-开发调试与打包](https://segmentfault.com/a/1190000008968295)
 - [配置文件加密](https://yq.aliyun.com/articles/182720)
+- [自定义配置文件](http://www.cnblogs.com/java-zhao/p/5542154.html)`将应用配置外置并注入成bean`
 
 ### 多种配置文件并切换
 #### yml方式
@@ -80,10 +81,8 @@
 ```java
 @Configuration
 public class MvcConfig extends WebMvcConfigurerAdapter {
-
     @Bean
     public EmbeddedServletContainerCustomizer containerCustomizer() {
-
         return (container -> {
             ErrorPage error401Page = new ErrorPage(HttpStatus.FORBIDDEN, "/403.html");
             ErrorPage error404Page = new ErrorPage(HttpStatus.NOT_FOUND, "/404.html");

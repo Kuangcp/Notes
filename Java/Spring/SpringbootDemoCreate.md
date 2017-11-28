@@ -186,7 +186,6 @@
 `如果要放在tomcat等web容器中运行，就要和Application同级目录下新建该类`
 ```java
     public class ServletInitializer extends SpringBootServletInitializer {
-
         @Override
         protected SpringApplicationBuilder configure(SpringApplicationBuilder application) {
             return application.sources(DemoApplication.class);
