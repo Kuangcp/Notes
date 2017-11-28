@@ -40,7 +40,16 @@
 - `sudo ./install.sh` #注：请勿sh install.sh或者bash install.sh这样执行
 
 ******************
-## 【常用工具】
+# 【常用工具】
+
+## 网络工具
+### nmap
+> 端口扫描 [参考博客](http://aaaxiang000.blog.163.com/blog/static/2063491220113284325531/)
+
+- 扫描`nmap -sP IP`
+
+**********
+## 终端工具
 ### xclip
 > 便捷的文本复制
 - `cat README.md | xclip -sel clip` 将文件复制到剪贴板
@@ -62,34 +71,6 @@
 - `ls -l ~/.local/share/autojump/` 统计信息的目录，清除就相当于卸载重装了
 
 ********
-### asciinema
-> 终端录制工具
-
-- 执行 `asciinema`或`asciinema rec` 即可开始录制
-- 要注册就运行 `asciinema auth` 进入输出的网址，填邮箱和名字即可（每次登录都要这样。或者使用邮件来确认，麻烦ing）
-
-********
-### qgit
-- git查看仓库的图形化界面
-
-********
-### tmux
-> 好用的管理会话的软件
-
-- [tmux 入门](http://blog.jobbole.com/87278/)
-`入门使用`
-- 新建会话 `tmux new -s test`
-- 断开会话但是后台运行 `ctrl-b d`
-- 连接会话 `tmux a -t test`
-
-********
-### convert
-- [参考博客](http://blog.csdn.net/mybelief321/article/details/9969949)
-- 将图片转换成指定大小 这是保持比例的 `convert -resize 600X600 src.jpg dst.jpg` 中间是字母X
-- 如果不保持比例，就在宽高后加上感叹号 
-- 可以只指定高度，那么宽度会等比例缩放 `convert -resize 400 src.jpg dst.jpg`
-
-********
 ### .git-prompt.sh
 > Bash下显示当前分支
 
@@ -109,6 +90,35 @@ set_bash_prompt(){
 }
 PROMPT_COMMAND="set_bash_prompt; $PROMPT_COMMAND"
 ```
+********
+### asciinema
+> 终端录制工具
+
+- 执行 `asciinema`或`asciinema rec` 即可开始录制
+- 要注册就运行 `asciinema auth` 进入输出的网址，填邮箱和名字即可（每次登录都要这样。或者使用邮件来确认，麻烦ing）
+
+********
+### tmux
+> 好用的管理会话的软件
+
+- [tmux 入门](http://blog.jobbole.com/87278/)
+`入门使用`
+- 新建会话 `tmux new -s test`
+- 断开会话但是后台运行 `ctrl-b d`
+- 连接会话 `tmux a -t test`
+
+********
+## 其他工具
+### qgit
+- git查看仓库的图形化界面
+
+********
+### convert
+- [参考博客](http://blog.csdn.net/mybelief321/article/details/9969949)
+- 将图片转换成指定大小 这是保持比例的 `convert -resize 600X600 src.jpg dst.jpg` 中间是字母X
+- 如果不保持比例，就在宽高后加上感叹号 
+- 可以只指定高度，那么宽度会等比例缩放 `convert -resize 400 src.jpg dst.jpg`
+
 
 **************************************
 ## 【文本编辑器】

@@ -141,6 +141,7 @@
     - -l 删除容器的连接，但是保留容器
     - -v 删除容器挂载的数据卷
     - 删除所有容器：`docker rm ${docker -a -q}`
+    - 删除所有容器和挂载的目录：`docker system prune --volumes -f`
 - 容器日志(终端所有输入输出)：`docker logs 容器name或id`
 - 重命名 ： `docker rename origin new`
 
