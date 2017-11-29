@@ -39,6 +39,10 @@
 - [zheng](https://github.com/shuzheng/zheng) `SSM框架整合的一个丰富解决方案`
 - [Java后台管理](https://github.com/chwshuang/web)`集成Spring4.x+SpringMVC+Mybatis`
 
+
+### BuildTool
+- [sbt](https://github.com/sbt/sbt)
+
 ### Tool
 - [lanproxy](https://github.com/ffay/lanproxy) `将局域网个人电脑、服务器代理到公网的内网穿透工具`
 - [weixin-java-tools](https://github.com/chanjarster/weixin-java-tools) `微信的java工具项目 包含企业号 微信支付 小程序`

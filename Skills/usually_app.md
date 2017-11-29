@@ -58,6 +58,8 @@
 ### zssh
 > 便捷的文件传输
 
+- [参考博客](http://blog.csdn.net/ygm_linux/article/details/32321729)
+
 ********
 ### Autojump
 > 统计cd 目录，方便目录跳转
