@@ -1,17 +1,19 @@
 ## 基于Git进行团队开发
-> Github gitee gitlab bitbucket 等各大平台都是这样一种模式，个人和个人开发者之间是并行master，只适合偶尔开发提交一些代码<br/>
+> Github gitee gitlab bitbucket 等各大平台都是这样一种模式: <br/>
+> 个人和个人开发者之间是并行master，只适合偶尔开发提交一些代码<br/>
 > 组织就是适合给多个人，等同的稳定开发时，分支就会比较明确，这个笔记就是记录组织中git的使用
 
 ### 介绍关于git在多人协作的使用
 > [原博客](http://nvie.com/posts/a-successful-git-branching-model/)
 
 `规范的分支图`
-[规范的分支图](https://raw.githubusercontent.com/Kuangcp/ImageRepos/master/Tech/Git/git-team-model.png)
+![规范的分支图](https://raw.githubusercontent.com/Kuangcp/ImageRepos/master/Tech/Git/git-team-model.png)
 
 `主要的分支`
 - master 稳定发行分支
-- dev 开发分支
-`开发上的分支`
+- dev 开发主分支
+
+`开发上的的分支`
 - fixbug
 - feature
 - 
@@ -20,7 +22,6 @@
 - 指定本地开发分支和远程的绑定关系 `git branch --set-upstream dev origin/dev` master同理
 
 - [分支图复杂的一个项目](https://github.com/Netflix/eureka/network) `只是演示分支的复杂度`
-
 
    
 *******************

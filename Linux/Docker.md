@@ -105,6 +105,7 @@
     - 这个需要SSL证书，所以要使用要么修改 docker daemon启动参数 要么手动生成SSL证书，或者申请真正SSL证书
         - 添加参数 DOCKER_OPTS="--insecure-registry ip:port" 重启docker服务
 
+*********************
 ### 【基础命令】
 - 登录hub.docker ：`docker login ` 或者 `docker login -u username -p password`
 - 登录时速云：`sudo docker login index.tenxcloud.com`
@@ -129,7 +130,6 @@
 - 查看所有容器的状态：`docker stats` 能看到正在运行的容器内存 cpu io net等信息
     - `-a` 所有容器
     - `--no-stream` 不阻塞标准输出流，只输出一次信息
-
 
 - 停止容器：`docker stop 容器name`
 - 重启容器：`docker restart 容器name`
@@ -195,8 +195,9 @@
 
 ##### docker commit
 - `docker commit 容器id 镜像name` 将容器为id的当前容器 保存为name镜像
-- 
 
+
+*********************
 ### 数据卷
 - 数据卷是一个可供容器使用的特殊目录，它将宿主机操作系统目录映射进容器 类似于 mount操作
     - 数据卷可以在容器之间共享重用
@@ -224,6 +225,7 @@
     - 解压当前目录的tar文件到数据卷容器中 `docker run --volumes-from reuse -v $(pwd):/backup busybox tar xvf /backup/backup.tar`
     - 这个就是实现了将本地的归档数据放到指定的容器内，如果要从数据卷容器中恢复到别的容器就只要挂载对应的数据卷容器然后进目录直接解压即可
 
+**************************
 ### 端口映射
 - 当不指定对应的参数容器默认不开放任何端口给外部，可以使用 -P -p 参数来开放
     - -P 随机映射一个 49000-49900 的端口到容器开放的端口
@@ -252,7 +254,7 @@
     - 构建Springboot应用镜像，构建应用容器 开放8888端口
     - 新建nginx容器：`docker run --name youhuigo -d -p 80:80 -v /home/kuang/nginx/conf/:/etc/nginx/conf.d/:ro --link you:web nginx`
 - 配置文件：`一样的cat /etc/hosts 查看容器的IP`
-```
+```conf
 upstream youhui {
   server 172.17.0.4:8888;
 }
@@ -273,6 +275,7 @@ server {
 }
 ```
 
+***********************
 ### Dockerfile
 >[Dockerfile文件学习](/Linux/Docker_file.md)
 

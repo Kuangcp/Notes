@@ -116,7 +116,7 @@ public class TestMany {
 ### JPA_NoSQL
 #### JPA关于redis的使用
 `配置连接信息`
-```
+```conf
     # REDIS (RedisProperties)
     # Redis数据库索引（默认为0）
     spring.redis.database=0
@@ -187,5 +187,3 @@ public class TestMany {
 - 设置超时时间
     - `redisTemplate.expire("max",tempTime,TimeUnit.SECONDS);`
 
-
-#### 注意
