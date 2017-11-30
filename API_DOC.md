@@ -1,3 +1,24 @@
+# 【常用的网站】
+## 学习网站
+### Linux
+- [IBM社区](https://www.ibm.com/developerworks/cn/)
+- [杭电ACM题库](http://acm.hdu.edu.cn/listproblem.php?vol=1)
+- [linux命令大全](http://man.linuxde.net/)
+- [RUNOOB.COM](http://www.runoob.com) `各种技术学习 文档资源`
+- [asciinema](https://asciinema.org) `终端屏幕录制和分享网`
+
+### Go
+- [go](http://www.runoob.com/go/go-tutorial.html)
+- [在线编译执行 学习go](http://www.vaikan.com/go/a-tour-of-go/#1) `在线编辑运行`
+
+### 前端
+- [bootcdn](http://www.bootcdn.cn/) `常用js css的cdn`
+- [填充图](https://placeholder.com/)
+
+### web站点分析
+- [网站性能分析](http://pagespeed.webkaka.com/)`十分详细`
+
+********************************
 # 【API】
 > 各种语言以及平台的在线API
 
@@ -17,7 +38,6 @@
 ## Linux
 
 ## DataBase
-
 
 
 **************************************************************

@@ -306,7 +306,7 @@ nameserver 8.8.8.4
 - 修改配置文件 `sudo chmod a+w /etc/vsftpd.conf`
 
 `/etc/vsftpd.conf `
-```
+```conf
     # 限制用户对主目录以外目录访问
     chroot_local_user=YES
     # 指定一个 userlist 存放允许访问 ftp 的用户列表
@@ -379,7 +379,7 @@ nameserver 8.8.8.4
 - 
 ##### 问题
 - `ssh_exchange_identification: Connection closed by remote host` 问题：
-```
+```sh
 echo "PermitRootLogin without-password" >> /etc/ssh/sshd_config ;\
 echo "PermitRootLogin yes" >> /etc/ssh/sshd_config ;\
 ```
@@ -387,7 +387,7 @@ echo "PermitRootLogin yes" >> /etc/ssh/sshd_config ;\
 
 ##### 使用别名登录
 `vim ~/.ssh/config`
-```    
+```
     Host aliyun
         HostName www.ttlsa.com
         Port 22
@@ -417,7 +417,7 @@ X11DisplayOffset 10
 - `ssh -X -p port user@host` 登录即可
 
 ## ssh登录并执行一系列命令
-```
+```sh
 ssh user@host 'cmd \
     && cmd \
     && cmd \
@@ -436,7 +436,7 @@ ssh user@host 'cmd \
 
 `客户端`
 - `sudo vim /etc/ss.json` 
-```
+```json
     { 
 	    "server":"127.0.0.1",
 	    "server_port":443,

@@ -102,8 +102,8 @@
         * [ ResponseCode ](./Skills/View/ResponseCode.md)
     * 【 Skills/Base 】
         * [ Arithmetic ](./Skills/Base/Arithmetic.md)
+        * [ Config ](./Skills/Base/Config.md)
     * [ Web安全 ](./Skills/Web安全.md)
-    * [ usually_app ](./Skills/usually_app.md)
     * [ 正则表达式学习 ](./Skills/正则表达式学习.md)
     * [ 编程感想 ](./Skills/编程感想.md)
     * [ 软件使用手册 ](./Skills/软件使用手册.md)
