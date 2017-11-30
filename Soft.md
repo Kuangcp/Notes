@@ -2,7 +2,12 @@
 
 ## 【国内的资源镜像站】
 - [网易](http://mirrors.163.com/)`下载系统是 *-cd 的文件`
+- [清华大学](https://mirrors.tuna.tsinghua.edu.cn/)
 - [中国科学技术大学](mirrors.ustc.edu.cn)`各大Linux发行版以及一些开源软件`
+- [阿里云](https://mirrors.aliyun.com/)
+- [Linux运维派](https://mirrors-wan.geekpie.org/)
+- [sourceforge](https://sourceforge.net/directory/system-administration/osdistro/livecd/os:linux/)`Linux发行版列表`
+
 
 ## IDE
 - [IDEA](https://www.jetbrains.com/idea/)
@@ -23,7 +28,10 @@
 - [Gradle官方下载地址](http://services.gradle.org/distributions/)
 - [git](https://git-scm.com/) `最好用的vcs`
 - [genymotion](https://www.genymotion.com/) `安卓模拟器`
-- [ngrok](https://ngrok.com/)`内网映射 ngrok http 8080`
+- [ngrok](https://ngrok.com/)`随机域名到穿透到内网 eg: ngrok http 8080`
+- [frp](https://diannaobos.com/frp/)`自己服务器外网到内网穿透`
+    - [下载地址](https://file.diannaobos.com/frp_releases/)[使用帮助](https://diannaobos.com/post/470.html)
+
 - [gogs](https://github.com/gogits/gogs) `自建git服务器`
 - [gitea](https://github.com/go-gitea/gitea) `gogs加强`
     - [docker安装](https://docs.gitea.io/zh-cn/install-with-docker/)

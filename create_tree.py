@@ -15,7 +15,6 @@ flag_show=False
 flag_append=False
 result = []
 
-
 def show_help():
     print("使用: python3 create_tree.py [-s] [-a] [-h] ")
     print("参数说明: \n -s     : 控制台显示生成的目录\n -a     : 生成的目录追加到文件中去\n -h     : 帮助")
