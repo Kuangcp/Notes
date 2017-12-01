@@ -1,9 +1,18 @@
 # Vim 
 > 学习曲线很高，但是学会熟练使用后就效率很高
 
+`vim输出的信息`
+```
+     系统 vimrc 文件: "$VIM/vimrc"
+     用户 vimrc 文件: "$HOME/.vimrc"
+ 第二用户 vimrc 文件: "~/.vim/vimrc"
+      用户 exrc 文件: "$HOME/.exrc"
+       defaults file: "$VIMRUNTIME/defaults.vim"
+         $VIM 预设值: "/usr/share/vim"
+```
 ## 基本配置
 - 在文件 全局：`/etc/vim/vimrc` 先备份一下 `sudo cp /etc/vim/vimrc /etc/vim/vimrc.bak`
-	- 或者当前用户：`~/.vimrc` 中添加如下内容就差不多了（但是高亮不见了）
+	- 或者当前用户：`~/.vimrc` 中添加如下内容就差不多了（但是文件高亮不见了）
 ```
 set showcmd		" Show (partial) command in status line.
 set autowrite		" Automatically save before commands like :next and :make
@@ -20,7 +29,6 @@ set guioptions=T
 set ruler
 set nohls
 set backspace=2
-
 imap jj <Esc>
 ```
 
@@ -80,5 +88,4 @@ imap jj <Esc>
 - `:q` 未修改的情况下退出
 - `:q!` 放弃所有修改，退出
 - `wq` `x` 先保存后退出
-
 

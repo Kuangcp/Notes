@@ -16,3 +16,7 @@
 ### Deepin
 
 - [FAQ](https://bbs.deepin.org/forum.php?mod=viewthread&tid=146921&extra=page%3D1)
+- fcitx单核满载:三种
+    - 杀掉，fcitx -r
+    - 先把进程杀掉再fcitx-autostart &
+    - fcitx再fcitx-qimpanel 
