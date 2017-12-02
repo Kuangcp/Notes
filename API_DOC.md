@@ -1,4 +1,11 @@
 # 【常用的网站】
+
+******************
+## 特别网站
+- [测试你当前连接用的是ipv4还是ipv6](http://www.kame.net/)
+
+
+******************
 ## 学习网站
 ### Linux
 - [IBM社区](https://www.ibm.com/developerworks/cn/)

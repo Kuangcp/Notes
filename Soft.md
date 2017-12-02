@@ -8,14 +8,14 @@
 - [Linux运维派](https://mirrors-wan.geekpie.org/)
 - [sourceforge](https://sourceforge.net/directory/system-administration/osdistro/livecd/os:linux/)`Linux发行版列表`
 
-
+*******************
 ## IDE
 - [IDEA](https://www.jetbrains.com/idea/)
 - [Eclipse](http://www.eclipse.org/)
     - [中科大eclipse镜像源](http://mirrors.ustc.edu.cn/eclipse/technology/epp/downloads/release/)
 
+**************
 ## SDK
-
 - [Springboot下载地址](https://github.com/spring-projects/spring-boot/releases)
 - [openjdk](http://openjdk.java.net/)
 - [oracle-jdk](http://www.oracle.com/technetwork/cn/java/javase/downloads/index.html)
@@ -24,6 +24,8 @@
 ## Plugin
 - [gradle-tomcat-plugin](https://github.com/bmuschko/gradle-tomcat-plugin)`gradle中tomcat插件`
 
+
+************
 ## Tools
 - [Gradle官方下载地址](http://services.gradle.org/distributions/)
 - [git](https://git-scm.com/) `最好用的vcs`
@@ -56,6 +58,8 @@
 
 ### 响应式
 - [vertx](http://vertx.io/)`构建响应式应用程序`
+
+
 *****
 ## Database
 - [sssdb](https://github.com/ideawu/ssdb) `键值对数据库`
@@ -64,7 +68,6 @@
 
 ## 前端
 - [Framework7](http://framework7.cn/)`开发类似ios7的web应用（HTML）`
-
 
 
 ************************

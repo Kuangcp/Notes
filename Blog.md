@@ -5,10 +5,16 @@
 
 ***************
 # 【Blog】
+
+## NetWork
+- [使用清华的IPV6](http://ju.outofmemory.cn/entry/154398)
+
+**************
 ## 算法
 
 ### 匹配算法
 - [字符串相似度匹配](http://zjwyhll.blog.163.com/blog/static/75149781201281142630851/)
+
 
 ************
 ## Java
@@ -62,6 +68,7 @@
 ### Linux
 - [Ubuntu放弃战斗, Linux桌面的悲哀](http://www.jianshu.com/p/86dd6e34ce91)`deepin王总`
 - [一些工具软件](https://bbs.deepin.org/forum.php?mod=viewthread&tid=134241&extra=)
+
 
 ***************
 ## Web性能
