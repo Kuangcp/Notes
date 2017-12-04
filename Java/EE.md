@@ -203,7 +203,6 @@
         <key column="cid"></key>
         <many-to-many class="Student" column="stu_id"></many-to-many>
     </set>
-
 ```
 #### 4.2.2 课程方 配置
 
@@ -212,7 +211,6 @@
         <key column="stu_id"></key>
         <many-to-many class="Course" column="cid"></many-to-many>
     </set>
-
 ```
 
 ***********************************
