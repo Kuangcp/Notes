@@ -1,21 +1,21 @@
-## 数据库模块
+# 数据库模块
 > 主要是采用的JPA，极大的缩减了代码量，但是要注意不要过度依赖框架，丧失了基本的能力
 
+## SQL
 ### 连接池
-
 #### c3p0
 - [参考博客](http://www.cnblogs.com/520playboy/p/7526252.html)
 
 #### druid
 - [druid连接池的配置](http://makaidong.com/L_Sail/1/40930_11573921.html)
 
-
+*******************
 ### JPA_SQL
 > 默认是tomcat-jdbc连接池
 
 #### Mysql
 - 1.引入依赖
-```
+```groovy
 	compile('org.springframework.boot:spring-boot-starter-data-jpa')
 	compile('org.springframework.boot:spring-boot-starter-jdbc')
 	runtime('mysql:mysql-connector-java')
@@ -53,7 +53,8 @@ public class TestMany {
 
 `多对多`
 
-#### Restful设计
+*************
+### Restful设计
 - 1.添加依赖
 
 ```xml
@@ -89,7 +90,6 @@ public class TestMany {
 ```
 
 - 4.启动应用，控制台有如下输出
-
 ![输出](https://raw.githubusercontent.com/Kuangcp/ImageRepos/master/Tech/Java/Spring/output.png)
 
 - 所有路径的使用方法：
@@ -99,22 +99,24 @@ public class TestMany {
     - `DELETE` 删除 `/repo/id` json数据 成功204 失败404
     - `PUT` 更新 `/repo/id` json 更新成功200 没有该id就插入201 失败404（使用主键自动增长就不会遇到404）
 
-##### 【特别注意】
+#### 【特别注意】
 - rest得到的数据没有id
     - 添加配置 `config.exposeIdsFor(Goods.class);` 即可查看到id [参考博客](http://tommyziegler.com/how-to-expose-the-resourceid-with-spring-data-rest/)
 
-#### Jpa数据分页
+### Jpa数据分页
 > [参考博客](https://www.tianmaying.com/tutorial/spring-jpa-page-sort)
 
 - 分页 page 从0开始 size是个数 sort可以不需要（如果本来就是id排序就没必要了） 
     - 原理就是 预编译SQL然后查询总数，然后再执行 必须有两条SQL执行
 - 查询的结果不包含实体的id属性
 
-#### 数据库上的事务支持
+### 数据库上的事务支持
 - JPA对所有默认方法都开启了事务支持，查询类事务默认启用readOnly=true
 
+****************
+## NoSQL
 ### JPA_NoSQL
-#### JPA关于redis的使用
+#### JPA关于Redis的使用
 `配置连接信息`
 ```conf
     # REDIS (RedisProperties)

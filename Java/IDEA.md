@@ -6,14 +6,18 @@
 - 一个项目一个空间也是可以的，就是跨项目查看代码会有点麻烦，而且每个项目的配置文件都是不一样的，同样的配置可能要配置很多遍
 
 ## 常用技巧
-### 导出为可运行的JAR包
+### 导出为可运行的JAR包(普通Java项目)
 - File -> project structure ->artifact 里面设置好 引入的库，设置Main类，引用的jar包的相对classpath
 - Build artifact -> Build
+- Maven或者Gradle的话直接就能得到，不过也要配置一下main
 
 ### Springboot热加载
 - Ctrl Shift A 快捷搜索 automatically 在Build下的 Compiler，打开自动构建
 - Ctrl Shift A 快捷搜索 Registry 进入后找到 compiler.automake.allow.when.app.running 勾选
 - 加入devtools依赖
+
+### 个人IDEA配置
+- 字体Fira Code Retina 14 0.9
 
 ## IDEA快捷键
 ### 使用类eclipse快捷键

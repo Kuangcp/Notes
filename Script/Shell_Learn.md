@@ -33,7 +33,7 @@ done
 
 ************
 ### 字符串
-- [字符串截取](https://www.2cto.com/os/201305/208219.html)
+- [字符串截取](https://www.2cto.com/os/201305/208219.html) | [Shell正则](http://man.linuxde.net/docs/shell_regex.html)
 
 `获取命令的输出`
 - 使用  保存结果的变量名=`需要执行的linux命令` 这种方式来获取命令的输出时，注意的情况总结如下：

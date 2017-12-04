@@ -68,15 +68,15 @@
 - [Springboot上传文件](http://www.cnblogs.com/studyCenter/p/6665171.html)
 - 上传文件有大小限制，使用如下方法进行配置 [参考博客](http://makaidong.com/studyDetail/11882_45833.html)
 ```java
-    @Bean
-    public MultipartConfigElement multipartConfigElement() {
-        MultipartConfigFactory factory = new MultipartConfigFactory();
-        //单个文件最大
-        factory.setMaxFileSize("80MB"); //KB,MB
-        /// 设置总上传数据总大小
-        factory.setMaxRequestSize("102400KB");
-        return factory.createMultipartConfig();
-    }
+@Bean
+public MultipartConfigElement multipartConfigElement() {
+    MultipartConfigFactory factory = new MultipartConfigFactory();
+    //单个文件最大
+    factory.setMaxFileSize("80MB"); //KB,MB
+    /// 设置总上传数据总大小
+    factory.setMaxRequestSize("102400KB");
+    return factory.createMultipartConfig();
+}
 ```
 ### 错误页面跳转配置
 ```java
@@ -99,7 +99,7 @@ public class MvcConfig extends WebMvcConfigurerAdapter {
 > [参考博客](https://www.drissamri.be/blog/java/enable-https-in-spring-boot/)
 
 - 签发证书：
-```
+```sh
 keytool -genkey -alias tomcat -storetype PKCS12 -keyalg RSA -keysize 2048 -keystore keystore.p12 -validity 3650
 ```
 ```yml
@@ -116,33 +116,33 @@ server:
 ```
 `任意的一个@Configuration注解类里添加`
 ```java
-    @Bean
-    public TomcatEmbeddedServletContainerFactory servletContainerFactory() {
-        TomcatEmbeddedServletContainerFactory factory =
-                new TomcatEmbeddedServletContainerFactory() {
-                    @Override
-                    protected void postProcessContext(Context context) {
-                        //SecurityConstraint必须存在，可以通过其为不同的URL设置不同的重定向策略。
-                        SecurityConstraint securityConstraint = new SecurityConstraint();
-                        securityConstraint.setUserConstraint("CONFIDENTIAL");
-                        SecurityCollection collection = new SecurityCollection();
-                        collection.addPattern("/*");
-                        securityConstraint.addCollection(collection);
-                        context.addConstraint(securityConstraint);
-                    }
-                };
-        factory.addAdditionalTomcatConnectors(createHttpConnector());
-        return factory;
-    }
+@Bean
+public TomcatEmbeddedServletContainerFactory servletContainerFactory() {
+    TomcatEmbeddedServletContainerFactory factory =
+            new TomcatEmbeddedServletContainerFactory() {
+                @Override
+                protected void postProcessContext(Context context) {
+                    //SecurityConstraint必须存在，可以通过其为不同的URL设置不同的重定向策略。
+                    SecurityConstraint securityConstraint = new SecurityConstraint();
+                    securityConstraint.setUserConstraint("CONFIDENTIAL");
+                    SecurityCollection collection = new SecurityCollection();
+                    collection.addPattern("/*");
+                    securityConstraint.addCollection(collection);
+                    context.addConstraint(securityConstraint);
+                }
+            };
+    factory.addAdditionalTomcatConnectors(createHttpConnector());
+    return factory;
+}
 
-    private Connector createHttpConnector() {
-        Connector connector = new Connector("org.apache.coyote.http11.Http11NioProtocol");
-        connector.setScheme("http");
-        connector.setSecure(false);
-        connector.setPort(8887);//http端口（这是要新增加的一个端口）
-        connector.setRedirectPort(8888);// https 端口配置文件中tomcat启动的默认端口
-        return connector;
-    }
+private Connector createHttpConnector() {
+    Connector connector = new Connector("org.apache.coyote.http11.Http11NioProtocol");
+    connector.setScheme("http");
+    connector.setSecure(false);
+    connector.setPort(8887);//http端口（这是要新增加的一个端口）
+    connector.setRedirectPort(8888);// https 端口配置文件中tomcat启动的默认端口
+    return connector;
+}
 ```
 
 - 另一种方式 [参考博客](http://www.cnblogs.com/xinzhao/p/4950689.html)
@@ -181,12 +181,10 @@ keytool -importcert -keystore server.jks -file ca.crt
 - 部署为war必须的类，一般在创建项目时选war就会自动生成，选jar就要手动添加
 ```java
     public class ServletInitializer extends SpringBootServletInitializer {
-
         @Override
         protected SpringApplicationBuilder configure(SpringApplicationBuilder application) {
             return application.sources(DemoApplication.class);
         }
-
     }
 ```
 - maven： `mvn war` 即可
@@ -209,7 +207,7 @@ ENTRYPOINT ["java","-jar","/app.war"]
 
 #### gradle结合docker
 `build.gradle`
-```gradle
+```groovy
 apply plugin: 'docker'
 task buildDocker(type: Docker, dependsOn: build) {
     push = true
