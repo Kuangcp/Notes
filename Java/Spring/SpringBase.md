@@ -199,6 +199,21 @@
 
 **********************
 ###  AOP：
+> 面向切面编程
+
+#### 基本概念
+
+- `JoinPoint`  切入面、连接点、切入点（所有方法）
+- `PointCut` 切点（特殊的连接点，需要增强的连接点）
+- `Advice` 增强（切入点的逻辑，待添加的功能）
+- `Aspect` 切面（切点和增强的合集）
+- `Target` 目标对象（被增强的实例）
+- `Weave` 织入（增强切点的过程）
+- `Proxy` 代理（增强后的类，一般是使用了代理类） 装饰器模式
+- `Introduction` 引介（为类添加属性和方法） 用的较少因为破坏了OOP思想
+
+####  基本配置
+`XML文件头`
 ```xml
     <beans xmlns="http://www.springframework.org/schema/beans"
      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
@@ -213,21 +228,8 @@
          </beans>
 
 ```
-
 - 方法级别的添加代理，Servlet中的过滤器也类似（但是那个是类级别的）
 
-#### 基本概念
-
-- JoinPoint  切入面、连接点、切入点（所有方法）
-- PointCut 切点（特殊的连接点，需要增强的连接点）
-- Advice 增强（切入点的逻辑，待添加的功能）
-- Aspect 切面（切点和增强的合集）
-- Target 目标对象（被增强的实例）
-- Weave 织入（增强切点的过程）
-- Proxy 代理（增强后的类，一般是使用了代理类） 装饰器模式
-- Introduction 引介（为类添加属性和方法） 用的较少因为破坏了OOP思想
-
-####  基本配置
 ```xml
     <!-- 基本类 提供切点 -->
     <bean id="student" class="cn.spring.aop.Student"></bean>
@@ -307,6 +309,8 @@ XML风格有两个缺点。第一是它不能完全将需求实现的地方封�
 我们完全可以混合使用以下几种风格的切面定义：使用自动代理的@AspectJ 风格的切面，`schema-defined <aop:aspect>` 的切面，
 和用 `<aop:advisor>` 声明的advisor，甚至是使用Spring 1.2风格的代理和拦截器。
 由于以上几种风格的切面定义的都使用了相同的底层机制，因此可以很好的共存。
+
+
 
 *******************
 ### Spring-Websocket 配置

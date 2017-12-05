@@ -7,4 +7,55 @@ URL 中带了 jsessionid 参数，导致页面各种问题
 - [jsessionid的作用](http://sxsoft.blog.163.com/blog/static/190412229200911103116773)
 
 
+# SpringMVC
 
+## 配置
+
+## 使用
+### 自定义拦截器
+`定义拦截器类`
+```java
+public class MythInterceptor extends HandlerInterceptorAdapter{
+    @Override
+    public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
+        Long startTime = System.currentTimeMillis();
+        request.setAttribute("startTime",startTime);
+        return true;// true就继续跳转，false就停止
+    }
+    @Override
+    public void postHandle(HttpServletRequest request, HttpServletResponse response, Object handler, ModelAndView modelAndView) throws Exception {
+        long startTime = (Long)request.getAttribute("startTime");
+        request.removeAttribute("startTime");
+        Long endTime = System.currentTimeMillis();
+        log.info(request.getRequestURL()+"发起请求耗时:[ "+ (endTime - startTime) +"  ms]");
+    }
+}
+```
+`配置MVC的配置类`
+```java
+@Configuration
+public class WebMvcConfig extends WebMvcConfigurerAdapter{
+    //自定义拦截器bean
+    @Bean
+    public MythInterceptor mythInterceptor(){
+        return new MythInterceptor();
+    }
+    //注册拦截器
+    @Override
+    public void addInterceptors(InterceptorRegistry registry) {
+        //拦截器的URL正则
+        registry.addInterceptor(mythInterceptor()).addPathPatterns("/**");
+        super.addInterceptors(registry);
+    }
+    // 自定义错误页面 需要放在静态资源下面
+    @Bean
+    public EmbeddedServletContainerCustomizer containerCustomizer() {
+        return (container -> {
+            ErrorPage error401Page = new ErrorPage(HttpStatus.FORBIDDEN, "/500.html");
+            ErrorPage error404Page = new ErrorPage(HttpStatus.NOT_FOUND, "/404.html");
+            ErrorPage error500Page = new ErrorPage(HttpStatus.INTERNAL_SERVER_ERROR, "/500.html");
+            container.addErrorPages(error401Page, error404Page, error500Page);
+        });
+    }
+}
+```
