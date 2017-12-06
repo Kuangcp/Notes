@@ -13,6 +13,8 @@ URL 中带了 jsessionid 参数，导致页面各种问题
 
 ## 使用
 ### 自定义拦截器
+- [相关博客](http://www.jianshu.com/p/f14ed6ca4e56)|[相关博客](http://blog.csdn.net/catoop/article/details/50501696)
+
 `定义拦截器类`
 ```java
 public class MythInterceptor extends HandlerInterceptorAdapter{
