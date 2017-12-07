@@ -1,17 +1,12 @@
-### Q&A
-URL 中带了 jsessionid 参数，导致页面各种问题
-- 一种原因：禁用cookie导致的
-- 最终解决： chrome中在设置里清除localhost的所有cookie和缓存
-
-- [解决问题参考博客](https://yq.aliyun.com/articles/101169)
-- [jsessionid的作用](http://sxsoft.blog.163.com/blog/static/190412229200911103116773)
-
-
 # SpringMVC
 
 ## 配置
 
 ## 使用
+> 在Springboot框架中，static templates 文件夹下分别代表了tomcat管理的静态文件和MVC负责跳转的HTML文件或JSP文件
+> 在static中对于路径的使用一定要带上应用路径，而在templates中就只要写相对路径即可
+
+
 ### 自定义拦截器
 - [相关博客](http://www.jianshu.com/p/f14ed6ca4e56)|[相关博客](http://blog.csdn.net/catoop/article/details/50501696)
 
@@ -61,3 +56,13 @@ public class WebMvcConfig extends WebMvcConfigurerAdapter{
     }
 }
 ```
+
+
+
+### Q&A
+URL 中带了 jsessionid 参数，导致页面各种问题
+- 一种原因：禁用cookie导致的
+- 最终解决： chrome中在设置里清除localhost的所有cookie和缓存
+
+- [解决问题参考博客](https://yq.aliyun.com/articles/101169)
+- [jsessionid的作用](http://sxsoft.blog.163.com/blog/static/190412229200911103116773)
