@@ -16,7 +16,19 @@
 ### Deepin
 
 - [FAQ](https://bbs.deepin.org/forum.php?mod=viewthread&tid=146921&extra=page%3D1)
-- fcitx单核满载:三种
+
+
+#### 输入法
+##### fcitx
+- fcitx单核满载:三种（搜狗拼音导致）
     - 杀掉，fcitx -r
     - 先把进程杀掉再fcitx-autostart &
     - fcitx再fcitx-qimpanel 
+`相关网页：`
+- [某引擎搜索结果页](https://ausdn.com/s/ubuntu+cpu+fcitx)| [几种方式](https://www.findhao.net/res/786)| [卸载搜狗安装拼音](http://tieba.baidu.com/p/3863217434)
+- [知乎问题](https://www.zhihu.com/question/19839748) | [ubuntu论坛](http://forum.ubuntu.com.cn/viewtopic.php?f=122&t=173730&p=1299087) | [ubuntu论坛](http://forum.ubuntu.com.cn/viewtopic.php?f=8&t=194486&start=0)
+
+#### Flash
+- 点击[官网下载地址](https://get.adobe.com/cn/flashplayer/)下载,然后解压,
+- 将文件复制进火狐插件目录:`sudo cp libflashplayer.so  /usr/lib64/mozilla/plugins`
+- 添加其他用户可执行权限`chmod 755 /usr/lib64/mozilla/plugins/libflashplayer.so`

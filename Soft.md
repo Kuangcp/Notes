@@ -68,7 +68,8 @@
 
 ## 前端
 - [Framework7](http://framework7.cn/)`开发类似ios7的web应用（HTML）`
-
+- [bootstrap](https://v3.bootcss.com/getting-started/)
+- [LayUI](http://www.layui.com/)
 
 ************************
 ## 【包管理】
@@ -184,6 +185,10 @@ PROMPT_COMMAND="set_bash_prompt; $PROMPT_COMMAND"
 
 ********
 ## 其他工具
+
+### 输入法
+- [rime](http://rime.im/)
+
 ### qgit
 - git查看仓库的图形化界面
 
