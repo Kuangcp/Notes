@@ -70,6 +70,7 @@
 - [Framework7](http://framework7.cn/)`开发类似ios7的web应用（HTML）`
 - [bootstrap](https://v3.bootcss.com/getting-started/)
 - [LayUI](http://www.layui.com/)
+- [hotkeys](https://github.com/jaywcjlove/hotkeys)`前端捕获按键输入,可以用来设置快捷键`
 
 ************************
 ## 【包管理】
