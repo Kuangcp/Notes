@@ -102,6 +102,7 @@
 - `expire key secondes` 设置或改变超时时间，精度是秒或毫秒
 	- `set key val ex secondes` set时设置超时时间
 - `persist key` 去除超时时间
+- `ttl key` 查看剩余存活时间 -1表示永久 -2表示没有该key
 
 
 ##### 列表 list

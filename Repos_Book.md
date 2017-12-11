@@ -8,6 +8,10 @@
 - [anapsix](https://github.com/anapsix)`擅长docker`
 - [aleen42](https://github.com/aleen42) `写了好几个方便的gitbook插件`
 
+## 笔记
+- [某研究生在校阅读笔记](https://github.com/lanxuezaipiao/ReadingNotes)
+- [跟老齐学Python的轻松入门 作者](https://github.com/qiwsir/ITArticles)
+
 ## Java
 
 ### 框架以及高级特性
