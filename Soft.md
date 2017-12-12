@@ -8,6 +8,9 @@
 - [Linux运维派](https://mirrors-wan.geekpie.org/)
 - [sourceforge](https://sourceforge.net/directory/system-administration/osdistro/livecd/os:linux/)`Linux发行版列表`
 
+## 三方库
+- [Eclipse Collections](http://www.eclipse.org/collections/)`更丰富的集合操作`
+
 *******************
 ## IDE
 - [IDEA](https://www.jetbrains.com/idea/)
@@ -27,6 +30,7 @@
 
 ************
 ## Tools
+- [开源中国在线工具](http://tool.oschina.net/)
 - [Gradle官方下载地址](http://services.gradle.org/distributions/)
 - [git](https://git-scm.com/) `最好用的vcs`
 - [genymotion](https://www.genymotion.com/) `安卓模拟器`
@@ -56,6 +60,9 @@
 - [charles](https://www.charlesproxy.com/)`跨平台收费`
     - [咳咳](http://charles.iiilab.com/)
 
+### 异步
+- [dwr](http://directwebremoting.org/dwr/index.html)`Js调用Java方法并拿到返回值`
+
 ### 响应式
 - [vertx](http://vertx.io/)`构建响应式应用程序`
 
@@ -68,9 +75,9 @@
 
 ## 前端
 - [Framework7](http://framework7.cn/)`开发类似ios7的web应用（HTML）`
-- [bootstrap](https://v3.bootcss.com/getting-started/)
+- [Bootstrap](https://v3.bootcss.com/getting-started/)
 - [LayUI](http://www.layui.com/)
-- [hotkeys](https://github.com/jaywcjlove/hotkeys)`前端捕获按键输入,可以用来设置快捷键`
+- [Hotkeys](https://github.com/jaywcjlove/hotkeys)`前端捕获按键输入,可以用来设置快捷键`
 
 ************************
 ## 【包管理】
@@ -310,6 +317,9 @@ E36B85CC 84991F19 7575D828 470A92AB
 
 *****************************
 ## 【平台】
+### Gitee
+> 码云
+
 ### Github
 `github仓库 URL规则`
 - 目录：

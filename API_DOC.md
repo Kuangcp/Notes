@@ -1,6 +1,9 @@
 # 【常用的网站】
 
 ******************
+## 软件市场
+- [https://en.softonic.com/](https://en.softonic.com/)`windows居多`
+
 ## 特别网站
 - [测试你当前连接用的是ipv4还是ipv6](http://www.kame.net/)
 
@@ -24,6 +27,7 @@
 
 ### web站点分析
 - [网站性能分析](http://pagespeed.webkaka.com/)`十分详细`
+
 
 ********************************
 # 【API】

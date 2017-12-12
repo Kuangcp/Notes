@@ -6,6 +6,7 @@ sh
 bash
 zsh
 dash
+fish
 
 ### Tips
 

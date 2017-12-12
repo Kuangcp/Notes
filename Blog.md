@@ -20,6 +20,7 @@
 ## Java
 ### SE
 - [Java异常浅谈](http://www.cnblogs.com/focusj/archive/2011/12/26/2301524.html)
+- [Eclipse Collections以及Java8的特性](http://www.infoq.com/cn/articles/eclipse-collections?utm_campaign=rightbar_v2&utm_source=infoq&utm_medium=articles_link&utm_content=link_text)
 
 ***************
 - [Java动态代理机制详解](http://blog.csdn.net/luanlouis/article/details/24589193) `博客很细致，深入原理`
@@ -37,6 +38,8 @@
 
 *****
 - [Springboot启动dubbo](https://coderknock.com/blog/2017/03/01/spring%20boot%E5%90%AF%E5%8A%A8dubbo.html)`等一系列文章`
+
+- [spring boot完美集成dwr3.0.2](http://blog.csdn.net/melody_susan/article/details/78659696)
 
 ### BuildTool
 - [Gradle构建多模块项目](http://blog.javachen.com/2015/01/07/build-multi-module-project-with-gradle.html)

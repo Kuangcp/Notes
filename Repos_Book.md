@@ -14,7 +14,9 @@
 
 ## Java
 
+
 ### 框架以及高级特性
+- [Jfinal](https://gitee.com/jfinal/jfinal)
 - [okhttp](https://github.com/square/okhttp)`Java上性能较好的HTTP交互工具`
 - [druid](https://github.com/alibaba/druid) `阿里数据库连接池`
 - [dubbo](https://github.com/alibaba/dubbo) `RPC 框架`
@@ -23,6 +25,12 @@
 - [zxing](https://github.com/zxing/zxing) `二维码处理的项目`
 - [easypoi](https://gitee.com/lemur/easypoi) `虽然代码非常不规范，也没人维护的样子，但是这个开源精神要学习`
 - [uflo](https://gitee.com/youseries/uflo) `国内的流程引擎`
+- [jeewx](https://gitee.com/jeecg/jeewx)`微信管家平台`
+- [禅道](https://gitee.com/wwccss/zentaopms)`项目管理软件`
+
+### 二次框架
+- [jeesite](https://gitee.com/thinkgem/jeesite)`Spring基础构建的maven jsp项目 bootstrap`
+- [Guns](https://gitee.com/naan1993/guns)`基于Springboot开发了大量模块`
 
 ### 高效
 - [interview](https://github.com/kdn251/interviews)`面试所需算法练习`
@@ -64,7 +72,9 @@
 - [build-web-application-with-golang](https://github.com/astaxie/build-web-application-with-golang)
 
 
+*********
 ## Python
+- [跟老齐学Python](https://github.com/qiwsir/StarterLearningPython)`书籍配套源码`
 - [PythonWeb开发](https://github.com/dongweiming/web_develop) `书籍相关源码`
 - [scrapy-redis](https://github.com/rmax/scrapy-redis) `爬虫框架结合redis使用`
 
@@ -90,12 +100,15 @@
 - [ui-for-docker](https://github.com/kevana/ui-for-docker) `docker 简单易用图形化`
 
 **********************************************
+**********************************************
 # 【Book】
 > 在线书籍
 ## Go
 - [《Go入门指南》](https://github.com/Unknwon/the-way-to-go_ZH_CN)
 - [Learning-Go](https://github.com/mikespook/Learning-Go-zh-cn)
 
+## Python
+- [Python3-cookbook](https://github.com/yidao620c/python3-cookbook)
 
 ## Tools
 - [Pro Git](https://git-scm.com/book/zh/v2) `git 学习的书籍`

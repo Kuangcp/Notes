@@ -286,7 +286,9 @@ Ctrl + r       显示：号提示，根据用户输入查找相关历史命令�
 ```
 
 - htop 终端的任务管理器显示
-- lsof 便捷的查看端口情况
+- lsof 便捷的查看端口情况以及文件调用情况
+- strace -p PID 查看系统调用
 - ps | clorm 20 30 `colrm`删除输出的20 到30 列
 - w | uptime 查看启动情况
 - wc -l 统计行数
+- last 查看Linux登录信息

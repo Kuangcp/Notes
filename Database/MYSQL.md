@@ -21,6 +21,8 @@
 ### Docker安装
 >[Docker安装MySQL](/Linux/Docker_Soft.md)
 
+- [博客：Mysql有没有必要Docker化](http://www.infoq.com/cn/articles/can-mysql-run-in-docker?utm_campaign=rightbar_v2&utm_source=infoq&utm_medium=articles_link&utm_content=link_text)
+
 ***********
 ## 基本数据类型
 ###  decimal 
