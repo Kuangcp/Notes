@@ -46,6 +46,14 @@
     - 官方的hub： `用户名/镜像名：tag`
     - 非官方的例如阿里 `registry.cn-hangzhou.aliyuncs.com/myth/jdk8:alpine` jdk8是镜像名，前面的是仓库地址
 
+## 学习资源
+> [码云上Docke相关资源](https://gitee.com/explore/starred?lang=Docker)
+
+- [docker-training 开源项目](https://gitee.com/dockerf/docker-training)
+    - [第二课](https://gitee.com/dockerf/second)
+- [Dockerfile集锦](https://gitee.com/kennylee/docker)
+- [Oracle的Dockerfile仓库](https://github.com/oracle/docker-images)
+
 ***************************************
 ## 安装与卸载
 > [daocloud安装帮助](http://get.daocloud.io/#install-docker)

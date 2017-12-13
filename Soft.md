@@ -78,6 +78,7 @@
 - [Bootstrap](https://v3.bootcss.com/getting-started/)
 - [LayUI](http://www.layui.com/)
 - [Hotkeys](https://github.com/jaywcjlove/hotkeys)`前端捕获按键输入,可以用来设置快捷键`
+- [socket.io](https://socket.io)`基于nodejs的socket技术`
 
 ************************
 ## 【包管理】
@@ -348,6 +349,24 @@ SSH_DOMAIN       = kuangcp.top
 ```
 
 
-### 百度开发平台
-### 腾讯微信公众号
-### 图灵机器人
+********
+### 测试
+- [自动API测试](https://www.eolinker.com/#/index)
+
+********
+### 综合开发平台
+#### 百度开发平台
+
+#### 腾讯微信公众号
+
+************
+### 智能
+#### 图灵机器人
+
+*********
+### 消息推送
+#### 极光推送
+> [官网](https://www.jiguang.cn/) `做Android IOS的消息推送和短信等推送`
+
+#### GoEasy
+- [示例](http://goeasy.io/cn/started)

@@ -1,5 +1,12 @@
 # SpringMVC
 
+## MVC思想
+> [参考博客](http://blog.csdn.net/besley/article/details/8479943)
+![图](http://img.my.csdn.net/uploads/201301/09/1357725989_7206.png)
+
+## API 
+> [简洁的API设计](http://www.csdn.net/article/2013-05-02/2815115-stop-designing-fragile-web-api)
+
 ## 配置
 
 ## 使用

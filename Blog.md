@@ -113,3 +113,6 @@
 ## 毕业
 - [开题答辩的礼貌性注意事项](http://biyelunwen.yjbys.com/dabian/)
 
+## 生活
+
+- [那些拿命换钱的年轻人，换着换着就死了](https://mp.weixin.qq.com/s/ZGDMod70iQMM7O2asx61Eg)
