@@ -2,9 +2,14 @@
 - [hushuang.me](https://hushuang.me/)
 - [猛禽](http://my.csdn.net/Raptor) `一个坚持了17年博客的程序员`
 - [折腾的创业者](https://xicheng412.github.io/)`大学生创业`
+- [冰封千里](http://ice1000.org/)`Javaer,JavaFX和JVM类语言擅长`
 
 ***************
 # 【Blog】
+
+## 搭建博客
+- [知乎话题：如何搭建博客](https://www.zhihu.com/question/20463581)
+- [知乎专栏：使用Springboot搭建博客](https://zhuanlan.zhihu.com/p/28428463)
 
 ## NetWork
 - [使用清华的IPV6](http://ju.outofmemory.cn/entry/154398)
@@ -116,3 +121,5 @@
 ## 生活
 
 - [那些拿命换钱的年轻人，换着换着就死了](https://mp.weixin.qq.com/s/ZGDMod70iQMM7O2asx61Eg)
+    - [相关书籍](http://www.ituring.com.cn/article/497314)
+- [土木真的没有 IT 行业有前途吗？](https://www.zhihu.com/question/57200773/answer/273681090?group_id=923124272622088192)`每一行都不容易！`
