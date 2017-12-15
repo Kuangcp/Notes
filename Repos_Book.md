@@ -76,6 +76,7 @@
 - [跟老齐学Python](https://github.com/qiwsir/StarterLearningPython)`书籍配套源码`
 - [PythonWeb开发](https://github.com/dongweiming/web_develop) `书籍相关源码`
 - [scrapy-redis](https://github.com/rmax/scrapy-redis) `爬虫框架结合redis使用`
+- [Python的一些脚本](https://github.com/9468305/script)
 
 ## Linux
 - [Java程序员眼中的Linux](https://github.com/judasn/Linux-Tutorial)

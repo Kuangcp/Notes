@@ -13,6 +13,8 @@
 ### JPA_SQL
 > 默认是tomcat-jdbc连接池
 
+- [原生SQL的写法](http://blog.csdn.net/Amy_Queen/article/details/72454099)
+
 #### Mysql
 - 1.引入依赖
 ```groovy

@@ -292,7 +292,6 @@
     - `def __init__(self)`
     - `def __del__(self)`
 
-
 ```python
     class Person:
         # 对象方法， 将对象作为参数self传进去

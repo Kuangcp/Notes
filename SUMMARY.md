@@ -46,6 +46,8 @@
         * [ SpringMessageQue ](./Java/Spring/SpringMessageQue.md)
         * [ SpringbootDatabase ](./Java/Spring/SpringbootDatabase.md)
         * [ SpringbootDemoCreate ](./Java/Spring/SpringbootDemoCreate.md)
+    * 【 Java/TemplateEngine 】
+        * [ Thymeleaf ](./Java/TemplateEngine/Thymeleaf.md)
     * 【 Java/AdvancedLearning 】
         * [ ClassFile ](./Java/AdvancedLearning/ClassFile.md)
         * [ Concurrents ](./Java/AdvancedLearning/Concurrents.md)
@@ -98,7 +100,7 @@
 * 【 Skills 】
     * 【 Skills/View 】
         * [ Hexo ](./Skills/View/Hexo.md)
-        * [ Learn_Js ](./Skills/View/Learn_Js.md)
+        * [ JavaScript ](./Skills/View/JavaScript.md)
         * [ Learn_PS ](./Skills/View/Learn_PS.md)
         * [ ResponseCode ](./Skills/View/ResponseCode.md)
     * 【 Skills/Base 】
