@@ -11,10 +11,27 @@
 
 *******************
 ### JPA_SQL
-> 默认是tomcat-jdbc连接池
+> 连接池:默认是tomcat-jdbc连接池
 
-- [原生SQL的写法](http://blog.csdn.net/Amy_Queen/article/details/72454099)
+- [Blog: 原生SQL的写法](http://blog.csdn.net/Amy_Queen/article/details/72454099)
 
+#### 自定义查询
+##### HQL
+- 使用Hibernate语法模式,将对象和数据库的表看成一个实体,方便书写SQL,但是在Controller层和Service层
+    - 进行写代码的时候,参数的传递全是实体对象,要不停的new,这样真的没问题么(当有各种复杂的关联关系的时候,单个对象的CURD基本没有什么问题)
+    - `TODO` 所以还不如直接写原生SQL! 那么JPA就真的没有使用的必要性了,直接用Mybatis结合插件生成自动的CRUD的代码,这样更为轻量
+    - 待后续使用后再回来填坑
+
+##### 原生SQL
+
+- 涉及到数据的修改,就要加上前两个前缀,查询就直接写Query注解即可
+```java
+@Modifying
+@Transactional
+@Query(value = "update a set b=?1", nativeQuery = true)
+```
+
+*************************
 #### Mysql
 - 1.引入依赖
 ```groovy
