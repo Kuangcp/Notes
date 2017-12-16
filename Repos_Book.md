@@ -48,7 +48,7 @@
 - [Springboot实战](https://github.com/lianggzone/springboot-action) `Springboot的案例`
 - [zheng](https://github.com/shuzheng/zheng) `SSM框架整合的一个丰富解决方案`
 - [Java后台管理](https://github.com/chwshuang/web)`集成Spring4.x+SpringMVC+Mybatis`
-
+- [java-jwt](https://github.com/auth0/java-jwt)`JSON WEB TOKEN`
 
 ### BuildTool
 - [sbt](https://github.com/sbt/sbt)

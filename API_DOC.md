@@ -9,7 +9,7 @@
 
 
 ******************
-## 学习网站
+## 【学习网站】
 ### Linux
 - [IBM社区](https://www.ibm.com/developerworks/cn/)
 - [杭电ACM题库](http://acm.hdu.edu.cn/listproblem.php?vol=1)
@@ -28,6 +28,8 @@
 ### web站点分析
 - [网站性能分析](http://pagespeed.webkaka.com/)`十分详细`
 
+### 人工智能
+- [AlphaGo学习网站](https://alphagoteach.deepmind.com/zh-hans)
 
 ********************************
 # 【API】
