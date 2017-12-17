@@ -67,7 +67,6 @@
 ### 响应式
 - [vertx](http://vertx.io/)`构建响应式应用程序`
 
-
 *****
 ## Database
 - [sssdb](https://github.com/ideawu/ssdb) `键值对数据库`
@@ -81,7 +80,9 @@
 - [Hotkeys](https://github.com/jaywcjlove/hotkeys)`前端捕获按键输入,可以用来设置快捷键`
 - [socket.io](https://socket.io)`基于nodejs的socket技术`
 
-************************
+
+***************************************************
+***************************************************
 ## 【包管理】
 ### 使用sdkman
 > 但是总会莫名其妙的冒出问题，sdk命令掉线始终连不上网，终端打开巨慢

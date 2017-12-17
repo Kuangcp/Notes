@@ -19,4 +19,7 @@ HTTP 基础原理
 ### CSRF
 > CSRF (Cross Site Request Forgery)，它讲的是你在一个浏览器中打开了两个标签页，其中一个页面通过窃取另一个页面的 cookie 来发送伪造的请求，因为 cookie 是随着请求自动发送到服务端的。
 
+#### 【JWT】
 - [Blog:通过使用JWT来防御CSRF](https://segmentfault.com/a/1190000003716037)
+- [Blog:介绍JWT](blog.leapoahead.com/2015/09/06/understanding-jwt/)`其实JWT还经常用于设计用户认证和授权系统，甚至实现Web应用的单点登录。`
+- [Blog:单点登录](http://blog.leapoahead.com/2015/09/07/user-authentication-with-jwt/)

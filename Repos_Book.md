@@ -1,3 +1,6 @@
+# 【Organization】
+- [ApacheCN](https://github.com/apachecn)`含有一些学习的文档和视频资料`
+
 # 【GitRepos】
 > 收集的一些优秀的git仓库
 
@@ -50,6 +53,7 @@
 - [zheng](https://github.com/shuzheng/zheng) `SSM框架整合的一个丰富解决方案`
 - [Java后台管理](https://github.com/chwshuang/web)`集成Spring4.x+SpringMVC+Mybatis`
 - [java-jwt](https://github.com/auth0/java-jwt)`JSON WEB TOKEN`
+- [blade](https://github.com/biezhi/blade)`轻量级Web框架`
 
 ### BuildTool
 - [sbt](https://github.com/sbt/sbt)
