@@ -8,10 +8,11 @@
 - [anapsix](https://github.com/anapsix)`擅长docker`
 - [aleen42](https://github.com/aleen42) `写了好几个方便的gitbook插件`
 
-## 笔记
+## 笔记仓库
 - [某研究生在校阅读笔记](https://github.com/lanxuezaipiao/ReadingNotes)
 - [跟老齐学Python的轻松入门 作者](https://github.com/qiwsir/ITArticles)
 
+*******************************************
 ## Java
 ### 框架以及高级特性
 - [Jfinal](https://gitee.com/jfinal/jfinal)
@@ -60,13 +61,20 @@
 
 
 
-********
+*******************************************************
 ## Docker
+- [Docker官方github组织](https://github.com/docker-library) `docker的官方Dockerfile以及doc文档`
+- [openoffice in docker](https://github.com/tobegit3hub/dockerized-openoffice)
+- [shipyard](https://github.com/shipyard/shipyardhttps://github.com/shipyard/shipyard) `docker图形化，功能稍多，配置略麻烦`
+- [ui-for-docker](https://github.com/kevana/ui-for-docker) `docker 简单易用图形化`
 - [openjdk](https://github.com/docker-library/openjdk) `openjdk的dockerfile仓库`
 - [docker-alpine-java](https://github.com/anapsix/docker-alpine-java) `java 运行环境 alpine为基础镜像`
+
+
 ### web
 - [webdis](https://github.com/anapsix/docker-webdis) `基于redis构建的使用http请求存取数据`
 
+*************
 ## Go
 - [build-web-application-with-golang](https://github.com/astaxie/build-web-application-with-golang)
 
@@ -78,6 +86,7 @@
 - [scrapy-redis](https://github.com/rmax/scrapy-redis) `爬虫框架结合redis使用`
 - [Python的一些脚本](https://github.com/9468305/script)
 
+***********
 ## Linux
 - [Java程序员眼中的Linux](https://github.com/judasn/Linux-Tutorial)
 
@@ -87,17 +96,15 @@
 ## 前端
 - [LayUI](https://github.com/sentsin/layui/) `国产layUI框架`
 
+***************************************
 ## Tools
 - [oneinstack](https://github.com/lj2007331/oneinstack) `一个在Linux上管理web，数据库，ftp, 等服务的软件`
 - [codefont](https://github.com/zhenruyan/codefont) `编程使用的等宽字体` `code的不错`
 - [学生的优惠资源](https://github.com/OpenGenus/Best-student-discount-services)
 - [JVM分析优化的定制JDK](https://www.yourkit.com/java/profiler/features/)
 
-## Docker
-- [Docker官方github组织](https://github.com/docker-library) `docker的官方Dockerfile以及doc文档`
-- [openoffice in docker](https://github.com/tobegit3hub/dockerized-openoffice)
-- [shipyard](https://github.com/shipyard/shipyardhttps://github.com/shipyard/shipyard) `docker图形化，功能稍多，配置略麻烦`
-- [ui-for-docker](https://github.com/kevana/ui-for-docker) `docker 简单易用图形化`
+### 微信相关
+- [微信小程序Demo](https://gitee.com/yuzeng84/wxapp)
 
 **********************************************
 **********************************************

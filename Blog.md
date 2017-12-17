@@ -27,6 +27,7 @@
 ### SE
 - [Java异常浅谈](http://www.cnblogs.com/focusj/archive/2011/12/26/2301524.html)
 - [Eclipse Collections以及Java8的特性](http://www.infoq.com/cn/articles/eclipse-collections?utm_campaign=rightbar_v2&utm_source=infoq&utm_medium=articles_link&utm_content=link_text)
+- [Java8的特性](http://www.jb51.net/article/48304.htm)
 
 ***************
 - [Java动态代理机制详解](http://blog.csdn.net/luanlouis/article/details/24589193) `博客很细致，深入原理`
