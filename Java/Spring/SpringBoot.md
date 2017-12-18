@@ -1,7 +1,29 @@
-# SpringBoot
-## 目录
+`目录`
+- [SpringBoot](#springboot)
+    - [安装SpringBootCLI](#安装springbootcli)
+    - [Springboot的测试模块](#springboot的测试模块)
+    - [参考博客](#参考博客)
+    - [配置文件](#配置文件)
+        - [多种配置文件并切换](#多种配置文件并切换)
+            - [yml方式](#yml方式)
+            - [yml和Properties结合](#yml和properties结合)
+    - [Web模块](#web模块)
+        - [上传下载文件](#上传下载文件)
+        - [错误页面跳转配置](#错误页面跳转配置)
+        - [跨域](#跨域)
+    - [HTTPS的配置](#https的配置)
+    - [线程池](#线程池)
+    - [项目部署](#项目部署)
+        - [生成指定文件](#生成指定文件)
+            - [war](#war)
+            - [jar](#jar)
+        - [构建docker镜像](#构建docker镜像)
+            - [gradle结合docker](#gradle结合docker)
 
-**********
+*目录创建于2017-12-18*
+
+**************************************************
+# SpringBoot
 ## 安装SpringBootCLI
 - 安装SDKMAN
     - 使用git bash运行  `curl -s get.sdkman.io | bash`
@@ -73,7 +95,7 @@ public MultipartConfigElement multipartConfigElement() {
     MultipartConfigFactory factory = new MultipartConfigFactory();
     //单个文件最大
     factory.setMaxFileSize("80MB"); //KB,MB
-    /// 设置总上传数据总大小
+    // 设置总上传数据总大小
     factory.setMaxRequestSize("102400KB");
     return factory.createMultipartConfig();
 }
@@ -126,7 +148,7 @@ keytool -genkey -alias tomcat -storetype PKCS12 -keyalg RSA -keysize 2048 -keyst
 ```
 ```yml
 server:
-#  context-path: /myth
+  context-path: /myth
   ssl:
     key-store: classpath:keystore.p12
     key-store-password: demo1429336
@@ -141,18 +163,18 @@ server:
 @Bean
 public TomcatEmbeddedServletContainerFactory servletContainerFactory() {
     TomcatEmbeddedServletContainerFactory factory =
-            new TomcatEmbeddedServletContainerFactory() {
-                @Override
-                protected void postProcessContext(Context context) {
-                    //SecurityConstraint必须存在，可以通过其为不同的URL设置不同的重定向策略。
-                    SecurityConstraint securityConstraint = new SecurityConstraint();
-                    securityConstraint.setUserConstraint("CONFIDENTIAL");
-                    SecurityCollection collection = new SecurityCollection();
-                    collection.addPattern("/*");
-                    securityConstraint.addCollection(collection);
-                    context.addConstraint(securityConstraint);
-                }
-            };
+        new TomcatEmbeddedServletContainerFactory() {
+            @Override
+            protected void postProcessContext(Context context) {
+                //SecurityConstraint必须存在，可以通过其为不同的URL设置不同的重定向策略。
+                SecurityConstraint securityConstraint = new SecurityConstraint();
+                securityConstraint.setUserConstraint("CONFIDENTIAL");
+                SecurityCollection collection = new SecurityCollection();
+                collection.addPattern("/*");
+                securityConstraint.addCollection(collection);
+                context.addConstraint(securityConstraint);
+            }
+        };
     factory.addAdditionalTomcatConnectors(createHttpConnector());
     return factory;
 }

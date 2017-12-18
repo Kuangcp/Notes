@@ -1,9 +1,9 @@
 `目录`
 - [1.安装](#1安装)
 - [setting.xml配置](#settingxml配置)
-    - [1.1.Maven常用命令:](#11maven常用命令:)
+    - [1.1.Maven常用命令](#11maven常用命令)
 - [2.maven配置](#2maven配置)
-    - [2.1.eclipse中配置：](#21eclipse中配置：)
+    - [2.1.eclipse中配置](#21eclipse中配置)
     - [2.2.配置插件](#22配置插件)
     - [2.3.配置文件的详解](#23配置文件的详解)
 - [3.maven概念](#3maven概念)
@@ -36,7 +36,7 @@
 *****
 ## setting.xml配置
 
-### 1.1.Maven常用命令:
+### 1.1.Maven常用命令
 > mvn [插件]:[目标] [参数]
 > mvn [阶段]
 
@@ -62,7 +62,7 @@
 
 ```
 ## 2.maven配置
-### 2.1.eclipse中配置：
+### 2.1.eclipse中配置
 - 高版本自带maven，需要注意的是eclipse的JRE环境目录要选择jdk下的JRE
 
 ### 2.2.配置插件

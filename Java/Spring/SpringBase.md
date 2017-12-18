@@ -1,3 +1,35 @@
+`目录`
+- [Spring 基础](#spring基础)
+    - [Spring配置](#spring配置)
+        - [原始的web项目复制jar方式](#原始的web项目复制jar方式)
+        - [maven配置Spring依赖](#maven配置spring依赖)
+        - [Gradle配置](#gradle配置)
+    - [Spring使用](#spring使用)
+        - [Spring技巧](#spring技巧)
+            - [获取Spring已有的Context上下文环境](#获取spring已有的context上下文环境)
+                - [【在JSP或Servlet中】](#在jsp或servlet中)
+            - [Spring 和 ServletContextList](#spring和servletcontextlist)
+        - [注解方式：](#注解方式：)
+            - [Application.xml中配置头部分](#applicationxml中配置头部分)
+            - [常用的注解：](#常用的注解：)
+        - [xml方式：](#xml方式：)
+            - [xml方式和注解方式的比较：](#xml方式和注解方式的比较：)
+        - [IOC / DI：控制反转](#ioc/di：控制反转)
+        - [AOP：](#aop：)
+            - [基本概念](#基本概念)
+            - [基本配置](#基本配置)
+            - [注意](#注意)
+            - [1 Spring AOP还是完全用AspectJ？](#1springaop还是完全用aspectj？)
+            - [2 Spring AOP中使用@AspectJ还是XML？](#2springaop中使用@aspectj还是xml？)
+            - [3 混合切面类型](#3混合切面类型)
+        - [Spring-Websocket 配置](#spring-websocket配置)
+            - [maven配置jar环境](#maven配置jar环境)
+        - [Web开发上的一些优秀的习惯](#web开发上的一些优秀的习惯)
+        - [RMI](#rmi)
+
+*目录创建于2017-12-18*
+
+********************************************************
 # Spring 基础
 
 ## Spring配置
