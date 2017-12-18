@@ -257,8 +257,8 @@ A 项目 compile
 - 2.navigator目录模式下 修改相关文件，把2.3改成3.0
 - 3.eclipse中右击改动Facets 然后maven-update一下就可以了
 
-#### 添加web容器
-##### Jetty
+### 添加web容器
+#### Jetty
 - http://mvnrepository.com/ 里找到想要的版本，加入即可
 特别注意 NIO的原因，静态文件在服务器启动的时候不能更改，需要找到maven仓库下的org/eclipse/jettyjetty-webapp/ 
 下的jar包中的default配置文件，把useFileBuffer标签的 true 改成false
@@ -300,7 +300,7 @@ A 项目 compile
 ```
 - 部署成功后，使用jetty:run 即可运行起服务器
 
-##### Tomcat
+#### Tomcat
 - 去Tomcat官网 找到maven plugins进入找到想要的版本即可
 
 ```xml
