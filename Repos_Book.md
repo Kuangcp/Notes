@@ -32,7 +32,7 @@
 - [ApacheCN](https://github.com/apachecn)`含有一些学习的文档和视频资料`
 
 # 【GitRepos】
-> 收集的一些优秀的git仓库
+> 收集的一些优秀的git仓库 
 
 ## User
 > 一些值得学习的人
