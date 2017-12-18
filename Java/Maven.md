@@ -1,33 +1,34 @@
 `目录`
-    - [1. 安装](#1安装)
-    - [setting.xml配置](#settingxml配置)
-        - [1.1 Maven常用命令:](#11maven常用命令:)
-    - [2.maven配置](#2maven配置)
-        - [2.1 eclipse中配置：](#21eclipse中配置：)
-        - [2.2 配置插件 [插件地址](http://maven.apache.org/plugins/index.html)](#22配置插件[插件地址](http://mavenapacheorg/plugins/indexhtml))
-        - [2.3 配置文件的详解](#23配置文件的详解)
-            - [2.3.1配置:源码package成JAR包：(pom.xml中配置)](#231配置:源码package成jar包：(pomxml中配置))
-    - [3. maven概念](#3maven概念)
-    - [4.maven的依赖](#4maven的依赖)
-        - [4.1处理项目间依赖方法](#41处理项目间依赖方法)
-        - [4.2依赖冲突](#42依赖冲突)
-        - [4.3继承](#43继承)
-        - [构建](#构建)
-            - [打包成可执行 jar](#打包成可执行jar)
-            - [war包当jar使用](#war包当jar使用)
-            - [关于使用git idea 多模块的项目的构建](#关于使用gitidea多模块的项目的构建)
-    - [5.使用maven新建Web3.0项目 [网络maven仓库](http://mvnrepository.com/)](#5使用maven新建web30项目[网络maven仓库](http://mvnrepositorycom/))
-            - [添加web容器](#添加web容器)
-                - [Jetty](#jetty)
-                - [Tomcat](#tomcat)
-        - [5.1 加入Servlet的API包:](#51加入servlet的api包:)
-    - [常用插件](#常用插件)
-        - [lombok](#lombok)
-    - [Maven和Ant的区别一:](#maven和ant的区别一:)
-    - [Maven的优势:](#maven的优势:)
+- [1.安装](#1安装)
+- [setting.xml配置](#settingxml配置)
+    - [1.1.Maven常用命令:](#11maven常用命令:)
+- [2.maven配置](#2maven配置)
+    - [2.1.eclipse中配置：](#21eclipse中配置：)
+    - [2.2.配置插件](#22配置插件)
+    - [2.3.配置文件的详解](#23配置文件的详解)
+- [3.maven概念](#3maven概念)
+- [4.maven的依赖](#4maven的依赖)
+    - [4.1.处理项目间依赖方法](#41处理项目间依赖方法)
+    - [4.2.依赖冲突](#42依赖冲突)
+    - [4.3.继承](#43继承)
+    - [构建](#构建)
+        - [打包成可执行 jar](#打包成可执行jar)
+        - [war包当jar使用](#war包当jar使用)
+        - [关于使用git和idea多模块的项目的构建](#关于使用git和idea多模块的项目的构建)
+- [5.使用maven新建Web3.0项目](#5使用maven新建web30项目)
+        - [添加web容器](#添加web容器)
+            - [Jetty](#jetty)
+            - [Tomcat](#tomcat)
+    - [5.1.加入Servlet的API包](#51加入servlet的api包)
+- [常用插件](#常用插件)
+    - [lombok](#lombok)
+- [Maven和Ant的区别一](#maven和ant的区别一)
+- [Maven的优势](#maven的优势)
+*目录创建于2017-12-18*
+
 
 ***********************************************
-##1. 安装
+## 1.安装
 * 下载zip包解压，将bin目录配置至PATH（最好是配置HOME然后引用）
 * 修改conf下53行的setting标签，指定本地仓库的路径
 * 在eclipse或Myeclipse中add，并采用自己的setting文件
@@ -35,7 +36,7 @@
 *****
 ## setting.xml配置
 
-### 1.1 Maven常用命令:
+### 1.1.Maven常用命令:
 > mvn [插件]:[目标] [参数]
 > mvn [阶段]
 
@@ -61,12 +62,13 @@
 
 ```
 ## 2.maven配置
-### 2.1 eclipse中配置：
+### 2.1.eclipse中配置：
 - 高版本自带maven，需要注意的是eclipse的JRE环境目录要选择jdk下的JRE
 
-### 2.2 配置插件 [插件地址](http://maven.apache.org/plugins/index.html)
+### 2.2.配置插件
+> [插件地址](http://maven.apache.org/plugins/index.html)
 
-### 2.3 配置文件的详解
+### 2.3.配置文件的详解
 ```xml
       <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
@@ -97,9 +99,7 @@
      <developers></developers>
      <licenses></licenses>
      <orgnazation></orgnazation>
-     <!--
-         依赖
-     -->
+     <!--依赖-->
      <dependencies>
        <dependency>
          <groupId>junit</groupId>
@@ -120,10 +120,9 @@
      </dependencies>
      <dependencyManagement>
      </dependencyManagement>
-     
      <build>
       <plugins>
-         构件三要素
+         <!-- 构件三要素 -->
       </plugins>
      </build>
      <!--继承-->
@@ -133,31 +132,31 @@
      </modules>
 ```
 
-#### 2.3.1配置:源码package成JAR包：(pom.xml中配置)
+配置:源码package成JAR包：(pom.xml中配置)
 `<packaging>jar</packaging>`
 
-## 3. maven概念
+## 3.maven概念
 - 坐标：三个标签唯一的标识了项目
 - 仓库：jar包的集合目录
     - 本地仓库
     - 远程仓库
 
 ## 4.maven的依赖
-### 4.1处理项目间依赖方法
+### 4.1.处理项目间依赖方法
 项目A依赖B
 A项目 pom.xml中配置依赖 （构件三要素）
 B项目 先clean package
       然后build 的 install
 A 项目 compile
 
-### 4.2依赖冲突
+### 4.2.依赖冲突
 - 依赖路径短优先
    - 1 A->B->C->X(jar文件)
    - 2 A->C->X(jar文件)
    - 会选择 2 中的X的jar版本
 - 先声明的优先
 
-### 4.3继承
+### 4.3.继承
 新建一个项目作为父项目，可以删除Test目录（无用）
 然后在需要引用父项目pom文件的地方加上parent 标签里面写上 父项目的三要素
 
@@ -200,7 +199,7 @@ A 项目 compile
 
 
 *****************
-#### 关于使用git idea 多模块的项目的构建
+#### 关于使用git和idea多模块的项目的构建
 `.gitignore文件` 没有特别的地方
 ```
     .idea/
@@ -239,7 +238,9 @@ A 项目 compile
 
 *************************
 
-## 5.使用maven新建Web3.0项目 [网络maven仓库](http://mvnrepository.com/)
+## 5.使用maven新建Web3.0项目
+> [网络maven仓库](http://mvnrepository.com/)
+
 - 新建maven 选择webapp 然后输入三要素
 - 但是因为模板默认的是web2.3，所以要手动修改成3.0
 - 1. pom文件中添加插件 编译部分
@@ -326,7 +327,7 @@ A 项目 compile
 ```
 - 部署完成后 tomcat7:deploy 运行服务器
 
-### 5.1 加入Servlet的API包:
+### 5.1.加入Servlet的API包
 ```xml
     <dependency>
         <groupId>javax.servlet</groupId>
@@ -351,7 +352,7 @@ A 项目 compile
 ****************************
 
 
-## Maven和Ant的区别一:
+## Maven和Ant的区别一
 
 1.ant脚本是可以直接运行在maven中的。maven和ant最大的差别就是在于maven的编译以及所有的脚本都有一个基础，就是POM（project object model）。这个模型定义了项目的方方面面，然后各式各样的脚本在这个模型上工作，而ant完全是自己定义，显然maven更胜一筹。
 
@@ -363,7 +364,7 @@ A 项目 compile
 
 5.maven目前不足的地方就是没有象ant那样成熟的GUI界面，不过mavengui正在努力中。目前使用maven最好的方法还是命令行，又快又方便
 
-## Maven的优势:
+## Maven的优势
 
 - 协同开发的基本规范，为大家提供方便的协作的模式，能增加代码的复用，提高生产率。
 - 提供方便，规范化的打包方法，是公司完成自动构建系统的核心部分，能帮助提高敏捷开发的效率(敏捷开发提倡尽早集成)。
