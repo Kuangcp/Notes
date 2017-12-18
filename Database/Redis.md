@@ -1,3 +1,41 @@
+`目录`
+- [Redis](#redis)
+    - [【windows上的基本配置】](#windows上的基本配置)
+    - [Linux下的使用](#linux下的使用)
+    - [docker安装redis](#docker安装redis)
+    - [redis配置文件](#redis配置文件)
+    - [Redis命令行常规使用](#redis命令行常规使用)
+        - [常用的数据类型操作](#常用的数据类型操作)
+            - [过期策略](#过期策略)
+        - [各数据类型的高级操作](#各数据类型的高级操作)
+            - [字符串 String](#字符串string)
+            - [列表 list](#列表list)
+            - [集合 set](#集合set)
+            - [有序集合 zset](#有序集合zset)
+            - [散列 hash](#散列hash)
+            - [HyperLogLog](#hyperloglog)
+            - [GEO【地理位置】](#geo地理位置)
+        - [Pub/Sub发布订阅](#pub/sub发布订阅)
+        - [事务](#事务)
+        - [服务器](#服务器)
+        - [Run Configuration](#runconfiguration)
+        - [数据安全和性能](#数据安全和性能)
+            - [持久化策略](#持久化策略)
+            - [复制](#复制)
+            - [数据迁移](#数据迁移)
+    - [【Redis的使用】](#redis的使用)
+        - [作为日志记录](#作为日志记录)
+        - [作为网站统计数据](#作为网站统计数据)
+        - [存储配置信息](#存储配置信息)
+        - [自动补全](#自动补全)
+        - [构建锁](#构建锁)
+        - [任务队列](#任务队列)
+        - [【Java使用redis】](#java使用redis)
+        - [jedis遇到的异常](#jedis遇到的异常)
+        - [SpringBoot使用Redis](#springboot使用redis)
+
+*目录创建于2017-12-18*
+************************************************************
 # Redis
 ## 【windows上的基本配置】
 - 注册为服务
@@ -76,7 +114,7 @@
     - zinterstore 进行集合之间的并集（可以看作是多表连接）
     - `精度丢失问题`	
 
-##### 过期策略
+#### 过期策略
 - `expire key seconds` 设置键的过期时间
 - `PTTL/TTL key ` 查看键剩余过期时间（生存时间） ms/s
     -  -1表示永久 -2表示没有该key
@@ -86,7 +124,7 @@
 ### 各数据类型的高级操作
 > [中文文档](http://redisdoc.com/index.html)
 
-##### 字符串 String
+#### 字符串 String
 - 字符串就是字节组成的序列 可以放字节串，整数，浮点数
 - `set key newval nx `存在则set失败
 - `set key newval xx `不存在则set失败
@@ -105,7 +143,7 @@
 - `ttl key` 查看剩余存活时间 -1表示永久 -2表示没有该key
 
 
-##### 列表 list
+#### 列表 list
 - `rpush key val val val `右/尾添加元素 lpush是左/头，若表不存在就新建
 - `rpushx key value` 若表不存在就什么都不做，否则尾插元素
 - `rpop key` 从list右/尾端中删除元素返回元素值 没有了就返回null
@@ -121,7 +159,7 @@
     - 当 pivot 不存在于列表 key 时，不执行任何操作。当 key 不存在时， key 被视为空列表，不执行任何操作。如果 key 不是列表类型，返回一个错误。
 - `LREM key count value` 根据参数 count 的值，移除列表中与参数 value 相等的元素。
 
-##### 集合 set
+#### 集合 set
 - `SADD key member [member ...]`
 - `SCARD key` 返回集合 key 的基数(集合中元素的数量)。
 - `SDIFF key [key ...]`  返回一个集合的全部成员，该集合是所有给定集合之间的差集。不存在的 key 被视为空集。
@@ -138,7 +176,7 @@
 - `SUNIONSTORE destination key [key ...]`
 - `SSCAN key cursor [MATCH pattern] [COUNT count]` 参考 SCAN 命令
 
-##### 有序集合 zset
+#### 有序集合 zset
 
 - ZADD
 - ZCARD
@@ -161,7 +199,7 @@
 - ZLEXCOUNT
 - ZREMRANGEBYLEX
 
-##### 散列 hash
+#### 散列 hash
 
 - HDEL
 - HEXISTS
@@ -179,12 +217,12 @@
 - HSCAN
 - HSTRLEN
 
-##### HyperLogLog
+#### HyperLogLog
 PFADD
 PFCOUNT
 PFMERGE
 
-##### GEO【地理位置】
+#### GEO【地理位置】
 GEOADD
 GEOPOS
 GEODIST
