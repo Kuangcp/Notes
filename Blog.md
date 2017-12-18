@@ -1,3 +1,35 @@
+`目录`
+- [【个人博客网】](#个人博客网)
+- [【Blog】](#blog)
+    - [搭建博客](#搭建博客)
+    - [NetWork](#network)
+    - [经验之谈](#经验之谈)
+    - [算法](#算法)
+        - [匹配算法](#匹配算法)
+    - [Java](#java)
+        - [SE](#se)
+        - [BuildTool](#buildtool)
+    - [Go](#go)
+    - [Python](#python)
+    - [Database](#database)
+        - [Mysql](#mysql)
+    - [操作系统](#操作系统)
+        - [Windows](#windows)
+        - [Linux](#linux)
+    - [Web性能](#web性能)
+    - [Tool](#tool)
+    - [编辑器](#编辑器)
+        - [VSCode](#vscode)
+    - [Web服务器](#web服务器)
+        - [Nginx](#nginx)
+        - [Tomcat](#tomcat)
+        - [Jetty](#jetty)
+    - [Docker](#docker)
+    - [团队开发](#团队开发)
+    - [毕业](#毕业)
+    - [生活](#生活)
+
+*************************************    
 # 【个人博客网】
 - [hushuang.me](https://hushuang.me/)
 - [猛禽](http://my.csdn.net/Raptor) `一个坚持了17年博客的程序员`
@@ -5,7 +37,7 @@
 - [冰封千里](http://ice1000.org/)`Javaer,JavaFX和JVM类语言擅长`
 - [David's blog](blog.weisiliang.com)`Java程序员`
 - [http://blog.leapoahead.com](http://blog.leapoahead.com)`经验之谈`
-- []()
+- [Java和Vue前后端](http://blog.exrick.cn/)
 
 ***************
 # 【Blog】
@@ -16,6 +48,9 @@
 
 ## NetWork
 - [使用清华的IPV6](http://ju.outofmemory.cn/entry/154398)
+
+## 经验之谈
+- [不好的编程习惯](http://blog.csdn.net/xishining/article/details/78824148)
 
 **************
 ## 算法
@@ -30,6 +65,7 @@
 - [Java异常浅谈](http://www.cnblogs.com/focusj/archive/2011/12/26/2301524.html)
 - [Eclipse Collections以及Java8的特性](http://www.infoq.com/cn/articles/eclipse-collections?utm_campaign=rightbar_v2&utm_source=infoq&utm_medium=articles_link&utm_content=link_text)
 - [Java8的特性](http://www.jb51.net/article/48304.htm)
+- [正确使用Volatile变量](https://www.ibm.com/developerworks/cn/java/j-jtp06197.html)
 
 ***************
 - [Java动态代理机制详解](http://blog.csdn.net/luanlouis/article/details/24589193) `博客很细致，深入原理`

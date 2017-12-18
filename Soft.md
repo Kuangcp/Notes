@@ -1,5 +1,74 @@
-# 常用的工具软件
+`目录`
+- [常用的工具软件](#常用的工具软件)
+    - [【国内的资源镜像站】](#国内的资源镜像站)
+    - [三方库](#三方库)
+    - [IDE](#ide)
+    - [SDK](#sdk)
+    - [Plugin](#plugin)
+    - [Tools](#tools)
+        - [文档处理](#文档处理)
+        - [压力测试](#压力测试)
+        - [UML](#uml)
+        - [抓包工具](#抓包工具)
+        - [异步](#异步)
+        - [响应式](#响应式)
+    - [Database](#database)
+    - [前端](#前端)
+    - [【包管理】](#包管理)
+        - [使用sdkman](#使用sdkman)
+    - [【服务管理】](#服务管理)
+        - [oneinstack](#oneinstack)
+- [【常用工具】](#常用工具)
+    - [网络工具](#网络工具)
+        - [nmap](#nmap)
+    - [终端工具](#终端工具)
+        - [xclip](#xclip)
+        - [zssh](#zssh)
+        - [Autojump](#autojump)
+        - [.git-prompt.sh](#git-promptsh)
+        - [asciinema](#asciinema)
+        - [tmux](#tmux)
+    - [其他工具](#其他工具)
+        - [输入法](#输入法)
+        - [qgit](#qgit)
+        - [convert](#convert)
+    - [【文本编辑器】](#文本编辑器)
+        - [Ghex](#ghex)
+        - [Kate/KWrite(Kate的轻量版)](#kate/kwrite(kate的轻量版))
+        - [Geany](#geany)
+        - [Sublime](#sublime)
+        - [VSCode](#vscode)
+        - [Gedit](#gedit)
+        - [小书匠](#小书匠)
+        - [Moediter Typora CuteMarkEd](#moeditertyporacutemarked)
+        - [Vi/Vim](#vi/vim)
+        - [Nano](#nano)
+        - [fte-terminal](#fte-terminal)
+    - [【IDE】](#ide)
+        - [Idea](#idea)
+            - [插件](#插件)
+                - [lombok](#lombok)
+        - [eclipse](#eclipse)
+    - [【浏览器】](#浏览器)
+        - [FireFox](#firefox)
+            - [必备插件](#必备插件)
+        - [Chrome](#chrome)
+        - [Vivaldi](#vivaldi)
+    - [【平台】](#平台)
+        - [Gitee](#gitee)
+        - [Github](#github)
+        - [Gitea](#gitea)
+        - [测试](#测试)
+        - [综合开发平台](#综合开发平台)
+            - [百度开发平台](#百度开发平台)
+            - [腾讯微信公众号](#腾讯微信公众号)
+        - [智能](#智能)
+            - [图灵机器人](#图灵机器人)
+        - [消息推送](#消息推送)
+            - [极光推送](#极光推送)
+            - [GoEasy](#goeasy)
 
+# 常用的工具软件
 ## 【国内的资源镜像站】
 - [网易](http://mirrors.163.com/)`下载系统是 *-cd 的文件`
 - [清华大学](https://mirrors.tuna.tsinghua.edu.cn/)
@@ -125,7 +194,11 @@
 ### nmap
 > 端口扫描 [参考博客](http://aaaxiang000.blog.163.com/blog/static/2063491220113284325531/)
 
-- 扫描`nmap -sP IP`
+- 扫描`nmap <param> IP`
+    - -sP
+    - -sT
+    - -sR
+
 
 **********
 ## 终端工具

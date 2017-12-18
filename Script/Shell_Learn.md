@@ -1,7 +1,7 @@
 # 学习Linux Shell
 > 首先语法不像别的语言可读性好，比如Python，然后方言众多，学习比Python2，3还恶心
 
-## shell 类别
+## shell类别
 sh
 bash
 zsh

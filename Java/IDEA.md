@@ -1,3 +1,17 @@
+`目录`
+- [IDEA 使用笔记](#idea使用笔记)
+    - [常识](#常识)
+    - [常用技巧](#常用技巧)
+        - [导出为可运行的JAR包(普通Java项目)](#导出为可运行的jar包(普通java项目))
+        - [Springboot热加载](#springboot热加载)
+        - [个人IDEA配置](#个人idea配置)
+    - [IDEA快捷键](#idea快捷键)
+        - [使用类eclipse快捷键](#使用类eclipse快捷键)
+        - [IDEA快捷键](#idea快捷键)
+            - [【正在使用】](#正在使用)
+                - [IntelliJ IDEA使用技巧一览表](#intellijidea使用技巧一览表)
+
+********************************
 # IDEA 使用笔记
 
 ## 常识

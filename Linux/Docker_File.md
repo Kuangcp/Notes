@@ -18,9 +18,11 @@
         - [WORKDIR](#workdir)
         - [STOPSIGNAL](#stopsignal)
         - [ONBUILD](#onbuild)
-            - [Dockerfile案例](#dockerfile案例)
-            - [打包最新版git](#打包最新版git)
+    - [Dockerfile案例](#dockerfile案例)
+        - [打包最新版git](#打包最新版git)
+        - [Dockerfile中新建用户](#dockerfile中新建用户)
 
+****************************************************************
 # Dockerfile
 ## 使用入门案例
 - `mkdir test && cd test && touch Dockerfile ` 输入如下文本
@@ -38,7 +40,7 @@
     - 否则就是 `docker build -t 仓库/镜像:tag- < 文件`
 - 创建镜像成功后 `docker run --name ContainerName -d repository/tag` 新建容器来运行镜像
 
-***************************
+*******************************************************************
 ## 【Dockerfile命令理解】
 - Dockerfile是一个`镜像`的表示，可以通过Dockerfile来描述构建镜像的步骤，且可以自动构建一个容器
 - 所有的 Dockerfile 命令格式都是: `INSTRUCTION arguments` 
@@ -161,7 +163,7 @@
 - 注入下游镜像。如果生成的镜像是作为另一个镜像的基础镜像，则该指令定义了需要被执行的那些指令
 
 ******************************************
-#### Dockerfile案例
+## Dockerfile案例
 - [alpine构建ssh](/Linux/Docker/alpine/Dockerfile)
 - [docker-wordpress-nginx](https://github.com/eugeneware/docker-wordpress-nginx)
 - [rails-meets-docker](https://github.com/gemnasium/rails-meets-docker)
@@ -169,7 +171,7 @@
 - [官方文档 dockerfile](https://www.docker.io/learn/dockerfile/)
 - [官方文档 builder](http://docs.docker.io/reference/builder/)
 
-#### 打包最新版git
+### 打包最新版git
 ```Dockerfile
 FROM ubuntu
 MAINTAINER "youtemail"
@@ -184,7 +186,7 @@ ENTRYPOINT ["git"]
 - 注意其运行环境是容器内，不是宿主机，入口点的命令运行完了就退出了，不能当成宿主机上的git使用，只能说是听个响
     - 所以不可能说在容器中安装软件然后在宿主机上交互运行
 
-#### Dockerfile中新建用户
+### Dockerfile中新建用户
 ```Dockerfile
 RUN useradd -ms /bin/bash mythos;\
     echo "mythos:jiushi" | chpasswd;

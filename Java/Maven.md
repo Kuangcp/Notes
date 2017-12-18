@@ -1,3 +1,32 @@
+`目录`
+    - [1. 安装](#1安装)
+    - [setting.xml配置](#settingxml配置)
+        - [1.1 Maven常用命令:](#11maven常用命令:)
+    - [2.maven配置](#2maven配置)
+        - [2.1 eclipse中配置：](#21eclipse中配置：)
+        - [2.2 配置插件 [插件地址](http://maven.apache.org/plugins/index.html)](#22配置插件[插件地址](http://mavenapacheorg/plugins/indexhtml))
+        - [2.3 配置文件的详解](#23配置文件的详解)
+            - [2.3.1配置:源码package成JAR包：(pom.xml中配置)](#231配置:源码package成jar包：(pomxml中配置))
+    - [3. maven概念](#3maven概念)
+    - [4.maven的依赖](#4maven的依赖)
+        - [4.1处理项目间依赖方法](#41处理项目间依赖方法)
+        - [4.2依赖冲突](#42依赖冲突)
+        - [4.3继承](#43继承)
+        - [构建](#构建)
+            - [打包成可执行 jar](#打包成可执行jar)
+            - [war包当jar使用](#war包当jar使用)
+            - [关于使用git idea 多模块的项目的构建](#关于使用gitidea多模块的项目的构建)
+    - [5.使用maven新建Web3.0项目 [网络maven仓库](http://mvnrepository.com/)](#5使用maven新建web30项目[网络maven仓库](http://mvnrepositorycom/))
+            - [添加web容器](#添加web容器)
+                - [Jetty](#jetty)
+                - [Tomcat](#tomcat)
+        - [5.1 加入Servlet的API包:](#51加入servlet的api包:)
+    - [常用插件](#常用插件)
+        - [lombok](#lombok)
+    - [Maven和Ant的区别一:](#maven和ant的区别一:)
+    - [Maven的优势:](#maven的优势:)
+
+***********************************************
 ##1. 安装
 * 下载zip包解压，将bin目录配置至PATH（最好是配置HOME然后引用）
 * 修改conf下53行的setting标签，指定本地仓库的路径

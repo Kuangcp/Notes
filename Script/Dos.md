@@ -14,6 +14,8 @@ netstat -ano ：查看端口占用
 - [参考博客](http://www.jb51.net/article/49196.htm)
 
 ## 服务
+
+`记一次在windows上配置服务`
 - [将jar程序配置为服务](http://developer.51cto.com/art/201411/456795.htm)
 - [将bat后台运行，隐藏黑窗口](http://blog.csdn.net/carl6148/article/details/7905549)
 - [按端口找到进程然后杀掉](https://zhidao.baidu.com/question/1430216669082941259.html)
