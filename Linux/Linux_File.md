@@ -316,6 +316,6 @@ du xmldb/*/*/* |wc -l
     *.tar.bz2用tar -xjf 解压
     *.Z 用 uncompress 解压
     *.tar.Z 用tar -xZf 解压
-    *.rar 用 unrar e解压
+    *.rar 用 unrar e 解压
     *.zip 用 unzip 解压
 ```

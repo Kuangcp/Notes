@@ -74,7 +74,7 @@
 - [Java-learing](https://github.com/brianway/java-learning) `基础学习仓库`
 - [activiti实战源码](https://github.com/henryyan/activiti-in-action-codes) `activiti实战这本书的源码`
 - [springboot-activiti](https://gitee.com/wyy396731037/springboot-activiti) `整合activiti的Springboot示例`
-- [activiti示例](https://github.com/henryyan/kft-activiti-demo)
+- [activiti示例](https://github.com/henryyan/kft-activiti-demo)`Activiti实战书籍相关源码`
 - [rabbitmq](https://github.com/chwshuang/rabbitmq)`入门学习代码`
 - [docker-demos](https://github.com/waylau/docker-demos) `Maven和Gradle结合docker使用`
 
@@ -143,7 +143,8 @@
 **********************************************
 **********************************************
 # 【Book】
-> 在线书籍
+> 在线书籍以及GitBook
+
 ## Go
 - [《Go入门指南》](https://github.com/Unknwon/the-way-to-go_ZH_CN)
 - [Learning-Go](https://github.com/mikespook/Learning-Go-zh-cn)
