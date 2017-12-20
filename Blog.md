@@ -38,6 +38,7 @@
 - [David's blog](blog.weisiliang.com)`Java程序员`
 - [http://blog.leapoahead.com](http://blog.leapoahead.com)`经验之谈`
 - [Java和Vue前后端](http://blog.exrick.cn/)
+- [程序员DD](http://blog.didispace.com/)`翟永超`
 
 ***************
 # 【Blog】

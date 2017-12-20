@@ -62,7 +62,6 @@
     RUN apt-get install -y apt-utils debconf-utils iputils-ping wget curl mc htop ssh; 
     RUN chmod 700 /root/.ssh; chmod 600 /root/.ssh/authorized_keys;
     RUN service ssh start
-
     EXPOSE 22
 ```
 - `docker build . -t myth:ssh`
