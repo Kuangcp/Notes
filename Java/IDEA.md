@@ -9,7 +9,7 @@
         - [使用类eclipse快捷键](#使用类eclipse快捷键)
         - [IDEA快捷键](#idea快捷键)
             - [【正在使用】](#正在使用)
-                - [IntelliJ IDEA使用技巧一览表](#intellijidea使用技巧一览表)
+                - [IntelliJ IDEA使用技巧一览表](#intellij-idea使用技巧一览表)
 
 ********************************
 # IDEA 使用笔记
@@ -20,7 +20,7 @@
 - 一个项目一个空间也是可以的，就是跨项目查看代码会有点麻烦，而且每个项目的配置文件都是不一样的，同样的配置可能要配置很多遍
 
 ## 常用技巧
-### 导出为可运行的JAR包(普通Java项目)
+### 导出为可运行的JAR包 普通Java项目
 - File -> project structure ->artifact 里面设置好 引入的库，设置Main类，引用的jar包的相对classpath
 - Build artifact -> Build
 - Maven或者Gradle的话直接就能得到，不过也要配置一下main
@@ -34,16 +34,28 @@
 - 字体Fira Code Retina 14 0.9
 
 ## IDEA快捷键
-### 使用类eclipse快捷键
-### IDEA快捷键
-#### 【正在使用】
-> Alt:A  Ctrl:C  Shift:S
+### 使用内置类eclipse快捷键系列
+### IDEA原生快捷键系列
 
-- A Enter 自动修复
-- C Q 显示doc
-- C B 显示定义处
-- C A B 显示实现处
-- C S T 自动创建JunitTest
+#### 【正在使用】
+
+- Alt Enter 自动修复
+- Ctrl Q 显示doc
+- Ctrl B 显示定义处
+- Ctrl Alt B 显示实现处
+- Ctrl Shift T 自动创建JunitTest
+- Ctrl W 选中代码
+- Ctrl E 最近文件
+- Ctrl N 快速搜索Java文件 
+    - Ctrl Shift N 搜索所有文件
+    - Ctrl Shift Alt N 按类名首字母搜索
+- Ctrl Space 智能补全
+    - Ctrl Shift Space 结合上下文补全
+- Ctrl Alt ←/→ 后退/前进 至光标的上一个位置
+- Ctrl Shift F7 高亮显示光标所在元素所有出现过的地方
+
+    - 
+
 
 `coding`
 - C O 选择要重写的方法

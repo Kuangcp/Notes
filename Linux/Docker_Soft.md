@@ -70,7 +70,8 @@
 
 ***********
 ## 创建一个alpine的ssh
-- [alpine-ssh](/Linux/Docker/alpine/Docerfile)
+- [alpine-ssh](/Linux/Docker/alpine/alpine-ssh) 
+    - 也可以使用百度云镜像 `docker pull hub.baidubce.com/mythos/alpine-ssh:1.0`
 
 ***********
 ## git服务器

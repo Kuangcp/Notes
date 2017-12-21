@@ -373,17 +373,26 @@ E36B85CC 84991F19 7575D828 470A92AB
 ********************
 ## 【浏览器】
 ### FireFox
-- 分为 正式版， beta， Nightly
+- 分为 正式版， beta， Nightly `因为那个插件标准的缘故 56 和 57 插件不共享`
 - 如果要配置多个火狐在电脑上 终端中 `./firefox -P` 就会进入配置文件的编辑（关闭所有火狐的情况下）
     - 新建一个就好了，之后就用新建的打开该火狐`./firefox -P name`
 - 如果要同时开多个火狐 加上`--no-remote`参数，但是我这个deepin不要诶，但是Ubuntu mint加上也没有用
 
 ************
 #### 必备插件
-- FoxyTab
-- New Tab Tools
+- `FoxyTab`
+- `New Tab Tools` 新建标签页的Tool
+- `cliget` 能将下载中的任务转化为 curl wget命令
+- `eolinker` 接口测试工具
+- `Simple Tab Groups` 
+- `rester` rest客户端工具
+- `Download all Images`下载图片
+- `octotree` github 目录查看
+- `Web Developer` 各种Web调试开发工具
+- `One Tab` tab归组
+- `Remove Cookies Button`
 
-************
+****************************************
 ### Chrome
 - 的确快，就是内存占用高
 
@@ -429,19 +438,33 @@ SSH_DOMAIN       = kuangcp.top
 - [自动API测试](https://www.eolinker.com/#/index)
 
 ********
-### 综合开发平台
-#### 百度开发平台
+# 综合开发平台
+## 百度开发平台
 
-#### 腾讯微信公众号
+### CCE
+> 容器引擎 -> [入门必看](https://cloud.baidu.com/doc/CCE/GettingStarted.html)
+
+- 比阿里的好用
+
+### BAE
+> 应用引擎，简单的说就是一个提供了环境，你只需上传打包好的可执行文件就可以运行起来了
+
+- 短期使用收费没有很高，十分灵活，就是前期学习入门 配置略麻烦。适合演示使用，例如毕设。
+    - 并且还提供一定免费额度的 MySQL Redis MongoDb （只能BAE的内网访问）
+    - 还有自动测试
+
+## 腾讯微信公众号
+`2017-12-21 21:41:43`
+- 不说了反正都是Shit一样的接口设计和返回值  希望会变好，碰过就不想再弄了！！！
 
 ************
-### 智能
-#### 图灵机器人
+# 智能平台
+## 图灵机器人
 
 *********
-### 消息推送
-#### 极光推送
+# 消息推送
+## 极光推送
 > [官网](https://www.jiguang.cn/) `做Android IOS的消息推送和短信等推送`
 
-#### GoEasy
+## GoEasy
 - [示例](http://goeasy.io/cn/started)
