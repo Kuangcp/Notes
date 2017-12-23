@@ -23,6 +23,8 @@
 - Java核心技术 卷1 基础知识 卷2 高级特性
 - 实战java高并发程序设计
 
+### Git
+- GitHub实践  [美] Chris Dawson , [美] Ben Straub (作者) 安道 (译者) 
 ### Linux
 
 ### Python

@@ -50,6 +50,9 @@
 ## Linux
 - [snap](https://snapcraft.io/docs/core/usage) `snap 软件包管理器`
 
+## Git
+- [github开发接口](https://developer.github.com/v3/)
+
 ## Go
 - [go官方文档](https://golang.org/doc/)
 

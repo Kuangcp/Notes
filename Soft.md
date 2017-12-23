@@ -244,14 +244,14 @@ set_bash_prompt(){
 }
 PROMPT_COMMAND="set_bash_prompt; $PROMPT_COMMAND"
 ```
-********
+************************************
 ### asciinema
 > 终端录制工具
 
 - 执行 `asciinema`或`asciinema rec` 即可开始录制
 - 要注册就运行 `asciinema auth` 进入输出的网址，填邮箱和名字即可（每次登录都要这样。或者使用邮件来确认，麻烦ing）
 
-********
+***********************************
 ### tmux
 > 好用的管理会话的软件
 
@@ -267,7 +267,7 @@ PROMPT_COMMAND="set_bash_prompt; $PROMPT_COMMAND"
     - `Ctrl B` `D` 可以合上电脑（休眠）
     - `tmux ls` 显示所有 `tmux a -t myth` 连上指定名字的就继续了
 
-********
+************************************
 ## 其他工具
 
 ### 输入法
@@ -276,7 +276,7 @@ PROMPT_COMMAND="set_bash_prompt; $PROMPT_COMMAND"
 ### qgit
 - git查看仓库的图形化界面
 
-********
+***********************************
 ### convert
 - [参考博客](http://blog.csdn.net/mybelief321/article/details/9969949)
 - 将图片转换成指定大小 这是保持比例的 `convert -resize 600X600 src.jpg dst.jpg` 中间是字母X
@@ -289,16 +289,16 @@ PROMPT_COMMAND="set_bash_prompt; $PROMPT_COMMAND"
 ### Ghex
 - 十六进制文件编辑器
 
-************
+************************************
 ### Kate/KWrite(Kate的轻量版)
 - [安装markdown预览插件](https://github.com/antonizoon/kate-markdown)
 - 码Python也挺方便，也有常用快捷键，自动提示，终端整合，而且是自动切目录
 
-************
+*********************************
 ### Geany
 - 码C 编译方便 有Ctag辅助
 
-************
+**********************************
 ### Sublime 
 - 如果出现小bug，就直接删除 ～.config 下的 sublime文件夹注意注册证书拷出来
 - 还是挺好的，小巧，但是中文硬伤 用来阅读代码比较合适
@@ -306,27 +306,12 @@ PROMPT_COMMAND="set_bash_prompt; $PROMPT_COMMAND"
     - 搜索安装插件 ChineseLocalizations 就能汉化 
     - 修改配置文件 添加`"font_face": "DeJaVu Sans Mono",` 就解决了字体错位的问题
     - 保存为项目来切换管理更为方便
-- [参考博客](http://www.cnblogs.com/hollow/p/6496469.html)
-`3143 注册码`
-```
-—– BEGIN LICENSE —–
-TwitterInc
-200 User License
-EA7E-890007
-1D77F72E 390CDD93 4DCBA022 FAF60790
-61AA12C0 A37081C5 D0316412 4584D136
-94D7F7D4 95BC8C1C 527DA828 560BB037
-D1EDDD8C AE7B379F 50C9D69D B35179EF
-2FE898C4 8E4277A8 555CE714 E1FB0E43
-D5D52613 C3D12E98 BC49967F 7652EED2
-9D2D2E61 67610860 6D338B72 5CF95C69
-E36B85CC 84991F19 7575D828 470A92AB
-—— END LICENSE ——
-```
+- [参考博客](http://www.cnblogs.com/hollow/p/6496469.html) | [3143码](https://gitee.com/kcp1104/codes/89xfugn5dwoyr23vchikb54)
 - 主题安装 Boxy Theme 以及  A File Icon 就能切换多种主题了 [参考博客](https://www.zhihu.com/question/46266742)
 - [sublime的常用快捷键](http://www.cnblogs.com/kristen-zou/p/7641158.html)
+- [配置C/C++开发环境](http://www.cnblogs.com/flipped/p/5836002.html)
 
-************
+************************************
 ### VSCode
 - 码笔记，码Python 比较方便，目录树，预览，整合终端
 - [快捷键](https://code.visualstudio.com/shortcuts/keyboard-shortcuts-linux.pdf)
