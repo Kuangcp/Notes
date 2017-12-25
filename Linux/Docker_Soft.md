@@ -9,7 +9,12 @@
     - [Docker中构建一个可外登录的完整单一Ubuntu](#docker中构建一个可外登录的完整单一ubuntu)
     - [创建一个alpine的ssh](#创建一个alpine的ssh)
     
-*************
+## 相关镜像
+`百度云`
+- `hub.baidubce.com/mythos/alpine-ssh:1.0` alpine配置好ssh，适合瞎折腾
+- `hub.baidubce.com/mythos/redis-alpine:1211` redis的alpine版镜像，轻量
+
+*************************************************
 ## 安装redis
 > [官方镜像地址](https://hub.docker.com/_/redis/)
 
@@ -19,7 +24,7 @@
 - `sudo docker run -v /myredis/conf/redis.conf:/usr/local/etc/redis/redis.conf --name myredis redis redis-server /usr/local/etc/redis/redis.conf`
 - port-redis容器的端口映射：`sudo docker run -d -p 6379:6379 --name port-redis redis` 左本机右容器
 
-***********
+************************************************
 ## 安装Jenkins
 - `sudo docker pull jenkins` 下拉镜像
 - `sudo docker run --name myjenkins -p 8080:8080 -p 50000:50000 -v /home/kcp/docker/jenkins:/var/jenkins_home jenkins` 构建容器
@@ -29,11 +34,11 @@
 ## 安装PostgreSQL
 - [Docker 安装 PostgreSQL](/Database/Postgresql.md)
 
-***********
+*************************************************
 ## 安装Oracle
 - [社区文档](https://hub.docker.com/r/wnameless/oracle-xe-11g/)
 
-************
+**************************************************
 ## 安装MySQL
 - [官方文档](https://hub.docker.com/_/mysql/)
 - `docker run --name some-mysql -e MYSQL_ROOT_PASSWORD=my-secret-pw -d mysql:tag`
@@ -41,7 +46,7 @@
     - `docker run --name mysql-5.6 -v 配置文件目录:/etc/mysql/conf.d  -e MYSQL_ROOT_PASSWORD=mythos1104 -e TZ=Asia/Shanghai -p 3360:3306 -d mysql:5.6`
 - 连接`mysql -h 127.0.0.1 -P 3360 -uroot -pmythos1104`
 
-*************
+*****************************************************
 ## Docker中构建一个可外登录的完整单一Ubuntu
 - 最为简单的是：`docker run  -i -t --name ubuntu17 -p 34433:22 ubuntu /bin/bash`
     - 为这些软件预留端口 `ssh tomcat mysql postgresql mysql oracle nginx reids`
@@ -50,7 +55,7 @@
 - 现在的问题是：能不能在已经运行的容器中添加端口映射？？要是用到途中发现端口少了就麻烦了，解决方法可以是commit成镜像再跑出一个容器出来，
 - 最好是一个服务（应用）一个容器
 
-****************
+**********
 - 自己写构建文件，安装相应的软件
 ```Dockerfile
     FROM ubuntu
