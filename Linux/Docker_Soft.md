@@ -11,7 +11,9 @@
     
 *************
 ## 安装redis
-- 获取镜像：`docker pull redis `
+> [官方镜像地址](https://hub.docker.com/_/redis/)
+
+- 获取镜像：`docker pull redis ` 如果使用`redis:alpine`镜像可以更小，但是稳定就。。
 - 运行默认配置的容器：`docker run --name test-redis -d redis`
 - 使用本地配置文件启动redis容器
 - `sudo docker run -v /myredis/conf/redis.conf:/usr/local/etc/redis/redis.conf --name myredis redis redis-server /usr/local/etc/redis/redis.conf`

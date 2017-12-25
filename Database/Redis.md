@@ -64,7 +64,7 @@
 ```
 
 ## docker安装redis
-- [docker-install-redis](/Linux/Docker.md)
+- [docker-install-redis](/Linux/Docker_Soft.md)
 
 ****************************
 ## redis配置文件
