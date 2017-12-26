@@ -201,23 +201,30 @@
 - 类成员与方法访问控制从严：
     - 如果不允许外部直接通过new来创建对象，那么构造方法显式声明并private
     - ` 工具类`不允许有public或default构造方法
-    - 类非static成员变量并且与子类共享，必须是protec ted
+    - 类非static成员变量并且与子类共享，必须是protected
     - 类非static成员变量并且仅在本类中使用，必须是private
     - 若是static成员变量，必须考虑是否final
+    - 类static 成员变量如果仅在本类使用，必须是 private。
     - 类成员方法只供类内部调用，必须是private
     - 类成员方法只对继承类公开，那么限制为protected
-    - **注意** 访问范围的严格控制利于对模块解耦，如果删除一个private方法，删除就删除，但是如果是public方法就得手心冒汗的删除了
-2017-12-26 11:40:22
+    - **注意** 说明： 任何类、方法、参数、变量，严控访问范围。过于宽泛的访问范围，不利于模块解耦。
+        - 思考：如果是一个 private 的方法，想删除就删除，可是一个 public 的 service 方法，或者一个 public 的成员变量，删除一下，不得手心冒点汗吗？
+        - 变量像自己的小孩，尽量在自己的视线内，变量作用域太大， 无限制的到处跑，那么你会担心的。
+
 **********************************************************
 ## 集合处理
 - 关于HashCode 和equals的处理
     - 只要重写equals，就必须重写HashCode
-    - 因为Set存储的是不重复的对象，依据HashCode和equals进行判断，所以Set存储的方法必须重写这两个方法
+    - 因为Set存储的是不重复的对象，依据hashCode和equals进行判断，所以Set存储的方法必须重写这两个方法
     - 如果自定义对象作为Map的键，那么必须重写HashCode和equals
-- ArrayList的subList结果不可强转成ArrayList，否则会抛出类型强转的错误
-    - subList返回的是ArrayList的内部类，是ArrayList的一个视图，对于subList的所有操作最终都会反映到原列表上
-- 在 subList 场景中，高度注意对原集合元素个数的修改，会导致子列表的遍历、增加、删除均产生 ConcurrentModificationException 异常。
-- 使用集合转数组的方法，必须使用集合的 toArray(T[] array) ，传入的是类型完全一样的数组，大小就是 list . size() 
+    - `说明`： String 重写了 hashCode 和 equals 方法，所以我们可以非常愉快地使用 String 对象作为 key 来使用。
+- ArrayList的subList结果不可强转成ArrayList 否则会抛出 ClassCastException异常， 
+    - 即 `java.util.RandomAccessSubList cannot be cast to java.util.ArrayList.`
+    - `说明`：subList返回的是ArrayList的内部类SubList，是ArrayList的一个视图，对于subList的所有操作最终都会反映到原列表上
+- 在 `subList` 场景中，高度注意对原集合元素个数的修改，会导致子列表的遍历、增加、删除均产生 `ConcurrentModificationException` 异常。
+- 使用集合转数组的方法，必须使用集合的 `toArray(T[] array)` ，传入的是类型完全一样的数组，大小就是 `list.size() `
+    - 使用 toArray 带参方法，入参分配的数组空间不够大时， toArray 方法内部将重新分配内存空间，并返回新数组地址；
+    - 如果数组元素大于实际所需，下标为[ list.size() ]的数组元素将被置为 null，其它数组元素保持原值，因此最好将方法入参数组大小定义与集合元素个数一致。
     - String[] array = new String[list.size()];
     - array = list.toArray(array);
 - 把数组转换成集合：使用工具类 Arrays . asList()时 ，不能使用其修改集合相关的方法，它的 add / remove / clear 方法会抛出 UnsupportedOperationException 异常。
