@@ -51,13 +51,15 @@
     - `-f` 指向任意位置的文件进行配置 `docker build -f /path/to/a/Dockerfile .`
     - `-t`如果构建成功 可以指定保存新镜像的repository和tag (多个的话就多个 -t就行了，例如 `docker build -t shykes/myapp:1.0.2 -t shykes/myapp:latest .`)
 
-### FROM 
+### FROM
 > 基于某镜像构建,这是整个文件的第一条指令，一定是基于某镜像构建的，如果是空镜像就使用特殊的 `FROM scratch` <br/>
 > 允许多个FROM命令，其后的命令就是基于该FROM的镜像构建的，但是一个dockerfile只能得到一个有名字的镜像(最后一个FROM构建的镜像)，之前的FROM就是none:none
 
 - `FROM image`
 - `FROM image:tag`
 - `FROM image@digest`
+
+- 如果FROM使用中，找不到对应的版本的镜像，整个Dockerfile就会报错返回
 
 ### MAINTAINER
 - 留开发者名字 例如 `MAINTAINER kuangcp myth.kuang@gmail.com`
@@ -67,12 +69,16 @@
 > 每条RUN命令在当前镜像的基础上执行指定命令，并提交为新的镜像层，所以尽量将所有命令放在一个RUN里
 
 - `RUN command` 
-    - 这种写法中的command是shell `/bin/sh -C`负责执行，所以就会有限制，必须要有 /bin/sh
-- `RUN ["executable", "param1", "param2" ... ]`  一定要双引号（JSON字符串的格式来解析的）
-    - 这种写法适用任意一个二进制程序 例如bash执行 `RUN ["/bin/bash", "-C", "echo hello"]`
+    - 这种写法中的command是shell `/bin/sh -C`负责执行，所以就会有限制，必须要有 `/bin/sh`
+
+- `RUN ["executable", "param1", "param2" ... ]`  一定要双引号（`JSON字符串的格式`来解析的）
+    - 这种写法适用任意一个二进制程序 
+        - 例如bash执行 `RUN ["/bin/bash", "-C", "echo hello"]`
+        - 例如 ui-docker 就是基于空镜像的直接二进制文件执行的。
     - 环境变量的问题： `RUN ["echo","$HOME"]` 是不会正常输出的，因为此时不会加载环境变量中的数据
         - `RUN ["sh", "-c", "echo", "$HOME"]` 就可以正常输出了
 - 当RUN命令执行完毕后，就会生成一个新的文件层。这个文件层会保存在缓存中作为下一个指令的基础镜像存在，如果不需要缓存就加上 `--no-cache`
+    - 所以就尽量是将所有的命令 放在一个RUN命令里减少镜像层数。
 
 
 ### CMD

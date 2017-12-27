@@ -231,7 +231,7 @@ keytool -importcert -keystore server.jks -file ca.crt
         }
     }
 ```
-- maven： `mvn war` 即可
+- maven： `mvn war` 即可 mvn package -DskipTests
 - gradle: `gradle war` 然后 `gradle bootRepackage` 即可
 
 #### jar
