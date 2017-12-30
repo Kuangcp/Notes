@@ -19,6 +19,11 @@
 > [简洁的API设计](http://www.csdn.net/article/2013-05-02/2815115-stop-designing-fragile-web-api)
 
 ## 配置
+> 如果引入了别的模板引擎就不需要配置解析器，不然就要配
+
+- 没有用模板引擎，配置前后缀 没有用什么原因？？？ classpath:/templates/  .html
+
+- [较完善的入门博客](https://www.tianmaying.com/tutorial/spring-mvc-quickstart)
 
 ## 使用
 > 在Springboot框架中，static templates 文件夹下分别代表了tomcat管理的静态文件和MVC负责跳转的HTML文件或JSP文件
