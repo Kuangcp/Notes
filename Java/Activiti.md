@@ -14,8 +14,8 @@
 ![最简单示例图](https://gitlab.com/Kuangcp/ImageRepo/raw/master/Tech/activiti/activiti-first.png)
 `bpmn是最原始的单纯的流程定义文件，与Springboot整合就是bpmn20.xml文件(区别在于动态注入)`
 
-```
-	dtd定义
+```xml
+	<!-- dtd定义 -->
     <definitions id="definitions"
       targetNamespace="http://activiti.org/bpmn20"
       xmlns:activiti="http://activiti.org/bpmn"

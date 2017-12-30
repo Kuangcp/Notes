@@ -104,11 +104,17 @@
 - 可以将镜像看成真正运行的程序，容器就是具体的一些配置，所以镜像是可以重复利用，容器出问题删掉就是了
 
 ### Docker仓库
+> 默认的Hub因为在国外所以慢而且不太稳定
 
-- 时速云：`sudo docker pull index.tenxcloud.com/<namespace>/<repository>:<tag>`
+- 时速云：
+    - `sudo docker pull index.tenxcloud.com/<namespace>/<repository>:<tag>`
     - 下载后可以用别名 `docker tag index.tenxcloud.com/docker_library/node:lastest node:lastest`
-- 阿里云：[开发者平台](https://dev.aliyun.com/search.html)
+    - 然后为了控制台干净可以直接将原来的长命名tag直接删除
+- 阿里云：
+    - [开发者平台](https://dev.aliyun.com/search.html)
     - 配置命名空间，仓库，然后使用文档的配置即可
+- 百度云（推荐）：
+    - [相关文档](https://cloud.baidu.com/doc/CCE/GettingStarted.html#.E9.95.9C.E5.83.8F.E4.BB.93.E5.BA.93)
 
 - 在服务器上搭建私有仓库
     - 服务器上运行 并映射到本地目录 `docker run -d -p 5000:5000 -v /opt/data/registry:/tmp/registry registry`
@@ -122,6 +128,7 @@
 ### 【基础命令】
 - 登录hub.docker ：`docker login ` 或者 `docker login -u username -p password`
 - 登录时速云：`sudo docker login index.tenxcloud.com`
+- 登录百度云： `docker login --username=[username] hub.baidubce.com`
 
 #### 【镜像命令】
 - 搜索 ： `docker search 镜像名`
