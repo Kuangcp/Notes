@@ -136,9 +136,15 @@
 - [codefont](https://github.com/zhenruyan/codefont) `编程使用的等宽字体` `code的不错`
 - [学生的优惠资源](https://github.com/OpenGenus/Best-student-discount-services)
 - [JVM分析优化的定制JDK](https://www.yourkit.com/java/profiler/features/)
+- [acme](https://github.com/Neilpang/acme.sh)`可以自动更新https证书从lets上`
+- [acme-tiny](https://github.com/diafygi/acme-tiny)`同样支持acme协议然后更新证书`
 
 ### 微信相关
 - [微信小程序Demo](https://gitee.com/yuzeng84/wxapp)
+
+## 工作
+### 简历
+- [简历模板](https://github.com/geekcompany/ResumeSample)
 
 **********************************************
 **********************************************

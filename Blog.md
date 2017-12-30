@@ -39,6 +39,7 @@
 - [http://blog.leapoahead.com](http://blog.leapoahead.com)`经验之谈`
 - [Java和Vue前后端](http://blog.exrick.cn/)
 - [程序员DD](http://blog.didispace.com/)`翟永超`
+- [Web程序猿](https://imququ.com/)
 
 ****************************************
 # 【Blog】
@@ -133,6 +134,9 @@
 ## Tool
 - [genymotion 4.2.2 windows版](http://blog.csdn.net/c_s_d_n_luckyq/article/details/48437789)
 - [使用gitbook打造电子书](http://www.cnblogs.com/wangchaoyuana/p/7507504.html)
+- [免费SSL证书获取](https://zhuanlan.zhihu.com/p/22641748)
+- [免费HTTPS证书](https://imququ.com/post/letsencrypt-certificate.html)
+
 
 ***************
 ## 编辑器
