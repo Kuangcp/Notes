@@ -129,6 +129,74 @@ server {
 }
 
 ```
+##### certbot来配置Https
+> [参考博客](http://www.cnblogs.com/lidong94/p/7156839.html)
+> [参考博客](https://www.digitalocean.com/community/tutorials/how-to-secure-nginx-with-let-s-encrypt-on-ubuntu-16-04)
+
+wget https://dl.eff.org/certbot-auto
+chmod a+x certbot-auto
+./certbot-auto 进行安装 但是过程中会有一些设置，
+./certbot-auto certonly --email kuangcp@aliyun.com --nginx -d wx.kuangcp.top 生成证书
+
+SSL 接收到一个超出最大准许长度的记录 要在端口后加上SSL nginx
+```
+upstream youhui {
+  server 127.0.0.1:8080;
+}
+upstream git{
+  server 127.0.0.1:55443;
+}
+#server {
+#  listen 80;
+#  server_name wx.kuangcp.top;
+#  location / {
+#    proxy_set_header X-Real-IP $remote_addr;
+#    proxy_set_header X-Forward-For $proxy_add_x_forwarded_for;
+#    proxy_set_header Host $http_host;
+#    proxy_set_header X-Nginx-Proxt true;
+#
+#    proxy_pass http://youhui;
+#    proxy_redirect off;
+#  }
+#  access_log /home/kuang/log/youhui.log;
+#}
+
+server {
+  listen 80;
+  server_name git.kuangcp.top;
+
+ location / {
+   proxy_set_header X-Real-IP $remote_addr;
+   proxy_set_header X-Forward-For $proxy_add_x_forwarded_for;
+    proxy_set_header Host $http_host;
+    proxy_set_header X-Nginx-Proxt true;
+
+    proxy_pass http://git;
+    proxy_redirect off;
+  }
+  access_log /home/kuang/log/youhui.log;
+}
+
+
+#upstream youhuis {
+#  server 127.0.0.1:8080;
+#}
+server{
+	listen 443 ssl;
+	server_name wx.kuangcp.top
+    ssl on;
+    ssl_certificate  /etc/letsencrypt/live/wx.kuangcp.top/fullchain.pem;
+    ssl_certificate_key  /etc/letsencrypt/live/wx.kuangcp.top/privkey.pem;
+	ssl_trusted_certificate /etc/letsencrypt/live/wx.kuangcp.top/chain.pem;
+	ssl_dhparam /etc/nginx/ssl/dhparam.pem;
+
+    location / {
+      proxy_pass https://youhui;
+   }
+   access_log /home/kuang/log/https.log;
+}
+```
+
 #### 配置Websocket反向代理
 ```conf
 # 配置连接的配置信息

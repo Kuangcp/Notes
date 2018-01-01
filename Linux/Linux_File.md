@@ -187,10 +187,10 @@ du xmldb/*/*/* |wc -l
 *******************************
 ## Tips
 ### 设置交换分区
-- `free -h` 查看内存
-- `dd if=/dev/zero of=/swapfile bs=1024k count=4096` 创建一个4g 交换文件
-- `mkswap /swapfile` 格式化成交换文件的格式
-- ` swapon /swapfile` 启用该文件作为交换分区的文件
+- 查看内存 `free -h` 
+- 创建一个4g 交换文件 `dd if=/dev/zero of=/swapfile bs=1024k count=4096` 
+- 格式化成交换文件的格式 `mkswap /swapfile` 
+- 启用该文件作为交换分区的文件 ` swapon /swapfile` 
 - `/swapfile swap swap defaults 0 0` 写入`/etc/fstab`文件中，让交换分区的设置开机自启
 - `sudo sysctl vm.swappiness=15` 临时修改重启注销失效， 查看：`cat /proc/sys/vm/swappiness`
 - 永久修改：`/etc/sysctl.conf ` 文件中设置开始使用交换分区的触发值： `vm.swappiness=10`

@@ -26,7 +26,10 @@
 - Maven或者Gradle的话直接就能得到，不过也要配置一下main
 
 ### Springboot热加载
-- Ctrl Shift A 快捷搜索 automatically 在Build下的 Compiler，打开自动构建
+> 每个project都是一个新的工作区，所以要重新配置
+
+- Ctrl Shift A 快捷搜索 automatically 在Build下的 Compiler，打开自动构建 *很重要*
+    - 以前遇到的各种不能热加载的问题就是这个引起的！！
 - Ctrl Shift A 快捷搜索 Registry 进入后找到 compiler.automake.allow.when.app.running 勾选
 - 加入devtools依赖
 

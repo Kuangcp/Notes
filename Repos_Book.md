@@ -64,6 +64,7 @@
 - [jeesite](https://gitee.com/thinkgem/jeesite)`Spring基础构建的maven jsp项目 bootstrap`
 - [Guns](https://gitee.com/naan1993/guns)`基于Springboot开发了大量模块`
 
+
 ### 高效
 - [interview](https://github.com/kdn251/interviews)`面试所需算法练习`
 - [Java设计模式](https://github.com/iluwatar/java-design-patterns) `设计模式详解`
@@ -77,6 +78,7 @@
 - [activiti示例](https://github.com/henryyan/kft-activiti-demo)`Activiti实战书籍相关源码`
 - [rabbitmq](https://github.com/chwshuang/rabbitmq)`入门学习代码`
 - [docker-demos](https://github.com/waylau/docker-demos) `Maven和Gradle结合docker使用`
+- [mabatis-spring-boot](https://github.com/abel533/MyBatis-Spring-Boot)
 
 ### Web
 - [Springboot实战](https://github.com/lianggzone/springboot-action) `Springboot的案例`
