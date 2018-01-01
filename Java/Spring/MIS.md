@@ -16,7 +16,8 @@
 ## MVC
 ### 持久化层
 #### Domain对象设计
-- 1.首先名称不能使用Java或者数据库中的的关键字
+- 1.首先名称不能使用Java或者数据库中的的关键字 class group table from 等等
+    - 班级就用ClassGroup吧
 - 2.关系映射注意死循环
 
 

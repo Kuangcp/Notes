@@ -44,6 +44,7 @@
 **********
 ## 参考博客
 - [Springboot探索](https://juejin.im/post/598dd709f265da3e213f0c57)
+- [SpringBoot入门](http://blog.csdn.net/jsyxcjw/article/details/46763639)
 
 ***********
 ## 配置文件

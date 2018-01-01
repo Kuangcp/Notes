@@ -40,6 +40,7 @@
 - [waylau](https://github.com/waylau) `擅长 Maven Gradle netty Spring`
 - [anapsix](https://github.com/anapsix)`擅长docker`
 - [aleen42](https://github.com/aleen42) `写了好几个方便的gitbook插件`
+- [Exrick](https://github.com/Exrick)`前后端都有一定造诣`
 
 ## 笔记仓库
 - [某研究生在校阅读笔记](https://github.com/lanxuezaipiao/ReadingNotes)
@@ -58,7 +59,7 @@
 - [easypoi](https://gitee.com/lemur/easypoi) `虽然代码非常不规范，也没人维护的样子，但是这个开源精神要学习`
 - [uflo](https://gitee.com/youseries/uflo) `国内的流程引擎`
 - [jeewx](https://gitee.com/jeecg/jeewx)`微信管家平台`
-- [禅道](https://gitee.com/wwccss/zentaopms)`项目管理软件`
+- [禅道](https://gitee.com/wwccss/zentaopms)`项目管理软件` 
 
 ### 二次框架
 - [jeesite](https://gitee.com/thinkgem/jeesite)`Spring基础构建的maven jsp项目 bootstrap`
@@ -143,6 +144,8 @@
 
 ### 微信相关
 - [微信小程序Demo](https://gitee.com/yuzeng84/wxapp)
+## 其他
+- [HelloGibhub](https://github.com/521xueweihan/HelloGitHub)`有趣的项目`
 
 ## 工作
 ### 简历
