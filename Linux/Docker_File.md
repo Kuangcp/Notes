@@ -120,9 +120,11 @@
 > 设置环境变量 
 
 - `ENV <key> <value>`
-    - 这种方式会将第一个字符串看作key，后面所有的字符串看成value，所以只能设置一个变量 `ENV name kuang cheng ping`
+    - 这种方式会将第一个字符串看作key，后面所有的字符串看成value
+    - 所以只能设置一个变量 `ENV name kuang cheng ping`
 - `ENV <key>=<value>`
     - 可以设置多个，但是空格要转义 `ENV name=myth\ kuang`
+    - 例如：设置时区 `ENV TZ=Asia/Shanghai`
 
 - ENV命令之后的RUN命令都可以使用这里配置的环境变量
 - 如果`docker run --env <key>=<value>`则会覆盖dockerfile中同名key的值

@@ -84,6 +84,14 @@
 - [持续集成](http://www.ruanyifeng.com/blog/2015/09/continuous-integration.html)
 
 *****
+`码农翻身`
+- [2017精华](http://chuansong.me/n/1501046251110) | [精华文章](http://blog.csdn.net/fanpeihua123/article/details/58151161)
+
+
+*****
+- [当你想多学写语言的时候看这里](https://segmentfault.com/q/1010000004701437)
+
+*****
 - [Springboot启动dubbo](https://coderknock.com/blog/2017/03/01/spring%20boot%E5%90%AF%E5%8A%A8dubbo.html)`等一系列文章`
 
 - [spring boot完美集成dwr3.0.2](http://blog.csdn.net/melody_susan/article/details/78659696)
