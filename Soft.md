@@ -298,6 +298,16 @@ PROMPT_COMMAND="set_bash_prompt; $PROMPT_COMMAND"
 ### Geany
 - 码C 编译方便 有Ctag辅助
 
+### scite
+> 简洁的编辑器，可配置挺多，打开速度快
+
+### textadept
+> 基于前者进行开发，十分简洁，有着和sublime的外观和速度，没有他的强大但也没有他的bug！
+> [官方手册](https://foicica.com/textadept/manual.html)
+
+- Github 地址[textadept](https://github.com/rgieseke/textadept/)
+- 主题仓库 [textadept-themes](https://github.com/rgieseke/textadept-themes) 棒！
+
 **********************************
 ### Sublime 
 - 如果出现小bug，就直接删除 ～.config 下的 sublime文件夹注意注册证书拷出来
