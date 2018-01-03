@@ -283,6 +283,13 @@ PROMPT_COMMAND="set_bash_prompt; $PROMPT_COMMAND"
 - 如果不保持比例，就在宽高后加上感叹号 
 - 可以只指定高度，那么宽度会等比例缩放 `convert -resize 400 src.jpg dst.jpg`
 
+### todo.txt
+> [官网](http://todotxt.org/) 一个简约的 TODO 软件
+
+#### todo.txt-cli
+> 终端中的TODO 
+
+- [todo.txt-cli](https://github.com/todotxt/todo.txt-cli)
 
 **************************************
 ## 【文本编辑器】
