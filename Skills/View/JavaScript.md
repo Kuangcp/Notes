@@ -1,5 +1,12 @@
 # JavaScript
 
+## 数据类型
+> 虽然是弱类型,但还是要注意一下
+
+### 字符串
+- 字符串转码:
+    - [参考博客:JS字符串相关转码函数](http://www.cnblogs.com/xcsn/archive/2013/05/15/3079373.html)
+
 ## 常用库和框架
 - lozad.js 懒加载
 

@@ -81,6 +81,9 @@
 - [docker-demos](https://github.com/waylau/docker-demos) `Maven和Gradle结合docker使用`
 - [mabatis-spring-boot](https://github.com/abel533/MyBatis-Spring-Boot)
 
+### Android 
+- [安卓进阶学习指南](https://github.com/iwannabetop/Awesome-Android-Learning-Guide)
+
 ### Web
 - [Springboot实战](https://github.com/lianggzone/springboot-action) `Springboot的案例`
 - [zheng](https://github.com/shuzheng/zheng) `SSM框架整合的一个丰富解决方案`
@@ -132,6 +135,7 @@
 
 ## 前端
 - [LayUI](https://github.com/sentsin/layui/) `国产layUI框架`
+- [vue-layui](https://github.com/IBAS0742/vue-layui)`vue和layui的结合`
 
 ***************************************
 ## Tools
