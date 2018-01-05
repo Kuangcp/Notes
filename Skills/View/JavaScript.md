@@ -13,7 +13,23 @@
 ### Jquery
 - 事件绑定 `$('#Button').on('click', function(){})`
 - 在HTML的DOM上绑定数据:设置 `data-*` 属性 然后jq拿到元素直接调用 `$(this).data('id')`拿到值就可以避免函数传值
-
+#### form插件
+```js
+// 使用jquery 的 form插件进行异步提交
+$(".submit").on('click', function () {
+        console.log('dfs')
+        // var jk = $("#contents").submit()
+        var options = {
+            // target:'#contents', //后台将把传递过来的值赋给该元素
+            url:'../teacher/topic/add', //提交给哪个执行
+            type:'POST',
+            success: function(data){
+                console.log(data)
+            } //显示操作提示
+        };
+        $('#contents').ajaxSubmit(options);
+    })
+```
 ## JSON
 - 直接点引用属性
     - 迭代集合:自带foreach循环 `data.forEach(function(value){})`

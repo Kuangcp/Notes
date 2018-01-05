@@ -149,6 +149,7 @@
 - [Hotkeys](https://github.com/jaywcjlove/hotkeys)`前端捕获按键输入,可以用来设置快捷键`
 - [socket.io](https://socket.io)`基于nodejs的socket技术`
 - [h-ui](http://h-ui.net/)
+- [wangeditor](http://www.wangeditor.com/)`富文本编辑器`
 
 ***************************************************
 ***************************************************
@@ -375,10 +376,12 @@ PROMPT_COMMAND="set_bash_prompt; $PROMPT_COMMAND"
 *********************************************
 ## 【浏览器】
 ### FireFox
-- 分为 正式版， beta， Nightly `因为那个插件标准的缘故 56 和 57 插件不共享`
+- 分为 正式版， beta， Nightly 开发版 `因为那个插件标准的缘故 56 和 57 插件不共享`
 - 如果要配置多个火狐在电脑上 终端中 `./firefox -P` 就会进入配置文件的编辑（关闭所有火狐的情况下）
     - 新建一个就好了，之后就用新建的打开该火狐`./firefox -P name`
 - 如果要同时开多个火狐 加上`--no-remote`参数，但是我这个deepin不要诶，但是Ubuntu mint加上也没有用
+
+- [开发者版本链接](https://www.mozilla.org/zh-CN/firefox/developer/)
 
 **************************************************
 #### 必备插件
@@ -473,3 +476,7 @@ SSH_DOMAIN       = kuangcp.top
 
 ## GoEasy
 - [示例](http://goeasy.io/cn/started)
+
+# 文档
+## 文档托管
+- [看云](https://www.kancloud.cn/dashboard)

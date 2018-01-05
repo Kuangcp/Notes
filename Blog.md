@@ -89,7 +89,7 @@
 
 
 *****
-- [当你想多学写语言的时候看这里](https://segmentfault.com/q/1010000004701437)
+- [当你想学别的语言的时候看这里](https://segmentfault.com/q/1010000004701437)
 
 *****
 - [Springboot启动dubbo](https://coderknock.com/blog/2017/03/01/spring%20boot%E5%90%AF%E5%8A%A8dubbo.html)`等一系列文章`
@@ -130,7 +130,7 @@
 ### Linux
 - [Ubuntu放弃战斗, Linux桌面的悲哀](http://www.jianshu.com/p/86dd6e34ce91)`deepin王总`
 - [一些工具软件](https://bbs.deepin.org/forum.php?mod=viewthread&tid=134241&extra=)
-
+- [关于uptime输出的详解](http://blog.csdn.net/adparking/article/details/6684690)
 
 ***************
 ## Web性能
