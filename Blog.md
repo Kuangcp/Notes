@@ -53,6 +53,7 @@
 
 ## 经验之谈
 - [不好的编程习惯](http://blog.csdn.net/xishining/article/details/78824148)
+- [英语的重要性](http://www.kuqin.com/shuoit/20170328/353424.html?url_type=39&object_type=webpage&pos=1)
 
 **************
 ## 算法

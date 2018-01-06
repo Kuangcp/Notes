@@ -1,4 +1,4 @@
-[CSDN博客](http://blog.csdn.net/kcp606) | [Gitbook](https://kuangcp.gitbooks.io/notes/) | - [当前笔记仓库的目录](./SUMMARY.md)
+[CSDN博客](http://blog.csdn.net/kcp606) | [Gitbook](https://kuangcp.gitbooks.io/notes/) | [当前笔记仓库的目录](./SUMMARY.md)
 
 ## 2016.08.11 新的开始
 - 这是用来记录我的笔记的仓库，用上git来管理，促使我熟悉git命令，习惯记录电子笔记

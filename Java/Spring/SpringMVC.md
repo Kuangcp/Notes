@@ -13,7 +13,7 @@
 
 ## MVC思想
 > [参考博客](http://blog.csdn.net/besley/article/details/8479943)
-![图](http://img.my.csdn.net/uploads/201301/09/1357725989_7206.png)
+![图](https://raw.githubusercontent.com/Kuangcp/ImageRepos/master/Tech/Model/mvc.png)
 
 ## API 
 > [简洁的API设计](http://www.csdn.net/article/2013-05-02/2815115-stop-designing-fragile-web-api)

@@ -1,19 +1,25 @@
-# Git实际使用的记录
 `目录`
+ 
+- [Git实际使用的记录](#git实际使用的记录)
 - [Tips](#tips)
-    - [安装最新版git](#安装最新版git)
-    - [【目前使用git的方法】](#目前使用git的方法)
-    - [实验楼使用Github](#实验楼使用github)
-    - [【git初始化】](#git初始化)
-    - [【VI编辑器的使用】](#vi编辑器的使用)
-    - [【GitHub】](#github)
+    - [配置记住密码](#配置记住密码)
+    - [【安装】](#安装)
+        - [Linux(debian系)](#linux(debian系))
+        - [windows](#windows)
+    - [【使用】](#使用)
+        - [实验楼上使用Github](#实验楼上使用github)
+    - [【git初始化配置】](#git初始化配置)
+        - [【VI编辑器的使用】](#vi编辑器的使用)
+    - [【配置SSH连接上GitHub】](#配置ssh连接上github)
         - [【.gitingnore文件】](#gitingnore文件)
-        - [【建立本地仓库并关联到远程仓库】](#建立本地仓库并关联到远程仓库)
-        - [【使用git daemon搭建本地简易Git_Server】](#使用gitdaemon搭建本地简易git_server)
-        - [【HTTP访问Git_Server】](#http访问git_server)
+        - [终端中显示当前分支](#终端中显示当前分支)
+        - [命令的自动补全](#命令的自动补全)
+    - [搭建Git服务器](#搭建git服务器)
+        - [【使用git daemon搭建本地简易Git_Server】](#使用git-daemon搭建本地简易git_server)
+        - [【HTTP访问Git服务器】](#http访问git服务器)
             - [【配置HTTPS】](#配置https)
             - [【使用SSH登录GitServer】](#使用ssh登录gitserver)
-    - [【基础命令】](#基础命令)
+    - [【基础命令解释】](#基础命令解释)
     - [【reset命令常用方式】](#reset命令常用方式)
         - [1.回滚add操作](#1回滚add操作)
         - [2.回滚最近一次commit](#2回滚最近一次commit)
@@ -25,7 +31,10 @@
         - [8.Reset一个单独的文件](#8reset一个单独的文件)
         - [9.保留working_tree并且丢弃一些commit](#9保留working_tree并且丢弃一些commit)
 
-# Tips
+*目录创建于2018-01-06*
+****************************************
+# Git实际使用的记录
+## Tips
 - 1 、虽然在物理上本地仓库中所有文件是放在一起的，但是分支之间是互不能访问以及操作的
 - 2 、在本地的每次commit都是有index的，上传到github可以不用那么频繁，反正都是有记录的
 - 3、 在github上修改了项目后，或者以后是和别人一起开发，就要先git pull origin （master）将别人的分支和自己的分支都拉下来确保是最新，
