@@ -4,6 +4,7 @@
 
 * [ API_DOC ](./API_DOC.md)
 * [ Blog ](./Blog.md)
+* [ Platform ](./Platform.md)
 * [ Problem ](./Problem.md)
 * [ Process ](./Process.md)
 * [ Repos_Book ](./Repos_Book.md)
@@ -51,8 +52,10 @@
         * [ Thymeleaf ](./Java/TemplateEngine/Thymeleaf.md)
     * 【 Java/AdvancedLearning 】
         * [ ClassFile ](./Java/AdvancedLearning/ClassFile.md)
+        * [ Collection ](./Java/AdvancedLearning/Collection.md)
         * [ Concurrents ](./Java/AdvancedLearning/Concurrents.md)
         * [ ContinuousIntegration ](./Java/AdvancedLearning/ContinuousIntegration.md)
+        * [ Generics ](./Java/AdvancedLearning/Generics.md)
         * [ IO ](./Java/AdvancedLearning/IO.md)
         * [ MultipleLanguage ](./Java/AdvancedLearning/MultipleLanguage.md)
         * [ ProgramThinking ](./Java/AdvancedLearning/ProgramThinking.md)
@@ -100,6 +103,8 @@
     * [ Shell_Learn ](./Script/Shell_Learn.md)
 * 【 Skills 】
     * 【 Skills/View 】
+        * 【 Skills/View/frame 】
+            * [ LayUI ](./Skills/View/frame/LayUI.md)
         * [ Hexo ](./Skills/View/Hexo.md)
         * [ JavaScript ](./Skills/View/JavaScript.md)
         * [ Learn_PS ](./Skills/View/Learn_PS.md)

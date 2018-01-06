@@ -41,8 +41,11 @@
 
 ## Java
 - [Mockito](http://www.vogella.com/tutorials/Mockito/article.html#when-thenreturn-and-when-thenthrow) `Java测试框架`
-- [gradle](https://docs.gradle.org/current/userguide/userguide.html)`构建工具，配置文件简洁，十分灵活强大，但是学习成本和其守护进程很是烦人`
+- [Maven](http://maven.apache.org/users/index.html)`工业级构建工具,确实规范,划时代的意义`
+- [gradle](https://docs.gradle.org/current/userguide/userguide.html)`新兴构建工具`
+    - `配置文件简洁，十分灵活强大，但是学习成本和其守护进程的资源消耗很是烦人,16G才敢用`
 - [TomcatConnector文档](http://tomcat.apache.org/connectors-doc/index.html)`用于连接IIS Apache 神器！`
+- [Oracle:Java8故障排除指南](https://docs.oracle.com/javase/8/docs/technotes/guides/troubleshoot/)
 
 ## 前端
 - [前端 LayUI 框架](http://www.layui.com/doc/)

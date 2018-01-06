@@ -1,4 +1,5 @@
 `目录`
+ 
 - [常用的工具软件](#常用的工具软件)
     - [【国内的资源镜像站】](#国内的资源镜像站)
     - [三方库](#三方库)
@@ -28,19 +29,24 @@
         - [.git-prompt.sh](#git-promptsh)
         - [asciinema](#asciinema)
         - [tmux](#tmux)
+        - [apache benchmark](#apache-benchmark)
     - [其他工具](#其他工具)
         - [输入法](#输入法)
         - [qgit](#qgit)
         - [convert](#convert)
+        - [todo.txt](#todotxt)
+            - [todo.txt-cli](#todotxt-cli)
     - [【文本编辑器】](#文本编辑器)
         - [Ghex](#ghex)
         - [Kate/KWrite(Kate的轻量版)](#kate/kwrite(kate的轻量版))
         - [Geany](#geany)
+        - [scite](#scite)
+        - [textadept](#textadept)
         - [Sublime](#sublime)
         - [VSCode](#vscode)
         - [Gedit](#gedit)
         - [小书匠](#小书匠)
-        - [Moediter Typora CuteMarkEd](#moeditertyporacutemarked)
+        - [Moediter Typora CuteMarkEd](#moediter-typora-cutemarked)
         - [Vi/Vim](#vi/vim)
         - [Nano](#nano)
         - [fte-terminal](#fte-terminal)
@@ -54,20 +60,9 @@
             - [必备插件](#必备插件)
         - [Chrome](#chrome)
         - [Vivaldi](#vivaldi)
-    - [【平台】](#平台)
-        - [Gitee](#gitee)
-        - [Github](#github)
-        - [Gitea](#gitea)
-        - [测试](#测试)
-        - [综合开发平台](#综合开发平台)
-            - [百度开发平台](#百度开发平台)
-            - [腾讯微信公众号](#腾讯微信公众号)
-        - [智能](#智能)
-            - [图灵机器人](#图灵机器人)
-        - [消息推送](#消息推送)
-            - [极光推送](#极光推送)
-            - [GoEasy](#goeasy)
 
+*目录创建于2018-01-06*
+****************************************
 # 常用的工具软件
 ## 【国内的资源镜像站】
 - [网易](http://mirrors.163.com/)`下载系统是 *-cd 的文件`
@@ -100,6 +95,7 @@
 ************
 ## Tools
 - [开源中国在线工具](http://tool.oschina.net/)
+- [Maven](http://maven.apache.org/)`不多说,上车`
 - [Gradle官方下载地址](http://services.gradle.org/distributions/)
 - [git](https://git-scm.com/) `最好用的vcs`
 - [genymotion](https://www.genymotion.com/) `安卓模拟器`
@@ -117,7 +113,7 @@
 
 ### 压力测试
 - [jmeter](http://jmeter.apache.org/download_jmeter.cgi) `apache 下的开源压测工具`
-- [ab](https://httpd.apache.org/docs/2.4/programs/ab.html) `apt安装这个包即可apache2-utils`
+- [ab](https://httpd.apache.org/docs/2.4/programs/ab.html) `apt安装这个包即可apache2-utils` 
 
 ### UML
 - [免费UML软件统计 博客](http://blog.csdn.net/s464036801/article/details/8469166)
@@ -226,25 +222,8 @@
 - `ls -l ~/.local/share/autojump/` 统计信息的目录，清除就相当于卸载重装了
 
 ********
-### .git-prompt.sh
-> Bash下显示当前分支
 
-- `wget https://raw.githubusercontent.com/git/git/master/contrib/completion/git-prompt.sh -O ~/.git-prompt.sh` 下载脚本
-- `chmod +x ~/.git-prompt.sh` 赋予可执行权限
-- 在 .bash_alases文件中添加
-```sh
-lightgreen='\[\033[1;32m\]'
-lightcyan='\[\033[1;36m\]'
-lightpurple='\[\033[1;35m\]'
-yellow='\[\033[1;33m\]'
-nocolor='\[\033[0m\]'
-source ~/.git-prompt.sh
-set_bash_prompt(){
-    #PS1="[e[32m]u[e[m]@[e[33m]W[e[36m]$(__git_ps1 ' (%s)')[e[31m]$[e[m]"
-    PS1="${lightcyan}\t${lightgreen}\w${lightpurple}$(__git_ps1 ' (%s)')${yellow} → \[\e[m\]"
-}
-PROMPT_COMMAND="set_bash_prompt; $PROMPT_COMMAND"
-```
+
 ************************************
 ### asciinema
 > 终端录制工具
@@ -268,11 +247,17 @@ PROMPT_COMMAND="set_bash_prompt; $PROMPT_COMMAND"
     - `Ctrl B` `D` 可以合上电脑（休眠）
     - `tmux ls` 显示所有 `tmux a -t myth` 连上指定名字的就继续了
 
+### apache benchmark
+> 压力测试工具
+
+- 测试本机超过100连接报错 104: 
+    - [Blog:解决问题](http://www.cnblogs.com/archoncap/p/5883723.html)
+
 ************************************
 ## 其他工具
 
 ### 输入法
-- [rime](http://rime.im/)
+- [rime](http://rime.im/) `用过一下子有莫名其妙的bug就卸载了`
 
 ### qgit
 - git查看仓库的图形化界面
@@ -406,77 +391,3 @@ PROMPT_COMMAND="set_bash_prompt; $PROMPT_COMMAND"
 - 感觉采用的是chrome内核，做的更漂亮了，而且是内置了很多常用插件，的确很方便，相比于chrome更符合国内使用
 
 ***********************************************
-## 【平台】
-### Gitee
-> 码云
-
-### Github
-`github仓库 URL规则`
-- 目录：
-    - https://github.com/用户/项目/tree/分支/相对根目录的目录
-- 文本文件：
-    -  https://github.com/用户/项目/blob/分支/文件目录
-- 二进制文件，例如图片：
-    -  https://raw.githubusercontent.com/用户/项目/分支/文件目录
-- 例如同仓库下的这个文件`/Linux/Docker.md` 可以直接这样写，方便调用，最好最前面不要加`.`这个表示当前目录的 加了反而会有问题
-`md文件 目录规则（页内跳转）`
-- `[](#标题名)` 即可，注意标题名不可有空格，`【Name】`看成Name 忽略这个符号
-
-**************
-### Gitea
-> [官网](https://gitea.io/zh-cn/) 
-
-- 使用docker安装比较简单
-    - 配置数据库，一定要是外网的。或者容器互联
-
-`/data/gitea/conf/app.ini` 要修改的配置，都是改成对外的配置
-```conf
-ROOT_URL         = http://git.kuangcp.top/
-DOMAIN           = git.kuangcp.top
-SSH_PORT         = 10022
-SSH_DOMAIN       = kuangcp.top
-```
-
-
-************************************************************
-### 测试
-- [自动API测试](https://www.eolinker.com/#/index)
-
-********************************************************
-# 综合开发平台
-## 百度开发平台
-
-****************************************************
-### CCE
-> 容器引擎 -> [入门必看](https://cloud.baidu.com/doc/CCE/GettingStarted.html)
-
-- 比阿里的好用
-
-****************
-### BAE
-> 应用引擎，简单的说就是一个提供了环境，你只需上传打包好的可执行文件就可以运行起来了
-
-- 短期使用收费没有很高，十分灵活，就是前期学习入门 配置略麻烦。适合演示使用，例如毕设。
-    - 并且还提供一定免费额度的 MySQL Redis MongoDb （只能BAE的内网访问）
-    - 还有自动测试
-
-*******************************************************
-## 腾讯微信公众号
-`2017-12-21 21:41:43`
-- 不说了反正都是Shit一样的接口设计和返回值  希望会变好，碰过就不想再弄了！！！
-
-****************************************************
-# 智能平台
-## 图灵机器人
-
-************************************************ 
-# 消息推送
-## 极光推送
-> [官网](https://www.jiguang.cn/) `做Android IOS的消息推送和短信等推送`
-
-## GoEasy
-- [示例](http://goeasy.io/cn/started)
-
-# 文档
-## 文档托管
-- [看云](https://www.kancloud.cn/dashboard)
