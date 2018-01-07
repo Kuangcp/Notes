@@ -1,4 +1,4 @@
-`目录`
+`目录 start`
  
 - [常用的工具软件](#常用的工具软件)
     - [【国内的资源镜像站】](#国内的资源镜像站)
@@ -26,7 +26,6 @@
         - [xclip](#xclip)
         - [zssh](#zssh)
         - [Autojump](#autojump)
-        - [.git-prompt.sh](#git-promptsh)
         - [asciinema](#asciinema)
         - [tmux](#tmux)
         - [apache benchmark](#apache-benchmark)
@@ -61,8 +60,9 @@
         - [Chrome](#chrome)
         - [Vivaldi](#vivaldi)
 
-*目录创建于2018-01-06*
+`目录 end` *目录创建于2018-01-07*
 ****************************************
+
 # 常用的工具软件
 ## 【国内的资源镜像站】
 - [网易](http://mirrors.163.com/)`下载系统是 *-cd 的文件`

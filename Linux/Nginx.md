@@ -1,3 +1,21 @@
+`目录 start`
+ 
+- [Nginx](#nginx)
+    - [Nginx的安装](#nginx的安装)
+        - [命令安装](#命令安装)
+        - [编译安装](#编译安装)
+        - [Docker安装并做反向代理](#docker安装并做反向代理)
+    - [配置使用](#配置使用)
+        - [基础配置](#基础配置)
+            - [配置https](#配置https)
+                - [certbot来配置Https](#certbot来配置https)
+            - [配置Websocket反向代理](#配置websocket反向代理)
+    - [命令使用](#命令使用)
+        - [问题](#问题)
+    - [学习使用](#学习使用)
+
+`目录 end` *目录创建于2018-01-07*
+****************************************
 # Nginx
 
 ## Nginx的安装
@@ -92,20 +110,20 @@ server {
 
 - 先签发证书 `命令运行`
 ```sh
-############ 证书颁发机构
-# CA机构私钥
-openssl genrsa -out ca.key 2048
-# CA证书
-openssl req -x509 -new -key ca.key -out ca.crt
-############ 服务端
-# 生成服务端私钥
-openssl genrsa -out server.key 2048
-# 生成服务端证书请求文件
-openssl req -new -key server.key -out server.csr
-# 使用CA证书生成服务端证书  关于sha256，默认使用的是sha1，在新版本的chrome中会被认为是不安全的，因为使用了过时的加密算法。
-openssl x509 -req -sha256 -in server.csr -CA ca.crt -CAkey ca.key -CAcreateserial -days 3650 -out server.crt    
-# 打包服务端的资料为pkcs12格式(非必要，只是换一种格式存储上一步生成的证书) 生成过程中，需要创建访问密码，请记录下来。
-openssl pkcs12 -export -in server.crt -inkey server.key -out server.pkcs12
+  ############ 证书颁发机构
+  # CA机构私钥
+  openssl genrsa -out ca.key 2048
+  # CA证书
+  openssl req -x509 -new -key ca.key -out ca.crt
+  ############ 服务端
+  # 生成服务端私钥
+  openssl genrsa -out server.key 2048
+  # 生成服务端证书请求文件
+  openssl req -new -key server.key -out server.csr
+  # 使用CA证书生成服务端证书  关于sha256，默认使用的是sha1，在新版本的chrome中会被认为是不安全的，因为使用了过时的加密算法。
+  openssl x509 -req -sha256 -in server.csr -CA ca.crt -CAkey ca.key -CAcreateserial -days 3650 -out server.crt    
+  # 打包服务端的资料为pkcs12格式(非必要，只是换一种格式存储上一步生成的证书) 生成过程中，需要创建访问密码，请记录下来。
+  openssl pkcs12 -export -in server.crt -inkey server.key -out server.pkcs12
 ```
 `*.conf配置文件 配置HTTPS`
 ```conf
@@ -143,91 +161,91 @@ chmod a+x certbot-auto
 ```
 SSL 接收到一个超出最大准许长度的记录 要在端口后加上SSL nginx
 ```conf
-upstream youhui {
-  server 127.0.0.1:8080;
-}
-upstream git{
-  server 127.0.0.1:55443;
-}
-#server {
-#  listen 80;
-#  server_name wx.kuangcp.top;
-#  location / {
-#    proxy_set_header X-Real-IP $remote_addr;
-#    proxy_set_header X-Forward-For $proxy_add_x_forwarded_for;
-#    proxy_set_header Host $http_host;
-#    proxy_set_header X-Nginx-Proxt true;
-#
-#    proxy_pass http://youhui;
-#    proxy_redirect off;
-#  }
-#  access_log /home/kuang/log/youhui.log;
-#}
-
-server {
-  listen 80;
-  server_name git.kuangcp.top;
-
- location / {
-   proxy_set_header X-Real-IP $remote_addr;
-   proxy_set_header X-Forward-For $proxy_add_x_forwarded_for;
-    proxy_set_header Host $http_host;
-    proxy_set_header X-Nginx-Proxt true;
-
-    proxy_pass http://git;
-    proxy_redirect off;
+  upstream youhui {
+    server 127.0.0.1:8080;
   }
-  access_log /home/kuang/log/youhui.log;
-}
+  upstream git{
+    server 127.0.0.1:55443;
+  }
+  #server {
+  #  listen 80;
+  #  server_name wx.kuangcp.top;
+  #  location / {
+  #    proxy_set_header X-Real-IP $remote_addr;
+  #    proxy_set_header X-Forward-For $proxy_add_x_forwarded_for;
+  #    proxy_set_header Host $http_host;
+  #    proxy_set_header X-Nginx-Proxt true;
+  #
+  #    proxy_pass http://youhui;
+  #    proxy_redirect off;
+  #  }
+  #  access_log /home/kuang/log/youhui.log;
+  #}
+
+  server {
+    listen 80;
+    server_name git.kuangcp.top;
+
+  location / {
+    proxy_set_header X-Real-IP $remote_addr;
+    proxy_set_header X-Forward-For $proxy_add_x_forwarded_for;
+      proxy_set_header Host $http_host;
+      proxy_set_header X-Nginx-Proxt true;
+
+      proxy_pass http://git;
+      proxy_redirect off;
+    }
+    access_log /home/kuang/log/youhui.log;
+  }
 
 
-#upstream youhuis {
-#  server 127.0.0.1:8080;
-#}
-server{
-	listen 443 ssl;
-	server_name wx.kuangcp.top
-    ssl on;
-    ssl_certificate  /etc/letsencrypt/live/wx.kuangcp.top/fullchain.pem;
-    ssl_certificate_key  /etc/letsencrypt/live/wx.kuangcp.top/privkey.pem;
-	ssl_trusted_certificate /etc/letsencrypt/live/wx.kuangcp.top/chain.pem;
-	ssl_dhparam /etc/nginx/ssl/dhparam.pem;
+  #upstream youhuis {
+  #  server 127.0.0.1:8080;
+  #}
+  server{
+    listen 443 ssl;
+    server_name wx.kuangcp.top
+      ssl on;
+      ssl_certificate  /etc/letsencrypt/live/wx.kuangcp.top/fullchain.pem;
+      ssl_certificate_key  /etc/letsencrypt/live/wx.kuangcp.top/privkey.pem;
+    ssl_trusted_certificate /etc/letsencrypt/live/wx.kuangcp.top/chain.pem;
+    ssl_dhparam /etc/nginx/ssl/dhparam.pem;
 
-    location / {
-      proxy_pass https://youhui;
-   }
-   access_log /home/kuang/log/https.log;
-}
+      location / {
+        proxy_pass https://youhui;
+    }
+    access_log /home/kuang/log/https.log;
+  }
 ```
 
 #### 配置Websocket反向代理
 ```conf
-# 配置连接的配置信息
-map $http_upgrade $connection_upgrade{
-  default upgrade;
-  ''  close;
-}
-upstream youhui {
-  server 127.0.0.1:8888;
-}
-server {
-  listen 80;
-  server_name 127.0.0.1;
-  location / {
-    proxy_set_header X-Real-IP $remote_addr;
-    proxy_set_header X-Forward-For $proxy_add_x_forwarded_for;
-    proxy_set_header Host $host;
-    proxy_set_header X-Nginx-Proxt true;
-
-    # 设置接收到的请求类型
-    proxy_set_header Upgrade $http_upgrade;
-    proxy_set_header Connection $connection_upgrade;
-
-    proxy_pass http://youhui;
-    proxy_redirect off;
-	proxy_read_timeout 300s;
+  # 配置连接的配置信息
+  map $http_upgrade $connection_upgrade{
+    default upgrade;
+    ''  close;
   }
-}
+  upstream youhui {
+    server 127.0.0.1:8888;
+  }
+  server {
+    listen 80;
+    server_name 127.0.0.1;
+    location / {
+      proxy_set_header X-Real-IP $remote_addr;
+      proxy_set_header X-Forward-For $proxy_add_x_forwarded_for;
+      proxy_set_header Host $host;
+      proxy_set_header X-Nginx-Proxt true;
+
+      # 设置接收到的请求类型
+      proxy_set_header Upgrade $http_upgrade;
+      proxy_set_header Connection $connection_upgrade;
+
+      proxy_pass http://youhui;
+      proxy_redirect off;
+    proxy_read_timeout 300s;
+    }
+  }
 ```
 ## 命令使用
 `nginx -h 输出`
