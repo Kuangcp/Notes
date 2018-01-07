@@ -3,7 +3,6 @@
 * [Introduction](README.md)
 
 * [ API_DOC ](./API_DOC.md)
-* [ Blog ](./Blog.md)
 * [ Platform ](./Platform.md)
 * [ Problem ](./Problem.md)
 * [ Process ](./Process.md)
@@ -20,6 +19,14 @@
     * [ 代码整洁 ](./Article/代码整洁.md)
     * [ 大冰_乖摸摸头_对不起 ](./Article/大冰_乖摸摸头_对不起.md)
     * [ 游戏为何会让人着魔 ](./Article/游戏为何会让人着魔.md)
+* 【 Blog 】
+    * [ Arithmetic ](./Blog/Arithmetic.md)
+    * [ Blog ](./Blog/Blog.md)
+    * [ Go ](./Blog/Go.md)
+    * [ Java ](./Blog/Java.md)
+    * [ Python ](./Blog/Python.md)
+    * [ Solution ](./Blog/Solution.md)
+    * [ View ](./Blog/View.md)
 * 【 Database 】
     * [ MSSql ](./Database/MSSql.md)
     * [ MYSQL ](./Database/MYSQL.md)

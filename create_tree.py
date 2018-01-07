@@ -117,4 +117,5 @@ if flag_append :
         dest.write('# Summary\n\n* [Introduction](README.md)\n\n')
         for res in result:
             dest.write(res+'\n')
+    print('重新生成目录树完成!')
         

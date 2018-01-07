@@ -52,6 +52,8 @@ server {
 ### 基础配置
 > [知乎专栏](https://zhuanlan.zhihu.com/p/24524057)
 
+- [nginx基本配置](https://segmentfault.com/a/1190000002797601) | [ngrok nginx docker本地搭建服务器](https://fengqi.me/unix/409.html)
+
 - 修改默认配置文件 `/etc/nginx/nginx.conf`
   - 或者更好的就是在 `/etc/nginx/conf.d/`下新建 *.conf 文件，文件名任意
 `该配置文件配置了服务器反向代理，80端口上：/路径的请求转发到9991端口 /myth转发到7898端口 `
@@ -133,13 +135,14 @@ server {
 > [参考博客](http://www.cnblogs.com/lidong94/p/7156839.html)
 > [参考博客](https://www.digitalocean.com/community/tutorials/how-to-secure-nginx-with-let-s-encrypt-on-ubuntu-16-04)
 
+```conf
 wget https://dl.eff.org/certbot-auto
 chmod a+x certbot-auto
 ./certbot-auto 进行安装 但是过程中会有一些设置，
 ./certbot-auto certonly --email kuangcp@aliyun.com --nginx -d wx.kuangcp.top 生成证书
-
-SSL 接收到一个超出最大准许长度的记录 要在端口后加上SSL nginx
 ```
+SSL 接收到一个超出最大准许长度的记录 要在端口后加上SSL nginx
+```conf
 upstream youhui {
   server 127.0.0.1:8080;
 }
@@ -257,4 +260,6 @@ Options:
 
 ## 学习使用
 - [实验楼课程](https://www.shiyanlou.com/courses/95)
+
+
 

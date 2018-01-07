@@ -1,6 +1,7 @@
 # Git基础
 ## Git常用命令
 > [中文教程](https://git-scm.com/book/zh/v2)
+> [git-tips](https://github.com/521xueweihan/git-tips)`学习Git的仓库`
 
 #### 【Tips】
 - `git ls-files` 列出文件列表

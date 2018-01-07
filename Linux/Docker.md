@@ -97,6 +97,10 @@
 - 然后双击安装，勾选上virtualbox 记住cpu要开虚拟化
 - 安装完成后就会有三个图标在桌面上，然后进入Docker Quickstart Terminal后 `docker run hello-world` 有正常输出即可
 
+## 相关博客
+- [ 具有中国特色的docker折腾记（上）](http://blog.csdn.net/Raptor/article/details/18305299)
+    - [ 具有中国特色的docker折腾记（下）](http://blog.csdn.net/raptor/article/details/18405569)
+
 **************************************
 
 ## 常规使用
