@@ -48,6 +48,17 @@
 
 ***********
 ## 配置文件
+
+> 配置文件(`application.properties或者yml`)加载顺序 [官方文档说明](https://docs.spring.io/spring-boot/docs/1.5.9.RELEASE/reference/htmlsingle/#boot-features-external-config-application-property-files)
+>> 1.当前Jar/War目录下的/config目录 `file:./config/`  
+>> 2.当前目录 `file:./`  
+>> 3.classpath 里的/config目录 `classpath:/config/`  
+>> 4.classpath 根目录 `classpath:/`  
+
+> 自定义配置文件名就要运行时加参数  
+>> `java -jar myproject.jar --spring.config.name=myproject`  
+>> `java -jar myproject.jar --spring.config.location=classpath:/default.properties,classpath:/override.properties` <br/>
+
 - [配置文件的使用](http://www.itwendao.com/article/detail/391009.html)
 - [Spring boot配置文件 application.properties](https://www.tuicool.com/articles/veUjQba)
 - [SpringBoot常用配置](https://my.oschina.net/wangnian/blog/666641)
@@ -55,6 +66,7 @@
 - [配置文件加密](https://yq.aliyun.com/articles/182720)
 
 - [自定义配置文件](http://www.cnblogs.com/java-zhao/p/5542154.html)`将应用配置外置并注入成bean`
+- [配置文件外置](http://www.cnblogs.com/xiaoqi/p/6955288.html)
 
 ### 多种配置文件并切换
 #### yml方式
@@ -194,24 +206,24 @@ private Connector createHttpConnector() {
 - 另一种方式 [参考博客](http://www.cnblogs.com/xinzhao/p/4950689.html)
 `方式不一样，没有成功`
 ```sh
-############ 证书颁发机构
-# CA机构私钥
-openssl genrsa -out ca.key 2048
-# CA证书
-openssl req -x509 -new -key ca.key -out ca.crt
-############ 服务端
-# 生成服务端私钥
-openssl genrsa -out server.key 2048
-# 生成服务端证书请求文件
-openssl req -new -key server.key -out server.csr
-# 使用CA证书生成服务端证书  关于sha256，默认使用的是sha1，在新版本的chrome中会被认为是不安全的，因为使用了过时的加密算法。
-openssl x509 -req -sha256 -in server.csr -CA ca.crt -CAkey ca.key -CAcreateserial -days 3650 -out server.crt    
-# 打包服务端的资料为pkcs12格式(非必要，只是换一种格式存储上一步生成的证书) 生成过程中，需要创建访问密码，请记录下来。
-openssl pkcs12 -export -in server.crt -inkey server.key -out server.pkcs12
-# 生成服务端的keystore（.jks文件, 非必要，Java程序通常使用该格式的证书） 生成过程中，需要创建访问密码，请记录下来。
-keytool -importkeystore -srckeystore server.pkcs12 -destkeystore server.jks -srcstoretype pkcs12
-# 把ca证书放到keystore中（非必要）
-keytool -importcert -keystore server.jks -file ca.crt
+    ############ 证书颁发机构
+    # CA机构私钥
+    openssl genrsa -out ca.key 2048
+    # CA证书
+    openssl req -x509 -new -key ca.key -out ca.crt
+    ############ 服务端
+    # 生成服务端私钥
+    openssl genrsa -out server.key 2048
+    # 生成服务端证书请求文件
+    openssl req -new -key server.key -out server.csr
+    # 使用CA证书生成服务端证书  关于sha256，默认使用的是sha1，在新版本的chrome中会被认为是不安全的，因为使用了过时的加密算法。
+    openssl x509 -req -sha256 -in server.csr -CA ca.crt -CAkey ca.key -CAcreateserial -days 3650 -out server.crt    
+    # 打包服务端的资料为pkcs12格式(非必要，只是换一种格式存储上一步生成的证书) 生成过程中，需要创建访问密码，请记录下来。
+    openssl pkcs12 -export -in server.crt -inkey server.key -out server.pkcs12
+    # 生成服务端的keystore（.jks文件, 非必要，Java程序通常使用该格式的证书） 生成过程中，需要创建访问密码，请记录下来。
+    keytool -importkeystore -srckeystore server.pkcs12 -destkeystore server.jks -srcstoretype pkcs12
+    # 把ca证书放到keystore中（非必要）
+    keytool -importcert -keystore server.jks -file ca.crt
 ```
 
 ****************
