@@ -1,20 +1,20 @@
-`目录`
-- [安装好deepin后配置Java开发环境](#安装好deepin后配置java开发环境)
+`目录 start`
+ 
+- [在Linux上配置Java环境](#在linux上配置java环境)
     - [配置JDK](#配置jdk)
         - [解压方式](#解压方式)
         - [sdkman方式](#sdkman方式)
     - [配置其他sdk](#配置其他sdk)
     - [配置MySQL](#配置mysql)
-        - [使用docker安装mysql](#使用docker安装mysql)
     - [配置Redis](#配置redis)
-        - [如果要运行make test](#如果要运行maketest)
-        - [使用make install安装redis并作为一个服务来使用](#使用makeinstall安装redis并作为一个服务来使用)
-        - [绿色安装 redis](#绿色安装redis)
-        - [docker安装redis](#docker安装redis)
+        - [如果要运行make test](#如果要运行make-test)
+    - [问题以及解决方案：](#问题以及解决方案)
+        - [Picked up _JAVA_OPTIONS: -Dawt.useSystemAAFontSettings=gasp](#picked-up-_java_options--dawtusesystemaafontsettings=gasp)
+        - [联想G4070 安装 deepin 15.4.1 显卡兼容失败（15.4还能正常用）](#联想g4070-安装-deepin-1541-显卡兼容失败（154还能正常用）)
 
-# 安装好deepin后配置Java开发环境
-> oneinstack 一键配置环境的软件
-
+`目录 end` *目录创建于2018-01-08*
+****************************************
+# 在Linux上配置Java环境
 ## 配置JDK
 ### 解压方式
 - [下载地址](http://www.oracle.com/technetwork/java/javase/downloads/index.html)
@@ -97,7 +97,7 @@ export PATH=$PATH:$GRADLE_HOME/bin:$GRAILS_HOME/bin:$GROOVY_HOME/bin:$SCALA_HOME
 
 **************
 ## 问题以及解决方案：
-##### Picked up _JAVA_OPTIONS: -Dawt.useSystemAAFontSettings=gasp
+### Picked up _JAVA_OPTIONS: -Dawt.useSystemAAFontSettings=gasp
 - 原因是linux自带的OpenJDK影响了安装的java
     - `sudo mv /etc/profile.d/java-awt-font-gasp.sh /etc/profile.d/java-awt-font-gasp.sh.bak`
     - 重启或注销即可
@@ -109,4 +109,3 @@ export PATH=$PATH:$GRADLE_HOME/bin:$GRAILS_HOME/bin:$GROOVY_HOME/bin:$SCALA_HOME
 ### 联想G4070 安装 deepin 15.4.1 显卡兼容失败（15.4还能正常用）
 - 因为合上盖子休眠就会导致打开电脑直接死机， 找了半天原因是驱动问题， 安装nvidia-driver nvidia-setting bumblebee-nvidia 即可解决、
 - 手残，按到关闭窗口特效后，就无法打开了，各种用着不爽， 然后重装了最新版系统，然后就装驱动，重启就不能开特效了。。。。。
-
