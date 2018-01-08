@@ -1,6 +1,7 @@
-`目录`
-- [Myth关于JavaEE的认识](#myth关于javaee的认识)
-    - [1.【JSP/Servlet 】](#1jsp/servlet)
+`目录 start`
+ 
+- [JavaEE](#javaee)
+    - [1.【JSP/Servlet】](#1jspservlet)
     - [2.【几大框架简述】](#2几大框架简述)
     - [3.【Hibernate基础配置】](#3hibernate基础配置)
         - [3.1【JDBC 和 Hibernate 比较】](#31jdbc-和-hibernate-比较)
@@ -25,7 +26,7 @@
             - [4.4.2.删除记录](#442删除记录)
         - [4.5 【继承关系的配置】 分两种，一般使用前者：](#45-继承关系的配置-分两种，一般使用前者：)
         - [4.6.【Hibernate 异常】](#46hibernate-异常)
-            - [4.6.1 could not find a getter for ...](#461-could-not-find-a-getter-for)
+            - [4.6.1 could not find a getter for](#461-could-not-find-a-getter-for)
             - [4.6.2 个人总结：](#462-个人总结：)
         - [4.7.【Hibernate对象的状态】](#47hibernate对象的状态)
             - [4.7.1 Session的方法。](#471-session的方法。)
@@ -41,7 +42,7 @@
         - [7.4 流程控制](#74-流程控制)
             - [foreach 循环语句](#foreach-循环语句)
                 - [collection 有 arry list map 几种 还有item是必写，其他的是可选的](#collection-有-arry-list-map-几种-还有item是必写，其他的是可选的)
-            - [if 判断语句:](#if-判断语句:)
+            - [if 判断语句:](#if-判断语句)
             - [set 方便书写update语句](#set-方便书写update语句)
             - [choose 相当于switch语句](#choose-相当于switch语句)
                 - [$和的区别：](#$和的区别：)
@@ -56,7 +57,7 @@
             - [8.3.1 Application.xml中配置头部分](#831-applicationxml中配置头部分)
             - [8.3.2 常用的注解：](#832-常用的注解：)
         - [8.4 xml方式：](#84-xml方式：)
-        - [8.5 IOC / DI：控制反转](#85-ioc-/-di：控制反转)
+        - [8.5 IOC / DI：控制反转](#85-ioc--di：控制反转)
         - [8.6 AOP：](#86-aop：)
             - [8.6.1 基本概念](#861-基本概念)
             - [8.6.2 基本配置](#862-基本配置)
@@ -85,10 +86,10 @@
     - [12.【Redis的使用】](#12redis的使用)
         - [12.1 【Java 使用 redis 配置】](#121-java-使用-redis-配置)
 
-*目录创建于2017-12-18*
-**************************************
-# Myth关于JavaEE的认识
-## 1.【JSP/Servlet 】
+`目录 end` *目录创建于2018-01-08*
+****************************************
+# JavaEE
+## 1.【JSP/Servlet】
 - 1、JSP页面上的SQL标签以及EL标签是优先于文件头的那些JavaServlet语句运行的，所以要保证非法进入页面时重定向的问题
 - 2、如果想要获取异常来据此返回参数到页面弹窗提示，那么就要对一层层的方法调用，进行查找，所有的try catch 块 都要检查
     - 因为一般我的习惯就是把异常当场就处理了，而要实现这个要求就必须将异常层层上抛！！！！
@@ -349,7 +350,7 @@
 ```
 *******************************************************
 ### 4.6.【Hibernate 异常】
-#### 4.6.1 could not find a getter for ...
+#### 4.6.1 could not find a getter for
     原因：1 可能真的没写get方法，或者get方法不合规范 setget方法中不允许两个连续大写字母
          2 *.hmb.xml文件中的属性名和pojo持久类中属性名不一致（一定不能在表名中添加下划线）
          3 方法名写错（基本不可能，都是自动生成的）
@@ -1077,4 +1078,5 @@ jar包：
 ## 12.【Redis的使用】
 
 ### 12.1 【Java 使用 redis 配置】
+> [Java使用Redis](/Database/Redis.md#Java使用Redis)�置】
 > [Java使用Redis](/Database/Redis.md#Java使用Redis)
