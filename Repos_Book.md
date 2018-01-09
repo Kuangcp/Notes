@@ -52,9 +52,10 @@
 ## 笔记仓库
 - [某研究生在校阅读笔记](https://github.com/lanxuezaipiao/ReadingNotes)
 - [跟老齐学Python的轻松入门 作者](https://github.com/qiwsir/ITArticles)
+- [judasn](https://github.com/judasn/hexo-blog)`善于归纳的人 相关:Javaer眼中的Linux`
 
 *******************************************
-## Java
+## 【Java】
 ### 框架以及高级特性
 - [Jfinal](https://gitee.com/jfinal/jfinal)
 - [okhttp](https://github.com/square/okhttp)`Java上性能较好的HTTP交互工具`
@@ -71,7 +72,6 @@
 ### 二次框架
 - [jeesite](https://gitee.com/thinkgem/jeesite)`Spring基础构建的maven jsp项目 bootstrap`
 - [Guns](https://gitee.com/naan1993/guns)`基于Springboot开发了大量模块`
-
 
 ### 高效
 - [interview](https://github.com/kdn251/interviews)`面试所需算法练习`
@@ -102,14 +102,21 @@
 - [sbt](https://github.com/sbt/sbt)
 
 ### Tool
+- [IDEA教程](https://github.com/judasn/IntelliJ-IDEA-Tutorial)
 - [lanproxy](https://github.com/ffay/lanproxy) `将局域网个人电脑、服务器代理到公网的内网穿透工具`
 - [weixin-java-tools](https://github.com/chanjarster/weixin-java-tools) `微信的java工具项目 包含企业号 微信支付 小程序`
 - [Springboot搭建的简易博客](https://github.com/wchstrife/blog)
+- [restfeel](https://github.com/Jason-Chen-2017/restfeel)`一个Rest接口的管理测试平台 陈光剑`
 
 
+******************************************************
+## 【Kotlin】
+
+- [EasyKotlin组织](https://github.com/EasyKotlin)
+    - [《Kotlin极简教程》书籍第一章](https://github.com/EasyKotlin/easy_kotlin_chapter_1)
 
 *******************************************************
-## Docker
+## 【Docker】
 - [Docker官方github组织](https://github.com/docker-library) `docker的官方Dockerfile以及doc文档`
 - [openoffice in docker](https://github.com/tobegit3hub/dockerized-openoffice)
 - [shipyard](https://github.com/shipyard/shipyardhttps://github.com/shipyard/shipyard) `docker图形化，功能稍多，配置略麻烦`
@@ -122,19 +129,19 @@
 - [webdis](https://github.com/anapsix/docker-webdis) `基于redis构建的使用http请求存取数据`
 
 *************
-## Go
+## 【Go】
 - [build-web-application-with-golang](https://github.com/astaxie/build-web-application-with-golang)
 
 
 *********
-## Python
+## 【Python】
 - [跟老齐学Python](https://github.com/qiwsir/StarterLearningPython)`书籍配套源码`
 - [PythonWeb开发](https://github.com/dongweiming/web_develop) `书籍相关源码`
 - [scrapy-redis](https://github.com/rmax/scrapy-redis) `爬虫框架结合redis使用`
 - [Python的一些脚本](https://github.com/9468305/script)
 
 ***********
-## Linux
+## 【Linux】
 - [Java程序员眼中的Linux](https://github.com/judasn/Linux-Tutorial)
 
 ## Database
@@ -166,6 +173,8 @@
 **********************************************
 # 【Book】
 > 在线书籍以及GitBook
+
+- [陈光剑的免费图书馆](https://universsky.github.io/)`Kotlin极简教程的作者`
 
 ## Go
 - [《Go入门指南》](https://github.com/Unknwon/the-way-to-go_ZH_CN)

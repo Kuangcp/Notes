@@ -10,14 +10,14 @@
     - 将注释取消 修改值: `net.ipv4.tcp_syncookies = 0`
     - 就能提高并发总量,但是并发量还是不能提高
 ```conf
-net.ipv4.tcp_syncookies = 0  
-#此参数是为了防止洪水攻击的，但对于大并发系统，要禁用此设置
-net.ipv4.tcp_max_syn_backlog=1024
-#参数决定了SYN_RECV状态队列的数量，一般默认值为512或者1024，即超过这个数量，系统将不再接受新的TCP连接请求，一定程度上可以防止系统资源耗尽。可根据情况增加该值以接受更多的连接请求。
-net.ipv4.tcp_tw_recycle=0
-#参数决定是否加速TIME_WAIT的sockets的回收，默认为0。
-net.ipv4.tcp_tw_reuse=0
-#参数决定是否可将TIME_WAIT状态的sockets用于新的TCP连接，默认为0。
-net.ipv4.tcp_max_tw_buckets
-#参数决定TIME_WAIT状态的sockets总数量，可根据连接数和系统资源需要进行设置。 
+    net.ipv4.tcp_syncookies = 0  
+    #此参数是为了防止洪水攻击的，但对于大并发系统，要禁用此设置
+    net.ipv4.tcp_max_syn_backlog=1024
+    #参数决定了SYN_RECV状态队列的数量，一般默认值为512或者1024，即超过这个数量，系统将不再接受新的TCP连接请求，一定程度上可以防止系统资源耗尽。可根据情况增加该值以接受更多的连接请求。
+    net.ipv4.tcp_tw_recycle=0
+    #参数决定是否加速TIME_WAIT的sockets的回收，默认为0。
+    net.ipv4.tcp_tw_reuse=0
+    #参数决定是否可将TIME_WAIT状态的sockets用于新的TCP连接，默认为0。
+    net.ipv4.tcp_max_tw_buckets
+    #参数决定TIME_WAIT状态的sockets总数量，可根据连接数和系统资源需要进行设置。 
 ```

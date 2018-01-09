@@ -52,3 +52,11 @@
 ## 醍醐灌顶
 - [知乎专栏-程序员你为什么这么累？](https://zhuanlan.zhihu.com/p/28705206)
     - [专栏的源码](https://github.com/xwjie/PLMCodeTemplate)
+
+## 笔记中所涉及到的知识
+
+- 编程语言: Python Java Kotlin Groovy Scala Clojure Shell Go
+- 构建工具: Git Gradle Maven 
+- 系统相关: Linux Docker 
+- 数据库相关: MySQL Oracle Redis Postgresql
+- web服务器: Tomcat Niginx

@@ -25,6 +25,11 @@
 
 **************************************************
 # SpringBoot
+> 一个简化Spring开发的框架,微服务SpringCloud的基础
+
+## 开始使用
+> 使用Idea的话就可以直接创建项目 使用别的可以下载zip进行导入 [官方下载地址](http://start.spring.io/)
+
 ## 安装SpringBootCLI
 - 安装SDKMAN
     - 使用git bash运行  `curl -s get.sdkman.io | bash`
