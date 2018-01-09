@@ -23,7 +23,7 @@
 * push时出现如下异常 cancelException 然后需要重新输入用户名密码。几次之后就不用输入，但是提示一直存在
 * 更改了输出窗口的编码后该提示是说取消了一个任务，还是不懂，但是正常使用
 * `back：使用ssh登录就不会有用户名密码这样的问题`
-- [ × ] [使用SSH登录github](https://github.com/Kuangcp/Notes/blob/master/Linux/git_action.md)
+- [X] [使用SSH登录github](/Linux/Git_Action.md)
 
 ## 2016.10.07
 - 图床的使用，百度云不方便，github更方便
