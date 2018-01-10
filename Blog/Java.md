@@ -1,4 +1,4 @@
-`目录`
+`目录 start`
  
 - [Java](#java)
     - [SE](#se)
@@ -7,8 +7,7 @@
     - [精彩系列](#精彩系列)
         - [码农翻身](#码农翻身)
 
-*目录创建于2018-01-07*
-
+`目录 end` *目录创建于2018-01-10*
 ****************************************
 # Java
 ## SE
@@ -46,6 +45,9 @@
 ## 精彩系列
 ### 码农翻身
 - [2017精华](http://chuansong.me/n/1501046251110) | [精华文章](http://blog.csdn.net/fanpeihua123/article/details/58151161)
+
+- [2017码农翻身文章](https://mp.weixin.qq.com/s?__biz=MzAxOTc0NzExNg==&mid=2665514184&idx=1&sn=3ace64c3a9eba2adf1ef94406e2ebf2b&chksm=80d67c8bb7a1f59d556bd7478626a4674ff07021726f84b4681b41ad7c6dbb4cfcf687dcf00a&scene=21#wechat_redirect)
+- [2016码农翻身文章](https://mp.weixin.qq.com/s?__biz=MzAxOTc0NzExNg==&mid=2665513504&idx=1&sn=25dd6420e3056101dd3f6fdaedacaa2a&chksm=80d67a63b7a1f37572a5159ff6f53810467c15c8beec94770e8360c45f45036360d77755ee78&scene=21#wechat_redirect)
 
 
 *****

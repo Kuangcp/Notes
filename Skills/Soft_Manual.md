@@ -141,6 +141,7 @@
 > 好用的管理会话的软件
 
 - [tmux 入门](http://blog.jobbole.com/87278/)
+
 `入门使用`
 - 新建会话 `tmux new -s test`
 - 断开会话但是后台运行 `ctrl-b d`

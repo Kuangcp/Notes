@@ -56,6 +56,10 @@
 
 *******************************************
 ## 【Java】
+### Java8
+- [little-java-functions](https://github.com/shekhargulati/little-java-functions)`Java8的函数式编程`
+    - [作者博客](https://shekhargulati.com/)
+
 ### 框架以及高级特性
 - [Jfinal](https://gitee.com/jfinal/jfinal)
 - [okhttp](https://github.com/square/okhttp)`Java上性能较好的HTTP交互工具`
@@ -112,6 +116,7 @@
 ******************************************************
 ## 【Kotlin】
 
+- [Kotlin For Android](https://github.com/wangjiegulu/kotlin-for-android-developers-zh)
 - [EasyKotlin组织](https://github.com/EasyKotlin)
     - [《Kotlin极简教程》书籍第一章](https://github.com/EasyKotlin/easy_kotlin_chapter_1)
 

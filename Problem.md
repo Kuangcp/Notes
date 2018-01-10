@@ -44,6 +44,9 @@
 - [某引擎搜索结果页](https://ausdn.com/s/ubuntu+cpu+fcitx)| [几种方式](https://www.findhao.net/res/786)| [卸载搜狗安装拼音](http://tieba.baidu.com/p/3863217434)
 - [知乎问题](https://www.zhihu.com/question/19839748) | [ubuntu论坛](http://forum.ubuntu.com.cn/viewtopic.php?f=122&t=173730&p=1299087) | [ubuntu论坛](http://forum.ubuntu.com.cn/viewtopic.php?f=8&t=194486&start=0)
 
+- 输入法没有显示打字窗口
+    - 直接杀掉 sogou-qimpanel 然后点击图标进行启动
+
 #### Flash
 - 点击[官网下载地址](https://get.adobe.com/cn/flashplayer/)下载,然后解压,
 - 将文件复制进火狐插件目录:`sudo cp libflashplayer.so  /usr/lib64/mozilla/plugins`
