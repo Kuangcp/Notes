@@ -29,6 +29,7 @@
     * [ Go ](./Blog/Go.md)
     * [ Java ](./Blog/Java.md)
     * [ Python ](./Blog/Python.md)
+    * [ Server ](./Blog/Server.md)
     * [ Solution ](./Blog/Solution.md)
     * [ View ](./Blog/View.md)
 * 【 Database 】
@@ -104,6 +105,7 @@
     * [ Linux_Net ](./Linux/Linux_Net.md)
     * [ Linux_Performance ](./Linux/Linux_Performance.md)
     * [ Nginx ](./Linux/Nginx.md)
+    * [ Release_Experience ](./Linux/Release_Experience.md)
     * [ Vim ](./Linux/Vim.md)
 * 【 Script 】
     * [ Dos ](./Script/Dos.md)
