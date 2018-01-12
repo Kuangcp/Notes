@@ -29,13 +29,23 @@
 
 # 代码托管平台
 ## Gitee
-> 码云
+> 码云,国内的github
 
+### URL规则
+- HTTPS & SSH
+    - `HTTPS:` https://gitee.com/kcp1104/MythRedisClient.git
+    - `SSH:` git@gitee.com:kcp1104/MythRedisClient.git
+
+***********************************
 ## Github
 > 全球范围的网站
 
 ### URL规则
 > github仓库的URL规则
+
+- HTTP & SSH
+    - `SSH:` git@github.com:Kuangcp/Script.git
+    - `HTTPS:` https://github.com/Kuangcp/Script.git
 
 - 目录：
     - https://github.com/用户/项目/tree/分支/相对根目录的目录
