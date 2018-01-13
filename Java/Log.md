@@ -1,15 +1,17 @@
-`目录`
-    - [slf4j 体系](#slf4j体系)
+`目录 start`
+ 
+    - [slf4j 体系](#slf4j-体系)
         - [logback的实现](#logback的实现)
         - [配置理解](#配置理解)
-            - [根节点 <configuration> 属性](#根节点<configuration>属性)
-                - [设置上下文名称：<contextName>](#设置上下文名称：<contextname>)
-                - [设置变量： <property>](#设置变量：<property>)
-                - [获取时间戳字符串：<timestamp>](#获取时间戳字符串：<timestamp>)
-            - [设置loger：](#设置loger：)
+            - [根节点 <configuration> 属性](#根节点-<configuration>-属性)
+                - [设置上下文名称：<contextName>](#设置上下文名称<contextname>)
+                - [设置变量： <property>](#设置变量-<property>)
+                - [获取时间戳字符串：<timestamp>](#获取时间戳字符串<timestamp>)
+            - [设置loger：](#设置loger)
             - [详解<appender>](#详解<appender>)
-    - [apache 体系](#apache体系)
+    - [apache 体系](#apache-体系)
 
+`目录 end` *目录创建于2018-01-14*
 ****************************************
 ## slf4j 体系
 

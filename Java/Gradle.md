@@ -1,4 +1,5 @@
-`目录`
+`目录 start`
+ 
 - [Gradle](#gradle)
     - [安装配置](#安装配置)
         - [SDKMAN方式](#sdkman方式)
@@ -9,25 +10,25 @@
         - [dependency](#dependency)
         - [常用插件](#常用插件)
     - [测试](#测试)
-    - [第一个 build.gradle](#第一个buildgradle)
-            - [配置Gradle包管理器 Wrapper](#配置gradle包管理器wrapper)
+    - [第一个 build.gradle](#第一个-buildgradle)
+            - [配置Gradle包管理器 Wrapper](#配置gradle包管理器-wrapper)
     - [Gradle进阶知识](#gradle进阶知识)
-        - [Gradle 构建块](#gradle构建块)
+        - [Gradle 构建块](#gradle-构建块)
         - [task的依赖关系](#task的依赖关系)
-        - [终结器 task](#终结器task)
+        - [终结器 task](#终结器-task)
         - [Groovy的POGO类管理配置文件上的版本号](#groovy的pogo类管理配置文件上的版本号)
         - [增量式构建特性](#增量式构建特性)
-        - [task 的inputs 和 outputs](#task的inputs和outputs)
+        - [task 的inputs 和 outputs](#task-的inputs-和-outputs)
     - [编写和使用自定义task](#编写和使用自定义task)
     - [声明task规则](#声明task规则)
     - [代码目录结构](#代码目录结构)
-- [Gradle 自动测试](#gradle自动测试)
+- [Gradle 自动测试](#gradle-自动测试)
     - [自动化测试理论](#自动化测试理论)
     - [测试java应用程序](#测试java应用程序)
-        - [项目布局，目录树](#项目布局，目录树)
+        - [项目布局，目录树](#项目布局目录树)
     - [单元测试](#单元测试)
         - [使用JUnit](#使用junit)
-        - [使用其他框架 TestNG Spock](#使用其他框架testngspock)
+        - [使用其他框架 TestNG Spock](#使用其他框架-testng-spock)
     - [配置测试执行](#配置测试执行)
 - [打包](#打包)
     - [War包](#war包)
@@ -39,12 +40,14 @@
 - [多语言编程](#多语言编程)
     - [处理javascript](#处理javascript)
         - [压缩javascript](#压缩javascript)
-        - [Java 和 Groovy的联合编译](#java和groovy的联合编译)
-        - [Java 和 Scala](#java和scala)
-    - [Jenkin 使用](#jenkin使用)
+        - [Java 和 Groovy的联合编译](#java-和-groovy的联合编译)
+        - [Java 和 Scala](#java-和-scala)
+    - [Jenkin 使用](#jenkin-使用)
         - [下载安装和配置](#下载安装和配置)
 
-***************************************
+`目录 end` *目录创建于2018-01-14*
+****************************************
+
 # Gradle
 ## 安装配置
 ### SDKMAN方式

@@ -1,24 +1,26 @@
-`目录`
+`目录 start`
+ 
 - [Tomcat](#tomcat)
     - [配置运行](#配置运行)
-        - [配置解压版 Tomcat](#配置解压版tomcat)
+        - [配置解压版 Tomcat](#配置解压版-tomcat)
         - [编码](#编码)
         - [虚拟目录](#虚拟目录)
             - [默认主页](#默认主页)
             - [虚拟主机](#虚拟主机)
-            - [配置 GZip压缩](#配置gzip压缩)
+            - [配置 GZip压缩](#配置-gzip压缩)
         - [Tips](#tips)
     - [Web容器和Web服务器的区别](#web容器和web服务器的区别)
         - [【web容器】](#web容器)
             - [【Web服务器】](#web服务器)
-            - [【应用程序服务器（The Application Server）】](#应用程序服务器（theapplicationserver）)
+            - [【应用程序服务器（The Application Server）】](#应用程序服务器（the-application-server）)
             - [【serverlet】](#serverlet)
             - [【Tomcat】](#tomcat)
             - [【Tomcat与Web服务器、应用服务器的关系】](#tomcat与web服务器、应用服务器的关系)
-    - [一、Tomcat 与应用服务器](#一、tomcat与应用服务器)
-    - [二、Tomcat 与 Web 服务器](#二、tomcat与web服务器)
+    - [一、Tomcat 与应用服务器](#一、tomcat-与应用服务器)
+    - [二、Tomcat 与 Web 服务器](#二、tomcat-与-web-服务器)
 
-*****************************************************
+`目录 end` *目录创建于2018-01-14*
+****************************************
 # Tomcat
 > [官方网站](http://tomcat.apache.org/)
 

@@ -1,3 +1,11 @@
+`目录 start`
+ 
+    - [IDEA 新建一个Springboot web项目并使用Gradle构建](#idea-新建一个springboot-web项目并使用gradle构建)
+            - [配置文件](#配置文件)
+                - [构建文件](#构建文件)
+
+`目录 end` *目录创建于2018-01-14*
+****************************************
 ## IDEA 新建一个Springboot web项目并使用Gradle构建
 - `Windows平台下：安装sdkman 包管理器 或者chocolatey`
 - `使用包管理器来安装 groovy Springboot`

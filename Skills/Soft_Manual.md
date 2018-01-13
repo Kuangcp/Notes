@@ -23,7 +23,7 @@
             - [todo.txt-cli](#todotxt-cli)
     - [【文本编辑器】](#文本编辑器)
         - [Ghex](#ghex)
-        - [Kate/KWrite(Kate的轻量版)](#kate/kwrite(kate的轻量版))
+        - [Kate/KWrite(Kate的轻量版)](#katekwritekate的轻量版)
         - [Geany](#geany)
         - [scite](#scite)
         - [textadept](#textadept)
@@ -32,7 +32,7 @@
         - [Gedit](#gedit)
         - [小书匠](#小书匠)
         - [Moediter Typora CuteMarkEd](#moediter-typora-cutemarked)
-        - [Vi/Vim](#vi/vim)
+        - [Vi/Vim](#vivim)
         - [Nano](#nano)
         - [fte-terminal](#fte-terminal)
     - [【IDE】](#ide)
@@ -41,8 +41,8 @@
                 - [lombok](#lombok)
         - [eclipse](#eclipse)
         - [MyEclipse](#myeclipse)
-            - [【ALT 】：](#alt-：)
-            - [【CTRL】 ：](#ctrl-：)
+            - [【ALT 】：](#alt-)
+            - [【CTRL】 ：](#ctrl-)
             - [【debug】](#debug)
     - [【浏览器】](#浏览器)
         - [FireFox](#firefox)
@@ -51,7 +51,7 @@
             - [主题](#主题)
         - [Vivaldi](#vivaldi)
 
-`目录 end` *目录创建于2018-01-07*
+`目录 end` *目录创建于2018-01-14*
 ****************************************
 # 软件使用记事
 ## 【包管理】
@@ -346,3 +346,4 @@
 - 感觉采用的是chrome内核，做的更漂亮了，而且是内置了很多常用插件，的确很方便，相比于chrome更符合国内使用
 
 ***********************************************
+*********

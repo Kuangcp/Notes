@@ -1,3 +1,13 @@
+`目录 start`
+ 
+- [配置Hexo的Github博客](#配置hexo的github博客)
+        - [安装node](#安装node)
+    - [安装 hexo](#安装-hexo)
+            - [配置文件](#配置文件)
+            - [新建文章](#新建文章)
+
+`目录 end` *目录创建于2018-01-14*
+****************************************
 # 配置Hexo的Github博客
 > 参考 [博客](http://stonebegin.com/hexo+github.html)
 ### 安装node 

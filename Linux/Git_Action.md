@@ -1,10 +1,10 @@
-`目录`
+`目录 start`
  
 - [Git实际使用的记录](#git实际使用的记录)
-- [Tips](#tips)
+    - [Tips](#tips)
     - [配置记住密码](#配置记住密码)
     - [【安装】](#安装)
-        - [Linux(debian系)](#linux(debian系))
+        - [Linux(debian系)](#linuxdebian系)
         - [windows](#windows)
     - [【使用】](#使用)
         - [实验楼上使用Github](#实验楼上使用github)
@@ -31,7 +31,7 @@
         - [8.Reset一个单独的文件](#8reset一个单独的文件)
         - [9.保留working_tree并且丢弃一些commit](#9保留working_tree并且丢弃一些commit)
 
-*目录创建于2018-01-06*
+`目录 end` *目录创建于2018-01-14*
 ****************************************
 # Git实际使用的记录
 ## Tips

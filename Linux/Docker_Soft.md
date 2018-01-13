@@ -1,6 +1,7 @@
-# 使用Docker安装软件
-`目录`
+`目录 start`
+ 
 - [使用Docker安装软件](#使用docker安装软件)
+    - [相关镜像](#相关镜像)
     - [安装redis](#安装redis)
     - [安装Jenkins](#安装jenkins)
     - [安装PostgreSQL](#安装postgresql)
@@ -8,7 +9,13 @@
     - [安装MySQL](#安装mysql)
     - [Docker中构建一个可外登录的完整单一Ubuntu](#docker中构建一个可外登录的完整单一ubuntu)
     - [创建一个alpine的ssh](#创建一个alpine的ssh)
-    
+    - [git服务器](#git服务器)
+        - [简易git-daemon](#简易git-daemon)
+    - [Java](#java)
+
+`目录 end` *目录创建于2018-01-14*
+****************************************
+# 使用Docker安装软件
 ## 相关镜像
 `百度云`
 - `hub.baidubce.com/mythos/alpine-ssh:1.0` alpine配置好ssh，适合瞎折腾

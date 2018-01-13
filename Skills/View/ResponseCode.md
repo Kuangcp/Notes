@@ -1,3 +1,19 @@
+`目录 start`
+ 
+- [HTTP状态码大全](#http状态码大全)
+    - [标准扩展码](#标准扩展码)
+        - [1xx Informational 信息化](#1xx-informational-信息化)
+        - [2xx Success 成功](#2xx-success-成功)
+        - [3xx Redirection 重定向](#3xx-redirection-重定向)
+        - [4xx Client Error 客户端错误](#4xx-client-error-客户端错误)
+        - [5xx Server Error 服务器错误](#5xx-server-error-服务器错误)
+    - [非官方扩展码](#非官方扩展码)
+    - [互联网信息服务扩展状态码](#互联网信息服务扩展状态码)
+    - [NGINX 扩展状态码](#nginx-扩展状态码)
+    - [七牛扩展状态码](#七牛扩展状态码)
+
+`目录 end` *目录创建于2018-01-14*
+****************************************
 # HTTP状态码大全
 ## 标准扩展码
 

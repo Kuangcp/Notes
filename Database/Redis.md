@@ -1,4 +1,5 @@
-`目录`
+`目录 start`
+ 
 - [Redis](#redis)
     - [【windows上的基本配置】](#windows上的基本配置)
     - [Linux下的使用](#linux下的使用)
@@ -8,17 +9,17 @@
         - [常用的数据类型操作](#常用的数据类型操作)
             - [过期策略](#过期策略)
         - [各数据类型的高级操作](#各数据类型的高级操作)
-            - [字符串 String](#字符串string)
-            - [列表 list](#列表list)
-            - [集合 set](#集合set)
-            - [有序集合 zset](#有序集合zset)
-            - [散列 hash](#散列hash)
+            - [字符串 String](#字符串-string)
+            - [列表 list](#列表-list)
+            - [集合 set](#集合-set)
+            - [有序集合 zset](#有序集合-zset)
+            - [散列 hash](#散列-hash)
             - [HyperLogLog](#hyperloglog)
             - [GEO【地理位置】](#geo地理位置)
-        - [Pub/Sub发布订阅](#pub/sub发布订阅)
+        - [Pub/Sub发布订阅](#pubsub发布订阅)
         - [事务](#事务)
         - [服务器](#服务器)
-        - [Run Configuration](#runconfiguration)
+        - [Run Configuration](#run-configuration)
         - [数据安全和性能](#数据安全和性能)
             - [持久化策略](#持久化策略)
             - [复制](#复制)
@@ -34,8 +35,8 @@
         - [jedis遇到的异常](#jedis遇到的异常)
         - [SpringBoot使用Redis](#springboot使用redis)
 
-*目录创建于2017-12-18*
-************************************************************
+`目录 end` *目录创建于2018-01-14*
+****************************************
 # Redis
 ## 【windows上的基本配置】
 - 注册为服务
