@@ -1,3 +1,14 @@
+`目录 start`
+ 
+- [泛型](#泛型)
+    - [入门](#入门)
+        - [简单使用](#简单使用)
+            - [类型擦除](#类型擦除)
+        - [约束和局限性](#约束和局限性)
+        - [泛型类型的继承规则](#泛型类型的继承规则)
+
+`目录 end` *目录创建于2018-01-13*
+****************************************
 # 泛型
 > Java8上的泛型 
 
@@ -22,14 +33,159 @@
 
 > 在Java的继承中,可以根据需要拥有多个接口超类型,但限定中至多只有一个类,如果用一个类作为限定,他必须是限定列表中的第一个
 
-#### 约束和局限性
-- 不能使用基本类型实例化类型参数 
+******************************
+### 约束和局限性
+> 以下代码示例:涉及的类Pair在上述的代码中已经定义, Human和Student是继承关系
+> 并且因为看的 Java核心技术卷 比较老 jdk是1.5的所以没有用7的菱形语法简化泛型 7可以省去右边的类型: `Pair<Double> pair = new Pair<>();`
+
+- | 不能使用基本类型实例化类型参数 
     - 也就是说没有`Pair<double>`只有`Pair<Double>`
-    - 因为类型擦除后Object并不能放double的值, 但是这样做与Java语言中基本类型的独立状态相一致.
-    - 当包装器类型(wrapper type)不能接受替换时,可以使用独立的类和方法处理他们 TODO 理解
-- 运行时类型查询只适用于原始类型
-- 不能抛出也不能捕获泛型类实例
-- 参数化类型的数组不合法
-- 不能实例化类型变量(T)
-- 泛型类的静态上下文中类型变量无效
-- 注意泛型擦除后的冲突
+    - 因为类型擦除后,类型是Object并不能放double的值, 但是这样做与Java语言中基本类型的独立状态相一致.
+    - 当包装器类型(wrapper type)不能接受替换时,可以使用独立的类和方法处理他们  
+- | 运行时类型查询(eq或者instanceof)只适用于原始类型
+    - 比如`Pair<T>` 和`Pair<String>`是等价的,因为类型擦除
+    - `Pair<String> pair1` `Pair<Date> pair2` pair1.getClass()和pair2.getClass()是等价的都是返回Pair.class
+- | 不能抛出也不能捕获泛型类实例
+    - 错误的示例:
+        - `public class Problem<T> extends Exception{}`
+        - `public static <T extends Throwable> void doWork(){try{}catch(T t){}}`
+    - 正确示例:
+        - 在异常声明中使用类型变量 
+        - `public static <T extends Throwable> void doWork() throws T{.. catch(){throw t;}}`
+- | 参数化类型的数组不合法
+    - `Pair<String>[] list = new Pair<String>[10];`
+    - 因为擦除后 list是Pair[]类型,然后就能转成Object[]
+    - 如果要使用的话最好直接使用集合 ArrayList:` ArrayList<Pair<String>>`,安全又高效
+```java
+    Object[] array = list;
+    array[0] = "hi";//  编译错误
+    array[0] = new Pair<Date>(); //通过数组存储的检测,但实际上类型错误了,所以禁止使用参数化类型的数组
+```
+
+- | 不能实例化类型变量(T)
+    - 非法 `new T(){}`
+```java
+    public Pair(){
+        first = new T();
+        second = new T();
+    }
+    first = T.class.newInstance() //非法 T.class是不合法的
+    //要实例化一个Pair<T>的对象就要如下:
+    public static <T> Pair<T> initPair(Class<T> c){
+        try{
+            return new Pair<T>(c.newInstance(), c.newInstance());
+        }catch (Exception e){
+            return null;
+        }
+    }
+    // 如下调用
+    Pair<String> pair = Pair.initPair(String.class);
+    // 因为Class本身是泛型, String.class其实是Class<String>的实例
+    // 也不能实例化为一个数组 new T[5]
+```
+- | 泛型类的静态上下文中类型变量无效
+    - 不能在静态域中使用类型变量 如下:
+    - 如果这段代码能执行,那就可以声明一个 Singleton<Random> 共享随机数生成类,
+    - 但是声明之后,类型擦除,就只剩下了Singleton类,并不能做对应的事情,所以禁止这样的写法
+```java
+    private static T first; // 错误
+    public static T getFirst(){ // 错误
+        return first;
+    }
+```
+- | 注意泛型擦除后的冲突
+    - 当类型擦除时,不能创建引发冲突的相关条件
+    - 例如 新实现一个类型变量约束的equals方法就会和Object原方法冲突 补救方法就是重命名该方法了
+    
+```java
+    public class Pair<T>{
+        public boolean equals (T value){
+            return ..
+        }
+    }
+```
+`泛型规范说明`
+-  要想支持擦除的转换,就需要强行限制一个类或类型变量不能同时成为两个接口类型的子类,而这两个接口是同一接口的不同参数化
+    - 以下代码就是非法的, GregorianCalendar 实现了两个接口,两个接口是Comparable接口的不同参数化,这是不允许的
+```java
+    class Calendar implements Comparable<Calendar>{}
+    class GregorianCalendar extends Calendar implements Comparable<GregorianCalendar>{} // 错误
+```
+- 但是如下又是合法的
+```java
+    class Calendar implements Comparable{}
+    class GregorianCalendar extends Calendar implements Comparable{}
+```
+- 很有可能是桥方法有关,不可能有两个一样的桥方法(因为两个接口其实是一个接口的不同参数化,桥方法的方法签名是一致的)
+
+*******************************************
+### 泛型类型的继承规则
+
+> 例如 父子类: Human Student  那么 Pair<Human> Pair<Student> 是继承(inherit)关系么,答案是否定的.
+
+```java
+    Pair<Human> humans = new Pair<Human>(man, woman);
+    Pair<Student> classmates = humans;// illegal, but suppose it wasn't
+    classmates.setSecond(junior) // 如果上面合法,那么这里是肯定可以执行的, 因为泛型类型变成了Student
+    //那么就有了问题了,原有的人类类型限制的对象中,出现了小学生
+    //所以不允许这样的类型变量约束的类进行多态
+    
+    // 但是数组可以这样写是因为数组会有自己的检查保护
+    Human[] humans = {man, woman};
+    Student[] students = humans;
+    students[0] = junior ;// 虚拟机将抛出 ArrayStoreException 异常
+```
+
+******************
+> 永远可以将参数化类型转换为一个原始类型, Pair<Human> 是原始类型Pair的一个子类型,转换成原始类型也会产生错误  
+> [相关测试类](https://github.com/Kuangcp/JavaBase/blob/master/src/test/java/com/generic/simple/PairTest.java)  
+```java
+    Pair<Human> humans = new Pair<Human>(man, woman);
+    Pair other = humans;
+    other.setFirst(new String("wtf"))// 只是会有一个编译时的警告(类型未检查),但实际上都看得出这明显是错误的
+    // 那么在后续代码中继续当做Human对象进行引用,必然就会有ClassCastException
+    // 所以这样的写法尽量避免,这里的设计 就失去了泛型程序设计提供的附加安全性.(挖的坑)
+```
+***************
+> 泛型类可以扩展或实现其他的泛型类,就这一点而言,和普通类没有什么区别
+
+- 例如 ArrayList<T> 实现List<T>接口, 这意味着一个ArrayList<Student>可以转换为List<Studnet> 
+    - 但是一个ArrayList<Student>不是ArrayList<Human>或者List<Student>.
+
+### 通配符类型
+> 更为灵活的使用泛型, 例如: `Pair<? extends Human>` 表示任何泛型Pair类型,他的类型参数是约束为Human的子类  
+
+> 例如编写一个方法 `public static void printMessage(Pair<Human> human){}`  
+> 正如上面所说, Pair<Student>类型的变量是不能放入这个方法的,因为泛型变量是没有继承关系, 这时候就可以使用这个通配符:  
+> `public static void printMessage(Pair<? extends Human>)` 可以get不能set
+```java
+    Pair<Human> humans = new Pair<Human>(man, woman);
+    Pair<? extends Human> classmates = humans;// 编译通过
+    classmates.setSecond(junior) // 编译错误,泛型约束起作用了
+
+    // 分析其泛型类实现可以理解为:
+    ? extends Human getFirst()
+    void setFirst(? extends Human)
+    // 这样的话是不可能调用setFirst方法, 对于编译器来说,只是知道入参是Human的子类,但是类型并不明确,所以不能正常调用
+    // 使用get方法就不会有问题, 泛型起作用了.将get返回值赋值给Human的引用也是完全合法的,这就是引入该统通配符的关键之处
+```
+
+### 通配符的超类型限定
+> 通配符限定和类型变量限定十分相似, 但是还有一个附加的能力, 即可以指定一个超类型限定(supertype bound)
+> `? extends Student` 这个通配符就限定为Studnet的所有超类型(super关键字已经十分准确的描述了这种关系)
+> 带有超类型限定的通配符的行为和前者相反,可以为方法提供参数,但不能使用返回值即 可以 set 但是不能get
+
+```java
+    // Pair<? super Student> 例如这种定义
+    void setFirst(? super Student)
+    ? super Student getFirst()
+    // 编译器不知道setFirst方法的确切类型,但是可以用任意Student对象(或子类型) 调用他, 而不能使用Human对象调用.
+    // 然而,如果调用getFirst,泛型没有起作用,只能将返回值用Object接收
+```
+> [以上两种情况的相关测试类](https://github.com/Kuangcp/JavaBase/blob/master/src/test/java/com/generic/simple/PairTest.java) 
+
+> 总结: 类定义上的泛型变量:  
+> <? extends Human> 是限定了不能set,但是保证了get  
+> <? super Student> 限定了不能get正确,但是保证了set.  
+> 都是约束了只能是 Human的子类 ????? 所以这是什么骚操作,就不能限定下父类???
+> 第一个约束了只能是Human的子类及自己,第二个约束了只能是Student的子类及自己  

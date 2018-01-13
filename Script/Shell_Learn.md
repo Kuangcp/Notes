@@ -100,13 +100,25 @@ fish
 ### 参数读取
 - [参考博客](http://www.cnblogs.com/FrankTan/archive/2010/03/01/1634516.html)`命令行选项 参数处理`
 - 脚本退出运行 `exit 0`
-- 得到脚本所在的目录 `basepath=$(cd `dirname $0`; pwd)`
+- 得到脚本所在的目录 basepath=$(cd \`dirname $0\`; pwd) 或者 path=\`pwd\`
 
 
 ### 判断
 #### if
 - [参考博客](http://www.cnblogs.com/276815076/archive/2011/10/30/2229286.html)
 
+#### case
+
+```sh
+  case $content in 
+    -h|h)
+      echo "help"
+    ;;
+    *)
+      echo "前面全部不匹配才会执行"
+    ;;
+  esac
+```
 ### 循环
 - [参考博客](http://www.cnblogs.com/fhefh/archive/2011/04/15/2017233.html)
 

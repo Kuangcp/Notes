@@ -236,7 +236,8 @@
 
 ### 小书匠
 - [在线使用](http://markdown.xiaoshujiang.com/)[github地址](https://github.com/suziwen/markdownxiaoshujiang)
-- 本来是很合适的，但是对文件操作不干净，总有些bug不好看，不适合编程适合写作
+- 本来是很合适的，但是对文件操作不干净，总有些bug不好用,文件闪退出错,终端不方便
+    - 不适合编程适合写作,所支持的md的格式非常强大
 - 快捷键
     - 加粗    `Ctrl + B` 
     - 斜体    `Ctrl + I` 
