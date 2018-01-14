@@ -11,7 +11,7 @@
         - [修改权限](#修改权限)
 
 `目录 end` *目录创建于2018-01-14*
-*******************************************************
+****************************************
 # Postgresql
 
 ## 概述
@@ -24,7 +24,7 @@
 - 安装客户端 `sudo apt-get install postgresql-client`
 
 `Dockerfile`
-```
+```dockerfile
     FROM ubuntu:16.04
     RUN apt-key adv --keyserver keyserver.ubuntu.com --recv-keys B97B0AFCAA1A47F044F244A07FCC7D46ACCC4CF8
 
@@ -66,12 +66,12 @@
 `pull 精简版`
 - 下拉镜像：`docker pull postgres:alpine`
 - 构建容器：
-```
-docker run -d --name gitea-db \
--e POSTGRES_PASSWORD=ad \
--v gitea-db-data:/var/lib/postgresql/data \
--p 5432:5432 \
-postgres:alpine
+```sh
+    docker run -d --name gitea-db \
+    -e POSTGRES_PASSWORD=ad \
+    -v gitea-db-data:/var/lib/postgresql/data \
+    -p 5432:5432 \
+    postgres:alpine
 ```  
 - 进入postgresql终端 `docker exec -it gitea-db psql -U postgres`
 
