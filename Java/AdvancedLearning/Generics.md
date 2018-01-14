@@ -123,7 +123,7 @@
 *******************************************
 ### 泛型类型的继承规则
 
-> 例如 父子类: Human Student  那么 Pair<Human> Pair<Student> 是继承(inherit)关系么,答案是否定的.
+> 例如 父子类: Human Student  那么 Pair<Human> Pair<Student> 是继承(inherit)关系么,答案是否定的!!
 
 ```java
     Pair<Human> humans = new Pair<Human>(man, woman);
@@ -148,18 +148,20 @@
     // 那么在后续代码中继续当做Human对象进行引用,必然就会有ClassCastException
     // 所以这样的写法尽量避免,这里的设计 就失去了泛型程序设计提供的附加安全性.(挖的坑)
 ```
+
 ***************
 > 泛型类可以扩展或实现其他的泛型类,就这一点而言,和普通类没有什么区别
 
 - 例如 ArrayList<T> 实现List<T>接口, 这意味着一个ArrayList<Student>可以转换为List<Studnet> 
     - 但是一个ArrayList<Student>不是ArrayList<Human>或者List<Student>.
 
+**************************************************************************
 ### 通配符类型
 > 更为灵活的使用泛型, 例如: `Pair<? extends Human>` 表示任何泛型Pair类型,他的类型参数是约束为Human的子类  
 
 > 例如编写一个方法 `public static void printMessage(Pair<Human> human){}`  
 > 正如上面所说, Pair<Student>类型的变量是不能放入这个方法的,因为泛型变量是没有继承关系, 这时候就可以使用这个通配符:  
-> `public static void printMessage(Pair<? extends Human>)` 可以get不能set
+>> `public static void printMessage(Pair<? extends Human>)` 可以get不能set
 ```java
     Pair<Human> humans = new Pair<Human>(man, woman);
     Pair<? extends Human> classmates = humans;// 编译通过
