@@ -7,9 +7,14 @@
         - [约束和局限性](#约束和局限性)
         - [泛型类型的继承规则](#泛型类型的继承规则)
         - [通配符类型](#通配符类型)
-        - [通配符的超类型限定](#通配符的超类型限定)
+            - [子类型限定的通配符 extends](#子类型限定的通配符-extends)
+            - [超类型限定的通配符 super](#超类型限定的通配符-super)
+                - [应用](#应用)
+            - [无限定通配符](#无限定通配符)
+            - [通配符捕获](#通配符捕获)
+        - [反射和泛型](#反射和泛型)
 
-`目录 end` *目录创建于2018-01-14*
+`目录 end` *目录创建于2018-01-16*
 ****************************************
 # 泛型
 > Java8上的泛型 
@@ -207,13 +212,66 @@
 > 否则还要用户在代码中随意地添加强制类型转换直至可以通过编译.
 
 #### 无限定通配符
+> TODO 对其使用场景 尚有疑问,以后再解
 
 ```java
     // 例如 Pair<?>
     ? getFirst() // 方法的返回值只能赋值给一个Object
     void setFirst(?) // 方法不能被调用,甚至不能用Object调用.
-    // Pair<?> 和 Pair 本质的不同在于: 可以用任意Object对象调用原始的Pair类的setObject方法
+    // Pair<?> 和 Pair 本质的不同在于: 可以用任意Object对象调用原始的Pair类的setObject(set方法,因为类型擦除 入参是Object, 简称setObject)方法 
 ```
-- 例如这个方法用来测试一个pair是否包含了指定的对象, 他不需要实际的类型.
+- 例如 [这个hasNull()方法](https://github.com/Kuangcp/JavaBase/blob/master/src/test/java/com/generic/simple/PairTest.java)用来测试一个pair是否包含了指定的对象, 他不需要实际的类型.
 
 #### 通配符捕获
+> TODO 学习和理解使用场景
+
+- 如果编写一个交换的方法  
+```java
+    public static void swap (Pair<?> p){
+        ? temp = p.getFirst(); // 错误, 不允许将?作为类型
+        p.setFirst(p.getSecond());
+        p.setSecond(temp);
+    }
+```
+- 但是可以编写一个辅助方法
+```java
+    public static <T> void swapHelper(Pair<T> p){
+        T temp = p.getFirst();
+        p.setFirst(p.getSecond());
+        p.setSecond(temp);
+    }
+```
+- swapHelper是一个泛型方法, 而swap不是, 它具有固定的Pair<?>类型的参数, 那么现在就可以这样写:
+    - `public static void swap(Pair<?> p){swapHelper(p);}`
+    - 这种情况下, swapHelper方法的参数T捕获通配符, 它不知道是哪种类型的通配符,但是这是一个明确的类型 并且<T>swapHelper 在T指出类型时,才有明确的含义
+    - 当然,这种情况下并不是一定要用通配符, 而且我们也实现了没有通配符的泛型方法
+
+> 但是下面这个通配符类型出现在计算结果中间的示例
+
+```java
+    public static void maxMinBonus(Student[] students, Pair<? super Student> result){
+        minMaxBonus(students, result);
+        swapHelper(result);
+    }
+    // 在这里,通配符捕获机制是不可避免的, 但是这种捕获只有在许多限制情况下才是合法的.
+    // 对于编译器而言, 必须能够确信通配符表达的是单个, 确定的类型.
+```
+
+### 反射和泛型
+> [官方Java7的Class文档](https://docs.oracle.com/javase/7/docs/api/java/lang/Class.html) | []()
+> 现在Class类是泛型的, 例如String.class实际上是Class<String>类的对象(事实上是唯一的对象)  
+> 类型参数十分有用, 这是因为他允许Class<T>方法的返回类型更加具有针对性.下面Class<T>的方法就使用了类型参数
+```java
+    T newInstance()
+    T cast(Object obj)
+    T[] getEnumConstants()
+    Class<? super T> getSuperclass()
+    Constructor<T> getConstructor(Class... paramterTypes)
+    Constructor<T> getDeclaredConstructor(Class... paramterTypes)
+```
+- newInstance方法返回一个示例, 这个实例所属的类由默认的构造器获得, 它的返回类型目前被声明为T, 其类型与Class<T>描述的类相同, 这样就免除了类型转换.
+- 如果给定的类型确实是T的一个子类型, cast方法就会返回一个现在声明为类型T的对象, 否则, 抛出一个BadCastException异常
+- 如果这个类不是enum类或类型T的枚举值的数组, getEnumConstants方法将返回Null.
+- 最后, getConstructor与getDeclaredConstructor方法返回一个Constructor<T>对象.Constructor类也已经变成泛型, 以便 newInstance方法有一个正确的返回类型.
+
+TODO 继续看书

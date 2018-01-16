@@ -103,7 +103,10 @@
 - [rabbitmq](https://github.com/chwshuang/rabbitmq)`入门学习代码`
 - [docker-demos](https://github.com/waylau/docker-demos) `Maven和Gradle结合docker使用`
 - [mybatis-spring-boot](https://github.com/abel533/MyBatis-Spring-Boot)
+
+#### 微服务
 - [shop](https://github.com/lrwinx/shop)`SpringClod的实战案例`
+- [daijie](https://github.com/daijiejay/daijie)`基于spring-cloud系列整合的依赖jar包`
 
 ### Android 
 - [安卓进阶学习指南](https://github.com/iwannabetop/Awesome-Android-Learning-Guide)
@@ -120,6 +123,7 @@
 
 ### Tool
 - [IDEA教程](https://github.com/judasn/IntelliJ-IDEA-Tutorial)
+- [SeleniumHQ](https://github.com/SeleniumHQ/selenium)`自动化测试`
 - [lanproxy](https://github.com/ffay/lanproxy) `将局域网个人电脑、服务器代理到公网的内网穿透工具`
 - [weixin-java-tools](https://github.com/chanjarster/weixin-java-tools) `微信的java工具项目 包含企业号 微信支付 小程序`
 - [Springboot搭建的简易博客](https://github.com/wchstrife/blog)

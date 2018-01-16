@@ -32,4 +32,6 @@ RegionId cn-qingdao	cn-beijing cn-zhangjiakou cn-hangzhou cn-shanghai cn-shenzhe
 - `里程碑` :trophy: `:trophy:`
 - `改良的余地` :warning: `:warning:`
   
-  
+## 生活
+### 出行
+- 出行尽量不要把东西放在袋子里提, 很容易丢!!! `写了便签,还发生了两次...`
