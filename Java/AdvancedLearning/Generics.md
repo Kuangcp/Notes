@@ -156,7 +156,9 @@
     - 但是一个ArrayList<Student>不是ArrayList<Human>或者List<Student>.
 
 **************************************************************************
+
 ### 通配符类型
+#### 子类型限定的通配符 extends
 > 更为灵活的使用泛型, 例如: `Pair<? extends Human>` 表示任何泛型Pair类型,他的类型参数是约束为Human的子类  
 
 > 例如编写一个方法 `public static void printMessage(Pair<Human> human){}`  
@@ -174,7 +176,7 @@
     // 使用get方法就不会有问题, 泛型起作用了.将get返回值赋值给Human的引用也是完全合法的,这就是引入该统通配符的关键之处
 ```
 
-### 通配符的超类型限定
+#### 超类型限定的通配符 super
 > 通配符限定和类型变量限定十分相似, 但是还有一个附加的能力, 即可以指定一个超类型限定(supertype bound)
 > `? extends Student` 这个通配符就限定为Studnet的所有超类型(super关键字已经十分准确的描述了这种关系)
 > 带有超类型限定的通配符的行为和前者相反,可以为方法提供参数,但不能使用返回值即 可以 set 但是不能get
@@ -189,9 +191,29 @@
 > [以上两种情况的相关测试类](https://github.com/Kuangcp/JavaBase/blob/master/src/test/java/com/generic/simple/PairTest.java) 
 
 > 总结: 类定义上的泛型变量:  
-> <? extends Human> 是限定了不能set,但是保证了get  
-> <? super Student> 限定了不能get正确,但是保证了set.  
-> 都是约束了只能是 Human的子类 ????? 所以这是什么骚操作,就不能限定下父类???
-> 第一个约束了只能是Human的子类及自己,第二个约束了只能是Student的子类及自己  
+> 子类型限定: <? extends Human> 是限定了不能set,但是保证了get  
+> 超类型限定: <? super Student> 限定了不能正确get,但是保证了set.  
 
-TODO 难道只是方法调用和声明上有不同????
+##### 应用
+- 示例:`public static <T extends Comparable<T>> T min(T[] list);`
+    - 限定了入参和返回值是 是实现了Comparable接口的某个类型 因为Comparable也是一个泛型类, 所以也进行限定类型
+    - 这样的写法要比 T extends Comparable 更为彻底
+    - 例如计算一个String数组的最小值 T 就是 String类型的, String是Comparable<String>的子类型
+        - 但是当处理GregorianCalendar, GregorianCalendar是Calendar的子类, 并且Calendar实现了`Comparable<Calendar>`
+        - 因此GregorianCalendar实现的是`Comparable<Calendar>`, 而不是Comparable<GregorianCalendar>
+        - 这种情况下 `public static <T extends Comparable<? super T>> T min(T[] list)` 就是安全的
+
+> 对于应用程序员, 可能很快的学会掩盖这些声明, 想当然地认为库程序员做的都是正确的, 如果是一名库程序员, 一定要习惯于通配符  
+> 否则还要用户在代码中随意地添加强制类型转换直至可以通过编译.
+
+#### 无限定通配符
+
+```java
+    // 例如 Pair<?>
+    ? getFirst() // 方法的返回值只能赋值给一个Object
+    void setFirst(?) // 方法不能被调用,甚至不能用Object调用.
+    // Pair<?> 和 Pair 本质的不同在于: 可以用任意Object对象调用原始的Pair类的setObject方法
+```
+- 例如这个方法用来测试一个pair是否包含了指定的对象, 他不需要实际的类型.
+
+#### 通配符捕获

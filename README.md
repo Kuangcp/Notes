@@ -2,6 +2,8 @@
 
 ## 2016.08.11 新的开始
 - 这是用来记录我的笔记的仓库，用上git来管理，促使我熟悉git命令，习惯记录电子笔记
+    - 每个文件都有目录,方便阅读,但是因为平台的兼容性,目前只在Github上能正常使用
+    - - `浏览器的 Octotree 插件` 也方便查阅
 
 *********
 > 我曾七次鄙视自己的灵魂：  
@@ -20,13 +22,9 @@
 > 你所浪费的今天，是昨天死去的人奢望的明天；  
 > 你所厌恶的现在，是未来的你回不去的曾经。 《哈佛大学图书馆馆训》
 
-### 开始查阅
-
-- `浏览器的 Octotree 插件` 也方便查阅
-
 **************
 
-`【学习历程】`
+## 【学习历程】
 
 |     时间     |  语言或工具   |
 | :--------: | :------: |
@@ -49,8 +47,10 @@
 - [知乎专栏-程序员你为什么这么累？](https://zhuanlan.zhihu.com/p/28705206)
     - [专栏的源码](https://github.com/xwjie/PLMCodeTemplate)
 
-## 笔记中所涉及到的知识
+- 公众号: 码农翻身
+    - [2017年所有文章](https://mp.weixin.qq.com/s?__biz=MzAxOTc0NzExNg==&mid=2665514184&idx=1&sn=3ace64c3a9eba2adf1ef94406e2ebf2b&chksm=80d67c8bb7a1f59d556bd7478626a4674ff07021726f84b4681b41ad7c6dbb4cfcf687dcf00a&scene=21#wechat_redirect) | [2016年所有文章](https://mp.weixin.qq.com/s?__biz=MzAxOTc0NzExNg==&mid=2665513504&idx=1&sn=25dd6420e3056101dd3f6fdaedacaa2a&chksm=80d67a63b7a1f37572a5159ff6f53810467c15c8beec94770e8360c45f45036360d77755ee78&scene=21#wechat_redirect)
 
+## 笔记中所涉及到的知识
 - 编程语言: Python Java Kotlin Groovy Scala Clojure Shell Go
 - 构建工具: Git Gradle Maven 
 - 系统相关: Linux Docker 

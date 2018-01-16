@@ -95,7 +95,7 @@
 - 出现 `RPC failed; result=22, HTTP code = 411` 的错误
     - 就是因为一次提交的文件太大，需要改大缓冲区 例如改成500m  `git config http.postBuffer 524288000`
 - 提交本地所有分支 `git push --all` pull 同理
-- 第一次与远程建立连接 `git push -u origin master ` 、`git push --set-uptream master` 、`git push -all` 
+- 第一次与远程建立连接 `git push -u origin master ` | `git push --set-uptream master` | `git push -all` 
     - 这几个都是可以的,最后那个简单, 还能将别的分支一起推上去
 
 #### 【git rebase】

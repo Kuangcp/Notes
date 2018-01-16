@@ -1,8 +1,9 @@
 `目录 start`
  
-- [学习Linux Shell](#学习linux-shell)
+- [学习Shell](#学习shell)
     - [shell类别](#shell类别)
-        - [Tips](#tips)
+    - [Tips](#tips)
+    - [执行](#执行)
     - [输入输出](#输入输出)
         - [输入](#输入)
         - [输出](#输出)
@@ -21,9 +22,9 @@
         - [循环](#循环)
     - [函数](#函数)
 
-`目录 end` *目录创建于2018-01-14*
+`目录 end` *目录创建于2018-01-16*
 ****************************************
-# 学习Linux Shell
+# 学习Shell
 > 首先语法不像别的语言可读性好，比如Python，然后方言众多，学习比Python2，3还恶心
 
 ## shell类别
@@ -33,7 +34,7 @@ zsh
 dash
 fish
 
-### Tips
+## Tips
 
 - 获取当前shell绝对路径 `basepath=$(cd `dirname $0`; pwd)`
 - 正则：`expr match "$i" ".*变更"`
@@ -41,6 +42,10 @@ fish
 - 关于以下的脚本命令, 都会注明是bash还是sh还是别的什么
 
 *******************
+## 执行
+- [source命令](http://blog.csdn.net/xiaolang85/article/details/7861441) | [点和source命令](http://www.cnblogs.com/my_life/articles/4323528.html)
+
+**********************
 ## 输入输出
 
 
@@ -140,5 +145,14 @@ fish
 
 *****************
 ## 函数
+
+
+�
+
+
+数
+
+
+�
 
 

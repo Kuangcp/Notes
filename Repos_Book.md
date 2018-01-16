@@ -124,7 +124,7 @@
 - [weixin-java-tools](https://github.com/chanjarster/weixin-java-tools) `微信的java工具项目 包含企业号 微信支付 小程序`
 - [Springboot搭建的简易博客](https://github.com/wchstrife/blog)
 - [restfeel](https://github.com/Jason-Chen-2017/restfeel)`一个Rest接口的管理测试平台 陈光剑`
-
+- [mushroom](https://github.com/wuweiit/mushroom) `基于Java的动态内容管理系统 ` 
 
 ******************************************************
 ## 【Kotlin】
