@@ -44,23 +44,33 @@
 > 收集的一些优秀的git仓库 
 
 ## User
-> 一些值得学习的人
+> 一些值得学习的人 他们的仓库都有必要看一下
 
 - [waylau](https://github.com/waylau) `擅长 Maven Gradle netty Spring`
 - [anapsix](https://github.com/anapsix)`擅长docker`
 - [aleen42](https://github.com/aleen42) `写了好几个方便的gitbook插件`
 - [Exrick](https://github.com/Exrick)`前后端都有一定造诣`
+- [oldratlee](https://github.com/oldratlee)`哲良, 大厂，有极客风范 有关java和shell的仓库`
+- [梁少锋](https://github.com/youngwind)`公众号:前端控`
 
 ## 笔记仓库
 - [某研究生在校阅读笔记](https://github.com/lanxuezaipiao/ReadingNotes)
-- [跟老齐学Python的轻松入门 作者](https://github.com/qiwsir/ITArticles)
+- [老齐的笔记](https://github.com/qiwsir/ITArticles)`跟老齐学Python的轻松入门 作者`
 - [judasn](https://github.com/judasn/hexo-blog)`善于归纳的人 相关:Javaer眼中的Linux`
+- [梁少锋的博客笔记](https://github.com/youngwind/blog)`前端相关`
+
+## 翻译和搬运
+- [translations](https://github.com/oldratlee/translations)`翻译外国的文章`
 
 *******************************************
 ## 【Java】
+### 源码学习
+- [tiny-spring](https://github.com/code4craft/tiny-spring) `Spring精简版`
+
 ### Java8
 - [little-java-functions](https://github.com/shekhargulati/little-java-functions)`Java8的函数式编程`
     - [作者博客](https://shekhargulati.com/)
+- [java8指南](https://github.com/winterbe/java8-tutorial)
 
 ### 框架以及高级特性
 - [Jfinal](https://gitee.com/jfinal/jfinal)
@@ -92,7 +102,8 @@
 - [activiti示例](https://github.com/henryyan/kft-activiti-demo)`Activiti实战书籍相关源码`
 - [rabbitmq](https://github.com/chwshuang/rabbitmq)`入门学习代码`
 - [docker-demos](https://github.com/waylau/docker-demos) `Maven和Gradle结合docker使用`
-- [mabatis-spring-boot](https://github.com/abel533/MyBatis-Spring-Boot)
+- [mybatis-spring-boot](https://github.com/abel533/MyBatis-Spring-Boot)
+- [shop](https://github.com/lrwinx/shop)`SpringClod的实战案例`
 
 ### Android 
 - [安卓进阶学习指南](https://github.com/iwannabetop/Awesome-Android-Learning-Guide)
@@ -157,6 +168,7 @@
 ## 前端
 - [LayUI](https://github.com/sentsin/layui/) `国产layUI框架`
 - [vue-layui](https://github.com/IBAS0742/vue-layui)`vue和layui的结合`
+- [js代码块集合](https://github.com/Chalarangelo/30-seconds-of-code)
 
 ***************************************
 ## Tools

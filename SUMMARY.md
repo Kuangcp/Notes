@@ -40,7 +40,7 @@
     * [ Oracle_list1 ](./Database/Oracle_list1.md)
     * [ Oracle_list2 ](./Database/Oracle_list2.md)
     * [ Oracle性能优化 ](./Database/Oracle性能优化.md)
-    * [ Postgresql ](./Database/Postgresql.md)
+    * [ PostgreSQL ](./Database/PostgreSQL.md)
     * [ Redis ](./Database/Redis.md)
     * [ 数据库的使用体会 ](./Database/数据库的使用体会.md)
 * 【 Functional 】
@@ -115,6 +115,8 @@
     * [ Python_Pygame ](./Script/Python_Pygame.md)
     * [ Shell_Learn ](./Script/Shell_Learn.md)
 * 【 Skills 】
+    * 【 Skills/Document 】
+        * [ 需求文档的要点 ](./Skills/Document/需求文档的要点.md)
     * 【 Skills/View 】
         * 【 Skills/View/frame 】
             * [ LayUI ](./Skills/View/frame/LayUI.md)
@@ -129,11 +131,12 @@
         * [ Concurrent ](./Skills/Base/Concurrent.md)
         * [ Config ](./Skills/Base/Config.md)
         * [ NetWork ](./Skills/Base/NetWork.md)
+    * 【 Skills/Work 】
+        * [ 番茄工作法 ](./Skills/Work/番茄工作法.md)
+        * [ 面试技巧 ](./Skills/Work/面试技巧.md)
     * [ Soft_Manual ](./Skills/Soft_Manual.md)
     * [ Web安全 ](./Skills/Web安全.md)
     * [ 正则表达式学习 ](./Skills/正则表达式学习.md)
     * [ 编程感想 ](./Skills/编程感想.md)
     * [ 软考知识点 ](./Skills/软考知识点.md)
     * [ 软考错题集 ](./Skills/软考错题集.md)
-    * [ 需求文档的要点 ](./Skills/需求文档的要点.md)
-    * [ 面试技巧 ](./Skills/面试技巧.md)
