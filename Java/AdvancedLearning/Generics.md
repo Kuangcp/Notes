@@ -17,7 +17,7 @@
 `目录 end` *目录创建于2018-01-16*
 ****************************************
 # 泛型
-> Java8上的泛型 
+> [开始学习的兴趣来源](https://mp.weixin.qq.com/s?__biz=MzAxOTc0NzExNg==&mid=2665514015&idx=1&sn=12409f705c6d266e4cd062e78ce50be0&chksm=80d67c5cb7a1f54a68ed83580b63b4acded0df525bb046166db2c00623a6bba0de3c5ad71884&scene=21#wechat_redirect)
 
 ## 入门
 >泛型程序设计划分为三个熟练级别 基本级别就是仅仅使用泛型类,典型的是像ArrayList这样的集合--不必考虑他们的工作方式和原因,大多数人会停留在这个级别.直到出现了什么问题. 当把不同的泛型类混合在一起的时候,或是对类型参数一无所知的遗留代码进行对接时,可能会看到含糊不清的错误消息.如果这样的话,就需要系统的进行学习Java泛型来系统地解决问题.  
@@ -164,7 +164,7 @@
 
 ### 通配符类型
 #### 子类型限定的通配符 extends
-> 更为灵活的使用泛型, 例如: `Pair<? extends Human>` 表示任何泛型Pair类型,他的类型参数是约束为Human的子类  
+> 顾名思义,就是限定为子类, 例如: `Pair<? extends Human>` 表示任何Pair泛型类型并且他的类型变量要为Human的子类  
 
 > 例如编写一个方法 `public static void printMessage(Pair<Human> human){}`  
 > 正如上面所说, Pair<Student>类型的变量是不能放入这个方法的,因为泛型变量是没有继承关系, 这时候就可以使用这个通配符:  
@@ -182,9 +182,9 @@
 ```
 
 #### 超类型限定的通配符 super
-> 通配符限定和类型变量限定十分相似, 但是还有一个附加的能力, 即可以指定一个超类型限定(supertype bound)
-> `? extends Student` 这个通配符就限定为Studnet的所有超类型(super关键字已经十分准确的描述了这种关系)
-> 带有超类型限定的通配符的行为和前者相反,可以为方法提供参数,但不能使用返回值即 可以 set 但是不能get
+> 顾名思义就是限定为父类, 通配符限定和类型变量限定十分相似, 但是可以指定一个超类型限定(supertype bound)  
+> `? extends Student` 这个通配符就限定为Studnet的所有超类型(super关键字已经十分准确的描述了这种关系)  
+>> 带有超类型限定的通配符的行为和前者相反,可以为方法提供参数,但不能使用返回值即 可以 set 但是不能get
 
 ```java
     // Pair<? super Student> 例如这种定义
@@ -196,8 +196,8 @@
 > [以上两种情况的相关测试类](https://github.com/Kuangcp/JavaBase/blob/master/src/test/java/com/generic/simple/PairTest.java) 
 
 > 总结: 类定义上的泛型变量:  
-> 子类型限定: <? extends Human> 是限定了不能set,但是保证了get  
-> 超类型限定: <? super Student> 限定了不能正确get,但是保证了set.  
+>> 子类型限定: <? extends Human> 是限定了不能set,但是保证了get  
+>> 超类型限定: <? super Student> 限定了不能正确get,但是保证了set.  
 
 ##### 应用
 - 示例:`public static <T extends Comparable<T>> T min(T[] list);`
@@ -274,4 +274,4 @@
 - 如果这个类不是enum类或类型T的枚举值的数组, getEnumConstants方法将返回Null.
 - 最后, getConstructor与getDeclaredConstructor方法返回一个Constructor<T>对象.Constructor类也已经变成泛型, 以便 newInstance方法有一个正确的返回类型.
 
-TODO 继续看书
+TODO 还要继续看书
