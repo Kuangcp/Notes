@@ -207,7 +207,7 @@ du xmldb/*/*/* |wc -l
 
 ### 善用.bashrc文件
 `Alias`
-```
+```sh
     if [ -f ~/.bash_aliases ]; then
         . ~/.bash_aliases
     fi
@@ -218,11 +218,11 @@ du xmldb/*/*/* |wc -l
 
 - 如我的文件 [.bash_aliases](/ConfigFiles/Linux/.bash_aliases)
     - K.h就能显示出每个命令的说明 其实现脚本： [python3文件](/Script/python/show_alias_help.py) 
-    - 建立链接就可以用了 `ln -s /home/kcp/Documents/Notes/Notes/ConfigFiles/Linux/.bash_aliases .bash_aliases` 
+    - 在别名文件目录时, 建立链接就可以用了 `ln -s `pwd`/.bash_aliases ~/.bash_aliases` 
 
 *************************
 `自定义桌面快捷方式文件`
-```
+```conf
 	[Desktop Entry] #每个desktop文件都以这个标签开始，说明这是一个Desktop Entry文件
 	Version = 1.0 #标明Desktop Entry的版本（可选）
 	Name = Firefox #程序名称（必须），这里以创建一个Firefox的快捷方式为例

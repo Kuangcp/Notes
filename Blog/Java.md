@@ -41,6 +41,10 @@
 - [tig](http://blog.csdn.net/willwcw/article/details/46517331)
 - [gradle构建Springboot的镜像](http://www.jianshu.com/p/0dac3ae2a2c9)
 
+## Test
+- [扩展 JUnit 测试并行程序](https://www.ibm.com/developerworks/cn/java/j-lo-junit-ext/)
+- [自动化测试工具 JUnit4 多线程执行测试用例](https://testerhome.com/topics/2502)
+
 *****************
 ## 精彩系列
 ### 码农翻身

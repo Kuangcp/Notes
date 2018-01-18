@@ -58,6 +58,7 @@
 - [老齐的笔记](https://github.com/qiwsir/ITArticles)`跟老齐学Python的轻松入门 作者`
 - [judasn](https://github.com/judasn/hexo-blog)`善于归纳的人 相关:Javaer眼中的Linux`
 - [梁少锋的博客笔记](https://github.com/youngwind/blog)`前端相关`
+- [cain-note](https://github.com/james-cain/cain-note)`像是培训机构的资料和他本人的学习笔记,偏向前端`
 
 ## 翻译和搬运
 - [translations](https://github.com/oldratlee/translations)`翻译外国的文章`
