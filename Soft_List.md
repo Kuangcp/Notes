@@ -22,7 +22,7 @@
 ## 【国内的资源镜像站】
 - [网易](http://mirrors.163.com/)`下载系统是 *-cd 的文件`
 - [清华大学](https://mirrors.tuna.tsinghua.edu.cn/)
-- [中国科学技术大学](mirrors.ustc.edu.cn)`各大Linux发行版以及一些开源软件`
+- [中国科学技术大学](http://mirrors.ustc.edu.cn/)`各大Linux发行版以及一些开源软件`
 - [阿里云](https://mirrors.aliyun.com/)
 - [Linux运维派](https://mirrors-wan.geekpie.org/)
 - [sourceforge](https://sourceforge.net/directory/system-administration/osdistro/livecd/os:linux/)`Linux发行版列表`

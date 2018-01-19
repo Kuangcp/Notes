@@ -14,6 +14,9 @@
 
 ## Debian系
 
+### raspberry-pi
+- [树莓派桌面版下载](https://www.raspberrypi.org/downloads/raspberry-pi-desktop/) `分辨率不知道怎么调, 资源的消耗倒是低`
+
 ### Ubuntu
 
 ### Deepin

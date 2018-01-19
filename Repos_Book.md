@@ -52,6 +52,7 @@
 - [Exrick](https://github.com/Exrick)`前后端都有一定造诣`
 - [oldratlee](https://github.com/oldratlee)`哲良, 大厂，有极客风范 有关java和shell的仓库`
 - [梁少锋](https://github.com/youngwind)`公众号:前端控`
+- [pkpk1234](https://github.com/pkpk1234)`华为程序员, 有关于Java9和自己写Servlet容器的项目`
 
 ## 笔记仓库
 - [某研究生在校阅读笔记](https://github.com/lanxuezaipiao/ReadingNotes)
@@ -76,6 +77,7 @@
 ### 框架以及高级特性
 - [Jfinal](https://gitee.com/jfinal/jfinal)
 - [okhttp](https://github.com/square/okhttp)`Java上性能较好的HTTP交互工具`
+    - [feign](https://github.com/OpenFeign/feign)`Feign makes writing java http clients easier`
 - [druid](https://github.com/alibaba/druid) `阿里数据库连接池`
 - [dubbo](https://github.com/alibaba/dubbo) `RPC 框架`
 - [elasticsearch](https://github.com/elastic/elasticsearch) `分布式全局搜索`
@@ -118,6 +120,9 @@
 - [Java后台管理](https://github.com/chwshuang/web)`集成Spring4.x+SpringMVC+Mybatis`
 - [java-jwt](https://github.com/auth0/java-jwt)`JSON WEB TOKEN`
 - [blade](https://github.com/biezhi/blade)`轻量级Web框架`
+
+#### 前后端综合
+- [vue vuex Springboot ](https://github.com/xwjie/ElementVueSpringbootCodeTemplate)`代码模板`
 
 ### BuildTool
 - [sbt](https://github.com/sbt/sbt)
