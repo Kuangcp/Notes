@@ -27,8 +27,8 @@ Clojure的设计原则可以概括成5个词汇：简单、专注、实用、一
 
 `Hello World`
 `java -cp clojure-1.8.0.jar clojure.main`进入REPL终端
-```
-user => (def hello(fn [] "hello"))
-user => (hello)
+```clojure
+    user => (def hello(fn [] "hello"))
+    user => (hello)
 ```
 

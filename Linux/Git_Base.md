@@ -26,8 +26,11 @@
 `目录 end` *目录创建于2018-01-14*
 ****************************************
 # Git基础
+## 版本控制系统(VCS)
+- [码农翻身:小李的版本管理系统](https://mp.weixin.qq.com/s?__biz=MzAxOTc0NzExNg==&mid=2665513204&idx=1&sn=c4c493d771a167a84ace01c3e016417e&scene=21#wechat_redirect)
+
 ## Git常用命令
-> [中文教程](https://git-scm.com/book/zh/v2)
+> [Git官网中文教程](https://git-scm.com/book/zh/v2)
 > [git-tips](https://github.com/521xueweihan/git-tips)`学习Git的仓库`
 
 #### 【Tips】

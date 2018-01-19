@@ -37,5 +37,5 @@ docker run --name mssql -e ACCEPT_EULA=Y -e SA_PASSWORD=docker888 -e SQLSERVER_U
 
 docker run -d -e 'ACCEPT_EULA=Y' -e 'SA_PASSWORD=ad'  -e 'SQLSERVER_PASSWORD=jiushi' -p 1433:1433 microsoft/mssql-server-linux:2017-GA 
 
-#### 2000
+#### 2000版本
 - [docker别人做的镜像](https://hub.docker.com/r/rsmoorthy/mssql/)

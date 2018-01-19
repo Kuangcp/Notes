@@ -30,6 +30,9 @@
     - [配置文件的定义](https://zhuanlan.zhihu.com/p/29191233)
 - [持续集成](http://www.ruanyifeng.com/blog/2015/09/continuous-integration.html)
 
+## JavaFx
+- [xJavaFxTool](https://gitee.com/xwintop/xJavaFxTool)`基于JavaFX的工具集`
+
 *****
 ## Springboot
 - [Springboot启动dubbo](https://coderknock.com/blog/2017/03/01/spring%20boot%E5%90%AF%E5%8A%A8dubbo.html)`等一系列文章`
@@ -56,4 +59,10 @@
 
 *****
 - [当你想学别的语言的时候看这里](https://segmentfault.com/q/1010000004701437)
+    - [上天还是入地](https://mp.weixin.qq.com/s?__biz=MzAxOTc0NzExNg==&mid=2665513899&idx=1&sn=3cc7e1721c3533e0f83bea906b8e1be5&chksm=80d67be8b7a1f2fe9da014603f0b94e231773a38151d7160c5d210e17de41f67ffe55e03f422&scene=21#wechat_redirect)
+> 往深度挖掘，可以成为某个技术领域的专家，如搜索方面的专家、安全方面的专家，分布式文件的专家等等，不管是哪个领域，重点都不是学会使用某个工具和框架， 而是保证你可以自己的知识和技术去搞定这个领域的顶尖问题。  
+往广度发展，各个技术领域都要了解，对于某种需求，能够选取合适的软件和技术架构来实现它，把需求转化成合适的技术组件，让这些组件以合适的方式连接、部署、运行，这也需要持续地学习和不断的经验积累。
+
+![前后端](https://raw.githubusercontent.com/Kuangcp/ImageRepos/master/Image/fun/640.webp)
+
 - [JDK各个版本发布时间](http://blog.csdn.net/tanxinwhu/article/details/6969086)

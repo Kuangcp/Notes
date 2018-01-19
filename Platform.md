@@ -153,3 +153,7 @@ SSH_DOMAIN       = kuangcp.top
 # 测试平台
 - [自动API测试](https://www.eolinker.com/#/index)
 - [吆喝科技](http://www.appadhoc.com/)`A/B测试 灰度上线`
+
+# 培训
+- [咕泡](http://www.gupaoedu.com/)`看起来很有深度, 就是有点贵`
+

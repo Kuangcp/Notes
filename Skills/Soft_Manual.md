@@ -227,6 +227,7 @@
     - Ctrl P 快速打开
     - Ctrl Shift P 命令模式
     - Ctrl+K Ctrl+S 设置快捷键 Keyboard Shortcuts
+    - Ctrl Shift C 在当前打开的文件夹下打开系统默认终端
 - [使用vscocd进行python开发](http://www.cnblogs.com/bloglkl/archive/2016/08/23/5797805.html)
 
 
