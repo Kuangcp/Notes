@@ -24,12 +24,16 @@
 ### 控制层
 
 
-#### 关于权限控制
+#### 权限控制
 
 ##### Session和Token的对比
-- token优势是前后端分离做起来比较简单,session在于实现快,但是容易有CSRF问题
+> [码农翻身:干掉状态：从session到token ](https://mp.weixin.qq.com/s?__biz=MzAxOTc0NzExNg==&mid=2665513566&idx=1&sn=a2688cadbe9c8042ff1abbdf04a8bd5e&chksm=80d67a1db7a1f30b28b93ed2ab29edfbf982b780433e4bfd178e3cc52cb1f9100cc8f923db4f&scene=21#wechat_redirect)
+
+- token优势是前后端分离做起来比较简单,session在于实现快,但是容易有CSRF问题,其实token也是会有的
     - 如果登录和页面的跳转路由还是由后端控制的，那么Token的实现就有点没有那么必要了。（不过为了安全性能够防范CSRF）
 
+##### 统一授权
+> [码农翻身:从密码到token，一个授权的故事](https://mp.weixin.qq.com/s?__biz=MzAxOTc0NzExNg==&mid=2665513744&idx=1&sn=93d0db97cfd67422bcd21c8afd00f495&chksm=80d67b53b7a1f24537fdc7c10eb2783357c1f8c65ad55601a722216d2293ae3fb7b1c16e5449&scene=21#wechat_redirect) | [自己收集到的相关文档](/API_DOC.md#登录授权)
 
 ### 视图层
 

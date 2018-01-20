@@ -69,8 +69,10 @@
         * [ ContinuousIntegration ](./Java/AdvancedLearning/ContinuousIntegration.md)
         * [ Generics ](./Java/AdvancedLearning/Generics.md)
         * [ IO ](./Java/AdvancedLearning/IO.md)
+        * [ JMS ](./Java/AdvancedLearning/JMS.md)
         * [ MultipleLanguage ](./Java/AdvancedLearning/MultipleLanguage.md)
         * [ ProgramThinking ](./Java/AdvancedLearning/ProgramThinking.md)
+        * [ Socket ](./Java/AdvancedLearning/Socket.md)
         * [ Thread ](./Java/AdvancedLearning/Thread.md)
         * [ WebPerformance ](./Java/AdvancedLearning/WebPerformance.md)
     * [ Activiti ](./Java/Activiti.md)
@@ -131,6 +133,7 @@
         * [ Concurrent ](./Skills/Base/Concurrent.md)
         * [ Config ](./Skills/Base/Config.md)
         * [ NetWork ](./Skills/Base/NetWork.md)
+        * [ Test ](./Skills/Base/Test.md)
     * 【 Skills/Work 】
         * [ 番茄工作法 ](./Skills/Work/番茄工作法.md)
         * [ 面试技巧 ](./Skills/Work/面试技巧.md)
@@ -139,4 +142,3 @@
     * [ 正则表达式学习 ](./Skills/正则表达式学习.md)
     * [ 编程感想 ](./Skills/编程感想.md)
     * [ 软考知识点 ](./Skills/软考知识点.md)
-    * [ 软考错题集 ](./Skills/软考错题集.md)

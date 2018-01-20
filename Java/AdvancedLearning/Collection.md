@@ -17,3 +17,7 @@
 ## List
 ## Set
 ## Map
+
+
+## Hash
+- [HashMap 实现原理](http://www.importnew.com/27043.html)

@@ -83,12 +83,12 @@
 **************
 - jar读取外部配置文件
 ```java
-Properties properties = new Properties();
-File file = new File("something.properties");
-FileInputStream fis = new FileInputStream(file);
-properties.load(fis);
-System.out.println(properties.getProperty("v"));
-fis.close();
+    Properties properties = new Properties();
+    File file = new File("something.properties");
+    FileInputStream fis = new FileInputStream(file);
+    properties.load(fis);
+    System.out.println(properties.getProperty("v"));
+    fis.close();
 ``` 
 - 只要配置文件和打包的jar同级即可
 
@@ -104,10 +104,14 @@ fis.close();
 
 ************
 ## 【JDBC】
+> [码农翻身:JDBC的诞生](https://mp.weixin.qq.com/s?__biz=MzAxOTc0NzExNg==&mid=2665513438&idx=1&sn=2967d595bb7d4ffdd2dacd3ab7501bbd&chksm=80d6799db7a1f08b27dc97650434fb2fc0e2570628945db99d9300a99e52828fd05c42fdb441&scene=21#wechat_redirect)
+
 - 基础的批量操作SQL ` pstmt.executeBatch(); //批量执行`
 
 *************
 ## 【Net】
+> 其实就是Socket [码农翻身:张大胖的socket ](https://mp.weixin.qq.com/s?__biz=MzAxOTc0NzExNg==&mid=2665513387&idx=1&sn=99665948d0b968cf15c5e7a01ffe166c&chksm=80d679e8b7a1f0febad077b57e8ad73bfb4b08de74814c45e1b1bd61ab4017b5041942403afb&scene=21#wechat_redirect)
+
 - 得到URL文件的输入流
     - `new URL(url).openStream()`
 

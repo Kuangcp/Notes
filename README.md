@@ -49,6 +49,8 @@
 - 公众号: 码农翻身
     - [2017年所有文章](https://mp.weixin.qq.com/s?__biz=MzAxOTc0NzExNg==&mid=2665514184&idx=1&sn=3ace64c3a9eba2adf1ef94406e2ebf2b&chksm=80d67c8bb7a1f59d556bd7478626a4674ff07021726f84b4681b41ad7c6dbb4cfcf687dcf00a&scene=21#wechat_redirect) | [2016年所有文章](https://mp.weixin.qq.com/s?__biz=MzAxOTc0NzExNg==&mid=2665513504&idx=1&sn=25dd6420e3056101dd3f6fdaedacaa2a&chksm=80d67a63b7a1f37572a5159ff6f53810467c15c8beec94770e8360c45f45036360d77755ee78&scene=21#wechat_redirect)
 
+> [码农翻身:抽象：程序员必备的能力 ](https://mp.weixin.qq.com/s?__biz=MzAxOTc0NzExNg==&mid=2665513062&idx=1&sn=a3b4a2962d8e82471192d9606b0a2722&scene=21#wechat_redirect)
+
 ## 笔记中所涉及到的知识
 - 编程语言: Python Java Kotlin Groovy Scala Clojure Shell Go
 - 构建工具: Git Gradle Maven 
