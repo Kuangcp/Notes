@@ -40,3 +40,6 @@
 *一种比较安全的iframe思路*
 - 在主页面上写form iframe页面用来展示,这样的话,截图截不了长图,也不能保存文件,也不能打印出来(试了好多种方式去修改教务系统得到的结论)
 
+## 分布式
+### CAP定理
+> [码农翻身:张大胖和CAP定理](https://mp.weixin.qq.com/s?__biz=MzAxOTc0NzExNg==&mid=2665513560&idx=1&sn=ba861726537c57bd34253cbce010b5fe&chksm=80d67a1bb7a1f30df37905ce979504aa132dcaef59075577ff52f45f057734825a59f6de75c9&scene=21#wechat_redirect)
