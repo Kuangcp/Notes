@@ -3,39 +3,34 @@
 - [SQLServer](#sqlserver)
     - [安装配置](#安装配置)
         - [Docker安装2017硬是不成功](#docker安装2017硬是不成功)
-            - [2000](#2000)
+            - [2000版本](#2000版本)
 
-`目录 end` *目录创建于2018-01-14*
+`目录 end` *目录创建于2018-01-21*
 ****************************************
-`目录`
-- [SQLServer](#sqlserver)
-    - [安装配置](#安装配置)
-        - [Docker安装2017硬是不成功](#docker安装2017硬是不成功)
-            - [2000](#2000)
-
-*目录创建于2017-12-18*
 # SQLServer
 
 ## 安装配置
 ### Docker安装2017硬是不成功
 - [dockerhub网址](https://hub.docker.com/r/exoplatform/sqlserver/)
 
-docker run -d -e SA_PASSWORD=<passord> -e SQLSERVER_DATABASE=<db name> -e SQLSERVER_USER=<user> -e 
-SQLSERVER_PASSWORD=<password> -p <local port>:1433 exoplatform/sqlserver:ctp2-1-1
+```sh
+    docker run -d -e SA_PASSWORD=<passord> -e SQLSERVER_DATABASE=<db name> -e SQLSERVER_USER=<user> -e 
+    SQLSERVER_PASSWORD=<password> -p <local port>:1433 exoplatform/sqlserver:ctp2-1-1
 
-docker run -d -e SA_PASSWORD=ad -e SQLSERVER_DATABASE=mythos -e SQLSERVER_USER=myth -e SQLSERVER_PASSWORD=jiushi -p 1433:1433 mssql
-
-
-docker run --name mssql -e ACCEPT_EULA=Y -e SA_PASSWORD=docker888 -e SQLSERVER_USER=myth -e SQLSERVER_PASSWORD=jiushi -p 1433:1433 -d microsoft/mssql-server-linux:latest
-
-docker run -e 'SA_PASSWORD=docker888' -p 1433:1433 -it --rm microsoft/mssql-server-linux:latest /opt/mssql/bin/sqlservr --accept-eula
+    docker run -d -e SA_PASSWORD=ad -e SQLSERVER_DATABASE=mythos -e SQLSERVER_USER=myth -e SQLSERVER_PASSWORD=jiushi -p 1433:1433 mssql
 
 
-查看控制台输出
-docker run --name mssql -e ACCEPT_EULA=Y -e SA_PASSWORD=docker888 -e SQLSERVER_USER=myth -e SQLSERVER_PASSWORD=jiushi -p 1433:1433 -it microsoft/mssql-server-linux:2017-GA
+    docker run --name mssql -e ACCEPT_EULA=Y -e SA_PASSWORD=docker888 -e SQLSERVER_USER=myth -e SQLSERVER_PASSWORD=jiushi -p 1433:1433 -d microsoft/mssql-server-linux:latest
+
+    docker run -e 'SA_PASSWORD=docker888' -p 1433:1433 -it --rm microsoft/mssql-server-linux:latest /opt/mssql/bin/sqlservr --accept-eula
 
 
-docker run -d -e 'ACCEPT_EULA=Y' -e 'SA_PASSWORD=ad'  -e 'SQLSERVER_PASSWORD=jiushi' -p 1433:1433 microsoft/mssql-server-linux:2017-GA 
+    # 查看控制台输出
+    docker run --name mssql -e ACCEPT_EULA=Y -e SA_PASSWORD=docker888 -e SQLSERVER_USER=myth -e SQLSERVER_PASSWORD=jiushi -p 1433:1433 -it microsoft/mssql-server-linux:2017-GA
 
+
+    docker run -d -e 'ACCEPT_EULA=Y' -e 'SA_PASSWORD=ad'  -e 'SQLSERVER_PASSWORD=jiushi' -p 1433:1433 microsoft/mssql-server-linux:2017-GA 
+
+```
 #### 2000版本
 - [docker别人做的镜像](https://hub.docker.com/r/rsmoorthy/mssql/)

@@ -9,16 +9,16 @@
             - [CountDownLatch 锁存器](#countdownlatch-锁存器)
             - [ConcurrentHashMap](#concurrenthashmap)
             - [CopyOnWriteArrayList](#copyonwritearraylist)
-        - [Queue](#queue)
+        - [【Queue】](#queue)
             - [BlockingQueue](#blockingqueue)
             - [TransferQueue](#transferqueue)
         - [【控制执行】](#控制执行)
             - [任务建模](#任务建模)
                 - [ScheduleThreadPoolExecutor](#schedulethreadpoolexecutor)
-        - [分支合并框架](#分支合并框架)
+        - [【分支合并框架】](#分支合并框架)
         - [【Java内存模型】](#java内存模型)
 
-`目录 end` *目录创建于2018-01-14*
+`目录 end` *目录创建于2018-01-21*
 ****************************************
 # Java并发
 > 主要知识来源 Java程序员修炼之道  | [并发编程网](http://ifeve.com/)  
@@ -188,7 +188,7 @@
 
 ***********************
 
-### Queue
+### 【Queue】
 
 - Queue接口全是泛型的，这样就更为方便， 自己再封装一个层
 
@@ -265,7 +265,7 @@ public class Pro<T>{
 
 **************************
 
-### 分支合并框架 
+### 【分支合并框架】 
 - 引入一种新的执行者服务，称为 ForkJoinPool
 - ForkJoinPool 服务处理一种比线程更小的并发单元 ForkJoinTask
     - ForkJoinTask是一种由ForkJoinPool以更轻量的方式所调度的抽象

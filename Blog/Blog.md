@@ -1,10 +1,12 @@
 `目录 start`
  
 - [【个人博客网】](#个人博客网)
+- [【博客社区】](#博客社区)
 - [【Blog】](#blog)
     - [搭建博客](#搭建博客)
     - [NetWork](#network)
     - [经验之谈](#经验之谈)
+    - [专栏](#专栏)
     - [操作系统](#操作系统)
         - [Windows](#windows)
         - [Linux](#linux)
@@ -13,8 +15,9 @@
     - [团队开发](#团队开发)
     - [毕业](#毕业)
     - [生活](#生活)
+    - [商业](#商业)
 
-`目录 end` *目录创建于2018-01-14*
+`目录 end` *目录创建于2018-01-21*
 ****************************************
 
 > 只用来记录非技术类的文章,技术类的直接放到对应的笔记中去
@@ -31,6 +34,18 @@
 - [Java和Vue前后端](http://blog.exrick.cn/)
 - [程序员DD](http://blog.didispace.com/)`翟永超`
 - [Web程序猿](https://imququ.com/)
+
+# 【博客社区】
+- [http://www.importnew.com](http://www.importnew.com)`小众?`
+- [http://www.cnblogs.com](http://www.cnblogs.com)
+- [http://blog.csdn.net](http://blog.csdn.net)`CSDN 人数似乎比较多, 解决问题方案比较多`
+- [http://www.infoq.com/cn/](http://www.infoq.com/cn/)`infoQ 比较有深度`
+- [https://www.oschina.net/](https://www.oschina.net/)`开源中国 软件的资讯比较多`
+- []()
+- []()
+- []()
+- []()
+
 
 ****************************************
 # 【Blog】
@@ -59,6 +74,8 @@
 7、最后的，也是最重要的是：在任何时候都要用并发的、分布式的思维去看待你的程序。因为竞争条件或者并发中的不确定因素（比如调用顺序）导致的 Bug，仅仅理解语言的基本特性，根本不能解释。每种语言都有自己的并发编程模式（比如 Go 的 Goroutine，Java 的 ForkJoinPool，Swift 的 Swift Grand Central Dispatch 等）。学习每一种语言，都应该去深入了解它的并发模型，在这个多核的时代，不懂并发的程序员不可能是个好工程师。  
 >>最近几年我主要使用 Ruby 和 Java 编程，这两门语言的优缺点就不在这里说了，网上有很多类似的观点。如果你还不知道应该学习哪一门编程语言，那么就从 Java 开始吧。  
 编程语言，你看它是山，它就是山；看它是水，它就是水。你可以把它当做一门简单的编程语言，有语法，有特性，也有优缺点，但这样的语言也可以复杂到去实现和解释各种计算模型和理论。一门编程语言到底能做什么，完全和工程师怎么去用，在什么场景中用息息相关。  
+
+- [码农翻身:这个动物园， 两年也逛不完](https://mp.weixin.qq.com/s?__biz=MzAxOTc0NzExNg==&mid=2665513596&idx=1&sn=558756b6fa77c7a86370f41fa7cde732&chksm=80d67a3fb7a1f329bfb3bfa9a3eb07ae21b19501cb895a0754c18ffbe26bf92029d6266f1845&scene=21#wechat_redirect)
 
 ## 专栏
 - [CSDN 知识林](http://blog.csdn.net/zsl129)

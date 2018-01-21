@@ -37,6 +37,7 @@
 ## 语言
 ### Java
 - [传智播客Activiti工作流视频教程](http://www.icoolxue.com/album/show/252) `免费全套 5.4 视频`
+- [maven在线训练网](http://takari.io/)
 
 ### Python
 - [廖雪峰Python3](https://www.liaoxuefeng.com/wiki/0014316089557264a6b348958f449949df42a6d3a2e542c000)

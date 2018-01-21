@@ -203,3 +203,8 @@
     
 ### 保护方法应用
 - @Secured 注解限制方法调用
+
+## 社交登录
+> [SpringForAll社区:Spring Security源码分析（三）：Spring Social实现QQ社交登录 ](https://mp.weixin.qq.com/s?__biz=MzU0MDEwMjgwNA==&mid=2247484230&idx=1&sn=358f684bd122888270730f2b102ee1b2&chksm=fb3f1abdcc4893ab9dc400a44edfe7a9d483c070b78db1d81f70c4a3d7870d113d9287d81b0f&mpshare=1&scene=1&srcid=0121kLxdu4ezkmeJAoJcdMZ1&pass_ticket=LGmo8DCbLhUXTV%2FDVv1W9SyGxNSXxxYLrKODVeXD8f3lkWt2HnMB5b7racYt5W6V#rd)  
+> [SpringForAll社区:Spring Security 源码分析（四）：Spring Social实现微信社交登录 ](https://mp.weixin.qq.com/s?__biz=MzU0MDEwMjgwNA==&mid=2247484233&idx=1&sn=1e84ffd8c9169db56a0d48ccb31bc842&chksm=fb3f1ab2cc4893a4263799c466d73ee67971ce9deb22a91b8ae8e968621679de3bce83a2c558&mpshare=1&scene=1&srcid=0121cjpvaOeB0nktdOSQNitj&pass_ticket=LGmo8DCbLhUXTV%2FDVv1W9SyGxNSXxxYLrKODVeXD8f3lkWt2HnMB5b7racYt5W6V#rd)
+

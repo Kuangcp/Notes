@@ -60,6 +60,14 @@
         * [ SpringMessageQue ](./Java/Spring/SpringMessageQue.md)
         * [ SpringbootDatabase ](./Java/Spring/SpringbootDatabase.md)
         * [ SpringbootDemoCreate ](./Java/Spring/SpringbootDemoCreate.md)
+    * 【 Java/Framework 】
+        * [ Activiti ](./Java/Framework/Activiti.md)
+        * [ Struts ](./Java/Framework/Struts.md)
+    * 【 Java/Tool 】
+        * [ Gradle ](./Java/Tool/Gradle.md)
+        * [ IDEA ](./Java/Tool/IDEA.md)
+        * [ Maven ](./Java/Tool/Maven.md)
+        * [ Tomcat ](./Java/Tool/Tomcat.md)
     * 【 Java/TemplateEngine 】
         * [ Thymeleaf ](./Java/TemplateEngine/Thymeleaf.md)
     * 【 Java/AdvancedLearning 】
@@ -75,18 +83,12 @@
         * [ Socket ](./Java/AdvancedLearning/Socket.md)
         * [ Thread ](./Java/AdvancedLearning/Thread.md)
         * [ WebPerformance ](./Java/AdvancedLearning/WebPerformance.md)
-    * [ Activiti ](./Java/Activiti.md)
     * [ AlibabaJavaStandard ](./Java/AlibabaJavaStandard.md)
     * [ EE ](./Java/EE.md)
-    * [ Gradle ](./Java/Gradle.md)
-    * [ IDEA ](./Java/IDEA.md)
     * [ JavaPerformance ](./Java/JavaPerformance.md)
     * [ JavaSE ](./Java/JavaSE.md)
     * [ Java_SE学习笔记 ](./Java/Java_SE学习笔记.md)
     * [ Log ](./Java/Log.md)
-    * [ Maven ](./Java/Maven.md)
-    * [ Struts ](./Java/Struts.md)
-    * [ Tomcat ](./Java/Tomcat.md)
     * [ UnitTest ](./Java/UnitTest.md)
     * [ UsuallyLibAPI ](./Java/UsuallyLibAPI.md)
     * [ 模式之禅 ](./Java/模式之禅.md)
