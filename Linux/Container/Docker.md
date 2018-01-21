@@ -28,12 +28,13 @@
         - [Dockerfile](#dockerfile)
         - [dockerignore文件的使用](#dockerignore文件的使用)
         - [使用启动脚本和多进程容器](#使用启动脚本和多进程容器)
-    - [Docker-Compose](#docker-compose)
-    - [Docker-Machine](#docker-machine)
-    - [Docker-Swarm](#docker-swarm)
+    - [容器编排](#容器编排)
+        - [Docker-Compose](#docker-compose)
+        - [Docker-Machine](#docker-machine)
+        - [Docker-Swarm](#docker-swarm)
     - [轻量镜像](#轻量镜像)
 
-`目录 end` *目录创建于2018-01-14*
+`目录 end` *目录创建于2018-01-21*
 ****************************************
 # Docker
 
@@ -312,16 +313,18 @@ server {
 
 ### 使用启动脚本和多进程容器
 
-## Docker-Compose
+******************************************************
+## 容器编排
+### Docker-Compose
 > 声明式环境，管理多容器依赖
 
-## Docker-Machine
+### Docker-Machine
 > 创建一个docker集群环境 [官方文档安装](https://docs.docker.com/machine/install-machine)
 
 Error with pre-create check: "VBoxManage not found. Make sure VirtualBox is installed and VBoxManage is in the path
 Error with pre-create check: "This computer doesn't have VT-X/AMD-v enabled. Enabling it in the BIOS is mandatory"
 
-## Docker-Swarm
+### Docker-Swarm
 
 ***************************************************
 

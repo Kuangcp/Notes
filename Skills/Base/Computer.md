@@ -1,3 +1,15 @@
+`目录 start`
+ 
+- [计算机历史](#计算机历史)
+    - [起源](#起源)
+    - [硬件系统](#硬件系统)
+        - [CPU](#cpu)
+    - [操作系统](#操作系统)
+    - [编程语言](#编程语言)
+        - [语言的的演化](#语言的的演化)
+
+`目录 end` *目录创建于2018-01-21*
+****************************************
 # 计算机历史
 
 ## 起源
@@ -5,7 +17,7 @@
 ## 硬件系统
 
 ### CPU
-> [码农翻身:CPU阿甘](https://mp.weixin.qq.com/s?__biz=MzAxOTc0NzExNg==&mid=2665513017&idx=1&sn=5550ee714abd36d0b580713f673e670b&scene=21#wechat_redirect)
+> [码农翻身:CPU阿甘](https://mp.weixin.qq.com/s?__biz=MzAxOTc0NzExNg==&mid=2665513017&idx=1&sn=5550ee714abd36d0b580713f673e670b&scene=21#wechat_redirect) `梳理了CPU 内存 操作系统 BIOS 硬盘之间的关系和特性`
 
 ## 操作系统
 > [码农翻身:操作系统是个大骗子？ ](https://mp.weixin.qq.com/s?__biz=MzAxOTc0NzExNg==&mid=2665513894&idx=1&sn=3cf8faef41800f0dd52f84a0ae2d8065&chksm=80d67be5b7a1f2f31833dc71f8c67dc50e64b14bb5a25678155a7b39927b63db7c17510793d0&scene=21#wechat_redirect)`描述了程序从硬盘中读取到内存执行的整个过程`

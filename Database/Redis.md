@@ -35,7 +35,7 @@
         - [jedis遇到的异常](#jedis遇到的异常)
         - [SpringBoot使用Redis](#springboot使用redis)
 
-`目录 end` *目录创建于2018-01-14*
+`目录 end` *目录创建于2018-01-21*
 ****************************************
 # Redis
 ## 【windows上的基本配置】
@@ -65,7 +65,7 @@
 ```
 
 ## docker安装redis
-- [docker-install-redis](/Linux/Docker_Soft.md)
+- [docker-install-redis](/Linux/Container/Docker_Soft.md)
 
 ****************************
 ## redis配置文件
