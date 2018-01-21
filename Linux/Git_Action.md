@@ -6,7 +6,8 @@
     - [【安装】](#安装)
         - [Linux(debian系)](#linuxdebian系)
         - [windows](#windows)
-    - [【使用】](#使用)
+    - [【简单使用】](#简单使用)
+        - [配置GPG](#配置gpg)
         - [实验楼上使用Github](#实验楼上使用github)
     - [【git初始化配置】](#git初始化配置)
         - [【VI编辑器的使用】](#vi编辑器的使用)
@@ -31,28 +32,29 @@
         - [8.Reset一个单独的文件](#8reset一个单独的文件)
         - [9.保留working_tree并且丢弃一些commit](#9保留working_tree并且丢弃一些commit)
 
-`目录 end` *目录创建于2018-01-14*
+`目录 end` *目录创建于2018-01-21*
 ****************************************
 # Git实际使用的记录
 ## Tips
-- 1 、虽然在物理上本地仓库中所有文件是放在一起的，但是分支之间是互不能访问以及操作的
-- 2 、在本地的每次commit都是有index的，上传到github可以不用那么频繁，反正都是有记录的
-- 3、 在github上修改了项目后，或者以后是和别人一起开发，就要先git pull origin （master）将别人的分支和自己的分支都拉下来确保是最新，
+1. 虽然在物理上本地仓库中所有文件是放在一起的，但是分支之间是互不能访问以及操作的
+2. 在本地的每次commit都是有index的，上传到github可以不用那么频繁，反正都是有记录的
+3. 在github上修改了项目后，或者以后是和别人一起开发，就要先git pull origin （master）将别人的分支和自己的分支都拉下来确保是最新，
     - 再进行git push -u origin master 才能正确提交代码，如果不pull，提交是注定失败的，还会扰乱分支图
-- 4、在github上修改文件，容易引起编码的变化，这时候没有pull就修改文件再commit也是会在push的时候很麻烦，最好在本地修改文件
+4. 在github上修改文件，容易引起编码的变化，这时候没有pull就修改文件再commit也是会在push的时候很麻烦，最好在本地修改文件
     - 最好是，在github上修改了就在本地pull之后再修改文件，万一出错了回退也简单
-- 5、出现了冲突，从而无法自动merge：
+5. 出现了冲突，从而无法自动merge：
 ```
     git pull 对方的分支
     git checkout 自己的分支
     git merge --no-ff 对方的分支
     git push （自己的源+分支）origin master
 ```
-* 6. 当不想把隐私的配置文件上传github时，就可以.gitignore中忽略掉配置文件，然后建立模板文件夹放待配置的文件即可
-* 7.`cat ~/.ssh/id_rsa.pub | xclip -sel clip` 复制公钥
-* 8.java代码质量监测平台 codacy特别在意test里用断言 codebeat特别在意类和方法的长度
-* 9. Linux下当大量文件出现mode的变化（因为你的目录移动，文件权限变化等影响的）可以设置忽略掉 `git config core.fileMode false`
+6. 当不想把隐私的配置文件上传github时，就可以.gitignore中忽略掉配置文件，然后建立模板文件夹放待配置的文件即可
+7. `cat ~/.ssh/id_rsa.pub | xclip -sel clip` 复制公钥
+8. java代码质量监测平台 codacy特别在意test里用断言 codebeat特别在意类和方法的长度
+9. Linux下当大量文件出现mode的变化（因为你的目录移动，文件权限变化等影响的）可以设置忽略掉 `git config core.fileMode false`
     * 当将目录备份出去，然后重装系统粘贴回来，权限就变了，mode也变了，可以设置忽略掉改变，继续使用仓库，看着不爽的话就提交到远程，新系统克隆即可，不过网速就...
+10. git status 中文乱码 执行`git config --global core.quotepath false`即可
 
 ## 配置记住密码
 -  `Windows下记住密码` ： 
@@ -98,7 +100,7 @@
 - 直接搜索git-for-windows 建议使用360搜索,会有360的下载链接,无意间发现 毕竟官网的下载速度不敢恭维
 
 **************
-## 【使用】 
+## 【简单使用】 
 
 *Github下拉到eclipse*
 - 1.在GitHub上新建一个项目，不勾选初始化，复制下URL
@@ -125,6 +127,11 @@
     - 2.3 `git remote add origin master URL` 连上远程仓库
     - 2.4 `git push -u origin master` 输入用户名，密码 （若因为没有上游节点就按提示输入命令建立初始节点即可 git push --setupstream origin master）
     - 原因是没有指定本地dev分支与远程origin/dev分支的链接，根据提示，设置dev和origin/dev的链接：`git branch --set-upstream dev origin/dev` master同理
+
+### 配置GPG
+> [阮一峰:GPG入门教程](http://www.ruanyifeng.com/blog/2013/07/gpg.html)
+
+- 能够提高安全性,但是麻烦,不过向来这两者就是不可兼得的.
 
 *********************
 ### 实验楼上使用Github

@@ -31,7 +31,7 @@
         - [VSCode](#vscode)
         - [Gedit](#gedit)
         - [小书匠](#小书匠)
-        - [Moediter Typora CuteMarkEd](#moediter-typora-cutemarked)
+        - [Moeditor Typora CuteMarkEd](#moeditor-typora-cutemarked)
         - [Vi/Vim](#vivim)
         - [Nano](#nano)
         - [fte-terminal](#fte-terminal)
@@ -51,7 +51,7 @@
             - [主题](#主题)
         - [Vivaldi](#vivaldi)
 
-`目录 end` *目录创建于2018-01-14*
+`目录 end` *目录创建于2018-01-21*
 ****************************************
 # 软件使用记事
 ## 【包管理】
@@ -254,7 +254,9 @@
     - 重做    `Ctrl + Y`
 
 ************
-### Moediter Typora CuteMarkEd 
+### Moeditor Typora CuteMarkEd 
+> [Moeditor](https://github.com/Moeditor/Moeditor)
+
 - 书写单个md文件方便，美观，没有目录树是硬伤
 
 ************

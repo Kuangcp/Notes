@@ -15,6 +15,7 @@
 ## 起源
 
 ## 硬件系统
+> [博客:【不周山之读薄 CSAPP】零 系列概览 ](http://wdxtub.com/2016/04/16/thin-csapp-0/) `CSAPP:深入理解计算机系统`
 
 ### CPU
 > [码农翻身:CPU阿甘](https://mp.weixin.qq.com/s?__biz=MzAxOTc0NzExNg==&mid=2665513017&idx=1&sn=5550ee714abd36d0b580713f673e670b&scene=21#wechat_redirect) `梳理了CPU 内存 操作系统 BIOS 硬盘之间的关系和特性`

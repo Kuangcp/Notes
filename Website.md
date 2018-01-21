@@ -11,12 +11,15 @@
         - [Linux](#linux)
         - [Go](#go)
     - [Git](#git)
+        - [Github相关](#github相关)
     - [持续集成](#持续集成)
     - [前端](#前端)
+        - [素材网](#素材网)
     - [web站点分析](#web站点分析)
     - [人工智能](#人工智能)
+    - [在线工具](#在线工具)
 
-`目录 end` *目录创建于2018-01-20*
+`目录 end` *目录创建于2018-01-21*
 ****************************************
 # 【常用的网站】
 ## 软件商店
@@ -48,6 +51,8 @@
 - [Linux命令大全](http://man.linuxde.net/) `Linux命令教程`
 - [RUNOOB.COM](http://www.runoob.com) `各种技术学习 文档资源`
 - [asciinema](https://asciinema.org) `终端屏幕录制和分享网`
+- [Linux中国开源社区](https://linux.cn/)
+- []()
 
 ### Go
 - [go](http://www.runoob.com/go/go-tutorial.html)
@@ -57,15 +62,31 @@
 ## Git
 - [廖雪峰学习网站](https://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000)
 
+### Github相关
+- [Github-page优秀示例](https://github.com/collections/github-pages-examples)`大厂的网页`
+
 ## 持续集成 
 - [国内一个产品](https://flow.ci/) | [文档](https://github.com/FlowCI/docs/blob/master/intro_base.md)
 
+**************************************
 ## 前端
 - [bootcdn](http://www.bootcdn.cn/) `常用js css的cdn`
 - [填充图](https://placeholder.com/)
 
+### 素材网
+- [素材之家](http://www.158pic.com/?txt)
+
+******************************************************
 ## web站点分析
 - [网站性能分析](http://pagespeed.webkaka.com/)`十分详细`
 
+***************************************************
 ## 人工智能
 - [AlphaGo学习网站](https://alphagoteach.deepmind.com/zh-hans)
+
+*****************************************************
+## 在线工具
+- [开源中国](http://tool.oschina.net/)
+- [脚本之家](http://tools.jb51.net/)
+
+****************************************************

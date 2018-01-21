@@ -4,14 +4,18 @@
 - [【GitRepos】](#gitrepos)
     - [User](#user)
     - [笔记仓库](#笔记仓库)
+    - [翻译和搬运](#翻译和搬运)
     - [【Java】](#java)
+        - [源码学习](#源码学习)
         - [Java8](#java8)
         - [框架以及高级特性](#框架以及高级特性)
         - [二次框架](#二次框架)
         - [高效](#高效)
         - [Demo](#demo)
+            - [微服务](#微服务)
         - [Android](#android)
         - [Web](#web)
+            - [前后端综合](#前后端综合)
         - [BuildTool](#buildtool)
         - [Tool](#tool)
     - [【Kotlin】](#kotlin)
@@ -34,7 +38,7 @@
     - [前端](#前端)
     - [Docker](#docker)
 
-`目录 end` *目录创建于2018-01-14*
+`目录 end` *目录创建于2018-01-21*
 ****************************************
 
 # 【Organization】
@@ -53,6 +57,7 @@
 - [oldratlee](https://github.com/oldratlee)`哲良, 大厂，有极客风范 有关java和shell的仓库`
 - [梁少锋](https://github.com/youngwind)`公众号:前端控`
 - [pkpk1234](https://github.com/pkpk1234)`华为程序员, 有关于Java9和自己写Servlet容器的项目`
+- [小土刀](https://github.com/wdxtub)`看了很多书,写了很多博客`
 
 ## 笔记仓库
 - [某研究生在校阅读笔记](https://github.com/lanxuezaipiao/ReadingNotes)
@@ -60,6 +65,7 @@
 - [judasn](https://github.com/judasn/hexo-blog)`善于归纳的人 相关:Javaer眼中的Linux`
 - [梁少锋的博客笔记](https://github.com/youngwind/blog)`前端相关`
 - [cain-note](https://github.com/james-cain/cain-note)`像是培训机构的资料和他本人的学习笔记,偏向前端`
+- [书写规范和建议](https://github.com/sparanoid/chinese-copywriting-guidelines)`比较全面,闲暇可以参考`
 
 ## 翻译和搬运
 - [translations](https://github.com/oldratlee/translations)`翻译外国的文章`
@@ -87,6 +93,7 @@
 - [uflo](https://gitee.com/youseries/uflo) `国内的流程引擎`
 - [jeewx](https://gitee.com/jeecg/jeewx)`微信管家平台`
 - [禅道](https://gitee.com/wwccss/zentaopms)`项目管理软件` 
+- [myth](https://github.com/yu199195/myth)`可靠消息解决分布式事务框架 `
 
 ### 二次框架
 - [jeesite](https://gitee.com/thinkgem/jeesite)`Spring基础构建的maven jsp项目 bootstrap`
@@ -135,6 +142,7 @@
 - [Springboot搭建的简易博客](https://github.com/wchstrife/blog)
 - [restfeel](https://github.com/Jason-Chen-2017/restfeel)`一个Rest接口的管理测试平台 陈光剑`
 - [mushroom](https://github.com/wuweiit/mushroom) `基于Java的动态内容管理系统 ` 
+- [notes](https://github.com/pimterry/notes)`notes shell 软件`
 
 ******************************************************
 ## 【Kotlin】
@@ -179,6 +187,7 @@
 - [LayUI](https://github.com/sentsin/layui/) `国产layUI框架`
 - [vue-layui](https://github.com/IBAS0742/vue-layui)`vue和layui的结合`
 - [js代码块集合](https://github.com/Chalarangelo/30-seconds-of-code)
+- [ssr-web](https://github.com/xiaofuzi/ssr-web)`基于vue的静态博客生成器`
 
 ***************************************
 ## Tools

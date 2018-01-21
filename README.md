@@ -55,6 +55,8 @@
 
 > [码农翻身:抽象：程序员必备的能力 ](https://mp.weixin.qq.com/s?__biz=MzAxOTc0NzExNg==&mid=2665513062&idx=1&sn=a3b4a2962d8e82471192d9606b0a2722&scene=21#wechat_redirect)
 
+- [知乎问题:为什么小土刀能读那么多书写那么多文章？](https://www.zhihu.com/question/47788269)
+    - [小土刀博客](http://wdxtub.com/thanks/)
 ## 笔记中所涉及到的知识
 - 编程语言: Python Java Kotlin Groovy Scala Clojure Shell Go
 - 构建工具: Git Gradle Maven 
