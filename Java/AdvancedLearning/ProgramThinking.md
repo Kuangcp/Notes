@@ -103,7 +103,8 @@ _一个基本的JUnit测试_
 
 ### 测试技术
 #### 测试替身
-> 泛指任何出于测试目的的替换真实对象的假冒对象，为了解决测试代码的依赖项问题。四种方式： 虚设，伪装，存根，模拟
+> 泛指任何出于测试目的的替换真实对象的假冒对象，为了解决测试代码的依赖项问题。  
+四种方式： 虚设，伪装，存根，模拟
 
 ![p286](https://raw.githubusercontent.com/Kuangcp/ImageRepos/master/Tech/Book/Java7Developer/p286.jpg)
 

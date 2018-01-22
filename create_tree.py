@@ -25,12 +25,14 @@ def listfiles(name):
     lists = []
     dir_list = []
     temp = os.listdir(name)
+    temp.sort()
+    # print(temp)
     for r in temp:
         if(not os.path.isdir(name+'/'+r)):
             lists.append(r)
         else:
             #print("是目录:::::::::::",r)
-            dir_list.insert(0, r)
+            dir_list.append(r)
             #lists.insert(0,r)
     lists.sort()
     lists = dir_list + lists
