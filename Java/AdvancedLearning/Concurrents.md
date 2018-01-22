@@ -2,23 +2,23 @@
  
 - [Java并发](#java并发)
     - [【理论知识】](#理论知识)
-        - [【块结构并发】 Java5之前](#块结构并发-java5之前)
-        - [【现代并发】 concurrent包](#现代并发-concurrent包)
-            - [原子类 java.util.concurrent.atomic](#原子类-javautilconcurrentatomic)
-            - [线程锁 java.util.concurrent.locks](#线程锁-javautilconcurrentlocks)
-            - [CountDownLatch 锁存器](#countdownlatch-锁存器)
-            - [ConcurrentHashMap](#concurrenthashmap)
-            - [CopyOnWriteArrayList](#copyonwritearraylist)
-        - [【Queue】](#queue)
-            - [BlockingQueue](#blockingqueue)
-            - [TransferQueue](#transferqueue)
-        - [【控制执行】](#控制执行)
-            - [任务建模](#任务建模)
-                - [ScheduleThreadPoolExecutor](#schedulethreadpoolexecutor)
-        - [【分支合并框架】](#分支合并框架)
-        - [【Java内存模型】](#java内存模型)
+    - [【块结构并发】 Java5之前](#块结构并发-java5之前)
+    - [【现代并发】 concurrent包](#现代并发-concurrent包)
+        - [原子类 java.util.concurrent.atomic](#原子类-javautilconcurrentatomic)
+        - [线程锁 java.util.concurrent.locks](#线程锁-javautilconcurrentlocks)
+        - [CountDownLatch 锁存器](#countdownlatch-锁存器)
+        - [ConcurrentHashMap](#concurrenthashmap)
+        - [CopyOnWriteArrayList](#copyonwritearraylist)
+    - [【Queue】](#queue)
+        - [BlockingQueue](#blockingqueue)
+        - [TransferQueue](#transferqueue)
+    - [【控制执行】](#控制执行)
+        - [任务建模](#任务建模)
+            - [ScheduleThreadPoolExecutor](#schedulethreadpoolexecutor)
+    - [【分支合并框架】](#分支合并框架)
+    - [【Java内存模型】](#java内存模型)
 
-`目录 end` *目录创建于2018-01-21*
+`目录 end` *目录创建于2018-01-22* | 更多: [CSDN](http://blog.csdn.net/kcp606) | [oschina](https://my.oschina.net/kcp1104) | [码云](https://gitee.com/kcp1104) 
 ****************************************
 # Java并发
 > 主要知识来源 Java程序员修炼之道  | [并发编程网](http://ifeve.com/)  
@@ -68,7 +68,7 @@
     - 内存的局部性
     - 算法设计
     
-### 【块结构并发】 Java5之前
+## 【块结构并发】 Java5之前
 - 同步和锁 synchronized：
     - 只能锁定对象，不能锁定原始类型
     - 被锁定的兑现给数组中的单个对象不会被锁定
@@ -106,6 +106,7 @@
     - 线程所写的值总会在指令完成之前同步回内存中
         - 可以把围绕该域的操作看成成是一个小的同步块
         - volatile 变量不会引入线程锁，所以不可能发生死锁
+        - [ ] TODO 矛盾
         - volatile 变量是真正线程安全的，但只有写入时不依赖当前状态（读取的状态）的变量才应该声明为volatile变量
 
 - 不可变性：
@@ -120,16 +121,16 @@
 
 ********************
 
-### 【现代并发】 concurrent包
+## 【现代并发】 concurrent包
 
-#### 原子类 java.util.concurrent.atomic
+### 原子类 java.util.concurrent.atomic
 > 提供适当的原子方法 避免在共享数据上出现竞争危害的方法
 
 - 常见的操作系统的支持， 他们是非阻塞的（无需线程锁）， 常见的方法是实现序列号机制（和数据库里的序列号机制类似），在AtomicInteger或AtomicLong上用原子
     - 操作`getAndIncrement()`方法， 并且提供了nextId 方法得到唯一的完全增长的数值
 - 注意： 原子类不是相似的类继承而来，所以 AtomicBoolean不能当Boolean用
 
-#### 线程锁 java.util.concurrent.locks
+### 线程锁 java.util.concurrent.locks
 - 块结构同步方式基于锁这样的的概念，具有缺点
     - 锁只有一种类型
     - 对被锁住的对象的所有同步操作都是一样的作用
@@ -150,7 +151,7 @@
         - `trylock()`: [官方API1.8 trylock](https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/locks/ReentrantLock.html#tryLock--)
     - Lock接口的实现类：ReentrantWriteLock 在需要读取很多线程而写入很少线程时，用这个性能更好
     
-#### CountDownLatch 锁存器
+### CountDownLatch 锁存器
 - 是一种简单的同步模式，这种模式允许线程在通过同步屏障之前做少量的准备工作
     - 构建实例时，需要提供一个数值（计数器），通过两个方法来实现这个机制
     - `countDown()` 作用：计数器减一
@@ -165,7 +166,7 @@
         
 - 能做到： 当一堆线程之间的同步，为了确保有指定数量正常初始化的线程 创建成功，才能开始同步 
 
-#### ConcurrentHashMap
+### ConcurrentHashMap
 - `ConcurrentHashMap` 是 HashMap的并发版本
 - 修改HashMap，并不需要将整个结构都锁住，只要锁住即将修改的桶（就是单个元素）
     - 好的HashMap 实现，在读取时不需要锁，写入时只要锁住要修改的单个桶 Java能达到这个标准，但是需要程序员去操作底层的细节才能实现
@@ -176,7 +177,7 @@
 - 例如之前的完全同步类里的公共 Map实现就是HashMap，如果换成ConcurrentHashMap 那些synchronized关键字修饰的方法就可以换成普通方法了
 - 该类不仅提供了多线程的安全性，性能也很好
 
-#### CopyOnWriteArrayList
+### CopyOnWriteArrayList
 - 标准的ArrayList的替代，通过写时复制语义来实现线程安全性，也就是说修改列表的任何操作都会创建一个列表底层数组的新副本
     - 这就意味着所有成形的迭代器都不会遇到意料之外的修改 （脏读）
     
@@ -188,7 +189,7 @@
 
 ***********************
 
-### 【Queue】
+## 【Queue】
 
 - Queue接口全是泛型的，这样就更为方便， 自己再封装一个层
 
@@ -211,7 +212,7 @@ public class Pro<T>{
     - 运行时系统信息： 比如 Author实例是如何排到队列的
 
     
-#### BlockingQueue
+### BlockingQueue
 > 并发扩展类， 
 
 - 基本方法
@@ -227,7 +228,7 @@ public class Pro<T>{
 - BlockingQueue 不接受 null 元素。试图 add、put 或 offer 一个 null 元素时，某些实现会抛出 NullPointerException。
 - BlockingQueue 的实现主要用于生产者-使用者队列
 
-#### TransferQueue 
+### TransferQueue 
 - 本质上是多了一项 transfer()操作的BlockingQueue， 如果接收线程处于等待状态， 该操作会马上把工作项传给他。
 - 否则就会阻塞直到取走工作项的线程出现 即 正在处理工作项的线程在交付当前工作项之前不会开始其他工作项的处理工作，
 - 这样系统就可以调控上游线程获取新工作项的速度 用限定大小的阻塞队列也能达到同样的效果，TransferQueue 执行效率更高
@@ -236,8 +237,8 @@ public class Pro<T>{
 
 ************************
 
-### 【控制执行】
-#### 任务建模
+## 【控制执行】
+### 任务建模
 > 要把目标代码做成可调用（执行者调用）的结构，而不是单独开线程运行
 > [展示代码](./src/main/java/com/concurrents/schedule/CreateModel.groovy)
 
@@ -255,7 +256,7 @@ public class Pro<T>{
     - 提供了两个构造器，一个是Callable为参数，另一个以Runnable为参数
 - 可以基于FutureTask的Runnable特性，把任务写成Callable然后封装进一个有执行者地调度并在必要时可以取消的FutureTask
 
-##### ScheduleThreadPoolExecutor
+#### ScheduleThreadPoolExecutor
 > ScheduleThreadPoolExecutor  简称 STPE 线程池类中很重要的类
 
 - 线程池的大小可以预定义， 也可自适应
@@ -265,7 +266,7 @@ public class Pro<T>{
 
 **************************
 
-### 【分支合并框架】 
+## 【分支合并框架】 
 - 引入一种新的执行者服务，称为 ForkJoinPool
 - ForkJoinPool 服务处理一种比线程更小的并发单元 ForkJoinTask
     - ForkJoinTask是一种由ForkJoinPool以更轻量的方式所调度的抽象
@@ -304,7 +305,7 @@ public class Pro<T>{
     - 对于子任务来说，分而治之是不是很自然的事？子任务是不是会创建更多的子任务，而且他们要比派生出他们的任务粒度更细？
     - 如果思考的结果是肯定的，就可以适用，如果思考结果是不确定的，用其他的同步方式更合适
 
-### 【Java内存模型】
+## 【Java内存模型】
 > Java Memory Model   JMM
 
 - 同步动作和被称为偏序的数据结构描述JMM， 
@@ -324,4 +325,6 @@ public class Pro<T>{
 - 代码块之间的 `之前发生（Happens-Before）` 和 `同步约束（Synchronizes-With）`关系
     - 之前发生 这种关系表明一段代码在其他代码开始之前就已经全部完成了
     - 同步约束 这意味着动作继续执行之前必须把他的对象视图与主内存同步
+
+�执行之前必须把他的对象视图与主内存同步
 

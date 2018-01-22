@@ -27,8 +27,9 @@
     - [7.构建工具对比](#7构建工具对比)
         - [7.1.Maven和Ant的区别一](#71maven和ant的区别一)
         - [7.2.Maven的优势](#72maven的优势)
+    - [发布构件](#发布构件)
 
-`目录 end` *目录创建于2018-01-21*
+`目录 end` *目录创建于2018-01-22* | 更多: [CSDN](http://blog.csdn.net/kcp606) | [oschina](https://my.oschina.net/kcp1104) | [码云](https://gitee.com/kcp1104) 
 ****************************************
 # Maven
 > [官网](https://maven.apache.org/) | [官网手册](https://maven.apache.org/guides/) | [http://takari.io/ 在线练习网](http://takari.io/)
@@ -382,3 +383,6 @@ A 项目 compile
 - 中心资源库管理，能减低源码库的大小，中心资源库可以统一定期备份。
 - 目录结构规范，让开发者从一个maven项目过度到另一maven项目很容易。
 - 大量的开源项目使用了maven。
+
+## 发布构件
+> [将项目发布到 maven 中央仓库踩过的坑](http://blog.csdn.net/h3243212/article/details/72374363)

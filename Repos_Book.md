@@ -5,6 +5,7 @@
     - [User](#user)
     - [笔记仓库](#笔记仓库)
     - [翻译和搬运](#翻译和搬运)
+    - [【算法】](#算法)
     - [【Java】](#java)
         - [源码学习](#源码学习)
         - [Java8](#java8)
@@ -38,7 +39,7 @@
     - [前端](#前端)
     - [Docker](#docker)
 
-`目录 end` *目录创建于2018-01-21*
+`目录 end` *目录创建于2018-01-22* | 更多: [CSDN](http://blog.csdn.net/kcp606) | [oschina](https://my.oschina.net/kcp1104) | [码云](https://gitee.com/kcp1104) 
 ****************************************
 
 # 【Organization】
@@ -58,6 +59,8 @@
 - [梁少锋](https://github.com/youngwind)`公众号:前端控`
 - [pkpk1234](https://github.com/pkpk1234)`华为程序员, 有关于Java9和自己写Servlet容器的项目`
 - [小土刀](https://github.com/wdxtub)`看了很多书,写了很多博客`
+- [Yong Zhu](https://github.com/drinkjava2)`有两个关于IOC和ORM的开源项目值得学习`
+- [魏楚阳](https://github.com/brianway)`和我同龄就进了大厂, 学习的东西确实多, 学习能力很好`
 
 ## 笔记仓库
 - [某研究生在校阅读笔记](https://github.com/lanxuezaipiao/ReadingNotes)
@@ -71,6 +74,8 @@
 - [translations](https://github.com/oldratlee/translations)`翻译外国的文章`
 
 *******************************************
+## 【算法】
+
 ## 【Java】
 ### 源码学习
 - [tiny-spring](https://github.com/code4craft/tiny-spring) `Spring精简版`
@@ -200,6 +205,7 @@
 
 ### 微信相关
 - [微信小程序Demo](https://gitee.com/yuzeng84/wxapp)
+
 ## 其他
 - [HelloGibhub](https://github.com/521xueweihan/HelloGitHub)`有趣的项目`
 

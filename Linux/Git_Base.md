@@ -1,6 +1,7 @@
 `目录 start`
  
 - [Git基础](#git基础)
+    - [版本控制系统(VCS)](#版本控制系统vcs)
     - [Git常用命令](#git常用命令)
             - [【Tips】](#tips)
             - [【git config】](#git-config)
@@ -21,16 +22,16 @@
     - [CVS工具的区别以及优缺点](#cvs工具的区别以及优缺点)
         - [Git](#git)
         - [SVN](#svn)
-    - [加强版 repos的使用](#加强版-repos的使用)
+    - [repos的使用](#repos的使用)
 
-`目录 end` *目录创建于2018-01-14*
+`目录 end` *目录创建于2018-01-22* | 更多: [CSDN](http://blog.csdn.net/kcp606) | [oschina](https://my.oschina.net/kcp1104) | [码云](https://gitee.com/kcp1104) 
 ****************************************
 # Git基础
 ## 版本控制系统(VCS)
 - [码农翻身:小李的版本管理系统](https://mp.weixin.qq.com/s?__biz=MzAxOTc0NzExNg==&mid=2665513204&idx=1&sn=c4c493d771a167a84ace01c3e016417e&scene=21#wechat_redirect)
 
 ## Git常用命令
-> [Git官网中文教程](https://git-scm.com/book/zh/v2)
+> [Git官网中文教程](https://git-scm.com/book/zh/v2)  
 > [git-tips](https://github.com/521xueweihan/git-tips)`学习Git的仓库`
 
 #### 【Tips】
@@ -210,6 +211,6 @@
 ### SVN
 
 
-## 加强版 repos的使用
-
+## repos的使用
+> 综合各个VCS的管理方式
 

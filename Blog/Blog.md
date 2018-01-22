@@ -17,7 +17,7 @@
     - [生活](#生活)
     - [商业](#商业)
 
-`目录 end` *目录创建于2018-01-21*
+`目录 end` *目录创建于2018-01-22* | 更多: [CSDN](http://blog.csdn.net/kcp606) | [oschina](https://my.oschina.net/kcp1104) | [码云](https://gitee.com/kcp1104) 
 ****************************************
 
 > 只用来记录非技术类的文章,技术类的直接放到对应的笔记中去
@@ -110,6 +110,7 @@
 ***************
 ## 毕业
 - [开题答辩的礼貌性注意事项](http://biyelunwen.yjbys.com/dabian/)
+- [如何准备校招技术面试](http://blog.csdn.net/h3243212/article/details/78132994)
 
 ## 生活
 

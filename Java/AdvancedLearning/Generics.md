@@ -14,7 +14,7 @@
             - [通配符捕获](#通配符捕获)
         - [反射和泛型](#反射和泛型)
 
-`目录 end` *目录创建于2018-01-16*
+`目录 end` *目录创建于2018-01-22* | 更多: [CSDN](http://blog.csdn.net/kcp606) | [oschina](https://my.oschina.net/kcp1104) | [码云](https://gitee.com/kcp1104) 
 ****************************************
 # 泛型
 > [开始学习的兴趣来源](https://mp.weixin.qq.com/s?__biz=MzAxOTc0NzExNg==&mid=2665514015&idx=1&sn=12409f705c6d266e4cd062e78ce50be0&chksm=80d67c5cb7a1f54a68ed83580b63b4acded0df525bb046166db2c00623a6bba0de3c5ad71884&scene=21#wechat_redirect)
@@ -45,23 +45,23 @@
 > 以下代码示例:涉及的类Pair在上述的代码中已经定义, Human和Student是继承关系
 > 并且因为看的 Java核心技术卷 比较老 jdk是1.5的所以没有用7的菱形语法简化泛型 7可以省去右边的类型: `Pair<Double> pair = new Pair<>();`
 
-- | 不能使用基本类型实例化类型参数 
+- | _不能使用基本类型实例化类型参数_
     - 也就是说没有`Pair<double>`只有`Pair<Double>`
     - 因为类型擦除后,类型是Object并不能放double的值, 但是这样做与Java语言中基本类型的独立状态相一致.
     - 当包装器类型(wrapper type)不能接受替换时,可以使用独立的类和方法处理他们  
-- | 运行时类型查询(eq或者instanceof)只适用于原始类型
+- | _运行时类型查询(eq或者instanceof)只适用于原始类型_
     - 比如`Pair<T>` 和`Pair<String>`是等价的,因为类型擦除
     - `Pair<String> pair1` `Pair<Date> pair2` pair1.getClass()和pair2.getClass()是等价的都是返回Pair.class
-- | 不能抛出也不能捕获泛型类实例
+- | _不能抛出也不能捕获泛型类实例_
     - 错误的示例:
         - `public class Problem<T> extends Exception{}`
         - `public static <T extends Throwable> void doWork(){try{}catch(T t){}}`
     - 正确示例:
         - 在异常声明中使用类型变量 
         - `public static <T extends Throwable> void doWork() throws T{.. catch(){throw t;}}`
-- | 参数化类型的数组不合法
-    - `Pair<String>[] list = new Pair<String>[10];`
-    - 因为擦除后 list是Pair[]类型,然后就能转成Object[]
+- | _参数化类型的数组不合法_
+    - 例:`Pair<String>[] list = new Pair<String>[10];`
+    - 因为擦除后 list是Pair[]类型,然后就能转成Object[], 就失去了泛型的作用
     - 如果要使用的话最好直接使用集合 ArrayList:` ArrayList<Pair<String>>`,安全又高效
 ```java
     Object[] array = list;
@@ -69,7 +69,7 @@
     array[0] = new Pair<Date>(); //通过数组存储的检测,但实际上类型错误了,所以禁止使用参数化类型的数组
 ```
 
-- | 不能实例化类型变量(T)
+- | _不能实例化类型变量(T)_
     - 非法 `new T(){}`
 ```java
     public Pair(){
@@ -90,7 +90,7 @@
     // 因为Class本身是泛型, String.class其实是Class<String>的实例
     // 也不能实例化为一个数组 new T[5]
 ```
-- | 泛型类的静态上下文中类型变量无效
+- | _泛型类的静态上下文中类型变量无效_
     - 不能在静态域中使用类型变量 如下:
     - 如果这段代码能执行,那就可以声明一个 Singleton<Random> 共享随机数生成类,
     - 但是声明之后,类型擦除,就只剩下了Singleton类,并不能做对应的事情,所以禁止这样的写法
@@ -100,7 +100,7 @@
         return first;
     }
 ```
-- | 注意泛型擦除后的冲突
+- | _注意泛型擦除后的冲突_
     - 当类型擦除时,不能创建引发冲突的相关条件
     - 例如 新实现一个类型变量约束的equals方法就会和Object原方法冲突 补救方法就是重命名该方法了
     
