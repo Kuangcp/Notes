@@ -10,7 +10,7 @@ import subprocess
 # 忽略的文件夹
 dirs=['.git','SQL','Docker']
 # 所有要被忽略的文件
-files=['CODE_OF_CONDUCT.md', 'README.md', 'CSS3.md', 'HTML5.md']
+files=['PULL_REQUEST_TEMPLATE.md', 'ISSUE_TEMPLATE.md', 'CODE_OF_CONDUCT.md', 'README.md', 'CSS3.md', 'HTML5.md']
 flag_show=False
 flag_append=False
 result = []
