@@ -23,10 +23,11 @@
     - [序列化](#序列化)
     - [反射的使用](#反射的使用)
 
-`目录 end` *目录创建于2018-01-21*
+`目录 end` *目录创建于2018-01-22* | 更多: [CSDN](http://blog.csdn.net/kcp606) | [oschina](https://my.oschina.net/kcp1104) | [码云](https://gitee.com/kcp1104) 
 ****************************************
 # Java基础
 ## 【类和字节码】
+> [个人相关代码](https://github.com/Kuangcp/JavaBase/tree/master/src/main/java/com/classfile) 
 
 ### 类加载和类对象
 - 一个.class　文件定义了JVM中的类型，包括了域,方法，继承信息，注解和其他元数据

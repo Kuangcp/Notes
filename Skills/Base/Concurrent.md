@@ -9,7 +9,7 @@
 `目录 end` *目录创建于2018-01-22* | 更多: [CSDN](http://blog.csdn.net/kcp606) | [oschina](https://my.oschina.net/kcp1104) | [码云](https://gitee.com/kcp1104) 
 ****************************************
 # 并发
-> 涉及 同步 异步 线程 协程
+> 无关语言 涉及 同步 异步 线程 协程
 
 ## 同步
 > [码农翻身:那些烦人的同步和互斥问题](https://mp.weixin.qq.com/s?__biz=MzAxOTc0NzExNg==&mid=2665513371&idx=1&sn=c875f64af83306bffca8dd748f1462ff&chksm=80d679d8b7a1f0ce98a0e3a12409805757cd2e958586c54049121f961cf5b2d236530cd019c7&scene=21#wechat_redirect)

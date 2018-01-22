@@ -12,6 +12,7 @@
 `目录 end` *目录创建于2018-01-22* | 更多: [CSDN](http://blog.csdn.net/kcp606) | [oschina](https://my.oschina.net/kcp1104) | [码云](https://gitee.com/kcp1104) 
 ****************************************
 # 线程的基础学习
+> [个人相关代码](https://github.com/Kuangcp/JavaBase/tree/master/src/main/java/com/threads)
 
 ## TODO
 - [ ] 线程的多种创建方式

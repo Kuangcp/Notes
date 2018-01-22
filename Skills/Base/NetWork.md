@@ -3,15 +3,16 @@
 - [网络](#网络)
     - [安全](#安全)
         - [SYNFlood攻击](#synflood攻击)
+        - [CSRF](#csrf)
 
-`目录 end` *目录创建于2018-01-14*
+`目录 end` *目录创建于2018-01-22* | 更多: [CSDN](http://blog.csdn.net/kcp606) | [oschina](https://my.oschina.net/kcp1104) | [码云](https://gitee.com/kcp1104) 
 ****************************************
 # 网络
 
 ## 安全
 ### SYNFlood攻击
-> 洪水攻击 [参考博客](http://xfocus.net/articles/200106/208.html) SYN Flood是当前最流行的DoS（拒绝服务攻击）与DDoS（分布式拒绝服务攻击）的方式之一，这是一种利用TCP协议缺陷，发送大量伪造的TCP连接请求，从而使得被攻击方资源耗尽（CPU满负荷或内存不足）的攻击方式。<br/>
-> [参考博客](http://www.cnblogs.com/popduke/p/5823801.html)
+> 洪水攻击 [参考博客](http://xfocus.net/articles/200106/208.html) SYN Flood是当前最流行的DoS（拒绝服务攻击）与DDoS（分布式拒绝服务攻击）的方式之一，这是一种利用TCP协议缺陷，发送大量伪造的TCP连接请求，从而使得被攻击方资源耗尽（CPU满负荷或内存不足）的攻击方式。  
+> [参考博客](http://www.cnblogs.com/popduke/p/5823801.html)  
 
 - Linux:
     - 修改文件 `sudo vim /etc/sysctl.conf `
@@ -29,3 +30,5 @@
     net.ipv4.tcp_max_tw_buckets
     #参数决定TIME_WAIT状态的sockets总数量，可根据连接数和系统资源需要进行设置。 
 ```
+### CSRF
+> [博客:CSRF漏洞的原理](https://www.zhuyingda.com/blog/b5.html)

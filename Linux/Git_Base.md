@@ -99,6 +99,7 @@
 
 - _常用参数_
     - `-h` 查看所有参数和说明
+    - `-q` 控制台不输出任何信息
     - `-f` 强制
     - `--all` 推送所有引用
     - `-u` upstream 设置 git pull/status 的上游
@@ -106,7 +107,9 @@
     - `--tags` 推送标签（不能使用 --all or --mirror）
 
 - 出现 `RPC failed; result=22, HTTP code = 411` 的错误
-    - 就是因为一次提交的文件太大，需要改大缓冲区 例如改成500m  `git config http.postBuffer 524288000`
+    - 就是因为一次提交的文件太大，需要改大缓冲区 
+    > 例如改成500m  `git config http.postBuffer 524288000`
+
 - 提交本地所有分支 `git push --all` pull时同理
 - _第一次与远程建立连接_
     - `git push -u origin master ` | `git push --set-uptream master` | `git push -all` 
@@ -114,7 +117,7 @@
 
 #### 【git rebase】
 
-- 效果和merge差不多，但是分支图更清晰
+- 效果和merge差不多，但是分支图更清晰 TODO 有待详细学习
 - 与master合并：`git merge master` 换成 `git rebase master`
 - 当遇到冲突：
     - `git rebase --abort` 放弃rebase

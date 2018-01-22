@@ -21,6 +21,7 @@
 `目录 end` *目录创建于2018-01-22* | 更多: [CSDN](http://blog.csdn.net/kcp606) | [oschina](https://my.oschina.net/kcp1104) | [码云](https://gitee.com/kcp1104) 
 ****************************************
 # Java并发
+> [个人相关代码](https://github.com/Kuangcp/JavaBase/tree/master/src/main/java/com/concurrents)  
 > 主要知识来源 Java程序员修炼之道  | [并发编程网](http://ifeve.com/)  
 > 该模块最早在1.5引入,由[Doug Lea](http://g.oswego.edu/)开发 |  [doug lea博客中文版](http://ifeve.com/doug-lea/)
 
