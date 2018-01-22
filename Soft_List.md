@@ -7,6 +7,8 @@
     - [SDK](#sdk)
     - [Plugin](#plugin)
     - [Tools](#tools)
+        - [构建](#构建)
+        - [Web服务器](#web服务器)
         - [文档处理](#文档处理)
         - [压力测试](#压力测试)
         - [UML](#uml)
@@ -15,8 +17,9 @@
         - [响应式](#响应式)
     - [Database](#database)
     - [前端](#前端)
+        - [富文本编辑器](#富文本编辑器)
 
-`目录 end` *目录创建于2018-01-21*
+`目录 end` *目录创建于2018-01-22* | 更多: [CSDN](http://blog.csdn.net/kcp606) | [oschina](https://my.oschina.net/kcp1104) | [码云](https://gitee.com/kcp1104) 
 ****************************************
 # 常用的工具软件
 ## 【国内的资源镜像站】
@@ -27,8 +30,10 @@
 - [Linux运维派](https://mirrors-wan.geekpie.org/)
 - [sourceforge](https://sourceforge.net/directory/system-administration/osdistro/livecd/os:linux/)`Linux发行版列表`
 
+***************************
 ## 三方库
 - [Eclipse Collections](http://www.eclipse.org/collections/)`更丰富的集合操作`
+- guava
 
 *******************
 ## IDE
@@ -49,18 +54,32 @@
 
 ************
 ## Tools
-- [Maven](http://maven.apache.org/)`不多说,上车`
-- [Gradle官方下载地址](http://services.gradle.org/distributions/)
 - [git](https://git-scm.com/) `最好用的vcs`
 - [genymotion](https://www.genymotion.com/) `安卓模拟器`
+
+_穿透_
+- [lanproxy](https://github.com/ffay/lanproxy) `将局域网个人电脑、服务器代理到公网的内网穿透工具`
 - [ngrok](https://ngrok.com/)`随机域名到穿透到内网 eg: ngrok http 8080`
 - [frp](https://diannaobos.com/frp/)`自己服务器外网到内网穿透`
     - [下载地址](https://file.diannaobos.com/frp_releases/)[使用帮助](https://diannaobos.com/post/470.html)
 
+_自建Git服务_
 - [gogs](https://github.com/gogits/gogs) `自建git服务器`
 - [gitea](https://github.com/go-gitea/gitea) `gogs加强`
     - [docker安装](https://docs.gitea.io/zh-cn/install-with-docker/)
+
+_授权_
 - [jwt](https://jwt.io)`JSON WEB TOKEN`
+
+### 构建
+- [Maven](http://maven.apache.org/)`不多说,上车`
+- [Gradle官方下载地址](http://services.gradle.org/distributions/)
+- [sbt](https://github.com/sbt/sbt)
+
+### Web服务器
+- [tomcat](http://tomcat.apache.org/)`Apache基金会`
+- [jetty](https://www.eclipse.org/jetty/)`Eclipse基金会`
+- [undertow](https://github.com/undertow-io/undertow) `轻量高可用` 
 
 ### 文档处理
 - [pandoc](https://github.com/jgm/pandoc) `一个文档格式转换的软件，markdown docx`
@@ -88,12 +107,13 @@
 ### 响应式
 - [vertx](http://vertx.io/)`构建响应式应用程序`
 
-*****
+****************************
 ## Database
 - [sssdb](https://github.com/ideawu/ssdb) `键值对数据库`
 - [Mysql-Font](https://github.com/NilsHoyer/MySQL-Front) `连接Mysql的客户端`
 - [sqlectron](https://github.com/sqlectron/sqlectron-gui) `简单直观的数据库图形化软件`
 
+*******************************
 ## 前端
 - [Framework7](http://framework7.cn/)`开发类似ios7的web应用（HTML）`
 - [Bootstrap](https://v3.bootcss.com/getting-started/)
@@ -101,5 +121,9 @@
 - [Hotkeys](https://github.com/jaywcjlove/hotkeys)`前端捕获按键输入,可以用来设置快捷键`
 - [socket.io](https://socket.io)`基于nodejs的socket技术`
 - [h-ui](http://h-ui.net/)
+
+### 富文本编辑器
 - [wangeditor](http://www.wangeditor.com/)`富文本编辑器`
+- [ckeditor](https://ckeditor.com/)`开源中国在用的富文本编辑器`
+    - [github地址](https://github.com/ckeditor/ckeditor-dev)
 

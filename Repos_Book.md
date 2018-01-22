@@ -11,7 +11,7 @@
         - [Java8](#java8)
         - [框架以及高级特性](#框架以及高级特性)
         - [二次框架](#二次框架)
-        - [高效](#高效)
+        - [进阶](#进阶)
         - [Demo](#demo)
             - [微服务](#微服务)
         - [Android](#android)
@@ -27,6 +27,8 @@
     - [【Linux】](#linux)
     - [Database](#database)
     - [前端](#前端)
+        - [资源仓库](#资源仓库)
+            - [字体](#字体)
     - [Tools](#tools)
         - [微信相关](#微信相关)
     - [其他](#其他)
@@ -44,6 +46,8 @@
 
 # 【Organization】
 - [ApacheCN](https://github.com/apachecn)`含有一些学习的文档和视频资料`
+- [稀土](https://github.com/xitu) `掘金的组织`
+- [docker-library](https://github.com/docker-library)`docker仓库组织,含有大量软件的Dockerfile`
 
 # 【GitRepos】
 > 收集的一些优秀的git仓库 
@@ -72,9 +76,12 @@
 
 ## 翻译和搬运
 - [translations](https://github.com/oldratlee/translations)`翻译外国的文章`
+- [掘金翻译计划](https://github.com/xitu/gold-miner)
 
 *******************************************
 ## 【算法】
+- [魏楚阳的算法学习](https://github.com/brianway/algorithms-learning)
+- [interview](https://github.com/kdn251/interviews)`面试所需算法练习`
 
 ## 【Java】
 ### 源码学习
@@ -86,7 +93,9 @@
 - [java8指南](https://github.com/winterbe/java8-tutorial)
 
 ### 框架以及高级特性
-- [Jfinal](https://gitee.com/jfinal/jfinal)
+- [Jfinal](https://gitee.com/jfinal/jfinal) `简洁`
+- [act](https://gitee.com/actframework/actframework)`MVC全栈框架`
+
 - [okhttp](https://github.com/square/okhttp)`Java上性能较好的HTTP交互工具`
     - [feign](https://github.com/OpenFeign/feign)`Feign makes writing java http clients easier`
 - [druid](https://github.com/alibaba/druid) `阿里数据库连接池`
@@ -104,8 +113,8 @@
 - [jeesite](https://gitee.com/thinkgem/jeesite)`Spring基础构建的maven jsp项目 bootstrap`
 - [Guns](https://gitee.com/naan1993/guns)`基于Springboot开发了大量模块`
 
-### 高效
-- [interview](https://github.com/kdn251/interviews)`面试所需算法练习`
+### 进阶
+- [全栈?](https://github.com/phodal/growth-v2)
 - [Java设计模式](https://github.com/iluwatar/java-design-patterns) `设计模式详解`
 - [编码规范 知乎上的专栏](https://github.com/xwjie/PLMCodeTemplate)`程序员为什么这么累`
 
@@ -123,11 +132,14 @@
 - [shop](https://github.com/lrwinx/shop)`SpringClod的实战案例`
 - [daijie](https://github.com/daijiejay/daijie)`基于spring-cloud系列整合的依赖jar包`
 
+****************
 ### Android 
 - [安卓进阶学习指南](https://github.com/iwannabetop/Awesome-Android-Learning-Guide)
 
+****************
 ### Web
 - [Springboot实战](https://github.com/lianggzone/springboot-action) `Springboot的案例`
+- [weixin-java-tools](https://github.com/chanjarster/weixin-java-tools) `微信的java工具项目 包含企业号 微信支付 小程序`
 - [zheng](https://github.com/shuzheng/zheng) `SSM框架整合的一个丰富解决方案`
 - [Java后台管理](https://github.com/chwshuang/web)`集成Spring4.x+SpringMVC+Mybatis`
 - [java-jwt](https://github.com/auth0/java-jwt)`JSON WEB TOKEN`
@@ -136,14 +148,16 @@
 #### 前后端综合
 - [vue vuex Springboot ](https://github.com/xwjie/ElementVueSpringbootCodeTemplate)`代码模板`
 
+*******************
 ### BuildTool
+- ant maven gradle
 - [sbt](https://github.com/sbt/sbt)
 
+
+************************
 ### Tool
 - [IDEA教程](https://github.com/judasn/IntelliJ-IDEA-Tutorial)
 - [SeleniumHQ](https://github.com/SeleniumHQ/selenium)`自动化测试`
-- [lanproxy](https://github.com/ffay/lanproxy) `将局域网个人电脑、服务器代理到公网的内网穿透工具`
-- [weixin-java-tools](https://github.com/chanjarster/weixin-java-tools) `微信的java工具项目 包含企业号 微信支付 小程序`
 - [Springboot搭建的简易博客](https://github.com/wchstrife/blog)
 - [restfeel](https://github.com/Jason-Chen-2017/restfeel)`一个Rest接口的管理测试平台 陈光剑`
 - [mushroom](https://github.com/wuweiit/mushroom) `基于Java的动态内容管理系统 ` 
@@ -151,7 +165,6 @@
 
 ******************************************************
 ## 【Kotlin】
-
 - [Kotlin For Android](https://github.com/wangjiegulu/kotlin-for-android-developers-zh)
 - [EasyKotlin组织](https://github.com/EasyKotlin)
     - [《Kotlin极简教程》书籍第一章](https://github.com/EasyKotlin/easy_kotlin_chapter_1)
@@ -164,7 +177,6 @@
 - [ui-for-docker](https://github.com/kevana/ui-for-docker) `docker 简单易用图形化`
 - [openjdk](https://github.com/docker-library/openjdk) `openjdk的dockerfile仓库`
 - [docker-alpine-java](https://github.com/anapsix/docker-alpine-java) `java 运行环境 alpine为基础镜像`
-
 
 ### web
 - [webdis](https://github.com/anapsix/docker-webdis) `基于redis构建的使用http请求存取数据`
@@ -185,6 +197,7 @@
 ## 【Linux】
 - [Java程序员眼中的Linux](https://github.com/judasn/Linux-Tutorial)
 
+************
 ## Database
 - [ssdb](https://github.com/ideawu/ssdb) `一个类似redis的键值对数据库`
 
@@ -193,6 +206,12 @@
 - [vue-layui](https://github.com/IBAS0742/vue-layui)`vue和layui的结合`
 - [js代码块集合](https://github.com/Chalarangelo/30-seconds-of-code)
 - [ssr-web](https://github.com/xiaofuzi/ssr-web)`基于vue的静态博客生成器`
+- [flowchart](https://github.com/adrai/flowchart.js)`绘制svg flow图形`
+
+### 资源仓库
+#### 字体
+- [IBM字体](https://github.com/IBM/type)`2017年发布的新字体`
+- [codefont](https://github.com/zhenruyan/codefont)`常用的代码字体`
 
 ***************************************
 ## Tools

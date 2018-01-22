@@ -113,7 +113,6 @@
 - [如何准备校招技术面试](http://blog.csdn.net/h3243212/article/details/78132994)
 
 ## 生活
-
 - [那些拿命换钱的年轻人，换着换着就死了](https://mp.weixin.qq.com/s/ZGDMod70iQMM7O2asx61Eg)
     - [相关书籍](http://www.ituring.com.cn/article/497314)
 - [土木真的没有 IT 行业有前途吗？](https://www.zhihu.com/question/57200773/answer/273681090?group_id=923124272622088192)`每一行都不容易！`

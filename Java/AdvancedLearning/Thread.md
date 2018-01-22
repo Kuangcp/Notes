@@ -24,11 +24,34 @@
 
 ## 线程的意义
 ## 线程的生命周期
-> [参考博客](https://segmentfault.com/a/1190000005006079) | [Blog: 线程详解](http://www.cnblogs.com/riskyer/p/3263032.html)
+> [参考博客](https://segmentfault.com/a/1190000005006079) | [Blog: 线程详解](http://www.cnblogs.com/riskyer/p/3263032.html) | [参考Java-learning仓库](https://github.com/brianway/java-learning)
 
 
 ### 创建
-- 创建线程有三种创建方式： 继承，实现接口，实例化匿名内部方法。[示例代码](https://github.com/Kuangcp/JavaBase/blob/master/src/main/java/com/threads/HowToCreateThread.java)
+- 创建线程有三种创建方式： 继承，实现接口，实例化匿名内部方法。-> [示例代码](https://github.com/Kuangcp/JavaBase/blob/master/src/main/java/com/threads/HowToCreateThread.java)
+
+> 查看Thread类源码 看看Thread类源码，捋清Runnable，target,run,start关系
+- Runnable是一个接口
+- target是Thread类中类型为Runnable，名为target的属性
+- run是Thread类实现了Runnable的接口，重写的方法。
+- start是启动线程的方法
+- 在Thread类中，调用关系为：_start->start0->run->target.run_
+
+_Thread类的run方法源码_
+```java
+    public void run() {
+        if (target != null) {
+            target.run();
+        }
+    }
+```
+_Thread类的target属性_
+```java
+    /* What will be run. */
+    private Runnable target;
+```
+- target属性由 `private void init(ThreadGroup g, Runnable target, String name,long stackSize, AccessControlContext acc)`方法初始化。
+    - init方法在Thread类的构造方法里被调用
 
 ### 控制
 - 当调用 `Thread.join()` 时，_调用线程_将阻塞，直到_目标线程_完成为止。 

@@ -96,10 +96,20 @@
 - 拉取更新 ：`git fetch 名称`
 
 #### 【git push】
+
+- _常用参数_
+    - `-h` 查看所有参数和说明
+    - `-f` 强制
+    - `--all` 推送所有引用
+    - `-u` upstream 设置 git pull/status 的上游
+    - `-d` 删除引用
+    - `--tags` 推送标签（不能使用 --all or --mirror）
+
 - 出现 `RPC failed; result=22, HTTP code = 411` 的错误
     - 就是因为一次提交的文件太大，需要改大缓冲区 例如改成500m  `git config http.postBuffer 524288000`
-- 提交本地所有分支 `git push --all` pull 同理
-- 第一次与远程建立连接 `git push -u origin master ` | `git push --set-uptream master` | `git push -all` 
+- 提交本地所有分支 `git push --all` pull时同理
+- _第一次与远程建立连接_
+    - `git push -u origin master ` | `git push --set-uptream master` | `git push -all` 
     - 这几个都是可以的,最后那个简单, 还能将别的分支一起推上去
 
 #### 【git rebase】
