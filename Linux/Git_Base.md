@@ -103,6 +103,8 @@
     - `-f` 强制
     - `--all` 推送所有引用
     - `-u` upstream 设置 git pull/status 的上游
+        - `git push origin master`和`git push -u origin master` 区别在于 前者是使用该远程和分支进行推送
+        - 后者也是推送, 并设置origin为默认推送的远程, 以后push就不用注明远程名了(多远程的情况下要注意)
     - `-d` 删除引用
     - `--tags` 推送标签（不能使用 --all or --mirror）
 

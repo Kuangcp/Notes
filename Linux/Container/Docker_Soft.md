@@ -63,7 +63,8 @@
 - 最好是一个服务（应用）一个容器
 
 **********
-- 自己写构建文件，安装相应的软件
+TODO  日后更新, Dockerfile现在还有bug
+- 自己写构建文件，安装相应的软件 
 ```Dockerfile
     FROM ubuntu
     MAINTAINER kuangcp myth.kuang@gmail.com
@@ -72,10 +73,11 @@
 
     ADD id_rsa.pub /root/.ssh/authorized_keys
 
-    RUN apt-get update; 
-    RUN apt-get install -y apt-utils debconf-utils iputils-ping wget curl mc htop ssh; 
-    RUN chmod 700 /root/.ssh; chmod 600 /root/.ssh/authorized_keys;
-    RUN service ssh start
+    RUN apt-get update; \
+        apt-get install -y apt-utils debconf-utils iputils-ping wget curl mc htop ssh; \ 
+        chmod 700 /root/.ssh; \
+        chmod 600 /root/.ssh/authorized_keys; \
+        service ssh start; \ 
     EXPOSE 22
 ```
 - `docker build . -t myth:ssh`
