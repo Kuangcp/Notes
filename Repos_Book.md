@@ -227,6 +227,7 @@
 
 ## 其他
 - [HelloGibhub](https://github.com/521xueweihan/HelloGitHub)`有趣的项目`
+- [serverless](https://github.com/phodal/serverless)`serverless学习手册`
 
 ## 工作
 ### 简历

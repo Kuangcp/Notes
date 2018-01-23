@@ -38,3 +38,8 @@
 - 常见编码转换
     - 一般Windows文件默认编码：`str = new String(str.getBytes("iso8859-1"), "gb2312"); ` 
     - properties文件中获取中文 `str = new String(str.getBytes("utf-8"), "utf-8");`
+
+
+*************************
+# 关键字
+

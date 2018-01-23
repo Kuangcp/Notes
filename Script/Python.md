@@ -583,6 +583,7 @@ sudo apt install libfreetype6-dev g++
         return str(sub.returncode)
 ```
 
+- [python-excel](http://www.python-excel.org/)
 ********************
 ## QT
 - 在Terminal中输入:sudo apt-get install qt4-dev-tools qt4-doc qt4-qtconfig qt4-demos qt4-designer
