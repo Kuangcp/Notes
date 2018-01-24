@@ -34,6 +34,7 @@
 - [Java和Vue前后端](http://blog.exrick.cn/)
 - [程序员DD](http://blog.didispace.com/)`翟永超`
 - [Web程序猿](https://imququ.com/)
+- [letus.club](http://letus.club/)
 
 # 【博客社区】
 - [http://www.importnew.com](http://www.importnew.com)`小众?`

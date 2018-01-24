@@ -38,6 +38,8 @@
 `目录 end` *目录创建于2018-01-21*
 ****************************************
 # Redis
+> [Redis教程](http://www.runoob.com/redis/redis-tutorial.html)
+
 ## 【windows上的基本配置】
 - 注册为服务
 	- `redis-server --service-install redis.windows.conf --loglevel verbose`
@@ -48,6 +50,13 @@
 	- 客户端登录 `auth redis1104`
 
 ## Linux下的使用
+
+### 命令安装
+- 安装 `apt install redis`
+- 开启数据库服务 `redis-server`
+- 打开客户端 `redis-cli`
+
+### 解压即用
 - 下载源码，执行`make`进行编译，编译完成后，复制src目录中的`redis-cli redis-server`就可以用了，redis-benchmark可选，测性能
     - 再复制下面的简化配置文件，或者使用源码中根目录下的配置文件自己配置下
     - [简化配置文件](https://raw.githubusercontent.com/Kuangcp/Configs/master/Database/redis/simple_redis.conf)

@@ -106,7 +106,7 @@ server {
 - 重启sudo `nginx -s reload`
 
 #### 配置https
-> 参考博客 [nginx搭建https服务](http://www.cnblogs.com/tintin1926/archive/2012/07/12/2587311.html) | [nginx https](http://letus.club/2016/04/08/nginx-http2-letsencrypt/)
+> 参考博客 [nginx搭建https服务](http://www.cnblogs.com/tintin1926/archive/2012/07/12/2587311.html) | [nginx http/2](http://letus.club/2016/04/08/nginx-http2-letsencrypt/)
 
 - 先签发证书 `命令运行`
 ```sh

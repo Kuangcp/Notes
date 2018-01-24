@@ -89,6 +89,9 @@ TODO  日后更新, Dockerfile现在还有bug
 - [alpine-ssh](/Linux/Docker/alpine/alpine-ssh) 
     - 也可以使用百度云镜像 `docker pull hub.baidubce.com/mythos/alpine-ssh:1.0`
 
+## Centos-ssh
+- [centos-ssh](https://github.com/jingniao/centos-ssh)
+
 ***********
 ## git服务器
 ### 简易git-daemon
