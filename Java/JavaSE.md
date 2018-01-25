@@ -4,8 +4,9 @@
 - [JavaSE](#javase)
     - [基础](#基础)
     - [深入](#深入)
+    - [抽象](#抽象)
 
-`目录 end` *目录创建于2018-01-22* | 更多: [CSDN](http://blog.csdn.net/kcp606) | [oschina](https://my.oschina.net/kcp1104) | [码云](https://gitee.com/kcp1104) 
+`目录 end` *目录创建于2018-01-25* | 更多: [CSDN](http://blog.csdn.net/kcp606) | [oschina](https://my.oschina.net/kcp1104) | [码云](https://gitee.com/kcp1104) 
 ****************************************
 
 # 编程基础
@@ -45,4 +46,8 @@
     > [最近版本的特性](/Java/AdvancedLearning/Update.md)  
     > [Java性能调优](/Java/AdvancedLearning/JavaPerformance.md)  
     > [Web性能调优](/Java/AdvancedLearning/WebPerformance.md)  
+
+## 抽象
+- 
     > [编程思想](/Java/AdvancedLearning/ProgramThinking.md)  
+    > [模式之禅](/Java/模式之禅.md)

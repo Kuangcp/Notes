@@ -41,7 +41,7 @@
     - [前端](#前端)
     - [Docker](#docker)
 
-`目录 end` *目录创建于2018-01-22* | 更多: [CSDN](http://blog.csdn.net/kcp606) | [oschina](https://my.oschina.net/kcp1104) | [码云](https://gitee.com/kcp1104) 
+`目录 end` *目录创建于2018-01-25* | 更多: [CSDN](http://blog.csdn.net/kcp606) | [oschina](https://my.oschina.net/kcp1104) | [码云](https://gitee.com/kcp1104) 
 ****************************************
 
 # 【Organization】
@@ -91,6 +91,7 @@
 - [little-java-functions](https://github.com/shekhargulati/little-java-functions)`Java8的函数式编程`
     - [作者博客](https://shekhargulati.com/)
 - [java8指南](https://github.com/winterbe/java8-tutorial)
+- [vavr](https://github.com/vavr-io/vavr)`基于Java8的库, 简化代码`
 
 ### 框架以及高级特性
 - [Jfinal](https://gitee.com/jfinal/jfinal) `简洁`
