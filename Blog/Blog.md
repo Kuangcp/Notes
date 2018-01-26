@@ -52,7 +52,13 @@
 - [赵劼](http://www.cnblogs.com/JeffreyZhao/) `对函数式编程，并行程序开发，代码之美以及程序员能力与修养等相关问题`
 - [进击的Java新人](https://zhuanlan.zhihu.com/hinus)
 - [Java知音](http://blog.csdn.net/sky_blue12321)`较多面试题`
+- [拭心](http://my.csdn.net/u011240877)`安卓大佬`
 
+************************
+## 专栏
+- [CSDN 知识林](http://blog.csdn.net/zsl129)
+- [三分钟教你学Git](http://blog.csdn.net/column/details/13149.html)
+- [设计模式](http://blog.csdn.net/column/details/zsxdesignpattern.html)
 ****************************************
 # 【Blog】
 
@@ -85,8 +91,6 @@
 - [码农翻身:这个动物园， 两年也逛不完](https://mp.weixin.qq.com/s?__biz=MzAxOTc0NzExNg==&mid=2665513596&idx=1&sn=558756b6fa77c7a86370f41fa7cde732&chksm=80d67a3fb7a1f329bfb3bfa9a3eb07ae21b19501cb895a0754c18ffbe26bf92029d6266f1845&scene=21#wechat_redirect)
 - [谁将会杀死 Java？](http://www.codeceo.com/article/what-will-kill-java.html)
 
-## 专栏
-- [CSDN 知识林](http://blog.csdn.net/zsl129)
 
 ***************
 ## 操作系统
@@ -123,6 +127,8 @@
 - [那些拿命换钱的年轻人，换着换着就死了](https://mp.weixin.qq.com/s/ZGDMod70iQMM7O2asx61Eg)
     - [相关书籍](http://www.ituring.com.cn/article/497314)
 - [土木真的没有 IT 行业有前途吗？](https://www.zhihu.com/question/57200773/answer/273681090?group_id=923124272622088192)`每一行都不容易！`
+
+- [我的 2017 ：追逐更好未来的一年 ](http://blog.csdn.net/u011240877/article/details/78967014)
 
 ## 商业
 - [都说在做某界的 Airbnb，Airbnb 到底做了什么](http://daily.zhihu.com/story/4826947)

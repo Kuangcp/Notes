@@ -132,6 +132,15 @@
 - `git log --after='2016-03-23 9:20' --before='2017-05-10 12:00' ` 输出指定日期的日志
 - `git shortlog` 按字母顺序输出每个人的日志 加上`--numbered` 参数就是按提交数排序
 
+##### 对比两个分支的差异
+> [参考博客](http://blog.csdn.net/u011240877/article/details/52586664)
+
+- 查看 dev 有，而 master 中没有的 `git log dev ^master` 反之 `git log master ^dev`
+- 查看 dev 中比 master 中多提交了哪些内容：`git log master..dev`
+- 不知道谁提交的多谁提交的少，单纯想知道有什么不一样：`git log dev...master`
+- 在上述情况下，再显示出每个提交是在哪个分支上:`git log --left-right dev...master`
+    - 注意 commit 后面的箭头，根据我们在 –left-right dev…master 的顺序，左箭头 < 表示是 dev 的，右箭头 > 表示是 master的。
+
 #### 【git tag】
 - [官方文档](https://git-scm.com/docs/git-tag/2.10.2)
 - `git tag` 查看所有标签
@@ -153,7 +162,8 @@
 - `git clone URL 目录` 克隆下来后更名为指定目录
 
 #### 【git checkout】
-- [官方文档](https://git-scm.com/docs/git-checkout)
+> [官方文档](https://git-scm.com/docs/git-checkout)
+
 - `git checkout 文件名 文件名` git会在索引中找文件，有就取出，没有就从最新的commit回找，取出第一个找到的版本，
     - 每个文件都是这样，也就是说如果有被删除的文件，是可以通过此来找回的
     - `git checkout . `取出文档库中所有文件的最新版本
@@ -163,7 +173,13 @@
 - `git pull --all` 下拉远程所有的分支到本地
 
 #### 【git fetch】
-- `git fetch origin dev-test` 下拉远程的分支新建到本地（本地没有）
+- `git fetch origin dev-test` 下拉指定远程的指定分支到本地, 本地没有就会自动新建
+- `git fetch --all` 下拉默认远程的所有分支的代码
+
+#### 【git pull】
+> 不仅仅是下拉代码, 还会进行merge合并, 所以安全起见, 是先fetch然后再进行合并操作  
+- `git pull origin dev` 下拉指定远程的指定分支
+- `git pull --all` 下拉默认远程的所有分支代码并自动合并
 
 #### 开发流程的常用分支操作
 - 一般的开发过程中会使用到三种临时分支（用完就删）和两个主分支 master develop

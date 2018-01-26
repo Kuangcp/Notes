@@ -31,17 +31,15 @@
 - `mkdir test && cd test && touch Dockerfile ` 输入如下文本
 ```Dockerfile
     #随意写的
-    FROM redis
+    FROM alpine
     MAINTAINER Mythos
     ENV DIRPATH /path
     WORKDIR $DIRPATH/$DIRNAME
     RUN pwd
 ```
-- `docker build .` 如果成功则会得到一个没有名字的镜像
-    - `docker build -t repository/tag .` 给镜像指定名字
-    - 如果文件名是`Dockerfile` 使用 `.` 
-    - 否则就是 `docker build -t 仓库/镜像:tag- < 文件`
-- 创建镜像成功后 `docker run --name ContainerName -d repository/tag` 新建容器来运行镜像
+- `docker build .` 如果成功则会得到一个没有名字的镜像 `none:none`
+    - `docker build -t image:tag .` 给镜像指定名字, 注意标签不设置就是默认的latest
+- 创建镜像成功后 `docker run --name ContainerName -d image:tag` 新建容器来运行镜像
 
 *******************************************************************
 ## 【Dockerfile命令理解】
@@ -51,11 +49,13 @@
     - 因为生成过程的第一件事是将整个上下文 (递归) 发送到守护进程。
 - 同样的可以使用`.dockerignore`文件来忽略不要上传的文件
 - `docker build` 
-    - `-f` 指向任意位置的文件进行配置 `docker build -f /path/to/a/Dockerfile .`
-    - `-t`如果构建成功 可以指定保存新镜像的repository和tag (多个的话就多个 -t就行了，例如 `docker build -t shykes/myapp:1.0.2 -t shykes/myapp:latest .`)
+    - 如果文件名是默认的`Dockerfile` 就使用 `.` 
+        - 否则就是 `docker build -t image:tag- < 文件名` 或者使用-f参数:
+        - `-f` 指向任意位置的文件进行配置 `docker build -f /path/to/a/Dockerfile .`
+    - `-t`如果构建成功 可以指定保存新镜像的image和tag (多个的话就多个 -t就行了，例如 `docker build -t shykes/myapp:1.0.2 -t shykes/myapp:latest .`)
 
 ### FROM
-> 基于某镜像构建,这是整个文件的第一条指令，一定是基于某镜像构建的，如果是空镜像就使用特殊的 `FROM scratch` <br/>
+> 基于某镜像构建,这是整个文件的第一条指令，一定是基于某镜像构建的，如果是空镜像就使用特殊的 `FROM scratch`  
 > 允许多个FROM命令，其后的命令就是基于该FROM的镜像构建的，但是一个dockerfile只能得到一个有名字的镜像(最后一个FROM构建的镜像)，之前的FROM就是none:none
 
 - `FROM image`
@@ -184,13 +184,13 @@
 
 ### 打包最新版git
 ```Dockerfile
-FROM ubuntu
-MAINTAINER "youtemail"
-RUN apt-get update
-RUN apt-get install -ysoftware-properties-common
-RUN add-apt-repository ppa:git-core/ppa
-RUN apt-get update && apt-get install -y git
-ENTRYPOINT ["git"]
+    FROM ubuntu
+    MAINTAINER "youtemail"
+    RUN apt-get update
+    RUN apt-get install -ysoftware-properties-common
+    RUN add-apt-repository ppa:git-core/ppa
+    RUN apt-get update && apt-get install -y git
+    ENTRYPOINT ["git"]
 ```
 - 构建镜像`docker build -t git:new .`
 - 将镜像容器化执行命令后自动删除容器`docker run --rm git:new`
@@ -199,8 +199,8 @@ ENTRYPOINT ["git"]
 
 ### Dockerfile中新建用户
 ```Dockerfile
-RUN useradd -ms /bin/bash mythos;\
-    echo "mythos:jiushi" | chpasswd;
-USER mythos
-WORKDIR /home/mythos
+    RUN useradd -ms /bin/bash mythos;\
+        echo "mythos:jiushi" | chpasswd;
+    USER mythos
+    WORKDIR /home/mythos
 ```
