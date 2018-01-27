@@ -118,8 +118,12 @@
     - 这几个都是可以的,最后那个简单, 还能将别的分支一起推上去
 
 #### 【git rebase】
+> 衍和操作 [参考博客](http://blog.csdn.net/endlu/article/details/51605861) | 
+> [Git rebase -i 交互变基](http://blog.csdn.net/zwlove5280/article/details/46649799) | 
+> [git rebase的原理之多人合作分支管理](http://blog.csdn.net/zwlove5280/article/details/46708969)    
+> 他会将分支中的圈, 消除掉, 成为线性结构
 
-- 效果和merge差不多，但是分支图更清晰 TODO 有待详细学习
+- 效果和merge差不多，但是分支图更清晰?TODO 有待详细学习
 - 与master合并：`git merge master` 换成 `git rebase master`
 - 当遇到冲突：
     - `git rebase --abort` 放弃rebase
@@ -157,6 +161,8 @@
 
 ******
 ### 分支操作
+> [stash的争论](http://www.cppblog.com/deercoder/archive/2011/11/13/160007.html)
+
 #### 【git clone】
 - `git clone branchname URL` 克隆指定分支
 - `git clone URL 目录` 克隆下来后更名为指定目录

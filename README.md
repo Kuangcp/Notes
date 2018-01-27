@@ -1,4 +1,5 @@
-[CSDN博客](http://blog.csdn.net/kcp606) | [Gitbook](https://kuangcp.gitbooks.io/notes/) | [笔记目录](./SUMMARY.md) | [Java笔记整理](./Java/JavaSE.md)
+[码云](https://gitee.com/kcp1104) | [CSDN博客](http://blog.csdn.net/kcp606) | [Gitbook](https://kuangcp.gitbooks.io/notes/) | [笔记目录](./SUMMARY.md) | [Java笔记整理](./Java/JavaSE.md) | 
+[![Build Status](https://www.gitbook.io/button/status/book/kuangcp/notes)](https://www.gitbook.io/book/kuangcp/notes/details)
 
 ## 2016.08.11 新的开始
 - 这是用来记录我的笔记的仓库，用上git来管理，促使我熟悉git命令，习惯记录电子笔记
@@ -59,7 +60,7 @@
 - [知乎问题:为什么小土刀能读那么多书写那么多文章？](https://www.zhihu.com/question/47788269)
     - [小土刀博客](http://wdxtub.com/thanks/)
 
-![学习效率](https://raw.githubusercontent.com/Kuangcp/ImageRepos/master/Learn/learn_rate.webq)
+![学习效率](https://raw.githubusercontent.com/Kuangcp/ImageRepos/master/Learn/learn_rate.jpg)
 
 ### 为什么写作
 > 来源 [码农翻身:对自己狠一点，开始写作吧](http://mp.weixin.qq.com/s/-bXP2jAcz8M1c9-nElOsJA) | [码农翻身:如何维护一个好的技术博客？](https://mp.weixin.qq.com/s?__biz=MzAxOTc0NzExNg==&mid=2665514310&idx=1&sn=230943ac36182c2ea5ca28317de3cb91&pass_ticket=kdzjNNRKN8g5Hs0IYC80YNed%2BLsTG5wDteQuZ1qoW%2F8bwio%2BGiEUdcisaIoKv4ua)

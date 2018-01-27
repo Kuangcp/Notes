@@ -321,7 +321,26 @@
 
 **************************************************
 #### 必备插件
-- `Saka Key` 快捷键神器 大幅度脱离鼠标
+- `Saka Key` 快捷键神器 大幅度脱离鼠标 [官方文档](https://key.saka.io/)
+    - 浏览器默认: 脱离输入框焦点 _Esc_ | 切换标签 _ctrl-Tab_  _shift-ctrl-Tab_ | 关闭标签 _ctrl-w_
+    - 滑动: 下滑 `d/j` 上滑 `s/k `
+        - 上下滑半屏幕 `Shift d/s` | 上下滑全屏 `Shift j/k` 
+        - 滑到底/顶 `Shift-g` / `gg`
+        - 滑左/右 `alt-s or alt-k` / `alt-d or alt-j`
+    - 缩放: 放大/缩小 `z/shift-z` | 重置大小 `shift-alt-z`
+    - 前进/后退: `cc/vv` | 跳上级URL `uu` | 跳URL域名 `u shift-u`
+    - 标签页: 新建 `t` | 恢复关闭 `shift t` | 复制 `b`
+        - 关闭 `xx` | 关闭其他 `x shift x` | 关闭左边 `x [` | 关闭右边 `x ]`
+        - 刷新 `rr` | 刷新全部标签 `r shift r` | 深度刷新 `shift r shift r `
+        - 切换: 左右 `q/w` 或者 `[/]` | 第一个/最后一个 `1/0`或者`shift-q`/`shift-w or 0 `
+        - 移动: 左右 `i/o` 或者 `shift-[` / `shift-]` 第一个/最后一个 `shift-i/shift-o` 或者 `alt-[/alt-]`
+        - 静音: `m` 静音所有标签 `shift-m`
+    - 窗口: 新建 `n` | 新建隐私 `shift n`
+    - 页面上所有页面链接 `ff` _神操作_ [文档](https://key.saka.io/tutorial/clicking_and_link_hints)
+    - 传递快捷键即绕过插件的事件监听 `;` [文档](https://key.saka.io/tutorial/pass_keys)
+    - [剪贴板](https://key.saka.io/tutorial/clipboard): 复制当前页面的URL:`yy`
+        - 当前标签页打开链接 `yf`| 后台打开 `yb` | 新窗口打开 `yn` | 隐私窗口 `y shift-n`
+
 - `FoxyTab`
 - `New Tab Tools` 新建标签页的自定义工具 有一定bug
 - `cliget` 能将下载中的任务转化为 curl wget命令
