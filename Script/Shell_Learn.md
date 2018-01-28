@@ -22,24 +22,26 @@
         - [循环](#循环)
     - [函数](#函数)
 
-`目录 end` *目录创建于2018-01-19*
+`目录 end` *目录创建于2018-01-27* | 更多: [CSDN](http://blog.csdn.net/kcp606) | [oschina](https://my.oschina.net/kcp1104) | [码云](https://gitee.com/kcp1104) 
 ****************************************
 # 学习Shell
 > 首先语法不像别的语言可读性好，比如Python，然后方言众多，学习比Python2，3还恶心
 
 ## shell类别
-sh
-bash
-zsh
-dash
-fish
+- sh
+  - 大多Linux都支持的shell类别
+- bash
+- zsh
+- dash
+  - 它主要是为了执行脚本而出现，而不是交互，它速度更快，但功能相比bash要少很多，语法严格遵守POSIX标准
+  - 速度确实要快,输入上的交互确实交互不了
+- fish
 
 ## Tips
 
 - 获取当前shell绝对路径 `basepath=$(cd `dirname $0`; pwd)`
 - 正则：`expr match "$i" ".*变更"`
-- 命令嵌套 只要在 命令中用 ``将子命令包住即可
-- 关于以下的脚本命令, 都会注明是bash还是sh还是别的什么
+- 命令嵌套 只要在 命令中用 两个反引号 `` 将子命令包住即可
 
 *******************
 ## 执行
@@ -104,9 +106,9 @@ fish
 
 `字符串的包含问题`
 ```sh
-
   isGithub=`expr match "$line" ".*"$2`
-
+  # 简单的就是使用grep
+  isGithub=`echo $line | grep "github" `
 ```
 
 `求长`

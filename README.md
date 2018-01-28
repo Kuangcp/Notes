@@ -1,5 +1,6 @@
-[码云](https://gitee.com/kcp1104) | [CSDN博客](http://blog.csdn.net/kcp606) | [Gitbook](https://kuangcp.gitbooks.io/notes/) | [笔记目录](./SUMMARY.md) | [Java笔记整理](./Java/JavaSE.md) | 
 [![Build Status](https://www.gitbook.io/button/status/book/kuangcp/notes)](https://www.gitbook.io/book/kuangcp/notes/details)
+ | [码云](https://gitee.com/kcp1104) | [CSDN博客](http://blog.csdn.net/kcp606) | [Gitbook](https://kuangcp.gitbooks.io/notes/) | [笔记目录](./SUMMARY.md) | [Java笔记整理](./Java/JavaSE.md)
+
 
 ## 2016.08.11 新的开始
 - 这是用来记录我的笔记的仓库，用上git来管理，促使我熟悉git命令，习惯记录电子笔记

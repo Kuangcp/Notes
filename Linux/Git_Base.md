@@ -7,15 +7,18 @@
             - [【git config】](#git-config)
             - [【git commit】](#git-commit)
             - [【git remote】](#git-remote)
+            - [【git show】](#git-show)
             - [【fork 相关操作】](#fork-相关操作)
             - [【git push】](#git-push)
             - [【git rebase】](#git-rebase)
             - [【git log】](#git-log)
+                - [对比两个分支的差异](#对比两个分支的差异)
             - [【git tag】](#git-tag)
         - [分支操作](#分支操作)
             - [【git clone】](#git-clone)
             - [【git checkout】](#git-checkout)
             - [【git fetch】](#git-fetch)
+            - [【git pull】](#git-pull)
             - [开发流程的常用分支操作](#开发流程的常用分支操作)
             - [【git merge】](#git-merge)
             - [【git grep 】](#git-grep-)
@@ -24,7 +27,7 @@
         - [SVN](#svn)
     - [repos的使用](#repos的使用)
 
-`目录 end` *目录创建于2018-01-22* | 更多: [CSDN](http://blog.csdn.net/kcp606) | [oschina](https://my.oschina.net/kcp1104) | [码云](https://gitee.com/kcp1104) 
+`目录 end` *目录创建于2018-01-27* | 更多: [CSDN](http://blog.csdn.net/kcp606) | [oschina](https://my.oschina.net/kcp1104) | [码云](https://gitee.com/kcp1104) 
 ****************************************
 # Git基础
 ## 版本控制系统(VCS)
@@ -90,6 +93,12 @@
 
 *******
 - [删除，重命名远程分支](http://zengrong.net/post/1746.htm)
+
+#### 【git show】
+> 展示提交信息
+
+- 显示当前提交的差异 `git show HEAD` HEAD替换成commit的sha值就是显示指定提交的修改
+- `git show -h` 查看更多
 
 #### 【fork 相关操作】
 - fork之后，想要更新原作者的分支：`git remote add 名称 原作者URL`
