@@ -12,7 +12,7 @@
         - [Picked up _JAVA_OPTIONS: -Dawt.useSystemAAFontSettings=gasp](#picked-up-_java_options--dawtusesystemaafontsettings=gasp)
         - [联想G4070 安装 deepin 15.4.1 显卡兼容失败（15.4还能正常用）](#联想g4070-安装-deepin-1541-显卡兼容失败（154还能正常用）)
 
-`目录 end` *目录创建于2018-01-14*
+`目录 end` *目录创建于2018-01-28* | 更多: [CSDN](http://blog.csdn.net/kcp606) | [oschina](https://my.oschina.net/kcp1104) | [码云](https://gitee.com/kcp1104) 
 ****************************************
 # 在Linux上配置Java环境
 ## 配置JDK

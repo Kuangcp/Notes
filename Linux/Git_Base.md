@@ -3,14 +3,15 @@
 - [Git基础](#git基础)
     - [版本控制系统(VCS)](#版本控制系统vcs)
     - [Git常用命令](#git常用命令)
-            - [【Tips】](#tips)
+        - [【Tips】](#tips)
+            - [清理仓库](#清理仓库)
+            - [【fork 相关操作】](#fork-相关操作)
+        - [仓库基本命令](#仓库基本命令)
             - [【git config】](#git-config)
             - [【git commit】](#git-commit)
             - [【git remote】](#git-remote)
             - [【git show】](#git-show)
-            - [【fork 相关操作】](#fork-相关操作)
             - [【git push】](#git-push)
-            - [【git rebase】](#git-rebase)
             - [【git log】](#git-log)
                 - [对比两个分支的差异](#对比两个分支的差异)
             - [【git tag】](#git-tag)
@@ -21,13 +22,14 @@
             - [【git pull】](#git-pull)
             - [开发流程的常用分支操作](#开发流程的常用分支操作)
             - [【git merge】](#git-merge)
+            - [【git rebase】](#git-rebase)
             - [【git grep 】](#git-grep-)
     - [CVS工具的区别以及优缺点](#cvs工具的区别以及优缺点)
         - [Git](#git)
         - [SVN](#svn)
     - [repos的使用](#repos的使用)
 
-`目录 end` *目录创建于2018-01-27* | 更多: [CSDN](http://blog.csdn.net/kcp606) | [oschina](https://my.oschina.net/kcp1104) | [码云](https://gitee.com/kcp1104) 
+`目录 end` *目录创建于2018-01-29* | 更多: [CSDN](http://blog.csdn.net/kcp606) | [oschina](https://my.oschina.net/kcp1104) | [码云](https://gitee.com/kcp1104) 
 ****************************************
 # Git基础
 ## 版本控制系统(VCS)
@@ -37,21 +39,17 @@
 > [Git官网中文教程](https://git-scm.com/book/zh/v2)  
 > [git-tips](https://github.com/521xueweihan/git-tips)`学习Git的仓库`
 
-#### 【Tips】
+### 【Tips】
 - `git ls-files` 列出文件列表
     - `git ls-files | xargs wc -l` 计算文件中程序代码行数 通过工具：`xargs` `wc` (中文命名的文件编码问题无法计算行数)
     - `git ls-files | xargs cat | wc -l` 计算行数总和
-        - `|` 表示前一个命令的输出作为下一个命令的输入 【流】
 
-******
-`清理仓库`
+### 清理仓库
+> [参考博客1 彻底删除](http://www.itwendao.com/article/detail/413282.html) | [参考博客2 彻底删除](http://blog.csdn.net/meteor1113/article/details/4407209) | [参考博客3 删除大文件](http://www.gzhphb.com/article/78/784131.html) | [参考博客4 减小磁盘占用](http://zhongmingmao.me/2017/04/19/git-reduce/)
+
 - 因为删除的文件是会留在仓库，以便以后恢复，这样的话仓库就会越来越大了
 - `git gc` 清理，不知道有没有用
 - 强制删除，并且从git索引中也去掉，相当于彻底删除 
-    - [参考博客1 彻底删除](http://www.itwendao.com/article/detail/413282.html) 
-    - [参考博客2 彻底删除](http://blog.csdn.net/meteor1113/article/details/4407209)
-    - [参考博客3 删除大文件](http://www.gzhphb.com/article/78/784131.html)
-    - [参考博客4 减小磁盘占用](http://zhongmingmao.me/2017/04/19/git-reduce/)
     - `git filter-branch --force --index-filter 'git rm --cached --ignore-unmatch 文件的路径' --prune-empty --tag-name-filter cat -- --all`
     - `git push origin --force --all`
     - `git push origin --force --tags`
@@ -60,13 +58,30 @@
 - 然而，因为这个笔记仓库，改动太多，之前加入的图片文件，删除之前也改动了名字，现在根本找不到文件了， 删除不了了，如果要减小仓库大小只能重建了
 - 猜测他的文件都在 `.git/objects/pack/` 里留有备份
 
-- 使用`git rm` 命令进行删除文件应该是会彻底删除文件的
+#### 【git gc】
+`git gc -h`:
+- `--aggressive` 默认使用较快速的方式检查文档库,并完成清理,当需要比较久的时间,偶尔使用即可
+- `--prune[=<日期>]` 清除未引用的对
+- `--auto` 启用自动垃圾回收模式
+- `--force` 强制执行 gc 即使另外一个 gc 正在执行
+
+#### 【fork 相关操作】
+- fork之后，想要更新原作者的分支：`git remote add 名称 原作者URL`
+- 拉取更新 ：`git fetch 名称`
+
 ****************
+### 仓库基本命令
 #### 【git config】
 - `git config user.email ***`  和   `git config user.name ***` 这两个是必须的，
     - 如果想统一配置不想每个仓库单独配置就 `git config --global user.name` email同理
 - `git config http.postBuffer 524288000` 设置缓存区大小为 500m
 - `git config core.fileMode false` 忽略文件的mode变化，一般发生在文件的复制粘贴之后（跨系统?）
+#### 【git rm】
+> 相当于rm 文件, 然后add进缓存区
+
+- 删除文件 `git rm 文件`
+- 从git仓库中删除文件, 但是文件系统中保留文件 `git rm --cached 文件`
+    - 如果仅仅是想从仓库中剔除, 那么执行完命令还要在 .gitignore文件中注明, 不然又add回去了
 
 #### 【git commit】
 - [官方文档](https://git-scm.com/docs/git-commit)
@@ -100,10 +115,6 @@
 - 显示当前提交的差异 `git show HEAD` HEAD替换成commit的sha值就是显示指定提交的修改
 - `git show -h` 查看更多
 
-#### 【fork 相关操作】
-- fork之后，想要更新原作者的分支：`git remote add 名称 原作者URL`
-- 拉取更新 ：`git fetch 名称`
-
 #### 【git push】
 
 - _常用参数_
@@ -126,17 +137,6 @@
     - `git push -u origin master ` | `git push --set-uptream master` | `git push -all` 
     - 这几个都是可以的,最后那个简单, 还能将别的分支一起推上去
 
-#### 【git rebase】
-> 衍和操作 [参考博客](http://blog.csdn.net/endlu/article/details/51605861) | 
-> [Git rebase -i 交互变基](http://blog.csdn.net/zwlove5280/article/details/46649799) | 
-> [git rebase的原理之多人合作分支管理](http://blog.csdn.net/zwlove5280/article/details/46708969)    
-> 他会将分支中的圈, 消除掉, 成为线性结构
-
-- 效果和merge差不多，但是分支图更清晰?TODO 有待详细学习
-- 与master合并：`git merge master` 换成 `git rebase master`
-- 当遇到冲突：
-    - `git rebase --abort` 放弃rebase
-    - `git rebase --continue` 修改好冲突后继续
 
 #### 【git log】
 
@@ -238,6 +238,19 @@
     - 也就是说master将develop分支拉取下来然后合并 develop向master合并
 - 如果遇到冲突：
     - `git mergetool` 使用工具进行分析冲突文件方便修改
+
+#### 【git rebase】
+> 衍和操作 [参考博客](http://blog.csdn.net/endlu/article/details/51605861) | 
+> [Git rebase -i 交互变基](http://blog.csdn.net/zwlove5280/article/details/46649799) | 
+> [git rebase的原理之多人合作分支管理](http://blog.csdn.net/zwlove5280/article/details/46708969)    
+> 他会将分支中的圈, 消除掉, 成为线性结构
+
+- 效果和merge差不多，但是分支图更清晰?TODO 有待详细学习
+- 与master合并：`git merge master` 换成 `git rebase master`
+- 当遇到冲突：
+    - `git rebase --abort` 放弃rebase
+    - `git rebase --continue` 修改好冲突后继续
+
 
 #### 【git grep 】    
 - 搜索文字 `git grep docker`

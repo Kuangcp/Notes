@@ -26,13 +26,19 @@
     - [Tips](#tips)
         - [设置交换分区](#设置交换分区)
         - [善用.bashrc文件](#善用bashrc文件)
+    - [善用FTP](#善用ftp)
+        - [基础](#基础)
+        - [使用](#使用)
+        - [手机和电脑之间传输管理文件](#手机和电脑之间传输管理文件)
+            - [手机](#手机)
+            - [电脑](#电脑)
     - [在Linux上操作压缩文件的命令](#在linux上操作压缩文件的命令)
         - [tar 归档 打包](#tar-归档-打包)
             - [压缩](#压缩)
             - [解压](#解压)
             - [总结](#总结)
 
-`目录 end` *目录创建于2018-01-14*
+`目录 end` *目录创建于2018-01-28* | 更多: [CSDN](http://blog.csdn.net/kcp606) | [oschina](https://my.oschina.net/kcp1104) | [码云](https://gitee.com/kcp1104) 
 ****************************************
 # 【文件管理】
 ## 基本命令 
@@ -118,6 +124,11 @@
 - cat mul.sh | wc -l
 - wc -l mul.sh
 
+### cat
+> 类似的还有 nl more less
+### file
+> 查看文件类型
+
 ### tail
 > tail命令用于输入文件中的尾部内容。tail命令默认在屏幕上显示指定文件的末尾10行。 来自: http://man.linuxde.net/tail
 
@@ -136,6 +147,8 @@
     tail +20 file （显示文件file的内容，从第20行至文件末尾） 
     tail -c 10 file （显示文件file的最后10个字符）
 ```
+### head
+> 查看文件头部, 前十行
 
 ### sed
 > 参数 命令 文件
@@ -304,7 +317,7 @@
     - j tar.bz2
     - Z tar.Z
     - J tar.xz
-- `tar -cvf jpg.tar *.jpg` //将所有jpg打包成tar.jpg 
+- `tar -cvf jpg.tar *.jpg` //将所有jpg打包成 jpg.tar
 - `tar -czf jpg.tar.gz *.jpg `  //将所有jpg打包成jpg.tar后 生成gzip压缩的包，命名为jpg.tar.gz
 - `tar -cjf jpg.tar.bz2 *.jpg `//将所有jpg打包成jpg.tar后 生成bzip2压缩的包，命名为jpg.tar.bz2
 - `tar -cZf jpg.tar.Z *.jpg ` //将所有jpg打包成jpg.tar后 生成umcompress压缩的包，命名为jpg.tar.Z

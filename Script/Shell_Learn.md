@@ -47,6 +47,9 @@
 ## 执行
 - [source命令](http://blog.csdn.net/xiaolang85/article/details/7861441) | [点和source命令](http://www.cnblogs.com/my_life/articles/4323528.html)
 
+- 文件头部 `#!/bin/sh`表示要使用sh解释器来执行, 可以替换成bash dash
+  -  只要该文件具有执行权限就可以直接运行了 `./a.sh` 或者绝对路径
+
 **********************
 ## 输入输出
 
