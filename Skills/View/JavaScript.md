@@ -48,6 +48,30 @@ $(".submit").on('click', function () {
 - 直接点引用属性
     - 迭代集合:自带foreach循环 `data.forEach(function(value){})`
 
+```js
+    var array = {
+        "a": "abc",
+        "b": [1, 2, 3, 4, 5, 6],
+        "c": 3,
+        "d": {
+            "name": "james",
+            "age": 28
+        },
+        "e": null,
+        "f": true
+    };
+
+    //遍历array方式1
+    for (var x in array) {
+        if (typeof array[x] == 'object' && array[x] != null) {
+            for (var y in array[x]) {
+                console.log(">>key = " + y + " value = " + array[x][y]);
+            }
+        } else {
+            console.log("key = " + x + " value = " + array[x]); // 非array object
+        }
+    }
+```
 ## 常用功能小模块
 ### 输入校验
 

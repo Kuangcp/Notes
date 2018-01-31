@@ -174,6 +174,13 @@
 - 将图片转换成指定大小 这是保持比例的 `convert -resize 600X600 src.jpg dst.jpg` 中间是字母X
 - 如果不保持比例，就在宽高后加上感叹号 
 - 可以只指定高度，那么宽度会等比例缩放 `convert -resize 400 src.jpg dst.jpg`
+- 还可以按百分比缩放
+
+_批量修改_
+> 如果没有 -path 语句，新生成的 png 文件将会覆盖原始文件 [参考博客](http://www.cnblogs.com/jkmiao/p/6756929.html)
+
+- `mogrify -path newdir -resize 40X40 *.png` 把png图片全部转成40X40大小并放在新文件夹下
+- `mogrify -path newdir -format png  *.gif` 将所有gif转成png放在新目录下
 
 ### todo.txt
 > [官网](http://todotxt.org/) 一个简约的 TODO 软件

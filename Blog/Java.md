@@ -31,9 +31,11 @@
 
 *****
 ## Springboot
+- [Springboot入门系列博客](http://www.cnblogs.com/page12/p/7899380.html)
+- [Springboot配置详解](https://segmentfault.com/a/1190000004315890)
 - [Springboot启动dubbo](https://coderknock.com/blog/2017/03/01/spring%20boot%E5%90%AF%E5%8A%A8dubbo.html)`等一系列文章`
-
 - [spring boot完美集成dwr3.0.2](http://blog.csdn.net/melody_susan/article/details/78659696)
+- [Spring Boot——开发新一代Spring Java应用](https://www.tianmaying.com/tutorial/spring-boot-overview)
 
 ## BuildTool
 - [Gradle构建多模块项目](http://blog.javachen.com/2015/01/07/build-multi-module-project-with-gradle.html)
@@ -63,3 +65,6 @@
 ![前后端](https://raw.githubusercontent.com/Kuangcp/ImageRepos/master/Image/fun/640.webp)
 
 - [JDK各个版本发布时间](http://blog.csdn.net/tanxinwhu/article/details/6969086)
+
+## Java语言讨论
+> [冷眼看Java](http://swiftlet.net/archives/2530)

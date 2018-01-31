@@ -14,6 +14,7 @@
 > 半学半就 [个人导航页](https://kuangcp.github.io/main.html)
 
 ## 基础
+> [我所理解的前端](https://www.cnblogs.com/Smiled/p/8377188.html)
 
 ### 规范
 - [前端开发命名规范](https://juejin.im/post/592d4a5b0ce463006b43b6da)

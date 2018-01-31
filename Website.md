@@ -42,11 +42,18 @@
 ### Java
 - [传智播客Activiti工作流视频教程](http://www.icoolxue.com/album/show/252) `免费全套 5.4 视频`
 - [maven在线训练网](http://takari.io/)
+- [teavm](http://www.teavm.org/)`将字节码转译成js`
 
 ### Python
 - [廖雪峰Python3](https://www.liaoxuefeng.com/wiki/0014316089557264a6b348958f449949df42a6d3a2e542c000)
 
-### Linux
+### Erlang
+> [Erlang](http://www.erlang.org/)
+
+#### Elixir
+> [官网](https://elixir-lang.org/)
+
+## Linux
 - [IBM社区](https://www.ibm.com/developerworks/cn/)
 - [杭电ACM题库](http://acm.hdu.edu.cn/listproblem.php?vol=1)
 - [Linux命令大全](http://man.linuxde.net/) `Linux命令教程`
@@ -90,9 +97,3 @@
 ## 在线工具
 - [开源中国](http://tool.oschina.net/)
 - [脚本之家](http://tools.jb51.net/)
-
-****************************************************
-
-## 培训
-- [集智](https://jizhi.im/index)
-- 咕咚

@@ -48,6 +48,7 @@
 - [ApacheCN](https://github.com/apachecn)`含有一些学习的文档和视频资料`
 - [稀土](https://github.com/xitu) `掘金的组织`
 - [docker-library](https://github.com/docker-library)`docker仓库组织,含有大量软件的Dockerfile`
+- [aliyun](https://github.com/aliyun)`大厂`
 
 # 【GitRepos】
 > 收集的一些优秀的git仓库 
@@ -95,7 +96,7 @@
 
 ### 框架以及高级特性
 - [Jfinal](https://gitee.com/jfinal/jfinal) `简洁`
-- [act](https://gitee.com/actframework/actframework)`MVC全栈框架`
+- [act](https://gitee.com/actframework/actframeworkP)`MVC全栈框架`
 
 - [okhttp](https://github.com/square/okhttp)`Java上性能较好的HTTP交互工具`
     - [feign](https://github.com/OpenFeign/feign)`Feign makes writing java http clients easier`
@@ -109,6 +110,7 @@
 - [jeewx](https://gitee.com/jeecg/jeewx)`微信管家平台`
 - [禅道](https://gitee.com/wwccss/zentaopms)`项目管理软件` 
 - [myth](https://github.com/yu199195/myth)`可靠消息解决分布式事务框架 `
+- [teaVM](https://github.com/konsoletyper/teavm)`字节码转译成js`
 
 ### 二次框架
 - [jeesite](https://gitee.com/thinkgem/jeesite)`Spring基础构建的maven jsp项目 bootstrap`
