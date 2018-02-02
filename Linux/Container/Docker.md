@@ -34,7 +34,7 @@
         - [Docker-Swarm](#docker-swarm)
     - [轻量镜像](#轻量镜像)
 
-`目录 end` *目录创建于2018-01-21*
+`目录 end` *目录创建于2018-02-02* | 更多: [CSDN](http://blog.csdn.net/kcp606) | [oschina](https://my.oschina.net/kcp1104) | [码云](https://gitee.com/kcp1104) 
 ****************************************
 # Docker
 
@@ -77,6 +77,11 @@
 
 `apt`
 - `sudo apt install docker.io`
+
+`yum`
+- `sudo yum install docker`
+    - Ubuntu的话,Docker没有启动, 只要一执行Docker相关命令就会自动启动, 但是Centos要手动启动
+    - `service docker start`  设置开机启动: `chkconfig docker on`
 
 #### 通过deb文件安装
 - [点击选择文件](https://download.docker.com/linux/debian/dists/)

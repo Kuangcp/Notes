@@ -29,7 +29,7 @@
             - [字符雨](#字符雨)
     - [快捷键](#快捷键)
 
-`目录 end` *目录创建于2018-01-28* | 更多: [CSDN](http://blog.csdn.net/kcp606) | [oschina](https://my.oschina.net/kcp1104) | [码云](https://gitee.com/kcp1104) 
+`目录 end` *目录创建于2018-02-02* | 更多: [CSDN](http://blog.csdn.net/kcp606) | [oschina](https://my.oschina.net/kcp1104) | [码云](https://gitee.com/kcp1104) 
 ****************************************
 # 【Linux系统】
 > 只是记录了debian系的Linux, 不过也是大同小异
@@ -120,7 +120,7 @@
     -  或者：使用修改文件的方式：（不推荐） 但是在docker中跑Ubuntu新建用户时很有用，也可以不用动文件，添加进组是有效的，看情况吧
     - `chmod 777 /etc/sudoers` 
         - 找不到文件说明没有安装sudo -> root用户 `apt install sudo `
-    - 添加一行 `kuang  ALL=(ALL:ALL)ALL`
+    - 添加一行 `kuang  ALL=(ALL:ALL)ALL` Centos:`kuang   ALL=(ALL)       ALL`
     - `chmod 440 /etc/sudoers`
         - `rwx 对应一个三位的二进制数， 1/0 表示开关`
 - 查看是否设置成功 ： `groups username`
@@ -237,6 +237,8 @@ cat more less nl
 
 - [tty 虚拟终端等概念](https://www.ibm.com/developerworks/cn/linux/l-cn-termi-hanzi/)
 
+- Centos上which并不是命令, 而是别名!
+    - `which='alias | /usr/bin/which --tty-only --read-alias --show-dot --show-tilde'`
 **************
 #### 让命令在后台运行
 > [原博客](https://www.ibm.com/developerworks/cn/linux/l-cn-nohup/)
@@ -259,7 +261,7 @@ cat more less nl
 
 #### 修改主机名
 - `sudo hostname linux` 重启终端即可看到修改
-- 但是重启电脑会恢复原有名字修改如下文件永久： `sudo gedit /etc/hostname` `/etc/hosts`
+- 但是重启电脑会恢复原有名字修改如下文件永久： `sudo gedit /etc/hostname` 也许需要更改`/etc/hosts`
 - 立即生效,也要重新登录 `hostname -F /etc/hostname `
 
 #### 字符雨

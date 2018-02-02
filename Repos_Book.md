@@ -41,7 +41,7 @@
     - [前端](#前端)
     - [Docker](#docker)
 
-`目录 end` *目录创建于2018-01-25* | 更多: [CSDN](http://blog.csdn.net/kcp606) | [oschina](https://my.oschina.net/kcp1104) | [码云](https://gitee.com/kcp1104) 
+`目录 end` *目录创建于2018-02-02* | 更多: [CSDN](http://blog.csdn.net/kcp606) | [oschina](https://my.oschina.net/kcp1104) | [码云](https://gitee.com/kcp1104) 
 ****************************************
 
 # 【Organization】
@@ -231,6 +231,7 @@
 ## 其他
 - [HelloGibhub](https://github.com/521xueweihan/HelloGitHub)`有趣的项目`
 - [serverless](https://github.com/phodal/serverless)`serverless学习手册`
+- [marp](https://github.com/yhatt/marp/)`markdown书写PPT`
 
 ## 工作
 ### 简历

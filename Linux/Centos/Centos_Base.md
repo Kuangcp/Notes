@@ -4,8 +4,10 @@
     - [安装](#安装)
         - [docker安装](#docker安装)
     - [基础命令](#基础命令)
+    - [用户管理](#用户管理)
+        - [新增](#新增)
 
-`目录 end` *目录创建于2018-01-14*
+`目录 end` *目录创建于2018-02-02* | 更多: [CSDN](http://blog.csdn.net/kcp606) | [oschina](https://my.oschina.net/kcp1104) | [码云](https://gitee.com/kcp1104) 
 ****************************************
 # Centos
 > 主流服务器
@@ -22,4 +24,13 @@
 
 ## 基础命令
 > 采用的是yum rpm 管理包
+
+## 用户管理
+
+### 新增
+> 和Ubuntu类似, 但是adduser会新建用户并且建立home目录,而且没有废话的交互, ubuntu就有
+
+`adduser kuang` 新增用户和对应目录
+`passwd kuang` 修改密码 , 奇怪的是使用gpasswd就更改成功了用不了
+
 

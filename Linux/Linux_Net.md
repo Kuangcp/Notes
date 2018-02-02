@@ -30,7 +30,7 @@
         - [【vpn】](#vpn)
             - [shadowsocks](#shadowsocks)
 
-`目录 end` *目录创建于2018-01-28* | 更多: [CSDN](http://blog.csdn.net/kcp606) | [oschina](https://my.oschina.net/kcp1104) | [码云](https://gitee.com/kcp1104) 
+`目录 end` *目录创建于2018-02-02* | 更多: [CSDN](http://blog.csdn.net/kcp606) | [oschina](https://my.oschina.net/kcp1104) | [码云](https://gitee.com/kcp1104) 
 ****************************************
 # 【网络管理】
 ## DNS
@@ -390,6 +390,9 @@ echo "PermitRootLogin yes" >> /etc/ssh/sshd_config ;\
 ```
 - 或者尝试 `echo "sshd: ALL" >> /etc/hosts.allow && service sshd restart`
 
+- 当一个服务器已经配置好了ssh密钥对, 然后服务器重装了系统或者别的原因, 修改了服务器秘钥,就需要:
+    - `ssh-keygen -f "/home/kcp/.ssh/known_hosts" -R 120.78.154.52`
+    
 ##### 使用别名登录
 `vim ~/.ssh/config`
 ```

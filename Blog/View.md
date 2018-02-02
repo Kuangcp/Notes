@@ -3,18 +3,21 @@
 - [前端](#前端)
     - [基础](#基础)
         - [规范](#规范)
+    - [CSS](#css)
     - [相关库](#相关库)
         - [Jquery](#jquery)
         - [Bootstrap](#bootstrap)
         - [LayUI](#layui)
 
-`目录 end` *目录创建于2018-01-25* | 更多: [CSDN](http://blog.csdn.net/kcp606) | [oschina](https://my.oschina.net/kcp1104) | [码云](https://gitee.com/kcp1104) 
+`目录 end` *目录创建于2018-02-02* | 更多: [CSDN](http://blog.csdn.net/kcp606) | [oschina](https://my.oschina.net/kcp1104) | [码云](https://gitee.com/kcp1104) 
 ****************************************
 # 前端
 > 半学半就 [个人导航页](https://kuangcp.github.io/main.html)
 
 ## 基础
-> [我所理解的前端](https://www.cnblogs.com/Smiled/p/8377188.html)
+> [我所理解的前端](https://www.cnblogs.com/Smiled/p/8377188.html)  
+> [Javascript字典操作](http://blog.csdn.net/limlimlim/article/details/9088161)
+> [js数据结构和算法（五）字典和散列（hash） ](https://segmentfault.com/a/1190000002447815)
 
 ### 规范
 - [前端开发命名规范](https://juejin.im/post/592d4a5b0ce463006b43b6da)

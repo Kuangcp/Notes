@@ -9,6 +9,7 @@
     - [【简单使用】](#简单使用)
         - [配置GPG](#配置gpg)
         - [实验楼上使用Github](#实验楼上使用github)
+        - [码云](#码云)
     - [【git初始化配置】](#git初始化配置)
         - [【VI编辑器的使用】](#vi编辑器的使用)
     - [【配置SSH连接上GitHub】](#配置ssh连接上github)
@@ -32,7 +33,7 @@
         - [8.Reset一个单独的文件](#8reset一个单独的文件)
         - [9.保留working_tree并且丢弃一些commit](#9保留working_tree并且丢弃一些commit)
 
-`目录 end` *目录创建于2018-01-28* | 更多: [CSDN](http://blog.csdn.net/kcp606) | [oschina](https://my.oschina.net/kcp1104) | [码云](https://gitee.com/kcp1104) 
+`目录 end` *目录创建于2018-02-02* | 更多: [CSDN](http://blog.csdn.net/kcp606) | [oschina](https://my.oschina.net/kcp1104) | [码云](https://gitee.com/kcp1104) 
 ****************************************
 # Git实际使用的记录
 ## Tips
@@ -142,6 +143,11 @@
 - `git push origin 新分支名` add commit 之后就push
 - `git fetch origin 已有分支` 下拉别的分支代码
 
+### 码云
+> [帮助文档](http://git.mydoc.io/) 
+
+- [如何进行减少提交历史数量以及修改自己的commit中的邮箱](http://git.mydoc.io/?t=83152)
+- [改写历史，永久删除git库的物理文件 ](https://my.oschina.net/jfinal/blog/215624?fromerr=ZTZ6c38X)
 ********************************
 ## 【git初始化配置】 
 ```

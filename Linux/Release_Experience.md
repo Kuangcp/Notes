@@ -1,14 +1,25 @@
 `目录 start`
  
 - [Linux各个发行版本使用体验](#linux各个发行版本使用体验)
+    - [基础知识](#基础知识)
     - [Debian系](#debian系)
-        - [raspberry-pi](#raspberry-pi)
+        - [Debian](#debian)
         - [Ubuntu](#ubuntu)
+        - [Ubuntu Mint](#ubuntu-mint)
         - [Deepin](#deepin)
+        - [raspberry-pi](#raspberry-pi)
     - [arch系](#arch系)
     - [redhat系](#redhat系)
+        - [Fedora](#fedora)
+        - [Centos](#centos)
+        - [openSUSE](#opensuse)
+    - [FreeBSD](#freebsd)
+    - [Solaris](#solaris)
+    - [alpine](#alpine)
+    - [Gentoo](#gentoo)
+    - [Mageia](#mageia)
 
-`目录 end` *目录创建于2018-01-28* | 更多: [CSDN](http://blog.csdn.net/kcp606) | [oschina](https://my.oschina.net/kcp1104) | [码云](https://gitee.com/kcp1104) 
+`目录 end` *目录创建于2018-02-02* | 更多: [CSDN](http://blog.csdn.net/kcp606) | [oschina](https://my.oschina.net/kcp1104) | [码云](https://gitee.com/kcp1104) 
 ****************************************
 # Linux各个发行版本使用体验
 > 一边用一边记录吧
@@ -18,6 +29,9 @@
     
     x86-64  =  64-bit  =  x64  =  amd64
     x86  =  32-bit  =  i386
+
+_查看发行版_
+- `lsb_release -a`
 
 ## Debian系
 ### Debian
@@ -56,6 +70,8 @@
 > redhat的试验场 不太感冒
 
 ### Centos
+> 在阿里云上装了一个, 开机82M Centos7.4
+
 ### openSUSE
 ************************
 ## FreeBSD

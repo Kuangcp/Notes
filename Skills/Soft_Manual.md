@@ -17,6 +17,8 @@
         - [apache benchmark](#apache-benchmark)
     - [其他工具](#其他工具)
         - [输入法](#输入法)
+            - [rime](#rime)
+            - [小小输入法](#小小输入法)
         - [qgit](#qgit)
         - [convert](#convert)
         - [todo.txt](#todotxt)
@@ -51,7 +53,7 @@
             - [主题](#主题)
         - [Vivaldi](#vivaldi)
 
-`目录 end` *目录创建于2018-01-27* | 更多: [CSDN](http://blog.csdn.net/kcp606) | [oschina](https://my.oschina.net/kcp1104) | [码云](https://gitee.com/kcp1104) 
+`目录 end` *目录创建于2018-02-02* | 更多: [CSDN](http://blog.csdn.net/kcp606) | [oschina](https://my.oschina.net/kcp1104) | [码云](https://gitee.com/kcp1104) 
 ****************************************
 # 软件使用记事
 ## 【包管理】
@@ -163,7 +165,11 @@
 ## 其他工具
 
 ### 输入法
+#### rime
 - [rime](http://rime.im/) `用过一下子有莫名其妙的bug就卸载了`
+
+#### 小小输入法
+[小小输入法在Deepin上的使用](https://bbs.deepin.org/forum.php?mod=viewthread&tid=138500&highlight=%E5%B0%8F%E5%B0%8F%E8%BE%93%E5%85%A5%E6%B3%95)
 
 ### qgit
 - git查看仓库的图形化界面
@@ -345,20 +351,22 @@ _批量修改_
     - 窗口: 新建 `n` | 新建隐私 `shift n`
     - 页面上所有页面链接 `ff` _神操作_ [文档](https://key.saka.io/tutorial/clicking_and_link_hints)
     - 传递快捷键即绕过插件的事件监听 `;` [文档](https://key.saka.io/tutorial/pass_keys)
+        - 比如要在网页上敲英文的时候,就需要每次都要输入分号,才能绕过监听, 真是麻烦
     - [剪贴板](https://key.saka.io/tutorial/clipboard): 复制当前页面的URL:`yy`
         - 当前标签页打开链接 `yf`| 后台打开 `yb` | 新窗口打开 `yn` | 隐私窗口 `y shift-n`
 
 - `FoxyTab`
 - `New Tab Tools` 新建标签页的自定义工具 有一定bug
-- `cliget` 能将下载中的任务转化为 curl wget命令
+- `cliget` 能将下载中的任务转化为 curl wget命令 牛
 - `eolinker` 接口测试工具
-- `Simple Tab Groups` 
+- `Simple Tab Groups` 58版本有bug
 - `rester` rest客户端工具
 - `Download all Images`下载图片
 - `octotree` github 目录查看
 - `Web Developer` 各种Web调试开发工具
-- `One Tab` tab归组
+- `One Tab` tab归组,十分好用
 - `Remove Cookies Button`
+- `围脖是个好图床哟` 方便的图床,但是要登录微博
 
 
 ****************************************

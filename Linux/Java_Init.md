@@ -1,5 +1,8 @@
 `目录 start`
  
+- [配置Linux](#配置linux)
+    - [新增用户](#新增用户)
+    - [安装Docker](#安装docker)
 - [在Linux上配置Java环境](#在linux上配置java环境)
     - [配置JDK](#配置jdk)
         - [解压方式](#解压方式)
@@ -12,8 +15,14 @@
         - [Picked up _JAVA_OPTIONS: -Dawt.useSystemAAFontSettings=gasp](#picked-up-_java_options--dawtusesystemaafontsettings=gasp)
         - [联想G4070 安装 deepin 15.4.1 显卡兼容失败（15.4还能正常用）](#联想g4070-安装-deepin-1541-显卡兼容失败（154还能正常用）)
 
-`目录 end` *目录创建于2018-01-28* | 更多: [CSDN](http://blog.csdn.net/kcp606) | [oschina](https://my.oschina.net/kcp1104) | [码云](https://gitee.com/kcp1104) 
+`目录 end` *目录创建于2018-02-02* | 更多: [CSDN](http://blog.csdn.net/kcp606) | [oschina](https://my.oschina.net/kcp1104) | [码云](https://gitee.com/kcp1104) 
 ****************************************
+# 配置Linux
+> 修改Hostname需要重启, 设置java默认需要重启, docker添加用户组需要重启
+
+## 新增用户
+## 安装Docker
+
 # 在Linux上配置Java环境
 ## 配置JDK
 ### 解压方式

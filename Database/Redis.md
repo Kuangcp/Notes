@@ -3,6 +3,8 @@
 - [Redis](#redis)
     - [【windows上的基本配置】](#windows上的基本配置)
     - [Linux下的使用](#linux下的使用)
+        - [命令安装](#命令安装)
+        - [解压即用](#解压即用)
     - [docker安装redis](#docker安装redis)
     - [redis配置文件](#redis配置文件)
     - [Redis命令行常规使用](#redis命令行常规使用)
@@ -35,7 +37,7 @@
         - [jedis遇到的异常](#jedis遇到的异常)
         - [SpringBoot使用Redis](#springboot使用redis)
 
-`目录 end` *目录创建于2018-01-21*
+`目录 end` *目录创建于2018-02-02* | 更多: [CSDN](http://blog.csdn.net/kcp606) | [oschina](https://my.oschina.net/kcp1104) | [码云](https://gitee.com/kcp1104) 
 ****************************************
 # Redis
 > [Redis教程](http://www.runoob.com/redis/redis-tutorial.html)
@@ -57,7 +59,9 @@
 - 打开客户端 `redis-cli`
 
 ### 解压即用
-- 下载源码，执行`make`进行编译，编译完成后，复制src目录中的`redis-cli redis-server`就可以用了，redis-benchmark可选，测性能
+> [下载打包好的](https://github.com/Kuangcp/Configs/tree/master/Database/redis)
+`步骤:`
+- 官网下载源码，执行`make`进行编译，编译完成后，复制src目录中的`redis-cli redis-server`就可以用了，redis-benchmark可选，测性能
     - 再复制下面的简化配置文件，或者使用源码中根目录下的配置文件自己配置下
     - [简化配置文件](https://raw.githubusercontent.com/Kuangcp/Configs/master/Database/redis/simple_redis.conf)
 - 再创建以下两个脚本就可以便捷的使用redis了
@@ -78,8 +82,7 @@
 
 ****************************
 ## redis配置文件
-- [配置文件讲解](https://github.com/Kuangcp/Configs/blob/master/Database/redis/explain_redis.conf)
-- [原始配置文件](https://github.com/Kuangcp/Configs/blob/master/Database/redis/redis.conf)
+- [配置文件讲解](https://github.com/Kuangcp/Configs/blob/master/Database/redis/explain_redis.conf) | [原始配置文件](https://github.com/Kuangcp/Configs/blob/master/Database/redis/redis.conf)
 - `使用ing`[简化配置文件](https://github.com/Kuangcp/Configs/blob/master/Database/redis/simple_redis.conf) 
 
 ********
