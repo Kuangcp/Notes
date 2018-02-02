@@ -11,6 +11,8 @@
 - [综合开发平台](#综合开发平台)
     - [华为云](#华为云)
     - [阿里云](#阿里云)
+        - [ECS](#ecs)
+        - [ACM](#acm)
         - [OSS](#oss)
     - [百度开发平台](#百度开发平台)
         - [CCE](#cce)
@@ -130,6 +132,13 @@ SSH_DOMAIN       = kuangcp.top
     - 移动推送    消息服务    邮件推送    语音服务    流量服务    短信服务    物联网无线连接服务    号码隐私保护
 - 大数据（数加）
     - DataWorks    Quick BI    机器学习    推荐引擎    公众趋势分析    DataV数据可视化    分析型数据库    大数据计算务    智能语音交互    流计算
+
+### ECS
+> 阿里云主机, 学生有优惠
+
+### ACM
+> 应用配置管理 [入门文档](https://help.aliyun.com/document_detail/59964.html?spm=a2c4g.11186623.6.546.yaM0cp)
+> [如何用ACM简化你的Spring Cloud微服务环境配置管理](https://zhuanlan.zhihu.com/p/33525168?group_id=942728800581259264)
 
 ### OSS
 > 对象存储
