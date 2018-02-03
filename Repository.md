@@ -37,7 +37,7 @@
     - [工作](#工作)
         - [简历](#简历)
 
-`目录 end` *目录创建于2018-02-02* | 更多: [CSDN](http://blog.csdn.net/kcp606) | [oschina](https://my.oschina.net/kcp1104) | [码云](https://gitee.com/kcp1104) 
+`目录 end` *目录创建于2018-02-03* | 更多: [CSDN](http://blog.csdn.net/kcp606) | [oschina](https://my.oschina.net/kcp1104) | [码云](https://gitee.com/kcp1104) 
 ****************************************
 
 # 【Organization】
@@ -192,6 +192,7 @@
 - [scrapy-redis](https://github.com/rmax/scrapy-redis) `爬虫框架结合redis使用`
 - [Python的一些脚本](https://github.com/9468305/script)
 - [区块链Python](https://github.com/dvf/blockchain)`附加Python中Docker的用法`
+- [pyspider](https://github.com/binux/pyspider)`爬虫框架`
 
 ***********
 ## 【Linux】

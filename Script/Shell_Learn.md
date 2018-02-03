@@ -22,7 +22,7 @@
         - [循环](#循环)
     - [函数](#函数)
 
-`目录 end` *目录创建于2018-01-27* | 更多: [CSDN](http://blog.csdn.net/kcp606) | [oschina](https://my.oschina.net/kcp1104) | [码云](https://gitee.com/kcp1104) 
+`目录 end` *目录创建于2018-02-03* | 更多: [CSDN](http://blog.csdn.net/kcp606) | [oschina](https://my.oschina.net/kcp1104) | [码云](https://gitee.com/kcp1104) 
 ****************************************
 # 学习Shell
 > 首先语法不像别的语言可读性好，比如Python，然后方言众多，学习比Python2，3还恶心
@@ -150,3 +150,10 @@
 
 *****************
 ## 函数
+> Shell的函数只能返回整型数据类型
+
+```sh
+  simple(){
+    echo "simple"
+  }
+```

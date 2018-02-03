@@ -30,7 +30,7 @@
         - [【vpn】](#vpn)
             - [shadowsocks](#shadowsocks)
 
-`目录 end` *目录创建于2018-02-02* | 更多: [CSDN](http://blog.csdn.net/kcp606) | [oschina](https://my.oschina.net/kcp1104) | [码云](https://gitee.com/kcp1104) 
+`目录 end` *目录创建于2018-02-03* | 更多: [CSDN](http://blog.csdn.net/kcp606) | [oschina](https://my.oschina.net/kcp1104) | [码云](https://gitee.com/kcp1104) 
 ****************************************
 # 【网络管理】
 ## DNS
@@ -115,6 +115,9 @@ nameserver 8.8.8.4
 - 不输出，重定向到*黑洞*  ` curl -s -o /dev/null URL`
 - 格式化返回的json数据：`curl xxxx|python -m json.tool `
 
+- [curl cookie](https://curl.haxx.se/docs/http-cookies.html) | [curl使用Cookie](https://aiezu.com/article/linux_curl_http_cookie.html)
+
+- [56错误码](https://stackoverflow.com/questions/10285700/curl-error-recv-failure-connection-reset-by-peer-php-curl)
 
 
 ### iproute2
@@ -255,8 +258,7 @@ nameserver 8.8.8.4
 
 ### wget
 
-> 特性和优势：支持 HTTP HTTPS FTP协议
->
+> 特性和优势：支持 HTTP HTTPS FTP协议 
 > - 能够跟踪 HTML 和 XHTML 即可以下载整站，但是注意wget会不停的去下载HTML中的外链，无休无止
 > - 遵守 robots.txt 标准的工具
 > - 支持慢速网路和不稳定的下载，当下载失败就会不断重试，直到下载成功
@@ -296,6 +298,7 @@ nameserver 8.8.8.4
 - 请求重试 `--waitretry` 设置请求重试的秒数, 如果设置的是10秒, 第一次失败后就会等1s,然后第二次失败就等2s...直到递增到10s,然后结束
     - 其效果 其实应该是 设置值的累加 (理解为重试次数似乎更好)
     
+- [wget cookie](http://blog.csdn.net/adream307/article/details/47379149)
 
 ****************************
 

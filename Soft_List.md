@@ -19,7 +19,7 @@
     - [前端](#前端)
         - [富文本编辑器](#富文本编辑器)
 
-`目录 end` *目录创建于2018-01-22* | 更多: [CSDN](http://blog.csdn.net/kcp606) | [oschina](https://my.oschina.net/kcp1104) | [码云](https://gitee.com/kcp1104) 
+`目录 end` *目录创建于2018-02-03* | 更多: [CSDN](http://blog.csdn.net/kcp606) | [oschina](https://my.oschina.net/kcp1104) | [码云](https://gitee.com/kcp1104) 
 ****************************************
 # 常用的工具软件
 ## 【国内的资源镜像站】
@@ -110,7 +110,9 @@ _授权_
 ****************************
 ## Database
 - [sssdb](https://github.com/ideawu/ssdb) `键值对数据库`
-- [Mysql-Font](https://github.com/NilsHoyer/MySQL-Front) `连接Mysql的客户端`
+- [MySQL官方下载地址](https://dev.mysql.com/downloads/mysql/)
+    - [Mysql-Font](https://github.com/NilsHoyer/MySQL-Front) `连接Mysql的客户端`
+    - [HeidiSQL](https://github.com/HeidiSQL/HeidiSQL)`十分好用`
 - [sqlectron](https://github.com/sqlectron/sqlectron-gui) `简单直观的数据库图形化软件`
 
 *******************************
