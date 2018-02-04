@@ -26,10 +26,9 @@
                 - [关闭ssh回话不能运行](#关闭ssh回话不能运行)
                 - [关闭ssh回话仍能运行](#关闭ssh回话仍能运行)
             - [修改主机名](#修改主机名)
-            - [字符雨](#字符雨)
-    - [快捷键](#快捷键)
+    - [终端快捷键](#终端快捷键)
 
-`目录 end` *目录创建于2018-02-04* | 更多: [CSDN](http://blog.csdn.net/kcp606) | [oschina](https://my.oschina.net/kcp1104) | [码云](https://gitee.com/kcp1104) 
+`目录 end` *目录创建于2018-02-05* | 更多: [CSDN](http://blog.csdn.net/kcp606) | [oschina](https://my.oschina.net/kcp1104) | [码云](https://gitee.com/kcp1104) 
 ****************************************
 # 【Linux系统】
 > 只是记录了debian系的Linux, 不过也是大同小异
@@ -69,44 +68,8 @@
 - `terminator` 可以定制背景图片，但是在我这deppin系统里有bug，多标签是假的，命令全是在共享的，不能用。。
 - `tmux` 运维必备软件，入门有些繁琐
 
-```
-搜索到的终端模拟器：
-  terminology 0.7.0-1+deb8u1build0.16.04.1
-  lxterminal 0.2.0-1ubuntu0.1
-  xvt 2.1-20.1ubuntu1
-  xiterm+thai 1.10-2
-  xfce4-terminal 0.6.3-2ubuntu1
-  vala-terminal 1.3-6
-  termit 2.10.0-2-gb8280ed-1
-  terminator 0.98-1
-  terminal.app 0.9.8-1+nmu1build2
-  stterm 0.5+20140606+gitc2fd275-1
-  sakura 3.3.4-2
-  rxvt-unicode-lite 9.21-1build1
-  rxvt-unicode-256color 9.21-1build1
-  rxvt-unicode 9.21-1build1
-  rxvt-ml 1:2.7.10-6
-  rxvt 1:2.7.10-6
-  roxterm 3.3.2-1
-  qterminal 0.6.0+20160104-1
-  pterm 0.67-2
-  mrxvt-mini 0.5.4-1.2
-  mrxvt-cjk 0.5.4-1.2
-  mrxvt 0.5.4-1.2
-  mlterm-tiny 3.5.0-1build1
-  mlterm 3.5.0-1build1
-  lilyterm 0.9.9.4+git20150208.f600c0-3
-  kterm 6.2.0-46.1build1
-  konsole 4:15.12.3-0ubuntu1
-  guake 0.8.4-1
-  evilvte 0.5.1-1
-  eterm 0.9.6-4
-  aterm 1.0.1-8
-  xterm 322-1ubuntu1
-  mate-terminal 1.18.1-1+sonya
-  gnome-terminal 3.18.3-linuxmint2
-请您明确地选择安装其中一个。
-```
+> [更多可安装终端](https://gitee.com/kcp1104/codes/gca14wtqvm67l9j5r0deb56#Terminals.md)
+
 ### 软件源列表
 - [参考博客 阿里云的软件源](https://hacpai.com/article/1482807364546?p=1&m=0)
 - [wiki-源列表说明](http://wiki.ubuntu.com.cn/%E6%BA%90%E5%88%97%E8%A1%A8)
@@ -118,7 +81,7 @@
 - 添加到sudo组 ，使用命令更安全：`sudo gpasswd -a $USER sudo` 但是要注销或者重启才生效貌似
 - 或者：添加用户到用户组：`adduser user group`
     -  或者：使用修改文件的方式：（不推荐） 但是在docker中跑Ubuntu新建用户时很有用，也可以不用动文件，添加进组是有效的，看情况吧
-    - `chmod 777 /etc/sudoers` 
+    - `chmod 777 /etc/sudoers`  然后直接`sudo visudo`就是调用vi来打开文件的简写
         - 找不到文件说明没有安装sudo -> root用户 `apt install sudo `
     - 添加一行 `kuang  ALL=(ALL:ALL)ALL` Centos:`kuang   ALL=(ALL)       ALL`
     - `chmod 440 /etc/sudoers`
@@ -127,36 +90,67 @@
 - 删除用户以及对应的home目录：`sudo deluser username --remove-home` 
 
 *****
-- `su username` 切换用户
+- _切换用户_ `su` 
 - `su -l username` 当前用户的环境下登录用户（当成一个程序一样可以退出登录）
 
-- 修改密码：
+*****
+- _修改密码_ `passwd`
     - `passwd user`
     - `echo "root:caishi" | chpasswd` 如果是普通用户就是 sudo chpasswd
-- `usermod` 修改相关信息
-    - `-s 更改shell环境`
-    - `-g 更改用户组`
-    - `-l 新用户名`
+*****
+- _修改相关信息_ `usermod` 
+```
+    -d, --home HOME_DIR           用户的新主目录
+    -e, --expiredate EXPIRE_DATE  设定帐户过期的日期为 EXPIRE_DATE
+    -f, --inactive INACTIVE       过期 INACTIVE 天数后，设定密码为失效状态
+    -g, --gid GROUP               强制使用 GROUP 为新主组
+    -G, --groups GROUPS           新的附加组列表 GROUPS
+    -a, --append GROUP            将用户追加至上边 -G 中提到的附加组中，并不从其它组中删除此用户
+    -l, --login LOGIN             新的登录名称
+    -L, --lock                    锁定用户帐号
+    -m, --move-home               将家目录内容移至新位置 (仅于 -d 一起使用)
+    -p, --password PASSWORD       将加密过的密码 (PASSWORD) 设为新密码
+    -R, --root CHROOT_DIR         chroot 到的目录
+    -s, --shell SHELL             该用户帐号的新登录 shell
+    -U, --unlock                  解锁用户帐号
+```
+> [所有参数说明](https://gitee.com/kcp1104/codes/gca14wtqvm67l9j5r0deb56#usermod.md)
 
 ******
 - `passwd 选项 用户名` 更改口令(密码)
     - `-l 锁定口令，禁用账号`  `-u 口令解锁` `-d 账号无口令` `-f 强迫用户下次登录时修改口令`
     - 当前用户 `passwd` 就是修改当前用户口令 超级用户就可以命令后接用户名，修改任意用户
 
+******
+- pwcov 注：同步用户从/etc/passwd 到/etc/shadow
+- pwck 注：pwck是校验用户配置文件/etc/passwd 和/etc/shadow 文件内容是否合法或完整;
+- pwunconv 注：是pwcov 的立逆向操作，是从/etc/shadow和 /etc/passwd 创建/etc/passwd ，然后会删除 /etc/shadow 文件;
+- finger 注：查看用户信息工具
+- id 注：查看用户的UID、GID及所归属的用户组
+- chfn 注：更改用户信息工具
+- visudo 注：visodo 是编辑 /etc/sudoers 的命令;也可以不用这个命令，直接用vi 来编辑 /etc/sudoers 的效果是一样的;
+
 ### 【用户组管理】
 > [相关总结网页](http://www.runoob.com/linux/linux-user-manage.html)
 
-- 修改用户所在组 `sudo usermod -G sudo username`
-
-- 添加用户组：` groupadd 选项 用户组`
+- 修改用户至指定组 `sudo usermod -G 用户组 用户`
+- _显示用户所在组_ `groups`
+    - 缺省是当前用户, 若指定即输出指定用户的用户组
+- _添加用户组_ `groupadd`
+    - 缺省参数 就是新建用户组
     - `-g GID` 指定新用户组的组标识号GID 
     - `-o` 一般和g共用 表示新用户组的GID可以与系统已有用户组的GID相同。
-- 删除用户组：`groupdel` 
+
+- _删除用户组_ `groupdel` 
 
 - `groupmod 选项 用户组`
     - -g GID 为用户组指定新的组标识号。
     - -o 与-g选项同时使用，用户组的新GID可以与系统已有用户组的GID相同。
     - -n 新用户组 将用户组的名字改为新名字
+
+- grpck 检查`/etc/group`文件是否正确
+- grpconv 注：通过/etc/group和/etc/gshadow 的文件内容来同步或创建/etc/gshadow ，如果/etc/gshadow 不存在则创建;
+-  注：通过/etc/group 和/etc/gshadow 文件内容来同步或创建/etc/group ，然后删除gshadow文件
 
 ******************
 ## 【软件管理】
@@ -191,13 +185,18 @@ cat more less nl
 
 *****************************************************
 ## 安装Linux发行版
-- 下载指定的镜像包，使用对应的刻录软件刻录U盘
+- 下载指定的镜像包，使用对应的刻录软件刻录U盘(Windows就是软碟通,Linux没怎么用过,只用过深度的U盘启动盘制作工具挺好的)
 - 进入U盘安装模式，分区：
     - 分配 1/5 的 `/` ext4
     - 分配 3/5 的 `/home` ext4
     - 分配 500-1000m 的 `/boot/efi` fat32格式
-- 如果是要双系统，直接全部` / `就行了，再加个交换分区    
-- 特别注意不要随意用sudo 更改配置文件，容易导致系统crash（除非你明确的知道这个更改的作用）
+- 如果是双系统:
+    - 如果新手直接全部` / `就行了，再加个交换分区 
+    - 如果为了日后重装系统方便,那么分两个区 `/` 和 `/home`
+        - 这样的话,就建议大量软件使用解压版,这样重装系统带来的影响最小,那么`/home`就要分大一点
+        - 例如我: `/`只用了22G `/home`用了40G
+
+> 新手的话特别注意不要随意用sudo然后更改配置文件，容易导致系统crash（除非你明确的知道这个更改操作的作用）
 
 ### 【常见问题】
 #### 终端错误提示音
@@ -215,7 +214,8 @@ cat more less nl
 
 
 #### 终端开启慢 
-- 检查 .bashrc 文件, 这次就是因为sdkman的原因导致巨慢,那上次是什么原因呢?
+- 检查 .bashrc 文件 看是否有可疑脚本,
+    -  这次就是因为sdkman的原因导致巨慢,那上次搞得我新建用户,重装系统是什么原因呢?
 
 #### 命令找不到
 - `sudo找不到` 就安装 sudo
@@ -246,54 +246,54 @@ cat more less nl
 
 - 命令后接 & （只是让进程躲到当前终端的后台去了 hup信号仍然影响）
 
+`nohup， disown, screen, setid `
 - 运行的命令不因 用户注销，网络中断等因素而中断
     - 让进程对hup信号免疫 nohup disown
     - 让进程在新的会话中运行 setid screen
 
 ##### 关闭ssh回话不能运行
+> 1.没有使用任何修饰原有命令  
+> 2.只在原有命令后加&
 
 ##### 关闭ssh回话仍能运行
-`nohup， disown, screen, setid `
-- 使用`nohup`屏蔽hup信号 后台运行，输出到nohup.out `nohup 命令 &`
-    - 修改重定向文件  `nohup 命令>/dev/null 2>&1`
+- 使用`nohup`就能屏蔽hup信号，默认输出到 nohup.out `nohup 命令 &`
+    - 将所有输出重定向到空设备  `nohup 命令>/dev/null 2>&1`
+
 - `(命令 &)` 屏蔽了hup信号
 
 *************
-
 #### 修改主机名
 - `sudo hostname linux` 重启终端即可看到修改
 - 但是重启电脑会恢复原有名字修改如下文件永久： `sudo gedit /etc/hostname` 也许需要更改`/etc/hosts`
 - 立即生效,也要重新登录 `hostname -F /etc/hostname `
 
-#### 字符雨
-- `sudo apt-get update;sudo apt-get install cmatrix` 然后 运行 cmatrix
-
 *************************
-## 快捷键
-- 终端：
-    - `Ctrl L` 清屏，Mysql也适用
-    - `Ctrl ；` 显示最近五条剪贴板内容
+## 终端快捷键
+
+- `Ctrl L` 清屏，Mysql也适用
+- `Ctrl ；` 显示最近五条剪贴板内容
 
 ```
 Ctrl + d       删除一个字符，相当于通常的Delete键（命令行若无任何字符，则相当于exit；处理多行标准输入时也表示EOF ）
 Ctrl + h       退格删除一个字符，相当于通常的Backspace键
 Ctrl + u       删除光标之前到 行首 的字符
 Ctrl + k       删除光标之前到 行尾 的字符
+
 Ctrl + c       取消当前行输入的命令，相当于Ctrl + Break
+
 Ctrl + a       光标移动到行首（Ahead of line），相当于通常的Home键
 Ctrl + e       光标移动到行尾（End of line）
 Ctrl + f       光标向前(Forward)移动一个字符位置
 Ctrl + b       光标往回(Backward)移动一个字符位置
+
 Ctrl + l       清屏，相当于执行clear命令
+
 Ctrl + p       调出命令历史中的前一条（Previous）命令，相当于通常的上箭头
 Ctrl + n       调出命令历史中的下一条（Next）命令，相当于通常的下箭头
+
 Ctrl + r       显示：号提示，根据用户输入查找相关历史命令（reverse-i-search）
 ```
 
-- htop 终端的任务管理器显示
-- lsof 便捷的查看端口情况以及文件调用情况
-- strace -p PID 查看系统调用
-- ps | clorm 20 30 `colrm`删除输出的20 到30 列
-- w | uptime 查看启动情况
-- wc -l 统计行数
-- last 查看Linux登录信息
+�reverse-i-search）
+```
+

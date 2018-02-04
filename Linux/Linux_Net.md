@@ -19,18 +19,18 @@
     - [【常用网络服务】](#常用网络服务)
         - [邮件服务器postfix和devecot](#邮件服务器postfix和devecot)
         - [FTP服务器](#ftp服务器)
-            - [【SSH的使用】](#ssh的使用)
-                - [1.安装软件](#1安装软件)
-                - [2.复制粘贴建立密钥对](#2复制粘贴建立密钥对)
-                - [2.使用脚本更简单](#2使用脚本更简单)
-                - [问题](#问题)
-                - [使用别名登录](#使用别名登录)
-    - [访问图形化](#访问图形化)
-    - [ssh登录并执行一系列命令](#ssh登录并执行一系列命令)
+        - [【SSH的使用】](#ssh的使用)
+            - [1.安装软件](#1安装软件)
+            - [2.复制粘贴建立密钥对](#2复制粘贴建立密钥对)
+            - [2.使用脚本更简单](#2使用脚本更简单)
+            - [遇到的问题](#遇到的问题)
+            - [SSH使用别名](#ssh使用别名)
+            - [访问图形化](#访问图形化)
+            - [ssh登录并执行一系列命令](#ssh登录并执行一系列命令)
         - [【vpn】](#vpn)
             - [shadowsocks](#shadowsocks)
 
-`目录 end` *目录创建于2018-02-04* | 更多: [CSDN](http://blog.csdn.net/kcp606) | [oschina](https://my.oschina.net/kcp1104) | [码云](https://gitee.com/kcp1104) 
+`目录 end` *目录创建于2018-02-05* | 更多: [CSDN](http://blog.csdn.net/kcp606) | [oschina](https://my.oschina.net/kcp1104) | [码云](https://gitee.com/kcp1104) 
 ****************************************
 # 【网络管理】
 ## DNS
@@ -352,50 +352,58 @@ nameserver 8.8.8.4
 ```
 
 ******************************
-#### 【SSH的使用】
-##### 1.安装软件
-`客户端安装软件`
+### 【SSH的使用】
+> `ssh user@host` 默认22端口登录系统  
+> `ssh -p port user@host` 指定端口登录  
+> `ssh -T -p port user@host` 测试能否登录上  
+
+#### 1.安装软件
+_客户端安装软件_
 - `sudo spt-get install openssh-client`
 - 生成密钥对 `ssh-keygen` 可以设置密码，为了方便也可以全部采用默认
 
-`服务端安装软件`
+_服务端安装软件_
 - 安装：`sudo apt-get install openssh-server`
 - 启动：`sudo /etc/init.d/ssh start` 或者 `service ssh start` 
 - 更改配置文件修改默认端口 `/etc/ssh/sshd_config`
 - 查看对否启动sshd`ps -e |grep ssh`
 - 关闭服务 `/etc/init.d/ssh stop`
 
-##### 2.复制粘贴建立密钥对
-`客户端`
+#### 2.复制粘贴建立密钥对
+_客户端_
 - 进入.ssh文件夹下 `gedit id_rsa.pub` 然后复制该公钥内容
     - 或者 `cat ~/.ssh/id_rsa.pub | xclip -sel clip` 将文件复制到剪贴板
 - 在各种平台服务上添加这个公钥即可免密登录
 
-  `服务器端`
+_服务器端_
 - 进入.ssh文件夹下 `sudo vim authorized_keys` 粘贴客户端公钥内容
 - 更改文件权限 `sudo chmod 600 authorized_keys` 确保 其 group和other位没有 w 权限
 
-##### 2.使用脚本更简单
+#### 2.使用脚本更简单
 - 两方安装好软件 客户端生成好了秘钥对之后
 - 默认端口:`ssh-copy-id "username@host"` 输密码就可以了
-- 指定端口 `ssh-copy-id ”-p port username@host“` 或者:`ssh-copy-id " username@host" -p port`
+- 指定端口 `ssh-copy-id ”-p port username@host“` 
+    - 或者:`ssh-copy-id " username@host" -p port`
     
 - 成功后 客户端登录 `ssh -p 22 username@ip`
-    - root用户似乎不能这样登录
-    - /etc/ssh/sshd_confg中PermitRootLogin  no 改为yes 重新启动ssh服务。
-- 注意 一个端口和IP如果之前记录过相关信息 再次连接新的系统（docker中可能出现）按着提示来运行一条命令即可
-- 
-##### 问题
-- `ssh_exchange_identification: Connection closed by remote host` 问题：
+    - root用户一般需要修改:
+    - `/etc/ssh/sshd_confg` 文件中PermitRootLogin  no 改为yes 重新启动ssh服务。
+
+- 注意:
+    - 一个端口和IP如果之前记录过相关信息,然后服务器重装了系统或者别的原因, 修改了服务器秘钥 
+    - 再次连接新的系统按着提示来运行一条命令即可
+    - 例如 `ssh-keygen -f "/home/kcp/.ssh/known_hosts" -R 120.78.154.52`
+
+#### 遇到的问题
+- 终端抛出`ssh_exchange_identification: Connection closed by remote host` 错误:
 ```sh
-echo "PermitRootLogin without-password" >> /etc/ssh/sshd_config ;\
-echo "PermitRootLogin yes" >> /etc/ssh/sshd_config ;\
+    echo "PermitRootLogin without-password" >> /etc/ssh/sshd_config ;\
+    echo "PermitRootLogin yes" >> /etc/ssh/sshd_config ;\
 ```
 - 或者尝试 `echo "sshd: ALL" >> /etc/hosts.allow && service sshd restart`
 
-- 当一个服务器已经配置好了ssh密钥对, 然后服务器重装了系统或者别的原因, 修改了服务器秘钥,就需要:
-    - `ssh-keygen -f "/home/kcp/.ssh/known_hosts" -R 120.78.154.52`
-    
+********
+
 _这是什么问题,这么6的么, 配置好了公钥_
 ```sh
 $ ssh -p 8888 git@184.170.220.117
@@ -409,7 +417,10 @@ $ ssh -p 8888 git@184.170.220.117
 ```
 _emmm.出现这样的输出竟然是连接上了,,,_
 
-##### 使用别名登录
+***************
+
+
+#### SSH使用别名
 `vim ~/.ssh/config`
 ```
     Host aliyun
@@ -428,24 +439,26 @@ _emmm.出现这样的输出竟然是连接上了,,,_
     IdentitiesOnly 只接受SSH key 登录
     PubkeyAuthentication
 ```
-- `ssh aliyun` 即可登录 但是要输入 pub的密码，
-    - 如果生成公钥时没设置密码就要错三次，然后输入用户密码，不觉得有多方便，还不如 alias
+- `ssh aliyun` 即可登录 但是要输入生成公钥时的密码， _方便多公钥的情况_
+    - 如果生成公钥时_没有_设置密码就要错三次，然后输入用户密码，
+    - 不觉得有多方便，还不如 alias进行配置
 
-## 访问图形化
+#### 访问图形化
 
 在`/etc/ssh/sshd_config`添加以下信息，然后重启ssh服务
 ```
-X11Forwarding yes
-X11DisplayOffset 10
+    X11Forwarding yes
+    X11DisplayOffset 10
 ```
 - `ssh -X -p port user@host` 登录即可
+    - 使用过一次,发现了严重的内存泄露,也不知道是什么原因
 
-## ssh登录并执行一系列命令
+#### ssh登录并执行一系列命令
 ```sh
-ssh user@host 'cmd \
-    && cmd \
-    && cmd \
-    '
+    ssh user@host 'cmd \
+        && cmd \
+        && cmd \
+        '
 ```
 
 ***********

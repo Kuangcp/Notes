@@ -19,7 +19,7 @@
     - [Gentoo](#gentoo)
     - [Mageia](#mageia)
 
-`目录 end` *目录创建于2018-02-04* | 更多: [CSDN](http://blog.csdn.net/kcp606) | [oschina](https://my.oschina.net/kcp1104) | [码云](https://gitee.com/kcp1104) 
+`目录 end` *目录创建于2018-02-05* | 更多: [CSDN](http://blog.csdn.net/kcp606) | [oschina](https://my.oschina.net/kcp1104) | [码云](https://gitee.com/kcp1104) 
 ****************************************
 # Linux各个发行版本使用体验
 > 一边用一边记录吧
@@ -31,7 +31,7 @@
     x86  =  32-bit  =  i386
 
 _查看发行版_
-- `lsb_release -a`
+- `lsb_release -a`  [查看更多方式](/Linux/Linux_File.md#查看发行版)
 
 ## Debian系
 ### Debian
