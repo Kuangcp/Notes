@@ -29,7 +29,7 @@
             - [字符雨](#字符雨)
     - [快捷键](#快捷键)
 
-`目录 end` *目录创建于2018-02-02* | 更多: [CSDN](http://blog.csdn.net/kcp606) | [oschina](https://my.oschina.net/kcp1104) | [码云](https://gitee.com/kcp1104) 
+`目录 end` *目录创建于2018-02-04* | 更多: [CSDN](http://blog.csdn.net/kcp606) | [oschina](https://my.oschina.net/kcp1104) | [码云](https://gitee.com/kcp1104) 
 ****************************************
 # 【Linux系统】
 > 只是记录了debian系的Linux, 不过也是大同小异
@@ -239,6 +239,7 @@ cat more less nl
 
 - Centos上which并不是命令, 而是别名!
     - `which='alias | /usr/bin/which --tty-only --read-alias --show-dot --show-tilde'`
+
 **************
 #### 让命令在后台运行
 > [原博客](https://www.ibm.com/developerworks/cn/linux/l-cn-nohup/)

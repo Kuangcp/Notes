@@ -8,7 +8,9 @@
     - [语言](#语言)
         - [Java](#java)
         - [Python](#python)
-        - [Linux](#linux)
+        - [Erlang](#erlang)
+            - [Elixir](#elixir)
+    - [Linux](#linux)
         - [Go](#go)
     - [Git](#git)
         - [Github相关](#github相关)
@@ -19,7 +21,7 @@
     - [人工智能](#人工智能)
     - [在线工具](#在线工具)
 
-`目录 end` *目录创建于2018-01-22* | 更多: [CSDN](http://blog.csdn.net/kcp606) | [oschina](https://my.oschina.net/kcp1104) | [码云](https://gitee.com/kcp1104) 
+`目录 end` *目录创建于2018-02-04* | 更多: [CSDN](http://blog.csdn.net/kcp606) | [oschina](https://my.oschina.net/kcp1104) | [码云](https://gitee.com/kcp1104) 
 ****************************************
 # 【常用的网站】
 ## 软件商店
@@ -60,7 +62,8 @@
 - [RUNOOB.COM](http://www.runoob.com) `各种技术学习 文档资源`
 - [asciinema](https://asciinema.org) `终端屏幕录制和分享网`
 - [Linux中国开源社区](https://linux.cn/)
-- []()
+- [LinuxTOY 是一个致力于提供 Linux 相关资讯的专题站点。](https://linuxtoy.org/)
+    - [内容Github源](https://github.com/LinuxTOY/linuxtoy.org)
 
 ### Go
 - [go](http://www.runoob.com/go/go-tutorial.html)

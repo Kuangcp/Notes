@@ -15,11 +15,12 @@
         - [抓包工具](#抓包工具)
         - [异步](#异步)
         - [响应式](#响应式)
+        - [Shell](#shell)
     - [Database](#database)
     - [前端](#前端)
         - [富文本编辑器](#富文本编辑器)
 
-`目录 end` *目录创建于2018-02-03* | 更多: [CSDN](http://blog.csdn.net/kcp606) | [oschina](https://my.oschina.net/kcp1104) | [码云](https://gitee.com/kcp1104) 
+`目录 end` *目录创建于2018-02-04* | 更多: [CSDN](http://blog.csdn.net/kcp606) | [oschina](https://my.oschina.net/kcp1104) | [码云](https://gitee.com/kcp1104) 
 ****************************************
 # 常用的工具软件
 ## 【国内的资源镜像站】
@@ -45,8 +46,9 @@
 ## SDK
 - [Springboot下载地址](https://github.com/spring-projects/spring-boot/releases)
 - [openjdk](http://openjdk.java.net/)
-- [oracle-jdk](http://www.oracle.com/technetwork/cn/java/javase/downloads/index.html)
-
+    
+- [oracle-jdk英文版页面](http://www.oracle.com/technetwork/java/javase/downloads/index.html)`更新的快`
+    - [oracle-jdk中文版页面](http://www.oracle.com/technetwork/cn/java/javase/downloads/index.html)`也就看着都是中文而已,英文版最好`
 *****
 ## Plugin
 - [gradle-tomcat-plugin](https://github.com/bmuschko/gradle-tomcat-plugin)`gradle中tomcat插件`
@@ -106,6 +108,9 @@ _授权_
 
 ### 响应式
 - [vertx](http://vertx.io/)`构建响应式应用程序`
+
+### Shell
+- [crash](http://www.crashub.org/)
 
 ****************************
 ## Database

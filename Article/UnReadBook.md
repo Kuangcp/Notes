@@ -18,9 +18,10 @@
         - [工作](#工作)
         - [生活](#生活)
 
-`目录 end` *目录创建于2018-01-22* | 更多: [CSDN](http://blog.csdn.net/kcp606) | [oschina](https://my.oschina.net/kcp1104) | [码云](https://gitee.com/kcp1104) 
+`目录 end` *目录创建于2018-02-04* | 更多: [CSDN](http://blog.csdn.net/kcp606) | [oschina](https://my.oschina.net/kcp1104) | [码云](https://gitee.com/kcp1104) 
 ****************************************
 # 待阅读的书籍
+> [程序员必读书单](http://www.cnblogs.com/figure9/p/developer-reading-list.html)
 
 ## 数学
 ### 统计学

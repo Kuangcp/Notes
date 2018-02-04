@@ -9,7 +9,7 @@
         - [插入模式](#插入模式)
         - [命令模式](#命令模式)
 
-`目录 end` *目录创建于2018-01-28* | 更多: [CSDN](http://blog.csdn.net/kcp606) | [oschina](https://my.oschina.net/kcp1104) | [码云](https://gitee.com/kcp1104) 
+`目录 end` *目录创建于2018-02-04* | 更多: [CSDN](http://blog.csdn.net/kcp606) | [oschina](https://my.oschina.net/kcp1104) | [码云](https://gitee.com/kcp1104) 
 ****************************************
 # Vim 
 > 学习曲线很高，但是学会熟练使用后就效率很高
@@ -26,27 +26,12 @@
 ## 基本配置
 - 在文件 全局：`/etc/vim/vimrc` 先备份一下 `sudo cp /etc/vim/vimrc /etc/vim/vimrc.bak`
 	- 或者当前用户：`~/.vimrc` 中添加如下内容就差不多了（但是文件高亮不见了）
-```
-set showcmd		" Show (partial) command in status line.
-set autowrite		" Automatically save before commands like :next and :make
-set nocompatible
-set number
-filetype on 
-set history=1000
-set autoindent
-set smartindent
-set tabstop=4
-set shiftwidth=4
-set showmatch
-set guioptions=T
-set ruler
-set nohls
-set backspace=2
-imap jj <Esc>
-```
+    - [.vimrc文件](https://gitee.com/kcp1104/codes/ajpxfmltvund5r2w8ge4o50#.vimrc)
 
 ## 基础操作
-> [参考博客](http://www.jianshu.com/p/bcbe916f97e1)
+> [参考博客](http://www.jianshu.com/p/bcbe916f97e1)  
+> [高效率编辑器 Vim——操作篇，非常适合 Vim 新手](https://linuxtoy.org/archives/efficient-editing-with-vim.html)
+
 ### 跳转
 - k j h l  上下左右
 - Ctrl+f 上翻一页

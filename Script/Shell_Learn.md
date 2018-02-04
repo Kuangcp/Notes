@@ -21,11 +21,15 @@
             - [case](#case)
         - [循环](#循环)
     - [函数](#函数)
+    - [工具](#工具)
+        - [jq](#jq)
+        - [shyaml](#shyaml)
 
-`目录 end` *目录创建于2018-02-03* | 更多: [CSDN](http://blog.csdn.net/kcp606) | [oschina](https://my.oschina.net/kcp1104) | [码云](https://gitee.com/kcp1104) 
+`目录 end` *目录创建于2018-02-04* | 更多: [CSDN](http://blog.csdn.net/kcp606) | [oschina](https://my.oschina.net/kcp1104) | [码云](https://gitee.com/kcp1104) 
 ****************************************
 # 学习Shell
-> 首先语法不像别的语言可读性好，比如Python，然后方言众多，学习比Python2，3还恶心
+> 首先语法不像别的语言可读性好，比如Python，然后方言众多，学习比Python2，3还恶心  
+> [Shell 编程之语法基础](https://linuxtoy.org/archives/shell-programming-basic.html) | [Shell 编程之执行过程](https://linuxtoy.org/archives/shell-programming-execute.html)
 
 ## shell类别
 - sh
@@ -36,6 +40,8 @@
   - 它主要是为了执行脚本而出现，而不是交互，它速度更快，但功能相比bash要少很多，语法严格遵守POSIX标准
   - 速度确实要快,输入上的交互确实交互不了
 - fish
+
+- [linux shell dash&bash](http://blog.csdn.net/zengqiang1/article/details/61916697)
 
 ## Tips
 
@@ -88,6 +94,13 @@
   do
     echo $j
   done
+```
+```sh
+    i=1
+    while [ "$i" -le 10 ];do
+        echo $i
+        i=$(($i+1))
+    done
 ```
 ************
 ### 字符串
@@ -157,3 +170,17 @@
     echo "simple"
   }
 ```
+
+
+*********************************
+## 工具
+> [更多工具](/Skills/Soft_Manual.md#终端工具)
+
+### jq
+> [官方网址](https://stedolan.github.io/jq/#) `sudo apt install jq 即可`
+
+- 看了半小时, 对于复杂的JSON格式,根本没有办法, 不像Python一样把那些{} [] 当成对象,而是简单的数据结构,随意嵌套
+  - 反观之,真是棒棒的一个脚本了!!!
+
+### shyaml
+> [参考](https://linuxtoy.org/archives/shyaml.html)

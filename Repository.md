@@ -27,6 +27,7 @@
     - [【Linux】](#linux)
     - [Database](#database)
     - [前端](#前端)
+        - [有趣](#有趣)
         - [资源仓库](#资源仓库)
             - [字体](#字体)
     - [Tools](#tools)
@@ -37,7 +38,7 @@
     - [工作](#工作)
         - [简历](#简历)
 
-`目录 end` *目录创建于2018-02-03* | 更多: [CSDN](http://blog.csdn.net/kcp606) | [oschina](https://my.oschina.net/kcp1104) | [码云](https://gitee.com/kcp1104) 
+`目录 end` *目录创建于2018-02-04* | 更多: [CSDN](http://blog.csdn.net/kcp606) | [oschina](https://my.oschina.net/kcp1104) | [码云](https://gitee.com/kcp1104) 
 ****************************************
 
 # 【Organization】
@@ -62,6 +63,7 @@
 - [小土刀](https://github.com/wdxtub)`看了很多书,写了很多博客`
 - [Yong Zhu](https://github.com/drinkjava2)`有两个关于IOC和ORM的开源项目值得学习`
 - [魏楚阳](https://github.com/brianway)`和我同龄就进了大厂, 学习的东西确实多, 学习能力很好`
+- [xuxiaodong](https://github.com/xuxiaodong)`活跃在开源社区, 17年开始就不活跃了,不知道为什么`
 
 ## 笔记仓库
 - [某研究生在校阅读笔记](https://github.com/lanxuezaipiao/ReadingNotes)
@@ -208,6 +210,9 @@
 - [js代码块集合](https://github.com/Chalarangelo/30-seconds-of-code)
 - [ssr-web](https://github.com/xiaofuzi/ssr-web)`基于vue的静态博客生成器`
 - [flowchart](https://github.com/adrai/flowchart.js)`绘制svg flow图形`
+
+### 有趣
+- [一个在线游戏](https://github.com/memdealloc/memdealloc.github.io)
 
 ### 资源仓库
 #### 字体

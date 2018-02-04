@@ -18,7 +18,7 @@
 - [【互联网标准化过程文档】](#互联网标准化过程文档)
     - [登录授权](#登录授权)
 
-`目录 end` *目录创建于2018-02-03* | 更多: [CSDN](http://blog.csdn.net/kcp606) | [oschina](https://my.oschina.net/kcp1104) | [码云](https://gitee.com/kcp1104) 
+`目录 end` *目录创建于2018-02-04* | 更多: [CSDN](http://blog.csdn.net/kcp606) | [oschina](https://my.oschina.net/kcp1104) | [码云](https://gitee.com/kcp1104) 
 ****************************************
 # 【API】
 > 各种语言以及平台的在线API
@@ -79,6 +79,7 @@
 - [Python2](https://docs.python.org/2/) | [Python3](https://docs.python.org/3/)
 - [python-gtk3](https://python-gtk-3-tutorial.readthedocs.io/en/latest/introduction.html) `python-gtk3的开发`
 - [httpie](http://python.ctolib.com/httpie.html) `好用的类curl工具 文档` 
+- [一译](http://python.usyiyi.cn/)`翻译了大量Python文档`
 
 ****************
 ## Database
