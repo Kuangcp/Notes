@@ -45,7 +45,7 @@
             - [查看发行版](#查看发行版)
             - [查看系统所有用户信息](#查看系统所有用户信息)
 
-`目录 end` *目录创建于2018-02-05* | 更多: [CSDN](http://blog.csdn.net/kcp606) | [oschina](https://my.oschina.net/kcp1104) | [码云](https://gitee.com/kcp1104) 
+`目录 end` *目录创建于2018-02-06* | 更多: [CSDN](http://blog.csdn.net/kcp606) | [oschina](https://my.oschina.net/kcp1104) | [码云](https://gitee.com/kcp1104) 
 ****************************************
 # 【文件管理】
 > Linux中认为万物皆文件
@@ -107,7 +107,11 @@
 
 
 ### ln
-- `ln -s 文件或目录 link` 生成软链接（快捷方式）
+- `ln -s 源文件或目录 目标绝对路径` 生成软链接（快捷方式）
+_示例_
+```sh
+    ln -s `pwd`/a.md ~/a.md 
+```
 
 ### find
 - `find . -name "*.txt"` 查找当前目录的txt后缀的文件

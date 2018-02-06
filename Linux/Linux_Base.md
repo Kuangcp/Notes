@@ -28,7 +28,7 @@
             - [修改主机名](#修改主机名)
     - [终端快捷键](#终端快捷键)
 
-`目录 end` *目录创建于2018-02-05* | 更多: [CSDN](http://blog.csdn.net/kcp606) | [oschina](https://my.oschina.net/kcp1104) | [码云](https://gitee.com/kcp1104) 
+`目录 end` *目录创建于2018-02-06* | 更多: [CSDN](http://blog.csdn.net/kcp606) | [oschina](https://my.oschina.net/kcp1104) | [码云](https://gitee.com/kcp1104) 
 ****************************************
 # 【Linux系统】
 > 只是记录了debian系的Linux, 不过也是大同小异
@@ -292,8 +292,5 @@ Ctrl + p       调出命令历史中的前一条（Previous）命令，相当于
 Ctrl + n       调出命令历史中的下一条（Next）命令，相当于通常的下箭头
 
 Ctrl + r       显示：号提示，根据用户输入查找相关历史命令（reverse-i-search）
-```
-
-�reverse-i-search）
 ```
 

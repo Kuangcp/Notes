@@ -12,7 +12,9 @@
         - [码云](#码云)
     - [【git初始化配置】](#git初始化配置)
         - [【VI编辑器的使用】](#vi编辑器的使用)
-    - [【配置SSH连接上GitHub】](#配置ssh连接上github)
+    - [【配置SSH连接上Github】](#配置ssh连接上github)
+        - [Github上fork别人项目的操作](#github上fork别人项目的操作)
+            - [合并对方最新代码](#合并对方最新代码)
         - [【.gitingnore文件】](#gitingnore文件)
         - [终端中显示当前分支](#终端中显示当前分支)
         - [命令的自动补全](#命令的自动补全)
@@ -33,7 +35,7 @@
         - [8.Reset一个单独的文件](#8reset一个单独的文件)
         - [9.保留working_tree并且丢弃一些commit](#9保留working_tree并且丢弃一些commit)
 
-`目录 end` *目录创建于2018-02-02* | 更多: [CSDN](http://blog.csdn.net/kcp606) | [oschina](https://my.oschina.net/kcp1104) | [码云](https://gitee.com/kcp1104) 
+`目录 end` *目录创建于2018-02-06* | 更多: [CSDN](http://blog.csdn.net/kcp606) | [oschina](https://my.oschina.net/kcp1104) | [码云](https://gitee.com/kcp1104) 
 ****************************************
 # Git实际使用的记录
 ## Tips
@@ -168,7 +170,7 @@
     4.输入`:wq`,按回车键即可 或者 :x
 ```
 
-## 【配置SSH连接上GitHub】 
+## 【配置SSH连接上Github】 
 > 其他平台类似
 
 - 【Markdown语法】: 
@@ -181,6 +183,17 @@
     - 4.测试SSH连接  $ssh -T git@github.com 输入 密钥对 密码
         - 询问将github的ip加入已知列表中 选择yes
 
+### Github上fork别人项目的操作
+
+#### 合并对方最新代码
+> 1.首先fork一个项目, 然后clone自己所属的该项目下来,假设原作者A自己为B  
+> 2.进入项目目录,添加原作者项目的URL到该项目的远程分支列表中 `git add remote A A_URL`  
+> 3.fetch源到本地 `git fetch A`  
+> 4.合并两个分支代码 `git merge --no-ff A/master`  
+> 5.push即可  
+
+
+
 ********************
 ### 【.gitingnore文件】
 - 使用 `#` 注释一行
@@ -190,20 +203,20 @@
 - `!foo.html`  不忽略该文件
 
 `示例文件`
-```
-      # maven #
-      target/
-      # IDEA #
-      .idea/
-      *.iml
-      out/
-      # eclipse #
-      bin/
-      .settings/
-      .metadata/
-      .classpath
-      .project
-      Servers/
+```conf
+    # maven #
+    target/
+    # IDEA #
+    .idea/
+    *.iml
+    out/
+    # eclipse #
+    bin/
+    .settings/
+    .metadata/
+    .classpath
+    .project
+    Servers/
 ```
 ********************
 ### 终端中显示当前分支

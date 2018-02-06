@@ -6,16 +6,15 @@
         - [【Tips】](#tips)
             - [【查看端口占用情况】](#查看端口占用情况)
             - [【修改DNS】](#修改dns)
-    - [工具](#工具)
-        - [常用命令工具](#常用命令工具)
-            - [ping](#ping)
-        - [curl](#curl)
-        - [iproute2](#iproute2)
-        - [tcpdump](#tcpdump)
-        - [netcat](#netcat)
-        - [scp](#scp)
-        - [rsync](#rsync)
-        - [wget](#wget)
+    - [基础命令工具](#基础命令工具)
+        - [1.ping](#1ping)
+        - [2.curl](#2curl)
+        - [3.iproute2](#3iproute2)
+        - [4.tcpdump](#4tcpdump)
+        - [5.netcat](#5netcat)
+        - [6.scp](#6scp)
+        - [7.rsync](#7rsync)
+        - [8.wget](#8wget)
     - [【常用网络服务】](#常用网络服务)
         - [邮件服务器postfix和devecot](#邮件服务器postfix和devecot)
         - [FTP服务器](#ftp服务器)
@@ -23,14 +22,15 @@
             - [1.安装软件](#1安装软件)
             - [2.复制粘贴建立密钥对](#2复制粘贴建立密钥对)
             - [2.使用脚本更简单](#2使用脚本更简单)
-            - [遇到的问题](#遇到的问题)
-            - [SSH使用别名](#ssh使用别名)
-            - [访问图形化](#访问图形化)
-            - [ssh登录并执行一系列命令](#ssh登录并执行一系列命令)
+            - [3.遇到的问题](#3遇到的问题)
+            - [4.SSH配置文件](#4ssh配置文件)
+            - [5.多密钥对](#5多密钥对)
+            - [6.访问图形化](#6访问图形化)
+            - [7.ssh登录并执行一系列命令](#7ssh登录并执行一系列命令)
         - [【vpn】](#vpn)
             - [shadowsocks](#shadowsocks)
 
-`目录 end` *目录创建于2018-02-05* | 更多: [CSDN](http://blog.csdn.net/kcp606) | [oschina](https://my.oschina.net/kcp1104) | [码云](https://gitee.com/kcp1104) 
+`目录 end` *目录创建于2018-02-06* | 更多: [CSDN](http://blog.csdn.net/kcp606) | [oschina](https://my.oschina.net/kcp1104) | [码云](https://gitee.com/kcp1104) 
 ****************************************
 # 【网络管理】
 ## DNS
@@ -64,7 +64,7 @@
 
 ### 【Tips】
 #### 【查看端口占用情况】
-> netstat lsof fuser ps 都有一定效果 [ linux_performance ](./Linux/linux_performance.md)
+> netstat lsof fuser ps 都有一定效果 [ linux_performance ](./Linux/linux_performance.md)  
 
 `netstat 工具` 更好用的 iproute2往下翻
 
@@ -92,16 +92,14 @@
 #### 【修改DNS】
 - `sudo vim /etc/resolv.conf` 添加Google的DNS 
 ```
-nameserver 8.8.8.8 
-nameserver 8.8.8.4
+    nameserver 8.8.8.8 
+    nameserver 8.8.8.4
 ```
-
 ***************************
-## 工具
-### 常用命令工具
+## 基础命令工具
 > 参考书籍 《Linux 大棚命令百篇》
 
-#### ping
+### 1.ping
 - ping URL ： Linux是默认无休止的
     - -c 次数
     - -q 安静模式 不输出
@@ -111,7 +109,7 @@ nameserver 8.8.8.4
     - -f 暴力尽可能大量包的传送 至少每秒100个
     - 注意：得到的结果中的 mdev 表示ICMP包的RTT偏离平均值的程度，mdev 越大表示网速不稳定 Linux有，mac下叫stddev win系列没有
 
-### curl
+### 2.curl
 - 不输出，重定向到*黑洞*  ` curl -s -o /dev/null URL`
 - 格式化返回的json数据：`curl xxxx|python -m json.tool `
 
@@ -120,7 +118,7 @@ nameserver 8.8.8.4
 - [56错误码](https://stackoverflow.com/questions/10285700/curl-error-recv-failure-connection-reset-by-peer-php-curl)
 
 
-### iproute2
+### 3.iproute2
 > 代替 netstat 的强大工具
 
 `替代方案`
@@ -160,7 +158,7 @@ nameserver 8.8.8.4
 - 默认网关： 如果主机找不到准发规则， 就把数据包发给默认的网关
 - 增加/删除一条路由规则 `ip route add/del 192.168.2.0/24 via 192.168.1.254`
 
-### tcpdump
+### 4.tcpdump
 - `tcpdump -i eth0 -nn -X 'port 53' -c 1` root用户才有运行权限
     - -i 指定监听的网络接口（网卡）
     - -nn 将协议号或端口号，显示数字，而不是名称例如：21 而不显示 FTP
@@ -177,8 +175,8 @@ nameserver 8.8.8.4
 
 - 列出可以选择的抓包对象 `tcpdump -D`（USB设备也能抓？）
 
-### netcat
-> sudo apt install netcat
+### 5.netcat
+> sudo apt install netcat  
 
 - 开始监听端口 ： `nc -l 11044`
     - 建立连接 `nc 127.0.0.1 11044` 任一方退出nc 就终止了连接
@@ -203,7 +201,7 @@ nameserver 8.8.8.4
     - 客户端 `nc -n host port | tar -xvPf -`
     - 这是未压缩的， 压缩再加上参数即可 例如 `gzip -czvPf -xzvPf`
 
-### scp
+### 6.scp
 > scp命令用于在Linux下进行远程拷贝文件的命令，和它类似的命令有cp，认证用的是ssh
 
 ```
@@ -225,7 +223,7 @@ nameserver 8.8.8.4
 - 本地到远程`scp /opt/soft/nginx-0.5.38.tar.gz root@10.10.10.10:/opt/soft/scptest`
 
 
-### rsync 
+### 7.rsync 
 > 同步 个人倾向于称为本地远程， 书籍上是称为 源端 目的端
 
 - 同步到 `rsync file user@host:path` 上， 是将这里的file文件覆盖远程的目录下的file文件，不像git那样
@@ -253,16 +251,12 @@ nameserver 8.8.8.4
 - `--partial` 断点续传 可以简写-P
 - `--progress` 显示传输进度信息
 
-
-
-
-### wget
-
-> 特性和优势：支持 HTTP HTTPS FTP协议 
-> - 能够跟踪 HTML 和 XHTML 即可以下载整站，但是注意wget会不停的去下载HTML中的外链，无休无止
-> - 遵守 robots.txt 标准的工具
-> - 支持慢速网路和不稳定的下载，当下载失败就会不断重试，直到下载成功
-> - 支持断点续传
+### 8.wget
+> 特性和优势：支持 HTTP HTTPS FTP协议  
+> - 能够跟踪 HTML 和 XHTML 即可以下载整站，但是注意wget会不停的去下载HTML中的外链，无休无止  
+> - 遵守 robots.txt 标准的工具  
+> - 支持慢速网路和不稳定的下载，当下载失败就会不断重试，直到下载成功  
+> - 支持断点续传  
 
 - wget 配置文件 `/etc/wgetrc` `~/.wgetrc` 两个文件配置（区别是全局和当前用户）wget的默认行为
 - 例如 -X配置：`wget  -X js,css URL` 排除两个文件夹不下载
@@ -355,7 +349,8 @@ nameserver 8.8.8.4
 ### 【SSH的使用】
 > `ssh user@host` 默认22端口登录系统  
 > `ssh -p port user@host` 指定端口登录  
-> `ssh -T -p port user@host` 测试能否登录上  
+> `ssh -T -p port user@host` 测试能否登录上    
+> `ssh -i 私钥绝对路径 user@host` 采用指定私钥登录(一般默认是`.ssh/id_rsa`)  
 
 #### 1.安装软件
 _客户端安装软件_
@@ -394,7 +389,7 @@ _服务器端_
     - 再次连接新的系统按着提示来运行一条命令即可
     - 例如 `ssh-keygen -f "/home/kcp/.ssh/known_hosts" -R 120.78.154.52`
 
-#### 遇到的问题
+#### 3.遇到的问题
 - 终端抛出`ssh_exchange_identification: Connection closed by remote host` 错误:
 ```sh
     echo "PermitRootLogin without-password" >> /etc/ssh/sshd_config ;\
@@ -420,7 +415,7 @@ _emmm.出现这样的输出竟然是连接上了,,,_
 ***************
 
 
-#### SSH使用别名
+#### 4.SSH配置文件
 `vim ~/.ssh/config`
 ```
     Host aliyun
@@ -430,12 +425,12 @@ _emmm.出现这样的输出竟然是连接上了,,,_
         IdentityFile  ~/.ssh/id_rsa.pub
         IdentitiesOnly yes
 ```
-`参数解释`
+_参数解释_
 ```
     HostName 指定登录的主机名或IP地址
     Port 指定登录的端口号
     User 登录用户名
-    IdentityFile 登录的公钥文件
+    IdentityFile 登录的公/私钥文件 奇怪的是有时候用公有时候用私??
     IdentitiesOnly 只接受SSH key 登录
     PubkeyAuthentication
 ```
@@ -443,7 +438,30 @@ _emmm.出现这样的输出竟然是连接上了,,,_
     - 如果生成公钥时_没有_设置密码就要错三次，然后输入用户密码，
     - 不觉得有多方便，还不如 alias进行配置
 
-#### 访问图形化
+#### 5.多密钥对
+> [参考博客](http://blog.csdn.net/black_ox/article/details/17753943)   
+
+- 1.`ssh-keygen` 生成SSH密钥对
+    - 然后在询问中输入新的文件名
+- 2.`ssh-add 私钥文件绝对路径`
+    - 若执行ssh-add时出现Could not open a connection to your authentication agent
+    - 就先执行 `ssh-agent bash` 对应自己的解释器环境
+- 3.如上 创建配置文件 config
+    - 在git项目中使用别名:正常的项目，我们clone下来之后，origin对应的URL假设为: `git@git.:Rusher/helloworld`
+    - 现在需要做个改动，将git, 要换成rusher_gitlab:
+        - `git remote set-url origin git@rusher_gitlab:Rusher/helloworld`
+    - 如果是root用户的项目:
+        - `git remote set-url origin git@root_gitlab:root/helloworld`
+_config_
+```
+    Host default
+    HostName github.com
+    User git
+    IdentityFile ~/.ssh/default_id_rsa.pub
+```
+- 测试配置是否正确: `ssh -T git@default`
+
+#### 6.访问图形化
 
 在`/etc/ssh/sshd_config`添加以下信息，然后重启ssh服务
 ```
@@ -453,7 +471,7 @@ _emmm.出现这样的输出竟然是连接上了,,,_
 - `ssh -X -p port user@host` 登录即可
     - 使用过一次,发现了严重的内存泄露,也不知道是什么原因
 
-#### ssh登录并执行一系列命令
+#### 7.ssh登录并执行一系列命令
 ```sh
     ssh user@host 'cmd \
         && cmd \
@@ -464,14 +482,14 @@ _emmm.出现这样的输出竟然是连接上了,,,_
 ***********
 ### 【vpn】
 #### shadowsocks
-`服务端`
+_服务端_
 - 安装服务端`sudo pip install shadowsocks`
 - 启动服务`sudo ssserver -p 443 -k sd -m aes-256-cfb`     
 - 后台运行`sudo ssserver -p 443 -k sd -m aes-256-cfb --user nobodu -d start`
 - 停止 `sudo ssserver -d stop`
 - 日志 `sudo less /var/log/shadowsocks.log`
 
-`客户端`
+_客户端_
 - `sudo vim /etc/ss.json` 
 ```json
     { 
@@ -485,5 +503,3 @@ _emmm.出现这样的输出竟然是连接上了,,,_
 ```
 - `sslocal -c /etc/ss/json`
 - 设置代理是1080端口即可
-
-

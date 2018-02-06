@@ -14,7 +14,7 @@
         - [核心配置文件](#核心配置文件)
         - [大致原理讲解](#大致原理讲解)
 
-`目录 end` *目录创建于2018-02-03* | 更多: [CSDN](http://blog.csdn.net/kcp606) | [oschina](https://my.oschina.net/kcp1104) | [码云](https://gitee.com/kcp1104) 
+`目录 end` *目录创建于2018-02-06* | 更多: [CSDN](http://blog.csdn.net/kcp606) | [oschina](https://my.oschina.net/kcp1104) | [码云](https://gitee.com/kcp1104) 
 ****************************************
 
 # Activiti
@@ -63,7 +63,7 @@
 
 ### 大致原理讲解
 
-![来源](https://raw.githubusercontent.com/Kuangcp/ImageRepos/master/Tech/activiti/simple.png)
+[![来源](https://raw.githubusercontent.com/Kuangcp/ImageRepos/master/Tech/activiti/simple.png)](http://www.icoolxue.com/play/5796)
 
 
 

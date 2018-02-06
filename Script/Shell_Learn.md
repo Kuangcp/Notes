@@ -25,7 +25,7 @@
         - [jq](#jq)
         - [shyaml](#shyaml)
 
-`目录 end` *目录创建于2018-02-04* | 更多: [CSDN](http://blog.csdn.net/kcp606) | [oschina](https://my.oschina.net/kcp1104) | [码云](https://gitee.com/kcp1104) 
+`目录 end` *目录创建于2018-02-06* | 更多: [CSDN](http://blog.csdn.net/kcp606) | [oschina](https://my.oschina.net/kcp1104) | [码云](https://gitee.com/kcp1104) 
 ****************************************
 # 学习Shell
 > 首先语法不像别的语言可读性好，比如Python，然后方言众多，学习比Python2，3还恶心  
@@ -36,6 +36,7 @@
   - 大多Linux都支持的shell类别
 - bash
 - zsh
+  - 十分现代化 [配置oh my zsh](https://segmentfault.com/a/1190000004695131)
 - dash
   - 它主要是为了执行脚本而出现，而不是交互，它速度更快，但功能相比bash要少很多，语法严格遵守POSIX标准
   - 速度确实要快,输入上的交互确实交互不了
@@ -125,6 +126,15 @@
   isGithub=`expr match "$line" ".*"$2`
   # 简单的就是使用grep
   isGithub=`echo $line | grep "github" `
+  
+  # return 0 is $1 is substring of $2, otherwise 1
+  strIsSubstring(){
+      local x=1
+      case "$2" in
+          *$1*) x=0;;
+      esac
+      echo $x
+  }
 ```
 
 `求长`
