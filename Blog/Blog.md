@@ -66,6 +66,7 @@
 - [知乎话题：如何搭建博客](https://www.zhihu.com/question/20463581)
 - [知乎专栏：使用Springboot搭建博客](https://zhuanlan.zhihu.com/p/28428463)
 - [solo](https://github.com/b3log/solo)`博客系统 markdown`
+- [咖啡兔](https://github.com/henryyan/henryyan.github.com)`现成的模板直接用md就能生成了`
 
 ## NetWork
 - [使用清华的IPV6](http://ju.outofmemory.cn/entry/154398)

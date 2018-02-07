@@ -35,20 +35,20 @@ export JRE_HOME=${JAVA_HOME}/jre
 export CLASSPATH=.:${JAVA_HOME}/lib:${JRE_HOME}/lib
 export PATH=${JAVA_HOME}/bin:$PATH
 ```
-- 让修改立即生效`source /etc/profile`
-`或者修改 .bash_aliases`
+- 让修改立即生效`source /etc/profile` 或者修改 `.bash_aliases`
+```sh
+    JAVA_HOME=/home/kcp/Application/sdk/jdk1.8.0_131
+    export JRE_HOME=${JAVA_HOME}/jre
+    export CLASSPATH=.:${JAVA_HOME}/lib:${JRE_HOME}/lib
+    export PATH=${JAVA_HOME}/bin:$PATH
 ```
-JAVA_HOME=/home/kcp/Application/sdk/jdk1.8.0_131
-export JRE_HOME=${JAVA_HOME}/jre
-export CLASSPATH=.:${JAVA_HOME}/lib:${JRE_HOME}/lib
-export PATH=${JAVA_HOME}/bin:$PATH
+`source ~/.bash_aliases`
+
+- *一定要执行*: 指定默认的jdk，因为系统预装了openJdk ,为了稳妥建议先进入JDK的bin目录,然后执行
+```sh
+    sudo update-alternatives --install /usr/bin/java java `pwd`/java 300
+    sudo update-alternatives --install /usr/bin/javac javac `pwd`/javac 300
 ```
-- source ~/.bash_aliases
-
-- *一定要执行*: 指定默认的jdk，因为系统预装了openJdk 
-- `sudo update-alternatives --install /usr/bin/java java /home/kcp/Application/sdk/jdk1.8.0_131/bin/java 300`
-- `sudo update-alternatives --install /usr/bin/java java /home/kcp/Application/sdk/jdk1.8.0_131/bin/java 300`
-
 ### sdkman方式 
 > jdk不推荐使用sdkman安装，这里的jdk是开源版估计，会少包 认准这个版本才是完整的(Oracle Corporation 25.131-b11)
 > 但是最近出了一个oracle的版本貌似是完整的，因为有个同意协议的过程 `sdk install java 8u144-oracle`

@@ -46,7 +46,7 @@
 
 ## Tips
 
-- 获取当前shell绝对路径 `basepath=$(cd `dirname $0`; pwd)`
+- 获取当前shell脚本的绝对路径 `basepath=$(cd `dirname $0`; pwd)`
 - 正则：`expr match "$i" ".*变更"`
 - 命令嵌套 只要在 命令中用 两个反引号 `` 将子命令包住即可
 

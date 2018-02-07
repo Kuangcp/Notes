@@ -218,6 +218,9 @@
 #### 字体
 - [IBM字体](https://github.com/IBM/type)`2017年发布的新字体`
 - [codefont](https://github.com/zhenruyan/codefont)`常用的代码字体`
+- [Font-Awesome](https://github.com/FortAwesome/Font-Awesome)`一大堆字体图标`
+- [fonts](https://github.com/powerline/fonts)`终端中常用字体`
+- [nerd-fonts](https://github.com/ryanoasis/nerd-fonts)`很多字体图标`
 
 ***************************************
 ## Tools
