@@ -14,7 +14,7 @@
         - [问题](#问题)
     - [学习使用](#学习使用)
 
-`目录 end` *目录创建于2018-01-28* | 更多: [CSDN](http://blog.csdn.net/kcp606) | [oschina](https://my.oschina.net/kcp1104) | [码云](https://gitee.com/kcp1104) 
+`目录 end` *目录创建于2018-02-07* | 更多: [CSDN](http://blog.csdn.net/kcp606) | [oschina](https://my.oschina.net/kcp1104) | [码云](https://gitee.com/kcp1104) 
 ****************************************
 # Nginx
 
@@ -153,13 +153,13 @@ server {
 > [参考博客](http://www.cnblogs.com/lidong94/p/7156839.html)
 > [参考博客](https://www.digitalocean.com/community/tutorials/how-to-secure-nginx-with-let-s-encrypt-on-ubuntu-16-04)
 
-```conf
-wget https://dl.eff.org/certbot-auto
-chmod a+x certbot-auto
-./certbot-auto 进行安装 但是过程中会有一些设置，
-./certbot-auto certonly --email kuangcp@aliyun.com --nginx -d wx.kuangcp.top 生成证书
+```sh
+  wget https://dl.eff.org/certbot-auto
+  chmod a+x certbot-auto
+  ./certbot-auto 进行安装 但是过程中会有一些设置，
+  ./certbot-auto certonly --email kuangcp@aliyun.com --nginx -d wx.kuangcp.top 生成证书
 ```
-SSL 接收到一个超出最大准许长度的记录 要在端口后加上SSL nginx
+_SSL 接收到一个超出最大准许长度的记录 要在端口后加上SSL nginx_
 ```conf
   upstream youhui {
     server 127.0.0.1:8080;
@@ -217,6 +217,7 @@ SSL 接收到一个超出最大准许长度的记录 要在端口后加上SSL ng
     access_log /home/kuang/log/https.log;
   }
 ```
+[Nginx反向代理https](http://linux.it.net.cn/e/server/nginx/2015/0131/12745.html)
 
 #### 配置Websocket反向代理
 ```conf

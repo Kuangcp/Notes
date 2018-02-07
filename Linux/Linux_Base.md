@@ -28,7 +28,7 @@
             - [修改主机名](#修改主机名)
     - [终端快捷键](#终端快捷键)
 
-`目录 end` *目录创建于2018-02-06* | 更多: [CSDN](http://blog.csdn.net/kcp606) | [oschina](https://my.oschina.net/kcp1104) | [码云](https://gitee.com/kcp1104) 
+`目录 end` *目录创建于2018-02-07* | 更多: [CSDN](http://blog.csdn.net/kcp606) | [oschina](https://my.oschina.net/kcp1104) | [码云](https://gitee.com/kcp1104) 
 ****************************************
 # 【Linux系统】
 > 只是记录了debian系的Linux, 不过也是大同小异
@@ -43,6 +43,7 @@
 - gnome 占用资源中等，个人对该桌面不感冒
 - xfce 占用资源少，操作类似于xp
 - kde 功能强大，占用资源中等
+    - [知乎 KDE如何配置得漂亮大气？](https://www.zhihu.com/question/54147372)
 - dde deepin设计的桌面环境，小bug略多，但是美观操作方便
 
 ***************************
@@ -258,6 +259,7 @@ cat more less nl
 ##### 关闭ssh回话仍能运行
 - 使用`nohup`就能屏蔽hup信号，默认输出到 nohup.out `nohup 命令 &`
     - 将所有输出重定向到空设备  `nohup 命令>/dev/null 2>&1`
+    - 例如 在当前目录后台打开文件管理器 `(dde-file-manager . &) >/dev/null 2>&1`
 
 - `(命令 &)` 屏蔽了hup信号
 

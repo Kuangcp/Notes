@@ -21,11 +21,11 @@
     - [人工智能](#人工智能)
     - [在线工具](#在线工具)
 
-`目录 end` *目录创建于2018-02-04* | 更多: [CSDN](http://blog.csdn.net/kcp606) | [oschina](https://my.oschina.net/kcp1104) | [码云](https://gitee.com/kcp1104) 
+`目录 end` *目录创建于2018-02-07* | 更多: [CSDN](http://blog.csdn.net/kcp606) | [oschina](https://my.oschina.net/kcp1104) | [码云](https://gitee.com/kcp1104) 
 ****************************************
 # 【常用的网站】
 ## 软件商店
-- [https://en.softonic.com/](https://en.softonic.com/)`windows居多`
+- [https://en.softonic.com/](https://en.softonic.com/)`windows软件居多`
 - [VirtualBox和VMWare的镜像网](http://www.osboxes.org/)
 - [安卓在X86设备上的ISO下载](http://www.android-x86.org/download)
 

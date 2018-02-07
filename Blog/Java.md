@@ -8,13 +8,15 @@
     - [Test](#test)
     - [精彩系列](#精彩系列)
         - [码农翻身](#码农翻身)
+    - [Java语言讨论](#java语言讨论)
 
-`目录 end` *目录创建于2018-01-22* | 更多: [CSDN](http://blog.csdn.net/kcp606) | [oschina](https://my.oschina.net/kcp1104) | [码云](https://gitee.com/kcp1104) 
+`目录 end` *目录创建于2018-02-07* | 更多: [CSDN](http://blog.csdn.net/kcp606) | [oschina](https://my.oschina.net/kcp1104) | [码云](https://gitee.com/kcp1104) 
 ****************************************
 # Java
 > 和Java有关的博客和网页  
  
 ## SE
+- [ 菜鸟入门：Java程序员学习之路 ](http://blog.csdn.net/zzp16/article/details/5614588)
 - [Eclipse Collections以及Java8的特性](http://www.infoq.com/cn/articles/eclipse-collections?utm_campaign=rightbar_v2&utm_source=infoq&utm_medium=articles_link&utm_content=link_text)
 - [Java8的特性](http://www.jb51.net/article/48304.htm)
 - [正确使用Volatile变量](https://www.ibm.com/developerworks/cn/java/j-jtp06197.html)

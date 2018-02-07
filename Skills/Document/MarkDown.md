@@ -1,18 +1,37 @@
 `目录 start`
  
 - [Markdown](#markdown)
+    - [基础格式](#基础格式)
+        - [头信息](#头信息)
     - [Github](#github)
 
-`目录 end` *目录创建于2018-01-22* | 更多: [CSDN](http://blog.csdn.net/kcp606) | [oschina](https://my.oschina.net/kcp1104) | [码云](https://gitee.com/kcp1104) 
+`目录 end` *目录创建于2018-02-07* | 更多: [CSDN](http://blog.csdn.net/kcp606) | [oschina](https://my.oschina.net/kcp1104) | [码云](https://gitee.com/kcp1104) 
 ****************************************
 # Markdown
-> [markup](https://github.com/github/markup)`各种标记性文本格式`
+> [markup](https://github.com/github/markup)`丰富的标记性文本格式`
 
+## 基础格式
+
+### 头信息
+```
+    --- 
+    layout: post
+    title: "关于WEB开发中引入javascript文件方式的一点建议"
+    wordpress_id: 12
+    wordpress_url: http://wsria.com/?p=12
+    date: 2009-02-07 18:24:46 +08:00
+    category: javascript
+    tags: 
+    - jquery
+    - prototype
+    - dojo
+    - ext
+    - 建议
+    ---
+```
 **************
 ## Github
 > [比较全面的Github格式 GFM](https://github.com/guodongxiaren/README)
-
-
 
 _目录规则（页内跳转）_
 

@@ -38,7 +38,7 @@
     - [工作](#工作)
         - [简历](#简历)
 
-`目录 end` *目录创建于2018-02-04* | 更多: [CSDN](http://blog.csdn.net/kcp606) | [oschina](https://my.oschina.net/kcp1104) | [码云](https://gitee.com/kcp1104) 
+`目录 end` *目录创建于2018-02-07* | 更多: [CSDN](http://blog.csdn.net/kcp606) | [oschina](https://my.oschina.net/kcp1104) | [码云](https://gitee.com/kcp1104) 
 ****************************************
 
 # 【Organization】
@@ -122,7 +122,7 @@
 ### Demo
 - [springboot-action](https://github.com/lianggzone/springboot-action) `Springboot常见的模块都有,文档也多`
 - [Java-learing](https://github.com/brianway/java-learning) `基础学习仓库`
-- [activiti实战源码](https://github.com/henryyan/activiti-in-action-codes) `activiti实战这本书的源码`
+- [activiti实战源码](https://github.com/henryyan/activiti-in-action-codes) `<activiti实战>这本书的源码`
 - [springboot-activiti](https://gitee.com/wyy396731037/springboot-activiti) `整合activiti的Springboot示例`
 - [activiti示例](https://github.com/henryyan/kft-activiti-demo)`Activiti实战书籍相关源码`
 - [rabbitmq](https://github.com/chwshuang/rabbitmq)`入门学习代码`

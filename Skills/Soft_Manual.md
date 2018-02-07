@@ -53,7 +53,7 @@
             - [主题](#主题)
         - [Vivaldi](#vivaldi)
 
-`目录 end` *目录创建于2018-02-02* | 更多: [CSDN](http://blog.csdn.net/kcp606) | [oschina](https://my.oschina.net/kcp1104) | [码云](https://gitee.com/kcp1104) 
+`目录 end` *目录创建于2018-02-07* | 更多: [CSDN](http://blog.csdn.net/kcp606) | [oschina](https://my.oschina.net/kcp1104) | [码云](https://gitee.com/kcp1104) 
 ****************************************
 # 软件使用记事
 ## 【包管理】
@@ -235,6 +235,8 @@ _批量修改_
 
 ************************************
 ### VSCode
+> [官网](https://code.visualstudio.com/)
+
 - 码笔记，码Python 比较方便，目录树，预览，整合终端
 - [快捷键](https://code.visualstudio.com/shortcuts/keyboard-shortcuts-linux.pdf)
     - Ctrl P 快速打开
@@ -246,6 +248,8 @@ _批量修改_
 
 ************
 ### Gedit
+> [Github地址](https://github.com/GNOME/gedit)
+
 - 安装markdown预览插件 `早已经停止维护了，还是只用来简单的查看修改文件就好了`
 
 ### 小书匠
@@ -274,6 +278,7 @@ _批量修改_
 
 ************
 ### Vi/Vim
+> [Github地址](https://github.com/vim/vim)  
 > [Vim 学习笔记](/Linux/vim.md)
 
 ************

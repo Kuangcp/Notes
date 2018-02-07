@@ -3,11 +3,11 @@
 - [【个人博客网】](#个人博客网)
 - [【博客社区】](#博客社区)
     - [博客能人](#博客能人)
+    - [专栏](#专栏)
 - [【Blog】](#blog)
     - [搭建博客](#搭建博客)
     - [NetWork](#network)
     - [经验之谈](#经验之谈)
-    - [专栏](#专栏)
     - [操作系统](#操作系统)
         - [Windows](#windows)
         - [Linux](#linux)
@@ -18,7 +18,7 @@
     - [生活](#生活)
     - [商业](#商业)
 
-`目录 end` *目录创建于2018-01-25* | 更多: [CSDN](http://blog.csdn.net/kcp606) | [oschina](https://my.oschina.net/kcp1104) | [码云](https://gitee.com/kcp1104) 
+`目录 end` *目录创建于2018-02-07* | 更多: [CSDN](http://blog.csdn.net/kcp606) | [oschina](https://my.oschina.net/kcp1104) | [码云](https://gitee.com/kcp1104) 
 ****************************************
 
 > 只用来记录非技术类的文章,技术类的直接放到对应的笔记中去
@@ -92,6 +92,12 @@
 - [码农翻身:这个动物园， 两年也逛不完](https://mp.weixin.qq.com/s?__biz=MzAxOTc0NzExNg==&mid=2665513596&idx=1&sn=558756b6fa77c7a86370f41fa7cde732&chksm=80d67a3fb7a1f329bfb3bfa9a3eb07ae21b19501cb895a0754c18ffbe26bf92029d6266f1845&scene=21#wechat_redirect)
 - [谁将会杀死 Java？](http://www.codeceo.com/article/what-will-kill-java.html)
 
+_如何将脑海中的思维火花转化为代码_
+
+>先把流程大致想清楚，在 main() 中写下大致的调用结构,不一定要实现每个细节，可以先用函数分装起来。实现最少的功能，之后再想怎么改进，加功能；这个过程也可以检验一开始写下来的代码是不是具备可拓展性。  
+比如用 js 做日历，可以先实现一个只能打印字符串日历的版本（这涉及到日期的计算，简单格式化输出），然后思考怎么把字符串适配到 html 上？或者服务端的话输出为 json ？
+或者其实可以跳过序列化这一步？等等。可以学习一下 TDD ，一边写代码一边写测试，切忌自以为思考完所有细节一气呵成实现完毕，这样的话基本上写代码：调试找 bug = 1:10
+
 
 ***************
 ## 操作系统
@@ -130,6 +136,7 @@
 - [土木真的没有 IT 行业有前途吗？](https://www.zhihu.com/question/57200773/answer/273681090?group_id=923124272622088192)`每一行都不容易！`
 
 - [我的 2017 ：追逐更好未来的一年 ](http://blog.csdn.net/u011240877/article/details/78967014)
+- [《程序员的成长课》:少走5年弯路](http://blog.csdn.net/IMbRl71u7pt5X29rlEu7/article/details/78746265)
 
 ## 商业
 - [都说在做某界的 Airbnb，Airbnb 到底做了什么](http://daily.zhihu.com/story/4826947)

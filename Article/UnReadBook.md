@@ -17,8 +17,9 @@
         - [Kotlin](#kotlin)
         - [工作](#工作)
         - [生活](#生活)
+- [教学视频](#教学视频)
 
-`目录 end` *目录创建于2018-02-04* | 更多: [CSDN](http://blog.csdn.net/kcp606) | [oschina](https://my.oschina.net/kcp1104) | [码云](https://gitee.com/kcp1104) 
+`目录 end` *目录创建于2018-02-07* | 更多: [CSDN](http://blog.csdn.net/kcp606) | [oschina](https://my.oschina.net/kcp1104) | [码云](https://gitee.com/kcp1104) 
 ****************************************
 # 待阅读的书籍
 > [程序员必读书单](http://www.cnblogs.com/figure9/p/developer-reading-list.html)
@@ -91,3 +92,8 @@
     《Head First 设计模式》
     《大型网站技术架构》（李智慧 著）
     《大型网站系统与 Java 中间件实践》
+
+
+# 教学视频
+
+- [用Java学编程  讲师：翁恺](http://study.163.com/course/introduction.htm?courseId=533006#/courseDetail?tab=1)

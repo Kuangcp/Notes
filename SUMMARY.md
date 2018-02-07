@@ -122,6 +122,7 @@
     * [ Nginx ](./Linux/Nginx.md)
     * [ Release_Experience ](./Linux/Release_Experience.md)
     * [ Vim ](./Linux/Vim.md)
+    * [ Zsh ](./Linux/Zsh.md)
 * 【 Script 】
     * [ Dos ](./Script/Dos.md)
     * [ Python ](./Script/Python.md)
