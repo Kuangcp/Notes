@@ -7,7 +7,7 @@
         - [oh-my-zsh](#oh-my-zsh)
             - [主题](#主题)
 
-`目录 end` *目录创建于2018-02-07* | 更多: [CSDN](http://blog.csdn.net/kcp606) | [oschina](https://my.oschina.net/kcp1104) | [码云](https://gitee.com/kcp1104) 
+`目录 end` *目录创建于2018-02-09* | 更多: [CSDN](http://blog.csdn.net/kcp606) | [oschina](https://my.oschina.net/kcp1104) | [码云](https://gitee.com/kcp1104) 
 ****************************************
 # Zsh
 ## 为什么要使用
@@ -26,15 +26,13 @@
 
 - 然后进行配置我自己的环境,将bash的配置迁移过来, 对应的 [配置文件](https://github.com/Kuangcp/Configs/tree/master/Linux)
 - 为了在控制台的左边提示符添加时间:
-```sh
-    PS1="${ret_status}%{$fg[cyan]%}%D{%I:%m:%S} %c%{$reset_color%}$(git_prompt_info)"
-    # 其实大部分内容都是 直接 echo $PS1 得到的
-    # 然后在中间加了个 %D{%I:%m:%S} 显示时分秒
-```
+    - `PS1="${ret_status}%{$fg[cyan]%}%D{%I:%m:%S}%c%{$reset_color%}$(git_prompt_info)"`
+    - 其实大部分内容都是 直接复制 echo $PS1
+    - 然后在中间加了个 %D{%I:%m:%S} 显示时分秒
 > 骚操作的是我找到两个帖子,在两个平台上,提的问题和回答的答案一模一样, 但是,,提问者和回答者另有其人, -> [云栖问答](https://yq.aliyun.com/ask/31670/)|[SegmentFault](https://segmentfault.com/q/1010000005104916)  
 > 当然也有可能是同一个人在两个平台上提问题,然后有个人复制回答了, 不管怎样,回答对于目前版本来说是错的, %M不被zsh识别要%m才是分钟
 
-> 然后时间正常了,emmmm,但是分支显示不出来了, 先这样吧, 看看主题
+> 然后时间正常了,emmmm,但是分支显示不出来了, 先这样吧, 选个主题算了
 
 #### 主题
 > [官网主题列表](https://github.com/robbyrussell/oh-my-zsh/wiki/Themes) 

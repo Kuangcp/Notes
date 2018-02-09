@@ -45,7 +45,7 @@
             - [查看发行版](#查看发行版)
             - [查看系统所有用户信息](#查看系统所有用户信息)
 
-`目录 end` *目录创建于2018-02-06* | 更多: [CSDN](http://blog.csdn.net/kcp606) | [oschina](https://my.oschina.net/kcp1104) | [码云](https://gitee.com/kcp1104) 
+`目录 end` *目录创建于2018-02-09* | 更多: [CSDN](http://blog.csdn.net/kcp606) | [oschina](https://my.oschina.net/kcp1104) | [码云](https://gitee.com/kcp1104) 
 ****************************************
 # 【文件管理】
 > Linux中认为万物皆文件
@@ -347,15 +347,18 @@ _示例_
 - `tar -cZf jpg.tar.Z *.jpg ` //将所有jpg打包成jpg.tar后 生成umcompress压缩的包，命名为jpg.tar.Z
 
 ******
-- `rar a jpg.rar *.jpg` //rar格式的压缩，需要先下载rar for linux
+- `rar a jpg.rar *.jpg` //rar格式的压缩
 
 ******
-- `zip jpg.zip *.jpg` //zip格式的压缩，需要先下载zip for linux
+- `zip images.zip *.jpg` //zip格式的压缩
 - `zip -r file.zip code/*` 压缩code目录下所有文件
     - `zip -r ./a.zip ./*` 压缩当前目录所有文件
-    - `-q`终端不输出 `-o` 输出文件`
-    -  `-r` 表示递归 `-l` 兼容Windows的换行符
-    -  `-e` 加密
+    - `-q`安静模式, 终端不输出
+    - `-o` 输出文件`
+    - `-r` 表示递归
+    - `-l` 兼容Windows的换行符
+    - `-e` 加密
+    - `-d filename` 在zip中删除某文件
 
 #### 解压
 - `tar -xvf file.tar` //解压 tar包
@@ -370,7 +373,7 @@ _示例_
 - `unzip file.zip `//解压zip
     - -q 终端不输出 
     - -d 指定目录 
-    - -l 查看不解压 
+    - -l 不解压,查看所有文件 
     - -O 指定编码
 
 

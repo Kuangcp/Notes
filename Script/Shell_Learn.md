@@ -25,7 +25,7 @@
         - [jq](#jq)
         - [shyaml](#shyaml)
 
-`目录 end` *目录创建于2018-02-06* | 更多: [CSDN](http://blog.csdn.net/kcp606) | [oschina](https://my.oschina.net/kcp1104) | [码云](https://gitee.com/kcp1104) 
+`目录 end` *目录创建于2018-02-09* | 更多: [CSDN](http://blog.csdn.net/kcp606) | [oschina](https://my.oschina.net/kcp1104) | [码云](https://gitee.com/kcp1104) 
 ****************************************
 # 学习Shell
 > 首先语法不像别的语言可读性好，比如Python，然后方言众多，学习比Python2，3还恶心  
@@ -60,11 +60,12 @@
 **********************
 ## 输入输出
 
-
 ### 输入
 ### 输出
 
 #### 彩色输出
+> [参考博客,比较详细](http://blog.csdn.net/magiclyj/article/details/72637666)
+
 - 红色 `\033[0;31m`
 - 绿色 `\033[0;32m`
 - 黄色 `\033[0;33m`

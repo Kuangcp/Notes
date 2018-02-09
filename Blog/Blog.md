@@ -18,7 +18,7 @@
     - [生活](#生活)
     - [商业](#商业)
 
-`目录 end` *目录创建于2018-02-07* | 更多: [CSDN](http://blog.csdn.net/kcp606) | [oschina](https://my.oschina.net/kcp1104) | [码云](https://gitee.com/kcp1104) 
+`目录 end` *目录创建于2018-02-09* | 更多: [CSDN](http://blog.csdn.net/kcp606) | [oschina](https://my.oschina.net/kcp1104) | [码云](https://gitee.com/kcp1104) 
 ****************************************
 
 > 只用来记录非技术类的文章,技术类的直接放到对应的笔记中去
@@ -26,6 +26,7 @@
 > [Java相关](Java.md) | [Go相关](Go.md) | [Python相关](Python.md) | [解决方案](Solution.md) | [前端相关](View.md) | [服务器运维](Server.md)
 
 # 【个人博客网】
+- [阮一峰](http://www.ruanyifeng.com/blog/)`一个勤奋的布道者`
 - [hushuang.me](https://hushuang.me/)
 - [猛禽](http://my.csdn.net/Raptor) `一个坚持了17年博客的程序员`
 - [折腾的创业者](https://xicheng412.github.io/)`大学生创业`
@@ -36,6 +37,7 @@
 - [程序员DD](http://blog.didispace.com/)`翟永超`
 - [Web程序猿](https://imququ.com/)
 - [letus.club](http://letus.club/)
+- [海底苍鹰(tank)](http://blog.51yip.com/) `前端和Linux`
 
 # 【博客社区】
 - [http://www.importnew.com](http://www.importnew.com)`小众?`

@@ -10,12 +10,13 @@
     - [常用功能小模块](#常用功能小模块)
         - [输入校验](#输入校验)
 
-`目录 end` *目录创建于2018-01-14*
+`目录 end` *目录创建于2018-02-09* | 更多: [CSDN](http://blog.csdn.net/kcp606) | [oschina](https://my.oschina.net/kcp1104) | [码云](https://gitee.com/kcp1104) 
 ****************************************
 # JavaScript
 
 ## 数据类型
 > 虽然是弱类型,但还是要注意一下
+
 
 ### 字符串
 - 字符串转码:
@@ -44,8 +45,12 @@ $(".submit").on('click', function () {
         $('#contents').ajaxSubmit(options);
     })
 ```
+
+**********************
 ## JSON
-- 直接点引用属性
+> [json 数据 添加 删除 排序](http://blog.51yip.com/jsjquery/1583.html)
+
+- 直接点引用属性或者a['b']的方式
     - 迭代集合:自带foreach循环 `data.forEach(function(value){})`
 
 ```js

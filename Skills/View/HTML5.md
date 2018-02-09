@@ -1,8 +1,146 @@
 `目录 start`
  
+- [HTML5](#html5)
+    - [参考资料](#参考资料)
+    - [特俗字符](#特俗字符)
+    - [基础结构标签](#基础结构标签)
+        - [head](#head)
+            - [meta](#meta)
+            - [title](#title)
+            - [base](#base)
+            - [link](#link)
+            - [style](#style)
+        - [script](#script)
+        - [常用结构](#常用结构)
+            - [form](#form)
+            - [label](#label)
+            - [关于引用](#关于引用)
+            - [插入和删除](#插入和删除)
+    - [数据存储](#数据存储)
+        - [cookie](#cookie)
+        - [LocalStorage和SessionStorage](#localstorage和sessionstorage)
+            - [清除](#清除)
+- [XML](#xml)
+    - [XML文件头含义](#xml文件头含义)
+    - [XML的元素](#xml的元素)
 
-`目录 end` *目录创建于2018-01-14*
+`目录 end` *目录创建于2018-02-09* | 更多: [CSDN](http://blog.csdn.net/kcp606) | [oschina](https://my.oschina.net/kcp1104) | [码云](https://gitee.com/kcp1104) 
 ****************************************
+# HTML5
+## 参考资料
+> [HTML5 教程 | 菜鸟教程](http://www.runoob.com/html/html5-intro.html)  
+> [HTML5 教程 | W3School](http://www.w3school.com.cn/html5/)
+## 特俗字符
+
+```html
+  空格:&nbsp;代表一个半角空格
+  < :&lt;
+  > :&gt;
+  & ：&amp;
+  ￥ :&yen;
+  × :&times
+  ÷ ：&divide;
+```
+## 基础结构标签
+### head
+```html
+  <head> 元素是所有头部元素的容器。<head> 内的元素可包含脚本，指示浏览器在何处可以找到样式表，提供元信息，等等。
+  以下标签都可以添加到 head 部分：<title>、<base>、<link>、<meta>、<script> 以及 <style>。
+
+```
+#### meta
+```html
+  元数据（metadata）是关于数据的信息。
+  <meta> 标签提供关于 HTML 文档的元数据。元数据不会显示在页面上，但是对于机器是可读的。
+  典型的情况是，meta 元素被用于规定页面的描述、关键词、文档的作者、最后修改时间以及其他元数据。
+  <meta> 标签始终位于 head 元素中。
+  元数据可用于浏览器（如何显示内容或重新加载页面），搜索引擎（关键词），或其他 web 服务。
+  针对搜索引擎的关键词
+  一些搜索引擎会利用 meta 元素的 name 和 content 属性来索引您的页面。
+  下面的 meta 元素定义页面的描述：
+  <meta name="description" content="Free Web tutorials on HTML, CSS, XML" />
+  下面的 meta 元素定义页面的关键词：
+  <meta name="keywords" content="HTML, CSS, XML" />
+  name 和 content 属性的作用是描述页面的内容。
+```
+#### title
+```html
+  <title> 标签定义文档的标题。
+  title 元素在所有 HTML/XHTML 文档中都是必需的。
+  title 元素能够：
+      定义浏览器工具栏中的标题
+      提供页面被添加到收藏夹时显示的标题
+      显示在搜索引擎结果中的页面标题
+```
+#### base
+```html
+  <base> 标签为页面上的所有链接规定默认地址或默认目标（target）：
+```
+#### link
+```html
+<link> 标签定义文档与外部资源之间的关系。
+<link> 标签最常用于连接样式表：
+```
+
+#### style
+> `<style>` 标签用于为 HTML 文档定义样式信息。您可以在 style 元素内规定 HTML 元素在浏览器中呈现的样式：
+```html
+  <head>
+    <style type="text/css">
+      body {background-color:yellow}
+      p {color:blue}
+    </style>
+  </head>
+```
+### script
+
+`<script> 标签用于定义客户端脚本，比如 JavaScript。`
+
+
+### 常用结构
+#### form
+```html
+  <form action="save.php" method="post" >
+      <label>爱好:</label>
+      <select>
+        <option value="看书">看书</option>
+        <option value="旅游">旅游</option>
+        <option value="运动">运动</option>
+        <option value="购物">购物</option>
+      </select>
+  </form>
+```
+#### label
+label标签不会向用户呈现任何特殊效果，它的作用是为鼠标用户改进了可用性。如果你在 label 标签内点击文本，就会触发此控件。
+就是说，当用户单击选中该label标签时，浏览器就会自动将焦点转到和标签相关的表单控件上（就自动选中和该label标签相关连的表单控件上）。
+注意：标签的 for 属性中的值应当与相关控件的 id 属性值一定要相同。
+
+#### 关于引用
+```html
+<blockquote>这是长的引用。</blockquote>
+<q>这是短的引用。</q>
+
+```
+`使用 blockquote 元素的话，浏览器会插入换行和外边距，而 q 元素不会有任何特殊的呈现。`
+#### 插入和删除
+```html
+  <p>一打有 <del>二十</del> <ins>十二</ins> 件。</p>
+```
+
+## 数据存储
+
+### cookie
+### LocalStorage和SessionStorage
+> [基础详细的一篇博客](http://www.cnblogs.com/st-leslie/p/5617130.html)
+
+#### 清除
+> [HTML5中的localStorage什么时候会被清空?](https://segmentfault.com/q/1010000000123500)  
+> [翻译：清除各个浏览器中的数据研究](http://www.zhangxinxu.com/wordpress/2012/09/%E7%BF%BB%E8%AF%91%EF%BC%9A%E6%B8%85%E9%99%A4%E5%90%84%E4%B8%AA%E6%B5%8F%E8%A7%88%E5%99%A8%E4%B8%AD%E7%9A%84%E6%95%B0%E6%8D%AE%E7%A0%94%E7%A9%B6/)
+
+- 自己在火狐中尝试了下,清除 网络内容缓存 对localStorage没有影响
+
+***********************************
+```html
 1.为了确保浏览器能够正确读取字符的编码，整个字符编码必须放置在文档的前512个字符中
 2.HTML中不需要声明JavaScript的type属性
 
@@ -12,121 +150,6 @@
      这种方法会重新加载整个页面。但如果要在原页面的基础上传递参数，则可以使用下面的方法：
      2.top.document.location.href='xxx.aspx?id=xx'。
      但这两种方法都有一个共同的缺点，就是iframe内嵌页面的状态不会保存了，刷新后会重新回到第一次加载的状态。
-
-
-
-
-
-============================
-======HTML <head> 元素
-<head> 元素是所有头部元素的容器。<head> 内的元素可包含脚本，指示浏览器在何处可以找到样式表，提供元信息，等等。
-以下标签都可以添加到 head 部分：<title>、<base>、<link>、<meta>、<script> 以及 <style>。
-
-======HTML <title> 元素
-<title> 标签定义文档的标题。
-title 元素在所有 HTML/XHTML 文档中都是必需的。
-title 元素能够：
-    定义浏览器工具栏中的标题
-    提供页面被添加到收藏夹时显示的标题
-    显示在搜索引擎结果中的页面标题
-
-=======HTML <base> 元素
-<base> 标签为页面上的所有链接规定默认地址或默认目标（target）：
-
-=======HTML <link> 元素
-<link> 标签定义文档与外部资源之间的关系。
-<link> 标签最常用于连接样式表：
-
-
-=======HTML <style> 元素
-<style> 标签用于为 HTML 文档定义样式信息。
-您可以在 style 元素内规定 HTML 元素在浏览器中呈现的样式：
-<head>
-<style type="text/css">
-body {background-color:yellow}
-p {color:blue}
-</style>
-</head>
-
-
-<style type="text/css">
-table tr td,th{border:1px solid #000;}
-</style>
-
-<title>下拉列表框</title>
-</head>
-<body>
-<form action="save.php" method="post" >
-    <label>爱好:</label>
-    <select>
-      <option value="看书">看书</option>
-      <option value="旅游">旅游</option>
-      <option value="运动">运动</option>
-      <option value="购物">购物</option>
-    </select>
-</form>
-
-
-
-========HTML <meta> 元素=========
-元数据（metadata）是关于数据的信息。
-<meta> 标签提供关于 HTML 文档的元数据。元数据不会显示在页面上，但是对于机器是可读的。
-典型的情况是，meta 元素被用于规定页面的描述、关键词、文档的作者、最后修改时间以及其他元数据。
-<meta> 标签始终位于 head 元素中。
-元数据可用于浏览器（如何显示内容或重新加载页面），搜索引擎（关键词），或其他 web 服务。
-针对搜索引擎的关键词
-一些搜索引擎会利用 meta 元素的 name 和 content 属性来索引您的页面。
-下面的 meta 元素定义页面的描述：
-<meta name="description" content="Free Web tutorials on HTML, CSS, XML" />
-下面的 meta 元素定义页面的关键词：
-<meta name="keywords" content="HTML, CSS, XML" />
-name 和 content 属性的作用是描述页面的内容。
-
-
-======HTML <script> 元素
-<script> 标签用于定义客户端脚本，比如 JavaScript。
-
-======关于引用的标签
-<body>
-这是长的引用：
-<blockquote>
-这是长的引用。这是长的引用。这是长的引用。这是长的引用。这是长的引用。这是长的引用。这是长的引用。这是长的引用。这是长的引用。这是长的引用。这是长的引用。
-</blockquote>
-
-这是短的引用：
-<q>
-这是短的引用。
-</q>
-
-<p>
-使用 blockquote 元素的话，浏览器会插入换行和外边距，而 q 元素不会有任何特殊的呈现。
-</p>
-
-</body>
-======插入与删除
-<p>一打有 <del>二十</del> <ins>十二</ins> 件。</p>
-
-
-
-=========label标签
-     label标签不会向用户呈现任何特殊效果，它的作用是为鼠标用户改进了可用性。如果你在 label 标签内点击文本，就会触发此控件。就是说，当用户单击选中该label标签时，浏览器就会自动将焦点转到和标签相关的表单控件上（就自动选中和该label标签相关连的表单控件上）。
-注意：标签的 for 属性中的值应当与相关控件的 id 属性值一定要相同。
-
-++++++++++++++++++++++++++++XML++++++++++++++++++++
-
-=======XML文件头  字符含义
-web-app 是web.xml的根节点标签名称
-version 是版本的意思
-xmlns是web.xml文件用到的命名空间
-xmlns:xsi是指web.xml遵循xml规范
-xsi:schemaLocation是指具体用到的schema资源（对文档的限制）
-
-
-====XML的元素
-  XML中元素的标记是自定义的，并具有明确的含义，其组织结构是树形的层次结构，每个元素及其
-  子元素 并不是XML规范好的，而是用户根据自己需要来自定义的，就像是我写坦克大战时用的文件
-  保存法，就需要有一定的格式来读取（辨认）所读取的数据是什么类型
-       XML文档结构清晰，易读，而且是根据开放的标准建立的
 
 
 =========================1、输入框点击清空==============
@@ -169,14 +192,7 @@ face:字体设置
 noshade:去掉阴影部分
 <pre></pre>:预排版标记
 
-HTML字符实体
-空格:&nbsp;代表一个半角空格
-< :&lt;
-> :&gt;
-& ：&amp;
-￥ :&yen;
-× :&times
-÷ ：&divide;
+
 HTML项目符号
 <ul>
 <li>  
@@ -483,3 +499,20 @@ width="1000" height="202" >
                                  scrolling:是否显示滚动条，取值：auto,no,yes
                                  name:给当前小窗口起个名字，这个name就是给<a>标记target属性来用的。
                           提示做网站后台时，返回首页的相关代码：<a href="" target="_top">
+```
+# XML
+## XML文件头含义
+```
+  web-app 是web.xml的根节点标签名称
+  version 是版本的意思
+  xmlns是web.xml文件用到的命名空间
+  xmlns:xsi是指web.xml遵循xml规范
+  xsi:schemaLocation是指具体用到的schema资源（对文档的限制）
+```
+
+## XML的元素
+XML中元素的标记是自定义的，并具有明确的含义，其组织结构是树形的层次结构，每个元素及其
+子元素 并不是XML规范好的，而是用户根据自己需要来自定义的，就像是我写坦克大战时用的文件
+保存法，就需要有一定的格式来读取（辨认）所读取的数据是什么类型
+      XML文档结构清晰，易读，而且是根据开放的标准建立的
+

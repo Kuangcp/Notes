@@ -1,6 +1,8 @@
 `目录 start`
  
 - [Activiti](#activiti)
+    - [相关书籍](#相关书籍)
+    - [相关仓库](#相关仓库)
     - [基础概念](#基础概念)
         - [什么是流程](#什么是流程)
         - [流程引擎](#流程引擎)
@@ -14,12 +16,24 @@
         - [核心配置文件](#核心配置文件)
         - [大致原理讲解](#大致原理讲解)
 
-`目录 end` *目录创建于2018-02-06* | 更多: [CSDN](http://blog.csdn.net/kcp606) | [oschina](https://my.oschina.net/kcp1104) | [码云](https://gitee.com/kcp1104) 
+`目录 end` *目录创建于2018-02-09* | 更多: [CSDN](http://blog.csdn.net/kcp606) | [oschina](https://my.oschina.net/kcp1104) | [码云](https://gitee.com/kcp1104) 
 ****************************************
 
 # Activiti
 > [参考笔记](https://github.com/dragonhht/Notes/blob/master/Java/Activiti%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0.md)
+## 相关书籍
 
+> Activiti实战  
+>> [activiti示例](https://github.com/henryyan/kft-activiti-demo)`作者:书籍的源码`  
+[activiti实战源码](https://github.com/henryyan/activiti-in-action-codes) `这本书的每个章节的实战源码` 
+
+*******************
+> Activiti权威指南  
+>> 
+
+## 相关仓库
+- [springboot-activiti](https://gitee.com/wyy396731037/springboot-activiti) `整合activiti的Springboot示例`
+- [spring-boot-activiti](https://gitee.com/fengyexjtu/spring-boot-activiti)`跑起来的小案例`
 ******************************
 ## 基础概念
 *****************************
