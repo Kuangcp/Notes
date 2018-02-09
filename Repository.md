@@ -38,7 +38,7 @@
     - [工作](#工作)
         - [简历](#简历)
 
-`目录 end` *目录创建于2018-02-09* | 更多: [CSDN](http://blog.csdn.net/kcp606) | [oschina](https://my.oschina.net/kcp1104) | [码云](https://gitee.com/kcp1104) 
+`目录 end` *目录创建于2018-02-10* | 更多: [CSDN](http://blog.csdn.net/kcp606) | [oschina](https://my.oschina.net/kcp1104) | [码云](https://gitee.com/kcp1104) 
 ****************************************
 
 # 【Organization】
@@ -72,6 +72,7 @@
 - [梁少锋的博客笔记](https://github.com/youngwind/blog)`前端相关`
 - [cain-note](https://github.com/james-cain/cain-note)`像是培训机构的资料和他本人的学习笔记,偏向前端`
 - [书写规范和建议](https://github.com/sparanoid/chinese-copywriting-guidelines)`比较全面,闲暇可以参考`
+- [阮一峰的博客](https://github.com/ruanyf/articles)`Github账号每日都有提交....`
 
 ## 翻译和搬运
 - [translations](https://github.com/oldratlee/translations)`翻译外国的文章`

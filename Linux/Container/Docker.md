@@ -34,7 +34,7 @@
         - [Docker-Swarm](#docker-swarm)
     - [轻量镜像](#轻量镜像)
 
-`目录 end` *目录创建于2018-02-02* | 更多: [CSDN](http://blog.csdn.net/kcp606) | [oschina](https://my.oschina.net/kcp1104) | [码云](https://gitee.com/kcp1104) 
+`目录 end` *目录创建于2018-02-10* | 更多: [CSDN](http://blog.csdn.net/kcp606) | [oschina](https://my.oschina.net/kcp1104) | [码云](https://gitee.com/kcp1104) 
 ****************************************
 # Docker
 
@@ -92,6 +92,8 @@
 - 测试安装成功 `sudo docker run hello-world`
 
 #### 不加sudo执行docker命令
+> [官方文档](https://docs.docker.com/install/linux/linux-postinstall/#manage-docker-as-a-non-root-user)
+
 - 如果没有docker组，添加组 `sudo groupadd docker `
 - 将当前用户加入用户组 `sudo gpasswd -a $USER docker`
     - 或者?? ：`sudo usermod -aG docker $USER` 会有问题

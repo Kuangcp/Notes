@@ -18,7 +18,7 @@
     - [生活](#生活)
     - [商业](#商业)
 
-`目录 end` *目录创建于2018-02-09* | 更多: [CSDN](http://blog.csdn.net/kcp606) | [oschina](https://my.oschina.net/kcp1104) | [码云](https://gitee.com/kcp1104) 
+`目录 end` *目录创建于2018-02-10* | 更多: [CSDN](http://blog.csdn.net/kcp606) | [oschina](https://my.oschina.net/kcp1104) | [码云](https://gitee.com/kcp1104) 
 ****************************************
 
 > 只用来记录非技术类的文章,技术类的直接放到对应的笔记中去
@@ -26,15 +26,17 @@
 > [Java相关](Java.md) | [Go相关](Go.md) | [Python相关](Python.md) | [解决方案](Solution.md) | [前端相关](View.md) | [服务器运维](Server.md)
 
 # 【个人博客网】
-- [阮一峰](http://www.ruanyifeng.com/blog/)`一个勤奋的布道者`
+- [阮一峰](http://www.ruanyifeng.com/blog/)`一个勤奋的布道者,Github每天都有提交`
+- [酷壳](https://coolshell.cn/)`左耳朵耗子个人博客网`
+- [程序员DD](http://blog.didispace.com/)`翟永超`
+- [冰封千里](http://ice1000.org/)`Javaer,JavaFX和JVM类语言擅长`
 - [hushuang.me](https://hushuang.me/)
 - [猛禽](http://my.csdn.net/Raptor) `一个坚持了17年博客的程序员`
 - [折腾的创业者](https://xicheng412.github.io/)`大学生创业`
-- [冰封千里](http://ice1000.org/)`Javaer,JavaFX和JVM类语言擅长`
 - [David's blog](blog.weisiliang.com)`Java程序员`
 - [http://blog.leapoahead.com](http://blog.leapoahead.com)`经验之谈`
 - [Java和Vue前后端](http://blog.exrick.cn/)
-- [程序员DD](http://blog.didispace.com/)`翟永超`
+
 - [Web程序猿](https://imququ.com/)
 - [letus.club](http://letus.club/)
 - [海底苍鹰(tank)](http://blog.51yip.com/) `前端和Linux`
@@ -48,20 +50,21 @@
 - [码农网](http://www.codeceo.com/)`看起来是有些深度的, 有时间就看一看`
 - []()
 - []()
-- []()
+
 
 ## 博客能人
 - [赵劼](http://www.cnblogs.com/JeffreyZhao/) `对函数式编程，并行程序开发，代码之美以及程序员能力与修养等相关问题`
 - [进击的Java新人](https://zhuanlan.zhihu.com/hinus)
 - [Java知音](http://blog.csdn.net/sky_blue12321)`较多面试题`
 - [拭心](http://my.csdn.net/u011240877)`安卓大佬`
-
+- [陈皓](http://blog.csdn.net/haoel)`左耳朵耗子`
 ************************
 ## 专栏
 - [CSDN 知识林](http://blog.csdn.net/zsl129)
 - [三分钟教你学Git](http://blog.csdn.net/column/details/13149.html)
 - [设计模式](http://blog.csdn.net/column/details/zsxdesignpattern.html)
-****************************************
+
+*********************************
 # 【Blog】
 
 ## 搭建博客
@@ -142,3 +145,4 @@ _如何将脑海中的思维火花转化为代码_
 
 ## 商业
 - [都说在做某界的 Airbnb，Airbnb 到底做了什么](http://daily.zhihu.com/story/4826947)
+

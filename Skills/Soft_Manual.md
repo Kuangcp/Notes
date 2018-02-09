@@ -34,9 +34,11 @@
         - [Gedit](#gedit)
         - [小书匠](#小书匠)
         - [Moeditor Typora CuteMarkEd](#moeditor-typora-cutemarked)
+    - [终端编辑器](#终端编辑器)
         - [Vi/Vim](#vivim)
         - [Nano](#nano)
         - [fte-terminal](#fte-terminal)
+    - [在线编辑器](#在线编辑器)
     - [【IDE】](#ide)
         - [Idea](#idea)
             - [插件](#插件)
@@ -49,11 +51,12 @@
     - [【浏览器】](#浏览器)
         - [FireFox](#firefox)
             - [必备插件](#必备插件)
+        - [seamonkey](#seamonkey)
         - [Chrome](#chrome)
             - [主题](#主题)
         - [Vivaldi](#vivaldi)
 
-`目录 end` *目录创建于2018-02-07* | 更多: [CSDN](http://blog.csdn.net/kcp606) | [oschina](https://my.oschina.net/kcp1104) | [码云](https://gitee.com/kcp1104) 
+`目录 end` *目录创建于2018-02-10* | 更多: [CSDN](http://blog.csdn.net/kcp606) | [oschina](https://my.oschina.net/kcp1104) | [码云](https://gitee.com/kcp1104) 
 ****************************************
 # 软件使用记事
 ## 【包管理】
@@ -210,6 +213,7 @@ _批量修改_
 ### Geany
 - 码C 编译方便 有Ctag辅助
 
+*********************************
 ### scite
 > 简洁的编辑器，可配置挺多，打开速度快
 
@@ -253,7 +257,7 @@ _批量修改_
 - 安装markdown预览插件 `早已经停止维护了，还是只用来简单的查看修改文件就好了`
 
 ### 小书匠
-- [在线使用](http://markdown.xiaoshujiang.com/)[github地址](https://github.com/suziwen/markdownxiaoshujiang)
+- [在线使用](http://markdown.xiaoshujiang.com/) | [github地址](https://github.com/suziwen/markdownxiaoshujiang)
 - 本来是很合适的，但是对文件操作不干净，总有些bug不好用,文件闪退出错,终端不方便
     - 不适合编程适合写作,所支持的md的格式非常强大
 - 快捷键
@@ -277,6 +281,7 @@ _批量修改_
 - 书写单个md文件方便，美观，没有目录树是硬伤
 
 ************
+## 终端编辑器
 ### Vi/Vim
 > [Github地址](https://github.com/vim/vim)  
 > [Vim 学习笔记](/Linux/vim.md)
@@ -285,11 +290,16 @@ _批量修改_
 ### Nano
 - 模式没有vi系列复杂，使用简单，安装占用小
 
-
 ************
 ### fte-terminal
 - 文件树浏览，快速打开文件进行修改是比较方便的
 
+*****************
+## 在线编辑器
+_[stackedit.io](https://stackedit.io/)_
+- [Github地址](https://github.com/benweet/stackedit/)
+
+CMD编辑器
 ******************************
 ## 【IDE】
 ### Idea
@@ -330,12 +340,14 @@ _批量修改_
 *********************************************
 ## 【浏览器】
 ### FireFox
+> [开发者版本链接](https://www.mozilla.org/zh-CN/firefox/developer/)
+
 - 分为 正式版， beta， Nightly 开发版 `因为那个插件标准的缘故 56 和 57 插件不共享`
 - 如果要配置多个火狐在电脑上 终端中 `./firefox -P` 就会进入配置文件的编辑（关闭所有火狐的情况下）
     - 新建一个就好了，之后就用新建的打开该火狐`./firefox -P name`
 - 如果要同时开多个火狐 加上`--no-remote`参数，但是我这个deepin不要诶，但是Ubuntu mint加上也没有用
 
-- [开发者版本链接](https://www.mozilla.org/zh-CN/firefox/developer/)
+> 火狐和Chrome都支持在控制台的网络中直接右击一个请求然后复制, 就可以出来复制成cURL命令的选项, 比较好用
 
 **************************************************
 #### 必备插件
@@ -373,10 +385,13 @@ _批量修改_
 - `Remove Cookies Button`
 - `围脖是个好图床哟` 方便的图床,但是要登录微博
 
+### seamonkey
+> Mozilla基金会另一个项目 [seamonkey](https://www.seamonkey-project.org/) 亮点在于内置IRC
 
 ****************************************
 ### Chrome
-- 的确快，就是内存占用高
+- 的确快，就是内存占用高, 还有就是主题被墙,fq才能配置好
+
 #### 主题
 - Aero Trans Brushed Metal Theme
 - Material Dark
@@ -384,6 +399,7 @@ _批量修改_
 - 炭黑+銀色金屬
 - Modern Flat
 ************
+
 ### Vivaldi
 - 感觉采用的是chrome内核，做的更漂亮了，而且是内置了很多常用插件，的确很方便，相比于chrome更符合国内使用
 

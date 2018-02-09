@@ -21,7 +21,7 @@
     - [人工智能](#人工智能)
     - [在线工具](#在线工具)
 
-`目录 end` *目录创建于2018-02-07* | 更多: [CSDN](http://blog.csdn.net/kcp606) | [oschina](https://my.oschina.net/kcp1104) | [码云](https://gitee.com/kcp1104) 
+`目录 end` *目录创建于2018-02-10* | 更多: [CSDN](http://blog.csdn.net/kcp606) | [oschina](https://my.oschina.net/kcp1104) | [码云](https://gitee.com/kcp1104) 
 ****************************************
 # 【常用的网站】
 ## 软件商店
@@ -81,10 +81,14 @@
 
 **************************************
 ## 前端
+- [pixlr](https://pixlr.com/editor/)`简直神器啊, 在线使用PS, woc!!!`
+- [PS在线工具](https://www.photoshop.com/tools?wf=editor)`功能有限,也可以玩玩`
 - [bootcdn](http://www.bootcdn.cn/) `常用js css的cdn`
 - [填充图](https://placeholder.com/)
+- [jshell](https://fiddle.jshell.net/)`可以在线练习HTML CSS Js`
 
 ### 素材网
+- [色码表](https://www.ifreesite.com/color/)
 - [素材之家](http://www.158pic.com/?txt)
 
 ******************************************************
