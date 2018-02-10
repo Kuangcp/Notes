@@ -6,6 +6,7 @@
         - [编译安装](#编译安装)
         - [Docker安装并做反向代理](#docker安装并做反向代理)
     - [配置使用](#配置使用)
+        - [本地静态文件Web服务器](#本地静态文件web服务器)
         - [基础配置](#基础配置)
             - [配置https](#配置https)
                 - [certbot来配置Https](#certbot来配置https)
@@ -14,7 +15,7 @@
         - [问题](#问题)
     - [学习使用](#学习使用)
 
-`目录 end` *目录创建于2018-02-07* | 更多: [CSDN](http://blog.csdn.net/kcp606) | [oschina](https://my.oschina.net/kcp1104) | [码云](https://gitee.com/kcp1104) 
+`目录 end` *目录创建于2018-02-10* | 更多: [CSDN](http://blog.csdn.net/kcp606) | [oschina](https://my.oschina.net/kcp1104) | [码云](https://gitee.com/kcp1104) 
 ****************************************
 # Nginx
 
@@ -67,6 +68,21 @@ server {
 
 ***************
 ## 配置使用
+### 本地静态文件Web服务器
+> 最简单的使用 [参考博客](http://blog.yuansc.com/2015/04/29/nginx%E9%85%8D%E7%BD%AE%E9%9D%99%E6%80%81%E6%96%87%E4%BB%B6%E6%9C%8D%E5%8A%A1%E5%99%A8/)
+
+```conf
+  server {
+    client_max_body_size 4G;
+    listen  80;  ## listen for ipv4; this line is default and implied
+    server_name static.me.com;
+    root /home/mini/Sync;
+    location / {
+    }
+  }
+```
+再在 `/etc/hosts`文件中配置下域名即可访问
+
 ### 基础配置
 > [知乎专栏](https://zhuanlan.zhihu.com/p/24524057)
 

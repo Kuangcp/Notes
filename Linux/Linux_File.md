@@ -45,7 +45,7 @@
             - [查看发行版](#查看发行版)
             - [查看系统所有用户信息](#查看系统所有用户信息)
 
-`目录 end` *目录创建于2018-02-09* | 更多: [CSDN](http://blog.csdn.net/kcp606) | [oschina](https://my.oschina.net/kcp1104) | [码云](https://gitee.com/kcp1104) 
+`目录 end` *目录创建于2018-02-10* | 更多: [CSDN](http://blog.csdn.net/kcp606) | [oschina](https://my.oschina.net/kcp1104) | [码云](https://gitee.com/kcp1104) 
 ****************************************
 # 【文件管理】
 > Linux中认为万物皆文件
@@ -358,7 +358,8 @@ _示例_
     - `-r` 表示递归
     - `-l` 兼容Windows的换行符
     - `-e` 加密
-    - `-d filename` 在zip中删除某文件
+    - `-d filename` 在zip中删除某文件 删除某目录`dir/*`
+        - _注意_: 所有的文件和目录都是相对于zip的根目录的完整路径
 
 #### 解压
 - `tar -xvf file.tar` //解压 tar包
