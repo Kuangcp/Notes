@@ -152,6 +152,7 @@
         * [ JavaScript ](./Skills/View/JavaScript.md)
         * [ Learn_PS ](./Skills/View/Learn_PS.md)
         * [ ResponseCode ](./Skills/View/ResponseCode.md)
+        * [ ViewSolution ](./Skills/View/ViewSolution.md)
     * 【 Skills/Work 】
         * [ 番茄工作法 ](./Skills/Work/番茄工作法.md)
         * [ 面试技巧 ](./Skills/Work/面试技巧.md)
