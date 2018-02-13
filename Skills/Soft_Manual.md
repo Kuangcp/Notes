@@ -56,7 +56,7 @@
             - [主题](#主题)
         - [Vivaldi](#vivaldi)
 
-`目录 end` *目录创建于2018-02-10* | 更多: [CSDN](http://blog.csdn.net/kcp606) | [oschina](https://my.oschina.net/kcp1104) | [码云](https://gitee.com/kcp1104) 
+`目录 end` *目录创建于2018-02-13* | 更多: [CSDN](http://blog.csdn.net/kcp606) | [oschina](https://my.oschina.net/kcp1104) | [码云](https://gitee.com/kcp1104) 
 ****************************************
 # 软件使用记事
 ## 【包管理】
@@ -349,8 +349,11 @@ CMD编辑器
 
 > 火狐和Chrome都支持在控制台的网络中直接右击一个请求然后复制, 就可以出来复制成cURL命令的选项, 比较好用
 
+> [火狐性能优化贴](https://www.xzcblog.com/post-47.html)
 **************************************************
 #### 必备插件
+> [插件开发相关](https://github.com/Kuangcp/LearnWebExtension)
+
 - `Saka Key` 快捷键神器 大幅度脱离鼠标 [官方文档](https://key.saka.io/)
     - 浏览器默认: 脱离输入框焦点 _Esc_ | 切换标签 _ctrl-Tab_  _shift-ctrl-Tab_ | 关闭标签 _ctrl-w_
     - 滑动: 下滑 `d/j` 上滑 `s/k `
