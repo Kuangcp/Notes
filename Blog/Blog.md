@@ -58,6 +58,7 @@
 - [Java知音](http://blog.csdn.net/sky_blue12321)`较多面试题`
 - [拭心](http://my.csdn.net/u011240877)`安卓大佬`
 - [陈皓](http://blog.csdn.net/haoel)`左耳朵耗子`
+- [于亮](http://blog.csdn.net/jiuqiyuliang)`Java相关知识,专栏挺多,阅读量都不低`
 ************************
 ## 专栏
 - [CSDN 知识林](http://blog.csdn.net/zsl129)

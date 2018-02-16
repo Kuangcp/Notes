@@ -88,22 +88,9 @@
   - ``` i=`expr $i + 1`;```
   - let i+=1;
   - i=$[$i+1];
-  - i=$(( $i + 1 ))
+  - i=$(( $i + 1 )) `dash sh 都有效`
 
-`简易循环`
-```sh
-  for j in $(seq 1 5)
-  do
-    echo $j
-  done
-```
-```sh
-    i=1
-    while [ "$i" -le 10 ];do
-        echo $i
-        i=$(($i+1))
-    done
-```
+
 ************
 ### 字符串
 - [字符串截取](https://www.2cto.com/os/201305/208219.html) | [Blog:变量字符串截取](http://www.jb51.net/article/56563.htm) | [Shell正则](http://man.linuxde.net/docs/shell_regex.html)
@@ -172,6 +159,20 @@
 ### 循环
 - [参考博客](http://www.cnblogs.com/fhefh/archive/2011/04/15/2017233.html)
 
+`简易循环`
+```sh
+  for j in $(seq 1 5)
+  do
+    echo $j
+  done
+```
+```sh
+    i=1
+    while [ "$i" -le 10 ];do
+        echo $i
+        i=$(($i+1))
+    done
+```
 *****************
 ## 函数
 > Shell的函数只能返回整型数据类型
@@ -182,7 +183,9 @@
   }
 ```
 
-
+## 常用模块
+### 时间
+> [shell处理时间格式](http://blog.csdn.net/superbfly/article/details/52453334)
 *********************************
 ## 工具
 > [更多工具](/Skills/Soft_Manual.md#终端工具)

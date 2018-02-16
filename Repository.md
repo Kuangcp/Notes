@@ -122,11 +122,12 @@
 
 ### Demo
 - [springboot-action](https://github.com/lianggzone/springboot-action) `Springboot常见的模块都有,文档也多`
-- [Java-learing](https://github.com/brianway/java-learning) `基础学习仓库`
+- [Java-learing](https://github.com/brianway/java-learning) `Java基础学习仓库, 代码量比较大也比较详细, 但是没有逻辑和注释, 看起来费劲`
 
 - [rabbitmq](https://github.com/chwshuang/rabbitmq)`入门学习代码`
 - [docker-demos](https://github.com/waylau/docker-demos) `Maven和Gradle结合docker使用`
 - [mybatis-spring-boot](https://github.com/abel533/MyBatis-Spring-Boot)
+- [chrome-plugin-demo](https://github.com/sxei/chrome-plugin-demo)`Chrome插件案例, 最新火狐(54之后)也适用`
 
 #### 微服务
 - [shop](https://github.com/lrwinx/shop)`SpringClod的实战案例`
