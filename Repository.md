@@ -19,7 +19,6 @@
             - [前后端综合](#前后端综合)
         - [BuildTool](#buildtool)
         - [Tool](#tool)
-    - [【Kotlin】](#kotlin)
     - [【Docker】](#docker)
         - [web](#web)
     - [【Go】](#go)
@@ -38,7 +37,7 @@
     - [工作](#工作)
         - [简历](#简历)
 
-`目录 end` *目录创建于2018-02-10* | 更多: [CSDN](http://blog.csdn.net/kcp606) | [oschina](https://my.oschina.net/kcp1104) | [码云](https://gitee.com/kcp1104) 
+`目录 end` *目录创建于2018-02-16* | 更多: [CSDN](http://blog.csdn.net/kcp606) | [oschina](https://my.oschina.net/kcp1104) | [码云](https://gitee.com/kcp1104) 
 ****************************************
 
 # 【Organization】
@@ -164,11 +163,6 @@
 - [mushroom](https://github.com/wuweiit/mushroom) `基于Java的动态内容管理系统 ` 
 - [notes](https://github.com/pimterry/notes)`notes shell 软件`
 
-******************************************************
-## 【Kotlin】
-- [Kotlin For Android](https://github.com/wangjiegulu/kotlin-for-android-developers-zh)
-- [EasyKotlin组织](https://github.com/EasyKotlin)
-    - [《Kotlin极简教程》书籍第一章](https://github.com/EasyKotlin/easy_kotlin_chapter_1)
 
 *******************************************************
 ## 【Docker】
@@ -247,3 +241,4 @@ ps://github.com/yhatt/marp/)`markdown书写PPT`
 ## 工作
 ### 简历
 - [简历模板](https://github.com/geekcompany/ResumeSample)
+com/geekcompany/ResumeSample)

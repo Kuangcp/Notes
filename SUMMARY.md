@@ -47,6 +47,7 @@
     * [ FPBase ](./Functional/FPBase.md)
     * [ Go ](./Functional/Go.md)
     * [ Groovy ](./Functional/Groovy.md)
+    * [ Kotlin ](./Functional/Kotlin.md)
     * [ Scala ](./Functional/Scala.md)
 * 【 Java 】
     * 【 Java/AdvancedLearning 】
