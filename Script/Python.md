@@ -23,10 +23,6 @@
         - [【异常】](#异常)
         - [【文件】](#文件)
         - [【测试】](#测试)
-        - [【GUI】](#gui)
-            - [Tkinter](#tkinter)
-            - [wxPython](#wxpython)
-            - [Qt5](#qt5)
         - [【数据库】](#数据库)
             - [【MySQL】](#mysql)
             - [【Redis】](#redis)
@@ -38,7 +34,7 @@
     - [【常见库】](#常见库)
     - [QT](#qt)
 
-`目录 end` *目录创建于2018-01-21*
+`目录 end` *目录创建于2018-02-19* | 更多: [CSDN](http://blog.csdn.net/kcp606) | [oschina](https://my.oschina.net/kcp1104) | [码云](https://gitee.com/kcp1104) 
 ****************************************
 # Python
 ## 简介
@@ -53,6 +49,7 @@
 - 更新了整数
 - 迭代无处不在
 
+> 列出所有已安装模块 pydoc pydoc3
 ## 【基础数据类型】
 - 数值类型
     - 整数 各种进制 `0 八` `0x 十六` `0b 二`
@@ -486,20 +483,6 @@
 - 断言 self.assertEqual assertNotEquals assertIn(item, list)
 - 直接运行 unittest.main()
 - 输出结果，`. 测试通过` `E 测试运行错误` `F 测试断言不通过`
-
-****************
-### 【GUI】
-#### Tkinter
-`安装`
-- python2: `sudo apt install python-tk`
-- python3: `sudo apt install python3-tk`
-`引入`
-- python2：`import Tkinter` `import Tkinter as tk` `from Tkinter import *`
-- 但是python3.5的环境下，`import tkinter` 才是正确的
-
-#### wxPython
-
-#### Qt5
 
 ************
 ### 【数据库】

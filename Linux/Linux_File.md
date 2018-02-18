@@ -45,7 +45,7 @@
             - [查看发行版](#查看发行版)
             - [查看系统所有用户信息](#查看系统所有用户信息)
 
-`目录 end` *目录创建于2018-02-10* | 更多: [CSDN](http://blog.csdn.net/kcp606) | [oschina](https://my.oschina.net/kcp1104) | [码云](https://gitee.com/kcp1104) 
+`目录 end` *目录创建于2018-02-19* | 更多: [CSDN](http://blog.csdn.net/kcp606) | [oschina](https://my.oschina.net/kcp1104) | [码云](https://gitee.com/kcp1104) 
 ****************************************
 # 【文件管理】
 > Linux中认为万物皆文件
@@ -300,7 +300,7 @@ _示例_
 
 ### tar 归档 打包
 
-`tar`
+_tar_
 `这五个是独立的命令，压缩解压都要用到其中一个，可以和别的命令连用但只能用其中一个。`
 - c: 打包 压缩
 - x：解压
@@ -336,6 +336,7 @@ _示例_
 
 ********************
 #### 压缩
+_tar_
 - tar -cvf a.tar *.txt
     - z tar.gz
     - j tar.bz2
@@ -346,10 +347,10 @@ _示例_
 - `tar -cjf jpg.tar.bz2 *.jpg `//将所有jpg打包成jpg.tar后 生成bzip2压缩的包，命名为jpg.tar.bz2
 - `tar -cZf jpg.tar.Z *.jpg ` //将所有jpg打包成jpg.tar后 生成umcompress压缩的包，命名为jpg.tar.Z
 
-******
+_rar_
 - `rar a jpg.rar *.jpg` //rar格式的压缩
 
-******
+_zip_
 - `zip images.zip *.jpg` //zip格式的压缩
 - `zip -r file.zip code/*` 压缩code目录下所有文件
     - `zip -r ./a.zip ./*` 压缩当前目录所有文件
@@ -362,21 +363,21 @@ _示例_
         - _注意_: 所有的文件和目录都是相对于zip的根目录的完整路径
 
 #### 解压
+_tar_
 - `tar -xvf file.tar` //解压 tar包
 - `tar -xzvf file.tar.gz` //解压tar.gz
 - `tar -xjvf file.tar.bz2`   //解压 tar.bz2
 - `tar -xZvf file.tar.Z `  //解压tar.Z
 
-***
+_unrar_
 - `unrar e file.rar` //解压rar
 
-***
+_unzip_
 - `unzip file.zip `//解压zip
     - -q 终端不输出 
-    - -d 指定目录 
+    - -d 指定解压目录 
     - -l 不解压,查看所有文件 
     - -O 指定编码
-
 
 #### 总结
 ```

@@ -14,6 +14,7 @@
     - [相关博客](#相关博客)
     - [常规使用](#常规使用)
         - [Docker仓库](#docker仓库)
+            - [百度云](#百度云)
         - [【基础命令】](#基础命令)
             - [【镜像命令】](#镜像命令)
             - [【容器命令】](#容器命令)
@@ -34,7 +35,7 @@
         - [Docker-Swarm](#docker-swarm)
     - [轻量镜像](#轻量镜像)
 
-`目录 end` *目录创建于2018-02-10* | 更多: [CSDN](http://blog.csdn.net/kcp606) | [oschina](https://my.oschina.net/kcp1104) | [码云](https://gitee.com/kcp1104) 
+`目录 end` *目录创建于2018-02-19* | 更多: [CSDN](http://blog.csdn.net/kcp606) | [oschina](https://my.oschina.net/kcp1104) | [码云](https://gitee.com/kcp1104) 
 ****************************************
 # Docker
 
@@ -120,17 +121,39 @@
 - 可以将镜像看成真正运行的程序，容器就是具体的一些配置，所以镜像是可以重复利用，容器出问题删掉就是了
 
 ### Docker仓库
-> 默认的Hub因为在国外所以慢而且不太稳定
+> 默认的DockerHub因为在国外所以慢,不太稳定
 
-- 时速云：
+- _时速云：_
     - `sudo docker pull index.tenxcloud.com/<namespace>/<repository>:<tag>`
     - 下载后可以用别名 `docker tag index.tenxcloud.com/docker_library/node:lastest node:lastest`
     - 然后为了控制台干净可以直接将原来的长命名tag直接删除
-- 阿里云：
+
+- _阿里云：_
     - [开发者平台](https://dev.aliyun.com/search.html)
     - 配置命名空间，仓库，然后使用文档的配置即可
-- 百度云（推荐）：
-    - [相关文档](https://cloud.baidu.com/doc/CCE/GettingStarted.html#.E9.95.9C.E5.83.8F.E4.BB.93.E5.BA.93)
+
+#### 百度云
+> 推荐  [相关文档](https://cloud.baidu.com/doc/CCE/GettingStarted.html#.E9.95.9C.E5.83.8F.E4.BB.93.E5.BA.93)
+
+_登录百度云镜像仓库_
+>$ sudo docker login --username=[username] hub.baidubce.com
+>> username:镜像仓库名称，即是开通镜像仓库时填写的用户名。输入密码后完成登录。
+
+_上传镜像_
+> $ sudo docker tag [ImageId] hub.baidubce.com/[namespace]/[ImageName]:[镜像版本号]  
+> $ sudo docker push hub.baidubce.com/[namespace]/[ImageName]:[镜像版本号]  
+>> ImageId和镜像版本号根据镜像信息补充  
+namespace是开通镜像仓库时填写的命名空间  
+ImageName是在控制台创建的镜像名称  
+
+_下载镜像_
+> 登录到镜像仓库，需输入密码  
+$ sudo docker pull hub.baidubce.com/[namespace]/[ImageName]:[镜像版本号]  
+
+_使用DockerHub加速器_
+> docker软件源地址：https://mirror.baidubce.com
+
+********
 
 - 在服务器上搭建私有仓库
     - 服务器上运行 并映射到本地目录 `docker run -d -p 5000:5000 -v /opt/data/registry:/tmp/registry registry`
@@ -140,7 +163,7 @@
     - 这个需要SSL证书，所以要使用要么修改 docker daemon启动参数 要么手动生成SSL证书，或者申请真正SSL证书
         - 添加参数 DOCKER_OPTS="--insecure-registry ip:port" 重启docker服务
 
-*********************
+********************************
 ### 【基础命令】
 - 登录hub.docker ：`docker login ` 或者 `docker login -u username -p password`
 - 登录时速云：`sudo docker login index.tenxcloud.com`

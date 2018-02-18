@@ -23,7 +23,7 @@
         - [打包最新版git](#打包最新版git)
         - [Dockerfile中新建用户](#dockerfile中新建用户)
 
-`目录 end` *目录创建于2018-01-21*
+`目录 end` *目录创建于2018-02-19* | 更多: [CSDN](http://blog.csdn.net/kcp606) | [oschina](https://my.oschina.net/kcp1104) | [码云](https://gitee.com/kcp1104) 
 ****************************************
 
 # Dockerfile
@@ -48,11 +48,12 @@
 - 最好在运行这个配置文件的时候新建一个空目录目录下放dockerfile，不要使用根目录，不然全部的东西都传到守护进程里去了
     - 因为生成过程的第一件事是将整个上下文 (递归) 发送到守护进程。
 - 同样的可以使用`.dockerignore`文件来忽略不要上传的文件
-- `docker build` 
-    - 如果文件名是默认的`Dockerfile` 就使用 `.` 
-        - 否则就是 `docker build -t image:tag- < 文件名` 或者使用-f参数:
-        - `-f` 指向任意位置的文件进行配置 `docker build -f /path/to/a/Dockerfile .`
-    - `-t`如果构建成功 可以指定保存新镜像的image和tag (多个的话就多个 -t就行了，例如 `docker build -t shykes/myapp:1.0.2 -t shykes/myapp:latest .`)
+
+_docker build_
+- 如果文件名是默认的`Dockerfile` 就使用 `.` 
+    - 否则就是 `docker build -t image:tag- < 文件名` 或者使用-f参数:
+    - `-f` 指向任意位置的文件进行配置 `docker build -f /path/to/a/Dockerfile .`
+- `-t`如果构建成功 可以指定保存新镜像的image和tag (多个的话就多个 -t就行了，例如 `docker build -t shykes/myapp:1.0.2 -t shykes/myapp:latest .`)
 
 ### FROM
 > 基于某镜像构建,这是整个文件的第一条指令，一定是基于某镜像构建的，如果是空镜像就使用特殊的 `FROM scratch`  
@@ -147,16 +148,18 @@
 - 使用`docker build --build=-arg<name>=<value>` 来传入值
 
 ### COPY
-- `copy <src> <dest>`
-    - `copy ["./log", "${APPROOT}"]`
+> [参考博客](http://www.simapple.com/364.html)
 
 - 当复制本地目录时，推荐使用copy
+- `copy <src> <dest>`
+    - src是当前Dockerfile的相对路径的文件或目录,也可以是远程URL
+    - dest 是目标容器中的绝对路径。
+- 例如: `copy ["./log", "${APPROOT}"]`
 
 ### ADD
 - 相当于copy命令
 - `ADD <src> <dest>` 
-    - src 是Dockerfile的相对目录，可以是本地也可以是远程URL
-    - dest 容器中的绝对路径
+    - src 和 dest 和上面COPY命令使用是一样的
 
 ### VOLUME
 - `VOLUME ["<mountpoint>"]` `VOLUME ["/data"]` 创建挂载点 用于共享目录

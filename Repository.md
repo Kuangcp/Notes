@@ -37,7 +37,7 @@
     - [工作](#工作)
         - [简历](#简历)
 
-`目录 end` *目录创建于2018-02-16* | 更多: [CSDN](http://blog.csdn.net/kcp606) | [oschina](https://my.oschina.net/kcp1104) | [码云](https://gitee.com/kcp1104) 
+`目录 end` *目录创建于2018-02-19* | 更多: [CSDN](http://blog.csdn.net/kcp606) | [oschina](https://my.oschina.net/kcp1104) | [码云](https://gitee.com/kcp1104) 
 ****************************************
 
 # 【Organization】
@@ -48,7 +48,6 @@
 
 # 【GitRepos】
 > 收集的一些优秀的git仓库 
-
 ## User
 > 一些值得学习的人 他们的仓库都有必要看一下
 
@@ -63,6 +62,8 @@
 - [Yong Zhu](https://github.com/drinkjava2)`有两个关于IOC和ORM的开源项目值得学习`
 - [魏楚阳](https://github.com/brianway)`和我同龄就进了大厂, 学习的东西确实多, 学习能力很好`
 - [xuxiaodong](https://github.com/xuxiaodong)`活跃在开源社区, 17年开始就不活跃了,不知道为什么`
+- [mank319](https://github.com/mank319)`go for it 作者`
+- [cycleuser](https://github.com/cycleuser)`博士, 翻译了很多东西`
 
 ## 笔记仓库
 - [某研究生在校阅读笔记](https://github.com/lanxuezaipiao/ReadingNotes)
