@@ -11,6 +11,8 @@
                 - [原生SQL](#原生sql)
             - [Mysql](#mysql)
             - [映射关系](#映射关系)
+                - [一对多](#一对多)
+                - [多对多](#多对多)
         - [Restful设计](#restful设计)
             - [【特别注意】](#特别注意)
         - [Jpa数据分页](#jpa数据分页)
@@ -20,7 +22,7 @@
             - [JPA关于Redis的使用](#jpa关于redis的使用)
             - [关于StringRedisTemplate的方法使用](#关于stringredistemplate的方法使用)
 
-`目录 end` *目录创建于2018-01-14*
+`目录 end` *目录创建于2018-02-20* | 更多: [CSDN](http://blog.csdn.net/kcp606) | [oschina](https://my.oschina.net/kcp1104) | [码云](https://gitee.com/kcp1104) 
 ****************************************
 # 数据库模块
 > 主要是采用的JPA，极大的缩减了代码量，但是要注意不要过度依赖框架，丧失了基本的能力
@@ -50,9 +52,9 @@
 
 - 涉及到数据的修改,就要加上前两个前缀,查询就直接写Query注解即可
 ```java
-@Modifying
-@Transactional
-@Query(value = "update a set b=?1", nativeQuery = true)
+    @Modifying
+    @Transactional
+    @Query(value = "update a set b=?1", nativeQuery = true)
 ```
 
 *************************
@@ -72,8 +74,8 @@
     - 默认使用的是HQL（HQL是基于类的所以使用的是类的名字不是表的名字），可以设置下使用原生SQL
 
 #### 映射关系
-`一对多`
-- 一方的配置是当前类的id，多方则按基本ER的规则来，直接采用的是外键的名字
+##### 一对多
+- 一方的配置是当前类的id，多方则按基本ER的规则来，注解中配置的是外键的名字, 所以当前类中的属性,外键名是不能重复的
 ```java
     // 一方
 public class TestOne{
@@ -92,10 +94,11 @@ public class TestMany {
     private TestOne testOneId;
 }
 ```
+> 问题: 当两个表互相引用了, 需要修改表结构 ,怎么删除重建两张表结构, 简单的命令会陷入死锁
+
 *************
 
-`多对多`
-
+##### 多对多
 *************
 ### Restful设计
 - 1.添加依赖
