@@ -7,7 +7,7 @@
     - [安装与卸载](#安装与卸载)
         - [【Linux】](#linux)
             - [通过命令安装](#通过命令安装)
-            - [通过deb文件安装](#通过deb文件安装)
+            - [安装包安装](#安装包安装)
             - [不加sudo执行docker命令](#不加sudo执行docker命令)
             - [卸载](#卸载)
         - [【Windows】](#windows)
@@ -35,7 +35,7 @@
         - [Docker-Swarm](#docker-swarm)
     - [轻量镜像](#轻量镜像)
 
-`目录 end` *目录创建于2018-02-19* | 更多: [CSDN](http://blog.csdn.net/kcp606) | [oschina](https://my.oschina.net/kcp1104) | [码云](https://gitee.com/kcp1104) 
+`目录 end` *目录创建于2018-02-23* | 更多: [CSDN](http://blog.csdn.net/kcp606) | [oschina](https://my.oschina.net/kcp1104) | [码云](https://gitee.com/kcp1104) 
 ****************************************
 # Docker
 
@@ -84,8 +84,11 @@
     - Ubuntu的话,Docker没有启动, 只要一执行Docker相关命令就会自动启动, 但是Centos要手动启动
     - `service docker start`  设置开机启动: `chkconfig docker on`
 
-#### 通过deb文件安装
-- [点击选择文件](https://download.docker.com/linux/debian/dists/)
+#### 安装包安装
+> [官方文件地址](https://download.docker.com/linux/)
+
+_Debian系_
+- [deb包选择](https://download.docker.com/linux/debian/dists/)
 - 进去后选择debain的版本，deepin15.4 的版本是stretch 然后pool/stable/amd64/选版本即可 
 - 例如：[Deepin 15.4直接点这里](https://download.docker.com/linux/debian/dists/stretch/pool/stable/amd64/)
 - `这两种方式装的是同一个版本号` 
@@ -362,5 +365,8 @@ Error with pre-create check: "This computer doesn't have VT-X/AMD-v enabled. Ena
 ```
 frolvlad/alpine-oraclejdk8   slim
 postgres                     alpine
+alpine
+```
+
 alpine
 ```
