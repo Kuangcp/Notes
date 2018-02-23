@@ -11,8 +11,9 @@
         - [IDEA原生快捷键系列](#idea原生快捷键系列)
             - [【正在使用】](#正在使用)
                 - [IntelliJ IDEA使用技巧一览表](#intellij-idea使用技巧一览表)
+    - [插件](#插件)
 
-`目录 end` *目录创建于2018-01-14*
+`目录 end` *目录创建于2018-02-23* | 更多: [CSDN](http://blog.csdn.net/kcp606) | [oschina](https://my.oschina.net/kcp1104) | [码云](https://gitee.com/kcp1104) 
 ****************************************
 
 # IDEA 使用笔记
@@ -59,11 +60,10 @@
     - Ctrl Shift Space 结合上下文补全
 - Ctrl Alt ←/→ 后退/前进 至光标的上一个位置
 - Ctrl Shift F7 高亮显示光标所在元素所有出现过的地方
-
     - 
 
 
-`coding`
+_coding_
 - C O 选择要重写的方法
 - C L 选择要实现的方法 
 - A Insert 选择要自动完成的setget构造器等
@@ -158,7 +158,7 @@
 ##### IntelliJ IDEA使用技巧一览表
 - 在使用 InelliJ IDEA 的过程中，通过查找资料以及一些自己的摸索，发现这个众多 Java 程序员喜欢的 IDE 里有许多值得一提的小窍门，如果能熟练的将它们应用于实际开发过程中，相信它会大大节省你的开发时间，而且随之而来的还会有那么一点点成就感：） Try it ！
 - 1 、写代码时用 Alt-Insert （ Code|Generate… ）可以创建类里面任何字段的 getter 与 setter 方法。
-- <?xml:namespace prefix = v ns = "urn:schemas-microsoft-com:vml" />
+- `<?xml:namespace prefix = v ns = "urn:schemas-microsoft-com:vml"/>`
 - 2 、右键点击断点标记（在文本的左边栏里）激活速查菜单，你可以快速设置 enable/disable 断点或者条件它的属性。
 - 3 、 CodeCompletion （代码完成）属性里的一个特殊的变量是，激活 Ctrl-Alt-Space 可以完成在或不在当前文件里的类名。如果类没有引入则 import 标志会自动创建。
 - 4 、使用 Ctrl-Shift-V 快捷键可以将最近使用的剪贴板内容选择插入到文本。使用时系统会弹出一个含有剪贴内容的对话框，从中你可以选择你要粘贴的部分。
@@ -180,3 +180,7 @@
 - 要使用这个功能须要把加入浏览器的路径，在“ General ”选项中设置（ Options | IDE Settings ），另外还要把创建的 Java 文档加入到工程中（ File | Project Properties ）。
 - 16 、用 Ctrl-F12 （ View | File Structure Popup 
 - 
+
+## 插件
+- Alibaba Java Code Guidelines
+    - 阿里巴巴的代码规范插件
