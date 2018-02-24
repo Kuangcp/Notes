@@ -4,10 +4,10 @@
     - [安装](#安装)
     - [基础](#基础)
 
-`目录 end` *目录创建于2018-02-23* | 更多: [CSDN](http://blog.csdn.net/kcp606) | [oschina](https://my.oschina.net/kcp1104) | [码云](https://gitee.com/kcp1104) 
+`目录 end` *目录创建于2018-02-25* | 更多: [CSDN](http://blog.csdn.net/kcp606) | [oschina](https://my.oschina.net/kcp1104) | [码云](https://gitee.com/kcp1104) 
 ****************************************
 # Clojure
-> [参考博客 Clojure 学习笔记 :0 零基础教程](https://www.jianshu.com/p/32b7ef3659db)
+> 似乎是Lisp的方言 [参考博客 Clojure 学习笔记 :0 零基础教程](https://www.jianshu.com/p/32b7ef3659db)
 
 ## 安装
 - [Clojure官网下载地址](https://clojure.org/community/downloads)

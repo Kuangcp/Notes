@@ -3,6 +3,7 @@
 - [完整的MIS构建经验](#完整的mis构建经验)
     - [MVC](#mvc)
         - [持久化层](#持久化层)
+            - [数据库设计](#数据库设计)
             - [Domain对象设计](#domain对象设计)
         - [控制层](#控制层)
             - [权限控制](#权限控制)
@@ -12,12 +13,16 @@
     - [分布式](#分布式)
         - [CAP定理](#cap定理)
 
-`目录 end` *目录创建于2018-01-22* | 更多: [CSDN](http://blog.csdn.net/kcp606) | [oschina](https://my.oschina.net/kcp1104) | [码云](https://gitee.com/kcp1104) 
+`目录 end` *目录创建于2018-02-25* | 更多: [CSDN](http://blog.csdn.net/kcp606) | [oschina](https://my.oschina.net/kcp1104) | [码云](https://gitee.com/kcp1104) 
 ****************************************
 # 完整的MIS构建经验
 
 ## MVC
 ### 持久化层
+#### 数据库设计
+> 一种极端是将业务也放在了数据库里, 使用大量的存储过程和函数  
+> 一种是将约束都放在了业务层, 甚至没有外键约束
+
 #### Domain对象设计
 - 1.首先名称不能使用Java或者数据库中的的关键字 class group table from 等等
     - 班级就用ClassGroup吧

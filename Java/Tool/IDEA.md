@@ -13,7 +13,7 @@
                 - [IntelliJ IDEA使用技巧一览表](#intellij-idea使用技巧一览表)
     - [插件](#插件)
 
-`目录 end` *目录创建于2018-02-23* | 更多: [CSDN](http://blog.csdn.net/kcp606) | [oschina](https://my.oschina.net/kcp1104) | [码云](https://gitee.com/kcp1104) 
+`目录 end` *目录创建于2018-02-25* | 更多: [CSDN](http://blog.csdn.net/kcp606) | [oschina](https://my.oschina.net/kcp1104) | [码云](https://gitee.com/kcp1104) 
 ****************************************
 
 # IDEA 使用笔记
@@ -184,3 +184,5 @@ _coding_
 ## 插件
 - Alibaba Java Code Guidelines
     - 阿里巴巴的代码规范插件
+- TestMe
+    - 快速创建测试类
