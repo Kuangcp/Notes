@@ -12,8 +12,10 @@
     - [常用库和框架](#常用库和框架)
         - [Jquery](#jquery)
             - [form插件](#form插件)
+    - [资源文件](#资源文件)
+        - [图片](#图片)
 
-`目录 end` *目录创建于2018-02-10* | 更多: [CSDN](http://blog.csdn.net/kcp606) | [oschina](https://my.oschina.net/kcp1104) | [码云](https://gitee.com/kcp1104) 
+`目录 end` *目录创建于2018-02-26* | 更多: [CSDN](http://blog.csdn.net/kcp606) | [oschina](https://my.oschina.net/kcp1104) | [码云](https://gitee.com/kcp1104) 
 ****************************************
 # JavaScript
 
@@ -99,3 +101,6 @@ $(".submit").on('click', function () {
         $('#contents').ajaxSubmit(options);
     })
 ```
+## 资源文件
+### 图片
+> [参考博客: JS 图片转Base64](http://www.cnblogs.com/wujingtao/p/5196836.html)

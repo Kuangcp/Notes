@@ -34,7 +34,7 @@
     - [【常见库】](#常见库)
     - [QT](#qt)
 
-`目录 end` *目录创建于2018-02-19* | 更多: [CSDN](http://blog.csdn.net/kcp606) | [oschina](https://my.oschina.net/kcp1104) | [码云](https://gitee.com/kcp1104) 
+`目录 end` *目录创建于2018-02-26* | 更多: [CSDN](http://blog.csdn.net/kcp606) | [oschina](https://my.oschina.net/kcp1104) | [码云](https://gitee.com/kcp1104) 
 ****************************************
 # Python
 ## 简介
@@ -132,6 +132,15 @@
     - `--version`
     - `--file=error.txt`
 - 让一个脚本同时支持短选项和长选项 `getopt.getopt(sys.argv[1:], "hi:o:", ["version", "file="]) `
+
+_docopt_ 
+> [Github地址](https://github.com/docopt/docopt) | 在脚本头部添加文档来实现读取参数的便捷
+会读取输入返回字典对象,可以很方便的读取输入的参数,但是需要书写大量文档, 适合参数比较多的时候,一眼过去简洁明了
+
+_Python Fire_
+> [Github地址](https://github.com/google/python-fire)快速的简洁的生成CLI
+> 不过要自己书写帮助文档输出,小量参数的话,开发十分的便利 可以和类一起,也可以和方法一起
+
 
 ### 【序列】
 `序列通用操作（包含：字符串，列表，元组）`

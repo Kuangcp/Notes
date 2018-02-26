@@ -37,7 +37,7 @@
     - [工作](#工作)
         - [简历](#简历)
 
-`目录 end` *目录创建于2018-02-19* | 更多: [CSDN](http://blog.csdn.net/kcp606) | [oschina](https://my.oschina.net/kcp1104) | [码云](https://gitee.com/kcp1104) 
+`目录 end` *目录创建于2018-02-26* | 更多: [CSDN](http://blog.csdn.net/kcp606) | [oschina](https://my.oschina.net/kcp1104) | [码云](https://gitee.com/kcp1104) 
 ****************************************
 
 # 【Organization】
@@ -51,6 +51,7 @@
 ## User
 > 一些值得学习的人 他们的仓库都有必要看一下
 
+- [Kenny Bastani](https://github.com/kbastani)`Spring 专家`
 - [waylau](https://github.com/waylau) `擅长 Maven Gradle netty Spring`
 - [anapsix](https://github.com/anapsix)`擅长docker`
 - [aleen42](https://github.com/aleen42) `写了好几个方便的gitbook插件`

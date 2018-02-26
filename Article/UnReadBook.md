@@ -19,7 +19,7 @@
         - [生活](#生活)
 - [教学视频](#教学视频)
 
-`目录 end` *目录创建于2018-02-07* | 更多: [CSDN](http://blog.csdn.net/kcp606) | [oschina](https://my.oschina.net/kcp1104) | [码云](https://gitee.com/kcp1104) 
+`目录 end` *目录创建于2018-02-26* | 更多: [CSDN](http://blog.csdn.net/kcp606) | [oschina](https://my.oschina.net/kcp1104) | [码云](https://gitee.com/kcp1104) 
 ****************************************
 # 待阅读的书籍
 > [程序员必读书单](http://www.cnblogs.com/figure9/p/developer-reading-list.html)
@@ -56,7 +56,10 @@
 
 ### Git
 - GitHub实践  [美] Chris Dawson , [美] Ben Straub (作者) 安道 (译者) 
+
 ### Linux
+- 鸟哥的Linux私房菜
+- 构建高可用 Linux 服务器（第 4 版） 余洪春
 
 ### Python
 - Python Web 开发实战

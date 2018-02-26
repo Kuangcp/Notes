@@ -254,7 +254,12 @@ _代码片段_
 > 可以放在一个github仓库里方便备份,然后建立一个软链接即可, 默认是放在用户的配置目录下
 
 - [参考博客: VS Code 折腾记 - (6) 基本配置/快捷键定义/代码片段的录入（snippet）](https://juejin.im/post/58aeeca22f301e006cf65c8b)
-    - 然后自定义一下insert snippet的快捷键,就很方便使用了
+- [巧用VScode“用户代码片段”来提高效率](https://www.dogxu.cn/2017/06/10/vscode-snippet/)
+    - 然后自定义一下insert snippet的快捷键,就很方便使用了 个人配置为`Ctrl L`
+    - 注意,每次修改片段配置文件,都需要重启Vscode才会生效最新修改...emm
+
+_列编辑_
+- Alt Shift 加上鼠标即可列编辑
 
 ************
 ### Gedit

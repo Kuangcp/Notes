@@ -3,6 +3,7 @@
 - [【常用的网站】](#常用的网站)
     - [软件商店](#软件商店)
     - [特别网站](#特别网站)
+- [社区网站](#社区网站)
 - [【学习网站】](#学习网站)
     - [并发](#并发)
     - [语言](#语言)
@@ -21,7 +22,7 @@
     - [人工智能](#人工智能)
     - [在线工具](#在线工具)
 
-`目录 end` *目录创建于2018-02-10* | 更多: [CSDN](http://blog.csdn.net/kcp606) | [oschina](https://my.oschina.net/kcp1104) | [码云](https://gitee.com/kcp1104) 
+`目录 end` *目录创建于2018-02-26* | 更多: [CSDN](http://blog.csdn.net/kcp606) | [oschina](https://my.oschina.net/kcp1104) | [码云](https://gitee.com/kcp1104) 
 ****************************************
 # 【常用的网站】
 ## 软件商店
@@ -32,6 +33,9 @@
 ******************************
 ## 特别网站
 - [测试你当前连接用的是ipv4还是ipv6](http://www.kame.net/)
+
+# 社区网站
+- [掘金门户网](http://e.xitu.io)
 
 ********************************
 # 【学习网站】
@@ -56,6 +60,7 @@
 > [官网](https://elixir-lang.org/)
 
 ## Linux
+- [运维生存时间](http://www.ttlsa.com)`含大量运维干货`
 - [IBM社区](https://www.ibm.com/developerworks/cn/)
 - [杭电ACM题库](http://acm.hdu.edu.cn/listproblem.php?vol=1)
 - [Linux命令大全](http://man.linuxde.net/) `Linux命令教程`
