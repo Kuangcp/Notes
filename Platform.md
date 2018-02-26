@@ -36,7 +36,7 @@
 - [测试平台](#测试平台)
 - [培训](#培训)
 
-`目录 end` *目录创建于2018-02-06* | 更多: [CSDN](http://blog.csdn.net/kcp606) | [oschina](https://my.oschina.net/kcp1104) | [码云](https://gitee.com/kcp1104) 
+`目录 end` *目录创建于2018-02-25* | 更多: [CSDN](http://blog.csdn.net/kcp606) | [oschina](https://my.oschina.net/kcp1104) | [码云](https://gitee.com/kcp1104) 
 ****************************************
 
 # 代码托管平台
@@ -208,6 +208,7 @@ CDN回源流出 	0.14
 *******************
 ### 其他应用
 - [百度脑图](http://naotu.baidu.com/)`在线思维导图创作`
+- [站内搜索](https://zn.baidu.com/cse/home/index)`不用自己写搜索了`
 
 *******************************************************
 ## 腾讯

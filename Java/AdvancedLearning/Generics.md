@@ -14,7 +14,7 @@
             - [通配符捕获](#通配符捕获)
         - [反射和泛型](#反射和泛型)
 
-`目录 end` *目录创建于2018-01-22* | 更多: [CSDN](http://blog.csdn.net/kcp606) | [oschina](https://my.oschina.net/kcp1104) | [码云](https://gitee.com/kcp1104) 
+`目录 end` *目录创建于2018-02-25* | 更多: [CSDN](http://blog.csdn.net/kcp606) | [oschina](https://my.oschina.net/kcp1104) | [码云](https://gitee.com/kcp1104) 
 ****************************************
 # 泛型
 > [开始学习的兴趣来源](https://mp.weixin.qq.com/s?__biz=MzAxOTc0NzExNg==&mid=2665514015&idx=1&sn=12409f705c6d266e4cd062e78ce50be0&chksm=80d67c5cb7a1f54a68ed83580b63b4acded0df525bb046166db2c00623a6bba0de3c5ad71884&scene=21#wechat_redirect)
@@ -183,7 +183,7 @@
 
 #### 超类型限定的通配符 super
 > 顾名思义就是限定为父类, 通配符限定和类型变量限定十分相似, 但是可以指定一个超类型限定(supertype bound)  
-> `? extends Student` 这个通配符就限定为Studnet的所有超类型(super关键字已经十分准确的描述了这种关系)  
+> `? super Student` 这个通配符就限定为Student的所有超类型(super关键字已经十分准确的描述了这种关系)  
 >> 带有超类型限定的通配符的行为和前者相反,可以为方法提供参数,但不能使用返回值即 可以 set 但是不能get
 
 ```java
