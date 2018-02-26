@@ -4,10 +4,12 @@
     - [版本控制系统(VCS)](#版本控制系统vcs)
     - [Git常用命令](#git常用命令)
         - [【Tips】](#tips)
-            - [清理仓库](#清理仓库)
+        - [清理仓库](#清理仓库)
+            - [【git gc】](#git-gc)
             - [【fork 相关操作】](#fork-相关操作)
         - [仓库基本命令](#仓库基本命令)
             - [【git config】](#git-config)
+            - [【git rm】](#git-rm)
             - [【git commit】](#git-commit)
             - [【git remote】](#git-remote)
             - [【git show】](#git-show)
@@ -29,7 +31,7 @@
         - [SVN](#svn)
     - [repos的使用](#repos的使用)
 
-`目录 end` *目录创建于2018-01-29* | 更多: [CSDN](http://blog.csdn.net/kcp606) | [oschina](https://my.oschina.net/kcp1104) | [码云](https://gitee.com/kcp1104) 
+`目录 end` *目录创建于2018-02-26* | 更多: [CSDN](http://blog.csdn.net/kcp606) | [oschina](https://my.oschina.net/kcp1104) | [码云](https://gitee.com/kcp1104) 
 ****************************************
 # Git基础
 ## 版本控制系统(VCS)
@@ -37,12 +39,15 @@
 
 ## Git常用命令
 > [Git官网中文教程](https://git-scm.com/book/zh/v2)  
-> [git-tips](https://github.com/521xueweihan/git-tips)`学习Git的仓库`
+> [git-tips](https://github.com/521xueweihan/git-tips)`学习Git的仓库`  
+> [git权威指南的组织](https://github.com/gotgit)`完整书籍,以及相关测试题`
 
 ### 【Tips】
 - `git ls-files` 列出文件列表
     - `git ls-files | xargs wc -l` 计算文件中程序代码行数 通过工具：`xargs` `wc` (中文命名的文件编码问题无法计算行数)
     - `git ls-files | xargs cat | wc -l` 计算行数总和
+- [二分查找捉虫记](http://www.worldhello.net/2016/02/29/git-bisect-on-git.html)`通过分析提交历史查到哪次提交引起的Bug然后检出,修复`
+
 
 ### 清理仓库
 > [参考博客1 彻底删除](http://www.itwendao.com/article/detail/413282.html) | [参考博客2 彻底删除](http://blog.csdn.net/meteor1113/article/details/4407209) | [参考博客3 删除大文件](http://www.gzhphb.com/article/78/784131.html) | [参考博客4 减小磁盘占用](http://zhongmingmao.me/2017/04/19/git-reduce/)
@@ -69,7 +74,7 @@
 - fork之后，想要更新原作者的分支：`git remote add 名称 原作者URL`
 - 拉取更新 ：`git fetch 名称`
 
-****************
+***************
 ### 仓库基本命令
 #### 【git config】
 - `git config user.email ***`  和   `git config user.name ***` 这两个是必须的，

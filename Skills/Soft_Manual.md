@@ -56,7 +56,7 @@
             - [主题](#主题)
         - [Vivaldi](#vivaldi)
 
-`目录 end` *目录创建于2018-02-20* | 更多: [CSDN](http://blog.csdn.net/kcp606) | [oschina](https://my.oschina.net/kcp1104) | [码云](https://gitee.com/kcp1104) 
+`目录 end` *目录创建于2018-02-26* | 更多: [CSDN](http://blog.csdn.net/kcp606) | [oschina](https://my.oschina.net/kcp1104) | [码云](https://gitee.com/kcp1104) 
 ****************************************
 # 软件使用记事
 ## 【包管理】
@@ -242,12 +242,19 @@ _批量修改_
 
 - 码笔记，码Python 比较方便，目录树，预览，整合终端
 - [快捷键](https://code.visualstudio.com/shortcuts/keyboard-shortcuts-linux.pdf)
-    - Ctrl P 快速打开
-    - Ctrl Shift P 命令模式
-    - Ctrl+K Ctrl+S 设置快捷键 Keyboard Shortcuts
+    - 快速打开文件 Ctrl P 
+    - 命令模式 Ctrl Shift P 
+    - 设置用户快捷键 Ctrl+K Ctrl+S  Keyboard Shortcuts
     - Ctrl Shift C 在当前打开的文件夹下打开系统默认终端
+
 - [使用vscocd进行python开发](http://www.cnblogs.com/bloglkl/archive/2016/08/23/5797805.html)
 
+_代码片段_
+> 配置地点 文件-首选项-用户代码片段 可以新建一个代码片段  
+> 可以放在一个github仓库里方便备份,然后建立一个软链接即可, 默认是放在用户的配置目录下
+
+- [参考博客: VS Code 折腾记 - (6) 基本配置/快捷键定义/代码片段的录入（snippet）](https://juejin.im/post/58aeeca22f301e006cf65c8b)
+    - 然后自定义一下insert snippet的快捷键,就很方便使用了
 
 ************
 ### Gedit

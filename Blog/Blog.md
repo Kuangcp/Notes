@@ -18,7 +18,7 @@
     - [生活](#生活)
     - [商业](#商业)
 
-`目录 end` *目录创建于2018-02-23* | 更多: [CSDN](http://blog.csdn.net/kcp606) | [oschina](https://my.oschina.net/kcp1104) | [码云](https://gitee.com/kcp1104) 
+`目录 end` *目录创建于2018-02-26* | 更多: [CSDN](http://blog.csdn.net/kcp606) | [oschina](https://my.oschina.net/kcp1104) | [码云](https://gitee.com/kcp1104) 
 ****************************************
 
 > 只用来记录非技术类的文章,技术类的直接放到对应的笔记中去
@@ -27,7 +27,7 @@
 
 # 【个人博客网】
 - [阮一峰](http://www.ruanyifeng.com/blog/)`一个勤奋的布道者,Github每天都有提交`
-- [酷壳](https://coolshell.cn/)`左耳朵耗子个人博客网`
+- [酷壳](https://coolshell.cn/)`左耳朵耗子个人博客网 阿里架构师`
 - [程序员DD](http://blog.didispace.com/)`翟永超`
 - [冰封千里](http://ice1000.org/)`Javaer,JavaFX和JVM类语言擅长`
 - [hushuang.me](https://hushuang.me/)
@@ -40,7 +40,8 @@
 - [Web程序猿](https://imququ.com/)
 - [letus.club](http://letus.club/)
 - [海底苍鹰(tank)](http://blog.51yip.com/) `前端和Linux`
-
+- [彭鑫](http://www.worldhello.net)`Git权威指南作者,Git比较熟练`
+- [Chenxu](https://www.dogxu.cn)`使用Github page 以及Https 全免费搭建`
 # 【博客社区】
 - [http://www.importnew.com](http://www.importnew.com)`小众?`
 - [http://www.cnblogs.com](http://www.cnblogs.com)
