@@ -17,6 +17,7 @@
         - [apache benchmark](#apache-benchmark)
     - [其他工具](#其他工具)
         - [输入法](#输入法)
+            - [搜狗输入法](#搜狗输入法)
             - [rime](#rime)
             - [小小输入法](#小小输入法)
         - [qgit](#qgit)
@@ -56,7 +57,7 @@
             - [主题](#主题)
         - [Vivaldi](#vivaldi)
 
-`目录 end` *目录创建于2018-02-26* | 更多: [CSDN](http://blog.csdn.net/kcp606) | [oschina](https://my.oschina.net/kcp1104) | [码云](https://gitee.com/kcp1104) 
+`目录 end` *目录创建于2018-02-27* | 更多: [CSDN](http://blog.csdn.net/kcp606) | [oschina](https://my.oschina.net/kcp1104) | [码云](https://gitee.com/kcp1104) 
 ****************************************
 # 软件使用记事
 ## 【包管理】
@@ -167,6 +168,11 @@
 ## 其他工具
 
 ### 输入法
+#### 搜狗输入法
+> 唯一一个大厂支持Linux 
+
+- Ctrl Alt B 显示/关闭 特殊字符面板
+
 #### rime
 - [rime](http://rime.im/) `用过一下子有莫名其妙的bug就卸载了`
 
@@ -314,6 +320,8 @@ CMD编辑器
 ******************************
 ## 【IDE】
 ### Idea
+> [学生授权申请方式](https://sales.jetbrains.com/hc/zh-cn/articles/207154369) | [click](http://mails.art.edu.lv/)
+
 #### 插件
 ##### lombok
 - 插件商店中搜索 lombok 安装重启idea即可

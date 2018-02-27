@@ -1,3 +1,16 @@
+`目录 start`
+ 
+- [有关Java的测试](#有关java的测试)
+    - [单元测试](#单元测试)
+        - [什么是TDD](#什么是tdd)
+    - [实现方案](#实现方案)
+        - [使用JunitTest](#使用junittest)
+            - [Assert](#assert)
+        - [Mock框架](#mock框架)
+    - [感悟](#感悟)
+
+`目录 end` *目录创建于2018-02-27* | 更多: [CSDN](http://blog.csdn.net/kcp606) | [oschina](https://my.oschina.net/kcp1104) | [码云](https://gitee.com/kcp1104) 
+****************************************
 # 有关Java的测试
 ## 单元测试
 > 单元测试(unit testing)，是指对软件中的最小可测试单元进行检查和验证。
@@ -24,10 +37,16 @@
 ****************
 ## 实现方案
 ### 使用JunitTest
-- idea中装好插件，直接Alt Insert 然后选Test生成
+> idea中安装TestMe插件，直接Alt Insert 然后选Test生成 或者 Ctrl Alt T 
+
 - Before Test 执行顺序：
     - Before在Test之前执行是毋庸置疑的，但是如果有多个Before的话，按定义的先后逆序执行，也就是说AB顺序定义，BA顺序执行
     - `注意` Before的执行顺序不是平常想的那样，如果你有一个共享的对象，需要在两个Before中完成初始化，是办不到的，必然空指针
+
+- 遇到一个问题,如果在加了Test注解的方法中像Main方法一样的去开多个子线程对象并运行起来,并不会得到想要的结果
+    - 这几个线程都是开了就立马关闭了,而且也是正常的退出码
+    - 原因:
+
 #### Assert
 > 断言是程序员假定程序在某种情况下的状态情况，如果不是预期断言的情况就会抛出异常
 

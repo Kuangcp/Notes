@@ -36,7 +36,7 @@
 - [测试平台](#测试平台)
 - [培训](#培训)
 
-`目录 end` *目录创建于2018-02-25* | 更多: [CSDN](http://blog.csdn.net/kcp606) | [oschina](https://my.oschina.net/kcp1104) | [码云](https://gitee.com/kcp1104) 
+`目录 end` *目录创建于2018-02-27* | 更多: [CSDN](http://blog.csdn.net/kcp606) | [oschina](https://my.oschina.net/kcp1104) | [码云](https://gitee.com/kcp1104) 
 ****************************************
 
 # 代码托管平台
@@ -258,6 +258,15 @@ _免费额度_
 # 文档
 ## 文档托管
 - [看云](https://www.kancloud.cn/dashboard)
+
+_showdoc_
+- [showdoc](https://www.showdoc.cc/web/#/)`开源,也具有Docker方式` | [示例](https://www.showdoc.cc/web/#/demo?page_id=7)
+- Docker安装: [官方文档](https://www.showdoc.cc/web/#/help?page_id=65610) `跑起来也就几十M内存占用`
+    - `git clone https://github.com/star7th/showdoc`
+    - 进入项目目录 然后 `docker build -t showdoc ./`
+    - `docker run -d --name showdoc -p 4999:80 showdoc`
+    - `http://localhost:4999/install/` 然后为了保险起见进容器删除项目根目录的install目录即可
+    - 数据与备份 Sqlite/showdoc.db.php 是数据库; 如果有图片就还要备份图片,所以解耦就还是不上传图片了
 
 ************************************************************
 # 测试平台

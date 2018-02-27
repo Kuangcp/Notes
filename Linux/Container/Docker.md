@@ -35,7 +35,7 @@
         - [Docker-Swarm](#docker-swarm)
     - [轻量镜像](#轻量镜像)
 
-`目录 end` *目录创建于2018-02-23* | 更多: [CSDN](http://blog.csdn.net/kcp606) | [oschina](https://my.oschina.net/kcp1104) | [码云](https://gitee.com/kcp1104) 
+`目录 end` *目录创建于2018-02-27* | 更多: [CSDN](http://blog.csdn.net/kcp606) | [oschina](https://my.oschina.net/kcp1104) | [码云](https://gitee.com/kcp1104) 
 ****************************************
 # Docker
 
@@ -69,6 +69,7 @@
 ## 安装与卸载
 > [daocloud安装帮助](http://get.daocloud.io/#install-docker)
 
+- [Docker 加速器](http://guide.daocloud.io/dcs/daocloud-9153151.html)
 ### 【Linux】
 #### 通过命令安装
 `snap`

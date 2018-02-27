@@ -22,7 +22,7 @@
     - [人工智能](#人工智能)
     - [在线工具](#在线工具)
 
-`目录 end` *目录创建于2018-02-26* | 更多: [CSDN](http://blog.csdn.net/kcp606) | [oschina](https://my.oschina.net/kcp1104) | [码云](https://gitee.com/kcp1104) 
+`目录 end` *目录创建于2018-02-27* | 更多: [CSDN](http://blog.csdn.net/kcp606) | [oschina](https://my.oschina.net/kcp1104) | [码云](https://gitee.com/kcp1104) 
 ****************************************
 # 【常用的网站】
 ## 软件商店
@@ -36,6 +36,7 @@
 
 # 社区网站
 - [掘金门户网](http://e.xitu.io)
+- [吾爱破解](https://www.52pojie.cn/)
 
 ********************************
 # 【学习网站】

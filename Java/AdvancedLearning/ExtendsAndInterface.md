@@ -3,10 +3,12 @@
 - [继承和接口](#继承和接口)
     - [【常用接口】](#常用接口)
 
-`目录 end` *目录创建于2018-01-22* | 更多: [CSDN](http://blog.csdn.net/kcp606) | [oschina](https://my.oschina.net/kcp1104) | [码云](https://gitee.com/kcp1104) 
+`目录 end` *目录创建于2018-02-27* | 更多: [CSDN](http://blog.csdn.net/kcp606) | [oschina](https://my.oschina.net/kcp1104) | [码云](https://gitee.com/kcp1104) 
 ****************************************
 # 继承和接口
 > 要倾向于组合多于继承
+
+- [参考博客: java的重载、覆盖和隐藏的区别](http://www.cnblogs.com/xiaoQLu/archive/2013/01/07/2849869.html)
 
 ## 【常用接口】
 `Comparable接口`
@@ -16,3 +18,5 @@
 - 接口指定实现的方法 ：`int compareTo(T o)` 比较此对象与指定对象的顺序。如果该对象`小于、等于或大于`指定对象，则分别返回`负整数、零或正整数`。
 - 强烈推荐 (x.compareTo(y)==0) == (x.equals(y)) 这种做法，但不是 严格要求这样做。一般来说，任何实现 Comparable 接口和违背此条件的类都应该清楚地指出这一事实。
     - 推荐如此阐述：“注意：此类具有与 equals 不一致的自然排序。”
+
+

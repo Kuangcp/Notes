@@ -18,7 +18,7 @@
     - [生活](#生活)
     - [商业](#商业)
 
-`目录 end` *目录创建于2018-02-26* | 更多: [CSDN](http://blog.csdn.net/kcp606) | [oschina](https://my.oschina.net/kcp1104) | [码云](https://gitee.com/kcp1104) 
+`目录 end` *目录创建于2018-02-27* | 更多: [CSDN](http://blog.csdn.net/kcp606) | [oschina](https://my.oschina.net/kcp1104) | [码云](https://gitee.com/kcp1104) 
 ****************************************
 
 > 只用来记录非技术类的文章,技术类的直接放到对应的笔记中去
@@ -42,6 +42,9 @@
 - [海底苍鹰(tank)](http://blog.51yip.com/) `前端和Linux`
 - [彭鑫](http://www.worldhello.net)`Git权威指南作者,Git比较熟练`
 - [Chenxu](https://www.dogxu.cn)`使用Github page 以及Https 全免费搭建`
+
+- [Romeng's blog](https://www.romeng.men/)`edu邮箱,VPS等`
+- [如有乐享](https://51.ruyo.net/)`突破限制的 教程资源比较多`
 # 【博客社区】
 - [http://www.importnew.com](http://www.importnew.com)`小众?`
 - [http://www.cnblogs.com](http://www.cnblogs.com)
