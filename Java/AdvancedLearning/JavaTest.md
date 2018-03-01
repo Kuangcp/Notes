@@ -7,9 +7,10 @@
         - [使用JunitTest](#使用junittest)
             - [Assert](#assert)
         - [Mock框架](#mock框架)
+            - [DBUnit](#dbunit)
     - [感悟](#感悟)
 
-`目录 end` *目录创建于2018-02-27* | 更多: [CSDN](http://blog.csdn.net/kcp606) | [oschina](https://my.oschina.net/kcp1104) | [码云](https://gitee.com/kcp1104) 
+`目录 end` *目录创建于2018-03-01* | 更多: [CSDN](http://blog.csdn.net/kcp606) | [oschina](https://my.oschina.net/kcp1104) | [码云](https://gitee.com/kcp1104) 
 ****************************************
 # 有关Java的测试
 ## 单元测试
@@ -59,6 +60,8 @@
 > [JMockit官方文档](http://www.vogella.com/tutorials/Mockito/article.html#testing-with-mock-objects)
 - [入门博客](http://blog.csdn.net/chjttony/article/details/17838693)
 
+#### DBUnit
+> 基于Junit的一个数据库测试框架, 方便测试dao层
 
 ## 感悟
 

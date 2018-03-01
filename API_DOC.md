@@ -18,7 +18,7 @@
 - [【互联网标准化过程文档】](#互联网标准化过程文档)
     - [登录授权](#登录授权)
 
-`目录 end` *目录创建于2018-02-04* | 更多: [CSDN](http://blog.csdn.net/kcp606) | [oschina](https://my.oschina.net/kcp1104) | [码云](https://gitee.com/kcp1104) 
+`目录 end` *目录创建于2018-03-01* | 更多: [CSDN](http://blog.csdn.net/kcp606) | [oschina](https://my.oschina.net/kcp1104) | [码云](https://gitee.com/kcp1104) 
 ****************************************
 # 【API】
 > 各种语言以及平台的在线API
@@ -45,7 +45,6 @@
 ## DataBase
 
 **************************************************************
-**************************************************************
 # 【Doc】
 > 各种软件的说明文档
 
@@ -68,8 +67,9 @@
 
 ****************
 ## Git
+- [git](https://git-scm.com/docs) `git`
 - [github开发接口](https://developer.github.com/v3/)
-
+- [tig](http://jonas.nitro.dk/tig/manual.html) `tig命令，git的加强版`
 ****************
 ## Go
 - [go官方文档](https://golang.org/doc/)
@@ -89,8 +89,6 @@
 ## Tools
 - [docker 安装 gitea](https://docs.gitea.io/en-us/install-with-docker/) `gitea是一个自助git服务，基于git`
 - [gitea配置文件说明](https://docs.gitea.io/zh-cn/config-cheat-sheet/)
-- [git](https://git-scm.com/docs) `git`
-- [tig](http://jonas.nitro.dk/tig/manual.html) `tig命令，git的加强版`
 - [VSCode编辑器快捷键文档](https://code.visualstudio.com/shortcuts/keyboard-shortcuts-linux.pdf)
 - [七牛云命令行工具文档](https://github.com/qiniu/qshell)
 
@@ -104,4 +102,4 @@
 # 【互联网标准化过程文档】
 
 ## 登录授权
-- [OAuth 2.0授权框架](https://github.com/jeansfish/RFC6749.zh-cn/blob/master/index.md).md)
+- [OAuth 2.0授权框架](https://github.com/jeansfish/RFC6749.zh-cn/blob/master/index.md)

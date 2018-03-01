@@ -45,7 +45,7 @@
     - [Jenkin 使用](#jenkin-使用)
         - [下载安装和配置](#下载安装和配置)
 
-`目录 end` *目录创建于2018-01-14*
+`目录 end` *目录创建于2018-03-01* | 更多: [CSDN](http://blog.csdn.net/kcp606) | [oschina](https://my.oschina.net/kcp1104) | [码云](https://gitee.com/kcp1104) 
 ****************************************
 
 # Gradle
@@ -348,7 +348,8 @@ task makeReleaseVersion(type:ReleaseVersionTask){
 ## War包
 ## Jar包
 - Gradle默认是只会打包源码，并不会打包依赖（为了更方便依赖的作用）
-- [shadow插件官网文档](http://imperceptiblethoughts.com/shadow/)
+    - [shadow插件官网文档](http://imperceptiblethoughts.com/shadow/)
+- 添加 `apply plugin: "maven"` 然后就能和mvn install 一样的执行 gradle install 了
 
 
 ************************
@@ -376,8 +377,8 @@ task makeReleaseVersion(type:ReleaseVersionTask){
 **************************
 
 # Gradle插件
-- shadowJar
-
+- shadowJar 含依赖进行打包
+- maven 提供maven类似的命令
 **************
 
 # 多语言编程

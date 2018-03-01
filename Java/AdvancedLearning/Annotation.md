@@ -3,7 +3,7 @@
 - [注解](#注解)
     - [读取](#读取)
 
-`目录 end` *目录创建于2018-02-22* | 更多: [CSDN](http://blog.csdn.net/kcp606) | [oschina](https://my.oschina.net/kcp1104) | [码云](https://gitee.com/kcp1104) 
+`目录 end` *目录创建于2018-03-01* | 更多: [CSDN](http://blog.csdn.net/kcp606) | [oschina](https://my.oschina.net/kcp1104) | [码云](https://gitee.com/kcp1104) 
 ****************************************
 # 注解
 > Java中的注解
@@ -34,6 +34,7 @@
     - 允许子类继承父类中的注解
 
 ## 读取
-判断是否有指定注解类型的注解
-在类上的注解就是得到类对象, 然后判断 isAnnotationPresent(ExcelConfig.class)
-在方法上的注解就是得到所有方法, 属性同理
+- 判断是否有指定注解类型的注解
+    - 在类上的注解就是得到类对象, 然后判断 isAnnotationPresent(ExcelConfig.class)
+    - 在方法上的注解就是得到所有方法, 属性同理
+- [相关代码片段](https://gitee.com/kcp1104/codes/s148mbplxo06qgn25d3wc23)

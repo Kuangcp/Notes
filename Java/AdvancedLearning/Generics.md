@@ -14,11 +14,15 @@
             - [通配符捕获](#通配符捕获)
         - [反射和泛型](#反射和泛型)
 
-`目录 end` *目录创建于2018-02-27* | 更多: [CSDN](http://blog.csdn.net/kcp606) | [oschina](https://my.oschina.net/kcp1104) | [码云](https://gitee.com/kcp1104) 
+`目录 end` *目录创建于2018-03-01* | 更多: [CSDN](http://blog.csdn.net/kcp606) | [oschina](https://my.oschina.net/kcp1104) | [码云](https://gitee.com/kcp1104) 
 ****************************************
 # 泛型
 > [开始学习的兴趣来源](https://mp.weixin.qq.com/s?__biz=MzAxOTc0NzExNg==&mid=2665514015&idx=1&sn=12409f705c6d266e4cd062e78ce50be0&chksm=80d67c5cb7a1f54a68ed83580b63b4acded0df525bb046166db2c00623a6bba0de3c5ad71884&scene=21#wechat_redirect)
 
+[参考博客: Java总结篇系列：Java泛型](http://www.cnblogs.com/lwbqqyumidi/p/3837629.html)  
+泛型，即“参数化类型”。一提到参数，最熟悉的就是定义方法时有形参，然后调用此方法时传递实参。  
+那么参数化类型怎么理解呢？顾名思义，就是将类型由原来的具体的类型参数化，类似于方法中的变量参数，此时类型也定义成参数形式（可以称之为类型形参），然后在使用/调用时传入具体的类型（类型实参）。  
+[参考博客: Java深度历险（五）——Java泛型](http://www.infoq.com/cn/articles/cf-java-generics)
 ## 入门
 >泛型程序设计划分为三个熟练级别 基本级别就是仅仅使用泛型类,典型的是像ArrayList这样的集合--不必考虑他们的工作方式和原因,大多数人会停留在这个级别.直到出现了什么问题. 当把不同的泛型类混合在一起的时候,或是对类型参数一无所知的遗留代码进行对接时,可能会看到含糊不清的错误消息.如果这样的话,就需要系统的进行学习Java泛型来系统地解决问题.  
 > 泛型类可以看作普通类的工厂  -- Java核心技术卷 2004(1.5)  
@@ -164,7 +168,7 @@
 
 ### 通配符类型
 #### 子类型限定的通配符 extends
-> 顾名思义,就是限定为子类, 例如: `Pair<? extends Human>` 表示任何Pair泛型类型并且他的类型变量要为Human的子类  
+> 通配符上限  顾名思义,就是限定为该类及其子类, 例如: `Pair<? extends Human>` 表示任何Pair泛型类型并且他的类型变量要为Human的子类  
 
 > 例如编写一个方法 `public static void printMessage(Pair<Human> human){}`  
 > 正如上面所说, Pair<Student>类型的变量是不能放入这个方法的,因为泛型变量是没有继承关系, 这时候就可以使用这个通配符:  
@@ -182,7 +186,7 @@
 ```
 
 #### 超类型限定的通配符 super
-> 顾名思义就是限定为父类, 通配符限定和类型变量限定十分相似, 但是可以指定一个超类型限定(supertype bound)  
+> 通配符下限  顾名思义就是限定为父类, 通配符限定和类型变量限定十分相似, 但是可以指定一个超类型限定(supertype bound)  
 > `? super Student` 这个通配符就限定为Student的所有超类型(super关键字已经十分准确的描述了这种关系)  
 >> 带有超类型限定的通配符的行为和前者相反,可以为方法提供参数,但不能使用返回值即 可以 set 但是不能get
 
@@ -200,13 +204,21 @@
 >> 超类型限定: <? super Student> 限定了不能正确get,但是保证了set.  
 
 ##### 应用
-- 示例:`public static <T extends Comparable<T>> T min(T[] list);`
+> [参考博客: 使用通配符简化泛型使用](https://www.ibm.com/developerworks/cn/java/j-jtp04298.html)
+
+- 示例1:`public static <T extends Comparable<T>> T min(T[] list);`
     - 限定了入参和返回值是 是实现了Comparable接口的某个类型 因为Comparable也是一个泛型类, 所以也进行限定类型
     - 这样的写法要比 T extends Comparable 更为彻底
     - 例如计算一个String数组的最小值 T 就是 String类型的, String是Comparable<String>的子类型
         - 但是当处理GregorianCalendar, GregorianCalendar是Calendar的子类, 并且Calendar实现了`Comparable<Calendar>`
         - 因此GregorianCalendar实现的是`Comparable<Calendar>`, 而不是Comparable<GregorianCalendar>
         - 这种情况下 `public static <T extends Comparable<? super T>> T min(T[] list)` 就是安全的
+
+- 示例2: `public static <T extends ExcelTransform> List<T> importExcel(Class<T> target)`
+    - 该方法实现了, 传入继承了ExcelTransform接口的类对象, 得到该类的List集合
+    - `<T extends ExcelTransform> boolean` 这样写编译没报错, 那么就是说, 就是一个泛型的定义, 后面进行引用, 省的重复写
+
+- 示例3: Spring4.x 添加的泛型依赖注入 , 使用的JPA就是依赖该技术   [spring学习笔记（14）——泛型依赖注入](http://blog.csdn.net/u010837612/article/details/45582043)
 
 > 对于应用程序员, 可能很快的学会掩盖这些声明, 想当然地认为库程序员做的都是正确的, 如果是一名库程序员, 一定要习惯于通配符  
 > 否则还要用户在代码中随意地添加强制类型转换直至可以通过编译.
