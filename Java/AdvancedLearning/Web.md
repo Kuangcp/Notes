@@ -1,9 +1,42 @@
+`目录 start`
+ 
+- [Java Web](#java-web)
+    - [1.【JSP/Servlet】](#1jspservlet)
+        - [Servlet](#servlet)
+        - [JSP](#jsp)
+            - [九大内置对象](#九大内置对象)
+            - [四个作用域](#四个作用域)
+        - [Tips](#tips)
+
+`目录 end` *目录创建于2018-03-02* | 更多: [CSDN](http://blog.csdn.net/kcp606) | [oschina](https://my.oschina.net/kcp1104) | [码云](https://gitee.com/kcp1104) 
+****************************************
 # Java Web
 ## 1.【JSP/Servlet】
 
 ### Servlet
-### Jsp
+### JSP
+> [参考博客: JSP面试题及答案](http://www.cnblogs.com/iOS-mt/p/5717631.html)
 
+#### 九大内置对象
+```
+   request            请求对象　                类型 javax.servlet.ServletRequest        作用域 Request
+   response          响应对象                   类型 javax.servlet.SrvletResponse       作用域  Page
+   pageContext    页面上下文对象       类型 javax.servlet.jsp.PageContext      作用域    Page
+　　session            会话对象                   类型 javax.servlet.http.HttpSession       作用域    Session
+　　application       应用程序对象          类型 javax.servlet.ServletContext          作用域    Application
+　　out                   输出对象                   类型 javax.servlet.jsp.JspWriter             作用域    Page
+　　config              配置对象                  类型 javax.servlet.ServletConfig            作用域    Page
+　　page               页面对象                  类型 javax.lang.Object                            作用域    Page
+　　exception        例外对象                 类型 javax.lang.Throwable                     作用域    page 来源: 
+```
+#### 四个作用域
+> [参考博客: JSP的四大作用域](http://www.cnblogs.com/featherfly/p/3513656.html)
+```
+application 在所有应用程序中有效
+session 在当前会话中有效
+request 在当前请求中有效
+page 在当前页面有效
+```
 ### Tips
 - 1、JSP页面上的SQL标签以及EL标签是优先于文件头的那些JavaServlet语句运行的，所以要保证非法进入页面时重定向的问题
 - 2、如果想要获取异常来据此返回参数到页面弹窗提示，那么就要对一层层的方法调用，进行查找，所有的try catch 块 都要检查

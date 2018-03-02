@@ -1,7 +1,6 @@
 `目录 start`
  
 - [JavaEE](#javaee)
-    - [1.【JSP/Servlet】](#1jspservlet)
     - [2.【几大框架简述】](#2几大框架简述)
     - [3.【Hibernate基础配置】](#3hibernate基础配置)
         - [3.1【JDBC 和 Hibernate 比较】](#31jdbc-和-hibernate-比较)
@@ -86,7 +85,7 @@
     - [12.【Redis的使用】](#12redis的使用)
         - [12.1 【Java 使用 redis 配置】](#121-java-使用-redis-配置)
 
-`目录 end` *目录创建于2018-01-14*
+`目录 end` *目录创建于2018-03-02* | 更多: [CSDN](http://blog.csdn.net/kcp606) | [oschina](https://my.oschina.net/kcp1104) | [码云](https://gitee.com/kcp1104) 
 ****************************************
 # JavaEE
 
