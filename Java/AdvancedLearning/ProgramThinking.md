@@ -23,7 +23,7 @@
     - [异常处理](#异常处理)
     - [配置文件](#配置文件)
 
-`目录 end` *目录创建于2018-01-22* | 更多: [CSDN](http://blog.csdn.net/kcp606) | [oschina](https://my.oschina.net/kcp1104) | [码云](https://gitee.com/kcp1104) 
+`目录 end` *目录创建于2018-03-04* | 更多: [CSDN](http://blog.csdn.net/kcp606) | [oschina](https://my.oschina.net/kcp1104) | [码云](https://gitee.com/kcp1104) 
 ****************************************
 # 开发思想
 > 有关开发的理论性思想,编写,测试,部署等
@@ -135,6 +135,8 @@ _一个基本的JUnit测试_
 ## 组件模型
 ### SOA
 > [百度百科定义](https://baike.baidu.com/item/SOA/2140650)
+
+- [参考博客: SOA面向服务架构](http://www.jdon.com/soa.html)
 
 ### 微服务
 > [码农翻身:从SOA到微服务](https://mp.weixin.qq.com/s?__biz=MzAxOTc0NzExNg==&mid=2665513674&idx=1&sn=fbc727b7c8ff6d03f5d53478b6d4e585&chksm=80d67a89b7a1f39ff0c3589a4a4076e323fab18379fc8d085c133b88e4db104f87988b29d246&scene=21#wechat_redirect)

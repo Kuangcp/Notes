@@ -9,8 +9,10 @@
     - [基础数据类型](#基础数据类型)
     - [包装类型](#包装类型)
         - [String](#string)
+    - [类型强转](#类型强转)
+- [关键字](#关键字)
 
-`目录 end` *目录创建于2018-01-22* | 更多: [CSDN](http://blog.csdn.net/kcp606) | [oschina](https://my.oschina.net/kcp1104) | [码云](https://gitee.com/kcp1104) 
+`目录 end` *目录创建于2018-03-04* | 更多: [CSDN](http://blog.csdn.net/kcp606) | [oschina](https://my.oschina.net/kcp1104) | [码云](https://gitee.com/kcp1104) 
 ****************************************
 # 基础语法
 
@@ -39,6 +41,8 @@
     - 一般Windows文件默认编码：`str = new String(str.getBytes("iso8859-1"), "gb2312"); ` 
     - properties文件中获取中文 `str = new String(str.getBytes("utf-8"), "utf-8");`
 
+## 类型强转
+Double -> int 直接(int)num;
 
 *************************
 # 关键字
