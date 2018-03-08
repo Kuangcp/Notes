@@ -1,12 +1,6 @@
 [![Build Status](https://www.gitbook.io/button/status/book/kuangcp/notes)](https://www.gitbook.io/book/kuangcp/notes/details)
  | [码云](https://gitee.com/kcp1104) | [CSDN博客](http://blog.csdn.net/kcp606) | [Gitbook](https://kuangcp.gitbooks.io/notes/) | [笔记目录](./SUMMARY.md) | [Java笔记整理](./Java/JavaSE.md)
 
-
-## 2016.08.11 新的开始
-- 这是用来记录我的笔记的仓库，用上git来管理，促使我熟悉git命令，习惯记录电子笔记
-    - 每个文件都有目录,方便阅读,但是因为平台的兼容性,目前只在Github上能正常使用
-    - `浏览器的 Octotree 插件` 也方便查阅
-
 *********
 > 我曾七次鄙视自己的灵魂：  
 > 第一次,当它本可进取时，却故作谦卑；  
@@ -32,20 +26,9 @@
 > 用个新框架，新库，这不叫长进。原来不会实现的东西，现在会实现了，这才叫长进。
 
 > 人可以有霉运,但不可以有霉相.
+
+> 长者賜不可辞 
 **************
-
-## 【学习历程】
-
-|     时间     |  语言或工具   |
-| :--------: | :------: |
-| 2014.09 |   接触C    |
-| 2015.07 |  接触Java  |
-| 2016.02 | 接触Maven |
-| 2016.03 | 接触Gradle |
-| 2017.03 | 接触Python |
-| 2017.04 | 接触Groovy |
-| 2017.05 | 接触Linux  |
-| 2017.08 | 接触Docker |
 
 ## 个人备忘
 - [阿里Java编程规范](Java/AlibabaJavaStandard.md)
@@ -101,9 +84,26 @@ _有自制力的人， 能够坚持的人才更有可能成功！_
 一年多，积累了很多读者，也通过写的东西造福了很多找工作的学生、迷茫的大学生、想转行的就业者，也让我有动力的不断继续更新下去。  
 > -- 知乎: 路人甲
 
+## 【学习历程】
+|   时间   |  语言或工具  |
+| :--------: | :------: |
+| 2014.09 |   接触C    |
+| 2015.07 |  接触Java  |
+| 2016.02 | 接触Maven |
+| 2016.03 | 接触Gradle |
+| 2017.03 | 接触Python |
+| 2017.04 | 接触Groovy |
+| 2017.05 | 接触Linux  |
+| 2017.08 | 接触Docker |
+
 ## 笔记中所涉及到的知识
 - 编程语言: Python Java Kotlin Groovy Scala Clojure Shell Go
 - 构建工具: Git Gradle Maven 
 - 系统相关: Linux Docker 
 - 数据库相关: MySQL Oracle Redis Postgresql
 - web服务器: Tomcat Niginx
+
+## 2016.08.11 新的开始
+- 这是用来记录我的笔记的仓库，用上git来管理，促使我熟悉git命令，习惯记录电子笔记
+    - 每个文件都有目录,方便阅读,但是因为平台的兼容性,目前只在Github上能正常使用
+    - `浏览器的 Octotree 插件` 也方便查阅
