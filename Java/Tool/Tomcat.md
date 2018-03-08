@@ -8,7 +8,8 @@
             - [默认主页](#默认主页)
             - [虚拟主机](#虚拟主机)
             - [配置 GZip压缩](#配置-gzip压缩)
-        - [Tips](#tips)
+            - [配置IO方式](#配置io方式)
+    - [Tips](#tips)
     - [Web容器和Web服务器的区别](#web容器和web服务器的区别)
         - [【web容器】](#web容器)
             - [【Web服务器】](#web服务器)
@@ -19,7 +20,7 @@
     - [一、Tomcat 与应用服务器](#一、tomcat-与应用服务器)
     - [二、Tomcat 与 Web 服务器](#二、tomcat-与-web-服务器)
 
-`目录 end` *目录创建于2018-01-14*
+`目录 end` *目录创建于2018-03-08* | 更多: [CSDN](http://blog.csdn.net/kcp606) | [oschina](https://my.oschina.net/kcp1104) | [码云](https://gitee.com/kcp1104) 
 ****************************************
 # Tomcat
 > [官方网站](http://tomcat.apache.org/)
@@ -115,8 +116,11 @@
 ```xml
     <Connector port="8080" protocol="HTTP/1.1" connectionTimeout="20000" redirectPort="8443" compression="on" compressionMinSize="2048" noCompressionUserAgents="gozilla,traviata" compressableMimeType="text/html,text/xml,text/javascript,application/x-javascript,application/javascript,text/css,text/plain"/>
 ```
+#### 配置IO方式
+> 默认http1.1是nio, 还有aio ajp bio
 
-###  Tips
+
+##  Tips
 - servletContextLisner 和Spring环境的加载顺序要注意
 - 配置好的tomcat [SDK 下的tomcat下的myth-tomcat-8.5.14.zip](https://pan.baidu.com/s/1i48uER7)
 
