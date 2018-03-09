@@ -15,11 +15,11 @@
         - [Python](#python)
         - [Go](#go)
         - [Kotlin](#kotlin)
-        - [工作](#工作)
-        - [生活](#生活)
+    - [工作](#工作)
+    - [生活](#生活)
 - [教学视频](#教学视频)
 
-`目录 end` *目录创建于2018-02-26* | 更多: [CSDN](http://blog.csdn.net/kcp606) | [oschina](https://my.oschina.net/kcp1104) | [码云](https://gitee.com/kcp1104) 
+`目录 end` |_2018-03-09_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [oschina](https://my.oschina.net/kcp1104)
 ****************************************
 # 待阅读的书籍
 > [程序员必读书单](http://www.cnblogs.com/figure9/p/developer-reading-list.html)
@@ -68,12 +68,12 @@
 
 ### Kotlin
 
-### 工作
+## 工作
 - [单核工作法](http://www.ituring.com.cn/book/1925)
     - [单核工作法图解](http://www.ituring.com.cn/book/1925)
 - [程序员面试金典](http://www.ituring.com.cn/book/1010)
 
-### 生活
+## 生活
 - 程序员健康指南
 
 ********************
@@ -95,6 +95,17 @@
     《Head First 设计模式》
     《大型网站技术架构》（李智慧 著）
     《大型网站系统与 Java 中间件实践》
+
+******************
+自己Kindle选择的书籍
+大设计
+果壳中的宇宙
+时间简史
+重构
+鸟哥Linux
+编程之美
+高性能Mysql
+HTTP权威指南
 
 
 # 教学视频

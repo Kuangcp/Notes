@@ -18,13 +18,15 @@
     - [【分支合并框架】](#分支合并框架)
     - [【Java内存模型】](#java内存模型)
 
-`目录 end` *目录创建于2018-03-08* | 更多: [CSDN](http://blog.csdn.net/kcp606) | [oschina](https://my.oschina.net/kcp1104) | [码云](https://gitee.com/kcp1104) 
+`目录 end` |_2018-03-09_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [oschina](https://my.oschina.net/kcp1104)
 ****************************************
 # Java并发
 > [个人相关代码](https://github.com/Kuangcp/JavaBase/tree/master/src/main/java/com/concurrents)  
 > 主要知识来源 Java程序员修炼之道  | [并发编程网](http://ifeve.com/)  
 > 该模块最早在1.5引入,由[Doug Lea](http://g.oswego.edu/)开发 |  [doug lea博客中文版](http://ifeve.com/doug-lea/)
 
+> [参考博客: 并发编程 ](http://www.jdon.com/concurrency.html)
+> [参考博客: 不可变真的意味线程安全？](http://www.jdon.com/concurrent/immutable.html)
 ## 【理论知识】
 `线程模型`
 - 共享的，默认可见的可变状态
