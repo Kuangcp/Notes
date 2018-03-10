@@ -18,7 +18,7 @@
     - [生活](#生活)
     - [商业](#商业)
 
-`目录 end` *目录创建于2018-03-08* | 更多: [CSDN](http://blog.csdn.net/kcp606) | [oschina](https://my.oschina.net/kcp1104) | [码云](https://gitee.com/kcp1104) 
+`目录 end` |_2018-03-10_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
 ****************************************
 
 > 只用来记录非技术类的文章,技术类的直接放到对应的笔记中去
@@ -80,6 +80,7 @@
 - [知乎专栏：使用Springboot搭建博客](https://zhuanlan.zhihu.com/p/28428463)
 - [solo](https://github.com/b3log/solo)`博客系统 markdown`
 - [咖啡兔](https://github.com/henryyan/henryyan.github.com)`现成的模板直接用md就能生成了`
+- [Gitment：使用 GitHub Issues 搭建评论系统 ](https://imsun.net/posts/gitment-introduction/)
 
 ## NetWork
 - [使用清华的IPV6](http://ju.outofmemory.cn/entry/154398)

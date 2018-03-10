@@ -1,17 +1,19 @@
 `目录 start`
  
 - [Java Web](#java-web)
-    - [1.【JSP/Servlet】](#1jspservlet)
+    - [【JSP/Servlet】](#jspservlet)
         - [Servlet](#servlet)
         - [JSP](#jsp)
             - [九大内置对象](#九大内置对象)
             - [四个作用域](#四个作用域)
-        - [Tips](#tips)
+    - [Spring系](#spring系)
+        - [缓存](#缓存)
+    - [Tips](#tips)
 
-`目录 end` *目录创建于2018-03-02* | 更多: [CSDN](http://blog.csdn.net/kcp606) | [oschina](https://my.oschina.net/kcp1104) | [码云](https://gitee.com/kcp1104) 
+`目录 end` |_2018-03-10_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
 ****************************************
 # Java Web
-## 1.【JSP/Servlet】
+## 【JSP/Servlet】
 
 ### Servlet
 ### JSP
@@ -37,7 +39,20 @@ session 在当前会话中有效
 request 在当前请求中有效
 page 在当前页面有效
 ```
-### Tips
+**************************
+## Spring系
+
+### 缓存 
+
+_如何做Etag缓存_
+1. 自定义了EtagCache注解
+2. 通过拦截器判断带EtagCache注解的Controller
+3. 通过Spring Data Jpa自带的乐观锁 version, 针对每个资源就可以做到EtagCache
+4. 将其值放在http的header中
+5. 还有另一种做法就是 自己针对内容进行hash code编码
+
+**************************** 
+## Tips
 - 1、JSP页面上的SQL标签以及EL标签是优先于文件头的那些JavaServlet语句运行的，所以要保证非法进入页面时重定向的问题
 - 2、如果想要获取异常来据此返回参数到页面弹窗提示，那么就要对一层层的方法调用，进行查找，所有的try catch 块 都要检查
     - 因为一般我的习惯就是把异常当场就处理了，而要实现这个要求就必须将异常层层上抛！！！！

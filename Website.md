@@ -22,7 +22,7 @@
     - [人工智能](#人工智能)
     - [在线工具](#在线工具)
 
-`目录 end` |_2018-03-09_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [oschina](https://my.oschina.net/kcp1104)
+`目录 end` |_2018-03-10_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
 ****************************************
 # 【常用的网站】
 ## 软件商店
@@ -33,6 +33,7 @@
 ******************************
 ## 特别网站
 - [测试你当前连接用的是ipv4还是ipv6](http://www.kame.net/)
+- [badge网站](https://shields.io/)
 
 # 社区网站
 - [掘金门户网](http://e.xitu.io)

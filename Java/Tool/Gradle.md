@@ -45,11 +45,13 @@
     - [Jenkin 使用](#jenkin-使用)
         - [下载安装和配置](#下载安装和配置)
 
-`目录 end` *目录创建于2018-03-01* | 更多: [CSDN](http://blog.csdn.net/kcp606) | [oschina](https://my.oschina.net/kcp1104) | [码云](https://gitee.com/kcp1104) 
+`目录 end` |_2018-03-10_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
 ****************************************
 
 # Gradle
 ## 安装配置
+> 和maven使用同一个本地库 只要加上 M2_HOME 环境变量即可, 值和 MAVEN_HOME 一样, 并没有用
+
 ### SDKMAN方式
 - 先安装sdkman
 - 使用Bash运行`curl -s "https://get.sdkman.io" | bash`
@@ -93,7 +95,10 @@
 
 ## 测试
 > 凡是依赖于本地环境的测试，使用完就注释Test注解，还有那些会CRUD，影响到数据的测试方法也是
-> 以防以后线上测试通不过
+> 以防以后线上测试通不过 打包失败, 
+
+也可以跳过测试 `gradle build -x test`
+
 ***************************************
 
 ## 第一个 build.gradle

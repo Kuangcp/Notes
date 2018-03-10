@@ -1,16 +1,23 @@
 `目录 start`
  
 - [集合](#集合)
+    - [集合继承和实现关系](#集合继承和实现关系)
+        - [继承关系](#继承关系)
+        - [实现关系](#实现关系)
     - [Iterator](#iterator)
     - [【Map】](#map)
     - [【List】](#list)
     - [【Set】](#set)
     - [Hash](#hash)
 
-`目录 end` *目录创建于2018-01-22* | 更多: [CSDN](http://blog.csdn.net/kcp606) | [oschina](https://my.oschina.net/kcp1104) | [码云](https://gitee.com/kcp1104) 
+`目录 end` |_2018-03-10_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
 ****************************************
 # 集合
 > 重要的知识点，面试必问，使用频率也很高
+
+## 集合继承和实现关系
+### 继承关系
+### 实现关系
 
 ## Iterator
 > 迭代器
