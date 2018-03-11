@@ -22,7 +22,7 @@
             - [JPA关于Redis的使用](#jpa关于redis的使用)
             - [关于StringRedisTemplate的方法使用](#关于stringredistemplate的方法使用)
 
-`目录 end` *目录创建于2018-02-20* | 更多: [CSDN](http://blog.csdn.net/kcp606) | [oschina](https://my.oschina.net/kcp1104) | [码云](https://gitee.com/kcp1104) 
+`目录 end` |_2018-03-11_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
 ****************************************
 # 数据库模块
 > 主要是采用的JPA，极大的缩减了代码量，但是要注意不要过度依赖框架，丧失了基本的能力
@@ -40,6 +40,8 @@
 > 连接池:默认是tomcat-jdbc连接池
 
 - [Blog: 原生SQL的写法](http://blog.csdn.net/Amy_Queen/article/details/72454099)
+
+> 怎么映射视图到实体上?
 
 #### 自定义查询
 ##### HQL

@@ -13,7 +13,7 @@
     - [类型强转](#类型强转)
 - [关键字](#关键字)
 
-`目录 end` *目录创建于2018-03-08* | 更多: [CSDN](http://blog.csdn.net/kcp606) | [oschina](https://my.oschina.net/kcp1104) | [码云](https://gitee.com/kcp1104) 
+`目录 end` |_2018-03-11_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
 ****************************************
 # 基础语法
 
@@ -39,6 +39,8 @@
 ## 包装类型
 ### String
 > 该类是final修饰的, 原因:[知乎问题](https://www.zhihu.com/question/31345592)
+
+- 常量池的实现
 
 - 常见编码转换
     - 一般Windows文件默认编码：`str = new String(str.getBytes("iso8859-1"), "gb2312"); ` 

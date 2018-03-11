@@ -33,6 +33,7 @@
 - [打包](#打包)
     - [War包](#war包)
     - [Jar包](#jar包)
+    - [上传至构建仓库](#上传至构建仓库)
     - [集成测试](#集成测试)
         - [多模块构建](#多模块构建)
     - [功能测试](#功能测试)
@@ -45,7 +46,7 @@
     - [Jenkin 使用](#jenkin-使用)
         - [下载安装和配置](#下载安装和配置)
 
-`目录 end` |_2018-03-10_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
+`目录 end` |_2018-03-11_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
 ****************************************
 
 # Gradle
@@ -356,6 +357,13 @@ task makeReleaseVersion(type:ReleaseVersionTask){
     - [shadow插件官网文档](http://imperceptiblethoughts.com/shadow/)
 - 添加 `apply plugin: "maven"` 然后就能和mvn install 一样的执行 gradle install 了
 
+## 上传至构建仓库
+> 特别注意使用gpg, 如果按这下面的一堆文档跟着做的话你要保证你的gpg小于等于2.0版本, 不然就卡在这里了
+
+[参考项目 ](https://github.com/haiyangwu/sonatype)
+[参考](https://www.jianshu.com/p/49c926589f41)
+[官方文档](http://central.sonatype.org/pages/gradle.html)
+[参考博客](http://blog.csdn.net/h3243212/article/details/72374363#%E9%81%87%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98)
 
 ************************
 ## 集成测试

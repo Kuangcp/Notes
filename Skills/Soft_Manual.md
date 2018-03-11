@@ -8,14 +8,14 @@
 - [【常用工具】](#常用工具)
     - [网络工具](#网络工具)
         - [nmap](#nmap)
+        - [apache benchmark](#apache-benchmark)
     - [终端工具](#终端工具)
         - [xclip](#xclip)
         - [zssh](#zssh)
         - [Autojump](#autojump)
         - [asciinema](#asciinema)
         - [tmux](#tmux)
-        - [apache benchmark](#apache-benchmark)
-    - [其他工具](#其他工具)
+    - [日常工具](#日常工具)
         - [输入法](#输入法)
             - [搜狗输入法](#搜狗输入法)
             - [rime](#rime)
@@ -35,19 +35,15 @@
         - [Gedit](#gedit)
         - [小书匠](#小书匠)
         - [Moeditor Typora CuteMarkEd](#moeditor-typora-cutemarked)
-    - [终端编辑器](#终端编辑器)
+    - [终端中的文本编辑器](#终端中的文本编辑器)
         - [Vi/Vim](#vivim)
         - [Nano](#nano)
         - [fte-terminal](#fte-terminal)
     - [在线编辑器](#在线编辑器)
     - [【IDE】](#ide)
         - [Idea](#idea)
-            - [插件](#插件)
-                - [lombok](#lombok)
         - [eclipse](#eclipse)
         - [MyEclipse](#myeclipse)
-            - [【ALT 】：](#alt-)
-            - [【CTRL】 ：](#ctrl-)
             - [【debug】](#debug)
     - [【浏览器】](#浏览器)
         - [FireFox](#firefox)
@@ -56,8 +52,10 @@
         - [Chrome](#chrome)
             - [主题](#主题)
         - [Vivaldi](#vivaldi)
+    - [安全工具](#安全工具)
+        - [gpg](#gpg)
 
-`目录 end` *目录创建于2018-02-27* | 更多: [CSDN](http://blog.csdn.net/kcp606) | [oschina](https://my.oschina.net/kcp1104) | [码云](https://gitee.com/kcp1104) 
+`目录 end` |_2018-03-11_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
 ****************************************
 # 软件使用记事
 ## 【包管理】
@@ -106,6 +104,11 @@
     - -sT
     - -sR
 
+### apache benchmark
+> 压力测试工具
+
+- 测试本机超过100连接报错 104: 
+    - [Blog:解决问题](http://www.cnblogs.com/archoncap/p/5883723.html)
 
 **********
 ## 终端工具
@@ -131,9 +134,6 @@
     - `jco c` 打开子目录
 - `ls -l ~/.local/share/autojump/` 统计信息的目录，清除就相当于卸载重装了
 
-********
-
-
 ************************************
 ### asciinema
 > 终端录制工具
@@ -158,15 +158,9 @@
     - `Ctrl B` `D` 可以合上电脑（休眠）
     - `tmux ls` 显示所有 `tmux a -t myth` 连上指定名字的就继续了
 
-### apache benchmark
-> 压力测试工具
-
-- 测试本机超过100连接报错 104: 
-    - [Blog:解决问题](http://www.cnblogs.com/archoncap/p/5883723.html)
 
 ************************************
-## 其他工具
-
+## 日常工具
 ### 输入法
 #### 搜狗输入法
 > 唯一一个大厂支持Linux 
@@ -298,7 +292,7 @@ _列编辑_
 - 书写单个md文件方便，美观，没有目录树是硬伤
 
 ************
-## 终端编辑器
+## 终端中的文本编辑器
 ### Vi/Vim
 > [Github地址](https://github.com/vim/vim)  
 > [Vim 学习笔记](/Linux/vim.md)
@@ -320,14 +314,10 @@ CMD编辑器
 ******************************
 ## 【IDE】
 ### Idea
-> [学生授权申请方式](https://sales.jetbrains.com/hc/zh-cn/articles/207154369) | [click](http://mails.art.edu.lv/)
-
-#### 插件
-##### lombok
-- 插件商店中搜索 lombok 安装重启idea即可
-- 配置 Build,Execution > Compiler > Annotation Processors 勾选上即可使用lombok的注解
+[更多](/Java/Tool/IDEA.md)
 
 ### eclipse
+
 【eclipse EE Mars】
 * 这里的Tomcat是使用了你所导入的必要执行文件，但是运行的必要配置文件在eclipse Server项目里另有一份
 * 而且运行时也是使用这份配置文件，这样的结果是可以使用一份Tomcat目录，在eclipse配置运行多个Tomcat
@@ -339,17 +329,9 @@ CMD编辑器
 * 从github上下载项目，直接打开，注意编码就行，注意项目要将使用的额外的JAR包直接拖到
 * webRoot下的lib下，再build 进PATH里，这样就不会出现JAR包缺失的问题了
 * 在2016中的JSP使用gbk编码，js和css文件引入时要注明UTF-8编码
-
-#### 【ALT 】：
-. 运行
-/ 助手
-#### 【CTRL】 ：
-+shift+O自动导包  
-+shift+F 优化缩进
-
-
  * 使用export导出时带上resource选项，这样的话注释才会导出去了
  * 自动添加注释在 Java>Code Style>Code Templates下
+
 #### 【debug】 
 - 【F5】  Step into 跳入
 - 【F6】  Step over 下一步
@@ -426,3 +408,14 @@ CMD编辑器
 - 感觉采用的是chrome内核，做的更漂亮了，而且是内置了很多常用插件，的确很方便，相比于chrome更符合国内使用
 
 ***********************************************
+
+## 安全工具
+### gpg
+> [参考博客](http://www.ruanyifeng.com/blog/2013/07/gpg.html)
+
+常用参数
+```
+gpg --list-key
+    --gen-key
+```
+- 生成的过程, 属兔相关提示信息, 最后输完密码后需要输入随机字符, 就也是按照提示, 但是1.4是正常的, 其他的直接假死,不是很理解这种操作

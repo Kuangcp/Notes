@@ -13,10 +13,11 @@
                 - [IntelliJ IDEA使用技巧一览表](#intellij-idea使用技巧一览表)
     - [插件](#插件)
 
-`目录 end` *目录创建于2018-02-26* | 更多: [CSDN](http://blog.csdn.net/kcp606) | [oschina](https://my.oschina.net/kcp1104) | [码云](https://gitee.com/kcp1104) 
+`目录 end` |_2018-03-11_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
 ****************************************
 
 # IDEA 使用笔记
+> [学生授权申请方式](https://sales.jetbrains.com/hc/zh-cn/articles/207154369) | [click](http://mails.art.edu.lv/)
 
 ## 常识
 -  project 就是一个工作空间，一个Module就是一个项目
@@ -188,3 +189,7 @@ _coding_
 
 - TestMe
     - 快速创建测试类
+
+- lombok
+    - 插件商店中搜索 lombok 安装重启idea即可
+    - 配置 Build,Execution > Compiler > Annotation Processors 勾选上即可使用lombok的注解

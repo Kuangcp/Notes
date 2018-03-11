@@ -13,7 +13,7 @@
         - [SYNFlood攻击](#synflood攻击)
         - [CSRF](#csrf)
 
-`目录 end` |_2018-03-10_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
+`目录 end` |_2018-03-11_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
 ****************************************
 # 网络
 
@@ -43,7 +43,7 @@ ISO制定的OSI参考模型的过于庞大、复杂招致了许多批评。与�
 > 目前大多国内厂商默认的还是1.1, aws和google使用了2 而且2一般也都会使用上https
 
 HTTP2的特点:
-1. 无阻塞的Multiplexing请求队列
+1. 无阻塞的Multiplexing请求队列 _可以异步加载CSS和JS_
 2. server端可以push资源给client端
 
 [参考博客: HTTP/2](http://www.hollischuang.com/archives/2066)
