@@ -21,9 +21,10 @@
             - [操作码的快捷形式](#操作码的快捷形式)
             - [invokedynamic](#invokedynamic)
     - [序列化](#序列化)
+        - [serialVersionUID](#serialversionuid)
     - [反射的使用](#反射的使用)
 
-`目录 end` *目录创建于2018-01-22* | 更多: [CSDN](http://blog.csdn.net/kcp606) | [oschina](https://my.oschina.net/kcp1104) | [码云](https://gitee.com/kcp1104) 
+`目录 end` |_2018-03-12_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
 ****************************************
 # Java基础
 ## 【类和字节码】
@@ -56,6 +57,8 @@
 
 #### Class对象
 - 加载和连接过程的最终结果是一个Class对象，Class对象可以和反射API一起实现对方法，域构造方法等类成员的间接访问
+
+> 所以一个类的定义就会有一个Class对象, 但是这个对象的类型呢?怎么判断, Class对象的类型就是他的值么?
 
 #### 类加载器
 ![图](https://raw.githubusercontent.com/Kuangcp/ImageRepos/master/Tech/Book/Java7Developer/p110.jpg)

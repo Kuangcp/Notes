@@ -33,7 +33,7 @@
     * [ View ](./Blog/View.md)
 * 【 Database 】
     * [ MSSql ](./Database/MSSql.md)
-    * [ MYSQL ](./Database/MYSQL.md)
+    * [ MySQL ](./Database/MySQL.md)
     * [ MySQL_Advance ](./Database/MySQL_Advance.md)
     * [ Oracle ](./Database/Oracle.md)
     * [ Oracle_list1 ](./Database/Oracle_list1.md)
@@ -76,6 +76,7 @@
         * [ WebPerformance ](./Java/AdvancedLearning/WebPerformance.md)
     * 【 Java/Framework 】
         * [ Activiti ](./Java/Framework/Activiti.md)
+        * [ JXls ](./Java/Framework/JXls.md)
         * [ Mybatis ](./Java/Framework/Mybatis.md)
         * [ POI ](./Java/Framework/POI.md)
         * [ Struts ](./Java/Framework/Struts.md)
