@@ -1,7 +1,6 @@
 `目录 start`
  
 - [常用的工具软件](#常用的工具软件)
-    - [【国内的资源镜像站】](#国内的资源镜像站)
     - [三方库](#三方库)
     - [IDE](#ide)
     - [SDK](#sdk)
@@ -20,18 +19,9 @@
     - [前端](#前端)
         - [富文本编辑器](#富文本编辑器)
 
-`目录 end` *目录创建于2018-02-04* | 更多: [CSDN](http://blog.csdn.net/kcp606) | [oschina](https://my.oschina.net/kcp1104) | [码云](https://gitee.com/kcp1104) 
+`目录 end` |_2018-03-14_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
 ****************************************
 # 常用的工具软件
-## 【国内的资源镜像站】
-- [网易](http://mirrors.163.com/)`下载系统是 *-cd 的文件`
-- [清华大学](https://mirrors.tuna.tsinghua.edu.cn/)
-- [中国科学技术大学](http://mirrors.ustc.edu.cn/)`各大Linux发行版以及一些开源软件`
-- [阿里云](https://mirrors.aliyun.com/)
-- [Linux运维派](https://mirrors-wan.geekpie.org/)
-- [sourceforge](https://sourceforge.net/directory/system-administration/osdistro/livecd/os:linux/)`Linux发行版列表`
-
-***************************
 ## 三方库
 - [Eclipse Collections](http://www.eclipse.org/collections/)`更丰富的集合操作`
 - guava

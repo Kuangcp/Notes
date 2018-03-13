@@ -6,6 +6,7 @@
     - [Github](#github)
         - [URL规则](#url规则)
         - [MarkDown规则](#markdown规则)
+        - [Bandage图标](#bandage图标)
     - [Gitea](#gitea)
         - [自建](#自建)
 - [综合开发平台](#综合开发平台)
@@ -36,7 +37,7 @@
 - [测试平台](#测试平台)
 - [培训](#培训)
 
-`目录 end` *目录创建于2018-02-27* | 更多: [CSDN](http://blog.csdn.net/kcp606) | [oschina](https://my.oschina.net/kcp1104) | [码云](https://gitee.com/kcp1104) 
+`目录 end` |_2018-03-14_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
 ****************************************
 
 # 代码托管平台
@@ -50,7 +51,7 @@
 
 ***********************************
 ## Github
-> 全球范围的网站
+> 全球范围性的网站
 
 ### URL规则
 > github仓库的URL规则
@@ -69,6 +70,14 @@
 
 ### MarkDown规则
 > [更多详情>>](/Skills/Document/MarkDown.md#github)
+
+### Bandage图标
+> [shields](https://shields.io/)
+
+- 规则 https://img.shields.io/badge/note-JavaSE-blue.svg
+    - 如果是中文则要转码
+    - 颜色: brightgreen green yellowgreen yellow orange red lightgrey blue ff69b4 (也就是说可以设置任意颜色)
+
 
 *********************************************
 ## Gitea

@@ -30,7 +30,7 @@
         - [【vpn】](#vpn)
             - [shadowsocks](#shadowsocks)
 
-`目录 end` *目录创建于2018-02-06* | 更多: [CSDN](http://blog.csdn.net/kcp606) | [oschina](https://my.oschina.net/kcp1104) | [码云](https://gitee.com/kcp1104) 
+`目录 end` |_2018-03-14_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
 ****************************************
 # 【网络管理】
 ## DNS
@@ -264,38 +264,40 @@
     - 这时候就出了一个问题，你不知道配置文件的情况时，发现总有目录下载不下来，就可以排除两个文件的作用：
     - `wget -X '' -X js,css URL`
     - 注意：`-X`，两个配置文件。这三者的配置，wget是取并集的， 使用了`-X ''` 后就只看后面的`-X 参数`   
-- 目录下载 -r 递归选项
-- 后台下载 --background 即使 你Ctrl D/exit也不会中断执行
-- -o 指定日志输出。默认当前目录的 wget-log
-- 避开robots.txt 协议 `--execute robots=off`
-    - 尝试使用tomcat构建一个有robots协议的网站，然后wget还是绕过了协议。。。。。。
-    - 对github测试这个参数是正常的
-- 简化wget获取到的文件
-    - -nH 去除wget将域名作为文件夹的情况,只得到域名下相对路径的文件
-    - --cut-dirs=number 去除前缀路径 
-    - 只用 `-r` : URL:a/b/c/
-    - `-r` 再用上 `--cut-dirs=1` : URL:/b/c/
-    - `-r` 再用上 `-nH` :a/b/c/
-    - `-r` 再用上 `-nH --cut-dirs=1` : /b/c/
-    - `-r` 再用上 `-nH --cut-dirs=2` : /c/
-- 平铺,不使用源站的目录结构: `-nd` 若有重名文件,自动重命名
-- 强制处处文件夹 `-x` 例如:com.github.com/a/b/ --> com/github/com/a/b/
-- 协议命名的根文件夹 --protocol-directories 例如 ftp://baidu.com/a/b/
-- 自动重试 `--tries=number` 设置下载失败后重试的次数    
-- 输出到指定文件 `-O` 将下载的所有文件的内容追加到指定的文件,不会新建任何文件 和 -o 对比:这是是指定输出日志文件
-- 拒绝重复下载同名文件,即使这个文件不是最新的 `-nc`, wget会先比较时间戳,然后下载,且多次下载同名文件会自动添加.1.2这样的后缀
-- 自动分析是否下载同名文件, `-N` 会考虑时间戳以及文件大小,但是不能和 -nc 同时设置
-- 断点续传 -c 但是有潜在bug,当源站的文件头部分或者已下载部分修改了,wget是不知道的,只会继续下载之前没下载的内容
-- 限速 `--limit-rate=N` 默认单位是b,可以指定单位 k m , 
-    - 这个限速的实现原理是通过在进行一次网络读取后,就线程睡眠一会儿,将速度降下来,如果下载是超小文件就可能无法达到限速的效果  
-- 限制频率 -w 即 --wait=seconds 可以指定m h d 等单位,效果是每两个请求间隔指定时间
-- 请求重试 `--waitretry` 设置请求重试的秒数, 如果设置的是10秒, 第一次失败后就会等1s,然后第二次失败就等2s...直到递增到10s,然后结束
-    - 其效果 其实应该是 设置值的累加 (理解为重试次数似乎更好)
+
+- 参数:
+    - 目录下载 -r 递归选项
+    - 后台下载 --background 即使 你Ctrl D/exit也不会中断执行
+    - -o 指定日志输出。默认当前目录的 wget-log
+    - 避开robots.txt 协议 `--execute robots=off`
+        - 尝试使用tomcat构建一个有robots协议的网站，然后wget还是绕过了协议。。。。。。
+        - 对github测试这个参数是正常的
+    - 简化wget获取到的文件
+        - -nH 去除wget将域名作为文件夹的情况,只得到域名下相对路径的文件
+        - --cut-dirs=number 去除前缀路径 
+        - 只用 `-r` : URL:a/b/c/
+        - `-r` 再用上 `--cut-dirs=1` : URL:/b/c/
+        - `-r` 再用上 `-nH` :a/b/c/
+        - `-r` 再用上 `-nH --cut-dirs=1` : /b/c/
+        - `-r` 再用上 `-nH --cut-dirs=2` : /c/
+    - 平铺,不使用源站的目录结构: `-nd` 若有重名文件,自动重命名
+    - 强制处处文件夹 `-x` 例如:com.github.com/a/b/ --> com/github/com/a/b/
+    - 协议命名的根文件夹 --protocol-directories 例如 ftp://baidu.com/a/b/
+    - 自动重试 `--tries=number` 设置下载失败后重试的次数    
+    - 输出到指定文件 `-O` 将下载的所有文件的内容追加到指定的文件,不会新建任何文件 和 -o 对比:这是是指定输出日志文件
+    - 拒绝重复下载同名文件,即使这个文件不是最新的 `-nc`, wget会先比较时间戳,然后下载,且多次下载同名文件会自动添加.1.2这样的后缀
+    - 自动分析是否下载同名文件, `-N` 会考虑时间戳以及文件大小,但是不能和 -nc 同时设置
+    - 断点续传 -c 但是有潜在bug,当源站的文件头部分或者已下载部分修改了,wget是不知道的,只会继续下载之前没下载的内容
+    - 限速 `--limit-rate=N` 默认单位是b,可以指定单位 k m , 
+        - 这个限速的实现原理是通过在进行一次网络读取后,就线程睡眠一会儿,将速度降下来,如果下载是超小文件就可能无法达到限速的效果  
+    - 限制频率 -w 即 --wait=seconds 可以指定m h d 等单位,效果是每两个请求间隔指定时间
+    - 请求重试 `--waitretry` 设置请求重试的秒数, 如果设置的是10秒, 第一次失败后就会等1s,然后第二次失败就等2s...直到递增到10s,然后结束
+        - 其效果 其实应该是 设置值的累加 (理解为重试次数似乎更好)
     
-- [wget cookie](http://blog.csdn.net/adream307/article/details/47379149)
+> [wget cookie](http://blog.csdn.net/adream307/article/details/47379149)  
+> [参考博客: wget命令详解](http://blog.csdn.net/RichardYSteven/article/details/4565931)
 
 ****************************
-
 ## 【常用网络服务】
 ### 邮件服务器postfix和devecot
 ### FTP服务器

@@ -2,6 +2,7 @@
  
 - [【常用的网站】](#常用的网站)
     - [软件商店](#软件商店)
+    - [【国内的资源镜像站】](#国内的资源镜像站)
     - [特别网站](#特别网站)
 - [社区网站](#社区网站)
 - [【学习网站】](#学习网站)
@@ -22,7 +23,7 @@
     - [人工智能](#人工智能)
     - [在线工具](#在线工具)
 
-`目录 end` |_2018-03-10_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
+`目录 end` |_2018-03-14_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
 ****************************************
 # 【常用的网站】
 ## 软件商店
@@ -30,6 +31,13 @@
 - [VirtualBox和VMWare的镜像网](http://www.osboxes.org/)
 - [安卓在X86设备上的ISO下载](http://www.android-x86.org/download)
 
+## 【国内的资源镜像站】
+- [网易](http://mirrors.163.com/)`下载系统是 *-cd 的文件`
+- [清华大学](https://mirrors.tuna.tsinghua.edu.cn/)
+- [中国科学技术大学](http://mirrors.ustc.edu.cn/)`各大Linux发行版以及一些开源软件`
+- [阿里云](https://mirrors.aliyun.com/)
+- [Linux运维派](https://mirrors-wan.geekpie.org/)
+- [sourceforge](https://sourceforge.net/directory/system-administration/osdistro/livecd/os:linux/)`Linux发行版列表`
 ******************************
 ## 特别网站
 - [测试你当前连接用的是ipv4还是ipv6](http://www.kame.net/)
