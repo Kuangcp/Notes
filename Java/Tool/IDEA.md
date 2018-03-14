@@ -6,6 +6,7 @@
         - [导出为可运行的JAR包 普通Java项目](#导出为可运行的jar包-普通java项目)
         - [Springboot热加载](#springboot热加载)
         - [个人IDEA配置](#个人idea配置)
+    - [常用配置](#常用配置)
     - [IDEA快捷键](#idea快捷键)
         - [使用内置类eclipse快捷键系列](#使用内置类eclipse快捷键系列)
         - [IDEA原生快捷键系列](#idea原生快捷键系列)
@@ -13,7 +14,7 @@
                 - [IntelliJ IDEA使用技巧一览表](#intellij-idea使用技巧一览表)
     - [插件](#插件)
 
-`目录 end` |_2018-03-11_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
+`目录 end` |_2018-03-14_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
 ****************************************
 
 # IDEA 使用笔记
@@ -41,6 +42,23 @@
 ### 个人IDEA配置
 - 字体Fira Code Retina 14 0.9
 
+*************************
+## 常用配置
+- 依次找到配置项: `File->settings->Editor->File and Code Templates->`
+    - 如果自己要每个文件都单独设置头部, 就依次点击Class Interface Enum ...进行设置
+        - [参考博客](https://segmentfault.com/q/1010000005997550)
+    - 如果要统一设置 就点击Includes标签, 选择File Header
+
+_例如修改为如下_
+```java
+/**
+ * Created by https://github.com/kuangcp
+ * @author kuangcp
+ * @date ${DATE}  ${TIME}
+ */
+
+```
+************************
 ## IDEA快捷键
 ### 使用内置类eclipse快捷键系列
 ### IDEA原生快捷键系列

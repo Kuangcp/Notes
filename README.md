@@ -1,12 +1,11 @@
 [![Build Status](https://www.gitbook.io/button/status/book/kuangcp/notes)](https://www.gitbook.io/book/kuangcp/notes/details)
-[![目录](https://img.shields.io/badge/note-catalog-brightgreen.svg)](./SUMMARY.md)
-[![码云](https://img.shields.io/badge/code-gitee-red.svg)](https://gitee.com/kcp1104)
+[![目录](https://img.shields.io/badge/note-Catalog-brightgreen.svg)](./SUMMARY.md)
+[![码云](https://img.shields.io/badge/code-Gitee-red.svg)](https://gitee.com/kcp1104)
 [![CSDN](https://img.shields.io/badge/blog-CSDN-orange.svg)](http://blog.csdn.net/kcp606)
 [![Gitbook](https://img.shields.io/badge/book-GitBook-blue.svg)](https://kuangcp.gitbooks.io/notes/)
 [![JavaSE](https://img.shields.io/badge/note-JavaSE-blue.svg)](./Java/JavaSE.md)
-[![page](https://img.shields.io/badge/note-page-red.svg)](http://kuangcp.github.io/Notes)
+[![page](https://img.shields.io/badge/note-Page-red.svg)](http://kuangcp.github.io/Notes)
 
-*********
 > 我曾七次鄙视自己的灵魂：  
 > 第一次,当它本可进取时，却故作谦卑；  
 > 第二次,当它空虚时，用爱欲来填充；   
@@ -55,6 +54,7 @@
 
 ![学习效率](https://raw.githubusercontent.com/Kuangcp/ImageRepos/master/Learn/learn_rate.jpg)
 
+********************
 ### 为什么写作
 > 来源 [码农翻身:对自己狠一点，开始写作吧](http://mp.weixin.qq.com/s/-bXP2jAcz8M1c9-nElOsJA) | [码农翻身:如何维护一个好的技术博客？](https://mp.weixin.qq.com/s?__biz=MzAxOTc0NzExNg==&mid=2665514310&idx=1&sn=230943ac36182c2ea5ca28317de3cb91&pass_ticket=kdzjNNRKN8g5Hs0IYC80YNed%2BLsTG5wDteQuZ1qoW%2F8bwio%2BGiEUdcisaIoKv4ua)
 
