@@ -76,6 +76,7 @@
         * [ WebPerformance ](./Java/AdvancedLearning/WebPerformance.md)
     * 【 Java/Framework 】
         * [ Activiti ](./Java/Framework/Activiti.md)
+        * [ Guava ](./Java/Framework/Guava.md)
         * [ JXls ](./Java/Framework/JXls.md)
         * [ Mybatis ](./Java/Framework/Mybatis.md)
         * [ POI ](./Java/Framework/POI.md)
@@ -130,6 +131,9 @@
     * [ Svn ](./Linux/Svn.md)
     * [ Vim ](./Linux/Vim.md)
     * [ Zsh ](./Linux/Zsh.md)
+* 【 MyBlog 】
+    * [ 2018-3-15-install-deepin ](./MyBlog/2018-3-15-install-deepin.md)
+    * [ how-to-use-junit ](./MyBlog/how-to-use-junit.md)
 * 【 Script 】
     * [ Dos ](./Script/Dos.md)
     * [ Python ](./Script/Python.md)
