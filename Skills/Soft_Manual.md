@@ -32,6 +32,7 @@
         - [textadept](#textadept)
         - [Sublime](#sublime)
         - [VSCode](#vscode)
+            - [插件](#插件)
         - [Gedit](#gedit)
         - [小书匠](#小书匠)
         - [Moeditor Typora CuteMarkEd](#moeditor-typora-cutemarked)
@@ -55,7 +56,7 @@
     - [安全工具](#安全工具)
         - [gpg](#gpg)
 
-`目录 end` |_2018-03-11_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
+`目录 end` |_2018-03-15_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
 ****************************************
 # 软件使用记事
 ## 【包管理】
@@ -260,6 +261,11 @@ _代码片段_
 
 _列编辑_
 - Alt Shift 加上鼠标即可列编辑
+
+#### 插件
+vscode-icons
+Beautify
+Auto Rename Tag
 
 ************
 ### Gedit

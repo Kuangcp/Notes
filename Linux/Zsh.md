@@ -7,7 +7,7 @@
         - [oh-my-zsh](#oh-my-zsh)
             - [主题](#主题)
 
-`目录 end` *目录创建于2018-02-10* | 更多: [CSDN](http://blog.csdn.net/kcp606) | [oschina](https://my.oschina.net/kcp1104) | [码云](https://gitee.com/kcp1104) 
+`目录 end` |_2018-03-15_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
 ****************************************
 # Zsh
 ## 为什么要使用
@@ -38,7 +38,7 @@ _额外安装_
     - `git clone https://github.com/bhilburn/powerlevel9k.git ~/.oh-my-zsh/custom/themes/powerlevel9k`
     - `powerlevel9k/powerlevel9k`
 
-- Bullet Train 
+- Bullet Train (目前在用)
     - [安装步骤](https://github.com/caiogondim/bullet-train.zsh#for-oh-my-zsh-users)
 
 - Maglev

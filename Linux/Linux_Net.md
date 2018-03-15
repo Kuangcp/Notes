@@ -30,7 +30,7 @@
         - [【vpn】](#vpn)
             - [shadowsocks](#shadowsocks)
 
-`目录 end` |_2018-03-14_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
+`目录 end` |_2018-03-15_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
 ****************************************
 # 【网络管理】
 ## DNS
@@ -369,7 +369,8 @@ _服务端安装软件_
 #### 2.复制粘贴建立密钥对
 _客户端_
 - 进入.ssh文件夹下 `gedit id_rsa.pub` 然后复制该公钥内容
-    - 或者 `cat ~/.ssh/id_rsa.pub | xclip -sel clip` 将文件复制到剪贴板
+    - 或者 `cat ~/.ssh/id_rsa.pub | xclip -sel clip` 将文件复制到剪贴板 
+    - 或者 `cat ~/.ssh/id_rsa.pub | xsel -b` 也是文件复制到剪贴板
 - 在各种平台服务上添加这个公钥即可免密登录
 
 _服务器端_

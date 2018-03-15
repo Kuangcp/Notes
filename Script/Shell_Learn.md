@@ -21,11 +21,15 @@
             - [case](#case)
         - [循环](#循环)
     - [函数](#函数)
+    - [配置文件](#配置文件)
+    - [终端中的命令提示](#终端中的命令提示)
+    - [常用模块](#常用模块)
+        - [时间](#时间)
     - [工具](#工具)
         - [jq](#jq)
         - [shyaml](#shyaml)
 
-`目录 end` *目录创建于2018-02-09* | 更多: [CSDN](http://blog.csdn.net/kcp606) | [oschina](https://my.oschina.net/kcp1104) | [码云](https://gitee.com/kcp1104) 
+`目录 end` |_2018-03-15_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
 ****************************************
 # 学习Shell
 > 首先语法不像别的语言可读性好，比如Python，然后方言众多，学习比Python2，3还恶心  
@@ -96,7 +100,7 @@
 - [字符串截取](https://www.2cto.com/os/201305/208219.html) | [Blog:变量字符串截取](http://www.jb51.net/article/56563.htm) | [Shell正则](http://man.linuxde.net/docs/shell_regex.html)
 
 ```sh
-  vars=${1%%#*} # 截取#左边
+  vars=${vars%%#*} # 截取#左边
   vars=${vars#*cd} # 截取cd右边
   vars=${vars%\'*} # 截取 右边引号 之左
 ```
@@ -131,15 +135,16 @@
 ************************
 ### 数组
 
-
 *********************
 ## 结构
 ### 参数读取
-- [参考博客](http://www.cnblogs.com/FrankTan/archive/2010/03/01/1634516.html)`命令行选项 参数处理`
-- 脚本退出运行 `exit 0`
-- 得到脚本所在的目录 basepath=$(cd \`dirname $0\`; pwd) 或者 path=\`pwd\`
-
-
+> [参考博客](http://www.cnblogs.com/FrankTan/archive/2010/03/01/1634516.html) `命令行选项 参数处理`
+- 只是 $1 $2 ....
+    - 脚本退出运行 `exit 0`
+- 得到脚本绝对路径; 如果只是执行 pwd 只是得到执行脚本时的当前绝对路径而已
+```
+basepath=$(cd \`dirname $0\`; pwd) 
+```
 ### 判断
 #### if
 - [参考博客](http://www.cnblogs.com/276815076/archive/2011/10/30/2229286.html)
@@ -182,7 +187,14 @@
     echo "simple"
   }
 ```
+**********************
+## 配置文件
+> [参考博客](http://blog.csdn.net/xinfuqizao/article/details/21812003)
 
+********************
+## 终端中的命令提示
+
+*****************
 ## 常用模块
 ### 时间
 > [shell处理时间格式](http://blog.csdn.net/superbfly/article/details/52453334)
