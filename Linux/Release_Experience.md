@@ -7,6 +7,7 @@
         - [Ubuntu](#ubuntu)
         - [Ubuntu Mint](#ubuntu-mint)
         - [Deepin](#deepin)
+            - [双系统安装](#双系统安装)
         - [raspberry-pi](#raspberry-pi)
     - [arch系](#arch系)
     - [redhat系](#redhat系)
@@ -19,7 +20,7 @@
     - [Gentoo](#gentoo)
     - [Mageia](#mageia)
 
-`目录 end` *目录创建于2018-02-05* | 更多: [CSDN](http://blog.csdn.net/kcp606) | [oschina](https://my.oschina.net/kcp1104) | [码云](https://gitee.com/kcp1104) 
+`目录 end` |_2018-03-15_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
 ****************************************
 # Linux各个发行版本使用体验
 > 一边用一边记录吧
@@ -45,6 +46,7 @@ _查看发行版_
 > 该有的都有了, 个人比较喜欢
 
 ### Deepin
+> [官方wiki](wiki.deepin.org)
 
 - 优点:
     - 界面美观,自带CrossOver深度家族的软件也挺好用,自定义命令的快捷键
@@ -55,6 +57,21 @@ _查看发行版_
 
 `遇到的bug记录`
 - 2018-01-09 19:29:25 休眠结束系统卡死,然后重启输入法没有窗口,然后升级到最新重启还是没有,杀掉搜狗进程再启动解决
+- 2018-03-15 09:25:47 [公司电脑安装Windows10 和 Deepin双系统](/MyBlog/2018-3-15-install-deepin.md)
+
+#### 双系统安装
+- 首先进入BIOS关闭 安全启动, 选择引导方式为Legacy关闭UEFI win8以上则要关闭快速启动, 
+    - 制作启动U盘, 然后选择从U盘启动, 进行安装, 分区 / 和 /home / 30-40g就足够, 如果你所用的软件都习惯性解压运行的话
+    - 安装完成后一般是Deepin的默认引导取代了winsows引导, 即可正常使用, 进入windows,Deepin的引导也有该入口
+    - 如果想默认进windows, 那么修改BIOS 改回UEFI即可
+
+- 固态加机械的电脑:
+    - 一样的关闭 安全启动, UEFI 
+    - 在固态中划分出300M左右的空间出来, 在安装的时候设为 /Boot 然后将 / 和 /home照常放在机械上即可
+    - 在启动时, 打开引导菜单, 选择固态即可正常启动Deepin
+    - 同样的修改BIOS 回 UEFI 就默认进WIndows了
+
+> 但是有时候有的电脑打开UEFI也能正常安装, 所以装系统要大胆的尝试, Deepin安装没有造成过数据损失
 
 ### raspberry-pi
 - [树莓派桌面版下载](https://www.raspberrypi.org/downloads/raspberry-pi-desktop/) `分辨率不知道怎么调, 资源的消耗倒是低`
@@ -68,7 +85,6 @@ _查看发行版_
     - [打造完美的 Linux 桌面 — Arch Linux 2007.08-2 (3)](https://linuxtoy.org/archives/the-perfect-linux-desktop-arch-linux-2007-08-2-3.html)
     - [打造完美的 Linux 桌面 — Arch Linux 2007.08-2 (4)](https://linuxtoy.org/archives/the-perfect-linux-desktop-arch-linux-2007-08-2-4.html)
     
-
 
 ****************************
 ## redhat系

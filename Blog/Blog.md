@@ -18,7 +18,7 @@
     - [生活](#生活)
     - [商业](#商业)
 
-`目录 end` |_2018-03-11_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
+`目录 end` |_2018-03-15_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
 ****************************************
 
 > 只用来记录非技术类的文章,技术类的直接放到对应的笔记中去
@@ -66,6 +66,8 @@
 - [于亮](http://blog.csdn.net/jiuqiyuliang)`Java相关知识,专栏挺多,阅读量都不低`
 - [BlindingDark](https://www.jianshu.com/u/ea4015fcb048)`擅长函数式编程lisp clojure等`
 - [轮子哥博客](http://www.cppblog.com/vczh/)
+- [zhangchuzhao](http://zhangchuzhao.site/)`有深度干货`
+
 ************************
 ## 专栏
 - [CSDN 知识林](http://blog.csdn.net/zsl129)

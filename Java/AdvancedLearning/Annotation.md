@@ -3,12 +3,13 @@
 - [注解](#注解)
     - [读取](#读取)
 
-`目录 end` *目录创建于2018-03-01* | 更多: [CSDN](http://blog.csdn.net/kcp606) | [oschina](https://my.oschina.net/kcp1104) | [码云](https://gitee.com/kcp1104) 
+`目录 end` |_2018-03-15_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
 ****************************************
 # 注解
-> Java中的注解
 
 > 参考博客 [全面解析Java注解](http://blog.csdn.net/chenxiang0207/article/details/8193980) | [Java注解（2）-运行时框架](http://blog.csdn.net/duo2005duo/article/details/50511476)
+
+> 参考项目 [AnnotationDemo](https://github.com/zhuifengshen/AnnotationDemo)
 
 注解定义包含四个元注解，分别为@Target,@Retention,@Documented,@Inherited。各元注解的作用如下：
 - ① @Target
