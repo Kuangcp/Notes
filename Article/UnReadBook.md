@@ -9,6 +9,7 @@
         - [硬件及软件](#硬件及软件)
         - [WEB基础](#web基础)
         - [算法](#算法)
+        - [数据库](#数据库)
         - [Java](#java)
         - [Git](#git)
         - [Linux](#linux)
@@ -19,7 +20,7 @@
     - [生活](#生活)
 - [教学视频](#教学视频)
 
-`目录 end` |_2018-03-09_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [oschina](https://my.oschina.net/kcp1104)
+`目录 end` |_2018-03-15_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
 ****************************************
 # 待阅读的书籍
 > [程序员必读书单](http://www.cnblogs.com/figure9/p/developer-reading-list.html)
@@ -46,10 +47,13 @@
 - 算法导论
 - 信息论、推理与学习算法
 
+### 数据库
+高性能Mysql
+
 ### Java
 - head first Java
 - head first 设计模式
-- 设计模式 可复用面向对象软件的基础
+- 设计模式 可复用面向对象软件的基础 `四人帮`
 - Java编程思想 需要精读
 - Java核心技术 卷1 基础知识 卷2 高级特性
 - 实战java高并发程序设计

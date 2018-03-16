@@ -3,38 +3,39 @@
 - [Python](#python)
     - [简介](#简介)
         - [关于Python2.x与3.x的使用](#关于python2x与3x的使用)
-    - [【基础数据类型】](#基础数据类型)
-            - [运算符](#运算符)
-    - [【基础语法】](#基础语法)
-        - [【import】](#import)
-    - [【输入输出】](#输入输出)
-        - [读取命令行参数](#读取命令行参数)
+    - [基础](#基础)
+        - [基础语法](#基础语法)
+        - [基础数据类型](#基础数据类型)
+    - [变量](#变量)
+    - [【基本运行结构】](#基本运行结构)
         - [【序列】](#序列)
             - [【列表】](#列表)
             - [【元组】](#元组)
             - [【字符串】](#字符串)
             - [字符串编码问题(python 2问题)：](#字符串编码问题python-2问题)
             - [字典（键值对）](#字典（键值对）)
-        - [【基本运行结构】](#基本运行结构)
-        - [【函数】](#函数)
-        - [变量](#变量)
-        - [【类】](#类)
+        - [运算符](#运算符)
+        - [模块](#模块)
+    - [【输入输出】](#输入输出)
+        - [读取命令行参数](#读取命令行参数)
+    - [【函数】](#函数)
+    - [【类】](#类)
             - [继承](#继承)
-        - [【异常】](#异常)
-        - [【文件】](#文件)
-        - [【测试】](#测试)
-        - [【数据库】](#数据库)
-            - [【MySQL】](#mysql)
-            - [【Redis】](#redis)
-                - [安装](#安装)
-                - [使用](#使用)
-        - [【绘图】 matplotlib](#绘图-matplotlib)
+    - [【异常】](#异常)
+    - [【文件】](#文件)
+    - [【测试】](#测试)
+    - [【数据库】](#数据库)
+        - [【MySQL】](#mysql)
+        - [【Redis】](#redis)
+            - [模块的安装](#模块的安装)
+            - [使用](#使用)
+    - [【绘图】 matplotlib](#绘图-matplotlib)
     - [【代码风格】](#代码风格)
     - [【常见函数】](#常见函数)
     - [【常见库】](#常见库)
     - [QT](#qt)
 
-`目录 end` *目录创建于2018-02-26* | 更多: [CSDN](http://blog.csdn.net/kcp606) | [oschina](https://my.oschina.net/kcp1104) | [码云](https://gitee.com/kcp1104) 
+`目录 end` |_2018-03-15_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
 ****************************************
 # Python
 ## 简介
@@ -50,7 +51,14 @@
 - 迭代无处不在
 
 > 列出所有已安装模块 pydoc pydoc3
-## 【基础数据类型】
+
+## 基础
+### 基础语法
+- 缩进来表示代码块的嵌套关系
+- 单行注释：`#` 多行注释：''' '''
+- 空行的重要性，代码段之间有空行，Python之禅
+
+### 基础数据类型
 - 数值类型
     - 整数 各种进制 `0 八` `0x 十六` `0b 二`
     - 浮点数 `1.2e2` `13.34e-2`
@@ -64,83 +72,30 @@
     - 三引号 多行字符串
 - 空值 None
 
-#### 运算符
-- 算术运算符
-    - 加减一样，`*` 乘,不仅可以用于数字，还可以用于字符串 ，`/` 除，和Java不一样，整数相除也会得到浮点数
-    - `//` 取整除，得到商的整数部分 ，`%` 取余数 ，`**` 幂运算 可以用来开根
-- 关系运算符
-    - 都是和Java一致
-- 逻辑运算符
-    - and or not 
-- 身份运算符 
-    - is : `a is b` 就是比较 id(a) id(b) 相同则是返回1
-    - is not 比较id 不相同返回1
+## 变量
+- 局部变量：
+- 全局变量：定义在函数外的变量，也称公用变量，函数中 `global x` 声明引用全局变量x
+## 【基本运行结构】
+- 输入输出：
+    - input("") 默认当成字符串输入 数值：int() 强转一下
+    - print("")
+        - 输出不带换行  print('', '', end='')
+- 选择：
+    - if elif else
+- for循环：
+    - `for in ` `while ` 例如：`for i in range(1,10,2):`  范围 [1,10) 增量为2
+    - pass 语句，当某个子句没有任何操作，，用pass保持程序结构完整性 不影响下一句 不像continue
+- while 循环;
+    - `while True:`` while ‘2’ in nums:`` while num<2:`  
+    - `while 列表: ` 直到列表为空退出循环
 
-- 位运算符
-    - `<< >>` 左右移 
-    - ` & | `按位与或
-    - `^  ~` 按位异或 按位翻转 
-- 算术运算符优先级 `** / // % +`
-    - // 取整数部分除法
-    - ** 幂运算
-- 转义字符：
-    - \a 响铃
-    - \b  退格 backspace
-    - \000  空
-    - \f   换页
-    - \  续行符（行尾）
-
-## 【基础语法】
-- 单行注释：`#` 多行注释：''' '''
-- 空行的重要性，代码段之间有空行，Python之禅
-
-### 【import】
-> [参考博客](http://blog.csdn.net/hansel/article/details/8975663)
-
-- 关于同级，子级目录是比较方便的，涉及到上级目录的就麻烦点了
-
-************
-## 【输入输出】
-### 读取命令行参数
-> [参考博客](http://www.sharejs.com/codes/python/6121)
-
-`只有输入参数，没有选项`
 ```python
-    import sys
-    print("脚本名：", sys.argv[0])
-    for i in range(1, len(sys.argv)):
-        print("参数", i, sys.argv[i])
+    if (b==0) and (a==1) :
+        pass
+        print("pass")
+    else:
+        print("Hi")
 ```
-`python tree.py hi op ` 顺序是python，第一个参数是文件，之后才是别的参数
- 结果>> `脚本名 tree.py 参数1 hi 参数2 op`
-
-`有选项`
-`getopt.getopt(args, options[, long_options])`
-```python
-    import sys, getopt
-    opts, args = getopt.getopt(sys.argv[1:], "hi:o:")
-    for op, value in opts:
-    
-```
-- `sys.argv[1:]`为要处理的参数列表，`sys.argv[0]`为脚本名，所以用`sys.argv[1:]`过滤掉脚本名。
-- `"hi:o:"`: 当一个选项只是表示开关状态时，即后面不带附加参数时，在分析串中写入选项字符。当选项后面是带一个附加参数时，在分析串中写入选项字符同时后面加一个":"号。
-    - 所以"hi:o:"就表示"h"是一个开关选项(单单的-h)；"i:"和"o:"则表示后面应该带一个参数。
-- 调用getopt函数。函数返回两个列表：`opts和args`。opts为分析出的格式信息。args为不属于格式信息的剩余的命令行参数。
-    - opts是一个两元组的列表。每个元素为：(选项串,附加参数)。如果没有附加参数则为空串''。
-    - getopt函数的第三个参数[, long_options]为可选的长选项参数，上面例子中的都为短选项(如-i -o)
-- 长选项格式举例:
-    - `--version`
-    - `--file=error.txt`
-- 让一个脚本同时支持短选项和长选项 `getopt.getopt(sys.argv[1:], "hi:o:", ["version", "file="]) `
-
-_docopt_ 
-> [Github地址](https://github.com/docopt/docopt) | 在脚本头部添加文档来实现读取参数的便捷
-会读取输入返回字典对象,可以很方便的读取输入的参数,但是需要书写大量文档, 适合参数比较多的时候,一眼过去简洁明了
-
-_Python Fire_
-> [Github地址](https://github.com/google/python-fire)快速的简洁的生成CLI
-> 不过要自己书写帮助文档输出,小量参数的话,开发十分的便利 可以和类一起,也可以和方法一起
-
 
 ### 【序列】
 `序列通用操作（包含：字符串，列表，元组）`
@@ -258,33 +213,83 @@ _Python Fire_
     - 字典套列表 `{'d':['we','e']}` 
     - 列表套字典，当成普通类型包含即可
     - 字典套字典
+    
+### 运算符
+- 算术运算符
+    - 加减一样，`*` 乘,不仅可以用于数字，还可以用于字符串 ，`/` 除，和Java不一样，整数相除也会得到浮点数
+    - `//` 取整除，得到商的整数部分 ，`%` 取余数 ，`**` 幂运算 可以用来开根
+- 关系运算符
+    - 都是和Java一致
+- 逻辑运算符
+    - and or not 
+- 身份运算符 
+    - is : `a is b` 就是比较 id(a) id(b) 相同则是返回1
+    - is not 比较id 不相同返回1
 
-***********
+- 位运算符
+    - `<< >>` 左右移 
+    - ` & | `按位与或
+    - `^  ~` 按位异或 按位翻转 
+- 算术运算符优先级 `** / // % +`
+    - // 取整数部分除法
+    - ** 幂运算
+- 转义字符：
+    - \a 响铃
+    - \b  退格 backspace
+    - \000  空
+    - \f   换页
+    - \  续行符（行尾）
 
-### 【基本运行结构】
-- 输入输出：
-    - input("") 默认当成字符串输入 数值：int() 强转一下
-    - print("")
-        - 输出不带换行  print('', '', end='')
-- 选择：
-    - if elif else
-- for循环：
-    - `for in ` `while ` 例如：`for i in range(1,10,2):`  范围 [1,10) 增量为2
-    - pass 语句，当某个子句没有任何操作，，用pass保持程序结构完整性 不影响下一句 不像continue
-- while 循环;
-    - `while True:`` while ‘2’ in nums:`` while num<2:`  
-    - `while 列表: ` 直到列表为空退出循环
 
+### 模块
+> [参考博客](http://blog.csdn.net/hansel/article/details/8975663)
+
+- 关于同级，子级目录是比较方便的，涉及到上级目录的就麻烦点了
+
+************
+## 【输入输出】
+### 读取命令行参数
+> [参考博客](http://www.sharejs.com/codes/python/6121)
+
+`只有输入参数，没有选项`
 ```python
-    if (b==0) and (a==1) :
-        pass
-        print("pass")
-    else:
-        print("Hi")
+    import sys
+    print("脚本名：", sys.argv[0])
+    for i in range(1, len(sys.argv)):
+        print("参数", i, sys.argv[i])
 ```
+`python tree.py hi op ` 顺序是python，第一个参数是文件，之后才是别的参数
+ 结果>> `脚本名 tree.py 参数1 hi 参数2 op`
+
+`有选项`
+`getopt.getopt(args, options[, long_options])`
+```python
+    import sys, getopt
+    opts, args = getopt.getopt(sys.argv[1:], "hi:o:")
+    for op, value in opts:
+    
+```
+- `sys.argv[1:]`为要处理的参数列表，`sys.argv[0]`为脚本名，所以用`sys.argv[1:]`过滤掉脚本名。
+- `"hi:o:"`: 当一个选项只是表示开关状态时，即后面不带附加参数时，在分析串中写入选项字符。当选项后面是带一个附加参数时，在分析串中写入选项字符同时后面加一个":"号。
+    - 所以"hi:o:"就表示"h"是一个开关选项(单单的-h)；"i:"和"o:"则表示后面应该带一个参数。
+- 调用getopt函数。函数返回两个列表：`opts和args`。opts为分析出的格式信息。args为不属于格式信息的剩余的命令行参数。
+    - opts是一个两元组的列表。每个元素为：(选项串,附加参数)。如果没有附加参数则为空串''。
+    - getopt函数的第三个参数[, long_options]为可选的长选项参数，上面例子中的都为短选项(如-i -o)
+- 长选项格式举例:
+    - `--version`
+    - `--file=error.txt`
+- 让一个脚本同时支持短选项和长选项 `getopt.getopt(sys.argv[1:], "hi:o:", ["version", "file="]) `
+
+_docopt_ 
+> [Github地址](https://github.com/docopt/docopt) | 在脚本头部添加文档来实现读取参数的便捷
+会读取输入返回字典对象,可以很方便的读取输入的参数,但是需要书写大量文档, 适合参数比较多的时候,一眼过去简洁明了
+
+_Python Fire_
+> [Github地址](https://github.com/google/python-fire)快速的简洁的生成CLI
+> 不过要自己书写帮助文档输出,小量参数的话,开发十分的便利 可以和类一起,也可以和方法一起
 
 *****************************************
-### 【函数】
+## 【函数】
 
 - 形参赋值传递方式
     - 按位置 `就是直接用看起来和Java一样，但不是按类型和位置，只是位置`
@@ -310,12 +315,9 @@ _Python Fire_
     -  导入指定的函数 `from create import create_aliens, type_button` 多个就，分隔 同理 as给函数加别名 * 通配所有
 - 注意：递归深度，Python中递归默认深度是 989， 要么更改实现，要么就 `sys.setrecursionlimit(10000000)`
 
-### 变量
-- 局部变量：
-- 全局变量：定义在函数外的变量，也称公用变量，函数中 `global x` 声明引用全局变量x
 
 *******************
-### 【类】
+## 【类】
 `Python 不存在多态，存在鸭子类型` [博客介绍](http://blog.csdn.net/shangzhihaohao/article/details/7065675)
 - 写在一个py文件里，默认构造器，可以加参数 `def __init__(self):`
 
@@ -378,7 +380,7 @@ _Python Fire_
     - 运算符重载： 加`__add__(self, x)` 减`__sub__(self, x)`
 
 ******************************************
-### 【异常】
+## 【异常】
 ```python
     try:
         print(5/0)
@@ -424,7 +426,7 @@ _Python Fire_
 |EOPError|文件结束标识错误|
 
 *****************
-### 【文件】
+## 【文件】
 - 注意路径，Windows系统中要使用反斜杠 \ 
 - 最简单：`file = open('')` 只读打开
 - `使用with来操作 好处是Python自动关闭文件`
@@ -486,7 +488,7 @@ _Python Fire_
 - json.dump()持久化 和 load() 装载
 
 ******************************
-### 【测试】
+## 【测试】
 - 文件名test开头就当做是测试类，不会直接运行
 - 类继承 unittest.TestCase, 所有test_开头的方法都将自动运行
 - 断言 self.assertEqual assertNotEquals assertIn(item, list)
@@ -494,31 +496,28 @@ _Python Fire_
 - 输出结果，`. 测试通过` `E 测试运行错误` `F 测试断言不通过`
 
 ************
-### 【数据库】
-#### 【MySQL】
+## 【数据库】
+### 【MySQL】
 - python3环境下： `sudo apt install python3-mysqldb`
 - `sudo apt install libmysqlclient-dev`
 - `sudo pip install mysql-python`
 
 
-#### 【Redis】
-##### 安装
+### 【Redis】
+#### 模块的安装
 - python2 `sudo pip install redis`
 - python3 `sudo pip3 install redis`
 
-##### 使用
+#### 使用
 - 使用的接口方法是和redis一样的
-    - [Redis笔记传送门](Database/Redis.md)
-
+    - [Redis笔记传送门](/Database/Redis.md)
 
 ********************
-### 【绘图】 matplotlib
+## 【绘图】 matplotlib
 `python 3.5 安装`
 sudo apt install python3-matplotlib 
 sudo apt install python3.5-dev python3.5-tk tk-dev
 sudo apt install libfreetype6-dev g++
-
-
 
 ************
 ## 【代码风格】
