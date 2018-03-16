@@ -13,7 +13,8 @@
         - [常用插件](#常用插件)
     - [测试](#测试)
     - [第一个 build.gradle](#第一个-buildgradle)
-            - [配置Gradle包管理器 Wrapper](#配置gradle包管理器-wrapper)
+        - [配置Gradle包管理器 Wrapper](#配置gradle包管理器-wrapper)
+        - [Gradle多模块的构建](#gradle多模块的构建)
     - [Gradle进阶知识](#gradle进阶知识)
         - [Gradle 构建块](#gradle-构建块)
         - [task的依赖关系](#task的依赖关系)
@@ -48,7 +49,7 @@
     - [Jenkin 使用](#jenkin-使用)
         - [下载安装和配置](#下载安装和配置)
 
-`目录 end` |_2018-03-12_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
+`目录 end` |_2018-03-17_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
 ****************************************
 
 # Gradle
@@ -165,7 +166,7 @@ allprojects{
 -  运行：`gradle -q helloworld`
 
 
-#### 配置Gradle包管理器 Wrapper
+### 配置Gradle包管理器 Wrapper
 > 在使用IDE生成项目的时候，可以选择gradle的执行目录，可以选`gradle wrapper` 也可以选自己下载解压的完整包
 > 如果使用的不是这个wrapper，那么别人在下载项目后，运行gradle命令就要先安装gradle，使用wrapper更好
 ```groovy
@@ -178,8 +179,32 @@ allprojects{
 - 运行 gradle wrapper 一次即可开始使用包装器的脚本来构建项目了
 - 生成gradle包管理器：`gradle wrapper --gradle-version 2.0`
 
-## Gradle进阶知识
+### Gradle多模块的构建
+_setting.gradle_
 
+```groovy
+    rootProject.name = 'JavaBase'
+    include('java-io')
+```
+_父项目的build.gradle_
+```groovy
+// 避免中文报错, 应该旧版本需要
+[compileJava, compileTestJava, javadoc]*.options*.encoding='UTF-8'
+
+allprojects {
+    apply plugin: 'java'
+    group 'com.github.kuangcp'
+    sourceCompatibility=1.8
+    targetCompatibility=1.8
+    repositories {
+        mavenLocal()
+        mavenCentral()
+    }
+}
+```
+
+********************************
+## Gradle进阶知识
 ### Gradle 构建块
 - 三个基本块 project task property， 使用DDD（领域驱动设计）
 - 一个真实的项目包含多个project 而 Project又包含多个task ，task之间通过依赖来确保执行顺序

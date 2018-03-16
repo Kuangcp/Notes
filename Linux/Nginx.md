@@ -8,6 +8,7 @@
     - [配置使用](#配置使用)
         - [本地静态文件Web服务器](#本地静态文件web服务器)
         - [基础配置](#基础配置)
+            - [反向代理多个服务](#反向代理多个服务)
             - [配置https](#配置https)
                 - [certbot来配置Https](#certbot来配置https)
             - [配置Websocket反向代理](#配置websocket反向代理)
@@ -17,7 +18,7 @@
         - [问题](#问题)
     - [学习使用](#学习使用)
 
-`目录 end` |_2018-03-16_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
+`目录 end` |_2018-03-17_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
 ****************************************
 # Nginx
 
@@ -90,6 +91,7 @@ server {
 
 - [nginx基本配置](https://segmentfault.com/a/1190000002797601) | [ngrok nginx docker本地搭建服务器](https://fengqi.me/unix/409.html)
 
+#### 反向代理多个服务
 - 修改默认配置文件 `/etc/nginx/nginx.conf`
   - 或者更好的就是在 `/etc/nginx/conf.d/`下新建 *.conf 文件，文件名任意
 `该配置文件配置了服务器反向代理，80端口上：/路径的请求转发到9991端口 /myth转发到7898端口 `
