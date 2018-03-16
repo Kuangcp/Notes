@@ -3,13 +3,15 @@
 - [为何要使用测试](#为何要使用测试)
 - [如何使用Junit](#如何使用junit)
     - [在Maven项目中](#在maven项目中)
-        - [编码规范](#编码规范)
-        - [常用注解](#常用注解)
-        - [断言的使用](#断言的使用)
-        - [参数化测试](#参数化测试)
-        - [测试套件](#测试套件)
+    - [编码规范](#编码规范)
+    - [常用注解](#常用注解)
+        - [Rule注解的使用](#rule注解的使用)
+    - [断言的使用](#断言的使用)
+    - [参数化测试](#参数化测试)
+    - [测试套件](#测试套件)
+    - [分类测试](#分类测试)
 
-`目录 end` |_2018-03-15_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
+`目录 end` |_2018-03-16_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
 ****************************************
 # 为何要使用测试
 1. 帮助理解需求
@@ -62,7 +64,7 @@ _例如该项目结构_
 
 > 如果是Idea然后使用快捷键Ctrl Shift T即可自动创建测试类  
 
-### 编码规范
+## 编码规范
 - 手动创建则一般按照规范是:
     1. 包结构要和被测试类保持一致
     2. 创建一个Java类, 命名为被测试类名字后加上Test
@@ -71,20 +73,26 @@ _例如该项目结构_
     5. 测试方法里一般使用断言进行测试, 更为直观
 
 *****************
-### 常用注解
+## 常用注解
 - [参考博客: JUnit4使用教程-快速入门](http://blog.csdn.net/chenleixing/article/details/44259453) | [参考博客: JUnit4单元测试入门教程](https://www.jianshu.com/p/7088822e21a3):
-    1. @Test : 测试方法，测试程序会运行的方法，
-        - 后边可以跟参数代表不同的测试，如(expected=XXException.class) 异常测试
-        - (timeout=xxx)限制该测试方法的执行时间, 超时视为失败
-        - 也可以使用 @Rule来规定测试类中所有测试方法  `@Rule public Timeout timeout = new Timeout(1000);`
+    1. @Test : 测试方法，测试程序会运行的方法,可设置参数
+        - (expected=XXException.class) 期望该测试方法应该抛出某异常
+        - (timeout=xxx) 限制该测试方法的执行时间, 超时视为失败
     2. @Ignore : 被忽略的测试方法
     3. @Before: 每一个测试方法之前运行
     4. @After : 每一个测试方法之后运行
     5. @BeforeClass: 所有测试开始之前运行, 在测试类还没有实例化就已经加载所以需要static修饰
     6. @AfterClass: 所有测试结束之后运行, 
 
+### Rule注解的使用
+> 也可以使用 @Rule来规定测试类中所有测试方法  
+```java
+@Rule 
+public Timeout timeout = new Timeout(1000);
+```
+
 *********************
-### 断言的使用
+## 断言的使用
 1. 直接使用关键字 assert, 例如 `assert a == null`
 2. 静态导入 `import static org.junit.Assert.*`, 使用其大量工具方法, 完整方法请查看源码
     - `assertNull(java.lang.Object object)` 检查对象是否为空 
@@ -128,7 +136,7 @@ public class AssertTest {
 
 ```
 
-### 参数化测试
+## 参数化测试
 > Junit 4 参数化测试 允许通过变化范围的参数值来测试方法 | 个人认为: 将测试方法的入参集合数据和测试行为分离开, 简化书写逻辑
 
 1. 对测试类添加注解 `@RunWith(Parameterized.class)`
@@ -177,7 +185,7 @@ public class CaculateTest {
 ```
 > 最后执行testAdd 测试方法的结果是: 将data方法返回的数据迭代执行testAdd, 
 
-### 测试套件
+## 测试套件
 > Junit 4允许通过使用测试套件类批量运行测试类 | 批量执行测试类, 组装为一个套件,一起执行
 
 - 在当前测试类上加上如下注解: 
@@ -193,3 +201,5 @@ public class SuiteTest {
 ```
 _注意最好不要在该测试类中书写测试方法, 因为运行不了, 但是如果写了, 直接运行该测试类却又不会受影响_
 
+## 分类测试
+>　[参考博客](http://blog.csdn.net/wanghantong/article/details/28897103) |  [JUnit4--- @Annotation注解总结](http://blog.csdn.net/neven7/article/details/42836413)

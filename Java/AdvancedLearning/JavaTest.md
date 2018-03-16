@@ -10,10 +10,10 @@
             - [DBUnit](#dbunit)
     - [感悟](#感悟)
 
-`目录 end` |_2018-03-15_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
+`目录 end` |_2018-03-16_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
 ****************************************
 # 有关Java的测试
-> [有关测试的基础理论](/Skills/Base/Test.md)
+> [测试的基础理论](/Skills/Base/Test.md)
 
 ## 单元测试
 > 单元测试(unit testing)，是指对软件中的最小可测试单元进行检查和验证。
@@ -21,7 +21,7 @@
 ****************
 ## 实现方案
 ### 使用JunitTest
-> [官网](https://junit.org/junit4/) | [个人整理: 如何上手Junit](/MyBlog/how-to-use-junit.md)
+> [官网](https://junit.org/junit4/) | [如何上手Junit](/MyBlog/how-to-use-junit.md) | [如何上手Junit5](/MyBlog/how-to-use-junit5.md)
 
 - Before Test 执行顺序：
     - Before在Test之前执行是毋庸置疑的，但是如果有多个Before的话，按定义的先后逆序执行，也就是说AB顺序定义，BA顺序执行

@@ -5,27 +5,32 @@
     - [安装Docker](#安装docker)
 - [在Linux上配置Java环境](#在linux上配置java环境)
     - [配置JDK](#配置jdk)
-        - [解压方式](#解压方式)
+        - [直接解压配置](#直接解压配置)
         - [sdkman方式](#sdkman方式)
-    - [配置其他sdk](#配置其他sdk)
+        - [mythsdk](#mythsdk)
+        - [使用软链接](#使用软链接)
     - [配置MySQL](#配置mysql)
     - [配置Redis](#配置redis)
-        - [如果要运行make test](#如果要运行make-test)
+        - [从源码编译运行并测试](#从源码编译运行并测试)
     - [问题以及解决方案：](#问题以及解决方案)
         - [Picked up _JAVA_OPTIONS: -Dawt.useSystemAAFontSettings=gasp](#picked-up-_java_options--dawtusesystemaafontsettings=gasp)
         - [联想G4070 安装 deepin 15.4.1 显卡兼容失败（15.4还能正常用）](#联想g4070-安装-deepin-1541-显卡兼容失败（154还能正常用）)
+        - [双硬盘的折腾记录](#双硬盘的折腾记录)
 
-`目录 end` *目录创建于2018-02-02* | 更多: [CSDN](http://blog.csdn.net/kcp606) | [oschina](https://my.oschina.net/kcp1104) | [码云](https://gitee.com/kcp1104) 
+`目录 end` |_2018-03-16_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
 ****************************************
 # 配置Linux
 > 修改Hostname需要重启, 设置java默认需要重启, docker添加用户组需要重启
 
 ## 新增用户
+> [详细](/Linux/Linux_Base.md#用户管理)
+
 ## 安装Docker
+> [详细文档](/Linux/Container/Docker.md)
 
 # 在Linux上配置Java环境
 ## 配置JDK
-### 解压方式
+### 直接解压配置
 - [下载地址](http://www.oracle.com/technetwork/java/javase/downloads/index.html)
 
 - 打开配置文件 ： `sudo gedit /etc/profile`
@@ -70,18 +75,21 @@ export PATH=${JAVA_HOME}/bin:$PATH
 - 指定默认版本 `sdk default java 8u131-zulu`
 - 验证是否成功：`java -version`
 
+### mythsdk
+> 个人用py开发的脚本， 实现了和sdkman一致的内容， 并且很简单 | [使用文档](https://github.com/Kuangcp/Script/tree/master/python/mythsdk)
+
 *************
-## 配置其他sdk
-- 下载压缩包然后解压到统一的文件夹下，建立一个软链接current在文件夹里，
-- 然后配置 .bashrc 或者 别名文件，这样的话，更改版本只要更改软链接就可以了
-```sh
-SDK_DIR=/home/kcp/.sdkman/candidates
-GRADLE_HOME=$SDK_DIR/gradle/current
-GRAILS_HOME=$SDK_DIR/grails/current
-GROOVY_HOME=$SDK_DIR/groovy/current
-KOTLIN_HOME=$SDK_DIR/kotlin/current
-SCALA_HOME=$SDK_DIR/scala/current
-export PATH=$PATH:$GRADLE_HOME/bin:$GRAILS_HOME/bin:$GROOVY_HOME/bin:$SCALA_HOME/bin:$KOTLIN_HOME/bin
+### 使用软链接
+> 下载压缩包然后解压到统一的文件夹下，建立一个软链接current在文件夹里，　　
+>　然后配置 .bashrc 或者 别名文件，这样的话，更改版本只要更改软链接就可以了
+``` conf
+    SDK_DIR=/home/kcp/.sdkman/candidates
+    GRADLE_HOME=$SDK_DIR/gradle/current
+    GRAILS_HOME=$SDK_DIR/grails/current
+    GROOVY_HOME=$SDK_DIR/groovy/current
+    KOTLIN_HOME=$SDK_DIR/kotlin/current
+    SCALA_HOME=$SDK_DIR/scala/current
+    export PATH=$PATH:$GRADLE_HOME/bin:$GRAILS_HOME/bin:$GROOVY_HOME/bin:$SCALA_HOME/bin:$KOTLIN_HOME/bin
 ```
 
 ********************************
@@ -92,8 +100,8 @@ export PATH=$PATH:$GRADLE_HOME/bin:$GRAILS_HOME/bin:$GROOVY_HOME/bin:$SCALA_HOME
 ## 配置Redis
 > [安装Redis](/Database/Redis.md)
 
-### 如果要运行make test
-新建文件夹运行，然后就可以将该目录删除
+### 从源码编译运行并测试
+> 新建文件夹将源码下拉下来运行，然后就可以将该目录删除
 
 ```sh
     wget http://downloads.sourceforge.net/tcl/tcl8.6.1-src.tar.gz
@@ -118,3 +126,6 @@ export PATH=$PATH:$GRADLE_HOME/bin:$GRAILS_HOME/bin:$GROOVY_HOME/bin:$SCALA_HOME
 ### 联想G4070 安装 deepin 15.4.1 显卡兼容失败（15.4还能正常用）
 - 因为合上盖子休眠就会导致打开电脑直接死机， 找了半天原因是驱动问题， 安装nvidia-driver nvidia-setting bumblebee-nvidia 即可解决、
 - 手残，按到关闭窗口特效后，就无法打开了，各种用着不爽， 然后重装了最新版系统，然后就装驱动，重启就不能开特效了。。。。。
+
+### 双硬盘的折腾记录
+> [记录](/MyBlog/2018-3-15-install-deepin.md)

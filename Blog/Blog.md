@@ -18,7 +18,7 @@
     - [生活](#生活)
     - [商业](#商业)
 
-`目录 end` |_2018-03-15_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
+`目录 end` |_2018-03-16_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
 ****************************************
 
 > 只用来记录非技术类的文章,技术类的直接放到对应的笔记中去
@@ -46,6 +46,8 @@
 
 - [Romeng's blog](https://www.romeng.men/)`edu邮箱,VPS等`
 - [如有乐享](https://51.ruyo.net/)`突破限制的 教程资源比较多`
+
+- [javabolg](https://javablog.net/)`nutz作者的博客`
 # 【博客社区】
 - [http://www.importnew.com](http://www.importnew.com)`小众?`
 - [http://www.cnblogs.com](http://www.cnblogs.com)

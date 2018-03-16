@@ -34,10 +34,8 @@
     - [其他](#其他)
     - [工作](#工作)
         - [简历](#简历)
-    - [工作](#工作)
-        - [简历](#简历)
 
-`目录 end` *目录创建于2018-02-26* | 更多: [CSDN](http://blog.csdn.net/kcp606) | [oschina](https://my.oschina.net/kcp1104) | [码云](https://gitee.com/kcp1104) 
+`目录 end` |_2018-03-16_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
 ****************************************
 
 # 【Organization】
@@ -111,7 +109,7 @@
 - [禅道](https://gitee.com/wwccss/zentaopms)`项目管理软件` 
 - [myth](https://github.com/yu199195/myth)`可靠消息解决分布式事务框架 `
 - [teaVM](https://github.com/konsoletyper/teavm)`字节码转译成js`
-
+- [nutzam](https://nutzam.com/index.html)`一个简单的MVC web开发框架`
 ### 二次框架
 - [jeesite](https://gitee.com/thinkgem/jeesite)`Spring基础构建的maven jsp项目 bootstrap`
 - [Guns](https://gitee.com/naan1993/guns)`基于Springboot开发了大量模块`
@@ -238,9 +236,4 @@
 ## 工作
 ### 简历
 - [简历模板](https://github.com/geekcompany/ResumeSample)
-ps://github.com/yhatt/marp/)`markdown书写PPT`
 
-## 工作
-### 简历
-- [简历模板](https://github.com/geekcompany/ResumeSample)
-com/geekcompany/ResumeSample)

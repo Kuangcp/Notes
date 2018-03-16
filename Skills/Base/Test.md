@@ -12,8 +12,9 @@
             - [相关问题](#相关问题)
         - [【冒烟测试】](#冒烟测试)
         - [什么是TDD](#什么是tdd)
+            - [TDD实践](#tdd实践)
 
-`目录 end` |_2018-03-14_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
+`目录 end` |_2018-03-16_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
 ****************************************
 # 测试
 
@@ -89,7 +90,7 @@ A/B测试其实也是谷歌管理方法论，具体文章请参考：
 
 ***************************
 ### 什么是TDD
-> [百度百科词条](http://baike.baidu.com/item/TDD/9064369)  
+> [百度百科词条](http://baike.baidu.com/item/TDD/9064369), 简单来讲就是红绿循环, 红 绿 红...  
 > TDD是测试驱动开发（Test-Driven Development）的英文简称，是敏捷开发中的一项核心实践和技术，也是一种设计方法论。  
 > TDD的原理是在开发功能代码之前，先编写单元测试用例代码，测试代码确定需要编写什么产品代码。TDD虽是敏捷方法的核心实践，但不只适用于XP（Extreme Programming），同样可以适用于其他开发方法和过程。
 
@@ -107,3 +108,6 @@ A/B测试其实也是谷歌管理方法论，具体文章请参考：
     输入0，期待返回0；
     输入非数值类型，比如None、[]、{}，期待抛出TypeError。
     把上面的测试用例放到一个测试模块里，就是一个完整的单元测试。
+
+#### TDD实践
+[java测试驱动开发(TDD)之《井字游戏》 ](https://my.oschina.net/bysu/blog/1635549)
