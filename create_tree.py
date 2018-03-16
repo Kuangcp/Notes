@@ -47,6 +47,7 @@ def print_line(name,count,path):
     # print(temp,'[-',name,'-](./',path,')')
     if not name in files:
         result.append(temp+'[ '+name[:-3]+' ](./'+path+')')
+        # result.append("<a href='"+path+"'>"+name[:-3]+"</a>")
 
 
 def print_title(name,count):
@@ -98,6 +99,7 @@ for fold in Folders:
             continue
         #print("md::::"+fold)
         result.append("* [ "+fold[:-3]+" ](./"+fold+")")
+        # result.append("<a href='"+fold+"'>"+fold[:-3]+"</a>")
 
 # 得到根目录下所有文件夹，然后开始递归得到所有文件       
 for fold in Folders:
@@ -105,7 +107,6 @@ for fold in Folders:
         if(fold in dirs):
             continue
         create(fold,1)
-
 
 # 终端输出
 if flag_show : 
@@ -120,4 +121,3 @@ if flag_append :
         for res in result:
             dest.write(res+'\n')
     print('重新生成目录树完成!')
-        

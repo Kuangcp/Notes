@@ -8,8 +8,9 @@
         - [创建](#创建)
         - [控制](#控制)
         - [销毁](#销毁)
+    - [线程池](#线程池)
 
-`目录 end` *目录创建于2018-01-22* | 更多: [CSDN](http://blog.csdn.net/kcp606) | [oschina](https://my.oschina.net/kcp1104) | [码云](https://gitee.com/kcp1104) 
+`目录 end` |_2018-03-16_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
 ****************************************
 # 线程的基础学习
 > [个人相关代码](https://github.com/Kuangcp/JavaBase/tree/master/src/main/java/com/threads)
@@ -58,3 +59,10 @@ _Thread类的target属性_
 - 当调用 `Thread.join()` 时，_调用线程_将阻塞，直到_目标线程_完成为止。 
 
 ### 销毁
+
+
+***************************
+## 线程池
+> [线程池 BlockingQueue synchronized volatile](https://segmentfault.com/a/1190000012916473)
+
+

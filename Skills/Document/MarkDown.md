@@ -5,10 +5,11 @@
         - [头信息](#头信息)
     - [Github](#github)
 
-`目录 end` *目录创建于2018-02-07* | 更多: [CSDN](http://blog.csdn.net/kcp606) | [oschina](https://my.oschina.net/kcp1104) | [码云](https://gitee.com/kcp1104) 
+`目录 end` |_2018-03-16_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
 ****************************************
 # Markdown
-> [markup](https://github.com/github/markup)`丰富的标记性文本格式`
+> [markup](https://github.com/github/markup)`丰富的标记性文本格式`  
+> [Markdown教程](http://www.markdown.cn/)
 
 ## 基础格式
 
@@ -45,7 +46,8 @@ _文件内容_
 - 一行显示上 58列 就要换行
 - 行末加上两个空格即是换行, 直接回车键换行是没有用的
 - *todo* 未完成 `[ ]` 已完成 `[X]`
-- 列表的折叠写法
+
+_列表的折叠写法_
 ```
     ### Demo
     <details>

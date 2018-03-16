@@ -11,11 +11,13 @@
             - [配置https](#配置https)
                 - [certbot来配置Https](#certbot来配置https)
             - [配置Websocket反向代理](#配置websocket反向代理)
+        - [防盗链](#防盗链)
+        - [负载均衡](#负载均衡)
     - [命令使用](#命令使用)
         - [问题](#问题)
     - [学习使用](#学习使用)
 
-`目录 end` *目录创建于2018-02-10* | 更多: [CSDN](http://blog.csdn.net/kcp606) | [oschina](https://my.oschina.net/kcp1104) | [码云](https://gitee.com/kcp1104) 
+`目录 end` |_2018-03-16_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
 ****************************************
 # Nginx
 
@@ -264,12 +266,17 @@ _SSL 接收到一个超出最大准许长度的记录 要在端口后加上SSL n
     }
   }
 ```
+### 防盗链
+
+### 负载均衡
+> [Nginx 反向代理 负载均衡 虚拟主机配置](https://segmentfault.com/a/1190000012479902)
+
+*********************************
 ## 命令使用
 `nginx -h 输出`
 ```
   nginx version: nginx/1.13.3
   Usage: nginx [-?hvVtTq] [-s signal] [-c filename] [-p prefix] [-g directives]
-
   Options:
     -?,-h         : this help
     -v            : show version and exit
@@ -295,6 +302,5 @@ _SSL 接收到一个超出最大准许长度的记录 要在端口后加上SSL n
 
 ## 学习使用
 - [实验楼课程](https://www.shiyanlou.com/courses/95)
-
 
 

@@ -4,23 +4,24 @@
     - [Java IO简史](#java-io简史)
         - [Java1.0到1.3](#java10到13)
         - [Java1.4引入的NIO](#java14引入的nio)
-        - [下一代 IO-NIO.2](#下一代-io-nio2)
+        - [Java1.7的AIO](#java17的aio)
     - [关于普通IO的文件操作](#关于普通io的文件操作)
         - [读取配置文件](#读取配置文件)
     - [NIO](#nio)
 
-`目录 end` *目录创建于2018-01-22* | 更多: [CSDN](http://blog.csdn.net/kcp606) | [oschina](https://my.oschina.net/kcp1104) | [码云](https://gitee.com/kcp1104) 
+`目录 end` |_2018-03-16_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
 ****************************************
 # IO操作的学习
 > - [个人代码:IO流的相关学习](https://github.com/Kuangcp/JavaBase/tree/master/src/main/java/com/io)
 
 ## Java IO简史
+> [BIO NIO AIO演变](http://www.cnblogs.com/itdragon/p/8337234.html)
 
 ### Java1.0到1.3
 ### Java1.4引入的NIO
-### 下一代 IO-NIO.2
-## 关于普通IO的文件操作
+### Java1.7的AIO
 
+## 关于普通IO的文件操作
 ### 读取配置文件
 - maven格式路径，会从resources下获取文件例如 /a.xml
 - `InputStream is = this.getClass().getResourceAsStream(path);`
