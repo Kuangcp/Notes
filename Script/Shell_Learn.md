@@ -29,7 +29,7 @@
         - [jq](#jq)
         - [shyaml](#shyaml)
 
-`目录 end` |_2018-03-15_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
+`目录 end` |_2018-03-18_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
 ****************************************
 # 学习Shell
 > 首先语法不像别的语言可读性好，比如Python，然后方言众多，学习比Python2，3还恶心  
@@ -118,7 +118,6 @@
   isGithub=`expr match "$line" ".*"$2`
   # 简单的就是使用grep
   isGithub=`echo $line | grep "github" `
-  
   # return 0 is $1 is substring of $2, otherwise 1
   strIsSubstring(){
       local x=1
@@ -129,8 +128,10 @@
   }
 ```
 
-`求长`
-- `${#var}`
+_求长_ `${#var}`
+
+_字符串拆分成数组_
+
 
 ************************
 ### 数组
