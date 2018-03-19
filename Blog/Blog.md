@@ -48,16 +48,6 @@
 - [如有乐享](https://51.ruyo.net/)`突破限制的 教程资源比较多`
 
 - [javabolg](https://javablog.net/)`nutz作者的博客`
-# 【博客社区】
-- [http://www.importnew.com](http://www.importnew.com)`小众?`
-- [http://www.cnblogs.com](http://www.cnblogs.com)
-- [http://blog.csdn.net](http://blog.csdn.net)`CSDN 人数似乎比较多, 解决问题方案比较多`
-- [http://www.infoq.com/cn/](http://www.infoq.com/cn/)`infoQ 比较有深度`
-- [https://www.oschina.net/](https://www.oschina.net/)`开源中国 软件的资讯比较多`
-- [码农网](http://www.codeceo.com/)`看起来是有些深度的, 有时间就看一看`
-- []()
-- []()
-
 
 ## 博客能人
 - [赵劼](http://www.cnblogs.com/JeffreyZhao/) `对函数式编程，并行程序开发，代码之美以及程序员能力与修养等相关问题`
@@ -78,7 +68,6 @@
 
 *********************************
 # 【Blog】
-
 ## 搭建博客
 - [知乎话题：如何搭建博客](https://www.zhihu.com/question/20463581)
 - [知乎专栏：使用Springboot搭建博客](https://zhuanlan.zhihu.com/p/28428463)

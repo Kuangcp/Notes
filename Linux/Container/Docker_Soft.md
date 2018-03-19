@@ -25,6 +25,8 @@
 `目录 end` *目录创建于2018-03-01* | 更多: [CSDN](http://blog.csdn.net/kcp606) | [oschina](https://my.oschina.net/kcp1104) | [码云](https://gitee.com/kcp1104) 
 ****************************************
 # 使用Docker安装软件
+> [如何创建尽可能小的Docker容器教程](http://www.open-open.com/lib/view/open1419760974078.html)
+
 ## 个人相关镜像
 `百度云`
 - `hub.baidubce.com/mythos/alpine-ssh:1.0` alpine配置好ssh，适合瞎折腾

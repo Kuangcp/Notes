@@ -38,7 +38,7 @@
 `目录 end` *目录创建于2018-02-27* | 更多: [CSDN](http://blog.csdn.net/kcp606) | [oschina](https://my.oschina.net/kcp1104) | [码云](https://gitee.com/kcp1104) 
 ****************************************
 # Docker
-
+> [docker资源汇总 ](http://www.open-open.com/lib/view/open1443075440623.html)
 
 *****************************************
 ## 简介
@@ -217,7 +217,10 @@ _使用DockerHub加速器_
 > [官方文档](https://docs.docker.com/engine/reference/commandline/create)
 
 ##### docker run 
-- 等价于 docker create 再 docker start
+> [Docker run 命令的使用方法](http://www.open-open.com/lib/view/open1422492851548.html)
+> 等价于 docker create 再 docker start
+
+
 - `docker run -d --name conrainer-name image-name touch a.md` ，如果镜像本地没有会自动pull
     - `--name` 配置容器名字
     - `-d` 后台启动程序
@@ -262,6 +265,9 @@ _使用DockerHub加速器_
 
 *********************
 ### 数据卷
+> [Docker 中管理数据](http://www.open-open.com/lib/view/open1403571027233.html)
+> [参考博客: 给一个正在运行的Docker容器动态添加Volume](http://www.open-open.com/lib/view/open1421996521062.html)
+
 - 数据卷是一个可供容器使用的特殊目录，它将宿主机操作系统目录映射进容器 类似于 mount操作
     - 数据卷可以在容器之间共享重用
     - 数据卷内数据的修改会立马生效，无论是容器内操作还是本地操作

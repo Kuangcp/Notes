@@ -27,6 +27,8 @@
 ## Jenkins
 > [官网](https://jenkins.io/)
 
+[参考博客: 用 Docker, maven, jenkins 完成 CI](http://www.open-open.com/lib/view/open1436922756240.html)
+
 ## Drone 
 > [官网](https://drone.io/)
 
