@@ -21,8 +21,10 @@
         - [简易git-daemon](#简易git-daemon)
         - [Gogs](#gogs)
         - [Gitea](#gitea)
+    - [在线IDE](#在线ide)
+        - [Coding平台的WebIDE](#coding平台的webide)
 
-`目录 end` *目录创建于2018-03-01* | 更多: [CSDN](http://blog.csdn.net/kcp606) | [oschina](https://my.oschina.net/kcp1104) | [码云](https://gitee.com/kcp1104) 
+`目录 end` |_2018-03-20_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
 ****************************************
 # 使用Docker安装软件
 > [如何创建尽可能小的Docker容器教程](http://www.open-open.com/lib/view/open1419760974078.html)
@@ -31,6 +33,7 @@
 `百度云`
 - `hub.baidubce.com/mythos/alpine-ssh:1.0` alpine配置好ssh，适合瞎折腾
 - `hub.baidubce.com/mythos/redis-alpine:1211` redis的alpine版镜像，轻量
+- `hub.baidubce.com/mythos/idea-register:1.0` idea的注册机
 
 ***********************************
 # 系统
