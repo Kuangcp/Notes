@@ -47,6 +47,16 @@
 - [掘金门户网](http://e.xitu.io)
 - [吾爱破解](https://www.52pojie.cn/)
 - [解道](http://www.jdon.com/)
+- [http://www.importnew.com](http://www.importnew.com)`小众?`
+- [http://www.cnblogs.com](http://www.cnblogs.com)
+- [http://blog.csdn.net](http://blog.csdn.net)`CSDN 人数似乎比较多, 解决问题方案比较多`
+- [http://www.infoq.com/cn/](http://www.infoq.com/cn/)`infoQ 比较有深度`
+- [https://www.oschina.net/](https://www.oschina.net/)`开源中国 软件的资讯比较多`
+- [码农网](http://www.codeceo.com/)`看起来是有些深度的, 有时间就看一看`
+- [10条](http://www.10tiao.com/)`有一些深度系列文章`
+- [内存溢出网](http://outofmemory.cn/#csdn)`内存溢出网`
+- [并发编程网](http://ifeve.com/)`大佬和深度好文`
+- [深度开源](http://www.open-open.com/lib/) `安卓居多`
 
 ********************************
 # 【学习网站】

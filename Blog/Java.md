@@ -21,6 +21,7 @@
 - [Eclipse Collections以及Java8的特性](http://www.infoq.com/cn/articles/eclipse-collections?utm_campaign=rightbar_v2&utm_source=infoq&utm_medium=articles_link&utm_content=link_text)
 - [Java8的特性](http://www.jb51.net/article/48304.htm)
 - [正确使用Volatile变量](https://www.ibm.com/developerworks/cn/java/j-jtp06197.html)
+- [javadoc 和 javadoc注释规范](http://www.cnblogs.com/felix-/p/4310229.html)
 
 ***************
 - [Java动态代理机制详解](http://blog.csdn.net/luanlouis/article/details/24589193) `博客很细致，深入原理`
@@ -71,6 +72,9 @@
 ![前后端](https://raw.githubusercontent.com/Kuangcp/ImageRepos/master/Image/fun/640.webp)
 
 - [JDK各个版本发布时间](http://blog.csdn.net/tanxinwhu/article/details/6969086)
+
+### 架构师
+- [通向架构师的道路(比较老)](http://www.10tiao.com/html/194/201801/2651479837/1.html)
 
 ## Java语言讨论
 > [冷眼看Java](http://swiftlet.net/archives/2530)

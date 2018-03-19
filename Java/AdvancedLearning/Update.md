@@ -14,7 +14,7 @@
     类文件格式的变化:注解
     JVM的新特性: 动态调用
 - | Switch 支持 String
-- | 二进制的实例化 原本是`int x = Integer.parseInt("1010100", 2);`7之后`int x = 0b110110;`
+- | 二进制的实例化 原本是 `int x = Integer.parseInt("1010100", 2);`7之后`int x = 0b110110;`
 - | 数字下划线 `10_0100__1000__0011`
 - | 异常处理
     - 允许异常的`或`操作 `catch(IOException | NullPointException e)`
