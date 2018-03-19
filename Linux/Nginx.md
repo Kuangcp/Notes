@@ -18,7 +18,7 @@
         - [问题](#问题)
     - [学习使用](#学习使用)
 
-`目录 end` |_2018-03-17_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
+`目录 end` |_2018-03-19_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
 ****************************************
 # Nginx
 
@@ -31,6 +31,7 @@
 
 ### 编译安装
 > 不建议使用这种方式进行安装，很容易出现兼容问题
+
 
 - 下载 nginx，pcre，zlib，openssl 的压缩包
 - 进入解压根目录（按实际情况配置） 
@@ -94,7 +95,9 @@ server {
 #### 反向代理多个服务
 - 修改默认配置文件 `/etc/nginx/nginx.conf`
   - 或者更好的就是在 `/etc/nginx/conf.d/`下新建 *.conf 文件，文件名任意
+
 `该配置文件配置了服务器反向代理，80端口上：/路径的请求转发到9991端口 /myth转发到7898端口 `
+
 ```conf
 upstream xxxuthus {
   server 127.0.0.1:9991;
