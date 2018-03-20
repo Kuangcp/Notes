@@ -22,9 +22,13 @@
             - [invokedynamic](#invokedynamic)
     - [序列化](#序列化)
         - [serialVersionUID](#serialversionuid)
+        - [其他业内主流编解码框架](#其他业内主流编解码框架)
+            - [Protobuf](#protobuf)
+            - [Thrift](#thrift)
+            - [Marshalling](#marshalling)
     - [反射的使用](#反射的使用)
 
-`目录 end` |_2018-03-12_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
+`目录 end` |_2018-03-20_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
 ****************************************
 # Java基础
 ## 【类和字节码】
@@ -139,7 +143,8 @@
 
 ### serialVersionUID
 > 简单的说就是类的版本控制, 标明类序列化时的版本, 版本一致表明这两个类定义一致  
-> 在进行反序列化时, JVM会把传来的字节流中的serialVersionUID与本地相应实体（类）的serialVersionUID进行比较，如果相同就认为是一致的，可以进行反序列化，否则就会出现序列化版本不一致的异常。(InvalidCastException) [参考博客](http://swiftlet.net/archives/1268)
+> 在进行反序列化时, JVM会把传来的字节流中的serialVersionUID与本地相应实体（类）的serialVersionUID进行比较，如果相同就认为是一致的，可以进行反序列化，否则就会出现序列化版本不一致的异常。(InvalidCastException)  
+[参考博客](http://swiftlet.net/archives/1268)
 
 - serialVersionUID有两种显示的生成方式： 
     -  一个是默认的1L
@@ -152,7 +157,32 @@ Window ==> Preferences ==> Java ==> Compiler ==> Error/Warnings ==>Potential pro
 将Serializable class without serialVersionUID的warning改成ignore即可。
 
 ******************************
+
+### 其他业内主流编解码框架
+> 因为Java序列化的性能和存储开销都表现不好,而且不能跨语言, 所以一般不使用Java的序列化而是使用以下流行的库
+
+#### Protobuf
+> Google开源的库 全称 Google Protocol Buffers
+
+- 他将数据结构以 proto后缀的文件进行描述, 通过代码生成工具, 可以生成对应数据结构的POJO对象和Protobuf相关的方法和属性
+    - 特点:
+        - 结构化数据存储格式: XML JSON等
+        - 高效的编解码性能
+        - 语言无关, 平台无关, 扩展性好
+        - 官方支持 Java C++ Python三种语言, 并且Js的支持也比较好[](https://github.com/dcodeIO/ProtoBuf.js/)
+    - 数据描述文件和代码生成机制优点:
+        - 文本化的数据结构描述语言, 可以实现语言和平台无关, 特别适合异构系统间的集成
+        - 通过标识字段的顺序, 可以实现协议的前向兼容
+        - 自动代码生成, 不需要手工编写同样数据结构的C++和Java版本;
+        - 方便后续的管理和维护,相比于代码, 结构化的文档更容易管理和维护
+
+#### Thrift
+> 源于Facebook, 支持多种语言: C++ C# Cocoa Erlang Haskell Java Ocami Perl PHP Python Ruby Smalltalk
+
+- 它支持数据(对象)序列化和多种类型的RPC服务, Thrift适用于静态的数据交换, 需要预先确定好他的数据结构, 当数据结构发生变化时,需要重新编辑IDL文件
+
+#### Marshalling
+
+**********************
 ## 反射的使用
 
-
-******************************

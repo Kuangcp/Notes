@@ -8,6 +8,7 @@
         - [2.1.eclipse中配置](#21eclipse中配置)
         - [2.2.配置插件](#22配置插件)
         - [2.3.配置文件的详解](#23配置文件的详解)
+        - [2.4 配置代码版本](#24-配置代码版本)
     - [3.maven概念](#3maven概念)
     - [4.maven的依赖](#4maven的依赖)
         - [4.1.处理项目间依赖方法](#41处理项目间依赖方法)
@@ -29,7 +30,7 @@
         - [7.2.Maven的优势](#72maven的优势)
     - [发布构件](#发布构件)
 
-`目录 end` *目录创建于2018-01-22* | 更多: [CSDN](http://blog.csdn.net/kcp606) | [oschina](https://my.oschina.net/kcp1104) | [码云](https://gitee.com/kcp1104) 
+`目录 end` |_2018-03-20_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
 ****************************************
 # Maven
 > [官网](https://maven.apache.org/) | [官网手册](https://maven.apache.org/guides/) | [http://takari.io/ 在线练习网](http://takari.io/)
@@ -142,7 +143,22 @@
 
 配置:源码package成JAR包：(pom.xml中配置)
 `<packaging>jar</packaging>`
-
+### 2.4 配置代码版本
+```xml
+<build>
+    <plugins>
+        <plugin>
+            <artifactId>maven-compiler-plugin</artifactId>
+            <version>3.1</version>
+            <configuration>
+                <source>1.8</source>
+                <target>1.8</target>
+                <encoding>UTF-8</encoding>
+            </configuration>
+        </plugin>
+    </plugins>
+</build>
+```
 ## 3.maven概念
 - 坐标：三个标签唯一的标识了项目
 - 仓库：jar包的集合目录

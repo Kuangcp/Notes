@@ -2,10 +2,10 @@
  
 - [【网络管理】](#网络管理)
     - [DNS](#dns)
+        - [修改DNS](#修改dns)
     - [IPv4和IPv6](#ipv4和ipv6)
-        - [【Tips】](#tips)
-            - [【查看端口占用情况】](#查看端口占用情况)
-            - [【修改DNS】](#修改dns)
+    - [Tips](#tips)
+        - [查看端口占用情况](#查看端口占用情况)
     - [基础命令工具](#基础命令工具)
         - [1.ping](#1ping)
         - [2.curl](#2curl)
@@ -18,7 +18,7 @@
     - [【常用网络服务】](#常用网络服务)
         - [邮件服务器postfix和devecot](#邮件服务器postfix和devecot)
         - [FTP服务器](#ftp服务器)
-        - [【SSH的使用】](#ssh的使用)
+        - [SSH](#ssh)
             - [1.安装软件](#1安装软件)
             - [2.复制粘贴建立密钥对](#2复制粘贴建立密钥对)
             - [2.使用脚本更简单](#2使用脚本更简单)
@@ -27,10 +27,11 @@
             - [5.多密钥对](#5多密钥对)
             - [6.访问图形化](#6访问图形化)
             - [7.ssh登录并执行一系列命令](#7ssh登录并执行一系列命令)
-        - [【vpn】](#vpn)
+        - [telnet](#telnet)
+        - [VPN](#vpn)
             - [shadowsocks](#shadowsocks)
 
-`目录 end` |_2018-03-15_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
+`目录 end` |_2018-03-20_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
 ****************************************
 # 【网络管理】
 ## DNS
@@ -54,7 +55,14 @@
     - +nocmd+nocomment+nostat 输出最核心内容
 
 `drill`
+### 修改DNS
+- `sudo vim /etc/resolv.conf` 添加Google的DNS 
+```
+    nameserver 8.8.8.8 
+    nameserver 8.8.8.4
+```
 
+******************
 ## IPv4和IPv6
 - IPv4 只有32bit IPv6 有128bit
 
@@ -62,13 +70,16 @@
 - 零省略 ：如果有一位是 000C 可以直接写C
 - 零压缩 ：如果FE04:0:0:0:0:0:0:DA 写成 FE::DA
 
-### 【Tips】
-#### 【查看端口占用情况】
+*******************
+## Tips
+### 查看端口占用情况
 > netstat lsof fuser ps 都有一定效果 [ linux_performance ](./Linux/linux_performance.md)  
 
-`netstat 工具` 更好用的 iproute2往下翻
+> [参考博客: linux下常用命令查看端口占用](http://blog.csdn.net/ws379374000/article/details/74218530)
 
-- `先安装lsof` `lsof -i:端口号` 用于查看某一端口的占用情况，缺省端口号显示全部
+_netstat工具_ 或者 更好用的 [iproute2](#3iproute2)
+
+- `lsof -i:端口号` 用于查看某一端口的占用情况，缺省端口号显示全部
     - 或者 `cat /etc/services` 查看系统以及使用的端口
 
 - `netstat -tunlp |grep 端口号` 用于查看指定的端口号的进程情况
@@ -78,23 +89,15 @@
     - `-l` 仅列出在Listen(监听)的服务状态
     - `-p` 显示建立相关链接的程序名
 
-- [扫描端口的Python](https://github.com/Kuangcp/Notes/blob/master/Python/net/netstatus.py)
-
-
 - 查询端口占用的pid 三种：
     - `netstat -aonp |grep "^[a-z]\+[ ]\+0[ ]\+0[ ]\+[0-9\.]\+:80[ ]\+"|awk -F" "   {'print $0'}`
     - `netstat -aonp |grep ":80[ ]\+"|awk -F" "   {'print $0'}`
     - `sudo netstat -aonp |grep ":6379[ ]\+"|awk -F" "   {'print $0'}`
     - `sudo kill -9 pid` 杀掉指定pid
     - `ps aux` 查看当前执行中的程序
-- `netstat -antlp | grep 127.0.0.1` 
 
-#### 【修改DNS】
-- `sudo vim /etc/resolv.conf` 添加Google的DNS 
-```
-    nameserver 8.8.8.8 
-    nameserver 8.8.8.4
-```
+- 似乎能看到更多 `netstat -antlp | grep 127.0.0.1` 
+
 ***************************
 ## 基础命令工具
 > 参考书籍 《Linux 大棚命令百篇》
@@ -133,13 +136,15 @@
 |   组播    | ipmaddr  |     ip maddr     |
 |   统计    | netstat  |        ss        |
 
-`ss`
+_ss_
+> [参考博客: Linux网络状态工具ss命令使用详解](http://www.ttlsa.com/linux-command/ss-replace-netstat/)
+
 - 查看网络连接统计 `ss -s`
 - 查看打开的端口 `ss -l`
 - 查看打开的端口以及进程pid `ss -pl`
 - 查看所有socket连接 `ss -a`
-
 - 隧道术： 网络协议的数据包被封装在另一种网络协议的数据包之中 `这是VPN的技术理论基础`
+> 别说的那么神乎其神, 用的时候, 连个Tomcat开的8080都查不到
 
 `net-tools 和 iproute 对应关系`
 
@@ -332,7 +337,7 @@
 - 新建公共目录 设置权限 `mkdir /home/common/public && sudo chmod 777 -R /home/common/public`
 - 重启服务 `sudo systemctl restart vsftpd.service`
 
-```
+```sh
      ~$ sudo mkdir /home/common
      ~$ sudo touch /home/common/welcome.txt
      ~$ sudo useradd -d /home/common -s /bin/bash common
@@ -348,7 +353,7 @@
 ```
 
 ******************************
-### 【SSH的使用】
+### SSH
 > `ssh user@host` 默认22端口登录系统  
 > `ssh -p port user@host` 指定端口登录  
 > `ssh -T -p port user@host` 测试能否登录上    
@@ -399,9 +404,7 @@ _服务器端_
     echo "PermitRootLogin yes" >> /etc/ssh/sshd_config ;\
 ```
 - 或者尝试 `echo "sshd: ALL" >> /etc/hosts.allow && service sshd restart`
-
 ********
-
 _这是什么问题,这么6的么, 配置好了公钥_
 ```sh
 $ ssh -p 8888 git@184.170.220.117
@@ -414,9 +417,6 @@ $ ssh -p 8888 git@184.170.220.117
     Connection to 184.170.220.117 closed.
 ```
 _emmm.出现这样的输出竟然是连接上了,,,_
-
-***************
-
 
 #### 4.SSH配置文件
 `vim ~/.ssh/config`
@@ -444,12 +444,12 @@ _参数解释_
 #### 5.多密钥对
 > [参考博客](http://blog.csdn.net/black_ox/article/details/17753943)   
 
-- 1.`ssh-keygen` 生成SSH密钥对
+1. `ssh-keygen` 生成SSH密钥对
     - 然后在询问中输入新的文件名
-- 2.`ssh-add 私钥文件绝对路径`
+2. `ssh-add 私钥文件绝对路径`
     - 若执行ssh-add时出现Could not open a connection to your authentication agent
     - 就先执行 `ssh-agent bash` 对应自己的解释器环境
-- 3.如上 创建配置文件 config
+3. 如上 创建配置文件 config
     - 在git项目中使用别名:正常的项目，我们clone下来之后，origin对应的URL假设为: `git@git.:Rusher/helloworld`
     - 现在需要做个改动，将git, 要换成rusher_gitlab:
         - `git remote set-url origin git@rusher_gitlab:Rusher/helloworld`
@@ -477,13 +477,15 @@ _config_
 #### 7.ssh登录并执行一系列命令
 ```sh
     ssh user@host 'cmd \
-        && cmd \
-        && cmd \
-        '
+        && cmd \'
 ```
 
+### telnet
+> [linux telnet命令参数](http://www.linuxso.com/command/telnet.html)  
+> [每天一个linux命令（58）：telnet命令](http://www.cnblogs.com/peida/archive/2013/03/13/2956992.html)
+
 ***********
-### 【vpn】
+### VPN
 #### shadowsocks
 _服务端_
 - 安装服务端`sudo pip install shadowsocks`
