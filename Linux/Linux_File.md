@@ -45,11 +45,14 @@
             - [查看发行版](#查看发行版)
             - [查看系统所有用户信息](#查看系统所有用户信息)
 
-`目录 end` *目录创建于2018-02-19* | 更多: [CSDN](http://blog.csdn.net/kcp606) | [oschina](https://my.oschina.net/kcp1104) | [码云](https://gitee.com/kcp1104) 
+`目录 end` |_2018-03-20_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
 ****************************************
 # 【文件管理】
 > Linux中认为万物皆文件
 
+- 清空文件内容 `true > a.txt ` 
+- 安装上传下载文件的工具 `sudo apt install lrzsz`
+- `cat ~/.ssh/id_rsa.pub | xsel -b` 将文件复制到剪贴板
 ## 基本命令 
 
 ### rename
@@ -134,9 +137,8 @@ _示例_
     - f 忽略不存在的文件，从不给出提示。
     - r 指示rm将参数中列出的全部目录和子目录均递归地删除。
     - i 进行交互式删除。 
-- 清空文件内容 `true > a.txt ` 
-- 安装上传下载文件的工具 `sudo apt install lrzsz`
-- `cat ~/.ssh/id_rsa.pub | xclip -sel clip` 将文件复制到剪贴板
+
+1. 递归删除目录下所有run后缀的文件 `find . -name "*.run"  | xargs rm -f`
 
 ### mv
 - mv `mv 目录或正则 目录` 移动
@@ -150,6 +152,11 @@ _示例_
 
 ### cat
 > 类似的还有 nl more less
+
+带行号输出 `cat -n file` 或者 `nl file`但是空行不会编号, 除非这样: `nl -b a file`
+
+[参考博客: 每天一个linux命令(11)：nl命令](http://www.cnblogs.com/peida/archive/2012/11/01/2749048.html#/)
+
 ### file
 > 查看文件类型
 
