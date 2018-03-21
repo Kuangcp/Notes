@@ -1,7 +1,6 @@
 `目录 start`
  
 - [【个人博客网】](#个人博客网)
-- [【博客社区】](#博客社区)
     - [博客能人](#博客能人)
     - [专栏](#专栏)
 - [【Blog】](#blog)
@@ -18,7 +17,7 @@
     - [生活](#生活)
     - [商业](#商业)
 
-`目录 end` |_2018-03-16_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
+`目录 end` |_2018-03-21_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
 ****************************************
 
 > 只用来记录非技术类的文章,技术类的直接放到对应的笔记中去
@@ -49,6 +48,7 @@
 
 - [javabolg](https://javablog.net/)`nutz作者的博客`
 
+- [chenssy ](http://cmsblogs.com/)`技术较新 Java博客网`
 ## 博客能人
 - [赵劼](http://www.cnblogs.com/JeffreyZhao/) `对函数式编程，并行程序开发，代码之美以及程序员能力与修养等相关问题`
 - [进击的Java新人](https://zhuanlan.zhihu.com/hinus)

@@ -18,7 +18,7 @@
     - [【分支合并框架】](#分支合并框架)
     - [【Java内存模型】](#java内存模型)
 
-`目录 end` |_2018-03-09_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [oschina](https://my.oschina.net/kcp1104)
+`目录 end` |_2018-03-21_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
 ****************************************
 # Java并发
 > [个人相关代码](https://github.com/Kuangcp/JavaBase/tree/master/src/main/java/com/concurrents)  
@@ -125,8 +125,11 @@
 ********************
 
 ## 【现代并发】 concurrent包
-> ReentrantLock 和 sync 加解锁机制的区别?  
-一个作用于线程一个作用于临界变量
+> 简称为J.U.C (java.util.concurrent) | [The j.u.c Synchronizer Framework中文翻译版](http://ifeve.com/aqs/)
+
+- ReentrantLock 和 sync 加解锁机制的区别?  
+    - 一个作用于线程一个作用于临界变量
+
 
 ### 原子类 java.util.concurrent.atomic
 > 提供适当的原子方法 避免在共享数据上出现竞争危害的方法

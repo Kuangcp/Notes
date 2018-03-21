@@ -23,12 +23,13 @@
     - [序列化](#序列化)
         - [serialVersionUID](#serialversionuid)
         - [其他业内主流编解码框架](#其他业内主流编解码框架)
+            - [MessagePack](#messagepack)
             - [Protobuf](#protobuf)
             - [Thrift](#thrift)
             - [Marshalling](#marshalling)
     - [反射的使用](#反射的使用)
 
-`目录 end` |_2018-03-20_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
+`目录 end` |_2018-03-21_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
 ****************************************
 # Java基础
 ## 【类和字节码】
@@ -161,6 +162,11 @@ Window ==> Preferences ==> Java ==> Compiler ==> Error/Warnings ==>Potential pro
 ### 其他业内主流编解码框架
 > 因为Java序列化的性能和存储开销都表现不好,而且不能跨语言, 所以一般不使用Java的序列化而是使用以下流行的库
 
+#### MessagePack
+> [Github:msgpack](https://github.com/msgpack)
+
+[参考博客: MessagePack：一种高效二进制序列化格式](http://hao.jobbole.com/messagepack/)
+
 #### Protobuf
 > Google开源的库 全称 Google Protocol Buffers
 
@@ -172,7 +178,7 @@ Window ==> Preferences ==> Java ==> Compiler ==> Error/Warnings ==>Potential pro
         - 官方支持 Java C++ Python三种语言, 并且Js的支持也比较好[](https://github.com/dcodeIO/ProtoBuf.js/)
     - 数据描述文件和代码生成机制优点:
         - 文本化的数据结构描述语言, 可以实现语言和平台无关, 特别适合异构系统间的集成
-        - 通过标识字段的顺序, 可以实现协议的前向兼容
+        - 通过标识字段的顺序, 可以实现协议的前向兼容 _在不同版本的数据结构进程间进行数据传递_
         - 自动代码生成, 不需要手工编写同样数据结构的C++和Java版本;
         - 方便后续的管理和维护,相比于代码, 结构化的文档更容易管理和维护
 
@@ -182,6 +188,7 @@ Window ==> Preferences ==> Java ==> Compiler ==> Error/Warnings ==>Potential pro
 - 它支持数据(对象)序列化和多种类型的RPC服务, Thrift适用于静态的数据交换, 需要预先确定好他的数据结构, 当数据结构发生变化时,需要重新编辑IDL文件
 
 #### Marshalling
+> JBOSS 内部使用的编解码框架
 
 **********************
 ## 反射的使用

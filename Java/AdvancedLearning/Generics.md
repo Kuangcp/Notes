@@ -14,7 +14,7 @@
             - [通配符捕获](#通配符捕获)
         - [反射和泛型](#反射和泛型)
 
-`目录 end` *目录创建于2018-03-01* | 更多: [CSDN](http://blog.csdn.net/kcp606) | [oschina](https://my.oschina.net/kcp1104) | [码云](https://gitee.com/kcp1104) 
+`目录 end` |_2018-03-21_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
 ****************************************
 # 泛型
 > [开始学习的兴趣来源](https://mp.weixin.qq.com/s?__biz=MzAxOTc0NzExNg==&mid=2665514015&idx=1&sn=12409f705c6d266e4cd062e78ce50be0&chksm=80d67c5cb7a1f54a68ed83580b63b4acded0df525bb046166db2c00623a6bba0de3c5ad71884&scene=21#wechat_redirect)
@@ -28,9 +28,15 @@
 > 泛型类可以看作普通类的工厂  -- Java核心技术卷 2004(1.5)  
 
 ### 简单使用
--  [简单泛型类示例](https://github.com/Kuangcp/JavaBase/blob/master/src/main/java/com/generic/simple/Pair.java)
+>- [简单泛型类示例](https://github.com/Kuangcp/JavaBase/blob/master/src/main/java/com/generic/simple/Pair.java)
 
-> 类型变量使用大写的一个字母这是代表: E 集合的元素类型 KV 表示表的关键字和值的类型 T U S 等就表示任意类型
+例如该行定义 : `public abstract class RoomCache<P extends PlayerBO, M extends MemberBO, V extends VideoDataBO<M>, R extends RoomBO<M, V>> extends AbstractCache<PlatformRoomId, R> {}`
+
+- 类型变量使用大写的一个字母这是代表:
+    - `E` 集合的元素类型 
+    - `K V` 表示表的关键字和值的类型 
+    - `T U S` 等就表示任意类型
+    - 
 
 #### 类型擦除
 - 不同于C++的泛型,C++是将模板类组合出来的生成一个新的类,Java则是进行类型擦除,然后再类型强转
@@ -291,4 +297,6 @@ TODO 还要继续看书
 ```java
     // 传入一个Class对象, 得到Class对应类型的实例
     public <T> T get(Class<T> target, String name);
+    // 加上约束
+    public <T extends Runable> T get(Class<T> target, String name);
 ```

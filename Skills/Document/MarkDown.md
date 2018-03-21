@@ -5,12 +5,14 @@
         - [头信息](#头信息)
     - [Github](#github)
 
-`目录 end` |_2018-03-16_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
+`目录 end` |_2018-03-21_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
 ****************************************
 # Markdown
 > [markup](https://github.com/github/markup)`丰富的标记性文本格式`  
-> [Markdown教程](http://www.markdown.cn/)
+> [Markdown教程](http://www.markdown.cn/)  
+> [CSDN的Markdown案例](https://github.com/kuangcp/Notes/blob/master/Article/CSDN的Markdown案例.md)
 
+**************
 ## 基础格式
 
 ### 头信息
@@ -31,7 +33,7 @@
     ---
 ```
 **************
-## Github
+## Github 
 > [比较全面的Github格式 GFM](https://github.com/guodongxiaren/README)
 
 _目录规则（页内跳转）_
@@ -63,4 +65,9 @@ _md文件的头属性_
     title: 泛型
     tags: Java, 泛型
     ---
+```
+
+```diff
++ fsd
+- 发的所发生的
 ```

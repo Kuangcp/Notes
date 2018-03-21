@@ -2,14 +2,15 @@
  
 - [IO操作的学习](#io操作的学习)
     - [Java IO简史](#java-io简史)
-        - [Java1.0到1.3](#java10到13)
-        - [Java1.4引入的NIO](#java14引入的nio)
-        - [Java1.7的AIO](#java17的aio)
+        - [Java1.0到1.3 BIO](#java10到13-bio)
+        - [Java1.4 NIO](#java14-nio)
+        - [Java1.7 AIO](#java17-aio)
     - [关于普通IO的文件操作](#关于普通io的文件操作)
         - [读取配置文件](#读取配置文件)
     - [NIO](#nio)
+        - [Buffer](#buffer)
 
-`目录 end` |_2018-03-16_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
+`目录 end` |_2018-03-21_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
 ****************************************
 # IO操作的学习
 > - [个人代码:IO流的相关学习](https://github.com/Kuangcp/JavaBase/tree/master/src/main/java/com/io)
@@ -22,6 +23,8 @@
 但是能自己实现 伪异步IO
 ### Java1.4 NIO
 > 非阻塞式IO, 虽然官方名称为New IO, 民间称为No-blocking IO  
+
+> [参考博客: NIO基础详解](http://cmsblogs.com/?p=2467)  
 
 - 对于调用者来说是异步的, 但是实际上是使用的多路复用和一个线程进行轮询, 真的吗? 到底是不是异步的呢?
 
