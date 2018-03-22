@@ -5,16 +5,16 @@
     - [常用技巧](#常用技巧)
         - [导出为可运行的JAR包 普通Java项目](#导出为可运行的jar包-普通java项目)
         - [Springboot热加载](#springboot热加载)
-        - [个人IDEA配置](#个人idea配置)
+        - [Debug](#debug)
     - [常用配置](#常用配置)
+        - [个人IDEA配置](#个人idea配置)
     - [IDEA快捷键](#idea快捷键)
         - [使用内置类eclipse快捷键系列](#使用内置类eclipse快捷键系列)
         - [IDEA原生快捷键系列](#idea原生快捷键系列)
-            - [【正在使用】](#正在使用)
-                - [IntelliJ IDEA使用技巧一览表](#intellij-idea使用技巧一览表)
+        - [个人习惯](#个人习惯)
     - [插件](#插件)
 
-`目录 end` |_2018-03-14_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
+`目录 end` |_2018-03-22_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
 ****************************************
 
 # IDEA 使用笔记
@@ -22,8 +22,9 @@
 
 ## 常识
 -  project 就是一个工作空间，一个Module就是一个项目
-- 新建一个empty项目可以作为一个工作空间，放很多module,新建的时候不要选中任何目录，*选中JRE库*，再菜单栏点击File然后new，不然项目结构很乱
-- 一个项目一个空间也是可以的，就是跨项目查看代码会有点麻烦，而且每个项目的配置文件都是不一样的，同样的配置可能要配置很多遍
+- 新建一个empty项目可以作为一个工作空间，放很多module,新建的时候不要选中任何目录，*光标选中JRE库*，再菜单栏点击File然后new，
+    - 不然项目结构很乱, 会在光标停留的文件夹下新建module
+- 一个项目一个空间也是可以的，就是跨项目查看代码会有点麻烦，而且每个项目的IDEA的配置都是不一样的，同样的配置可能要配置很多遍
 
 ## 常用技巧
 ### 导出为可运行的JAR包 普通Java项目
@@ -39,8 +40,30 @@
 - Ctrl Shift A 快捷搜索 Registry 进入后找到 compiler.automake.allow.when.app.running 勾选
 - 加入devtools依赖
 
-### 个人IDEA配置
-- 字体Fira Code Retina 14 0.9
+*********************************
+### Debug
+> debug还是比较强大的, 会在行末显示这一行的变量值
+
+- [在Intellij IDEA中使用Debug](http://www.cnblogs.com/chiangchou/p/idea-debug.html)
+
+_横排的八个按钮_
+> `Show Execution Point (Alt + F10)`：如果你的光标在其它行或其它页面，点击这个按钮可跳转到当前代码执行的行。  
+> `Step Over (F8)`：步过，一行一行地往下走，如果这一行上有方法不会进入方法。  
+> `Step Into (F7)`：步入，如果当前行有方法，可以进入方法内部，一般用于进入自定义方法内，不会进入官方类库的方法，如第25行的put方法。  
+> `Force Step Into (Alt + Shift + F7)`：强制步入，能进入任何方法，查看底层源码的时候可以用这个进入官方类库的方法。  
+> `Step Out (Shift + F8)`：步出，从步入的方法内退出到方法调用处，此时方法已执行完毕，只是还没有完成赋值。  
+> `Drop Frame (默认无)`：回退断点，后面章节详细说明。  
+> `Run to Cursor (Alt + F9)`：运行到光标处，你可以将光标定位到你需要查看的那一行，点击按钮,代码会运行至光标行，而不需要打断点。  
+> `Evaluate Expression (Alt + F8)`：计算表达式，后面章节详细说明。  
+
+_竖向的七个按钮_
+> Rerun 'xxxx'：重新运行程序，会关闭服务后重新启动程序。
+> Update 'tech' application (Ctrl + F5)：更新程序，一般在你的代码有改动后可执行这个功能。而这个功能对应的操作则是在服务配置里，如图2.3。
+> Resume Program (F9)：恢复程序，比如，你在第20行和25行有两个断点，当前运行至第20行，按F9，则运行到下一个断点(即第25行)，再按F9，则运行完整个流程，因为后面已经没有断点了。
+> Pause Program：暂停程序，启用Debug。目前没发现具体用法。
+> Stop 'xxx' (Ctrl + F2)：连续按两下，关闭程序。有时候你会发现关闭服务再启动时，报端口被占用，这是因为没完全关闭服务的原因，你就需要查杀所有JVM进程了。
+> View Breakpoints (Ctrl + Shift + F8)：查看所有断点，后面章节会涉及到。
+> Mute Breakpoints：哑的断点，选择这个后，所有断点变为灰色，断点失效，按F9则可以直接运行完程序。再次点击，断点变为红色，有效。如果只想使某一个断点失效，可以在断点上右键取消Enabled
 
 *************************
 ## 常用配置
@@ -56,88 +79,36 @@ _例如修改为如下_
  * @author kuangcp
  * @date ${DATE}  ${TIME}
  */
-
 ```
+### 个人IDEA配置
+> [导出的配置jar](https://github.com/Kuangcp/Configs/tree/master/Idea)
+- 字体Fira Code Retina 14 0.9
+
 ************************
 ## IDEA快捷键
 ### 使用内置类eclipse快捷键系列
+> 设置中 keymap 选择eclipse系列即可
+
 ### IDEA原生快捷键系列
+> 默认配置的是Idea原生
 
-#### 【正在使用】
 
-- Alt Enter 自动修复
-- Ctrl Q 显示doc
-- Ctrl B 显示定义处
-- Ctrl Alt B 显示实现处
-- Ctrl Shift T 自动创建JunitTest
-- Ctrl W 选中代码
-- Ctrl E 最近文件
-- Ctrl N 快速搜索Java文件 
-    - Ctrl Shift N 搜索所有文件
-    - Ctrl Shift Alt N 按类名首字母搜索
-- Ctrl Space 智能补全
-    - Ctrl Shift Space 结合上下文补全
-- Ctrl Alt ←/→ 后退/前进 至光标的上一个位置
-- Ctrl Shift F7 高亮显示光标所在元素所有出现过的地方
-    - 
-
-_coding_
-- C O 选择要重写的方法
-- C L 选择要实现的方法 
-- A Insert 选择要自动完成的setget构造器等
-
-********
-
-- Ctrl Alt L 快速格式化代码 
 - 这时我们只需敲Ctrl+Shift+Enter就能自动补全末尾的字符。
     - 而且不只是括号，例如敲完if/for时也可以自动补上{}花括号。
-- Alt+回车 在错误地方自动导包/自动修正
-- Ctrl+N 查找类
-- Ctrl+Shift+N 查找文件
-- Ctrl+Alt+L 格式化代码
-- Ctrl+Alt+O 优化导入的类和包
-- Alt+Insert 生成代码(如get,set方法,构造函数等)
-- Ctrl+E或者Alt+Shift+C 最近更改的代码
-- Ctrl+R 替换文本
-- Ctrl+F 查找文本
-- Ctrl+Shift+Space 自动补全代码
 - Ctrl+空格 代码提示
 - Ctrl+Alt+Space 类名或接口名提示
 - Ctrl+P 方法参数提示
-- Ctrl+Shift+Alt+N 查找类中的方法或变量
-- Ctrl+Shift+Alt+? 进行一些设置，找到编译自动部署，就能热加载
-- Alt+Shift+C 对比最近修改的代码
-- Shift+F6 重构-重命名
-- Ctrl+Shift+先上键
-- Ctrl+X 剪切行
-- Ctrl+D 复制行到下一行
 - Ctrl+/ 或 Ctrl+Shift+/ 注释（// 或者/*...*/ ）
-- Ctrl+J 自动代码
-- Ctrl+E 最近打开的文件
-- Ctrl+H 显示类结构图
-- `Ctrl+Q` 显示注释文档 或者 Alt+鼠标中键
-- 
 - Alt+F1 查找代码所在位置
-- Alt+1 快速打开或隐藏工程面板
-- Ctrl+Alt+ left/right 返回至上次浏览的位置
-- Alt+ left/right 切换代码视图
-- Alt+ Up/Down 在方法间快速移动定位
-- Ctrl+Shift+Up/Down 代码向上/下移动。
-- F2 或Shift+F2 高亮错误或警告快速定位
-- 
-- 代码标签输入完成后，按Tab，生成代码。
 - 选中文本，按Ctrl+Shift+F7 ，高亮显示所有该文本，按Esc高亮消失。
-- Ctrl+W 选中代码，连续按会有其他效果
 - 选中文本，按Alt+F3 ，逐个往下查找相同文本，并高亮显示。
-- 
 - Ctrl+Up/Down 光标跳转到第一行或最后一行下
-- 
 - Ctrl+B 快速打开光标处的类或方法
-- 
-- 最常用快捷键
+
+最常用快捷键
+
 - 1.Ctrl＋E，可以显示最近编辑的文件列表
 - 2.Shift＋单击标签页 可以关闭文件
-- 3.`Ctrl＋[`或`]`可以跳到大括号的开头结尾
 - 4.Ctrl＋Shift＋Backspace可以跳转到上次编辑的地方
 - 5.Ctrl＋F12，可以显示当前文件的结构
 - 6.Ctrl＋F7可以查询当前元素在当前文件中的引用，然后按F3可以选择
@@ -152,7 +123,10 @@ _coding_
 - 15.Ctrl＋Alt＋V 可以引入变量。例如把括号内的SQL赋成一个变量
 - 16.Ctrl＋Alt＋T可以把代码包在一块内，例如try/catch
 - 17.Alt＋Up and Alt＋Down可在方法间快速移动
-- 下面的不是很有用
+
+- Shift-Escape 不仅可以把焦点移到编辑器上而且还可以隐藏当前（或最后活动的）工具窗口。
+下面的不是很有用
+
 - 18.在一些地方按Alt＋Enter可以得到一些Intention Action，例如将”==”改为”equals()”
 - 19.Ctrl＋Shift＋Alt＋N可以快速打开符号
 - 20.Ctrl＋Shift＋Space在很多时候都能够给出Smart提示
@@ -169,34 +143,83 @@ _coding_
 - 31.Ctrl＋Shift＋J可以整合两行
 - 32.Alt＋F8是计算变量值
 
-##### IntelliJ IDEA使用技巧一览表
-- 在使用 InelliJ IDEA 的过程中，通过查找资料以及一些自己的摸索，发现这个众多 Java 程序员喜欢的 IDE 里有许多值得一提的小窍门，如果能熟练的将它们应用于实际开发过程中，相信它会大大节省你的开发时间，而且随之而来的还会有那么一点点成就感：） Try it ！
-- 1 、写代码时用 Alt-Insert （ Code|Generate… ）可以创建类里面任何字段的 getter 与 setter 方法。
-- `<?xml:namespace prefix = v ns = "urn:schemas-microsoft-com:vml"/>`
-- 2 、右键点击断点标记（在文本的左边栏里）激活速查菜单，你可以快速设置 enable/disable 断点或者条件它的属性。
-- 3 、 CodeCompletion （代码完成）属性里的一个特殊的变量是，激活 Ctrl-Alt-Space 可以完成在或不在当前文件里的类名。如果类没有引入则 import 标志会自动创建。
-- 4 、使用 Ctrl-Shift-V 快捷键可以将最近使用的剪贴板内容选择插入到文本。使用时系统会弹出一个含有剪贴内容的对话框，从中你可以选择你要粘贴的部分。
-- 5 、利用 CodeCompletion （代码完成）属性可以快速地在代码中完成各种不同地语句，方法是先键入一个类名地前几个字母然后再用 Ctrl-Space 完成全称。如果有多个选项，它们会列在速查列表里。
-- 6 、用 Ctrl-/ 与 Ctrl-Shift-/ 来注释 / 反注释代码行与代码块。
-- -/ 用单行注释标记（“ //… ”）来注释 / 反注释当前行或者选择地代码块。而 Ctrl-Shift-/ 则可以用块注释标记（“ /*…*/ ”）把所选块包围起来。要反注释一个代码块就在块中任何一个地方按 Ctrl-Shift-/ 即可。
-- 7 、按 Alt-Q （ View|Context Info ）可以不需要移动代码就能查看当前方法地声明。连续按两次会显示当前所编辑的类名。
-- 8 、使用 Refactor|Copy Class… 可以创建一个所选择的类的“副本”。这一点很有用，比如，在你想要创建一个大部分内容都和已存在类相同的类时。
-- 9 、在编辑器里 Ctrl-D 可以复制选择的块或者没有所选块是的当前行。
-- 10 、 Ctrl-W （选择字）在编辑器里的功能是先选择脱字符处的单词，然后选择源代码的扩展区域。举例来说，先选择一个方法名，然后是调用这个方法的表达式，然后是整个语句，然后包容块，等等。
-- 11 、如果你不想让指示事件细节的“亮球”图标在编辑器上显示，通过按 Alt-Enter 组合键打开所有事件列表然后用鼠标点击它就可以把这个事件文本附件的亮球置成非活动状态。
-- 这样以后就不会有指示特殊事件的亮球出现了，但是你仍然可以用 Alt-Enter 快捷键使用它。
-- 12 、在使用 CodeCompletion 时，可以用逗点（ . ）字符，逗号（，）分号（；），空格和其它字符输入弹出列表里的当前高亮部分。选择的名字会随着输入的字符自动输入到编辑器里。
-- 13 、在任何工具窗口里使用 Escape 键都可以把焦点移到编辑器上。
-- Shift-Escape 不仅可以把焦点移到编辑器上而且还可以隐藏当前（或最后活动的）工具窗口。
-- F12 键把焦点从编辑器移到最近使用的工具窗口。
 - 14 、在调试程序时查看任何表达式值的一个容易的方法就是在编辑器中选择文本（可以按几次 Ctrl-W 组合键更有效地执行这个操作）然后按 Alt-F8 。
 - 15 、要打开编辑器脱字符处使用的类或者方法 Java 文档的浏览器，就按 Shift-F1 （右键菜单的 External JavaDoc ）。
 - 要使用这个功能须要把加入浏览器的路径，在“ General ”选项中设置（ Options | IDE Settings ），另外还要把创建的 Java 文档加入到工程中（ File | Project Properties ）。
-- 16 、用 Ctrl-F12 （ View | File Structure Popup 
-- 
 
+### 个人习惯
+> 从eclipse风格脱离而来和原生Idea快捷键结合, 自己修改的风格 在 [个人配置文件夹下找到导入即可](#个人idea配置)
+
+- Alt Enter 自动修复
+- Ctrl Q 显示doc
+- Ctrl B 显示定义处或者调用处
+- Ctrl Shift T 自动创建JunitTest
+- Ctrl Shift F7 高亮显示光标所在元素所有出现过的地方
+- Ctrl Alt L 快速格式化代码 
+- Ctrl+Alt+O 优化导入的类和包
+
+_file_
+- Ctrl W 选中代码
+- Ctrl E 最近文件打开
+- Alt+Shift+C 最近更改的文件
+- Ctrl N 快速搜索Java文件 
+    - Ctrl Shift N 搜索所有文件
+    - Ctrl Shift Alt N 按类名首字母搜索
+- Alt+ left/right 左右切换打开的文件
+
+_coding_
+- Ctrl Shift V 显示最近的粘贴板记录
+- Ctrl O 选择要重写的方法
+- Ctrl L 选择要实现的方法 
+- Alt+Insert 生成代码(如get,set方法,构造函数等)
+- Shift+F6 重构-重命名
+- Ctrl+X 剪切行
+- Ctrl+D 复制行到下一行 `个人习惯这个是删除一行, Y才是复制`
+- Ctrl+Q 显示注释文档 或者 Alt+鼠标中键
+- Ctrl+Shift+Space 智能提示代码的补全
+- Ctrl+Shift+上/下键 代码上/下移动 `光标在一行上就是移动一行, 在代码块的首行就是移动整个代码块`
+- Ctrl+J 代码片段
+- Ctrl Space 智能补全
+    - Ctrl Shift Space 结合上下文补全
+- Ctrl+W 选中代码，连续按会有其他效果
+
+_jump_
+- Alt+ Up/Down 在方法间快速移动定位
+- Ctrl Alt ←/→ 后退/前进 至光标的上一个位置
+- F2 或 Shift+F2 高亮错误或警告快速定位
+- Ctrl＋[ 或 ]可以跳到大括号的开头结尾
+
+_search_
+- Ctrl+N 查找类
+- Ctrl+Shift+N 查找文件
+- Ctrl+R 替换文本
+- Ctrl+F 查找文本
+- Ctrl+Shift+Alt+N 全项目查找: 类中的方法或变量
+
+_view_
+- Ctrl+H 显示类结构图
+- Ctrl＋F12，可以显示当前文件的结构 `或者直接Alt S`
+- Alt A , 显示目录结构
+- Alt R , 显示运行窗口
+- Alt D , 显示debug窗口
+- Alt T , 显示TODO的窗口 | `Ctrl +/-` 全部显示和折叠 TODO
+- Alt G , 显示Gradle窗口
+- Alt M , 显示Maven窗口
+- Alt . , 显示数据库工具窗口
+
+> 在任一工具窗口, 按`ESC`都会让焦点回到编辑器 `Shift ESC` 就能关闭工具窗口并让焦点回到编辑器
+> 以上的窗口都是默认显示小bar的, 我为了窗口更大就设置为了默认隐藏, 如果想显示, 可以双击Alt, 在第二下按住不动, 鼠标就能进行点击了  
+
+_setting_
+- Ctrl Shift A 搜索设置项的位置
+- Ctrl+Shift+Alt+? 进行一些设置，找到编译自动部署，就能热加载
+
+_tips_
+- 代码标签输入完成后，按Tab或者Enter，生成代码。
+
+*********************
 ## 插件
-- Alibaba Java Code Guidelines
+- Alibaba Java Code Guidelineshuo
     - 阿里巴巴的代码规范插件
     - [《阿里巴巴Java开发规约》IDEA插件与Eclipse插件使用指南](https://zhuanlan.zhihu.com/p/30191998)
 
@@ -206,3 +229,6 @@ _coding_
 - lombok
     - 插件商店中搜索 lombok 安装重启idea即可
     - 配置 Build,Execution > Compiler > Annotation Processors 勾选上即可使用lombok的注解
+- Jrebel
+    - 热部署插件, 需要付费
+    

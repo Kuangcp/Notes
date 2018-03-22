@@ -31,7 +31,7 @@
         - [SVN](#svn)
     - [repos的使用](#repos的使用)
 
-`目录 end` *目录创建于2018-02-26* | 更多: [CSDN](http://blog.csdn.net/kcp606) | [oschina](https://my.oschina.net/kcp1104) | [码云](https://gitee.com/kcp1104) 
+`目录 end` |_2018-03-22_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
 ****************************************
 # Git基础
 ## 版本控制系统(VCS)
@@ -76,6 +76,9 @@
 
 ***************
 ### 仓库基本命令
+> 如果没有一个Github 码云这样的平台, 而只是单独的两个点, 两个用户或者IP之间要使用同一个仓库进行开发  
+> 两个人互为对方的远程库, 互为服务器即可完成, 即使使用的是动态IP, 应该也不会受太大影响
+
 #### 【git config】
 - `git config user.email ***`  和   `git config user.name ***` 这两个是必须的，
     - 如果想统一配置不想每个仓库单独配置就 `git config --global user.name` email同理
@@ -271,10 +274,12 @@
 ## CVS工具的区别以及优缺点
 
 ### Git
+> 分布式的去中心化的, 年轻化的团队在用, 个人也是习惯性用Git了
 
 ### SVN
+> [Svn笔记](/Linux/Svn.md)
 
+中心化的, 代码统一保存, 如果中心发生错误, 代码会全部毁掉, 旧的技术栈以及非开发人员还在用
 
 ## repos的使用
 > 综合各个VCS的管理方式
-

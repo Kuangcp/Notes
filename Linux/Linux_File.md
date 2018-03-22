@@ -27,6 +27,7 @@
         - [du](#du)
     - [Tips](#tips)
         - [设置交换分区](#设置交换分区)
+            - [清空交换内存](#清空交换内存)
         - [清除缓存](#清除缓存)
         - [善用.bashrc文件](#善用bashrc文件)
     - [善用FTP](#善用ftp)
@@ -46,7 +47,7 @@
             - [查看发行版](#查看发行版)
             - [查看系统所有用户信息](#查看系统所有用户信息)
 
-`目录 end` |_2018-03-21_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
+`目录 end` |_2018-03-22_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
 ****************************************
 # 【文件管理】
 > Linux中认为万物皆文件
@@ -247,12 +248,17 @@ _示例_
     - 表示物理内存剩余`10%` 才会开始使用交换分区
 - `建议，笔记本的硬盘低于 7200 转的不要设置太高的交换分区使用，大大影响性能，因为交换分区就是在硬盘上，频繁的交换数据`
 
-`看着交换内存很大不爽`
+#### 清空交换内存
 - 关闭交换分区 `sudo swapoff 交换分区文件`
 - 开启交换分区 `sudo swapon 交换分区文件`
 
+- 或者 `swapoff -a && swapon -a`
+
 ### 清除缓存
-> [参考: 如何在 Linux 中清除缓存（Cache）？](https://linux.cn/article-5627-1.html) `注意要切换到root再运行命令`
+> [参考: 如何在 Linux 中清除缓存（Cache）？](https://linux.cn/article-5627-1.html) `注意要切换到root再运行命令`  
+> 仅清除页面缓存（PageCache） `sync; echo 1 > /proc/sys/vm/drop_caches`
+> 清除目录项和inode `sync; echo 2 > /proc/sys/vm/drop_caches`
+> 清除页面缓存，目录项和inode `sync; echo 3 > /proc/sys/vm/drop_caches`
 
 - 有时候, 因为缓存的问题会引发一些很诡异的问题, 有应用缓存和系统缓存的分别
     - 例如构建工具Maven, 也会因为在一个项目空间下, 多个同名项目的缓存问题 

@@ -29,15 +29,17 @@
     - [七牛云](#七牛云)
 - [智能机器人平台](#智能机器人平台)
     - [图灵机器人](#图灵机器人)
+- [评论系统](#评论系统)
 - [消息推送](#消息推送)
     - [极光推送](#极光推送)
     - [GoEasy](#goeasy)
 - [文档](#文档)
     - [文档托管](#文档托管)
+    - [文档转换](#文档转换)
 - [测试平台](#测试平台)
 - [培训](#培训)
 
-`目录 end` |_2018-03-14_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
+`目录 end` |_2018-03-22_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
 ****************************************
 
 # 代码托管平台
@@ -280,6 +282,9 @@ _showdoc_
     - `docker run -d --name showdoc -p 4999:80 showdoc`
     - `http://localhost:4999/install/` 然后为了保险起见进容器删除项目根目录的install目录即可
     - 数据与备份 Sqlite/showdoc.db.php 是数据库; 如果有图片就还要备份图片,所以解耦就还是不上传图片了
+
+## 文档转换
+- [pandoc](http://pandoc.org/try/)
 
 ************************************************************
 # 测试平台
