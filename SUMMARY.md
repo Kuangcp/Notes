@@ -135,6 +135,8 @@
     * [ Vim ](./Linux/Vim.md)
     * [ Zsh ](./Linux/Zsh.md)
 * 【 MyBlog 】
+    * 【 MyBlog/Problem 】
+        * [ shared-libiraries ](./MyBlog/Problem/shared-libiraries.md)
     * [ 2018-3-15-install-deepin ](./MyBlog/2018-3-15-install-deepin.md)
     * [ how-to-use-junit ](./MyBlog/how-to-use-junit.md)
     * [ how-to-use-junit5 ](./MyBlog/how-to-use-junit5.md)

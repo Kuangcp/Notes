@@ -19,6 +19,7 @@
         - [tail](#tail)
         - [head](#head)
         - [sed](#sed)
+        - [awk](#awk)
     - [【磁盘管理】](#磁盘管理)
         - [dd](#dd)
         - [mount](#mount)
@@ -47,7 +48,7 @@
             - [查看发行版](#查看发行版)
             - [查看系统所有用户信息](#查看系统所有用户信息)
 
-`目录 end` |_2018-03-22_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
+`目录 end` |_2018-03-23_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
 ****************************************
 # 【文件管理】
 > Linux中认为万物皆文件
@@ -195,6 +196,10 @@ _示例_
     - i 插入 在上一行 将hello插入到第4行：`sed -in "4i hello" test.md`
     - c 替换 整行
     - s 替换 字符串的替换
+
+### awk
+> awk有3个不同版本: awk、nawk和gawk，未作特别说明，一般指gawk，gawk 是 AWK 的 GNU 版本。
+
 
 *****************************
 ## 【磁盘管理】

@@ -8,9 +8,8 @@
     - [docker安装redis](#docker安装redis)
     - [redis配置文件](#redis配置文件)
     - [Redis命令行常规使用](#redis命令行常规使用)
-        - [常用的数据类型操作](#常用的数据类型操作)
-            - [过期策略](#过期策略)
-        - [各数据类型的高级操作](#各数据类型的高级操作)
+        - [过期策略](#过期策略)
+        - [数据类型](#数据类型)
             - [字符串 String](#字符串-string)
             - [列表 list](#列表-list)
             - [集合 set](#集合-set)
@@ -22,10 +21,10 @@
         - [事务](#事务)
         - [服务器](#服务器)
         - [Run Configuration](#run-configuration)
-        - [数据安全和性能](#数据安全和性能)
-            - [持久化策略](#持久化策略)
-            - [复制](#复制)
-            - [数据迁移](#数据迁移)
+    - [数据安全和性能](#数据安全和性能)
+        - [持久化策略](#持久化策略)
+        - [复制](#复制)
+        - [数据迁移](#数据迁移)
     - [【Redis的使用】](#redis的使用)
         - [作为日志记录](#作为日志记录)
         - [作为网站统计数据](#作为网站统计数据)
@@ -37,7 +36,7 @@
         - [jedis遇到的异常](#jedis遇到的异常)
         - [SpringBoot使用Redis](#springboot使用redis)
 
-`目录 end` *目录创建于2018-02-02* | 更多: [CSDN](http://blog.csdn.net/kcp606) | [oschina](https://my.oschina.net/kcp1104) | [码云](https://gitee.com/kcp1104) 
+`目录 end` |_2018-03-23_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
 ****************************************
 # Redis
 > [Redis教程](http://www.runoob.com/redis/redis-tutorial.html)
@@ -54,13 +53,16 @@
 ## Linux下的使用
 
 ### 命令安装
+> 这样不太好做多个redis, 个人不喜欢这种方式
+
 - 安装 `apt install redis`
 - 开启数据库服务 `redis-server`
 - 打开客户端 `redis-cli`
 
 ### 解压即用
-> [下载打包好的](https://github.com/Kuangcp/Configs/tree/master/Database/redis)
-`步骤:`
+> [下载我打包好的(适用于Linux平台)](https://github.com/Kuangcp/Configs/tree/master/Database/redis)
+
+`个人配置步骤:`
 - 官网下载源码，执行`make`进行编译，编译完成后，复制src目录中的`redis-cli redis-server`就可以用了，redis-benchmark可选，测性能
     - 再复制下面的简化配置文件，或者使用源码中根目录下的配置文件自己配置下
     - [简化配置文件](https://raw.githubusercontent.com/Kuangcp/Configs/master/Database/redis/simple_redis.conf)
@@ -76,9 +78,8 @@
     basepath=$(cd `dirname $0`; pwd)
     $basepath/redis-cli -p 6379
 ```
-
 ## docker安装redis
-- [docker-install-redis](/Linux/Container/Docker_Soft.md)
+> [docker-install-redis](/Linux/Container/Docker_Soft.md)
 
 ****************************
 ## redis配置文件
@@ -87,63 +88,27 @@
 
 ********
 ## Redis命令行常规使用
-### 常用的数据类型操作
-- 【`字符串`】
-    - get 
-    - set
-    - del 
 
-- 【`list 列表 (类似队列)`】
-    - rpush 右入队列，末端
-    - lpush 左
-    - lrange 获取范围 0，-1 表示获取全部
-    - lindex 获取指定index的元素
-    - lpop 左出队列
-    - rpop
+- 关闭数据库 `shutdown` 他会在关闭前保存数据
+- 保存内存中数据 `save`
+- 认证 `auth` 口令
 
-- 【`set 集合 (类似无序的Set)`】
-    - sadd 添加一个对象`asdd key member`
-    - smembers 获取某Set所有元素 `smembers key`
-    - sismember 查询某Set是否含某元素，返回类型是 0 1 `sismember key member`
-    - srem 删除指定Set中指定元素 `srem key member`
-
-- 【`hash 散列 (类似Map 嵌套，一个内置的微型redis)`】
-    - hget
-    - hset
-    - hgetall 获取某散列所有k-v
-    - hdel 删除散列中指定k
-    - hincrby 自增
-
-- 【`zset 有序集合(元素是键值对，键是member成员，值是score分值必须是浮点数)`】
-    - zadd 将一个给定分值的成员添加到有序集合里 `zadd key 3.3 member` 
-    - zrange 根据元素在有序集合中的位置，从有序集合中获取多个元素
-        - zrange name 0 -1 withscores 获取所有并获取分值
-        - zrange name 2 30 withscores 
-    - zrevrange 从大到小排序的获取集合元素
-    - zrangebyscore 获取有序集合在给定范围中的所有元素
-        - zrangebyscore name 0 200 withscores 
-    - zrem
-    - zincrby 自增
-    - zinterstore 进行集合之间的并集（可以看作是多表连接）
-    - `精度丢失问题`	
-
-#### 过期策略
+### 过期策略
 - `expire key seconds` 设置键的过期时间
 - `PTTL/TTL key ` 查看键剩余过期时间（生存时间） ms/s
     -  -1表示永久 -2表示没有该key
-- 
 
-*******************
-### 各数据类型的高级操作
+### 数据类型
 > [中文文档](http://redisdoc.com/index.html)
 
 #### 字符串 String
-- 字符串就是字节组成的序列 可以放字节串，整数，浮点数
+> 字符串就是字节组成的序列 可以放字节串，整数，浮点数
+
 - `set key newval nx `存在则set失败
 - `set key newval xx `不存在则set失败
-- 存入的String能被解析为数值 就能使用 incr incrby decr decrby 
+- `incr incrby decr decrby`  只要存入的String能被解析为数值,就能执行这些命令: 递增或者递减
 - `incr` 是原子操作即并发的情况下不会有脏读(可用于主键生成策略)
-- `getset key val`  set新值，get旧值
+- `getset key val` get旧值并且set新值
 - `mset mget `
 	- `mset key val key val` 
 	- `mget key key key` 返回值组成的数组
@@ -155,22 +120,23 @@
 - `persist key` 去除超时时间
 - `ttl key` 查看剩余存活时间 -1表示永久 -2表示没有该key
 
-
 #### 列表 list
 - `rpush key val val val `右/尾添加元素 lpush是左/头，若表不存在就新建
 - `rpushx key value` 若表不存在就什么都不做，否则尾插元素
 - `rpop key` 从list右/尾端中删除元素返回元素值 没有了就返回null
+- `lrange key 0 -1` 取指定长度的list -1表示全部
+- `ltrim key 0 2` 截取当前的list
+- `lindex key index`   返回偏移量为index的元素(提到偏移量一般都是0开始)
+- `linsert key BEFORE|AFTER pivot value`
+    - 将值 value 插入到列表 key 当中，位于值 pivot 之前或之后。
+    - 当 pivot 不存在于列表 key 时，不执行任何操作。当 key 不存在时， key 被视为空列表，不执行任何操作。
+    - 如果 key 不是列表类型，返回一个错误。
+- `lrem key count value` 根据参数 count 的值，移除列表中与参数 value 相等的元素。
 - 阻塞式的列表弹出命令(block) `队列很有用`
     - `blpop`
     - `brpop`
     - `bpoplpush`
     - `brpoplpush` 阻塞式先右弹再左进
-- `lrange key 0 -1` 取指定长度的list -1表示全部
-- `ltrim key 0 2` 截取当前的list
-- `lindex key offset`   返回偏移量为offset的元素
-- `LINSERT key BEFORE|AFTER pivot value` 将值 value 插入到列表 key 当中，位于值 pivot 之前或之后。
-    - 当 pivot 不存在于列表 key 时，不执行任何操作。当 key 不存在时， key 被视为空列表，不执行任何操作。如果 key 不是列表类型，返回一个错误。
-- `LREM key count value` 根据参数 count 的值，移除列表中与参数 value 相等的元素。
 
 #### 集合 set
 - `SADD key member [member ...]`
@@ -180,7 +146,7 @@
 - `SINTER key [key ...]` 返回一个集合的全部成员，该集合是所有给定集合的交集。不存在的 key 被视为空集。当给定集合当中有一个空集时，结果也为空集(根据集合运算定律)。
 - `SINTERSTORE destination key [key ...]` 与sdiffstore类似
 - `SISMEMBER key member` 判断 member 元素是否集合 key 的成员。
-- `SMEMBERS key` 
+- `SMEMBERS key` 获取某Set所有元素
 - `SMOVE source destination member` 将 member 元素从 source 集合移动到 destination 集合。 SMOVE 是原子性操作。
 - `SPOP key` 移除并返回集合中的一个随机元素
 - `SRANDMEMBER key [count]` 如果命令执行时，只提供了 key 参数，那么返回集合中的一个随机元素
@@ -190,31 +156,36 @@
 - `SSCAN key cursor [MATCH pattern] [COUNT count]` 参考 SCAN 命令
 
 #### 有序集合 zset
+> (元素是键值对，键是member成员，值是score分值必须是浮点数
 
-- ZADD
+- `zadd` 将一个给定分值的成员添加到有序集合里
 - ZCARD
 - ZCOUNT
-- ZINCRBY
-- ZRANGE
-- ZRANGEBYSCORE
+- `zincrby` 自增
+- zrange 根据元素在有序集合中的位置，从有序集合中获取多个元素
+    - zrange name 0 -1 withscores 获取所有并获取分值
+    - zrange name 2 30 withscores 
+- `zrangebyscore` 获取有序集合在给定范围中的所有元素
+    - `zrangebyscore name 0 200 withscores`
 - ZRANK
 - ZREM
 - ZREMRANGEBYRANK
 - ZREMRANGEBYSCORE
-- ZREVRANGE
+- `zrevrange` 从大到小排序的获取集合元素
 - ZREVRANGEBYSCORE
 - ZREVRANK
 - ZSCORE
 - ZUNIONSTORE
-- ZINTERSTORE
+- `zinterstore` 进行集合之间的并集（可以看作关系型数据库的多表连接）
 - ZSCAN
 - ZRANGEBYLEX
 - ZLEXCOUNT
 - ZREMRANGEBYLEX
 
 #### 散列 hash
+> (类似Map 嵌套，一个内置的微型redis)
 
-- HDEL
+- HDEL 删除散列中指定的K
 - HEXISTS
 - HGET
 - HGETALL
@@ -231,17 +202,17 @@
 - HSTRLEN
 
 #### HyperLogLog
-PFADD
-PFCOUNT
-PFMERGE
+- PFADD
+- PFCOUNT
+- PFMERGE
 
 #### GEO【地理位置】
-GEOADD
-GEOPOS
-GEODIST
-GEORADIUS
-GEORADIUSBYMEMBER
-GEOHASH
+- GEOADD
+- GEOPOS
+- GEODIST
+- GEORADIUS
+- GEORADIUSBYMEMBER
+- GEOHASH
 
 ***************
 ### Pub/Sub发布订阅
@@ -282,32 +253,31 @@ GEOHASH
 *************
 ### 服务器
 
-BGREWRITEAOF
-BGSAVE
-CLIENT GETNAME
-CLIENT KILL
-CLIENT LIST
-CLIENT SETNAME
-CONFIG GET
-CONFIG RESETSTAT
-CONFIG REWRITE
-CONFIG SET
-DBSIZE
-DEBUG OBJECT
-DEBUG SEGFAULT
-FLUSHALL
-FLUSHDB
-INFO
-LASTSAVE
-MONITOR
-PSYNC
-SAVE
-SHUTDOWN
-SLAVEOF
-SLOWLOG
-SYNC
-TIME
-
+- BGREWRITEAOF
+- BGSAVE
+- CLIENT GETNAME
+- CLIENT KILL
+- CLIENT LIST
+- CLIENT SETNAME
+- CONFIG GET
+- CONFIG RESETSTAT
+- CONFIG REWRITE
+- CONFIG SET
+- DBSIZE
+- DEBUG OBJECT
+- DEBUG SEGFAULT
+- FLUSHALL
+- FLUSHDB
+- INFO
+- LASTSAVE
+- MONITOR
+- PSYNC
+- SAVE
+- SHUTDOWN
+- SLAVEOF
+- SLOWLOG
+- SYNC
+- TIME
 *****************************
 	
 ### Run Configuration	
@@ -318,12 +288,13 @@ TIME
 - *loglevel*
     - `./redis-server /etc/redis/6379.conf --loglevel debug	`
 
-### 数据安全和性能
-#### 持久化策略
-#### 复制
+***********
+## 数据安全和性能
+### 持久化策略
+### 复制
 
-#### 数据迁移
-- 使用主从复制来进行数据
+### 数据迁移
+- 使用主从复制来进行数据, 或者自己写Py脚本?
 
 *******
 ## 【Redis的使用】

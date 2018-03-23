@@ -25,15 +25,17 @@
         - [其他业内主流编解码框架](#其他业内主流编解码框架)
             - [MessagePack](#messagepack)
             - [Protobuf](#protobuf)
+                - [Linux上安装](#linux上安装)
+                - [对于Java的使用](#对于java的使用)
             - [Thrift](#thrift)
             - [Marshalling](#marshalling)
     - [反射的使用](#反射的使用)
 
-`目录 end` |_2018-03-21_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
+`目录 end` |_2018-03-23_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
 ****************************************
 # Java基础
 ## 【类和字节码】
-> [个人相关代码](https://github.com/Kuangcp/JavaBase/tree/master/src/main/java/com/classfile) 
+> [个人相关代码](https://github.com/Kuangcp/JavaBase/tree/master/java-classfile/src/main/java/com/github/kuangcp) 
 
 ### 类加载和类对象
 - 一个.class　文件定义了JVM中的类型，包括了域,方法，继承信息，注解和其他元数据
@@ -181,6 +183,36 @@ Window ==> Preferences ==> Java ==> Compiler ==> Error/Warnings ==>Potential pro
         - 通过标识字段的顺序, 可以实现协议的前向兼容 _在不同版本的数据结构进程间进行数据传递_
         - 自动代码生成, 不需要手工编写同样数据结构的C++和Java版本;
         - 方便后续的管理和维护,相比于代码, 结构化的文档更容易管理和维护
+
+##### Linux上安装
+> 只是安装2.5版本 [参考博客: linux下Google的Protobuf安装及使用笔记](http://www.cnblogs.com/brainy/archive/2012/05/13/2498671.html) | [参考:proto buffer 安装 及 调用](http://dofound.blog.163.com/blog/static/1711432462013524111644655/)
+
+- [下载2.5](https://github.com/google/protobuf/releases/tag/v2.5.0) 并解压 
+    - 进入目录  `./configure` 
+    -  `make` 然后 `make check` 然后 `sudo make install`
+    - `protoc --version` 有版本则安装成功
+
+> 注意: ./configure 时, 默认会安装在/usr/local目录下，可以加--prefix=/usr来指定安装到/usr/lib下  
+> 如果不加, 上述参数就要执行 `export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/lib`  
+>> 当然,可以将这个环境变量的设置加在 .zshrc 或者 .bashrc 里  
+> 不然就会报错: `protoc: error while loading shared libraries: libprotobuf.so.8: cannot open shared object file: No such file or directory`
+
+##### 对于Java的使用
+`简单使用`  
+touch _hi.proto_
+```protobuf
+package lm;
+message helloworld{
+    required int32 id = 1;//ID
+    required string str = 2;//str
+    optional int32 opt = 3;//optional field
+}
+```
+- 据此生成Java文件 `mkdir src && protoc --java_out=./src hi.proto`
+
+*********************
+> [Google Protocol Buffer 的使用和原理](https://www.ibm.com/developerworks/cn/linux/l-cn-gpb/index.html)
+
 
 #### Thrift
 > 源于Facebook, 支持多种语言: C++ C# Cocoa Erlang Haskell Java Ocami Perl PHP Python Ruby Smalltalk

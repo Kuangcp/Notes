@@ -6,7 +6,7 @@
     - [定时任务crontab](#定时任务crontab)
 - [实用的工具](#实用的工具)
 
-`目录 end` *目录创建于2018-02-05* | 更多: [CSDN](http://blog.csdn.net/kcp606) | [oschina](https://my.oschina.net/kcp1104) | [码云](https://gitee.com/kcp1104) 
+`目录 end` |_2018-03-23_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
 ****************************************
 # 系统常用基础命令
 
@@ -29,6 +29,7 @@
 - w | uptime _查看启动情况_
 - wc -l file _统计文件行数_
 - last _查看Linux登录信息_
+    - last -n 5 最近五次登录
 
  - cmatrix _装13,字符雨_
  
