@@ -3,12 +3,15 @@
 - [Maven](#maven)
     - [1.安装](#1安装)
         - [1.1.Maven常用命令](#11maven常用命令)
-        - [1.2.setting.xml配置](#12settingxml配置)
+            - [从jar安装到本地库](#从jar安装到本地库)
+        - [1.2.settings.xml配置](#12settingsxml配置)
+            - [配置镜像源](#配置镜像源)
+                - [阿里云](#阿里云)
     - [2.maven配置](#2maven配置)
         - [2.1.eclipse中配置](#21eclipse中配置)
         - [2.2.配置插件](#22配置插件)
         - [2.3.配置文件的详解](#23配置文件的详解)
-        - [2.4 配置代码版本](#24-配置代码版本)
+        - [2.4 配置代码编译版本](#24-配置代码编译版本)
     - [3.maven概念](#3maven概念)
     - [4.maven的依赖](#4maven的依赖)
         - [4.1.处理项目间依赖方法](#41处理项目间依赖方法)
@@ -28,9 +31,17 @@
     - [7.构建工具对比](#7构建工具对比)
         - [7.1.Maven和Ant的区别一](#71maven和ant的区别一)
         - [7.2.Maven的优势](#72maven的优势)
-    - [发布构件](#发布构件)
+    - [8.发布构件](#8发布构件)
+    - [9.配置私服](#9配置私服)
+        - [nexus](#nexus)
+        - [码云](#码云)
+            - [创建仓库](#创建仓库)
+            - [使用](#使用)
+            - [Gradle](#gradle)
+                - [Maven](#maven)
+            - [后期添加构建](#后期添加构建)
 
-`目录 end` |_2018-03-20_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
+`目录 end` |_2018-03-24_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
 ****************************************
 # Maven
 > [官网](https://maven.apache.org/) | [官网手册](https://maven.apache.org/guides/) | [http://takari.io/ 在线练习网](http://takari.io/)
@@ -39,8 +50,6 @@
 * 下载zip包解压，将bin目录配置至PATH（最好是配置HOME然后引用）
 * 修改conf下53行的setting标签，指定本地仓库的路径
 * 在eclipse或Myeclipse中add，并采用自己的setting文件
-
-
 
 ### 1.1.Maven常用命令
 > mvn [插件]:[目标] [参数]
@@ -61,18 +70,39 @@
 * mvn deploy：将jar包发布到远程仓库
 * mvn eclipse:eclipse ：生成 Eclipse 项目文件
 
+#### 从jar安装到本地库
 ```
-    mvn install:install-file -Dfile=D:\mvn\spring-context-support-3.1.0.RELEASE.jar\
-     -DgroupId=org.springframework -DartifactId=spring-context-support\
-     -Dversion=3.1.0.RELEASE -Dpackaging=jar
+mvn install:install-file 
+    -Dfile=D:\mvn\spring-context-support-3.1.0.RELEASE.jar \
+    -DgroupId=org.springframework  \
+    -DartifactId=spring-context-support \
+    -Dversion=3.1.0.RELEASE \
+    -Dpackaging=jar
+```
+- 安装并跳过测试 `mvn install -Dmaven.test.skip=true`
 
-```
 *****
-### 1.2.setting.xml配置
+### 1.2.settings.xml配置
+> 要特别注意 `settings.xml` 加载顺序是 `maven解压目录的conf/`下的 然后 `用户目录下/.m2/` 下的 后者覆盖前者
 
+#### 配置镜像源
+> 在 用户目录下 .m2/setttings.xml 中 找到 mirrors 标签 进行添加即可
+
+##### 阿里云
+
+```xml
+<mirror> 
+    <id>alimaven</id> 
+    <name>aliyun maven</name> 
+    <url>http://maven.aliyun.com/nexus/content/groups/public/</url> 
+    <mirrorOf>central</mirrorOf> 
+</mirror> 
+```
+
+*****************
 ## 2.maven配置
 ### 2.1.eclipse中配置
-- 高版本自带maven，需要注意的是eclipse的JRE环境目录要选择jdk下的JRE
+> 高版本自带maven，需要注意的是eclipse的JRE运行环境目录要选择jdk下的JRE目录
 
 ### 2.2.配置插件
 > [插件地址](http://maven.apache.org/plugins/index.html)
@@ -143,7 +173,8 @@
 
 配置:源码package成JAR包：(pom.xml中配置)
 `<packaging>jar</packaging>`
-### 2.4 配置代码版本
+
+### 2.4 配置代码编译版本
 ```xml
 <build>
     <plugins>
@@ -159,6 +190,8 @@
     </plugins>
 </build>
 ```
+
+***********************
 ## 3.maven概念
 - 坐标：三个标签唯一的标识了项目
 - 仓库：jar包的集合目录
@@ -400,5 +433,58 @@ A 项目 compile
 - 目录结构规范，让开发者从一个maven项目过度到另一maven项目很容易。
 - 大量的开源项目使用了maven。
 
-## 发布构件
+********************
+## 8.发布构件
 > [将项目发布到 maven 中央仓库踩过的坑](http://blog.csdn.net/h3243212/article/details/72374363)
+
+*********************
+## 9.配置私服
+> 不用去跑审核流程, 私有, 快速, 便捷
+
+### nexus
+> 需要运行软件, 一般公司内部局域网使用, 如果自己有服务器也能开放给公众使用
+[参考博客: maven私服搭建及gradle上传](https://www.jianshu.com/p/b1fe26d5b8c8)
+
+### 码云
+> 利用公开仓库来搭建私服 | [参考博客:  使用git仓库搭建maven私服 ](https://my.oschina.net/polly/blog/1649362)
+
+#### 创建仓库
+> 当然了在各个托管平台都可以的, 只不过码云是国内的, 毕竟要快 github gitlab bitbucket 就....
+
+1. 创建公开仓库, 下拉
+2. 修改的是`用户目录/.m2/settings.xml` 文件
+    - 修改本地仓库为`<localRepository>/myth/mvnRepo</localRepository>`
+3. 修改的目录就是下拉的仓库的绝对路径
+4. 然后进入原来本地库找到Jar位置, 安装到现在新的本地库 [参考安装命令](#从jar安装到本地库)
+5. 等安装成功后, 你就会发现这个git仓库下多了很多jar, 你只需要自己的jar上传到git服务器即可, 但是有不能删除, 因为maven下次安装jar又要用到这些jar 
+	- 最简单的方法就是 `.gitignore` 文件 忽略掉无关目录 add 后仔细检查下添加文件是否正确即可
+
+#### 使用
+#### Gradle
+build.gradle 中添加
+```
+repositories {
+    maven{
+        url "https://gitee.com/你的用户名/创建的仓库/raw/master"
+    }
+}
+```
+##### Maven
+pom.xml中添加
+```
+<repositories>
+  <repository>
+    <id>mvnrepo</id>
+    <name>mvn repository</name>
+    <url>https://gitee.com/用户名/仓库/raw/master</url>
+  </repository>
+</repositories>
+```
+#### 后期添加构建
+> 一样的, 先注释掉新的本地库配置, 然后日常使用原先的本地库, 只有到要发布上传上去了才修改为新本地库
+
+1. 构建好jar 
+2. 修改配置文件 指向到Git本地库
+3. 从jar安装到Git本地库
+4. 提交到码云上
+5. 配置文件改回来
