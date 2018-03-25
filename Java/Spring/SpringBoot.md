@@ -4,7 +4,6 @@
     - [开始使用](#开始使用)
     - [安装SpringBootCLI](#安装springbootcli)
     - [Springboot的测试模块](#springboot的测试模块)
-    - [参考博客](#参考博客)
     - [配置文件](#配置文件)
         - [多种配置文件并切换](#多种配置文件并切换)
             - [yml方式](#yml方式)
@@ -13,6 +12,7 @@
         - [上传下载文件](#上传下载文件)
         - [错误页面跳转配置](#错误页面跳转配置)
         - [跨域](#跨域)
+    - [全局异常处理](#全局异常处理)
     - [HTTPS的配置](#https的配置)
     - [线程池](#线程池)
     - [项目部署](#项目部署)
@@ -22,10 +22,12 @@
         - [构建docker镜像](#构建docker镜像)
             - [gradle结合docker](#gradle结合docker)
 
-`目录 end` *目录创建于2018-01-14*
+`目录 end` |_2018-03-25_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
 ****************************************
 # SpringBoot
 > 一个简化Spring开发的框架,微服务SpringCloud的基础
+- [Springboot探索](https://juejin.im/post/598dd709f265da3e213f0c57)
+- [SpringBoot入门](http://blog.csdn.net/jsyxcjw/article/details/46763639)
 
 ## 开始使用
 > 使用Idea的话就可以直接创建项目 使用别的可以下载zip进行导入 [官方下载地址](http://start.spring.io/)
@@ -45,11 +47,6 @@
 	- 启动嵌入式的Servlet容器来进行测试，下断言
 - 使用随机端口启动服务器 配置local.server.port=0
 - 使用Selenium来测试HTML页面，模拟浏览器的动作，查看系统运行状态
-
-**********
-## 参考博客
-- [Springboot探索](https://juejin.im/post/598dd709f265da3e213f0c57)
-- [SpringBoot入门](http://blog.csdn.net/jsyxcjw/article/details/46763639)
 
 ***********
 ## 配置文件
@@ -155,7 +152,10 @@ public class CorsConfig {
     }
 }
 ```
-
+## 全局异常处理
+1. 新建类, 加上注解 ControllerAdvice
+2. 方法上使用注解 `ExceptionHandler(Exception.class)` 处理所有异常
+3. 然后返回值的写法和普通Controller一样, 返回JSON就`ResponseBody`
 
 *******************
 ## HTTPS的配置

@@ -26,6 +26,7 @@
     - [【Linux】](#linux)
     - [Database](#database)
     - [前端](#前端)
+        - [Vue](#vue)
         - [有趣](#有趣)
         - [资源仓库](#资源仓库)
             - [字体](#字体)
@@ -35,7 +36,7 @@
     - [工作](#工作)
         - [简历](#简历)
 
-`目录 end` |_2018-03-16_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
+`目录 end` |_2018-03-25_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
 ****************************************
 
 # 【Organization】
@@ -199,11 +200,17 @@
 - [ssdb](https://github.com/ideawu/ssdb) `一个类似redis的键值对数据库`
 
 ## 前端
+- [amazeUI](http://amazeui.org/)
+- [hui](http://h-ui.net/Hui-overview.shtml)
 - [LayUI](https://github.com/sentsin/layui/) `国产layUI框架`
-- [vue-layui](https://github.com/IBAS0742/vue-layui)`vue和layui的结合`
 - [js代码块集合](https://github.com/Chalarangelo/30-seconds-of-code)
-- [ssr-web](https://github.com/xiaofuzi/ssr-web)`基于vue的静态博客生成器`
 - [flowchart](https://github.com/adrai/flowchart.js)`绘制svg flow图形`
+
+### Vue
+- [iview](https://github.com/iview/iview)`vue 的前端组件` | [文档](https://www.iviewui.com/docs/guide/start)
+- [vue-rap](https://gitee.com/tengzhinei/Vue-rap) | [文档](https://www.kancloud.cn/tengzhinei/vue-rap)
+- [vue-layui](https://github.com/IBAS0742/vue-layui)`vue和layui的结合`
+- [ssr-web](https://github.com/xiaofuzi/ssr-web)`基于vue的静态博客生成器`
 
 ### 有趣
 - [一个在线游戏](https://github.com/memdealloc/memdealloc.github.io)
