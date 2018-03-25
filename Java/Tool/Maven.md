@@ -37,7 +37,7 @@
         - [码云](#码云)
             - [创建仓库](#创建仓库)
             - [使用](#使用)
-            - [Gradle](#gradle)
+                - [Gradle](#gradle)
                 - [Maven](#maven)
             - [后期添加构建](#后期添加构建)
 
@@ -48,8 +48,6 @@
 
 ## 1.安装
 * 下载zip包解压，将bin目录配置至PATH（最好是配置HOME然后引用）
-* 修改conf下53行的setting标签，指定本地仓库的路径
-* 在eclipse或Myeclipse中add，并采用自己的setting文件
 
 ### 1.1.Maven常用命令
 > mvn [插件]:[目标] [参数]
@@ -70,6 +68,8 @@
 * mvn deploy：将jar包发布到远程仓库
 * mvn eclipse:eclipse ：生成 Eclipse 项目文件
 
+- 安装项目并跳过测试 `mvn install -Dmaven.test.skip=true`
+
 #### 从jar安装到本地库
 ```
 mvn install:install-file 
@@ -79,8 +79,6 @@ mvn install:install-file
     -Dversion=3.1.0.RELEASE \
     -Dpackaging=jar
 ```
-- 安装并跳过测试 `mvn install -Dmaven.test.skip=true`
-
 *****
 ### 1.2.settings.xml配置
 > 要特别注意 `settings.xml` 加载顺序是 `maven解压目录的conf/`下的 然后 `用户目录下/.m2/` 下的 后者覆盖前者
@@ -460,9 +458,9 @@ A 项目 compile
 	- 最简单的方法就是 `.gitignore` 文件 忽略掉无关目录 add 后仔细检查下添加文件是否正确即可
 
 #### 使用
-#### Gradle
+##### Gradle
 build.gradle 中添加
-```
+```groovy
 repositories {
     maven{
         url "https://gitee.com/你的用户名/创建的仓库/raw/master"
@@ -471,7 +469,7 @@ repositories {
 ```
 ##### Maven
 pom.xml中添加
-```
+```xml
 <repositories>
   <repository>
     <id>mvnrepo</id>

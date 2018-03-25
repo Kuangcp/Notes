@@ -131,6 +131,8 @@
 _求长_ `${#var}`
 
 _字符串拆分成数组_
+> [修改分隔符](http://www.cnblogs.com/FlyFive/p/3640243.html) | [三种方法概述](https://blog.csdn.net/bitcarmanlee/article/details/50973454)
+
 1. 如果是空格分割的字符串
     - 直接 `for element in $target`
 

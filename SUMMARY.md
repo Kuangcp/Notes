@@ -9,19 +9,6 @@
 * [ SUMMARY ](./SUMMARY.md)
 * [ Soft_List ](./Soft_List.md)
 * [ Website ](./Website.md)
-* 【 Article 】
-    * 【 Article/backup 】
-        * [ Process_2016 ](./Article/backup/Process_2016.md)
-        * [ Process_2017 ](./Article/backup/Process_2017.md)
-        * [ Project_Process_2017 ](./Article/backup/Project_Process_2017.md)
-    * [ CSDN的Markdown案例 ](./Article/CSDN的Markdown案例.md)
-    * [ FreeBook ](./Article/FreeBook.md)
-    * [ Java世界观 ](./Article/Java世界观.md)
-    * [ Memorandum ](./Article/Memorandum.md)
-    * [ NotCode ](./Article/NotCode.md)
-    * [ ReadBook ](./Article/ReadBook.md)
-    * [ UnReadBook ](./Article/UnReadBook.md)
-    * [ 代码整洁 ](./Article/代码整洁.md)
 * 【 Blog 】
     * [ Arithmetic ](./Blog/Arithmetic.md)
     * [ Blog ](./Blog/Blog.md)
