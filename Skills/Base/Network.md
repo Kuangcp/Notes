@@ -9,11 +9,12 @@
         - [HTTP的缓存](#http的缓存)
         - [Session和Cookie](#session和cookie)
         - [HTTP1.1 和 HTTP2](#http11-和-http2)
+    - [Websocket](#websocket)
     - [安全](#安全)
         - [SYNFlood攻击](#synflood攻击)
         - [CSRF](#csrf)
 
-`目录 end` |_2018-03-11_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
+`目录 end` |_2018-03-26_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
 ****************************************
 # 网络
 
@@ -47,6 +48,17 @@ HTTP2的特点:
 2. server端可以push资源给client端
 
 [参考博客: HTTP/2](http://www.hollischuang.com/archives/2066)
+
+**********************************
+## Websocket
+> 本质就是TCP的简单封装, 不像HTTP那样应答模式, 一次连接后就保持全双工模式
+
+1. 单一的TCP连接, 采用全双工模式通信
+2. 对代理, 防火墙和路由器透明
+3. 无头部信息, Cookie, 身份验证
+4. 无安全开销
+5. 通过 ping/pong 帧 保持链路激活
+6. 服务器可以主动传递消息给客户端, 不需要客户端轮询
 
 *******************************
 ## 安全

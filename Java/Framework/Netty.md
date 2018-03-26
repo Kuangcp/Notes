@@ -3,10 +3,11 @@
 - [Netty](#netty)
     - [原理](#原理)
         - [编解码相关](#编解码相关)
+            - [Protobuf](#protobuf)
     - [使用](#使用)
         - [配置环境](#配置环境)
 
-`目录 end` |_2018-03-21_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
+`目录 end` |_2018-03-26_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
 ****************************************
 # Netty
 > [trustlin](https://github.com/trustin)`Netty mina 的作者`
@@ -27,7 +28,14 @@
 [Netty高性能开发备忘录](http://www.10tiao.com/html/321/201611/2659763226/5.html)
 
 ### 编解码相关
-> [更多](https://github.com/kuangcp/Notes/blob/master/Java/AdvancedLearning/ClassFile.md)
+> [更多](https://github.com/kuangcp/Notes/blob/master/Java/AdvancedLearning/ClassFile.md#其他业内主流编解码框架)
+
+#### Protobuf
+> [Netty中的使用案例](https://github.com/Kuangcp/NettyBook2/blob/master/src/main/java/com/phei/netty/codec/protobuf/README.md)
+> 要搭配处理半包的解码器
+1. 使用 ProtobufVarint32FrameDecoder 
+2. 继承自 LengthFieldBasedFrameDecoder
+3. 继承自 ByteToMessageDecoder 自己处理
 
 *****************************
 ## 使用

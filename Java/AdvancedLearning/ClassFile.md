@@ -31,7 +31,7 @@
             - [Marshalling](#marshalling)
     - [反射的使用](#反射的使用)
 
-`目录 end` |_2018-03-23_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
+`目录 end` |_2018-03-26_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
 ****************************************
 # Java基础
 ## 【类和字节码】
@@ -183,6 +183,8 @@ Window ==> Preferences ==> Java ==> Compiler ==> Error/Warnings ==>Potential pro
         - 通过标识字段的顺序, 可以实现协议的前向兼容 _在不同版本的数据结构进程间进行数据传递_
         - 自动代码生成, 不需要手工编写同样数据结构的C++和Java版本;
         - 方便后续的管理和维护,相比于代码, 结构化的文档更容易管理和维护
+
+> 只是编解码的工具, 不支持读半包, 粘包拆包
 
 ##### Linux上安装
 > 只是安装2.5版本 [参考博客: linux下Google的Protobuf安装及使用笔记](http://www.cnblogs.com/brainy/archive/2012/05/13/2498671.html) | [参考:proto buffer 安装 及 调用](http://dofound.blog.163.com/blog/static/1711432462013524111644655/)

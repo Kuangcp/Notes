@@ -39,16 +39,16 @@
             - [电脑](#电脑)
     - [在Linux上操作压缩文件的命令](#在linux上操作压缩文件的命令)
         - [tar 归档 打包](#tar-归档-打包)
-            - [压缩](#压缩)
-            - [解压](#解压)
-            - [总结](#总结)
+        - [压缩](#压缩)
+        - [解压](#解压)
+        - [总结](#总结)
     - [常用文件](#常用文件)
         - [划分](#划分)
         - [使用](#使用)
             - [查看发行版](#查看发行版)
             - [查看系统所有用户信息](#查看系统所有用户信息)
 
-`目录 end` |_2018-03-23_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
+`目录 end` |_2018-03-26_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
 ****************************************
 # 【文件管理】
 > Linux中认为万物皆文件
@@ -364,7 +364,7 @@ _tar_
     - `tar -cphf etc.tar /etc`
 
 ********************
-#### 压缩
+### 压缩
 _tar_
 - tar -cvf a.tar *.txt
     - z tar.gz
@@ -391,7 +391,7 @@ _zip_
     - `-d filename` 在zip中删除某文件 删除某目录`dir/*`
         - _注意_: 所有的文件和目录都是相对于zip的根目录的完整路径
 
-#### 解压
+### 解压
 _tar_
 - `tar -xvf file.tar` //解压 tar包
 - `tar -xzvf file.tar.gz` //解压tar.gz
@@ -408,7 +408,7 @@ _unzip_
     - -l 不解压,查看所有文件 
     - -O 指定编码
 
-#### 总结
+### 总结
 ```
     *.tar 用 tar -xvf 解压
     *.gz 用 gzip -d或者gunzip 解压

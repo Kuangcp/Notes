@@ -6,7 +6,7 @@
     - [使用](#使用)
     - [查看](#查看)
 
-`目录 end` |_2018-03-22_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
+`目录 end` |_2018-03-26_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
 ****************************************
 # SVN
 > 传统的中心化版本控制工具
@@ -17,10 +17,13 @@ _Ubuntu_
 `sudo apt install subversion`
 
 ## 使用
-[参考博客: linux-svn命令](http://blog.csdn.net/gexiaobaohelloworld/article/details/7752862) | [SVN常用命令](http://www.cnblogs.com/SanMaoSpace/p/5102878.html)  
+[参考博客: linux-svn命令](http://blog.csdn.net/gexiaobaohelloworld/article/details/7752862) | [SVN常用命令](http://www.cnblogs.com/SanMaoSpace/p/5102878.html)
+| [Linux下SVN客户端使用教程（全）](https://blog.csdn.net/qq_27968607/article/details/55253997)  
 
 - 下拉代码 `svn co URL`  
-- 添加文件 `svn add * --force`  
+- 添加文件 
+    - svn add file , 或者 *.java 当前目录下java文件, 或者 文件夹, 一般使用文件夹好点也就src目录
+    - 强制添加所有文件`svn add * --force`  
 - 将改动的文件提交到版本库 `svn ci -m “update“` 
     - 因为是中心化的仓库, 所以提交就是推送到总仓库了, 不像Git那样先提到到本地仓库, 然后推送至远程仓库
 - 更新本地代码 `svn up`  
