@@ -51,7 +51,7 @@
         - [数据类型](#数据类型)
         - [常见函数](#常见函数)
 
-`目录 end` |_2018-03-11_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
+`目录 end` |_2018-03-27_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
 ****************************************
 
 # Mysql
@@ -65,13 +65,15 @@
   - （启动显示cp 0 0 localhost.localdomain:mysql *:* LISTEN - ）
 - 启动服务 ： `sudo /etc/init.d/mysql restart `
 - 查看编码 ： `status` 或者 `show variables like 'character_set_%`
+
 _配置_
 - 打开配置文件： `sudo gedit /etc/mysql/mysql.conf.d/mysqld.cnf`
     - `[mysqld]`下添加一行： `character-set-server=utf8`
-    - `[client]`下添加 `efault-character-set = utf8`
+    - `[client]`下添加 `default-character-set = utf8`
     - 如果要允许远程访问，就注释掉 `bind-address`
     - 如果是服务器要配置远程访问 就 bind-address=服务器IP
     - 确保skip-networking被删除或者屏蔽，否则不支持TCP/IP 访问
+
 _重启_
 - 重启MySQL ：`sudo systemctl restart mysql`
 
@@ -315,12 +317,9 @@ TIMESTAMP(5) -> TIMESTAMP(6)
 - 查看权限 `show grants for zx_root;`
 
 ### 创建
-> 创建本地超级用户： CREATE USER 'myth'@'localhost' IDENTIFIED BY 'ad'; 
-
-> 授予所有权限 GRANT all privileges  ON *.* TO 'myth'@'localhost';
-
-> 创建远程访问指定数据库用户 ： CREATE USER 'myth'@'%' IDENTIFIED BY 'ad'; 
-
+> 创建本地超级用户： CREATE USER 'myth'@'localhost' IDENTIFIED BY 'ad';   
+> 授予所有权限 GRANT all privileges  ON *.* TO 'myth'@'localhost';   
+> 创建远程访问指定数据库用户 ： CREATE USER 'myth'@'%' IDENTIFIED BY 'ad';   
 > 授予数据库db的所有权限 GRANT all privileges  ON db.* TO 'myth'@'%';
 
 - 创建用户 `CREATE USER 'username'@'host' IDENTIFIED BY 'password';`

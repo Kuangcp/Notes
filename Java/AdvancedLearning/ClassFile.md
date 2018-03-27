@@ -31,7 +31,7 @@
             - [Marshalling](#marshalling)
     - [反射的使用](#反射的使用)
 
-`目录 end` |_2018-03-26_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
+`目录 end` |_2018-03-27_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
 ****************************************
 # Java基础
 ## 【类和字节码】
@@ -165,12 +165,10 @@ Window ==> Preferences ==> Java ==> Compiler ==> Error/Warnings ==>Potential pro
 > 因为Java序列化的性能和存储开销都表现不好,而且不能跨语言, 所以一般不使用Java的序列化而是使用以下流行的库
 
 #### MessagePack
-> [Github:msgpack](https://github.com/msgpack)
-
-[参考博客: MessagePack：一种高效二进制序列化格式](http://hao.jobbole.com/messagepack/)
+> [Github:msgpack](https://github.com/msgpack) | [参考博客: MessagePack：一种高效二进制序列化格式](http://hao.jobbole.com/messagepack/)
 
 #### Protobuf
-> Google开源的库 全称 Google Protocol Buffers
+> Google开源的库 全称 `Google Protocol Buffers`
 
 - 他将数据结构以 proto后缀的文件进行描述, 通过代码生成工具, 可以生成对应数据结构的POJO对象和Protobuf相关的方法和属性
     - 特点:

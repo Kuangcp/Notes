@@ -31,6 +31,7 @@
             - [清空交换内存](#清空交换内存)
         - [清除缓存](#清除缓存)
         - [善用.bashrc文件](#善用bashrc文件)
+        - [比较两个文件的不同](#比较两个文件的不同)
     - [善用FTP](#善用ftp)
         - [基础](#基础)
         - [使用](#使用)
@@ -48,7 +49,7 @@
             - [查看发行版](#查看发行版)
             - [查看系统所有用户信息](#查看系统所有用户信息)
 
-`目录 end` |_2018-03-26_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
+`目录 end` |_2018-03-27_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
 ****************************************
 # 【文件管理】
 > Linux中认为万物皆文件
@@ -304,6 +305,9 @@ _示例_
 - [示例文件](https://github.com/Kuangcp/Notes/tree/master/ConfigFiles/Linux/VSCode.desktop)
 - 如要将快捷方式放在启动菜单内 将desktop文件放在 `/usr/share/applications/` 目录下即可
 - 注意：目录不能有空格 等特殊字符
+
+### 比较两个文件的不同
+- `grep -vwf 文件1 文件2`
 
 ************************************
 ## 善用FTP

@@ -1,23 +1,25 @@
 `目录 start`
  
-- [Springboot集成SpringSecurity](#springboot集成springsecurity)
-    - [Demo](#demo)
+- [SpringSecurity](#springsecurity)
+    - [SpringBoot的集成Demo](#springboot的集成demo)
         - [快速上手-初步入门：](#快速上手-初步入门)
             - [创建单用户单角色的安全控制](#创建单用户单角色的安全控制)
             - [多用户多角色的实现思路](#多用户多角色的实现思路)
                 - [每个身份都使用一个登录实体类](#每个身份都使用一个登录实体类)
                 - [另一种思路：](#另一种思路)
+        - [JWT](#jwt)
     - [实现细节](#实现细节)
         - [关于注解的几种使用方式](#关于注解的几种使用方式)
             - [@Secured](#@secured)
             - [@RolesAllowed](#@rolesallowed)
             - [SpringSecurity3.0 开始提供了 SpEL表达式](#springsecurity30-开始提供了-spel表达式)
         - [保护方法应用](#保护方法应用)
+    - [社交登录](#社交登录)
 
-`目录 end` *目录创建于2018-01-14*
+`目录 end` |_2018-03-27_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
 ****************************************
-# Springboot集成SpringSecurity
-## Demo
+# SpringSecurity
+## SpringBoot的集成Demo
 ### 快速上手-初步入门：
 #### 创建单用户单角色的安全控制
 - 添加依赖
@@ -148,6 +150,10 @@
 - 思考：
     - 其实这个安全框架使用的是角色控制，而不是权限控制，目前的了解，达不到Oracle那样的权限加角色控制
 
+### JWT
+> [集成JWT到Spring Boot项目](http://www.saily.top/2016/12/08/spring-boot-jwt/) | [使用JWT保护你的Spring Boot应用](https://segmentfault.com/a/1190000009231329)
+
+
 ******************************************************************
 
 ## 实现细节
@@ -204,6 +210,7 @@
 ### 保护方法应用
 - @Secured 注解限制方法调用
 
+************************
 ## 社交登录
 > [SpringForAll社区:Spring Security源码分析（三）：Spring Social实现QQ社交登录 ](https://mp.weixin.qq.com/s?__biz=MzU0MDEwMjgwNA==&mid=2247484230&idx=1&sn=358f684bd122888270730f2b102ee1b2&chksm=fb3f1abdcc4893ab9dc400a44edfe7a9d483c070b78db1d81f70c4a3d7870d113d9287d81b0f&mpshare=1&scene=1&srcid=0121kLxdu4ezkmeJAoJcdMZ1&pass_ticket=LGmo8DCbLhUXTV%2FDVv1W9SyGxNSXxxYLrKODVeXD8f3lkWt2HnMB5b7racYt5W6V#rd)  
 > [SpringForAll社区:Spring Security 源码分析（四）：Spring Social实现微信社交登录 ](https://mp.weixin.qq.com/s?__biz=MzU0MDEwMjgwNA==&mid=2247484233&idx=1&sn=1e84ffd8c9169db56a0d48ccb31bc842&chksm=fb3f1ab2cc4893a4263799c466d73ee67971ce9deb22a91b8ae8e968621679de3bce83a2c558&mpshare=1&scene=1&srcid=0121cjpvaOeB0nktdOSQNitj&pass_ticket=LGmo8DCbLhUXTV%2FDVv1W9SyGxNSXxxYLrKODVeXD8f3lkWt2HnMB5b7racYt5W6V#rd)

@@ -6,7 +6,7 @@
     - [使用](#使用)
     - [查看](#查看)
 
-`目录 end` |_2018-03-26_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
+`目录 end` |_2018-03-27_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
 ****************************************
 # SVN
 > 传统的中心化版本控制工具
@@ -30,6 +30,9 @@ _Ubuntu_
 > svn update如果后面没有目录，默认将当前目录以及子目录下的所有文件都更新到最新版本
 
 ## 查看
-> [查看最后修改的文件](https://java-er.com/blog/svn-last-files/)
+> [查看最后修改的文件](https://java-er.com/blog/svn-last-files/)  
+> [svn历史版本对比以及还原到历史版本](http://www.cnblogs.com/simonote/articles/3086717.html)
 
 - `svn log | less` 这样能更为方便和干净
+- `svn cat -r 版本号 文件` 输出某个版本的某文件
+- `svn diff -r 版本号:版本号 文件` 对比两个版本的某文件

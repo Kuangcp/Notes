@@ -24,7 +24,7 @@
     - [人工智能](#人工智能)
     - [在线工具](#在线工具)
 
-`目录 end` |_2018-03-25_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
+`目录 end` |_2018-03-27_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
 ****************************************
 # 【常用的网站】
 ## 软件商店
@@ -70,6 +70,7 @@
 # 学习网站
 ## 并发
 - [并发编程网 http://ifeve.com](http://ifeve.com/)
+- [IBM社区](https://www.ibm.com/developerworks/cn/)
 
 *****************************************
 ## 语言
@@ -89,7 +90,7 @@
 
 ## Linux
 - [运维生存时间](http://www.ttlsa.com)`含大量运维干货`
-- [IBM社区](https://www.ibm.com/developerworks/cn/)
+
 - [杭电ACM题库](http://acm.hdu.edu.cn/listproblem.php?vol=1)
 - [Linux命令大全](http://man.linuxde.net/) `Linux命令教程`
 - [RUNOOB.COM](http://www.runoob.com) `各种技术学习 文档资源`

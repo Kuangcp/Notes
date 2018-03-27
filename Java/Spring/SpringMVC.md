@@ -2,13 +2,14 @@
  
 - [SpringMVC](#springmvc)
     - [MVC思想](#mvc思想)
+        - [原理](#原理)
     - [API](#api)
     - [配置](#配置)
     - [使用](#使用)
         - [自定义拦截器](#自定义拦截器)
         - [Q&A](#q&a)
 
-`目录 end` *目录创建于2018-01-14*
+`目录 end` |_2018-03-27_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
 ****************************************
 
 # SpringMVC
@@ -17,20 +18,26 @@
 > [参考博客](http://blog.csdn.net/besley/article/details/8479943)
 ![图](https://raw.githubusercontent.com/Kuangcp/ImageRepos/master/Tech/Model/mvc.png)
 
+### 原理
+> 统一使用一个Servlet 进行请求的收发, 通过配置的URL对应的方法, 进行调用, 然后返回视图解析器进行渲染
+
+************************
 ## API 
 > [简洁的API设计](http://www.csdn.net/article/2013-05-02/2815115-stop-designing-fragile-web-api)
 
+***********************
 ## 配置
 > 如果引入了别的模板引擎就不需要配置解析器，不然就要配
 
-- 没有用模板引擎，配置前后缀 没有用什么原因？？？ classpath:/templates/  .html
+- 没有用模板引擎themleaf的依赖，配置前后缀并没有用, 这是什么原因？？？ classpath:/templates/  .html  
+    - 单纯的想写个前后端分离不行?
 
 - [较完善的入门博客](https://www.tianmaying.com/tutorial/spring-mvc-quickstart)
 
+************************
 ## 使用
 > 在Springboot框架中，static templates 文件夹下分别代表了tomcat管理的静态文件和MVC负责跳转的HTML文件或JSP文件
 > 在static中对于路径的使用一定要带上应用路径，而在templates中就只要写相对路径即可
-
 
 ### 自定义拦截器
 - [相关博客](http://www.jianshu.com/p/f14ed6ca4e56)|[相关博客](http://blog.csdn.net/catoop/article/details/50501696)
