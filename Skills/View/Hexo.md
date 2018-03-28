@@ -1,34 +1,25 @@
 `目录 start`
  
 - [配置Hexo的Github博客](#配置hexo的github博客)
-        - [安装node](#安装node)
     - [安装 hexo](#安装-hexo)
-            - [配置文件](#配置文件)
-            - [新建文章](#新建文章)
+        - [配置文件](#配置文件)
+        - [新建文章](#新建文章)
 
-`目录 end` *目录创建于2018-01-14*
+`目录 end` |_2018-03-28_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
 ****************************************
 # 配置Hexo的Github博客
 > 参考 [博客](http://stonebegin.com/hexo+github.html) | [部署Hexo](http://letus.club/2016/04/04/deploy-hexo-and-change-theme/)
 
-TODO 在docker中下拉笔记仓库, 然后构建, 然后推送到github的page上
-
-### 安装node 
-
-#### 解压方式
-- [官网下载](https://nodejs.org/en/)
-- 解压后在`bin`目录中将 两个文件都建立 软连接到 `/usr/local/bin/` 目录下
-- 执行 `node --version` 和 `npm -v` 查看是否配置成功
-- 
+- TODO 在docker中下拉笔记仓库, 然后构建, 然后推送到github的page上
+    - 其实可以更为简单, 使用travi.ci 进行构建和发布
 
 ## 安装 hexo
 - `npm install -g hexo`
 - 新建一个目录然后初始化 `hexo init` 
-- 根据md生成静态资源文件 `hexo generate` ` hexo g`
-- 本地试运行 `hexo server` ` hexo s`
+- 根据md生成静态资源文件 `hexo generate` | ` hexo g`
+- 本地试运行 `hexo server` | ` hexo s`
 - 清除静态文件` hexo clean`
-- 发布到远程 `hexo deploy` `hexo d`
-
+- 发布到远程 `hexo deploy` | `hexo d`
 
 ### 配置文件
 - 当前目录下的`_config.yml`是主配置文件
@@ -56,7 +47,7 @@ TODO 在docker中下拉笔记仓库, 然后构建, 然后推送到github的page�
 > [更多发布方式](https://hexo.io/docs/deployment.html)   
  
 ### 新建文章
-- `hexo new "postName" #postName是文章的名字`    
+- `hexo new "postName"` #postName是文章的名字
     - 文章的开头具有 时间，标题，分类， 标签等信息
 - 然后生成，发布 `hexo g` `hexo d`
 

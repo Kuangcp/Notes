@@ -51,16 +51,13 @@
     - [Jenkin 使用](#jenkin-使用)
         - [下载安装和配置](#下载安装和配置)
 
-`目录 end` |_2018-03-18_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
+`目录 end` |_2018-03-28_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
 ****************************************
 
 # Gradle
 ## 发行版本
 ### 4.6
-> [发行说明](https://docs.gradle.org/4.6/release-notes.html?_ga=2.214014495.909415461.1519975016-498617321.1519975016#dependency-constraints-for-transitive-dependencies)
-
-支持Junit5, 还有解决依赖冲突的一种声明式方式
-
+> [发行说明](https://docs.gradle.org/4.6/release-notes.html?_ga=2.214014495.909415461.1519975016-498617321.1519975016#dependency-constraints-for-transitive-dependencies) | `支持Junit5, 还有解决依赖冲突的一种声明式方式`
 
 ## 安装配置
 > 和maven使用同一个本地库 只要加上 M2_HOME 环境变量即可, 值和 MAVEN_HOME 一样, 并没有用
@@ -155,7 +152,7 @@ allprojects{
 > 凡是依赖于本地环境的测试，使用完就注释Test注解，还有那些会CRUD，影响到数据的测试方法也是
 > 以防以后线上测试通不过 打包失败, 
 
-也可以跳过测试 `gradle build -x test`
+- 也可以跳过测试 `gradle build -x test`
 
 ***************************************
 
@@ -214,6 +211,8 @@ allprojects {
 
 ********************************
 ## Gradle进阶知识
+> [某人的学习仓库](https://github.com/davenkin/gradle-learning)
+
 ### Gradle 构建块
 - 三个基本块 project task property， 使用DDD（领域驱动设计）
 - 一个真实的项目包含多个project 而 Project又包含多个task ，task之间通过依赖来确保执行顺序

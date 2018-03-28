@@ -2,12 +2,12 @@
  
 - [SpringSecurity](#springsecurity)
     - [SpringBoot的集成Demo](#springboot的集成demo)
-        - [快速上手-初步入门：](#快速上手-初步入门)
-            - [创建单用户单角色的安全控制](#创建单用户单角色的安全控制)
-            - [多用户多角色的实现思路](#多用户多角色的实现思路)
-                - [每个身份都使用一个登录实体类](#每个身份都使用一个登录实体类)
-                - [另一种思路：](#另一种思路)
-        - [JWT](#jwt)
+        - [创建单用户单角色的安全控制](#创建单用户单角色的安全控制)
+        - [多用户多角色的实现思路](#多用户多角色的实现思路)
+            - [每个身份都使用一个登录实体类](#每个身份都使用一个登录实体类)
+            - [另一种思路：](#另一种思路)
+    - [JWT](#jwt)
+    - [Oauth](#oauth)
     - [实现细节](#实现细节)
         - [关于注解的几种使用方式](#关于注解的几种使用方式)
             - [@Secured](#@secured)
@@ -16,124 +16,28 @@
         - [保护方法应用](#保护方法应用)
     - [社交登录](#社交登录)
 
-`目录 end` |_2018-03-27_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
+`目录 end` |_2018-03-28_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
 ****************************************
 # SpringSecurity
 ## SpringBoot的集成Demo
-### 快速上手-初步入门：
-#### 创建单用户单角色的安全控制
-- 添加依赖
-```xml
-   <dependency>
-		<groupId>org.springframework.boot</groupId>
-		<artifactId>spring-boot-starter-security</artifactId>
-	</dependency>
-```
+### 创建单用户单角色的安全控制
 
-```java
-    @Configuration
-    public class SecurityConfig extends WebSecurityConfigurerAdapter {
-      @Autowired
-      private ReaderRepository readerRepository;
-      @Override
-      protected void configure(HttpSecurity http) throws Exception {
-        http
-          .authorizeRequests()
-            .antMatchers("/").access("hasRole('READER')")//要求登陆者进入根目录必须具有 READER 的角色
-            .antMatchers("/**").permitAll()//其他页面开放了权限
-          .and()
-          .formLogin()
-            .loginPage("/login")//登录表单的路径
-            .failureUrl("/login?error=true");
-      }
-      @Override
-      protected void configure(
-                  AuthenticationManagerBuilder auth) throws Exception {
-        auth.userDetailsService(new UserDetailsService() {//定义自定义的UserDetailService
-            @Override
-            public UserDetails loadUserByUsername(String username)
-                throws UsernameNotFoundException {
-              UserDetails userDetails = readerRepository.findOne(username);
-              if (userDetails != null) {
-                return userDetails;
-              }
-              throw new UsernameNotFoundException("User '" + username + "' not found.");
-            }
-          });
-      }
-    }
-```
-`Repository类`
-```java
-   public interface ReaderRepository extends JpaRepository<Reader, String> {}
-```
-```java
-    //登录实体类
-    @Entity
-    public class Reader implements UserDetails {
-      private static final long serialVersionUID = 1L;
-      @Id
-      private String username;
-      private String fullname;
-      private String password;
-      //省略setget
-      //授予READER权限
-      @Override
-      public Collection<? extends GrantedAuthority> getAuthorities() {
-        return Arrays.asList(new SimpleGrantedAuthority("ROLE_READER"));
-      }
-      //不过期
-      @Override
-      public boolean isAccountNonExpired() { return true;}
-      //不加锁
-      @Override
-      public boolean isAccountNonLocked() {return true;}
-      //不禁用
-      @Override
-      public boolean isCredentialsNonExpired() {return true;}
-      //可用
-      @Override
-      public boolean isEnabled() { return true;}
-    }
-```
+1. Gradle : `compile('org.springframework.boot:spring-boot-starter-security')`
+2. [Security主要配置类](https://gitee.com/kcp1104/codes/n2berl0tfg8wq9s4ko7xa78#SecurityConfig.java)
+3. [登录实体类](https://gitee.com/kcp1104/codes/n2berl0tfg8wq9s4ko7xa78#Reader.java)
+4. Jpa实现的Dao层 `public interface ReaderRepository extends JpaRepository<Reader, String> {}`
 
 *************************
-
-#### 多用户多角色的实现思路
+### 多用户多角色的实现思路
 - 使用多个实体类（实现了UserDetails接口），一个权限类，再一个多对多连接，就得到了多用户，多权限的控制
-- 在页面上加上角色的判断来控制数据显示，业务操作等功能
+    - 在页面上加上角色的判断来控制数据显示，业务操作等功能
 
 - 根据书上案例代码，可以得出结论，用户表，角色表，用户角色关联表，用户表是可以多张的，角色公用一张即可，然后关联表也对应的多张，就能实现具体的业务需求
     - 例如：一个网上在线阅读书城，作家和读者以及编辑，网站后台管理员等角色的不同权限对应的页面甚至页面上细分的各个模块
-    
-- `Author` `Admin` `Reader` 三个类
-`继承了UserDetails接口的实体类的配置`
-```java
-    //配置多对多的关系，用户和角色（权限）之间的关系,是通用的改下属性名即可
-    @ManyToMany(cascade = {CascadeType.REFRESH},fetch = FetchType.EAGER)
-    private List<AllRoles> roles ;
-    @Override
-    public Collection<? extends GrantedAuthority> getAuthorities() {
-        List<GrantedAuthority> auths = new ArrayList<GrantedAuthority>();
-        List<AllRoles> roles = this.getRoles();
-        for(AllRoles role:roles){
-            auths.add(new SimpleGrantedAuthority(role.getRole_name()));
-        }
-        return auths;
-    }
-    // 登录的用户名，如果属性不是叫username，就要重写，返回应该的用户名属性就是了
-    @Override
-    public String getUsername() { return this.reader_name;}
-    @Override
-    public boolean isAccountNonExpired() {return true;}
-    @Override
-    public boolean isAccountNonLocked() {return true;}
-    @Override
-    public boolean isCredentialsNonExpired() {return true;}
-    @Override
-    public boolean isEnabled() {return true;}
-```
-##### 每个身份都使用一个登录实体类
+    - `Author` `Admin` `Reader` 三个类
+- `继承了UserDetails接口的实体类的配置` [代码片段](https://gitee.com/kcp1104/codes/n2berl0tfg8wq9s4ko7xa78#Readers.java)
+
+#### 每个身份都使用一个登录实体类
 - 然后使用不同的dao层查询，显然的实体类登录查询的效率及其低且不易扩展
 - 设置好`spirng.jpa.hibernate.ddl-auto=update`
 - 第一次运行还会有没有实体对应的表这样的提示,说明了他正在根据多对多映射创建实体表，也体现了这个多种用户模式下需要实体等量的连接表
@@ -142,20 +46,28 @@
     - 也可以考虑使用一个字符串，然后用`特殊字符`把类型放进去，然后正则取出来
     - 登录页面就需要自定义一个函数进行拼接（或者使用校验来拼接？）
       
-##### 另一种思路：
+#### 另一种思路：
 - 使用一个登录用户表（序列id，用户名，密码，用户编码（对应多张表））
-- 角色表（序列id，用户编码，角色） 
-这样的话扩展就只要加表，使用同一个主键生成策略就可以了
+    - 角色表（序列id，用户编码，角色） 
+    - 这样的话扩展就只要加表，使用同一个主键生成策略就可以了
 
-- 思考：
-    - 其实这个安全框架使用的是角色控制，而不是权限控制，目前的了解，达不到Oracle那样的权限加角色控制
+>- 思考：
+>- 其实这个安全框架使用的是角色控制，而不是权限控制，目前的了解，达不到Oracle那样的权限加角色的精细化控制
 
-### JWT
+*********
+## JWT
+> [JWT相关原理](/Skills/Base/WebSecurity.md#jwt)  
+
+- [个人代码片段](https://gitee.com/kcp1104/codes/kw31qf40iz9p8mt2x7bcd49)  | [SpringBoot2使用Security整合Jwt案例项目](https://github.com/Kuangcp/SpringBoot2-Security-Jwt)  
+
 > [集成JWT到Spring Boot项目](http://www.saily.top/2016/12/08/spring-boot-jwt/) | [使用JWT保护你的Spring Boot应用](https://segmentfault.com/a/1190000009231329)
+> [重拾后端之Spring Boot（四）：使用JWT和Spring Security保护REST API](https://juejin.im/post/58c29e0b1b69e6006bce02f4)
 
+*******************
+## Oauth
+> [oauth](https://github.com/spring-projects/spring-security-oauth)
 
 ******************************************************************
-
 ## 实现细节
 ### 关于注解的几种使用方式
 #### @Secured 
