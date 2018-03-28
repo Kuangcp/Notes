@@ -6,6 +6,8 @@
 [![JavaSE](https://img.shields.io/badge/note-JavaSE-blue.svg)](./Java/JavaSE.md)
 [![page](https://img.shields.io/badge/note-Page-red.svg)](http://kuangcp.github.io/Notes)
 
+> [精简的新仓库](https://github.com/Kuangcp/2018Notes)
+
 > 我曾七次鄙视自己的灵魂：  
 > 第一次,当它本可进取时，却故作谦卑；  
 > 第二次,当它空虚时，用爱欲来填充；   
