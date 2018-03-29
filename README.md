@@ -1,4 +1,4 @@
-[![Build Status](https://www.gitbook.io/button/status/book/kuangcp/2018notes)](https://www.gitbook.io/book/kuangcp/2018notes/details)
+[![Build Status](https://www.gitbook.io/button/status/book/kuangcp/notes)](https://www.gitbook.io/book/kuangcp/notes/details)
 [![目录](https://img.shields.io/badge/note-Catalog-brightgreen.svg)](./SUMMARY.md)
 [![码云](https://img.shields.io/badge/code-Gitee-red.svg)](https://gitee.com/kcp1104)
 [![CSDN](https://img.shields.io/badge/blog-CSDN-orange.svg)](http://blog.csdn.net/kcp606)
@@ -38,6 +38,7 @@
 - [阿里Java编程规范](Java/AlibabaJavaStandard.md)
 - [常用SDK自动下载配置工具 mythsdk](https://github.com/Kuangcp/Script/tree/master/python/mythsdk) 
     - `功能仿sdkman，但简单，不过是提供自行搭建使用的，毕竟七牛云下载超量了是要收费的`
+- 克隆笔记仓库可以加上 `-depth 1` 参数, 减小克隆的大小
 
 ## 醍醐灌顶
 - [相关:知乎专栏-程序员你为什么这么累？](/Java/AdvancedLearning/ProgramThinking.md#编程习惯)
