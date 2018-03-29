@@ -1,43 +1,34 @@
 `目录 start`
  
 - [【文件管理】](#文件管理)
-    - [基本命令](#基本命令)
-        - [rename](#rename)
-        - [cd](#cd)
-        - [ls](#ls)
-        - [chown](#chown)
-        - [chgrp](#chgrp)
-        - [file](#file)
-        - [ln](#ln)
-        - [find](#find)
-        - [cp](#cp)
-        - [rm](#rm)
-        - [mv](#mv)
-        - [wc](#wc)
-        - [cat](#cat)
-        - [file](#file)
-        - [tail](#tail)
-        - [head](#head)
-        - [sed](#sed)
-        - [awk](#awk)
-    - [【磁盘管理】](#磁盘管理)
-        - [dd](#dd)
-        - [mount](#mount)
-        - [fdisk](#fdisk)
-        - [df](#df)
-        - [du](#du)
     - [Tips](#tips)
         - [设置交换分区](#设置交换分区)
             - [清空交换内存](#清空交换内存)
         - [清除缓存](#清除缓存)
         - [善用.bashrc文件](#善用bashrc文件)
         - [比较两个文件的不同](#比较两个文件的不同)
+    - [基本命令](#基本命令)
+        - [查找文件](#查找文件)
+        - [查看文件](#查看文件)
+        - [更改文件](#更改文件)
+        - [流编辑器](#流编辑器)
+            - [sed](#sed)
+            - [awk](#awk)
+    - [【磁盘管理】](#磁盘管理)
+        - [dd](#dd)
+        - [mount](#mount)
+        - [fdisk](#fdisk)
+        - [df](#df)
+        - [du](#du)
     - [善用FTP](#善用ftp)
         - [基础](#基础)
         - [使用](#使用)
         - [手机和电脑之间传输管理文件](#手机和电脑之间传输管理文件)
             - [手机](#手机)
             - [电脑](#电脑)
+    - [日志](#日志)
+        - [用户日志](#用户日志)
+        - [系统日志](#系统日志)
     - [在Linux上操作压缩文件的命令](#在linux上操作压缩文件的命令)
         - [tar 归档 打包](#tar-归档-打包)
         - [压缩](#压缩)
@@ -49,7 +40,7 @@
             - [查看发行版](#查看发行版)
             - [查看系统所有用户信息](#查看系统所有用户信息)
 
-`目录 end` |_2018-03-27_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
+`目录 end` |_2018-03-29_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
 ****************************************
 # 【文件管理】
 > Linux中认为万物皆文件
@@ -57,6 +48,74 @@
 - 清空文件内容 `true > a.txt ` 
 - 安装上传下载文件的工具 `sudo apt install lrzsz`
 - `cat ~/.ssh/id_rsa.pub | xsel -b` 将文件复制到剪贴板
+
+## Tips
+### 设置交换分区
+- 查看内存 `free -h` 
+- 创建一个4g 交换文件 `dd if=/dev/zero of=/swapfile bs=1024k count=4096` 
+- 格式化成交换文件的格式 `mkswap /swapfile` 
+- 启用该文件作为交换分区的文件 ` swapon /swapfile` 
+- `/swapfile swap swap defaults 0 0` 写入`/etc/fstab`文件中，让交换分区的设置开机自启
+- `sudo sysctl vm.swappiness=15` 临时修改重启注销失效， 查看：`cat /proc/sys/vm/swappiness`
+- 永久修改：`/etc/sysctl.conf ` 文件中设置开始使用交换分区的触发值： `vm.swappiness=10`
+    - 表示物理内存剩余`10%` 才会开始使用交换分区
+- `建议，笔记本的硬盘低于 7200 转的不要设置太高的交换分区使用，大大影响性能，因为交换分区就是在硬盘上，频繁的交换数据`
+
+#### 清空交换内存
+- 1.关闭交换分区 `sudo swapoff 交换分区文件`
+    - 2.开启交换分区 `sudo swapon 交换分区文件`
+- 或者 `swapoff -a && swapon -a`
+
+### 清除缓存
+> [参考: 如何在 Linux 中清除缓存（Cache）？](https://linux.cn/article-5627-1.html) `注意要切换到root再运行命令`  
+> 仅清除页面缓存（PageCache） `sync; echo 1 > /proc/sys/vm/drop_caches`
+> 清除目录项和inode `sync; echo 2 > /proc/sys/vm/drop_caches`
+> 清除页面缓存，目录项和inode `sync; echo 3 > /proc/sys/vm/drop_caches`
+
+- 有时候, 因为缓存的问题会引发一些很诡异的问题, 有应用缓存和系统缓存的分别
+    - 例如构建工具Maven, 也会因为在一个项目空间下, 多个同名项目的缓存问题 
+        - (巨诡异 `if(true){}` 都能不执行, 一个变量的值莫名其妙的时刻被修改 )
+    - 然后操作系统的缓存问题也有出现:
+        - 例如 启动一个web项目, 运行到某一行, 突然运行不下去了, 前端阻塞在了等待请求这里 重新编译 和请求target目录都没有用, 重启IDEA也没有用
+        - 然后找到了上面的博客, 清除了下缓存就OK了
+
+### 善用.bashrc文件
+`Alias`
+```sh
+    if [ -f ~/.bash_aliases ]; then
+        . ~/.bash_aliases
+    fi
+```
+- 在`~/.bashrc`添加这段，然后在 `.bash_aliases` 文件中设置别名
+    - 例如 ： `alias Kgit.notes='cd ~/Documents/Notes/Code_Notes/'` 
+    - 更改文件后，想当前终端就生效就 `source ~/.bashrc` 不执行命令就重启终端即可
+
+- 如[我的配置文件](https://github.com/Kuangcp/Configs/tree/master/Linux/init) `将配置文件分类放`
+    - K.h就能显示出每个命令的说明 其实现脚本： [python3脚本](https://github.com/Kuangcp/Script/blob/master/python/show_alias_help.py) 
+    - 在别名文件目录时, 建立链接就可以用了 `ln -s `pwd`/.bash_aliases ~/.bash_aliases` 
+
+*************************
+`自定义桌面快捷方式文件`
+```conf
+	[Desktop Entry] #每个desktop文件都以这个标签开始，说明这是一个Desktop Entry文件
+	Version = 1.0 #标明Desktop Entry的版本（可选）
+	Name = Firefox #程序名称（必须），这里以创建一个Firefox的快捷方式为例
+	GenericName = Web Browser #程序通用名称（可选）
+	Comment = A Web Browser #程序描述（可选）
+	Exec = firefox %u #程序的启动命令（必选），可以带参数运行,当下面的Type为Application，此项有效
+	Icon = firefox #设置快捷方式的图标（可选）
+	Terminal = false #是否在终端中运行（可选），当Type为Application，此项有效
+	Type = Application #desktop的类型（必选），常见值有“Application”和“Link”
+	Categories = GNOME;Application;Network; #注明在菜单栏中显示的类别（可选）
+```
+- [示例文件](https://github.com/Kuangcp/Notes/tree/master/ConfigFiles/Linux/VSCode.desktop)
+- 如要将快捷方式放在启动菜单内 将desktop文件放在 `/usr/share/applications/` 目录下即可
+- 注意：目录不能有空格 等特殊字符
+
+### 比较两个文件的不同
+- `grep -vwf 文件1 文件2`
+
+**************************************
 ## 基本命令 
 ### 查找文件
 _cd_
@@ -75,7 +134,7 @@ _find_
 ### 查看文件
 
 _ls_
-- 参数
+- `参数`
     - i 详情 
     - a 全部包含隐藏文件 A 不显示当前目录和上级目录 . .. 
     - l 使用较长格式列出信息 详细信息
@@ -88,13 +147,12 @@ _ls_
     - t 按修改时间从顶至下,一般不单用,和 g|l 结合一起用
     - c 按ctime(创建时间)一般是文件夹,文件则是修改时间排列
         - 和 lt|gt 一起用 即 `ls -clt` 同上的排列顺序
-- 输出
+- `输出`
     - 输出类型：d 目录 l 软链接 b 块设备 c 字符设备 s socket p 管道 - 普通文件
     - 输出权限信息：r 读权限 w 写权限 x 执行权限
     - rwx有三个，是因为 `拥有者，所属用户组 其他用户` 代表的rwx权限
     - ![权限输出图](https://dn-anything-about-doc.qbox.me/linux_base/3-10.png/logoblackfont)
     - ![权限计算图](https://dn-anything-about-doc.qbox.me/linux_base/3-14.png/logoblackfont)
-
     - `chmod 700 文件` 就是只设置拥有者具有读写权限
     - 加减权限操作 `chmod go-rw 文件` `g group` `o others` `u user` `+- 增减权限`
 - `ls -ASsh` 显示所有文件大小， 便于阅读的形式输出
@@ -244,73 +302,6 @@ _mv_
     du xmldb/*/*/* |wc -l
     40752
 
-*******************************
-## Tips
-### 设置交换分区
-- 查看内存 `free -h` 
-- 创建一个4g 交换文件 `dd if=/dev/zero of=/swapfile bs=1024k count=4096` 
-- 格式化成交换文件的格式 `mkswap /swapfile` 
-- 启用该文件作为交换分区的文件 ` swapon /swapfile` 
-- `/swapfile swap swap defaults 0 0` 写入`/etc/fstab`文件中，让交换分区的设置开机自启
-- `sudo sysctl vm.swappiness=15` 临时修改重启注销失效， 查看：`cat /proc/sys/vm/swappiness`
-- 永久修改：`/etc/sysctl.conf ` 文件中设置开始使用交换分区的触发值： `vm.swappiness=10`
-    - 表示物理内存剩余`10%` 才会开始使用交换分区
-- `建议，笔记本的硬盘低于 7200 转的不要设置太高的交换分区使用，大大影响性能，因为交换分区就是在硬盘上，频繁的交换数据`
-
-#### 清空交换内存
-- 关闭交换分区 `sudo swapoff 交换分区文件`
-- 开启交换分区 `sudo swapon 交换分区文件`
-
-- 或者 `swapoff -a && swapon -a`
-
-### 清除缓存
-> [参考: 如何在 Linux 中清除缓存（Cache）？](https://linux.cn/article-5627-1.html) `注意要切换到root再运行命令`  
-> 仅清除页面缓存（PageCache） `sync; echo 1 > /proc/sys/vm/drop_caches`
-> 清除目录项和inode `sync; echo 2 > /proc/sys/vm/drop_caches`
-> 清除页面缓存，目录项和inode `sync; echo 3 > /proc/sys/vm/drop_caches`
-
-- 有时候, 因为缓存的问题会引发一些很诡异的问题, 有应用缓存和系统缓存的分别
-    - 例如构建工具Maven, 也会因为在一个项目空间下, 多个同名项目的缓存问题 
-        - (巨诡异 `if(true)` 都能不执行, 一个变量的值莫名其妙的时刻被修改 )
-    - 然后操作系统的缓存问题也有出现:
-        - 例如 启动一个web项目, 运行到某一行, 突然运行不下去了, 前端阻塞在了等待请求这里 重新编译 和请求target目录都没有用, 重启IDEA也没有用
-        - 然后找到了上面的博客, 清除了下缓存就OK了
-
-### 善用.bashrc文件
-`Alias`
-```sh
-    if [ -f ~/.bash_aliases ]; then
-        . ~/.bash_aliases
-    fi
-```
-- 在`~/.bashrc`添加这段，然后在 `.bash_aliases` 文件中设置别名
-    - 例如 ： `alias Kgit.notes='cd ~/Documents/Notes/Code_Notes/'` 
-    - 更改文件后，想当前终端就生效就 `source ~/.bashrc` 不执行命令就重启终端即可
-
-- 如我的文件 [.bash_aliases](/ConfigFiles/Linux/.bash_aliases)
-    - K.h就能显示出每个命令的说明 其实现脚本： [python3文件](/Script/python/show_alias_help.py) 
-    - 在别名文件目录时, 建立链接就可以用了 `ln -s `pwd`/.bash_aliases ~/.bash_aliases` 
-
-*************************
-`自定义桌面快捷方式文件`
-```conf
-	[Desktop Entry] #每个desktop文件都以这个标签开始，说明这是一个Desktop Entry文件
-	Version = 1.0 #标明Desktop Entry的版本（可选）
-	Name = Firefox #程序名称（必须），这里以创建一个Firefox的快捷方式为例
-	GenericName = Web Browser #程序通用名称（可选）
-	Comment = A Web Browser #程序描述（可选）
-	Exec = firefox %u #程序的启动命令（必选），可以带参数运行,当下面的Type为Application，此项有效
-	Icon = firefox #设置快捷方式的图标（可选）
-	Terminal = false #是否在终端中运行（可选），当Type为Application，此项有效
-	Type = Application #desktop的类型（必选），常见值有“Application”和“Link”
-	Categories = GNOME;Application;Network; #注明在菜单栏中显示的类别（可选）
-```
-- [示例文件](https://github.com/Kuangcp/Notes/tree/master/ConfigFiles/Linux/VSCode.desktop)
-- 如要将快捷方式放在启动菜单内 将desktop文件放在 `/usr/share/applications/` 目录下即可
-- 注意：目录不能有空格 等特殊字符
-
-### 比较两个文件的不同
-- `grep -vwf 文件1 文件2`
 
 ************************************
 ## 善用FTP
