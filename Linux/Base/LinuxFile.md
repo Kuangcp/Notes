@@ -58,22 +58,23 @@
 - 安装上传下载文件的工具 `sudo apt install lrzsz`
 - `cat ~/.ssh/id_rsa.pub | xsel -b` 将文件复制到剪贴板
 ## 基本命令 
-
-### rename
-`rename命令的使用(基于perl)`
-- `rename "s/.html/.php/" * ` //把.html 后缀的改成 .php后缀
-- `rename "s/$/.txt/" *  `   //把所有的文件名都以txt结尾
-- `rename "s/.txt//" *  `   //把所有以.txt结尾的文件名的.txt删掉
-- `rename "s/AA/aa/" * `  //把文件名中的AA替换成aa
-- `rename "s/ - 副本/_bak/" *` 将文件`-副本`结尾改成`_bak`结尾
-
-### cd
+### 查找文件
+_cd_
 - `cd - ` 跳转到上一个目录
 - `cd !$` 把上个命令的参数作为cd参数使用。
 - `cd //` 系统根目录 
 
+_find_
+- `find . -name "*.txt"` 查找当前目录的txt后缀的文件
+- `sudo find / -name a.java` 全盘查找
+- `find -type f -name README.md` 默认当前目录查找
+    - d 文件夹 f 普通文件 l 符号链接文件 b 块设备 c 字符设备 p 管道文件 s 套接字
 
-### ls
+> 递归删除目录下所有run后缀的文件 `find . -name "*.run"  | xargs rm -f`
+
+### 查看文件
+
+_ls_
 - 参数
     - i 详情 
     - a 全部包含隐藏文件 A 不显示当前目录和上级目录 . .. 
@@ -87,84 +88,36 @@
     - t 按修改时间从顶至下,一般不单用,和 g|l 结合一起用
     - c 按ctime(创建时间)一般是文件夹,文件则是修改时间排列
         - 和 lt|gt 一起用 即 `ls -clt` 同上的排列顺序
-        
 - 输出
     - 输出类型：d 目录 l 软链接 b 块设备 c 字符设备 s socket p 管道 - 普通文件
     - 输出权限信息：r 读权限 w 写权限 x 执行权限
     - rwx有三个，是因为 `拥有者，所属用户组 其他用户` 代表的rwx权限
-    ![权限输出图](https://dn-anything-about-doc.qbox.me/linux_base/3-10.png/logoblackfont)
-![权限计算图](https://dn-anything-about-doc.qbox.me/linux_base/3-14.png/logoblackfont)
+    - ![权限输出图](https://dn-anything-about-doc.qbox.me/linux_base/3-10.png/logoblackfont)
+    - ![权限计算图](https://dn-anything-about-doc.qbox.me/linux_base/3-14.png/logoblackfont)
+
     - `chmod 700 文件` 就是只设置拥有者具有读写权限
     - 加减权限操作 `chmod go-rw 文件` `g group` `o others` `u user` `+- 增减权限`
 - `ls -ASsh` 显示所有文件大小， 便于阅读的形式输出
 - `ls -dl 目录` 查看一个目录的完整属性
 
-### chown
-- `chown [-R] 账号名称 文件或目录`
-- `chown [-R] 账号名称:用户组名称 文件或目录`
-
-### chgrp
-- 更改文件所属用户组 `chgrp group file`
-    - -R 递归子目录
-    
-### file
+_file_
 - file a.txt 查看文件类型
     - -i 输出文件的MIME类型
     - -F "#" 修改输出分隔符
 
-
-### ln
-- `ln -s 源文件或目录 目标绝对路径` 生成软链接（快捷方式）
-_示例_
-```sh
-    ln -s `pwd`/a.md ~/a.md 
-```
-
-### find
-- `find . -name "*.txt"` 查找当前目录的txt后缀的文件
-- `sudo find / -name a.java` 全盘查找
-- `find -type f -name README.md` 默认当前目录查找
-    - d 文件夹 f 普通文件 l 符号链接文件 b 块设备 c 字符设备 p 管道文件 s 套接字
-
-### cp
-- cp   `cp -ri 目录或正则 目录` 目录所有文件复制过去
-    - a 该选项通常在拷贝目录时使用。它保留链接、文件属性，并递归地拷贝目录，其作用等于dpR选项的组合。
-    - d 拷贝时保留链接。
-    - f 删除已经存在的目标文件而不提示。
-    - i 和f选项相反，在覆盖目标文件之前将给出提示要求用户确认。回答y时目标文件将被覆盖，是交互式拷贝。
-    - p 此时cp除复制源文件的内容外，还将把其修改时间和访问权限也复制到新文件中。
-    - r 若给出的源文件是一目录文件，此时cp将递归复制该目录下所有的子目录和文件。此时目标文件必须为一个目录名。
-    - l 不作拷贝，只是链接文件。
-
-### rm
-- rm  `rm -rf 目录` 不提示性删除
-    - f 忽略不存在的文件，从不给出提示。
-    - r 指示rm将参数中列出的全部目录和子目录均递归地删除。
-    - i 进行交互式删除。 
-
-1. 递归删除目录下所有run后缀的文件 `find . -name "*.run"  | xargs rm -f`
-
-### mv
-- mv `mv 目录或正则 目录` 移动
-    - I 交互方式操作。如果mv操作将导致对已存在的目标文件的覆盖，此时系统询问要求用户回答y或n，这样可以避免误覆盖文件。
-    - f 禁止交互操作。在mv操作要覆盖某已有的目标文件时不给任何指示，指定此选项后，i选项将不再起作用。
-
-### wc
+_wc_
 - `wc [-lmw] ` 参数说明： -l :多少行-m:多少字符 -w:多少字
 - cat mul.sh | wc -l
 - wc -l mul.sh
 
-### cat
+_cat_
 > 类似的还有 nl more less
 
 带行号输出 `cat -n file` 或者 `nl file`但是空行不会编号, 除非这样: `nl -b a file`
 
 [参考博客: 每天一个linux命令(11)：nl命令](http://www.cnblogs.com/peida/archive/2012/11/01/2749048.html#/)
 
-### file
-> 查看文件类型
-
-### tail
+_tail_
 > tail命令用于输入文件中的尾部内容。tail命令默认在屏幕上显示指定文件的末尾10行。 来自: http://man.linuxde.net/tail
 
 - `--retry`：即是在tail命令启动时，文件不可访问或者文件稍后变得不可访问，都始终尝试打开文件。此选项需要与选项“——follow=name”连用； 
@@ -182,10 +135,61 @@ _示例_
     tail +20 file （显示文件file的内容，从第20行至文件末尾） 
     tail -c 10 file （显示文件file的最后10个字符）
 ```
-### head
+_head_
 > 查看文件头部, 前十行
 
-### sed
+### 更改文件
+_rename_
+`rename命令的使用(基于perl)`
+- `rename "s/.html/.php/" * ` //把.html 后缀的改成 .php后缀
+- `rename "s/$/.txt/" *  `   //把所有的文件名都以txt结尾
+- `rename "s/.txt//" *  `   //把所有以.txt结尾的文件名的.txt删掉
+- `rename "s/AA/aa/" * `  //把文件名中的AA替换成aa
+- `rename "s/ - 副本/_bak/" *` 将文件`-副本`结尾改成`_bak`结尾
+
+_chown_
+- `chown [-R] 账号名称 文件或目录`
+- `chown [-R] 账号名称:用户组名称 文件或目录`
+
+_chgrp_
+- 更改文件所属用户组 `chgrp group file`
+    - -R 递归子目录
+    
+_ln_
+- `ln -s 源文件或目录 目标绝对路径` 生成软链接（快捷方式）
+```sh
+    ln -s `pwd`/a.md ~/a.md 
+```
+
+_cp_
+- cp   `cp -ri 目录或正则 目录` 目录所有文件复制过去
+    - a 该选项通常在拷贝目录时使用。它保留链接、文件属性，并递归地拷贝目录，其作用等于dpR选项的组合。
+    - d 拷贝时保留链接。
+    - f 删除已经存在的目标文件而不提示。
+    - i 和f选项相反，在覆盖目标文件之前将给出提示要求用户确认。回答y时目标文件将被覆盖，是交互式拷贝。
+    - p 此时cp除复制源文件的内容外，还将把其修改时间和访问权限也复制到新文件中。
+    - r 若给出的源文件是一目录文件，此时cp将递归复制该目录下所有的子目录和文件。此时目标文件必须为一个目录名。
+    - l 不作拷贝，只是链接文件。
+
+_rm_
+- rm  `rm -rf 目录` 不提示性删除
+    - f 忽略不存在的文件，从不给出提示。
+    - r 指示rm将参数中列出的全部目录和子目录均递归地删除。
+    - i 进行交互式删除。 
+
+_wc_
+- `wc [-lmw] ` 参数说明： -l :多少行-m:多少字符 -w:多少字
+- cat mul.sh | wc -l
+- wc -l mul.sh
+
+
+_mv_
+- mv `mv 目录或正则 目录` 移动
+    - I 交互方式操作。如果mv操作将导致对已存在的目标文件的覆盖，此时系统询问要求用户回答y或n，这样可以避免误覆盖文件。
+    - f 禁止交互操作。在mv操作要覆盖某已有的目标文件时不给任何指示，指定此选项后，i选项将不再起作用。
+
+### 流编辑器
+#### sed
 > 参数 命令 文件
 
 - `参数`
@@ -198,9 +202,8 @@ _示例_
     - c 替换 整行
     - s 替换 字符串的替换
 
-### awk
+#### awk
 > awk有3个不同版本: awk、nawk和gawk，未作特别说明，一般指gawk，gawk 是 AWK 的 GNU 版本。
-
 
 *****************************
 ## 【磁盘管理】
@@ -326,6 +329,16 @@ _示例_
 
 #### 电脑
 > 安装FileZila 建立连接, 然后就能方便的用鼠标进行传输了
+
+*********************************
+## 日志
+> 基本都在 `/var/log` 下
+### 用户日志
+- last 查看用户最后登录时间
+
+### 系统日志
+- 查看系统启动日志 `less /var/log/boot.log` 
+- 查看系统消息日志 `less /var/log/messages`
 
 ************************************
 ## 在Linux上操作压缩文件的命令
