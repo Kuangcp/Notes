@@ -1,12 +1,8 @@
-[![Build Status](https://www.gitbook.io/button/status/book/kuangcp/notes)](https://www.gitbook.io/book/kuangcp/notes/details)
+[![Build Status](https://www.gitbook.io/button/status/book/kuangcp/2018notes)](https://www.gitbook.io/book/kuangcp/2018notes/details)
 [![目录](https://img.shields.io/badge/note-Catalog-brightgreen.svg)](./SUMMARY.md)
 [![码云](https://img.shields.io/badge/code-Gitee-red.svg)](https://gitee.com/kcp1104)
 [![CSDN](https://img.shields.io/badge/blog-CSDN-orange.svg)](http://blog.csdn.net/kcp606)
-[![Gitbook](https://img.shields.io/badge/book-GitBook-blue.svg)](https://kuangcp.gitbooks.io/notes/)
 [![JavaSE](https://img.shields.io/badge/note-JavaSE-blue.svg)](./Java/JavaSE.md)
-[![page](https://img.shields.io/badge/note-Page-red.svg)](http://kuangcp.github.io/Notes)
-
-> [精简的新仓库](https://github.com/Kuangcp/2018Notes)
 
 > 我曾七次鄙视自己的灵魂：  
 > 第一次,当它本可进取时，却故作谦卑；  
