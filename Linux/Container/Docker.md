@@ -15,6 +15,7 @@
     - [常规使用](#常规使用)
         - [Docker仓库](#docker仓库)
             - [百度云](#百度云)
+            - [在服务器上搭建私有仓库](#在服务器上搭建私有仓库)
         - [【基础命令】](#基础命令)
             - [【镜像命令】](#镜像命令)
             - [【容器命令】](#容器命令)
@@ -35,7 +36,7 @@
         - [Docker-Swarm](#docker-swarm)
     - [轻量镜像](#轻量镜像)
 
-`目录 end` *目录创建于2018-02-27* | 更多: [CSDN](http://blog.csdn.net/kcp606) | [oschina](https://my.oschina.net/kcp1104) | [码云](https://gitee.com/kcp1104) 
+`目录 end` |_2018-03-30_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
 ****************************************
 # Docker
 > [docker资源汇总 ](http://www.open-open.com/lib/view/open1443075440623.html)
@@ -141,14 +142,14 @@ _Debian系_
 
 _登录百度云镜像仓库_
 >$ sudo docker login --username=[username] hub.baidubce.com
->> username:镜像仓库名称，即是开通镜像仓库时填写的用户名。输入密码后完成登录。
+>> username:镜像仓库名称，即是`开通镜像仓库时填写的用户名`。输入密码后完成登录。
 
 _上传镜像_
 > $ sudo docker tag [ImageId] hub.baidubce.com/[namespace]/[ImageName]:[镜像版本号]  
 > $ sudo docker push hub.baidubce.com/[namespace]/[ImageName]:[镜像版本号]  
 >> ImageId和镜像版本号根据镜像信息补充  
-namespace是开通镜像仓库时填写的命名空间  
-ImageName是在控制台创建的镜像名称  
+>> namespace是开通镜像仓库时填写的命名空间  
+>> ImageName是在控制台创建的镜像名称  
 
 _下载镜像_
 > 登录到镜像仓库，需输入密码  
@@ -158,14 +159,13 @@ _使用DockerHub加速器_
 > docker软件源地址：https://mirror.baidubce.com
 
 ********
-
-- 在服务器上搭建私有仓库
-    - 服务器上运行 并映射到本地目录 `docker run -d -p 5000:5000 -v /opt/data/registry:/tmp/registry registry`
-    - 对服务器中docker已经有的镜像 设置别名 `docker tag 镜像 ip:port/名字`
-    - docker push 别名
-    - 查看服务器上仓库的镜像 `curl http://IP:5000/v1/search `
-    - 这个需要SSL证书，所以要使用要么修改 docker daemon启动参数 要么手动生成SSL证书，或者申请真正SSL证书
-        - 添加参数 DOCKER_OPTS="--insecure-registry ip:port" 重启docker服务
+#### 在服务器上搭建私有仓库
+- 服务器上运行 并映射到本地目录 `docker run -d -p 5000:5000 -v /opt/data/registry:/tmp/registry registry`
+- 对服务器中docker已经有的镜像 设置别名 `docker tag 镜像 ip:port/名字`
+- docker push 别名
+- 查看服务器上仓库的镜像 `curl http://IP:5000/v1/search `
+- 这个需要SSL证书，所以要使用要么修改 docker daemon启动参数 要么手动生成SSL证书，或者申请真正SSL证书
+    - 添加参数 DOCKER_OPTS="--insecure-registry ip:port" 重启docker服务
 
 ********************************
 ### 【基础命令】

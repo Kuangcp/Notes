@@ -25,13 +25,15 @@
         - [其他业内主流编解码框架](#其他业内主流编解码框架)
             - [MessagePack](#messagepack)
             - [Protobuf](#protobuf)
+                - [proto文件定义](#proto文件定义)
                 - [Linux上安装](#linux上安装)
+                - [通过Docker使用](#通过docker使用)
                 - [对于Java的使用](#对于java的使用)
             - [Thrift](#thrift)
             - [Marshalling](#marshalling)
     - [反射的使用](#反射的使用)
 
-`目录 end` |_2018-03-27_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
+`目录 end` |_2018-03-30_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
 ****************************************
 # Java基础
 ## 【类和字节码】
@@ -170,6 +172,8 @@ Window ==> Preferences ==> Java ==> Compiler ==> Error/Warnings ==>Potential pro
 #### Protobuf
 > Google开源的库 全称 `Google Protocol Buffers`
 
+> [参考博客: 详解如何在NodeJS中使用Google的Protobuf](https://juejin.im/entry/59c1214df265da0658151a2c) | [protocobuf](https://github.com/dcodeIO/protobuf.js)
+
 - 他将数据结构以 proto后缀的文件进行描述, 通过代码生成工具, 可以生成对应数据结构的POJO对象和Protobuf相关的方法和属性
     - 特点:
         - 结构化数据存储格式: XML JSON等
@@ -273,11 +277,12 @@ _导入另一个proto定义_
     -  `make` 然后 `make check` 然后 `sudo make install`
     - `protoc --version` 有版本则安装成功
 
-> 注意: ./configure 时, 默认会安装在/usr/local目录下，可以加--prefix=/usr来指定安装到/usr/lib下  
-> 如果不加, 上述参数就要执行 `export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/lib`  
+> 注意: ./configure 时, 默认会安装在/usr/local目录下，可以加`--prefix=/usr`来指定安装到/usr/lib下  
+>> 如果不加, 上述参数就要执行 `export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/lib`  
 >> 当然,可以将这个环境变量的设置加在 .zshrc 或者 .bashrc 里  
-> 不然就会报错: `protoc: error while loading shared libraries: libprotobuf.so.8: cannot open shared object file: No such file or directory`
+>> 不然就会报错: `protoc: error while loading shared libraries: libprotobuf.so.8: cannot open shared object file: No such file or directory`
 
+##### 通过Docker使用
 ##### 对于Java的使用
 > [Google Protocol Buffer 的使用和原理](https://www.ibm.com/developerworks/cn/linux/l-cn-gpb/index.html) `C++ 但是原理差不多`
 
