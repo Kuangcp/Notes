@@ -29,7 +29,7 @@
         - [jq](#jq)
         - [shyaml](#shyaml)
 
-`目录 end` |_2018-03-19_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
+`目录 end` |_2018-03-31_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
 ****************************************
 # 学习Shell
 > 首先语法不像别的语言可读性好，比如Python，然后方言众多，学习比Python2，3还恶心  
@@ -65,6 +65,8 @@
 ## 输入输出
 
 ### 输入
+- `read answer`
+
 ### 输出
 
 #### 彩色输出
@@ -153,6 +155,11 @@ basepath=$(cd \`dirname $0\`; pwd)
 ### 判断
 #### if
 - [参考博客](http://www.cnblogs.com/276815076/archive/2011/10/30/2229286.html)
+
+_判断文件_
+- 文件 `if [ -f path ]`
+- 链接 `if [ -L path ]`
+- 目录 `if [ -d path ]`
 
 #### case
 

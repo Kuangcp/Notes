@@ -31,7 +31,7 @@
         - [VPN](#vpn)
             - [shadowsocks](#shadowsocks)
 
-`目录 end` |_2018-03-20_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
+`目录 end` |_2018-03-31_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
 ****************************************
 # 【网络管理】
 ## DNS
@@ -271,8 +271,8 @@ _ss_
     - 注意：`-X`，两个配置文件。这三者的配置，wget是取并集的， 使用了`-X ''` 后就只看后面的`-X 参数`   
 
 - 参数:
-    - 目录下载 -r 递归选项
-    - 后台下载 --background 即使 你Ctrl D/exit也不会中断执行
+    - 目录下载 `-r` 递归选项
+    - 后台下载 `--background` 即使 你Ctrl D/exit也不会中断执行
     - -o 指定日志输出。默认当前目录的 wget-log
     - 避开robots.txt 协议 `--execute robots=off`
         - 尝试使用tomcat构建一个有robots协议的网站，然后wget还是绕过了协议。。。。。。
