@@ -36,7 +36,7 @@
         - [Docker-Swarm](#docker-swarm)
     - [轻量镜像](#轻量镜像)
 
-`目录 end` |_2018-03-30_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
+`目录 end` |_2018-04-01_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
 ****************************************
 # Docker
 > [docker资源汇总 ](http://www.open-open.com/lib/view/open1443075440623.html)
@@ -78,8 +78,13 @@
 - 查看适用于当前系统的包：`snap install find`
 - 安装： `snap install docker`
 
-`apt`
+`Ubuntu或者Deepin`
 - `sudo apt install docker.io`
+
+`debian 8`
+> [参考](http://www.docker.org.cn/book/install/install-docker-on-debian-8.0-jessie-34.html)
+- `sudo echo "deb http://http.debian.net/debian jessie-backports main" >> /etc/apt/sources.list`
+- `sudo apt-get install docker.io`
 
 `yum`
 - `sudo yum install docker`
@@ -102,7 +107,6 @@ _Debian系_
 
 - 如果没有docker组，添加组 `sudo groupadd docker `
 - 将当前用户加入用户组 `sudo gpasswd -a $USER docker`
-    - 或者?? ：`sudo usermod -aG docker $USER` 会有问题
 - 然后重新注销登录，或者退出会话重新登录即可
 
 #### 卸载

@@ -1,6 +1,7 @@
 `目录 start`
  
 - [Vim](#vim)
+    - [Tips](#tips)
     - [基本配置](#基本配置)
     - [基础操作](#基础操作)
         - [跳转](#跳转)
@@ -9,24 +10,45 @@
         - [插入模式](#插入模式)
         - [命令模式](#命令模式)
 
-`目录 end` |_2018-03-15_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
+`目录 end` |_2018-04-01_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
 ****************************************
 # Vim 
 > 学习曲线很高，但是学会熟练使用后就效率很高
 
+## Tips
+1. 误按 `Ctrl S` 终止屏幕输出（即停止回显）你敲的依然有效，只是看不见 `Ctrl Q` 即可恢复
+**************
 `vim输出的信息`
 ```
-     系统 vimrc 文件: "$VIM/vimrc"
-     用户 vimrc 文件: "$HOME/.vimrc"
- 第二用户 vimrc 文件: "~/.vim/vimrc"
-      用户 exrc 文件: "$HOME/.exrc"
-       defaults file: "$VIMRUNTIME/defaults.vim"
-         $VIM 预设值: "/usr/share/vim"
+    系统 vimrc 文件: "$VIM/vimrc"
+    用户 vimrc 文件: "$HOME/.vimrc"
+    第二用户 vimrc 文件: "~/.vim/vimrc"
+    用户 exrc 文件: "$HOME/.exrc"
+    defaults file: "$VIMRUNTIME/defaults.vim"
+    $VIM 预设值: "/usr/share/vim"
 ```
 ## 基本配置
 - 在文件 全局：`/etc/vim/vimrc` 先备份一下 `sudo cp /etc/vim/vimrc /etc/vim/vimrc.bak`
-	- 或者当前用户：`~/.vimrc` 中添加如下内容就差不多了（但是文件高亮不见了）
-    - [.vimrc文件](https://gitee.com/kcp1104/codes/ajpxfmltvund5r2w8ge4o50#.vimrc)
+	- 或者当前用户：`~/.vimrc` 中添加如下内容
+```sh
+    set showcmd		" Show (partial) command in status line.
+    set autowrite		" Automatically save before commands like :next and :make
+    set nocompatible
+    set number
+    filetype on 
+    syntax on
+    set history=1000
+    set autoindent
+    set smartindent
+    set tabstop=4
+    set shiftwidth=4
+    set showmatch
+    set guioptions=T
+    set ruler
+    set nohls
+    set backspace=2
+    imap jj <Esc>
+```
 
 ## 基础操作
 > [参考博客](http://www.jianshu.com/p/bcbe916f97e1)  

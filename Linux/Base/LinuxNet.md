@@ -31,7 +31,7 @@
         - [VPN](#vpn)
             - [shadowsocks](#shadowsocks)
 
-`目录 end` |_2018-03-31_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
+`目录 end` |_2018-04-01_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
 ****************************************
 # 【网络管理】
 ## DNS
@@ -354,6 +354,8 @@ _ss_
 
 ******************************
 ### SSH
+> [Linux启动或禁止SSH用户及IP的登录](https://blog.csdn.net/linghe301/article/details/8211305)
+
 > `ssh user@host` 默认22端口登录系统  
 > `ssh -p port user@host` 指定端口登录  
 > `ssh -T -p port user@host` 测试能否登录上    
@@ -441,6 +443,7 @@ _参数解释_
     - 如果生成公钥时_没有_设置密码就要错三次，然后输入用户密码，
     - 不觉得有多方便，还不如 alias进行配置
 
+> 修改欢迎信息 /etc/motd
 #### 5.多密钥对
 > [参考博客](http://blog.csdn.net/black_ox/article/details/17753943)   
 

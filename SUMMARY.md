@@ -124,6 +124,9 @@
         * [ DockerFile ](./Linux/Container/DockerFile.md)
         * [ DockerSoft ](./Linux/Container/DockerSoft.md)
         * [ Kubernetes ](./Linux/Container/Kubernetes.md)
+    * 【 Linux/Debian 】
+        * [ Debian ](./Linux/Debian/Debian.md)
+        * [ Ubuntu ](./Linux/Debian/Ubuntu.md)
     * 【 Linux/Tool 】
         * [ Nginx ](./Linux/Tool/Nginx.md)
         * [ Vim ](./Linux/Tool/Vim.md)
@@ -170,6 +173,7 @@
     * 【 Skills/Work 】
         * [ InterviewSkill ](./Skills/Work/InterviewSkill.md)
         * [ PomodoroTechnique ](./Skills/Work/PomodoroTechnique.md)
+        * [ ShortcutKey ](./Skills/Work/ShortcutKey.md)
     * [ AppManual ](./Skills/AppManual.md)
     * [ CodingThinking ](./Skills/CodingThinking.md)
     * [ Problem ](./Skills/Problem.md)

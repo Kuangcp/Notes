@@ -13,17 +13,17 @@
     - [配置Redis](#配置redis)
         - [从源码编译运行并测试](#从源码编译运行并测试)
     - [问题以及解决方案：](#问题以及解决方案)
-        - [Picked up _JAVA_OPTIONS: -Dawt.useSystemAAFontSettings=gasp](#picked-up-_java_options--dawtusesystemaafontsettings=gasp)
-        - [联想G4070 安装 deepin 15.4.1 显卡兼容失败（15.4还能正常用）](#联想g4070-安装-deepin-1541-显卡兼容失败（154还能正常用）)
+        - [Java OpenJDK](#java-openjdk)
+        - [显卡问题](#显卡问题)
         - [双硬盘的折腾记录](#双硬盘的折腾记录)
 
-`目录 end` |_2018-03-16_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
+`目录 end` |_2018-04-01_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
 ****************************************
 # 配置Linux
 > 修改Hostname需要重启, 设置java默认需要重启, docker添加用户组需要重启
 
 ## 新增用户
-> [详细](/Linux/Linux_Base.md#用户管理)
+> [详细](/Linux/Base/LinuxBase.md#用户管理)
 
 ## 安装Docker
 > [详细文档](/Linux/Container/Docker.md)
@@ -114,7 +114,8 @@ export PATH=${JAVA_HOME}/bin:$PATH
 
 **************
 ## 问题以及解决方案：
-### Picked up _JAVA_OPTIONS: -Dawt.useSystemAAFontSettings=gasp
+### Java OpenJDK
+> Picked up _JAVA_OPTIONS: -Dawt.useSystemAAFontSettings=gasp
 - 原因是linux自带的OpenJDK影响了安装的java
     - `sudo mv /etc/profile.d/java-awt-font-gasp.sh /etc/profile.d/java-awt-font-gasp.sh.bak`
     - 重启或注销即可
@@ -123,7 +124,8 @@ export PATH=${JAVA_HOME}/bin:$PATH
 - `sudo apt-get install deepin-crossover deepinwine-qq`
 - [安装QQ](https://www.findhao.net/easycoding/1748)
 
-### 联想G4070 安装 deepin 15.4.1 显卡兼容失败（15.4还能正常用）
+### 显卡问题
+> 联想G4070 安装 deepin 15.4.1 显卡兼容失败（15.4还能正常用）
 - 因为合上盖子休眠就会导致打开电脑直接死机， 找了半天原因是驱动问题， 安装nvidia-driver nvidia-setting bumblebee-nvidia 即可解决、
 - 手残，按到关闭窗口特效后，就无法打开了，各种用着不爽， 然后重装了最新版系统，然后就装驱动，重启就不能开特效了。。。。。
 
