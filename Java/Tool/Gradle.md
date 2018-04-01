@@ -51,7 +51,7 @@
     - [Jenkin 使用](#jenkin-使用)
         - [下载安装和配置](#下载安装和配置)
 
-`目录 end` |_2018-03-28_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
+`目录 end` |_2018-04-01_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
 ****************************************
 
 # Gradle
@@ -155,7 +155,6 @@ allprojects{
 - 也可以跳过测试 `gradle build -x test`
 
 ***************************************
-
 ## 第一个 build.gradle
 ```groovy
    task helloworld{
@@ -167,10 +166,8 @@ allprojects{
    task helloworld<<{
       println 'Hello world!'
    }
-   
 ```
 -  运行：`gradle -q helloworld`
-
 
 ### 配置Gradle包管理器 Wrapper
 > 在使用IDE生成项目的时候，可以选择gradle的执行目录，可以选`gradle wrapper` 也可以选自己下载解压的完整包
@@ -187,7 +184,6 @@ allprojects{
 
 ### Gradle多模块的构建
 _setting.gradle_
-
 ```groovy
     rootProject.name = 'JavaBase'
     include('java-io')
@@ -208,10 +204,10 @@ allprojects {
     }
 }
 ```
-
 ********************************
 ## Gradle进阶知识
-> [某人的学习仓库](https://github.com/davenkin/gradle-learning)
+> [davenkin的学习仓库](https://github.com/davenkin/gradle-learning)
+> [个人学习Gradle的记录仓库](https://github.com/Kuangcp/LearnGradle)
 
 ### Gradle 构建块
 - 三个基本块 project task property， 使用DDD（领域驱动设计）
@@ -264,7 +260,6 @@ allprojects {
 -  因为Gradle的构建生命周期阶段如下: 初始化、配置和执行 读取文件就属于配置阶段
 	- **注意** : 项目的每一次构建都会运行属于配置阶段的代码，即使你只是运行了 gradle tasks
 
-
 ***************************
 
 ### 增量式构建特性
@@ -296,7 +291,6 @@ allprojects {
    class ReleaseVersionTask extends DefaultTask{
     @Input Boolean release
     @OutputFile File destFile
-
     ReleaseVersionTask(){
         group = 'versioning'
         description = 'Make Project a release version'
@@ -337,7 +331,6 @@ class ProjectVersion{
 task makeReleaseVersion(type:ReleaseVersionTask){
     release = 'true'
     destFile = file('version.properties')
-    
 }
 ```
 - 书上写的不完全，调试要死人
@@ -380,7 +373,6 @@ task makeReleaseVersion(type:ReleaseVersionTask){
                 case 'minor':++version.minor
                     break
                 default : throw new GradleException("Invalid version type '$classifier' . Allow types :['Major','Minor']")
-
             }
             String newVersion = version.toString()
             logger.info "Increment $classifier project version: $currentVersion -> $newVersion"

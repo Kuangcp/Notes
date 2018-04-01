@@ -17,7 +17,7 @@
     - [生活](#生活)
     - [商业](#商业)
 
-`目录 end` |_2018-03-21_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
+`目录 end` |_2018-04-01_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
 ****************************************
 
 > 只用来记录非技术类的文章,技术类的直接放到对应的笔记中去
@@ -136,6 +136,7 @@ _如何将脑海中的思维火花转化为代码_
 ## 毕业
 - [开题答辩的礼貌性注意事项](http://biyelunwen.yjbys.com/dabian/)
 - [如何准备校招技术面试](http://blog.csdn.net/h3243212/article/details/78132994)
+- [知网毕业论文查重有关](http://www.cnkis.net/html/970548227.html)
 
 ## 生活
 - [那些拿命换钱的年轻人，换着换着就死了](https://mp.weixin.qq.com/s/ZGDMod70iQMM7O2asx61Eg)

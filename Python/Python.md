@@ -37,7 +37,7 @@
         - [自行安装](#自行安装)
     - [QT](#qt)
 
-`目录 end` |_2018-03-28_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
+`目录 end` |_2018-04-01_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
 ****************************************
 # Python
 ## 简介
@@ -551,6 +551,7 @@ sudo apt install libfreetype6-dev g++
 - `redis` 和Redis命令完美融合
 - `httpie` HTTP方便的交互
 - [python-excel](http://www.python-excel.org/)
+- `python-docx` [文档](https://python-docx.readthedocs.io/en/latest/)
 
 ********************
 ## QT
