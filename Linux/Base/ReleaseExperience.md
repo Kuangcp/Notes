@@ -2,6 +2,7 @@
  
 - [Linux各个发行版本使用体验](#linux各个发行版本使用体验)
     - [基础知识](#基础知识)
+    - [服务器系统之争](#服务器系统之争)
     - [Debian系](#debian系)
         - [Debian](#debian)
         - [Ubuntu](#ubuntu)
@@ -20,7 +21,7 @@
     - [Gentoo](#gentoo)
     - [Mageia](#mageia)
 
-`目录 end` |_2018-03-15_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
+`目录 end` |_2018-04-01_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
 ****************************************
 # Linux各个发行版本使用体验
 > 一边用一边记录吧
@@ -33,12 +34,21 @@
 
 _查看发行版_
 - `lsb_release -a`  [查看更多方式](/Linux/Linux_File.md#查看发行版)
+## 服务器系统之争
+> [服务器操作系统应该选择 Debian/Ubuntu 还是 CentOS？](https://www.zhihu.com/question/19599986)  
+> [CentOS vs CoreOS – Which OS to choose for your Docker web hosting services](https://bobcares.com/blog/centos-vs-coreos-os-for-docker-web-hosting/2/)
+
+> 2018-04-01 17:17:19  
+> 个人来讲, 菜鸡一个,但是习惯了Ubuntu16,也尝试过centos7, 还行之匆匆的两个服务器都装了centos, 然后俩都出问题了,都不想去百度找解决方案了,正常操作都能报错? 很棒棒
+> 正在尝试Debian8 还是debian系习惯了
 
 ## Debian系
 ### Debian
-> 很古老的系统 [官网](https://www.debian.org/index.zh-cn.html)
+> 很古老但是很好用的系统 [官网](https://www.debian.org/index.zh-cn.html)
 
-- 奇怪的是我在虚拟机装了好几个好几次装不上, 装完一登录就只有壁纸
+- 奇怪的是我在虚拟机里装了好几个好几次装不上, 装完一登录就只有壁纸
+- 2018-04-01 17:19:50 作为服务器系统安装完Debian8.2 85M内存占用
+
 ### Ubuntu
 > 很多人的入门系统
 
@@ -93,7 +103,8 @@ _查看发行版_
 > redhat的试验场 不太感冒
 
 ### Centos
-> 在阿里云上装了一个, 开机82M Centos7.4
+> 在阿里云上装了一个, 开机82M Centos7.4 然后装个nginx就挂了 稳定?  
+> 不管,就是要黑一波, 命令都没有提示
 
 ### openSUSE
 ************************

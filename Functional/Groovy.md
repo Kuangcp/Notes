@@ -2,6 +2,7 @@
  
 - [Groovy](#groovy)
     - [安装配置](#安装配置)
+        - [在IDEA中](#在idea中)
         - [Maven引入Groovy](#maven引入groovy)
     - [Groovy基础](#groovy基础)
         - [Groovy特性](#groovy特性)
@@ -9,14 +10,14 @@
             - [数字处理](#数字处理)
             - [变量，动态和静态类型，作用域](#变量动态和静态类型作用域)
             - [列表和映射语法](#列表和映射语法)
-        - [与Java的差异](#与java的差异)
+    - [与Java的差异](#与java的差异)
         - [Java不具备的Groovy特性](#java不具备的groovy特性)
-        - [Groovy和Java的交互](#groovy和java的交互)
-            - [Groovy调用Java](#groovy调用java)
-            - [Java调用Groovy](#java调用groovy)
-        - [Grails](#grails)
+    - [Groovy和Java的交互](#groovy和java的交互)
+        - [Groovy调用Java](#groovy调用java)
+        - [Java调用Groovy](#java调用groovy)
+    - [Grails](#grails)
 
-`目录 end` *目录创建于2018-01-14*
+`目录 end` |_2018-04-01_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
 ****************************************
 # Groovy
 - Groovy 具有的Java所没有的语言特性 ：
@@ -27,16 +28,20 @@
 - Groovy处理XML和循环遍历集合的方式要比Java简洁
 - Groovy性能：如果你需要注重性能，Groovy不是一个好的选择，Groovy的对象都派生于GroovyObject，Groovy的方法都不是直接调用的而是反射执行的。虽然有invokedynamic关键字进行优化
     - 一些重活还是调用Java类库好些，毕竟是互通互用的，调用groovyserv类库能提高性能
-## 安装配置
-- [安装sdkman](./Skills/usually_app.md#使用sdkman)
-- `sdk install groovy`
 
-- 新建文件 `println "Hello World!"` 然后 `groovy 文件`
-    - 或者`groovy -e "println 'Hello World!'"`
+## 安装配置
+- [安装sdkman](./Skills/AppManual.md#使用sdkman)
+    - 然后 `sdk install groovy`
+    - 新建文件 `println "Hello World!"` 然后 `groovy 文件`
+        - 或者`groovy -e "println 'Hello World!'"`
+
+### 在IDEA中
+> 因为构建工具Gradle中就已经包含了Groovy的库,所以最好就是只配置好一个Gradle, 然后Groovy配置Gradle的目录即可
 
 ### Maven引入Groovy
 - [参考博客](http://www.cnblogs.com/xiziyin/archive/2010/03/29/1699860.html)
 
+*************************
 ## Groovy基础
 > 作为一个脚本语言，和Python Ruby Smalltalk语法相似
 
@@ -83,7 +88,7 @@ import java.util.*
     - [列表和映射的学习代码](https://github.com/kuangcp/JavaBase/blob/master/src/main/groovy/com/learn/base/LearnListAndMap.groovy)
 
 ************
-### 与Java的差异
+## 与Java的差异
 
 - 简化输出语句：`println()` `print()` `printf()`
 - Groovy的省略语法:
@@ -111,7 +116,6 @@ import java.util.*
 
 > [示例代码](https://github.com/kuangcp/JavaBase/blob/master/src/main/groovy/com/learn/base/DiverseFromJava.groovy)
 
-*******
 ### Java不具备的Groovy特性
 - GroovyBean，更简单的bean
 - 用操作符`?.`实现null对象的安全访问
@@ -172,14 +176,12 @@ class Person{
 
 > [示例代码](https://github.com/kuangcp/JavaBase/blob/master/src/main/groovy/com/learn/base/ModernGroovy.groovy)
 
-
-### Groovy和Java的交互
-
-#### Groovy调用Java
+***********************
+## Groovy和Java的交互
+### Groovy调用Java
 - 只要将JAR放入classpath中，只要java能调用到，groovy也能调用到，也就是说直接用，无需特别配置
 - 也可以使用@Grab注解，来加载JAR
-
-#### Java调用Groovy
+### Java调用Groovy
 > [参考博客](http://www.tuicool.com/articles/i6raAv)
 
 - 从Java调用Groovy需要将Groovy及其相关的JAR放到这个程序的CLASSPATH下
@@ -192,8 +194,8 @@ class Person{
 
 > [示例代码](https://github.com/kuangcp/JavaBase/blob/master/src/main/java/com/classfile/JavaUseGroovy.java)
 
-
-### Grails
+***********************
+## Grails
 - [入门博客](http://www.jianshu.com/p/32c9b45a788f)
 
 

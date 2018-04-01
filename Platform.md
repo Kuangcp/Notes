@@ -21,6 +21,7 @@
         - [BAE](#bae)
         - [其他应用](#其他应用)
     - [腾讯](#腾讯)
+        - [域名](#域名)
         - [CVM](#cvm)
         - [COS](#cos)
         - [微信公众号](#微信公众号)
@@ -39,7 +40,7 @@
 - [测试平台](#测试平台)
 - [培训](#培训)
 
-`目录 end` |_2018-03-22_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
+`目录 end` |_2018-04-01_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
 ****************************************
 
 # 代码托管平台
@@ -223,6 +224,8 @@ CDN回源流出 	0.14
 
 *******************************************************
 ## 腾讯
+### 域名
+> [域名检测工具](https://cloud.tencent.com/product/tools)
 ### CVM
 > 云服务器  
 > 学生优惠是 10元每月1核1g 60则是2核2g

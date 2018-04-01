@@ -24,7 +24,7 @@
     - [人工智能](#人工智能)
     - [在线工具](#在线工具)
 
-`目录 end` |_2018-03-27_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
+`目录 end` |_2018-04-01_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
 ****************************************
 # 【常用的网站】
 ## 软件商店
@@ -43,6 +43,7 @@
 ## 特别网站
 - [测试你当前连接用的是ipv4还是ipv6](http://www.kame.net/)
 - [badge网站](https://shields.io/)
+- [工信部备案查询](http://www.miitbeian.gov.cn/publish/query/indexFirst.action)
 
 - [亲戚关系计算器项目](https://www.shiyanlou.com/courses/271#reports)
 - [程序员的导航页](http://www.gitnavi.com/)
