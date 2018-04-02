@@ -6,7 +6,7 @@
         - [【Tips】](#tips)
         - [清理仓库](#清理仓库)
             - [【git gc】](#git-gc)
-            - [【fork 相关操作】](#fork-相关操作)
+        - [fork相关操作](#fork相关操作)
         - [仓库基本命令](#仓库基本命令)
             - [【git config】](#git-config)
             - [【git rm】](#git-rm)
@@ -31,7 +31,7 @@
         - [SVN](#svn)
     - [repos的使用](#repos的使用)
 
-`目录 end` |_2018-03-22_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
+`目录 end` |_2018-04-02_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
 ****************************************
 # Git基础
 ## 版本控制系统(VCS)
@@ -50,29 +50,37 @@
 
 
 ### 清理仓库
-> [参考博客1 彻底删除](http://www.itwendao.com/article/detail/413282.html) | [参考博客2 彻底删除](http://blog.csdn.net/meteor1113/article/details/4407209) | [参考博客3 删除大文件](http://www.gzhphb.com/article/78/784131.html) | [参考博客4 减小磁盘占用](http://zhongmingmao.me/2017/04/19/git-reduce/)
+> [bfg-cleaner](https://rtyley.github.io/bfg-repo-cleaner/)
 
-- 因为删除的文件是会留在仓库，以便以后恢复，这样的话仓库就会越来越大了
-- `git gc` 清理，不知道有没有用
-- 强制删除，并且从git索引中也去掉，相当于彻底删除 
+> [参考博客1 彻底删除](http://www.itwendao.com/article/detail/413282.html) | 
+> [参考博客2 彻底删除](http://blog.csdn.net/meteor1113/article/details/4407209) | 
+> [参考博客3 删除大文件](http://www.gzhphb.com/article/78/784131.html)  
+> [参考博客4 减小磁盘占用](http://zhongmingmao.me/2017/04/19/git-reduce/)  
+> [删除仓库的某个时间点之前的历史记录，减少.git 目录大小](https://www.v2ex.com/t/297802)  
+> [如何清洗 Git Repo 代码仓库](http://www.open-open.com/lib/view/open1414632626075.html)  
+- 因为删除的文件是会留在仓库，为了以后恢复用，但是这样的话仓库就会越来越大了
+- `强制删除`，并且从git索引中也去掉，相当于彻底删除 
     - `git filter-branch --force --index-filter 'git rm --cached --ignore-unmatch 文件的路径' --prune-empty --tag-name-filter cat -- --all`
     - `git push origin --force --all`
     - `git push origin --force --tags`
     - 使用`git rebase`来更新分支，而不是 `git merge` 不然文件又回来了
 
-- 然而，因为这个笔记仓库，改动太多，之前加入的图片文件，删除之前也改动了名字，现在根本找不到文件了， 删除不了了，如果要减小仓库大小只能重建了
-- 猜测他的文件都在 `.git/objects/pack/` 里留有备份
+- 然而这个笔记仓库，之前将图片文件也放在了仓库里，删除之前也改动了名字，现在根本找不到文件了,如果要减小仓库大小只能重建了
+    - 猜测他的文件都在 `.git/objects/pack/` 里留有备份
+    - 最简单的减小传输的大小的是clone时加上 `--depth 1` 对之前的分支延迟下载
 
 #### 【git gc】
+> 只能压缩一部分空间
 `git gc -h`:
 - `--aggressive` 默认使用较快速的方式检查文档库,并完成清理,当需要比较久的时间,偶尔使用即可
 - `--prune[=<日期>]` 清除未引用的对
 - `--auto` 启用自动垃圾回收模式
 - `--force` 强制执行 gc 即使另外一个 gc 正在执行
 
-#### 【fork 相关操作】
+### fork相关操作
 - fork之后，想要更新原作者的分支：`git remote add 名称 原作者URL`
 - 拉取更新 ：`git fetch 名称`
+> 在合并别人仓库源码时,相当于两个不同源的分支之间的合并操作
 
 ***************
 ### 仓库基本命令

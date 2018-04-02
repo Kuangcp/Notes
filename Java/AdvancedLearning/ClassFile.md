@@ -33,7 +33,7 @@
             - [Marshalling](#marshalling)
     - [反射的使用](#反射的使用)
 
-`目录 end` |_2018-03-30_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
+`目录 end` |_2018-04-02_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
 ****************************************
 # Java基础
 ## 【类和字节码】
@@ -297,6 +297,16 @@ message helloworld{
 }
 ```
 - 据此生成Java文件 `mkdir src && protoc --java_out=./src hi.proto`
+
+_也可以使用该脚本更新协议_
+```sh
+    # proto文件中明确定义了一样的包结构就可以直接跑脚本
+    basePath='minigame/proto/proto'
+    targetPath='minigame/src/main/java'
+    rm -rf $targetPath \
+    && mkdir $targetPath \
+    && protoc $basePath/*.proto --java_out=$targetPath \
+```
 
 *********************
 

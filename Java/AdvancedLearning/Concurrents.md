@@ -11,6 +11,7 @@
         - [volatile](#volatile)
             - [正确使用](#正确使用)
     - [【现代并发】 concurrent包](#现代并发-concurrent包)
+        - [CAS指令](#cas指令)
         - [原子类 java.util.concurrent.atomic](#原子类-javautilconcurrentatomic)
         - [线程锁 java.util.concurrent.locks](#线程锁-javautilconcurrentlocks)
         - [CountDownLatch 锁存器](#countdownlatch-锁存器)
@@ -25,7 +26,7 @@
     - [【分支合并框架】](#分支合并框架)
     - [【Java内存模型】](#java内存模型)
 
-`目录 end` |_2018-04-01_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
+`目录 end` |_2018-04-02_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
 ****************************************
 # Java并发
 > [个人相关代码](https://github.com/Kuangcp/JavaBase/tree/master/src/main/java/com/concurrents)  
@@ -160,15 +161,44 @@ public int current(){
         - 线程可见性: 当一个线程修改了被volatile修饰的变量后,无论是否加锁,其他线程都能立即看到最新的修改
         - 禁止指令重排序优化, 普通的变量仅仅保证在该方法的执行过程中, 所有依赖赋值结果的地方都能获取正确的结果
             - 而不能保证变量赋值操作的顺序和程序代码的执行顺序一致
-```
-TODO 
+```java
+public class ResortJavaDemo {
+    private static boolean stop;
+    public static void main(String[]s) throws InterruptedException {
+        Thread workThread = new Thread(() -> {
+            int i = 0;
+            while(!stop){
+                i++;
+                try {
+                    TimeUnit.SECONDS.sleep(1);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+                System.out.println("i"+i);
+            }
+        });
+        workThread.start();
+        TimeUnit.SECONDS.sleep(3);
+        stop = true;
+    }
+}
 ```
 > 我们预期程序会在3s后停止, 但是实际上它会一直执行下去, 原因就是虚拟机对代码进行了指令重排序和优化, 优化后的指令如下:
+```java
+if (!stop)
+    while(true)
 ```
-TODO
-```
+> 所以需要在stop前加上volatile修饰符, 解决了如下两个问题
+>> 1. main线程对stop的修改在workThread中可见
+>> 2. 禁止指令重排序, 防止因为重排序导致的并发访问逻辑混乱
 
+- 以上示例代码在Java8中是正常运行的, 并不会一直执行下去, 所以还需要找个别的Demo过来
 
+> 一些人认为volatile可以替代传统锁,提升并发性能, 这个认识是错误的. volatile仅仅解决了可见性的问题, 并不能保证互斥性
+>> volatile最适合使用的是一个线程写, 其他线程读的场景. 
+>> 如果有多个线程并发`写`操作,仍然需要使用`锁`或者`线程安全的容器`或者`原子变量`来代替
+
+****************************
 - 不可变性：
     - 这些对象或者没有状态（属性）或者只有final域。因为他们的状态不可变，所以是安全而又活泼，不会出现不一致的情况
     - 初始化就会遇上问题，如果是需要初始化很多属性，可以采用工厂模式，但是构建器模式更好。
@@ -177,19 +207,24 @@ TODO
     - 不可变对象中的final域特别要注意：
         - final声明的对象的引用是不可变的， 但是如果引用的是对象，该对象自身的属性的引用是可变的
     - 不可变对象的使用十分广泛，但是开发效率不行，每修改对象的状态都要构建一个新对象
-********************
-
 ## 【现代并发】 concurrent包
 > 简称为J.U.C (java.util.concurrent) | [The j.u.c Synchronizer Framework中文翻译版](http://ifeve.com/aqs/)
+> 建议通过使用线程池,Task(Runnable/Callable),原子类和线程安全容器来代替传统的同步锁.wait和notify, 提升并发访问的性能, 降低多线程编程的难度
 
 - ReentrantLock 和 sync 加解锁机制的区别?  
     - 一个作用于线程一个作用于临界变量
+### CAS指令
+> 互斥同步最主要的问题就是进行线程阻塞和唤醒所带来的性能额外损耗, 因此这种同步也被称为阻塞同步,悲观锁
+>> 与之对应的乐观锁是, 先进行操作, 操作完成之后再判断操作是否成功, 是否有并发问题, 如果有则进行失败补偿, 如果没有就算操作成功. 
+
+> Java中的非阻塞同步就是CAS 1.5就有了
 
 
 ### 原子类 java.util.concurrent.atomic
-> 提供适当的原子方法 避免在共享数据上出现竞争危害的方法
+> 提供适当的原子方法 避免在共享数据上出现竞争危害的方法, 使用Java自带的原子类, 可以避免同步锁带来的并发访问性能降低的问题, 减少犯错的机会. 对于 int, long, boolean 等成员变量大量使用原子类
+>> 但是使用者必须通过类似 compareAndSet或者set或者与这些操作等价的`原子操作`来保证更新的原子性.
 
-- 常见的操作系统的支持， 他们是非阻塞的（无需线程锁）， 常见的方法是实现序列号机制（和数据库里的序列号机制类似），在AtomicInteger或AtomicLong上用原子
+- 常见的操作系统的支持， 他们是非阻塞的（无需线程锁）， 常见的方法是实现序列号机制（和数据库里的序列号机制类似），在`AtomicInteger`或`AtomicLong`上用原子
     - 操作`getAndIncrement()`方法， 并且提供了nextId 方法得到唯一的完全增长的数值
 - 注意： 原子类不是相似的类继承而来，所以 AtomicBoolean不能当Boolean用
 
