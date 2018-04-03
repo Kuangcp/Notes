@@ -11,7 +11,7 @@
     - [测试套件](#测试套件)
     - [分类测试](#分类测试)
 
-`目录 end` |_2018-03-16_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
+`目录 end` |_2018-04-03_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
 ****************************************
 # 为何要使用测试
 1. 帮助理解需求
@@ -85,10 +85,10 @@ _例如该项目结构_
     6. @AfterClass: 所有测试结束之后运行, 
 
 ### Rule注解的使用
-> 也可以使用 @Rule来规定测试类中所有测试方法  
+> 也可以使用 `@Rule` 来规定测试类中所有测试方法  
 ```java
-@Rule 
-public Timeout timeout = new Timeout(1000);
+    @Rule 
+    public Timeout timeout = new Timeout(1000);
 ```
 
 *********************

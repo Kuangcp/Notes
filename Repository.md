@@ -37,7 +37,7 @@
     - [工作](#工作)
         - [简历](#简历)
 
-`目录 end` |_2018-04-01_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
+`目录 end` |_2018-04-03_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
 ****************************************
 
 # 【Organization】
@@ -129,6 +129,7 @@
 - [docker-demos](https://github.com/waylau/docker-demos) `Maven和Gradle结合docker使用`
 - [mybatis-spring-boot](https://github.com/abel533/MyBatis-Spring-Boot)
 - [chrome-plugin-demo](https://github.com/sxei/chrome-plugin-demo)`Chrome插件案例, 最新火狐(54之后)也适用`
+- [netty-in-action-cn](https://github.com/ReactivePlatform/netty-in-action-cn) `Netty实战中文版配套代码`
 
 #### 微服务
 - [shop](https://github.com/lrwinx/shop)`SpringClod的实战案例`

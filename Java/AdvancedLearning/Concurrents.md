@@ -10,13 +10,16 @@
             - [正确使用锁](#正确使用锁)
         - [volatile](#volatile)
             - [正确使用](#正确使用)
-    - [【现代并发】 concurrent包](#现代并发-concurrent包)
-        - [CAS指令](#cas指令)
-        - [原子类 java.util.concurrent.atomic](#原子类-javautilconcurrentatomic)
-        - [线程锁 java.util.concurrent.locks](#线程锁-javautilconcurrentlocks)
-        - [CountDownLatch 锁存器](#countdownlatch-锁存器)
-        - [ConcurrentHashMap](#concurrenthashmap)
-        - [CopyOnWriteArrayList](#copyonwritearraylist)
+    - [【现代并发】JUC](#现代并发juc)
+        - [概念](#概念)
+            - [CAS指令](#cas指令)
+            - [原子类](#原子类)
+            - [读写锁](#读写锁)
+        - [具体实现](#具体实现)
+            - [线程锁](#线程锁)
+            - [CountDownLatch 锁存器](#countdownlatch-锁存器)
+            - [ConcurrentHashMap](#concurrenthashmap)
+            - [CopyOnWriteArrayList](#copyonwritearraylist)
     - [【Queue】](#queue)
         - [BlockingQueue](#blockingqueue)
         - [TransferQueue](#transferqueue)
@@ -26,7 +29,7 @@
     - [【分支合并框架】](#分支合并框架)
     - [【Java内存模型】](#java内存模型)
 
-`目录 end` |_2018-04-02_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
+`目录 end` |_2018-04-03_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
 ****************************************
 # Java并发
 > [个人相关代码](https://github.com/Kuangcp/JavaBase/tree/master/src/main/java/com/concurrents)  
@@ -67,10 +70,12 @@
 - 一个安全但是编写幼稚的系统性能通常不会好，因为里面会用大量的锁来保证安全
 
 ### 好的习惯
-- 尽可能限制子系统之间的通信，隐藏数据堆安全性非常有帮助
-- 尽可能保证子系统内部结构的确定性，比如：即便子系统会以并发的，非确定性的方式进行交互，子系统内部的设计也应该按照线程和对象的静态知识
-- 采用客户端应用必须遵守的方正。这个技巧虽然强大，但是依赖于用户应用程序的合作程度，如果某个糟糕的应用不遵守规则，排查问题很困难
-- 在文档中记录所要求的行为，这是最逊的方法，但如果代码要部署在非常通用的环境下，就必须采用这个方法
+1. 尽可能限制子系统之间的通信，隐藏数据对安全性非常有帮助
+2. 尽可能保证子系统内部结构的确定性，
+    - 比如：即便子系统会以并发的，非确定性的方式进行交互，子系统内部的设计也应该按照线程和对象的静态知识
+3. 采用客户端应用必须遵守的规则。
+    - 这个技巧虽然强大，但是依赖于用户应用程序的合作程度，如果某个糟糕的应用不遵守规则，排查问题很困难
+4. 在文档中记录所要求的行为，这是最逊的方法，但如果代码要部署在非常通用的环境下，就必须采用这个方法
 
 ***********
 - 系统开销之源
@@ -100,8 +105,7 @@
 - 线程的状态模型：
     - 线程创建时处于准备（Ready）状态，然后调度器会准备执行
     
-- 完全同步对象 策略
-    - 一个满足下面所有条件的类就是完全同步类：
+- 完全同步对象 策略 一个满足下面所有条件的类就是完全同步类：
     - 所有域在任何公共构造方法中的初始化都能达到一致的状态
     - 没有公共域
     - 从任何非私有方法返回后，都可以保证对象实例处于一致的状态  假定调用方法时状态是一致的
@@ -207,28 +211,41 @@ if (!stop)
     - 不可变对象中的final域特别要注意：
         - final声明的对象的引用是不可变的， 但是如果引用的是对象，该对象自身的属性的引用是可变的
     - 不可变对象的使用十分广泛，但是开发效率不行，每修改对象的状态都要构建一个新对象
-## 【现代并发】 concurrent包
+
+## 【现代并发】JUC
 > 简称为J.U.C (java.util.concurrent) | [The j.u.c Synchronizer Framework中文翻译版](http://ifeve.com/aqs/)
-> 建议通过使用线程池,Task(Runnable/Callable),原子类和线程安全容器来代替传统的同步锁.wait和notify, 提升并发访问的性能, 降低多线程编程的难度
+- 建议通过使用`线程池`,`Task(Runnable/Callable)`,`读写锁`,`原子类`和`线程安全容器`来代替传统的同步锁,wait和notify
+    - 提升并发访问的性能, 降低多线程编程的难度, Netty就是这么做的
+
+> 线程安全容器底层使用了CAS,volatile,和ReadWriteLock实现
 
 - ReentrantLock 和 sync 加解锁机制的区别?  
     - 一个作用于线程一个作用于临界变量
-### CAS指令
+- 不要依赖线程优先级
+### 概念
+#### CAS指令
 > 互斥同步最主要的问题就是进行线程阻塞和唤醒所带来的性能额外损耗, 因此这种同步也被称为阻塞同步,悲观锁
 >> 与之对应的乐观锁是, 先进行操作, 操作完成之后再判断操作是否成功, 是否有并发问题, 如果有则进行失败补偿, 如果没有就算操作成功. 
 
 > Java中的非阻塞同步就是CAS 1.5就有了
 
-
-### 原子类 java.util.concurrent.atomic
-> 提供适当的原子方法 避免在共享数据上出现竞争危害的方法, 使用Java自带的原子类, 可以避免同步锁带来的并发访问性能降低的问题, 减少犯错的机会. 对于 int, long, boolean 等成员变量大量使用原子类
+#### 原子类 
+> `java.util.concurrent.atomic` 提供适当的原子方法 避免在共享数据上出现竞争危害的方法  
+> 使用Java自带的原子类, 可以避免同步锁带来的并发访问性能降低的问题, 减少犯错的机会. 对于 int, long, boolean 等成员变量大量使用原子类
 >> 但是使用者必须通过类似 compareAndSet或者set或者与这些操作等价的`原子操作`来保证更新的原子性.
 
 - 常见的操作系统的支持， 他们是非阻塞的（无需线程锁）， 常见的方法是实现序列号机制（和数据库里的序列号机制类似），在`AtomicInteger`或`AtomicLong`上用原子
     - 操作`getAndIncrement()`方法， 并且提供了nextId 方法得到唯一的完全增长的数值
 - 注意： 原子类不是相似的类继承而来，所以 AtomicBoolean不能当Boolean用
 
-### 线程锁 java.util.concurrent.locks
+#### 读写锁
+> 在读多写少的场景下, 使用同步锁比同步块性能要好
+
+- 读锁 ReentranReadWriteLock 是共享锁
+*****************
+### 具体实现
+#### 线程锁 
+> `java.util.concurrent.locks`
 - 块结构同步方式基于锁这样的的概念，具有缺点
     - 锁只有一种类型
     - 对被锁住的对象的所有同步操作都是一样的作用
@@ -249,7 +266,7 @@ if (!stop)
         - `trylock()`: [官方API1.8 trylock](https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/locks/ReentrantLock.html#tryLock--)
     - Lock接口的实现类：ReentrantWriteLock 在需要读取很多线程而写入很少线程时，用这个性能更好
     
-### CountDownLatch 锁存器
+#### CountDownLatch 锁存器
 - 是一种简单的同步模式，这种模式允许线程在通过同步屏障之前做少量的准备工作
     - 构建实例时，需要提供一个数值（计数器），通过两个方法来实现这个机制
     - `countDown()` 作用：计数器减一
@@ -264,7 +281,7 @@ if (!stop)
         
 - 能做到： 当一堆线程之间的同步，为了确保有指定数量正常初始化的线程 创建成功，才能开始同步 
 
-### ConcurrentHashMap
+#### ConcurrentHashMap
 - `ConcurrentHashMap` 是 HashMap的并发版本
 - 修改HashMap，并不需要将整个结构都锁住，只要锁住即将修改的桶（就是单个元素）
     - 好的HashMap 实现，在读取时不需要锁，写入时只要锁住要修改的单个桶 Java能达到这个标准，但是需要程序员去操作底层的细节才能实现
@@ -275,7 +292,7 @@ if (!stop)
 - 例如之前的完全同步类里的公共 Map实现就是HashMap，如果换成ConcurrentHashMap 那些synchronized关键字修饰的方法就可以换成普通方法了
 - 该类不仅提供了多线程的安全性，性能也很好
 
-### CopyOnWriteArrayList
+#### CopyOnWriteArrayList
 - 标准的ArrayList的替代，通过写时复制语义来实现线程安全性，也就是说修改列表的任何操作都会创建一个列表底层数组的新副本
     - 这就意味着所有成形的迭代器都不会遇到意料之外的修改 （脏读）
     

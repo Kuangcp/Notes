@@ -31,7 +31,7 @@
         - [VPN](#vpn)
             - [shadowsocks](#shadowsocks)
 
-`目录 end` |_2018-04-01_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
+`目录 end` |_2018-04-03_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
 ****************************************
 # 【网络管理】
 ## DNS
@@ -358,8 +358,10 @@ _ss_
 
 > `ssh user@host` 默认22端口登录系统  
 > `ssh -p port user@host` 指定端口登录  
-> `ssh -T -p port user@host` 测试能否登录上    
+> `ssh -T user@host` 测试能否登录上    
 > `ssh -i 私钥绝对路径 user@host` 采用指定私钥登录(一般默认是`.ssh/id_rsa`)  
+>> 私钥一定要是 600 权限
+>> 去除私钥的口令 `openssl rsa -in ~/.ssh/id_rsa -out ~/.ssh/id_rsa_new` 
 
 #### 1.安装软件
 _客户端安装软件_

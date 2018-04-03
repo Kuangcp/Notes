@@ -8,9 +8,10 @@
         - [创建](#创建)
         - [控制](#控制)
         - [销毁](#销毁)
+    - [线程的优先级](#线程的优先级)
     - [线程池](#线程池)
 
-`目录 end` |_2018-03-16_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
+`目录 end` |_2018-04-03_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
 ****************************************
 # 线程的基础学习
 > [个人相关代码](https://github.com/Kuangcp/JavaBase/tree/master/src/main/java/com/threads)
@@ -60,6 +61,9 @@ _Thread类的target属性_
 
 ### 销毁
 
+************************
+## 线程的优先级
+> 多个线程同时运行时,由线程调度器来决定哪些线程运行,哪些等待以及线程切换的时间点. 由于各个操作系统的线程调度器的实现各不相同, 所以依赖JDK来设置线程优先级策略是错误和非平台可移植性的.
 
 ***************************
 ## 线程池
