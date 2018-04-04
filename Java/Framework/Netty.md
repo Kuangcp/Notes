@@ -5,9 +5,10 @@
         - [编解码相关](#编解码相关)
             - [Protobuf](#protobuf)
     - [使用](#使用)
+        - [源码](#源码)
         - [配置环境](#配置环境)
 
-`目录 end` |_2018-03-26_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
+`目录 end` |_2018-04-04_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
 ****************************************
 # Netty
 > [trustlin](https://github.com/trustin)`Netty mina 的作者`
@@ -31,8 +32,9 @@
 > [更多](https://github.com/kuangcp/Notes/blob/master/Java/AdvancedLearning/ClassFile.md#其他业内主流编解码框架)
 
 #### Protobuf
+> [Protobuf基础](/Java/AdvancedLearning/ClassFile.md#protobuf) | 
 > [Netty中的使用案例](https://github.com/Kuangcp/NettyBook2/blob/master/src/main/java/com/phei/netty/codec/protobuf/README.md)
-> 要搭配处理半包的解码器
+>> 要搭配处理半包的解码器
 1. 使用 ProtobufVarint32FrameDecoder 
 2. 继承自 LengthFieldBasedFrameDecoder
 3. 继承自 ByteToMessageDecoder 自己处理
@@ -46,7 +48,10 @@
 > [NettyServer与SpringBoot集成](https://segmentfault.com/a/1190000004919133)  
 > [Netty NIO 框架性能压测-短链接-对比Tomcat ](http://www.oschina.net/question/12_8749)
 
+### 源码
 > [官方Demo](https://github.com/netty/netty/tree/4.1/example/src/main/java/io/netty/example)
+> [Netty实战配套源码](https://github.com/ReactivePlatform/netty-in-action-cn)
+> [Netty权威指南2 源码](https://github.com/Kuangcp/NettyBook2)
 
 ### 配置环境
 

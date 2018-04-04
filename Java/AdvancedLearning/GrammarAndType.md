@@ -9,6 +9,7 @@
     - [基础数据类型](#基础数据类型)
     - [包装类型](#包装类型)
         - [String](#string)
+            - [StringBuffer和StringBuilder](#stringbuffer和stringbuilder)
     - [自定义类](#自定义类)
     - [类型强转](#类型强转)
 - [类的结构](#类的结构)
@@ -17,6 +18,7 @@
         - [其他](#其他)
     - [属性](#属性)
     - [方法](#方法)
+- [TODO 学习和完善](#todo-学习和完善)
 - [POJO](#pojo)
     - [VO](#vo)
     - [PO](#po)
@@ -26,7 +28,7 @@
     - [DAO](#dao)
 - [关键字](#关键字)
 
-`目录 end` |_2018-04-03_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
+`目录 end` |_2018-04-04_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
 ****************************************
 # 基础语法
 
@@ -53,12 +55,18 @@
 ### String
 > 该类是final修饰的, 原因:[知乎问题](https://www.zhihu.com/question/31345592)
 
+
 - 常量池的实现
 
 - 常见编码转换
     - 一般Windows文件默认编码：`str = new String(str.getBytes("iso8859-1"), "gb2312"); ` 
     - properties文件中获取中文 `str = new String(str.getBytes("utf-8"), "utf-8");`
 
+#### StringBuffer和StringBuilder
+> [参考博客](https://blog.csdn.net/rmn190/article/details/1492013)
+
+
+***************************
 ## 自定义类
 > 也就是内部类, 而且其域可以和其他常见类型一样, 作为类的成员, 也可作为方法的局部变量, 其中包含的各种变量的域都是按原规则生效的
 
@@ -80,6 +88,8 @@
 
 ## 方法
 方法的签名: 
+# TODO 学习和完善
+
 
 **************
 # POJO

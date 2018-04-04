@@ -29,10 +29,14 @@
     - [日志](#日志)
         - [用户日志](#用户日志)
         - [系统日志](#系统日志)
+        - [应用日志](#应用日志)
     - [在Linux上操作压缩文件的命令](#在linux上操作压缩文件的命令)
         - [tar 归档 打包](#tar-归档-打包)
-        - [压缩](#压缩)
-        - [解压](#解压)
+        - [tar归档后压缩](#tar归档后压缩)
+        - [rar](#rar)
+        - [zip](#zip)
+        - [7Z](#7z)
+- [TODO 学习使用](#todo-学习使用)
         - [总结](#总结)
     - [常用文件](#常用文件)
         - [划分](#划分)
@@ -40,7 +44,7 @@
             - [查看发行版](#查看发行版)
             - [查看系统所有用户信息](#查看系统所有用户信息)
 
-`目录 end` |_2018-03-29_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
+`目录 end` |_2018-04-04_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
 ****************************************
 # 【文件管理】
 > Linux中认为万物皆文件
@@ -331,6 +335,9 @@ _mv_
 - 查看系统启动日志 `less /var/log/boot.log` 
 - 查看系统消息日志 `less /var/log/messages`
 
+### 应用日志
+> [处理Apache日志的Bash脚本](http://www.ruanyifeng.com/blog/2012/01/a_bash_script_of_apache_log_analysis.html)
+
 ************************************
 ## 在Linux上操作压缩文件的命令
 > Linux默认自带ZIP压缩，最大支持4GB压缩，RAR的压缩比大于4GB.
@@ -372,8 +379,7 @@ _tar_
     - `tar -cphf etc.tar /etc`
 
 ********************
-### 压缩
-_tar_
+### tar归档后压缩
 - tar -cvf a.tar *.txt
     - z tar.gz
     - j tar.bz2
@@ -384,10 +390,19 @@ _tar_
 - `tar -cjf jpg.tar.bz2 *.jpg `//将所有jpg打包成jpg.tar后 生成bzip2压缩的包，命名为jpg.tar.bz2
 - `tar -cZf jpg.tar.Z *.jpg ` //将所有jpg打包成jpg.tar后 生成umcompress压缩的包，命名为jpg.tar.Z
 
-_rar_
+_解压_
+- `tar -xvf file.tar` //解压 tar包
+- `tar -xzvf file.tar.gz` //解压tar.gz
+- `tar -xjvf file.tar.bz2`   //解压 tar.bz2
+- `tar -xZvf file.tar.Z `  //解压tar.Z
+
+### rar
 - `rar a jpg.rar *.jpg` //rar格式的压缩
 
-_zip_
+_解压_
+- `unrar e file.rar` //解压rar
+
+### zip
 - `zip images.zip *.jpg` //zip格式的压缩
 - `zip -r file.zip code/*` 压缩code目录下所有文件
     - `zip -r ./a.zip ./*` 压缩当前目录所有文件
@@ -399,23 +414,15 @@ _zip_
     - `-d filename` 在zip中删除某文件 删除某目录`dir/*`
         - _注意_: 所有的文件和目录都是相对于zip的根目录的完整路径
 
-### 解压
-_tar_
-- `tar -xvf file.tar` //解压 tar包
-- `tar -xzvf file.tar.gz` //解压tar.gz
-- `tar -xjvf file.tar.bz2`   //解压 tar.bz2
-- `tar -xZvf file.tar.Z `  //解压tar.Z
-
-_unrar_
-- `unrar e file.rar` //解压rar
-
-_unzip_
+_解压_
 - `unzip file.zip `//解压zip
     - -q 终端不输出 
     - -d 指定解压目录 
     - -l 不解压,查看所有文件 
     - -O 指定编码
 
+### 7Z
+# TODO 学习使用
 ### 总结
 ```
     *.tar 用 tar -xvf 解压

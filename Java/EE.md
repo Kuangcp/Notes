@@ -65,8 +65,8 @@
         - [8.7 Spring-Websocket 配置](#87-spring-websocket-配置)
                 - [maven配置jar环境](#maven配置jar环境)
         - [8.0 xml方式和注解方式的比较：](#80-xml方式和注解方式的比较)
-            - [1 Spring AOP还是完全用AspectJ？](#1-spring-aop还是完全用aspectj？)
-            - [2 Spring AOP中使用@AspectJ还是XML？](#2-spring-aop中使用@aspectj还是xml？)
+            - [1 Spring AOP还是完全用AspectJ？](#1-spring-aop还是完全用aspectj)
+            - [2 Spring AOP中使用@AspectJ还是XML？](#2-spring-aop中使用@aspectj还是xml)
             - [3 混合切面类型](#3-混合切面类型)
     - [9 【SpringMVC】](#9-springmvc)
         - [9.1 必要JAR包：](#91-必要jar包)
@@ -85,7 +85,7 @@
     - [12.【Redis的使用】](#12redis的使用)
         - [12.1 【Java 使用 redis 配置】](#121-java-使用-redis-配置)
 
-`目录 end` *目录创建于2018-03-02* | 更多: [CSDN](http://blog.csdn.net/kcp606) | [oschina](https://my.oschina.net/kcp1104) | [码云](https://gitee.com/kcp1104) 
+`目录 end` |_2018-04-04_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
 ****************************************
 # JavaEE
 
@@ -470,7 +470,6 @@
             InputStream inputStream = Resources.getResourceAsStream(resource);
             sessionFactory = new SqlSessionFactoryBuilder().build(inputStream);
         } catch (Exception e) {
-            // TODO: handle exception
             System.out.println("获取Session失败");
         }
     }

@@ -31,7 +31,7 @@
         - [VPN](#vpn)
             - [shadowsocks](#shadowsocks)
 
-`目录 end` |_2018-04-03_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
+`目录 end` |_2018-04-04_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
 ****************************************
 # 【网络管理】
 ## DNS
@@ -219,6 +219,7 @@ _ss_
     -F：指定ssh配置文件； 
     -l：指定宽带限制； 
     -o：指定使用的ssh选项； 
+    -i: 指定私钥文件
     -P：指定远程主机的端口号； 
     -p：保留文件的最后修改时间，最后访问时间和权限模式； 
     -q：不显示复制进度； 
@@ -355,6 +356,9 @@ _ss_
 ******************************
 ### SSH
 > [Linux启动或禁止SSH用户及IP的登录](https://blog.csdn.net/linghe301/article/details/8211305)
+> [ssh和ssh2之间的免密码登陆详解](http://blog.chinaunix.net/uid-26517277-id-4055228.html)
+> [SSH原理与运用（一）：远程登录](http://www.ruanyifeng.com/blog/2011/12/ssh_remote_login.html)
+> [SSH原理与运用（二）：远程操作与端口转发](http://www.ruanyifeng.com/blog/2011/12/ssh_port_forwarding.html)
 
 > `ssh user@host` 默认22端口登录系统  
 > `ssh -p port user@host` 指定端口登录  
