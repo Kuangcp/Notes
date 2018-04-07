@@ -186,10 +186,14 @@
 
 *********
 ## 【Python】
+- [python](https://github.com/zhanghe06/python)
+- [python](https://github.com/xxg1413/python.git)`某书的案例源码`
 - [跟老齐学Python](https://github.com/qiwsir/StarterLearningPython)`书籍配套源码`
 - [PythonWeb开发](https://github.com/dongweiming/web_develop) `书籍相关源码`
 - [scrapy-redis](https://github.com/rmax/scrapy-redis) `爬虫框架结合redis使用`
 - [Python的一些脚本](https://github.com/9468305/script)
+- [Python实用性脚本](https://github.com/geekcomputers/Python.git)
+- [习题的一些Python](https://github.com/qiwsir/StarterLearningPython.git )
 - [区块链Python](https://github.com/dvf/blockchain)`附加Python中Docker的用法`
 - [pyspider](https://github.com/binux/pyspider)`爬虫框架`
 

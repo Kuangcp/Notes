@@ -29,7 +29,7 @@
         - [jq](#jq)
         - [shyaml](#shyaml)
 
-`目录 end` |_2018-03-31_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
+`目录 end` |_2018-04-07_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
 ****************************************
 # 学习Shell
 > 首先语法不像别的语言可读性好，比如Python，然后方言众多，学习比Python2，3还恶心  
@@ -96,15 +96,21 @@
   - i=$[$i+1];
   - i=$(( $i + 1 )) `dash sh 都有效`
 
-
+- [取随机数](http://www.cnblogs.com/chengmo/archive/2010/10/23/1858879.html)
 ************
 ### 字符串
 - [字符串截取](https://www.2cto.com/os/201305/208219.html) | [Blog:变量字符串截取](http://www.jb51.net/article/56563.htm) | [Shell正则](http://man.linuxde.net/docs/shell_regex.html)
 
 ```sh
+  ${varible##*string} 从左向右截取最后一个string后的字符串
+  ${varible#*string}  从左向右截取第一个string后的字符串
+  ${varible%%string*} 从右向左截取最后一个string后的字符串
+  ${varible%string*}  从右向左截取第一个string后的字符串
+
   vars=${vars%%#*} # 截取#左边
-  vars=${vars#*cd} # 截取cd右边
+  vars=${vars#*cd} # 截取最左的cd的右边
   vars=${vars%\'*} # 截取 右边引号 之左
+
 ```
 
 `获取命令的输出`
@@ -178,8 +184,7 @@ _判断文件_
 
 `简易循环`
 ```sh
-  for j in $(seq 1 5)
-  do
+  for j in $(seq 1 5); do
     echo $j
   done
 ```

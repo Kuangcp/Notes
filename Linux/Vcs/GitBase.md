@@ -5,33 +5,35 @@
     - [Git常用命令](#git常用命令)
         - [【Tips】](#tips)
         - [清理仓库](#清理仓库)
-            - [【git gc】](#git-gc)
+            - [gc](#gc)
         - [fork相关操作](#fork相关操作)
         - [仓库基本命令](#仓库基本命令)
-            - [【git config】](#git-config)
-            - [【git rm】](#git-rm)
-            - [【git commit】](#git-commit)
-            - [【git remote】](#git-remote)
-            - [【git show】](#git-show)
-            - [【git push】](#git-push)
-            - [【git log】](#git-log)
+            - [config](#config)
+            - [status](#status)
+            - [rm](#rm)
+            - [commit](#commit)
+            - [remote](#remote)
+            - [show](#show)
+            - [push](#push)
+            - [log](#log)
                 - [对比两个分支的差异](#对比两个分支的差异)
-            - [【git tag】](#git-tag)
+            - [diff](#diff)
+            - [tag](#tag)
         - [分支操作](#分支操作)
-            - [【git clone】](#git-clone)
-            - [【git checkout】](#git-checkout)
-            - [【git fetch】](#git-fetch)
-            - [【git pull】](#git-pull)
+            - [clone](#clone)
+            - [checkout](#checkout)
+            - [fetch](#fetch)
+            - [pull](#pull)
             - [开发流程的常用分支操作](#开发流程的常用分支操作)
-            - [【git merge】](#git-merge)
-            - [【git rebase】](#git-rebase)
-            - [【git grep 】](#git-grep-)
+            - [merge](#merge)
+            - [rebase](#rebase)
+            - [grep](#grep)
     - [CVS工具的区别以及优缺点](#cvs工具的区别以及优缺点)
         - [Git](#git)
         - [SVN](#svn)
     - [repos的使用](#repos的使用)
 
-`目录 end` |_2018-04-02_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
+`目录 end` |_2018-04-07_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
 ****************************************
 # Git基础
 ## 版本控制系统(VCS)
@@ -47,7 +49,6 @@
     - `git ls-files | xargs wc -l` 计算文件中程序代码行数 通过工具：`xargs` `wc` (中文命名的文件编码问题无法计算行数)
     - `git ls-files | xargs cat | wc -l` 计算行数总和
 - [二分查找捉虫记](http://www.worldhello.net/2016/02/29/git-bisect-on-git.html)`通过分析提交历史查到哪次提交引起的Bug然后检出,修复`
-
 
 ### 清理仓库
 > [bfg-cleaner](https://rtyley.github.io/bfg-repo-cleaner/)
@@ -69,7 +70,7 @@
     - 猜测他的文件都在 `.git/objects/pack/` 里留有备份
     - 最简单的减小传输的大小的是clone时加上 `--depth 1` 对之前的分支延迟下载
 
-#### 【git gc】
+#### gc
 > 只能压缩一部分空间
 `git gc -h`:
 - `--aggressive` 默认使用较快速的方式检查文档库,并完成清理,当需要比较久的时间,偶尔使用即可
@@ -85,21 +86,29 @@
 ***************
 ### 仓库基本命令
 > 如果没有一个Github 码云这样的平台, 而只是单独的两个点, 两个用户或者IP之间要使用同一个仓库进行开发  
-> 两个人互为对方的远程库, 互为服务器即可完成, 即使使用的是动态IP, 应该也不会受太大影响
+> 两个人互为对方的远程库, 互为服务器即可完成, 即使使用的是动态IP, 应该也不会受太大影响  
+> 使用 `git help 加上命令`, 就能看到命令对应的文档
 
-#### 【git config】
+#### config
 - `git config user.email ***`  和   `git config user.name ***` 这两个是必须的，
     - 如果想统一配置不想每个仓库单独配置就 `git config --global user.name` email同理
 - `git config http.postBuffer 524288000` 设置缓存区大小为 500m
 - `git config core.fileMode false` 忽略文件的mode变化，一般发生在文件的复制粘贴之后（跨系统?）
-#### 【git rm】
-> 相当于rm 文件, 然后add进缓存区
+
+#### status
+- `-s --short` 简洁的输出
+    - ?? 表示新添加未跟踪
+    - A 新添加到暂存区
+    - M 修改过的文件
+    - MM 修改了但是没有暂存
+
+#### rm
 
 - 删除文件 `git rm 文件`
 - 从git仓库中删除文件, 但是文件系统中保留文件 `git rm --cached 文件`
-    - 如果仅仅是想从仓库中剔除, 那么执行完命令还要在 .gitignore文件中注明, 不然又add回去了
+    - 如果仅仅是想从仓库中剔除, 那么执行完命令还要在 `.gitignore` 文件中注明, 不然又add回去了
 
-#### 【git commit】
+#### commit
 - [官方文档](https://git-scm.com/docs/git-commit)
 - `git commit -am "init" `: a git库已有文件的修改进行添加, m 注释
     - `git add * ` 如果有新建立文件就要add 再之后commit就不要a参数了 `git commit -m ""`
@@ -110,7 +119,7 @@
     - 第三行：记述更改的原因和详细内容
     - 使用下面方法关闭退出
 
-#### 【git remote】
+#### remote
 - [官方文档](https://git-scm.com/docs/git-remote)
 - `git remote add name URL地址` 添加远程关联仓库 不唯一，可以关联多个一般默认有个origin
         - `git remote`  可以看到添加的远程URL的名字
@@ -120,18 +129,18 @@
 - `git ls-remote` 输出所有关联的remote库 还会输出库的分支
 - `git remote -v` 输出push和pull的URL
 - `git push 远程URL的名称 --delete 分支名称` 删除远程库某分支
-- `git remote show origin` 查看远程分支的状态
+- `git remote show origin` 查看远程分支的状态和信息
 
 *******
 - [删除，重命名远程分支](http://zengrong.net/post/1746.htm)
 
-#### 【git show】
+#### show
 > 展示提交信息
 
 - 显示当前提交的差异 `git show HEAD` HEAD替换成commit的sha值就是显示指定提交的修改
 - `git show -h` 查看更多
 
-#### 【git push】
+#### push
 
 - _常用参数_
     - `-h` 查看所有参数和说明
@@ -153,8 +162,13 @@
     - `git push -u origin master ` | `git push --set-uptream master` | `git push -all` 
     - 这几个都是可以的,最后那个简单, 还能将别的分支一起推上去
 
-
-#### 【git log】
+#### log
+> 更多说明 查看 `git help log`
+- `-p` 显示每次提交的内容差异 `git log -p -2` 仅显示最近两次提交的差异
+- `--stat` 查看提交对仓库修改的总览
+- `---pretty=[online/short/full/fuller/format]` 使用预定义格式显示
+    - format 是可以自定义格式和占位符
+- `--graph` 图形的样子显示分支图
 
 - `git log --author='A' `输出所有A开头的作者日志
 - `git log 文件名 文件名` 输出更改指定文件的所有commit 要文件在当前路径才可
@@ -170,30 +184,41 @@
 - 在上述情况下，再显示出每个提交是在哪个分支上:`git log --left-right dev...master`
     - 注意 commit 后面的箭头，根据我们在 –left-right dev…master 的顺序，左箭头 < 表示是 dev 的，右箭头 > 表示是 master的。
 
-#### 【git tag】
-- [官方文档](https://git-scm.com/docs/git-tag/2.10.2)
-- `git tag` 查看所有标签
-- 新建一个标签并打上注释 `git tag -a v1.0.0 -m "初始版本"` 
-- `git checkout tagname` 和切换分支一样的切换标签，但是标签只是一个镜像，不能修改
-- 如果要在某tag上新建一个分支， `git checkout -b branchname tagname`
-- `git show tagname` 展示标签注释信息
-- 删除本地标签 `git tag -d tagname` 
-- 由指定的commit打标签  `git tag -a v1.2.4 commit-id` 
-- 提交指定的tag `git push origin tagname` （默认不会自动提交标签）
-- 提交所有的tag `git push --tags` 
+#### diff
+- `--cached` 查看已暂存起来的变化 1.6以上 则是 `--staged`
+```
+    git diff [options] [<commit>] [--] [<path>...]
+    git diff [options] --cached [<commit>] [--] [<path>...]
+    git diff [options] <commit> <commit> [--] [<path>...]
+    git diff [options] <blob> <blob>
+    git diff [options] [--no-index] [--] <path> <path>
+```
+#### tag
+> [官方文档](https://git-scm.com/docs/git-tag/2.10.2)
 
+- 查看所有标签 `git tag` 
+    - `-l 'v1.0.*'` 列出v1.0.*
+    - 展示标签注释信息 `git show tagname`
+- 新建一个标签并打上注释 `git tag -a v1.0.0 -m "初始版本"` 
+    - 由指定的commit打标签  `git tag -a v1.2.4 commit-id` 
+- 切换标签 `git checkout tagname` 和切换分支一样的，但是标签只是一个镜像，不能修改
+- 如果要在某tag上新建一个分支， `git checkout -b branchname tagname`
+- 提交指定的tag `git push origin tagname` （默认不会自动提交标签）
+    - 提交所有的tag `git push --tags` 
+
+- 删除本地标签 `git tag -d tagname` 
 - 删除远程的tag `git push origin --delete tag <tagname>` 
 
 ******
 ### 分支操作
 > [stash的争论](http://www.cppblog.com/deercoder/archive/2011/11/13/160007.html)
 
-#### 【git clone】
+#### clone
 - `git clone branchname URL` 克隆指定分支
 - `git clone URL 目录` 克隆下来后更名为指定目录
-- `git clone -depth 1 URL` 只克隆最近一次提交的历史, 能大大减小拉取的大小, 但是如果要用到之前的提交历史就还是要下拉下来的 类似于懒加载
+- `git clone --depth 1 URL` 只克隆最近一次提交的历史, 能大大减小拉取的大小, 但是如果要用到之前的提交历史就还是要下拉下来的 类似于懒加载
 
-#### 【git checkout】
+#### checkout
 > [官方文档](https://git-scm.com/docs/git-checkout)
 
 - `git checkout 文件名 文件名` git会在索引中找文件，有就取出，没有就从最新的commit回找，取出第一个找到的版本，
@@ -204,11 +229,14 @@
     - 需要执行  `git reset HEAD` 来清除这种状态
 - `git pull --all` 下拉远程所有的分支到本地
 
-#### 【git fetch】
+> 撤销当前对文件的所有修改 `git checkout -- 文件名` 就会使用上次提交的文件来覆盖当前文件
+
+#### fetch
+> 访问远程仓库, 拉取本地没有的数据
 - `git fetch origin dev-test` 下拉指定远程的指定分支到本地, 本地没有就会自动新建
 - `git fetch --all` 下拉默认远程的所有分支的代码
 
-#### 【git pull】
+#### pull
 > 不仅仅是下拉代码, 还会进行merge合并, 所以安全起见, 是先fetch然后再进行合并操作  
 - `git pull origin dev` 下拉指定远程的指定分支
 - `git pull --all` 下拉默认远程的所有分支代码并自动合并
@@ -239,7 +267,7 @@
 - 删除分支 `git branch -d fixbug-0.1` 
 - 删除远程没有本地有的分支`git fetch -p`
 
-#### 【git merge】
+#### merge
 - [官方文档](https://git-scm.com/docs/git-merge)
 `配置mergetool工具：`
 - `git config --global merge.tool kdiff3`
@@ -256,7 +284,7 @@
 - 如果遇到冲突：
     - `git mergetool` 使用工具进行分析冲突文件方便修改
 
-#### 【git rebase】
+#### rebase
 > 衍和操作 [参考博客](http://blog.csdn.net/endlu/article/details/51605861) | 
 > [Git rebase -i 交互变基](http://blog.csdn.net/zwlove5280/article/details/46649799) | 
 > [git rebase的原理之多人合作分支管理](http://blog.csdn.net/zwlove5280/article/details/46708969)    
@@ -269,7 +297,7 @@
     - `git rebase --continue` 修改好冲突后继续
 
 
-#### 【git grep 】    
+#### grep  
 - 搜索文字 `git grep docker`
     - `-n`搜索并显示行号 
     - `--name-only` 只显示文件名，不显示内容
@@ -277,7 +305,6 @@
     - 查找git仓库里某个特定版本里的内容, 在命令行末尾加上标签名(tag reference):  `git grep xmmap v1.5.0`
     - `git grep --all-match -e '#define' -e SORT_DIRENT` 匹配两个字符串
     
-
 *************
 
 ## CVS工具的区别以及优缺点
@@ -288,7 +315,8 @@
 ### SVN
 > [Svn笔记](/Linux/Svn.md)
 
-中心化的, 代码统一保存, 如果中心发生错误, 代码会全部毁掉, 旧的技术栈以及非开发人员还在用
+1. 中心化的, 代码统一保存, 如果中心发生错误, 代码会全部毁掉, 旧的技术栈以及非开发人员还在用
+2. 允许部分的进行修改, 下拉提交, 而对于Git来说一个仓库就是一个整体
 
 ## repos的使用
 > 综合各个VCS的管理方式
