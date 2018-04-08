@@ -12,6 +12,7 @@
         - [Session和Cookie](#session和cookie)
         - [HTTP1.1 和 HTTP2](#http11-和-http2)
         - [HTTPS](#https)
+            - [HSTS](#hsts)
     - [Websocket](#websocket)
         - [WSS](#wss)
 
@@ -39,7 +40,7 @@ ISO制定的OSI参考模型的过于庞大、复杂招致了许多批评。与�
 
 *******************************
 ## Web安全
-> [详细](/Skills/CS/WebSecurity.md)
+> [详细...](/Skills/CS/WebSecurity.md)
 **************************
 ## HTTP
 > HyperText Transfer Protocol 超文本传输协议
@@ -61,6 +62,11 @@ HTTP2的特点:
 [参考博客: HTTP/2](http://www.hollischuang.com/archives/2066)
 
 ### HTTPS
+> [SSL/TSL](/Skills/CS/WebSecurity.md#ssl和tsl)
+
+#### HSTS
+> HTTP Strict Transport Security 强制让客户端使用HTTPS进行通信
+
 **********************************
 ## Websocket
 > 本质就是TCP的简单封装, 不像HTTP那样应答模式, 一次连接后就保持全双工模式

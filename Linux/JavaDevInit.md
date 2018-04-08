@@ -32,7 +32,6 @@
 ## 配置JDK
 ### 直接解压配置
 - [下载地址](http://www.oracle.com/technetwork/java/javase/downloads/index.html)
-
 - 打开配置文件 ： `sudo gedit /etc/profile`
 ```
 export JAVA_HOME= 绝对路径例如： /home/kcp/Application/sdk/jdk1.8.0_131

@@ -255,7 +255,8 @@ _批量修改_
 
 _代码片段_
 > 配置地点 文件-首选项-用户代码片段 可以新建一个代码片段  
-> 可以放在一个github仓库里方便备份,然后建立一个软链接即可, 默认是放在用户的配置目录下
+> 可以放在一个github仓库里方便备份,然后建立一个软链接即可, 
+>> 默认是放在用户的配置目录下 `/home/kcp/.config/Code/User/snippets/`
 
 - [参考博客: VS Code 折腾记 - (6) 基本配置/快捷键定义/代码片段的录入（snippet）](https://juejin.im/post/58aeeca22f301e006cf65c8b)
 - [巧用VScode“用户代码片段”来提高效率](https://www.dogxu.cn/2017/06/10/vscode-snippet/)

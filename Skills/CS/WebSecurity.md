@@ -1,7 +1,7 @@
 `目录 start`
  
 - [Web安全](#web安全)
-    - [SSL/TSL](#ssltsl)
+    - [SSL和TSL](#ssl和tsl)
     - [SYNFlood攻击](#synflood攻击)
         - [CSRF](#csrf)
         - [XSS](#xss)
@@ -16,9 +16,10 @@
 > 上传导致的漏洞是因为用户的文件没有做好判断和处理，导致传上来的文件被当成程序执行了。 SQL注入是用户的数据被当成了表示SQL语义的部分，改变了原来的查询语句的语义，从而产生意料之外的结果。
 > 反向代理服务器，构建在web服务器与 客户端之间，保护web服务器，服务器发送到客户端的请求被代理
 
-## SSL/TSL
+## SSL和TSL
 > [SSL/TLS协议运行机制的概述](http://www.ruanyifeng.com/blog/2014/02/ssl_tls.html)
 
+********************
 ## SYNFlood攻击
 > 洪水攻击 [参考博客](http://xfocus.net/articles/200106/208.html) SYN Flood是当前最流行的DoS（拒绝服务攻击）与DDoS（分布式拒绝服务攻击）的方式之一，这是一种利用TCP协议缺陷，发送大量伪造的TCP连接请求，从而使得被攻击方资源耗尽（CPU满负荷或内存不足）的攻击方式。  
 > [参考博客](http://www.cnblogs.com/popduke/p/5823801.html)  

@@ -96,7 +96,13 @@
   - i=$[$i+1];
   - i=$(( $i + 1 )) `dash sh 都有效`
 
-- [取随机数](http://www.cnblogs.com/chengmo/archive/2010/10/23/1858879.html)
+> [取随机数](http://www.cnblogs.com/chengmo/archive/2010/10/23/1858879.html)
+
+- 四则运算 [参考](https://blog.csdn.net/taijianyu/article/details/6907288)
+  - ((i=$j+$k))    等价于 i=`expr $j + $k`
+  - ((i=$j-$k))     等价于   i=`expr $j -$k`
+  - ((i=$j*$k))     等价于   i=`expr $j \*$k`
+  - ((i=$j/$k))     等价于   i=`expr $j /$k`
 ************
 ### 字符串
 - [字符串截取](https://www.2cto.com/os/201305/208219.html) | [Blog:变量字符串截取](http://www.jb51.net/article/56563.htm) | [Shell正则](http://man.linuxde.net/docs/shell_regex.html)
@@ -167,6 +173,15 @@ _判断文件_
 - 链接 `if [ -L path ]`
 - 目录 `if [ -d path ]`
 
+- 整数比较
+    - `-eq` 等于,如:if [ "$a" -eq "$b" ]
+    - `-ne` 不等于,如:if [ "$a" -ne "$b" ]
+    - `-gt` 大于,如:if [ "$a" -gt "$b" ]
+    - `-ge` 大于等于,如:if [ "$a" -ge "$b" ]
+    - `-lt` 小于,如:if [ "$a" -lt "$b" ]
+    - `-le` 小于等于,如:if [ "$a" -le "$b" ]
+    - `大于` (需要双括号),如:(("$a" > "$b"))
+    - `>= `大于等于(需要双括号),如:(("$a" >= "$b"))
 #### case
 
 ```sh
