@@ -15,11 +15,14 @@
             - [sed](#sed)
             - [awk](#awk)
     - [【磁盘管理】](#磁盘管理)
-        - [dd](#dd)
-        - [mount](#mount)
-        - [fdisk](#fdisk)
-        - [df](#df)
-        - [du](#du)
+        - [分区介绍](#分区介绍)
+        - [设备列表](#设备列表)
+        - [常用命令](#常用命令)
+            - [dd](#dd)
+            - [mount](#mount)
+            - [fdisk](#fdisk)
+            - [df](#df)
+            - [du](#du)
     - [善用FTP](#善用ftp)
         - [基础](#基础)
         - [使用](#使用)
@@ -44,7 +47,7 @@
             - [查看发行版](#查看发行版)
             - [查看系统所有用户信息](#查看系统所有用户信息)
 
-`目录 end` |_2018-04-07_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
+`目录 end` |_2018-04-08_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
 ****************************************
 # 【文件管理】
 > Linux中认为万物皆文件
@@ -177,7 +180,12 @@ _cat_
 
 带行号输出 `cat -n file` 或者 `nl file`但是空行不会编号, 除非这样: `nl -b a file`
 
-[参考博客: 每天一个linux命令(11)：nl命令](http://www.cnblogs.com/peida/archive/2012/11/01/2749048.html#/)
+_nl_
+- [参考博客: 每天一个linux命令(11)：nl命令](http://www.cnblogs.com/peida/archive/2012/11/01/2749048.html#/)
+
+_less_
+> 该命令的导航是和Vi体系一样的, 建议打开大文件使用less或者more 如果用vim,文件全加载到内存了
+- [ less命令简介](https://blog.csdn.net/caihaijiang/article/details/6113419)
 
 _tail_
 > tail命令用于输入文件中的尾部内容。tail命令默认在屏幕上显示指定文件的末尾10行。 来自: http://man.linuxde.net/tail
@@ -269,7 +277,15 @@ _mv_
 
 *****************************
 ## 【磁盘管理】
+### 分区介绍
+- /root
+- /home
+- /boot
 
+### 设备列表
+- /dev/random 产生随机数的设备
+
+### 常用命令
 - 创建一个空文件 `dd if=/dev/zero of=virtual.img bs=1M count=256` 查看大小 `du -h virtual.img`
 - 将虚拟磁盘镜像格式化为指定的文件系统 `sudo mkfs.ext4 virtual.img`
 - 查看支持的文件系统 `ls -l /lib/modules/$(uname -r)/kernel/fs`
@@ -277,23 +293,23 @@ _mv_
 - 只读方式挂载 `mount -o loop --ro virtual.img /mnt`
 - 卸载挂载的磁盘 `sudo umount /mnt`
 
-### dd
+#### dd
 - 
 
-### mount
+#### mount
 - `mount [options] [source] [directory] `
 - `mount [-o [操作选项]] [-t 文件系统类型] [-w|--rw|--ro] [文件系统源] [挂载点]`
 - 查看已挂载信息 `mount`
 
-### fdisk
+#### fdisk
 - 查看磁盘分区表信息 ：`sudo fdisk -l `
 - 
 
 
-### df 
+#### df 
 - `df -h ` 查看挂载文件系统信息
 
-### du
+#### du
 - `du -sh 目录` 查看磁盘占用总大小 h 自动搭配单位（human read ）
 - `du --max-depth` 一级子目录使用情况
 - du -sm * | sort -n //统计当前目录大小 并安大小 排序
@@ -305,7 +321,6 @@ _mv_
     du xmldb/
     du xmldb/*/*/* |wc -l
     40752
-
 
 ************************************
 ## 善用FTP

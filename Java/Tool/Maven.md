@@ -7,20 +7,21 @@
         - [1.2.settings.xml配置](#12settingsxml配置)
             - [配置镜像源](#配置镜像源)
                 - [阿里云](#阿里云)
+            - [配置本地仓库](#配置本地仓库)
     - [2.maven配置](#2maven配置)
         - [2.1.eclipse中配置](#21eclipse中配置)
         - [2.2.配置插件](#22配置插件)
         - [2.3.配置文件的详解](#23配置文件的详解)
         - [2.4 配置代码编译版本](#24-配置代码编译版本)
-    - [3.maven概念](#3maven概念)
+    - [3. 构建](#3-构建)
+        - [3.1.打包成可执行Jar](#31打包成可执行jar)
+        - [3.2.war包当jar使用](#32war包当jar使用)
+        - [3.3.关于使用git和idea多模块的项目的构建](#33关于使用git和idea多模块的项目的构建)
+- [TODO 子项目编译打包各自独立，怎么整合成一个](#todo-子项目编译打包各自独立怎么整合成一个)
     - [4.maven的依赖](#4maven的依赖)
         - [4.1.处理项目间依赖方法](#41处理项目间依赖方法)
         - [4.2.依赖冲突](#42依赖冲突)
         - [4.3.继承](#43继承)
-        - [4.4.构建](#44构建)
-            - [4.4.1.打包成可执行 jar](#441打包成可执行-jar)
-            - [4.4.2.war包当jar使用](#442war包当jar使用)
-            - [4.4.3.关于使用git和idea多模块的项目的构建](#443关于使用git和idea多模块的项目的构建)
     - [5.使用maven新建Web3.0项目](#5使用maven新建web30项目)
         - [5.1.添加web容器](#51添加web容器)
             - [5.1.2.Jetty](#512jetty)
@@ -41,7 +42,7 @@
                 - [Maven](#maven)
             - [后期添加构建](#后期添加构建)
 
-`目录 end` |_2018-03-24_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
+`目录 end` |_2018-04-08_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
 ****************************************
 # Maven
 > [官网](https://maven.apache.org/) | [官网手册](https://maven.apache.org/guides/) | [http://takari.io/ 在线练习网](http://takari.io/)
@@ -58,17 +59,17 @@
     * -DartifactId=项目名-模块名
     * -Dversion=版本号
     * -Dpackage=代码所在的包
-* mvn compile ：编译源代码
-* mvn test-compile ：编译测试代码
-* mvn test ： 运行应用程序中的单元测试
-* mvn site ： 生成项目相关信息的网站
-* mvn clean ：清除目标目录中的生成结果
-* mvn package ： 依据项目生成 jar 文件
-* mvn install ：在本地 Repository 中安装 jar
-* mvn deploy：将jar包发布到远程仓库
-* mvn eclipse:eclipse ：生成 Eclipse 项目文件
 
-- 安装项目并跳过测试 `mvn install -Dmaven.test.skip=true`
+- `compile` ：编译源代码
+- `test-compile` ：编译测试代码
+- `test` ： 运行应用程序中的单元测试
+- `site` ： 生成项目相关信息的网站
+- `clean` ：清除目标目录中的生成结果
+- `package` ： 依据项目生成 jar 文件
+- `install` ：在本地 Repository 中安装 jar
+- `deploy`：将jar包发布到远程仓库
+- 使用id为ChatServer的Profile `-PChatServer` 
+- 跳过测试 `-Dmaven.test.skip=true`
 
 #### 从jar安装到本地库
 ```
@@ -81,10 +82,12 @@ mvn install:install-file
 ```
 *****
 ### 1.2.settings.xml配置
-> 要特别注意 `settings.xml` 加载顺序是 `maven解压目录的conf/`下的 然后 `用户目录下/.m2/` 下的 后者覆盖前者
+> 要特别注意 `settings.xml` 后者覆盖前者 加载顺序是: 
+>> `maven目录/conf/setting.xml`  
+>> `用户目录下/.m2/setting.xml` 
 
 #### 配置镜像源
-> 在 用户目录下 .m2/setttings.xml 中 找到 mirrors 标签 进行添加即可
+> 在 用户目录下 .m2/setttings.xml 中 找到 mirrors 标签 进行添加`mirror节点`即可
 
 ##### 阿里云
 
@@ -96,7 +99,8 @@ mvn install:install-file
     <mirrorOf>central</mirrorOf> 
 </mirror> 
 ```
-
+#### 配置本地仓库
+`localRepository节点`
 *****************
 ## 2.maven配置
 ### 2.1.eclipse中配置
@@ -109,9 +113,7 @@ mvn install:install-file
 ```xml
       <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-     <!--当前pom的版本号-->
      <modelVersion>4.0.0</modelVersion>
-   
      <groupId>反写的公司名+项目名</groupId>
      <artifactId>项目名+模块名</artifactId>
      <!--
@@ -169,9 +171,6 @@ mvn install:install-file
      </modules>
 ```
 
-配置:源码package成JAR包：(pom.xml中配置)
-`<packaging>jar</packaging>`
-
 ### 2.4 配置代码编译版本
 ```xml
 <build>
@@ -189,34 +188,8 @@ mvn install:install-file
 </build>
 ```
 
-***********************
-## 3.maven概念
-- 坐标：三个标签唯一的标识了项目
-- 仓库：jar包的集合目录
-    - 本地仓库
-    - 远程仓库
-
-## 4.maven的依赖
-### 4.1.处理项目间依赖方法
-项目A依赖B
-A项目 pom.xml中配置依赖 （构件三要素）
-B项目 先clean package
-      然后build 的 install
-A 项目 compile
-
-### 4.2.依赖冲突
-- 依赖路径短优先
-   - 1 A->B->C->X(jar文件)
-   - 2 A->C->X(jar文件)
-   - 会选择 2 中的X的jar版本
-- 先声明的优先
-
-### 4.3.继承
-> 新建一个项目作为父项目  
-> 然后在需要引用父项目的子项目pom文件中, 加上parent 标签里面写上 父项目的三要素
-
-### 4.4.构建
-#### 4.4.1.打包成可执行 jar
+## 3. 构建
+### 3.1.打包成可执行Jar
 ```xml
     <plugin>
         <groupId>org.apache.maven.plugins</groupId>
@@ -245,21 +218,21 @@ A 项目 compile
         </executions>
     </plugin>
 ```
-- 多个main的情况下运行指定的main `java -cp example03-1.0-SNAPSHOT.jar cn.zhouyafeng.itchat4j.main.TulingRobot`
+- 多个main的情况下运行指定的main 
+    - `java -cp example03-1.0-SNAPSHOT.jar cn.zhouyafeng.itchat4j.main.TulingRobot`
 
-#### 4.4.2.war包当jar使用
-- Springboot项目能够
-
-- [通过Maven构建打包Spring boot，并将config配置文件提取到jar文件外](http://lib.csdn.net/article/java/65574)
-
+### 3.2.war包当jar使用
+- Springboot项目能够做到, 其实就是Main方法, 然后配置了一个Servlet的加载类就可以当war用了
+    - [通过Maven构建打包Spring boot，并将config配置文件提取到jar文件外](http://lib.csdn.net/article/java/65574)
 
 *****************
-#### 4.4.3.关于使用git和idea多模块的项目的构建
-`.gitignore文件` 没有特别的地方
-```conf
+### 3.3.关于使用git和idea多模块的项目的构建
+`.gitignore文件`
+```
     .idea/
     *.iml
     target/
+    *.log 
 ```
 `父项目pom文件`
 ``` xml
@@ -276,9 +249,9 @@ A 项目 compile
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <java.version>1.8</java.version>
     </properties>
-    ```
-    `子项目pom文件`
-    ```xml
+```
+`子项目pom文件`
+```xml
     <artifactId>website</artifactId>
     <version>1.0-SNAPSHOT</version>
     <packaging>jar</packaging>
@@ -289,10 +262,29 @@ A 项目 compile
         <version>1.0-SNAPSHOT</version>
     </parent>
 ```
-- 子项目编译打包各自独立，怎么整合成一个
+# TODO 子项目编译打包各自独立，怎么整合成一个
+
+******************
+## 4.maven的依赖
+### 4.1.处理项目间依赖方法
+项目A依赖B
+A项目 pom.xml中配置依赖 （构件三要素）
+B项目 先clean package
+      然后build 的 install
+A 项目 compile
+
+### 4.2.依赖冲突
+- 依赖路径短优先
+   - 1 A->B->C->X(jar文件)
+   - 2 A->C->X(jar文件)
+   - 会选择 2 中的X的jar版本
+- 先声明的优先
+
+### 4.3.继承
+> 新建一个项目作为父项目  
+> 然后在需要引用父项目的子项目pom文件中, 加上parent 标签里面写上 父项目的三要素
 
 *************************
-
 ## 5.使用maven新建Web3.0项目
 > [网络maven仓库](http://mvnrepository.com/)
 

@@ -9,9 +9,10 @@
     - [Test](#test)
     - [精彩系列](#精彩系列)
         - [码农翻身](#码农翻身)
+        - [架构师](#架构师)
     - [Java语言讨论](#java语言讨论)
 
-`目录 end` *目录创建于2018-02-26* | 更多: [CSDN](http://blog.csdn.net/kcp606) | [oschina](https://my.oschina.net/kcp1104) | [码云](https://gitee.com/kcp1104) 
+`目录 end` |_2018-04-08_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
 ****************************************
 # Java
 > 和Java有关的博客和网页  

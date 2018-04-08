@@ -18,7 +18,7 @@
 - [【互联网标准化过程文档】](#互联网标准化过程文档)
     - [登录授权](#登录授权)
 
-`目录 end` |_2018-03-28_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
+`目录 end` |_2018-04-08_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
 ****************************************
 # 【API】
 > 各种语言以及平台的在线API

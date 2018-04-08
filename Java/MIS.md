@@ -13,7 +13,7 @@
     - [分布式](#分布式)
         - [CAP定理](#cap定理)
 
-`目录 end` *目录创建于2018-02-25* | 更多: [CSDN](http://blog.csdn.net/kcp606) | [oschina](https://my.oschina.net/kcp1104) | [码云](https://gitee.com/kcp1104) 
+`目录 end` |_2018-04-08_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
 ****************************************
 # 完整的MIS构建经验
 

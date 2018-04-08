@@ -10,7 +10,7 @@
     - [sonarqube](#sonarqube)
         - [小型项目目前使用的方案](#小型项目目前使用的方案)
 
-`目录 end` *目录创建于2018-03-01* | 更多: [CSDN](http://blog.csdn.net/kcp606) | [oschina](https://my.oschina.net/kcp1104) | [码云](https://gitee.com/kcp1104) 
+`目录 end` |_2018-04-08_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
 ****************************************
 # 传统部署
 - 打包成jar或者war，下载JDK或者JRE 绿色解压即用，将jar/war文件复制到bin目录下

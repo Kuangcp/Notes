@@ -20,7 +20,7 @@
     - [生活](#生活)
 - [教学视频](#教学视频)
 
-`目录 end` |_2018-03-15_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
+`目录 end` |_2018-04-08_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
 ****************************************
 # 待阅读的书籍
 > [程序员必读书单](http://www.cnblogs.com/figure9/p/developer-reading-list.html)

@@ -1,13 +1,13 @@
 `目录 start`
  
-- [各种配置文件](#各种配置文件)
+- [配置文件](#配置文件)
     - [YAML](#yaml)
         - [Java使用](#java使用)
     - [XML](#xml)
     - [properties](#properties)
     - [JSON](#json)
 
-`目录 end` *目录创建于2018-01-14*
+`目录 end` |_2018-04-08_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
 ****************************************
 # 配置文件
 

@@ -4,20 +4,25 @@
     - [基础](#基础)
         - [ISO七层模型和TCP/IP五层模型](#iso七层模型和tcpip五层模型)
         - [TCP和UDP](#tcp和udp)
+        - [网络延迟](#网络延迟)
+    - [Web安全](#web安全)
     - [HTTP](#http)
         - [HTTP的错误码](#http的错误码)
         - [HTTP的缓存](#http的缓存)
         - [Session和Cookie](#session和cookie)
         - [HTTP1.1 和 HTTP2](#http11-和-http2)
+        - [HTTPS](#https)
     - [Websocket](#websocket)
-    - [Web安全](#web安全)
+        - [WSS](#wss)
 
-`目录 end` |_2018-03-28_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
+`目录 end` |_2018-04-08_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
 ****************************************
 # 网络
 
 ## 基础
-> [码农翻身:小白科普：从输入网址到最后浏览器呈现页面内容，中间发生了什么？](https://mp.weixin.qq.com/s?__biz=MzAxOTc0NzExNg==&mid=2665514196&idx=1&sn=ca26d258fcc4a35fc6d9a539b7d71dd7&chksm=80d67c97b7a1f58198b2e6ae436f73c677c0df4c05c2a8a4aad2b9e2d523da57dd5cd3d0a8ee&mpshare=1&scene=1&srcid=0122nnRpNb6OvRJubkSfKfsZ&pass_ticket=%2B%2FAmfhAaNv2sKw6192eqEL9hoW%2F6BrLxlzHIsKC0k6lPQsM4%2FFo08R%2FZowzw3821#rd) | [码农翻身:我是一个路由器](https://mp.weixin.qq.com/s?__biz=MzAxOTc0NzExNg==&mid=2665513173&idx=1&sn=6ec5281b12ed5195070fa4df22383595&scene=21#wechat_redirect) | [码农翻身:我是一个网卡](https://mp.weixin.qq.com/s?__biz=MzAxOTc0NzExNg==&mid=2665513160&idx=1&sn=d938db4f1a2d62514b57e92fd8d3d749&scene=21#wechat_redirect)
+> [码农翻身:小白科普：从输入网址到最后浏览器呈现页面内容，中间发生了什么？](https://mp.weixin.qq.com/s?__biz=MzAxOTc0NzExNg==&mid=2665514196&idx=1&sn=ca26d258fcc4a35fc6d9a539b7d71dd7&chksm=80d67c97b7a1f58198b2e6ae436f73c677c0df4c05c2a8a4aad2b9e2d523da57dd5cd3d0a8ee&mpshare=1&scene=1&srcid=0122nnRpNb6OvRJubkSfKfsZ&pass_ticket=%2B%2FAmfhAaNv2sKw6192eqEL9hoW%2F6BrLxlzHIsKC0k6lPQsM4%2FFo08R%2FZowzw3821#rd) | 
+> [码农翻身:我是一个路由器](https://mp.weixin.qq.com/s?__biz=MzAxOTc0NzExNg==&mid=2665513173&idx=1&sn=6ec5281b12ed5195070fa4df22383595&scene=21#wechat_redirect) | 
+> [码农翻身:我是一个网卡](https://mp.weixin.qq.com/s?__biz=MzAxOTc0NzExNg==&mid=2665513160&idx=1&sn=d938db4f1a2d62514b57e92fd8d3d749&scene=21#wechat_redirect)
 
 ### ISO七层模型和TCP/IP五层模型
 ISO制定的OSI参考模型的过于庞大、复杂招致了许多批评。与此对照，由技术人员自己开发的TCP/IP协议栈获得了更为广泛的应用。
@@ -26,7 +31,15 @@ ISO制定的OSI参考模型的过于庞大、复杂招致了许多批评。与�
 ### TCP和UDP
 [参考博客: 区别](http://www.cnblogs.com/bizhu/archive/2012/05/12/2497493.html)
 
+### 网络延迟
+> [如何彻底解决「网络延迟」这个问题？](https://www.zhihu.com/question/34689035)
 
+- [MOBA类游戏是如何解决网络延迟同步的？](https://www.zhihu.com/question/36258781)
+- [状态同步与帧同步](http://www.cnblogs.com/sevenyuan/p/5283265.html)
+
+*******************************
+## Web安全
+> [详细](/Skills/CS/WebSecurity.md)
 **************************
 ## HTTP
 > HyperText Transfer Protocol 超文本传输协议
@@ -47,6 +60,7 @@ HTTP2的特点:
 
 [参考博客: HTTP/2](http://www.hollischuang.com/archives/2066)
 
+### HTTPS
 **********************************
 ## Websocket
 > 本质就是TCP的简单封装, 不像HTTP那样应答模式, 一次连接后就保持全双工模式
@@ -58,6 +72,4 @@ HTTP2的特点:
 5. 通过 ping/pong 帧 保持链路激活
 6. 服务器可以主动传递消息给客户端, 不需要客户端轮询
 
-*******************************
-## Web安全
-> [详细](/Skills/Base/WebSecurity.md)
+### WSS

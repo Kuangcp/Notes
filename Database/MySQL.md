@@ -44,14 +44,8 @@
         - [创建](#创建)
         - [修改](#修改)
         - [【授权】](#授权)
-    - [mysql命令行参数](#mysql命令行参数)
-    - [mysql命令行实例](#mysql命令行实例)
-        - [常用五类约束](#常用五类约束)
-        - [mysql正确卸载](#mysql正确卸载)
-        - [数据类型](#数据类型)
-        - [常见函数](#常见函数)
 
-`目录 end` |_2018-03-27_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
+`目录 end` |_2018-04-08_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
 ****************************************
 
 # Mysql

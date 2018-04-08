@@ -85,7 +85,7 @@
     - [12.【Redis的使用】](#12redis的使用)
         - [12.1 【Java 使用 redis 配置】](#121-java-使用-redis-配置)
 
-`目录 end` |_2018-04-04_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
+`目录 end` |_2018-04-08_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
 ****************************************
 # JavaEE
 

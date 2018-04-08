@@ -22,14 +22,14 @@
         - [循环](#循环)
     - [函数](#函数)
     - [配置文件](#配置文件)
-    - [终端中的命令提示](#终端中的命令提示)
+    - [终端中的命令参数自动补全](#终端中的命令参数自动补全)
     - [常用模块](#常用模块)
         - [时间](#时间)
     - [工具](#工具)
         - [jq](#jq)
         - [shyaml](#shyaml)
 
-`目录 end` |_2018-04-07_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
+`目录 end` |_2018-04-08_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
 ****************************************
 # 学习Shell
 > 首先语法不像别的语言可读性好，比如Python，然后方言众多，学习比Python2，3还恶心  
@@ -209,7 +209,7 @@ _判断文件_
 > [参考博客](http://blog.csdn.net/xinfuqizao/article/details/21812003)
 
 ********************
-## 终端中的命令提示
+## 终端中的命令参数自动补全
 
 *****************
 ## 常用模块
@@ -223,7 +223,7 @@ _判断文件_
 > [官方网址](https://stedolan.github.io/jq/#) `sudo apt install jq 即可`
 
 - 看了半小时, 对于复杂的JSON格式,根本没有办法, 不像Python一样把那些{} [] 当成对象,而是简单的数据结构,随意嵌套
-  - 反观之,真是棒棒的一个脚本了!!!
+  - 相对于httpie,真是棒棒的一个脚本了!!!
 
 ### shyaml
 > [参考](https://linuxtoy.org/archives/shyaml.html)

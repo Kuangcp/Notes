@@ -20,15 +20,15 @@
             - [基本概念](#基本概念)
             - [基本配置](#基本配置)
             - [注意](#注意)
-            - [1 Spring AOP还是完全用AspectJ？](#1-spring-aop还是完全用aspectj？)
-            - [2 Spring AOP中使用@AspectJ还是XML？](#2-spring-aop中使用@aspectj还是xml？)
+            - [1 Spring AOP还是完全用AspectJ？](#1-spring-aop还是完全用aspectj)
+            - [2 Spring AOP中使用@AspectJ还是XML？](#2-spring-aop中使用@aspectj还是xml)
             - [3 混合切面类型](#3-混合切面类型)
         - [Spring-Websocket 配置](#spring-websocket-配置)
             - [maven配置jar环境](#maven配置jar环境)
         - [Web开发上的一些优秀的习惯](#web开发上的一些优秀的习惯)
         - [RMI](#rmi)
 
-`目录 end` *目录创建于2018-01-14*
+`目录 end` |_2018-04-08_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
 ****************************************
 # Spring 基础
 

@@ -5,7 +5,7 @@
         - [Docker安装2017硬是不成功](#docker安装2017硬是不成功)
             - [2000版本](#2000版本)
 
-`目录 end` *目录创建于2018-01-21*
+`目录 end` |_2018-04-08_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
 ****************************************
 # SQLServer
 

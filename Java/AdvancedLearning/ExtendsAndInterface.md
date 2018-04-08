@@ -3,7 +3,7 @@
 - [继承和接口](#继承和接口)
     - [【常用接口】](#常用接口)
 
-`目录 end` |_2018-03-23_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
+`目录 end` |_2018-04-08_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
 ****************************************
 # 继承和接口
 > 要倾向于组合的使用多于继承

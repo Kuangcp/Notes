@@ -19,8 +19,9 @@
             - [【Tomcat与Web服务器、应用服务器的关系】](#tomcat与web服务器、应用服务器的关系)
     - [一、Tomcat 与应用服务器](#一、tomcat-与应用服务器)
     - [二、Tomcat 与 Web 服务器](#二、tomcat-与-web-服务器)
+    - [Tomcat和Jetty](#tomcat和jetty)
 
-`目录 end` *目录创建于2018-03-08* | 更多: [CSDN](http://blog.csdn.net/kcp606) | [oschina](https://my.oschina.net/kcp1104) | [码云](https://gitee.com/kcp1104) 
+`目录 end` |_2018-04-08_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
 ****************************************
 # Tomcat
 > [官方网站](http://tomcat.apache.org/)
@@ -32,6 +33,8 @@
     - Tomcat Connectors `用于连接IIS Apache`[文档](http://tomcat.apache.org/connectors-doc/index.html)
 
 ## 配置运行
+> [SDK 下的tomcat下的myth-tomcat-8.5.14.zip](https://pan.baidu.com/s/1i48uER7)
+
 ###  配置解压版 Tomcat
 `Windows 平台`
 在setclasspath中把前几行关于JAVA_HOME，JRE_HOME的路径改成自己的
@@ -122,8 +125,7 @@
 
 ##  Tips
 - servletContextLisner 和Spring环境的加载顺序要注意
-- 配置好的tomcat [SDK 下的tomcat下的myth-tomcat-8.5.14.zip](https://pan.baidu.com/s/1i48uER7)
-
+- [Tomcat启动卡住,因为random](https://www.jianshu.com/p/576d356dc163)
 *************
 ##	Web容器和Web服务器的区别
 ### 【web容器】 

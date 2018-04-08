@@ -23,7 +23,7 @@
     - [异常处理](#异常处理)
     - [配置文件](#配置文件)
 
-`目录 end` *目录创建于2018-03-04* | 更多: [CSDN](http://blog.csdn.net/kcp606) | [oschina](https://my.oschina.net/kcp1104) | [码云](https://gitee.com/kcp1104) 
+`目录 end` |_2018-04-08_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
 ****************************************
 # 开发思想
 > 有关开发的理论性思想,编写,测试,部署等

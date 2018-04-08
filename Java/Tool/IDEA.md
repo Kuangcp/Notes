@@ -3,6 +3,7 @@
 - [IDEA 使用笔记](#idea-使用笔记)
     - [常识](#常识)
     - [常用技巧](#常用技巧)
+        - [Tomcat的使用](#tomcat的使用)
         - [导出为可运行的JAR包 普通Java项目](#导出为可运行的jar包-普通java项目)
         - [Springboot热加载](#springboot热加载)
         - [Debug](#debug)
@@ -14,7 +15,7 @@
         - [个人习惯](#个人习惯)
     - [插件](#插件)
 
-`目录 end` |_2018-03-27_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
+`目录 end` |_2018-04-08_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
 ****************************************
 
 # IDEA 使用笔记
@@ -27,6 +28,10 @@
 - 一个项目一个空间也是可以的，就是跨项目查看代码会有点麻烦，而且每个项目的IDEA的配置都是不一样的，同样的配置可能要配置很多遍
 
 ## 常用技巧
+### Tomcat的使用
+> 直接配置解压的即可, 然后Idea会在 用户目录下的Idea主目录中配置一个专门放Tomcat的配置和日志等文件, 和原Tomcat进行了隔离, 这样就不会影响到该Tomcat.
+
+
 ### 导出为可运行的JAR包 普通Java项目
 - File -> project structure ->artifact 里面设置好 引入的库，设置Main类，引用的jar包的相对classpath
 - Build artifact -> Build
