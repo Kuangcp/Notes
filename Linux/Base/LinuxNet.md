@@ -365,7 +365,7 @@ _ss_
 > `ssh -T user@host` 测试能否登录上    
 > `ssh -i 私钥绝对路径 user@host` 采用指定私钥登录(一般默认是`.ssh/id_rsa`)  
 >> 私钥一定要是 600 权限
->> 去除私钥的口令 `openssl rsa -in ~/.ssh/id_rsa -out ~/.ssh/id_rsa_new` 
+>> 去除私钥的口令 `openssl rsa -in ~/.ssh/id_rsa -out ~/.ssh/id_rsa_new` _在GitForWindows里面虽然有openssl,但是这个命令却执行不了_
 
 #### 1.安装软件
 _客户端安装软件_

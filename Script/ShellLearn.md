@@ -46,7 +46,7 @@
   - 速度确实要快,输入上的交互确实交互不了
 - fish
 
-- [linux shell dash&bash](http://blog.csdn.net/zengqiang1/article/details/61916697)
+> [linux shell dash&bash](http://blog.csdn.net/zengqiang1/article/details/61916697)
 
 ## Tips
 
