@@ -37,7 +37,7 @@
     - [工作](#工作)
         - [简历](#简历)
 
-`目录 end` |_2018-04-08_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
+`目录 end` |_2018-04-09_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
 ****************************************
 
 # 【Organization】
@@ -196,7 +196,7 @@
 - [习题的一些Python](https://github.com/qiwsir/StarterLearningPython.git )
 - [区块链Python](https://github.com/dvf/blockchain)`附加Python中Docker的用法`
 - [pyspider](https://github.com/binux/pyspider)`爬虫框架`
-
+- [httpie]()https://github.com/jakubroztocil/httpie
 ***********
 ## 【Linux】
 - [Java程序员眼中的Linux](https://github.com/judasn/Linux-Tutorial)

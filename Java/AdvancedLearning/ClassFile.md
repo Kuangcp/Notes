@@ -33,7 +33,7 @@
             - [Marshalling](#marshalling)
     - [反射的使用](#反射的使用)
 
-`目录 end` |_2018-04-08_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
+`目录 end` |_2018-04-09_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
 ****************************************
 # Java基础
 ## 【类和字节码】
@@ -173,6 +173,8 @@ Window ==> Preferences ==> Java ==> Compiler ==> Error/Warnings ==>Potential pro
 > Google开源的库 全称 `Google Protocol Buffers`
 
 > [参考博客: 详解如何在NodeJS中使用Google的Protobuf](https://juejin.im/entry/59c1214df265da0658151a2c) | [protocobuf](https://github.com/dcodeIO/protobuf.js)
+> [Google 开源技术protobuf ](https://blog.csdn.net/hguisu/article/details/20721109)
+> [Google Protocol Buffer 的使用和原理](https://www.ibm.com/developerworks/cn/linux/l-cn-gpb/index.html)
 
 - 他将数据结构以 proto后缀的文件进行描述, 通过代码生成工具, 可以生成对应数据结构的POJO对象和Protobuf相关的方法和属性
     - 特点:
@@ -187,9 +189,11 @@ Window ==> Preferences ==> Java ==> Compiler ==> Error/Warnings ==>Potential pro
         - 方便后续的管理和维护,相比于代码, 结构化的文档更容易管理和维护
 - 习惯性规则:
     - 命名: `packageName.MessageName.proto`
+
 > 只是编解码的工具, 不支持读半包, 粘包拆包
 ##### proto文件定义
-[参考博客: 数据交换利器 Protobuf 技术浅析](http://blog.jobbole.com/107405/)
+> [参考博客: 数据交换利器 Protobuf 技术浅析](http://blog.jobbole.com/107405/)
+
 ```
 // 用户数据信息
 message Article {
@@ -209,7 +213,7 @@ message Article {
     - 需要说明的是标签在1到15范围的采用一个字节进行编码。所以通常将标签1到15用于频繁发生的消息字段。编号标签大小的范围是1 到 2的29次幂–1。
     - 此外不能使用protobuf系统预留的编号标签（19000 －19999）。
 
-![数据类型对应表]()
+![数据类型对应表](https://raw.githubusercontent.com/Kuangcp/ImageRepos/master/Learn/java/protobuf/protobuf-type.jpeg)
 
 _复杂类型_  
 > 定义了enum枚举类型，嵌套的消息。甚至对原有的消息进行了扩展，也可以对字段设置默认值。添加注释等
@@ -286,7 +290,7 @@ _导入另一个proto定义_
 ##### 对于Java的使用
 > [Google Protocol Buffer 的使用和原理](https://www.ibm.com/developerworks/cn/linux/l-cn-gpb/index.html) `C++ 但是原理差不多`
 
-`简单使用`  
+`生成Java文件`  
 touch _hi.proto_
 ```protobuf
 package lm;
@@ -297,17 +301,23 @@ message helloworld{
 }
 ```
 - 据此生成Java文件 `mkdir src && protoc --java_out=./src hi.proto`
-
 _也可以使用该脚本更新协议_
 ```sh
     # proto文件中明确定义了一样的包结构就可以直接跑脚本
     basePath='minigame/proto/proto'
-    targetPath='minigame/src/main/java'
+    targetPath='ssss'
     rm -rf $targetPath \
     && mkdir $targetPath \
     && protoc $basePath/*.proto --java_out=$targetPath \
 ```
 
+`使用`
+```java
+    // 实例化一个构建器
+    helloworld.Builder msg = helloworld.newBuilder();
+    // 填充信息
+    msg.setId(12);
+```
 *********************
 
 #### Thrift
