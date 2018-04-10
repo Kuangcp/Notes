@@ -16,7 +16,7 @@
         - [负载均衡](#负载均衡)
     - [问题](#问题)
 
-`目录 end` |_2018-04-08_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
+`目录 end` |_2018-04-10_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
 ****************************************
 # Nginx
 
@@ -49,19 +49,19 @@
 - 运行命令创建容器运行 `docker run --name youhuigo -d -p 80:80 -v /home/kuang/nginx/conf/:/etc/nginx/conf.d/:ro --link you:web nginx`
 `conf 基础配置文件`
 ```
-upstream youhui {
-  server 172.17.0.4:8888;
+upstream gitea {
+  server 127.0.0.1:6001;
 }
 server {
   listen 80;
-  server_name youhui;
+  server_name git.kuangcp.top;
   location / {
     proxy_set_header X-Real-IP $remote_addr;
     proxy_set_header X-Forward-For $proxy_add_x_forwarded_for;
     proxy_set_header Host $http_host;
     proxy_set_header X-Nginx-Proxt true;
 
-    proxy_pass http://youhui;
+    proxy_pass http://gitea;
     proxy_redirect off;
   }
 }

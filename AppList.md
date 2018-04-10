@@ -29,6 +29,7 @@
 *******************
 ## IDE
 - [IDEA](https://www.jetbrains.com/idea/)
+    - [lanyus](http://blog.lanyus.com/6.html)
 - [Eclipse](http://www.eclipse.org/)
     - [中科大eclipse镜像源](http://mirrors.ustc.edu.cn/eclipse/technology/epp/downloads/release/)
 

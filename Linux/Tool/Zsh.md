@@ -7,7 +7,7 @@
         - [oh-my-zsh](#oh-my-zsh)
             - [主题](#主题)
 
-`目录 end` |_2018-04-08_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
+`目录 end` |_2018-04-10_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
 ****************************************
 # Zsh
 ## 为什么要使用
@@ -47,7 +47,9 @@ _额外安装_
     - `git clone https://github.com/bhilburn/powerlevel9k.git ~/.oh-my-zsh/custom/themes/powerlevel9k`
     - `powerlevel9k/powerlevel9k`
 
-- Bullet Train (目前在用)
+- Bullet Train (桌面在用)
+- ys 服务器在用
+
 > [安装步骤](https://github.com/caiogondim/bullet-train.zsh#for-oh-my-zsh-users)
 1. mkdir $ZSH_CUSTOM/themes/
 2. wget http://raw.github.com/caiogondim/bullet-train-oh-my-zsh-theme/master/bullet-train.zsh-theme

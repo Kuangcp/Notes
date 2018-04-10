@@ -21,7 +21,7 @@
     - [Gentoo](#gentoo)
     - [Mageia](#mageia)
 
-`目录 end` |_2018-04-08_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
+`目录 end` |_2018-04-10_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
 ****************************************
 # Linux各个发行版本使用体验
 > 一边用一边记录吧
@@ -47,13 +47,16 @@ _查看发行版_
 > 很古老但是很好用的系统 [官网](https://www.debian.org/index.zh-cn.html)
 
 - 奇怪的是我在虚拟机里装了好几个好几次装不上, 装完一登录就只有壁纸
-- 2018-04-01 17:19:50 作为服务器系统安装完Debian8.2 85M内存占用
+
+_服务器_
+- 2018-04-01 17:19:50 作为服务器系统安装完Debian8.2 85M内存占用 docker 是1.6
+- 2018-04-10 10:35:54 服务器安装Ubuntu16.04 71M内存 docker是1.13
 
 ### Ubuntu
-> 很多人的入门系统
+> 很多人的入门系统, 作为个人服务器也是首选, 软件比较新
 
 ### Ubuntu Mint
-> 该有的都有了, 个人比较喜欢
+> 作为桌面版系统, 该有的都有了, 个人比较喜欢
 
 ### Deepin
 > [官方wiki](wiki.deepin.org)

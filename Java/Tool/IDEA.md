@@ -19,7 +19,8 @@
 ****************************************
 
 # IDEA 使用笔记
-> [学生授权申请方式](https://sales.jetbrains.com/hc/zh-cn/articles/207154369) | [click](http://mails.art.edu.lv/)
+> [学生授权申请方式](https://sales.jetbrains.com/hc/zh-cn/articles/207154369) | [click](http://idea.lanyus.com/)
+> [IDEA主题](http://www.riaway.com/index.php)
 
 ## 常识
 -  project 就是一个工作空间，一个Module就是一个项目

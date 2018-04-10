@@ -7,7 +7,7 @@
         - [网络延迟](#网络延迟)
     - [Web安全](#web安全)
     - [HTTP](#http)
-        - [HTTP的错误码](#http的错误码)
+        - [HTTP的返回码](#http的返回码)
         - [HTTP的缓存](#http的缓存)
         - [Session和Cookie](#session和cookie)
         - [HTTP1.1 和 HTTP2](#http11-和-http2)
@@ -16,7 +16,7 @@
     - [Websocket](#websocket)
         - [WSS](#wss)
 
-`目录 end` |_2018-04-08_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
+`目录 end` |_2018-04-10_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
 ****************************************
 # 网络
 
@@ -40,13 +40,14 @@ ISO制定的OSI参考模型的过于庞大、复杂招致了许多批评。与�
 
 *******************************
 ## Web安全
-> [详细...](/Skills/CS/WebSecurity.md)
+> [完整的系统化信息](/Skills/CS/WebSecurity.md)
+
 **************************
 ## HTTP
 > HyperText Transfer Protocol 超文本传输协议
 
-### HTTP的错误码
-> [完整解释](https://github.com/Kuangcp/Notes/blob/master/Skills/View/ResponseCode.md)
+### HTTP的返回码
+> [完整列表 ](/FrontEnd/ResponseCode.md)
 
 ### HTTP的缓存
 
