@@ -24,7 +24,7 @@
 `目录 end` |_2018-04-10_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
 ****************************************
 # Linux各个发行版本使用体验
-> 一边用一边记录吧
+> 一边用一边记录吧 [发行版热度对比](https://distrowatch.com/dwres.php?resource=popularity)
 
 ## 基础知识
 > 下载安装时要选平台 参考[相关博客](http://downtoearthlinux.com/posts/x86-i386-x86-64-x64-and-amd64-oh-my/)
@@ -98,6 +98,12 @@ _服务器_
     - [打造完美的 Linux 桌面 — Arch Linux 2007.08-2 (3)](https://linuxtoy.org/archives/the-perfect-linux-desktop-arch-linux-2007-08-2-3.html)
     - [打造完美的 Linux 桌面 — Arch Linux 2007.08-2 (4)](https://linuxtoy.org/archives/the-perfect-linux-desktop-arch-linux-2007-08-2-4.html)
     
+### manjaro
+> [官网](https://manjaro.org/community-editions/)
+> [人生苦短我用Manjaro](https://www.manjaro.cn/451) | [什么Linux发行版软件最多？](https://www.lulinux.com/archives/2787)
+> | [Manjaro: 一种不同的野兽](https://www.manjaro.cn/195) | [为什么要用Manjaro？](https://www.manjaro.cn/150)
+
+- 因为基于arch, 并且简化了很多操作, 还兼容了Deepin桌面, 真是稳了
 
 ****************************
 ## redhat系

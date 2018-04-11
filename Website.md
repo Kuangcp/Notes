@@ -32,7 +32,7 @@
 - [VirtualBox和VMWare的镜像网](http://www.osboxes.org/)
 - [安卓在X86设备上的ISO下载](http://www.android-x86.org/download)
 
-## 国内的资源镜像站
+## 国内镜像站
 - [网易](http://mirrors.163.com/)`下载系统是 *-cd 的文件`
 - [清华大学](https://mirrors.tuna.tsinghua.edu.cn/)
 - [中国科学技术大学](http://mirrors.ustc.edu.cn/)`各大Linux发行版以及一些开源软件`
