@@ -5,24 +5,35 @@
         - [Ubuntu安装配置MySQL](#ubuntu安装配置mysql)
         - [Docker安装](#docker安装)
         - [图形化客户端](#图形化客户端)
-    - [基本数据类型](#基本数据类型)
+- [基本数据类型](#基本数据类型)
+    - [数值类型](#数值类型)
         - [short](#short)
         - [int](#int)
-        - [varchar](#varchar)
         - [decimal](#decimal)
-        - [LongBlob](#longblob)
-    - [基本组成](#基本组成)
-        - [数据库](#数据库)
-        - [表](#表)
-        - [视图](#视图)
-        - [触发器](#触发器)
-            - [【创建单语句的触发器】](#创建单语句的触发器)
-            - [【创建多语句的触发器】](#创建多语句的触发器)
-            - [【NEW 和 OLD关键字】](#new-和-old关键字)
-        - [存储过程](#存储过程)
-            - [基本结构示例：](#基本结构示例)
-        - [函数](#函数)
-            - [【简单示例】](#简单示例)
+    - [字符类型](#字符类型)
+        - [varchar](#varchar)
+        - [text](#text)
+        - [](#)
+    - [LongBlob](#longblob)
+- [基本组成](#基本组成)
+    - [数据库](#数据库)
+        - [创建](#创建)
+        - [导出](#导出)
+        - [修改](#修改)
+- [TODO 重头戏](#todo-重头戏)
+    - [表](#表)
+        - [创建](#创建)
+        - [修改](#修改)
+- [TODO 重头戏](#todo-重头戏)
+    - [视图](#视图)
+    - [触发器](#触发器)
+        - [【创建单语句的触发器】](#创建单语句的触发器)
+        - [【创建多语句的触发器】](#创建多语句的触发器)
+        - [【NEW 和 OLD关键字】](#new-和-old关键字)
+    - [存储过程](#存储过程)
+        - [基本结构示例：](#基本结构示例)
+    - [函数](#函数)
+        - [【简单示例】](#简单示例)
     - [1.mysql常用命令集合](#1mysql常用命令集合)
         - [1.1【自增长】](#11自增长)
         - [1.2【主键约束的修改】](#12主键约束的修改)
@@ -45,7 +56,7 @@
         - [修改](#修改)
         - [【授权】](#授权)
 
-`目录 end` |_2018-04-08_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
+`目录 end` |_2018-04-11_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
 ****************************************
 
 # Mysql
@@ -78,26 +89,55 @@ _重启_
 > windows上就直接 MySQL-Font HeidiSQL Linux就终端了..虽然wine也能装这俩 | [10个Mysql图形客户端](http://www.linuxidc.com/Linux/2015-01/111421.htm)
 
 ********************************
-## 基本数据类型
+# 基本数据类型
+> [MySQL 数据类型](http://www.cnblogs.com/bukudekong/archive/2011/06/27/2091590.html)
+## 数值类型
 ### short
 ### int
-### varchar
 ###  decimal 
 -  The declaration syntax for a DECIMAL column is DECIMAL(M,D). The ranges of values for the arguments are as follows:
    - M is the maximum number of digits (the precision). It has a range of 1 to 65.
    - D is the number of digits to the right of the decimal point (the scale). It has a range of 0 to 30 and must be no larger than M. 
-- 在MySQL 3.23 及以后的版本中，DECIMAL(M, D) 的取值范围等于早期版本中的DECIMAL(M + 2, D) 的取值范围。 - 1、当插入的整数部分的值超过了其表示范围后就直接忽略了小数部分的值，并以最大值填充。 
-- 2、当整数部分合法，小数部分多余的位数，直接截断。
+- 在MySQL 3.23 及以后的版本中，DECIMAL(M, D) 的取值范围等于早期版本中的DECIMAL(M + 2, D) 的取值范围。
+1. 当插入的整数部分的值超过了其表示范围后就直接忽略了小数部分的值，并以最大值填充。 
+2. 当整数部分合法，小数部分多余的位数，直接截断。
 
-### LongBlob
+## 字符类型
+### varchar
+### text
+### 
+
+
+## LongBlob
 - 这种数据类型可以直接把图像文件存到数据库中！
 创建UTF8编码数据库 `CREATE DATABASE `test2` DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci`
 
 *****************************
-## 基本组成
-### 数据库
-### 表
-### 视图
+# 基本组成
+## 数据库
+### 创建
+> create database name;
+
+### 导出
+> 以下的 -p -h 参数依数据库的配置情况而定
+
+1. 只导出数据库的结构 `mysqldump -uroot -pmysql -d dbname > /data/backup/sql/dbname.sql`  
+    - 导出具体的表就在数据库名后加上 表名
+2. 导出结构和数据就去掉-d参数, 导出具体的表同理
+3. 导入就是执行这个SQL文件就行了 `source /path/to/dbname.sql`
+
+### 修改
+# TODO 重头戏
+
+## 表
+### 创建
+> create table name;
+
+### 修改
+# TODO 重头戏
+
+**************8
+## 视图
 > 保障数据安全性，提高查询效率
 
 [参考博客: ](http://www.jb51.net/article/36363.htm)
@@ -118,12 +158,12 @@ WITH CHECK OPTION表示更新视图时要保证在该试图的权限范围之内
 　　LOCAL：更新视图时，要满足该视图本身定义的条件即可
 tips：创建试图时最好加上WITH CASCADED CHECK OPTION参数，这种方式比较严格,可以保证数据的安全性
 
-### 触发器
-#### 【创建单语句的触发器】
+## 触发器
+### 【创建单语句的触发器】
 - `CREATE TRIGGER ins_sum BEFORE INSERT ON account FOR EACH ROW SET @sum = @sum + NEW.amount;`
 - `CREATE TRIGGER trigger_name trigger_time trigger_event ON tbl_name FOR EACH ROW trigger_stmt`
 
-#### 【创建多语句的触发器】
+### 【创建多语句的触发器】
 ```sql
       CREATE TRIGGER trigger_name trigger_time trigger_event
           ON tbl_name FOR EACH ROW
@@ -131,7 +171,7 @@ tips：创建试图时最好加上WITH CASCADED CHECK OPTION参数，这种方�
           .......
       END
 ```
-#### 【NEW 和 OLD关键字】
+### 【NEW 和 OLD关键字】
 - 使用OLD和NEW关键字，能够访问受触发程序影响的行中的列（OLD和NEW不区分大小写）。在INSERT触发程序中，仅能使用NEW.col_name，没有旧行。
 - 在DELETE触发程序中，仅能使用OLD.col_name，没有新行。在UPDATE触发程序中，可以使用OLD.col_name来引用更新前的某一行的列，也能使用NEW.col_name来引用更新后的行中的列。
 - 用OLD命名的列是只读的。你可以引用它，但不能更改它。对于用NEW命名的列，如果具有SELECT权限，可引用它。
@@ -139,8 +179,8 @@ tips：创建试图时最好加上WITH CASCADED CHECK OPTION参数，这种方�
 - 你可以使用触发程序来更改将要插入到新行中的值，或用于更新行的值。
 - 在BEFORE触发程序中，AUTO_INCREMENT列的NEW值为0，不是实际插入新记录时将自动生成的序列号。
 
-### 存储过程
-#### 基本结构示例：
+## 存储过程
+### 基本结构示例：
 ```sql
        -- 【loop】 要有iterate 和leave才是完整的
     CREATE PROCEDURE doiterate(p1 INT)
@@ -158,8 +198,8 @@ tips：创建试图时最好加上WITH CASCADED CHECK OPTION参数，这种方�
 ```
 
 
-###  函数
-#### 【简单示例】
+##  函数
+### 【简单示例】
 
 ```sql
       ---函数部分,修改定界符 
@@ -184,6 +224,7 @@ tips：创建试图时最好加上WITH CASCADED CHECK OPTION参数，这种方�
 select fun_test(8,'d');
 ```
 
+***********************************
 ***********************************
 ## 1.mysql常用命令集合
 ### 1.1【自增长】

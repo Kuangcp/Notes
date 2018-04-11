@@ -31,7 +31,7 @@
         - [VPN](#vpn)
             - [shadowsocks](#shadowsocks)
 
-`目录 end` |_2018-04-08_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
+`目录 end` |_2018-04-11_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
 ****************************************
 # 【网络管理】
 ## DNS
@@ -360,12 +360,17 @@ _ss_
 > [SSH原理与运用（一）：远程登录](http://www.ruanyifeng.com/blog/2011/12/ssh_remote_login.html)
 > [SSH原理与运用（二）：远程操作与端口转发](http://www.ruanyifeng.com/blog/2011/12/ssh_port_forwarding.html)
 
-> `ssh user@host` 默认22端口登录系统  
-> `ssh -p port user@host` 指定端口登录  
-> `ssh -T user@host` 测试能否登录上    
+- `ssh user@host` 默认22端口登录系统  
+- `ssh -p port user@host` 指定端口登录  
+- `ssh -T user@host` 测试能否登录上    
+
 > `ssh -i 私钥绝对路径 user@host` 采用指定私钥登录(一般默认是`.ssh/id_rsa`)  
 >> 私钥一定要是 600 权限
 >> 去除私钥的口令 `openssl rsa -in ~/.ssh/id_rsa -out ~/.ssh/id_rsa_new` _在GitForWindows里面虽然有openssl,但是这个命令却执行不了_
+
+> 使用密码方式免去密码登录(因为一些奇怪的需求, 又想省事)
+>> 1. 安装sshpass
+>> 2. sshpass -p '密码' 后接正常的ssh命令 ssh user@host
 
 #### 1.安装软件
 _客户端安装软件_

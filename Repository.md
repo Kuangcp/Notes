@@ -1,15 +1,18 @@
 `目录 start`
  
-- [【Organization】](#organization)
 - [【GitRepos】](#gitrepos)
+    - [【Organization】](#organization)
     - [User](#user)
     - [笔记仓库](#笔记仓库)
     - [翻译和搬运](#翻译和搬运)
     - [【算法】](#算法)
     - [【Java】](#java)
+        - [综合索引](#综合索引)
         - [源码学习](#源码学习)
         - [Java8](#java8)
         - [框架以及高级特性](#框架以及高级特性)
+            - [应用广泛](#应用广泛)
+            - [个人团体开发](#个人团体开发)
         - [二次框架](#二次框架)
         - [进阶](#进阶)
         - [Demo](#demo)
@@ -37,17 +40,19 @@
     - [工作](#工作)
         - [简历](#简历)
 
-`目录 end` |_2018-04-09_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
+`目录 end` |_2018-04-11_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
 ****************************************
 
-# 【Organization】
+
+# 【GitRepos】
+> 收集的一些优秀的git仓库, 一般是参考学习为主, 用为主的工具放在了AppList下
+
+## 【Organization】
 - [ApacheCN](https://github.com/apachecn)`含有一些学习的文档和视频资料`
 - [稀土](https://github.com/xitu) `掘金的组织`
 - [docker-library](https://github.com/docker-library)`docker仓库组织,含有大量软件的Dockerfile`
 - [aliyun](https://github.com/aliyun)`大厂`
 
-# 【GitRepos】
-> 收集的一些优秀的git仓库 
 ## User
 > 一些值得学习的人 他们的仓库都有必要看一下
 
@@ -84,7 +89,11 @@
 - [魏楚阳的算法学习](https://github.com/brianway/algorithms-learning)
 - [interview](https://github.com/kdn251/interviews)`面试所需算法练习`
 
+***********************************
 ## 【Java】
+### 综合索引
+> [Java资源大全中文版](https://github.com/jobbole/awesome-java-cn)
+
 ### 源码学习
 - [tiny-spring](https://github.com/code4craft/tiny-spring) `Spring精简版`
 
@@ -95,16 +104,20 @@
 - [vavr](https://github.com/vavr-io/vavr)`基于Java8的库, 简化代码`
 
 ### 框架以及高级特性
-- [Jfinal](https://gitee.com/jfinal/jfinal) `简洁`
-- [act](https://gitee.com/actframework/actframeworkP)`MVC全栈框架`
-
-- [okhttp](https://github.com/square/okhttp)`Java上性能较好的HTTP交互工具`
-    - [feign](https://github.com/OpenFeign/feign)`Feign makes writing java http clients easier`
+#### 应用广泛
 - [druid](https://github.com/alibaba/druid) `阿里数据库连接池`
 - [dubbo](https://github.com/alibaba/dubbo) `RPC 框架`
+- [Eclipse Collections](http://www.eclipse.org/collections/)`更丰富的集合操作`
+- [guava](https://github.com/google/guava)`Google工具包`
+- [Jfinal](https://gitee.com/jfinal/jfinal) `简洁`
+- [act](https://gitee.com/actframework/actframeworkP)`MVC全栈框架`
+- [okhttp](https://github.com/square/okhttp)`Java上性能较好的HTTP交互工具`
+    - [feign](https://github.com/OpenFeign/feign)`Feign makes writing java http clients easier`
 - [elasticsearch](https://github.com/elastic/elasticsearch) `分布式全局搜索`
 - [webmagic](https://github.com/code4craft/webmagic) `爬虫框架`
 - [zxing](https://github.com/zxing/zxing) `二维码处理的项目`
+
+#### 个人团体开发
 - [easypoi](https://gitee.com/lemur/easypoi) `虽然代码非常不规范，也没人维护的样子，但是这个开源精神要学习`
 - [uflo](https://gitee.com/youseries/uflo) `国内的流程引擎`
 - [jeewx](https://gitee.com/jeecg/jeewx)`微信管家平台`
@@ -112,6 +125,7 @@
 - [myth](https://github.com/yu199195/myth)`可靠消息解决分布式事务框架 `
 - [teaVM](https://github.com/konsoletyper/teavm)`字节码转译成js`
 - [nutzam](https://nutzam.com/index.html)`一个简单的MVC web开发框架`
+
 ### 二次框架
 - [jeesite](https://gitee.com/thinkgem/jeesite)`Spring基础构建的maven jsp项目 bootstrap`
 - [Guns](https://gitee.com/naan1993/guns)`基于Springboot开发了大量模块`
@@ -165,7 +179,6 @@
 - [restfeel](https://github.com/Jason-Chen-2017/restfeel)`一个Rest接口的管理测试平台 陈光剑`
 - [mushroom](https://github.com/wuweiit/mushroom) `基于Java的动态内容管理系统 ` 
 - [notes](https://github.com/pimterry/notes)`notes shell 软件`
-
 
 *******************************************************
 ## 【Docker】
