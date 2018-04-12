@@ -42,7 +42,7 @@
                 - [Maven](#maven)
             - [后期添加构建](#后期添加构建)
 
-`目录 end` |_2018-04-08_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
+`目录 end` |_2018-04-12_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
 ****************************************
 # Maven
 > [官网](https://maven.apache.org/) | [官网手册](https://maven.apache.org/guides/) | [http://takari.io/ 在线练习网](http://takari.io/)
@@ -110,11 +110,13 @@ mvn install:install-file
 > [插件地址](http://maven.apache.org/plugins/index.html)
 
 ### 2.3.配置文件的详解
+> [版本说明](http://www.blogjava.net/RomulusW/archive/2008/05/04/197985.html)
+
 ```xml
       <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
      <modelVersion>4.0.0</modelVersion>
-     <groupId>反写的公司名+项目名</groupId>
+     <groupId>反写的公司域名+项目名</groupId>
      <artifactId>项目名+模块名</artifactId>
      <!--
          第一个 0 是大版本号
@@ -123,8 +125,8 @@ mvn install:install-file
          snapshot 快照
          alpha 内部测试
          beta 公测
-         Release 稳定
-         GA 正式发布
+         RC 发行候选版本
+         Release/GA 正式发布
      -->
      <version>0.0.1-SNAPSHOT</version>
      <!--jar war zip pom-->

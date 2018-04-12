@@ -10,6 +10,7 @@
     - [操作系统](#操作系统)
         - [Windows](#windows)
         - [Linux](#linux)
+        - [安卓](#安卓)
     - [Web性能](#web性能)
     - [Tool](#tool)
     - [团队开发](#团队开发)
@@ -17,7 +18,7 @@
     - [生活](#生活)
     - [商业](#商业)
 
-`目录 end` |_2018-04-08_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
+`目录 end` |_2018-04-12_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
 ****************************************
 
 > 只用来记录非技术类的文章,技术类的直接放到对应的笔记中去
@@ -115,6 +116,8 @@ _如何将脑海中的思维火花转化为代码_
 - [一些工具软件](https://bbs.deepin.org/forum.php?mod=viewthread&tid=134241&extra=)
 - [关于uptime输出的详解](http://blog.csdn.net/adparking/article/details/6684690)
 
+### 安卓
+> [Android，开源还是封闭？](http://www.ruanyifeng.com/blog/2010/02/open_android_or_not.html)
 ***************
 ## Web性能
 - [ab: Apache Benchmark 的使用的个人浅薄经验](https://ruby-china.org/topics/13870)

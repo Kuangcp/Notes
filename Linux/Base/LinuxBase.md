@@ -28,7 +28,7 @@
             - [修改主机名](#修改主机名)
     - [终端快捷键](#终端快捷键)
 
-`目录 end` |_2018-04-08_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
+`目录 end` |_2018-04-12_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
 ****************************************
 # 【Linux系统】
 > 只是记录了debian系的Linux, 不过也是大同小异
@@ -63,11 +63,12 @@
 ### 【终端模拟器之别】
 - `qterminal` 可定制标签页位置以及透明度，很简洁,挺好用
 - `mate-terminal` 和gnome-terminal 基本配置什么的几乎一样，只是标题栏简洁一丢丢，跨标签页复制粘贴有bug
-- `gnome-terminal` 很简洁，但是多标签时，标签页太大
+- `gnome-terminal` 很简洁，但是多标签时，标签栏太大
 - `sakura` 外观上和前两个几乎一样，标签页可以更简洁，但是设置不好调
 - `deepin-terminal` 功能很多，主题很多，功能最为强大，但是字体可以选的很少
 - `terminator` 可以定制背景图片，但是在我这deppin系统里有bug，多标签是假的，命令全是在共享的，不能用。。
 - `tmux` 运维必备软件，入门有些繁琐
+- `tilda` 内嵌于桌面上, 小命令方便, 需要查看文件就不方便了
 
 > [更多可安装终端](https://gitee.com/kcp1104/codes/gca14wtqvm67l9j5r0deb56#Terminals.md)
 

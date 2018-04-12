@@ -2,7 +2,7 @@
  
 - [【常用的网站】](#常用的网站)
     - [软件商店](#软件商店)
-    - [国内的资源镜像站](#国内的资源镜像站)
+    - [国内镜像站](#国内镜像站)
     - [特别网站](#特别网站)
 - [社区网站](#社区网站)
 - [资源网](#资源网)
@@ -24,7 +24,7 @@
     - [人工智能](#人工智能)
     - [在线工具](#在线工具)
 
-`目录 end` |_2018-04-11_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
+`目录 end` |_2018-04-12_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
 ****************************************
 # 【常用的网站】
 ## 软件商店
@@ -35,7 +35,8 @@
 ## 国内镜像站
 - [网易](http://mirrors.163.com/)`下载系统是 *-cd 的文件`
 - [清华大学](https://mirrors.tuna.tsinghua.edu.cn/)
-- [中国科学技术大学](http://mirrors.ustc.edu.cn/)`各大Linux发行版以及一些开源软件`
+- [中科大](http://mirrors.ustc.edu.cn/)`中国科学技术大学 各大Linux发行版以及一些开源软件`
+- [浙江大学](http://mirrors.zju.edu.cn/)
 - [阿里云](https://mirrors.aliyun.com/)
 - [Linux运维派](https://mirrors-wan.geekpie.org/)
 - [sourceforge](https://sourceforge.net/directory/system-administration/osdistro/livecd/os:linux/)`Linux发行版列表`
@@ -95,7 +96,7 @@
 
 ## Linux
 - [运维生存时间](http://www.ttlsa.com)`含大量运维干货`
-
+- [撸Linux](https://www.lulinux.com/)`非理性言论?`
 - [杭电ACM题库](http://acm.hdu.edu.cn/listproblem.php?vol=1)
 - [Linux命令大全](http://man.linuxde.net/) `Linux命令教程`
 - [RUNOOB.COM](http://www.runoob.com) `各种技术学习 文档资源`

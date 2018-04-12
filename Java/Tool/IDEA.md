@@ -15,12 +15,12 @@
         - [个人习惯](#个人习惯)
     - [插件](#插件)
 
-`目录 end` |_2018-04-08_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
+`目录 end` |_2018-04-12_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
 ****************************************
 
 # IDEA 使用笔记
 > [学生授权申请方式](https://sales.jetbrains.com/hc/zh-cn/articles/207154369) | [click](http://idea.lanyus.com/)
-> [IDEA主题](http://www.riaway.com/index.php)
+> [rover12421博客](http://ju.outofmemory.cn/feed/2608/?page=1) | [IDEA主题](http://www.riaway.com/index.php)
 
 ## 常识
 -  project 就是一个工作空间，一个Module就是一个项目
