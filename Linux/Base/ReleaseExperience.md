@@ -11,6 +11,7 @@
             - [双系统安装](#双系统安装)
         - [raspberry-pi](#raspberry-pi)
     - [arch系](#arch系)
+        - [manjaro](#manjaro)
     - [redhat系](#redhat系)
         - [Fedora](#fedora)
         - [Centos](#centos)
@@ -21,16 +22,17 @@
     - [Gentoo](#gentoo)
     - [Mageia](#mageia)
 
-`目录 end` |_2018-04-10_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
+`目录 end` |_2018-04-13_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
 ****************************************
 # Linux各个发行版本使用体验
 > 一边用一边记录吧 [发行版热度对比](https://distrowatch.com/dwres.php?resource=popularity)
 
 ## 基础知识
 > 下载安装时要选平台 参考[相关博客](http://downtoearthlinux.com/posts/x86-i386-x86-64-x64-and-amd64-oh-my/)
-    
+```
     x86-64  =  64-bit  =  x64  =  amd64
     x86  =  32-bit  =  i386
+```
 
 _查看发行版_
 - `lsb_release -a`  [查看更多方式](/Linux/Linux_File.md#查看发行版)

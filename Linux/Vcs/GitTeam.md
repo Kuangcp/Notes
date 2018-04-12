@@ -1,16 +1,20 @@
 `目录 start`
  
 - [基于Git进行团队开发](#基于git进行团队开发)
+    - [TODO 整理和学习这几种管理方式](#todo-整理和学习这几种管理方式)
     - [基础思想](#基础思想)
         - [介绍关于git在多人协作的使用](#介绍关于git在多人协作的使用)
         - [本地和远程](#本地和远程)
         - [小规模团队使用码云组织的总结](#小规模团队使用码云组织的总结)
             - [最终方案](#最终方案)
 
-`目录 end` |_2018-04-08_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
+`目录 end` |_2018-04-13_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
 ****************************************
 
 # 基于Git进行团队开发
+> [在阿里，我们如何管理代码分支？](https://blog.csdn.net/maoreyou/article/details/79877829)
+## TODO 整理和学习这几种管理方式
+
 > Github gitee gitlab bitbucket 等各大平台都是这样一种模式:   
 > 个人和个人开发者之间是并行master，只适合偶尔开发提交一些代码  
 > 组织就是适合给多个人，等同的稳定开发时，分支就会比较明确，这个笔记就是记录组织中git的使用
