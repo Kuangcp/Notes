@@ -18,7 +18,7 @@
     - [生活](#生活)
     - [商业](#商业)
 
-`目录 end` |_2018-04-12_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
+`目录 end` |_2018-04-14_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
 ****************************************
 
 > 只用来记录非技术类的文章,技术类的直接放到对应的笔记中去
@@ -115,6 +115,7 @@ _如何将脑海中的思维火花转化为代码_
 - [Ubuntu放弃战斗, Linux桌面的悲哀](http://www.jianshu.com/p/86dd6e34ce91)`deepin王总`
 - [一些工具软件](https://bbs.deepin.org/forum.php?mod=viewthread&tid=134241&extra=)
 - [关于uptime输出的详解](http://blog.csdn.net/adparking/article/details/6684690)
+- [Ubuntu安装我的世界](https://www.linuxidc.com/Linux/2016-04/129764.htm)
 
 ### 安卓
 > [Android，开源还是封闭？](http://www.ruanyifeng.com/blog/2010/02/open_android_or_not.html)
