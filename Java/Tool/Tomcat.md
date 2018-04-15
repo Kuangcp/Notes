@@ -31,28 +31,35 @@
     - Tomcat `7 8 8.5 9 大版本`
     - Tomcat Native `优化Tomcat性能，提升速倍`
     - Apache Standard Taglib `JSTL的实现`
-    - Tomcat Connectors `用于连接IIS Apache`[文档](http://tomcat.apache.org/connectors-doc/index.html)
+    - Tomcat Connectors `用于连接IIS Apache` [官方文档](http://tomcat.apache.org/connectors-doc/index.html)
+
+> [一款功能强大的Tomcat管理监控工具](https://zhuanlan.zhihu.com/p/35557373?group_id=967469270317457408)
+> [psi-probe](https://github.com/psi-probe/psi-probe)`Tomcat监控管理工具`
 
 ##  Tips
 - servletContextLisner 和Spring环境的加载顺序要注意
 - [Tomcat启动卡住,因为random](https://www.jianshu.com/p/576d356dc163)
 *************
 ## 原理
+> 更多查看 Tomcat那些事儿 公众号
 > [Tomcat目录部署与Context描述文件context.xml ](https://mp.weixin.qq.com/s?__biz=MzI3MTEwODc5Ng==&mid=2650859355&idx=1&sn=2122baf040ae337dba90201a48b4e11c&chksm=f1329888c645119eec4473e11beaf988c48ce02c52151502086595de59b65dd4bd7cf129530e&scene=21#wechat_redirect)
 > | [Tomcat配置文件解析与Digester](https://mp.weixin.qq.com/s?__biz=MzI3MTEwODc5Ng==&mid=2650859293&idx=1&sn=3c017b2675bb59fda8ae037b7a1e6cb4&chksm=f13298cec64511d8183a23f1b3110bc6b65e8742c6e76391a51c552d86c0bc81a34fab8d0a60&scene=21#wechat_redirect)
 > | [Servlet到底是单例还是多例你了解吗？](https://mp.weixin.qq.com/s?__biz=MzI3MTEwODc5Ng==&mid=401278436&idx=1&sn=7d28750b7cff1f706efb82c7fcaa73c5&scene=21#wechat_redirect)
+> | [Tomcat类加载器以及应用间class隔离与共享 ](https://mp.weixin.qq.com/s?__biz=MzI3MTEwODc5Ng==&mid=2650859298&idx=1&sn=8856375f2268fc33a6bb3fbc6932eca7&chksm=f13298f1c64511e77ef1d77d28272840ca56f62da6e11928c78827e8ec53f937f812a4b49aa0&scene=21#wechat_redirect)
+> | [啥，Tomcat里竟然还有特权应用? ](https://mp.weixin.qq.com/s?__biz=MzI3MTEwODc5Ng==&mid=2650859476&idx=1&sn=8be7a37b59a5d167998f6695a1606d39&chksm=f1329807c6451111d2a1c379221655dc87dd105b067f894bfb202d1f9f283bad310a5cdc2277&scene=21#wechat_redirect)
+> | [你了解JMX在Tomcat的应用吗?](https://mp.weixin.qq.com/s?__biz=MzI3MTEwODc5Ng==&mid=401135587&idx=1&sn=610950fda2eceb3683a9fe45078f1a83&scene=21#wechat_redirect)
 ## 配置运行
-> [SDK 下的tomcat下的myth-tomcat-8.5.14.zip](https://pan.baidu.com/s/1i48uER7)
+> 个人配置好的:[SDK 下的tomcat下的myth-tomcat-8.5.14.zip](https://pan.baidu.com/s/1i48uER7)
 
 ###  配置解压版 Tomcat
 `Windows 平台`
-在setclasspath中把前几行关于JAVA_HOME，JRE_HOME的路径改成自己的
-系统中添加catalina_home环境变量
-运行tomcatw.exe配置里面所有的路径
-双击启动
+1. 在setclasspath中把前几行关于JAVA_HOME，JRE_HOME的路径改成自己的
+2. 系统中添加catalina_home环境变量
+3. 运行tomcatw.exe配置里面所有的路径( JDK JRE )
+4. 双击tomcat.exe启动Tomcat
 
 `Linux 平台`
-- 下载解压，然后 bin 目录下执行 `chmod 744 *.sh`
+- 下载解压，然后 bin 目录下执行 `chmod +x *.sh`
 
 > [参考博客](http://blog.csdn.net/kkgbn/article/details/52071109)
 
@@ -75,6 +82,10 @@
              <Valve className="org.apache.catalina.valves.RemoteAddrValve" allow="^.*$" />  
     </Context> 
 ```
+#### IDE中配置运行
+> [你一定不知道IDE里的Tomcat是怎么工作的！ ](https://mp.weixin.qq.com/s?__biz=MzI3MTEwODc5Ng==&mid=401107149&idx=1&sn=908bd8ba76b38417570056795626c163&scene=21#wechat_redirect)
+
+- 虽然IDE也是引用到解压的Tomcat路径, 但是只是使用了可执行文件, 配置文件和一系列中间文件都是和原Tomcat隔离的, 这样也保证了原Tomcat能单独运行不受影响
 
 ### 编码
 - 编辑conf/下的server.xml，配置Connector项 `URIEncoding="UTF-8"`

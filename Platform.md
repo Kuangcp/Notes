@@ -257,6 +257,10 @@ _showdoc_
 ## 文档转换
 - [pandoc](http://pandoc.org/try/)
 
+# 接口平台
+## 今日头条
+> 今日头条灵犬系统 API `https://m.toutiao.com/detector/api/detect/?text=`URL
+
 ************************************************************
 # 测试平台
 - [自动API测试](https://www.eolinker.com/#/index)

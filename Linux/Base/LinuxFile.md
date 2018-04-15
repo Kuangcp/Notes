@@ -272,6 +272,8 @@ _mv_
     - c 替换 整行
     - s 替换 字符串的替换
 
+> 1. 截取指定行数到新文件 `sed -n ‘开始行数，结束行数p’ info.log > newFile.log`
+
 #### awk
 > awk有3个不同版本: awk、nawk和gawk，未作特别说明，一般指gawk，gawk 是 AWK 的 GNU 版本。
 

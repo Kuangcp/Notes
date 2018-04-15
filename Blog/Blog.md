@@ -50,6 +50,7 @@
 - [javabolg](https://javablog.net/)`nutz作者的博客`
 
 - [chenssy ](http://cmsblogs.com/)`技术较新 Java博客网`
+- [java3y](https://zhongfucheng.bitcron.com/)`技术比较全面`
 ## 博客能人
 - [赵劼](http://www.cnblogs.com/JeffreyZhao/) `对函数式编程，并行程序开发，代码之美以及程序员能力与修养等相关问题`
 - [进击的Java新人](https://zhuanlan.zhihu.com/hinus)
@@ -66,7 +67,7 @@
 - [CSDN 知识林](http://blog.csdn.net/zsl129)
 - [三分钟教你学Git](http://blog.csdn.net/column/details/13149.html)
 - [设计模式](http://blog.csdn.net/column/details/zsxdesignpattern.html)
-
+- [网络安全](https://zhuanlan.zhihu.com/avcom)
 *********************************
 # 【Blog】
 ## 搭建博客

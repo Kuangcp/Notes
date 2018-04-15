@@ -132,17 +132,19 @@
 ### 进阶
 - [全栈?](https://github.com/phodal/growth-v2)
 - [Java设计模式](https://github.com/iluwatar/java-design-patterns) `设计模式详解`
-- [编码规范 知乎上的专栏](https://github.com/xwjie/PLMCodeTemplate)`程序员为什么这么累`
+- [编码规范 知乎上的专栏对应源码](https://github.com/xwjie/PLMCodeTemplate)`程序员为什么这么累`
 
 ### Demo
 - [springboot-action](https://github.com/lianggzone/springboot-action) `Springboot常见的模块都有,文档也多`
 - [Java-learing](https://github.com/brianway/java-learning) `Java基础学习仓库, 代码量比较大也比较详细, 但是没有逻辑和注释, 看起来费劲`
+
 
 - [rabbitmq](https://github.com/chwshuang/rabbitmq)`入门学习代码`
 - [docker-demos](https://github.com/waylau/docker-demos) `Maven和Gradle结合docker使用`
 - [mybatis-spring-boot](https://github.com/abel533/MyBatis-Spring-Boot)
 - [chrome-plugin-demo](https://github.com/sxei/chrome-plugin-demo)`Chrome插件案例, 最新火狐(54之后)也适用`
 - [netty-in-action-cn](https://github.com/ReactivePlatform/netty-in-action-cn) `Netty实战中文版配套代码`
+- [日志系统](https://github.com/ZhongFuCheng3y/JournalSystem)`SpringBoot 开发的` 
 
 #### 微服务
 - [shop](https://github.com/lrwinx/shop)`SpringClod的实战案例`
@@ -195,6 +197,9 @@
 ## 【Go】
 - [build-web-application-with-golang](https://github.com/astaxie/build-web-application-with-golang)
 
+### Demo
+- [gin-example](https://github.com/EDDYCJY/go-gin-example)
+    - [对应博客](https://segmentfault.com/a/1190000013297625)
 
 *********
 ## 【Python】

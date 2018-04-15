@@ -46,6 +46,7 @@
 - Set是无序的，但是StringRedisTemplate的对象操作返回的set竟然是有序的
     - 因为有一个类是SortSet，顾名思义，所以是有序的，要继续多学习和使用Java原生的集合对象了
 
+> [3分钟搞掂Set集合](https://segmentfault.com/a/1190000014391402?utm_source=channel-hottest)
 
 ## Hash
 - [HashMap 实现原理](http://www.importnew.com/27043.html)
