@@ -1,6 +1,8 @@
 `目录 start`
  
 - [Tomcat](#tomcat)
+    - [Tips](#tips)
+    - [原理](#原理)
     - [配置运行](#配置运行)
         - [配置解压版 Tomcat](#配置解压版-tomcat)
         - [编码](#编码)
@@ -9,7 +11,6 @@
             - [虚拟主机](#虚拟主机)
             - [配置 GZip压缩](#配置-gzip压缩)
             - [配置IO方式](#配置io方式)
-    - [Tips](#tips)
     - [Web容器和Web服务器的区别](#web容器和web服务器的区别)
         - [【web容器】](#web容器)
             - [【Web服务器】](#web服务器)
@@ -21,7 +22,7 @@
     - [二、Tomcat 与 Web 服务器](#二、tomcat-与-web-服务器)
     - [Tomcat和Jetty](#tomcat和jetty)
 
-`目录 end` |_2018-04-08_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
+`目录 end` |_2018-04-15_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
 ****************************************
 # Tomcat
 > [官方网站](http://tomcat.apache.org/)
@@ -32,6 +33,14 @@
     - Apache Standard Taglib `JSTL的实现`
     - Tomcat Connectors `用于连接IIS Apache`[文档](http://tomcat.apache.org/connectors-doc/index.html)
 
+##  Tips
+- servletContextLisner 和Spring环境的加载顺序要注意
+- [Tomcat启动卡住,因为random](https://www.jianshu.com/p/576d356dc163)
+*************
+## 原理
+> [Tomcat目录部署与Context描述文件context.xml ](https://mp.weixin.qq.com/s?__biz=MzI3MTEwODc5Ng==&mid=2650859355&idx=1&sn=2122baf040ae337dba90201a48b4e11c&chksm=f1329888c645119eec4473e11beaf988c48ce02c52151502086595de59b65dd4bd7cf129530e&scene=21#wechat_redirect)
+> | [Tomcat配置文件解析与Digester](https://mp.weixin.qq.com/s?__biz=MzI3MTEwODc5Ng==&mid=2650859293&idx=1&sn=3c017b2675bb59fda8ae037b7a1e6cb4&chksm=f13298cec64511d8183a23f1b3110bc6b65e8742c6e76391a51c552d86c0bc81a34fab8d0a60&scene=21#wechat_redirect)
+> | [Servlet到底是单例还是多例你了解吗？](https://mp.weixin.qq.com/s?__biz=MzI3MTEwODc5Ng==&mid=401278436&idx=1&sn=7d28750b7cff1f706efb82c7fcaa73c5&scene=21#wechat_redirect)
 ## 配置运行
 > [SDK 下的tomcat下的myth-tomcat-8.5.14.zip](https://pan.baidu.com/s/1i48uER7)
 
@@ -122,11 +131,6 @@
 #### 配置IO方式
 > 默认http1.1是nio, 还有aio ajp bio
 
-
-##  Tips
-- servletContextLisner 和Spring环境的加载顺序要注意
-- [Tomcat启动卡住,因为random](https://www.jianshu.com/p/576d356dc163)
-*************
 ##	Web容器和Web服务器的区别
 ### 【web容器】 
 

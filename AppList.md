@@ -15,6 +15,7 @@
         - [构建工具](#构建工具)
     - [文档处理](#文档处理)
         - [UML](#uml)
+        - [Log文件](#log文件)
     - [异步](#异步)
     - [响应式](#响应式)
     - [Database](#database)
@@ -23,7 +24,7 @@
     - [模拟器](#模拟器)
     - [Other](#other)
 
-`目录 end` |_2018-04-12_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
+`目录 end` |_2018-04-15_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
 ****************************************
 # 工具软件
 
@@ -100,6 +101,13 @@ _自建Git服务_
 - [bouml](http://www.bouml.fr/download.html#Debian) `官方网站下载`
 - [argouml](http://argouml.tigris.org/) `argouml官网`
 
+### Log文件
+> 方便的查看Log文件
+- [otroslogviewer](https://github.com/otros-systems/otroslogviewer)
+- [chainsaw](http://logging.apache.org/chainsaw/2.x/)
+- [vigilog](http://vigilog.sourceforge.net/index.html)
+
+*******************
 ## 异步
 - [dwr](http://directwebremoting.org/dwr/index.html)`Js调用Java方法并拿到返回值`
 

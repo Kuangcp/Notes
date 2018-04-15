@@ -35,29 +35,29 @@
         - [8.Reset一个单独的文件](#8reset一个单独的文件)
         - [9.保留working_tree并且丢弃一些commit](#9保留working_tree并且丢弃一些commit)
 
-`目录 end` |_2018-04-08_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
+`目录 end` |_2018-04-15_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
 ****************************************
 # Git实际使用的记录
 ## Tips
 1. 虽然在物理上本地仓库中所有文件是放在一起的，但是分支之间是互不能访问以及操作的
 2. 在本地的每次commit都是有index的，上传到github可以不用那么频繁，反正都是有记录的
-3. 在github上修改了项目后，或者以后是和别人一起开发，就要先git pull origin （master）将别人的分支和自己的分支都拉下来确保是最新，
-    - 再进行git push -u origin master 才能正确提交代码，如果不pull，提交是注定失败的，还会扰乱分支图
-4. 在github上修改文件，容易引起编码的变化，这时候没有pull就修改文件再commit也是会在push的时候很麻烦，最好在本地修改文件
-    - 最好是，在github上修改了就在本地pull之后再修改文件，万一出错了回退也简单
-5. 出现了冲突，从而无法自动merge：
+3. 出现了冲突，从而无法自动merge：
 ```
     git pull 对方的分支
     git checkout 自己的分支
     git merge --no-ff 对方的分支
     git push （自己的源+分支）origin master
 ```
-6. 当不想把隐私的配置文件上传github时，就可以.gitignore中忽略掉配置文件，然后建立模板文件夹放待配置的文件即可
-7. `cat ~/.ssh/id_rsa.pub | xclip -sel clip` 复制公钥
-8. java代码质量监测平台 codacy特别在意test里用断言 codebeat特别在意类和方法的长度
-9. Linux下当大量文件出现mode的变化（因为你的目录移动，文件权限变化等影响的）可以设置忽略掉 `git config core.fileMode false`
-    * 当将目录备份出去，然后重装系统粘贴回来，权限就变了，mode也变了，可以设置忽略掉改变，继续使用仓库，看着不爽的话就提交到远程，新系统克隆即可，不过网速就...
-10. git status 中文乱码 执行`git config --global core.quotepath false`即可
+4. 切记：避免隐私的配置文件上传github时，将配置分离出来配置.gitignore中忽略掉配置文件，然后建立模板文件夹放待配置的文件即可
+    -  `大意的后果`：[程序员复仇记 | 这些年，GitHub 上泄露了些什么？](https://zhuanlan.zhihu.com/p/33424997)
+    - [不小心把密码上传到 GitHub 了，怎么办](https://www.bennythink.com/git-password.html)
+5. `cat ~/.ssh/id_rsa.pub | xclip -sel clip` 复制公钥
+6. Linux下当大量文件出现mode的变化（因为你的目录移动，文件权限变化等影响的）可以设置忽略掉 `git config core.fileMode false`
+    * 当将目录备份出去，然后重装系统粘贴回来，权限就变了，mode也变了，可以设置忽略掉改变
+7. git的输出中文乱码 执行 `git config --global core.quotepath false`即可
+
+*****************************
+> [如何高效地使用 Git](https://zhuanlan.zhihu.com/p/30561653)
 
 ## 配置记住密码
 -  `Windows下记住密码` ： 

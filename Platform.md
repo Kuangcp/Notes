@@ -41,7 +41,7 @@
 - [测试平台](#测试平台)
 - [培训](#培训)
 
-`目录 end` |_2018-04-08_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
+`目录 end` |_2018-04-15_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
 ****************************************
 
 # 代码托管平台
@@ -56,10 +56,14 @@
 ***********************************
 ## Github
 > 全球范围性的网站
-
+3. 在github上修改了项目后，或者以后是和别人一起开发，就要先git pull origin （master）将别人的分支和自己的分支都拉下来确保是最新，
+    - 再进行git push -u origin master 才能正确提交代码，如果不pull，提交是注定失败的，还会扰乱分支图
+4. 在github上修改文件，容易引起编码的变化，这时候没有pull就修改文件再commit也是会在push的时候很麻烦，最好在本地修改文件
+    - 最好是，在github上修改了就在本地pull之后再修改文件，万一出错了回退也简单
+[少有人知的 GitHub 使用技巧](https://segmentfault.com/a/1190000000475547)
 ### URL规则
 > github仓库的URL规则
-
+>> git.io 是短网址服务
 - HTTP & SSH
     - `SSH:` git@github.com:Kuangcp/Script.git
     - `HTTPS:` https://github.com/Kuangcp/Script.git
