@@ -13,10 +13,11 @@
         - [2.2.配置插件](#22配置插件)
         - [2.3.配置文件的详解](#23配置文件的详解)
         - [2.4 配置代码编译版本](#24-配置代码编译版本)
-    - [3. 构建](#3-构建)
+    - [3.构建](#3构建)
         - [3.1.打包成可执行Jar](#31打包成可执行jar)
         - [3.2.war包当jar使用](#32war包当jar使用)
-        - [3.3.关于使用git和idea多模块的项目的构建](#33关于使用git和idea多模块的项目的构建)
+        - [3.3.使用maven构建多模块的项目](#33使用maven构建多模块的项目)
+        - [3.4.Maven多配置环境](#34maven多配置环境)
 - [TODO 子项目编译打包各自独立，怎么整合成一个](#todo-子项目编译打包各自独立怎么整合成一个)
     - [4.maven的依赖](#4maven的依赖)
         - [4.1.处理项目间依赖方法](#41处理项目间依赖方法)
@@ -42,7 +43,7 @@
                 - [Maven](#maven)
             - [后期添加构建](#后期添加构建)
 
-`目录 end` |_2018-04-12_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
+`目录 end` |_2018-04-16_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
 ****************************************
 # Maven
 > [官网](https://maven.apache.org/) | [官网手册](https://maven.apache.org/guides/) | [http://takari.io/ 在线练习网](http://takari.io/)
@@ -190,7 +191,7 @@ mvn install:install-file
 </build>
 ```
 
-## 3. 构建
+## 3.构建
 ### 3.1.打包成可执行Jar
 ```xml
     <plugin>
@@ -223,12 +224,13 @@ mvn install:install-file
 - 多个main的情况下运行指定的main 
     - `java -cp example03-1.0-SNAPSHOT.jar cn.zhouyafeng.itchat4j.main.TulingRobot`
 
+
 ### 3.2.war包当jar使用
 - Springboot项目能够做到, 其实就是Main方法, 然后配置了一个Servlet的加载类就可以当war用了
     - [通过Maven构建打包Spring boot，并将config配置文件提取到jar文件外](http://lib.csdn.net/article/java/65574)
 
 *****************
-### 3.3.关于使用git和idea多模块的项目的构建
+### 3.3.使用maven构建多模块的项目
 `.gitignore文件`
 ```
     .idea/
@@ -257,13 +259,15 @@ mvn install:install-file
     <artifactId>website</artifactId>
     <version>1.0-SNAPSHOT</version>
     <packaging>jar</packaging>
-
     <parent>
         <groupId>com.github.kuangcp</groupId>
         <artifactId>Modules</artifactId>
         <version>1.0-SNAPSHOT</version>
     </parent>
 ```
+### 3.4.Maven多配置环境
+> [Maven 如何为不同的环境打包](https://www.zybuluo.com/haokuixi/note/25985)
+
 # TODO 子项目编译打包各自独立，怎么整合成一个
 
 ******************

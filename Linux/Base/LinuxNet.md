@@ -31,7 +31,7 @@
         - [VPN](#vpn)
             - [shadowsocks](#shadowsocks)
 
-`目录 end` |_2018-04-11_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
+`目录 end` |_2018-04-16_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
 ****************************************
 # 【网络管理】
 ## DNS
@@ -369,8 +369,11 @@ _ss_
 >> 去除私钥的口令 `openssl rsa -in ~/.ssh/id_rsa -out ~/.ssh/id_rsa_new` _在GitForWindows里面虽然有openssl,但是这个命令却执行不了_
 
 > 使用密码方式免去密码登录(因为一些奇怪的需求, 又想省事)
->> 1. 安装sshpass
+>> 1. 安装sshpass [完整教程](https://linux.cn/article-8086-1.html)
 >> 2. sshpass -p '密码' 后接正常的ssh命令 ssh user@host
+
+> ssh登录然后执行一系列命令, sudo会执行不了 需要加 -t 参数才行 
+
 
 #### 1.安装软件
 _客户端安装软件_

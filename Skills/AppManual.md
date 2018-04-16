@@ -35,7 +35,8 @@
             - [插件](#插件)
         - [Gedit](#gedit)
         - [小书匠](#小书匠)
-        - [Moeditor Typora CuteMarkEd](#moeditor-typora-cutemarked)
+        - [Moeditor|Typora|CuteMarkEd](#moeditor|typora|cutemarked)
+        - [Cmd](#cmd)
     - [终端中的文本编辑器](#终端中的文本编辑器)
         - [Vi/Vim](#vivim)
         - [Nano](#nano)
@@ -59,7 +60,7 @@
     - [安全工具](#安全工具)
         - [gpg](#gpg)
 
-`目录 end` |_2018-04-08_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
+`目录 end` |_2018-04-16_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
 ****************************************
 # 软件使用记事
 ## 【包管理】
@@ -297,12 +298,15 @@ Todo Tree
     - 重做    `Ctrl + Y`
 
 ************
-### Moeditor Typora CuteMarkEd 
+### Moeditor|Typora|CuteMarkEd 
 > [Moeditor](https://github.com/Moeditor/Moeditor)
 
 - 书写单个md文件方便，美观，没有目录树是硬伤
 
-************
+### Cmd
+> [官网](https://www.zybuluo.com/cmd/)
+
+*************************************
 ## 终端中的文本编辑器
 ### Vi/Vim
 > [Github地址](https://github.com/vim/vim)  

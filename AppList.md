@@ -22,8 +22,10 @@
         - [富文本编辑器](#富文本编辑器)
     - [模拟器](#模拟器)
     - [Other](#other)
+- [安卓手机](#安卓手机)
+    - [Google](#google)
 
-`目录 end` |_2018-04-12_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
+`目录 end` |_2018-04-16_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
 ****************************************
 # 工具软件
 
@@ -134,3 +136,9 @@ _自建Git服务_
 
 ## Other
 - [crash](http://www.crashub.org/)`Java中的Shell环境`
+
+
+# 安卓手机
+
+## Google
+> [google安装器](http://www.goplaycn.com/)

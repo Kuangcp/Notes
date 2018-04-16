@@ -10,6 +10,7 @@
             - [彩色输出](#彩色输出)
     - [变量](#变量)
         - [变量作用域](#变量作用域)
+        - [嵌套](#嵌套)
     - [数据类型](#数据类型)
         - [整型数值](#整型数值)
         - [字符串](#字符串)
@@ -29,7 +30,7 @@
         - [jq](#jq)
         - [shyaml](#shyaml)
 
-`目录 end` |_2018-04-08_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
+`目录 end` |_2018-04-16_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
 ****************************************
 # 学习Shell
 > 首先语法不像别的语言可读性好，比如Python，然后方言众多，学习比Python2，3还恶心  
@@ -81,11 +82,26 @@
 - 白色 `\033[0;37m`
 - 默认 `\033[0m`
 
-
+******************
 ## 变量
+
 ### 变量作用域
 > 比Python的作用域更加恶心
 
+### 嵌套
+```sh
+  # 实现了读取 A_host变量的值
+  perfix='A_'
+  name=${perfix}host
+  host=${!name}
+```
+
+> [shell将变量当命令执行问题](http://www.bitscn.com/os/linux/201505/506409.html)
+
+1. `${command}`
+2. `echo ${command}|awk '{run=$0;system(run)}'` 最好
+
+*****************
 ## 数据类型
 ### 整型数值
 
