@@ -28,12 +28,14 @@
             - [merge](#merge)
             - [rebase](#rebase)
             - [grep](#grep)
-    - [CVS工具的区别以及优缺点](#cvs工具的区别以及优缺点)
+        - [Tools](#tools)
+            - [Submodules](#submodules)
+    - [各个VCS工具的区别以及优缺点](#各个vcs工具的区别以及优缺点)
         - [Git](#git)
         - [SVN](#svn)
     - [repos的使用](#repos的使用)
 
-`目录 end` |_2018-04-08_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
+`目录 end` |_2018-04-17_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
 ****************************************
 # Git基础
 ## 版本控制系统(VCS)
@@ -296,7 +298,6 @@
     - `git rebase --abort` 放弃rebase
     - `git rebase --continue` 修改好冲突后继续
 
-
 #### grep  
 - 搜索文字 `git grep docker`
     - `-n`搜索并显示行号 
@@ -307,7 +308,14 @@
     
 *************
 
-## CVS工具的区别以及优缺点
+### Tools
+#### Submodules
+> [官方文档](https://git-scm.com/book/en/v2/Git-Tools-Submodules)
+> [git submodule的使用](https://blog.csdn.net/wangjia55/article/details/24400501)
+
+- 能够在一个git仓库中将一个文件夹作为一些独立的子仓库进行管理
+
+## 各个VCS工具的区别以及优缺点
 
 ### Git
 > 分布式的去中心化的, 年轻化的团队在用, 个人也是习惯性用Git了
@@ -317,6 +325,7 @@
 
 1. 中心化的, 代码统一保存, 如果中心发生错误, 代码会全部毁掉, 旧的技术栈以及非开发人员还在用
 2. 允许部分的进行修改, 下拉提交, 而对于Git来说一个仓库就是一个整体
+3. 能够精确控制每个目录的每个人的访问权限
 
 ## repos的使用
 > 综合各个VCS的管理方式

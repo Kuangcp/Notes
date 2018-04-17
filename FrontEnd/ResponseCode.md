@@ -12,16 +12,18 @@
     - [NGINX 扩展状态码](#nginx-扩展状态码)
     - [七牛扩展状态码](#七牛扩展状态码)
 
-`目录 end` |_2018-04-08_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
+`目录 end` |_2018-04-17_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
 ****************************************
 # HTTP状态码大全
+> [HTTP状态码](http://www.runoob.com/http/http-status-codes.html)
+> [HTTP状态码百度百科](https://baike.baidu.com/item/HTTP%E7%8A%B6%E6%80%81%E7%A0%81)
 ## 标准扩展码
 
 ### 1xx Informational 信息化
 ```
 100 Continue 继续
 101 Switching Protocols 交换协议
-102 Processing 处理
+102 Processing 继续处理
 ```
 ### 2xx Success 成功
 ```
@@ -42,7 +44,7 @@
 301 Moved Permanently 永久移动
 302 Found 发现
 303 See Other 查看其它
-304 Not Modified 未修改
+304 Not Modified 未修改,使用缓存
 305 Use Proxy 使用代理
 306 Switch Proxy 开关代理
 307 Temporary Redirect 临时重定向

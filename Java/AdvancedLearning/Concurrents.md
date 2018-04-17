@@ -29,7 +29,7 @@
     - [【分支合并框架】](#分支合并框架)
     - [【Java内存模型】](#java内存模型)
 
-`目录 end` |_2018-04-08_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
+`目录 end` |_2018-04-17_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
 ****************************************
 # Java并发
 > [个人相关代码](https://github.com/Kuangcp/JavaBase/tree/master/src/main/java/com/concurrents)  
@@ -120,6 +120,8 @@
         - 同步的作用不仅仅是互斥,另一个作用就是共享可变性, 当某个线程修改了可变数据并释放锁,其他线程可以获取变量的最新值
         - 如果没有正确的同步,这种修改对其他线程是不可见的
 
+>1. 如果锁定的是类的成员属性,或者this, 就是对该对象进行了加锁变成了'单线程', 就影响了整体性能
+>2. 使用局部变量就会多线程且保证了数据的一致性
 #### 正确使用锁
 > 查看JDK源码 ForkJoinTask 的 externalAwaitDone 方法
 
