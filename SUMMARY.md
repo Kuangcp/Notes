@@ -82,6 +82,8 @@
     * 【 Java/Framework 】
         * [ Activiti ](./Java/Framework/Activiti.md)
         * [ Guava ](./Java/Framework/Guava.md)
+        * [ Hibernate ](./Java/Framework/Hibernate.md)
+        * [ JPA ](./Java/Framework/JPA.md)
         * [ JXls ](./Java/Framework/JXls.md)
         * [ Mybatis ](./Java/Framework/Mybatis.md)
         * [ Netty ](./Java/Framework/Netty.md)

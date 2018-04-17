@@ -28,7 +28,7 @@
     - [DAO](#dao)
 - [关键字](#关键字)
 
-`目录 end` |_2018-04-08_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
+`目录 end` |_2018-04-18_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
 ****************************************
 # 基础语法
 
@@ -55,7 +55,6 @@
 ### String
 > 该类是final修饰的, 原因:[知乎问题](https://www.zhihu.com/question/31345592)
 
-
 - 常量池的实现
 
 - 常见编码转换
@@ -64,7 +63,6 @@
 
 #### StringBuffer和StringBuilder
 > [参考博客](https://blog.csdn.net/rmn190/article/details/1492013)
-
 
 ***************************
 ## 自定义类
@@ -84,17 +82,17 @@
 - `private`  当前类或者内部类
 
 ### 其他
+
 ## 属性
 
 ## 方法
 方法的签名: 
 # TODO 学习和完善
 
-
 **************
 # POJO
 > [参考博客:  java的(PO,VO,TO,BO,DAO,POJO)解释](http://www.cnblogs.com/yxnchinahlj/archive/2012/02/24/2366110.html)
-
+> | [VO DAO BO 等缩写的意义](https://zhuanlan.zhihu.com/p/35762537?group_id=969493512006373376)
 ## VO
 > (value object) 值对象
 1. 使用new关键字创建的, 由GC回收的, 

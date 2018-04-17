@@ -2,15 +2,20 @@
  
 - [Postgresql](#postgresql)
     - [概述](#概述)
+    - [和MySQL对比](#和mysql对比)
     - [安装](#安装)
-        - [Postgresql 的安装（Docker方式）](#postgresql-的安装（docker方式）)
+        - [客户端安装](#客户端安装)
+        - [Docker方式安装服务端](#docker方式安装服务端)
+            - [pull完整版](#pull完整版)
+            - [pull精简版](#pull精简版)
             - [解释Dockerfile文件](#解释dockerfile文件)
     - [Postgresql终端命令行使用](#postgresql终端命令行使用)
     - [用户和角色权限](#用户和角色权限)
         - [创建用户](#创建用户)
         - [修改权限](#修改权限)
+    - [Java使用](#java使用)
 
-`目录 end` |_2018-04-08_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
+`目录 end` |_2018-04-18_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
 ****************************************
 # Postgresql
 
@@ -19,9 +24,16 @@
 - Schemas 和表，用户的关系：
     - Schemas相当于是一个数据库进行分类的文件夹
 
+## 和MySQL对比
+> [PostgreSQL 与 MySQL 相比，优势何在？](https://www.zhihu.com/question/20010554)
+> [Converting MySQL to PostgreSQL](https://en.wikibooks.org/wiki/Converting_MySQL_to_PostgreSQL)
+
 ## 安装
-### Postgresql 的安装（Docker方式）
-- 安装客户端 `sudo apt-get install postgresql-client`
+### 客户端安装
+> `sudo apt-get install postgresql-client`
+
+### Docker方式安装服务端
+> [官方镜像](https://hub.docker.com/_/postgres/)
 
 `Dockerfile`
 ```dockerfile
@@ -58,13 +70,13 @@
     - 使用客户端连接`psql -h localhost -p 5432 -U pger -W pgerdb` 口令：`pger`
     
 
-`pull 完整版`
+#### pull完整版
 - 或者： `docker pull postgres` [官方镜像](https://hub.docker.com/_/postgres/)
     - 运行容器 `docker run --name mypostgre -i -t -p 5432:5432 postgres`
     - 客户端连接 `psql -h localhost -p 5432 -U postgres`
 
-`pull 精简版`
-- 下拉镜像：`docker pull postgres:alpine`
+#### pull精简版
+- 下拉镜像：`docker pull postgres:alpine` | 因为个人系统客户端是9.6`9.6-alpine`
 - 构建容器：
 ```sh
     docker run -d --name gitea-db \
@@ -81,8 +93,10 @@
 > 待学习解释
 
 
-
+*************************************
+> [PostgreSQL 9.6.0 手册](http://postgres.cn/docs/9.6/index.html)
 ## Postgresql终端命令行使用
+> [PostgreSQL新手入门](http://www.ruanyifeng.com/blog/2013/12/getting_started_with_postgresql.html)
 `用熟悉的MySQL命令来解释`
 - `\l` show databases
 - `\c dbname [user]` 切换数据库
@@ -127,3 +141,10 @@
 - `CREATE ROLE father login nosuperuser nocreatedb nocreaterole noinherit encrypted password 'abc123';` 
     - 在PostgreSQL中，首先需要创建一个代表组的角色，之后再将该角色的membership 权限赋给独立的角色即可。
 - `GRANT CONNECT ON DATABASE test to father;` 角色赋予数据库test 连接权限和相关表的查询权限。
+
+
+## Java使用
+> [Postgresql JDBC Driver](https://github.com/pgjdbc/pgjdbc)
+
+- [官方：springboot使用](https://springframework.guru/configuring-spring-boot-for-postgresql/)
+    - [参考博客](https://www.netkiller.cn/java/spring/boot/postgresql.html)

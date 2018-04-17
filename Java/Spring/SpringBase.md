@@ -1,6 +1,6 @@
 `目录 start`
  
-- [Spring 基础](#spring-基础)
+- [Spring](#spring)
     - [Spring配置](#spring配置)
         - [原始的web项目复制jar方式](#原始的web项目复制jar方式)
         - [maven配置Spring依赖](#maven配置spring依赖)
@@ -28,9 +28,9 @@
         - [Web开发上的一些优秀的习惯](#web开发上的一些优秀的习惯)
         - [RMI](#rmi)
 
-`目录 end` |_2018-04-08_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
+`目录 end` |_2018-04-18_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
 ****************************************
-# Spring 基础
+# Spring
 
 ## Spring配置
 ### 原始的web项目复制jar方式
@@ -46,71 +46,75 @@
 - spring-expression-3.2.6.RELEASE.jar
 
 ### maven配置Spring依赖
+_pom.xml_
 ```xml
-      <properties>
-       <spring.version>4.1.7.RELEASE</spring.version>
-      </properties>
-      .....
-      <!-- 核心 -->
-       <dependency>
-         <groupId>org.springframework</groupId>
-         <artifactId>spring-core</artifactId>
-         <version>${spring.version}</version>
-       </dependency>
-       <dependency>
-         <groupId>org.springframework</groupId>
-         <artifactId>spring-beans</artifactId>
-         <version>${spring.version}</version>
-       </dependency>
-       <dependency>
-         <groupId>org.springframework</groupId>
-         <artifactId>spring-context</artifactId>
-         <version>${spring.version}</version>
-       </dependency>
-       <dependency>
-         <groupId>org.springframework</groupId>
-         <artifactId>spring-aop</artifactId>
-         <version>${spring.version}</version>
-       </dependency>
-       <dependency>
-         <groupId>org.springframework</groupId>
-         <artifactId>spring-websocket</artifactId>
-         <version>${spring.version}</version>
-       </dependency>
-       <dependency>
-         <groupId>org.springframework</groupId>
-         <artifactId>spring-messaging</artifactId>
-         <version>${spring.version}</version>
-       </dependency>
-       <!-- dao层框架 -->
-       <dependency>
-         <groupId>org.springframework</groupId>
-         <artifactId>spring-jdbc</artifactId>
-         <version>${spring.version}</version>
-       </dependency>
-       <dependency>
-         <groupId>org.springframework</groupId>
-         <artifactId>spring-tx</artifactId>
-         <version>${spring.version}</version>
-       </dependency>
-       <dependency>
-         <groupId>org.springframework</groupId>
-         <artifactId>spring-web</artifactId>
-         <version>${spring.version}</version>
-       </dependency>
-       <dependency>
-         <groupId>org.springframework</groupId>
-         <artifactId>spring-webmvc</artifactId>
-         <version>${spring.version}</version>
-       </dependency>
-       <!-- Spring test 相关依赖 -->
-       <dependency>
-         <groupId>org.springframework</groupId>
-         <artifactId>spring-test</artifactId>
-         <version>${spring.version}</version>
-       </dependency> 
+    <properties>
+    <spring.version>4.1.7.RELEASE</spring.version>
+    </properties>
+    .....
+    <!-- 核心 -->
+    <dependency>
+        <groupId>org.springframework</groupId>
+        <artifactId>spring-core</artifactId>
+        <version>${spring.version}</version>
+    </dependency>
+    <dependency>
+        <groupId>org.springframework</groupId>
+        <artifactId>spring-beans</artifactId>
+        <version>${spring.version}</version>
+    </dependency>
+    <dependency>
+        <groupId>org.springframework</groupId>
+        <artifactId>spring-context</artifactId>
+        <version>${spring.version}</version>
+    </dependency>
+    <dependency>
+        <groupId>org.springframework</groupId>
+        <artifactId>spring-aop</artifactId>
+        <version>${spring.version}</version>
+    </dependency>
+    <dependency>
+        <groupId>org.springframework</groupId>
+        <artifactId>spring-websocket</artifactId>
+        <version>${spring.version}</version>
+    </dependency>
+    <dependency>
+        <groupId>org.springframework</groupId>
+        <artifactId>spring-messaging</artifactId>
+        <version>${spring.version}</version>
+    </dependency>
+    <!-- dao层框架 -->
+    <dependency>
+        <groupId>org.springframework</groupId>
+        <artifactId>spring-jdbc</artifactId>
+        <version>${spring.version}</version>
+    </dependency>
+    <dependency>
+        <groupId>org.springframework</groupId>
+        <artifactId>spring-tx</artifactId>
+        <version>${spring.version}</version>
+    </dependency>
+    <dependency>
+        <groupId>org.springframework</groupId>
+        <artifactId>spring-web</artifactId>
+        <version>${spring.version}</version>
+    </dependency>
+    <dependency>
+        <groupId>org.springframework</groupId>
+        <artifactId>spring-webmvc</artifactId>
+        <version>${spring.version}</version>
+    </dependency>
+    <!-- Spring test 相关依赖 -->
+    <dependency>
+        <groupId>org.springframework</groupId>
+        <artifactId>spring-test</artifactId>
+        <version>${spring.version}</version>
+    </dependency> 
 ```
 ### Gradle配置
+_build.gradle_
+```
+```
 
 ****************************
 ## Spring使用
@@ -258,7 +262,6 @@
          http://www.springframework.org/schema/aop
          http://www.springframework.org/schema/aop/spring-aop-3.0.xsd">
          </beans>
-
 ```
 - 方法级别的添加代理，Servlet中的过滤器也类似（但是那个是类级别的）
 
@@ -331,18 +334,14 @@ XML风格有两个缺点。第一是它不能完全将需求实现的地方封�
   <aop:pointcut id="operationReturningAnAccount"  expression="execution(org.xyz.Account+ *(..))"/>
 
 ```
-
 但是不能通过组合这些来定义accountPropertyAccess连接点
 - @AspectJ风格支持其它的实例模型以及更丰富的连接点组合。它具有将将切面保持为一个模块单元的优点。 还有一个优点就是@AspectJ切面能被Spring AOP和AspectJ两者都理解 
 - 所以如果稍后你认为你需要AspectJ 的能力去实现附加的需求，那么你非常容易转移到基于AspectJ的途径。总而言之，我们更喜欢@AspectJ风格只要你有切面 去做超出简单的“配置”企业服务之外的事情。
 
 #### 3 混合切面类型
-
 我们完全可以混合使用以下几种风格的切面定义：使用自动代理的@AspectJ 风格的切面，`schema-defined <aop:aspect>` 的切面，
 和用 `<aop:advisor>` 声明的advisor，甚至是使用Spring 1.2风格的代理和拦截器。
 由于以上几种风格的切面定义的都使用了相同的底层机制，因此可以很好的共存。
-
-
 
 *******************
 ### Spring-Websocket 配置
@@ -359,7 +358,6 @@ XML风格有两个缺点。第一是它不能完全将需求实现的地方封�
      <artifactId>spring-messaging</artifactId>
      <version>${spring.version}</version>
    </dependency>
-    
 ```
 
 - java代码: 
