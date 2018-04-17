@@ -43,7 +43,11 @@
                 - [Maven](#maven)
             - [后期添加构建](#后期添加构建)
 
+<<<<<<< HEAD
 `目录 end` |_2018-04-16_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
+=======
+`目录 end` |_2018-04-15_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
+>>>>>>> 98ff2d3bf8f6c0fc5a956dd91e95ee841de1e486
 ****************************************
 # Maven
 > [官网](https://maven.apache.org/) | [官网手册](https://maven.apache.org/guides/) | [http://takari.io/ 在线练习网](http://takari.io/)
@@ -70,8 +74,22 @@
 - `install` ：在本地 Repository 中安装 jar
 - `deploy`：将jar包发布到远程仓库
 - 使用id为ChatServer的Profile `-PChatServer` 
-- 跳过测试 `-Dmaven.test.skip=true`
 
+- 跳过测试
+    - `-Dmaven.test.skip=true` 不执行测试用例，也不编译测试用例类。
+    - `-DskipTests=true` 不执行测试用例，但编译测试用例类生成相应的class文件至target/test-classes下
+    - `-Dmaven.javadoc.skip=true` 跳过文档生成
+
+_配置文件中配置_
+```xml
+<plugin>
+    <groupId>org.apache.maven.plugins</groupId>
+    <artifactId>maven-surefire-plugin</artifactId>
+    <configuration>
+        <skip>true</skip>
+    </configuration>
+</plugin>
+```
 #### 从jar安装到本地库
 ```
 mvn install:install-file 

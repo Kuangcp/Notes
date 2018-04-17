@@ -40,8 +40,12 @@
 > [个人相关代码](https://github.com/Kuangcp/JavaBase/tree/master/java-classfile/src/main/java/com/github/kuangcp) 
 
 ### 类加载和类对象
-- 一个.class　文件定义了JVM中的类型，包括了域,方法，继承信息，注解和其他元数据
+- 一个`.class`文件定义了JVM中的类型，包括了域,方法，继承信息，注解和其他元数据
 
+#### 类加载器
+# TODO 学习类加载器
+> [类装载器、双亲委托模型、命名空间、安全性](https://blog.csdn.net/yuan22003/article/details/6839335\)
+> [java ClassLoader类解析-双亲委托机制](https://blog.csdn.net/wangyang1354/article/details/49448007)
 #### 加载和连接
 ![图](https://raw.githubusercontent.com/Kuangcp/ImageRepos/master/Tech/Book/Java7Developer/p107.jpg)
 
