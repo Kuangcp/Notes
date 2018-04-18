@@ -4,16 +4,19 @@
     - [概述](#概述)
     - [和MySQL对比](#和mysql对比)
     - [安装](#安装)
-        - [客户端安装](#客户端安装)
+        - [安装客户端](#安装客户端)
+        - [安装服务端](#安装服务端)
         - [Docker方式安装服务端](#docker方式安装服务端)
             - [pull完整版](#pull完整版)
             - [pull精简版](#pull精简版)
+            - [Dockerfile构建](#dockerfile构建)
             - [解释Dockerfile文件](#解释dockerfile文件)
-    - [Postgresql终端命令行使用](#postgresql终端命令行使用)
-    - [用户和角色权限](#用户和角色权限)
-        - [创建用户](#创建用户)
-        - [修改权限](#修改权限)
-    - [Java使用](#java使用)
+    - [使用](#使用)
+        - [Postgresql终端命令行使用](#postgresql终端命令行使用)
+        - [用户和角色权限](#用户和角色权限)
+            - [创建用户](#创建用户)
+            - [修改权限](#修改权限)
+        - [Java使用](#java使用)
 
 `目录 end` |_2018-04-18_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
 ****************************************
@@ -29,46 +32,14 @@
 > [Converting MySQL to PostgreSQL](https://en.wikibooks.org/wiki/Converting_MySQL_to_PostgreSQL)
 
 ## 安装
-### 客户端安装
+### 安装客户端
 > `sudo apt-get install postgresql-client`
+
+### 安装服务端
+> `sudo apt install postgresql`
 
 ### Docker方式安装服务端
 > [官方镜像](https://hub.docker.com/_/postgres/)
-
-`Dockerfile`
-```dockerfile
-    FROM ubuntu:16.04
-    RUN apt-key adv --keyserver keyserver.ubuntu.com --recv-keys B97B0AFCAA1A47F044F244A07FCC7D46ACCC4CF8
-
-    RUN echo "deb http://apt.postgresql.org/pub/repos/apt/ precise-pgdg main" > /etc/apt/sources.list.d/pgdg.list
-    RUN apt-get update && apt-get -y -q install python-software-properties software-properties-common \
-        && apt-get -y -q install postgresql-9.4 postgresql-client-9.4 postgresql-contrib-9.4
-
-    USER postgres
-    RUN /etc/init.d/postgresql start \
-        && psql --command "CREATE USER pger WITH SUPERUSER PASSWORD 'pger';" \
-        && createdb -O pger pgerdb
-
-    USER root
-    RUN echo "host all  all    0.0.0.0/0  md5" >> /etc/postgresql/9.4/main/pg_hba.conf
-    RUN echo "listen_addresses='*'" >> /etc/postgresql/9.4/main/postgresql.conf
-
-    EXPOSE 5432
-
-    RUN mkdir -p /var/run/postgresql && chown -R postgres /var/run/postgresql
-    VOLUME  ["/etc/postgresql", "/var/log/postgresql", "/var/lib/postgresql"]
-
-    USER postgres
-    CMD ["/usr/lib/postgresql/9.4/bin/postgres", "-D", "/var/lib/postgresql/9.4/main", "-c", "config_file=/etc/postgresql/9.4/main/postgresql.conf"]
-
-```
-
-
-`Dockerfile构建`
-- 构建容器 `docker build --rm=true -t mypostgresql:9.4 .`
-    - 运行容器 `docker run --name mypostgre -i -t -p 5432:5432 mypostgresql:9.4`
-    - 使用客户端连接`psql -h localhost -p 5432 -U pger -W pgerdb` 口令：`pger`
-    
 
 #### pull完整版
 - 或者： `docker pull postgres` [官方镜像](https://hub.docker.com/_/postgres/)
@@ -86,16 +57,41 @@
     postgres:alpine
 ```  
 - 进入postgresql终端 `docker exec -it gitea-db psql -U postgres`
-
 - 连接后 输入`\l` 列出所有数据库 即可查看连接成功与否
+
+#### Dockerfile构建
+`Dockerfile`
+```dockerfile
+    FROM ubuntu:16.04
+    RUN apt-key adv --keyserver keyserver.ubuntu.com --recv-keys B97B0AFCAA1A47F044F244A07FCC7D46ACCC4CF8
+    RUN echo "deb http://apt.postgresql.org/pub/repos/apt/ precise-pgdg main" > /etc/apt/sources.list.d/pgdg.list
+    RUN apt-get update && apt-get -y -q install python-software-properties software-properties-common \
+        && apt-get -y -q install postgresql-9.4 postgresql-client-9.4 postgresql-contrib-9.4
+    USER postgres
+    RUN /etc/init.d/postgresql start \
+        && psql --command "CREATE USER pger WITH SUPERUSER PASSWORD 'pger';" \
+        && createdb -O pger pgerdb
+    USER root
+    RUN echo "host all  all    0.0.0.0/0  md5" >> /etc/postgresql/9.4/main/pg_hba.conf
+    RUN echo "listen_addresses='*'" >> /etc/postgresql/9.4/main/postgresql.conf
+    EXPOSE 5432
+    RUN mkdir -p /var/run/postgresql && chown -R postgres /var/run/postgresql
+    VOLUME  ["/etc/postgresql", "/var/log/postgresql", "/var/lib/postgresql"]
+    USER postgres
+    CMD ["/usr/lib/postgresql/9.4/bin/postgres", "-D", "/var/lib/postgresql/9.4/main", "-c", "config_file=/etc/postgresql/9.4/main/postgresql.conf"]
+```
+- 构建容器 `docker build --rm=true -t mypostgresql:9.4 .`
+    - 运行容器 `docker run --name mypostgre -i -t -p 5432:5432 mypostgresql:9.4`
+    - 使用客户端连接`psql -h localhost -p 5432 -U pger -W pgerdb` 口令：`pger`
 
 #### 解释Dockerfile文件
 > 待学习解释
 
-
-*************************************
+****************************************8
+## 使用
 > [PostgreSQL 9.6.0 手册](http://postgres.cn/docs/9.6/index.html)
-## Postgresql终端命令行使用
+
+### Postgresql终端命令行使用
 > [PostgreSQL新手入门](http://www.ruanyifeng.com/blog/2013/12/getting_started_with_postgresql.html)
 `用熟悉的MySQL命令来解释`
 - `\l` show databases
@@ -113,11 +109,10 @@
 - `\q` exit
 - 可以使用pg_dump和pg_dumpall来完成。比如备份sales数据库： 
     - pg_dump drupal>/opt/Postgresql/backup/1.bak 
--  
 
-## 用户和角色权限
+### 用户和角色权限
 
-### 创建用户
+#### 创建用户
 - `createuser -P -D -R -e playboy`  //创建一个用户,-P要设置密码，-R,不参创建其他用户，-D不能创建数据库
 - `create user myth` 不带login属性
 - `create role myth` 具有login属性
@@ -125,7 +120,7 @@
 
 - [修改默认登录不需要密码的配置](http://www.linuxidc.com/Linux/2013-04/83564p2.htm)
 
-### 修改权限
+#### 修改权限
 > [参考博客](http://blog.csdn.net/beiigang/article/details/8604578)
 > [参考博客_角色](http://www.cnblogs.com/stephen-liu74/archive/2012/05/18/2302639.html)
 > [配置](http://www.linuxidc.com/Linux/2013-04/83564p2.htm)
@@ -143,7 +138,7 @@
 - `GRANT CONNECT ON DATABASE test to father;` 角色赋予数据库test 连接权限和相关表的查询权限。
 
 
-## Java使用
+### Java使用
 > [Postgresql JDBC Driver](https://github.com/pgjdbc/pgjdbc)
 
 - [官方：springboot使用](https://springframework.guru/configuring-spring-boot-for-postgresql/)

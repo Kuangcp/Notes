@@ -6,7 +6,7 @@
     - [执行](#执行)
     - [输入输出](#输入输出)
         - [输入](#输入)
-        - [输出](#输出)
+        - [输出Shw](#输出shw)
             - [彩色输出](#彩色输出)
     - [变量](#变量)
         - [变量作用域](#变量作用域)
@@ -30,7 +30,7 @@
         - [jq](#jq)
         - [shyaml](#shyaml)
 
-`目录 end` |_2018-04-16_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
+`目录 end` |_2018-04-18_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
 ****************************************
 # 学习Shell
 > 首先语法不像别的语言可读性好，比如Python，然后方言众多，学习比Python2，3还恶心  
@@ -68,7 +68,7 @@
 ### 输入
 - `read answer`
 
-### 输出
+### 输出Shw
 
 #### 彩色输出
 > [参考博客,比较详细](http://blog.csdn.net/magiclyj/article/details/72637666)
@@ -119,6 +119,15 @@
   - ((i=$j-$k))     等价于   i=`expr $j -$k`
   - ((i=$j*$k))     等价于   i=`expr $j \*$k`
   - ((i=$j/$k))     等价于   i=`expr $j /$k`
+
+> [判断是否为数值](http://www.jb51.net/article/67468.htm)
+```sh
+if [ "$1" -gt 0 ] 2>/dev/null ;then 
+  echo "$1 is number." 
+else 
+  echo 'no.' 
+fi 
+```
 ************
 ### 字符串
 - [字符串截取](https://www.2cto.com/os/201305/208219.html) | [Blog:变量字符串截取](http://www.jb51.net/article/56563.htm) | [Shell正则](http://man.linuxde.net/docs/shell_regex.html)
