@@ -91,8 +91,8 @@
         * [ Struts ](./Java/Framework/Struts.md)
         * [ Vertx ](./Java/Framework/Vertx.md)
     * 【 Java/Spring 】
+        * [ Spring ](./Java/Spring/Spring.md)
         * [ Spring5 ](./Java/Spring/Spring5.md)
-        * [ SpringBase ](./Java/Spring/SpringBase.md)
         * [ SpringBoot ](./Java/Spring/SpringBoot.md)
         * [ SpringBoot2 ](./Java/Spring/SpringBoot2.md)
         * [ SpringCloud ](./Java/Spring/SpringCloud.md)
