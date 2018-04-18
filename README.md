@@ -1,4 +1,4 @@
-[![Build Status](https://www.gitbook.io/button/status/book/kuangcp/notes)](https://www.gitbook.io/book/kuangcp/notes/details)
+[![GitBook](https://img.shields.io/badge/GitBook-online-brightgreen.svg)](https://legacy.gitbook.com/book/kuangcp/notes/details)
 [![目录](https://img.shields.io/badge/note-Catalog-brightgreen.svg)](./SUMMARY.md)
 [![码云](https://img.shields.io/badge/code-Gitee-red.svg)](https://gitee.com/kcp1104)
 [![CSDN](https://img.shields.io/badge/blog-CSDN-orange.svg)](http://blog.csdn.net/kcp606)

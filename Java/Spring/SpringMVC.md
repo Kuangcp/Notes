@@ -9,7 +9,7 @@
         - [自定义拦截器](#自定义拦截器)
         - [Q&A](#q&a)
 
-`目录 end` |_2018-04-08_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
+`目录 end` |_2018-04-18_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
 ****************************************
 
 # SpringMVC
@@ -31,7 +31,6 @@
 
 - 没有用模板引擎themleaf的依赖，配置前后缀并没有用, 这是什么原因？？？ classpath:/templates/  .html  
     - 单纯的想写个前后端分离不行?
-
 - [较完善的入门博客](https://www.tianmaying.com/tutorial/spring-mvc-quickstart)
 
 ************************
