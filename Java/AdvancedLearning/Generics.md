@@ -14,7 +14,7 @@
             - [通配符捕获](#通配符捕获)
         - [反射和泛型](#反射和泛型)
 
-`目录 end` |_2018-04-08_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
+`目录 end` |_2018-04-19_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
 ****************************************
 # 泛型
 > [开始学习的兴趣来源](https://mp.weixin.qq.com/s?__biz=MzAxOTc0NzExNg==&mid=2665514015&idx=1&sn=12409f705c6d266e4cd062e78ce50be0&chksm=80d67c5cb7a1f54a68ed83580b63b4acded0df525bb046166db2c00623a6bba0de3c5ad71884&scene=21#wechat_redirect)
@@ -223,6 +223,7 @@
 - 示例2: `public static <T extends ExcelTransform> List<T> importExcel(Class<T> target)`
     - 该方法实现了, 传入继承了ExcelTransform接口的类对象, 得到该类的List集合
     - `<T extends ExcelTransform> boolean` 这样写编译没报错, 那么就是说, 就是一个泛型的定义, 后面进行引用, 省的重复写
+    - 简单的写法就是 `public static <T> List<T> importExcel(Class<T> target)`
 
 - 示例3: Spring4.x 添加的泛型依赖注入 , 使用的JPA就是依赖该技术   [spring学习笔记（14）——泛型依赖注入](http://blog.csdn.net/u010837612/article/details/45582043)
 
