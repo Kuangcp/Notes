@@ -60,7 +60,7 @@
     - [安全工具](#安全工具)
         - [gpg](#gpg)
 
-`目录 end` |_2018-04-16_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
+`目录 end` |_2018-04-20_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
 ****************************************
 # 软件使用记事
 ## 【包管理】
@@ -356,7 +356,7 @@ CMD编辑器
 *********************************************
 ## 【浏览器】
 ### FireFox
-> [开发者版本链接](https://www.mozilla.org/zh-CN/firefox/developer/)
+> [开发者版本链接](https://www.mozilla.org/zh-CN/firefox/developer/) | [其他版本](https://www.mozilla.org/zh-CN/firefox/channel/desktop/)
 
 - 分为 正式版， beta， Nightly 开发版 `因为那个插件标准的缘故 56 和 57 插件不共享`
 - 如果要配置多个火狐在电脑上 终端中 `./firefox -P` 就会进入配置文件的编辑（关闭所有火狐的情况下）

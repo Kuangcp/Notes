@@ -15,7 +15,7 @@
     - [资源文件](#资源文件)
         - [图片](#图片)
 
-`目录 end` |_2018-04-08_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
+`目录 end` |_2018-04-20_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
 ****************************************
 # JavaScript
 
@@ -33,7 +33,7 @@
 ## JSON
 > [json 数据 添加 删除 排序](http://blog.51yip.com/jsjquery/1583.html)
 
-- 直接点引用属性或者a['b']的方式
+- 直接点引用属性或者a['b']的方式, 但是又不行了？？？eval('('+data+')')才能用
     - 迭代集合:自带foreach循环 `data.forEach(function(value){})`
 
 ```js

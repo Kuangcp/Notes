@@ -51,7 +51,7 @@
             - [查看发行版](#查看发行版)
             - [查看系统所有用户信息](#查看系统所有用户信息)
 
-`目录 end` |_2018-04-18_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
+`目录 end` |_2018-04-20_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
 ****************************************
 # 【文件管理】
 > Linux中认为万物皆文件
@@ -311,7 +311,7 @@ _mv_
 - 卸载挂载的磁盘 `sudo umount /mnt`
 
 #### dd
-- 
+> [使用 dd 命令进行硬盘 I/O 性能检测 ](https://linux.cn/article-6104-1.html)
 
 #### mount
 - `mount [options] [source] [directory] `
