@@ -24,7 +24,7 @@
     - [XML文件头含义](#xml文件头含义)
     - [XML的元素](#xml的元素)
 
-`目录 end` |_2018-04-08_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
+`目录 end` |_2018-04-21_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
 ****************************************
 # HTML5
 ## 参考资料
@@ -76,6 +76,7 @@
 ```html
   <base> 标签为页面上的所有链接规定默认地址或默认目标（target）：
 ```
+
 #### link
 ```html
 <link> 标签定义文档与外部资源之间的关系。
@@ -93,9 +94,13 @@
   </head>
 ```
 ### script
-
 `<script> 标签用于定义客户端脚本，比如 JavaScript。`
 
+********************
+> 以上的link script style 等引用外部资源的标签要注意路径问题
+1. / 开头则是相对于项目的根路径来定位的
+2. 开头为空,就是相对于该页面的的相对路径.` 被URL尾部多输入一个/坑过,所以最好采用第一种稳妥`
+3. ..开头就是相对于该页面的相对父路径
 
 ### 常用结构
 #### form

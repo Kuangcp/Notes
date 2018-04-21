@@ -26,7 +26,7 @@
 - [安全规约](#安全规约)
     - [注意](#注意)
 
-`目录 end` |_2018-04-08_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
+`目录 end` |_2018-04-21_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
 ****************************************
 # 阿里巴巴Java开发手册终极版
 检查工具
@@ -40,7 +40,7 @@
 - |禁止拼音混合英文，更不允许直接使用中文的方式。
 - |类用UserDao `UpperCamelCase风格` 但以下情形例外： DO / BO / DTO / VO / AO 例如：`UserDO`
 - |方法，变量，参数用userDao `lowerCamelCase风格`
-- |常量名全部大写，下划线隔开，力求语义表达完整清楚，不要嫌名字长。
+- |常量名全部大写，下划线隔开，力求语义表达完整清楚，不要嫌名字长(枚举类中的也是)。
 - |抽象类使用`Abstract或者Base`开头，异常类使用Exception结尾
 - |数组定义 `String[] name` 而不是 `String name[]`
 - |POJO 类中布尔类型的变量不能is开头，否则部分框架解析会引起序列化错误。 

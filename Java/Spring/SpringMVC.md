@@ -11,6 +11,7 @@
             - [Gradle](#gradle)
         - [web.xml](#webxml)
         - [ApplicationContext.xml](#applicationcontextxml)
+            - [全局异常处理](#全局异常处理)
             - [中文编码问题](#中文编码问题)
         - [创建Controller](#创建controller)
     - [使用](#使用)
@@ -153,6 +154,31 @@ compile('org.springframework:spring-webmvc:4.3.9.RELEASE')
 </bean>
 </beans>
 ```
+#### 全局异常处理
+```java
+public class ExceptionHandler implements HandlerExceptionResolver {
+    public ModelAndView resolveException(HttpServletRequest request, HttpServletResponse response, Object handler, Exception ex) {
+        Map<String, Object> model = new HashMap<>();
+        model.put("ex", ex);
+        ex.printStackTrace();//打印异常信息
+        // 根据不同错误转向不同页面
+        if (ex instanceof CSRFException) {//受到csrf攻击
+           return new ModelAndView("/errorPage/error", model);
+        }
+       if (ex instanceof BusinessException) {//业务逻辑处理出错
+           return new ModelAndView("errorPage/businessError", model);
+       } else if (ex instanceof ParameterException) {//参数处理出错。
+           return new ModelAndView("errorPage/parameterError", model);
+       } else {  //其他数据类型错误
+           return new ModelAndView("errorPage/error", model);
+       }
+        return new ModelAndView("error", model);
+    }
+}
+```
+> 但如果是前后端分离的话， 就只能统一处理异常然后然后对应的错误码和提示信息了 
+> [参考博客](http://www.cnblogs.com/exmyth/p/5601288.html)
+> [ResponseBody方案](https://blog.csdn.net/xin917480852/article/details/78023911)
 #### 中文编码问题
 > [参考博客](http://www.cnblogs.com/dyllove98/p/3180158.html) `但是奇怪的是某些方法用第二种正常，有些还是要用第一种`
 1. 单个方法：`@GetMapping(value = "/target/all",  produces = "application/json; charset=utf-8")`
