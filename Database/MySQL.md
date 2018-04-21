@@ -34,29 +34,31 @@
         - [基本结构示例：](#基本结构示例)
     - [函数](#函数)
         - [【简单示例】](#简单示例)
-    - [1.mysql常用命令集合](#1mysql常用命令集合)
-        - [1.1【自增长】](#11自增长)
-        - [1.2【主键约束的修改】](#12主键约束的修改)
-        - [1.3【修改表名】](#13修改表名)
-        - [1.4【定界符】](#14定界符)
-        - [1.5【已有表数据，新建表】](#15已有表数据新建表)
-        - [1.6【查看所有连接状态】](#16查看所有连接状态)
-        - [1.7【查看表的状态】](#17查看表的状态)
-        - [1.8【关于时间 】](#18关于时间-)
-            - [1.8.1【常用函数】](#181常用函数)
-            - [1.8.2【获取当前时间与i个月之间的天数】](#182获取当前时间与i个月之间的天数)
-            - [1.8.3 【datetime 和 timestamp 区别】](#183-datetime-和-timestamp-区别)
-        - [1.9 【插入外码】](#19-插入外码)
-    - [2.【变量】](#2变量)
-    - [3.【基本流程语法】](#3基本流程语法)
-    - [7.【异常】](#7异常)
-    - [8.【用户管理】](#8用户管理)
-        - [查看](#查看)
-        - [创建](#创建)
-        - [修改](#修改)
+- [1.mysql常用命令集合](#1mysql常用命令集合)
+    - [查看数据库参数](#查看数据库参数)
+        - [查看连接状况](#查看连接状况)
+    - [1.1【自增长】](#11自增长)
+    - [1.2【主键约束的修改】](#12主键约束的修改)
+    - [1.3【修改表名】](#13修改表名)
+    - [1.4【定界符】](#14定界符)
+    - [1.5【已有表数据，新建表】](#15已有表数据新建表)
+    - [1.6【查看所有连接状态】](#16查看所有连接状态)
+    - [1.7【查看表的状态】](#17查看表的状态)
+    - [1.8【关于时间 】](#18关于时间-)
+        - [1.8.1【常用函数】](#181常用函数)
+        - [1.8.2【获取当前时间与i个月之间的天数】](#182获取当前时间与i个月之间的天数)
+        - [1.8.3 datetime和timestamp区别](#183-datetime和timestamp区别)
+    - [1.9 【插入外码】](#19-插入外码)
+- [2.【变量】](#2变量)
+- [3.【基本流程语法】](#3基本流程语法)
+- [7.【异常】](#7异常)
+- [8.【用户管理】](#8用户管理)
+    - [查看](#查看)
+    - [创建](#创建)
+    - [修改](#修改)
         - [【授权】](#授权)
 
-`目录 end` |_2018-04-11_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
+`目录 end` |_2018-04-21_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
 ****************************************
 
 # Mysql
@@ -87,6 +89,7 @@ _重启_
 
 ### 图形化客户端
 > windows上就直接 MySQL-Font HeidiSQL Linux就终端了..虽然wine也能装这俩 | [10个Mysql图形客户端](http://www.linuxidc.com/Linux/2015-01/111421.htm)
+
 
 ********************************
 # 基本数据类型
@@ -136,7 +139,7 @@ _重启_
 ### 修改
 # TODO 重头戏
 
-**************8
+**************
 ## 视图
 > 保障数据安全性，提高查询效率
 
@@ -225,9 +228,13 @@ select fun_test(8,'d');
 ```
 
 ***********************************
-***********************************
-## 1.mysql常用命令集合
-### 1.1【自增长】
+# 1.mysql常用命令集合
+## 查看数据库参数
+### 查看连接状况
+> [查看mysql数据库连接数、并发数相关信息。](https://blog.csdn.net/caodongfang126/article/details/52764213)
+`show status like 'Threads%';`
+
+## 1.1【自增长】
 - 【创建表时设置自增长，并设置起始值】
     - create table cc( id int auto_increment,name varchar(20),primary key(id) ) auto_increment=1000;
 - 【设置已有字段自增长】 
@@ -237,22 +244,22 @@ select fun_test(8,'d');
 - 【自增长字段溢出】
     - 设置自动增长的列，只能是int类型（包含了各种int），当出现了溢出就可以改成bigint 但是如果有外键约束，可能就会更改失败，还不如删库重建，实在太大了就删约束再建约束
 
-### 1.2【主键约束的修改】
+## 1.2【主键约束的修改】
 alter table 表名  add constraint (PK_表名) primary key (j,k,l); 关于一些约束条件constraint好像没有起到作用比如 check
-### 1.3【修改表名】
+## 1.3【修改表名】
 rename table table1 to table2; 	切记不可随便修改表名，改了就要修改相应的 外键，触发器，函数，存储过程！！！
-### 1.4【定界符】
+## 1.4【定界符】
 delimiter 任意字符除了转义字符：\
-### 1.5【已有表数据，新建表】
+## 1.5【已有表数据，新建表】
 create table temp as select * from test;
-### 1.6【查看所有连接状态】
+## 1.6【查看所有连接状态】
 show processlist  如果是普通用户，只能查看自己当前的连接状态
-### 1.7【查看表的状态】
+## 1.7【查看表的状态】
 show table status like 'assitant' 可以看到当前自动增长的id当前值 dev.mysql.com/downloads/mysql/#downloads
 
 *****
-### 1.8【关于时间 】
-#### 1.8.1【常用函数】
+## 1.8【关于时间 】
+### 1.8.1【常用函数】
 - **NOW()**函数以 'YYYY-MM-DD HH:MM:SS' 返回当前的日期时间，可以直接存到**DATETIME**字段中。
 - **CURDATE()**以’YYYY-MM-DD’的格式返回今天的日期，可以直接存到**DATE**字段中。
 - **CURTIME()**以’HH:MM:SS’的格式返回当前的时间，可以直接存到**TIME**字段中。
@@ -261,7 +268,7 @@ show table status like 'assitant' 可以看到当前自动增长的id当前值 d
    - select datediff(curdate(), date_sub(curdate(), interval i month)); 
 - 一般函数是不能作为 default默认值的，使用只能在插入修改数据时使用
 
-#### 1.8.2【获取当前时间与i个月之间的天数】
+### 1.8.2【获取当前时间与i个月之间的天数】
 - 问题：假设当前是5月19 且（提前月份）i=1 就是计算从4月19到今天的天数
     - 解答：
 
@@ -276,7 +283,7 @@ show table status like 'assitant' 可以看到当前自动增长的id当前值 d
       SELECT count(*) FROM t_get_video_temp Where DATE_FORMAT(get_date, '%Y-%d')='2006-07';
       SELECT count(*) FROM t_get_video_temp Where get_date like '2006%-07%';
 ```
-#### 1.8.3 【datetime 和 timestamp 区别】
+### 1.8.3 datetime和timestamp区别
 ```sql
       -- 问题：为什么 5.5的环境下运行两句命令得到不同的结果（5.6不会有错误）
       -- 没错误
@@ -303,11 +310,12 @@ show table status like 'assitant' 可以看到当前自动增长的id当前值 d
 
 >列如：
 定义字段长度 强制字段长度
+```
 TIMESTAMP(0) -> TIMESTAMP(14)
 TIMESTAMP(15)-> TIMESTAMP(14)
 TIMESTAMP(1) -> TIMESTAMP(2)
 TIMESTAMP(5) -> TIMESTAMP(6)
-
+```
 >所有的TIMESTAMP列都有同样的存储大小，
 使用被指定的时期时间值的完整精度（14位）存储合法的值不考虑显示尺寸。
 不合法的日期，将会被强制为0存储
@@ -322,11 +330,12 @@ TIMESTAMP(5) -> TIMESTAMP(6)
 - 以后当你对该记录行的其它列执行更新时，为 TIMESTAMP 列值明确地指定为它原来的值。
 - 另一方面，你可能发现更容易的方法，使用 DATETIME 列，当新建记录行时以 NOW() 初始化该列，以后在对该记录行进行更新时不再处理它。
 
-### 1.9 【插入外码】
-> alter table `Bookinfo` add constraint `F_N` foreign key `F_N`(`classno`) references `Bookclass`(`classno`) on delete cascade on update cascade;
-
+## 1.9 【插入外码】
+```sql
+alter table `Bookinfo` add constraint `F_N` foreign key `F_N`(`classno`) references `Bookclass`(`classno`) on delete cascade on update cascade;
+```
 *********************************************
-## 2.【变量】
+# 2.【变量】
 - 加了@ 的是用户变量， 限定当前用户，当前客户端， 在declare中声明的参数可以不加 @，那就是是局部变量
 - 例如：declare a int ;  也可以直接就用不用声明，作为临时变量 例如这两种写法：
    - set @name =   expr;
@@ -334,24 +343,24 @@ TIMESTAMP(5) -> TIMESTAMP(6)
 - 注意：MySQL中只有基本数据类型，没有Oracle中那个绑定类型：表类型或行类型，所以处理起来有点。。不如Oracle方便，不管是触发器还是存储过程
 - set @a= select * from User；执行这句话就会报出 operand should contain 1 column(s)错误，就是说多值赋值的错误
 
-## 3.【基本流程语法】
-```
+# 3.【基本流程语法】
+```sql
 	if ... then 
 	elseif ... then (注意elseif中间没有空格)
 	end if;
 ```
 
 
-## 7.【异常】
+# 7.【异常】
 
-## 8.【用户管理】
+# 8.【用户管理】
 > [参考博客](http://www.cnblogs.com/fslnet/p/3143344.html)
 
-### 查看
+## 查看
 - 查询用户信息 `select host,user,password from user ;`
 - 查看权限 `show grants for zx_root;`
 
-### 创建
+## 创建
 > 创建本地超级用户： CREATE USER 'myth'@'localhost' IDENTIFIED BY 'ad';   
 > 授予所有权限 GRANT all privileges  ON *.* TO 'myth'@'localhost';   
 > 创建远程访问指定数据库用户 ： CREATE USER 'myth'@'%' IDENTIFIED BY 'ad';   
@@ -368,11 +377,11 @@ TIMESTAMP(5) -> TIMESTAMP(6)
     127.0.0.1    会通过TCP/IP协议连接，并且只能在本机访问；
     ::1          ::1就是兼容支持ipv6的，表示同ipv4的127.0.0.1
 ```
-### 修改
-- 修改名字：`rename   user  feng  to   newuser；`
+## 修改
+- 修改名字：`rename user feng to newuser；`
 
 ### 【授权】
-- grant all privileges  ON databasename.tablename TO 'username'@'host' 
+1. grant all privileges  ON databasename.tablename TO 'username'@'host' 
     - all privileges 所有权限
     - alter | alter routine
     - create | create routine | create temporary table | create user | create view
@@ -384,7 +393,7 @@ TIMESTAMP(5) -> TIMESTAMP(6)
     - select | show databases | show view
     - shutdown | super
     - update | usage
-- revoke 回收权限用法和grant一样
+2. 回收权限 revoke, 用法和 grant 一样
 
 - 刷新权限缓存 `flush privileges;`
 

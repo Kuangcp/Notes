@@ -4,12 +4,20 @@
     - [MVC思想](#mvc思想)
         - [原理](#原理)
     - [API](#api)
-    - [配置](#配置)
+    - [SpringBoot中配置](#springboot中配置)
+    - [传统项目配置完整流程](#传统项目配置完整流程)
+        - [配置依赖](#配置依赖)
+            - [Maven](#maven)
+            - [Gradle](#gradle)
+        - [web.xml](#webxml)
+        - [ApplicationContext.xml](#applicationcontextxml)
+            - [中文编码问题](#中文编码问题)
+        - [创建Controller](#创建controller)
     - [使用](#使用)
         - [自定义拦截器](#自定义拦截器)
         - [Q&A](#q&a)
 
-`目录 end` |_2018-04-18_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
+`目录 end` |_2018-04-21_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
 ****************************************
 
 # SpringMVC
@@ -34,8 +42,8 @@
 > [SpringBoot 较完善的入门博客](https://www.tianmaying.com/tutorial/spring-mvc-quickstart)
 
 ***********************
-## 传统项目配置
-> [参考](https://www.cnblogs.com/Sinte-Beuve/p/5730553.html)
+## 传统项目配置完整流程
+> 也就是Maven的Web结构，甚至是Eclipse那样的DynamicWeb项目结构， [参考 博客](https://www.cnblogs.com/Sinte-Beuve/p/5730553.html)
 
 ### 配置依赖
 #### Maven
@@ -108,7 +116,7 @@ compile('org.springframework:spring-webmvc:4.3.9.RELEASE')
        xmlns:mvc="http://www.springframework.org/schema/mvc"
        xsi:schemaLocation="http://www.springframework.org/schema/beans
             http://www.springframework.org/schema/beans/spring-beans-3.2.xsd
-                http://www.springframework.org/schema/context
+                http://www.sprinControllergframework.org/schema/context
             http://www.springframework.org/schema/context/spring-context-3.2.xsd
             http://www.springframework.org/schema/mvc
             http://www.springframework.org/schema/mvc/spring-mvc.xsd">
@@ -145,7 +153,28 @@ compile('org.springframework:spring-webmvc:4.3.9.RELEASE')
 </bean>
 </beans>
 ```
-### 创建类
+#### 中文编码问题
+> [参考博客](http://www.cnblogs.com/dyllove98/p/3180158.html) `但是奇怪的是某些方法用第二种正常，有些还是要用第一种`
+1. 单个方法：`@GetMapping(value = "/target/all",  produces = "application/json; charset=utf-8")`
+2. 或者整个应用 注意：`</mvc:annotation-driven>` 只能有一个，要将上面的覆盖掉
+```xml
+ <mvc:annotation-driven>
+        <mvc:message-converters>
+            <bean class="org.springframework.http.converter.StringHttpMessageConverter">
+                <property name="supportedMediaTypes">
+                    <list>
+                    <!-- 如果是前后端使用JSON作为主要数据交换格式就把JSON列为第一个， 否则就会被认为是Text -->
+                        <value>application/json; charset=UTF-8</value>
+                        <value>text/plain; charset=UTF-8</value>
+                        <value>text/html; charset=UTF-8</value>
+                    </list>
+                </property>
+            </bean>
+        </mvc:message-converters>
+    </mvc:annotation-driven>
+```
+
+### 创建Controller
 包 com.test.controller 下创建一个类
 ```java
 @RestController
@@ -157,6 +186,7 @@ public class Hi {
     }
 }
 ```
+
 ************************
 ## 使用
 > 在Springboot框架中，static templates 文件夹下分别代表了tomcat管理的静态文件和MVC负责跳转的HTML文件或JSP文件
@@ -211,7 +241,6 @@ public class WebMvcConfig extends WebMvcConfigurerAdapter{
     }
 }
 ```
-
 
 
 ### Q&A
