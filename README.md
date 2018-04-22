@@ -32,13 +32,17 @@
 > 长者赐不可辞 
 
 > 所谓学习，就是“进一步有进一步的欢喜”，让这种快乐充实自己不好吗？
+
+> `每一天的我要比昨天辽阔` [每一天都不同](http://music.163.com/#/song?id=233854)
+
+> 今天你帮他一个小忙，日后一定会要你帮个大忙。
 **************
 
 ## 个人备忘
 - [阿里Java编程规范](Java/AlibabaJavaStandard.md)
 - [常用SDK自动下载配置工具 mythsdk](https://github.com/Kuangcp/Script/tree/master/python/mythsdk) 
     - `功能仿sdkman，但简单，不过是提供自行搭建使用的，毕竟七牛云下载超量了是要收费的`
-- 克隆笔记仓库可以加上 `-depth 1` 参数, 减小克隆的大小
+- 克隆笔记仓库可以加上 `--depth 1` 参数, 减小克隆的大小
 
 ## 醍醐灌顶
 - [相关:知乎专栏-程序员你为什么这么累？](/Java/AdvancedLearning/ProgramThinking.md#编程习惯)

@@ -13,10 +13,11 @@
         - [HTTP1.1 和 HTTP2](#http11-和-http2)
         - [HTTPS](#https)
             - [HSTS](#hsts)
+        - [CORS](#cors)
     - [Websocket](#websocket)
         - [WSS](#wss)
 
-`目录 end` |_2018-04-10_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
+`目录 end` |_2018-04-23_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
 ****************************************
 # 网络
 
@@ -67,6 +68,10 @@ HTTP2的特点:
 
 #### HSTS
 > HTTP Strict Transport Security 强制让客户端使用HTTPS进行通信
+
+### CORS
+> 跨域
+> [mozilla CORS](https://developer.mozilla.org/zh-CN/docs/Web/HTTP/Access_control_CORS)
 
 **********************************
 ## Websocket

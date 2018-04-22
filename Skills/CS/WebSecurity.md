@@ -4,10 +4,11 @@
     - [SSL和TSL](#ssl和tsl)
     - [SYNFlood攻击](#synflood攻击)
         - [CSRF](#csrf)
+- [TODO 问题是 CSRF 只是非法获取Cookie做操作么, 自己写两个域名的网站试试](#todo-问题是-csrf-只是非法获取cookie做操作么-自己写两个域名的网站试试)
         - [XSS](#xss)
     - [JWT](#jwt)
 
-`目录 end` |_2018-04-08_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
+`目录 end` |_2018-04-23_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
 ****************************************
 # Web安全
 > 关注常见的比如 XSS CSRF SQL注入 上传等问题的原理和修复方案。还有密码安全也基本上是面试必考点。
@@ -43,10 +44,17 @@
 ### CSRF
 > CSRF (Cross Site Request Forgery) `跨站请求伪造` ，它讲的是你在一个浏览器中打开了两个标签页，其中一个页面通过窃取另一个页面的 cookie 来发送伪造的请求，
 > 因为 cookie 是随着请求自动发送到服务端的。  
- 
+
+> [维基百科定义 CSRF](https://www.owasp.org/index.php/Cross-Site_Request_Forgery) |
+> [百度百科 CSRF](https://baike.baidu.com/item/CSRF)
+
+> [[Web 安全] 如何通过JWT防御CSRF](https://segmentfault.com/a/1190000003716037)
 > [web安全之token和CSRF攻击](https://blog.csdn.net/qq_15096707/article/details/51307024)  
 > [博客:CSRF漏洞的原理](https://www.zhuyingda.com/blog/b5.html)  
 > [浅谈CSRF攻击方式](http://www.cnblogs.com/hyddd/archive/2009/04/09/1432744.html)  
+> [参考提问下的回答](https://segmentfault.com/q/1010000000713614)
+
+# TODO 问题是 CSRF 只是非法获取Cookie做操作么, 自己写两个域名的网站试试
 
 ### XSS
 > Cross Site Scripting `跨站脚本攻击` 

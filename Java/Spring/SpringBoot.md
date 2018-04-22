@@ -8,6 +8,7 @@
         - [多种配置文件并切换](#多种配置文件并切换)
             - [yml方式](#yml方式)
             - [yml和Properties结合](#yml和properties结合)
+        - [应用配置文件](#应用配置文件)
     - [Web模块](#web模块)
         - [上传下载文件](#上传下载文件)
         - [错误页面跳转配置](#错误页面跳转配置)
@@ -22,7 +23,7 @@
         - [构建docker镜像](#构建docker镜像)
             - [gradle结合docker](#gradle结合docker)
 
-`目录 end` |_2018-04-08_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
+`目录 end` |_2018-04-23_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
 ****************************************
 # SpringBoot
 > 一个简化Spring开发的框架,微服务SpringCloud的基础
@@ -97,7 +98,30 @@
       profiles:
         active: dev或者是prod
 ```
-
+### 应用配置文件
+> 依赖于 `org.springframework.boot:spring-boot-configuration-processor`
+配置对应的实体类
+```java
+@Data
+@Component
+@ConfigurationProperties(prefix = "graduate.main")
+public class MainConfig {
+    private String delimiter;
+}
+```
+应用配置类
+```java
+@Configuration
+@EnableConfigurationProperties(MainConfig.class)
+public class AutoCustomConfig {
+}
+```
+application.yml
+```yml
+graduate:
+  main:
+    delimiter: ,
+```
 ************
 ## Web模块
 ### 上传下载文件
