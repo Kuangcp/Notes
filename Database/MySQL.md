@@ -397,3 +397,12 @@ alter table `Bookinfo` add constraint `F_N` foreign key `F_N`(`classno`) referen
 
 - 刷新权限缓存 `flush privileges;`
 
+
+# 查询
+> 数据库中最主要的还是查询， 多角度复杂的查询
+
+_全自段模糊查询_
+1. `select * from target where concat(ifnull(host, ''), ifnull(username, '')) like '%localhost%' > 0 limit 0,1;`
+    - 将全字段(空的替换为空串)连接成一个字符再模糊查询, 
+2. `select * from target where host like '%localhost%' or username like '%localhost%' limit 0,1;`
+    - 这种查询虽然也能实现, 但是性能差一些

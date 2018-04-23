@@ -375,4 +375,4 @@ _Singleton_
 - [一个鸭子游戏引发的设计（多态，继承，抽象，接口，策略者模式）](http://www.cnblogs.com/x-xk/archive/2012/12/21/2823401.html)
 - [不要再盲目的new了！你要学着针对接口编程！（具体方法，Factory，Abstract Factory](www.cnblogs.com/x-xk/archive/2013/01/06/2830742.html)
 
-TODO 自己用Java重写一下这个例子, 并做出自己的总结
+# TODO 自己用Java重写一下这个例子, 并做出自己的总结
