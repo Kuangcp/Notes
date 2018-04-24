@@ -28,6 +28,7 @@
 ## Go
 - [《Go入门指南》](https://github.com/Unknwon/the-way-to-go_ZH_CN)
 - [Learning-Go](https://github.com/mikespook/Learning-Go-zh-cn)
+- [使用Go构建一个WebApplication](https://github.com/astaxie/build-web-application-with-golang)
 
 ## Python
 - [笨方法学Python](http://www.ttlsa.com/docs/learn-python-the-hard-way/)

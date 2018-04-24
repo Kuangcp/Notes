@@ -197,7 +197,7 @@
 
 *************
 ## 【Go】
-- [build-web-application-with-golang](https://github.com/astaxie/build-web-application-with-golang)
+- [Go Programming & Concurrency in Practice](https://github.com/hyper0x/goc2p)
 
 ### Demo
 - [gin-example](https://github.com/EDDYCJY/go-gin-example)
