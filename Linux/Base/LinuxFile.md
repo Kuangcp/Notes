@@ -51,7 +51,7 @@
             - [查看发行版](#查看发行版)
             - [查看系统所有用户信息](#查看系统所有用户信息)
 
-`目录 end` |_2018-04-20_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
+`目录 end` |_2018-04-24_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
 ****************************************
 # 【文件管理】
 > Linux中认为万物皆文件
@@ -215,7 +215,6 @@ _head_
 - `grep -vwf 文件1 文件2`
 ##### diff
 > [参考博客](http://www.cnblogs.com/chenjianhong/archive/2012/09/26/4144940.html)
-
 
 #### 相同
 

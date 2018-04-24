@@ -37,7 +37,7 @@
         - [自行安装](#自行安装)
     - [QT](#qt)
 
-`目录 end` |_2018-04-13_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
+`目录 end` |_2018-04-24_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
 ****************************************
 # Python
 > [Python初学者（零基础学习Python、Python入门）书籍、视频、资料、社区推荐](https://github.com/Yixiaohan/codeparkshare)
@@ -179,8 +179,8 @@
 - [ Python 3的bytes/str之别 ](http://www.ituring.com.cn/article/1116)
 ![str和bytes的关系](https://raw.githubusercontent.com/Kuangcp/ImageRepos/masters/Tech/python/str_bytes.jpeg)
 
-- `encode("utf-8")`： str -> bytes
-- `decode()`： bytes -> str
+- 解码 `encode("utf-8")`： str -> bytes
+- 编码 `decode()`： bytes -> str
 
 ```python
     # coding:utf-8

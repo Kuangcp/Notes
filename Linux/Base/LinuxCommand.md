@@ -1,14 +1,24 @@
 `目录 start`
  
 - [系统常用基础命令](#系统常用基础命令)
+    - [输入输出](#输入输出)
+        - [重定向](#重定向)
     - [time](#time)
     - [grep](#grep)
     - [定时任务crontab](#定时任务crontab)
+        - [定时执行脚本](#定时执行脚本)
 - [实用的工具](#实用的工具)
 
-`目录 end` |_2018-04-17_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
+`目录 end` |_2018-04-24_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
 ****************************************
 # 系统常用基础命令
+
+## 输入输出
+
+### 重定向
+- 输出重定向  `> a.log 2>&1`表示为将2也输出到标准输出
+    - 2是错误输出
+    - 1是标准输出
 
 ## time
 - bash内置简易time `time` 和 /usr/bin/time `\time`
@@ -20,7 +30,10 @@
 
 ## 定时任务crontab
 > [参考博客 shell定时任务crontab](http://www.cnblogs.com/taosim/articles/2007056.html)
+`minute hour day-of-month month-of-year day-of-week commands  `
 
+### 定时执行脚本 
+> 脚本中的操作最好都使用绝对路径
 
 # 实用的工具
 - htop _终端里的任务管理器_
