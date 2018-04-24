@@ -6,6 +6,7 @@
             - [c3p0](#c3p0)
             - [druid](#druid)
         - [JPA_SQL](#jpa_sql)
+        - [Mybatis](#mybatis)
             - [自定义查询](#自定义查询)
                 - [HQL](#hql)
                 - [原生SQL](#原生sql)
@@ -22,7 +23,7 @@
             - [JPA关于Redis的使用](#jpa关于redis的使用)
             - [关于StringRedisTemplate的方法使用](#关于stringredistemplate的方法使用)
 
-`目录 end` |_2018-04-08_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
+`目录 end` |_2018-04-24_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
 ****************************************
 # 数据库模块
 > 主要是采用的JPA，极大的缩减了代码量，但是要注意不要过度依赖框架，丧失了基本的能力
@@ -43,6 +44,9 @@
 
 > 怎么映射视图到实体上?
 
+### Mybatis
+
+> [IDEA下创建Springboot，thymeleaf，Mybatis，Postgresql，Gradle项目](https://blog.csdn.net/juewang_love/article/details/53769906)
 #### 自定义查询
 ##### HQL
 - 使用Hibernate语法模式,将对象和数据库的表看成一个实体,方便书写SQL,但是在Controller层和Service层

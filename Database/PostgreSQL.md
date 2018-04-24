@@ -18,11 +18,13 @@
             - [修改权限](#修改权限)
         - [Java使用](#java使用)
 
-`目录 end` |_2018-04-18_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
+`目录 end` |_2018-04-24_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
 ****************************************
 # Postgresql
 
 ## 概述
+> [PostgreSQL](http://www.cnblogs.com/fcode/articles/PostgreSQL.html)
+
 - 严格SQL标准
 - Schemas 和表，用户的关系：
     - Schemas相当于是一个数据库进行分类的文件夹
@@ -47,16 +49,17 @@
     - 客户端连接 `psql -h localhost -p 5432 -U postgres`
 
 #### pull精简版
-- 下拉镜像：`docker pull postgres:alpine` | 因为个人系统客户端是9.6`9.6-alpine`
+- 下拉镜像：`docker pull postgres:alpine` | 因为个人系统客户端是9.6, 所以用`9.6-alpine`镜像
 - 构建容器：
 ```sh
-    docker run -d --name gitea-db \
-    -e POSTGRES_PASSWORD=ad \
+    docker run -d --name postgre \
+    -e POSTGRES_PASSWORD=jiushi \
     -v gitea-db-data:/var/lib/postgresql/data \
     -p 5432:5432 \
-    postgres:alpine
-```  
-- 进入postgresql终端 `docker exec -it gitea-db psql -U postgres`
+    postgres:9.6-alpine
+```
+- 容器中连接 进入postgresql终端 `docker exec -it postgre psql -U postgres`
+    - 客户端连接 `psql -h localhost -U postgres`
 - 连接后 输入`\l` 列出所有数据库 即可查看连接成功与否
 
 #### Dockerfile构建
@@ -87,7 +90,7 @@
 #### 解释Dockerfile文件
 > 待学习解释
 
-****************************************8
+************************************
 ## 使用
 > [PostgreSQL 9.6.0 手册](http://postgres.cn/docs/9.6/index.html)
 
