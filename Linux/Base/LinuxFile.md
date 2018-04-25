@@ -51,7 +51,7 @@
             - [查看发行版](#查看发行版)
             - [查看系统所有用户信息](#查看系统所有用户信息)
 
-`目录 end` |_2018-04-24_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
+`目录 end` |_2018-04-25_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
 ****************************************
 # 【文件管理】
 > Linux中认为万物皆文件
@@ -428,12 +428,14 @@ _解压_
 - `tar -xZvf file.tar.Z `  //解压tar.Z
 
 ### rar
+_压缩_
 - `rar a jpg.rar *.jpg` //rar格式的压缩
 
 _解压_
 - `unrar e file.rar` //解压rar
 
 ### zip
+_压缩_
 - `zip images.zip *.jpg` //zip格式的压缩
 - `zip -r file.zip code/*` 压缩code目录下所有文件
     - `zip -r ./a.zip ./*` 压缩当前目录所有文件
@@ -453,7 +455,14 @@ _解压_
     - -O 指定编码
 
 ### 7Z
-_压缩_
+> 安装 apt install p7zip-full 或者 p7zip 
+> man 7z 查看帮助文档  
+-  `7z <command> [<switches>... ] <archive_name> [<file_names>... ] [<@listfiles>... ]`
+    - b benchmark 评测分数 [个人电脑评测](https://gitee.com/kcp1104/codes/0r72axdcp1yewmnljhi8g38)
+    
+_压缩_ 
+- a 压缩包名 文件名 
+
 _解压_
 - 7z x file
     - -o 路径

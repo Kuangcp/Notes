@@ -15,7 +15,7 @@
     - [资源文件](#资源文件)
         - [图片](#图片)
 
-`目录 end` |_2018-04-21_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
+`目录 end` |_2018-04-25_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
 ****************************************
 # JavaScript
 
@@ -84,10 +84,11 @@
 - lozad.js 懒加载
 
 ### Jquery
-> jquery有是slim版, 这个是没有ajax的精简版
+> jquery有是slim版(没有ajax的精简版 ) [JQuery](http://jquery.com/)
 
 - 事件绑定 `$('#Button').on('click', function(){})`
 - 在HTML的DOM上绑定数据:设置 `data-*` 属性 然后jq拿到元素直接调用 `$(this).data('id')`拿到值就可以避免函数传值
+
 #### form插件
 ```js
 // 使用jquery 的 form插件进行异步提交

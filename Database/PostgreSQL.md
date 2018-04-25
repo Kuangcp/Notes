@@ -17,8 +17,9 @@
             - [创建用户](#创建用户)
             - [修改权限](#修改权限)
         - [Java使用](#java使用)
+    - [基础数据](#基础数据)
 
-`目录 end` |_2018-04-24_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
+`目录 end` |_2018-04-25_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
 ****************************************
 # Postgresql
 
@@ -147,3 +148,5 @@
 - [官方：springboot使用](https://springframework.guru/configuring-spring-boot-for-postgresql/)
     - [参考博客](https://www.netkiller.cn/java/spring/boot/postgresql.html)
 
+## 基础数据
+> [ PostgreSQL中的数据类型](https://blog.csdn.net/jpzhu16/article/details/52140048)

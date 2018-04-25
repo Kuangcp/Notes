@@ -1,6 +1,7 @@
 `目录 start`
  
 - [Gradle](#gradle)
+    - [前言](#前言)
     - [发行版本](#发行版本)
         - [4.6](#46)
     - [安装配置](#安装配置)
@@ -51,10 +52,13 @@
     - [Jenkin 使用](#jenkin-使用)
         - [下载安装和配置](#下载安装和配置)
 
-`目录 end` |_2018-04-08_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
+`目录 end` |_2018-04-25_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
 ****************************************
 
 # Gradle
+## 前言
+> [Gradle在大型Java项目上的应用](www.infoq.com/cn/articles/Gradle-application-in-large-Java-projects)
+
 ## 发行版本
 ### 4.6
 > [发行说明](https://docs.gradle.org/4.6/release-notes.html?_ga=2.214014495.909415461.1519975016-498617321.1519975016#dependency-constraints-for-transitive-dependencies) | `支持Junit5, 还有解决依赖冲突的一种声明式方式`
