@@ -7,6 +7,7 @@
             - [每个身份都使用一个登录实体类](#每个身份都使用一个登录实体类)
             - [另一种思路：](#另一种思路)
     - [JWT](#jwt)
+        - [跨域问题](#跨域问题)
     - [Oauth](#oauth)
     - [实现细节](#实现细节)
         - [关于注解的几种使用方式](#关于注解的几种使用方式)
@@ -16,7 +17,7 @@
         - [保护方法应用](#保护方法应用)
     - [社交登录](#社交登录)
 
-`目录 end` |_2018-04-08_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
+`目录 end` |_2018-04-25_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
 ****************************************
 # SpringSecurity
 ## SpringBoot的集成Demo
@@ -56,12 +57,16 @@
 
 *********
 ## JWT
-> [JWT相关原理](/Skills/Base/WebSecurity.md#jwt)  
+> [JWT相关原理](/Skills/Base/WebSecurity.md#jwt) | [Github SpringBoot2使用Security整合Jwt案例项目](https://github.com/Kuangcp/SpringBoot2-Security-Jwt)  
 
-- [个人代码片段](https://gitee.com/kcp1104/codes/kw31qf40iz9p8mt2x7bcd49)  | [SpringBoot2使用Security整合Jwt案例项目](https://github.com/Kuangcp/SpringBoot2-Security-Jwt)  
+- [个人代码片段](https://gitee.com/kcp1104/codes/kw31qf40iz9p8mt2x7bcd49)  |
 
 > [集成JWT到Spring Boot项目](http://www.saily.top/2016/12/08/spring-boot-jwt/) | [使用JWT保护你的Spring Boot应用](https://segmentfault.com/a/1190000009231329)
 > [重拾后端之Spring Boot（四）：使用JWT和Spring Security保护REST API](https://juejin.im/post/58c29e0b1b69e6006bce02f4)
+> [开箱即用 - jwt 无状态分布式授权](http://www.cnblogs.com/grissom007/p/6294746.html)
+### 跨域问题
+> [跨域(CORS) 解决方案中，为什么 Access-Control-Allow-Methods 不起作用？](https://segmentfault.com/q/1010000005067552)
+> [WEB应用前后端分离实践 关键词：rest架构+跨域访问+JWT校验](https://bbs.csdn.net/topics/392006333)
 
 *******************
 ## Oauth

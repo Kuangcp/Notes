@@ -18,7 +18,7 @@
         - [自定义拦截器](#自定义拦截器)
         - [Q&A](#q&a)
 
-`目录 end` |_2018-04-21_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
+`目录 end` |_2018-04-25_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
 ****************************************
 
 # SpringMVC
@@ -157,6 +157,7 @@ compile('org.springframework:spring-webmvc:4.3.9.RELEASE')
 #### 全局异常处理
 ```java
 public class ExceptionHandler implements HandlerExceptionResolver {
+    @Override
     public ModelAndView resolveException(HttpServletRequest request, HttpServletResponse response, Object handler, Exception ex) {
         Map<String, Object> model = new HashMap<>();
         model.put("ex", ex);

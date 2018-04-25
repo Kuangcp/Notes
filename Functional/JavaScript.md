@@ -6,11 +6,13 @@
     - [JSON](#json)
     - [常用功能小模块](#常用功能小模块)
         - [输入校验](#输入校验)
+    - [Ajax](#ajax)
     - [事件](#事件)
         - [鼠标](#鼠标)
             - [滚轮](#滚轮)
     - [常用库和框架](#常用库和框架)
         - [Jquery](#jquery)
+            - [Ajax](#ajax)
             - [form插件](#form插件)
     - [资源文件](#资源文件)
         - [图片](#图片)
@@ -69,6 +71,8 @@
 
 - [Blog:关于Input的输入校验](http://yuncode.net/code/c_5039bb4a3fccf28)`数字,字母汉字等限制`
 
+## Ajax
+> [js 原生 post请求](https://segmentfault.com/q/1010000005162727)
 
 ## 事件
 
@@ -89,6 +93,8 @@
 - 事件绑定 `$('#Button').on('click', function(){})`
 - 在HTML的DOM上绑定数据:设置 `data-*` 属性 然后jq拿到元素直接调用 `$(this).data('id')`拿到值就可以避免函数传值
 
+#### Ajax
+> [ajax文档](https://api.jquery.com/jQuery.ajax/)
 #### form插件
 ```js
 // 使用jquery 的 form插件进行异步提交

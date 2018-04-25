@@ -24,7 +24,7 @@
     - [人工智能](#人工智能)
     - [在线工具](#在线工具)
 
-`目录 end` |_2018-04-15_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
+`目录 end` |_2018-04-25_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
 ****************************************
 # 【常用的网站】
 ## 软件商店
@@ -42,6 +42,7 @@
 - [sourceforge](https://sourceforge.net/directory/system-administration/osdistro/livecd/os:linux/)`Linux发行版列表`
 - [程序员应该访问的最佳网站中文版](https://github.com/tuteng/Best-websites-a-programmer-should-visit-zh)
 
+- [mycat镜像站](http://dl.mycat.io/)
 ******************************
 ## 特别网站
 - [测试你当前连接用的是ipv4还是ipv6](http://www.kame.net/)
@@ -78,6 +79,7 @@
 ## 并发
 - [并发编程网 http://ifeve.com](http://ifeve.com/)
 - [IBM社区](https://www.ibm.com/developerworks/cn/)
+- [MDN web docs](https://developer.mozilla.org/zh-CN/)`火狐社区的关于Web的文档`
 
 *****************************************
 ## 语言

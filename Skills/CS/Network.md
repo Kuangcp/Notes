@@ -5,6 +5,8 @@
         - [ISO七层模型和TCP/IP五层模型](#iso七层模型和tcpip五层模型)
         - [TCP和UDP](#tcp和udp)
         - [网络延迟](#网络延迟)
+            - [TTFB](#ttfb)
+        - [URL](#url)
     - [Web安全](#web安全)
     - [HTTP](#http)
         - [HTTP的返回码](#http的返回码)
@@ -17,7 +19,7 @@
     - [Websocket](#websocket)
         - [WSS](#wss)
 
-`目录 end` |_2018-04-23_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
+`目录 end` |_2018-04-25_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
 ****************************************
 # 网络
 
@@ -77,8 +79,10 @@ HTTP2的特点:
 
 ### CORS
 > 跨域
-> [mozilla CORS](https://developer.mozilla.org/zh-CN/docs/Web/HTTP/Access_control_CORS)
 
+> [mozilla CORS](https://developer.mozilla.org/zh-CN/docs/Web/HTTP/Access_control_CORS)
+> [阮一峰 跨域资源共享 CORS 详解](http://www.ruanyifeng.com/blog/2016/04/cors.html)
+> [CORS详解.md](https://github.com/hstarorg/HstarDoc/blob/master/%E5%89%8D%E7%AB%AF%E7%9B%B8%E5%85%B3/CORS%E8%AF%A6%E8%A7%A3.md)
 **********************************
 ## Websocket
 > 本质就是TCP的简单封装, 不像HTTP那样应答模式, 一次连接后就保持全双工模式

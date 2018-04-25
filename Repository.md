@@ -41,7 +41,7 @@
     - [工作](#工作)
         - [简历](#简历)
 
-`目录 end` |_2018-04-18_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
+`目录 end` |_2018-04-25_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
 ****************************************
 
 # 【GitRepos】
@@ -79,7 +79,7 @@
 - [cain-note](https://github.com/james-cain/cain-note)`像是培训机构的资料和他本人的学习笔记,偏向前端`
 - [书写规范和建议](https://github.com/sparanoid/chinese-copywriting-guidelines)`比较全面,闲暇可以参考`
 - [阮一峰的博客](https://github.com/ruanyf/articles)`Github账号每日都有提交....`
-
+- [HstarDoc](https://github.com/hstarorg/HstarDoc)`前端的大量文档`
 ## 翻译和搬运
 - [translations](https://github.com/oldratlee/translations)`翻译外国的文章`
 - [掘金翻译计划](https://github.com/xitu/gold-miner)

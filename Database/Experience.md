@@ -1,26 +1,27 @@
 `目录 start`
  
 - [数据库的使用体会](#数据库的使用体会)
-    - [使用的关系型数据库](#使用的关系型数据库)
+    - [关系型数据库](#关系型数据库)
         - [SQLServer](#sqlserver)
         - [Mysql](#mysql)
         - [Oracle](#oracle)
         - [Postgresql](#postgresql)
-    - [使用的非关系型数据库](#使用的非关系型数据库)
+    - [非关系型数据库](#非关系型数据库)
         - [Redis](#redis)
         - [MangoDB](#mangodb)
     - [结构设计](#结构设计)
         - [基本表的设计](#基本表的设计)
             - [关于主键的设计](#关于主键的设计)
         - [视图的设计](#视图的设计)
+    - [数据库中间件](#数据库中间件)
 
-`目录 end` |_2018-04-18_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
+`目录 end` |_2018-04-25_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
 ****************************************
 # 数据库的使用体会
 > [码农翻身:爱炫耀的数据库老头儿](https://mp.weixin.qq.com/s?__biz=MzAxOTc0NzExNg==&mid=2665514001&idx=1&sn=17b72c3e69db6c4277e3045c699b7b6b&chksm=80d67c52b7a1f5446020826841869221873f4578524181384592839d19c4810dc68807117e13&scene=21#wechat_redirect) `事务,undo日志`
 
 > [DB-Engines Ranking](https://db-engines.com/en/ranking)
-## 使用的关系型数据库
+## 关系型数据库
 > [参考博客: 什么是数据库ACID?](http://www.jdon.com/concurrent/acid-database.html)
 
 ### SQLServer
@@ -33,7 +34,7 @@
 ### Postgresql
 > 听说性能强劲, 但是自己没有测试实践过, 命令行倒是很简洁, 就是数据库的逻辑理念和MySQL不一样, 迁移过去要稍微看下基础
 
-## 使用的非关系型数据库
+## 非关系型数据库
 ### Redis
 > 数据类型丰富,处理非关系型并且结构化的数据十分方便, 结合Python使用就行云流水一般了
 
@@ -50,3 +51,8 @@
 - 如果是小型项目，使用整型自增即可，排序方便节约内存
 
 ### 视图的设计
+
+## 数据库中间件
+> [MyCat：开源分布式数据库中间件](https://www.csdn.net/article/2015-07-16/2825228)
+
+

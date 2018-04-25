@@ -14,9 +14,10 @@
             - [配置Websocket反向代理](#配置websocket反向代理)
         - [防盗链](#防盗链)
         - [负载均衡](#负载均衡)
+        - [跨域问题的配置](#跨域问题的配置)
     - [问题](#问题)
 
-`目录 end` |_2018-04-10_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
+`目录 end` |_2018-04-25_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
 ****************************************
 # Nginx
 
@@ -273,7 +274,15 @@ _SSL 接收到一个超出最大准许长度的记录 要在端口后加上SSL n
 ### 负载均衡
 > [Nginx 反向代理 负载均衡 虚拟主机配置](https://segmentfault.com/a/1190000012479902)
 
+### 跨域问题的配置
+添加如下配置
+```
+add_header Access-Control-Allow-Origin *;
+add_header Access-Control-Allow-Headers X-Requested-With;
+add_header Access-Control-Allow-Methods GET,POST,OPTIONS; 
+```
 
+****************************
 ## 问题
 - 文件上传报错 413 
   - http{}中添加 `client_max_body_size 80M;`
