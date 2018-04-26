@@ -30,7 +30,26 @@
     - [参考博客:JS字符串相关转码函数](http://www.cnblogs.com/xcsn/archive/2013/05/15/3079373.html)
 
 
-
+## 函数
+### 函数传值
+```js
+function handlerGet(url, role, success, fail) {
+  var request = $.ajax({
+    method: 'GET',
+    url : 'xxx'+url
+  });
+  request.done(success);
+  request.fail(fail);
+}
+function testRole() {
+    handlerGet('/world', 'student',
+        function (data) {
+            layer.msg('获取成功');
+        }, function (data) {
+            layer.msg('身份认证已过期， 请重新登录');
+        })
+}
+```
 **********************
 ## JSON
 > [json 数据 添加 删除 排序](http://blog.51yip.com/jsjquery/1583.html)

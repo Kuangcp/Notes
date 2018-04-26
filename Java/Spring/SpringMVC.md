@@ -180,6 +180,20 @@ public class ExceptionHandler implements HandlerExceptionResolver {
 > 但如果是前后端分离的话， 就只能统一处理异常然后然后对应的错误码和提示信息了 
 > [参考博客](http://www.cnblogs.com/exmyth/p/5601288.html)
 > [ResponseBody方案](https://blog.csdn.net/xin917480852/article/details/78023911)
+
+#### 自定义错误页面
+```java
+    // 自定义错误页面 需要放在静态资源下面
+    @Bean
+    public EmbeddedServletContainerCustomizer containerCustomizer() {
+        return (container -> {
+            ErrorPage error401Page = new ErrorPage(HttpStatus.FORBIDDEN, "/500.html");
+            ErrorPage error404Page = new ErrorPage(HttpStatus.NOT_FOUND, "/404.html");
+            ErrorPage error500Page = new ErrorPage(HttpStatus.INTERNAL_SERVER_ERROR, "/500.html");
+            container.addErrorPages(error401Page, error404Page, error500Page);
+        });
+    }
+```
 #### 中文编码问题
 > [参考博客](http://www.cnblogs.com/dyllove98/p/3180158.html) `但是奇怪的是某些方法用第二种正常，有些还是要用第一种`
 1. 单个方法：`@GetMapping(value = "/target/all",  produces = "application/json; charset=utf-8")`
@@ -255,16 +269,6 @@ public class WebMvcConfig extends WebMvcConfigurerAdapter{
         //拦截器的URL正则
         registry.addInterceptor(mythInterceptor()).addPathPatterns("/**");
         super.addInterceptors(registry);
-    }
-    // 自定义错误页面 需要放在静态资源下面
-    @Bean
-    public EmbeddedServletContainerCustomizer containerCustomizer() {
-        return (container -> {
-            ErrorPage error401Page = new ErrorPage(HttpStatus.FORBIDDEN, "/500.html");
-            ErrorPage error404Page = new ErrorPage(HttpStatus.NOT_FOUND, "/404.html");
-            ErrorPage error500Page = new ErrorPage(HttpStatus.INTERNAL_SERVER_ERROR, "/500.html");
-            container.addErrorPages(error401Page, error404Page, error500Page);
-        });
     }
 }
 ```
