@@ -12,7 +12,7 @@
     - [NGINX 扩展状态码](#nginx-扩展状态码)
     - [七牛扩展状态码](#七牛扩展状态码)
 
-`目录 end` |_2018-04-17_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
+`目录 end` |_2018-04-26_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
 ****************************************
 # HTTP状态码大全
 > [HTTP状态码](http://www.runoob.com/http/http-status-codes.html)
@@ -39,10 +39,12 @@
 226 IMIM Used 使用的
 ```
 ### 3xx Redirection 重定向
+> [HTTP返回码中301与302的区别  ](http://blog.163.com/darkness@yeah/blog/static/131774484201221495129735/)
+
 ```
 300 Multiple Choices 多种选择
 301 Moved Permanently 永久移动
-302 Found 发现
+302 Found 发现 代表暂时性转移(Temporarily Moved )。
 303 See Other 查看其它
 304 Not Modified 未修改,使用缓存
 305 Use Proxy 使用代理

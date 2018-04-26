@@ -19,12 +19,12 @@
         - [Java使用](#java使用)
     - [基础数据](#基础数据)
 
-`目录 end` |_2018-04-25_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
+`目录 end` |_2018-04-26_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
 ****************************************
 # Postgresql
 
 ## 概述
-> [PostgreSQL](http://www.cnblogs.com/fcode/articles/PostgreSQL.html)
+> [PostgreSQL](http://www.cnblogs.com/fcode/articles/PostgreSQL.html) | [wiki](https://wiki.postgresql.org/wiki/Main_Page)
 
 - 严格SQL标准
 - Schemas 和表，用户的关系：

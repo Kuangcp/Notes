@@ -19,7 +19,7 @@
     - [Websocket](#websocket)
         - [WSS](#wss)
 
-`目录 end` |_2018-04-25_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
+`目录 end` |_2018-04-26_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
 ****************************************
 # 网络
 
@@ -46,6 +46,9 @@ ISO制定的OSI参考模型的过于庞大、复杂招致了许多批评。与�
 
 ### URL
 > [维基百科](https://en.wikipedia.org/wiki/URL) | [百度百科](https://baike.baidu.com/item/URL)
+
+- 统一资源定位符 特别注意URL的组成和编解码  [url中的特殊字符问题](http://www.cnblogs.com/xmphoenix/archive/2011/04/20/2022945.html)
+    - 不能在URL的关键位置出现%号，作为参数的值是允许的。
 
 *******************************
 ## Web安全

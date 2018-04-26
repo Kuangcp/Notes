@@ -60,7 +60,7 @@
     - [安全工具](#安全工具)
         - [gpg](#gpg)
 
-`目录 end` |_2018-04-20_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
+`目录 end` |_2018-04-26_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
 ****************************************
 # 软件使用记事
 ## 【包管理】
@@ -403,6 +403,7 @@ CMD编辑器
 - `One Tab` tab归组,十分好用
 - `Remove Cookies Button`
 - `围脖是个好图床哟` 方便的图床,但是要登录微博
+- `滴答清单` 全平台可使用
 
 ### seamonkey
 > Mozilla基金会另一个项目 [seamonkey](https://www.seamonkey-project.org/) 亮点在于内置IRC
