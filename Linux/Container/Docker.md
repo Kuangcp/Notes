@@ -23,6 +23,7 @@
                 - [docker run](#docker-run)
                 - [docker exec](#docker-exec)
                 - [docker commit](#docker-commit)
+                - [docker port](#docker-port)
         - [数据卷](#数据卷)
             - [数据卷容器](#数据卷容器)
         - [端口映射](#端口映射)
@@ -32,11 +33,12 @@
         - [使用启动脚本和多进程容器](#使用启动脚本和多进程容器)
     - [容器编排](#容器编排)
         - [Docker-Compose](#docker-compose)
+            - [安装](#安装)
         - [Docker-Machine](#docker-machine)
         - [Docker-Swarm](#docker-swarm)
     - [轻量镜像](#轻量镜像)
 
-`目录 end` |_2018-04-08_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
+`目录 end` |_2018-04-27_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
 ****************************************
 # Docker
 > [docker资源汇总 ](http://www.open-open.com/lib/view/open1443075440623.html)
@@ -266,6 +268,8 @@ _使用DockerHub加速器_
 ##### docker commit
 - `docker commit 容器id 镜像name` 将容器为id的当前容器 保存为name镜像
 
+##### docker port
+> 查看容器的端口映射情况， 输出是左容器右本机， 和使用相反
 
 *********************
 ### 数据卷
@@ -360,7 +364,9 @@ server {
 ******************************************************
 ## 容器编排
 ### Docker-Compose
-> 声明式环境，管理多容器依赖
+> 声明式环境，管理多容器， 并处理好相关资源的关系
+#### 安装
+> sudo pip install -U docker-compose
 
 ### Docker-Machine
 > 创建一个docker集群环境 [官方文档安装](https://docs.docker.com/machine/install-machine)
@@ -378,6 +384,5 @@ frolvlad/alpine-oraclejdk8   slim
 postgres                     alpine
 alpine
 ```
-
 alpine
-```
+

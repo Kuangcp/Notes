@@ -14,7 +14,6 @@
     - [构建依赖](#构建依赖)
         - [dependency](#dependency)
         - [常用插件](#常用插件)
-    - [测试](#测试)
     - [第一个 build.gradle](#第一个-buildgradle)
         - [配置Gradle包管理器 Wrapper](#配置gradle包管理器-wrapper)
         - [Gradle多模块的构建](#gradle多模块的构建)
@@ -40,6 +39,8 @@
     - [War包](#war包)
     - [Jar包](#jar包)
     - [上传至构建仓库](#上传至构建仓库)
+    - [构建Docker镜像](#构建docker镜像)
+- [ENTRYPOINT ["java","-Djava.security.egd=file:/dev/./urandom","-jar","/app.war"]](#entrypoint-["java""-djavasecurityegd=filedevurandom""-jar""appwar"])
     - [集成测试](#集成测试)
         - [多模块构建](#多模块构建)
     - [功能测试](#功能测试)
@@ -52,14 +53,17 @@
     - [Jenkin 使用](#jenkin-使用)
         - [下载安装和配置](#下载安装和配置)
 
-`目录 end` |_2018-04-25_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
+`目录 end` |_2018-04-27_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
 ****************************************
 
 # Gradle
 ## 前言
 > [Gradle在大型Java项目上的应用](www.infoq.com/cn/articles/Gradle-application-in-large-Java-projects)
+> [极客学院 教程](https://wiki.jikexueyuan.com/project/GradleUserGuide-Wiki/introduction.html)
+
 
 ## 发行版本
+> 似乎版本越高，内存占用越大， 从4.7降级回了4.2
 ### 4.6
 > [发行说明](https://docs.gradle.org/4.6/release-notes.html?_ga=2.214014495.909415461.1519975016-498617321.1519975016#dependency-constraints-for-transitive-dependencies) | `支持Junit5, 还有解决依赖冲突的一种声明式方式`
 
@@ -151,13 +155,6 @@ allprojects{
 - lombok
     - `compile 'org.projectlombok:lombok:1.16.16'`
 
-
-## 测试
-> 凡是依赖于本地环境的测试，使用完就注释Test注解，还有那些会CRUD，影响到数据的测试方法也是
-> 以防以后线上测试通不过 打包失败, 
-
-- 也可以跳过测试 `gradle build -x test`
-
 ***************************************
 ## 第一个 build.gradle
 ```groovy
@@ -171,7 +168,7 @@ allprojects{
       println 'Hello world!'
    }
 ```
--  运行：`gradle -q helloworld`
+-  运行：`gradle -q helloworld` -q 可省略
 
 ### 配置Gradle包管理器 Wrapper
 > 在使用IDE生成项目的时候，可以选择gradle的执行目录，可以选`gradle wrapper` 也可以选自己下载解压的完整包
@@ -416,9 +413,17 @@ task makeReleaseVersion(type:ReleaseVersionTask){
 *******
 
 # Gradle 自动测试
+> 凡是依赖于本地环境的测试，使用完就注释Test注解，还有那些会CRUD，影响到数据的测试方法也是
+> 以防以后线上测试通不过 打包失败, 
+
+- 也可以跳过测试 `gradle build -x test`
+
 ## 自动化测试理论
 ## 测试java应用程序
 ### 项目布局，目录树
+```
+
+```
 
 ## 单元测试
 ### 使用JUnit
@@ -440,6 +445,48 @@ task makeReleaseVersion(type:ReleaseVersionTask){
 [参考](https://www.jianshu.com/p/49c926589f41)
 [官方文档](http://central.sonatype.org/pages/gradle.html)
 [参考博客](http://blog.csdn.net/h3243212/article/details/72374363#%E9%81%87%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98)
+
+## 构建Docker镜像
+_build.gradle_
+```groovy
+apply plugin: 'docker'
+buildscript {
+    ext {
+        springBootVersion = '2.0.1.RELEASE'
+    }
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
+        classpath('se.transmode.gradle:gradle-docker:1.2')
+    }
+}
+task buildDocker(type: Docker, dependsOn: build) {
+    //设置自动上传的话，命名就不能乱取了，仓库名/镜像名：tag
+//    push = true
+    // 跳过测试
+    test.enabled=false
+    applicationName = jar.baseName
+    dockerfile = file('src/main/docker/Dockerfile')
+    doFirst {
+        copy {
+            from war
+            into stageDir
+        }
+    }
+}
+```
+_Dockerfile_
+```dockerfile
+FROM frolvlad/alpine-oraclejdk8:slim
+VOLUME /tmp
+ # 这里的和打包出来的文件名一致就行了
+ADD weixin-1.0.0.war app.war
+# ENTRYPOINT ["java","-Djava.security.egd=file:/dev/./urandom","-jar","/app.war"]
+ENTRYPOINT ["java","-jar","/app.war"]
+```
+- `gradle buildDocker` 即可构建镜像
 
 ************************
 ## 集成测试

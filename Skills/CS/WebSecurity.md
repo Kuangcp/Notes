@@ -9,7 +9,7 @@
         - [XSS](#xss)
     - [JWT](#jwt)
 
-`目录 end` |_2018-04-24_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
+`目录 end` |_2018-04-27_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
 ****************************************
 # Web安全
 > 关注常见的比如 XSS CSRF SQL注入 上传等问题的原理和修复方案。还有密码安全也基本上是面试必考点。
@@ -69,6 +69,8 @@
 
 
 ## JWT
+> [理解JWT的使用场景和优劣](http://www.qingpingshan.com/rjbc/java/384762.html)
+
 - [Blog:通过使用JWT来防御CSRF](https://segmentfault.com/a/1190000003716037)  
 - [Blog:介绍JWT](blog.leapoahead.com/2015/09/06/understanding-jwt/)`其实JWT还经常用于设计用户认证和授权系统，甚至实现Web应用的单点登录。`  
 - [Blog:单点登录](http://blog.leapoahead.com/2015/09/07/user-authentication-with-jwt/)  

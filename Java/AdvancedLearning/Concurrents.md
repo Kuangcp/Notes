@@ -29,7 +29,7 @@
     - [【分支合并框架】](#分支合并框架)
     - [【Java内存模型】](#java内存模型)
 
-`目录 end` |_2018-04-19_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
+`目录 end` |_2018-04-27_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
 ****************************************
 # Java并发
 > [个人相关代码](https://github.com/Kuangcp/JavaBase/tree/master/src/main/java/com/concurrents)  
@@ -155,6 +155,8 @@ public int current(){
 > 正确的做法是 current 方法也要加上synchronized关键字
 
 ### volatile
+> [Java多线程i++线程安全问题，volatile和AtomicInteger解释？](https://segmentfault.com/q/1010000006733274)
+
 - 线程所读的值在使用之前总会从内存中读出来
 - 线程所写的值总会在指令完成之前同步回内存中
     - 可以把围绕该域的操作看成成是一个小的同步块

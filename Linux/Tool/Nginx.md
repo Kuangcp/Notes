@@ -15,9 +15,10 @@
         - [防盗链](#防盗链)
         - [负载均衡](#负载均衡)
         - [跨域问题的配置](#跨域问题的配置)
+            - [静态服务器将后台反代理](#静态服务器将后台反代理)
     - [问题](#问题)
 
-`目录 end` |_2018-04-25_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
+`目录 end` |_2018-04-27_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
 ****************************************
 # Nginx
 
@@ -47,7 +48,9 @@
 ```
 
 ### Docker安装并做反向代理
+> [nginx hub 官方镜像](https://hub.docker.com/r/library/nginx/)
 - 运行命令创建容器运行 `docker run --name youhuigo -d -p 80:80 -v /home/kuang/nginx/conf/:/etc/nginx/conf.d/:ro --link you:web nginx`
+
 `conf 基础配置文件`
 ```
 upstream gitea {
@@ -67,7 +70,8 @@ server {
   }
 }
 ```
-- [配置多域名反向代理](http://www.ttlsa.com/nginx/use-nginx-proxy/) `其实也就是多了 俩 upstream 监听80的server`
+> [配置多域名反向代理](http://www.ttlsa.com/nginx/use-nginx-proxy/) `其实也就是多了 俩 upstream 监听80的server`
+
 ## 命令使用
 `nginx -h 输出`
 ```
@@ -115,6 +119,7 @@ server {
 ```
 再在 `/etc/hosts`文件中配置下域名即可访问
 
+> 在服务器中配置， 出现403错误， 将 /etc/nginx/nginx.conf 中第一行的 user 改成 root
 #### 反向代理多个服务
 - 修改默认配置文件 `/etc/nginx/nginx.conf`
   - 或者更好的就是在 `/etc/nginx/conf.d/`下新建 *.conf 文件，文件名任意
@@ -275,12 +280,34 @@ _SSL 接收到一个超出最大准许长度的记录 要在端口后加上SSL n
 > [Nginx 反向代理 负载均衡 虚拟主机配置](https://segmentfault.com/a/1190000012479902)
 
 ### 跨域问题的配置
-添加如下配置
+需要被跨域访问的一端， 添加如下配置
 ```
 add_header Access-Control-Allow-Origin *;
 add_header Access-Control-Allow-Headers X-Requested-With;
 add_header Access-Control-Allow-Methods GET,POST,OPTIONS; 
 ```
+
+#### 静态服务器将后台反代理
+> 极大地省去了后台的配置！！
+> [Nginx反向代理解决跨域问题](https://segmentfault.com/a/1190000012859206) | [nginx简易使用教程,使用nginx解决跨域问题](https://www.jianshu.com/p/05415981e5e5)
+_配置静态端_
+```
+server {
+    client_max_body_size 4G;
+    listen  80;  ## listen for ipv4; this line is default and implied
+    server_name view.kcp;
+        location /api/ {
+                # add_header 'Access-Control-Allow-Origin' '*';
+                proxy_pass http://127.0.0.1:8889;
+        }
+    location / {
+        root /home/kcp/IdeaProjects/Base/graduate/static;
+    }
+}
+```
+1. 将静态文件交由Nginx进行处理， 后台的服务统一用一个前缀和前台进行区分， 然后将服务端的真实host和ip或者域名配置进来
+2. 这样在于前端看来就是访问 view.kcp/api 而已， 实际上访问的是 127.0.0.1:8889/api 
+> 由于我原先用了nginx反向代理tomcat， 配置一个修改本地host得到的域名， 然后填在这里就没用了， 所以最好使用真实IP或者外网可访问的域名
 
 ****************************
 ## 问题

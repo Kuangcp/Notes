@@ -57,8 +57,9 @@
     - [创建](#创建)
     - [修改](#修改)
         - [【授权】](#授权)
+- [查询](#查询)
 
-`目录 end` |_2018-04-21_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
+`目录 end` |_2018-04-27_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
 ****************************************
 
 # Mysql
@@ -128,6 +129,8 @@ _重启_
     - 导出具体的表就在数据库名后加上 表名
 2. 导出结构和数据就去掉-d参数, 导出具体的表同理
 3. 导入就是执行这个SQL文件就行了 `source /path/to/dbname.sql`
+
+> [java操作：mysql数据库导入、导出](https://blog.csdn.net/EASYgoing00/article/details/72885280)  主要的思想是Java调用系统命令行执行命令后得到导出文件， 然后读取导出的文件 进一步操作
 
 ### 修改
 # TODO 重头戏
