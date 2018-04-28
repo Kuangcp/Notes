@@ -38,11 +38,11 @@
         - [Docker-Swarm](#docker-swarm)
     - [轻量镜像](#轻量镜像)
 
-`目录 end` |_2018-04-27_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
+`目录 end` |_2018-04-28_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
 ****************************************
 # Docker
 > [docker资源汇总 ](http://www.open-open.com/lib/view/open1443075440623.html)
-
+> [简述 Docker](http://www.importnew.com/24658.html)
 *****************************************
 ## 简介
 - `Docker 是一个开源的应用容器引擎` 理解为加强版虚拟机
@@ -385,5 +385,4 @@ frolvlad/alpine-oraclejdk8   slim
 postgres                     alpine
 alpine
 ```
-alpine
 

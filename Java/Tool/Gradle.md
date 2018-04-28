@@ -53,7 +53,7 @@
     - [Jenkin 使用](#jenkin-使用)
         - [下载安装和配置](#下载安装和配置)
 
-`目录 end` |_2018-04-27_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
+`目录 end` |_2018-04-28_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
 ****************************************
 
 # Gradle
@@ -447,6 +447,8 @@ task makeReleaseVersion(type:ReleaseVersionTask){
 [参考博客](http://blog.csdn.net/h3243212/article/details/72374363#%E9%81%87%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98)
 
 ## 构建Docker镜像
+> [用 Docker、Gradle 来构建、运行、发布一个 Spring Boot 应用](http://www.importnew.com/24671.html)
+
 _build.gradle_
 ```groovy
 apply plugin: 'docker'
@@ -481,12 +483,13 @@ _Dockerfile_
 ```dockerfile
 FROM frolvlad/alpine-oraclejdk8:slim
 VOLUME /tmp
- # 这里的和打包出来的文件名一致就行了
-ADD weixin-1.0.0.war app.war
+ # 配置通配符是为了不受版本影响
+ADD weixin*.war app.war
 # ENTRYPOINT ["java","-Djava.security.egd=file:/dev/./urandom","-jar","/app.war"]
 ENTRYPOINT ["java","-jar","/app.war"]
 ```
 - `gradle buildDocker` 即可构建镜像
+- 运行 `docker run --name web --link postgre:db -p 5678:8889 -it 镜像` 注意其中要关联PostgreSQL的容器
 
 ************************
 ## 集成测试
@@ -509,12 +512,12 @@ ENTRYPOINT ["java","-jar","/app.war"]
 
 ## 功能测试
 
-
 **************************
 
 # Gradle插件
 - shadowJar 含依赖进行打包
 - maven 提供maven类似的命令
+- docker 
 **************
 
 # 多语言编程

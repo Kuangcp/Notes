@@ -20,9 +20,12 @@
         - [3.4.Maven多配置环境](#34maven多配置环境)
 - [TODO 子项目编译打包各自独立，怎么整合成一个](#todo-子项目编译打包各自独立怎么整合成一个)
     - [4.maven的依赖](#4maven的依赖)
-        - [4.1.处理项目间依赖方法](#41处理项目间依赖方法)
-        - [4.2.依赖冲突](#42依赖冲突)
-        - [4.3.继承](#43继承)
+        - [4.1 依赖的范围](#41-依赖的范围)
+            - [依赖的传递](#依赖的传递)
+        - [4.2.处理项目间依赖方法](#42处理项目间依赖方法)
+        - [4.3.依赖冲突](#43依赖冲突)
+            - [排除依赖](#排除依赖)
+        - [4.4.继承](#44继承)
     - [5.使用maven新建Web3.0项目](#5使用maven新建web30项目)
         - [5.1.添加web容器](#51添加web容器)
             - [5.1.2.Jetty](#512jetty)
@@ -43,13 +46,14 @@
                 - [Maven](#maven)
             - [后期添加构建](#后期添加构建)
 
-`目录 end` |_2018-04-18_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
+`目录 end` |_2018-04-28_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
 ****************************************
 # Maven
 > [官网](https://maven.apache.org/) | [官网手册](https://maven.apache.org/guides/) | [http://takari.io/ 在线练习网](http://takari.io/)
+> [关于Maven的完整博客](http://tengj.top/2018/01/01/maven/)
 
 ## 1.安装
-* 下载zip包解压，将bin目录配置至PATH（最好是配置HOME然后引用）
+* 下载zip包解压，将bin目录配置至PATH（最好是配置MAVEN_HOME然后引用）
 
 ### 1.1.Maven常用命令
 > mvn [插件]:[目标] [参数]
@@ -155,6 +159,13 @@ mvn install:install-file
      <developers></developers>
      <licenses></licenses>
      <orgnazation></orgnazation>
+
+    <!-- 配置属性 -->
+    <properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <!-- 统一定义版本 -->
+        <springframework.version>1.5.6</springframework.version>
+	</properties>
      <!--依赖-->
      <dependencies>
        <dependency>
@@ -162,7 +173,7 @@ mvn install:install-file
          <artifactId>junit</artifactId>
          <version>3.8.1</version>
          <!--
-            test 表明这个构件只在junit  中可以被引用
+            test 表明这个构件只在test目录下可以被引用
             compile 默认的
             provided 只在编译中引用
             runtime 编译和运行都有效
@@ -286,21 +297,60 @@ mvn install:install-file
 
 ******************
 ## 4.maven的依赖
-### 4.1.处理项目间依赖方法
+### 4.1 依赖的范围
+> 依赖范围就是用来控制依赖和三种classpath(编译classpath，测试classpath、运行classpath)的关系
+
+- `compile`:编译依赖范围。如果没有指定，就会默认使用该依赖范围。使用此依赖范围的Maven依赖，对于编译、测试、运行三种classpath都有效。
+    - 典型的例子是spring-core,在编译、测试和运行的时候都需要使用该依赖。
+- `test`: 测试依赖范围。使用次依赖范围的Maven依赖，只对于测试classpath有效
+    - 在编译主代码或者运行项目的使用时将无法使用此依赖。典型的例子是Jnuit,它只有在编译测试代码及运行测试的时候才需要。
+- `provided`:已提供依赖范围。使用此依赖范围的Maven依赖，对于编译和测试classpath有效，但在运行时候无效。
+    - 典型的例子是servlet-api,编译和测试项目的时候需要该依赖，但在运行项目的时候，由于容器以及提供，就不需要Maven重复地引入一遍。
+- `runtime`:运行时依赖范围。使用此依赖范围的Maven依赖，对于测试和运行classpath有效，但在编译主代码时无效。
+    - 典型的例子是JDBC驱动实现，项目主代码的编译只需要JDK提供的JDBC接口，只有在执行测试或者运行项目的时候才需要实现上述接口的具体JDBC驱动。
+
+| 依赖范围 Scope | 对于编译classpath | 对于测试classpath | 对于运行classpath | Demo | 
+|:----:|:----:|:----:|:----:|:----:|
+| compile | Y | Y | Y | spring-boot-starter-web |
+| test |  | Y |  | Junit |
+| provided | Y | Y |  | servlet-api |
+| runtime |  | Y | Y | JDBC的实现Jar |
+| system | Y | Y |  | Maven仓库之外的类库文件 |
+
+#### 依赖的传递
+- 比如一个account-email项目为例
+    - account-email有一个compile范围的spring-code依赖，
+    - spring-core有一个compile范围的commons-logging依赖，
+- 那么commons-logging就会成为account-email的compile的范围依赖，commons-logging是account-email的一个传递性依赖
+
+### 4.2.处理项目间依赖方法
+```
 项目A依赖B
 A项目 pom.xml中配置依赖 （构件三要素）
 B项目 先clean package
       然后build 的 install
 A 项目 compile
+```
 
-### 4.2.依赖冲突
+### 4.3.依赖冲突
 - 依赖路径短优先
    - 1 A->B->C->X(jar文件)
    - 2 A->C->X(jar文件)
    - 会选择 2 中的X的jar版本
 - 先声明的优先
 
-### 4.3.继承
+#### 排除依赖
+`对应的<dependency>标签中添加`
+```xml
+<exclusions>
+    <exclusion>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-logging</artifactId>
+    </exclusion>
+</exclusions>
+```
+
+### 4.4.继承
 > 新建一个项目作为父项目  
 > 然后在需要引用父项目的子项目pom文件中, 加上parent 标签里面写上 父项目的三要素
 

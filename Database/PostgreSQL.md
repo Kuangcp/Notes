@@ -19,7 +19,7 @@
         - [Java使用](#java使用)
     - [基础数据](#基础数据)
 
-`目录 end` |_2018-04-26_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
+`目录 end` |_2018-04-28_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
 ****************************************
 # Postgresql
 
@@ -84,7 +84,7 @@
     USER postgres
     CMD ["/usr/lib/postgresql/9.4/bin/postgres", "-D", "/var/lib/postgresql/9.4/main", "-c", "config_file=/etc/postgresql/9.4/main/postgresql.conf"]
 ```
-- 构建容器 `docker build --rm=true -t mypostgresql:9.4 .`
+- 构建容器 `docker build -t mypostgresql:9.4 .`
     - 运行容器 `docker run --name mypostgre -i -t -p 5432:5432 mypostgresql:9.4`
     - 使用客户端连接`psql -h localhost -p 5432 -U pger -W pgerdb` 口令：`pger`
 
