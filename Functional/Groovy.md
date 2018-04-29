@@ -10,6 +10,7 @@
             - [数字处理](#数字处理)
             - [变量，动态和静态类型，作用域](#变量动态和静态类型作用域)
             - [列表和映射语法](#列表和映射语法)
+        - [调用命令行](#调用命令行)
     - [与Java的差异](#与java的差异)
         - [Java不具备的Groovy特性](#java不具备的groovy特性)
     - [Groovy和Java的交互](#groovy和java的交互)
@@ -17,7 +18,7 @@
         - [Java调用Groovy](#java调用groovy)
     - [Grails](#grails)
 
-`目录 end` |_2018-04-08_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
+`目录 end` |_2018-04-28_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
 ****************************************
 # Groovy
 - Groovy 具有的Java所没有的语言特性 ：
@@ -86,6 +87,13 @@ import java.util.*
     - 列表：`lists = ['2', 2, new Date()]` 其实这个和Python的语法差不多，同样的支持负索引
     - 映射：`maps = [Java:"2", A:2]` 声明Maps
     - [列表和映射的学习代码](https://github.com/kuangcp/JavaBase/blob/master/src/main/groovy/com/learn/base/LearnListAndMap.groovy)
+
+### 调用命令行
+> [Groovy 执行"cp *"shell 命令 ](http://www.guanggua.com/question/183352-groovy-execute-cp-shell-command.html)
+
+1. 字符串.execute()
+2. 字符串数组.execute() 这种更好些，尤其是多个参数的时候
+    - 写法和Dockerfile一致 ` ["sh", "-c", "cp src/*.txt dst/"].execute()`
 
 ************
 ## 与Java的差异
