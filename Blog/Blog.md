@@ -52,6 +52,7 @@
 - [chenssy ](http://cmsblogs.com/)`技术较新 Java博客网`
 - [java3y](https://zhongfucheng.bitcron.com/)`技术比较全面`
 - [tengj](http://tengj.top/)`SpringBoot了解深入`
+- [dreamlikes](http://dreamlikes.cn/)`Java后台开发`
 
 ## 博客能人
 - [赵劼](http://www.cnblogs.com/JeffreyZhao/) `对函数式编程，并行程序开发，代码之美以及程序员能力与修养等相关问题`

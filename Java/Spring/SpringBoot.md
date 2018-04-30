@@ -30,6 +30,8 @@
 - [Springboot探索](https://juejin.im/post/598dd709f265da3e213f0c57)
 - [SpringBoot入门](http://blog.csdn.net/jsyxcjw/article/details/46763639)
 
+- [一系列专栏](https://github.com/guoxiaoxu/guo-projects/tree/master/guns-admin/note)
+
 ## 开始使用
 > 使用Idea的话就可以直接创建项目 使用别的可以下载zip进行导入 [官方下载地址](http://start.spring.io/)
 

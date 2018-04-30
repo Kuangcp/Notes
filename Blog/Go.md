@@ -9,3 +9,5 @@
 - [学习Go的知乎话题](https://www.zhihu.com/question/23486344)
 - [Go相关书籍的知乎话题](https://www.zhihu.com/question/30461290)
 - [Go1.0的吐槽](http://blog.csdn.net/liigo/article/details/23699459)
+- [Java 20年：转角遇到Go](http://www.infoq.com/cn/news/2015/05/java20-from-language-to-platform)
+

@@ -296,10 +296,10 @@ server {
     client_max_body_size 4G;
     listen  80;  ## listen for ipv4; this line is default and implied
     server_name view.kcp;
-        location /api/ {
-                # add_header 'Access-Control-Allow-Origin' '*';
-                proxy_pass http://127.0.0.1:8889;
-        }
+    location /api/ {
+            # add_header 'Access-Control-Allow-Origin' '*';
+            proxy_pass http://127.0.0.1:8889;
+    }
     location / {
         root /home/kcp/IdeaProjects/Base/graduate/static;
     }
