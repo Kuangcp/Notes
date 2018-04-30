@@ -2,6 +2,9 @@
 - [2017年](/Article/backup/Process_2017.md)
 - [2016年](/Article/backup/Process_2016.md)
 
+## 2018-04-30 23:18:42
+- 从实现规范去学习,
+
 ## 2018-04-28 08:28:02
 - 一直想到的是Gradle插件可能出问题了，没想到是IDEA的lombok插件不认识这个最新的IDEA，还好升级就解决了
     - 所以问题来了 Maven 和 Gradle中添加的Lombok依赖是干嘛的。

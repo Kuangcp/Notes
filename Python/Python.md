@@ -12,12 +12,14 @@
             - [列表](#列表)
             - [元组](#元组)
             - [字符串](#字符串)
-            - [字符串编码问题(python 2问题)：](#字符串编码问题python-2问题)
+            - [字符串编码问题(python2问题)](#字符串编码问题python2问题)
             - [字典（键值对）](#字典（键值对）)
         - [运算符](#运算符)
         - [模块](#模块)
     - [【输入输出】](#输入输出)
         - [读取命令行参数](#读取命令行参数)
+            - [docopt](#docopt)
+            - [Python Fire](#python-fire)
     - [【函数】](#函数)
     - [【类】](#类)
             - [继承](#继承)
@@ -37,7 +39,7 @@
         - [自行安装](#自行安装)
     - [QT](#qt)
 
-`目录 end` |_2018-04-24_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
+`目录 end` |_2018-05-01_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
 ****************************************
 # Python
 > [Python初学者（零基础学习Python、Python入门）书籍、视频、资料、社区推荐](https://github.com/Yixiaohan/codeparkshare)
@@ -175,7 +177,7 @@
 
 
 ***************************************
-#### 字符串编码问题(python 2问题)：
+#### 字符串编码问题(python2问题)
 - [ Python 3的bytes/str之别 ](http://www.ituring.com.cn/article/1116)
 ![str和bytes的关系](https://raw.githubusercontent.com/Kuangcp/ImageRepos/masters/Tech/python/str_bytes.jpeg)
 
@@ -283,11 +285,11 @@
     - `--file=error.txt`
 - 让一个脚本同时支持短选项和长选项 `getopt.getopt(sys.argv[1:], "hi:o:", ["version", "file="]) `
 
-_docopt_ 
+#### docopt
 > [Github地址](https://github.com/docopt/docopt) | 在脚本头部添加文档来实现读取参数的便捷
 会读取输入返回字典对象,可以很方便的读取输入的参数,但是需要书写大量文档, 适合参数比较多的时候,一眼过去简洁明了
 
-_Python Fire_
+#### Python Fire
 > [Github地址](https://github.com/google/python-fire)快速的简洁的生成CLI
 > 不过要自己书写帮助文档输出,小量参数的话,开发十分的便利 可以和类一起,也可以和方法一起
 

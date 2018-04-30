@@ -2,8 +2,11 @@
  
 - [Gradle](#gradle)
     - [前言](#前言)
-    - [发行版本](#发行版本)
+    - [发行版本列表](#发行版本列表)
         - [4.6](#46)
+    - [优缺点](#优缺点)
+        - [优点](#优点)
+        - [缺点](#缺点)
     - [安装配置](#安装配置)
         - [SDKMAN方式](#sdkman方式)
         - [Chocolate](#chocolate)
@@ -53,7 +56,7 @@
     - [Jenkin 使用](#jenkin-使用)
         - [下载安装和配置](#下载安装和配置)
 
-`目录 end` |_2018-04-28_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
+`目录 end` |_2018-05-01_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
 ****************************************
 
 # Gradle
@@ -62,11 +65,26 @@
 > [极客学院 教程](https://wiki.jikexueyuan.com/project/GradleUserGuide-Wiki/introduction.html)
 
 
-## 发行版本
+## 发行版本列表
+> [官方网址](http://services.gradle.org/) 有各个版本的下载以及版本发行说明
 > 似乎版本越高，内存占用越大， 从4.7降级回了4.2
+
 ### 4.6
 > [发行说明](https://docs.gradle.org/4.6/release-notes.html?_ga=2.214014495.909415461.1519975016-498617321.1519975016#dependency-constraints-for-transitive-dependencies) | `支持Junit5, 还有解决依赖冲突的一种声明式方式`
 
+## 优缺点
+> 相关博客 [Gradle大吐槽](https://blog.csdn.net/MCL529/article/details/79341706)
+
+### 优点 
+1. 相对于Maven, 配置文件简洁了很多, 所以才入坑学习使用的
+2. 对于一些需要自定义的任务,因为核心为Groovy,所以实现能力高
+	- 例如:将一个SpringBoot项目构建成一个镜像,并tag上当前构建的镜像为release,然后删除旧有容器,使用新的镜像启动容器
+
+### 缺点
+1. 内存占用巨大,存在内存泄露问题, 以至于在IDEA上不敢使用自动导入, 不然每动一下build.gradle 就会卡半天, 8G内存都不够用!!
+2. 编译速度慢, 如果和Maven进行对比, 编译速度和资源占用确实慢
+3. 
+********************
 ## 安装配置
 > 和maven使用同一个本地库 只要加上 M2_HOME 环境变量即可, 值和 MAVEN_HOME 一样, 并没有用
 
