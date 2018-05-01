@@ -60,7 +60,7 @@
     - [安全工具](#安全工具)
         - [gpg](#gpg)
 
-`目录 end` |_2018-04-26_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
+`目录 end` |_2018-05-02_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
 ****************************************
 # 软件使用记事
 ## 【包管理】
@@ -356,9 +356,13 @@ CMD编辑器
 *********************************************
 ## 【浏览器】
 ### FireFox
-> [开发者版本链接](https://www.mozilla.org/zh-CN/firefox/developer/) | [其他版本](https://www.mozilla.org/zh-CN/firefox/channel/desktop/)
+> [开发者版本链接](https://www.mozilla.org/zh-CN/firefox/developer/) | [其他发行版本](https://www.mozilla.org/zh-CN/firefox/channel/desktop/)
 
-- 分为 正式版， beta， Nightly 开发版 `因为那个插件标准的缘故 56 和 57 插件不共享`
+> [所有正式版](https://www.mozilla.org/en-US/firefox/releases/) | [FTP下载地址](http://ftp.mozilla.org/pub/firefox/releases/)
+
+`57为全新的Quantum版本， 因为插件标准的缘故和之前的56版本插件不兼容`
+
+- 分为 正式版， beta， Nightly 开发版 
 - 如果要配置多个火狐在电脑上 终端中 `./firefox -P` 就会进入配置文件的编辑（关闭所有火狐的情况下）
     - 新建一个就好了，之后就用新建的打开该火狐`./firefox -P name`
 - 如果要同时开多个火狐 加上`--no-remote`参数，但是我这个deepin不要诶，但是Ubuntu mint加上也没有用
