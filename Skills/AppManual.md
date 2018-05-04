@@ -49,6 +49,7 @@
             - [【debug】](#debug)
     - [【浏览器】](#浏览器)
         - [FireFox](#firefox)
+            - [开发版本](#开发版本)
             - [必备插件](#必备插件)
         - [seamonkey](#seamonkey)
         - [Chrome](#chrome)
@@ -60,7 +61,7 @@
     - [安全工具](#安全工具)
         - [gpg](#gpg)
 
-`目录 end` |_2018-05-02_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
+`目录 end` |_2018-05-05_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
 ****************************************
 # 软件使用记事
 ## 【包管理】
@@ -356,20 +357,23 @@ CMD编辑器
 *********************************************
 ## 【浏览器】
 ### FireFox
-> [开发者版本链接](https://www.mozilla.org/zh-CN/firefox/developer/) | [其他发行版本](https://www.mozilla.org/zh-CN/firefox/channel/desktop/)
-
-> [所有正式版](https://www.mozilla.org/en-US/firefox/releases/) | [FTP下载地址](http://ftp.mozilla.org/pub/firefox/releases/)
+> [所有桌面版](https://www.mozilla.org/zh-CN/firefox/channel/desktop/) | [所有正式版](https://www.mozilla.org/en-US/firefox/releases/) | [FTP下载地址](http://ftp.mozilla.org/pub/firefox/releases/)
 
 `57为全新的Quantum版本， 因为插件标准的缘故和之前的56版本插件不兼容`
 
 - 分为 正式版， beta， Nightly 开发版 
 - 如果要配置多个火狐在电脑上 终端中 `./firefox -P` 就会进入配置文件的编辑（关闭所有火狐的情况下）
     - 新建一个就好了，之后就用新建的打开该火狐`./firefox -P name`
-- 如果要同时开多个火狐 加上`--no-remote`参数，但是我这个deepin不要诶，但是Ubuntu mint加上也没有用
+    - 如果要同时运行多种版本的火狐 加上`--no-remote`参数，但是我这个deepin不要诶，只要配置不同即可，但是Ubuntu mint加上也没有用
 
-> 火狐和Chrome都支持在控制台的网络中直接右击一个请求然后复制, 就可以出来复制成cURL命令的选项, 比较好用
+- 火狐和Chrome都支持在控制台的网络中直接右击一个请求然后复制, 就可以出来复制成cURL命令的选项, 比较好用
 
 > [火狐性能优化贴](https://www.xzcblog.com/post-47.html)
+
+#### 开发版本
+> [开发者版本链接](https://www.mozilla.org/zh-CN/firefox/developer/) 
+> [使用说明文档](https://developer.mozilla.org/zh-CN/docs/Tools?utm_source=devtools&utm_medium=tabbar-menu)
+
 **************************************************
 #### 必备插件
 > [插件开发相关](https://github.com/Kuangcp/LearnWebExtension)
