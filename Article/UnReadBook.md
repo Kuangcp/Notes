@@ -57,6 +57,7 @@
 - Java编程思想 需要精读
 - Java核心技术 卷1 基础知识 卷2 高级特性
 - 实战java高并发程序设计
+- 深入理解Java虚拟机
 
 ### Git
 - GitHub实践  [美] Chris Dawson , [美] Ben Straub (作者) 安道 (译者) 
