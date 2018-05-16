@@ -18,7 +18,7 @@
     - [生活](#生活)
     - [商业](#商业)
 
-`目录 end` |_2018-04-28_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
+`目录 end` |_2018-05-16_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
 ****************************************
 
 > 只用来记录非技术类的文章,技术类的直接放到对应的笔记中去
@@ -153,7 +153,7 @@ _如何将脑海中的思维火花转化为代码_
 
 - [我的 2017 ：追逐更好未来的一年 ](http://blog.csdn.net/u011240877/article/details/78967014)
 - [《程序员的成长课》:少走5年弯路](http://blog.csdn.net/IMbRl71u7pt5X29rlEu7/article/details/78746265)
-
+- [阮一峰的随笔](http://www.ruanyifeng.com/blog/essays/)
 ## 商业
 - [都说在做某界的 Airbnb，Airbnb 到底做了什么](http://daily.zhihu.com/story/4826947)
 
