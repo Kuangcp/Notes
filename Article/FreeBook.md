@@ -10,12 +10,13 @@
     - [前端](#前端)
     - [Docker](#docker)
 
-`目录 end` |_2018-04-12_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
+`目录 end` |_2018-05-21_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
 ****************************************
 # 【Book】
 > 在线书籍以及GitBook
 
 - [陈光剑的免费图书馆](https://universsky.github.io/)`Kotlin极简教程的作者`
+    - [陈光剑先生的学习方式](https://github.com/judasn/hexo-blog/blob/master/2016/02/My-Learning-Way.md) 
 - [Github某仓库](https://github.com/EbookFoundation/free-programming-books)
 - [bookstack](https://www.bookstack.cn/)
 

@@ -13,8 +13,9 @@
     - [apache 体系](#apache-体系)
 - [分析日志](#分析日志)
     - [Linux上查看日志](#linux上查看日志)
+    - [lnav](#lnav)
 
-`目录 end` |_2018-05-02_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
+`目录 end` |_2018-05-21_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
 ****************************************
 # 日志系统
 ## slf4j 体系
@@ -316,4 +317,9 @@ _4.另外还有SocketAppender、SMTPAppender、DBAppender、SyslogAppender、Sif
 
 # 分析日志
 ## Linux上查看日志
-> [Linux常用的日志分析命令与工具 ](https://yq.aliyun.com/articles/388039)
+> [Linux常用的日志分析命令与工具 ](https://yq.aliyun.com/articles/388039) `其中就是使用简单的cat less awk sed`
+
+## lnav
+> 一个专门用于浏览日志文件的软件  | [官网](http://lnav.org/) | [文档](http://lnav.readthedocs.io/en/latest/)
+> [博客: LNAV：基于 Ncurses 的日志文件阅读器 ](https://linux.cn/article-6677-1.html)
+

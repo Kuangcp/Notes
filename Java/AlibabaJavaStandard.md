@@ -26,7 +26,7 @@
 - [安全规约](#安全规约)
     - [注意](#注意)
 
-`目录 end` |_2018-04-21_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
+`目录 end` |_2018-05-21_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
 ****************************************
 # 阿里巴巴Java开发手册终极版
 检查工具
@@ -79,6 +79,7 @@
        - 数据传输对象 ***DTO*** 是业务领域相关的名称
        - 展示对象 ***VO*** 是网页名称 使用了模板框架
        - POJO是 ***DO DTO BO VO*** 统称
+       - 有关这些缩写的详细说明  [相关](/Java/AdvancedLearning/GrammarAndType.md#pojo)
 
 `Tomcat推荐`
 - 使用空格进行缩进，而不是制表符
@@ -312,7 +313,6 @@ public int compare(Student o1, Student o2) {
 - |利用 Set元素唯一的特性，可以快速对一个集合进行去重操作，避免使用 List的contains 方法进行遍历、对比、去重操作。
     - OrderSet也是一个很重要的类
 
-2018-01-02 21:46:03
 ## 并发处理
 - 获取单例对象需要保证线程安全，其中的方法也要保证线程安全。
     - 资源驱动类、工具类、单例工厂类都需要注意。

@@ -32,6 +32,8 @@
         - [textadept](#textadept)
         - [Sublime](#sublime)
         - [VSCode](#vscode)
+            - [快捷键](#快捷键)
+            - [代码片段](#代码片段)
             - [插件](#插件)
         - [Gedit](#gedit)
         - [小书匠](#小书匠)
@@ -61,7 +63,7 @@
     - [安全工具](#安全工具)
         - [gpg](#gpg)
 
-`目录 end` |_2018-05-05_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
+`目录 end` |_2018-05-21_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
 ****************************************
 # 软件使用记事
 ## 【包管理】
@@ -223,7 +225,7 @@ _批量修改_
 > 简洁的编辑器，可配置挺多，打开速度快
 
 ### textadept
-> 基于前者进行开发，十分简洁，有着和sublime的外观和速度，没有他的强大但也没有他的bug！
+> 基于前者进行开发，十分简洁，有着和sublime的外观和速度，没有他的功能强大但也没有他的烦心bug！
 > [官方手册](https://foicica.com/textadept/manual.html)
 
 - Github 地址[textadept](https://github.com/rgieseke/textadept/)
@@ -244,18 +246,19 @@ _批量修改_
 
 ************************************
 ### VSCode
-> [官网](https://code.visualstudio.com/)
+> [官网](https://code.visualstudio.com/) 码笔记，码Python 比较方便，目录树，预览，整合终端
 
-- 码笔记，码Python 比较方便，目录树，预览，整合终端
-- [快捷键](https://code.visualstudio.com/shortcuts/keyboard-shortcuts-linux.pdf)
-    - 快速打开文件 Ctrl P 
-    - 命令模式 Ctrl Shift P 
-    - 设置用户快捷键 Ctrl+K Ctrl+S  Keyboard Shortcuts
-    - Ctrl Shift C 在当前打开的文件夹下打开系统默认终端
+#### 快捷键
+> [快捷键官方PDF说明](https://code.visualstudio.com/shortcuts/keyboard-shortcuts-linux.pdf)
+- 快速打开文件 `Ctrl P` 弹出的输入框键入 `>` 作为前缀 就是执行一些命令了
+- 命令模式 `Ctrl Shift P` 
+- 设置用户快捷键 `Ctrl+K Ctrl+S`  Keyboard Shortcuts
+- `Ctrl Shift C `在当前打开的文件夹下打开系统默认终端
+- `Ctrl T` 快速搜索打开所有Markdown 的标题 
 
 - [使用vscocd进行python开发](http://www.cnblogs.com/bloglkl/archive/2016/08/23/5797805.html)
 
-_代码片段_
+#### 代码片段
 > 配置地点 文件-首选项-用户代码片段 可以新建一个代码片段  
 > 可以放在一个github仓库里方便备份,然后建立一个软链接即可, 
 >> 默认是放在用户的配置目录下 `/home/kcp/.config/Code/User/snippets/`
@@ -273,6 +276,8 @@ vscode-icons
 Beautify
 Auto Rename Tag
 Todo Tree 
+
+1.23版本之后还要安装 Chinese language package 也就是汉化包
 
 ************
 ### Gedit
@@ -330,7 +335,7 @@ CMD编辑器
 ******************************
 ## 【IDE】
 ### Idea
-[更多](/Java/Tool/IDEA.md)
+> [更多](/Java/Tool/IDEA.md)
 
 ### eclipse
 

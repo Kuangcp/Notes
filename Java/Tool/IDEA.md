@@ -16,7 +16,7 @@
     - [插件](#插件)
     - [启动配置](#启动配置)
 
-`目录 end` |_2018-05-03_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
+`目录 end` |_2018-05-21_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
 ****************************************
 
 # IDEA 使用笔记
@@ -240,6 +240,8 @@ _tips_
 - Jrebel
     - 热部署插件, 需要付费
     
+- GoogleTranslation
+    - Ctrl Alt 1 快速翻译选中的单词和语句
 
 ## 启动配置
 > [官网文档](https://www.jetbrains.com/help/idea/increasing-memory-heap.html)

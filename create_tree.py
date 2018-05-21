@@ -44,7 +44,8 @@ def handlerFile(name,count,path):
     temp = temp+'* '
     # print(temp,'[-',name,'-](./',path,')')
     if not name in ignoreFile:
-        result.append(temp+'[ '+name[:-3]+' ](./'+path+')')
+        result.append(temp+'[ '+name[:-3]+' ](/'+path+')')
+        # result.append(temp+'[['+name[:-3]+'|/'+path+']]')
         # result.append("<a href='"+path+"'>"+name[:-3]+"</a>")
 
 # 处理标题(文件夹)
