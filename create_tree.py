@@ -4,22 +4,19 @@ import getopt
 import subprocess
 
 '''
-    通过运行脚本，读取文件夹的文件生成目录，为了gitbook
-    使用： python3 readFolder_tree -h 查看帮助
+    通过运行脚本，读取文件夹的文件生成目录，为了gitbook和wiki
+    使用： python3 create_tree.py -h 查看帮助
 '''
 # 忽略的文件夹
 ignoreFolder=['.git', 'backup']
 # 所有要被忽略的文件
 ignoreFile=['PULL_REQUEST_TEMPLATE.md', 'ISSUE_TEMPLATE.md', 'CODE_OF_CONDUCT.md',
-       'README.md', 'CSS3.md', 'HTML5.md']
-
-flag_show=False
-flag_append=False
+       'README.md', 'CSS3.md', 'HTML5.md', '_Sidebar.md']
 result = []
 
 def showHelp():
     print("使用: python3 readFolder_tree.py [-s] [-a] [-h] ")
-    print("参数说明: \n -s     : 控制台显示生成的目录\n -a     : 生成的目录追加到文件中去\n -h     : 帮助")
+    print("参数说明: \n -s     : 控制台显示生成的目录\n -a     : 生成的目录追加到文件中去\n -w     : 生成Wiki格式目录\n -h     : 帮助")
 
 # 列出所有文件的列表 并排好序
 def listFiles(name):
@@ -37,79 +34,69 @@ def listFiles(name):
     return lists 
         
 # 处理文件
-def handlerFile(name,count,path):
-    temp=''
-    for i in range(1,count+1,1):
-        temp = temp+'    '
-    temp = temp+'* '
-    # print(temp,'[-',name,'-](./',path,')')
+def handlerFile(name, count, path, wiki=False):
+    temp = '    '*count
     if not name in ignoreFile:
-        result.append(temp+'[ '+name[:-3]+' ](/'+path+')')
-        # result.append(temp+'['+name[:-3]+']('+name[:-3]+')')  # wiki 目录
-        # result.append("<a href='"+path+"'>"+name[:-3]+"</a>")
+        if wiki == False:
+            result.append(temp+'* [ '+name[:-3]+' ](/'+path+')')
+        else:
+            result.append(temp+'* ['+name[:-3]+']('+name[:-3]+')')  # wiki 目录
 
 # 处理标题(文件夹)
-def handlerFolder(name,count):
-    ''''''
-    temp=''
-    for i in range(1,count,1):
-        temp = temp+'    '
-    temp = temp+'* '
-    # 输出文件夹目录
-    #print(temp,name.split('/'))
-    result.append(temp+'【 '+name+' 】') 
-
+def handlerFolder(name, count):
+    temp = '    '*(int(count)-1)
+    result.append(temp+'* 【 '+name+' 】') 
 
 # 递归 读取文件夹
-def readFolder(name,count):
-    if(os.path.isdir(name)):
-        handlerFolder(name,count)
-        for fold in listFiles(name):
-            if fold in ignoreFolder:
-                continue
-            if not os.path.isdir(name+'/'+fold):
-                #print("不是目录--------",fold)
-                handlerFile(fold,count,name+'/'+fold)
-            
-            readFolder(name+'/'+fold,count+1)
-
-
-
-Folders = os.listdir('./')
-Folders.sort()
-# 处理根目录下的md文件
-for fold in Folders:
-    if fold.endswith('.md'):
-        if fold in ignoreFile:
+def readFolder(name, count, wiki=False):
+    handlerFolder(name,count)
+    for fold in listFiles(name):
+        if fold in ignoreFolder:
             continue
-        #print("md::::"+fold)
-        result.append("* [ "+fold[:-3]+" ](./"+fold+")")
-        # result.append("<a href='"+fold+"'>"+fold[:-3]+"</a>")
+        if not os.path.isdir(name+'/'+fold):
+            handlerFile(fold, count, name+'/'+fold, wiki)
+        else:
+            readFolder(name+'/'+fold, count+1, wiki)
 
-# 得到根目录下所有文件夹，然后开始递归得到所有文件       
-for fold in Folders:
-    if(os.path.isdir(fold)):
-        if(fold in ignoreFolder):
-            continue
-        readFolder(fold,1)
+def readAll(wiki=False):
+    Folders = os.listdir('./')
+    Folders.sort()
+    # 处理根目录下的md文件
+    for fold in Folders:
+        if fold.endswith('.md') and not fold in ignoreFile:
+            if wiki == False:
+                result.append("* [ "+fold[:-3]+" ](./"+fold+")")
+            else:
+                result.append("* [ "+fold[:-3]+" ]("+fold[:-3]+")")
+    # 得到根目录下所有文件夹，然后开始递归得到所有文件       
+    for fold in Folders:
+        if os.path.isdir(fold) and not fold in ignoreFolder :
+            readFolder(fold, 1, wiki)
 
 # 处理参数
-opts, args = getopt.getopt(sys.argv[1:], "sha")
+opts, args = getopt.getopt(sys.argv[1:], "shaw")
 for op,value in opts:
     # 只在终端输出
     if op == "-s":
+        readAll()
         for res in result:
             print(res) 
-    # 追加到gitbook的目录文件中
+    # 追加到SUMMARY
     elif op == "-a":
+        readAll()
         subprocess.call('mv SUMMARY.md SUMMARY.md.bak',shell=True)
         with open('SUMMARY.md','w+') as dest:
             dest.write('# Summary\n\n* [Introduction](README.md)\n\n')
             for res in result:
                 dest.write(res+'\n')
         print('重新生成目录树完成!')
+    # 追加到 _Sidebar.md
+    elif op == "-w":
+        readAll(True)
+        with open('_Sidebar.md','w+') as dest:
+            dest.write('* [Introduction](Home.md)\n')
+            for res in result:
+                dest.write(res+'\n')
     # 帮助信息
     elif op == "-h":
         showHelp()
-
-
