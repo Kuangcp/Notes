@@ -18,7 +18,7 @@
     - [生活](#生活)
     - [商业](#商业)
 
-`目录 end` |_2018-04-28_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
+`目录 end` |_2018-04-14_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
 ****************************************
 
 > 只用来记录非技术类的文章,技术类的直接放到对应的笔记中去
@@ -51,7 +51,7 @@
 
 - [chenssy ](http://cmsblogs.com/)`技术较新 Java博客网`
 - [java3y](https://zhongfucheng.bitcron.com/)`技术比较全面`
-- [tengj](http://tengj.top/)`SpringBoot了解深入`
+- [tengj](http://tengj.top/)`SpringBoot了解深入 `
 
 ## 博客能人
 - [赵劼](http://www.cnblogs.com/JeffreyZhao/) `对函数式编程，并行程序开发，代码之美以及程序员能力与修养等相关问题`
