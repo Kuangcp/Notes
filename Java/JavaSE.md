@@ -6,7 +6,7 @@
     - [【深入】](#深入)
     - [【抽象】](#抽象)
 
-`目录 end` |_2018-04-08_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
+`目录 end` |_2018-05-16_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
 ****************************************
 # 计算机基础
 
@@ -43,5 +43,5 @@
 
 ## 【抽象】
 >- [编程思想](/Java/AdvancedLearning/ProgramThinking.md)  
->- [模式之禅](/Java/模式之禅.md)
+>- [模式之禅](/Java/ZenOfPattern.md.md)
 

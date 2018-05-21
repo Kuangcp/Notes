@@ -11,8 +11,10 @@
             - [设置loger：](#设置loger)
             - [详解<appender>](#详解<appender>)
     - [apache 体系](#apache-体系)
+- [分析日志](#分析日志)
+    - [Linux上查看日志](#linux上查看日志)
 
-`目录 end` |_2018-04-08_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
+`目录 end` |_2018-05-02_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
 ****************************************
 # 日志系统
 ## slf4j 体系
@@ -311,3 +313,7 @@ _4.另外还有SocketAppender、SMTPAppender、DBAppender、SyslogAppender、Sif
 ## apache 体系
 - [apache的简单示例](https://github.com/Kuangcp/Notes/blob/master/ConfigFiles/Log/log4j.xml)
 
+
+# 分析日志
+## Linux上查看日志
+> [Linux常用的日志分析命令与工具 ](https://yq.aliyun.com/articles/388039)

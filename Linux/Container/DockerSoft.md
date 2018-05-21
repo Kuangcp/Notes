@@ -23,10 +23,11 @@
         - [简易git-daemon](#简易git-daemon)
         - [Gogs](#gogs)
         - [Gitea](#gitea)
+            - [配置](#配置)
     - [在线IDE](#在线ide)
         - [Coding平台的WebIDE](#coding平台的webide)
 
-`目录 end` |_2018-04-10_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
+`目录 end` |_2018-05-16_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
 ****************************************
 # 使用Docker安装软件
 > [如何创建尽可能小的Docker容器教程](http://www.open-open.com/lib/view/open1419760974078.html)
@@ -147,10 +148,24 @@ TODO  日后更新, Dockerfile现在还有bug
     git daemon --export-all --base-path="/root/Repository" --port=55443
 ```
 ### Gogs
+
 ### Gitea
 - [docker 安装 gitea](https://docs.gitea.io/en-us/install-with-docker/) `gitea是一个自助git服务，基于git`
     - [中文版](https://docs.gitea.io/zh-cn/install-with-docker/)
 - [gitea配置文件说明](https://docs.gitea.io/zh-cn/config-cheat-sheet/)
 
+#### 配置
+> 配置SSH
+只要没有禁用掉SSH, 就能和Github一样使用SSH操作仓库, 但是,由于使用的Docker, 所以端口不是默认的22  
+所以在本机需要配置下 例如我的就是 6002映射到了22上
+`~/.ssh/config`
+```conf
+Host git.kuangcp.com
+HostName 111.111.111.111
+User git
+Port 6002
+IdentityFile /home/kcp/.ssh/id_rsa
+```
+然后就能正常使用了
 ## 在线IDE
 ### Coding平台的WebIDE

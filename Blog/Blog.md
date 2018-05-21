@@ -18,7 +18,11 @@
     - [生活](#生活)
     - [商业](#商业)
 
+<<<<<<< HEAD
 `目录 end` |_2018-04-14_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
+=======
+`目录 end` |_2018-05-16_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
+>>>>>>> f5a04d07c9a22126f0b47ce8ae8ab8e19ea7fe45
 ****************************************
 
 > 只用来记录非技术类的文章,技术类的直接放到对应的笔记中去
@@ -51,7 +55,9 @@
 
 - [chenssy ](http://cmsblogs.com/)`技术较新 Java博客网`
 - [java3y](https://zhongfucheng.bitcron.com/)`技术比较全面`
-- [tengj](http://tengj.top/)`SpringBoot了解深入 `
+
+- [tengj](http://tengj.top/)`SpringBoot了解深入`
+- [dreamlikes](http://dreamlikes.cn/)`Java后台开发`
 
 ## 博客能人
 - [赵劼](http://www.cnblogs.com/JeffreyZhao/) `对函数式编程，并行程序开发，代码之美以及程序员能力与修养等相关问题`
@@ -152,7 +158,7 @@ _如何将脑海中的思维火花转化为代码_
 
 - [我的 2017 ：追逐更好未来的一年 ](http://blog.csdn.net/u011240877/article/details/78967014)
 - [《程序员的成长课》:少走5年弯路](http://blog.csdn.net/IMbRl71u7pt5X29rlEu7/article/details/78746265)
-
+- [阮一峰的随笔](http://www.ruanyifeng.com/blog/essays/)
 ## 商业
 - [都说在做某界的 Airbnb，Airbnb 到底做了什么](http://daily.zhihu.com/story/4826947)
 

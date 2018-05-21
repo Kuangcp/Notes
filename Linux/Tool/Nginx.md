@@ -18,7 +18,7 @@
             - [静态服务器将后台反代理](#静态服务器将后台反代理)
     - [问题](#问题)
 
-`目录 end` |_2018-04-27_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
+`目录 end` |_2018-05-03_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
 ****************************************
 # Nginx
 
@@ -103,6 +103,10 @@ server {
 > [nginx基本配置](https://segmentfault.com/a/1190000002797601) | [ngrok nginx docker本地搭建服务器](https://fengqi.me/unix/409.html)
 - [实验楼课程](https://www.shiyanlou.com/courses/95)
 
+- 个人理解
+  1. server_name 是一个域名或者ip, 如果是ip和公网的域名就没什么好解释的,
+    - 但是如果只是局域网的修改host文件生成的域名, 自己使用该域名访问是没有问题的, 别人访问不了,但是如果也同样的修改host文件后, 也能正确使用域名访问
+  2. server是一个门路, 不会冲突, 所以才能有很多个监听80端口的配置而互不影响.
 
 ### 本地静态文件Web服务器
 > 最简单的使用 [参考博客](http://blog.yuansc.com/2015/04/29/nginx%E9%85%8D%E7%BD%AE%E9%9D%99%E6%80%81%E6%96%87%E4%BB%B6%E6%9C%8D%E5%8A%A1%E5%99%A8/)
@@ -152,7 +156,7 @@ server {
  }
 }
 ```
-- 测试配置文件 再 重启nginx
+- 测试配置文件 再 重启nginx `nginx -s reload`
 
 #### 配置https
 > 参考博客 [nginx搭建https服务](http://www.cnblogs.com/tintin1926/archive/2012/07/12/2587311.html) | [nginx http/2](http://letus.club/2016/04/08/nginx-http2-letsencrypt/)
@@ -296,10 +300,10 @@ server {
     client_max_body_size 4G;
     listen  80;  ## listen for ipv4; this line is default and implied
     server_name view.kcp;
-        location /api/ {
-                # add_header 'Access-Control-Allow-Origin' '*';
-                proxy_pass http://127.0.0.1:8889;
-        }
+    location /api/ {
+            # add_header 'Access-Control-Allow-Origin' '*';
+            proxy_pass http://127.0.0.1:8889;
+    }
     location / {
         root /home/kcp/IdeaProjects/Base/graduate/static;
     }

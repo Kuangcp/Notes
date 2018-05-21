@@ -5,16 +5,21 @@
     - [配置](#配置)
         - [使用淘宝的镜像](#使用淘宝的镜像)
     - [使用](#使用)
+        - [安装Vue](#安装vue)
 
-`目录 end` |_2018-04-08_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
+`目录 end` |_2018-05-02_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
 ****************************************
 # NodeJs
 
 ## 安装
 1. [官网下载](https://nodejs.org/en/)
-2. 进入解压的 `bin目录` 将所有个文件建立软链接到 `/usr/local/bin/` 目录下
+2. 进入解压的 `bin目录` 将所有的文件建立软链接到 `/usr/local/bin/` 目录下
 3. 执行 node --version 和 npm -v 查看是否配置成功
-
+4. 添加node的真正解压目录到环境变量中， 之后安装的模块才能被找到
+```sh
+NODE_HOME=/home/kcp/Application/sdk/node-v8.11.1-linux-x64
+export PATH=$PATH:$NODE_HOME/bin
+```
 
 ## 配置
 ### 使用淘宝的镜像
@@ -29,3 +34,9 @@
 ## 使用
 
 > [Hexo](/Skills/View/Hexo.md)
+
+
+### 安装Vue
+> `npm install -g vue-cli --registry=https://registry.npm.taobao.org`
+
+

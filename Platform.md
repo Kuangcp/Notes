@@ -38,10 +38,12 @@
 - [文档](#文档)
     - [文档托管](#文档托管)
     - [文档转换](#文档转换)
+- [接口平台](#接口平台)
+    - [今日头条](#今日头条)
 - [测试平台](#测试平台)
 - [培训](#培训)
 
-`目录 end` |_2018-04-15_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
+`目录 end` |_2018-05-16_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
 ****************************************
 
 # 代码托管平台
@@ -55,7 +57,7 @@
 
 ***********************************
 ## Github
-> 全球范围性的网站
+> 全球范围性的网站  [开发者文档](https://developer.github.com/v3/) 
 3. 在github上修改了项目后，或者以后是和别人一起开发，就要先git pull origin （master）将别人的分支和自己的分支都拉下来确保是最新，
     - 再进行git push -u origin master 才能正确提交代码，如果不pull，提交是注定失败的，还会扰乱分支图
 4. 在github上修改文件，容易引起编码的变化，这时候没有pull就修改文件再commit也是会在push的时候很麻烦，最好在本地修改文件
@@ -94,15 +96,14 @@
 ### 自建
 - 使用docker安装比较简单
     - 配置数据库，一定要是外网的。或者容器互联
-
-`/data/gitea/conf/app.ini` 要修改的配置，都是改成对外的配置
+`/data/gitea/conf/app.ini` Docker中要修改的配置，都是改成对外的配置
 ```conf
 ROOT_URL         = http://git.kuangcp.top/
 DOMAIN           = git.kuangcp.top
-SSH_PORT         = 10022
+SSH_PORT         = 22
 SSH_DOMAIN       = kuangcp.top
 ```
-
+然后还需修改本地的SSH配置才能正常使用
 ********************************************************
 # 综合开发平台
 ## 华为云

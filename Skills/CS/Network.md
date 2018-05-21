@@ -18,8 +18,9 @@
         - [CORS](#cors)
     - [Websocket](#websocket)
         - [WSS](#wss)
+    - [WebAssembly](#webassembly)
 
-`目录 end` |_2018-04-26_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
+`目录 end` |_2018-05-05_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
 ****************************************
 # 网络
 
@@ -98,3 +99,9 @@ HTTP2的特点:
 6. 服务器可以主动传递消息给客户端, 不需要客户端轮询
 
 ### WSS
+
+
+## WebAssembly
+> 字节码技术
+> [ WebAssembly 实践：如何写代码 ](https://segmentfault.com/a/1190000008402872)
+> [MDN](https://developer.mozilla.org/en-US/docs/WebAssembly)

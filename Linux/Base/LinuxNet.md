@@ -3,6 +3,7 @@
 - [【网络管理】](#网络管理)
     - [DNS](#dns)
         - [修改DNS](#修改dns)
+        - [刷新本地缓存](#刷新本地缓存)
     - [IPv4和IPv6](#ipv4和ipv6)
     - [Tips](#tips)
         - [查看端口占用情况](#查看端口占用情况)
@@ -23,7 +24,7 @@
         - [VPN](#vpn)
             - [shadowsocks](#shadowsocks)
 
-`目录 end` |_2018-04-17_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
+`目录 end` |_2018-05-16_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
 ****************************************
 # 【网络管理】
 ## DNS
@@ -54,6 +55,8 @@
     nameserver 8.8.8.4
 ```
 
+### 刷新本地缓存
+> [参考博客](https://linux.cn/article-3341-1.html)
 ******************
 ## IPv4和IPv6
 - IPv4 只有32bit IPv6 有128bit

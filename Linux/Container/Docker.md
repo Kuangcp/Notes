@@ -352,10 +352,9 @@ server {
   }
 }
 ```
-
 ***********************
 ### Dockerfile
->[Dockerfile文件学习](/Linux/Docker_file.md)
+>[Dockerfile文件学习](/Linux/Container/DockerFile.md)
 
 ### dockerignore文件的使用
 - .dockerignore文件是依据 Go的PathMatch规范来的，使用和.gitignore类似
@@ -366,9 +365,11 @@ server {
 ## 容器编排
 ### Docker-Compose
 > 声明式环境，管理多容器， 并处理好相关资源的关系
+
 #### 安装
 > sudo pip install -U docker-compose
 
+***********
 ### Docker-Machine
 > 创建一个docker集群环境 [官方文档安装](https://docs.docker.com/machine/install-machine)
 
@@ -385,4 +386,3 @@ frolvlad/alpine-oraclejdk8   slim
 postgres                     alpine
 alpine
 ```
-
