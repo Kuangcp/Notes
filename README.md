@@ -1,5 +1,6 @@
 [![GitBook](https://img.shields.io/badge/GitBook-online-brightgreen.svg)](https://legacy.gitbook.com/book/kuangcp/notes/details)
 [![目录](https://img.shields.io/badge/note-Catalog-brightgreen.svg)](./SUMMARY.md)
+[![目录](https://img.shields.io/badge/note-Wiki-brightgreen.svg)](https://github.com/Kuangcp/Notes/wiki)
 [![码云](https://img.shields.io/badge/code-Gitee-red.svg)](https://gitee.com/kcp1104)
 [![CSDN](https://img.shields.io/badge/blog-CSDN-orange.svg)](http://blog.csdn.net/kcp606)
 [![JavaSE](https://img.shields.io/badge/note-JavaSE-blue.svg)](./Java/JavaSE.md)

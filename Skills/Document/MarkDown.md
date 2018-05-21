@@ -2,10 +2,11 @@
  
 - [Markdown](#markdown)
     - [基础格式](#基础格式)
+        - [链接](#链接)
         - [头信息](#头信息)
     - [Github](#github)
 
-`目录 end` |_2018-04-08_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
+`目录 end` |_2018-05-21_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
 ****************************************
 # Markdown
 > [markup](https://github.com/github/markup)`丰富的标记性文本格式`  
@@ -15,6 +16,9 @@
 **************
 ## 基础格式
 
+### 链接
+> [name](url) 推荐
+> [[name|url]]
 ### 头信息
 ```
     --- 

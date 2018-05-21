@@ -91,7 +91,8 @@
   * Basic Utilities
     * [[Using/avoiding null|UsingAndAvoidingNullExplained]]
 ```
-> 其中 [[名称|URL]] 类似于 []()
+> 其中 [[名称|URL]] 类似于 []()  URL的md后缀也要去掉,不然就跳转到md文件的源路径了
+> 允许md以文件夹多结构的形式存在, 但是最终的目录规则是扁平的, 直接就是文件名,没有目录名
 
 ### Bandage图标
 > [shields](https://shields.io/)

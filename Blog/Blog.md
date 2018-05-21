@@ -18,16 +18,11 @@
     - [生活](#生活)
     - [商业](#商业)
 
-<<<<<<< HEAD
-`目录 end` |_2018-04-14_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
-=======
-`目录 end` |_2018-05-16_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
->>>>>>> f5a04d07c9a22126f0b47ce8ae8ab8e19ea7fe45
+`目录 end` |_2018-05-21_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
 ****************************************
 
-> 只用来记录非技术类的文章,技术类的直接放到对应的笔记中去
-
-> [Java相关](Java.md) | [Go相关](Go.md) | [Python相关](Python.md) | [解决方案](Solution.md) | [前端相关](View.md) | [服务器运维](Server.md)
+> 只用来记录非技术类的文章,技术类的直接放到对应的笔记中去  
+> [Java相关](/Blog/Java.md) | [Go相关](/Blog/Go.md) | [Python相关](/Blog/Python.md) | [解决方案](/Blog/Solution.md) | [前端相关](/Blog/View.md) | [服务器运维](/Blog/Server.md)
 
 # 【个人博客网】
 - [ciaoshen](http://www.ciaoshen.com/)`肉身翻墙? Java大佬`
