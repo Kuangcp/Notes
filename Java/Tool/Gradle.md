@@ -3,22 +3,20 @@
 - [Gradle](#gradle)
     - [前言](#前言)
     - [发行版本列表](#发行版本列表)
-        - [4.6](#46)
     - [优缺点](#优缺点)
-        - [优点](#优点)
-        - [缺点](#缺点)
-    - [安装配置](#安装配置)
+    - [安装使用](#安装使用)
         - [SDKMAN方式](#sdkman方式)
         - [Chocolate](#chocolate)
         - [命令行选项](#命令行选项)
         - [守护进程](#守护进程)
     - [配置镜像源](#配置镜像源)
         - [阿里云](#阿里云)
-    - [构建依赖](#构建依赖)
+    - [build.gradle](#buildgradle)
         - [dependency](#dependency)
         - [常用插件](#常用插件)
-    - [第一个 build.gradle](#第一个-buildgradle)
+        - [统一依赖管理](#统一依赖管理)
         - [配置Gradle包管理器 Wrapper](#配置gradle包管理器-wrapper)
+    - [setting.gradle](#settinggradle)
         - [Gradle多模块的构建](#gradle多模块的构建)
     - [Gradle进阶知识](#gradle进阶知识)
         - [Gradle 构建块](#gradle-构建块)
@@ -31,23 +29,15 @@
     - [声明task规则](#声明task规则)
     - [代码目录结构](#代码目录结构)
 - [Gradle 自动测试](#gradle-自动测试)
-    - [自动化测试理论](#自动化测试理论)
-    - [测试java应用程序](#测试java应用程序)
-        - [项目布局，目录树](#项目布局目录树)
     - [单元测试](#单元测试)
         - [使用JUnit](#使用junit)
         - [使用其他框架 TestNG Spock](#使用其他框架-testng-spock)
     - [配置测试执行](#配置测试执行)
-- [打包](#打包)
+- [部署](#部署)
     - [War包](#war包)
     - [Jar包](#jar包)
     - [上传至构建仓库](#上传至构建仓库)
     - [构建Docker镜像](#构建docker镜像)
-- [ENTRYPOINT ["java","-Djava.security.egd=file:/dev/./urandom","-jar","/app.war"]](#entrypoint-["java""-djavasecurityegd=filedevurandom""-jar""appwar"])
-    - [集成测试](#集成测试)
-        - [多模块构建](#多模块构建)
-    - [功能测试](#功能测试)
-- [Gradle插件](#gradle插件)
 - [多语言编程](#多语言编程)
     - [处理javascript](#处理javascript)
         - [压缩javascript](#压缩javascript)
@@ -56,7 +46,7 @@
     - [Jenkin 使用](#jenkin-使用)
         - [下载安装和配置](#下载安装和配置)
 
-`目录 end` |_2018-05-01_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
+`目录 end` |_2018-05-22_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
 ****************************************
 
 # Gradle
@@ -69,23 +59,25 @@
 > [官方网址](http://services.gradle.org/) 有各个版本的下载以及版本发行说明
 > 似乎版本越高，内存占用越大， 从4.7降级回了4.2
 
-### 4.6
+_4.6_
 > [发行说明](https://docs.gradle.org/4.6/release-notes.html?_ga=2.214014495.909415461.1519975016-498617321.1519975016#dependency-constraints-for-transitive-dependencies) | `支持Junit5, 还有解决依赖冲突的一种声明式方式`
 
 ## 优缺点
 > 相关博客 [Gradle大吐槽](https://blog.csdn.net/MCL529/article/details/79341706)
 
-### 优点 
+> 优点 
+
 1. 相对于Maven, 配置文件简洁了很多, 所以才入坑学习使用的
 2. 对于一些需要自定义的任务,因为核心为Groovy,所以实现能力高
 	- 例如:将一个SpringBoot项目构建成一个镜像,并tag上当前构建的镜像为release,然后删除旧有容器,使用新的镜像启动容器
 
-### 缺点
+> 缺点
+
 1. 内存占用巨大,存在内存泄露问题, 以至于在IDEA上不敢使用自动导入, 不然每动一下build.gradle 就会卡半天, 8G内存都不够用!!
 2. 编译速度慢, 如果和Maven进行对比, 编译速度和资源占用确实慢
 3. 
 ********************
-## 安装配置
+## 安装使用
 > 和maven使用同一个本地库 只要加上 M2_HOME 环境变量即可, 值和 MAVEN_HOME 一样, 并没有用
 
 ### SDKMAN方式
@@ -163,30 +155,57 @@ allprojects{
     }
 }
 ```
-
-## 构建依赖
-### dependency
-- 和Maven用的是同一种方式 三个基本坐标
-- 本地依赖 `compile files('lib/ojdbc-14.jar')` 相对的根目录是src同级目录
-
-### 常用插件
-- lombok
-    - `compile 'org.projectlombok:lombok:1.16.16'`
-
 ***************************************
-## 第一个 build.gradle
+## build.gradle
+_一个简单示例_
 ```groovy
    task helloworld{
       doLast {
          printf 'Hello World!'
       }
    }
-   或者是 使用 << 代表doLast：
+   // 或者是 使用 << 代表doLast：
    task helloworld<<{
       println 'Hello world!'
    }
 ```
--  运行：`gradle -q helloworld` -q 可省略
+-  运行：`gradle -q helloworld`
+
+### dependency
+- 和Maven用的是同一种方式 三个基本坐标
+- 本地依赖 `compile files('lib/ojdbc-14.jar')` 相对的根目录是src同级目录
+- 但是依赖的类别要多于Maven
+    - compile
+    - testCompile
+    - runtime
+    - provide
+
+### 常用插件
+- lombok
+    - `compile 'org.projectlombok:lombok:1.16.16'`
+
+- maven 
+    - `apply plugin: "maven"` 然后就能执行 install等命令了
+- shadowJar 含依赖进行打包
+- docker 提供Docker操作
+    - `apply plugin: 'docker'`
+    - buildscript dependencies 中添加`classpath('se.transmode.gradle:gradle-docker:1.2')`
+
+### 统一依赖管理
+新建一个文件 dependency.gradle
+```groovy
+ext {
+    ver = [
+            junit     : '4.12',
+    ]
+    libs = [
+            "junit"          : "junit:junit:$ver.junit",
+    ]
+}
+```
+- 在 build.gradle 中引入 `apply from: 'dependency.gradle'`
+- 使用依赖时 只需 `compile libs['junit']`即使在子模块中也是如此使用
+
 
 ### 配置Gradle包管理器 Wrapper
 > 在使用IDE生成项目的时候，可以选择gradle的执行目录，可以选`gradle wrapper` 也可以选自己下载解压的完整包
@@ -201,7 +220,13 @@ allprojects{
 - 运行 gradle wrapper 一次即可开始使用包装器的脚本来构建项目了
 - 生成gradle包管理器：`gradle wrapper --gradle-version 2.0`
 
+## setting.gradle
+> 项目的配置信息, 一般存在这个文件的时候, Gradle就会认为当前目录是作为一个完整的根项目的, 并在当前目录添加 .gradle 目录  
+> 一般默认内容为 `rootProject.name = ''`
+
 ### Gradle多模块的构建
+> [完整示例 JavaBase](https://github.com/Kuangcp/JavaBase)`统一依赖管理多模块的构建`
+
 _setting.gradle_
 ```groovy
     rootProject.name = 'JavaBase'
@@ -223,6 +248,21 @@ allprojects {
     }
 }
 ```
+***************
+_目录结构_
+- RedisClient
+    - Core
+    - Website
+    
+``` groovy
+    rootProject.name = 'RedisClient'
+    include 'Core','Website'
+``` 
+- 如果只是同级的目录，就直接新建，无需配置，引用类时添加下依赖即可，但是这样只能运行，不能打包构建
+- [有关多模块的构建详情参考这里](https://github.com/Kuangcp/GradleIntegrationMultipleModules)
+- [参考更为规范的多项目构建](https://github.com/someok/gradle-multi-project-example)
+    - 依赖另一个模块的代码 `compile project(":redis_core")` 
+
 ********************************
 ## Gradle进阶知识
 > [davenkin的学习仓库](https://github.com/davenkin/gradle-learning)
@@ -235,7 +275,6 @@ allprojects {
 - gradle 也方便构建多模块项目
 
 ### task的依赖关系
-
 ```groovy
    version = '0.1-SNAPSHOT'
    task first {
@@ -352,7 +391,6 @@ task makeReleaseVersion(type:ReleaseVersionTask){
     destFile = file('version.properties')
 }
 ```
-- 书上写的不完全，调试要死人
 
 ## 声明task规则
 ```groovy
@@ -436,21 +474,18 @@ task makeReleaseVersion(type:ReleaseVersionTask){
 
 - 也可以跳过测试 `gradle build -x test`
 
-## 自动化测试理论
-## 测试java应用程序
-### 项目布局，目录树
-```
-
-```
 
 ## 单元测试
 ### 使用JUnit
+> [使用Junit4](/MyBlog/how-to-use-junit.md)
+
 ### 使用其他框架 TestNG Spock
 ## 配置测试执行
 
 ********************
-# 打包
+# 部署
 ## War包
+
 ## Jar包
 - Gradle默认是只会打包源码，并不会打包依赖（为了更方便依赖的作用）
     - [shadow插件官网文档](http://imperceptiblethoughts.com/shadow/)
@@ -459,10 +494,11 @@ task makeReleaseVersion(type:ReleaseVersionTask){
 ## 上传至构建仓库
 > 特别注意使用gpg, 如果按这下面的一堆文档跟着做的话你要保证你的gpg小于等于2.0版本, 不然就卡在这里了
 
-[参考项目 ](https://github.com/haiyangwu/sonatype)
-[参考](https://www.jianshu.com/p/49c926589f41)
-[官方文档](http://central.sonatype.org/pages/gradle.html)
-[参考博客](http://blog.csdn.net/h3243212/article/details/72374363#%E9%81%87%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98)
+> [参考项目 ](https://github.com/haiyangwu/sonatype)
+> [参考](https://www.jianshu.com/p/49c926589f41)
+> [官方文档](http://central.sonatype.org/pages/gradle.html)
+> [参考博客](http://blog.csdn.net/h3243212/article/details/72374363#%E9%81%87%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98)
+> [最简单的方式就是利用码云等平台创建私服 ](https://blog.csdn.net/kcp606/article/details/79675590)
 
 ## 构建Docker镜像
 > [用 Docker、Gradle 来构建、运行、发布一个 Spring Boot 应用](http://www.importnew.com/24671.html)
@@ -499,43 +535,16 @@ task buildDocker(type: Docker, dependsOn: build) {
 ```
 _Dockerfile_
 ```dockerfile
-FROM frolvlad/alpine-oraclejdk8:slim
-VOLUME /tmp
- # 配置通配符是为了不受版本影响
-ADD weixin*.war app.war
-# ENTRYPOINT ["java","-Djava.security.egd=file:/dev/./urandom","-jar","/app.war"]
-ENTRYPOINT ["java","-jar","/app.war"]
+    FROM frolvlad/alpine-oraclejdk8:slim
+    VOLUME /tmp
+    # 配置通配符是为了不受版本影响
+    ADD weixin*.war app.war
+    # ENTRYPOINT ["java","-Djava.security.egd=file:/dev/./urandom","-jar","/app.war"]
+    ENTRYPOINT ["java","-jar","/app.war"]
 ```
 - `gradle buildDocker` 即可构建镜像
 - 运行 `docker run --name web --link postgre:db -p 5678:8889 -it 镜像` 注意其中要关联PostgreSQL的容器
 
-************************
-## 集成测试
-### 多模块构建
-
-`树级结构的多模块项目就这样配置`
-- RedisClient
-    - Core
-    - Website
-    
-``` groovy
-    rootProject.name = 'RedisClient'
-    include 'Core','Website'
-``` 
-- 如果只是同级的目录，就直接新建，无需配置，引用类时添加下依赖即可，但是这样只能运行，不能打包构建
-- [有关多模块的构建详情参考这里](https://github.com/Kuangcp/GradleIntegrationMultipleModules)
-- [参考更为规范的多项目构建](https://github.com/someok/gradle-multi-project-example)
-    - 统一一个文件管理依赖
-    - 依赖另一个模块的代码 `compile project(":redis_core")` 
-
-## 功能测试
-
-**************************
-
-# Gradle插件
-- shadowJar 含依赖进行打包
-- maven 提供maven类似的命令
-- docker 
 **************
 
 # 多语言编程

@@ -94,7 +94,7 @@ for op,value in opts:
     elif op == "-w":
         readAll(True)
         with open('_Sidebar.md','w+') as dest:
-            dest.write('* [ Introduction ](Home.md)\n')
+            dest.write('* [ Introduction ](Home)\n')
             for res in result:
                 dest.write(res+'\n')
     # 帮助信息

@@ -51,7 +51,7 @@
             - [查看发行版](#查看发行版)
             - [查看系统所有用户信息](#查看系统所有用户信息)
 
-`目录 end` |_2018-05-03_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
+`目录 end` |_2018-05-22_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
 ****************************************
 # 【文件管理】
 > Linux中认为万物皆文件
@@ -283,11 +283,12 @@ _mv_
     - -n 直接在控制台输出的操作的结果，源文件不变 
     - -i 在源文件中进行修改
 - `命令`
-    - p 打印
+    - p 打印 `sed -n Np 文件名`
     - a 新增 在下一行
     - i 插入 在上一行 将hello插入到第4行：`sed -in "4i hello" test.md`
     - c 替换 整行
     - s 替换 字符串的替换
+    - d 删除 行级别, 删除2-4行 `sed -i "2,4d" test.md`
 
 > 1. 截取指定行数到新文件 `sed -n ‘开始行数，结束行数p’ info.log > newFile.log`
 > 2. 修改配置文件中name的值为123 `sed -i "s/name=.*/name=123/g" config.conf`

@@ -16,7 +16,7 @@
     - [插件](#插件)
     - [启动配置](#启动配置)
 
-`目录 end` |_2018-05-21_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
+`目录 end` |_2018-05-22_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
 ****************************************
 
 # IDEA 使用笔记
@@ -29,6 +29,7 @@
     - 不然项目结构很乱, 会在光标停留的文件夹下新建module
 - 一个项目一个空间也是可以的，就是跨项目查看代码会有点麻烦，而且每个项目的IDEA的配置都是不一样的，同样的配置可能要配置很多遍
 
+- 在新版中提供的load unload 模块功能,必须要重启idea, 才能让maven生效 emmm
 ## 常用技巧
 ### Tomcat的使用
 > 直接配置解压的即可, 然后Idea会在 用户目录下的Idea主目录中配置一个专门放Tomcat的配置和日志等文件, 和原Tomcat进行了隔离, 这样就不会影响到该Tomcat.
