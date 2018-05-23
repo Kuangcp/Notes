@@ -1,12 +1,23 @@
 `目录 start`
  
     - [Web](#web)
+        - [简单Web服务器](#简单web服务器)
         - [Django](#django)
+        - [Flask](#flask)
+            - [开发一个简易RESTful风格的服务器](#开发一个简易restful风格的服务器)
+            - [跨域](#跨域)
 
-`目录 end` |_2018-04-08_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
+`目录 end` |_2018-05-23_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
 ****************************************
 
 ## Web
+> [对比五种Web框架](https://www.csdn.net/article/2011-02-17/292058)
+
+### 简单Web服务器
+> python内置一个简易的Web服务器 只需在静态资源的根目录下执行  
+- python2 `python -m SimpleHTTPServer [8000]` 即可启动 缺省端口为8000
+- python3 `python3 -m http.server [8000]`
+
 ### Django
 `python3.5 建立虚拟环境`
 - `sudo apt install python3-venv`
@@ -18,3 +29,17 @@
     - `ls first_pro`查看到创建的默认文件
 - 创建SQLite数据库 `python manage.py migrate`    
 - 启动项目`python3 manage.py runserver`
+
+### Flask
+#### 开发一个简易RESTful风格的服务器
+> [官方文档 ](http://www.pythondoc.com/flask-restful/first.html#python-flask-restful-api)
+
+#### 跨域
+> [解决方式](https://blog.csdn.net/yannanxiu/article/details/53036508)
+`pip install flask-cors`
+```python
+from flask_cors import *
+
+app = Flask(__name__)
+CORS(app, supports_credentials=True)
+```

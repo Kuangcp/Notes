@@ -3,6 +3,8 @@
 - [JavaScript](#javascript)
     - [数据类型](#数据类型)
         - [字符串](#字符串)
+    - [函数](#函数)
+        - [函数传值](#函数传值)
     - [JSON](#json)
     - [常用功能小模块](#常用功能小模块)
         - [输入校验](#输入校验)
@@ -17,7 +19,7 @@
     - [资源文件](#资源文件)
         - [图片](#图片)
 
-`目录 end` |_2018-04-25_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
+`目录 end` |_2018-05-23_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
 ****************************************
 # JavaScript
 
@@ -59,7 +61,7 @@ function testRole() {
 
 - 但是有时候不能使用，会undefined，eval('('+data+')')解析后才能用
     - 原因在于Response Headers 的 `Content-Type:application/json;charset=UTF-8` 如果回应的类型是 text/plain 就需要使用 eval('('+data+')')才能用
-    - 如果设置成JSON就可以直接点引用和循环迭代
+    - 如果设置成JSON就可以直接点引用和循环迭代, _并且不需要强制的JSON规范, 值为数字时不加双引号也是正常解析的_
 
 ```js
     var array = {

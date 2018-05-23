@@ -36,9 +36,10 @@
             - [安装](#安装)
         - [Docker-Machine](#docker-machine)
         - [Docker-Swarm](#docker-swarm)
+    - [网络](#网络)
     - [轻量镜像](#轻量镜像)
 
-`目录 end` |_2018-04-28_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
+`目录 end` |_2018-05-23_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
 ****************************************
 # Docker
 > [docker资源汇总 ](http://www.open-open.com/lib/view/open1443075440623.html)
@@ -378,8 +379,12 @@ Error with pre-create check: "This computer doesn't have VT-X/AMD-v enabled. Ena
 
 ### Docker-Swarm
 
-***************************************************
+***********************************
+## 网络
+> 远没有前面的容器互联那样的简单, 更多还需学习 
 
+> [weave](https://www.weave.works/) `能解决跨宿主机的容器互联问题`
+***********************************
 ## 轻量镜像
 ```
 frolvlad/alpine-oraclejdk8   slim

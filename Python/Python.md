@@ -6,6 +6,7 @@
     - [基础](#基础)
         - [基础语法](#基础语法)
         - [基础数据类型](#基础数据类型)
+        - [virtualenv](#virtualenv)
     - [变量](#变量)
     - [基本运行结构](#基本运行结构)
         - [序列](#序列)
@@ -39,7 +40,7 @@
         - [自行安装](#自行安装)
     - [QT](#qt)
 
-`目录 end` |_2018-05-01_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
+`目录 end` |_2018-05-23_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
 ****************************************
 # Python
 > [Python初学者（零基础学习Python、Python入门）书籍、视频、资料、社区推荐](https://github.com/Yixiaohan/codeparkshare)
@@ -77,6 +78,13 @@
     - 三引号 多行字符串
 - 空值 None
 
+### virtualenv
+> [廖雪峰 virtualenv](https://www.liaoxuefeng.com/wiki/0014316089557264a6b348958f449949df42a6d3a2e542c000/001432712108300322c61f256c74803b43bfd65c6f8d0d0000)
+
+- 创建环境 `python3 -m venv web` 或者 `virtualenv --no-site-packages web` 不将系统中安装的包带入该环境
+- 启动环境 `source web/bin/activate`
+    - 在环境中使用的pip python 都是环境中的, 其实就是修改了系统的环境变量指向
+- 停用环境 `deactivate`
 ## 变量
 - 局部变量：
 - 全局变量：定义在函数外的变量，也称公用变量，函数中 `global x` 声明引用全局变量x

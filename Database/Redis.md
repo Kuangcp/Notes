@@ -32,11 +32,14 @@
         - [自动补全](#自动补全)
         - [构建锁](#构建锁)
         - [任务队列](#任务队列)
+    - [编程语言的使用](#编程语言的使用)
         - [【Java使用redis】](#java使用redis)
-        - [jedis遇到的异常](#jedis遇到的异常)
-        - [SpringBoot使用Redis](#springboot使用redis)
+            - [jedis遇到的异常](#jedis遇到的异常)
+            - [SpringBoot使用Redis](#springboot使用redis)
+        - [Python使用](#python使用)
+        - [webdis](#webdis)
 
-`目录 end` |_2018-04-08_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
+`目录 end` |_2018-05-23_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
 ****************************************
 # Redis
 > [Redis教程](http://www.runoob.com/redis/redis-tutorial.html)
@@ -309,6 +312,7 @@
 ### 任务队列
 - 发送邮件
 
+## 编程语言的使用
 ***************************
 ### 【Java使用redis】
 - maven依赖(Spring 4.1.7)：
@@ -365,11 +369,17 @@
 - jedis 使用后要disconnect释放连接,最新版本close就不用了，使用连接池就不用
 - jedis 的事务 使用exec释放事务
 
-### jedis遇到的异常
+#### jedis遇到的异常
 - Invocation of init method failed; nested exception is java.lang.NoSuchMethodError: org.springframework.core.serializer.support.DeserializingConverter
 - 版本对不上，要Spring和Spring-data-redis 和 redis和commons-lang3对应
 - 目前是4.1.7 + 1.6.0 + 2.9.0 + 3.3.2 编译通过了	
 
-### SpringBoot使用Redis
-[SpringBoot配置Redis](/Java/Spring/SpringBootDatabase.md)	
-	
+#### SpringBoot使用Redis
+> [SpringBoot配置Redis](/Java/Spring/SpringBootDatabase.md)	
+
+### Python使用
+> pip install redis 该模块和redis命令的用法几乎一模一样, 上手很快
+
+### webdis
+> [官网](http://webd.is/)
+

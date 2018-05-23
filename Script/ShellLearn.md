@@ -6,13 +6,13 @@
     - [执行](#执行)
     - [输入输出](#输入输出)
         - [输入](#输入)
-        - [输出Shw](#输出shw)
+        - [输出](#输出)
             - [彩色输出](#彩色输出)
     - [变量](#变量)
         - [变量作用域](#变量作用域)
         - [嵌套](#嵌套)
     - [数据类型](#数据类型)
-        - [整型数值](#整型数值)
+        - [整型](#整型)
         - [字符串](#字符串)
         - [数组](#数组)
     - [结构](#结构)
@@ -30,7 +30,7 @@
         - [jq](#jq)
         - [shyaml](#shyaml)
 
-`目录 end` |_2018-04-24_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
+`目录 end` |_2018-05-23_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
 ****************************************
 # 学习Shell
 > 首先语法不像别的语言可读性好，比如Python，然后方言众多，学习比Python2，3还恶心  
@@ -65,11 +65,11 @@
 
 **********************
 ## 输入输出
-
 ### 输入
 - `read answer`
 
-### 输出Shw
+### 输出
+echo  printf 
 
 #### 彩色输出
 > [参考博客,比较详细](http://blog.csdn.net/magiclyj/article/details/72637666)
@@ -104,7 +104,7 @@
 
 *****************
 ## 数据类型
-### 整型数值
+### 整型
 
 - 自增：
   - ((a++))
@@ -115,13 +115,14 @@
 
 > [取随机数](http://www.cnblogs.com/chengmo/archive/2010/10/23/1858879.html)
 
-- 四则运算 [参考](https://blog.csdn.net/taijianyu/article/details/6907288)
-  - ((i=$j+$k))    等价于 i=`expr $j + $k`
+- 四则运算 [参考博客 ](https://blog.csdn.net/taijianyu/article/details/6907288)
+  - ((i=$j+$k))     等价于   i=`expr $j + $k`
   - ((i=$j-$k))     等价于   i=`expr $j -$k`
   - ((i=$j*$k))     等价于   i=`expr $j \*$k`
   - ((i=$j/$k))     等价于   i=`expr $j /$k`
 
-> [判断是否为数值](http://www.jb51.net/article/67468.htm)
+_判断变量是否为数值_
+> [博客 判断是否为数值](http://www.jb51.net/article/67468.htm)
 ```sh
 if [ "$1" -gt 0 ] 2>/dev/null ;then 
   echo "$1 is number." 
@@ -187,7 +188,7 @@ _字符串拆分成数组_
 - 只是 $1 $2 ....
     - 脚本退出运行 `exit 0`
 - 得到脚本绝对路径; 如果只是执行 pwd 只是得到执行脚本时的当前绝对路径而已
-```
+```sh
 basepath=$(cd \`dirname $0\`; pwd) 
 ```
 ### 判断
