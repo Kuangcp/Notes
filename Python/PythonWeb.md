@@ -7,7 +7,7 @@
             - [开发一个简易RESTful风格的服务器](#开发一个简易restful风格的服务器)
             - [跨域](#跨域)
 
-`目录 end` |_2018-05-23_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
+`目录 end` |_2018-05-24_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
 ****************************************
 
 ## Web
@@ -32,7 +32,7 @@
 
 ### Flask
 #### 开发一个简易RESTful风格的服务器
-> [官方文档 ](http://www.pythondoc.com/flask-restful/first.html#python-flask-restful-api)
+> [官方文档 ](http://www.pythondoc.com/flask-restful/first.html#python-flask-restful-api) `但是这个内置的web服务器性能很渣`
 
 #### 跨域
 > [解决方式](https://blog.csdn.net/yannanxiu/article/details/53036508)

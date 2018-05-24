@@ -40,7 +40,7 @@
         - [自行安装](#自行安装)
     - [QT](#qt)
 
-`目录 end` |_2018-05-23_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
+`目录 end` |_2018-05-24_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
 ****************************************
 # Python
 > [Python初学者（零基础学习Python、Python入门）书籍、视频、资料、社区推荐](https://github.com/Yixiaohan/codeparkshare)
@@ -140,9 +140,7 @@
 - 二维数组的定义：
     - 原始： lists = [[1, 2], [3, 4]]
     - 仿造一维的定义： lists = [[0 for x in range(10)] for y in range(10)] 10*10 初始为0的列表
-    - 简便但是不可行的方法： lists = [[0]*10]*10 这是个坑， 只是声明了一维数组，然后多次引用， 虽然看起来是二维， 引用数据就会发现是一维
-
-*****
+    - 简便但是不可行的方法： lists = [[0]*10]*10 这是个坑， 只是声明了一维数组，然后多次引用， 虽然看起来是二维， 引用数据就会发现是一维  
 #### 元组
 - 元组和列表类似但是元组是创建不可更改的 
     - 和列表相比，相同点：按定义的顺序排序，负索引一致，可以使用分片

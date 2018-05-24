@@ -23,8 +23,10 @@
         - [telnet](#telnet)
         - [VPN](#vpn)
             - [shadowsocks](#shadowsocks)
+        - [防火墙](#防火墙)
+            - [iptables](#iptables)
 
-`目录 end` |_2018-05-16_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
+`目录 end` |_2018-05-24_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
 ****************************************
 # 【网络管理】
 ## DNS
@@ -382,3 +384,10 @@ _客户端_
 ```
 - `sslocal -c /etc/ss/json`
 - 设置代理是1080端口即可
+
+### 防火墙
+
+#### iptables
+[参考博客: linux下IPTABLES配置详解](http://www.cnblogs.com/JemBai/archive/2009/03/19/1416364.html)
+- 查看配置情况 ` iptables -L -n`
+
