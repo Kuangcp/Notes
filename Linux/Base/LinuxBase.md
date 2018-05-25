@@ -28,7 +28,7 @@
             - [修改主机名](#修改主机名)
     - [终端快捷键](#终端快捷键)
 
-`目录 end` |_2018-04-12_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
+`目录 end` |_2018-05-25_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
 ****************************************
 # 【Linux系统】
 > 只是记录了debian系的Linux, 不过也是大同小异
@@ -61,7 +61,7 @@
 
 *******************************
 ### 【终端模拟器之别】
-- `qterminal` 可定制标签页位置以及透明度，很简洁,挺好用
+- `qterminal` 可定制标签页位置以及透明度，很简洁,挺好用,但是不能内容和窗体大小自适配
 - `mate-terminal` 和gnome-terminal 基本配置什么的几乎一样，只是标题栏简洁一丢丢，跨标签页复制粘贴有bug
 - `gnome-terminal` 很简洁，但是多标签时，标签栏太大
 - `sakura` 外观上和前两个几乎一样，标签页可以更简洁，但是设置不好调

@@ -30,7 +30,7 @@
         - [jq](#jq)
         - [shyaml](#shyaml)
 
-`目录 end` |_2018-05-23_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
+`目录 end` |_2018-05-25_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
 ****************************************
 # 学习Shell
 > 首先语法不像别的语言可读性好，比如Python，然后方言众多，学习比Python2，3还恶心  
@@ -74,14 +74,16 @@ echo  printf
 #### 彩色输出
 > [参考博客,比较详细](http://blog.csdn.net/magiclyj/article/details/72637666)
 
-- 红色 `\033[0;31m`
-- 绿色 `\033[0;32m`
-- 黄色 `\033[0;33m`
-- 靛色 `\033[0;34m`
-- 紫色 `\033[0;35m`
-- 蓝色 `\033[0;36m`
-- 白色 `\033[0;37m`
-- 默认 `\033[0m`
+```sh
+  red='\033[0;31m'
+  green='\033[0;32m'
+  yellow='\033[0;33m'
+  yarn='\033[0;34m'
+  purple='\033[0;35m'
+  blue='\033[0;36m'
+  white='\033[0;37m'
+  default='\033[0m'
+```
 
 ******************
 ## 变量

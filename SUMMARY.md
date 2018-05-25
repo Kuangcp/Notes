@@ -1,6 +1,6 @@
 # Summary
 
-* [Introduction](README.md)
+* [ Introduction ](README.md)
 
 * [ ApiAndDoc ](./ApiAndDoc.md)
 * [ AppList ](./AppList.md)
@@ -123,6 +123,8 @@
 * 【 Linux 】
     * 【 Linux/Alpine 】
         * [ AlpineBase ](/Linux/Alpine/AlpineBase.md)
+    * 【 Linux/Arch 】
+        * [ Manjaro ](/Linux/Arch/Manjaro.md)
     * 【 Linux/Base 】
         * [ LinuxBase ](/Linux/Base/LinuxBase.md)
         * [ LinuxCommand ](/Linux/Base/LinuxCommand.md)

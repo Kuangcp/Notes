@@ -26,6 +26,9 @@
             - [继承](#继承)
     - [【异常】](#异常)
     - [【文件】](#文件)
+        - [JSON](#json)
+        - [conf或者ini](#conf或者ini)
+- [写 但是要有write节点](#写-但是要有write节点)
     - [【测试】](#测试)
     - [【数据库】](#数据库)
         - [【MySQL】](#mysql)
@@ -40,7 +43,7 @@
         - [自行安装](#自行安装)
     - [QT](#qt)
 
-`目录 end` |_2018-05-24_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
+`目录 end` |_2018-05-25_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
 ****************************************
 # Python
 > [Python初学者（零基础学习Python、Python入门）书籍、视频、资料、社区推荐](https://github.com/Yixiaohan/codeparkshare)
@@ -485,8 +488,7 @@
 |wb+ |写打开新可读 |打开删空 |新建打开  |
 |ab+ |追加打开可读 |打开   |新建打开  |
 
-
-`json`
+### JSON
 ```python
     alien = {'color': 'green', 'age': '23'}
     files = 'a.json'
@@ -498,6 +500,28 @@
 ```
 - json.dump()持久化 和 load() 装载
 
+### conf或者ini
+> [参考博客: python操作ini文件](https://www.oschina.net/code/snippet_782578_14344)
+
+```python
+import os
+from configparser import ConfigParser
+
+path = os.path.split(os.path.realpath(__file__))[0]
+mainConf = path + '/main.conf'
+cf = ConfigParser()
+cf.read(mainConf)
+host = cf.get('redis', 'host')
+
+# 写 但是要有write节点
+cf.set('write', 'add', '12')
+cf.write(open(mainConf, 'r+'))
+```
+_对应的conf_
+```conf
+    [redis]
+    host=127.0.0.1
+```
 ******************************
 ## 【测试】
 - 文件名test开头就当做是测试类，不会直接运行
@@ -554,6 +578,7 @@ sudo apt install libfreetype6-dev g++
 ### 内置库
 - `codecs` 编码
 - `os` 操作系统相关API
+    - 获取脚本绝对路径  `os.path.split(os.path.realpath(__file__))[0]`
 - `subprocess` [代码](https://gitee.com/kcp1104/codes/9ytejo7fl2xmqsr5zwkv380)
 
 ### 自行安装
