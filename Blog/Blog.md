@@ -18,7 +18,7 @@
     - [生活](#生活)
     - [商业](#商业)
 
-`目录 end` |_2018-05-21_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
+`目录 end` |_2018-05-26_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
 ****************************************
 
 > 只用来记录非技术类的文章,技术类的直接放到对应的笔记中去  
@@ -54,6 +54,8 @@
 - [tengj](http://tengj.top/)`SpringBoot了解深入`
 - [dreamlikes](http://dreamlikes.cn/)`Java后台开发`
 
+- [张子阳的博客](http://www.tracefact.net/) `有技术,有推荐的书`
+
 ## 博客能人
 - [赵劼](http://www.cnblogs.com/JeffreyZhao/) `对函数式编程，并行程序开发，代码之美以及程序员能力与修养等相关问题`
 - [进击的Java新人](https://zhuanlan.zhihu.com/hinus)
@@ -65,6 +67,7 @@
 - [轮子哥博客](http://www.cppblog.com/vczh/)
 - [zhangchuzhao](http://zhangchuzhao.site/)`有深度干货`
 
+- [人月神话](http://blog.sina.com.cn/s/articlelist_1228571733_0_1.html)
 ************************
 ## 专栏
 - [CSDN 知识林](http://blog.csdn.net/zsl129)

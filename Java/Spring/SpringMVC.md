@@ -12,13 +12,14 @@
         - [web.xml](#webxml)
         - [ApplicationContext.xml](#applicationcontextxml)
             - [全局异常处理](#全局异常处理)
+            - [自定义错误页面](#自定义错误页面)
             - [中文编码问题](#中文编码问题)
         - [创建Controller](#创建controller)
     - [使用](#使用)
         - [自定义拦截器](#自定义拦截器)
         - [Q&A](#q&a)
 
-`目录 end` |_2018-04-25_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
+`目录 end` |_2018-05-26_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
 ****************************************
 
 # SpringMVC
@@ -166,13 +167,13 @@ public class ExceptionHandler implements HandlerExceptionResolver {
         if (ex instanceof CSRFException) {//受到csrf攻击
            return new ModelAndView("/errorPage/error", model);
         }
-       if (ex instanceof BusinessException) {//业务逻辑处理出错
-           return new ModelAndView("errorPage/businessError", model);
-       } else if (ex instanceof ParameterException) {//参数处理出错。
-           return new ModelAndView("errorPage/parameterError", model);
-       } else {  //其他数据类型错误
-           return new ModelAndView("errorPage/error", model);
-       }
+        if (ex instanceof BusinessException) {//业务逻辑处理出错
+            return new ModelAndView("errorPage/businessError", model);
+        } else if (ex instanceof ParameterException) {//参数处理出错。
+            return new ModelAndView("errorPage/parameterError", model);
+        } else {  //其他数据类型错误
+            return new ModelAndView("errorPage/error", model);
+        }
         return new ModelAndView("error", model);
     }
 }

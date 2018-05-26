@@ -2,15 +2,15 @@
  
 - [开发思想](#开发思想)
     - [抽象](#抽象)
-    - [代码质量分析](#代码质量分析)
-        - [Checkstyle](#checkstyle)
-        - [FindBugs](#findbugs)
-        - [阿里巴巴的代码检查](#阿里巴巴的代码检查)
+    - [面向过程](#面向过程)
+    - [面向对象](#面向对象)
+        - [面向过程和面向对象的对比](#面向过程和面向对象的对比)
     - [DDD 领域驱动设计](#ddd-领域驱动设计)
+        - [聚合](#聚合)
+        - [参考实践项目](#参考实践项目)
     - [数据的操作](#数据的操作)
         - [CURD](#curd)
         - [CQRS](#cqrs)
-    - [TDD 测试驱动开发](#tdd-测试驱动开发)
     - [组件模型](#组件模型)
         - [SOA](#soa)
         - [MSA](#msa)
@@ -20,6 +20,10 @@
     - [接口定义](#接口定义)
     - [日志规范](#日志规范)
     - [异常处理](#异常处理)
+    - [代码质量分析](#代码质量分析)
+        - [Checkstyle](#checkstyle)
+        - [FindBugs](#findbugs)
+        - [阿里巴巴的代码检查](#阿里巴巴的代码检查)
     - [配置文件](#配置文件)
 
 `目录 end` |_2018-05-26_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
@@ -39,38 +43,73 @@
 
 抽象能力的高低，很大程度上反映了一个程序员的能力的高低
 
-*********************************
-## 代码质量分析
-- 测试对代码的覆盖率
-- 代码的格式是否清晰，有助于差异比较和可读性
-- 是否很可能会出现NPE
-- 是否忘记了域对象中的equals和hashCode方法
 
-### Checkstyle
+*********************
+## 面向过程
+> 只有数据和函数, 使用函数改变数据状态
 
-### FindBugs
+## 面向对象
+> OO  Object Oriented
 
-### 阿里巴巴的代码检查
+> [参考博客: 再见面向对象编程？](http://www.jdon.com/48231)
 
+### 面向过程和面向对象的对比
+> 示例 把大象塞进冰箱:
+>> 面向过程, 冰箱开门(冰箱) 冰箱装进(冰箱, 大象) 冰箱关门(冰箱)
+>> 面向对象 冰箱.开门().装进(大象).关门()
+
+- 面向过程
+    - 优点：性能比面向对象高，因为类调用时需要实例化，开销比较大，比较消耗资源;比如单片机、嵌入式开发、Linux/Unix等一般采用面向过程开发，性能是最重要的因素。
+    - 缺点：没有面向对象易维护、易复用、易扩展
+- 面向对象    
+    - 优点：易维护、易复用、易扩展，由于面向对象有封装、继承、多态性的特性，可以设计出低耦合的系统，使系统更加灵活、更加易于维护
+    - 缺点：性能比面向过程低
 *************************************************
 ## DDD 领域驱动设计
+> [领域驱动设计(DDD:Domain-Driven Design)](http://www.jdon.com/ddd.html)`入门贴`
+
+> [领域驱动设计 软件核心复杂性应对之道 Eric J. Evans 在线阅读](http://ishare.iask.sina.com.cn/f/69200951.html)
+> [领域驱动设计精简版 ](http://www.infoq.com/cn/minibooks/domain-driven-design-quickly)
 
 > [参考博客](http://kb.cnblogs.com/page/117717/) | [讨论](http://www.cnblogs.com/netfocus/p/3307971.html) | [基础](http://www.cnblogs.com/netfocus/archive/2011/10/10/2204949.html)
+
+> [参考博客: 危险的DDD聚合根](http://www.cnblogs.com/netfocus/archive/2012/09/08/2676985.html) 初步感受是DDD禁不起变化, 必须要在起初就设计好一个完备的体系
+> [参考博客: DDD应用的思考](http://www.jdon.com/47313)`提出了关于领域设计的困惑`
+
+### 聚合
+聚合根的修改行为应该属于聚合根实体对象自己，用聚合根行为守护其内部状态的一致性是DDD设计核心，如果聚合根内部的状态直接暴露给外界（通过领域服务）任意修改，那么会导致状态变化混乱，难以调试和跟踪。
+### 参考实践项目
+> [enode](https://github.com/tangxuehua/enode)`C#实现`
+> [](https://github.com/liangzeng/cqrs)
 
 *****************************
 ## 数据的操作
 ### CURD
 ### CQRS
-******************
-## TDD 测试驱动开发
-> [详细](/Skills/CS/TestTheory.md)
+> [www.cqrs.nu](http://www.cqrs.nu/)`CQRS Guides`  
+> [event-sourcing](https://docs.microsoft.com/en-us/azure/architecture/patterns/event-sourcing)| [中文版](https://docs.microsoft.com/zh-cn/azure/architecture/patterns/event-sourcing)   `微软关于azure的技术性文档`  
 
+> [event-sourcing-in-practice](https://ookami86.github.io/event-sourcing-in-practice/) 
+> [参考博客:  CQRS & Event Sourcing ](https://www.cnblogs.com/netfocus/category/361988.html)  
+> [参考博客: 领域驱动设计的实践 – CQRS & Event Sourcing](https://www.jianshu.com/p/9a3f8d514fcd) `图文并茂的讲解CQRS思想`
+
+> [eventapis](https://github.com/kloiasoft/eventapis)`Java实现的CQRS`
+> [CQRS journey](http://cqrsjourney.github.io/) `微软团队的项目`
+
+- [ ] 
 *************************
 ## 组件模型
 ### SOA
-> [百度百科定义](https://baike.baidu.com/item/SOA/2140650)
+> [参考博客: SOA面向服务架构](http://www.jdon.com/soa.html)
 
-- [参考博客: SOA面向服务架构](http://www.jdon.com/soa.html)
+_[Spring Web 应用的最大败笔](http://www.jdon.com/45857)_
+- 传统意义上的SOA 内部封装的是数据表的DTO 也被称为 失血模型,贫血模型,  从而导致SOA服务内部腐烂堵塞，违背SOA自治和可用性等原则约束
+    - 我现在使用Java的SpringMVC进行开发的东西, MVC架构, 然后JavaBean, Dao层或者JPA的Repository, Service层, Controller层, 而且还使用了好几年了
+    1. Web层负责处理用户输入，并返回正确的响应返回给用户。 web层与服务层通信。
+    2. 服务层作为一个事务边界。它也负责授权和包含我们的应用程序的业务逻辑。服务层管理的域模型对象，并与其他服务和存储库层进行通信。
+    3. 存储库/数据访问层负责与所使用的数据的存储进行通信。
+    - 正如这个毕业设计的项目  [Graduate](https://github.com/Kuangcp/Graduate), 显然的都具有如上提到的各种缺陷, 
+    - 每一个 DTO 只具有属性, 而没有方法, 一个DTO就要对应一个服务, 服务之间再相互注入, 就会有很有依赖, 甚至循环依赖
 
 ### MSA
 > 微服务
@@ -116,6 +155,20 @@
     - 后台（如队列等）异常一定要有通知机制，要第一时间知道异常。
     - 少加空判断，加了空判断就要测试为空的场景！
 
+
+## 代码质量分析
+- 测试对代码的覆盖率
+- 代码的格式是否清晰，有助于差异比较和可读性
+- 是否很可能会出现NPE
+- 是否忘记了域对象中的equals和hashCode方法
+
+### Checkstyle
+
+### FindBugs
+
+### 阿里巴巴的代码检查
+
+*********************************
 
 ## 配置文件
 千万业务代码里面不要和读取配置的代码耦合在一起。切记！
