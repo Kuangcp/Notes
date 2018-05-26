@@ -17,9 +17,11 @@
         - [保护方法应用](#保护方法应用)
     - [社交登录](#社交登录)
 
-`目录 end` |_2018-04-25_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
+`目录 end` |_2018-05-26_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
 ****************************************
 # SpringSecurity
+[参考博客: Spring Security 入门系列](http://www.spring4all.com/article/428)
+
 ## SpringBoot的集成Demo
 ### 创建单用户单角色的安全控制
 

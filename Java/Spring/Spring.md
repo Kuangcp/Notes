@@ -28,9 +28,12 @@
         - [Web开发上的一些优秀的习惯](#web开发上的一些优秀的习惯)
         - [RMI](#rmi)
 
-`目录 end` |_2018-04-18_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
+`目录 end` |_2018-05-26_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
 ****************************************
 # Spring
+> [Spring官网](https://spring.io/) | [spring4all社区](http://www.spring4all.com/)
+
+> [Spring For All 社区 Spring 官方教程翻译](http://www.spring4all.com/article/558)
 
 ## Spring配置
 ### 原始的web项目复制jar方式

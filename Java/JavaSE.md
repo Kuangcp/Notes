@@ -6,15 +6,15 @@
     - [【深入】](#深入)
     - [【抽象】](#抽象)
 
-`目录 end` |_2018-05-16_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
+`目录 end` |_2018-05-26_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
 ****************************************
 # 计算机基础
 
->- [算法](/Skills/Base/Arithmetic.md)  
->- [计算机相关](/Skills/Base/Computer.md)  
->- [并发理论](/Skills/Base/Concurrent.md)  
->- [网络](/Skills/Base/Network.md)  
->- [测试理论](/Skills/Base/Test.md)  
+>- [算法](/Skills/CS/Arithmetic.md)  
+>- [计算机相关](/Skills/CS/Computer.md)  
+>- [并发理论](/Skills/CS/Concurrent.md)  
+>- [网络](/Skills/CS/Network.md)  
+>- [测试理论](/Skills/CS/TestTheory.md)  
 
 *************************************
 # Java
@@ -43,5 +43,5 @@
 
 ## 【抽象】
 >- [编程思想](/Java/AdvancedLearning/ProgramThinking.md)  
->- [模式之禅](/Java/ZenOfPattern.md.md)
+>- [模式之禅](/Java/ZenOfPattern.md)
 

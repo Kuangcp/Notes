@@ -21,12 +21,15 @@
             - [war](#war)
             - [jar](#jar)
         - [构建docker镜像](#构建docker镜像)
+            - [手动方式](#手动方式)
             - [gradle结合docker](#gradle结合docker)
 
-`目录 end` |_2018-04-23_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
+`目录 end` |_2018-05-26_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
 ****************************************
 # SpringBoot
 > 一个简化Spring开发的框架,微服务SpringCloud的基础
+
+- [参考博客: Spring Boot 入门系列](http://www.spring4all.com/article/246)
 - [Springboot探索](https://juejin.im/post/598dd709f265da3e213f0c57)
 - [SpringBoot入门](http://blog.csdn.net/jsyxcjw/article/details/46763639)
 
@@ -285,8 +288,9 @@ private Connector createHttpConnector() {
     - gradle:`gradle jar` 然后 `gradle bootRepackage` 也生成可执行jar
 
 ### 构建docker镜像
-> 方便监控应用状态，cpu 内存 流量
+> 方便监控应用状态，cpu 内存 流量, [官方文档](https://spring.io/guides/gs/spring-boot-docker/)
 
+#### 手动方式
 - 先构建得到war或jar，然后根据dockerfile构建一个镜像
 ```Dockerfile
 FROM frolvlad/alpine-oraclejdk8:slim
@@ -295,25 +299,3 @@ ENTRYPOINT ["java","-jar","/app.war"]
 ```
 
 #### gradle结合docker
-`build.gradle`
-```groovy
-apply plugin: 'docker'
-task buildDocker(type: Docker, dependsOn: build) {
-    push = true
-    applicationName = jar.baseName
-    dockerfile = file('src/main/docker/Dockerfile')
-    doFirst {
-        copy {
-            from war
-            into stageDir
-        }
-    }
-}
-```
-`Dockerfile`
-```Dockerfile
-FROM frolvlad/alpine-oraclejdk8:slim
-VOLUME /tmp
-ADD weixin-1.0.0.war app.war
-ENTRYPOINT ["java","-jar","/app.war"]
-```

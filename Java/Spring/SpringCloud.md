@@ -5,10 +5,11 @@
     - [微服务](#微服务)
         - [通信方式](#通信方式)
 
-`目录 end` |_2018-04-11_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
+`目录 end` |_2018-05-26_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
 ****************************************
 # SpringCloud 
 
+> [参考博客: Spring Cloud 入门系列](http://www.spring4all.com/article/320)
 
 ## 集成docker
 > [boot in Alpine Linux](https://www.huangyunkun.com/2016/04/03/spring-boot-alpine-linux/)

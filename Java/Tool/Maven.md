@@ -11,14 +11,14 @@
     - [2.maven配置](#2maven配置)
         - [2.1.eclipse中配置](#21eclipse中配置)
         - [2.2.配置插件](#22配置插件)
-        - [2.3.配置文件的详解](#23配置文件的详解)
-        - [2.4 配置代码编译版本](#24-配置代码编译版本)
+        - [2.3.POM配置文件详解](#23pom配置文件详解)
+        - [2.4.配置代码编译版本](#24配置代码编译版本)
     - [3.构建](#3构建)
         - [3.1.打包成可执行Jar](#31打包成可执行jar)
         - [3.2.war包当jar使用](#32war包当jar使用)
-        - [3.3.使用maven构建多模块的项目](#33使用maven构建多模块的项目)
-        - [3.4.Maven多配置环境](#34maven多配置环境)
-- [TODO 子项目编译打包各自独立，怎么整合成一个](#todo-子项目编译打包各自独立怎么整合成一个)
+        - [3.3.构建Docker镜像](#33构建docker镜像)
+        - [3.4.使用maven构建多模块的项目](#34使用maven构建多模块的项目)
+        - [3.5.Maven多配置环境](#35maven多配置环境)
     - [4.maven的依赖](#4maven的依赖)
         - [4.1 依赖的范围](#41-依赖的范围)
             - [依赖的传递](#依赖的传递)
@@ -41,12 +41,11 @@
         - [nexus](#nexus)
         - [码云](#码云)
             - [创建仓库](#创建仓库)
-            - [使用](#使用)
+            - [引用仓库中的构件](#引用仓库中的构件)
                 - [Gradle](#gradle)
                 - [Maven](#maven)
-            - [后期添加构建](#后期添加构建)
 
-`目录 end` |_2018-04-28_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
+`目录 end` |_2018-05-26_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
 ****************************************
 # Maven
 > [官网](https://maven.apache.org/) | [官网手册](https://maven.apache.org/guides/) | [http://takari.io/ 在线练习网](http://takari.io/)
@@ -128,7 +127,7 @@ mvn install:install-file
 ### 2.2.配置插件
 > [插件地址](http://maven.apache.org/plugins/index.html)
 
-### 2.3.配置文件的详解
+### 2.3.POM配置文件详解
 > [版本说明](http://www.blogjava.net/RomulusW/archive/2008/05/04/197985.html)
 
 ```xml
@@ -199,7 +198,7 @@ mvn install:install-file
      </modules>
 ```
 
-### 2.4 配置代码编译版本
+### 2.4.配置代码编译版本
 ```xml
 <build>
     <plugins>
@@ -249,13 +248,14 @@ mvn install:install-file
 - 多个main的情况下运行指定的main 
     - `java -cp example03-1.0-SNAPSHOT.jar cn.zhouyafeng.itchat4j.main.TulingRobot`
 
-
 ### 3.2.war包当jar使用
 - Springboot项目能够做到, 其实就是Main方法, 然后配置了一个Servlet的加载类就可以当war用了
     - [通过Maven构建打包Spring boot，并将config配置文件提取到jar文件外](http://lib.csdn.net/article/java/65574)
 
+### 3.3.构建Docker镜像
+
 *****************
-### 3.3.使用maven构建多模块的项目
+### 3.4.使用maven构建多模块的项目
 `.gitignore文件`
 ```
     .idea/
@@ -290,10 +290,10 @@ mvn install:install-file
         <version>1.0-SNAPSHOT</version>
     </parent>
 ```
-### 3.4.Maven多配置环境
+### 3.5.Maven多配置环境
 > [Maven 如何为不同的环境打包](https://www.zybuluo.com/haokuixi/note/25985)
 
-# TODO 子项目编译打包各自独立，怎么整合成一个
+- [ ] 子项目编译打包各自独立，怎么整合成一个
 
 ******************
 ## 4.maven的依赖
@@ -385,8 +385,6 @@ A 项目 compile
     <groupId>org.mortbay.jetty</groupId>
     <artifactId>jetty-maven-plugin</artifactId>
     <version>8.1.16.v20140903</version>
-    <!-- <groupId>org.apache.tomcat.maven</groupId> <artifactId>tomcat6-maven-plugin</artifactId> 
-        <version>2.2</version> -->
     <executions>
         <execution>
             <!-- 在打包成功后使用jetty:run来运行 -->
@@ -413,7 +411,6 @@ A 项目 compile
         </connectors>
     </configuration>
 </plugin>
-
 ```
 - 部署成功后，使用jetty:run 即可运行起服务器
 
@@ -500,26 +497,19 @@ A 项目 compile
 *********************
 ## 9.配置私服
 > 不用去跑审核流程, 私有, 快速, 便捷
-
 ### nexus
-> 需要运行软件, 一般公司内部局域网使用, 如果自己有服务器也能开放给公众使用
-[参考博客: maven私服搭建及gradle上传](https://www.jianshu.com/p/b1fe26d5b8c8)
+> 需要运行软件, 一般公司内部局域网使用, 如果自己有服务器也能开放给公众使用 [参考博客: maven私服搭建及gradle上传](https://www.jianshu.com/p/b1fe26d5b8c8)
 
 ### 码云
 > 利用公开仓库来搭建私服 | [参考博客:  使用git仓库搭建maven私服 ](https://my.oschina.net/polly/blog/1649362)
-
 #### 创建仓库
 > 当然了在各个托管平台都可以的, 只不过码云是国内的, 毕竟要快 github gitlab bitbucket 就....
 
-1. 创建公开仓库, 下拉
-2. 修改的是`用户目录/.m2/settings.xml` 文件
-    - 修改本地仓库为`<localRepository>/myth/mvnRepo</localRepository>`
-3. 修改的目录就是下拉的仓库的绝对路径
-4. 然后进入原来本地库找到Jar位置, 安装到现在新的本地库 [参考安装命令](#从jar安装到本地库)
-5. 等安装成功后, 你就会发现这个git仓库下多了很多jar, 你只需要自己的jar上传到git服务器即可, 但是有不能删除, 因为maven下次安装jar又要用到这些jar 
-	- 最简单的方法就是 `.gitignore` 文件 忽略掉无关目录 add 后仔细检查下添加文件是否正确即可
+1. 创建好一个空的公开仓库
+2. 使用统一的groupId, 这样就会放到默认目录 `~/.m2/repository/` 下 只要在groupId对应的目录下 git init
+3. 只需在项目中执行install, 然后在此目录进行提交即可
 
-#### 使用
+#### 引用仓库中的构件
 ##### Gradle
 build.gradle 中添加
 ```groovy
@@ -540,11 +530,3 @@ pom.xml中添加
   </repository>
 </repositories>
 ```
-#### 后期添加构建
-> 一样的, 先注释掉新的本地库配置, 然后日常使用原先的本地库, 只有到要发布上传上去了才修改为新本地库
-
-1. 构建好jar 
-2. 修改配置文件 指向到Git本地库
-3. 从jar安装到Git本地库
-4. 提交到码云上
-5. 配置文件改回来

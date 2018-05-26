@@ -5,11 +5,10 @@
     - [ARP断网攻击](#arp断网攻击)
     - [SYNFlood攻击](#synflood攻击)
         - [CSRF](#csrf)
-- [TODO 问题是 CSRF 只是非法获取Cookie做操作么, 自己写两个域名的网站试试](#todo-问题是-csrf-只是非法获取cookie做操作么-自己写两个域名的网站试试)
         - [XSS](#xss)
     - [JWT](#jwt)
 
-`目录 end` |_2018-04-27_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
+`目录 end` |_2018-05-26_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
 ****************************************
 # Web安全
 > 关注常见的比如 XSS CSRF SQL注入 上传等问题的原理和修复方案。还有密码安全也基本上是面试必考点。
@@ -58,7 +57,7 @@
 > [浅谈CSRF攻击方式](http://www.cnblogs.com/hyddd/archive/2009/04/09/1432744.html)  
 > [参考提问下的回答](https://segmentfault.com/q/1010000000713614)
 
-# TODO 问题是 CSRF 只是非法获取Cookie做操作么, 自己写两个域名的网站试试
+- [ ] 问题是 CSRF 只是非法获取Cookie做操作么, 自己写两个域名的网站试试
 
 ### XSS
 > Cross Site Scripting `跨站脚本攻击` 

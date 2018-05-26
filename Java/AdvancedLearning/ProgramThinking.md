@@ -7,10 +7,13 @@
         - [FindBugs](#findbugs)
         - [阿里巴巴的代码检查](#阿里巴巴的代码检查)
     - [DDD 领域驱动设计](#ddd-领域驱动设计)
+    - [数据的操作](#数据的操作)
+        - [CURD](#curd)
+        - [CQRS](#cqrs)
     - [TDD 测试驱动开发](#tdd-测试驱动开发)
     - [组件模型](#组件模型)
         - [SOA](#soa)
-        - [微服务](#微服务)
+        - [MSA](#msa)
     - [杂项](#杂项)
         - [国际化的配置](#国际化的配置)
 - [编程习惯](#编程习惯)
@@ -19,7 +22,7 @@
     - [异常处理](#异常处理)
     - [配置文件](#配置文件)
 
-`目录 end` |_2018-05-24_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
+`目录 end` |_2018-05-26_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
 ****************************************
 # 开发思想
 > 有关开发的理论性思想,编写,测试,部署等
@@ -54,6 +57,11 @@
 
 > [参考博客](http://kb.cnblogs.com/page/117717/) | [讨论](http://www.cnblogs.com/netfocus/p/3307971.html) | [基础](http://www.cnblogs.com/netfocus/archive/2011/10/10/2204949.html)
 
+*****************************
+## 数据的操作
+### CURD
+### CQRS
+******************
 ## TDD 测试驱动开发
 > [详细](/Skills/CS/TestTheory.md)
 
@@ -64,11 +72,15 @@
 
 - [参考博客: SOA面向服务架构](http://www.jdon.com/soa.html)
 
-### 微服务
+### MSA
+> 微服务
+
+>　[参考博客: SOA 与 MSA（微服务架构）](https://blog.csdn.net/ztguang/article/details/52894794)
 > [码农翻身:从SOA到微服务](https://mp.weixin.qq.com/s?__biz=MzAxOTc0NzExNg==&mid=2665513674&idx=1&sn=fbc727b7c8ff6d03f5d53478b6d4e585&chksm=80d67a89b7a1f39ff0c3589a4a4076e323fab18379fc8d085c133b88e4db104f87988b29d246&scene=21#wechat_redirect)
 
 - [码农翻身:我是一个函数](https://mp.weixin.qq.com/s?__biz=MzAxOTc0NzExNg==&mid=2665513873&idx=1&sn=2383f099fb353e59649167e723575158&chksm=80d67bd2b7a1f2c4ae61704b8a2bd330764d20f0e2fafa6fdff55c99ea68272b3cff851684cc&scene=21#wechat_redirect) `详解了RPC, 也就是RMI(远程过程调用)规范的实现`
 
+> [微服务 MSA](http://www.spring4all.com/article/609)
 
 ## 杂项
 ### 国际化的配置

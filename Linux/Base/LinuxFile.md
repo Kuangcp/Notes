@@ -43,7 +43,6 @@
         - [rar](#rar)
         - [zip](#zip)
         - [7Z](#7z)
-- [TODO 学习使用](#todo-学习使用)
         - [总结](#总结)
     - [常用文件](#常用文件)
         - [划分](#划分)
@@ -51,7 +50,7 @@
             - [查看发行版](#查看发行版)
             - [查看系统所有用户信息](#查看系统所有用户信息)
 
-`目录 end` |_2018-05-22_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
+`目录 end` |_2018-05-26_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
 ****************************************
 # 【文件管理】
 > Linux中认为万物皆文件
@@ -471,7 +470,7 @@ _压缩_
 _解压_
 - 7z x file
     - -o 路径
-# TODO 学习使用
+- [ ] 7z命令的 学习使用
 ### 总结
 ```
     *.tar 用 tar -xvf 解压

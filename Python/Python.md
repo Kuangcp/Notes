@@ -40,10 +40,10 @@
     - [【常见函数】](#常见函数)
     - [【常见库】](#常见库)
         - [内置库](#内置库)
-        - [自行安装](#自行安装)
+        - [三方库](#三方库)
     - [QT](#qt)
 
-`目录 end` |_2018-05-25_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
+`目录 end` |_2018-05-26_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
 ****************************************
 # Python
 > [Python初学者（零基础学习Python、Python入门）书籍、视频、资料、社区推荐](https://github.com/Yixiaohan/codeparkshare)
@@ -147,7 +147,7 @@
 #### 元组
 - 元组和列表类似但是元组是创建不可更改的 
     - 和列表相比，相同点：按定义的顺序排序，负索引一致，可以使用分片
-    - 不同点：元组使用的是()，不能增加删除元素，没有index方法但是有in，可以在字典中作为键列表不可以，
+    - 不同点：元组使用的是()，不能增加删除元素，没有index方法但是有in，可以在字典中作为键,列表不可以
     - 由于具有写保护，代码安全，操作速度略快列表
 - 操作：
     - 访问： 和列表一样的索引和分片，
@@ -181,13 +181,14 @@
 ****
 `字符串，列表，元组相互转换：`
 - 字符串-列表 ： list("python")
-- 字符串-元组：tuple("python")
+- 字符串-元组 ： tuple("python")
 - 列表或元组-字符串 join(obj) 参数是列表或元组类型，其元素只能是字符串类型
 
 
 ***************************************
 #### 字符串编码问题(python2问题)
-- [ Python 3的bytes/str之别 ](http://www.ituring.com.cn/article/1116)
+> [ Python 3的bytes/str之别 ](http://www.ituring.com.cn/article/1116)
+
 ![str和bytes的关系](https://raw.githubusercontent.com/Kuangcp/ImageRepos/masters/Tech/python/str_bytes.jpeg)
 
 - 解码 `encode("utf-8")`： str -> bytes
@@ -574,6 +575,7 @@ sudo apt install libfreetype6-dev g++
 - `help(方法名)` 展示方法的说明文档
 - `dir(对象)` 展示对象的方法API
 
+******************************
 ## 【常见库】
 ### 内置库
 - `codecs` 编码
@@ -581,7 +583,7 @@ sudo apt install libfreetype6-dev g++
     - 获取脚本绝对路径  `os.path.split(os.path.realpath(__file__))[0]`
 - `subprocess` [代码](https://gitee.com/kcp1104/codes/9ytejo7fl2xmqsr5zwkv380)
 
-### 自行安装
+### 三方库
 - `redis` 和Redis命令完美融合
 - `httpie` HTTP方便的交互
     - POST时 特别注意:`参数==值`

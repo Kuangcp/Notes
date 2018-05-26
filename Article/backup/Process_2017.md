@@ -55,7 +55,7 @@
     - [2017-1-1 10:00:53](#2017-1-1-100053)
         - [没有提交的原因](#没有提交的原因)
 
-`目录 end` |_2018-04-08_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
+`目录 end` |_2018-05-26_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
 ****************************************
 
 # 2017年度总结
@@ -274,7 +274,7 @@ RegionId cn-qingdao	cn-beijing cn-zhangjiakou cn-hangzhou cn-shanghai cn-shenzhe
 ## 2017-06-05 20:23:29
 - 使用微信的个人公众号来进行系统的监测，可以部署在百度BAE上
 - ![公众号](https://raw.githubusercontent.com/Kuangcp/ImageRepos/master/Tech/8.jpg)
-- [ ] 公众号还没做完，待系统完成后使用上公众号
+- [X] 公众号还没做完，待系统完成后使用上公众号
 
 ## 2017-05-24 20:12:45
 - 使用IRC 
@@ -293,7 +293,7 @@ RegionId cn-qingdao	cn-beijing cn-zhangjiakou cn-hangzhou cn-shanghai cn-shenzhe
 
 ## 2017-05-04 08:51:58
 - 使用Python的脚本生成目录（URL编码），但是要注意不能有空格，不能以.开头，没有大写字母
-- [ ] 关于数据类型和基本运算都要系统学习才行
+- [X] 关于数据类型和基本运算都要系统学习才行
 
 ## 2017-04-27 15:16:17
 - 转移到了Linux平台进行开发，工具使用方便了些

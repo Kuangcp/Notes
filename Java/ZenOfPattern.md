@@ -34,9 +34,8 @@
         - [【常见设计模式】](#常见设计模式)
     - [实践](#实践)
         - [经验之谈](#经验之谈)
-- [TODO 自己用Java重写一下这个例子, 并做出自己的总结](#todo-自己用java重写一下这个例子-并做出自己的总结)
 
-`目录 end` |_2018-05-24_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
+`目录 end` |_2018-05-26_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
 ****************************************
 # 设计模式之禅
 ## 软件设计的一些原则
@@ -380,4 +379,4 @@ _Singleton_
 - [一个鸭子游戏引发的设计（多态，继承，抽象，接口，策略者模式）](http://www.cnblogs.com/x-xk/archive/2012/12/21/2823401.html)
 - [不要再盲目的new了！你要学着针对接口编程！（具体方法，Factory，Abstract Factory](www.cnblogs.com/x-xk/archive/2013/01/06/2830742.html)
 
-# TODO 自己用Java重写一下这个例子, 并做出自己的总结
+- [ ] 自己用Java重写一下这个例子, 并做出自己的总结

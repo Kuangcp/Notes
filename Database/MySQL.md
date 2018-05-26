@@ -20,11 +20,9 @@
         - [创建](#创建)
         - [导出](#导出)
         - [修改](#修改)
-- [TODO 重头戏](#todo-重头戏)
     - [表](#表)
         - [创建](#创建)
         - [修改](#修改)
-- [TODO 重头戏](#todo-重头戏)
     - [视图](#视图)
     - [触发器](#触发器)
         - [【创建单语句的触发器】](#创建单语句的触发器)
@@ -59,7 +57,7 @@
         - [【授权】](#授权)
 - [查询](#查询)
 
-`目录 end` |_2018-04-27_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
+`目录 end` |_2018-05-26_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
 ****************************************
 
 # Mysql
@@ -133,14 +131,14 @@ _重启_
 > [java操作：mysql数据库导入、导出](https://blog.csdn.net/EASYgoing00/article/details/72885280)  主要的思想是Java调用系统命令行执行命令后得到导出文件， 然后读取导出的文件 进一步操作
 
 ### 修改
-# TODO 重头戏
+- [ ] TODO 修改数据库
 
 ## 表
 ### 创建
 > create table name;
 
 ### 修改
-# TODO 重头戏
+- [ ] TODO 修改表格
 
 **************
 ## 视图

@@ -3,9 +3,9 @@
 - [Redis](#redis)
     - [【windows上的基本配置】](#windows上的基本配置)
     - [Linux下的使用](#linux下的使用)
+        - [docker安装redis](#docker安装redis)
         - [命令安装](#命令安装)
         - [解压即用](#解压即用)
-    - [docker安装redis](#docker安装redis)
     - [redis配置文件](#redis配置文件)
     - [Redis命令行常规使用](#redis命令行常规使用)
         - [过期策略](#过期策略)
@@ -39,10 +39,10 @@
         - [Python使用](#python使用)
         - [webdis](#webdis)
 
-`目录 end` |_2018-05-23_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
+`目录 end` |_2018-05-26_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
 ****************************************
 # Redis
-> [Redis教程](http://www.runoob.com/redis/redis-tutorial.html)
+> [Redis官网](https://redis.io/) | [Redis中文社区](http://www.redis.cn/) | [Redis教程](http://www.runoob.com/redis/redis-tutorial.html) 
 
 ## 【windows上的基本配置】
 - 注册为服务
@@ -54,6 +54,8 @@
 	- 客户端登录 `auth redis1104`
 
 ## Linux下的使用
+### docker安装redis
+> [docker-install-redis](/Linux/Container/Docker_Soft.md)
 
 ### 命令安装
 > 这样不太好做多个redis, 个人不喜欢这种方式
@@ -63,7 +65,8 @@
 - 打开客户端 `redis-cli`
 
 ### 解压即用
-> [下载我打包好的(适用于Linux平台)](https://github.com/Kuangcp/Configs/tree/master/Database/redis)
+> [下载我打包好的(适用于Linux平台)](https://github.com/Kuangcp/Configs/tree/master/Database/redis)  
+> [4.0.2](http://cloud.kuangcp.top/redis-4.0.2.zip) | [3.2.8](http://cloud.kuangcp.top/redis-3.2.8.zip)  
 
 `个人配置步骤:`
 - 官网下载源码，执行`make`进行编译，编译完成后，复制src目录中的`redis-cli redis-server`就可以用了，redis-benchmark可选，测性能
@@ -81,8 +84,6 @@
     basepath=$(cd `dirname $0`; pwd)
     $basepath/redis-cli -p 6379
 ```
-## docker安装redis
-> [docker-install-redis](/Linux/Container/Docker_Soft.md)
 
 ****************************
 ## redis配置文件

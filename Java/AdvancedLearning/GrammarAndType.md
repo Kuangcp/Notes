@@ -18,7 +18,6 @@
         - [其他](#其他)
     - [属性](#属性)
     - [方法](#方法)
-- [TODO 学习和完善](#todo-学习和完善)
 - [POJO](#pojo)
     - [VO](#vo)
     - [PO](#po)
@@ -28,7 +27,7 @@
     - [DAO](#dao)
 - [关键字](#关键字)
 
-`目录 end` |_2018-04-18_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
+`目录 end` |_2018-05-26_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
 ****************************************
 # 基础语法
 
@@ -87,7 +86,7 @@
 
 ## 方法
 方法的签名: 
-# TODO 学习和完善
+- [ ] 方法签名的详解
 
 **************
 # POJO
