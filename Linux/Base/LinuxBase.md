@@ -154,6 +154,11 @@
 - grpconv 注：通过/etc/group和/etc/gshadow 的文件内容来同步或创建/etc/gshadow ，如果/etc/gshadow 不存在则创建;
 -  注：通过/etc/group 和/etc/gshadow 文件内容来同步或创建/etc/group ，然后删除gshadow文件
 
+### 自启服务管理
+1. 移除MySQL的自启 `sudo update-rc.d -f mysql remove`
+2. 设置MySQL随机启动 `sudo update-rc.d mysql defaults`
+3. 设定MySQL启动顺序 `update-rc.d mysql defaults 90` 数字越小, 启动顺序越前
+
 ******************
 ## 【软件管理】
 ### 安装命令
