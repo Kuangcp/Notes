@@ -1,6 +1,7 @@
 `目录 start`
  
 - [Groovy](#groovy)
+    - [语言特性](#语言特性)
     - [安装配置](#安装配置)
         - [在IDEA中](#在idea中)
         - [Maven引入Groovy](#maven引入groovy)
@@ -18,9 +19,16 @@
         - [Java调用Groovy](#java调用groovy)
     - [Grails](#grails)
 
-`目录 end` |_2018-04-28_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
+`目录 end` |_2018-05-28_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
 ****************************************
 # Groovy
+> [精通Groovy](https://www.ibm.com/developerworks/cn/education/java/j-groovy/j-groovy.html)
+> [Groovy：Java 程序员的 DSL](https://www.ibm.com/developerworks/cn/java/j-pg02179.html)
+> [w3cschool Groovy教程](https://www.w3cschool.cn/groovy/)
+> [并发编程网 Groovy教程](http://ifeve.com/category/groovy/)
+> [infoQ 上Groovy相关](http://www.infoq.com/cn/groovy)
+
+## 语言特性
 - Groovy 具有的Java所没有的语言特性 ：
     - 函数字面值（闭包）
     - 对集合的一等支持
