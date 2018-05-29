@@ -1,18 +1,17 @@
 `目录 start`
  
-- [【Linux系统】](#linux系统)
-    - [【系统管理】](#系统管理)
-        - [【发行版之别】](#发行版之别)
-        - [【桌面环境之别】](#桌面环境之别)
-        - [【文件管理器之别】](#文件管理器之别)
-        - [【终端模拟器之别】](#终端模拟器之别)
+- [Linux系统](#linux系统)
+    - [系统管理](#系统管理)
+        - [桌面环境对比](#桌面环境对比)
+        - [文件管理器对比](#文件管理器对比)
+        - [终端模拟器对比](#终端模拟器对比)
         - [软件源列表](#软件源列表)
-        - [【用户管理】](#用户管理)
-        - [【用户组管理】](#用户组管理)
+        - [用户管理](#用户管理)
+        - [用户组管理](#用户组管理)
+        - [时间管理](#时间管理)
+        - [自启服务管理](#自启服务管理)
     - [【软件管理】](#软件管理)
         - [安装命令](#安装命令)
-        - [基础系统软件](#基础系统软件)
-            - [文本查看](#文本查看)
     - [安装Linux发行版](#安装linux发行版)
         - [【常见问题】](#常见问题)
             - [终端错误提示音](#终端错误提示音)
@@ -20,26 +19,24 @@
             - [终端开启慢](#终端开启慢)
             - [命令找不到](#命令找不到)
             - [Deepin的NVIDIA驱动问题](#deepin的nvidia驱动问题)
-        - [【Tips】](#tips)
-            - [一行执行多条命令](#一行执行多条命令)
-            - [让命令在后台运行](#让命令在后台运行)
-                - [关闭ssh回话不能运行](#关闭ssh回话不能运行)
-                - [关闭ssh回话仍能运行](#关闭ssh回话仍能运行)
-            - [修改主机名](#修改主机名)
+    - [【Tips】](#tips)
+        - [一行执行多条命令](#一行执行多条命令)
+        - [让命令在后台运行](#让命令在后台运行)
+            - [关闭ssh回话不能运行](#关闭ssh回话不能运行)
+            - [关闭ssh回话仍能运行](#关闭ssh回话仍能运行)
+        - [修改主机名](#修改主机名)
     - [终端快捷键](#终端快捷键)
 
-`目录 end` |_2018-05-25_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
+`目录 end` |_2018-05-29_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
 ****************************************
-# 【Linux系统】
+# Linux系统
 > 只是记录了debian系的Linux, 不过也是大同小异
 
-## 【系统管理】
-> sudo 其实是软件 早该意识到的，所有的命令都是可执行文件
+## 系统管理
+> sudo 其实是软件 早该意识到的，所有的命令都是可执行文件  
+> [笔记: 发行版之别](/Linux/Release_Experience.md)
 
-### 【发行版之别】
-- [更多](/Linux/Release_Experience.md)
-
-### 【桌面环境之别】
+### 桌面环境对比
 - gnome 占用资源中等，个人对该桌面不感冒
 - xfce 占用资源少，操作类似于xp
 - kde 功能强大，占用资源中等
@@ -47,7 +44,7 @@
 - dde deepin设计的桌面环境，小bug略多，但是美观操作方便
 
 ***************************
-### 【文件管理器之别】
+### 文件管理器对比
 > 有单窗口，双列，命令，简洁轻量，笨重完整 各种各样的选择
 
 - `nautilus` Gnome默认 挺好用，但是不能自动挂载分区
@@ -60,7 +57,7 @@
 - `tuxcmd` Tux Commander 双列，小，直接的目录树，学习成本高点 `2M`
 
 *******************************
-### 【终端模拟器之别】
+### 终端模拟器对比
 - `qterminal` 可定制标签页位置以及透明度，很简洁,挺好用,但是不能内容和窗体大小自适配
 - `mate-terminal` 和gnome-terminal 基本配置什么的几乎一样，只是标题栏简洁一丢丢，跨标签页复制粘贴有bug
 - `gnome-terminal` 很简洁，但是多标签时，标签栏太大
@@ -77,7 +74,7 @@
 - [wiki-源列表说明](http://wiki.ubuntu.com.cn/%E6%BA%90%E5%88%97%E8%A1%A8)
 
 **************************************
-### 【用户管理】
+### 用户管理
 - 添加用户 `sudo adduser username` 
     - 对比 `useradd`只是新建一个用户不会创建主目录
 - 添加到sudo组 ，使用命令更安全：`sudo gpasswd -a $USER sudo` 但是要注销或者重启才生效貌似
@@ -132,7 +129,7 @@
 - chfn 注：更改用户信息工具
 - visudo 注：visodo 是编辑 /etc/sudoers 的命令;也可以不用这个命令，直接用vi 来编辑 /etc/sudoers 的效果是一样的;
 
-### 【用户组管理】
+### 用户组管理
 > [相关总结网页](http://www.runoob.com/linux/linux-user-manage.html)
 
 - 修改用户至指定组 `sudo usermod -G 用户组 用户`
@@ -153,8 +150,23 @@
 - grpck 检查`/etc/group`文件是否正确
 - grpconv 注：通过/etc/group和/etc/gshadow 的文件内容来同步或创建/etc/gshadow ，如果/etc/gshadow 不存在则创建;
 -  注：通过/etc/group 和/etc/gshadow 文件内容来同步或创建/etc/group ，然后删除gshadow文件
+### 时间管理
+> [同步Linux服务器时间](http://www.cnblogs.com/chenmh/p/5485829.html)
+
+_同步时间_
+1. 修改时区 `cp -y /usr/share/zoneinfo/Asia/Shanghai /etc/localtime`
+2. 同步时间 `/usr/sbin/ntpdate -u cn.pool.ntp.org`
+3. 查看硬件时间 `hwclock -r`
+    - 如果不同步就需要写入时间 `hwclock -w` _因为系统重启是参考硬件时间的_
+
+_自动同步时间_
+1. 配置开机自动校验 `vim /etc/rc.d/rc.local`
+    - `/usr/sbin/ntpdate -u cn.pool.ntp.org> /dev/null 2>&1; /sbin/hwclock -w`
+2. 配置定时任务 `crontab -e`
+    - `00 10 * * * root /usr/sbin/ntpdate -u cn.pool.ntp.org > /dev/null 2>&1; /sbin/hwclock -w `
 
 ### 自启服务管理
+
 1. 移除MySQL的自启 `sudo update-rc.d -f mysql remove`
 2. 设置MySQL随机启动 `sudo update-rc.d mysql defaults`
 3. 设定MySQL启动顺序 `update-rc.d mysql defaults 90` 数字越小, 启动顺序越前
@@ -184,11 +196,6 @@
 	- `sudo apt-get --purge remove 应用名`
 - 只卸载程序，保留配置文件
 	- `sudo apt-get remove 应用名`
-
-### 基础系统软件
-#### 文本查看
-cat more less nl 
-
 
 *****************************************************
 ## 安装Linux发行版
@@ -233,10 +240,10 @@ cat more less nl
     - `sudo apt-get install bumblebee-nvidia nvidia-driver nvidia-settings`
 
 *****************************************************
-### 【Tips】
+## 【Tips】
 > man help 后接使用的命令，就可以得到用户手册和帮助文档
 
-#### 一行执行多条命令 
+### 一行执行多条命令 
 - ` && ` 第2条命令只有在第1条命令成功执行之后才执行 根据命令产生的退出码判断是否执行成功（0成功，非0失败）
 - `|| ` 执行不成功（产生了一个非0的退出码）时，才执行后面的命令
 - ` ; ` 顺序执行多条命令，当;号前的命令执行完（不管是否执行成功），才执行;后的命令。 
@@ -248,7 +255,7 @@ cat more less nl
     - `which='alias | /usr/bin/which --tty-only --read-alias --show-dot --show-tilde'`
 
 **************
-#### 让命令在后台运行
+### 让命令在后台运行
 > [原博客](https://www.ibm.com/developerworks/cn/linux/l-cn-nohup/)
 
 - 命令后接 & （只是让进程躲到当前终端的后台去了 hup信号仍然影响）
@@ -258,11 +265,11 @@ cat more less nl
     - 让进程对hup信号免疫 nohup disown
     - 让进程在新的会话中运行 setid screen
 
-##### 关闭ssh回话不能运行
+#### 关闭ssh回话不能运行
 > 1.没有使用任何修饰原有命令  
 > 2.只在原有命令后加&
 
-##### 关闭ssh回话仍能运行
+#### 关闭ssh回话仍能运行
 - 使用`nohup`就能屏蔽hup信号，默认输出到 nohup.out `nohup 命令 &`
     - 将所有输出重定向到空设备  `nohup 命令>/dev/null 2>&1`
     - 例如 在当前目录后台打开文件管理器 `(dde-file-manager . &) >/dev/null 2>&1`
@@ -270,7 +277,7 @@ cat more less nl
 - `(命令 &)` 屏蔽了hup信号
 
 *************
-#### 修改主机名
+### 修改主机名
 - `sudo hostname linux` 重启终端即可看到修改
 - 但是重启电脑会恢复原有名字修改如下文件永久： `sudo gedit /etc/hostname` 也许需要更改`/etc/hosts`
 - 立即生效,也要重新登录 `hostname -F /etc/hostname `
@@ -281,24 +288,22 @@ cat more less nl
 - `Ctrl L` 清屏，Mysql也适用
 - `Ctrl ；` 显示最近五条剪贴板内容
 
-```
-Ctrl + d       删除一个字符，相当于通常的Delete键（命令行若无任何字符，则相当于exit；处理多行标准输入时也表示EOF ）
-Ctrl + h       退格删除一个字符，相当于通常的Backspace键
-Ctrl + u       删除光标之前到 行首 的字符
-Ctrl + k       删除光标之前到 行尾 的字符
-
-Ctrl + c       取消当前行输入的命令，相当于Ctrl + Break
-
-Ctrl + a       光标移动到行首（Ahead of line），相当于通常的Home键
-Ctrl + e       光标移动到行尾（End of line）
-Ctrl + f       光标向前(Forward)移动一个字符位置
-Ctrl + b       光标往回(Backward)移动一个字符位置
-
-Ctrl + l       清屏，相当于执行clear命令
-
-Ctrl + p       调出命令历史中的前一条（Previous）命令，相当于通常的上箭头
-Ctrl + n       调出命令历史中的下一条（Next）命令，相当于通常的下箭头
-
-Ctrl + r       显示：号提示，根据用户输入查找相关历史命令（reverse-i-search）
-```
+- Ctrl
+    - D       删除光标后字符,等价于Delete键（命令行若无任何字符，则相当于exit；处理多行标准输入时也表示EOF）
+    - H       退格删除一个字符，相当于通常的Backspace键
+    - U       删除光标之前到 行首 的字符
+    - K       删除光标之前到 行尾 的字符
+    - 
+    - C       取消当前行输入的命令，相当于Ctrl + Break
+    - A       光标移动到行首（Ahead of line），相当于通常的Home键
+    - E       光标移动到行尾（End of line）
+    - F       光标向前(Forward)移动一个字符位置
+    - B       光标往回(Backward)移动一个字符位置
+    - 
+    - P       调出命令历史中的前一条（Previous）命令，相当于通常的上箭头
+    - N       调出命令历史中的下一条（Next）命令，相当于通常的下箭头
+    - O       运行上翻下翻出来的命令, 并且自动将下一条命令填入
+    - 
+    - L       清屏，相当于执行clear命令
+    - R       显示：号提示，根据用户输入查找相关历史命令（reverse-i-search）
 
