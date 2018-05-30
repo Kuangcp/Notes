@@ -11,7 +11,7 @@
         - [JVM对备选语言的支持](#jvm对备选语言的支持)
         - [编译器小说](#编译器小说)
 
-`目录 end` |_2018-05-28_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
+`目录 end` |_2018-05-30_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
 ****************************************
 # JVM上的多语言使用
 > 先把Java熟练先
@@ -52,6 +52,8 @@
 - 静态类型语言更倾向于稳定层的任务，能力不是那么强，通用性较低的技术在金字塔的顶部更好用
 
 > [Java 、Groovy、 Scala 的未来会怎样？](https://www.zhihu.com/question/21740715)
+> [Java & Groovy & Scala & Kotlin - 16.方法，Lambda 与闭包](https://www.jianshu.com/p/3d01a98da9f9)
+
 
 Scala有两个流派：FP和Better Java。FP派喜欢scalaz，喜欢shapeless，喜欢type level programming。这一派特点是程序高度抽象但可读性奇差。
 适合PL研究者验证概念，适合业余项目自嗨，也适合学习PL概念。不适合多人协作的工程项目。Better Java派以前之所以存在，单纯是因为Java语法设计太烂，烂到无法忍受。

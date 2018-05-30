@@ -43,10 +43,14 @@
         - [三方库](#三方库)
     - [QT](#qt)
 
-`目录 end` |_2018-05-26_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
+`目录 end` |_2018-05-30_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
 ****************************************
 # Python
 > [Python初学者（零基础学习Python、Python入门）书籍、视频、资料、社区推荐](https://github.com/Yixiaohan/codeparkshare)
+
+- [Python中的多态](http://blog.csdn.net/shangzhihaohao/article/details/7065675)
+- [python输出带颜色的字体](http://www.cnblogs.com/oleli/p/5228880.html)
+
 ## 简介
 
 ### 关于Python2.x与3.x的使用

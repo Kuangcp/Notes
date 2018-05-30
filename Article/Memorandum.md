@@ -15,7 +15,7 @@
     - [喜事](#喜事)
     - [丧事](#丧事)
 
-`目录 end` |_2018-04-08_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
+`目录 end` |_2018-05-30_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
 ****************************************
 # 备忘录
 > 用来记录一些容易忘的乱七八糟的事情
@@ -25,6 +25,8 @@
 > 关于方向键的移动速度一定要快
 
 ### 键盘
+
+现在使用的是 Poker II, 61键, 小巧方便, 习惯上要稍微适应一下
 
 ***********************
 ## 资源

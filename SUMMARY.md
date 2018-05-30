@@ -20,9 +20,7 @@
 * 【 Blog 】
     * [ Arithmetic ](/Blog/Arithmetic.md)
     * [ Blog ](/Blog/Blog.md)
-    * [ Go ](/Blog/Go.md)
     * [ Java ](/Blog/Java.md)
-    * [ Python ](/Blog/Python.md)
     * [ Server ](/Blog/Server.md)
     * [ Solution ](/Blog/Solution.md)
     * [ View ](/Blog/View.md)
@@ -70,6 +68,7 @@
         * [ IO ](/Java/AdvancedLearning/IO.md)
         * [ JDBC ](/Java/AdvancedLearning/JDBC.md)
         * [ JMS ](/Java/AdvancedLearning/JMS.md)
+        * [ Java8 ](/Java/AdvancedLearning/Java8.md)
         * [ JavaPerformance ](/Java/AdvancedLearning/JavaPerformance.md)
         * [ JavaTest ](/Java/AdvancedLearning/JavaTest.md)
         * [ MultipleLanguage ](/Java/AdvancedLearning/MultipleLanguage.md)

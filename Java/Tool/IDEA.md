@@ -16,7 +16,7 @@
     - [插件](#插件)
     - [启动配置](#启动配置)
 
-`目录 end` |_2018-05-22_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
+`目录 end` |_2018-05-30_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
 ****************************************
 
 # IDEA 使用笔记
@@ -215,6 +215,7 @@ _view_
 - Alt G , 显示Gradle窗口
 - Alt M , 显示Maven窗口
 - Alt . , 显示数据库工具窗口
+- Ctrl Shift 左/右 , 调节以上窗口分隔线
 
 > 在任一工具窗口, 按`ESC`都会让焦点回到编辑器 `Shift ESC` 就能关闭工具窗口并让焦点回到编辑器
 > 以上的窗口都是默认显示小bar的, 我为了窗口更大就设置为了默认隐藏, 如果想显示, 可以双击Alt, 在第二下按住不动, 鼠标就能进行点击了  
