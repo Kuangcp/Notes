@@ -1,6 +1,7 @@
 `目录 start`
  
 - [Groovy](#groovy)
+    - [书籍](#书籍)
     - [语言特性](#语言特性)
     - [安装配置](#安装配置)
         - [在IDEA中](#在idea中)
@@ -23,14 +24,19 @@
         - [Java调用Groovy](#java调用groovy)
     - [Grails](#grails)
 
-`目录 end` |_2018-05-30_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
+`目录 end` |_2018-05-31_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
 ****************************************
 # Groovy
+> [Groovy 官网](http://www.groovy-lang.org/) | 
+
 > [精通Groovy](https://www.ibm.com/developerworks/cn/education/java/j-groovy/j-groovy.html)
 > [Groovy：Java 程序员的 DSL](https://www.ibm.com/developerworks/cn/java/j-pg02179.html)
 > [w3cschool Groovy教程](https://www.w3cschool.cn/groovy/)
 > [并发编程网 Groovy教程](http://ifeve.com/category/groovy/)
 > [infoQ 上Groovy相关](http://www.infoq.com/cn/groovy)
+
+## 书籍
+> [Groovy in Action](http://ishare.iask.sina.com.cn/f/12475871.html) `在线阅读英文原版`
 
 ## 语言特性
 - Groovy 具有的Java所没有的语言特性 ：
@@ -112,6 +118,15 @@ import java.util.*
 > [参考博客: Groovy进阶之函数、闭包和类](https://www.tuicool.com/articles/iEBJnqF)
 
 ### 闭包
+```groovy
+// 简单示例
+    def plus = { x, y ->
+        println "$x plus $y is ${x + y}"
+    }
+    plus(2, 3)
+```
+
+
 *************************
 ### 调用系统命令行
 > [Groovy 执行"cp *"shell 命令 ](http://www.guanggua.com/question/183352-groovy-execute-cp-shell-command.html)
@@ -257,5 +272,5 @@ class Person{
 ***********************
 ## Grails
 - [入门博客](http://www.jianshu.com/p/32c9b45a788f)
-
+> [入门视频](http://www.icoolxue.com/album/show/341)
 

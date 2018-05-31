@@ -7,9 +7,18 @@
     - [用户输入输出](#用户输入输出)
 - [数据类型](#数据类型)
     - [基础数据类型](#基础数据类型)
+        - [byte](#byte)
+        - [char](#char)
+        - [boolean](#boolean)
+        - [short](#short)
+        - [int](#int)
+        - [long](#long)
+        - [float](#float)
+        - [double](#double)
     - [包装类型](#包装类型)
         - [String](#string)
             - [StringBuffer和StringBuilder](#stringbuffer和stringbuilder)
+    - [自动拆装箱](#自动拆装箱)
     - [自定义类](#自定义类)
     - [类型强转](#类型强转)
 - [类的结构](#类的结构)
@@ -27,7 +36,7 @@
     - [DAO](#dao)
 - [关键字](#关键字)
 
-`目录 end` |_2018-05-26_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
+`目录 end` |_2018-05-31_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
 ****************************************
 # 基础语法
 
@@ -38,17 +47,35 @@
 
 ### 循环
 - while
-- for each循环里面 `for(item:list){}` list对象如果是一个对象的方法返回的，那么只会调用一次
+    - `while(true){}`
+    - `do{}while(true);`
+- for 循环
+    - `for(int a=0; i<10; i++){}`
+- for each循环
+    - `for(Object item:list){}` 其中list对象如果是通过调用一个对象的方法返回的，那么只会调用一次
 
 ## 用户输入输出
-- `System.out.println("")` 输出并换行
-    - print() 输出, 行末不换行
-    - printf() 格式化输出, 和C语法类似
+- `System.out.println("")` 输出并在末尾追加换行
+    - .print() 输出, 行末不换行
+    - .printf() 格式化输出, 和C语法类似
 
 ***********************
 # 数据类型
 
 ## 基础数据类型
+> 八种基本数据类型 byte char boolean short int long float double
+
+### byte
+> Java8以前是使用char数组来存放String, Java8开始就是byte数组了
+
+### char
+### boolean
+> [参考 你真的知道Java中boolean类型占用多少个字节吗？](https://www.jianshu.com/p/2f663dc820d0)
+### short
+### int
+### long
+### float
+### double
 
 ## 包装类型
 ### String
@@ -62,6 +89,8 @@
 
 #### StringBuffer和StringBuilder
 > [参考博客](https://blog.csdn.net/rmn190/article/details/1492013)
+
+## 自动拆装箱
 
 ***************************
 ## 自定义类

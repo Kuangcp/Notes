@@ -7,7 +7,7 @@
         - [oh-my-zsh](#oh-my-zsh)
             - [主题](#主题)
 
-`目录 end` |_2018-04-10_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
+`目录 end` |_2018-05-31_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
 ****************************************
 # Zsh
 ## 为什么要使用
@@ -48,6 +48,7 @@ _额外安装_
     - `powerlevel9k/powerlevel9k`
 
 - Bullet Train (桌面在用)
+    - Source Code Pro for Powerline + Powerline + Awesonme 的 Bold 字体搭配最合适
 - ys 服务器在用
 
 > [安装步骤](https://github.com/caiogondim/bullet-train.zsh#for-oh-my-zsh-users)
