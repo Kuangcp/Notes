@@ -41,7 +41,7 @@
     - [工作](#工作)
         - [简历](#简历)
 
-`目录 end` |_2018-05-26_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
+`目录 end` |_2018-06-01_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
 ****************************************
 
 # 【GitRepos】
@@ -126,6 +126,7 @@
 - [myth](https://github.com/yu199195/myth)`可靠消息解决分布式事务框架 `
 - [teaVM](https://github.com/konsoletyper/teavm)`字节码转译成js`
 - [nutzam](https://nutzam.com/index.html)`一个简单的MVC web开发框架`
+- [java-repl](https://github.com/albertlatacz/java-repl)`Java REPL环境`
 
 ### 二次框架
 - [jeesite](https://gitee.com/thinkgem/jeesite)`Spring基础构建的maven jsp项目 bootstrap`

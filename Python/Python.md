@@ -18,6 +18,8 @@
         - [运算符](#运算符)
         - [模块](#模块)
     - [【输入输出】](#输入输出)
+        - [输入](#输入)
+        - [输出](#输出)
         - [读取命令行参数](#读取命令行参数)
             - [docopt](#docopt)
             - [Python Fire](#python-fire)
@@ -43,7 +45,7 @@
         - [三方库](#三方库)
     - [QT](#qt)
 
-`目录 end` |_2018-05-31_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
+`目录 end` |_2018-06-01_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
 ****************************************
 # Python
 > [Python初学者（零基础学习Python、Python入门）书籍、视频、资料、社区推荐](https://github.com/Yixiaohan/codeparkshare)
@@ -292,6 +294,19 @@
 
 ************
 ## 【输入输出】
+### 输入
+### 输出
+- python3 print('Hi')
+    - 格式化输出 `print("%10s - %-10s"%(name, addr))`
+```python
+def show_help():
+    start='\033[0;32m'
+    end='\033[0m'
+    print("%-26s %-20s"%(start+"-h"+end, "帮助"))
+```
+
+- python2 print 'Hi'
+
 ### 读取命令行参数
 > [参考博客](http://www.sharejs.com/codes/python/6121)
 
@@ -332,6 +347,16 @@
 > [Github地址](https://github.com/google/python-fire)快速的简洁的生成CLI
 > 不过要自己书写帮助文档输出,小量参数的话,开发十分的便利 可以和类一起,也可以和方法一起
 
+```python
+import fire
+def main(action=None):
+    print(action)
+    if action == '-h':
+        show_help()
+       
+fire.Fire(main)
+// 使用时 py filename.py -h  
+```
 *****************************************
 ## 【函数】
 
