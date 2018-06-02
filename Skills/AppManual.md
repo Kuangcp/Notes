@@ -30,6 +30,7 @@
         - [Geany](#geany)
         - [scite](#scite)
         - [textadept](#textadept)
+            - [快捷键](#快捷键)
         - [Sublime](#sublime)
         - [VSCode](#vscode)
             - [快捷键](#快捷键)
@@ -63,7 +64,7 @@
     - [安全工具](#安全工具)
         - [gpg](#gpg)
 
-`目录 end` |_2018-05-21_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
+`目录 end` |_2018-05-31_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
 ****************************************
 # 软件使用记事
 ## 【包管理】
@@ -229,7 +230,20 @@ _批量修改_
 > [官方手册](https://foicica.com/textadept/manual.html)
 
 - Github 地址[textadept](https://github.com/rgieseke/textadept/)
-- 主题仓库 [textadept-themes](https://github.com/rgieseke/textadept-themes) 棒！
+- 主题仓库 [textadept-themes](https://github.com/rgieseke/textadept-themes) 
+_个人配置_
+```lua
+    if not CURSES then ui.set_theme('base16-solarized-light') end
+    ui.set_theme('light', {font = 'Monospace', fontsize = 13})
+    -- print(ui.size)
+    -- for k,v in ipairs(ui.size) do
+    -- print(k,v)
+    -- end
+    ui.size = {[1] = 800, [2] = 650}
+```
+
+#### 快捷键
+> Alt Shift 列编辑
 
 **********************************
 ### Sublime 
@@ -362,7 +376,8 @@ CMD编辑器
 *********************************************
 ## 【浏览器】
 ### FireFox
-> [所有桌面版](https://www.mozilla.org/zh-CN/firefox/channel/desktop/) | [所有正式版](https://www.mozilla.org/en-US/firefox/releases/) | [FTP下载地址](http://ftp.mozilla.org/pub/firefox/releases/)
+> [所有桌面版](https://www.mozilla.org/zh-CN/firefox/channel/desktop/) | [所有正式版](https://www.mozilla.org/en-US/firefox/releases/)
+> [正式版本和夜更新版FTP下载地址](http://ftp.mozilla.org/pub/firefox) | [所有开发者版本](http://ftp.mozilla.org/pub/devedition/releases/)
 
 `57为全新的Quantum版本， 因为插件标准的缘故和之前的56版本插件不兼容`
 

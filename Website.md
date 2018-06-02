@@ -5,6 +5,7 @@
     - [国内镜像站](#国内镜像站)
     - [特别网站](#特别网站)
 - [社区网站](#社区网站)
+    - [娱乐](#娱乐)
 - [资源网](#资源网)
 - [学习网站](#学习网站)
     - [并发](#并发)
@@ -24,7 +25,7 @@
     - [人工智能](#人工智能)
     - [在线工具](#在线工具)
 
-`目录 end` |_2018-05-26_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
+`目录 end` |_2018-06-01_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
 ****************************************
 # 【常用的网站】
 ## 软件商店
@@ -69,6 +70,9 @@
 - [深度开源](http://www.open-open.com/lib/) `安卓居多`
 - [dockone](http://dockone.io/)`主要讨论容器技术`
 - [Spring4All](http://www.spring4all.com/)
+
+## 娱乐
+- [数字尾巴](http://www.dgtle.com/portal.php) `小清新的数字技术`
 
 ********************************
 # 资源网

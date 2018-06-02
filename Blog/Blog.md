@@ -1,6 +1,7 @@
 `目录 start`
  
-- [【个人博客网】](#个人博客网)
+- [博客](#博客)
+    - [【个人博客网】](#个人博客网)
     - [博客能人](#博客能人)
     - [专栏](#专栏)
 - [【Blog】](#blog)
@@ -16,15 +17,18 @@
     - [团队开发](#团队开发)
     - [毕业](#毕业)
     - [生活](#生活)
+        - [娱乐](#娱乐)
     - [商业](#商业)
 
-`目录 end` |_2018-05-26_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
+`目录 end` |_2018-06-01_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
 ****************************************
 
 > 只用来记录非技术类的文章,技术类的直接放到对应的笔记中去  
 > [Java相关](/Blog/Java.md) | [Go相关](/Blog/Go.md) | [Python相关](/Blog/Python.md) | [解决方案](/Blog/Solution.md) | [前端相关](/Blog/View.md) | [服务器运维](/Blog/Server.md)
 
-# 【个人博客网】
+# 博客
+
+## 【个人博客网】
 - [ciaoshen](http://www.ciaoshen.com/)`肉身翻墙? Java大佬`
 - [阮一峰](http://www.ruanyifeng.com/blog/)`一个勤奋的布道者,Github每天都有提交`
 - [酷壳](https://coolshell.cn/)`左耳朵耗子个人博客网 阿里架构师`
@@ -55,7 +59,7 @@
 - [dreamlikes](http://dreamlikes.cn/)`Java后台开发`
 
 - [张子阳的博客](http://www.tracefact.net/) `有技术,有推荐的书`
-
+- [绿色记忆](https://blog.gmem.cc/) `技术涉猎广泛`
 ## 博客能人
 - [赵劼](http://www.cnblogs.com/JeffreyZhao/) `对函数式编程，并行程序开发，代码之美以及程序员能力与修养等相关问题`
 - [进击的Java新人](https://zhuanlan.zhihu.com/hinus)
@@ -157,6 +161,9 @@ _如何将脑海中的思维火花转化为代码_
 - [我的 2017 ：追逐更好未来的一年 ](http://blog.csdn.net/u011240877/article/details/78967014)
 - [《程序员的成长课》:少走5年弯路](http://blog.csdn.net/IMbRl71u7pt5X29rlEu7/article/details/78746265)
 - [阮一峰的随笔](http://www.ruanyifeng.com/blog/essays/)
+- [业务分析三维度（场景+角色+时间）之程序员坐禅论道](http://www.cnblogs.com/bluedoctor/archive/2013/04/30/3051418.html#C5)
+
+### 娱乐
 ## 商业
 - [都说在做某界的 Airbnb，Airbnb 到底做了什么](http://daily.zhihu.com/story/4826947)
 

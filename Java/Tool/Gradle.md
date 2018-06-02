@@ -1,6 +1,7 @@
 `目录 start`
  
 - [Gradle](#gradle)
+    - [书籍](#书籍)
     - [前言](#前言)
     - [发行版本列表](#发行版本列表)
     - [优缺点](#优缺点)
@@ -38,6 +39,7 @@
     - [Jar包](#jar包)
     - [上传至构建仓库](#上传至构建仓库)
     - [构建Docker镜像](#构建docker镜像)
+        - [第二种插件方式](#第二种插件方式)
 - [多语言编程](#多语言编程)
     - [处理javascript](#处理javascript)
         - [压缩javascript](#压缩javascript)
@@ -46,10 +48,13 @@
     - [Jenkin 使用](#jenkin-使用)
         - [下载安装和配置](#下载安装和配置)
 
-`目录 end` |_2018-05-22_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
+`目录 end` |_2018-05-31_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
 ****************************************
 
 # Gradle
+## 书籍
+> [Gradle in Action 中译](http://www.jb51.net/books/527811.html) `如果没有一点Groovy基础, 阅读自定义Task等一些高自定义的地方还是比较困惑`
+
 ## 前言
 > [Gradle在大型Java项目上的应用](www.infoq.com/cn/articles/Gradle-application-in-large-Java-projects)
 > [极客学院 教程](https://wiki.jikexueyuan.com/project/GradleUserGuide-Wiki/introduction.html)
@@ -544,6 +549,11 @@ _Dockerfile_
 ```
 - `gradle buildDocker` 即可构建镜像
 - 运行 `docker run --name web --link postgre:db -p 5678:8889 -it 镜像` 注意其中要关联PostgreSQL的容器
+
+### 第二种插件方式
+> [参考  通过Gradle使用Docker部署 Spring Boot项目](https://www.jianshu.com/p/7571fa3b394c)
+
+
 
 **************
 

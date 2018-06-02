@@ -4,12 +4,13 @@
     - [输入输出](#输入输出)
         - [重定向](#重定向)
     - [time](#time)
+    - [date](#date)
     - [grep](#grep)
     - [定时任务crontab](#定时任务crontab)
         - [定时执行脚本](#定时执行脚本)
 - [实用的工具](#实用的工具)
 
-`目录 end` |_2018-04-24_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
+`目录 end` |_2018-06-01_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
 ****************************************
 # 系统常用基础命令
 
@@ -21,8 +22,15 @@
     - 1是标准输出
 
 ## time
+> 可以用于计算命令运行消耗的时间
+
 - bash内置简易time `time` 和 /usr/bin/time `\time`
     - `\time -v ls -al`
+## date
+> 获取日期和时间
+
+- 获取前一天日期 `date --date='1 day ago' -R`
+
 ## grep
 > egrep [相关网页](http://man.linuxde.net/grep)
 
@@ -45,7 +53,7 @@
     - last -n 5 最近五次登录
 
 - cmatrix _装13,字符雨_
- 
+- stty -a 查看键映射
 - xsel 
     - `cat a.md | xsel -b` _将文件所有内容复制到剪贴板_
 - logkeys 记录键盘输入 [Github](https://github.com/kernc/logkeys)

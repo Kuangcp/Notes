@@ -15,7 +15,7 @@
         - [视图的设计](#视图的设计)
     - [数据库中间件](#数据库中间件)
 
-`目录 end` |_2018-04-25_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
+`目录 end` |_2018-05-30_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
 ****************************************
 # 数据库的使用体会
 > [码农翻身:爱炫耀的数据库老头儿](https://mp.weixin.qq.com/s?__biz=MzAxOTc0NzExNg==&mid=2665514001&idx=1&sn=17b72c3e69db6c4277e3045c699b7b6b&chksm=80d67c52b7a1f5446020826841869221873f4578524181384592839d19c4810dc68807117e13&scene=21#wechat_redirect) `事务,undo日志`
@@ -33,6 +33,7 @@
 
 ### Postgresql
 > 听说性能强劲, 但是自己没有测试实践过, 命令行倒是很简洁, 就是数据库的逻辑理念和MySQL不一样, 迁移过去要稍微看下基础
+> 实际使用上, 如果使用Docker开一个容器运行, 所消耗的资源比MySQL少多了, MySQL大概 300M PostgreSQL只要几十M
 
 ## 非关系型数据库
 ### Redis

@@ -3,7 +3,7 @@
 - [非技术类的思考](#非技术类的思考)
     - [开源文化](#开源文化)
 
-`目录 end` |_2018-05-26_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
+`目录 end` |_2018-05-30_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
 ****************************************
 # 非技术类的思考
 
@@ -19,3 +19,4 @@
 - [知乎为什么是个垃圾网站](https://www.douban.com/note/361685574/)
 
 - [农业](http://blog.sina.com.cn/s/blog_173a9afb20102ybj0.html?tj=1)
+

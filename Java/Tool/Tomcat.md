@@ -5,6 +5,7 @@
     - [原理](#原理)
     - [配置运行](#配置运行)
         - [配置解压版 Tomcat](#配置解压版-tomcat)
+            - [IDE中配置运行](#ide中配置运行)
         - [编码](#编码)
         - [虚拟目录](#虚拟目录)
             - [默认主页](#默认主页)
@@ -22,7 +23,7 @@
     - [二、Tomcat 与 Web 服务器](#二、tomcat-与-web-服务器)
     - [Tomcat和Jetty](#tomcat和jetty)
 
-`目录 end` |_2018-04-15_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
+`目录 end` |_2018-06-01_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
 ****************************************
 # Tomcat
 > [官方网站](http://tomcat.apache.org/)
@@ -41,16 +42,18 @@
 - [Tomcat启动卡住,因为random](https://www.jianshu.com/p/576d356dc163)
 *************
 ## 原理
-> 更多查看 Tomcat那些事儿 公众号
+> 更多查看 `Tomcat那些事儿` 公众号  
 > [Tomcat目录部署与Context描述文件context.xml ](https://mp.weixin.qq.com/s?__biz=MzI3MTEwODc5Ng==&mid=2650859355&idx=1&sn=2122baf040ae337dba90201a48b4e11c&chksm=f1329888c645119eec4473e11beaf988c48ce02c52151502086595de59b65dd4bd7cf129530e&scene=21#wechat_redirect)
-> | [Tomcat配置文件解析与Digester](https://mp.weixin.qq.com/s?__biz=MzI3MTEwODc5Ng==&mid=2650859293&idx=1&sn=3c017b2675bb59fda8ae037b7a1e6cb4&chksm=f13298cec64511d8183a23f1b3110bc6b65e8742c6e76391a51c552d86c0bc81a34fab8d0a60&scene=21#wechat_redirect)
+> | [Tomcat配置文件解析与Digester](https://mp.weixin.qq.com/s?__biz=MzI3MTEwODc5Ng==&mid=2650859293&idx=1&sn=3c017b2675bb59fda8ae037b7a1e6cb4&chksm=f13298cec64511d8183a23f1b3110bc6b65e8742c6e76391a51c552d86c0bc81a34fab8d0a60&scene=21#wechat_redirect)  
 > | [Servlet到底是单例还是多例你了解吗？](https://mp.weixin.qq.com/s?__biz=MzI3MTEwODc5Ng==&mid=401278436&idx=1&sn=7d28750b7cff1f706efb82c7fcaa73c5&scene=21#wechat_redirect)
-> | [Tomcat类加载器以及应用间class隔离与共享 ](https://mp.weixin.qq.com/s?__biz=MzI3MTEwODc5Ng==&mid=2650859298&idx=1&sn=8856375f2268fc33a6bb3fbc6932eca7&chksm=f13298f1c64511e77ef1d77d28272840ca56f62da6e11928c78827e8ec53f937f812a4b49aa0&scene=21#wechat_redirect)
+> | [Tomcat类加载器以及应用间class隔离与共享 ](https://mp.weixin.qq.com/s?__biz=MzI3MTEwODc5Ng==&mid=2650859298&idx=1&sn=8856375f2268fc33a6bb3fbc6932eca7&chksm=f13298f1c64511e77ef1d77d28272840ca56f62da6e11928c78827e8ec53f937f812a4b49aa0&scene=21#wechat_redirect)  
 > | [啥，Tomcat里竟然还有特权应用? ](https://mp.weixin.qq.com/s?__biz=MzI3MTEwODc5Ng==&mid=2650859476&idx=1&sn=8be7a37b59a5d167998f6695a1606d39&chksm=f1329807c6451111d2a1c379221655dc87dd105b067f894bfb202d1f9f283bad310a5cdc2277&scene=21#wechat_redirect)
 > | [你了解JMX在Tomcat的应用吗?](https://mp.weixin.qq.com/s?__biz=MzI3MTEwODc5Ng==&mid=401135587&idx=1&sn=610950fda2eceb3683a9fe45078f1a83&scene=21#wechat_redirect)
 ## 配置运行
-> 个人配置好的:[SDK 下的tomcat下的myth-tomcat-8.5.14.zip](https://pan.baidu.com/s/1i48uER7)
-
+- 精简版, 适合放在服务器
+    - [tomcat-clean-8.5.31](http://cloud.kuangcp.top/tomcat-clean-8.5.31.zip) | [tomcat-clean-9.0.8](http://cloud.kuangcp.top/tomcat-clean-9.0.8.zip)
+- 个人配置版,适合个人图形化使用
+    - [tomcat-admin-9.0.8](http://cloud.kuangcp.top/tomcat-admin-9.0.8.zip) | [tomcat-admin-8.5.31](http://cloud.kuangcp.top/tomcat-admin-8.5.31.zip)
 ###  配置解压版 Tomcat
 `Windows 平台`
 1. 在setclasspath中把前几行关于JAVA_HOME，JRE_HOME的路径改成自己的
@@ -202,3 +205,13 @@ Tomcat 是提供一个支持 Servlet 和 JSP 运行的容器。Servlet 和 JSP �
 *************************
 ## Tomcat和Jetty
 > [参考博客: Jetty和Tomcat的选择：按场景而定](http://www.open-open.com/lib/view/open1322622094390.html)
+
+- [Jetty官网](http://www.eclipse.org/jetty/) 
+
+    一个简单项目, 就是index.jsp 里面放了个 Hello 字符串
+    经过对比 8.5.29 jetty 9.2 
+    启动时间 jetty花费时间是Tomcat2倍
+    启动后内存 Jetty480M Tomcat300M
+    1000并发 20000总量 
+    Tomcat涨到 460M 第二次480M  连续5次后上660M了 10次900M 最长时间时而220ms 时而 70ms
+    Jetty涨到770M 第二次压测直接上900M了 十次后也是900M 最长响应时间稳定在 220ms

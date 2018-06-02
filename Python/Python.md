@@ -18,6 +18,8 @@
         - [运算符](#运算符)
         - [模块](#模块)
     - [【输入输出】](#输入输出)
+        - [输入](#输入)
+        - [输出](#输出)
         - [读取命令行参数](#读取命令行参数)
             - [docopt](#docopt)
             - [Python Fire](#python-fire)
@@ -43,10 +45,39 @@
         - [三方库](#三方库)
     - [QT](#qt)
 
-`目录 end` |_2018-05-26_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
+`目录 end` |_2018-06-01_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
 ****************************************
 # Python
 > [Python初学者（零基础学习Python、Python入门）书籍、视频、资料、社区推荐](https://github.com/Yixiaohan/codeparkshare)
+
+- [Python中的多态](http://blog.csdn.net/shangzhihaohao/article/details/7065675)
+- [python输出带颜色的字体](http://www.cnblogs.com/oleli/p/5228880.html)
+
+
+- [Google 开源项目风格指南 (中文版)](https://github.com/zh-google-styleguide/zh-google-styleguide) `其中有Python的风格规范`
+    - `import this` 就会输出Zen Of Python | [官方文档](https://www.python.org/dev/peps/pep-0020/)
+```
+    优美胜于丑陋（Python 以编写优美的代码为目标）
+    明了胜于晦涩（优美的代码应当是明了的，命名规范，风格相似）
+    简洁胜于复杂（优美的代码应当是简洁的，不要有复杂的内部实现）
+    复杂胜于凌乱（如果复杂不可避免，那代码间也不能有难懂的关系，要保持接口简洁）
+    扁平胜于嵌套（优美的代码应当是扁平的，不能有太多的嵌套）
+    间隔胜于紧凑（优美的代码有适当的间隔，不要奢望一行代码解决问题）
+    可读性很重要（优美的代码是可读的）
+    即便假借特例的实用性之名，也不可违背这些规则（这些规则至高无上）
+    
+    不要包容所有错误，除非你确定需要这样做（精准地捕获异常，不写 except:pass 风格的代码）
+    
+    当存在多种可能，不要尝试去猜测
+    而是尽量找一种，最好是唯一一种明显的解决方案（如果不确定，就用穷举法）
+    虽然这并不容易，因为你不是 Python 之父（这里的 Dutch 是指 Guido ）
+    
+    做也许好过不做，但不假思索就动手还不如不做（动手之前要细思量）
+    
+    如果你无法向人描述你的方案，那肯定不是一个好方案；反之亦然（方案测评标准）
+    
+    命名空间是一种绝妙的理念，我们应当多加利用（倡导与号召）
+```
 ## 简介
 
 ### 关于Python2.x与3.x的使用
@@ -263,6 +294,19 @@
 
 ************
 ## 【输入输出】
+### 输入
+### 输出
+- python3 print('Hi')
+    - 格式化输出 `print("%10s - %-10s"%(name, addr))`
+```python
+def show_help():
+    start='\033[0;32m'
+    end='\033[0m'
+    print("%-26s %-20s"%(start+"-h"+end, "帮助"))
+```
+
+- python2 print 'Hi'
+
 ### 读取命令行参数
 > [参考博客](http://www.sharejs.com/codes/python/6121)
 
@@ -303,6 +347,16 @@
 > [Github地址](https://github.com/google/python-fire)快速的简洁的生成CLI
 > 不过要自己书写帮助文档输出,小量参数的话,开发十分的便利 可以和类一起,也可以和方法一起
 
+```python
+import fire
+def main(action=None):
+    print(action)
+    if action == '-h':
+        show_help()
+       
+fire.Fire(main)
+// 使用时 py filename.py -h  
+```
 *****************************************
 ## 【函数】
 

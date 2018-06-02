@@ -27,14 +27,14 @@
     - [在线IDE](#在线ide)
         - [Coding平台的WebIDE](#coding平台的webide)
 
-`目录 end` |_2018-05-16_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
+`目录 end` |_2018-06-01_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
 ****************************************
 # 使用Docker安装软件
 > [如何创建尽可能小的Docker容器教程](http://www.open-open.com/lib/view/open1419760974078.html)
 
 ## 个人相关镜像
 `百度云`
-- alpine配置好ssh `hub.baidubce.com/mythos/alpine-ssh:1.0` 
+- alpine 3.6 配置好ssh `hub.baidubce.com/mythos/alpine-ssh:1.0` 
 - redis的alpine版镜像 `hub.baidubce.com/mythos/redis-alpine:1211` 
 - idea的注册机 `hub.baidubce.com/mythos/idea-register:1.0`
 - protobuf的编译环境以及2.5的源码在内 `hub.baidubce.com/mythos/protoc-alpine-src:2.5` 

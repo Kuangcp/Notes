@@ -6,7 +6,7 @@
     - [编辑器](#编辑器)
     - [终端](#终端)
 
-`目录 end` |_2018-04-08_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
+`目录 end` |_2018-05-31_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
 ****************************************
 # 字体
 
@@ -26,6 +26,7 @@
 
 ## 终端
 - Source Code Pro for Powerline
+    - 并且 + Powerline + Awesonme 的 Bold 最适合ZSH的 Bullet Train 主题
 - Droid Sans Mono for Powerline
 - Roboto Mono for Powerline Bold
 - Hack

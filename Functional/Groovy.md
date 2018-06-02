@@ -1,6 +1,8 @@
 `目录 start`
  
 - [Groovy](#groovy)
+    - [书籍](#书籍)
+    - [语言特性](#语言特性)
     - [安装配置](#安装配置)
         - [在IDEA中](#在idea中)
         - [Maven引入Groovy](#maven引入groovy)
@@ -10,17 +12,33 @@
             - [数字处理](#数字处理)
             - [变量，动态和静态类型，作用域](#变量动态和静态类型作用域)
             - [列表和映射语法](#列表和映射语法)
-        - [调用命令行](#调用命令行)
+            - [动态调用函数](#动态调用函数)
+        - [函数](#函数)
+        - [闭包](#闭包)
+        - [调用系统命令行](#调用系统命令行)
     - [与Java的差异](#与java的差异)
         - [Java不具备的Groovy特性](#java不具备的groovy特性)
     - [Groovy和Java的交互](#groovy和java的交互)
+        - [Maven中引入Groovy](#maven中引入groovy)
         - [Groovy调用Java](#groovy调用java)
         - [Java调用Groovy](#java调用groovy)
     - [Grails](#grails)
 
-`目录 end` |_2018-04-28_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
+`目录 end` |_2018-05-31_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
 ****************************************
 # Groovy
+> [Groovy 官网](http://www.groovy-lang.org/) | 
+
+> [精通Groovy](https://www.ibm.com/developerworks/cn/education/java/j-groovy/j-groovy.html)
+> [Groovy：Java 程序员的 DSL](https://www.ibm.com/developerworks/cn/java/j-pg02179.html)
+> [w3cschool Groovy教程](https://www.w3cschool.cn/groovy/)
+> [并发编程网 Groovy教程](http://ifeve.com/category/groovy/)
+> [infoQ 上Groovy相关](http://www.infoq.com/cn/groovy)
+
+## 书籍
+> [Groovy in Action](http://ishare.iask.sina.com.cn/f/12475871.html) `在线阅读英文原版`
+
+## 语言特性
 - Groovy 具有的Java所没有的语言特性 ：
     - 函数字面值（闭包）
     - 对集合的一等支持
@@ -88,7 +106,29 @@ import java.util.*
     - 映射：`maps = [Java:"2", A:2]` 声明Maps
     - [列表和映射的学习代码](https://github.com/kuangcp/JavaBase/blob/master/src/main/groovy/com/learn/base/LearnListAndMap.groovy)
 
-### 调用命令行
+#### 动态调用函数
+```groovy
+    def test() {
+        "1"
+    }
+    String a = "test"
+    print("${a}"())
+```
+### 函数
+> [参考博客: Groovy进阶之函数、闭包和类](https://www.tuicool.com/articles/iEBJnqF)
+
+### 闭包
+```groovy
+// 简单示例
+    def plus = { x, y ->
+        println "$x plus $y is ${x + y}"
+    }
+    plus(2, 3)
+```
+
+
+*************************
+### 调用系统命令行
 > [Groovy 执行"cp *"shell 命令 ](http://www.guanggua.com/question/183352-groovy-execute-cp-shell-command.html)
 
 1. 字符串.execute()
@@ -186,11 +226,38 @@ class Person{
 
 ***********************
 ## Groovy和Java的交互
+### Maven中引入Groovy
+> [参考文档 ](https://groovy.github.io/gmaven/groovy-maven-plugin/execute.html)
+
+```xml
+<!-- 添加插件-->
+<plugin>
+    <groupId>org.codehaus.gmaven</groupId>
+    <artifactId>groovy-maven-plugin</artifactId>
+    <dependencies>
+        <dependency>
+            <groupId>org.codehaus.groovy</groupId>
+            <artifactId>groovy-all</artifactId>
+            <version>2.0.6</version>
+        </dependency>
+    </dependencies>
+</plugin>
+<!-- 添加Groovy依赖-->
+<dependency>
+    <groupId>org.codehaus.groovy</groupId>
+    <artifactId>groovy-all</artifactId>
+    <version>2.4.7</version>
+</dependency>
+```
+- main 下新建 groovy目录, 和java 同级即可
+
 ### Groovy调用Java
 - 只要将JAR放入classpath中，只要java能调用到，groovy也能调用到，也就是说直接用，无需特别配置
 - 也可以使用@Grab注解，来加载JAR
+
 ### Java调用Groovy
 > [参考博客](http://www.tuicool.com/articles/i6raAv)
+> [参考 在 Java 应用程序中加一些 Groovy 进来](https://www.ibm.com/developerworks/cn/java/j-pg05245/)
 
 - 从Java调用Groovy需要将Groovy及其相关的JAR放到这个程序的CLASSPATH下
 - Java调用Groovy代码的几种方法
@@ -205,5 +272,5 @@ class Person{
 ***********************
 ## Grails
 - [入门博客](http://www.jianshu.com/p/32c9b45a788f)
-
+> [入门视频](http://www.icoolxue.com/album/show/341)
 
