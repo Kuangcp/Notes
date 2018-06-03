@@ -27,10 +27,9 @@
     - [【类】](#类)
             - [继承](#继承)
     - [【异常】](#异常)
-    - [【文件】](#文件)
+    - [【文件操作】](#文件操作)
         - [JSON](#json)
         - [conf或者ini](#conf或者ini)
-- [写 但是要有write节点](#写-但是要有write节点)
     - [【测试】](#测试)
     - [【数据库】](#数据库)
         - [【MySQL】](#mysql)
@@ -45,7 +44,7 @@
         - [三方库](#三方库)
     - [QT](#qt)
 
-`目录 end` |_2018-06-01_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
+`目录 end` |_2018-06-04_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
 ****************************************
 # Python
 > [Python初学者（零基础学习Python、Python入门）书籍、视频、资料、社区推荐](https://github.com/Yixiaohan/codeparkshare)
@@ -559,23 +558,23 @@ fire.Fire(main)
 > [参考博客: python操作ini文件](https://www.oschina.net/code/snippet_782578_14344)
 
 ```python
-import os
-from configparser import ConfigParser
+    import os
+    from configparser import ConfigParser
 
-path = os.path.split(os.path.realpath(__file__))[0]
-mainConf = path + '/main.conf'
-cf = ConfigParser()
-cf.read(mainConf)
-host = cf.get('redis', 'host')
+    path = os.path.split(os.path.realpath(__file__))[0]
+    mainConf = path + '/main.conf'
+    cf = ConfigParser()
+    cf.read(mainConf)
+    host = cf.get('redis', 'host')
 
-# 写 但是要有write节点
-cf.set('write', 'add', '12')
-cf.write(open(mainConf, 'r+'))
-```
-_对应的conf_
-```conf
-    [redis]
-    host=127.0.0.1
+    # 写 但是要有write节点
+    cf.set('write', 'add', '12')
+    cf.write(open(mainConf, 'r+'))
+    ```
+    _对应的conf_
+    ```conf
+        [redis]
+        host=127.0.0.1
 ```
 ******************************
 ## 【测试】

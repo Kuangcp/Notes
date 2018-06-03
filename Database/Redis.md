@@ -1,6 +1,7 @@
 `目录 start`
  
 - [Redis](#redis)
+    - [Book](#book)
     - [【windows上的基本配置】](#windows上的基本配置)
     - [Linux下的使用](#linux下的使用)
         - [docker安装redis](#docker安装redis)
@@ -39,10 +40,13 @@
         - [Python使用](#python使用)
         - [webdis](#webdis)
 
-`目录 end` |_2018-05-26_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
+`目录 end` |_2018-06-04_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
 ****************************************
 # Redis
 > [Redis官网](https://redis.io/) | [Redis中文社区](http://www.redis.cn/) | [Redis教程](http://www.runoob.com/redis/redis-tutorial.html) 
+
+## Book 
+> [Redis设计与实现 第二版](http://www.shouce.ren/api/view/a/13483)
 
 ## 【windows上的基本配置】
 - 注册为服务
@@ -96,6 +100,7 @@
 - 关闭数据库 `shutdown` 他会在关闭前保存数据
 - 保存内存中数据 `save`
 - 认证 `auth` 口令
+- 测试联通性 `ping` 连接成功会返回pong
 
 ### 过期策略
 - `expire key seconds` 设置键的过期时间

@@ -48,7 +48,7 @@
     - [Jenkin 使用](#jenkin-使用)
         - [下载安装和配置](#下载安装和配置)
 
-`目录 end` |_2018-05-31_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
+`目录 end` |_2018-06-04_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
 ****************************************
 
 # Gradle
@@ -70,14 +70,12 @@ _4.6_
 ## 优缺点
 > 相关博客 [Gradle大吐槽](https://blog.csdn.net/MCL529/article/details/79341706)
 
-> 优点 
-
+> 优点  
 1. 相对于Maven, 配置文件简洁了很多, 所以才入坑学习使用的
 2. 对于一些需要自定义的任务,因为核心为Groovy,所以实现能力高
 	- 例如:将一个SpringBoot项目构建成一个镜像,并tag上当前构建的镜像为release,然后删除旧有容器,使用新的镜像启动容器
 
-> 缺点
-
+> 缺点  
 1. 内存占用巨大,存在内存泄露问题, 以至于在IDEA上不敢使用自动导入, 不然每动一下build.gradle 就会卡半天, 8G内存都不够用!!
 2. 编译速度慢, 如果和Maven进行对比, 编译速度和资源占用确实慢
 3. 
