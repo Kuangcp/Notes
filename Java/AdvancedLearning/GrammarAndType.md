@@ -1,6 +1,7 @@
 `目录 start`
  
 - [基础语法](#基础语法)
+    - [代码风格](#代码风格)
     - [结构](#结构)
         - [判断](#判断)
         - [循环](#循环)
@@ -36,9 +37,12 @@
     - [DAO](#dao)
 - [关键字](#关键字)
 
-`目录 end` |_2018-05-31_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
+`目录 end` |_2018-06-04_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
 ****************************************
 # 基础语法
+
+## 代码风格
+> [Google Style Guide](https://github.com/google/styleguide) | [阿里巴巴手册](/Java/AlibabaJavaStandard.md)
 
 ## 结构
 ### 判断

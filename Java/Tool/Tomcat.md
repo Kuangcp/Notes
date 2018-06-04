@@ -12,6 +12,7 @@
             - [虚拟主机](#虚拟主机)
             - [配置 GZip压缩](#配置-gzip压缩)
             - [配置IO方式](#配置io方式)
+    - [Tomcat Native](#tomcat-native)
     - [Web容器和Web服务器的区别](#web容器和web服务器的区别)
         - [【web容器】](#web容器)
             - [【Web服务器】](#web服务器)
@@ -23,13 +24,13 @@
     - [二、Tomcat 与 Web 服务器](#二、tomcat-与-web-服务器)
     - [Tomcat和Jetty](#tomcat和jetty)
 
-`目录 end` |_2018-06-01_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
+`目录 end` |_2018-06-04_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
 ****************************************
 # Tomcat
 > [官方网站](http://tomcat.apache.org/)
 
 - 官网上大致有：
-    - Tomcat `7 8 8.5 9 大版本`
+    - Tomcat `7 8 8.5 9` 大版本
     - Tomcat Native `优化Tomcat性能，提升速倍`
     - Apache Standard Taglib `JSTL的实现`
     - Tomcat Connectors `用于连接IIS Apache` [官方文档](http://tomcat.apache.org/connectors-doc/index.html)
@@ -49,11 +50,13 @@
 > | [Tomcat类加载器以及应用间class隔离与共享 ](https://mp.weixin.qq.com/s?__biz=MzI3MTEwODc5Ng==&mid=2650859298&idx=1&sn=8856375f2268fc33a6bb3fbc6932eca7&chksm=f13298f1c64511e77ef1d77d28272840ca56f62da6e11928c78827e8ec53f937f812a4b49aa0&scene=21#wechat_redirect)  
 > | [啥，Tomcat里竟然还有特权应用? ](https://mp.weixin.qq.com/s?__biz=MzI3MTEwODc5Ng==&mid=2650859476&idx=1&sn=8be7a37b59a5d167998f6695a1606d39&chksm=f1329807c6451111d2a1c379221655dc87dd105b067f894bfb202d1f9f283bad310a5cdc2277&scene=21#wechat_redirect)
 > | [你了解JMX在Tomcat的应用吗?](https://mp.weixin.qq.com/s?__biz=MzI3MTEwODc5Ng==&mid=401135587&idx=1&sn=610950fda2eceb3683a9fe45078f1a83&scene=21#wechat_redirect)
+
 ## 配置运行
 - 精简版, 适合放在服务器
     - [tomcat-clean-8.5.31](http://cloud.kuangcp.top/tomcat-clean-8.5.31.zip) | [tomcat-clean-9.0.8](http://cloud.kuangcp.top/tomcat-clean-9.0.8.zip)
 - 个人配置版,适合个人图形化使用
     - [tomcat-admin-9.0.8](http://cloud.kuangcp.top/tomcat-admin-9.0.8.zip) | [tomcat-admin-8.5.31](http://cloud.kuangcp.top/tomcat-admin-8.5.31.zip)
+
 ###  配置解压版 Tomcat
 `Windows 平台`
 1. 在setclasspath中把前几行关于JAVA_HOME，JRE_HOME的路径改成自己的
@@ -145,6 +148,11 @@
 #### 配置IO方式
 > 默认http1.1是nio, 还有aio ajp bio
 
+## Tomcat Native
+> [官方文档](http://tomcat.apache.org/native-doc/) | [参考博客: tomcat安装与配置native,apr](https://blog.csdn.net/shangruo/article/details/52776212)
+
+
+*************************
 ##	Web容器和Web服务器的区别
 ### 【web容器】 
 

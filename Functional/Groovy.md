@@ -24,7 +24,7 @@
         - [Java调用Groovy](#java调用groovy)
     - [Grails](#grails)
 
-`目录 end` |_2018-05-31_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
+`目录 end` |_2018-06-04_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
 ****************************************
 # Groovy
 > [Groovy 官网](http://www.groovy-lang.org/) | 
@@ -229,6 +229,7 @@ class Person{
 ### Maven中引入Groovy
 > [参考文档 ](https://groovy.github.io/gmaven/groovy-maven-plugin/execute.html)
 
+- 此方法不能打包, 只是在idea中能成功运行
 ```xml
 <!-- 添加插件-->
 <plugin>
@@ -249,7 +250,38 @@ class Person{
     <version>2.4.7</version>
 </dependency>
 ```
-- main 下新建 groovy目录, 和java 同级即可
+*********************************************
+
+> [参考博客 eclipse开发Groovy代码，与java集成，maven打包编译](http://www.cnblogs.com/rightmin/p/4945797.html) | [Groovy file does not compile in Intellij IDEA](https://stackoverflow.com/questions/8310563/groovy-file-does-not-compile-in-intellij-idea)
+
+```xml
+    <plugin>
+        <!-- 编译插件 -->
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <version>3.7.0</version>
+        <configuration>
+            <target>1.8</target>
+            <source>1.8</source>
+            <encoding>UTF-8</encoding>
+            <compilerId>groovy-eclipse-compiler</compilerId>
+            <verbose>true</verbose>
+        </configuration>
+        <dependencies>
+            <dependency>
+                <groupId>org.codehaus.groovy</groupId>
+                <artifactId>groovy-eclipse-compiler</artifactId>
+                <version>2.9.3-01</version>
+            </dependency>
+            <dependency>
+                <groupId>org.codehaus.groovy</groupId>
+                <artifactId>groovy-eclipse-batch</artifactId>
+                <version>2.5.0-01</version>
+            </dependency>
+        </dependencies>
+    </plugin>
+```
+> 这样的配置就能 `mvn clean package`
 
 ### Groovy调用Java
 - 只要将JAR放入classpath中，只要java能调用到，groovy也能调用到，也就是说直接用，无需特别配置

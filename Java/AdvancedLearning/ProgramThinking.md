@@ -4,6 +4,7 @@
     - [抽象](#抽象)
     - [面向过程](#面向过程)
     - [面向对象](#面向对象)
+        - [OOP](#oop)
         - [面向过程和面向对象的对比](#面向过程和面向对象的对比)
     - [DDD 领域驱动设计](#ddd-领域驱动设计)
         - [聚合](#聚合)
@@ -26,7 +27,7 @@
         - [阿里巴巴的代码检查](#阿里巴巴的代码检查)
     - [配置文件](#配置文件)
 
-`目录 end` |_2018-05-26_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
+`目录 end` |_2018-06-04_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
 ****************************************
 # 开发思想
 > 有关开发的理论性思想,编写,测试,部署等
@@ -52,6 +53,9 @@
 > OO  Object Oriented
 
 > [参考博客: 再见面向对象编程？](http://www.jdon.com/48231)
+
+### OOP
+> [维基 OOP](https://en.wikipedia.org/wiki/Object-oriented_programming) | [中文版](https://zh.wikipedia.org/wiki/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1)
 
 ### 面向过程和面向对象的对比
 > 示例 把大象塞进冰箱:
