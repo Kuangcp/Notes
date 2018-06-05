@@ -193,6 +193,7 @@
         * [ InterviewSkill ](/Skills/Work/InterviewSkill.md)
         * [ PomodoroTechnique ](/Skills/Work/PomodoroTechnique.md)
         * [ ShortcutKey ](/Skills/Work/ShortcutKey.md)
+        * [ WorkThinking ](/Skills/Work/WorkThinking.md)
     * [ AppManual ](/Skills/AppManual.md)
     * [ CodingThinking ](/Skills/CodingThinking.md)
     * [ Problem ](/Skills/Problem.md)

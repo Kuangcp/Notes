@@ -42,7 +42,7 @@
     - [工作](#工作)
         - [简历](#简历)
 
-`目录 end` |_2018-06-05_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
+`目录 end` |_2018-06-06_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
 ****************************************
 
 # 【GitRepos】
@@ -83,7 +83,7 @@
 - [阮一峰的博客](https://github.com/ruanyf/articles)`Github账号每日都有提交....`
 - [HstarDoc](https://github.com/hstarorg/HstarDoc)`前端的大量文档`
 
-- [唯品会的规范文档](https://github.com/vipshop/vjtools)
+- [唯品会的规范文档](https://github.com/vipshop/vjtools)`规范这种东西, 各有各家的说法, 适合自己就好`
 
 ## 翻译和搬运
 - [translations](https://github.com/oldratlee/translations)`翻译外国的文章`

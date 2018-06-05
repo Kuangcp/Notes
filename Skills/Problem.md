@@ -12,7 +12,7 @@
                 - [fcitx](#fcitx)
             - [Flash](#flash)
 
-`目录 end` |_2018-04-08_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
+`目录 end` |_2018-06-06_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
 ****************************************
 `目录`
 - [问题解决博客](#问题解决博客)
@@ -29,8 +29,7 @@
 *********************
 # 问题解决方案
 ## 终端
-- 误触 Ctrl+S
-    - 终端会出现无响应状态，一般按下 Ctrl Shift C 即可解除
+
 
 ## IDE
 ### IDEA
@@ -67,3 +66,4 @@
 - 点击[官网下载地址](https://get.adobe.com/cn/flashplayer/)下载,然后解压,
 - 将文件复制进火狐插件目录:`sudo cp libflashplayer.so  /usr/lib64/mozilla/plugins`
 - 添加其他用户可执行权限`chmod 755 /usr/lib64/mozilla/plugins/libflashplayer.so`
+
