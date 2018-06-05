@@ -25,6 +25,7 @@
     - [【Docker】](#docker)
         - [web](#web)
     - [【Go】](#go)
+        - [Fun](#fun)
         - [Demo](#demo)
     - [【Python】](#python)
     - [【Linux】](#linux)
@@ -41,7 +42,7 @@
     - [工作](#工作)
         - [简历](#简历)
 
-`目录 end` |_2018-06-01_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
+`目录 end` |_2018-06-05_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
 ****************************************
 
 # 【GitRepos】
@@ -81,6 +82,9 @@
 - [书写规范和建议](https://github.com/sparanoid/chinese-copywriting-guidelines)`比较全面,闲暇可以参考`
 - [阮一峰的博客](https://github.com/ruanyf/articles)`Github账号每日都有提交....`
 - [HstarDoc](https://github.com/hstarorg/HstarDoc)`前端的大量文档`
+
+- [唯品会的规范文档](https://github.com/vipshop/vjtools)
+
 ## 翻译和搬运
 - [translations](https://github.com/oldratlee/translations)`翻译外国的文章`
 - [掘金翻译计划](https://github.com/xitu/gold-miner)
@@ -89,6 +93,7 @@
 ## 【算法】
 - [魏楚阳的算法学习](https://github.com/brianway/algorithms-learning)
 - [interview](https://github.com/kdn251/interviews)`面试所需算法练习`
+
 
 ***********************************
 ## 【Java】
@@ -201,6 +206,9 @@
 ## 【Go】
 - [Go Programming & Concurrency in Practice](https://github.com/hyper0x/goc2p)
 
+### Fun
+- [wtf](https://github.com/senorprogrammer/wtf)`终端中的丰富功能`
+
 ### Demo
 - [gin-example](https://github.com/EDDYCJY/go-gin-example)
     - [对应博客](https://segmentfault.com/a/1190000013297625)
@@ -269,6 +277,7 @@
 - [HelloGibhub](https://github.com/521xueweihan/HelloGitHub)`有趣的项目`
 - [serverless](https://github.com/phodal/serverless)`serverless学习手册`
 - [marp](https://github.com/yhatt/marp/)`markdown书写PPT`
+- [build your own ](https://github.com/danistefanovic/build-your-own-x)`使用各种语言和技术栈,实现一个东西`
 
 ## 工作
 ### 简历

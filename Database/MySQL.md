@@ -13,7 +13,6 @@
     - [字符类型](#字符类型)
         - [varchar](#varchar)
         - [text](#text)
-        - [](#)
     - [LongBlob](#longblob)
 - [基本组成](#基本组成)
     - [数据库](#数据库)
@@ -22,7 +21,8 @@
         - [修改](#修改)
     - [表](#表)
         - [创建](#创建)
-        - [修改](#修改)
+        - [修改表定义](#修改表定义)
+            - [增删字段](#增删字段)
     - [视图](#视图)
     - [触发器](#触发器)
         - [【创建单语句的触发器】](#创建单语句的触发器)
@@ -57,7 +57,7 @@
         - [【授权】](#授权)
 - [查询](#查询)
 
-`目录 end` |_2018-05-26_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
+`目录 end` |_2018-06-05_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
 ****************************************
 
 # Mysql
@@ -107,8 +107,8 @@ _重启_
 ## 字符类型
 ### varchar
 ### text
-### 
 
+- [ ] 后期完善
 
 ## LongBlob
 - 这种数据类型可以直接把图像文件存到数据库中！
@@ -135,32 +135,37 @@ _重启_
 
 ## 表
 ### 创建
-> create table name;
+- `create table name (field int, field varchar(32)....);`
+- 查看表的创建语句 `show create table name;`
 
-### 修改
+### 修改表定义
 - [ ] TODO 修改表格
+
+#### 增删字段
+- 增加字段 `alter table name add field1 int, field2 varchar(20);`
+- 删除字段 `alter table name drop column field1, drop column field2;`
 
 **************
 ## 视图
 > 保障数据安全性，提高查询效率
 
-[参考博客: ](http://www.jb51.net/article/36363.htm)
+> [参考博客: ](http://www.jb51.net/article/36363.htm)
 ```sql
-CREATE [ALGORITHM]={UNDEFINED|MERGE|TEMPTABLE}]
-       VIEW 视图名 [(属性清单)]
-       AS SELECT 语句
-       [WITH [CASCADED|LOCAL] CHECK OPTION];
+    CREATE [ALGORITHM]={UNDEFINED|MERGE|TEMPTABLE}]
+        VIEW 视图名 [(属性清单)]
+        AS SELECT 语句
+        [WITH [CASCADED|LOCAL] CHECK OPTION];
 ```
-ALGORITHM表示视图选择的算法（可选参数）
-　　UNDEFINED：MySQL将自动选择所要使用的算法
-　　MERGE：将视图的语句与视图定义合并起来，使得视图定义的某一部分取代语句的对应部分
-　　TEMPTABLE：将视图的结果存入临时表，然后使用临时表执行语句
-视图名表示要创建的视图的名称
-属性清单表示视图中的列名，默认与SELECT查询结果中的列名相同（可选参数）
-WITH CHECK OPTION表示更新视图时要保证在该试图的权限范围之内（可选参数）
-　　CASCADED：更新视图时要满足所有相关视图和表的条件
-　　LOCAL：更新视图时，要满足该视图本身定义的条件即可
-tips：创建试图时最好加上WITH CASCADED CHECK OPTION参数，这种方式比较严格,可以保证数据的安全性
+- ALGORITHM表示视图选择的算法（可选参数）
+    - UNDEFINED：MySQL将自动选择所要使用的算法
+    - MERGE：将视图的语句与视图定义合并起来，使得视图定义的某一部分取代语句的对应部分
+    - TEMPTABLE：将视图的结果存入临时表，然后使用临时表执行语句
+- 视图名表示要创建的视图的名称
+- 属性清单表示视图中的列名，默认与SELECT查询结果中的列名相同（可选参数）
+- WITH CHECK OPTION表示更新视图时要保证在该试图的权限范围之内（可选参数）
+    - CASCADED：更新视图时要满足所有相关视图和表的条件
+    - LOCAL：更新视图时，要满足该视图本身定义的条件即可
+> tips：创建试图时最好加上WITH CASCADED CHECK OPTION参数，这种方式比较严格,可以保证数据的安全性
 
 ## 触发器
 ### 【创建单语句的触发器】
@@ -196,44 +201,38 @@ tips：创建试图时最好加上WITH CASCADED CHECK OPTION参数，这种方�
         END LOOP label1;
         SET @x = p1;
       END
-      
       call doiterate(7);
       select @x;
 ```
-
 
 ##  函数
 ### 【简单示例】
 
 ```sql
-      ---函数部分,修改定界符 
-      delimiter //
-      CREATE FUNCTION hello (s CHAR(20)) RETURNS CHAR(50)
-       RETURN CONCAT('Hello, ',s,'!');
-      //
-      --将定界符改回来，是第二句SQL语句
-      delimiter ;
-      
-      select hello('Myth ');
-      drop function hello;
-
--- 函数
-		create function fun_test(var1 int,var2 varchar(16)) returns int
-		begin 
-		   declare temp int;
-		   select count(*) into temp from test;
-		   return temp;
-		end;
-
-select fun_test(8,'d');
+    ---函数部分,修改定界符 
+    delimiter //
+    CREATE FUNCTION hello (s CHAR(20)) RETURNS CHAR(50)
+    RETURN CONCAT('Hello, ',s,'!');
+    //
+    --将定界符改回来，是第二句SQL语句
+    delimiter ;
+    select hello('Myth ');
+    drop function hello;
+    -- 函数
+    create function fun_test(var1 int,var2 varchar(16)) returns int
+    begin 
+        declare temp int;
+        select count(*) into temp from test;
+        return temp;
+    end;
+    select fun_test(8,'d');
 ```
 
 ***********************************
 # 1.mysql常用命令集合
 ## 查看数据库参数
 ### 查看连接状况
-> [查看mysql数据库连接数、并发数相关信息。](https://blog.csdn.net/caodongfang126/article/details/52764213)
-`show status like 'Threads%';`
+> [查看mysql数据库连接数、并发数相关信息。](https://blog.csdn.net/caodongfang126/article/details/52764213)`show status like 'Threads%';`
 
 ## 1.1【自增长】
 - 【创建表时设置自增长，并设置起始值】

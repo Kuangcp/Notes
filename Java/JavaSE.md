@@ -5,8 +5,9 @@
     - [【基础】](#基础)
     - [【深入】](#深入)
     - [【抽象】](#抽象)
+    - [相关](#相关)
 
-`目录 end` |_2018-05-26_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
+`目录 end` |_2018-06-05_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
 ****************************************
 # 计算机基础
 
@@ -44,4 +45,8 @@
 ## 【抽象】
 >- [编程思想](/Java/AdvancedLearning/ProgramThinking.md)  
 >- [模式之禅](/Java/ZenOfPattern.md)
+
+
+## 相关
+> [architect-awesome](https://github.com/xingshaocheng/architect-awesome)
 

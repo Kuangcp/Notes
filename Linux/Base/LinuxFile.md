@@ -50,7 +50,7 @@
             - [查看发行版](#查看发行版)
             - [查看系统所有用户信息](#查看系统所有用户信息)
 
-`目录 end` |_2018-05-29_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
+`目录 end` |_2018-06-05_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
 ****************************************
 # 【文件管理】
 > Linux中认为万物皆文件
@@ -139,6 +139,7 @@ _find_
 
 > 递归删除目录下所有run后缀的文件 `find . -name "*.run"  | xargs rm -f`
 
+> 查找文件内容 `find etc/  |xargs grep -i java`
 ### 查看文件
 
 _ls_

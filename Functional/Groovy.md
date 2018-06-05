@@ -22,9 +22,11 @@
         - [Maven中引入Groovy](#maven中引入groovy)
         - [Groovy调用Java](#groovy调用java)
         - [Java调用Groovy](#java调用groovy)
+    - [坑](#坑)
+        - [默认return](#默认return)
     - [Grails](#grails)
 
-`目录 end` |_2018-06-04_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
+`目录 end` |_2018-06-05_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
 ****************************************
 # Groovy
 > [Groovy 官网](http://www.groovy-lang.org/) | 
@@ -300,6 +302,12 @@ class Person{
     - 使用嵌入式的Groovy控制台
 
 > [示例代码](https://github.com/kuangcp/JavaBase/blob/master/src/main/java/com/classfile/JavaUseGroovy.java)
+
+## 坑
+
+### 默认return
+> 只要在方法最后一行放入表达式, 就会自动return, 这就导致了Groovy不会对方法进行检查, 逻辑复杂时如果少了一个return, 不会报编译错误, 方法直接返回null.  
+> 这个坑, 硬是Debug了近一个小时, debug功力要提升了
 
 ***********************
 ## Grails
