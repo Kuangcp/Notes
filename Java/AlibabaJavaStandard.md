@@ -26,12 +26,12 @@
 - [安全规约](#安全规约)
     - [注意](#注意)
 
-`目录 end` |_2018-05-21_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
+`目录 end` |_2018-06-06_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
 ****************************************
 # 阿里巴巴Java开发手册终极版
-检查工具
 
 > [FindBugs、PMD和CheckStyle对比](https://blog.csdn.net/ml5271169588/article/details/6975701)
+
 # 【编程规约】
 *********************************************
 ## 命名规约

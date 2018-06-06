@@ -37,7 +37,7 @@
     - [DAO](#dao)
 - [关键字](#关键字)
 
-`目录 end` |_2018-06-04_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
+`目录 end` |_2018-06-06_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
 ****************************************
 # 基础语法
 
@@ -77,7 +77,10 @@
 > [参考 你真的知道Java中boolean类型占用多少个字节吗？](https://www.jianshu.com/p/2f663dc820d0)
 ### short
 ### int
+> 数值范围 +- 2147483647 也就是 2^31-1 也就说明了int是占四个字节 32位 一位是符号位
+
 ### long
+> 数值范围 +- 9223372036854775807 2^63-1 也就是八个字节 64位 一位是符号位
 ### float
 ### double
 

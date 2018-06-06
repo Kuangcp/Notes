@@ -10,7 +10,7 @@
         - [插入模式](#插入模式)
         - [命令模式](#命令模式)
 
-`目录 end` |_2018-06-05_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
+`目录 end` |_2018-06-06_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
 ****************************************
 # Vim 
 > 学习曲线很高，但是学会熟练使用后就效率很高
@@ -84,6 +84,7 @@
 - `$` 右移光标到行末尾
 - `^` 移动到本行第一个非空字符
 
+- [ ] 在文本文件中通过文件名字符串 跳转到对应的文件, 再跳转回来
 
 ### 搜索匹配
 - `/name`  正向搜索字符串 name

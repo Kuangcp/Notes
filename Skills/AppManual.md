@@ -64,7 +64,7 @@
     - [安全工具](#安全工具)
         - [gpg](#gpg)
 
-`目录 end` |_2018-05-31_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
+`目录 end` |_2018-06-06_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
 ****************************************
 # 软件使用记事
 ## 【包管理】
@@ -358,6 +358,7 @@ CMD编辑器
 * 而且运行时也是使用这份配置文件，这样的结果是可以使用一份Tomcat目录，在eclipse配置运行多个Tomcat
 * 但是奇怪的是 访问不了Tomcat主页即：localhost:8080 所以也就不能管理Tomcat 查看运行状态
 
+资源下载 archive.eclipse.org/eclipse/downloads/ 
 *********************
 ### MyEclipse
 * 创建一个工作平台后，首先把编码改成UTF-8，自动更新去掉，加上独立的Tomcat

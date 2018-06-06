@@ -35,7 +35,7 @@
         - [SVN](#svn)
     - [repos的使用](#repos的使用)
 
-`目录 end` |_2018-04-17_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
+`目录 end` |_2018-06-06_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
 ****************************************
 # Git基础
 ## 版本控制系统(VCS)
@@ -221,7 +221,7 @@
 - `git clone --depth 1 URL` 只克隆最近一次提交的历史, 能大大减小拉取的大小, 但是如果要用到之前的提交历史就还是要下拉下来的 类似于懒加载
 
 #### checkout
-> [官方文档](https://git-scm.com/docs/git-checkout)
+> [官方文档 : git checkout](https://git-scm.com/docs/git-checkout)
 
 - `git checkout 文件名 文件名` git会在索引中找文件，有就取出，没有就从最新的commit回找，取出第一个找到的版本，
     - 每个文件都是这样，也就是说如果有被删除的文件，是可以通过此来找回的
@@ -232,6 +232,8 @@
 - `git pull --all` 下拉远程所有的分支到本地
 
 > 撤销当前对文件的所有修改 `git checkout -- 文件名` 就会使用上次提交的文件来覆盖当前文件
+
+- [ ] 有没有 svn cat 类似的功能
 
 #### fetch
 > 访问远程仓库, 拉取本地没有的数据
