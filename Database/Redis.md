@@ -165,22 +165,24 @@
 - `SSCAN key cursor [MATCH pattern] [COUNT count]` 参考 SCAN 命令
 
 #### 有序集合 zset
-> (元素是键值对，键是member成员，值是score分值必须是浮点数
+> 元素是键值对，键是member成员，值是score分值必须是浮点数
 
-- `zadd` 将一个给定分值的成员添加到有序集合里
+- _zadd_ 将一个给定分值的成员添加到有序集合里
 - ZCARD
 - ZCOUNT
-- `zincrby` 自增
-- zrange 根据元素在有序集合中的位置，从有序集合中获取多个元素
-    - zrange name 0 -1 withscores 获取所有并获取分值
-    - zrange name 2 30 withscores 
-- `zrangebyscore` 获取有序集合在给定范围中的所有元素
+- _zincrby_ 自增
+
+- _zrange_ 根据元素在有序集合中的位置，从有序集合中从小到大获取多个元素
+    - `zrange name 0 -1 withscores` 获取所有并获取分值
+    - `zrange name 0 3 withscores`  获取分数最少的4个键值对
+- _zrevrange_ 相反的, 从大到小
+
+- _zrangebyscore_ 获取有序集合在给定范围中的所有元素
     - `zrangebyscore name 0 200 withscores`
 - ZRANK
 - ZREM
 - ZREMRANGEBYRANK
 - ZREMRANGEBYSCORE
-- `zrevrange` 从大到小排序的获取集合元素
 - ZREVRANGEBYSCORE
 - ZREVRANK
 - ZSCORE
