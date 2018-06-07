@@ -18,7 +18,7 @@
 - [【互联网标准化过程文档】](#互联网标准化过程文档)
     - [登录授权](#登录授权)
 
-`目录 end` |_2018-04-08_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
+`目录 end` |_2018-06-07_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
 ****************************************
 # 【API】
 > 各种语言以及平台的在线API
@@ -96,7 +96,7 @@
 
 ****************
 ## Docker
-- [java的官方镜像](https://hub.docker.com/_/java/) `基于openjdk的，和oraclejdk相比资源翻番有点不能理解`
+- [java的官方镜像](https://hub.docker.com/_/java/) `基于openjdk的，和oraclejdk相比消耗的资源翻番有点不能理解`
 
 
 *************************************************************

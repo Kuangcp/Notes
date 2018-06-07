@@ -119,3 +119,207 @@ _有自制力的人， 能够坚持的人才更有可能成功！_
 - 这是用来记录我的笔记的仓库，用上git来管理，促使我熟悉git命令，习惯记录电子笔记
     - 每个文件都有目录,方便阅读,但是因为平台的兼容性,目前只在Github上能正常使用
     - `浏览器的 Octotree 插件` 也方便查阅
+
+
+# Summary
+
+* [ Introduction ](README.md)
+
+* [ ApiAndDoc ](./ApiAndDoc.md)
+* [ AppList ](./AppList.md)
+* [ Platform ](./Platform.md)
+* [ Process ](./Process.md)
+* [ Repository ](./Repository.md)
+* [ SUMMARY ](./SUMMARY.md)
+* [ Website ](./Website.md)
+* 【 Article 】
+    * [ CleanCode ](/Article/CleanCode.md)
+    * [ Font ](/Article/Font.md)
+    * [ FreeBook ](/Article/FreeBook.md)
+    * [ Memorandum ](/Article/Memorandum.md)
+    * [ NotCode ](/Article/NotCode.md)
+    * [ ReadBook ](/Article/ReadBook.md)
+    * [ UnReadBook ](/Article/UnReadBook.md)
+* 【 Blog 】
+    * [ Arithmetic ](/Blog/Arithmetic.md)
+    * [ Blog ](/Blog/Blog.md)
+    * [ Java ](/Blog/Java.md)
+    * [ Server ](/Blog/Server.md)
+    * [ Solution ](/Blog/Solution.md)
+    * [ View ](/Blog/View.md)
+* 【 Database 】
+    * [ Experience ](/Database/Experience.md)
+    * [ MangoDB ](/Database/MangoDB.md)
+    * [ MySQL ](/Database/MySQL.md)
+    * [ MySQLAdvance ](/Database/MySQLAdvance.md)
+    * [ Oracle ](/Database/Oracle.md)
+    * [ OraclePerformances ](/Database/OraclePerformances.md)
+    * [ PostgreSQL ](/Database/PostgreSQL.md)
+    * [ Redis ](/Database/Redis.md)
+    * [ SQL ](/Database/SQL.md)
+    * [ SQLServer ](/Database/SQLServer.md)
+* 【 FrontEnd 】
+    * 【 FrontEnd/Frame 】
+        * [ LayUI ](/FrontEnd/Frame/LayUI.md)
+        * [ Vue ](/FrontEnd/Frame/Vue.md)
+    * 【 FrontEnd/Node 】
+        * [ NodeJS ](/FrontEnd/Node/NodeJS.md)
+    * [ Hexo ](/FrontEnd/Hexo.md)
+    * [ LearnPS ](/FrontEnd/LearnPS.md)
+    * [ ResponseCode ](/FrontEnd/ResponseCode.md)
+    * [ ViewSolution ](/FrontEnd/ViewSolution.md)
+* 【 Functional 】
+    * [ Clojure ](/Functional/Clojure.md)
+    * [ FPBase ](/Functional/FPBase.md)
+    * [ Go ](/Functional/Go.md)
+    * [ Groovy ](/Functional/Groovy.md)
+    * [ JavaScript ](/Functional/JavaScript.md)
+    * [ Kotlin ](/Functional/Kotlin.md)
+    * [ Scala ](/Functional/Scala.md)
+* 【 Java 】
+    * 【 Java/AdvancedLearning 】
+        * [ Annotation ](/Java/AdvancedLearning/Annotation.md)
+        * [ ClassFile ](/Java/AdvancedLearning/ClassFile.md)
+        * [ Collection ](/Java/AdvancedLearning/Collection.md)
+        * [ Concurrents ](/Java/AdvancedLearning/Concurrents.md)
+        * [ ContinuousIntegration ](/Java/AdvancedLearning/ContinuousIntegration.md)
+        * [ Deploy ](/Java/AdvancedLearning/Deploy.md)
+        * [ Exception ](/Java/AdvancedLearning/Exception.md)
+        * [ ExtendsAndInterface ](/Java/AdvancedLearning/ExtendsAndInterface.md)
+        * [ Generics ](/Java/AdvancedLearning/Generics.md)
+        * [ GrammarAndType ](/Java/AdvancedLearning/GrammarAndType.md)
+        * [ IO ](/Java/AdvancedLearning/IO.md)
+        * [ JDBC ](/Java/AdvancedLearning/JDBC.md)
+        * [ JMS ](/Java/AdvancedLearning/JMS.md)
+        * [ Java8 ](/Java/AdvancedLearning/Java8.md)
+        * [ JavaPerformance ](/Java/AdvancedLearning/JavaPerformance.md)
+        * [ JavaTest ](/Java/AdvancedLearning/JavaTest.md)
+        * [ MultipleLanguage ](/Java/AdvancedLearning/MultipleLanguage.md)
+        * [ ProgramThinking ](/Java/AdvancedLearning/ProgramThinking.md)
+        * [ Reflect ](/Java/AdvancedLearning/Reflect.md)
+        * [ Socket ](/Java/AdvancedLearning/Socket.md)
+        * [ Thread ](/Java/AdvancedLearning/Thread.md)
+        * [ Update ](/Java/AdvancedLearning/Update.md)
+        * [ Web ](/Java/AdvancedLearning/Web.md)
+        * [ WebPerformance ](/Java/AdvancedLearning/WebPerformance.md)
+    * 【 Java/Framework 】
+        * [ Activiti ](/Java/Framework/Activiti.md)
+        * [ Guava ](/Java/Framework/Guava.md)
+        * [ Hibernate ](/Java/Framework/Hibernate.md)
+        * [ JPA ](/Java/Framework/JPA.md)
+        * [ JXls ](/Java/Framework/JXls.md)
+        * [ Mybatis ](/Java/Framework/Mybatis.md)
+        * [ Netty ](/Java/Framework/Netty.md)
+        * [ POI ](/Java/Framework/POI.md)
+        * [ Struts ](/Java/Framework/Struts.md)
+        * [ Vertx ](/Java/Framework/Vertx.md)
+    * 【 Java/Spring 】
+        * [ Spring ](/Java/Spring/Spring.md)
+        * [ Spring5 ](/Java/Spring/Spring5.md)
+        * [ SpringBoot ](/Java/Spring/SpringBoot.md)
+        * [ SpringBoot2 ](/Java/Spring/SpringBoot2.md)
+        * [ SpringCloud ](/Java/Spring/SpringCloud.md)
+        * [ SpringMVC ](/Java/Spring/SpringMVC.md)
+        * [ SpringMessageQue ](/Java/Spring/SpringMessageQue.md)
+        * [ SpringSecurity ](/Java/Spring/SpringSecurity.md)
+        * [ SpringWebFlux ](/Java/Spring/SpringWebFlux.md)
+        * [ SpringbootDatabase ](/Java/Spring/SpringbootDatabase.md)
+        * [ Transactional ](/Java/Spring/Transactional.md)
+    * 【 Java/TemplateEngine 】
+        * [ Thymeleaf ](/Java/TemplateEngine/Thymeleaf.md)
+    * 【 Java/Tool 】
+        * [ Gradle ](/Java/Tool/Gradle.md)
+        * [ IDEA ](/Java/Tool/IDEA.md)
+        * [ Lombok ](/Java/Tool/Lombok.md)
+        * [ Maven ](/Java/Tool/Maven.md)
+        * [ PyCharm ](/Java/Tool/PyCharm.md)
+        * [ SBT ](/Java/Tool/SBT.md)
+        * [ Tomcat ](/Java/Tool/Tomcat.md)
+    * [ AlibabaJavaStandard ](/Java/AlibabaJavaStandard.md)
+    * [ EE ](/Java/EE.md)
+    * [ JavaSE ](/Java/JavaSE.md)
+    * [ Log ](/Java/Log.md)
+    * [ MIS ](/Java/MIS.md)
+    * [ RESTful ](/Java/RESTful.md)
+    * [ UsuallyLibAPI ](/Java/UsuallyLibAPI.md)
+    * [ ZenOfPattern ](/Java/ZenOfPattern.md)
+* 【 Linux 】
+    * 【 Linux/Alpine 】
+        * [ AlpineBase ](/Linux/Alpine/AlpineBase.md)
+    * 【 Linux/Arch 】
+        * [ Manjaro ](/Linux/Arch/Manjaro.md)
+    * 【 Linux/Base 】
+        * [ LinuxBase ](/Linux/Base/LinuxBase.md)
+        * [ LinuxCommand ](/Linux/Base/LinuxCommand.md)
+        * [ LinuxFile ](/Linux/Base/LinuxFile.md)
+        * [ LinuxNet ](/Linux/Base/LinuxNet.md)
+        * [ LinuxPerformance ](/Linux/Base/LinuxPerformance.md)
+        * [ ReleaseExperience ](/Linux/Base/ReleaseExperience.md)
+        * [ Ssh ](/Linux/Base/Ssh.md)
+    * 【 Linux/Centos 】
+        * [ CentosBase ](/Linux/Centos/CentosBase.md)
+    * 【 Linux/Container 】
+        * [ Docker ](/Linux/Container/Docker.md)
+        * [ DockerFile ](/Linux/Container/DockerFile.md)
+        * [ DockerService ](/Linux/Container/DockerService.md)
+        * [ DockerSoft ](/Linux/Container/DockerSoft.md)
+        * [ Kubernetes ](/Linux/Container/Kubernetes.md)
+    * 【 Linux/Debian 】
+        * [ Debian ](/Linux/Debian/Debian.md)
+        * [ Ubuntu ](/Linux/Debian/Ubuntu.md)
+    * 【 Linux/Tool 】
+        * [ Nginx ](/Linux/Tool/Nginx.md)
+        * [ Vim ](/Linux/Tool/Vim.md)
+        * [ Zsh ](/Linux/Tool/Zsh.md)
+    * 【 Linux/Vcs 】
+        * [ GitAction ](/Linux/Vcs/GitAction.md)
+        * [ GitBase ](/Linux/Vcs/GitBase.md)
+        * [ GitTeam ](/Linux/Vcs/GitTeam.md)
+        * [ Svn ](/Linux/Vcs/Svn.md)
+    * [ JavaDevInit ](/Linux/JavaDevInit.md)
+* 【 MyBlog 】
+    * 【 MyBlog/Problem 】
+        * [ shared-libiraries ](/MyBlog/Problem/shared-libiraries.md)
+    * [ 2018-3-15-install-deepin ](/MyBlog/2018-3-15-install-deepin.md)
+    * [ how-to-use-junit ](/MyBlog/how-to-use-junit.md)
+    * [ how-to-use-junit5 ](/MyBlog/how-to-use-junit5.md)
+    * [ why-put-netty-in-tomcat ](/MyBlog/why-put-netty-in-tomcat.md)
+* 【 Python 】
+    * [ Python ](/Python/Python.md)
+    * [ PythonGUI ](/Python/PythonGUI.md)
+    * [ PythonGame ](/Python/PythonGame.md)
+    * [ PythonNet ](/Python/PythonNet.md)
+    * [ PythonWeb ](/Python/PythonWeb.md)
+* 【 Reactive 】
+* 【 Script 】
+    * [ Dos ](/Script/Dos.md)
+    * [ ShellLearn ](/Script/ShellLearn.md)
+* 【 Skills 】
+    * 【 Skills/CS 】
+        * [ Arithmetic ](/Skills/CS/Arithmetic.md)
+        * [ Computer ](/Skills/CS/Computer.md)
+        * [ Concurrent ](/Skills/CS/Concurrent.md)
+        * [ Network ](/Skills/CS/Network.md)
+        * [ Profile ](/Skills/CS/Profile.md)
+        * [ TestTheory ](/Skills/CS/TestTheory.md)
+        * [ WebSecurity ](/Skills/CS/WebSecurity.md)
+    * 【 Skills/Document 】
+        * [ MarkDown ](/Skills/Document/MarkDown.md)
+        * [ RequirementsDocument ](/Skills/Document/RequirementsDocument.md)
+    * 【 Skills/FrameWork 】
+        * [ JavaBoot ](/Skills/FrameWork/JavaBoot.md)
+    * 【 Skills/Soft 】
+        * [ VirtualBox ](/Skills/Soft/VirtualBox.md)
+    * 【 Skills/Spider 】
+        * [ SpiderBase ](/Skills/Spider/SpiderBase.md)
+    * 【 Skills/Work 】
+        * [ InterviewSkill ](/Skills/Work/InterviewSkill.md)
+        * [ PomodoroTechnique ](/Skills/Work/PomodoroTechnique.md)
+        * [ ShortcutKey ](/Skills/Work/ShortcutKey.md)
+        * [ WorkThinking ](/Skills/Work/WorkThinking.md)
+    * [ AppManual ](/Skills/AppManual.md)
+    * [ CodingThinking ](/Skills/CodingThinking.md)
+    * [ Problem ](/Skills/Problem.md)
+    * [ RegularExpression ](/Skills/RegularExpression.md)
+    * [ SoftwareDesignEngineer ](/Skills/SoftwareDesignEngineer.md)
+* 【 Windows 】
