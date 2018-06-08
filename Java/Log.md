@@ -2,58 +2,73 @@
  
 - [日志系统](#日志系统)
     - [slf4j 体系](#slf4j-体系)
-        - [logback的实现](#logback的实现)
-        - [配置理解](#配置理解)
-            - [根节点 <configuration> 属性](#根节点-<configuration>-属性)
-                - [设置上下文名称：<contextName>](#设置上下文名称<contextname>)
-                - [设置变量： <property>](#设置变量-<property>)
-                - [获取时间戳字符串：<timestamp>](#获取时间戳字符串<timestamp>)
-            - [设置loger：](#设置loger)
-            - [详解<appender>](#详解<appender>)
+        - [Log4j](#log4j)
+        - [LogBack](#logback)
+            - [配置理解](#配置理解)
+                - [根节点 <configuration> 属性](#根节点-<configuration>-属性)
+                - [子节点](#子节点)
+                    - [设置上下文名称：<contextName>](#设置上下文名称<contextname>)
+                    - [设置变量： <property>](#设置变量-<property>)
+                    - [获取时间戳字符串：<timestamp>](#获取时间戳字符串<timestamp>)
+                - [设置loger：](#设置loger)
+                - [详解<appender>](#详解<appender>)
     - [apache 体系](#apache-体系)
 - [分析日志](#分析日志)
     - [Linux上查看日志](#linux上查看日志)
     - [lnav](#lnav)
 
-`目录 end` |_2018-05-21_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
+`目录 end` |_2018-06-08_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
 ****************************************
 # 日志系统
 ## slf4j 体系
+> 只是接口设计, 以下是具体实现库
+
 > [码农翻身: 一个著名的日志系统是怎么设计出来的？ ](https://mp.weixin.qq.com/s?__biz=MzAxOTc0NzExNg==&mid=2665513967&idx=1&sn=5586ce841a7e8b39adc2569f0eb5bb45&chksm=80d67bacb7a1f2ba38aa37620d273dfd7d7227667df556d36c84d125cafd73fef16464288cf9&scene=21#wechat_redirect)`深刻的理解了日志系统的来源以及相关关系`  
+
+> 目前来说, LogBack要好于Log4j [参考博客: 从Log4j迁移到LogBack的理由](https://blog.csdn.net/gaojian881/article/details/53957961)
+
+- 个人体验:  logback 1.1.3 log4j 1.7.25
+    - 在Java中
+        - 
+    - 在Groovy中
+        - Log4j不能在Groovy中获取到正确的 类,方法,方法所在行 直接输出?
+        - LogBack可以拿到正确的值, 但是在闭包中, 方法是混乱的
+        
+****************************
+### Log4j
+
 > [log4j.properties配置详解](http://www.cnblogs.com/ITEagle/archive/2010/04/23/1718365.html)
 
-### logback的实现
+**************************
+### LogBack
+
 - [logback简单示例](https://github.com/Kuangcp/Notes/blob/master/ConfigFiles/Log/logback.xml)
 
-**************
-### 配置理解
+#### 配置理解
 > [参考博客](http://www.cnblogs.com/lixuwu/p/5811273.html)
 
-#### 根节点 <configuration> 属性
-- scan:
-    - 当此属性设置为true时，配置文件如果发生改变，将会被重新加载，默认值为true。
-- scanPeriod:
-    - 设置监测配置文件是否有修改的时间间隔，如果没有给出时间单位，默认单位是毫秒。当scan为true时，此属性生效。默认的时间间隔为1分钟。
-- debug:
-    - 当此属性设置为true时，将打印出logback内部日志信息，实时查看logback运行状态。默认值为false。
+##### 根节点 <configuration> 属性
+- _scan_ : 当此属性设置为true时，配置文件如果发生改变，将会被重新加载，默认值为true。
+- _scanPeriod_ : 设置监测配置文件是否有修改的时间间隔，如果没有给出时间单位，默认单位是毫秒。当scan为true时，此属性生效。默认的时间间隔为1分钟。
+- _debug_ : 当此属性设置为true时，将打印出logback内部日志信息，实时查看logback运行状态。默认值为false。
 
 ```xml
     <configuration scan="true" scanPeriod="60 seconds" debug="false"> 
         <!-- 其他配置省略--> 
     </configuration> 
 ```
-` 子节点：`
-##### 设置上下文名称：<contextName>
-每个logger都关联到logger上下文，默认上下文名称为“default”。但可以使用<contextName>设置成其他名字，用于区分不同应用程序的记录。一旦设置，不能修改。
+##### 子节点
+###### 设置上下文名称：<contextName>
+每个logger都关联到logger上下文，默认上下文名称为“default”。但可以使用`<contextName>`设置成其他名字，用于区分不同应用程序的记录。一旦设置，不能修改。
 ```xml
     <configuration scan="true" scanPeriod="60 seconds" debug="false">
       <contextName>myAppName</contextName>
       <!-- 其他配置省略-->
     </configuration> 
 ```
-##### 设置变量： <property>
-用来定义变量值的标签，<property> 有两个属性，name和value；其中name的值是变量的名称，value的值时变量定义的值。通过<property>定义的值会被插入到logger上下文中。
-定义变量后，可以使“${}”来使用变量。例如使用<property>定义上下文名称，然后在<contentName>设置logger上下文时使用。
+###### 设置变量： <property>
+用来定义变量值的标签，`<property>` 有两个属性，name和value；其中name的值是变量的名称，value的值时变量定义的值。通过`<property>`定义的值会被插入到logger上下文中。
+定义变量后，可以通过`${}`来使用变量。例如使用`<property>`定义上下文名称，然后在`<contentName>`设置logger上下文时使用。
 ```xml
     <configuration scan="true" scanPeriod="60 seconds" debug="false">
       <property name="APP_Name" value="myAppName" /> 
@@ -61,8 +76,8 @@
       <!-- 其他配置省略-->
     </configuration>
 ```
-##### 获取时间戳字符串：<timestamp>
-两个属性 key:标识此<timestamp> 的名字；datePattern：设置将当前时间（解析配置文件的时间）转换为字符串的模式，遵循java.txt.SimpleDateFormat的格式。
+###### 获取时间戳字符串：<timestamp>
+两个属性 key:标识此`<timestamp>` 的名字；datePattern：设置将当前时间（解析配置文件的时间）转换为字符串的模式，遵循`java.txt.SimpleDateFormat`的格式。
 例如将解析配置文件的时间作为上下文名称：
 ```xml
     <configuration scan="true" scanPeriod="60 seconds" debug="false"> 
@@ -72,9 +87,9 @@
     </configuration>
 ```
 ************
-#### 设置loger：
+##### 设置loger：
 - `<loger>`
-    - 用来设置某一个包或者具体的某一个类的日志打印级别、以及指定<appender>。<loger>仅有一个name属性，一个可选的level和一个可选的addtivity属性。
+    - 用来设置某一个包或者具体的某一个类的日志打印级别、以及指定`<appender>`。`<loger>`仅有一个name属性，一个可选的level和一个可选的addtivity属性。
     - `name:`
         - 用来指定受此loger约束的某一个包或者具体的某一个类。
     - `level:`
@@ -86,12 +101,11 @@
 
 ********
 - `<root>`
-    - 也是<loger>元素，但是它是根loger。只有一个level属性，应为已经被命名为"root".
+    - 也是`<loger>`元素，但是它是根loger。只有一个level属性，应为已经被命名为"root".
     - `level:`
         - 用来设置打印级别，大小写无关：TRACE, DEBUG, INFO, WARN, ERROR, ALL 和 OFF，不能设置为INHERITED或者同义词NULL。
         - 默认是DEBUG。
 - `<root>`可以包含零个或多个`<appender-ref>`元素，标识这个appender将会添加到这个loger。
-**********
 **********
 `测试类：`
 ```java
@@ -106,7 +120,7 @@
         }  
     } 
 ```
-- `第1种：只配置root`
+_第1种：只配置root_
 ```xml
     <configuration> 
         <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">   
@@ -121,10 +135,10 @@
     </configuration>
 ```
 其中appender的配置表示打印到控制台(稍后详细讲解appender )；
-<root level="INFO">将root的打印级别设置为“INFO”，指定了名字为“STDOUT”的appender。
+`<root level="INFO">`将root的打印级别设置为“INFO”，指定了名字为“STDOUT”的appender。
 当执行logback.LogbackDemo类的main方法时，root将级别为“INFO”及大于“INFO”的日志信息交给已经配置好的名为“STDOUT”的appender处理，“STDOUT”appender将信息打印到控制台；
 
-- `第2种：带有loger的配置，不指定级别，不指定appender`
+_第2种：带有loger的配置，不指定级别，不指定appender_
 ```xml
     <configuration> 
       <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender"> 
@@ -141,15 +155,15 @@
      </configuration> 
 ```
 其中appender的配置表示打印到控制台(稍后详细讲解appender )；
-<logger name="logback" />将控制logback包下的所有类的日志的打印，但是并没用设置打印级别，所以继承他的上级<root>的日志级别“DEBUG”；
+`<logger name="logback" />`将控制logback包下的所有类的日志的打印，但是并没用设置打印级别，所以继承他的上级`<root>`的日志级别“DEBUG”；
 没有设置addtivity，默认为true，将此loger的打印信息向上级传递；
 没有设置appender，此loger本身不打印任何信息。
-<root level="DEBUG">将root的打印级别设置为“DEBUG”，指定了名字为“STDOUT”的appender。
+`<root level="DEBUG">`将root的打印级别设置为“DEBUG”，指定了名字为“STDOUT”的appender。
  
-当执行logback.LogbackDemo类的main方法时，因为LogbackDemo 在包logback中，所以首先执行<logger name="logback" />，将级别为“DEBUG”及大于“DEBUG”的日志信息传递给root，本身并不打印；
+当执行logback.LogbackDemo类的main方法时，因为LogbackDemo 在包logback中，所以首先执行`<logger name="logback" />`，将级别为“DEBUG”及大于“DEBUG”的日志信息传递给root，本身并不打印；
 root接到下级传递的信息，交给已经配置好的名为“STDOUT”的appender处理，“STDOUT”appender将信息打印到控制台；
 
-- `第3种：带有多个loger的配置，指定级别，指定appender `
+_第3种：带有多个loger的配置，指定级别，指定appender_
 ```xml
     <configuration> 
        <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender"> 
@@ -171,25 +185,25 @@ root接到下级传递的信息，交给已经配置好的名为“STDOUT”的a
 ```
 其中appender的配置表示打印到控制台(稍后详细讲解appender )；
  
-<logger name="logback" />将控制logback包下的所有类的日志的打印，但是并没用设置打印级别，所以继承他的上级<root>的日志级别“DEBUG”；
+`<logger name="logback" />`将控制logback包下的所有类的日志的打印，但是并没用设置打印级别，所以继承他的上级`<root>`的日志级别“DEBUG”；
 没有设置addtivity，默认为true，将此loger的打印信息向上级传递；
 没有设置appender，此loger本身不打印任何信息。
- <logger name="logback.LogbackDemo" level="INFO" additivity="false">控制logback.LogbackDemo类的日志打印，打印级别为“INFO”；
+` <logger name="logback.LogbackDemo" level="INFO" additivity="false">`控制logback.LogbackDemo类的日志打印，打印级别为“INFO”；
 additivity属性为false，表示此loger的打印信息不再向上级传递，
 指定了名字为“STDOUT”的appender。
-<root level="DEBUG">将root的打印级别设置为“ERROR”，指定了名字为“STDOUT”的appender。
+`<root level="DEBUG">`将root的打印级别设置为“ERROR”，指定了名字为“STDOUT”的appender。
  
- 当执行logback.LogbackDemo类的main方法时，先执行<logger name="logback.LogbackDemo" level="INFO" additivity="false">，将级别为“INFO”及大于“INFO”的日志信息交给此loger指定的名为“STDOUT”的appender处理，在控制台中打出日志，不再向次loger的上级 <logger name="logback"/> 传递打印信息；
-<logger name="logback"/>未接到任何打印信息，当然也不会给它的上级root传递任何打印信息；
+ 当执行logback.LogbackDemo类的main方法时，先执行`<logger name="logback.LogbackDemo" level="INFO" additivity="false">`，将级别为“INFO”及大于“INFO”的日志信息交给此loger指定的名为“STDOUT”的appender处理，在控制台中打出日志，不再向次loger的上级 `<logger name="logback"/>` 传递打印信息；
+`<logger name="logback"/>`未接到任何打印信息，当然也不会给它的上级root传递任何打印信息；
 *********
-如果将<logger name="logback.LogbackDemo" level="INFO" additivity="false">修改为 <logger name="logback.LogbackDemo" level="INFO" additivity="true">那打印结果将是什么呢？
+如果将`<logger name="logback.LogbackDemo" level="INFO" additivity="false">` 修改为 `<logger name="logback.LogbackDemo" level="INFO" additivity="true">`那打印结果将是什么呢？
 没错，日志打印了两次，想必大家都知道原因了，因为打印信息向上级传递，logger本身打印一次，root接到后又打印一次
 
-#### 详解<appender>
+##### 详解<appender>
 > <appender>是<configuration>的子节点，是负责写日志的组件。
 > <appender>有两个必要属性name和class。name指定appender名称，class指定appender的全限定名。
 
-- _1.ConsoleAppender:_
+_1.ConsoleAppender:_
 把日志添加到控制台，有以下子节点：
 `<encoder>`：对日志进行格式化。（具体参数稍后讲解 ）
 `<target>`：字符串 System.out 或者 System.err ，默认 System.out ；
@@ -205,7 +219,7 @@ additivity属性为false，表示此loger的打印信息不再向上级传递，
       </root>
     </configuration> 
 ```
-- _2.FileAppender:_
+_2.FileAppender:_
 - 把日志添加到文件，有以下子节点：
     - `<file>`：被写入的文件名，可以是相对目录，也可以是绝对目录，如果上级目录不存在会自动创建，没有默认值。
     - `<append>`：如果是 true，日志被追加到文件结尾，如果是 false，清空现存文件，默认是true。
@@ -234,7 +248,7 @@ additivity属性为false，表示此loger的打印信息不再向上级传递，
         - `<triggeringPolicy >:` 告知 RollingFileAppender 合适激活滚动。
         - `<prudent>：`当为true时，不支持FixedWindowRollingPolicy。支持TimeBasedRollingPolicy，但是有两个限制，1不支持也不允许文件压缩，2不能设置file属性，必须留空。
  
-`rollingPolicy：`
+_rollingPolicy_
  
 TimeBasedRollingPolicy： 最常用的滚动策略，它根据时间来制定滚动策略，既负责滚动也负责出发滚动。有以下子节点：
 `<fileNamePattern>:`

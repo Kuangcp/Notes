@@ -9,6 +9,7 @@
     - [Groovy基础](#groovy基础)
         - [Groovy特性](#groovy特性)
             - [默认导入](#默认导入)
+            - [隐式return](#隐式return)
             - [数字处理](#数字处理)
             - [变量，动态和静态类型，作用域](#变量动态和静态类型作用域)
             - [列表和映射语法](#列表和映射语法)
@@ -26,7 +27,7 @@
         - [默认return](#默认return)
     - [Grails](#grails)
 
-`目录 end` |_2018-06-05_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
+`目录 end` |_2018-06-08_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
 ****************************************
 # Groovy
 > [Groovy 官网](http://www.groovy-lang.org/) | 
@@ -83,6 +84,11 @@ import java.net.*
 import java.util.*
 ```
 - 添加额外的JAR可以使用@Grab注解或者和Java一样加入到ClassPath中去
+
+#### 隐式return
+- [ ] 乍一眼看过去, Groovy 的方法是没有返回值的, 那么是真么没有返回值?
+
+- Groovy会在代码块的行末缺省return null, 如果末行有一个表达式, 并有返回值, 就会return该值, 略坑
 
 #### 数字处理
 - Groovy默认浮点数使用BigDecimal，Java中BigDecimal构造器入参是字符串，Groovy是数值，底层转换了一下，看起来更自然

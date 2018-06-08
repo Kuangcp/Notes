@@ -10,7 +10,7 @@
         - [使用](#使用)
         - [查看](#查看)
 
-`目录 end` |_2018-05-21_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
+`目录 end` |_2018-06-08_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
 ****************************************
 # SVN
 > 传统的中心化版本控制工具,能够精确控制每个目录的权限  
@@ -57,6 +57,14 @@ _Ubuntu_
 
 - _删除文件_ `svn remove path`
 
+> [参考博客: svn下忽略文件和文件夹](http://blog.sina.com.cn/s/blog_6e165cc101017m0j.html)
+> [参考博客: svn 忽略文件、文件夹](https://ztgame.shenyu.me/svn/svn-ignore.html)
+- _忽略文件_
+    - `svn propedit svn:ignore 文件夹` 会打开默认配置,  和gitignore一样的配置, 然后保存即可
+        - 文件夹就是项目, 所以要在项目根目录的上级目录之心这个命令
+        - 如果上面没有调起编辑器, 就要在 .bashrc 中 `export SVN_EDITOR=vim`
+    - 然后提交到仓库, 即可完成 忽略文件的配置, 为了可见性, 一般和.gitignore一样的配置即可
+        -  `svn propset -F .svnignore .`
 ### 查看
 > [查看最后修改的文件](https://java-er.com/blog/svn-last-files/)  
 > | [svn历史版本对比以及还原到历史版本](http://www.cnblogs.com/simonote/articles/3086717.html)
