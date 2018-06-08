@@ -94,7 +94,7 @@
 ## 基础
 ### 基础语法
 - 缩进来表示代码块的嵌套关系
-- 单行注释：`#` 多行注释：''' '''
+- 单行注释：`#` 多行注释： `""" """`
 - 空行的重要性，代码段之间有空行，Python之禅
 
 ### 基础数据类型
@@ -113,6 +113,8 @@
 
 ### virtualenv
 > [廖雪峰 virtualenv](https://www.liaoxuefeng.com/wiki/0014316089557264a6b348958f449949df42a6d3a2e542c000/001432712108300322c61f256c74803b43bfd65c6f8d0d0000)
+
+`sudo apt install python3-venv`
 
 - 创建环境 `python3 -m venv web` 或者 `virtualenv --no-site-packages web` 不将系统中安装的包带入该环境
 - 启动环境 `source web/bin/activate`

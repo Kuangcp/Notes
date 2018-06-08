@@ -109,12 +109,40 @@ import java.util.*
     - [列表和映射的学习代码](https://github.com/kuangcp/JavaBase/blob/master/src/main/groovy/com/learn/base/LearnListAndMap.groovy)
 
 #### 动态调用函数
+
 ```groovy
-    def test() {
-        "1"
+    // 当前类, 可以这么用
+    def test(name) {
+        return "Hi "+name
     }
     String a = "test"
-    print("${a}"())
+    print("${a}"("myth"))
+
+```
+```java
+    class Condition{
+        static isLevelMore(int level){
+            return level > 30
+        }
+    }
+    class Use {
+        static void main(String[]a){
+            // 跨类, 需要使用反射
+            // 1
+            MetaMethod method = Condition.metaClass.getMetaMethod("isLevelMore", 20)
+            println method
+            println method.invoke(Condition.class, 20)
+
+            // 2
+            Method method1 = Condition.class.getMethod("isLevelMore", int.class)
+            println method1.invoke(Condition.class, 40)
+            
+            // 3
+            Condition.getDeclaredMethods().toList().toSet().each {if(it.toString().contains("isLevelMore")){
+                println it.invoke(Condition.class, 40)
+            }}
+        }
+    }
 ```
 ### 函数
 > [参考博客: Groovy进阶之函数、闭包和类](https://www.tuicool.com/articles/iEBJnqF)
