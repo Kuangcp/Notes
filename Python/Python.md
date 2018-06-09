@@ -7,6 +7,8 @@
         - [基础语法](#基础语法)
         - [基础数据类型](#基础数据类型)
         - [virtualenv](#virtualenv)
+        - [pip](#pip)
+            - [Requirements files](#requirements-files)
     - [变量](#变量)
     - [基本运行结构](#基本运行结构)
         - [序列](#序列)
@@ -44,7 +46,7 @@
         - [三方库](#三方库)
     - [QT](#qt)
 
-`目录 end` |_2018-06-04_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
+`目录 end` |_2018-06-10_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
 ****************************************
 # Python
 > [Python初学者（零基础学习Python、Python入门）书籍、视频、资料、社区推荐](https://github.com/Yixiaohan/codeparkshare)
@@ -120,6 +122,19 @@
 - 启动环境 `source web/bin/activate`
     - 在环境中使用的pip python 都是环境中的, 其实就是修改了系统的环境变量指向
 - 停用环境 `deactivate`
+
+### pip
+> [pip](https://pip.readthedocs.io/en/stable/) | Python的包管理器
+
+#### Requirements files
+> [pip官方文档 Requirements files](https://pip.readthedocs.io/en/1.1/requirements.html)
+
+1. 导出 `pip freeze > requirements.txt` _这个命令会将当前环境安装的包全部列出来, 适合env环境下使用_
+    - 如果没有使用虚拟环境, 然后只想导出某项目的依赖 [Github pipreqs](https://github.com/bndr/pipreqs)
+    - 安装 : `pip install pipreqs` 然后 `pipreqs /path/to/project`
+2. 使用 `pip install -r requirements.txt`
+
+*******************************
 ## 变量
 - 局部变量：
 - 全局变量：定义在函数外的变量，也称公用变量，函数中 `global x` 声明引用全局变量x

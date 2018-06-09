@@ -19,7 +19,7 @@
     - [资源文件](#资源文件)
         - [图片](#图片)
 
-`目录 end` |_2018-05-23_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
+`目录 end` |_2018-06-10_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
 ****************************************
 # JavaScript
 
@@ -109,30 +109,39 @@ function testRole() {
 - lozad.js 懒加载
 
 ### Jquery
-> jquery有是slim版(没有ajax的精简版 ) [JQuery](http://jquery.com/)
+> jquery有是slim版(没有ajax的精简版 ) [JQuery官网](http://jquery.com/) | [Jquery教程](http://www.w3school.com.cn/jquery/index.asp)
 
 - 事件绑定 `$('#Button').on('click', function(){})`
 - 在HTML的DOM上绑定数据:设置 `data-*` 属性 然后jq拿到元素直接调用 `$(this).data('id')`拿到值就可以避免函数传值
 
+_原生方式异步提交_
+```js
+    $("#set-form").submit(function(e){
+        e.preventDefault();
+        console.log('prepare submit')
+    });
+```
 #### Ajax
 > [ajax文档](https://api.jquery.com/jQuery.ajax/)
+
 #### form插件
 ```js
 // 使用jquery 的 form插件进行异步提交
 $(".submit").on('click', function () {
-        console.log('dfs')
-        // var jk = $("#contents").submit()
-        var options = {
-            // target:'#contents', //后台将把传递过来的值赋给该元素
-            url:'../teacher/topic/add', //提交给哪个执行
-            type:'POST',
-            success: function(data){
-                console.log(data)
-            } //显示操作提示
-        };
-        $('#contents').ajaxSubmit(options);
-    })
+    console.log('dfs')
+    // var jk = $("#contents").submit()
+    var options = {
+        // target:'#contents', //后台将把传递过来的值赋给该元素
+        url:'../teacher/topic/add', //提交给哪个执行
+        type:'POST',
+        success: function(data){
+            console.log(data)
+        } //显示操作提示
+    };
+    $('#contents').ajaxSubmit(options);
+})
 ```
+
 ## 资源文件
 ### 图片
 > [参考博客: JS 图片转Base64](http://www.cnblogs.com/wujingtao/p/5196836.html)
