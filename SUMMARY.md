@@ -42,6 +42,7 @@
     * 【 FrontEnd/Node 】
         * [ NodeJS ](/FrontEnd/Node/NodeJS.md)
     * [ Hexo ](/FrontEnd/Hexo.md)
+    * [ JavaScript ](/FrontEnd/JavaScript.md)
     * [ LearnPS ](/FrontEnd/LearnPS.md)
     * [ ResponseCode ](/FrontEnd/ResponseCode.md)
     * [ ViewSolution ](/FrontEnd/ViewSolution.md)
@@ -50,7 +51,6 @@
     * [ FPBase ](/Functional/FPBase.md)
     * [ Go ](/Functional/Go.md)
     * [ Groovy ](/Functional/Groovy.md)
-    * [ JavaScript ](/Functional/JavaScript.md)
     * [ Kotlin ](/Functional/Kotlin.md)
     * [ Scala ](/Functional/Scala.md)
 * 【 Java 】

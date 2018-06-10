@@ -31,7 +31,6 @@
 - 字符串转码:
     - [参考博客:JS字符串相关转码函数](http://www.cnblogs.com/xcsn/archive/2013/05/15/3079373.html)
 
-
 ## 函数
 ### 函数传值
 ```js
@@ -141,6 +140,10 @@ $(".submit").on('click', function () {
     $('#contents').ajaxSubmit(options);
 })
 ```
+
+### echarts
+> [官网](http://echarts.baidu.com/index.html) | 做图表展示很简单
+
 
 ## 资源文件
 ### 图片

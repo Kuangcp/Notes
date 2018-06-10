@@ -54,6 +54,47 @@ _弹出页面层_
     <input type="text" />
     </script>
 ```
+_弹出页面中异步提交表单_
+```html
+    <script type="text/html" id="set_key">
+        <form id="set-form" class="set-form">
+            <input type="text" id="key" required/> <->
+            <input type="text" id="value" required/><br><br>
+            <button>新增 string</button>
+        </form>
+    </script>
+    <button onclick="string()">String</button>
+```
+```js
+
+    function string(){
+        var set_content = $("#set_key").html()
+        layer.tab({
+            area: ['500px', '520px'],
+            tab: [{
+                title: 'set', 
+                content: set_content
+            }]
+        });        
+        $("#set-form").submit(function(e){
+            e.preventDefault();
+            set();
+        });
+    }
+    function set(){
+        var key = $("#key").val()
+        var value = $("#value").val()
+        handlePost('/key',  {
+            key: key, 
+            value: value
+        }, function(data){
+            console.log(data)
+        }, function(data){
+            console.log(data)
+        })
+    }
+}
+```
 ### 树形
 > [基于layui树形菜单写的树形列表（treetable）](https://segmentfault.com/a/1190000011812724)
 
