@@ -27,7 +27,7 @@
         - [阿里巴巴的代码检查](#阿里巴巴的代码检查)
     - [配置文件](#配置文件)
 
-`目录 end` |_2018-06-04_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
+`目录 end` |_2018-06-10_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
 ****************************************
 # 开发思想
 > 有关开发的理论性思想,编写,测试,部署等
@@ -85,6 +85,7 @@
 ### 参考实践项目
 > [enode](https://github.com/tangxuehua/enode)`C#实现`
 > [](https://github.com/liangzeng/cqrs)
+
 
 *****************************
 ## 数据的操作
