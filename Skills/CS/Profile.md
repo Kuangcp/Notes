@@ -8,7 +8,7 @@
     - [JSON](#json)
     - [Protobuf](#protobuf)
 
-`目录 end` |_2018-06-06_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
+`目录 end` |_2018-06-10_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
 ****************************************
 # 配置文件
 
@@ -29,6 +29,7 @@
 
 
 ## JSON
+> [Google 规范](https://github.com/darcyliu/google-styleguide/blob/master/JSONStyleGuide.md)
 
 ## Protobuf
 > [Github : Protobuf](https://github.com/google/protobuf)

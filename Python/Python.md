@@ -55,7 +55,7 @@
 - [python输出带颜色的字体](http://www.cnblogs.com/oleli/p/5228880.html)
 
 
-- [Google 开源项目风格指南 (中文版)](https://github.com/zh-google-styleguide/zh-google-styleguide) `其中有Python的风格规范`
+- [Google 开源项目风格指南 (中文版)](http://zh-google-styleguide.readthedocs.io/en/latest/google-python-styleguide/background/) 
     - `import this` 就会输出Zen Of Python | [官方文档](https://www.python.org/dev/peps/pep-0020/)
 ```
     优美胜于丑陋（Python 以编写优美的代码为目标）
