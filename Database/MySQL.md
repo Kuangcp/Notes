@@ -57,7 +57,7 @@
         - [【授权】](#授权)
 - [查询](#查询)
 
-`目录 end` |_2018-06-05_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
+`目录 end` |_2018-06-11_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
 ****************************************
 
 # Mysql
@@ -88,7 +88,6 @@ _重启_
 
 ### 图形化客户端
 > windows上就直接 MySQL-Font HeidiSQL Linux就终端了..虽然wine也能装这俩 | [10个Mysql图形客户端](http://www.linuxidc.com/Linux/2015-01/111421.htm)
-
 
 ********************************
 # 基本数据类型

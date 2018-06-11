@@ -3,7 +3,10 @@
 - [Python](#python)
     - [简介](#简介)
         - [关于Python2.x与3.x的使用](#关于python2x与3x的使用)
+    - [安装配置](#安装配置)
+        - [Docker](#docker)
     - [基础](#基础)
+        - [代码风格](#代码风格)
         - [基础语法](#基础语法)
         - [基础数据类型](#基础数据类型)
         - [virtualenv](#virtualenv)
@@ -19,34 +22,34 @@
             - [字典（键值对）](#字典（键值对）)
         - [运算符](#运算符)
         - [模块](#模块)
-    - [【输入输出】](#输入输出)
+    - [输入输出](#输入输出)
         - [输入](#输入)
         - [输出](#输出)
         - [读取命令行参数](#读取命令行参数)
             - [docopt](#docopt)
             - [Python Fire](#python-fire)
-    - [【函数】](#函数)
-    - [【类】](#类)
+    - [函数](#函数)
+    - [类](#类)
             - [继承](#继承)
-    - [【异常】](#异常)
-    - [【文件操作】](#文件操作)
+    - [异常](#异常)
+    - [文件操作](#文件操作)
         - [JSON](#json)
         - [conf或者ini](#conf或者ini)
-    - [【测试】](#测试)
-    - [【数据库】](#数据库)
-        - [【MySQL】](#mysql)
-        - [【Redis】](#redis)
-            - [模块的安装](#模块的安装)
-            - [使用](#使用)
-    - [【绘图】 matplotlib](#绘图-matplotlib)
-    - [【代码风格】](#代码风格)
-    - [【常见函数】](#常见函数)
-    - [【常见库】](#常见库)
+    - [测试](#测试)
+    - [数据库](#数据库)
+        - [MySQL](#mysql)
+        - [Redis](#redis)
+    - [部署](#部署)
+        - [Docker部署](#docker部署)
+    - [绘图](#绘图)
+        - [matplotlib](#matplotlib)
+    - [常见函数](#常见函数)
+    - [常见库](#常见库)
         - [内置库](#内置库)
         - [三方库](#三方库)
     - [QT](#qt)
 
-`目录 end` |_2018-06-10_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
+`目录 end` |_2018-06-11_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
 ****************************************
 # Python
 > [Python初学者（零基础学习Python、Python入门）书籍、视频、资料、社区推荐](https://github.com/Yixiaohan/codeparkshare)
@@ -54,6 +57,40 @@
 - [Python中的多态](http://blog.csdn.net/shangzhihaohao/article/details/7065675)
 - [python输出带颜色的字体](http://www.cnblogs.com/oleli/p/5228880.html)
 
+## 简介
+
+### 关于Python2.x与3.x的使用
+> 摘自 Python核心编程 第三版 Wesley Chun著
+
+- print 变为 print()
+- 默认字符的编码是 Unicode
+- 增加单类 类型
+- 更新异常的语法
+- 更新了整数
+- 迭代无处不在
+
+> 列出所有已安装模块 pydoc pydoc3
+
+## 安装配置
+
+### Docker
+> [docker hub](https://hub.docker.com/_/python/)
+
+
+
+
+## 基础
+### 代码风格
+- 一行只写一句
+- 表达式尽量不要省略括号，有助于理解
+- 函数的行数不要超过100行
+- 尽量使用系统函数
+- 尽量使用局部变量，不要使用全局
+- 循环，分支，最好不要超过5层
+- 尽量减少否定的条件语句
+- 对输入的数据进行合法性检查
+
+`巨坑: tab和空格不能混用,如果你复制别人的代码是tab,自己敲空格,就会缩进错误!!!!, 天灭tab空格保平安, 要不是kate编辑器显示了tab字符,找半天都不知道错在哪`
 
 - [Google 开源项目风格指南 (中文版)](http://zh-google-styleguide.readthedocs.io/en/latest/google-python-styleguide/background/) 
     - `import this` 就会输出Zen Of Python | [官方文档](https://www.python.org/dev/peps/pep-0020/)
@@ -79,21 +116,6 @@
     
     命名空间是一种绝妙的理念，我们应当多加利用（倡导与号召）
 ```
-## 简介
-
-### 关于Python2.x与3.x的使用
-> 摘自 Python核心编程 第三版 Wesley Chun著
-
-- print 变为 print()
-- 默认字符的编码是 Unicode
-- 增加单类 类型
-- 更新异常的语法
-- 更新了整数
-- 迭代无处不在
-
-> 列出所有已安装模块 pydoc pydoc3
-
-## 基础
 ### 基础语法
 - 缩进来表示代码块的嵌套关系
 - 单行注释：`#` 多行注释： `""" """`
@@ -310,11 +332,12 @@
 - 关于同级，子级目录是比较方便的，涉及到上级目录的就麻烦点了
 
 ************
-## 【输入输出】
+## 输入输出
 ### 输入
 ### 输出
-- python3 print('Hi')
+- python3 `print('Hi')`
     - 格式化输出 `print("%10s - %-10s"%(name, addr))`
+    - print会默认追加换行符, 取消需要参数 `end=''`
 ```python
 def show_help():
     start='\033[0;32m'
@@ -322,7 +345,7 @@ def show_help():
     print("%-26s %-20s"%(start+"-h"+end, "帮助"))
 ```
 
-- python2 print 'Hi'
+- python2 `print 'Hi'`
 
 ### 读取命令行参数
 > [参考博客](http://www.sharejs.com/codes/python/6121)
@@ -375,7 +398,7 @@ fire.Fire(main)
 // 使用时 py filename.py -h  
 ```
 *****************************************
-## 【函数】
+## 函数
 
 - 形参赋值传递方式
     - 按位置 `就是直接用看起来和Java一样，但不是按类型和位置，只是位置`
@@ -403,7 +426,7 @@ fire.Fire(main)
 
 
 *******************
-## 【类】
+## 类
 `Python 不存在多态，存在鸭子类型` [博客介绍](http://blog.csdn.net/shangzhihaohao/article/details/7065675)
 - 写在一个py文件里，默认构造器，可以加参数 `def __init__(self):`
 
@@ -466,7 +489,7 @@ fire.Fire(main)
     - 运算符重载： 加`__add__(self, x)` 减`__sub__(self, x)`
 
 ******************************************
-## 【异常】
+## 异常
 ```python
     try:
         print(5/0)
@@ -512,7 +535,7 @@ fire.Fire(main)
 |EOPError|文件结束标识错误|
 
 *****************
-## 【文件操作】
+## 文件操作
 - 注意路径，Windows系统中要使用反斜杠 \ 
 - 最简单：`file = open('')` 只读打开
 - `使用with来操作 好处是Python自动关闭文件`
@@ -595,7 +618,7 @@ fire.Fire(main)
         host=127.0.0.1
 ```
 ******************************
-## 【测试】
+## 测试
 - 文件名test开头就当做是测试类，不会直接运行
 - 类继承 unittest.TestCase, 所有test_开头的方法都将自动运行
 - 断言 self.assertEqual assertNotEquals assertIn(item, list)
@@ -603,51 +626,66 @@ fire.Fire(main)
 - 输出结果，`. 测试通过` `E 测试运行错误` `F 测试断言不通过`
 
 ************
-## 【数据库】
-### 【MySQL】
+## 数据库
+### MySQL
 - python3环境下： `sudo apt install python3-mysqldb`
 - `sudo apt install libmysqlclient-dev`
 - `sudo pip install mysql-python`
 
 
-### 【Redis】
-#### 模块的安装
+### Redis
+_安装模块_
 - python2 `sudo pip install redis`
 - python3 `sudo pip3 install redis`
 
-#### 使用
+_使用_
 - 使用的接口方法是和redis一样的
     - [Redis笔记传送门](/Database/Redis.md)
 
+## 部署
+### Docker部署
+> [参考官方文档](https://hub.docker.com/_/python/)
+Create a Dockerfile in your Python app project
+```dockerfile
+    FROM python:3
+    WORKDIR /usr/src/app
+    COPY requirements.txt ./
+    RUN pip install --no-cache-dir -r requirements.txt
+    COPY . .
+    CMD [ "python", "./your-daemon-or-script.py" ]
+```
+_or (if you need to use Python 2)_
+```dockerfile
+    FROM python:2
+    WORKDIR /usr/src/app
+    COPY requirements.txt ./
+    RUN pip install --no-cache-dir -r requirements.txt
+    COPY . .
+    CMD [ "python", "./your-daemon-or-script.py" ]
+```
+- You can then build and run the Docker image:
+    - $ docker build -t my-python-app .
+    - $ docker run -it --rm --name my-running-app my-python-app
+
 ********************
-## 【绘图】 matplotlib
+## 绘图 
+### matplotlib
 `python 3.5 安装`
-sudo apt install python3-matplotlib 
-sudo apt install python3.5-dev python3.5-tk tk-dev
-sudo apt install libfreetype6-dev g++
-
-************
-## 【代码风格】
-- 一行只写一句
-- 表达式尽量不要省略括号，有助于理解
-- 函数的行数不要超过100行
-- 尽量使用系统函数
-- 尽量使用局部变量，不要使用全局
-- 循环，分支，最好不要超过5层
-- 尽量减少否定的条件语句
-- 对输入的数据进行合法性检查
-
-`巨坑: tab和空格不能混用,如果你复制别人的代码是tab,自己敲空格,就会缩进错误!!!!, 天灭tab空格保平安, 要不是kate编辑器显示了tab字符,找半天都不知道错在哪`
+```sh
+    sudo apt install python3-matplotlib 
+    sudo apt install python3.5-dev python3.5-tk tk-dev
+    sudo apt install libfreetype6-dev g++
+```
 
 ********
-## 【常见函数】
+## 常见函数
 
 - `id()` 查看内存地址
 - `help(方法名)` 展示方法的说明文档
 - `dir(对象)` 展示对象的方法API
 
 ******************************
-## 【常见库】
+## 常见库
 ### 内置库
 - `codecs` 编码
 - `os` 操作系统相关API
@@ -671,6 +709,3 @@ sudo apt install libfreetype6-dev g++
     qt4-demos 官方的一些Demo
     qt4-designer 可视化窗体设置工具
 ```
-
-
-

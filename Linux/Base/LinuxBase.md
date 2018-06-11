@@ -27,7 +27,7 @@
         - [修改主机名](#修改主机名)
     - [终端快捷键](#终端快捷键)
 
-`目录 end` |_2018-05-31_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
+`目录 end` |_2018-06-11_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
 ****************************************
 # Linux系统
 > 只是记录了debian系的Linux, 不过也是大同小异
@@ -173,6 +173,16 @@ _自动同步时间_
 2. 设置MySQL随机启动 `sudo update-rc.d mysql defaults`
 3. 设定MySQL启动顺序 `update-rc.d mysql defaults 90` 数字越小, 启动顺序越前
 
+- sysv-rc-conf  略微图形化的管理服务的开机自启
+- chkconfig 简单的输出服务自启状态
+
+_系统运行级别_
+```
+    0        系统停机状态
+    1        单用户或系统维护状态
+    2~5 多用户状态
+    6        重新启动 
+```
 ******************
 ## 【软件管理】
 ### 安装命令

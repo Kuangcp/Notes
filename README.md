@@ -59,6 +59,7 @@
 
 ![学习效率](https://raw.githubusercontent.com/Kuangcp/ImageRepos/master/Learn/learn_rate.jpg)
 
+- [参考博客: 国外的程序猿可以工作到退休而国内的为什么这么短命（思维认知）](http://group.jobbole.com/33239/?utm_source=hao.jobbole.com&utm_medium=relatedTopic)
 ********************
 ### 为什么写作
 > 来源 [码农翻身:对自己狠一点，开始写作吧](http://mp.weixin.qq.com/s/-bXP2jAcz8M1c9-nElOsJA) | [码农翻身:如何维护一个好的技术博客？](https://mp.weixin.qq.com/s?__biz=MzAxOTc0NzExNg==&mid=2665514310&idx=1&sn=230943ac36182c2ea5ca28317de3cb91&pass_ticket=kdzjNNRKN8g5Hs0IYC80YNed%2BLsTG5wDteQuZ1qoW%2F8bwio%2BGiEUdcisaIoKv4ua)
@@ -97,6 +98,7 @@ _有自制力的人， 能够坚持的人才更有可能成功！_
 > -- 知乎: 路人甲
 
 ## 【学习历程】
+
 |   时间   |  语言或工具  |
 | :--------: | :------: |
 | 2014.09 |   接触C    |
