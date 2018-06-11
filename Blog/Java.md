@@ -12,17 +12,18 @@
         - [架构师](#架构师)
     - [Java语言讨论](#java语言讨论)
 
-`目录 end` |_2018-05-30_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
+`目录 end` |_2018-06-11_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
 ****************************************
 # Java
 > 和Java有关的博客和网页  
- 
+
 ## SE
 - [ 菜鸟入门：Java程序员学习之路 ](http://blog.csdn.net/zzp16/article/details/5614588)
 - [Eclipse Collections以及Java8的特性](http://www.infoq.com/cn/articles/eclipse-collections?utm_campaign=rightbar_v2&utm_source=infoq&utm_medium=articles_link&utm_content=link_text)
 - [Java8的特性](http://www.jb51.net/article/48304.htm)
 - [正确使用Volatile变量](https://www.ibm.com/developerworks/cn/java/j-jtp06197.html)
 - [javadoc 和 javadoc注释规范](http://www.cnblogs.com/felix-/p/4310229.html)
+- [推荐！国外程序员整理的Java资源大全](http://www.codeceo.com/article/java-resource-collection.html)
 
 ***************
 - [Java动态代理机制详解](http://blog.csdn.net/luanlouis/article/details/24589193) `博客很细致，深入原理`
