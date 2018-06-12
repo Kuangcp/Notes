@@ -33,6 +33,7 @@
         - [5.2.加入Servlet的API包](#52加入servlet的api包)
     - [6.常用插件](#6常用插件)
         - [6.1.lombok](#61lombok)
+        - [6.2 protobuf](#62-protobuf)
     - [7.构建工具对比](#7构建工具对比)
         - [7.1.Maven和Ant的区别一](#71maven和ant的区别一)
         - [7.2.Maven的优势](#72maven的优势)
@@ -45,7 +46,7 @@
                 - [Gradle](#gradle)
                 - [Maven](#maven)
 
-`目录 end` |_2018-05-26_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
+`目录 end` |_2018-06-12_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
 ****************************************
 # Maven
 > [官网](https://maven.apache.org/) | [官网手册](https://maven.apache.org/guides/) | [http://takari.io/ 在线练习网](http://takari.io/)
@@ -463,6 +464,10 @@ A 项目 compile
         <scope>provided</scope>
     </dependency>
 ```
+
+### 6.2 protobuf
+
+- [ ] maven配置集成 Protobuf
 
 ****************************
 

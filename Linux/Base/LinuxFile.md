@@ -50,7 +50,7 @@
             - [查看发行版](#查看发行版)
             - [查看系统所有用户信息](#查看系统所有用户信息)
 
-`目录 end` |_2018-06-05_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
+`目录 end` |_2018-06-12_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
 ****************************************
 # 【文件管理】
 > Linux中认为万物皆文件
@@ -141,6 +141,12 @@ _find_
 
 > 查找文件内容 `find etc/  |xargs grep -i java`
 ### 查看文件
+_tree_
+- 展示目录结构
+    - -p 匹配
+    - -h 可读的显示文件大小
+    - -F 和ls一样
+    - -L 目录深度
 
 _ls_
 - `参数`

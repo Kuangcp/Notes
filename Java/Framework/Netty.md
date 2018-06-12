@@ -8,7 +8,7 @@
         - [源码](#源码)
         - [配置环境](#配置环境)
 
-`目录 end` |_2018-04-08_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
+`目录 end` |_2018-06-12_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
 ****************************************
 # Netty
 > [trustlin](https://github.com/trustin)`Netty mina 的作者`
@@ -35,6 +35,7 @@
 > [Protobuf基础](/Java/AdvancedLearning/ClassFile.md#protobuf) | 
 > [Netty中的使用案例](https://github.com/Kuangcp/NettyBook2/blob/master/src/main/java/com/phei/netty/codec/protobuf/README.md)
 >> 要搭配处理半包的解码器
+
 1. 使用 ProtobufVarint32FrameDecoder 
 2. 继承自 LengthFieldBasedFrameDecoder
 3. 继承自 ByteToMessageDecoder 自己处理

@@ -1,16 +1,29 @@
 `目录 start`
  
 - [配置文件](#配置文件)
+    - [conf或者ini](#conf或者ini)
+    - [properties](#properties)
+    - [XML](#xml)
     - [YAML](#yaml)
         - [Java使用](#java使用)
-    - [XML](#xml)
-    - [properties](#properties)
     - [JSON](#json)
-    - [Protobuf](#protobuf)
 
-`目录 end` |_2018-06-10_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
+`目录 end` |_2018-06-12_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
 ****************************************
 # 配置文件
+
+## conf或者ini
+```
+[main]
+debug=true
+[client]
+timeOut=10
+```
+
+## properties
+
+## XML
+> 可阅读性强, 结构清晰, 但是太繁杂, 信息承载比重小
 
 ## YAML
 
@@ -22,18 +35,6 @@
 
 - [Jackson操作yaml](https://dzone.com/articles/read-yaml-in-java-with-jackson)
 
-## XML
-> 人类可阅读性强, 结构清晰, 但是太繁杂, 信息承载比重小
-
-## properties
-
-
 ## JSON
 > [Google 规范](https://github.com/darcyliu/google-styleguide/blob/master/JSONStyleGuide.md)
-
-## Protobuf
-> [Github : Protobuf](https://github.com/google/protobuf)
-
-> [参考博客: Protobuf语言指南](http://www.cnblogs.com/dkblog/archive/2012/03/27/2419010.html)
-
 

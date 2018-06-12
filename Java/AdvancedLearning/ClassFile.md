@@ -34,7 +34,7 @@
             - [Marshalling](#marshalling)
     - [反射的使用](#反射的使用)
 
-`目录 end` |_2018-05-26_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
+`目录 end` |_2018-06-12_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
 ****************************************
 # Java基础
 ## 【类和字节码】
@@ -175,8 +175,9 @@ Window ==> Preferences ==> Java ==> Compiler ==> Error/Warnings ==>Potential pro
 > [Github:msgpack](https://github.com/msgpack) | [参考博客: MessagePack：一种高效二进制序列化格式](http://hao.jobbole.com/messagepack/)
 
 #### Protobuf
-> Google开源的库 全称 `Google Protocol Buffers`
+> Google开源的库 全称 `Google Protocol Buffers` |  [Github : Protobuf](https://github.com/google/protobuf)
 
+> [参考博客: Protobuf语言指南](http://www.cnblogs.com/dkblog/archive/2012/03/27/2419010.html)
 > [参考博客: 详解如何在NodeJS中使用Google的Protobuf](https://juejin.im/entry/59c1214df265da0658151a2c) | [protocobuf](https://github.com/dcodeIO/protobuf.js)
 > [Google 开源技术protobuf ](https://blog.csdn.net/hguisu/article/details/20721109)
 > [Google Protocol Buffer 的使用和原理](https://www.ibm.com/developerworks/cn/linux/l-cn-gpb/index.html)
@@ -196,6 +197,7 @@ Window ==> Preferences ==> Java ==> Compiler ==> Error/Warnings ==>Potential pro
     - 命名: `packageName.MessageName.proto`
 
 > 只是编解码的工具, 不支持读半包, 粘包拆包
+
 ##### proto文件定义
 > [参考博客: 数据交换利器 Protobuf 技术浅析](http://blog.jobbole.com/107405/)
 
