@@ -7,18 +7,20 @@
     - [Java10](#java10)
     - [Java11](#java11)
 
-`目录 end` |_2018-05-30_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
+`目录 end` |_2018-06-13_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
 ****************************************
 # Java版本更迭
 > 粗度列举特性 
 
 ## Java7
+```
     语法糖:数字中的下划线
     新的语言小特性:TWR(try with resources)
     类文件格式的变化:注解
     JVM的新特性: 动态调用
+```
 - | Switch 支持 String
-- | 二进制的实例化 原本是 `int x = Integer.parseInt("1010100", 2);`7之后`int x = 0b110110;`
+- | 二进制的实例化 原本是 `int x = Integer.parseInt("1010100", 2);`Java7之后`int x = 0b110110;`
 - | 数字下划线 `10_0100__1000__0011`
 - | 异常处理
     - 允许异常的`或`操作 `catch(IOException | NullPointException e)`
@@ -55,6 +57,8 @@
         - 这样的编写也只是一个敷衍, 编译器会警告: 可以将array定义为HashMap<String, String>数组,但是又不能创建这个类型的实例. 所以这里只是将原始类型实例化了放进去.
     - 现在能够这样编写: `public static <T> Collection<T> doSomething(T... entries){}`
 
+- [ ] 反射的简化和加强
+
 ## Java8
 - 接口中新增 静态方法,默认方法
 
@@ -73,6 +77,7 @@ _集合的Lambda迭代方式_
 模块化
 
 ## Java10 
+
 
 ## Java11
 

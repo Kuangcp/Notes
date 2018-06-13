@@ -1,6 +1,9 @@
 `目录 start`
  
 - [SpringBoot](#springboot)
+    - [思考](#思考)
+    - [参考教程](#参考教程)
+        - [系列](#系列)
     - [开始使用](#开始使用)
     - [安装SpringBootCLI](#安装springbootcli)
     - [Springboot的测试模块](#springboot的测试模块)
@@ -10,6 +13,8 @@
             - [yml和Properties结合](#yml和properties结合)
         - [应用配置文件](#应用配置文件)
     - [Web模块](#web模块)
+        - [Lisener](#lisener)
+            - [ServletContextListener](#servletcontextlistener)
         - [上传下载文件](#上传下载文件)
         - [错误页面跳转配置](#错误页面跳转配置)
         - [跨域](#跨域)
@@ -24,27 +29,50 @@
             - [手动方式](#手动方式)
             - [gradle结合docker](#gradle结合docker)
 
-`目录 end` |_2018-05-26_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
+`目录 end` |_2018-06-13_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
 ****************************************
 # SpringBoot
 > 一个简化Spring开发的框架,微服务SpringCloud的基础
 
+## 思考
+- [SpringBoot优缺点](https://www.zhihu.com/question/39483566) 
+    - `大大降低编程门槛, 但是, 将大量细节隐藏在默认配置中, 需要详细阅读文档和源码才能更好的玩转SpringBoot, 不然到处是坑`
+
+- [SpringBoot启动流程解析](https://www.cnblogs.com/trgl/p/7353782.html)`原理才是王道`
+
+## 参考教程
+- [SpringBoot中文索引](http://springboot.fun/)
 - [参考博客: Spring Boot 入门系列](http://www.spring4all.com/article/246)
 - [Springboot探索](https://juejin.im/post/598dd709f265da3e213f0c57)
 - [SpringBoot入门](http://blog.csdn.net/jsyxcjw/article/details/46763639)
 
+### 系列
 - [一系列专栏](https://github.com/guoxiaoxu/guo-projects/tree/master/guns-admin/note)
+- [个人博客专栏: SpringBoot干货系列](http://tengj.top/tags/Spring-Boot/)
+- [SpringBoot系列文章](http://www.ityouknow.com/spring-boot)
+- [恒宇少年](https://www.jianshu.com/u/092df3f77bca)`大量Boot博客`
 
 ## 开始使用
-> 使用Idea的话就可以直接创建项目 使用别的可以下载zip进行导入 [官方下载地址](http://start.spring.io/)
+> 使用Idea的话就可以直接创建项目 使用别的可以下载zip进行导入 | [官方初始项目构建 下载地址](http://start.spring.io/)
 
+_目录结构最好如下_ `*Application类要处于所有用了Springboot注解的类的顶级目录, 这样默认才能扫描到`
+```
+    ├── config/
+    ├── controller/
+    ├── dao/
+    ├── domain/
+    ├── GraduateApplication.java
+    ├── service/
+    ├── ServletInitializer.java
+    └── util/
+```
 ## 安装SpringBootCLI
 - 安装SDKMAN
     - 使用git bash运行  `curl -s get.sdkman.io | bash`
     - `source "/Users/{yourname}/.sdkman/bin/sdkman-init.sh" `根据实际目录去运行
     - spring --version
 
-- *注意：所有`Controller`类要和`*Application`类 *同包或子包*
+
     
 ## Springboot的测试模块
 - 可以使用MockMvc来测试Controller层的代码
@@ -129,6 +157,22 @@ graduate:
 ```
 ************
 ## Web模块
+### Lisener
+#### ServletContextListener
+```java
+    @WebListener
+    public class ApplicationContext implements ServletContextListener {
+    @Override
+    public void contextInitialized(ServletContextEvent event) {
+        System.out.println("Servlet容器初始化");
+    }
+
+    @Override
+    public void contextDestroyed(ServletContextEvent event) {
+        System.out.println("Servlet容器销毁");
+    }
+    }
+```
 ### 上传下载文件
 > 第一种直接上传到应用的webroot或者resources目录下，第二种上传到数据库中，第三种使用ftp。
 

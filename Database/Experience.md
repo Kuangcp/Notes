@@ -9,18 +9,22 @@
     - [非关系型数据库](#非关系型数据库)
         - [Redis](#redis)
         - [MangoDB](#mangodb)
+    - [两者的对比](#两者的对比)
+- [关系型数据库设计](#关系型数据库设计)
     - [结构设计](#结构设计)
         - [基本表的设计](#基本表的设计)
             - [关于主键的设计](#关于主键的设计)
         - [视图的设计](#视图的设计)
     - [数据库中间件](#数据库中间件)
+- [非关系型数据库设计](#非关系型数据库设计)
 
-`目录 end` |_2018-05-30_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
+`目录 end` |_2018-06-13_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
 ****************************************
 # 数据库的使用体会
 > [码农翻身:爱炫耀的数据库老头儿](https://mp.weixin.qq.com/s?__biz=MzAxOTc0NzExNg==&mid=2665514001&idx=1&sn=17b72c3e69db6c4277e3045c699b7b6b&chksm=80d67c52b7a1f5446020826841869221873f4578524181384592839d19c4810dc68807117e13&scene=21#wechat_redirect) `事务,undo日志`
 
-> [DB-Engines Ranking](https://db-engines.com/en/ranking)
+> [DB-Engines Ranking](https://db-engines.com/en/ranking) `数据库评分排行`
+
 ## 关系型数据库
 > [参考博客: 什么是数据库ACID?](http://www.jdon.com/concurrent/acid-database.html)
 
@@ -36,13 +40,17 @@
 > 实际使用上, 如果使用Docker开一个容器运行, 所消耗的资源比MySQL少多了, MySQL大概 300M PostgreSQL只要几十M
 
 ## 非关系型数据库
+
 ### Redis
 > 数据类型丰富,处理非关系型并且结构化的数据十分方便, 结合Python使用就行云流水一般了
 
 ### MangoDB
 > 正准备学习的文档性数据库, 混合类型: 关系型非关系型
 
+## 两者的对比
+> [为什么说SQL正在击败NoSQL，这对数据的未来意味着什么？](http://www.infoq.com/cn/news/2017/10/SQL-NoSQL-mean-what?utm_source=news_about_rdbms&utm_medium=link&utm_campaign=rdbms)
 ***********************
+# 关系型数据库设计
 ## 结构设计
 ### 基本表的设计
 #### 关于主键的设计
@@ -56,4 +64,5 @@
 ## 数据库中间件
 > [MyCat：开源分布式数据库中间件](https://www.csdn.net/article/2015-07-16/2825228)
 
+# 非关系型数据库设计
 

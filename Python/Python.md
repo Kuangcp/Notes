@@ -46,10 +46,11 @@
     - [常见函数](#常见函数)
     - [常见库](#常见库)
         - [内置库](#内置库)
+            - [时间处理](#时间处理)
         - [三方库](#三方库)
     - [QT](#qt)
 
-`目录 end` |_2018-06-11_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
+`目录 end` |_2018-06-13_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
 ****************************************
 # Python
 > [Python初学者（零基础学习Python、Python入门）书籍、视频、资料、社区推荐](https://github.com/Yixiaohan/codeparkshare)
@@ -692,6 +693,10 @@ _or (if you need to use Python 2)_
     - 获取脚本绝对路径  `os.path.split(os.path.realpath(__file__))[0]`
 - `subprocess` [代码](https://gitee.com/kcp1104/codes/9ytejo7fl2xmqsr5zwkv380)
 
+#### 时间处理
+
+_time_
+> [参考博客: Python 日期和时间](http://www.runoob.com/python/python-date-time.html)
 ### 三方库
 - `redis` 和Redis命令完美融合
 - `httpie` HTTP方便的交互

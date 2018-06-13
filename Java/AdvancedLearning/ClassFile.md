@@ -34,7 +34,7 @@
             - [Marshalling](#marshalling)
     - [反射的使用](#反射的使用)
 
-`目录 end` |_2018-06-12_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
+`目录 end` |_2018-06-13_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
 ****************************************
 # Java基础
 ## 【类和字节码】
@@ -92,7 +92,7 @@
 ******
 ### 检查类文件
 #### javap
-> 用来探视类文件内部和反汇编文件
+> JDK内置命令, 用来探视类文件内部和反编译class文件
 
 ****
 ### 常量池

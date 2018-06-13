@@ -1,11 +1,13 @@
 `目录 start`
  
 - [数据库模块](#数据库模块)
-    - [SQL](#sql)
+    - [Relational Database](#relational-database)
+        - [多数据源配置](#多数据源配置)
         - [连接池](#连接池)
             - [c3p0](#c3p0)
             - [druid](#druid)
-        - [JPA_SQL](#jpa_sql)
+            - [HikariPool](#hikaripool)
+        - [JPA](#jpa)
         - [Mybatis](#mybatis)
             - [自定义查询](#自定义查询)
                 - [HQL](#hql)
@@ -18,17 +20,23 @@
             - [【特别注意】](#特别注意)
         - [Jpa数据分页](#jpa数据分页)
         - [数据库上的事务支持](#数据库上的事务支持)
-    - [NoSQL](#nosql)
-        - [JPA_NoSQL](#jpa_nosql)
-            - [JPA关于Redis的使用](#jpa关于redis的使用)
+    - [Non Relational database](#non-relational-database)
+        - [JPA](#jpa)
+            - [Redis的简单使用](#redis的简单使用)
             - [关于StringRedisTemplate的方法使用](#关于stringredistemplate的方法使用)
+            - [消息订阅和发布](#消息订阅和发布)
 
-`目录 end` |_2018-04-24_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
+`目录 end` |_2018-06-13_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
 ****************************************
 # 数据库模块
 > 主要是采用的JPA，极大的缩减了代码量，但是要注意不要过度依赖框架，丧失了基本的能力
 
-## SQL
+## Relational Database
+### 多数据源配置
+> 为什么要有多数据源? 思考
+
+> [Spring Boot多数据源配置与使用](https://www.jianshu.com/p/34730e595a8c)
+
 ### 连接池
 #### c3p0
 - [参考博客](http://www.cnblogs.com/520playboy/p/7526252.html)
@@ -36,13 +44,17 @@
 #### druid
 - [druid连接池的配置](http://makaidong.com/L_Sail/1/40930_11573921.html)
 
+#### HikariPool
+> 性能最好的数据库连接池
+
+- [ ] 听说代码很精简, 阅读源码学习
 *******************
-### JPA_SQL
-> 连接池:默认是tomcat-jdbc连接池
+### JPA
+> 连接池:1.x 默认是tomcat-jdbc连接池 2.x 是 HikariPool
 
 - [Blog: 原生SQL的写法](http://blog.csdn.net/Amy_Queen/article/details/72454099)
 
-> 怎么映射视图到实体上?
+- [ ] 怎么映射视图到实体上?
 
 ### Mybatis
 
@@ -166,10 +178,10 @@ public class TestMany {
 - JPA对所有默认方法都开启了事务支持，查询类事务默认启用readOnly=true
 
 ****************
-## NoSQL
-### JPA_NoSQL
-#### JPA关于Redis的使用
-`配置连接信息`
+## Non Relational database
+### JPA
+#### Redis的简单使用
+_配置连接信息_
 ```conf
     # REDIS (RedisProperties)
     # Redis数据库索引（默认为0）
@@ -228,6 +240,7 @@ public class TestMany {
 - 以上配置的template都是只是建立在最简单的键值对上，String-String，所以对象使用的是json来存储
 - 但是使用的时候如同使用MySQL一样，是ORM框架自动处理数据的转换
 
+
 #### 关于StringRedisTemplate的方法使用
 - 常见数据类型的中间对象
     - opsForValue() 操作简单键值对数据
@@ -240,4 +253,8 @@ public class TestMany {
 
 - 设置超时时间
     - `redisTemplate.expire("max",tempTime,TimeUnit.SECONDS);`
+
+#### 消息订阅和发布
+[参考博客: Spring Boot使用Redis进行消息的发布订阅](https://www.tianmaying.com/tutorial/springboot-redis-message)
+
 
