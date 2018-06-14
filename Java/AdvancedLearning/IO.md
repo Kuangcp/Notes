@@ -42,7 +42,7 @@
     - 按行读取文件 `BufferedReader bf = new BufferedReader(new InputStreamReader(is));`
 
 **************
-- jar读取外部配置文件
+#### 可执行jar读取外部配置文件
 ```java
     Properties properties = new Properties();
     File file = new File("something.properties");
@@ -53,6 +53,18 @@
 ``` 
 - 只要配置文件和打包的jar同级即可
 
+#### Maven项目
+_读取resource目录下配置文件_
+```java
+    ClassLoader classLoader = MainConfig.class.getClassLoader();
+    URL resource = classLoader.getResource("excel.main.yml");
+    if(resource!=null){
+        String path = resource.getPath();
+    }
+```
+- 这样也可以, 但是会有诡异的问题, 打包后运行是正常的, idea中运行就不正常, `new File("src/main/resources/excel.main.yml")` 
+
+**********************************
 ## NIO
 > [NIO](http://ifeve.com/overview/)
 学习真是痛苦, 过程繁杂,又有各种并发 难以调试
