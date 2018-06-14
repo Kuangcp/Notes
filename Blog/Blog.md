@@ -32,7 +32,7 @@
 - [ciaoshen](http://www.ciaoshen.com/)`肉身翻墙? Java大佬`
 - [阮一峰](http://www.ruanyifeng.com/blog/)`一个勤奋的布道者,Github每天都有提交`
 - [酷壳](https://coolshell.cn/)`左耳朵耗子个人博客网 阿里架构师`
-- [程序员DD](http://blog.didispace.com/)`翟永超`
+- [程序员DD](http://blog.didispace.com/)`翟永超 Spring4all社区创立者`
 - [冰封千里](http://ice1000.org/)`Javaer,JavaFX和JVM类语言擅长`
 - [hushuang.me](https://hushuang.me/)
 - [猛禽](http://my.csdn.net/Raptor) `一个坚持了17年博客的程序员`
@@ -62,7 +62,7 @@
 - [绿色记忆](https://blog.gmem.cc/) `技术涉猎广泛`
 
 - [嘟嘟独立博客](http://tengj.top/)`SpringBoot系`
-- [ityouknow](http://www.ityouknow.com/)`Java丰富技术栈`
+- [ityouknow](http://www.ityouknow.com/)`Java丰富技术栈 云收藏的开发者`
 - [会飞的污熊](https://www.xncoding.com/)`github 搭建静态博客, 内容多`
 
 ## 博客能人

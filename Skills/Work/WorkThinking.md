@@ -5,7 +5,7 @@
     - [如何完成任务](#如何完成任务)
     - [交流](#交流)
 
-`目录 end` |_2018-06-13_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
+`目录 end` |_2018-06-14_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
 ****************************************
 # 工作思考
 
@@ -27,3 +27,6 @@
 ## 交流
 
 职责明确 配合问题 
+
+[参考博客: 如何更好地控制情绪，不「抬杠」？](https://www.zhihu.com/question/27306335)
+

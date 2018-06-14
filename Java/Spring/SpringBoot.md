@@ -44,6 +44,7 @@
     - 答案是 ? 多线程 然后 ThreadLocal 分别存储了各自的数据, 所以才说, 不能在Controller层 放置属性, 使其具有状态, 从而导致并发问题
     - 那么WebSocket服务器, 处理并发会不会有并发问题?
 
+- [为什么说 Java 程序员到了必须掌握 Spring Boot 的时候？](http://www.ityouknow.com/springboot/2018/06/12/spring-boo-java-simple.html)
 ## 参考教程
 - [SpringBoot中文索引](http://springboot.fun/)
 - [参考博客: Spring Boot 入门系列](http://www.spring4all.com/article/246)

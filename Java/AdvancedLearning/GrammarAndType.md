@@ -38,7 +38,7 @@
     - [DAO](#dao)
 - [关键字](#关键字)
 
-`目录 end` |_2018-06-12_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
+`目录 end` |_2018-06-14_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
 ****************************************
 # 基础语法
 
@@ -99,12 +99,27 @@
 > [参考博客](https://blog.csdn.net/rmn190/article/details/1492013)
 
 ### 枚举类型
+
 > [参考博客: Java 语言中 Enum 类型的使用介绍](https://www.ibm.com/developerworks/cn/java/j-lo-enum/index.html)
 从上面的定义形式来看，似乎 Java 中的枚举类型很简单，但实际上 Java 语言规范赋予枚举类型的功能非常的强大，它不仅是简单地将整形数值转换成对象，而是将枚举类型定义转变成一个完整功能的类定义。
 
 - 简单定义
     - `public enum Color {RED, GREEN, GRAY, BLUE, YELLOW, WHITE, PURPLE, BLACK}`
-
+- 简单单例
+```java
+public enum Tool{
+    INSTANCE(12); 
+    private int num; 
+    Tool(int num){
+        this.num = num;
+    }
+    public getNum(){
+        return num;
+    }
+}
+// 使用的时候
+Tool.INSTANCE.getNum();
+```
 
 ****************************
 ## 自动拆装箱

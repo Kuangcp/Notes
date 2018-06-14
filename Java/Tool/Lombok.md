@@ -5,11 +5,14 @@
     - [为什么要用](#为什么要用)
     - [为什么不要用](#为什么不要用)
     - [个人见解](#个人见解)
+- [配置](#配置)
     - [Maven](#maven)
         - [普通Java项目](#普通java项目)
         - [Groovy和Java项目使用Lombok](#groovy和java项目使用lombok)
+- [使用](#使用)
+    - [注解使用](#注解使用)
 
-`目录 end` |_2018-06-13_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
+`目录 end` |_2018-06-14_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
 ****************************************
 # Lombok
 
@@ -28,7 +31,9 @@
 > Lombok在IDE中安装插件是为了编译和构建中能够动态的添加Getter Setter 等方法, 而在Maven或者Gradle中添加是为了注解能够引用得到??
 
 
+# 配置
 ## Maven
+> [官方文档](https://projectlombok.org/setup/maven)
 ### 普通Java项目
 ```xml
       <plugin>
@@ -69,7 +74,7 @@
       <artifactId>lombok</artifactId>
       <version>1.16.10</version>
     </dependency>
-```
+```而static有还是有可能被new出多个实例的
 ### Groovy和Java项目使用Lombok
 
 _配置编译插件_
@@ -116,3 +121,17 @@ _添加依赖_
       <version>1.16.10</version>
     </dependency>
 ```
+
+# 使用
+
+## 注解使用
+- @Getter
+- @Setter
+- @Data
+
+_日志相关_
+- @Log4j
+- @Log4j2
+- @Slf4j `用上logback, 但是这个不是一个接口规范么`
+
+

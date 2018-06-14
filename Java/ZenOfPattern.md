@@ -361,6 +361,9 @@ _Singleton_
     - [参考博客: springmvc是单例的，开发的时候会不会影响性能呢？](https://bbs.csdn.net/topics/390873889)
     - [参考博客: Spring并发访问的线程安全性问题](http://www.xuebuyuan.com/1628190.html) `Controller或者Service层中定义共享对象, 但是使用线程安全对象`
 
+> [参考博客: 单例模式和Static的区别! ](https://bbs.csdn.net/topics/310136305) 
+- [ ] `static 有可能被实例化多个出来么`
+
 ##### 装饰器模式
 - **装饰器模式** 创建一个新类为某一个类动态添加新功能或增强原有的功能，避免代码重复或具体子类的数量增加
 

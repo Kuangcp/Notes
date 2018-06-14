@@ -3,7 +3,9 @@
 - [日志系统](#日志系统)
     - [slf4j 体系](#slf4j-体系)
         - [Log4j](#log4j)
+        - [Log4j2](#log4j2)
         - [LogBack](#logback)
+            - [Gradle中使用](#gradle中使用)
             - [配置理解](#配置理解)
                 - [根节点 <configuration> 属性](#根节点-<configuration>-属性)
                 - [子节点](#子节点)
@@ -17,13 +19,15 @@
     - [Linux上查看日志](#linux上查看日志)
     - [lnav](#lnav)
 
-`目录 end` |_2018-06-08_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
+`目录 end` |_2018-06-14_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
 ****************************************
 # 日志系统
-## slf4j 体系
-> 只是接口设计, 以下是具体实现库
-
 > [码农翻身: 一个著名的日志系统是怎么设计出来的？ ](https://mp.weixin.qq.com/s?__biz=MzAxOTc0NzExNg==&mid=2665513967&idx=1&sn=5586ce841a7e8b39adc2569f0eb5bb45&chksm=80d67bacb7a1f2ba38aa37620d273dfd7d7227667df556d36c84d125cafd73fef16464288cf9&scene=21#wechat_redirect)`深刻的理解了日志系统的来源以及相关关系`  
+
+## slf4j 体系
+> SLF4J是一套简单的日志`外观模式`的Java API，帮助在项目部署时对接各种日志实现。 只是接口设计, 以下是具体实现库
+
+> [lombok+slf4j+logback SLF4J和Logback日志框架详解](http://www.cnblogs.com/diegodu/p/6098084.html)
 
 > 目前来说, LogBack要好于Log4j [参考博客: 从Log4j迁移到LogBack的理由](https://blog.csdn.net/gaojian881/article/details/53957961)
 
@@ -39,10 +43,20 @@
 
 > [log4j.properties配置详解](http://www.cnblogs.com/ITEagle/archive/2010/04/23/1718365.html)
 
+### Log4j2
+> [官方文档, 配置详解](https://logging.apache.org/log4j/2.x/manual/configuration.html)
+> 听说是为了解决Log4j无法在多环境使用的问题 , 也就是类似于 SpringBoot 多profile的功能
+
 **************************
 ### LogBack
 
 - [logback简单示例](https://github.com/Kuangcp/Notes/blob/master/ConfigFiles/Log/logback.xml)
+
+#### Gradle中使用
+1. 添加依赖 `  testCompile 'ch.qos.logback:logback-classic:1.2.3'`
+    - `compile 'org.projectlombok:lombok:1.16.16'`
+2. 类上加注解 `@Slf4j` 然后 就能用了
+
 
 #### 配置理解
 > [参考博客](http://www.cnblogs.com/lixuwu/p/5811273.html)

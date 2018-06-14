@@ -25,7 +25,7 @@
     - [人工智能](#人工智能)
     - [在线工具](#在线工具)
 
-`目录 end` |_2018-06-01_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
+`目录 end` |_2018-06-14_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
 ****************************************
 # 【常用的网站】
 ## 软件商店
@@ -53,6 +53,7 @@
 - [亲戚关系计算器项目](https://www.shiyanlou.com/courses/271#reports)
 - [程序员的导航页](http://www.gitnavi.com/)
 - [代码时间](http://codetimecn.com/) `访谈类语言节目`
+- [云收藏](http://favorites.ren/index)`SpringBoot搭建的收藏夹服务`
 
 # 社区网站
 - [掘金门户网](http://e.xitu.io)
