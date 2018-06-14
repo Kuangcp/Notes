@@ -10,6 +10,7 @@
         - [Chocolate](#chocolate)
         - [命令行选项](#命令行选项)
         - [守护进程](#守护进程)
+        - [Docker安装](#docker安装)
     - [配置镜像源](#配置镜像源)
         - [阿里云](#阿里云)
     - [build.gradle](#buildgradle)
@@ -48,7 +49,7 @@
     - [Jenkin 使用](#jenkin-使用)
         - [下载安装和配置](#下载安装和配置)
 
-`目录 end` |_2018-06-04_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
+`目录 end` |_2018-06-14_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
 ****************************************
 
 # Gradle
@@ -112,6 +113,9 @@ _4.6_
 - 守护进程会在空闲3小时后销毁
 - 手动关闭 `gadle --stop `
 - 构建时不采用守护进程 `--no--daemon`
+
+### Docker安装
+> [Docker 文档](https://docs.docker.com/samples/library/gradle/)
 
 ****************************
 ## 配置镜像源

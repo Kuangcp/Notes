@@ -40,7 +40,7 @@
         - [Python使用](#python使用)
         - [webdis](#webdis)
 
-`目录 end` |_2018-06-04_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
+`目录 end` |_2018-06-14_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
 ****************************************
 # Redis
 > [Redis官网](https://redis.io/) | [Redis中文社区](http://www.redis.cn/) | [Redis教程](http://www.runoob.com/redis/redis-tutorial.html) 
@@ -59,7 +59,7 @@
 
 ## Linux下的使用
 ### docker安装redis
-> [docker-install-redis](/Linux/Container/Docker_Soft.md)
+> [docker-install-redis](/Linux/Container/DockerSoft.md#redis)
 
 ### 命令安装
 > 这样不太好做多个redis, 个人不喜欢这种方式

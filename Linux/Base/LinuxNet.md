@@ -26,7 +26,7 @@
         - [防火墙](#防火墙)
             - [iptables](#iptables)
 
-`目录 end` |_2018-05-24_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
+`目录 end` |_2018-06-14_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
 ****************************************
 # 【网络管理】
 ## DNS
@@ -79,7 +79,7 @@ _netstat工具_ 或者 更好用的 [iproute2](#3iproute2)
 - `lsof -i:端口号` 用于查看某一端口的占用情况，缺省端口号显示全部
     - 或者 `cat /etc/services` 查看系统以及使用的端口
 
-- `netstat -tunlp |grep 端口号` 用于查看指定的端口号的进程情况
+- `netstat -tunlp | grep 端口号` 用于查看指定的端口号的进程情况
     - `-t` (tcp) 仅显示tcp相关选项
     - `-u` (udp)仅显示udp相关选项
     - `-n` 拒绝显示别名，能显示数字的全部转化为数字
@@ -93,7 +93,7 @@ _netstat工具_ 或者 更好用的 [iproute2](#3iproute2)
     - `sudo kill -9 pid` 杀掉指定pid
     - `ps aux` 查看当前执行中的程序
 
-- 似乎能看到更多 `netstat -antlp | grep 127.0.0.1` 
+- 似乎能看到更多 `netstat -tpanl | grep 127.0.0.1` 
 
 ***************************
 ## 基础命令工具
@@ -115,8 +115,8 @@ _netstat工具_ 或者 更好用的 [iproute2](#3iproute2)
 
 - [curl cookie](https://curl.haxx.se/docs/http-cookies.html) | [curl使用Cookie](https://aiezu.com/article/linux_curl_http_cookie.html)
 
+> [参考博客: curl返回常见错误码](http://www.cnblogs.com/wainiwann/p/3492939.html)
 - [56错误码](https://stackoverflow.com/questions/10285700/curl-error-recv-failure-connection-reset-by-peer-php-curl)
-
 
 ### 3.iproute2
 > 代替 netstat 的强大工具
@@ -388,6 +388,12 @@ _客户端_
 ### 防火墙
 
 #### iptables
-[参考博客: linux下IPTABLES配置详解](http://www.cnblogs.com/JemBai/archive/2009/03/19/1416364.html)
+> [参考博客: linux下IPTABLES配置详解](http://www.cnblogs.com/JemBai/archive/2009/03/19/1416364.html)
 - 查看配置情况 ` iptables -L -n`
+
+_有时候会发生这样的事情_
+1. 服务器的服务是正常启动的, 但是客户端连不上, 然后使用curl 去访问那个端口, 报错说 curl: (7) Failed to connect to 192.168.10.201 port 16888: 没有到主机的路由
+2. 那么这时候就要检查防火墙了
+
+
 

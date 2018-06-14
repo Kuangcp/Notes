@@ -1,6 +1,7 @@
 `目录 start`
  
 - [Java](#java)
+    - [社区](#社区)
     - [SE](#se)
     - [JavaFx](#javafx)
     - [爬虫](#爬虫)
@@ -12,10 +13,13 @@
         - [架构师](#架构师)
     - [Java语言讨论](#java语言讨论)
 
-`目录 end` |_2018-06-11_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
+`目录 end` |_2018-06-14_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
 ****************************************
 # Java
 > 和Java有关的博客和网页  
+## 社区
+- [并发编程网 Java](http://ifeve.com/category/java/)
+- [InfoQ Java](http://www.infoq.com/cn/java)
 
 ## SE
 - [ 菜鸟入门：Java程序员学习之路 ](http://blog.csdn.net/zzp16/article/details/5614588)

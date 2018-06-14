@@ -57,7 +57,7 @@
         - [【授权】](#授权)
 - [查询](#查询)
 
-`目录 end` |_2018-06-11_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
+`目录 end` |_2018-06-14_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
 ****************************************
 
 # Mysql
@@ -139,6 +139,8 @@ _重启_
 
 ### 修改表定义
 - [ ] TODO 修改表格
+
+_重命名表格_ `RENAME TABLE old TO new `
 
 #### 增删字段
 - 增加字段 `alter table name add field1 int, field2 varchar(20);`

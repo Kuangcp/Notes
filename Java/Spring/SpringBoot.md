@@ -29,7 +29,7 @@
             - [手动方式](#手动方式)
             - [gradle结合docker](#gradle结合docker)
 
-`目录 end` |_2018-06-13_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
+`目录 end` |_2018-06-14_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
 ****************************************
 # SpringBoot
 > 一个简化Spring开发的框架,微服务SpringCloud的基础
@@ -39,6 +39,10 @@
     - `大大降低编程门槛, 但是, 将大量细节隐藏在默认配置中, 需要详细阅读文档和源码才能更好的玩转SpringBoot, 不然到处是坑`
 
 - [SpringBoot启动流程解析](https://www.cnblogs.com/trgl/p/7353782.html)`原理才是王道`
+
+- Spring 是单例模式, 全部使用IOC容器进行管理, 那么怎么处理并发呢, 
+    - 答案是 ? 多线程 然后 ThreadLocal 分别存储了各自的数据, 所以才说, 不能在Controller层 放置属性, 使其具有状态, 从而导致并发问题
+    - 那么WebSocket服务器, 处理并发会不会有并发问题?
 
 ## 参考教程
 - [SpringBoot中文索引](http://springboot.fun/)

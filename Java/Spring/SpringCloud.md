@@ -5,7 +5,7 @@
     - [微服务](#微服务)
         - [通信方式](#通信方式)
 
-`目录 end` |_2018-05-26_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
+`目录 end` |_2018-06-14_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
 ****************************************
 # SpringCloud 
 
@@ -23,6 +23,7 @@
 ## 微服务
 > [《Spring Cloud实战》一书的配套示例代码](https://github.com/dyc87112/SpringCloudBook)
 > [《Spring Cloud与Docker微服务架构实战》1-11章配套代码](https://github.com/itmuch/spring-cloud-docker-microservice-book-code)
+> [使用SpringBoot开启微服务之旅](http://www.infoq.com/cn/articles/Microservices-SpringBoot)
 
 ### 通信方式
 - [知乎:既然有http 请求，为什么还要用rpc调用？](https://www.zhihu.com/question/41609070)

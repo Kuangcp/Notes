@@ -34,10 +34,17 @@
         - [2.结构型设计模式](#2结构型设计模式)
         - [3.行为设计模式](#3行为设计模式)
         - [【常见设计模式】](#常见设计模式)
+            - [适配器模式](#适配器模式)
+            - [中介者模式](#中介者模式)
+            - [观察者模式](#观察者模式)
+                - [单例模式](#单例模式)
+                - [装饰器模式](#装饰器模式)
+            - [原型模式](#原型模式)
+            - [生成器模式](#生成器模式)
     - [实践](#实践)
         - [经验之谈](#经验之谈)
 
-`目录 end` |_2018-06-11_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
+`目录 end` |_2018-06-14_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
 ****************************************
 # 设计模式之禅
 ## 软件设计的一些原则
@@ -330,18 +337,31 @@ _Singleton_
 -------------------------------------------------------------------------------
 ### 【常见设计模式】
 
+#### 适配器模式
 - **适配器 模式**（Adapter）：适配器是的一个接口与其他接口兼容，从而给出了多个不同接口的同一抽象。一般分类结构和对象结构两种：
 - *类适配器*：适配器类继承被适配类，实现某个接口，在客户端类中可以根据需求来建立子类
 - *对象适配器*：适配器不是继承，是使用直接关联，或称委托方式
 ![](https://raw.githubusercontent.com/Kuangcp/ImageRepos/master/Tech/UML/Adapter.png)
+
+#### 中介者模式
 - **中介者 模式**：包装了一系列对象相互作用的方式，使得对象间的相互作用是独立变化，但是与中介者紧密联系
+
+#### 观察者模式
 - **观察者 模式 Observer**：一个目标物件管理相依于它的管理物件，并且在它本身的状态发生改变时发出通知，这种模式常用来实现事件处理系统。（也称发布-订阅，模型-视图，源-收听者模式）
     - 观察者（接口）：更新信息，展示信息，给 **被观察者（形参）** 注册上观察者
     - 被观察者（接口）：发出更新通知（遍历观察者集合并注册），当自身发生改动时发出通知消息
 
 ![](https://raw.githubusercontent.com/Kuangcp/ImageRepos/master/Tech/Model/Observer.png)
 
-- **单例模式 Singleton** 一个类只有一个实例易于外界访问
+##### 单例模式
+> Singleton 一个类只有一个实例易于外界访问 Spring将该模式运用的出神入化
+
+- [单例模式与高并发](http://www.cnblogs.com/atwanli/articles/5104898.html)当某个单例对象中含有不具有并发性的对象 就会发生并发问题, 由于只有一个对象, 为了确保数据一致, 就需要加锁, 这样就带来了严重的性能下降, 而Spring是怎么做的呢
+    - [参考博客 Spring如何处理线程并发](https://blog.csdn.net/java_fancy/article/details/7439657)
+    - [参考博客: springmvc是单例的，开发的时候会不会影响性能呢？](https://bbs.csdn.net/topics/390873889)
+    - [参考博客: Spring并发访问的线程安全性问题](http://www.xuebuyuan.com/1628190.html) `Controller或者Service层中定义共享对象, 但是使用线程安全对象`
+
+##### 装饰器模式
 - **装饰器模式** 创建一个新类为某一个类动态添加新功能或增强原有的功能，避免代码重复或具体子类的数量增加
 
 ![](https://raw.githubusercontent.com/Kuangcp/ImageRepos/master/Tech/Model/Decorator.png)
@@ -377,12 +397,15 @@ _Singleton_
     
 ![](https://raw.githubusercontent.com/Kuangcp/ImageRepos/master/Tech/Model/AbstractFactory.png)
 
+#### 原型模式
+> struts2 就是采用该模式
 - **原型模式** ： 对象创建模型： 允许一个对象创建另一个可定制的对象，封装实例化细节。
     - 实现Cloneable接口（Java自带接口），重写clone方法（在这里实例化对象，new或反射，按需求来修改）
     - 该例，组合关系，在对方使用clone来代替构造器来实例化对象，并做好了绑定操作，大量减少代码量
     
 ![](https://raw.githubusercontent.com/Kuangcp/ImageRepos/master/Tech/Model/Clone.png) 
 
+#### 生成器模式
 - **生成器模式**：
 
 ![](https://raw.githubusercontent.com/Kuangcp/ImageRepos/master/Tech/Model/Builder.png)

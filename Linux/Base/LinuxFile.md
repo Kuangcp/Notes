@@ -5,7 +5,8 @@
         - [设置交换分区](#设置交换分区)
             - [清空交换内存](#清空交换内存)
         - [清除缓存](#清除缓存)
-        - [善用.bashrc文件](#善用bashrc文件)
+        - [善用*shrc文件](#善用shrc文件)
+            - [善用alias](#善用alias)
     - [基本命令](#基本命令)
         - [查找文件](#查找文件)
         - [查看文件](#查看文件)
@@ -50,7 +51,7 @@
             - [查看发行版](#查看发行版)
             - [查看系统所有用户信息](#查看系统所有用户信息)
 
-`目录 end` |_2018-06-12_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
+`目录 end` |_2018-06-14_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
 ****************************************
 # 【文件管理】
 > Linux中认为万物皆文件
@@ -89,16 +90,26 @@
         - 例如 启动一个web项目, 运行到某一行, 突然运行不下去了, 前端阻塞在了等待请求这里 重新编译 和请求target目录都没有用, 重启IDEA也没有用
         - 然后找到了上面的博客, 清除了下缓存就OK了
 
-### 善用.bashrc文件
-`Alias`
+### 善用*shrc文件
+> 注意加载顺序 /etc/profile -> ~/.*shrc `各种sh的rc文件` bash zsh ash
+
+#### 善用alias
+
 ```sh
     if [ -f ~/.bash_aliases ]; then
         . ~/.bash_aliases
     fi
 ```
 - 在`~/.bashrc`添加这段，然后在 `.bash_aliases` 文件中设置别名
-    - 例如 ： `alias Kgit.notes='cd ~/Documents/Notes/Code_Notes/'` 
+    - 例如 ： `alias Kg.notes='cd ~/Documents/Notes/Code_Notes/'` 
     - 更改文件后，想当前终端就生效就 `source ~/.bashrc` 不执行命令就重启终端即可
+_注意_
+> 你会发现 当前用户 下 Kg.notes 是正常运行的, 但是 sudo Kg.note 就会报错说找不到命令  
+> 神奇的是 配置一个别名 `alias sudo='sudo '` 就可以解决这个问题了 [stackoverflow](https://askubuntu.com/questions/22037/aliases-not-available-when-using-sudo)
+
+```
+The first word of each simple command, if unquoted, is checked to see if it has an alias. If so, that word is replaced by the text of the alias. The characters ‘/’, ‘$’, ‘`’, ‘=’ and any of the shell metacharacters or quoting characters listed above may not appear in an alias name. The replacement text may contain any valid shell input, including shell metacharacters. The first word of the replacement text is tested for aliases, but a word that is identical to an alias being expanded is not expanded a second time. This means that one may alias ls to "ls -F", for instance, and Bash does not try to recursively expand the replacement text. If the last character of the alias value is a space or tab character, then the next command word following the alias is also checked for alias expansion. 
+```
 
 - 如[我的配置文件](https://github.com/Kuangcp/Configs/tree/master/Linux/init) `将配置文件分类放`
     - K.h就能显示出每个命令的说明 其实现脚本： [python3脚本](https://github.com/Kuangcp/Script/blob/master/python/show_alias_help.py) 
@@ -121,7 +132,6 @@
 - [示例文件](https://github.com/Kuangcp/Notes/tree/master/ConfigFiles/Linux/VSCode.desktop)
 - 如要将快捷方式放在启动菜单内 将desktop文件放在 `/usr/share/applications/` 目录下即可
 - 注意：目录不能有空格 等特殊字符
-
 
 **************************************
 ## 基本命令 

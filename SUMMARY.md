@@ -87,6 +87,7 @@
         * [ Hibernate ](/Java/Framework/Hibernate.md)
         * [ JPA ](/Java/Framework/JPA.md)
         * [ JXls ](/Java/Framework/JXls.md)
+        * [ Kafaka ](/Java/Framework/Kafaka.md)
         * [ Mybatis ](/Java/Framework/Mybatis.md)
         * [ Netty ](/Java/Framework/Netty.md)
         * [ POI ](/Java/Framework/POI.md)
@@ -110,6 +111,7 @@
     * 【 Java/Tool 】
         * [ Gradle ](/Java/Tool/Gradle.md)
         * [ IDEA ](/Java/Tool/IDEA.md)
+        * [ Jetty ](/Java/Tool/Jetty.md)
         * [ Lombok ](/Java/Tool/Lombok.md)
         * [ Maven ](/Java/Tool/Maven.md)
         * [ PyCharm ](/Java/Tool/PyCharm.md)
@@ -198,6 +200,7 @@
         * [ ShortcutKey ](/Skills/Work/ShortcutKey.md)
         * [ WorkThinking ](/Skills/Work/WorkThinking.md)
     * [ AppManual ](/Skills/AppManual.md)
+    * [ CelebrityQuotes ](/Skills/CelebrityQuotes.md)
     * [ CodingThinking ](/Skills/CodingThinking.md)
     * [ Problem ](/Skills/Problem.md)
     * [ RegularExpression ](/Skills/RegularExpression.md)
