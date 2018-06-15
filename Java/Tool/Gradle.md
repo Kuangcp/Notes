@@ -49,17 +49,17 @@
     - [Jenkin 使用](#jenkin-使用)
         - [下载安装和配置](#下载安装和配置)
 
-`目录 end` |_2018-06-14_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
+`目录 end` |_2018-06-15_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
 ****************************************
 
 # Gradle
+> [官方 guide](https://gradle.org/guides/?q=JVM)
+
 ## 书籍
 > [Gradle in Action 中译](http://www.jb51.net/books/527811.html) `如果没有一点Groovy基础, 阅读自定义Task等一些高自定义的地方还是比较困惑`
 
 ## 前言
 > [Gradle在大型Java项目上的应用](www.infoq.com/cn/articles/Gradle-application-in-large-Java-projects)
-> [极客学院 教程](https://wiki.jikexueyuan.com/project/GradleUserGuide-Wiki/introduction.html)
-
 
 ## 发行版本列表
 > [官方网址](http://services.gradle.org/) 有各个版本的下载以及版本发行说明
@@ -193,13 +193,14 @@ _一个简单示例_
 
 - maven 
     - `apply plugin: "maven"` 然后就能执行 install等命令了
+    - 4.8 用不了 [需要这种方式](https://blog.csdn.net/mxw2552261/article/details/78640338)
 - shadowJar 含依赖进行打包
 - docker 提供Docker操作
     - `apply plugin: 'docker'`
     - buildscript dependencies 中添加`classpath('se.transmode.gradle:gradle-docker:1.2')`
 
 ### 统一依赖管理
-新建一个文件 dependency.gradle
+新建一个文件 _dependency.gradle_
 ```groovy
 ext {
     ver = [

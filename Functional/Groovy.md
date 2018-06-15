@@ -11,13 +11,16 @@
         - [Groovy特性](#groovy特性)
             - [默认导入](#默认导入)
             - [隐式return](#隐式return)
+            - [默认生成setter getter](#默认生成setter-getter)
             - [数字处理](#数字处理)
             - [变量，动态和静态类型，作用域](#变量动态和静态类型作用域)
             - [列表和映射语法](#列表和映射语法)
             - [动态调用函数](#动态调用函数)
         - [函数](#函数)
         - [闭包](#闭包)
+        - [测试](#测试)
         - [调用系统命令行](#调用系统命令行)
+    - [强大的注解](#强大的注解)
     - [与Java的差异](#与java的差异)
         - [Java不具备的Groovy特性](#java不具备的groovy特性)
     - [Groovy和Java的交互](#groovy和java的交互)
@@ -28,11 +31,12 @@
         - [默认return](#默认return)
     - [Grails](#grails)
 
-`目录 end` |_2018-06-14_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
+`目录 end` |_2018-06-15_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
 ****************************************
 # Groovy
 > [Groovy 官网](http://www.groovy-lang.org/) | 
 
+> [实战Groovy系列](https://www.ibm.com/developerworks/cn/java/j-pg/)`有体系的知识`
 > [精通Groovy](https://www.ibm.com/developerworks/cn/education/java/j-groovy/j-groovy.html)
 > [Groovy：Java 程序员的 DSL](https://www.ibm.com/developerworks/cn/java/j-pg02179.html)
 > [w3cschool Groovy教程](https://www.w3cschool.cn/groovy/)
@@ -59,7 +63,7 @@
         - 或者`groovy -e "println 'Hello World!'"`
 
 ### 在IDEA中
-> 因为构建工具Gradle中就已经包含了Groovy的库,所以最好就是只配置好一个Gradle, 然后Groovy配置Gradle的目录即可
+> 因为构建工具Gradle中就已经包含了Groovy的库,所以最好就是只配置好一个Gradle, 然后配置Groovy时选择Gradle的目录即可
 
 ### Maven引入Groovy
 - [参考博客](http://www.cnblogs.com/xiziyin/archive/2010/03/29/1699860.html)
@@ -71,28 +75,29 @@
 ## Groovy基础
 > 作为一个脚本语言，和Python Ruby Smalltalk语法相似
 
-- groovyc groovy 类似于 javac 和 java
+- groovyc groovy 类似于 javac java
 
 ### Groovy特性
 
 #### 默认导入
 `这一些导入是默认隐含在Groovy代码中`
 ```groovy
-import groovy.lang.*
-import groovy.util.*
-import java.lang.*
-import java.io.*
-import java.math.BigDecimal
-import java.math.BigInteger
-import java.net.*
-import java.util.*
+    import groovy.lang.*
+    import groovy.util.*
+    import java.lang.*
+    import java.io.*
+    import java.math.BigDecimal
+    import java.math.BigInteger
+    import java.net.*
+    import java.util.*
 ```
-- 添加额外的JAR可以使用@Grab注解或者和Java一样加入到ClassPath中去
+- 添加额外的JAR可以使用`@Grab`注解或者和Java一样加入到ClassPath中去
 
 #### 隐式return
-- [ ] 乍一眼看过去, Groovy 的方法是没有返回值的, 那么是真么没有返回值?
+> Groovy会在`代码块`的行末缺省return null, 如果末行有一个表达式, 并有返回值, 就会return该值, 略坑
 
-- Groovy会在代码块的行末缺省return null, 如果末行有一个表达式, 并有返回值, 就会return该值, 略坑
+#### 默认生成setter getter
+> 类当中的属性, 只要不是使用private修饰, 就能自动生成getter setter, 并且直接`.引用`属性, 相当于调用了对应的get set
 
 #### 数字处理
 - Groovy默认浮点数使用BigDecimal，Java中BigDecimal构造器入参是字符串，Groovy是数值，底层转换了一下，看起来更自然
@@ -110,7 +115,6 @@ import java.util.*
 - 绑定域：是脚本的全局作用域。就是在脚本顶层没有声明类型的变量
 - 本地域：变量的作用域局限于声明他们的代码块。就是在顶层声明了类型或者在代码块里
     - [变量作用域学习代码](https://github.com/kuangcp/JavaBase/blob/master/src/main/groovy/com/learn/base/VariableScope.groovy)
-
 
 #### 列表和映射语法
 - Groovy将列表和映射结构当做语言中的一等类型，列表和映射在底层是`ArrayList` 和 `LinkedHashMap`实现的
@@ -166,6 +170,8 @@ import java.util.*
     plus(2, 3)
 ```
 
+### 测试
+[参考博客: 用 Groovy 更迅速地对 Java 代码进行单元测试](https://www.ibm.com/developerworks/cn/java/j-pg11094/)
 
 *************************
 ### 调用系统命令行
@@ -175,6 +181,17 @@ import java.util.*
 2. 字符串数组.execute() 这种更好些，尤其是多个参数的时候
     - 写法和Dockerfile一致 ` ["sh", "-c", "cp src/*.txt dst/"].execute()`
 
+***************************
+## 强大的注解
+
+@ToString 自动实现toString方法, 但是字符串有点冗余
+
+_日志相关_ 只需要引入对应的依赖, 就和lombok一样的使用
+```java
+    @Log4j
+    @Log4j2
+    @Slf4j
+```
 ************
 ## 与Java的差异
 

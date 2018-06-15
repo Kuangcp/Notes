@@ -3,6 +3,7 @@
 - [日志系统](#日志系统)
     - [slf4j 体系](#slf4j-体系)
         - [Log4j](#log4j)
+            - [问题](#问题)
         - [Log4j2](#log4j2)
         - [LogBack](#logback)
             - [Gradle中使用](#gradle中使用)
@@ -19,7 +20,7 @@
     - [Linux上查看日志](#linux上查看日志)
     - [lnav](#lnav)
 
-`目录 end` |_2018-06-14_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
+`目录 end` |_2018-06-15_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
 ****************************************
 # 日志系统
 > [码农翻身: 一个著名的日志系统是怎么设计出来的？ ](https://mp.weixin.qq.com/s?__biz=MzAxOTc0NzExNg==&mid=2665513967&idx=1&sn=5586ce841a7e8b39adc2569f0eb5bb45&chksm=80d67bacb7a1f2ba38aa37620d273dfd7d7227667df556d36c84d125cafd73fef16464288cf9&scene=21#wechat_redirect)`深刻的理解了日志系统的来源以及相关关系`  
@@ -40,8 +41,12 @@
         
 ****************************
 ### Log4j
-
+> [Log4J使用笔记](http://www.cnblogs.com/eflylab/archive/2007/01/11/618001.html)
 > [log4j.properties配置详解](http://www.cnblogs.com/ITEagle/archive/2010/04/23/1718365.html)
+
+#### 问题
+> `log4j:WARN No appenders could be found for logger` 这是路径下没有对应的配置文件, 那么这时就有了神奇的事情, maven项目按道理是resources下就行了, 
+> 但如果你项目配置文件自己新建目录然后再复制过去什么的, 这么瞎搞的话,虽然在ide是能运行的, 但是一大包就没用了, 那么直接把log的配置单独放在 src/main/java 下就行了
 
 ### Log4j2
 > [官方文档, 配置详解](https://logging.apache.org/log4j/2.x/manual/configuration.html)
@@ -51,6 +56,9 @@
 ### LogBack
 
 - [logback简单示例](https://github.com/Kuangcp/Notes/blob/master/ConfigFiles/Log/logback.xml)
+
+> [xml to groovy config](https://logback.qos.ch/translator/asGroovy.html)
+
 
 #### Gradle中使用
 1. 添加依赖 `  testCompile 'ch.qos.logback:logback-classic:1.2.3'`

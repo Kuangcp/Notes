@@ -29,7 +29,7 @@
             - [手动方式](#手动方式)
             - [gradle结合docker](#gradle结合docker)
 
-`目录 end` |_2018-06-14_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
+`目录 end` |_2018-06-15_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
 ****************************************
 # SpringBoot
 > 一个简化Spring开发的框架,微服务SpringCloud的基础
@@ -72,13 +72,12 @@ _目录结构最好如下_ `*Application类要处于所有用了Springboot注解
     └── util/
 ```
 ## 安装SpringBootCLI
-- 安装SDKMAN
+- 使用 SDKMAN 进行安装
     - 使用git bash运行  `curl -s get.sdkman.io | bash`
     - `source "/Users/{yourname}/.sdkman/bin/sdkman-init.sh" `根据实际目录去运行
     - spring --version
+- 官方下载地址 [所有版本](https://repo.spring.io/release/org/springframework/boot/spring-boot-cli/)
 
-
-    
 ## Springboot的测试模块
 - 可以使用MockMvc来测试Controller层的代码
 - 可以使用MockMvc的SpringSecurity支持来测试安全模块
