@@ -42,7 +42,7 @@
     - [工作](#工作)
         - [简历](#简历)
 
-`目录 end` |_2018-06-06_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
+`目录 end` |_2018-06-17_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
 ****************************************
 
 # 【GitRepos】
@@ -249,7 +249,9 @@
 
 ### 有趣
 - [一个在线游戏](https://github.com/memdealloc/memdealloc.github.io)
-
+- [插件项目, 搜图](https://github.com/AInoob/NooBox)
+    - [完整项目网址](https://ainoob.com/zh/projects)
+    
 ### 资源仓库
 #### 字体
 - [IBM字体](https://github.com/IBM/type)`2017年发布的新字体`

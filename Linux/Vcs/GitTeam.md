@@ -2,13 +2,13 @@
  
 - [基于Git进行团队开发](#基于git进行团队开发)
     - [基础思想](#基础思想)
-        - [介绍关于git在多人协作的使用](#介绍关于git在多人协作的使用)
+        - [Git Flow](#git-flow)
         - [本地和远程](#本地和远程)
         - [模板化提交信息](#模板化提交信息)
     - [小规模团队使用码云组织的总结](#小规模团队使用码云组织的总结)
         - [最终方案](#最终方案)
 
-`目录 end` |_2018-05-26_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
+`目录 end` |_2018-06-17_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
 ****************************************
 
 # 基于Git进行团队开发
@@ -21,23 +21,32 @@
 > 组织就是适合给多个人，等同的稳定开发时，分支就会比较明确，这个笔记就是记录组织中git的使用
 
 ## 基础思想
-### 介绍关于git在多人协作的使用
-> [原博客](http://nvie.com/posts/a-successful-git-branching-model/)
+### Git Flow
+> [Vincent Driessen 提出了 A Successful Git Branching Model](http://nvie.com/posts/a-successful-git-branching-model/)
+
+- [依据以上思想开发的 git flow工具](https://github.com/nvie/gitflow)
+    - [介绍 Git Flow](https://datasift.github.io/gitflow/IntroducingGitFlow.html)
+- [参考博客:  Git 在团队中的最佳实践--如何正确使用Git Flow](http://www.cnblogs.com/cnblogsfans/p/5075073.html)
+    - [参考博客: Getting Started – Git-Flow](https://yakiloo.com/getting-started-git-flow/)
 
 `规范的分支图`
 ![规范的分支图](https://raw.githubusercontent.com/Kuangcp/ImageRepos/master/Tech/Git/git-team-model.png)
 
-`主要的分支`
-- master 稳定发行分支
-- dev 开发主分支
-
-`开发上的的分支`
-- fixbug
-- feature
-- 
+- Git Flow常用的分支
+    - Production 分支
+        - 也就是我们经常使用的Master分支，这个分支最近发布到生产环境的代码，最近发布的Release， 这个分支只能从其他分支合并，不能在这个分支直接修改
+    - Develop 分支
+        - 这个分支是我们是我们的主开发分支，包含所有要发布到下一个Release的代码，这个主要合并与其他分支，比如Feature分支
+    - Feature 分支
+        - 这个分支主要是用来开发一个新的功能，一旦开发完成，我们合并回Develop分支进入下一个Release
+    - Release分支
+        - 当你需要一个发布一个新Release的时候，我们基于Develop分支创建一个Release分支，完成Release后，我们合并到Master和Develop分支
+    - Hotfix分支
+        - 当我们在Production发现新的Bug时候，我们需要创建一个Hotfix, 完成Hotfix后，我们合并回Master和Develop分支，所以Hotfix的改动会进入下一个Release
 
 ### 本地和远程
 - 指定本地开发分支和远程的绑定关系 `git branch --set-upstream dev origin/dev` master同理
+    - 一个本地库是能够绑定多个远程的
 
 - [分支图复杂的一个项目](https://github.com/Netflix/eureka/network) `只是演示分支的复杂度`
 
