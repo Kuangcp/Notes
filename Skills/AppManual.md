@@ -64,7 +64,7 @@
     - [安全工具](#安全工具)
         - [gpg](#gpg)
 
-`目录 end` |_2018-06-06_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
+`目录 end` |_2018-06-18_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
 ****************************************
 # 软件使用记事
 ## 【包管理】
@@ -262,6 +262,8 @@ _个人配置_
 ### VSCode
 > [官网](https://code.visualstudio.com/) 码笔记，码Python 比较方便，目录树，预览，整合终端
 
+- 其所有自定义配置都缓存在此 `~/.config/Code/User/`
+
 #### 快捷键
 > [快捷键官方PDF说明](https://code.visualstudio.com/shortcuts/keyboard-shortcuts-linux.pdf)
 - 快速打开文件 `Ctrl P` 弹出的输入框键入 `>` 作为前缀 就是执行一些命令了
@@ -274,8 +276,7 @@ _个人配置_
 
 #### 代码片段
 > 配置地点 文件-首选项-用户代码片段 可以新建一个代码片段  
-> 可以放在一个github仓库里方便备份,然后建立一个软链接即可, 
->> 默认是放在用户的配置目录下 `/home/kcp/.config/Code/User/snippets/`
+> 默认是放在用户的配置目录下 `~/.config/Code/User/snippets/`
 
 - [参考博客: VS Code 折腾记 - (6) 基本配置/快捷键定义/代码片段的录入（snippet）](https://juejin.im/post/58aeeca22f301e006cf65c8b)
 - [巧用VScode“用户代码片段”来提高效率](https://www.dogxu.cn/2017/06/10/vscode-snippet/)
