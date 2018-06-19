@@ -7,7 +7,7 @@
     - [Java10](#java10)
     - [Java11](#java11)
 
-`目录 end` |_2018-06-13_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
+`目录 end` |_2018-06-20_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
 ****************************************
 # Java版本更迭
 > 粗度列举特性 
@@ -66,6 +66,7 @@ Optional
 Lambda
 
 Stream
+java.time 包 增强了日期时间的处理
 
 _集合的Lambda迭代方式_
 - [参考博客: List、Map的循环迭代](http://blog.csdn.net/xf_87/article/details/53931207)
