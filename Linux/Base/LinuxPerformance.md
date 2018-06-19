@@ -8,6 +8,7 @@
             - [vmstat](#vmstat)
             - [mpstat](#mpstat)
             - [top](#top)
+            - [htop](#htop)
             - [iostat](#iostat)
         - [进程管理](#进程管理)
             - [pidof](#pidof)
@@ -35,7 +36,7 @@
             - [chroot](#chroot)
         - [关机重启](#关机重启)
 
-`目录 end` |_2018-04-08_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
+`目录 end` |_2018-06-19_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
 ****************************************
 # Linux 性能分析和管理
 ## 常用工具
@@ -47,6 +48,8 @@
 - 表示单核:平均负载0.7以下是安全的,大于就需要优化了,多核的情况就是 0.7*N(核心数)
 
 ### 内存情况
+> 对于Linux来说, 都是有内存就去分配, 然后就用, 只有内存不够了才会去回收, 对于服务器来说, 交换内存会带来性能的明显下降 一般是不会配置的
+
 `free`
 - 直接运行得到的就是内存情况,默认是kb为单位,可以指定 -b -m -g (后两种不推荐,因为向下取整的特性,出来的数据有点诡异,)
     - -h 人类可读形式 推荐,能快速看到大略,精准的话还是用 -b
@@ -126,6 +129,9 @@
 
 #### top
 > 感觉 htop 就是基于这个开发的, 使用htop更简单些, 这个强大但是好多参数
+
+#### htop
+> 其中主要是看 RES 真实内存, VIRT 是虚拟内存(也就是进程和线程以为自己能拥有的内存大小)
 
 #### iostat
 - 执行`iostat`输出信息:

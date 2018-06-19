@@ -6,7 +6,7 @@
         - [系列](#系列)
     - [开始使用](#开始使用)
     - [安装SpringBootCLI](#安装springbootcli)
-    - [Springboot的测试模块](#springboot的测试模块)
+    - [测试模块](#测试模块)
     - [配置文件](#配置文件)
         - [多种配置文件并切换](#多种配置文件并切换)
             - [yml方式](#yml方式)
@@ -29,7 +29,7 @@
             - [手动方式](#手动方式)
             - [gradle结合docker](#gradle结合docker)
 
-`目录 end` |_2018-06-15_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
+`目录 end` |_2018-06-19_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
 ****************************************
 # SpringBoot
 > 一个简化Spring开发的框架,微服务SpringCloud的基础
@@ -78,7 +78,20 @@ _目录结构最好如下_ `*Application类要处于所有用了Springboot注解
     - spring --version
 - 官方下载地址 [所有版本](https://repo.spring.io/release/org/springframework/boot/spring-boot-cli/)
 
-## Springboot的测试模块
+## 测试模块
+- [ ] 了解这些测试注解 的作用和使用场景
+
+```java
+    // 依赖于Springboot环境的测试类的必备注解
+    @RunWith(SpringRunner.class)
+    @SpringBootTest
+
+    // 使用内存数据库测试
+    @ComponentScan("com.github.kuagncp") // 如果有类没注入需要手动设置扫面
+    @RunWith(SpringJUnit4ClassRunner.class)
+    @DataJpaTest
+```
+
 - 可以使用MockMvc来测试Controller层的代码
 - 可以使用MockMvc的SpringSecurity支持来测试安全模块
 - 使用 WebIntegraionTest 测试运行中的Web容器

@@ -27,11 +27,12 @@
         - [Maven中引入Groovy](#maven中引入groovy)
         - [Groovy调用Java](#groovy调用java)
         - [Java调用Groovy](#java调用groovy)
+        - [Groovy和Spring](#groovy和spring)
     - [坑](#坑)
         - [默认return](#默认return)
     - [Grails](#grails)
 
-`目录 end` |_2018-06-15_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
+`目录 end` |_2018-06-19_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
 ****************************************
 # Groovy
 > [Groovy 官网](http://www.groovy-lang.org/) | 
@@ -358,6 +359,10 @@ class Person{
 
 > [示例代码](https://github.com/kuangcp/JavaBase/blob/master/src/main/java/com/classfile/JavaUseGroovy.java)
 
+### Groovy和Spring
+> [参考博客: Groovy 使 Spring 更出色，第 1 部分](https://www.ibm.com/developerworks/cn/java/j-groovierspring1.html)
+
+**************************************
 ## 坑
 
 ### 默认return
