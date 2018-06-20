@@ -21,8 +21,9 @@
             - [StringBuffer和StringBuilder](#stringbuffer和stringbuilder)
         - [枚举类型](#枚举类型)
     - [自动拆装箱](#自动拆装箱)
-    - [自定义类](#自定义类)
+    - [内部类](#内部类)
     - [类型强转](#类型强转)
+    - [时间类型](#时间类型)
 - [类的结构](#类的结构)
     - [修饰符](#修饰符)
         - [权限修饰符](#权限修饰符)
@@ -38,7 +39,7 @@
     - [DAO](#dao)
 - [关键字](#关键字)
 
-`目录 end` |_2018-06-14_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
+`目录 end` |_2018-06-20_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
 ****************************************
 # 基础语法
 
@@ -125,11 +126,17 @@ Tool.INSTANCE.getNum();
 ## 自动拆装箱
 
 ***************************
-## 自定义类
-> 也就是内部类, 而且其域可以和其他常见类型一样, 作为类的成员, 也可作为方法的局部变量, 其中包含的各种变量的域都是按原规则生效的
+## 内部类
+> 其域可以和其他常见类型一样, 作为类的成员, 也可作为方法的局部变量, 其中包含的各种变量的域都是按原规则生效的
 
 ## 类型强转
 - Double -> int 直接(int)num;
+
+## 时间类型
+
+1. 最早是 Date 然后 Calendar 然后 Instant 
+
+_获取指定时间_ [获取指定时间的时间戳](https://blog.csdn.net/jssongwei/article/details/71403354)
 
 ******************
 # 类的结构

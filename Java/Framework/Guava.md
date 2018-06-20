@@ -4,7 +4,7 @@
     - [基础部分](#基础部分)
         - [EventBus](#eventbus)
 
-`目录 end` |_2018-06-13_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
+`目录 end` |_2018-06-20_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
 ****************************************
 # Guava
 > [Github地址](https://github.com/google/guava)
@@ -18,6 +18,5 @@
 
 ### EventBus
 > [官方文档](https://github.com/google/guava/wiki/EventBusExplained) | [Guava学习笔记：EventBus](http://www.cnblogs.com/peida/p/EventBus.html)
-
-
+> [并发编程网 event bus](http://ifeve.com/google-guava-eventbus/) | [走进Guava](https://www.yeetrack.com/?p=1177)
 

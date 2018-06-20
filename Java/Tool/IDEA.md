@@ -16,7 +16,7 @@
     - [插件](#插件)
     - [启动配置](#启动配置)
 
-`目录 end` |_2018-06-11_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
+`目录 end` |_2018-06-20_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
 ****************************************
 
 # IDEA 使用笔记
@@ -99,7 +99,6 @@ _例如修改为如下_
 
 ### IDEA原生快捷键系列
 > 默认配置的是Idea原生
-
 
 - 这时我们只需敲Ctrl+Shift+Enter就能自动补全末尾的字符。
     - 而且不只是括号，例如敲完if/for时也可以自动补上{}花括号。
