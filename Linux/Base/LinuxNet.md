@@ -18,7 +18,13 @@
         - [8.wget](#8wget)
     - [【常用网络服务】](#常用网络服务)
         - [邮件服务器postfix和devecot](#邮件服务器postfix和devecot)
-        - [FTP服务器](#ftp服务器)
+        - [FTP](#ftp)
+            - [基础](#基础)
+            - [使用](#使用)
+            - [手机和电脑之间传输管理文件](#手机和电脑之间传输管理文件)
+                - [手机](#手机)
+                - [电脑](#电脑)
+            - [配置FTP服务器](#配置ftp服务器)
         - [Ssh](#ssh)
         - [telnet](#telnet)
         - [VPN](#vpn)
@@ -26,7 +32,7 @@
         - [防火墙](#防火墙)
             - [iptables](#iptables)
 
-`目录 end` |_2018-06-14_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
+`目录 end` |_2018-06-20_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
 ****************************************
 # 【网络管理】
 ## DNS
@@ -305,7 +311,25 @@ _ss_
 ****************************
 ## 【常用网络服务】
 ### 邮件服务器postfix和devecot
-### FTP服务器
+
+### FTP
+
+#### 基础
+
+#### 使用
+- 登录`ftp host port`
+
+#### 手机和电脑之间传输管理文件
+> 前提是两个设备处于同一个局域网, 也就是说连同一个WIFI, 或者电脑开热点给手机连?
+
+##### 手机
+> 手机安装 FeelFTP , 然后设置编码为utf-8, 开启服务器  
+> 或者安装ES文件浏览器, 也带有FTP服务器, 但是不稳定, 切出去就停了, 而且不能选择上SDK卡
+
+##### 电脑
+> 安装FileZila 建立连接, 然后就能方便的用鼠标进行传输了
+
+#### 配置FTP服务器
 - `sudo apt-get install vsftpd -y`
 - `sudo systemctl start vsftpd.service`
 - 创建用户 `sudo useradd -d /home/uftp -s /bin/bash uftp`

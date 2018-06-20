@@ -5,9 +5,9 @@
     - [【基础】](#基础)
     - [【深入】](#深入)
     - [【抽象】](#抽象)
-    - [相关](#相关)
+    - [相关资源](#相关资源)
 
-`目录 end` |_2018-06-05_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
+`目录 end` |_2018-06-20_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
 ****************************************
 # 计算机基础
 
@@ -19,6 +19,8 @@
 
 *************************************
 # Java
+> [Oracle Java 首页](http://www.oracle.com/technetwork/java/index.html)
+
 ## 【基础】
 >- [基础语法](/Java/AdvancedLearning/GrammarAndType.md)  
 >- [继承和接口](/Java/AdvancedLearning/ExtendsAndInterface.md)  
@@ -47,6 +49,6 @@
 >- [模式之禅](/Java/ZenOfPattern.md)
 
 
-## 相关
+## 相关资源
 > [architect-awesome](https://github.com/xingshaocheng/architect-awesome)
-
+> [Java资源大全](http://www.codeceo.com/article/java-resource-collection.html)

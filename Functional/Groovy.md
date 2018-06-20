@@ -32,7 +32,7 @@
         - [默认return](#默认return)
     - [Grails](#grails)
 
-`目录 end` |_2018-06-19_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
+`目录 end` |_2018-06-20_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
 ****************************************
 # Groovy
 > [Groovy 官网](http://www.groovy-lang.org/) | 
@@ -41,7 +41,7 @@
 > [精通Groovy](https://www.ibm.com/developerworks/cn/education/java/j-groovy/j-groovy.html)
 > [Groovy：Java 程序员的 DSL](https://www.ibm.com/developerworks/cn/java/j-pg02179.html)
 > [w3cschool Groovy教程](https://www.w3cschool.cn/groovy/)
-> [并发编程网 Groovy教程](http://ifeve.com/category/groovy/)
+> [并发编程网 Groovy分类文章](http://ifeve.com/category/groovy/)
 > [infoQ 上Groovy相关](http://www.infoq.com/cn/groovy)
 
 ## 书籍

@@ -14,11 +14,11 @@
             - [不同](#不同)
                 - [diff](#diff)
             - [相同](#相同)
-        - [更改文件](#更改文件)
+        - [文件管理命令](#文件管理命令)
             - [合并文件](#合并文件)
-        - [流编辑器](#流编辑器)
-            - [sed](#sed)
-            - [awk](#awk)
+    - [流编辑器](#流编辑器)
+        - [sed](#sed)
+        - [awk](#awk)
     - [【磁盘管理】](#磁盘管理)
         - [分区介绍](#分区介绍)
         - [设备列表](#设备列表)
@@ -28,12 +28,6 @@
             - [fdisk](#fdisk)
             - [df](#df)
             - [du](#du)
-    - [善用FTP](#善用ftp)
-        - [基础](#基础)
-        - [使用](#使用)
-        - [手机和电脑之间传输管理文件](#手机和电脑之间传输管理文件)
-            - [手机](#手机)
-            - [电脑](#电脑)
     - [日志](#日志)
         - [用户日志](#用户日志)
         - [系统日志](#系统日志)
@@ -51,7 +45,7 @@
             - [查看发行版](#查看发行版)
             - [查看系统所有用户信息](#查看系统所有用户信息)
 
-`目录 end` |_2018-06-14_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
+`目录 end` |_2018-06-20_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
 ****************************************
 # 【文件管理】
 > Linux中认为万物皆文件
@@ -79,9 +73,9 @@
 
 ### 清除缓存
 > [参考: 如何在 Linux 中清除缓存（Cache）？](https://linux.cn/article-5627-1.html) `注意要切换到root再运行命令`  
-> 仅清除页面缓存（PageCache） `sync; echo 1 > /proc/sys/vm/drop_caches`
-> 清除目录项和inode `sync; echo 2 > /proc/sys/vm/drop_caches`
-> 清除页面缓存，目录项和inode `sync; echo 3 > /proc/sys/vm/drop_caches`
+> 仅清除页面缓存（PageCache） `sync; echo 1 > /proc/sys/vm/drop_caches`  
+> 清除目录项和inode `sync; echo 2 > /proc/sys/vm/drop_caches`  
+> 清除页面缓存，目录项和inode `sync; echo 3 > /proc/sys/vm/drop_caches`  
 
 - 有时候, 因为缓存的问题会引发一些很诡异的问题, 有应用缓存和系统缓存的分别
     - 例如构建工具Maven, 也会因为在一个项目空间下, 多个同名项目的缓存问题 
@@ -106,11 +100,15 @@
 _注意_
 > 你会发现 当前用户 下 Kg.notes 是正常运行的, 但是 sudo Kg.note 就会报错说找不到命令  
 > 神奇的是 配置一个别名 `alias sudo='sudo '` 就可以解决这个问题了 [stackoverflow](https://askubuntu.com/questions/22037/aliases-not-available-when-using-sudo)
-
+_官方说明如下_
 ```
-The first word of each simple command, if unquoted, is checked to see if it has an alias. If so, that word is replaced by the text of the alias. The characters ‘/’, ‘$’, ‘`’, ‘=’ and any of the shell metacharacters or quoting characters listed above may not appear in an alias name. The replacement text may contain any valid shell input, including shell metacharacters. The first word of the replacement text is tested for aliases, but a word that is identical to an alias being expanded is not expanded a second time. This means that one may alias ls to "ls -F", for instance, and Bash does not try to recursively expand the replacement text. If the last character of the alias value is a space or tab character, then the next command word following the alias is also checked for alias expansion. 
+    The first word of each simple command, if unquoted, is checked to see if it has an alias. If so, that word is replaced by the text of the alias. 
+    The characters ‘/’, ‘$’, ‘`’, ‘=’ and any of the shell metacharacters or quoting characters listed above may not appear in an alias name. 
+    The replacement text may contain any valid shell input, including shell metacharacters. The first word of the replacement text is tested for aliases, 
+    but a word that is identical to an alias being expanded is not expanded a second time. This means that one may alias ls to "ls -F", for instance, 
+    and Bash does not try to recursively expand the replacement text. If the last character of the alias value is a space or tab character, 
+    then the next command word following the alias is also checked for alias expansion. 
 ```
-
 - 如[我的配置文件](https://github.com/Kuangcp/Configs/tree/master/Linux/init) `将配置文件分类放`
     - K.h就能显示出每个命令的说明 其实现脚本： [python3脚本](https://github.com/Kuangcp/Script/blob/master/python/show_alias_help.py) 
     - 在别名文件目录时, 建立链接就可以用了 `ln -s `pwd`/.bash_aliases ~/.bash_aliases` 
@@ -239,7 +237,7 @@ _head_
 
 #### 相同
 
-### 更改文件
+### 文件管理命令
 _rename_
 `rename命令的使用(基于perl)`
 - `rename "s/.html/.php/" * ` //把.html 后缀的改成 .php后缀
@@ -283,7 +281,6 @@ _wc_
 - cat mul.sh | wc -l
 - wc -l mul.sh
 
-
 _mv_
 - mv `mv 目录或正则 目录` 移动
     - I 交互方式操作。如果mv操作将导致对已存在的目标文件的覆盖，此时系统询问要求用户回答y或n，这样可以避免误覆盖文件。
@@ -293,8 +290,8 @@ _mv_
 1. 最简单就是 `cat file1 file2 > result`
 
 *****************
-### 流编辑器
-#### sed
+## 流编辑器
+### sed
 > 参数 命令 文件
 
 - `参数`
@@ -311,15 +308,15 @@ _mv_
 > 1. 截取指定行数到新文件 `sed -n ‘开始行数，结束行数p’ info.log > newFile.log`
 > 2. 修改配置文件中name的值为123 `sed -i "s/name=.*/name=123/g" config.conf`
 
-#### awk
+### awk
 > awk有3个不同版本: awk、nawk和gawk，未作特别说明，一般指gawk，gawk 是 AWK 的 GNU 版本。
 
 *****************************
 ## 【磁盘管理】
 ### 分区介绍
-- /root
-- /home
-- /boot
+- /root 系统用户 root 的主目录
+- /home 其他用户的主目录分配路径
+- /boot 系统引导目录
 
 ### 设备列表
 - /dev/random 产生随机数的设备
@@ -342,8 +339,6 @@ _mv_
 
 #### fdisk
 - 查看磁盘分区表信息 ：`sudo fdisk -l `
-- 
-
 
 #### df 
 - `df -h ` 查看挂载文件系统信息
@@ -356,32 +351,10 @@ _mv_
 - du -sk * | grep guojf //看一个人的大小
 - du -m | cut -d "/" -f 2 //看第二个/ 字符前的文字
 
-- 查看此文件夹有多少文件 /*/*/* 有多少文件
-    du xmldb/
-    du xmldb/*/*/* |wc -l
-    40752
-
-************************************
-## 善用FTP
-
-### 基础
-
-### 使用
-- 登录`ftp host port`
-
-### 手机和电脑之间传输管理文件
-> 前提是两个设备处于同一个局域网, 也就是说连同一个WIFI, 或者电脑开热点给手机连?
-
-#### 手机
-> 手机安装 FeelFTP , 然后设置编码为utf-8, 开启服务器  
-> 或者安装ES文件浏览器, 也带有FTP服务器, 但是不稳定, 切出去就停了, 而且不能选择上SDK卡
-
-#### 电脑
-> 安装FileZila 建立连接, 然后就能方便的用鼠标进行传输了
-
 *********************************
 ## 日志
 > 基本都在 `/var/log` 下
+
 ### 用户日志
 - last 查看用户最后登录时间
 
@@ -506,8 +479,10 @@ _解压_
 **************************
 ## 常用文件
 ### 划分
+> Linux 系统配置文件的大致分布
 
 ### 使用
+> 具体配置文件的使用
 
 #### 查看发行版
 `cat /etc/issue` 通用

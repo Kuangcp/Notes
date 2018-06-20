@@ -13,7 +13,7 @@
         - [架构师](#架构师)
     - [Java语言讨论](#java语言讨论)
 
-`目录 end` |_2018-06-14_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
+`目录 end` |_2018-06-20_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
 ****************************************
 # Java
 > 和Java有关的博客和网页  
@@ -29,12 +29,12 @@
 - [javadoc 和 javadoc注释规范](http://www.cnblogs.com/felix-/p/4310229.html)
 - [推荐！国外程序员整理的Java资源大全](http://www.codeceo.com/article/java-resource-collection.html)
 
+- [oracle magazine](https://blogs.oracle.com/java/java-magazine-design-pattern)
 ***************
 - [Java动态代理机制详解](http://blog.csdn.net/luanlouis/article/details/24589193) `博客很细致，深入原理`
 - [使用JMockit编写java单元测试](http://blog.csdn.net/chjttony/article/details/17838693)
 - [Java(Android)线程池](http://www.trinea.cn/android/java-android-thread-pool/)
 - [Docker图形化管理](http://blog.liuker.cn/index.php/docker/31.html)
-
 
 ## JavaFx
 - [xJavaFxTool](https://gitee.com/xwintop/xJavaFxTool)`基于JavaFX的工具集`

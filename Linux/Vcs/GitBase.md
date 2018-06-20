@@ -35,7 +35,7 @@
         - [SVN](#svn)
     - [repos的使用](#repos的使用)
 
-`目录 end` |_2018-06-10_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
+`目录 end` |_2018-06-20_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
 ****************************************
 # Git基础
 ## 版本控制系统(VCS)
@@ -231,11 +231,11 @@
 - `git checkout commit 节点标识符或者标签 文件名 文件名。。。` 
     - 取出指定节点状态的某文件，而且执行完命令后，取出的那个状态会成为head状态，
     - 需要执行  `git reset HEAD` 来清除这种状态
-- `git pull --all` 下拉远程所有的分支到本地
 
 > 撤销当前对文件的所有修改 `git checkout -- 文件名` 就会使用上次提交的文件来覆盖当前文件
 
 - [ ] 有没有 svn cat 类似的功能
+
 
 #### fetch
 > 访问远程仓库, 拉取本地没有的数据
