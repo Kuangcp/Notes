@@ -20,7 +20,7 @@
     - [生活](#生活)
 - [教学视频](#教学视频)
 
-`目录 end` |_2018-04-08_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
+`目录 end` |_2018-06-21_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
 ****************************************
 # 待阅读的书籍
 > [程序员必读书单](http://www.cnblogs.com/figure9/p/developer-reading-list.html)
@@ -78,6 +78,7 @@
     - [单核工作法图解](http://www.ituring.com.cn/book/1925)
 - [程序员面试金典](http://www.ituring.com.cn/book/1010)
 
+- The Art of Readable Code 
 ## 生活
 - 程序员健康指南
 

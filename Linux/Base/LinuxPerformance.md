@@ -36,7 +36,7 @@
             - [chroot](#chroot)
         - [关机重启](#关机重启)
 
-`目录 end` |_2018-06-20_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
+`目录 end` |_2018-06-21_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
 ****************************************
 # Linux 性能分析和管理
 ## 常用工具
@@ -156,6 +156,8 @@
 
 
 ### 进程管理
+> 按程序名字找到id `ps -ef | grep "$NAME" | grep -v "grep" | awk '{print $2}'`
+
 #### pidof
 - 查询ssh服务启动的进程的pid `pidof sshd`
 - 找出shell脚本执行的pid, `pidof -x 脚本文件名`
@@ -382,7 +384,7 @@
 > 忽略信号对程序可能的影响 `trap "" 2`: 忽略 `Ctrl+C`
 > 可以针对用户的退出操作，询问用户是否真的确认要退出
 
-```
+```sh
     #!/bin/bash
     trap 'echo "hello"' 2
     tail -f ~/.bashrc

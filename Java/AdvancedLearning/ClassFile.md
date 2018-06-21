@@ -178,7 +178,7 @@ Window ==> Preferences ==> Java ==> Compiler ==> Error/Warnings ==>Potential pro
 #### Protobuf
 > Google开源的库 全称 `Google Protocol Buffers` |  [Github : Protobuf](https://github.com/google/protobuf)
 
-> [参考博客: Protobuf语言指南](http://www.cnblogs.com/dkblog/archive/2012/03/27/2419010.html)
+> [参考博客: Protobuf语言指南](http://www.cnblogs.com/dkblog/archive/2012/03/27/2419010.html) `较为详细, 只是版本有点旧`
 > [参考博客: 详解如何在NodeJS中使用Google的Protobuf](https://juejin.im/entry/59c1214df265da0658151a2c) | [protocobuf](https://github.com/dcodeIO/protobuf.js)
 > [Google 开源技术protobuf ](https://blog.csdn.net/hguisu/article/details/20721109)
 > [Google Protocol Buffer 的使用和原理](https://www.ibm.com/developerworks/cn/linux/l-cn-gpb/index.html)
