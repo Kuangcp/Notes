@@ -19,7 +19,11 @@
     - [包装类型](#包装类型)
         - [String](#string)
             - [StringBuffer和StringBuilder](#stringbuffer和stringbuilder)
-        - [枚举类型](#枚举类型)
+        - [Double](#double)
+        - [Integer](#integer)
+        - [Long](#long)
+        - [Boolean](#boolean)
+    - [枚举类型](#枚举类型)
     - [自动拆装箱](#自动拆装箱)
     - [内部类](#内部类)
     - [类型强转](#类型强转)
@@ -28,7 +32,7 @@
     - [修饰符](#修饰符)
         - [权限修饰符](#权限修饰符)
         - [其他](#其他)
-    - [属性](#属性)
+    - [成员属性](#成员属性)
     - [方法](#方法)
 - [POJO](#pojo)
     - [VO](#vo)
@@ -39,12 +43,12 @@
     - [DAO](#dao)
 - [关键字](#关键字)
 
-`目录 end` |_2018-06-20_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
+`目录 end` |_2018-06-21_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
 ****************************************
 # 基础语法
 
 ## 代码风格
-> [Google Style Guide](https://github.com/google/styleguide) | [阿里巴巴手册](/Java/AlibabaJavaStandard.md)
+> [Google Style Guide](https://github.com/google/styleguide) | [阿里巴巴开发手册](/Java/AlibabaJavaStandard.md)
 
 ## 结构
 ### 判断
@@ -99,7 +103,12 @@
 #### StringBuffer和StringBuilder
 > [参考博客](https://blog.csdn.net/rmn190/article/details/1492013)
 
-### 枚举类型
+### Double
+### Integer
+### Long
+### Boolean
+****************************
+## 枚举类型
 
 > [参考博客: Java 语言中 Enum 类型的使用介绍](https://www.ibm.com/developerworks/cn/java/j-lo-enum/index.html)
 从上面的定义形式来看，似乎 Java 中的枚举类型很简单，但实际上 Java 语言规范赋予枚举类型的功能非常的强大，它不仅是简单地将整形数值转换成对象，而是将枚举类型定义转变成一个完整功能的类定义。
@@ -129,9 +138,15 @@ Tool.INSTANCE.getNum();
 ## 内部类
 > 其域可以和其他常见类型一样, 作为类的成员, 也可作为方法的局部变量, 其中包含的各种变量的域都是按原规则生效的
 
+_但是内部类的属性不能用static修饰_
+归根结底，还是类与对象的区别，静态属性不依赖于对象，因为它保存在jvm的静态区，所以访问修改的时候不需要依赖当前有没有存活的对象，在虚拟机加载的时候也是优先于实例生成的。
+而实例对象则是保存在jvm的堆内存中，想要访问内部类，必须先实例化外部类，然后通过外部类才能访问内部类。内部类其实也可以认为是外部类的一个成员变量，只要是成员变量，
+各个对象都是不依赖的，静态属性的出现破坏了这一逻辑，所以java语言在语义层面不允许我们那么做，这其实不是技术问题，是一个语言的逻辑和语义问题。
+
 ## 类型强转
 - Double -> int 直接(int)num;
 
+**********************
 ## 时间类型
 
 1. 最早是 Date 然后 Calendar 然后 Instant 
@@ -150,7 +165,9 @@ _获取指定时间_ [获取指定时间的时间戳](https://blog.csdn.net/jsso
 
 ### 其他
 
-## 属性
+## 成员属性
+作为Java的bean, 或者大多数情况下, 属性都是私有的, 然后提供setter getter 方法,而且 一般来说, setter和getter方法是不能包含逻辑的, 也就是简单的赋值 取值
+乍一看相比于C语言, 似乎这是多此一举, 但是注意面向对象思想, 一个对象对外提供的应该只是行为, 具有较强的语义性, 什么对象执行了什么方法, 而直接引用就可能将对象属性和静态属性混淆
 
 ## 方法
 方法的签名: 

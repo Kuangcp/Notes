@@ -16,7 +16,7 @@
     - [插件](#插件)
     - [启动配置](#启动配置)
 
-`目录 end` |_2018-06-20_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
+`目录 end` |_2018-06-21_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
 ****************************************
 
 # IDEA 使用笔记
@@ -33,7 +33,6 @@
 ## 常用技巧
 ### Tomcat的使用
 > 直接配置解压的即可, 然后Idea会在 用户目录下的Idea主目录中配置一个专门放Tomcat的配置和日志等文件, 和原Tomcat进行了隔离, 这样就不会影响到该Tomcat.
-
 
 ### 导出为可运行的JAR包 普通Java项目
 - File -> project structure ->artifact 里面设置好 引入的库，设置Main类，引用的jar包的相对classpath
@@ -98,65 +97,53 @@ _例如修改为如下_
 > 设置中 keymap 选择eclipse系列即可
 
 ### IDEA原生快捷键系列
-> 默认配置的是Idea原生
 
-- 这时我们只需敲Ctrl+Shift+Enter就能自动补全末尾的字符。
-    - 而且不只是括号，例如敲完if/for时也可以自动补上{}花括号。
-- Ctrl+空格 代码提示
-- Ctrl+Alt+Space 类名或接口名提示
-- Ctrl+P 方法参数提示
-- Ctrl+/ 或 Ctrl+Shift+/ 注释（// 或者/*...*/ ）
-- Alt+F1 查找代码所在位置
-- 选中文本，按Ctrl+Shift+F7 ，高亮显示所有该文本，按Esc高亮消失。
-- 选中文本，按Alt+F3 ，逐个往下查找相同文本，并高亮显示。
-- Ctrl+Up/Down 光标跳转到第一行或最后一行下
-- Ctrl+B 快速打开光标处的类或方法的`声明或调用`
-    - Ctrl Alt B 查看抽象类或接口的实现方法
+1. `Ctrl＋E`，可以显示最近编辑的文件列表
+1. `Shift＋单击标签页` 可以关闭文件
+1. `Ctrl＋Shift＋Backspace `可以跳转到上次编辑的地方
+1. `Ctrl＋F12`，可以弹窗显示当前文件中类的结构
+1. `Ctrl＋F7`可以查询当前元素在当前文件中的引用，然后按F3可以选择
+1. `Ctrl＋N`，可以快速打开类
+1. `Ctrl＋Shift＋N`，可以快速打开文件
+1. `Alt＋Q` 可以看到光标处的元素的Javadoc
+1. `Ctrl＋W` 可以选择单词继而语句继而行继而函数
+1. `Alt＋F1` 可以将正在编辑的元素在各个面板中定位
+1. `Ctrl＋P`，可以显示参数信息
+1. `Ctrl＋Shift＋Insert` 可以选择剪贴板内容并插入
+1. `Alt＋Insert` 可以生成构造器/Getter/Setter等
+1. `Ctrl＋Alt＋V` 可以引入变量。例如把括号内的SQL赋成一个变量
+1. `Ctrl＋Alt＋T` 可以把代码包在一块内，例如try/catch
+1. `Alt＋Up and Alt＋Down` 可在方法间快速移动
+1. `Shift+Escape` 不仅可以把焦点移到编辑器上而且还可以隐藏当前（或最后活动的）工具窗口。
+1. `Ctrl+Shift+Enter` 就能自动补全代码的分号,括号
+1. `Ctrl+空格` 代码提示
+1. `Ctrl+Alt+Space` 代码提示 包括类,变量,方法等内容
+    - `Ctrl Shift Space` 智能提示
+1. `Ctrl+P` 方法参数提示
+1. `Alt+F1` 查找当前文件所在位置(项目,结构,maven等等)
+1. 选中文本，按`Ctrl+Shift+F7` ，高亮显示所有该文本，按Esc高亮消失。
+1. 选中文本，按`Alt+F3` ，然后 F3逐个往下查找相同文本，并高亮显示。
+1. `Ctrl+B` 快速打开光标处的类或方法的 _声明或调用_
+    - `Ctrl Alt B` 查看抽象类或接口的实现方法
+    - 等价的,B键 可以换成鼠标左键单击
+1. `Ctrl＋Shift＋Alt＋N` 可以快速打开符号(方法名, 变量名等等,全局搜索)
+1. `Ctrl＋O` 可以选择父类的方法进行重写
+1. Shift Shift 也就是双击, 就可以快速搜索类了
+    - Ctrl Shift F 全局搜索, 不含Shift 就是简单当前文件搜索
+    - 快速打开类/文件/符号时，可以使用通配符，也可以使用缩写
+1. `Ctrl＋J` Live Templates!  例如 fori 等快速模板代码
+1. `Ctrl＋Shift＋F7` 可以高亮当前元素在当前文件中的使用
+1. `Ctrl＋Alt＋Up /Ctrl＋Alt＋Down` 可以快速跳转搜索结果
+1. `Ctrl＋Shift＋J` 可以整合两行
+1. `Alt＋F8` 是计算变量值
 
-最常用快捷键
-
-- 1.Ctrl＋E，可以显示最近编辑的文件列表
-- 2.Shift＋单击标签页 可以关闭文件
-- 4.Ctrl＋Shift＋Backspace可以跳转到上次编辑的地方
-- 5.Ctrl＋F12，可以显示当前文件的结构
-- 6.Ctrl＋F7可以查询当前元素在当前文件中的引用，然后按F3可以选择
-- 7.Ctrl＋N，可以快速打开类
-- 8.Ctrl＋Shift＋N，可以快速打开文件
-- 9.Alt＋Q可以看到当前方法的声明
-- 10.Ctrl＋W可以选择单词继而语句继而行继而函数
-- 11.Alt＋F1可以将正在编辑的元素在各个面板中定位
-- 12.Ctrl＋P，可以显示参数信息
-- 13.Ctrl＋Shift＋Insert可以选择剪贴板内容并插入
-- 14.Alt＋Insert可以生成构造器/Getter/Setter等
-- 15.Ctrl＋Alt＋V 可以引入变量。例如把括号内的SQL赋成一个变量
-- 16.Ctrl＋Alt＋T可以把代码包在一块内，例如try/catch
-- 17.Alt＋Up and Alt＋Down可在方法间快速移动
-
-- Shift-Escape 不仅可以把焦点移到编辑器上而且还可以隐藏当前（或最后活动的）工具窗口。
-下面的不是很有用
-
-- 18.在一些地方按Alt＋Enter可以得到一些Intention Action，例如将”==”改为”equals()”
-- 19.Ctrl＋Shift＋Alt＋N可以快速打开符号
-- 20.Ctrl＋Shift＋Space在很多时候都能够给出Smart提示
-- 21.Alt＋F3可以快速寻找
-- 22.Ctrl＋/和Ctrl＋Shift＋/可以注释代码
-- 23.Ctrl＋Alt＋B可以跳转到抽象方法的实现
-- 24.Ctrl＋O可以选择父类的方法进行重写
-- 25.Ctrl＋Q可以看JavaDoc
-- 26.Ctrl＋Alt＋Space是类名自动完成
-- 27.快速打开类/文件/符号时，可以使用通配符，也可以使用缩写
-- 28.Live Templates! Ctrl＋J
-- 29.Ctrl＋Shift＋F7可以高亮当前元素在当前文件中的使用
-- 30.Ctrl＋Alt＋Up /Ctrl＋Alt＋Down可以快速跳转搜索结果
-- 31.Ctrl＋Shift＋J可以整合两行
-- 32.Alt＋F8是计算变量值
-
-- 14 、在调试程序时查看任何表达式值的一个容易的方法就是在编辑器中选择文本（可以按几次 Ctrl-W 组合键更有效地执行这个操作）然后按 Alt-F8 。
-- 15 、要打开编辑器脱字符处使用的类或者方法 Java 文档的浏览器，就按 Shift-F1 （右键菜单的 External JavaDoc ）。
-- 要使用这个功能须要把加入浏览器的路径，在“ General ”选项中设置（ Options | IDE Settings ），另外还要把创建的 Java 文档加入到工程中（ File | Project Properties ）。
+******
+1. 在调试程序时查看任何表达式值的一个容易的方法就是在编辑器中选择文本（可以按几次 Ctrl-W 组合键更有效地执行这个操作）然后按 Alt-F8 。
+1. 要打开编辑器脱字符处使用的类或者方法 Java 文档的浏览器，就按 Shift-F1 （右键菜单的 External JavaDoc ）。
+1. 要使用这个功能须要把加入浏览器的路径，在“ General ”选项中设置（ Options | IDE Settings ），另外还要把创建的 Java 文档加入到工程中（ File | Project Properties ）。
 
 ### 个人习惯
-> 从eclipse风格脱离而来和原生Idea快捷键结合, 自己修改的风格 在 [个人配置文件夹下找到导入即可](#个人idea配置)
+> 从eclipse风格脱离而来和原生Idea快捷键结合, 自己修改的风格 在 [个人配置文件夹下找到导入即可](#https://github.com/Kuangcp/Configs/tree/master/Idea)
 
 - Alt Enter 自动修复
 - Ctrl Q 显示doc
@@ -168,7 +155,7 @@ _例如修改为如下_
 
 _file_
 - Ctrl W 选中代码
-- Ctrl E 最近文件打开
+- Ctrl E / Alt E 最近文件打开
 - Alt+Shift+C 最近更改的文件
 - Ctrl N 快速搜索Java文件 
     - Ctrl Shift N 搜索所有文件
@@ -224,7 +211,7 @@ _setting_
 - Ctrl+Shift+Alt+? 进行一些设置，找到编译自动部署，就能热加载
 
 _tips_
-- 代码标签输入完成后，按Tab或者Enter，生成代码。
+- 代码模板(fori notnull...) 输入完成后，按Tab或者Enter，生成代码。
 
 *********************
 ## 插件
