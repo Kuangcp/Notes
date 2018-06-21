@@ -13,7 +13,7 @@
     - [分布式](#分布式)
         - [CAP定理](#cap定理)
 
-`目录 end` |_2018-04-08_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
+`目录 end` |_2018-06-21_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
 ****************************************
 # 完整的MIS构建经验
 
@@ -21,16 +21,15 @@
 ### 持久化层
 #### 数据库设计
 > 一种极端是将业务也放在了数据库里, 使用大量的存储过程和函数  
-> 一种是将约束都放在了业务层, 甚至没有外键约束
+> 一种是将约束都放在了业务层, 数据库没有外键约束
 
 #### Domain对象设计
-- 1.首先名称不能使用Java或者数据库中的的关键字 class group table from 等等
+1. 首先名称不能使用Java或者数据库中的的关键字 class group table from 等等
     - 班级就用ClassGroup吧
-- 2.关系映射注意死循环
-
+1. 实体间的关系映射注意死循环
 
 ### 控制层
-
+> 只是映射好URL, 调用对应的Service
 
 #### 权限控制
 

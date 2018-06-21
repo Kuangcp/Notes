@@ -123,7 +123,6 @@
     * [ Log ](/Java/Log.md)
     * [ MIS ](/Java/MIS.md)
     * [ RESTful ](/Java/RESTful.md)
-    * [ UsuallyLibAPI ](/Java/UsuallyLibAPI.md)
     * [ ZenOfPattern ](/Java/ZenOfPattern.md)
 * 【 Linux 】
     * 【 Linux/Alpine 】

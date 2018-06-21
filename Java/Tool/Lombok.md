@@ -12,12 +12,14 @@
 - [使用](#使用)
     - [注解使用](#注解使用)
 
-`目录 end` |_2018-06-14_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
+`目录 end` |_2018-06-21_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
 ****************************************
 # Lombok
 
 ## 何为Lombok
 > [官网](https://projectlombok.org/) | [源码地址](https://github.com/rzwitserloot/lombok)
+
+
 
 ## 为什么要用
 > 简化JavaBean 更为直观 省去了Setter Getter toString hashCode 构造器等方法  
@@ -80,38 +82,38 @@
 _配置编译插件_
 ```xml
 <!--lombok-->
-      <plugin>
-        <artifactId>maven-compiler-plugin</artifactId>
-        <version>3.7.0</version>
-        <configuration>
-          <target>1.8</target>
-          <source>1.8</source>
-          <encoding>UTF-8</encoding>
-          <compilerId>groovy-eclipse-compiler</compilerId>
-          <verbose>true</verbose>
-          <fork>true</fork>
-          <compilerArguments>
-            <javaAgentClass>lombok.launch.Agent</javaAgentClass>
-          </compilerArguments>
-        </configuration>
-        <dependencies>
-          <dependency>
-            <groupId>org.codehaus.groovy</groupId>
-            <artifactId>groovy-eclipse-compiler</artifactId>
-            <version>2.9.3-01</version>
-          </dependency>
-          <dependency>
-            <groupId>org.codehaus.groovy</groupId>
-            <artifactId>groovy-eclipse-batch</artifactId>
-            <version>2.5.0-01</version>
-          </dependency>
-          <dependency>
-            <groupId>org.projectlombok</groupId>
-            <artifactId>lombok</artifactId>
-            <version>1.16.10</version>
-          </dependency>
-        </dependencies>
-      </plugin>
+<plugin>
+<artifactId>maven-compiler-plugin</artifactId>
+<version>3.7.0</version>
+<configuration>
+    <target>1.8</target>
+    <source>1.8</source>
+    <encoding>UTF-8</encoding>
+    <compilerId>groovy-eclipse-compiler</compilerId>
+    <verbose>true</verbose>
+    <fork>true</fork>
+    <compilerArguments>
+    <javaAgentClass>lombok.launch.Agent</javaAgentClass>
+    </compilerArguments>
+</configuration>
+<dependencies>
+    <dependency>
+    <groupId>org.codehaus.groovy</groupId>
+    <artifactId>groovy-eclipse-compiler</artifactId>
+    <version>2.9.3-01</version>
+    </dependency>
+    <dependency>
+    <groupId>org.codehaus.groovy</groupId>
+    <artifactId>groovy-eclipse-batch</artifactId>
+    <version>2.5.0-01</version>
+    </dependency>
+    <dependency>
+    <groupId>org.projectlombok</groupId>
+    <artifactId>lombok</artifactId>
+    <version>1.16.10</version>
+    </dependency>
+</dependencies>
+</plugin>
 ```
 _添加依赖_
 ```xml
@@ -123,11 +125,14 @@ _添加依赖_
 ```
 
 # 使用
+- Lombok 注解在线帮助文档：http://projectlombok.org/features/index.
 
 ## 注解使用
-- @Getter
-- @Setter
-- @Data
+- `@Data` ：注解在类上；提供类所有属性的 getter 和 setter 方法，此外还提供了equals、canEqual、hashCode、toString 方法
+- `@Setter`：注解在属性上；为属性提供 setter 方法
+- `@Getter`：注解在属性上；为属性提供 getter 方法
+- `@NoArgsConstructor`：注解在类上；为类提供一个无参的构造方法
+- `@AllArgsConstructor`：注解在类上；为类提供一个全参的构造方法
 
 _日志相关_
 - @Log4j

@@ -32,9 +32,8 @@
                 - [对于Java的使用](#对于java的使用)
             - [Thrift](#thrift)
             - [Marshalling](#marshalling)
-    - [反射的使用](#反射的使用)
 
-`目录 end` |_2018-06-14_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
+`目录 end` |_2018-06-21_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
 ****************************************
 # Java基础
 ## 【类和字节码】
@@ -336,9 +335,3 @@ _也可以使用该脚本更新协议_
 
 #### Marshalling
 > JBOSS 内部使用的编解码框架
-
-**********************
-## 反射的使用
-
-> [ Java反射异常处理之InvocationTargetException ](https://blog.csdn.net/zhangzeyuaaa/article/details/39611467)
-

@@ -30,7 +30,7 @@
         - [jq](#jq)
         - [shyaml](#shyaml)
 
-`目录 end` |_2018-06-10_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
+`目录 end` |_2018-06-21_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
 ****************************************
 # 学习Shell
 > 首先语法不像别的语言可读性好，比如Python，然后方言众多，学习比Python2，3还恶心  
@@ -147,7 +147,6 @@ fi
   vars=${vars%%#*} # 截取#左边
   vars=${vars#*cd} # 截取最左的cd的右边
   vars=${vars%\'*} # 截取 右边引号 之左
-
 ```
 
 `获取命令的输出`

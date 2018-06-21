@@ -93,6 +93,8 @@ _例如修改为如下_
 
 ************************
 ## IDEA快捷键
+[参考博客: Intellij IDEA神器居然还有这些小技巧](https://my.oschina.net/samgege/blog/1808622)
+
 ### 使用内置类eclipse快捷键系列
 > 设置中 keymap 选择eclipse系列即可
 
@@ -145,72 +147,72 @@ _例如修改为如下_
 ### 个人习惯
 > 从eclipse风格脱离而来和原生Idea快捷键结合, 自己修改的风格 在 [个人配置文件夹下找到导入即可](#https://github.com/Kuangcp/Configs/tree/master/Idea)
 
-- Alt Enter 自动修复
-- Ctrl Q 显示doc
-- Ctrl B 显示定义处或者调用处
-- Ctrl Shift T 自动创建JunitTest
-- Ctrl Shift F7 高亮显示光标所在元素所有出现过的地方
-- Ctrl Alt L 快速格式化代码 
-- Ctrl+Alt+O 优化导入的类和包
+1. Alt Enter 自动修复
+1. Ctrl Q 显示doc
+1. Ctrl B 显示定义处或者调用处
+1. Ctrl Shift T 自动创建JunitTest
+1. Ctrl Shift F7 高亮显示光标所在元素所有出现过的地方
+1. Ctrl Alt L 快速格式化代码 
+1. Ctrl+Alt+O 优化导入的类和包
 
-_file_
-- Ctrl W 选中代码
-- Ctrl E / Alt E 最近文件打开
-- Alt+Shift+C 最近更改的文件
-- Ctrl N 快速搜索Java文件 
+**file**
+1. Ctrl W 选中代码
+1. Ctrl E / Alt E 最近文件打开
+1. Alt+Shift+C 最近更改的文件
+1. Ctrl N 快速搜索Java文件 
     - Ctrl Shift N 搜索所有文件
     - Ctrl Shift Alt N 按类名首字母搜索
-- Alt+ left/right 左右切换打开的文件
+1. Alt+ left/right 左右切换打开的文件
 
-_coding_
-- Ctrl Shift V 显示最近的粘贴板记录
-- Ctrl O 选择要重写的方法
-- Ctrl L 选择要实现的方法 
-- Alt+Insert 生成代码(如get,set方法,构造函数等)
-- Shift+F6 重构-重命名
-- Ctrl+X 剪切行
-- Ctrl+D 复制行到下一行 `个人习惯这个是删除一行, Y才是复制`
-- Ctrl+Q 显示注释文档 或者 Alt+鼠标中键
-- Ctrl+Shift+Space 智能提示代码的补全
-- Ctrl+Shift+上/下键 代码上/下移动 `光标在一行上就是移动一行, 在代码块的首行就是移动整个代码块`
-- Ctrl+J 代码片段
-- Ctrl Space 智能补全
+**coding**
+1. Ctrl Shift V 显示最近的粘贴板记录
+1. Ctrl O 选择要重写的方法
+1. Ctrl L 选择要实现的方法 
+1. Alt+Insert 生成代码(如get,set方法,构造函数等)
+1. Shift+F6 重构-重命名
+1. Ctrl+X 剪切行
+1. Ctrl+D 复制行到下一行 `个人习惯这个是删除一行, Y才是复制`
+1. Ctrl+Q 显示注释文档 或者 Alt+鼠标中键
+1. Ctrl+Shift+Space 智能提示代码的补全
+1. Ctrl+Shift+上/下键 代码上/下移动 `光标在一行上就是移动一行, 在代码块的首行就是移动整个代码块`
+1. Ctrl+J 代码片段
+1. Ctrl Space 智能补全
     - Ctrl Shift Space 结合上下文补全
-- Ctrl+W 选中代码，连续按会有其他效果
+1. Ctrl+W 选中代码，连续按会有其他效果
 
-_jump_
-- Alt+ Up/Down 在方法间快速移动定位
-- Ctrl Alt ←/→ 后退/前进 至光标的上一个位置
-- F2 或 Shift+F2 高亮错误或警告快速定位
-- Ctrl＋[ 或 ]可以跳到大括号的开头结尾
+**jump**
+1. Alt+ Up/Down 在方法间快速移动定位
+1. Ctrl Alt ←/→ 后退/前进 至光标的上一个位置
+1. F2 或 Shift+F2 高亮错误或警告快速定位
+1. Ctrl＋[ 或 ]可以跳到大括号的开头结尾
 
-_search_
-- Ctrl+N 查找类
-- Ctrl+Shift+N 查找文件
-- Ctrl+R 替换文本
-- Ctrl+F 查找文本
-- Ctrl+Shift+Alt+N 全项目查找: 类中的方法或变量
+**search**
+1. Ctrl+N 查找类
+1. Ctrl+Shift+N 查找文件
+1. Ctrl+R 替换文本
+1. Ctrl+F 查找文本
+1. Ctrl+Shift+Alt+N 全项目查找: 类中的方法或变量
 
-_view_
-- Ctrl+H 显示类结构图
-- Ctrl＋F12，可以显示当前文件的结构 `或者直接Alt S`
-- Alt A , 显示目录结构
-- Alt R , 显示运行窗口
-- Alt D , 显示debug窗口
-- Alt T , 显示TODO的窗口 | `Ctrl +/-` 全部显示和折叠 TODO
-- Alt G , 显示Gradle窗口
-- Alt M , 显示Maven窗口
-- Alt . , 显示数据库工具窗口
-- Ctrl Shift 左/右 , 调节以上窗口分隔线
+**view**
+1. Ctrl+H 显示类结构图
+1. Ctrl＋F12，可以显示当前文件的结构 `或者直接Alt S`
+1. Alt A , 显示目录结构
+1. Alt R , 显示运行窗口
+1. Alt D , 显示debug窗口
+1. Alt T , 显示TODO的窗口 | `Ctrl +/-` 全部显示和折叠 TODO
+1. Alt G , 显示Gradle窗口
+1. Alt M , 显示Maven窗口
+1. Alt . , 显示数据库工具窗口
+1. Ctrl Shift 左/右 , 调节以上窗口分隔线
 
 > 在任一工具窗口, 按`ESC`都会让焦点回到编辑器 `Shift ESC` 就能关闭工具窗口并让焦点回到编辑器
 > 以上的窗口都是默认显示小bar的, 我为了窗口更大就设置为了默认隐藏, 如果想显示, 可以双击Alt, 在第二下按住不动, 鼠标就能进行点击了  
 
-_setting_
+**setting**
 - Ctrl Shift A 搜索设置项的位置
 - Ctrl+Shift+Alt+? 进行一些设置，找到编译自动部署，就能热加载
 
-_tips_
+**tips**
 - 代码模板(fori notnull...) 输入完成后，按Tab或者Enter，生成代码。
 
 *********************

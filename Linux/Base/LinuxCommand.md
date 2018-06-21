@@ -10,7 +10,7 @@
         - [定时执行脚本](#定时执行脚本)
 - [实用的工具](#实用的工具)
 
-`目录 end` |_2018-06-04_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
+`目录 end` |_2018-06-21_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
 ****************************************
 # 系统常用基础命令
 
@@ -27,7 +27,7 @@
 - bash内置简易time `time` 和 /usr/bin/time `\time`
     - `\time -v ls -al`
 ## date
-> 获取日期和时间
+> 获取日期和时间 `date +%Y_%m_%d_%H:%M:%S`
 
 - 获取前一天日期 `date --date='1 day ago' -R`
 - 将秒时间戳转换为日期 `date --date='@1524738626'`

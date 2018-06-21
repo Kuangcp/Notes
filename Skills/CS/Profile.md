@@ -7,8 +7,9 @@
     - [YAML](#yaml)
         - [Java使用](#java使用)
     - [JSON](#json)
+        - [Jackson](#jackson)
 
-`目录 end` |_2018-06-12_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
+`目录 end` |_2018-06-21_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
 ****************************************
 # 配置文件
 
@@ -38,3 +39,5 @@ timeOut=10
 ## JSON
 > [Google 规范](https://github.com/darcyliu/google-styleguide/blob/master/JSONStyleGuide.md)
 
+### Jackson
+- [Jackcon 注解的讲解](http://blog.csdn.net/sdyy321/article/details/40298081)

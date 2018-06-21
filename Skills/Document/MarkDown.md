@@ -3,10 +3,11 @@
 - [Markdown](#markdown)
     - [基础格式](#基础格式)
         - [链接](#链接)
+        - [列表](#列表)
         - [头信息](#头信息)
     - [Github](#github)
 
-`目录 end` |_2018-05-21_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
+`目录 end` |_2018-06-21_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
 ****************************************
 # Markdown
 > [markup](https://github.com/github/markup)`丰富的标记性文本格式`  
@@ -19,6 +20,14 @@
 ### 链接
 > [name](url) 推荐
 > [[name|url]]
+
+### 列表
+> 注意都要有空格隔开
+
+- _无序列表_ : `- ` 和  `* `
+- _有序列表_ : `1. ` (markdown渲染的时候会自动排序 1 也可以换成任意非0正整数)
+
+
 ### 头信息
 ```
     --- 
