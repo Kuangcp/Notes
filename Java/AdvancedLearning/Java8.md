@@ -13,6 +13,7 @@
 ## Funcational
 
 > [参考  Java8函数接口实现回调及Groovy闭包的代码示例](http://www.cnblogs.com/lovesqcc/p/6083759.html)
+> [Function接口 – Java8中java.util.function包下的函数式接口](http://ifeve.com/jjava-util-function-java8/)
 
 - 常用函数接口主要有:
     - Consumer (接收单参数无返回值的函数或lambda表达式)， 方法是 void accept(T t);
@@ -29,3 +30,7 @@
 
 ## Lambda
 
+
+## 集合
+_集合的Lambda迭代方式_
+- [参考博客: List、Map的循环迭代](http://blog.csdn.net/xf_87/article/details/53931207)

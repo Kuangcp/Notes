@@ -1,0 +1,44 @@
+`目录 start`
+ 
+- [Java版本更迭](#java版本更迭)
+    - [Java7](#java7)
+    - [Java8](#java8)
+    - [Java9](#java9)
+    - [Java10](#java10)
+    - [Java11](#java11)
+
+`目录 end` |_2018-06-20_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
+****************************************
+# Java主要发行版本
+> 粗度列举特性 
+
+## Java7
+> [详情](/Java/AdvancedLearning/Java7.md)
+
+1. 语法糖:数字中的下划线
+1. 新的语言小特性:TWR(try with resources)
+1. 类文件格式的变化:注解
+1. JVM的新特性: 动态调用
+
+
+## Java8
+> [详情](/Java/AdvancedLearning/Java8.md)
+
+1. 接口中新增 静态方法,默认方法
+1. Optional
+1. Lambda
+1. Stream
+1. java.time 包 增强了日期时间的处理
+
+
+## Java9
+> [参考博客: Java9 新特性汇总](http://www.infoq.com/cn/news/2014/09/java9)  
+> [参考博客: Java9 新特性 详解](https://my.oschina.net/u/3209213/blog/1622984)
+
+1. 模块化
+
+## Java10 
+1. 类型推断
+
+## Java11
+

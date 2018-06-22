@@ -1,30 +1,15 @@
-`目录 start`
- 
-- [Java版本更迭](#java版本更迭)
-    - [Java7](#java7)
-    - [Java8](#java8)
-    - [Java9](#java9)
-    - [Java10](#java10)
-    - [Java11](#java11)
+# Java7
 
-`目录 end` |_2018-06-20_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
-****************************************
-# Java版本更迭
-> 粗度列举特性 
-
-## Java7
-```
-    语法糖:数字中的下划线
-    新的语言小特性:TWR(try with resources)
-    类文件格式的变化:注解
-    JVM的新特性: 动态调用
-```
 - | Switch 支持 String
 - | 二进制的实例化 原本是 `int x = Integer.parseInt("1010100", 2);`Java7之后`int x = 0b110110;`
 - | 数字下划线 `10_0100__1000__0011`
+
+## 异常处理
 - | 异常处理
     - 允许异常的`或`操作 `catch(IOException | NullPointException e)`
     - final关键字: `catch (final Exception e){throw e;}` 抛出后的是原异常类型的异常而不是Exception
+
+## TWR
 - | TWR(try with resources)
 ```java
     // 从URL下载文件, 其中的资源都会自动关闭
@@ -50,35 +35,15 @@
 > 目前TWR特性依靠一个接口来实现 AutoCloseable. TWR的try从句中出现的资源类都必须实现这个接口. Java7中大部分资源类都修改过  
 > 但不是所有的资源类都采用了这项技术, JDBC是已经具备了这个特性. _官方提倡尽量采用TWR替代原有的方式_  
 
+******************
 - | 钻石语法: 泛型右部直接`<>`不用写类型变量
+
+*********************
 - | 简化变参方法调用:
     - `HashMap<String, String>[] array = new HashMap<>[2];` 不允许创建已知类型的泛型数组
     - 只能这样写 `HashMap<String, String> array = new HashMap[2];`
         - 这样的编写也只是一个敷衍, 编译器会警告: 可以将array定义为HashMap<String, String>数组,但是又不能创建这个类型的实例. 所以这里只是将原始类型实例化了放进去.
     - 现在能够这样编写: `public static <T> Collection<T> doSomething(T... entries){}`
 
+**********************
 - [ ] 反射的简化和加强
-
-## Java8
-- 接口中新增 静态方法,默认方法
-
-Optional
-Lambda
-
-Stream
-java.time 包 增强了日期时间的处理
-
-_集合的Lambda迭代方式_
-- [参考博客: List、Map的循环迭代](http://blog.csdn.net/xf_87/article/details/53931207)
-
-## Java9
-> [参考博客: Java9 新特性汇总](http://www.infoq.com/cn/news/2014/09/java9)  
-> [参考博客: Java9 新特性 详解](https://my.oschina.net/u/3209213/blog/1622984)
-
-模块化
-
-## Java10 
-
-
-## Java11
-
