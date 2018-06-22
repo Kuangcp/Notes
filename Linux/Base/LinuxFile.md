@@ -45,7 +45,7 @@
             - [查看发行版](#查看发行版)
             - [查看系统所有用户信息](#查看系统所有用户信息)
 
-`目录 end` |_2018-06-20_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
+`目录 end` |_2018-06-22_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
 ****************************************
 # 【文件管理】
 > Linux中认为万物皆文件
@@ -170,16 +170,18 @@ _ls_
     - `t` 按修改时间从顶至下,一般不单用,和 g|l 结合一起用
     - `c` 按ctime(创建时间)一般是文件夹,文件则是修改时间排列
         - 和 lt|gt 一起用 即 `ls -clt` 同上的排列顺序
-- `输出`
-    - 输出类型：d 目录 l 软链接 b 块设备 c 字符设备 s socket p 管道 - 普通文件
-    - 输出权限信息：r 读权限 w 写权限 x 执行权限
-    - rwx有三个，是因为 `拥有者，所属用户组 其他用户` 代表的rwx权限
-    - ![权限输出图](https://dn-anything-about-doc.qbox.me/linux_base/3-10.png/logoblackfont)
-    - ![权限计算图](https://dn-anything-about-doc.qbox.me/linux_base/3-14.png/logoblackfont)
-    - `chmod 700 文件` 就是只设置拥有者具有读写权限
-    - 加减权限操作 `chmod go-rw 文件` `g group` `o others` `u user` `+- 增减权限`
-- `ls -ASsh` 显示所有文件大小， 便于阅读的形式输出
-- `ls -dl 目录` 查看一个目录的完整属性
+- `执行ls -l 命令后的输出`
+    1. 输出类型：d 目录 l 软链接 b 块设备 c 字符设备 s socket p 管道 - 普通文件
+    1. 输出权限信息：r 读权限 w 写权限 x 执行权限
+        - rwx有三个，是因为 `拥有者，所属用户组 其他用户` 代表的rwx权限
+        - ![权限输出图](https://dn-anything-about-doc.qbox.me/linux_base/3-10.png/logoblackfont)
+        - ![权限计算图](https://dn-anything-about-doc.qbox.me/linux_base/3-14.png/logoblackfont)
+        - `chmod 700 文件` 就是只设置拥有者具有读写权限
+        - 加减权限操作 `chmod go-rw 文件` `g group` `o others` `u user` `+- 增减权限`
+    1. 硬链接数 一般你可以理解成子目录数（对于普通文件，总是1，对于目录来说，为对应目录的 _下一级子目录的个数_ +2 (+2是由于 . 和 .. 的原因））
+    1. 最后是归属用户和用户组, 大小, 最后修改日期
+
+- `ls -lFh` 列出所有文件的详细信息, 并且文件大小是人类可阅读的
 
 _file_
 - file a.txt 查看文件类型
