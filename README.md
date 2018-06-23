@@ -128,8 +128,6 @@ _有自制力的人， 能够坚持的人才更有可能成功！_
 *******************************
 # Catalog
 
-* [ Introduction ](README.md)
-
 * [ ApiAndDoc ](./ApiAndDoc.md)
 * [ AppList ](./AppList.md)
 * [ Platform ](./Platform.md)
@@ -144,9 +142,9 @@ _有自制力的人， 能够坚持的人才更有可能成功！_
     * [ Memorandum ](/Article/Memorandum.md)
     * [ NotCode ](/Article/NotCode.md)
     * [ ReadBook ](/Article/ReadBook.md)
+    * [ Science ](/Article/Science.md)
     * [ UnReadBook ](/Article/UnReadBook.md)
 * 【 Blog 】
-    * [ Arithmetic ](/Blog/Arithmetic.md)
     * [ Blog ](/Blog/Blog.md)
     * [ Java ](/Blog/Java.md)
     * [ Server ](/Blog/Server.md)
@@ -170,6 +168,7 @@ _有自制力的人， 能够坚持的人才更有可能成功！_
     * 【 FrontEnd/Node 】
         * [ NodeJS ](/FrontEnd/Node/NodeJS.md)
     * [ Hexo ](/FrontEnd/Hexo.md)
+    * [ JavaScript ](/FrontEnd/JavaScript.md)
     * [ LearnPS ](/FrontEnd/LearnPS.md)
     * [ ResponseCode ](/FrontEnd/ResponseCode.md)
     * [ ViewSolution ](/FrontEnd/ViewSolution.md)
@@ -178,7 +177,6 @@ _有自制力的人， 能够坚持的人才更有可能成功！_
     * [ FPBase ](/Functional/FPBase.md)
     * [ Go ](/Functional/Go.md)
     * [ Groovy ](/Functional/Groovy.md)
-    * [ JavaScript ](/Functional/JavaScript.md)
     * [ Kotlin ](/Functional/Kotlin.md)
     * [ Scala ](/Functional/Scala.md)
 * 【 Java 】
@@ -196,26 +194,30 @@ _有自制力的人， 能够坚持的人才更有可能成功！_
         * [ IO ](/Java/AdvancedLearning/IO.md)
         * [ JDBC ](/Java/AdvancedLearning/JDBC.md)
         * [ JMS ](/Java/AdvancedLearning/JMS.md)
+        * [ Java7 ](/Java/AdvancedLearning/Java7.md)
         * [ Java8 ](/Java/AdvancedLearning/Java8.md)
         * [ JavaPerformance ](/Java/AdvancedLearning/JavaPerformance.md)
+        * [ JavaReleaseVersion ](/Java/AdvancedLearning/JavaReleaseVersion.md)
         * [ JavaTest ](/Java/AdvancedLearning/JavaTest.md)
         * [ MultipleLanguage ](/Java/AdvancedLearning/MultipleLanguage.md)
         * [ ProgramThinking ](/Java/AdvancedLearning/ProgramThinking.md)
         * [ Reflect ](/Java/AdvancedLearning/Reflect.md)
         * [ Socket ](/Java/AdvancedLearning/Socket.md)
         * [ Thread ](/Java/AdvancedLearning/Thread.md)
-        * [ Update ](/Java/AdvancedLearning/Update.md)
         * [ Web ](/Java/AdvancedLearning/Web.md)
         * [ WebPerformance ](/Java/AdvancedLearning/WebPerformance.md)
     * 【 Java/Framework 】
         * [ Activiti ](/Java/Framework/Activiti.md)
+        * [ Blade ](/Java/Framework/Blade.md)
         * [ Guava ](/Java/Framework/Guava.md)
         * [ Hibernate ](/Java/Framework/Hibernate.md)
         * [ JPA ](/Java/Framework/JPA.md)
         * [ JXls ](/Java/Framework/JXls.md)
+        * [ Kafaka ](/Java/Framework/Kafaka.md)
         * [ Mybatis ](/Java/Framework/Mybatis.md)
         * [ Netty ](/Java/Framework/Netty.md)
         * [ POI ](/Java/Framework/POI.md)
+        * [ Querydsl ](/Java/Framework/Querydsl.md)
         * [ Struts ](/Java/Framework/Struts.md)
         * [ Vertx ](/Java/Framework/Vertx.md)
     * 【 Java/Spring 】
@@ -235,6 +237,7 @@ _有自制力的人， 能够坚持的人才更有可能成功！_
     * 【 Java/Tool 】
         * [ Gradle ](/Java/Tool/Gradle.md)
         * [ IDEA ](/Java/Tool/IDEA.md)
+        * [ Jetty ](/Java/Tool/Jetty.md)
         * [ Lombok ](/Java/Tool/Lombok.md)
         * [ Maven ](/Java/Tool/Maven.md)
         * [ PyCharm ](/Java/Tool/PyCharm.md)
@@ -246,7 +249,6 @@ _有自制力的人， 能够坚持的人才更有可能成功！_
     * [ Log ](/Java/Log.md)
     * [ MIS ](/Java/MIS.md)
     * [ RESTful ](/Java/RESTful.md)
-    * [ UsuallyLibAPI ](/Java/UsuallyLibAPI.md)
     * [ ZenOfPattern ](/Java/ZenOfPattern.md)
 * 【 Linux 】
     * 【 Linux/Alpine 】
@@ -286,8 +288,6 @@ _有自制力的人， 能够坚持的人才更有可能成功！_
     * 【 MyBlog/Problem 】
         * [ shared-libiraries ](/MyBlog/Problem/shared-libiraries.md)
     * [ 2018-3-15-install-deepin ](/MyBlog/2018-3-15-install-deepin.md)
-    * [ how-to-use-junit ](/MyBlog/how-to-use-junit.md)
-    * [ how-to-use-junit5 ](/MyBlog/how-to-use-junit5.md)
     * [ why-put-netty-in-tomcat ](/MyBlog/why-put-netty-in-tomcat.md)
 * 【 Python 】
     * [ Python ](/Python/Python.md)
@@ -306,7 +306,6 @@ _有自制力的人， 能够坚持的人才更有可能成功！_
         * [ Concurrent ](/Skills/CS/Concurrent.md)
         * [ Network ](/Skills/CS/Network.md)
         * [ Profile ](/Skills/CS/Profile.md)
-        * [ TestTheory ](/Skills/CS/TestTheory.md)
         * [ WebSecurity ](/Skills/CS/WebSecurity.md)
     * 【 Skills/Document 】
         * [ MarkDown ](/Skills/Document/MarkDown.md)
@@ -317,14 +316,20 @@ _有自制力的人， 能够坚持的人才更有可能成功！_
         * [ VirtualBox ](/Skills/Soft/VirtualBox.md)
     * 【 Skills/Spider 】
         * [ SpiderBase ](/Skills/Spider/SpiderBase.md)
+    * 【 Skills/Test 】
+        * [ Junit ](/Skills/Test/Junit.md)
+        * [ Junit5 ](/Skills/Test/Junit5.md)
+        * [ TestNG ](/Skills/Test/TestNG.md)
+        * [ TestTheory ](/Skills/Test/TestTheory.md)
+        * [ hamcrest ](/Skills/Test/hamcrest.md)
     * 【 Skills/Work 】
         * [ InterviewSkill ](/Skills/Work/InterviewSkill.md)
         * [ PomodoroTechnique ](/Skills/Work/PomodoroTechnique.md)
         * [ ShortcutKey ](/Skills/Work/ShortcutKey.md)
         * [ WorkThinking ](/Skills/Work/WorkThinking.md)
     * [ AppManual ](/Skills/AppManual.md)
+    * [ CelebrityQuotes ](/Skills/CelebrityQuotes.md)
     * [ CodingThinking ](/Skills/CodingThinking.md)
     * [ Problem ](/Skills/Problem.md)
     * [ RegularExpression ](/Skills/RegularExpression.md)
     * [ SoftwareDesignEngineer ](/Skills/SoftwareDesignEngineer.md)
-* 【 Windows 】

@@ -19,7 +19,6 @@
     * [ Science ](/Article/Science.md)
     * [ UnReadBook ](/Article/UnReadBook.md)
 * 【 Blog 】
-    * [ Arithmetic ](/Blog/Arithmetic.md)
     * [ Blog ](/Blog/Blog.md)
     * [ Java ](/Blog/Java.md)
     * [ Server ](/Blog/Server.md)
@@ -163,8 +162,6 @@
     * 【 MyBlog/Problem 】
         * [ shared-libiraries ](/MyBlog/Problem/shared-libiraries.md)
     * [ 2018-3-15-install-deepin ](/MyBlog/2018-3-15-install-deepin.md)
-    * [ how-to-use-junit ](/MyBlog/how-to-use-junit.md)
-    * [ how-to-use-junit5 ](/MyBlog/how-to-use-junit5.md)
     * [ why-put-netty-in-tomcat ](/MyBlog/why-put-netty-in-tomcat.md)
 * 【 Python 】
     * [ Python ](/Python/Python.md)
@@ -183,7 +180,6 @@
         * [ Concurrent ](/Skills/CS/Concurrent.md)
         * [ Network ](/Skills/CS/Network.md)
         * [ Profile ](/Skills/CS/Profile.md)
-        * [ TestTheory ](/Skills/CS/TestTheory.md)
         * [ WebSecurity ](/Skills/CS/WebSecurity.md)
     * 【 Skills/Document 】
         * [ MarkDown ](/Skills/Document/MarkDown.md)
@@ -194,6 +190,12 @@
         * [ VirtualBox ](/Skills/Soft/VirtualBox.md)
     * 【 Skills/Spider 】
         * [ SpiderBase ](/Skills/Spider/SpiderBase.md)
+    * 【 Skills/Test 】
+        * [ Junit ](/Skills/Test/Junit.md)
+        * [ Junit5 ](/Skills/Test/Junit5.md)
+        * [ TestNG ](/Skills/Test/TestNG.md)
+        * [ TestTheory ](/Skills/Test/TestTheory.md)
+        * [ hamcrest ](/Skills/Test/hamcrest.md)
     * 【 Skills/Work 】
         * [ InterviewSkill ](/Skills/Work/InterviewSkill.md)
         * [ PomodoroTechnique ](/Skills/Work/PomodoroTechnique.md)

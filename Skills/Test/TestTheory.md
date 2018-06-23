@@ -31,6 +31,13 @@
 - [个人笔记: TDD 测试驱动开发](/Java/AdvancedLearning/ProgramThinking.md#tdd-测试驱动开发)
 
 ## 测试类别
+
+### 单元测试
+
+- [ ] 单元测试, 集成测试
+
+
+
 ### 【A/B测试】
 > 对照实验，也叫随机实验和 A/B测试 [参考来源:知乎问题](https://www.zhihu.com/question/20045543) | [相关三方平台](http://www.appadhoc.com/)
 

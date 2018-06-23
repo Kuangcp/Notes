@@ -8,9 +8,11 @@
     - [客户端安装](#客户端安装)
         - [Linux](#linux)
         - [使用](#使用)
+            - [添加文件](#添加文件)
+            - [忽略文件](#忽略文件)
         - [查看](#查看)
 
-`目录 end` |_2018-06-19_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
+`目录 end` |_2018-06-23_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
 ****************************************
 # SVN
 > 传统的中心化版本控制工具,能够精确控制每个目录的权限, Apache顶级项目  
@@ -46,10 +48,10 @@ _Ubuntu_
 > | [Linux下SVN客户端使用教程（全）](https://blog.csdn.net/qq_27968607/article/details/55253997)  
 
 - _下拉代码_ `svn co URL`  
-- _添加文件_ 
-    - `svn add filename` , 或者 `*.java`是添加当前目录下java文件,
-    -  或者 文件夹, 一般使用文件夹好点,也就是src目录
-    - 强制添加所有文件`svn add * --force`  
+#### 添加文件
+- `svn add filename` , 或者 `*.java`是添加当前目录下java文件,
+-  或者 文件夹, 一般使用文件夹好点,也就是src目录
+- 强制添加所有文件`svn add * --force`  
 - 将改动的文件提交到版本库 `svn ci -m "update"` 
     - 因为是中心化的仓库, 所以提交就是推送到总仓库了, 不像Git那样先提到到本地仓库, 然后推送至远程仓库
 - _更新本地代码_ `svn up`  
@@ -59,12 +61,14 @@ _Ubuntu_
 
 > [参考博客: svn下忽略文件和文件夹](http://blog.sina.com.cn/s/blog_6e165cc101017m0j.html)
 > [参考博客: svn 忽略文件、文件夹](https://ztgame.shenyu.me/svn/svn-ignore.html)
-- _忽略文件_
-    - `svn propedit svn:ignore 项目文件夹` 会打开默认配置,  和gitignore一样的配置, 然后保存即可
-        - 文件夹就是项目, 所以要在项目根目录的上级目录之心这个命令
-        - 如果上面没有调起编辑器, 就要在 .bashrc 中 `export SVN_EDITOR=vim`
-    - 然后提交到仓库, 即可完成 忽略文件的配置, 为了可见性, 一般和.gitignore一样的配置即可
-        -  导入忽略文件 `svn propset -F .svnignore .`
+
+#### 忽略文件
+- `svn propedit svn:ignore 项目文件夹` 会打开默认配置,  和gitignore一样的配置, 然后保存即可
+    - 文件夹就是项目, 所以要在项目根目录的上级目录之心这个命令
+    - 如果上面没有调起编辑器, 就要在 .bashrc 中 `export SVN_EDITOR=vim`
+- 然后提交到仓库, 即可完成 忽略文件的配置, 为了可见性, 一般和.gitignore一样的配置即可
+    -  导入忽略文件 `svn propset -F .svnignore .`
+    
 ### 查看
 > [查看最后修改的文件](https://java-er.com/blog/svn-last-files/)  
 > | [svn历史版本对比以及还原到历史版本](http://www.cnblogs.com/simonote/articles/3086717.html)

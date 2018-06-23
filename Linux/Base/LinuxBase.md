@@ -27,7 +27,7 @@
         - [修改主机名](#修改主机名)
     - [终端快捷键](#终端快捷键)
 
-`目录 end` |_2018-06-21_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
+`目录 end` |_2018-06-23_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
 ****************************************
 # Linux系统
 > 只是记录了debian系的Linux, 不过也是大同小异
@@ -306,7 +306,7 @@ _系统运行级别_
     - U       删除光标之前到 行首 的字符
     - K       删除光标之前到 行尾 的字符
     - 
-    - C       取消当前行输入的命令，相当于Ctrl + Break
+    - C       取消运行当前行输入的命令，相当于Ctrl + Break
     - A       光标移动到行首（Ahead of line），相当于通常的Home键
     - E       光标移动到行尾（End of line）
     - F       光标向前(Forward)移动一个字符位置
@@ -316,6 +316,5 @@ _系统运行级别_
     - N       调出命令历史中的下一条（Next）命令，相当于通常的下箭头
     - O       运行上翻下翻出来的命令, 并且自动将下一条命令填入
     - 
-    - L       清屏，相当于执行clear命令
     - R       显示：号提示，根据用户输入查找相关历史命令（reverse-i-search）
 

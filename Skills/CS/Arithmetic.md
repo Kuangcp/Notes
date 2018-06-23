@@ -1,12 +1,14 @@
 `目录 start`
  
 - [算法](#算法)
+    - [时间复杂度](#时间复杂度)
     - [匹配算法](#匹配算法)
+    - [排序算法](#排序算法)
     - [安全](#安全)
         - [密码学](#密码学)
             - [Diffie-Hellman Key Exchange算法](#diffie-hellman-key-exchange算法)
 
-`目录 end` |_2018-04-11_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
+`目录 end` |_2018-06-23_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
 ****************************************
 # 算法
 
@@ -19,7 +21,10 @@
 ## 匹配算法
 - [字符串相似度匹配](http://zjwyhll.blog.163.com/blog/static/75149781201281142630851/)
 
+## 排序算法
+> [参考博客: 九种排序算法的可视化及比较](https://zhuanlan.zhihu.com/p/34421623?group_id=955945213303250944)
 
+*********
 ## 安全
 
 ### 密码学
@@ -34,6 +39,3 @@
     -  “数学家小帅哥说了， 原因很简单，(gｘ mod p)ｙ mod p　和　(gｙ mod p)ｘ mod p　是相等的！ ”
     -  “那黑客不能从公开传输的 p = 17, g = 3, a = 6 , b = 12 推算出s = 10 吗？” 我问道。
     -  “当然不能， 不过前提是需要使用非常大的p , x, y,  这样以来，即使黑客动用地球上所有的计算资源， 也推算不出来。 ”
-
-
-    

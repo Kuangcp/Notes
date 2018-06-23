@@ -6,3 +6,5 @@
 ****************************************
 # 如何使用JUnit5
 > [参考博客](http://blog.csdn.net/bitgnu/article/details/78715836)
+> [参考博客: JUnit 5 新特性](https://www.ibm.com/developerworks/cn/java/j-junit5/index.html)
+

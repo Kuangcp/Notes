@@ -2,7 +2,7 @@
  
 - [为何要将Netty放在Tomcat下](#为何要将netty放在tomcat下)
 
-`目录 end` |_2018-04-08_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
+`目录 end` |_2018-06-23_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
 ****************************************
 # 为何要将Netty放在Tomcat下
 > 2018-03-19 17:41:28
@@ -21,4 +21,8 @@
     - 感觉这个是最大的一个原因了, 因为甲方的电脑环境, 肯定都是乱七八糟什么玩意都有的, 对于我这个war来说的话, 只要有能正常运行的tomcat, 我就没有什么问题了
     - 但是如果抛开Tomcat, 弄成jar运行, 就比较麻烦了(主要还是为了日志和启动脚本,emmm)
 - 还有就是为了使用丰富的协议, 例如Websocket Hybrid 等等, 就还是不能脱离Tomcat
+
+
+>　2018-06-23 21:01:11
+- 其实是可以直接将 Tomcat有关的依赖全部去除 Maven打包成jar, 配置下Main方法就能直接启动了, 而且资源消耗还少
 
