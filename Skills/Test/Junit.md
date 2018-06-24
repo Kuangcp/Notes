@@ -11,23 +11,35 @@
     - [测试套件](#测试套件)
     - [分类测试](#分类测试)
 
-`目录 end` |_2018-04-08_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
+`目录 end` |_2018-06-25_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
 ****************************************
 # 为何要使用测试
 1. 帮助理解需求
     - 单元测试应该反映Use Case，把被测单元当成黑盒测试其外部行为。
-2. 提高实现质量
+1. 提高实现质量
     - 单元测试不保证程序做正确的事，但能帮助保证程序正确地做事，从而提高实现质量。
-3. 测试成本低
+1. 测试成本低
     - 相比集成测试、验收测试，单元测试所依赖的外部环境少，自动化程度高，时间短，节约了测试成本。
-4. 反馈速度快
+1. 反馈速度快
     - 单元测试提供快速反馈，把bug消灭在开发阶段，减少问题流到集成测试、验收测试和用户，降低了软件质量控制的成本。
-5. 利于重构
+1. 利于重构
     - 由于有单元测试作为回归测试用例，有助于预防在重构过程中引入bug。
-6. 文档作用
+1. 文档作用
     - 单元测试提供了被测单元的使用场景，起到了使用文档的作用。
-7. 对设计的反馈
+1. 对设计的反馈
     - 一个模块很难进行单元测试通常是不良设计的信号，单元测试可以反过来指导设计出高内聚、低耦合的模块。
+
+***********************
+_JUnit_
+- 主要的三个特性： 
+    - 用于测试预期结果和异常的断言， assertEquals()
+    - 设置和 _拆卸_ 通用测试数据的能力， @Before @After
+    - 运行测试套件的测试运行器
+
+_一个基本的JUnit测试_
+- @Before 标记方法， 测试运行前准备测试数据
+- @After 标记方法， 测试运行完成后拆卸测试数据
+- @Test 测试方法 例如：预期的异常`@Test(expected=NullPointException.class)`
 
 # 如何使用Junit
 ## 在Maven项目中
@@ -93,6 +105,8 @@ _例如该项目结构_
 
 *********************
 ## 断言的使用
+> 使用 Hamcrest 工具能让断言更为简洁强大
+
 1. 直接使用关键字 assert, 例如 `assert a == null`
 2. 静态导入 `import static org.junit.Assert.*`, 使用其大量工具方法, 完整方法请查看源码
     - `assertNull(java.lang.Object object)` 检查对象是否为空 
@@ -124,13 +138,11 @@ public class AssertTest {
         String c = "h"+"i".trim();
         assertEquals(a, c);
         assertSame(a, c);
-
     }
     @Test
     public void testFail(){
         fail();
         fail("测试失败");
-
     }
 }
 
@@ -203,3 +215,5 @@ _注意最好不要在该测试类中书写测试方法, 因为运行不了, 但
 
 ## 分类测试
 >　[参考博客](http://blog.csdn.net/wanghantong/article/details/28897103) |  [JUnit4--- @Annotation注解总结](http://blog.csdn.net/neven7/article/details/42836413)
+
+
