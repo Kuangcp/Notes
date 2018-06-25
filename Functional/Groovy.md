@@ -32,7 +32,7 @@
         - [默认return](#默认return)
     - [Grails](#grails)
 
-`目录 end` |_2018-06-20_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
+`目录 end` |_2018-06-25_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
 ****************************************
 # Groovy
 > [Groovy 官网](http://www.groovy-lang.org/) | 
@@ -364,6 +364,7 @@ class Person{
 
 **************************************
 ## 坑
+> 因为是动态的, 所以, 当Java或Groovy类更改了一些接口, 属性名, 调用方那里不会报错, 直到运行才报错, 而且 eclipse idea 都不报错, 只是会把错误的属性和调用变成带有下划线的灰色...
 
 ### 默认return
 > 只要在方法最后一行放入表达式, 就会自动return, 这就导致了Groovy不会对方法进行检查, 逻辑复杂时如果少了一个return, 不会报编译错误, 方法直接返回null.  

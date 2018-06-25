@@ -43,7 +43,7 @@
     - [DAO](#dao)
 - [关键字](#关键字)
 
-`目录 end` |_2018-06-21_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
+`目录 end` |_2018-06-25_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
 ****************************************
 # 基础语法
 
@@ -157,11 +157,12 @@ _获取指定时间_ [获取指定时间的时间戳](https://blog.csdn.net/jsso
 # 类的结构
 ## 修饰符
 > [参考博客: java 权限修饰符](https://blog.csdn.net/yan8024/article/details/6426451)
+
 ### 权限修饰符
-- `public`   公开访问
-- `protect`  子类（可以是别的包下） / 包 （主要是包内）
-- `缺省`      包 不能访问所修饰的对象的属性 只有public可以
-- `private`  当前类或者内部类
+- `public`   **公开访问**
+- `protect`  **子类**（可以是别的包下） / **包** （主要是包内）
+- `缺省`      **包** 不能访问所修饰的对象的属性 只有 **public** 可以
+- `private`  **当前类** 或者 **内部类**
 
 ### 其他
 

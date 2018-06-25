@@ -65,6 +65,9 @@
 - [ityouknow](http://www.ityouknow.com/)`Java丰富技术栈 云收藏的开发者`
 - [会飞的污熊](https://www.xncoding.com/)`github 搭建静态博客, 内容多`
 - [yscoder](https://yscoder.github.io/)`indigo主题的作者 hexo`
+- [晓风轻技术小站](https://xwjie.github.io/)`程序员你为什么这么累？ 作者`
+
+- [todo](http://www.saitjr.com/)
 ## 博客能人
 - [赵劼](http://www.cnblogs.com/JeffreyZhao/) `对函数式编程，并行程序开发，代码之美以及程序员能力与修养等相关问题`
 - [进击的Java新人](https://zhuanlan.zhihu.com/hinus)

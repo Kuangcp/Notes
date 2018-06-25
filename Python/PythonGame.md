@@ -1,12 +1,12 @@
 `目录 start`
  
-    - [pygame](#pygame)
-        - [安装](#安装)
+- [pygame](#pygame)
+    - [安装](#安装)
 
-`目录 end` |_2018-04-08_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
+`目录 end` |_2018-06-25_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
 ****************************************
-## pygame
-### 安装
+# pygame
+## 安装
 *python2 安装 pygame*
 - `sudo apt install python-pygame`
   *python3 安装 pygame*
@@ -21,6 +21,8 @@
 - `pip install --user hg+http://bitbucket.org/pygame/pygame`
   *我使用上面的方式安装报错，使用这个完成了安装*
 - `sudo pip install pygame`
+
 *********
 `检验是否安装成功`
 - `import pygame ` 查看版本 `pygame.ver`
+
