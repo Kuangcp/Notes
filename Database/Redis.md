@@ -40,7 +40,7 @@
         - [Python使用](#python使用)
         - [webdis](#webdis)
 
-`目录 end` |_2018-06-14_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
+`目录 end` |_2018-06-27_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
 ****************************************
 # Redis
 > [Redis官网](https://redis.io/) | [Redis中文社区](http://www.redis.cn/) | [Redis教程](http://www.runoob.com/redis/redis-tutorial.html) 
@@ -389,5 +389,7 @@
 > pip install redis 该模块和redis命令的用法几乎一模一样, 上手很快
 
 ### webdis
-> [官网](http://webd.is/)
+> 将redis变为一个简单的web接口  
+
+> [官网](http://webd.is/) | [Github地址](https://github.com/nicolasff/webdis)
 

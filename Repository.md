@@ -33,8 +33,6 @@
     - [前端](#前端)
         - [Vue](#vue)
         - [有趣](#有趣)
-        - [资源仓库](#资源仓库)
-            - [字体](#字体)
     - [Tools](#tools)
         - [微信相关](#微信相关)
         - [网络有关](#网络有关)
@@ -42,7 +40,7 @@
     - [工作](#工作)
         - [简历](#简历)
 
-`目录 end` |_2018-06-17_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
+`目录 end` |_2018-06-27_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
 ****************************************
 
 # 【GitRepos】
@@ -252,13 +250,6 @@
 - [插件项目, 搜图](https://github.com/AInoob/NooBox)
     - [完整项目网址](https://ainoob.com/zh/projects)
     
-### 资源仓库
-#### 字体
-- [IBM字体](https://github.com/IBM/type)`2017年发布的新字体`
-- [codefont](https://github.com/zhenruyan/codefont)`常用的代码字体`
-- [Font-Awesome](https://github.com/FortAwesome/Font-Awesome)`一大堆字体图标`
-- [fonts](https://github.com/powerline/fonts)`终端中常用字体`
-- [nerd-fonts](https://github.com/ryanoasis/nerd-fonts)`很多字体图标`
 
 ***************************************
 ## Tools

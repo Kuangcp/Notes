@@ -45,6 +45,7 @@
 - [常用SDK自动下载配置工具 mythsdk](https://github.com/Kuangcp/Script/tree/master/python/mythsdk) 
     - `功能仿sdkman，但简单，不过是提供自行搭建使用的，毕竟七牛云下载超量了是要收费的`
 - 克隆笔记仓库可以加上 `--depth 1` 参数, 减小克隆的大小
+- [notes](https://github.com/pimterry/notes)`终端内的note工具`
 
 ## 醍醐灌顶
 - [相关:知乎专栏-程序员你为什么这么累？](/Java/AdvancedLearning/ProgramThinking.md#编程习惯)
@@ -60,6 +61,9 @@
 ![学习效率](https://raw.githubusercontent.com/Kuangcp/ImageRepos/master/Learn/learn_rate.jpg)
 
 - [参考博客: 国外的程序猿可以工作到退休而国内的为什么这么短命（思维认知）](http://group.jobbole.com/33239/?utm_source=hao.jobbole.com&utm_medium=relatedTopic)
+
+> [写作中的排版指南](https://github.com/sparanoid/chinese-copywriting-guidelines)
+
 ********************
 ### 为什么写作
 > 来源 [码农翻身:对自己狠一点，开始写作吧](http://mp.weixin.qq.com/s/-bXP2jAcz8M1c9-nElOsJA) | [码农翻身:如何维护一个好的技术博客？](https://mp.weixin.qq.com/s?__biz=MzAxOTc0NzExNg==&mid=2665514310&idx=1&sn=230943ac36182c2ea5ca28317de3cb91&pass_ticket=kdzjNNRKN8g5Hs0IYC80YNed%2BLsTG5wDteQuZ1qoW%2F8bwio%2BGiEUdcisaIoKv4ua)

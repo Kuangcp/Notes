@@ -187,15 +187,16 @@
     * 【 Skills/FrameWork 】
         * [ JavaBoot ](/Skills/FrameWork/JavaBoot.md)
     * 【 Skills/Soft 】
+        * [ Terminal ](/Skills/Soft/Terminal.md)
         * [ VirtualBox ](/Skills/Soft/VirtualBox.md)
     * 【 Skills/Spider 】
         * [ SpiderBase ](/Skills/Spider/SpiderBase.md)
     * 【 Skills/Test 】
+        * [ Hamcrest ](/Skills/Test/Hamcrest.md)
         * [ Junit ](/Skills/Test/Junit.md)
         * [ Junit5 ](/Skills/Test/Junit5.md)
         * [ TestNG ](/Skills/Test/TestNG.md)
         * [ TestTheory ](/Skills/Test/TestTheory.md)
-        * [ hamcrest ](/Skills/Test/hamcrest.md)
     * 【 Skills/Work 】
         * [ InterviewSkill ](/Skills/Work/InterviewSkill.md)
         * [ PomodoroTechnique ](/Skills/Work/PomodoroTechnique.md)

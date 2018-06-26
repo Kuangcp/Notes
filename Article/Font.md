@@ -2,18 +2,26 @@
  
 - [字体](#字体)
     - [资源](#资源)
+        - [终端中常用字体](#终端中常用字体)
     - [操作系统默认字体](#操作系统默认字体)
     - [编辑器](#编辑器)
     - [终端](#终端)
 
-`目录 end` |_2018-05-31_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
+`目录 end` |_2018-06-27_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
 ****************************************
 # 字体
 
 > [有哪些适合用于写代码的西文字体？](https://www.zhihu.com/question/20299865)
 
 ## 资源
-> [Github上的字体仓库](/Repository.md#字体)
+- [IBM字体](https://github.com/IBM/type)`2017年发布的新字体`
+- [codefont](https://github.com/zhenruyan/codefont)`常用的代码字体`
+- [nerd-fonts](https://github.com/ryanoasis/nerd-fonts)`系列字体图标`
+- [Font-Awesome](https://github.com/FortAwesome/Font-Awesome)`一大堆字体图标`
+
+### 终端中常用字体
+- [powerline](https://github.com/powerline/powerline)
+- [fonts](https://github.com/powerline/fonts)`终端中常用字体`
 
 ## 操作系统默认字体
 - 微软雅黑

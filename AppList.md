@@ -11,7 +11,6 @@
         - [镜像](#镜像)
     - [安全](#安全)
         - [授权](#授权)
-        - [压力测试](#压力测试)
         - [构建工具](#构建工具)
     - [文档处理](#文档处理)
         - [UML](#uml)
@@ -26,7 +25,7 @@
 - [安卓手机](#安卓手机)
     - [Google](#google)
 
-`目录 end` |_2018-04-16_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
+`目录 end` |_2018-06-27_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
 ****************************************
 # 工具软件
 
@@ -80,10 +79,6 @@ _自建Git服务_
 ## 安全
 ### 授权
 - [jwt](https://jwt.io)`JSON WEB TOKEN`
-
-### 压力测试
-- [jmeter](http://jmeter.apache.org/download_jmeter.cgi) `apache 下的开源压测工具`
-- [ab](https://httpd.apache.org/docs/2.4/programs/ab.html) `apt安装这个包即可apache2-utils` 
 
 ### 构建工具
 - [Maven](http://maven.apache.org/)

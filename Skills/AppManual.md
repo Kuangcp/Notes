@@ -9,12 +9,6 @@
     - [网络工具](#网络工具)
         - [nmap](#nmap)
         - [apache benchmark](#apache-benchmark)
-    - [终端工具](#终端工具)
-        - [xclip](#xclip)
-        - [zssh](#zssh)
-        - [Autojump](#autojump)
-        - [asciinema](#asciinema)
-        - [tmux](#tmux)
     - [日常工具](#日常工具)
         - [输入法](#输入法)
             - [搜狗输入法](#搜狗输入法)
@@ -64,7 +58,7 @@
     - [安全工具](#安全工具)
         - [gpg](#gpg)
 
-`目录 end` |_2018-06-20_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
+`目录 end` |_2018-06-27_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
 ****************************************
 # 软件使用记事
 ## 【包管理】
@@ -119,55 +113,6 @@
 
 - 测试本机超过100连接报错 104: 
     - [Blog:解决问题](http://www.cnblogs.com/archoncap/p/5883723.html)
-
-**********
-## 终端工具
-### xclip
-> 便捷的文本复制
-- `cat README.md | xclip -sel clip` 将文件复制到剪贴板
-
-***********
-### zssh
-> 便捷的文件传输
-
-- [参考博客](http://blog.csdn.net/ygm_linux/article/details/32321729)
-
-********
-### Autojump
-> 统计cd 目录，方便目录跳转
-
-- `apt install autojump` 设置为自动运行 `echo '. /usr/share/autojump/autojump.sh' >> ~/.bashrc`
-    - `j -v` 查看安装版本
-    - `j --stat` 查看统计信息
-    - `j --help`
-    - `jo code` 打开code文件夹
-    - `jco c` 打开子目录
-- `ls -l ~/.local/share/autojump/` 统计信息的目录，清除就相当于卸载重装了
-
-************************************
-### asciinema
-> 终端录制工具
-
-- 执行 `asciinema`或`asciinema rec` 即可开始录制
-- 要注册就运行 `asciinema auth` 进入输出的网址，填邮箱和名字即可（每次登录都要这样。或者使用邮件来确认，麻烦ing）
-
-***********************************
-### tmux
-> 好用的管理会话的软件
-
-- [tmux 入门](http://blog.jobbole.com/87278/)
-
-`入门使用`
-- 新建会话 `tmux new -s test`
-- 断开会话但是后台运行 `ctrl-b d`
-- 连接会话 `tmux a -t test`
-
-- `tmux new -s myth`  新建一个窗口 
-- `Ctrl B`  再 `C`  新建一个窗口 `Ctrl B` `数字键`切换指定窗口
-- 连接远程服务器，运行一个阻塞命令
-    - `Ctrl B` `D` 可以合上电脑（休眠）
-    - `tmux ls` 显示所有 `tmux a -t myth` 连上指定名字的就继续了
-
 
 ************************************
 ## 日常工具

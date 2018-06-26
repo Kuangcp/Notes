@@ -27,14 +27,19 @@
     - [在线IDE](#在线ide)
         - [Coding平台的WebIDE](#coding平台的webide)
 
-`目录 end` |_2018-06-01_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
+`目录 end` |_2018-06-27_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
 ****************************************
 # 使用Docker安装软件
 > [如何创建尽可能小的Docker容器教程](http://www.open-open.com/lib/view/open1419760974078.html)
 
 ## 个人相关镜像
 `百度云`
-- alpine 3.6 配置好ssh `hub.baidubce.com/mythos/alpine-ssh:1.0` 
+- 配置好SSH服务器的 alpine 3.6  
+    - [docker hub地址](https://hub.docker.com/r/mythkuang/alpine-ssh/) | 百度镜像源: `hub.baidubce.com/mythos/alpine-ssh:1.0` 
+    1. 使用上, pull, 然后 `docker run --name sshd -p 8989:22 alpine-ssh`
+    1. 设置root用户密码 `docker exec -it sshd passwd`
+    1. 登录 `ssh -p 8989 root@localhost`
+
 - redis的alpine版镜像 `hub.baidubce.com/mythos/redis-alpine:1211` 
 - idea的注册机 `hub.baidubce.com/mythos/idea-register:1.0`
 - protobuf的编译环境以及2.5的源码在内 `hub.baidubce.com/mythos/protoc-alpine-src:2.5` 
