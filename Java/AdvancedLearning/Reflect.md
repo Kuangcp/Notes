@@ -8,6 +8,8 @@
 # 反射
 > [ Java反射异常处理之InvocationTargetException ](https://blog.csdn.net/zhangzeyuaaa/article/details/39611467)
 
+
+## 获取属性
 _通过属性名得到对象属性的值_
 ```java
     PropertyDescriptor propertyDescriptor = new PropertyDescriptor(meta.getField().getName(), target);
@@ -27,4 +29,8 @@ _通过属性名得到对象属性的值_
     System.out.println(f.get(a));
 ```
 
-## 获得类的方法
+## 获得方法
+
+### 性能问题
+> [参考博客: java反射的性能问题 ](http://www.cnblogs.com/zhishan/p/3195771.html)
+

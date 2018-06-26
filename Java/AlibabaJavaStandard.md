@@ -26,7 +26,7 @@
 - [安全规约](#安全规约)
     - [注意](#注意)
 
-`目录 end` |_2018-06-06_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
+`目录 end` |_2018-06-26_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
 ****************************************
 # 阿里巴巴Java开发手册终极版
 
@@ -35,34 +35,34 @@
 # 【编程规约】
 *********************************************
 ## 命名规约
-`强制`
-- |所有命名不能以`美元符和下划线`开始和结尾
-- |禁止拼音混合英文，更不允许直接使用中文的方式。
-- |类用UserDao `UpperCamelCase风格` 但以下情形例外： DO / BO / DTO / VO / AO 例如：`UserDO`
-- |方法，变量，参数用userDao `lowerCamelCase风格`
-- |常量名全部大写，下划线隔开，力求语义表达完整清楚，不要嫌名字长(枚举类中的也是)。
-- |抽象类使用`Abstract或者Base`开头，异常类使用Exception结尾
-- |数组定义 `String[] name` 而不是 `String name[]`
-- |POJO 类中布尔类型的变量不能is开头，否则部分框架解析会引起序列化错误。 
-- |包名统一使用小写，点分隔符之间有且仅有一个自然语义的英语单词。包名统一使用单数形式，但是类名如果有复数含义，类名可以使用复数形式。
+**`强制`**
+1. 所有命名不能以`美元符和下划线`开始和结尾
+1. 禁止拼音混合英文，更不允许直接使用中文的方式。
+1. 类用UserDao `UpperCamelCase风格` 但以下情形例外： DO / BO / DTO / VO / AO 例如：`UserDO`
+1. 方法，变量，参数用userDao `lowerCamelCase风格`
+1. 常量名全部大写，下划线隔开，力求语义表达完整清楚，不要嫌名字长(枚举类中的也是)。
+1. 抽象类使用`Abstract或者Base`开头，异常类使用Exception结尾
+1. 数组定义 `String[] name` 而不是 `String name[]`
+1. POJO 类中布尔类型的变量不能is开头，否则部分框架解析会引起序列化错误。 
+1. 包名统一使用小写，点分隔符之间有且仅有一个自然语义的英语单词。包名统一使用单数形式，但是类名如果有复数含义，类名可以使用复数形式。
     - 正例： 应用工具类包名为 com.alibaba.open.util、类名为 MessageUtils（ 此规则参考spring 的框架结构）
-- |杜绝完全不规范的缩写， 避免望文不知义。
+1. 杜绝完全不规范的缩写， 避免望文不知义。
     - 反例： AbstractClass“ 缩写” 命名成 AbsClass； condition“ 缩写” 命名成 condi，此类随意缩写严重降低了代码的可阅读性。
 
-`推荐`
+**`推荐`**
 - 为了达到代码自解释的目标，任何自定义编程元素在命名时，使用尽量完整的单词组合来表达其意。
     - 正例： 从远程仓库拉取代码的类命名为 PullCodeFromRemoteRepository。
 - 如果使用到了设计模式，建议在类名中体现出具体模式。将设计模式体现在名字中，有利于阅读者快速理解架构设计理念`LoginProxy`
 - 接口类中的方法和属性不要加任何修饰符号（ public 也不要加） ，保持代码的简洁性，并加上有效的 Javadoc 注释。
     - 尽量不要在接口里定义变量，如果一定要定义变量，肯定是与接口方法相关，并且是整个应用的基础常量。
 
-`接口和实现类的命名有两套规则`
+**`接口和实现类的命名有两套规则`**
 - `强制` 对于 Service 和 DAO 类，基于 SOA 的理念，暴露出来的服务一定是接口，内部的实现类用 Impl 的后缀与接口区别。
     - 正例： CacheServiceImpl 实现 CacheService 接口。
 - `推荐` 如果是形容能力的接口名称，取对应的形容词做接口名 （ 通常是–able 的形式）。
     - 正例： AbstractTranslator 实现 Translatable。
 
-`参考`
+**`参考`**
 - 枚举类名建议带上 Enum 后缀，枚举成员名称需要全大写，单词间用下划线隔开。
     - 说明： 枚举其实就是特殊的常量类，且构造方法被默认强制是私有。
     - 正例： 枚举名字为 `ProcessStatusEnum` 的成员名称： `SUCCESS`或者`UNKOWN_REASON`
@@ -81,11 +81,11 @@
        - POJO是 ***DO DTO BO VO*** 统称
        - 有关这些缩写的详细说明  [相关](/Java/AdvancedLearning/GrammarAndType.md#pojo)
 
-`Tomcat推荐`
+**`Tomcat组织推荐的代码风格`**
 - 使用空格进行缩进，而不是制表符
-- 用于Java源的100个字符行宽度，用于文档源（.txt，.xml）的80个字符行宽度
-- Java源代码：{在行末，4个空格缩进
-- XML源：2个空格缩进
+- 用于 Java 源的100个字符行宽度，用于文档源（.txt，.xml）的80个字符行宽度
+- Java 源代码：{在行末，4个空格缩进
+- XML 源文件：2个空格缩进
 
 ***************************************************
 ## 常量定义
@@ -105,12 +105,13 @@
     类 B 中： public static final String YES = "y";
     A.YES.equals(B.YES)，预期是 true，但实际返回为 false，导致线上问题。
 ```
-- `推荐`如果变量值仅在一个范围内变化，且带有名称之外的延伸属性， 定义为枚举类。下面正例中的数字就是延伸信息，表示星期几。
+- `推荐` 
+    - 如果变量值仅在一个范围内变化，且带有名称之外的延伸属性， 定义为枚举类。下面正例中的数字就是延伸信息，表示星期几。
     - `public Enum { MONDAY(1), TUESDAY(2), WEDNESDAY(3), THURSDAY(4), FRIDAY(5), SATURDAY(6),SUNDAY(7);}`
 
 *************************************************
 ## 代码格式
-- |大括号约定：
+1. 大括号约定：
     - 如果是大括号内为空，则简洁地写成{}即可，不需要换行； 
     - 如果是非空代码块则：
         - 左大括号前不换行。
@@ -118,22 +119,22 @@
         - 右大括号前换行。
         - 右大括号后还有 else 等代码则不换行； 表示终止的右大括号后必须换行。
 
-- |小括号和字符之间不出现空格；
+1. 小括号和字符之间不出现空格；
     - 反例： `if (空格 a == b 空格)`
-- |`if/for/while/switch/do` 后加空格: 例如 ：if () 
-- |任何二目、 三目运算符的左右两边都需要加一个空格。
-- |缩进采用4个空格，而不是tab字符，IDE要调整一下
-- |注释的双斜线与注释内容之间有且仅有一个空格。 `// 注释`
-- |单行字符不超过120个，超出需换行：
+1. `if/for/while/switch/do` 后加空格: 例如 ：if () 
+1. 任何二目、 三目运算符的左右两边都需要加一个空格。
+1. 缩进采用4个空格，而不是tab字符，IDE要调整一下
+1. 注释的双斜线与注释内容之间有且仅有一个空格。 `// 注释`
+1. 单行字符不超过120个，超出需换行：
     - 第二行比第一行缩进4个空格，第三行以后就和第二行平齐就可以了
     - 运算符与下文一起换行
     - 方法调用的点符号与下文一起换行
     - 调用方法 多个参数，需在逗号后进行换行
     - 括号之前不要换行
-- |方法参数在定义和传入时，多个参数逗号后边必须加空格
+1. 方法参数在定义和传入时，多个参数逗号后边必须加空格
     - `method("a", "b", "c");`
-- |编码统一采用`UTF-8` IDE中换行符采用unix格式`使用别的编码的话会开心死的`
-- |没有必要增加若干空格来使某一行的字符与上一行对应位置的字符对齐。
+1. 编码统一采用`UTF-8` IDE中换行符采用unix格式`使用别的编码的话会开心死的`
+1. 没有必要增加若干空格来使某一行的字符与上一行对应位置的字符对齐。
     ```
     int a = 3;
     long b = 4L;
@@ -141,29 +142,29 @@
     StringBuffer sb = new StringBuffer();
     增加 sb 这个变量，如果需要对齐，则给 a、 b、 c 都要增加几个空格，在变量比较多的情况下，是一种累赘的事情。
     ```
-- |方法体内执行语句组，变量的定义语句组，不同的业务逻辑之间或者不同的语义之间插入一个空行，相同业务逻辑和语义之间不需要插入空行
+1. 方法体内执行语句组，变量的定义语句组，不同的业务逻辑之间或者不同的语义之间插入一个空行，相同业务逻辑和语义之间不需要插入空行
 
 *********************************************
 ## OOP规约
-- |避免使用对象来引用类的静态变量或方法。无谓增加编译器解析成本，直接用类名来访问即可。
-- |所有的覆写方法，必须加注解 @Override 
-- |相同参数类型，相同业务含义，才可以使用Java的可变参数。避免使用Object
+1. 避免使用对象来引用类的静态变量或方法。无谓增加编译器解析成本，直接用类名来访问即可。
+1. 所有的覆写方法，必须加注解 @Override 
+1. 相同参数类型，相同业务含义，才可以使用Java的可变参数。避免使用Object
     - 说明： 可变参数必须放置在参数列表的最后。 （ 提倡同学们尽量不用可变参数编程）
     - 正例： `public User getUsers(String type, Integer... ids) {...}`
-- |外部正在调用或者二方库依赖的接口，不允许修改方法签名，避免对接口调用方产生影响。
+1. 外部正在调用或者二方库依赖的接口，不允许修改方法签名，避免对接口调用方产生影响。
     - 接口过时必须加 `@Deprecated` 注解，并清晰地说明采用的新接口或者新服务是什么。
-- |不能使用过时的类或方法
+1. 不能使用过时的类或方法
     - 说明： `java.net.URLDecoder` 中的方法 `decode(String encodeStr)` 这个方法已经过时，
     - 应该使用双参数 `decode(String source, String encode)`。接口提供方既然明确是过时接口，
     - 那么有义务同时提供新的接口； 作为调用方来说，有义务去考证过时方法的新实现是什么。
-- |Object 的 equals 方法容易抛空指针异常，应使用常量或确定有值的对象来调用equals。
+1. Object 的 equals 方法容易抛空指针异常，应使用常量或确定有值的对象来调用equals。
     - 使用` "t".equals(test)`方式
     - 推荐使用`java.util.Object#equals` (jdk7引入的工具类)
-- |所有的相同类型的包装类对象之间的 *值的比较* ，全部使用equals方法比较，
+1. 所有的相同类型的包装类对象之间的 *值的比较* ，全部使用equals方法比较，
     - 注意：对于 `Integer var = ?` 在-128 至 127 范围内的赋值， Integer 对象是在`IntegerCache.cache 产生`，会复用已有对象，
     - 这个区间内的 Integer 值可以直接使用==进行判断，但是这个区间之外的所有数据，都会在堆上产生，并不会复用已有对象，所以 `==` 就会失效
     - 这是一个大坑！，推荐统一使用 equals 方法进行判断。
-- |关于基本数据类型与包装数据类型的使用标准如下：
+1. 关于基本数据类型与包装数据类型的使用标准如下：
     - 所有的 POJO 类属性必须使用包装数据类型。
     - RPC方法的返回值和参数必须使用包装数据类型
     - 所有的局部变量 推荐使用基本数据类型
@@ -172,39 +173,39 @@
     - `反例`： 比如显示成交总额涨跌情况，即正负 x%， x 为基本数据类型，调用的 RPC 服务，调用
         - 不成功时，返回的是默认值，页面显示为 0%，这是不合理的，应该显示成中划线。所以包装
         - 数据类型的 null 值，能够表示额外的信息，如：远程调用失败，异常退出。
-- |定义 `DO/DTO/VO`等POJO类时，不要设定任何属性的`默认值`
+1. 定义 `DO/DTO/VO`等POJO类时，不要设定任何属性的`默认值`
     - `反例`： POJO 类的 gmtCreate 默认值为 new Date();
         - 但是这个属性在数据提取时并没有置入具体值，在更新其它字段时又附带更新了此字段，导致创建时间被修改成当前时间。
-- |序列化类新增属性时，不要修改`serialVersionUID`字段，避免反序列化失败
+1. 序列化类新增属性时，不要修改`serialVersionUID`字段，避免反序列化失败
     - 如果要完全不兼容升级，为了避免反序列化混乱，就可以修改`serialVersionUID`的值
     - idea可以配置使用快捷键自动生成
     - `说明`： 注意 serialVersionUID 不一致会抛出序列化运行时异常。
-- |构造方法里面禁止加入任何业务逻辑，如果有初始化逻辑，请放在 init 方法中。
-- |POJO 类必须写 toString 方法。 如果继承了另一个 POJO 类，注意在前面加一下 super.toString()。
+1. 构造方法里面禁止加入任何业务逻辑，如果有初始化逻辑，请放在 init 方法中。
+1. POJO 类必须写 toString 方法。 如果继承了另一个 POJO 类，注意在前面加一下 super.toString()。
     - 说明： 在方法执行抛出异常时，可以直接调用 POJO 的 toString()方法打印其属性值，便于排查问题
-- |使用索引访问用 String 的 split 方法得到的数组时，需做最后一个分隔符后有无内容的检查，否则会有抛 `IndexOutOfBoundsException` 的风险。
+1. 使用索引访问用 String 的 split 方法得到的数组时，需做最后一个分隔符后有无内容的检查，否则会有抛 `IndexOutOfBoundsException` 的风险。
     - `System.out.println("a,b,c,,".split(",").length);` 预期是大于3
-- |当一个类有多个构造方法，或者多个重名方法，这些方法应该按顺序放置在一起，优于下条规则
-- |类内方法的定义顺序依次是 共有方法或保护方法 -> 私有方法 -> setter/getter方法
+1. 当一个类有多个构造方法，或者多个重名方法，这些方法应该按顺序放置在一起，优于下条规则
+1. 类内方法的定义顺序依次是 共有方法或保护方法 -> 私有方法 -> setter/getter方法
     - 公有方法是类的调用者和维护者最关心的方法，首屏展示最好； 
     - 保护方法虽然只是子类关心，也可能是“模板设计模式”下的核心方法； 
     - 而私有方法外部一般不需要特别关心，是黑盒实现； 
     - 因为承载的信息价值较低，所有 Service 和 DAO 的 `getter/setter` 方法放在类体最后。
-- |setter 方法中，参数名称与类成员变量名称一致， this.成员名 = 参数名。
+1. setter 方法中，参数名称与类成员变量名称一致， this.成员名 = 参数名。
     - 在`getter/setter` 方法中， 不要增加业务逻辑，增加排查问题的难度。
-- |循环体中的字符串的连接方式，使用`StringBuffer`的`append`方法进行扩展
+1. 循环体中的字符串的连接方式，使用`StringBuffer`的`append`方法进行扩展
     - 说明： 反编译出的字节码文件显示每次循环都会 new 出一个 StringBuilder 对象，然后进行append 操作，
     - 最后通过 toString 方法返回 String 对象，造成内存资源浪费。
-- |final 可以声明类、成员变量、方法、以及本地变量，下列情况使用 final 关键字：
+1. final 可以声明类、成员变量、方法、以及本地变量，下列情况使用 final 关键字：
     - 不允许被继承的类，如： String 类。
     - 不允许修改引用的域对象，如： POJO 类的域变量。
     - 不允许被重写的方法，如： POJO 类的 setter 方法。
     - 不允许运行过程中重新赋值的局部变量。
     - 避免上下文重复使用一个变量，使用 final 描述可以强制重新定义一个变量，方便更好地进行重构。
     - 方法入参：对象参数前加final，表示不允许修改引用的指向
-- |慎用Object的clone方法来拷贝对象
+1. 慎用Object的clone方法来拷贝对象
     - 说明： 对象的 clone 方法默认是浅拷贝，最好重写该方法，实现属性对象的拷贝。
-- |类成员与方法访问控制从严：
+1. 类成员与方法访问控制从严：
     - 如果不允许外部直接通过new来创建对象，那么构造方法显式声明并private
     - ` 工具类`不允许有public或default构造方法
     - 类非static成员变量并且与子类共享，必须是protected
@@ -219,82 +220,82 @@
 
 **********************************************************
 ## 集合处理
-- |关于HashCode 和equals的处理
+1. 关于HashCode 和equals的处理
     - 只要重写equals，就必须重写HashCode
     - 因为Set存储的是不重复的对象，依据hashCode和equals进行判断，所以Set存储的方法必须重写这两个方法
     - 如果自定义对象作为Map的键，那么必须重写HashCode和equals
     - `说明`： String 重写了 hashCode 和 equals 方法，所以我们可以非常愉快地使用 String 对象作为 key 来使用。
-- |ArrayList的subList 结果不可强转成ArrayList 否则会抛出 ClassCastException异常， 
+1. ArrayList的subList 结果不可强转成ArrayList 否则会抛出 ClassCastException异常， 
     - 即 `java.util.RandomAccessSubList cannot be cast to java.util.ArrayList.`
     - `说明`：subList返回的是ArrayList的内部类SubList，是ArrayList的一个视图，对于subList的所有操作最终都会反映到原列表上
-- |在 `subList` 场景中，高度注意对原集合元素个数的修改，会导致子列表的遍历、增加、删除均产生 `ConcurrentModificationException` 异常。
-- |使用集合转数组的方法，必须使用集合的 `toArray(T[] array)` ，传入的是类型完全一样的数组，大小就是 `list.size() `
+1. 在 `subList` 场景中，高度注意对原集合元素个数的修改，会导致子列表的遍历、增加、删除均产生 `ConcurrentModificationException` 异常。
+1. 使用集合转数组的方法，必须使用集合的 `toArray(T[] array)` ，传入的是类型完全一样的数组，大小就是 `list.size() `
     - 使用 toArray 带参方法，入参分配的数组空间不够大时， toArray 方法内部将重新分配内存空间，并返回新数组地址；
     - 如果数组元素大于实际所需，下标为[ list.size() ]的数组元素将被置为 null，其它数组元素保持原值，因此最好将方法入参数组大小定义与集合元素个数一致。
     - `String[] array = new String[list.size()];`
     - `array = list.toArray(array);`
     - *注意*直接使用 toArray 无参方法存在问题，此方法返回值只能是 Object[]类，若强转其它类型数组将出现 ClassCastException 错误。
-- |把数组转换成集合：使用工具类`Arrays.asList()`时，不能使用其修改集合相关的方法，其`add/remove/clear`方法会抛出`UnsupportedOperationException`异常。
+1. 把数组转换成集合：使用工具类`Arrays.asList()`时，不能使用其修改集合相关的方法，其`add/remove/clear`方法会抛出`UnsupportedOperationException`异常。
     - *说明*：asList 的返回对象是一个 Arrays 内部类，并没有实现集合的修改方法。`Arrays.asList`体现的是适配器模式，只是转换接口，后台的数据仍是数组。
     - `String[] str = new String[] { "a", "b" };`
     - `List list = Arrays.asList(str);`
     - *第一种情况*： `list.add("c");`  运行时异常。
     - *第二种情况*： `str[0]= "gujin";` 那么 `list.get(0)` 也会随之修改。
-- |泛型通配符`<? extends T>`来接收返回的数据，此写法的泛型集合不能使用 add 方法。
+1. 泛型通配符`<? extends T>`来接收返回的数据，此写法的泛型集合不能使用 add 方法。
     - 而`<? super T>`不能使用 get 方法，做为接口调用赋值时易出错。
     - *说明*： 扩展说一下 `PECS(Producer Extends Consumer Super)`原则： 
         - 第一、 频繁往外读取内容的，适合用`<? extends T>`。 
         - 第二、 经常往里插入的，适合用`<? super T>`。
    - 说明：苹果装箱后返回一个`<? extends Fruits>`对象，此对象就不能往里加任何水果，包括苹果。
-- |不要在 foreach 循环里进行元素的 `remove/add` 操作。 remove 元素请使用 Iterator方式，如果并发操作，需要对 Iterator 对象加锁。
+1. 不要在 foreach 循环里进行元素的 `remove/add` 操作。 remove 元素请使用 Iterator方式，如果并发操作，需要对 Iterator 对象加锁。
 
 *正例：*
 ```java
-Iterator<String> iterator = list.iterator();
-while (iterator.hasNext()) {
-    String item = iterator.next();
-    if (删除元素的条件) {
-        iterator.remove();
+    Iterator<String> iterator = list.iterator();
+    while (iterator.hasNext()) {
+        String item = iterator.next();
+        if (删除元素的条件) {
+            iterator.remove();
+        }
     }
-}
 ```
 *反例：*
 ```java
-List<String> a = new ArrayList<String>();
-list.add("1");
-list.add("2");
-for (String item : list) {
-    if ("1".equals(item)) {
-        list.remove(item);
+    List<String> a = new ArrayList<String>();
+    list.add("1");
+    list.add("2");
+    for (String item : list) {
+        if ("1".equals(item)) {
+            list.remove(item);
+        }
     }
-}
 ```
 *说明*： 以上代码的执行结果肯定会出乎大家的意料，那么试一下把“1”换成“2”，会是同样的结果吗？
 
-- |在 JDK7 版本以上， Comparator 要满足自反性，传递性，对称性，不然 `Arrays.sort` ，`Collections.sort` 会报 `IllegalArgumentException` 异常。
+1. 在 JDK7 版本以上， Comparator 要满足自反性，传递性，对称性，不然 `Arrays.sort` ，`Collections.sort` 会报 `IllegalArgumentException` 异常。
     - 1 ） 自反性： x ， y 的比较结果和 y ， x 的比较结果相反。
     - 2 ） 传递性： x > y , y > z ,则 x > z 。
     - 3 ） 对称性： x = y ,则 x , z 比较结果和 y ， z 比较结果相同。
 *反例： 下例中没有处理相等的情况，实际使用中可能会出现异常：*
 ```java
-new Comparator<Student>() {
-@Override
-public int compare(Student o1, Student o2) {
-    return o1.getId() > o2.getId() ? 1 : -1;
-}
-};
+    new Comparator<Student>() {
+    @Override
+    public int compare(Student o1, Student o2) {
+        return o1.getId() > o2.getId() ? 1 : -1;
+    }
+    };
 ```
-- |集合初始化时，尽量指定集合初始值大小。
+1. 集合初始化时，尽量指定集合初始值大小。
     - 说明： HashMap 使用 HashMap(int initialCapacity) 初始化
     - 正例：`initialCapacity=(需要存储的元素个数/负载因子)+1`。注意负载因子（即 loaderfactor）默认为`0.75`，
         -  如果暂时无法确定初始值大小，请设置为 16（即默认值） 。
     - 反例： HashMap 需要放置 1024 个元素， 由于没有设置容量初始大小，随着元素不断增加，容量`7`次被迫扩大， resize 需要重建 hash 表，严重影响性能。
-- |使用 `entrySet` 遍历 Map 类集合 KV ，而不是 `keySet` 方式进行遍历
+1. 使用 `entrySet` 遍历 Map 类集合 KV ，而不是 `keySet` 方式进行遍历
     -  `keySet` 其实是遍历了 2 次，一次是转为 `Iterator` 对象，另一次是从 hashMap 中取出key 所对应的 value 。
     -  而 `entrySet` 只是遍历了一次就把 key 和 value 都放到了 entry 中，效率更高。
     -  如果是 JDK8，使用 `Map.foreach` 方法。
     -  *正例：*values() 返回的是V值集合，是一个 list 集合对象；keySet()返回的是K值集合，是一个 Set集合对象;entrySet()返回的是 K - V 值组合集合。
-- |高度注意 Map 类集合 `K/V` 能不能存储 null 值的情况，如下表格:
+1. 高度注意 Map 类集合 `K/V` 能不能存储 null 值的情况，如下表格:
     - 反例： 由于 HashMap 的干扰，很多人认为 ConcurrentHashMap 是可以置入 null 值，而事实上，存储 null 值时会抛出 NPE 异常。
 
 |  集合类   |    Key  |   Value  |  Super   |  说明  |
@@ -304,15 +305,16 @@ public int compare(Student o1, Student o2) {
 |TreeMap|! NULL|NULL|AbstractMap|线程不安全|
 |HashMap|NULL|NULL|AbstractMap|线程不安全|
 
-- |合理利用好集合的有序性 (sort) 和稳定性 (order) ，避免集合的无序性 (unsort) 和不稳定性 (unorder) 带来的负面影响。
+1. 合理利用好集合的有序性 (sort) 和稳定性 (order) ，避免集合的无序性 (unsort) 和不稳定性 (unorder) 带来的负面影响。
     - 稳定性指集合每次遍历的元素次序是一定的。
     - 有序性是指遍历的结果是按某种比较规则依次排列的。
     - 如： ArrayList 是 order / unsort；
     - HashMap 是 unorder/unsort；
     - TreeSet 是order / sort 。
-- |利用 Set元素唯一的特性，可以快速对一个集合进行去重操作，避免使用 List的contains 方法进行遍历、对比、去重操作。
+1. 利用 Set元素唯一的特性，可以快速对一个集合进行去重操作，避免使用 List的contains 方法进行遍历、对比、去重操作。
     - OrderSet也是一个很重要的类
 
+- [ ] 重新整理
 ## 并发处理
 - 获取单例对象需要保证线程安全，其中的方法也要保证线程安全。
     - 资源驱动类、工具类、单例工厂类都需要注意。

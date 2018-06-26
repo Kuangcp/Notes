@@ -33,7 +33,7 @@
         - [阿里巴巴的代码检查](#阿里巴巴的代码检查)
     - [配置文件](#配置文件)
 
-`目录 end` |_2018-06-25_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
+`目录 end` |_2018-06-26_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
 ****************************************
 # 开发思想
 > 有关开发的理论性思想,编写,测试,部署等
@@ -108,10 +108,13 @@
 ### 聚合
 聚合根的修改行为应该属于聚合根实体对象自己，用聚合根行为守护其内部状态的一致性是DDD设计核心，如果聚合根内部的状态直接暴露给外界（通过领域服务）任意修改，那么会导致状态变化混乱，难以调试和跟踪。
 
+- 现在书写的这个项目就和这个理念相一致, 但是总说是OOP 没有提及DDD _TODO_
+    - 整个系统中涉及到的实体对象, 需要持久化的属就独立出来作为一个PO对象, 然后Spring Data JPA 接管DAO操作
+    - 然后在对象中建立 修改PO对象行为 的方法, 而不是以往 MVC 那样的设计, 业务全在Service里面, 对实体自身属性的基本操作也在Service里面
+
 ### 参考实践项目
 > [enode](https://github.com/tangxuehua/enode)`C#实现`
 > [CQRS](https://github.com/liangzeng/cqrs)
-
 
 *****************************
 ## 数据的操作

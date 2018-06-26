@@ -1,148 +1,63 @@
 `目录 start`
  
 - [Spring](#spring)
-    - [Spring配置](#spring配置)
-        - [原始的web项目复制jar方式](#原始的web项目复制jar方式)
-        - [maven配置Spring依赖](#maven配置spring依赖)
-        - [Gradle配置](#gradle配置)
-    - [Spring使用](#spring使用)
-        - [Spring技巧](#spring技巧)
-            - [获取Spring已有的Context上下文环境](#获取spring已有的context上下文环境)
-                - [【在JSP或Servlet中】](#在jsp或servlet中)
-            - [Spring 和 ServletContextList](#spring-和-servletcontextlist)
-        - [注解方式：](#注解方式)
-            - [Application.xml中配置头部分](#applicationxml中配置头部分)
-            - [常用的注解：](#常用的注解)
-        - [xml方式：](#xml方式)
+    - [配置使用](#配置使用)
+        - [通过构建工具](#通过构建工具)
+        - [Spring中的Bean的生命周期](#spring中的bean的生命周期)
+        - [注解方式](#注解方式)
+            - [xml文件配置](#xml文件配置)
+            - [常用的注解](#常用的注解)
+        - [xml方式](#xml方式)
             - [xml方式和注解方式的比较：](#xml方式和注解方式的比较)
-        - [IOC / DI：控制反转](#ioc--di控制反转)
-        - [AOP：](#aop)
-            - [基本概念](#基本概念)
-            - [基本配置](#基本配置)
-            - [注意](#注意)
+    - [Spring技巧](#spring技巧)
+        - [获取Context上下文环境](#获取context上下文环境)
+            - [在JSP或Servlet中获取](#在jsp或servlet中获取)
+        - [Spring 和 ServletContextList](#spring-和-servletcontextlist)
+    - [IOC/DI 控制反转](#iocdi-控制反转)
+    - [AOP](#aop)
+        - [基本概念](#基本概念)
+        - [基本配置](#基本配置)
+        - [注意](#注意)
             - [1 Spring AOP还是完全用AspectJ？](#1-spring-aop还是完全用aspectj)
             - [2 Spring AOP中使用@AspectJ还是XML？](#2-spring-aop中使用@aspectj还是xml)
             - [3 混合切面类型](#3-混合切面类型)
-        - [Spring-Websocket 配置](#spring-websocket-配置)
-            - [maven配置jar环境](#maven配置jar环境)
-        - [Web开发上的一些优秀的习惯](#web开发上的一些优秀的习惯)
-        - [RMI](#rmi)
+    - [Websocket](#websocket)
+        - [maven配置](#maven配置)
+    - [Web开发上的一些优秀的习惯](#web开发上的一些优秀的习惯)
 
-`目录 end` |_2018-05-26_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
+`目录 end` |_2018-06-26_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
 ****************************************
 # Spring
 > [Spring官网](https://spring.io/) | [spring4all社区](http://www.spring4all.com/)
 
-> [Spring For All 社区 Spring 官方教程翻译](http://www.spring4all.com/article/558)
+> [Spring For All 社区 ->  Spring 官方教程翻译](http://www.spring4all.com/article/558)
 
-## Spring配置
-### 原始的web项目复制jar方式
-`最原始的配置：基本JAR包：`
-- aspectjtools.jar
-- com.springsource.org.aopalliance-1.0.0.jar
-- com.springsource.org.apache.commons.logging-1.1.1.jar
-- spring-aop-3.2.6.RELEASE.jar
-- spring-aspects-3.2.6.RELEASE.jar
-- spring-beans-3.2.6.RELEASE.jar
-- spring-context-3.2.6.RELEASE.jar
-- spring-core-3.2.6.RELEASE.jar
-- spring-expression-3.2.6.RELEASE.jar
+## 配置使用
+> **通过原始的复制jar方式 :** 官网下载对应的jar, 添加到ide中
+### 通过构建工具
+Maven 中 pom.xml 中, Gradle是 build.gradle 添加以下等依赖:
 
-### maven配置Spring依赖
-_pom.xml_
-```xml
-    <properties>
-    <spring.version>4.1.7.RELEASE</spring.version>
-    </properties>
-    .....
-    <!-- 核心 -->
-    <dependency>
-        <groupId>org.springframework</groupId>
-        <artifactId>spring-core</artifactId>
-        <version>${spring.version}</version>
-    </dependency>
-    <dependency>
-        <groupId>org.springframework</groupId>
-        <artifactId>spring-beans</artifactId>
-        <version>${spring.version}</version>
-    </dependency>
-    <dependency>
-        <groupId>org.springframework</groupId>
-        <artifactId>spring-context</artifactId>
-        <version>${spring.version}</version>
-    </dependency>
-    <dependency>
-        <groupId>org.springframework</groupId>
-        <artifactId>spring-aop</artifactId>
-        <version>${spring.version}</version>
-    </dependency>
-    <dependency>
-        <groupId>org.springframework</groupId>
-        <artifactId>spring-websocket</artifactId>
-        <version>${spring.version}</version>
-    </dependency>
-    <dependency>
-        <groupId>org.springframework</groupId>
-        <artifactId>spring-messaging</artifactId>
-        <version>${spring.version}</version>
-    </dependency>
-    <!-- dao层框架 -->
-    <dependency>
-        <groupId>org.springframework</groupId>
-        <artifactId>spring-jdbc</artifactId>
-        <version>${spring.version}</version>
-    </dependency>
-    <dependency>
-        <groupId>org.springframework</groupId>
-        <artifactId>spring-tx</artifactId>
-        <version>${spring.version}</version>
-    </dependency>
-    <dependency>
-        <groupId>org.springframework</groupId>
-        <artifactId>spring-web</artifactId>
-        <version>${spring.version}</version>
-    </dependency>
-    <dependency>
-        <groupId>org.springframework</groupId>
-        <artifactId>spring-webmvc</artifactId>
-        <version>${spring.version}</version>
-    </dependency>
-    <!-- Spring test 相关依赖 -->
-    <dependency>
-        <groupId>org.springframework</groupId>
-        <artifactId>spring-test</artifactId>
-        <version>${spring.version}</version>
-    </dependency> 
-```
-### Gradle配置
-_build.gradle_
-```
-```
+_核心依赖_
+1. spring-core
+1. spring-beans
+1. spring-context
 
-****************************
-## Spring使用
-###  Spring技巧
-####  获取Spring已有的Context上下文环境
-##### 【在JSP或Servlet中】
-```java
-    ApplicationContext context = WebApplicationContextUtils.getWebApplicationContext(config.getServletContext());
+_其他,可选_
+1. spring-aop
+1. spring-websocket
+1. spring-jdbc 
+1. spring-tx 
+1. spring-web
+1. spring-webmvc
+1. spring-test
 
-```
-#### Spring 和 ServletContextList
-- 想要启动Tomcat之后，初始化运行一些方法，把数据从数据库拿出放入redis中，然后使用了ServletContextListener
-    - 然后还是按照往常一样的使用Spring自动注入的便利，来使用service层获取数据，但是忽略了启动顺序
-    - **context-param -> listener -> filter -> servlet**
-    - 所以在启动这个初始化方法的时候，其实Spring的环境是还没有加载的，所以没有扫描，也就没有了自动注入，也就有了空指针异常
-    - 所以要使用如下方法得到Spring的Context（上下文），获取bean，再操作
-  
-```java
-    public void contextInitialized(ServletContextEvent event) { 
-        ApplicationContext context = WebApplicationContextUtils.getWebApplicationContext(event.getServletContext());
-        ....
-    }
-``` 
-### 注解方式：
-#### Application.xml中配置头部分
+### Spring中的Bean的生命周期
+> [参考博客: Spring Bean的生命周期](https://www.cnblogs.com/redcool/p/6397398.html)
+
+### 注解方式
+> 需要在配置文件 xml配置文件 中配置包扫描 才能生效
+
+#### xml文件配置
 ```xml
     <!-- 头部分要添加Context -->
     <?xml version="1.0" encoding="UTF-8"?>
@@ -154,12 +69,12 @@ _build.gradle_
              http://www.springframework.org/schema/context
              http://www.springframework.org/schema/context/spring-context-3.0.xsd">
         <!-- 对使用了注解的包进行扫描 -->
-        <context:component-scan base-package="cn.spring.aop"></context:component-scan>
+        <context:component-scan base-package="com.github.kuangcp"></context:component-scan>
     </beans>
 ```
->**【注意】**只需要这个配置文件就可以使用注解来使用Spring框架
+> **注意** 只需要这个配置文件就可以使用注解来使用Spring框架
 
-#### 常用的注解：
+#### 常用的注解
 - 标注为bean
     - `@Component([value=]"id") `不写则默认是当前类名
     - @Entity
@@ -171,14 +86,17 @@ _build.gradle_
     - `@Resource([value=]"id")` 按名字注入
     - `@Autowried` 根据类型自动注入（只对单例起作用）和 `Resource(类名首字母小写)` 等价
     - `@Qualifier("id") `自动注入后的进一步精确（多个的情况：）
-- AOP切面编程 
+- **注意 :** 关于自动注入, 在属性上打 @Autowried 注解是不建议的, 作者建议采用构造器方式:  [Why field injection is evil](http://olivergierke.de/2013/11/why-field-injection-is-evil/)
+
+- AOP
     - @Aspect 注明是切面类
     - @Before("execution(public void com.wjt276.dao.impl.UserDaoImpl.save(com.wjt276.model.User))") 和xml方式的before对应
+
 - bean扫描
-    - ComponentScan 扫描指定包下Spring注解
-    
+    - ComponentScan 扫描指定包下Spring注解的类
+
 ***********************
-###  xml方式：
+###  xml方式
 - 只用到bean的头，主要配置内容：`<bean><property></property></bean>`
 
 ```xml
@@ -189,7 +107,6 @@ _build.gradle_
         <property name="name" value="myth"/>
         <property name="addr" value="vol"/>
     </bean>
-    
     <bean id="construct" class="cn.spring.entity.ConstructorEntity">
     <!-- 如果是不同的类型的参数 顺序可以随意，但是数据类型一样的话就要严格按顺序了-->
         <constructor-arg type="java.lang.String" value="String_1"></constructor-arg>
@@ -200,7 +117,6 @@ _build.gradle_
     <bean id="TestConstruct" class="cn.spring.entity.TestConstruct">
         <property name="entity" ref="construct"></property>
     </bean>
-    
     <!-- 加载属性文件 -->
     <bean id="property_config" class="org.springframework.beans.factory.config.PreferencesPlaceholderConfigurer">
         <property name="locations">
@@ -217,16 +133,36 @@ _build.gradle_
         <property name="password" value="${password}"/>
         <property name="url" value="${url}"/>
     </bean>
-
 ```
+
 #### xml方式和注解方式的比较：
 
 - 当你确定切面是实现一个给定需求的最佳方法时，你如何选择是使用Spring AOP还是AspectJ，以及选择 Aspect语言（代码）风格、@AspectJ声明风格或XML风格？
 - 这个决定会受到多个因素的影响，包括应用的需求、 开发工具和小组对AOP的精通程度。
 - **个人理解**：使用bean的时候使用注解，AOP使用xml方式，更直观
 
+***********************************
+##  Spring技巧
+### 获取Context上下文环境
+#### 在JSP或Servlet中获取
+```java
+    ApplicationContext context = WebApplicationContextUtils.getWebApplicationContext(config.getServletContext());
+```
+### Spring 和 ServletContextList
+- 想要启动Tomcat之后，初始化运行一些方法，把数据从数据库拿出放入redis中，然后使用了ServletContextListener
+    - 然后还是按照往常一样的使用Spring自动注入的便利，来使用service层获取数据，但是忽略了启动顺序
+    - **context-param -> listener -> filter -> servlet**
+    - 所以在启动这个初始化方法的时候，其实Spring的环境是还没有加载的，所以没有扫描，也就没有了自动注入，也就有了空指针异常
+    - 所以要使用如下方法得到Spring的Context（上下文），获取bean，再操作
+  
+```java
+    public void contextInitialized(ServletContextEvent event) { 
+        ApplicationContext context = WebApplicationContextUtils.getWebApplicationContext(event.getServletContext());
+        //....
+    }
+``` 
 ****************
-###  IOC / DI：控制反转
+##  IOC/DI 控制反转
 - DI 译为依赖注入 所有的bean都在IOC容器中（单例的）多例的不在该容器中进行管理
 - 通过注入 可以注入基本属性 对象属性，集合属性，构造器，properties等
 - 不采用Spring的IOC容器使用Java基础来实现：
@@ -237,66 +173,68 @@ _build.gradle_
        - 针对一个方面编写一个InvocationHandler，然后借用JDK反射包中的Proxy类为各种接口动态生成相应的代理类 
 
 **********************
-###  AOP：
-> 面向切面编程
+## AOP
+> Aspect Oriented Programming  面向切面编程
 
-#### 基本概念
+### 基本概念
+| 英文 | 解释 |
+|:----|:----|
+|`JoinPoint`|切入面、连接点、切入点（所有方法） |
+|`PointCut` |切点（特殊的连接点，需要增强的连接点）|
+|`Advice`|增强（切入点的逻辑，待添加的功能）|
+|`Aspect`|切面（切点和增强的合集）|
+|`Target`|目标对象（被增强的实例）|
+|`Weave`|织入（增强切点的过程）|
+|`Proxy`|代理（增强后的类，一般是使用了代理类） 装饰器模式|
+|`Introduction`|引介（为类添加属性和方法） 用的较少因为破坏了OOP思想|
 
-- `JoinPoint`  切入面、连接点、切入点（所有方法）
-- `PointCut` 切点（特殊的连接点，需要增强的连接点）
-- `Advice` 增强（切入点的逻辑，待添加的功能）
-- `Aspect` 切面（切点和增强的合集）
-- `Target` 目标对象（被增强的实例）
-- `Weave` 织入（增强切点的过程）
-- `Proxy` 代理（增强后的类，一般是使用了代理类） 装饰器模式
-- `Introduction` 引介（为类添加属性和方法） 用的较少因为破坏了OOP思想
-
-####  基本配置
+*********************
+###  基本配置
 `XML文件头`
 ```xml
-    <beans xmlns="http://www.springframework.org/schema/beans"
-     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-     xmlns:context="http://www.springframework.org/schema/context"
-     xmlns:aop="http://www.springframework.org/schema/aop"
-     xsi:schemaLocation="http://www.springframework.org/schema/beans
-         http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
-         http://www.springframework.org/schema/context
-         http://www.springframework.org/schema/context/spring-context-3.0.xsd
-         http://www.springframework.org/schema/aop
-         http://www.springframework.org/schema/aop/spring-aop-3.0.xsd">
-         </beans>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:context="http://www.springframework.org/schema/context"
+    xmlns:aop="http://www.springframework.org/schema/aop"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+        http://www.springframework.org/schema/context
+        http://www.springframework.org/schema/context/spring-context-3.0.xsd
+        http://www.springframework.org/schema/aop
+        http://www.springframework.org/schema/aop/spring-aop-3.0.xsd">
+        </beans>
 ```
 - 方法级别的添加代理，Servlet中的过滤器也类似（但是那个是类级别的）
 
 ```xml
-    <!-- 基本类 提供切点 -->
-    <bean id="student" class="cn.spring.aop.Student"></bean>
-    <!-- 增强部分 -->
-    <bean id="adder" class="cn.spring.aop.NewDeal"></bean>
-    <!-- 使用aop的自动提示也要配置上面的头文件声明 -->
-    <aop:config>
-        <!--aspect表示切面 ref 标明增强方法的类来源 -->
-        <aop:aspect id="myAop" ref="adder">
-            <!-- execution 是表达式（正则一样的功能）匹配的是具体的切点 -->
-            <aop:pointcut expression="execution(* cn.spring.aop.Student.run(..))" id="needAdd"/>
-            <!-- 织入 的过程 将增强和切入点结合 -->
-            <aop:before method="add" pointcut-ref="needAdd"/>
-            <aop:after method="af" pointcut-ref="needAdd"/>
-            <aop:around method="around" pointcut-ref="needAdd"/>
-        </aop:aspect>
-    </aop:config>
-
+<!-- 基本类 提供切点 -->
+<bean id="student" class="cn.spring.aop.Student"></bean>
+<!-- 增强部分 -->
+<bean id="adder" class="cn.spring.aop.NewDeal"></bean>
+<!-- 使用aop的自动提示也要配置上面的头文件声明 -->
+<aop:config>
+    <!--aspect表示切面 ref 标明增强方法的类来源 -->
+    <aop:aspect id="myAop" ref="adder">
+        <!-- execution 是表达式（正则一样的功能）匹配的是具体的切点 -->
+        <aop:pointcut expression="execution(* cn.spring.aop.Student.run(..))" id="needAdd"/>
+        <!-- 织入 的过程 将增强和切入点结合 -->
+        <aop:before method="add" pointcut-ref="needAdd"/>
+        <aop:after method="af" pointcut-ref="needAdd"/>
+        <aop:around method="around" pointcut-ref="needAdd"/>
+    </aop:aspect>
+</aop:config>
 ```
+### 注意
+- 要注意环绕的写法 `public void around(ProceedingJoinPoint m)throws Throwable{`  
+    - [Spring AOP中的around](https://www.oschina.net/code/snippet_246557_9205)  
 
-#### 注意
-- 要注意环绕的写法 public void around(ProceedingJoinPoint m)throws Throwable{
-- [Spring AOP中的around](https://www.oschina.net/code/snippet_246557_9205)
-- 然后在test类中直接getBean（基类）但是实际上是获取到的是装饰好的代理对象
-- [Spring AOP配置(转)](http://blog.csdn.net/yuqinying112/article/details/7335416)
-- [aop:config详解](http://www.cnblogs.com/yangy608/archive/2010/11/14/1876833.html)
+- 然后在test类中直接getBean（基类）但是实际上是获取到的是装饰好的代理对象  
+    - [Spring AOP配置(转)](http://blog.csdn.net/yuqinying112/article/details/7335416)  
+    - [aop:config详解](http://www.cnblogs.com/yangy608/archive/2010/11/14/1876833.html)  
+
 - 善用debug 调试看是否获取到的是代理对象 $proxy
 
-> 在Spring的配置文件中，所有的切面和通知器都必须定义在 <aop:config> 元素内部。 一个application context可以包含多个 <aop:config>。 一个 <aop:config> 可以包含pointcut，advisor和aspect元素（注意它们必须按照这样的顺序进行声明）。 
+-  在Spring的配置文件中，所有的切面和通知器都必须定义在` <aop:config>` 元素内部。 一个`application context`可以包含多个 `<aop:config>`。 一个` <aop:config>` 可以包含 `pointcut`， `advisor` 和 `aspect` 元素（注意它们必须按照这样的顺序进行声明）。 
 
 #### 1 Spring AOP还是完全用AspectJ？
 做能起作用的最简单的事。Spring AOP比完全使用AspectJ更加简单，因为它不需要引入AspectJ的编译器／织入器到你开发和构建过程中。 
@@ -328,14 +266,12 @@ XML风格有两个缺点。第一是它不能完全将需求实现的地方封�
    public void operationReturningAnAccount() {} 
    @Pointcut(propertyAccess() && operationReturningAnAccount()) 
    public void accountPropertyAccess() {}
-
 ```
 在XML风格中能声明开头的两个连接点：
 
 ```xml
   <aop:pointcut id="propertyAccess" expression="execution(* get*())"/> 
   <aop:pointcut id="operationReturningAnAccount"  expression="execution(org.xyz.Account+ *(..))"/>
-
 ```
 但是不能通过组合这些来定义accountPropertyAccess连接点
 - @AspectJ风格支持其它的实例模型以及更丰富的连接点组合。它具有将将切面保持为一个模块单元的优点。 还有一个优点就是@AspectJ切面能被Spring AOP和AspectJ两者都理解 
@@ -347,8 +283,8 @@ XML风格有两个缺点。第一是它不能完全将需求实现的地方封�
 由于以上几种风格的切面定义的都使用了相同的底层机制，因此可以很好的共存。
 
 *******************
-### Spring-Websocket 配置
-#### maven配置jar环境
+## Websocket
+### maven配置
 
 ```xml
   <dependency>
@@ -362,18 +298,9 @@ XML风格有两个缺点。第一是它不能完全将需求实现的地方封�
      <version>${spring.version}</version>
    </dependency>
 ```
-
-- java代码: 
-    - (handle.java)[] (systemHandle.java)[]
-- js代码: 
-    - (socket.js)[]
-
+- [ ] Spring方式, 现在用boot用多了, 都忘了怎么配置Spring了
 
 ****************
-### Web开发上的一些优秀的习惯
+## Web开发上的一些优秀的习惯
 - 使用AOP来简化开发MVC的代码
 - 繁杂的代码如何简化
-
-
-************
-### RMI
