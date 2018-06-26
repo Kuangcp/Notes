@@ -1,6 +1,6 @@
 `目录 start`
  
-- [Git实际使用的记录](#git实际使用的记录)
+- [GitInAction](#gitinaction)
     - [Tips](#tips)
     - [配置记住密码](#配置记住密码)
     - [【安装】](#安装)
@@ -14,8 +14,7 @@
         - [【VI编辑器的使用】](#vi编辑器的使用)
     - [【配置SSH连接上Github】](#配置ssh连接上github)
         - [Github上fork别人项目的操作](#github上fork别人项目的操作)
-            - [合并对方最新代码](#合并对方最新代码)
-        - [【.gitingnore文件】](#gitingnore文件)
+        - [.gitingnore文件](#gitingnore文件)
         - [终端中显示当前分支](#终端中显示当前分支)
         - [命令的自动补全](#命令的自动补全)
     - [搭建Git服务器](#搭建git服务器)
@@ -23,8 +22,8 @@
         - [【HTTP访问Git服务器】](#http访问git服务器)
             - [【配置HTTPS】](#配置https)
             - [【使用SSH登录GitServer】](#使用ssh登录gitserver)
-    - [【基础命令解释】](#基础命令解释)
-    - [【reset命令常用方式】](#reset命令常用方式)
+    - [基础命令概述](#基础命令概述)
+    - [reset使用方式](#reset使用方式)
         - [1.回滚add操作](#1回滚add操作)
         - [2.回滚最近一次commit](#2回滚最近一次commit)
         - [3.回滚最近几次的commit并添加到一个新建的分支上去](#3回滚最近几次的commit并添加到一个新建的分支上去)
@@ -35,9 +34,11 @@
         - [8.Reset一个单独的文件](#8reset一个单独的文件)
         - [9.保留working_tree并且丢弃一些commit](#9保留working_tree并且丢弃一些commit)
 
-`目录 end` |_2018-04-15_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
+`目录 end` |_2018-06-26_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
 ****************************************
-# Git实际使用的记录
+# GitInAction
+> [try git](https://try.github.io/)
+
 ## Tips
 1. 虽然在物理上本地仓库中所有文件是放在一起的，但是分支之间是互不能访问以及操作的
 2. 在本地的每次commit都是有index的，上传到github可以不用那么频繁，反正都是有记录的
@@ -55,9 +56,6 @@
 6. Linux下当大量文件出现mode的变化（因为你的目录移动，文件权限变化等影响的）可以设置忽略掉 `git config core.fileMode false`
     * 当将目录备份出去，然后重装系统粘贴回来，权限就变了，mode也变了，可以设置忽略掉改变
 7. git的输出中文乱码 执行 `git config --global core.quotepath false`即可
-
-*****************************
-> [如何高效地使用 Git](https://zhuanlan.zhihu.com/p/30561653)
 
 ## 配置记住密码
 -  `Windows下记住密码` ： 
@@ -93,7 +91,7 @@
 ### Linux(debian系)
 - `sudo apt-get install git`
 
-`安装最新版本`
+`安装最新版本Git`
 - `sudo add-apt-repository ppa:git-core/ppa` 
     - 如果命令找不到就先安装这个 `sudo apt-get install software-properties-common`
 - `sudo apt update`
@@ -152,7 +150,7 @@
 - [改写历史，永久删除git库的物理文件 ](https://my.oschina.net/jfinal/blog/215624?fromerr=ZTZ6c38X)
 ********************************
 ## 【git初始化配置】 
-```
+```sh
 	git config --global user.name " "
 	git config --global user.email " "
 	git config --global color.ui  auto 
@@ -178,27 +176,27 @@
     - 通过 用户名/仓库名 #编号 来指定仓库的指定Issue
 - 【将Bash和GitHub绑定起来】：
     - 1.在GItHub上设置SSH key， 有一个即可
-    - 2.$ssh-keygen -t rsa -C "Kuangchengping@outlook.com" 生成一个具有指定邮箱的rsa密钥对,然后复制到平台上
+    - 2.$ssh-keygen -t rsa -C "xxx@outlook.com" 生成一个具有指定邮箱的rsa密钥对,然后复制到平台上
     - 3.设置密钥对密码. 当然为了偷懒就不设置,不然每次提交都要输入....
     - 4.测试SSH连接  $ssh -T git@github.com 输入 密钥对 密码
         - 询问将github的ip加入已知列表中 选择yes
 
 ### Github上fork别人项目的操作
 
-#### 合并对方最新代码
+**合并对方最新代码**
 > 1.首先fork一个项目, 然后clone自己所属的该项目下来,假设原作者A自己为B  
 > 2.进入项目目录,添加原作者项目的URL到该项目的远程分支列表中 `git add remote A A_URL`  
 > 3.fetch源到本地 `git fetch A`  
 > 4.合并两个分支代码 `git merge --no-ff A/master`  
 > 5.push即可  
 
-
-
 ********************
-### 【.gitingnore文件】
+### .gitingnore文件
+> [Github: gitignore](https://github.com/github/gitignore) | 一行是一个配置, 是独占一行的
+
 - 使用 `#` 注释一行
 - `test.txt`  忽略该文件
-- `*.html`  忽略所有HTML文件
+- `*.html`  忽略所有HTML后缀文件
 - `*[o/a]`  忽略所有o和a后缀的文件
 - `!foo.html`  不忽略该文件
 
@@ -216,7 +214,6 @@
     .metadata/
     .classpath
     .project
-    Servers/
 ```
 ********************
 ### 终端中显示当前分支
@@ -225,7 +222,7 @@
 - `wget https://raw.githubusercontent.com/git/git/master/contrib/completion/git-prompt.sh -O ~/.git-prompt.sh` 下载脚本
 - `chmod +x ~/.git-prompt.sh` 赋予可执行权限
 - 在 .bash_alases文件中添加
-```sh
+```conf
     lightgreen='\[\033[1;32m\]'
     lightcyan='\[\033[1;36m\]'
     lightpurple='\[\033[1;35m\]'
@@ -238,7 +235,6 @@
     }
     PROMPT_COMMAND="set_bash_prompt; $PROMPT_COMMAND"
 ```
-
 ********************
 ### 命令的自动补全
 > [git自动补全脚本GitHub地址](https://github.com/git/git/tree/master/contrib/completion)
@@ -302,10 +298,10 @@
 - 或者直接改配置文件，省的每次输这么多 `git config http.sslVerify false`
 
 #### 【使用SSH登录GitServer】
-- TODO 
+- [ ] 实践一下
 
 *********************
-## 【基础命令解释】 
+## 基础命令概述
 - `git touch file1 file2 ` 新建三个文件
 - `echo "  ">>file1 ` 修改文件file1
 - `git rm 文件名 ` ： 删除文件至缓存区
@@ -332,7 +328,7 @@
 ```
 
 **************************
-## 【reset命令常用方式】
+## reset使用方式
 ### 1.回滚add操作
 ```
 	edit  (1)
