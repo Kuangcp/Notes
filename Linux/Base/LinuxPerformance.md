@@ -36,7 +36,7 @@
             - [chroot](#chroot)
         - [关机重启](#关机重启)
 
-`目录 end` |_2018-06-25_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
+`目录 end` |_2018-06-27_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
 ****************************************
 # Linux 性能分析和管理
 ## 常用工具
@@ -251,7 +251,7 @@
 - 还能发送信号 `fuser -v -k /home/kuang/sdk` 就把占用该文件夹的进程全部杀掉了(如果是ssh登录的服务器,当前目录就是这个的话, 就直接下线了)
 
 #### ps
-> [参考博客: ps命令输出](http://www.cnblogs.com/lidabo/p/5505610.html)
+> [参考博客: ps命令输出](http://www.cnblogs.com/lidabo/p/5505610.html) `输出的信息解释`
 
 - 直接运行 `ps` 就会显示当前会话中的进程
 - `ps aux` 显示系统中所有进程的状态信息 `可根据需要自由组合`

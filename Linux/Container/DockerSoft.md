@@ -1,7 +1,8 @@
 `目录 start`
  
 - [使用Docker安装软件](#使用docker安装软件)
-    - [个人相关镜像](#个人相关镜像)
+    - [个人镜像](#个人镜像)
+    - [常用镜像](#常用镜像)
 - [系统](#系统)
     - [Ubuntu-ssh](#ubuntu-ssh)
     - [alpine-ssh](#alpine-ssh)
@@ -32,7 +33,7 @@
 # 使用Docker安装软件
 > [如何创建尽可能小的Docker容器教程](http://www.open-open.com/lib/view/open1419760974078.html)
 
-## 个人相关镜像
+## 个人镜像
 `百度云`
 - 配置好SSH服务器的 alpine 3.6  
     - [docker hub地址](https://hub.docker.com/r/mythkuang/alpine-ssh/) | 百度镜像源: `hub.baidubce.com/mythos/alpine-ssh:1.0` 
@@ -47,6 +48,9 @@
     - protobuf 的 Ubuntu 的 2.5版本 `hub.baidubce.com/mythos/protoc:2.5`
     - protobuf 的 Alpine 的 3.5.1版本 `hub.baidubce.com/mythos/protoc-alpine:3.5.1`
 
+## 常用镜像
+- jdk
+    - `frolvlad/alpine-oraclejdk8   slim`
 ***********************************
 # 系统
 ## Ubuntu-ssh
@@ -121,11 +125,16 @@ TODO  日后更新, Dockerfile现在还有bug
 ## flow.ci
 - [flow.ci](https://github.com/flowci/docker) 可以学习compose
 
+******************
 ## Jenkins
-- `sudo docker pull jenkins` 下拉镜像
+> [DockerHub : official ](https://hub.docker.com/_/jenkins/) | [长期支持版](https://hub.docker.com/r/jenkins/jenkins/)[长期支持版文档](https://github.com/jenkinsci/docker/blob/master/README.md)
+
+- `sudo docker pull jenkins` 下拉镜像(600M+) `jenkins:alpine` 更小点(200M+)
 - `sudo docker run --name myjenkins -p 8080:8080 -p 50000:50000 -v /home/kcp/docker/jenkins:/var/jenkins_home jenkins` 构建容器
-- 确保目录是开放了权限的 直接 `chmod 777 jenkins` 了事
-- 然后就是正常的容器的启动关闭了
+- 确保目录是开放了权限的, `chmod 777 jenkins` 最简单直接
+- 容器启动后, 第一次访问需要初始化, 之后就是正常的容器的启动关闭了
+
+> 分析可知基础镜像是 openjdk
 
 ****************************
 # 工具

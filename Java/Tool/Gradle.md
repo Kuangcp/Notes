@@ -49,7 +49,7 @@
     - [Jenkin 使用](#jenkin-使用)
         - [下载安装和配置](#下载安装和配置)
 
-`目录 end` |_2018-06-21_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
+`目录 end` |_2018-06-27_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
 ****************************************
 
 # Gradle
@@ -233,12 +233,12 @@ ext {
 > 一般默认内容为 `rootProject.name = ''`
 
 ### Gradle多模块的构建
-> [完整示例 JavaBase](https://github.com/Kuangcp/JavaBase)`统一依赖管理多模块的构建`
+> [完整示例 JavaBase](https://github.com/Kuangcp/JavaBase)`统一配置依赖, 管理多模块` 
 
 _setting.gradle_
 ```groovy
     rootProject.name = 'JavaBase'
-    include('java-io')
+    include('java-io', 'java-test')
 ```
 _父项目的build.gradle_
 ```groovy
@@ -256,7 +256,16 @@ allprojects {
     }
 }
 ```
+_如果要添加一个项目也简单_
+1. 直接新建一个目录 test
+1. 目录下新建空的文件 build.gradle
+1. 在根项目的 setting.gradle 中的include 加入 test (可以和文件夹不同名, build.gradle配置下就行了, 建议同名)
+1. gradle build 整个项目, 就完成了
+1. 最后就是手动的新建项目结构
+
 ***************
+
+以下是以往的经验, 存在错误: 
 _目录结构_
 - RedisClient
     - Core
@@ -270,6 +279,7 @@ _目录结构_
 - [有关多模块的构建详情参考这里](https://github.com/Kuangcp/GradleIntegrationMultipleModules)
 - [参考更为规范的多项目构建](https://github.com/someok/gradle-multi-project-example)
     - 依赖另一个模块的代码 `compile project(":redis_core")` 
+
 
 ********************************
 ## Gradle进阶知识
@@ -480,7 +490,7 @@ task makeReleaseVersion(type:ReleaseVersionTask){
 > 凡是依赖于本地环境的测试，使用完就注释Test注解，还有那些会CRUD，影响到数据的测试方法也是
 > 以防以后线上测试通不过 打包失败, 
 
-- 也可以跳过测试 `gradle build -x test`
+- 跳过测试 `gradle build -x test`
 
 
 ## 单元测试

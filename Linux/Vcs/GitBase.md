@@ -37,7 +37,7 @@
         - [SVN](#svn)
     - [repos的使用](#repos的使用)
 
-`目录 end` |_2018-06-26_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
+`目录 end` |_2018-06-27_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
 ****************************************
 # Git基础
 > Git is a free and open source distributed version control system designed to handle everything from small to very large projects with speed and efficiency. --[git-scm.com](https://git-scm.com/)
@@ -193,7 +193,8 @@
     - 这几个都是可以的,最后那个简单, 还能将别的分支一起推上去
 
 #### log
-> 更多说明 查看 `git help log`
+> 更多说明 查看 `git help log` | [官网文档](https://www.git-scm.com/docs/git-log)
+
 - `-p` 显示每次提交的内容差异 `git log -p -2` 仅显示最近两次提交的差异
 - `--stat` 查看提交对仓库修改的总览
 - `---pretty=[online/short/full/fuller/format]` 使用预定义格式显示
@@ -205,6 +206,14 @@
 - `git log --after='2016-03-23 9:20' --before='2017-05-10 12:00' ` 输出指定日期的日志
 - `git shortlog` 按字母顺序输出每个人的日志 加上`--numbered` 参数就是按提交数排序
 
+**彩色输出**
+```sh
+alias glogc="git log --graph --pretty=format:'%Cred%h%Creset %Cgreen%ad%Creset | %C(bold cyan)<%an>%Creset %C(yellow)%d%Creset %s ' --abbrev-commit --date=short" # 彩色输出
+alias gloga='git log --oneline --decorate --graph --all' # 简短彩色输出
+alias glo='git log --oneline --decorate' # 最简单
+alias glol='git log --graph --pretty='\''%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset'\'
+alias glola='git log --graph --pretty='\''%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset'\'' --all'
+```
 ##### 对比两个分支的差异
 > [参考博客](http://blog.csdn.net/u011240877/article/details/52586664)
 

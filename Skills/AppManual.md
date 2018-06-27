@@ -48,6 +48,7 @@
         - [FireFox](#firefox)
             - [开发版本](#开发版本)
             - [必备插件](#必备插件)
+            - [配置](#配置)
         - [seamonkey](#seamonkey)
         - [Chrome](#chrome)
             - [主题](#主题)
@@ -381,6 +382,14 @@ CMD编辑器
 - `围脖是个好图床哟` 方便的图床,但是要登录微博
 - `滴答清单` 全平台可使用
 
+#### 配置
+> 主要是 about:config 
+
+1. 此地址使用了一个通常用于网络浏览以外的端口 
+    1. 地址栏 : `about:config` 
+    1. 右键新建字符串 `network.security.ports.banned.override` 
+    1. 输入值 81,88,98 也可以是 6000-6005, 省事就 0-65535(不建议)
+*********************
 ### seamonkey
 > Mozilla基金会另一个项目 [seamonkey](https://www.seamonkey-project.org/) 亮点在于内置IRC
 
