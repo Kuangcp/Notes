@@ -26,6 +26,8 @@
         - [textadept](#textadept)
             - [快捷键](#快捷键)
         - [Sublime](#sublime)
+            - [快捷键](#快捷键)
+            - [crack](#crack)
         - [VSCode](#vscode)
             - [快捷键](#快捷键)
             - [代码片段](#代码片段)
@@ -59,7 +61,7 @@
     - [安全工具](#安全工具)
         - [gpg](#gpg)
 
-`目录 end` |_2018-06-27_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
+`目录 end` |_2018-07-06_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
 ****************************************
 # 软件使用记事
 ## 【包管理】
@@ -173,7 +175,7 @@ _批量修改_
 > 简洁的编辑器，可配置挺多，打开速度快
 
 ### textadept
-> 基于前者进行开发，十分简洁，有着和sublime的外观和速度，没有他的功能强大但也没有他的烦心bug！
+> 基于前者进行开发，十分简洁，有着和sublime的外观和速度，没有他的功能强大但也没有他的烦心bug！ 但是自己定制时难度有点大
 > [官方手册](https://foicica.com/textadept/manual.html)
 
 - Github 地址[textadept](https://github.com/rgieseke/textadept/)
@@ -195,15 +197,24 @@ _个人配置_
 **********************************
 ### Sublime 
 - 如果出现小bug，就直接删除 ～.config 下的 sublime文件夹注意注册证书拷出来
-- 还是挺好的，小巧，但是中文硬伤 用来阅读代码比较合适
 - 中文不兼容解决方法： 3143版本号下：
     - 搜索安装插件 ChineseLocalizations 就能汉化 
     - 修改配置文件 添加`"font_face": "DeJaVu Sans Mono",` 就解决了字体错位的问题
     - 保存为项目来切换管理更为方便
-- [参考博客](http://www.cnblogs.com/hollow/p/6496469.html) | [3143码](https://gitee.com/kcp1104/codes/89xfugn5dwoyr23vchikb54)
 - 主题安装 Boxy Theme 以及  A File Icon 就能切换多种主题了 [参考博客](https://www.zhihu.com/question/46266742)
-- [sublime的常用快捷键](http://www.cnblogs.com/kristen-zou/p/7641158.html)
 - [配置C/C++开发环境](http://www.cnblogs.com/flipped/p/5836002.html)
+
+**关闭自动检查升级**
+- setting 中 "update_check":false
+#### 快捷键
+> [参考博客: Sublime Text 3 快捷键](http://www.cnblogs.com/roadone/p/7745641.html)
+> [sublime的常用快捷键](http://www.cnblogs.com/kristen-zou/p/7641158.html)
+
+#### crack
+> [3143码](https://gitee.com/kcp1104/codes/89xfugn5dwoyr23vchikb54#sublime-3143-Key)
+
+- [参考博客](http://www.cnblogs.com/hollow/p/6496469.html)
+- [3143 1](https://fatesinger.com/100121) | [3143 2](https://fatesinger.com/100227) [3176](https://fatesinger.com/100237) 
 
 ************************************
 ### VSCode

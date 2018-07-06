@@ -33,7 +33,7 @@
         - [系统日志](#系统日志)
         - [应用日志](#应用日志)
     - [在Linux上操作压缩文件的命令](#在linux上操作压缩文件的命令)
-        - [tar 归档 打包](#tar-归档-打包)
+        - [tar归档](#tar归档)
         - [tar归档后压缩](#tar归档后压缩)
         - [rar](#rar)
         - [zip](#zip)
@@ -45,7 +45,7 @@
             - [查看发行版](#查看发行版)
             - [查看系统所有用户信息](#查看系统所有用户信息)
 
-`目录 end` |_2018-06-22_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
+`目录 end` |_2018-07-06_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
 ****************************************
 # 【文件管理】
 > Linux中认为万物皆文件
@@ -297,8 +297,8 @@ _mv_
 > 参数 命令 文件
 
 - `参数`
-    - -n 直接在控制台输出的操作的结果，源文件不变 
-    - -i 在源文件中进行修改
+    - `-n` 直接在控制台输出的操作的结果，源文件不变 
+    - `-i` 在源文件中进行修改
 - `命令`
     - p 打印 `sed -n Np 文件名`
     - a 新增 在下一行
@@ -371,7 +371,7 @@ _mv_
 ## 在Linux上操作压缩文件的命令
 > Linux默认自带ZIP压缩，最大支持4GB压缩，RAR的压缩比大于4GB.
 
-### tar 归档 打包
+### tar归档
 
 _tar_
 `这五个是独立的命令，压缩解压都要用到其中一个，可以和别的命令连用但只能用其中一个。`
@@ -410,28 +410,27 @@ _tar_
 ********************
 ### tar归档后压缩
 - tar -cvf a.tar *.txt
-    - z tar.gz
-    - j tar.bz2
-    - Z tar.Z
-    - J tar.xz
-- `tar -cvf jpg.tar *.jpg` //将所有jpg打包成 jpg.tar
-- `tar -czf jpg.tar.gz *.jpg `  //将所有jpg打包成jpg.tar后 生成gzip压缩的包，命名为jpg.tar.gz
-- `tar -cjf jpg.tar.bz2 *.jpg `//将所有jpg打包成jpg.tar后 生成bzip2压缩的包，命名为jpg.tar.bz2
-- `tar -cZf jpg.tar.Z *.jpg ` //将所有jpg打包成jpg.tar后 生成umcompress压缩的包，命名为jpg.tar.Z
+    1. `-czf` tar.gz
+    1. `-cjf` tar.bz2
+    1. `-cZf` tar.Z
+    1. `-cJf` tar.xz
 
 _解压_
-- `tar -xvf file.tar` //解压 tar包
-- `tar -xzvf file.tar.gz` //解压tar.gz
-- `tar -xjvf file.tar.bz2`   //解压 tar.bz2
-- `tar -xZvf file.tar.Z `  //解压tar.Z
+- `tar -xvf file.tar`      // 解压 tar
+- `tar -xzvf file.tar.gz`  // 解压 tar.gz
+- `tar -xjvf file.tar.bz2` // 解压 tar.bz2
+- `tar -xZvf file.tar.Z `  // 解压 tar.Z
 
+****************
 ### rar
 _压缩_
-- `rar a jpg.rar *.jpg` //rar格式的压缩
+- `rar a jpg.rar *.jpg`    // rar格式的压缩
 
 _解压_
-- `unrar e file.rar` //解压rar
+- `unrar x file.rar`       // 解压 rar
+    - `e` 不保留目录结构,平铺解压
 
+**************
 ### zip
 _压缩_
 - `zip images.zip *.jpg` //zip格式的压缩
@@ -452,6 +451,7 @@ _解压_
     - -l 不解压,查看所有文件 
     - -O 指定编码
 
+*******************
 ### 7Z
 > 安装 apt install p7zip-full 或者 p7zip 
 > man 7z 查看帮助文档  
@@ -465,18 +465,20 @@ _解压_
 - 7z x file
     - -o 路径
 - [ ] 7z命令的 学习使用
+
+***************
 ### 总结
-```
-    *.tar 用 tar -xvf 解压
-    *.gz 用 gzip -d或者gunzip 解压
-    *.tar.gz和*.tgz 用 tar -xzf 解压
-    *.bz2 用 bzip2 -d或者用bunzip2 解压
-    *.tar.bz2用tar -xjf 解压
-    *.Z 用 uncompress 解压
-    *.tar.Z 用tar -xZf 解压
-    *.rar 用 unrar e 解压
-    *.zip 用 unzip 解压
-```
+| 文件名模式 | 解压方式 |
+|:----|:----|
+| *.tar |  用 tar -xvf 解压 |
+| *.gz|用 gzip -d或者gunzip 解压|
+|*.tar.gz和*.tgz| 用 tar -xzf 解压|
+|*.bz2|用 bzip2 -d或者用bunzip2 解压|
+|*.tar.bz2|用tar -xjf 解压|
+|*.Z|用 uncompress 解压|
+|*.tar.Z| 用tar -xZf 解压|
+|*.rar|用 unrar e 解压|
+|*.zip|用 unzip 解压|
 
 **************************
 ## 常用文件

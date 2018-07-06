@@ -30,7 +30,7 @@
         - [jq](#jq)
         - [shyaml](#shyaml)
 
-`目录 end` |_2018-06-21_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
+`目录 end` |_2018-07-06_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
 ****************************************
 # 学习Shell
 > 首先语法不像别的语言可读性好，比如Python，然后方言众多，学习比Python2，3还恶心  
@@ -51,10 +51,26 @@
 > [linux shell dash&bash](http://blog.csdn.net/zengqiang1/article/details/61916697)
 
 ## Tips
+> 常用代码片段 
 
-- 获取当前shell脚本的绝对路径 `basepath=$(cd `dirname $0`; pwd)`
-- 正则：`expr match "$i" ".*变更"`
-- 命令嵌套 只要在 命令中用 两个反引号 `` 将子命令包住即可
+1. 获取当前shell脚本的绝对路径 ```basepath=$(cd `dirname $0`; pwd)```
+1. 命令嵌套 只要在 命令中用 两个反引号 `` 将子命令包住即可
+1. 检查当前用户为Root用户
+```sh
+  if [ $(id -u) != "0" ]; then
+      printf $red"Please use root to run this script\n"$end
+      exit 1
+  fi
+```
+1. kill 脚本进程
+```sh
+  id=`ps -ef | grep "WithRedis.py" | grep -v "grep" | grep -v "\-d" | awk '{print $2}'`
+  if [ "${id}1" = "1" ];then
+      printf $red"not exist background running script\n"$end
+  else
+      kill -9 $id
+  fi
+```
 
 *******************
 ## 执行

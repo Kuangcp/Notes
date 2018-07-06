@@ -9,7 +9,7 @@
     - [JSON](#json)
         - [Jackson](#jackson)
 
-`目录 end` |_2018-06-21_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
+`目录 end` |_2018-07-06_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
 ****************************************
 # 配置文件
 
@@ -27,6 +27,7 @@ timeOut=10
 > 可阅读性强, 结构清晰, 但是太繁杂, 信息承载比重小
 
 ## YAML
+> yaml is ain't markup language
 
 - [入门博客](http://blog.csdn.net/liukuan73/article/details/78031693)
 - [Python使用YML](http://www.cnblogs.com/c9com/archive/2013/01/05/2845539.html)
