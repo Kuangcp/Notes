@@ -2,9 +2,7 @@
  
 - [Gradle](#gradle)
     - [书籍](#书籍)
-    - [前言](#前言)
     - [发行版本列表](#发行版本列表)
-    - [优缺点](#优缺点)
     - [安装使用](#安装使用)
         - [SDKMAN方式](#sdkman方式)
         - [Chocolate](#chocolate)
@@ -12,7 +10,6 @@
         - [守护进程](#守护进程)
         - [Docker安装](#docker安装)
     - [配置镜像源](#配置镜像源)
-        - [阿里云](#阿里云)
     - [build.gradle](#buildgradle)
         - [dependency](#dependency)
         - [常用插件](#常用插件)
@@ -49,26 +46,16 @@
     - [Jenkin 使用](#jenkin-使用)
         - [下载安装和配置](#下载安装和配置)
 
-`目录 end` |_2018-06-27_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
+`目录 end` |_2018-07-07_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
 ****************************************
 
 # Gradle
 > [官方 guide](https://gradle.org/guides/?q=JVM)
 
-## 书籍
-> [Gradle in Action 中译](http://www.jb51.net/books/527811.html) `如果没有一点Groovy基础, 阅读自定义Task等一些高自定义的地方还是比较困惑`
+**个人看法**
+> [参考: Gradle在大型Java项目上的应用](www.infoq.com/cn/articles/Gradle-application-in-large-Java-projects)
 
-## 前言
-> [Gradle在大型Java项目上的应用](www.infoq.com/cn/articles/Gradle-application-in-large-Java-projects)
-
-## 发行版本列表
-> [官方网址](http://services.gradle.org/) 有各个版本的下载以及版本发行说明
-> 似乎版本越高，内存占用越大， 从4.7降级回了4.2
-
-_4.6_
-> [发行说明](https://docs.gradle.org/4.6/release-notes.html?_ga=2.214014495.909415461.1519975016-498617321.1519975016#dependency-constraints-for-transitive-dependencies) | `支持Junit5, 还有解决依赖冲突的一种声明式方式`
-
-## 优缺点
+**优缺点**
 > 相关博客 [Gradle大吐槽](https://blog.csdn.net/MCL529/article/details/79341706)
 
 > 优点  
@@ -80,7 +67,19 @@ _4.6_
 1. 内存占用巨大,存在内存泄露问题, 以至于在IDEA上不敢使用自动导入, 不然每动一下build.gradle 就会卡半天, 8G内存都不够用!!
 2. 编译速度慢, 如果和Maven进行对比, 编译速度和资源占用确实慢
 3. 
+
 ********************
+## 书籍
+> [Gradle in Action 中译](http://www.jb51.net/books/527811.html) `如果没有一点Groovy基础, 阅读自定义Task等一些高自定义的地方还是比较困惑`
+
+## 发行版本列表
+> [官方网址](http://services.gradle.org/) 有各个版本的下载以及版本发行说明
+> 似乎版本越高，内存占用越大， 从4.7降级回了4.2
+
+_4.6_
+> [发行说明](https://docs.gradle.org/4.6/release-notes.html?_ga=2.214014495.909415461.1519975016-498617321.1519975016#dependency-constraints-for-transitive-dependencies) | `支持Junit5, 还有解决依赖冲突的一种声明式方式`
+
+
 ## 安装使用
 > 和maven使用同一个本地库 只要加上 M2_HOME 环境变量即可, 值和 MAVEN_HOME 一样, 并没有用
 
@@ -119,7 +118,7 @@ _4.6_
 
 ****************************
 ## 配置镜像源
-### 阿里云
+**阿里云**
 > [参考博客: 配置Gradle的镜像为阿里云镜像](https://tvzr.com/change-the-mirror-of-gradle-to-aliyun.html)
 
 当前项目的 _build.gradle_
@@ -523,33 +522,33 @@ task makeReleaseVersion(type:ReleaseVersionTask){
 
 _build.gradle_
 ```groovy
-apply plugin: 'docker'
-buildscript {
-    ext {
-        springBootVersion = '2.0.1.RELEASE'
-    }
-    repositories {
-        mavenCentral()
-    }
-    dependencies {
-        classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
-        classpath('se.transmode.gradle:gradle-docker:1.2')
-    }
-}
-task buildDocker(type: Docker, dependsOn: build) {
-    //设置自动上传的话，命名就不能乱取了，仓库名/镜像名：tag
-//    push = true
-    // 跳过测试
-    test.enabled=false
-    applicationName = jar.baseName
-    dockerfile = file('src/main/docker/Dockerfile')
-    doFirst {
-        copy {
-            from war
-            into stageDir
+    apply plugin: 'docker'
+    buildscript {
+        ext {
+            springBootVersion = '2.0.1.RELEASE'
+        }
+        repositories {
+            mavenCentral()
+        }
+        dependencies {
+            classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
+            classpath('se.transmode.gradle:gradle-docker:1.2')
         }
     }
-}
+    task buildDocker(type: Docker, dependsOn: build) {
+        //设置自动上传的话，命名就不能乱取了，仓库名/镜像名：tag
+    //    push = true
+        // 跳过测试
+        test.enabled=false
+        applicationName = jar.baseName
+        dockerfile = file('src/main/docker/Dockerfile')
+        doFirst {
+            copy {
+                from war
+                into stageDir
+            }
+        }
+    }
 ```
 _Dockerfile_
 ```dockerfile

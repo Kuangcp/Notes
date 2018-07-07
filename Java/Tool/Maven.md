@@ -46,7 +46,7 @@
                 - [Gradle](#gradle)
                 - [Maven](#maven)
 
-`目录 end` |_2018-06-20_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
+`目录 end` |_2018-07-07_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
 ****************************************
 # Maven
 > [官网](https://maven.apache.org/) | [官网手册](https://maven.apache.org/guides/) | [http://takari.io/ 在线练习网](http://takari.io/)
@@ -221,33 +221,10 @@ mvn install:install-file
 > [Maven实战（九）——打包的技巧](http://www.infoq.com/cn/news/2011/06/xxb-maven-9-package)
 > [Maven打包成可执行jar](https://blog.csdn.net/u013177446/article/details/53944424)
 > [参考博客: 使用MAVEN打包可执行的jar包](https://www.jianshu.com/p/afb79650b606)
-```xml
-<plugin>
-    <groupId>org.apache.maven.plugins</groupId>
-    <artifactId>maven-shade-plugin</artifactId>
-    <version>2.3</version>
-    <executions>
-        <execution>
-            <phase>package</phase>
-            <goals>
-                <goal>shade</goal>
-            </goals>
-            <configuration>
-                <transformers>
-                    <transformer implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">
-                        <mainClass>mainClassPath</mainClass>
-                    </transformer>
-                </transformers>
-                <artifactSet>
-                </artifactSet>
-                <!--<outputFile>${project.build.directory}/${project.artifactId}-${project.version}-fat.jar</outputFile>-->
-            </configuration>
-        </execution>
-    </executions>
-</plugin>
-```
-- 多个main的情况下运行指定的main 
-    - `java -cp example03-1.0-SNAPSHOT.jar cn.zhouyafeng.itchat4j.main.TulingRobot`
+
+1. [Demo项目](https://gitee.com/kcp1104/maven-package-execute-jar)
+    - 多个main的情况下运行指定的main 
+        - `java -cp example03-1.0-SNAPSHOT.jar cn.zhouyafeng.itchat4j.main.TulingRobot`
 
 ### 3.2.war包当jar使用
 - Springboot项目能够做到, 其实就是Main方法, 然后配置了一个Servlet的加载类就可以当war用了

@@ -44,8 +44,6 @@
     - [【IDE】](#ide)
         - [Idea](#idea)
         - [eclipse](#eclipse)
-        - [MyEclipse](#myeclipse)
-            - [【debug】](#debug)
     - [【浏览器】](#浏览器)
         - [FireFox](#firefox)
             - [开发版本](#开发版本)
@@ -61,7 +59,7 @@
     - [安全工具](#安全工具)
         - [gpg](#gpg)
 
-`目录 end` |_2018-07-06_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
+`目录 end` |_2018-07-07_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
 ****************************************
 # 软件使用记事
 ## 【包管理】
@@ -192,10 +190,12 @@ _个人配置_
 ```
 
 #### 快捷键
-> Alt Shift 列编辑
+> Alt Shift 列编辑  
 
-**********************************
+
 ### Sublime 
+> [常用配置](https://segmentfault.com/a/1190000002596724)
+
 - 如果出现小bug，就直接删除 ～.config 下的 sublime文件夹注意注册证书拷出来
 - 中文不兼容解决方法： 3143版本号下：
     - 搜索安装插件 ChineseLocalizations 就能汉化 
@@ -214,21 +214,30 @@ _个人配置_
 > [3143码](https://gitee.com/kcp1104/codes/89xfugn5dwoyr23vchikb54#sublime-3143-Key)
 
 - [参考博客](http://www.cnblogs.com/hollow/p/6496469.html)
-- [3143 1](https://fatesinger.com/100121) | [3143 2](https://fatesinger.com/100227) [3176](https://fatesinger.com/100237) 
+- [3143 1](https://fatesinger.com/100121) | [3143 2](https://fatesinger.com/100227) | [3176](https://fatesinger.com/100237) 
 
 ************************************
-### VSCode
-> [官网](https://code.visualstudio.com/) 码笔记，码Python 比较方便，目录树，预览，整合终端
 
-- 其所有自定义配置都缓存在此 `~/.config/Code/User/`
+### VSCode
+> [官网](https://code.visualstudio.com/) 码笔记，码Python 比较方便，目录树，预览，整合终端  | [中文手册](https://jeasonstudio.gitbooks.io/vscode-cn-doc/)
+
+1. 其所有用户自定义配置都缓存在此目录 `~/.config/Code/User/`
+1. vscode 书写 markdown [官方文档](https://code.visualstudio.com/Docs/languages/markdown)
+
 
 #### 快捷键
 > [快捷键官方PDF说明](https://code.visualstudio.com/shortcuts/keyboard-shortcuts-linux.pdf)
-- 快速打开文件 `Ctrl P` 弹出的输入框键入 `>` 作为前缀 就是执行一些命令了
-- 命令模式 `Ctrl Shift P` 
-- 设置用户快捷键 `Ctrl+K Ctrl+S`  Keyboard Shortcuts
+
+- `Ctrl P` 快速命令
+    - 直接输入文件名就是搜文件
+    - `>` 作为前缀则等同 `Ctrl Shift P`
+    - `#` 作为前缀则等同 `Ctrl T`
+- `Ctrl T ` 搜索打开所有Markdown文件的所有标题
+- `Ctrl Shift P ` 执行命令
+- `Ctrl+K Ctrl+S` 设置用户快捷键  Keyboard Shortcuts
 - `Ctrl Shift C `在当前打开的文件夹下打开系统默认终端
-- `Ctrl T` 快速搜索打开所有Markdown 的标题 
+- `Ctrl Space` 智能提示 变量,代码片段...
+- `Alt Shift` 列编辑
 
 - [使用vscocd进行python开发](http://www.cnblogs.com/bloglkl/archive/2016/08/23/5797805.html)
 
@@ -238,25 +247,28 @@ _个人配置_
 
 - [参考博客: VS Code 折腾记 - (6) 基本配置/快捷键定义/代码片段的录入（snippet）](https://juejin.im/post/58aeeca22f301e006cf65c8b)
 - [巧用VScode“用户代码片段”来提高效率](https://www.dogxu.cn/2017/06/10/vscode-snippet/)
-    - 然后自定义一下insert snippet的快捷键,就很方便使用了 个人配置为`Ctrl L`
+    - 然后自定义一下insert snippet的快捷键,就很方便使用了 个人配置为`Ctrl L`, **其实 直接 Ctrl Space 直接提示就行了**
     - 注意,每次修改片段配置文件,都需要重启Vscode才会生效最新修改...emm
 
-_列编辑_
-- Alt Shift 加上鼠标即可列编辑
-
 #### 插件
-vscode-icons
-Beautify
-Auto Rename Tag
-Todo Tree 
+**美化**
+1. vscode-icons
+1. Material Icon Theme
+1. One Dark Pro
 
-1.23版本之后还要安装 Chinese language package 也就是汉化包
+**工具**
+1. Beautify
+1. Auto Rename Tag
+1. Todo Tree 
 
-************
+***********************************
+
 ### Gedit
 > [Github地址](https://github.com/GNOME/gedit)
 
-- 安装markdown预览插件 `早已经停止维护了，还是只用来简单的查看修改文件就好了`
+- 安装markdown预览插件 `该插件早已经停止维护了，还是只用来简单的查看修改文件就好了`
+
+******************************
 
 ### 小书匠
 - [在线使用](http://markdown.xiaoshujiang.com/) | [github地址](https://github.com/suziwen/markdownxiaoshujiang)
@@ -277,10 +289,13 @@ Todo Tree
     - 重做    `Ctrl + Y`
 
 ************
+
 ### Moeditor|Typora|CuteMarkEd 
 > [Moeditor](https://github.com/Moeditor/Moeditor)
 
-- 书写单个md文件方便，美观，没有目录树是硬伤
+- 书写单个md文件方便，美观，没有目录树侧栏是硬伤, 但是typora 导出很强大
+
+*****************************
 
 ### Cmd
 > [官网](https://www.zybuluo.com/cmd/)
@@ -318,20 +333,6 @@ CMD编辑器
 * 但是奇怪的是 访问不了Tomcat主页即：localhost:8080 所以也就不能管理Tomcat 查看运行状态
 
 资源下载 archive.eclipse.org/eclipse/downloads/ 
-*********************
-### MyEclipse
-* 创建一个工作平台后，首先把编码改成UTF-8，自动更新去掉，加上独立的Tomcat
-* 从github上下载项目，直接打开，注意编码就行，注意项目要将使用的额外的JAR包直接拖到
-* webRoot下的lib下，再build 进PATH里，这样就不会出现JAR包缺失的问题了
-* 在2016中的JSP使用gbk编码，js和css文件引入时要注明UTF-8编码
- * 使用export导出时带上resource选项，这样的话注释才会导出去了
- * 自动添加注释在 Java>Code Style>Code Templates下
-
-#### 【debug】 
-- 【F5】  Step into 跳入
-- 【F6】  Step over 下一步
-- 【F7】  Step return 跳出
-- 【F8】  resume 恢复
 
 *********************************************
 ## 【浏览器】
@@ -359,39 +360,39 @@ CMD编辑器
 > [插件开发相关](https://github.com/Kuangcp/LearnWebExtension)
 
 - `Saka Key` 快捷键神器 大幅度脱离鼠标 [官方文档](https://key.saka.io/)
-    - 浏览器默认: 脱离输入框焦点 _Esc_ | 切换标签 _ctrl-Tab_  _shift-ctrl-Tab_ | 关闭标签 _ctrl-w_
-    - 滑动: 下滑 `d/j` 上滑 `s/k `
+    1. 浏览器默认: 脱离输入框焦点 _Esc_ | 切换标签 _ctrl-Tab_  _shift-ctrl-Tab_ | 关闭标签 _ctrl-w_
+    1. 滑动: 下滑 `d/j` 上滑 `s/k `
         - 上下滑半屏幕 `Shift d/s` | 上下滑全屏 `Shift j/k` 
         - 滑到底/顶 `Shift-g` / `gg`
         - 滑左/右 `alt-s or alt-k` / `alt-d or alt-j`
-    - 缩放: 放大/缩小 `z/shift-z` | 重置大小 `shift-alt-z`
-    - 前进/后退: `cc/vv` | 跳上级URL `uu` | 跳URL域名 `u shift-u`
-    - 标签页: 新建 `t` | 恢复关闭 `shift t` | 复制 `b`
+    1. 缩放: 放大/缩小 `z/shift-z` | 重置大小 `shift-alt-z`
+    1. 前进/后退: `cc/vv` | 跳上级URL `uu` | 跳URL域名 `u shift-u`
+    1. 标签页: 新建 `t` | 恢复关闭 `shift t` | 复制 `b`
         - 关闭 `xx` | 关闭其他 `x shift x` | 关闭左边 `x [` | 关闭右边 `x ]`
         - 刷新 `rr` | 刷新全部标签 `r shift r` | 深度刷新 `shift r shift r `
         - 切换: 左右 `q/w` 或者 `[/]` | 第一个/最后一个 `1/0`或者`shift-q`/`shift-w or 0 `
         - 移动: 左右 `i/o` 或者 `shift-[` / `shift-]` 第一个/最后一个 `shift-i/shift-o` 或者 `alt-[/alt-]`
         - 静音: `m` 静音所有标签 `shift-m`
-    - 窗口: 新建 `n` | 新建隐私 `shift n`
-    - 页面上所有页面链接 `ff` _神操作_ [文档](https://key.saka.io/tutorial/clicking_and_link_hints)
-    - 传递快捷键即绕过插件的事件监听 `;` [文档](https://key.saka.io/tutorial/pass_keys)
+    1. 窗口: 新建 `n` | 新建隐私 `shift n`
+    1. 页面上所有页面链接 `ff` _神操作_ [文档](https://key.saka.io/tutorial/clicking_and_link_hints)
+    1. 传递快捷键即绕过插件的事件监听 `;` [文档](https://key.saka.io/tutorial/pass_keys)
         - 比如要在网页上敲英文的时候,就需要每次都要输入分号,才能绕过监听, 真是麻烦
-    - [剪贴板](https://key.saka.io/tutorial/clipboard): 复制当前页面的URL:`yy`
+    1. [剪贴板](https://key.saka.io/tutorial/clipboard): 复制当前页面的URL:`yy`
         - 当前标签页打开链接 `yf`| 后台打开 `yb` | 新窗口打开 `yn` | 隐私窗口 `y shift-n`
 
-- `FoxyTab`
-- `New Tab Tools` 新建标签页的自定义工具 有一定bug
-- `cliget` 能将下载中的任务转化为 curl wget命令 牛
-- `eolinker` 接口测试工具
-- `Simple Tab Groups` 58版本有bug
-- `rester` rest客户端工具
-- `Download all Images`下载图片
-- `octotree` github 目录查看
-- `Web Developer` 各种Web调试开发工具
-- `One Tab` tab归组,十分好用
-- `Remove Cookies Button`
-- `围脖是个好图床哟` 方便的图床,但是要登录微博
-- `滴答清单` 全平台可使用
+1. `FoxyTab`
+1. `New Tab Tools` 新建标签页的自定义工具 有一定bug
+1. `cliget` 能将下载中的任务转化为 curl wget命令 牛
+1. `eolinker` 接口测试工具
+1. `Simple Tab Groups` 58版本有bug
+1. `rester` rest客户端工具
+1. `Download all Images`下载图片
+1. `octotree` github 目录查看
+1. `Web Developer` 各种Web调试开发工具
+1. `One Tab` tab归组,十分好用
+1. `Remove Cookies Button`
+1. `围脖是个好图床哟` 方便的图床,但是要登录微博
+1. `滴答清单` 全平台可使用
 
 #### 配置
 > 主要是 about:config 
@@ -406,14 +407,14 @@ CMD编辑器
 
 ****************************************
 ### Chrome
-- 的确快，就是内存占用高, 还有就是主题被墙,fq才能配置好
+- 的确快,几乎没有各种兼容和诡异问题，就是内存占用高, 还有就是主题被墙,fq才能配置好
 
 #### 主题
-- Aero Trans Brushed Metal Theme
-- Material Dark
-- Morpheon Dark
-- 炭黑+銀色金屬
-- Modern Flat
+1. Aero Trans Brushed Metal Theme
+1. Material Dark
+1. Morpheon Dark
+1. 炭黑+銀色金屬
+1. Modern Flat
 ************
 
 ### Vivaldi

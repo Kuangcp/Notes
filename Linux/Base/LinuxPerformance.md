@@ -1,53 +1,50 @@
 `目录 start`
  
 - [Linux 性能分析和管理](#linux-性能分析和管理)
-    - [常用工具](#常用工具)
-        - [运行状况信息](#运行状况信息)
-        - [内存情况](#内存情况)
-        - [性能监测](#性能监测)
-            - [vmstat](#vmstat)
-            - [mpstat](#mpstat)
-            - [top](#top)
-            - [htop](#htop)
-            - [iostat](#iostat)
-        - [进程管理](#进程管理)
-            - [pidof](#pidof)
-            - [sar](#sar)
-            - [lsof](#lsof)
-                - [删除文件的问题，利用lsof解决](#删除文件的问题利用lsof解决)
-            - [fuser](#fuser)
-            - [ps](#ps)
-            - [kill](#kill)
-            - [killall](#killall)
-            - [作业控制](#作业控制)
-            - [trap](#trap)
-        - [后台运行](#后台运行)
-            - [nohup](#nohup)
-            - [disown](#disown)
-            - [setid](#setid)
-            - [screen](#screen)
-        - [系统管理](#系统管理)
-            - [uname](#uname)
-            - [who](#who)
-            - [service](#service)
-            - [chkconfig](#chkconfig)
-            - [dmidecode](#dmidecode)
-            - [lsmod](#lsmod)
-            - [chroot](#chroot)
-        - [关机重启](#关机重启)
+    - [运行状况信息](#运行状况信息)
+    - [内存情况](#内存情况)
+    - [性能监测](#性能监测)
+        - [vmstat](#vmstat)
+        - [mpstat](#mpstat)
+        - [top](#top)
+        - [htop](#htop)
+        - [iostat](#iostat)
+    - [进程管理](#进程管理)
+        - [pidof](#pidof)
+        - [sar](#sar)
+        - [lsof](#lsof)
+        - [fuser](#fuser)
+        - [ps](#ps)
+        - [kill](#kill)
+        - [killall](#killall)
+        - [作业控制](#作业控制)
+        - [trap](#trap)
+    - [后台运行](#后台运行)
+        - [nohup](#nohup)
+        - [disown](#disown)
+        - [setid](#setid)
+        - [screen](#screen)
+    - [系统管理](#系统管理)
+        - [uname](#uname)
+        - [who](#who)
+        - [service](#service)
+        - [chkconfig](#chkconfig)
+        - [dmidecode](#dmidecode)
+        - [lsmod](#lsmod)
+        - [chroot](#chroot)
+    - [关机重启](#关机重启)
 
-`目录 end` |_2018-06-27_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
+`目录 end` |_2018-07-07_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
 ****************************************
 # Linux 性能分析和管理
-## 常用工具
-### 运行状况信息
+## 运行状况信息
 - `uptime ` 执行结果
     - 系统当前时间 主机已运行时间 用户连接数 1,5,15,分钟的系统平均负载
 - `cat /proc/loadavg ` 执行结果
     - 1,5,15分钟的平均负载 当前运行的进程/总进程 最近一个启动的进程的id
 - 表示单核:平均负载0.7以下是安全的,大于就需要优化了,多核的情况就是 0.7*N(核心数)
 
-### 内存情况
+## 内存情况
 > 对于Linux来说, 都是有内存就去分配, 然后就用, 只有内存不够了才会去回收, 对于服务器来说, 交换内存会带来性能的明显下降 一般是不会配置的
 
 空闲内存, 已使用, buffers, cached 共同构成了整个内存容量
@@ -68,8 +65,8 @@
     - 交换文件的设置在[Linux_file](/Linux/linux_file.md)中,
     - 分区的设置就不多讲了, 主要是fdisk
 
-### 性能监测
-#### vmstat
+## 性能监测
+### vmstat
 - 最初是设计为查看虚拟内存的,现在用于性能监测
 - `vmstat 1 4` 输出信息,间隔1s 共4次 特别注意第一行数据是指开机以来的平均值,后面的才是当前值
     - 输出内容:
@@ -110,7 +107,7 @@
 - ![p135](https://raw.githubusercontent.com/Kuangcp/ImageRepos/master/Tech/Book/Linux_DaPeng_mingling100/p135.jpg)
 - ![p136](https://raw.githubusercontent.com/Kuangcp/ImageRepos/master/Tech/Book/Linux_DaPeng_mingling100/p136.jpg)
 
-#### mpstat
+### mpstat
 > 对多处理器的统计, 和iostat同属于systat软件下,可能需要手动安装
 
 - `mpstat -P ALL 1 1` 查询所有CPU信息,后两个参数是和vmstat一样的,如果只看0号CPU 就ALL改成0即可
@@ -128,13 +125,13 @@
     - `-I ` 值可选, SUM CPU ALL 
     - 分别表示 CPU总的中断数, 展示每一个CPU的中断数 SUM和CPU数据综合展示
 
-#### top
+### top
 > 感觉 htop 就是基于这个开发的, 使用htop更简单些, 这个强大但是好多参数
 
-#### htop
+### htop
 > 其中主要是看 RES 真实内存, VIRT 是虚拟内存(也就是进程和线程以为自己能拥有的内存大小)
 
-#### iostat
+### iostat
 - 执行`iostat`输出信息:
     - 第一部分, 系统信息
     - 第二部分, CPU信息
@@ -155,17 +152,17 @@
 - ![p164](https://raw.githubusercontent.com/Kuangcp/ImageRepos/master/Tech/Book/Linux_DaPeng_mingling100/p164.jpg)
 
 
-### 进程管理
+## 进程管理
 > 按程序名字找到id `ps -ef | grep "$NAME" | grep -v "grep" | awk '{print $2}'`
 
-#### pidof
+### pidof
 - 查询ssh服务启动的进程的pid `pidof sshd`
 - 找出shell脚本执行的pid, `pidof -x 脚本文件名`
 - -s 只显示一个pid, 有的软件会有多个进程,就有多个pid
 - 忽略指定的pid `-o pid`
 - ![p167](https://raw.githubusercontent.com/Kuangcp/ImageRepos/master/Tech/Book/Linux_DaPeng_mingling100/p167.jpg)
 
-#### sar
+### sar
 - 默认持续执行除非Ctrl C退出,指定参数后就和vmstat一样 `sar 2 3` 
 - 输出到指定文件中: `-o filename` 注意这个不是文本结构,是特殊的结构化方式, 查看需要 `sar -f filename`
 - 多核的支持:`sar -P ALL 1 1 ` 与mpstat 大致相同
@@ -181,14 +178,15 @@
 - ![p175](https://raw.githubusercontent.com/Kuangcp/ImageRepos/master/Tech/Book/Linux_DaPeng_mingling100/p175.jpg)
 - ![p176](https://raw.githubusercontent.com/Kuangcp/ImageRepos/master/Tech/Book/Linux_DaPeng_mingling100/p176.jpg)
 
-#### lsof
+### lsof
 > 这个命令使用时最好是 sudo或者root用户, 不然就会警告说显示信息不完全
 
-- 查看打开标准错误输出的进程 `lsof -d 3`
-- 查看打开某文件或目录(不关注子文件夹)的进程 `lsof filename/catalog `
-- 通过进程查询打开的文件 `ps aux | grep mysqld` `sudo lsof -p pid` 就能看到mysql服务打开的文件了
-- 查看某一用户打开的文件 `sudo lsof -u username`
-- 输出结果:
+1. `lsof -d 3` 查看打开标准错误输出的进程 (标准错误输出是3)
+1. `lsof file/dir` 查看打开某文件或目录(不关注子文件夹)的进程 
+1. 通过进程查询打开的文件
+    1. `ps aux | grep mysqld`  得到pid
+    1. `sudo lsof -p pid` 查看mysql服务打开的文件了
+1. `sudo lsof -u username` 查看某一用户打开的文件 输出结果说明:
     - Command 进程名过长会简略显示, PID 进程标识符, USER 进程拥有者
     - FD 一般是文件描述符:
         - 两类: 一.文件描述符,二.描述文件特征的标识
@@ -206,13 +204,13 @@
         - FIFO 先进先出 队列, IPv4/Ipv6 网际协议套接字
     - DEVICE 磁盘的名称, SIZE 文件大小, NODE 索引节点(文件在磁盘上的标识), NAME 打开文件的确切名字
 
-- 端口占用查询 ` lsof -i [4/6] [protocol][@hostname|hostaddr] [:service|port] `
+1. 端口占用查询 ` lsof -i [4/6] [protocol][@hostname|hostaddr] [:service|port] `
     - 4/6 IPv4/Ipv6
     - protocol TCP/UDP 缺省TCP
     - :service 服务名 可以多个 逗号分隔
     - :port 端口 可以多个 逗号分隔
 
-##### 删除文件的问题，利用lsof解决
+**删除文件的问题，利用lsof解决**
 - 创建一个0填充的1g文件 `dd if=/dev/zero bs=1024 count=1000000 of=./1gb.file` 
     - 就能看到硬盘的显著变化 `df -h`
 - 然后写一个简单的程序一直占用他, 例如 python
@@ -221,7 +219,7 @@
 - `lsof | grep 1gb.file`或者 `lsof 1gb.file` 就能找到占用该文件的进程了,杀掉就能真正的删除文件了
     - 可以试试两个多个Python脚本同时占用, 那么要将进程全部杀掉,才有用
 
-#### fuser
+### fuser
 > 和lsof功能差不多,但是这个是符合posix标准的命令 POSIX:可移植操作系统接口
 
 - `fuser -v /home/kuang/sdk` 列出正在打开这个目录的进程(和lsof一样不关注子文件夹)
@@ -231,26 +229,26 @@
         - c 作为当前目录使用， e 作为可执行对象使用， r 作为根目录使用， s 作为共享库或其他装载对象 使用
         - m 作为映射文件或共享库使用，  f 打开文件, 默认不显示， F 打开文件,用于写操作 默认不显示
 `常用选项`
-- -a 显示所有命令行中指定的文件，默认情况下被访问的文件才会被显示。 
-- -c 和-m一样，用于POSIX兼容。 
-- -k 杀掉访问文件的进程。如果没有指定-signal就会发送SIGKILL信号。 
-- -i 杀掉进程之前询问用户，如果没有-k这个选项会被忽略。 
-- -l 列出所有已知的信号名称。 
-- -m name 指定一个挂载文件系统上的文件或者被挂载的块设备（名称name）。这样所有访问这个文件或者文件系统的进程都会被列出来。如果指定的是一个目录会自动转换成"name/",并使用所有挂载在那个目录下面的文件系统。 
-- -n space 指定一个不同的命名空间(space).这里支持不同的空间文件(文件名，此处默认)、tcp(本地tcp端口)、udp(本地udp端口)。对于端口， 可以指定端口号或者名称，如果不会引起歧义那么可以使用简单表示的形式，例如：name/space (即形如:80/tcp之类的表示)。 
-- -s 静默模式，这时候-u,-v会被忽略。-a不能和-s一起使用。 
-- -signal 使用指定的信号，而不是用SIGKILL来杀掉进程。可以通过名称或者号码来表示信号(例如-HUP,-1),这个选项要和-k一起使用，否则会被忽略。 
-- -u 在每个PID后面添加进程拥有者的用户名称。 
-- -v 详细模式。输出似ps命令的输出，包含PID,USER,COMMAND等许多域,如果是内核访问的那么PID为kernel. -V 输出版本号。 
-- -4 使用IPV4套接字,不能和-6一起应用，只在-n的tcp和udp的命名存在时不被忽略。 
-- -6 使用IPV6套接字,不能和-4一起应用，只在-n的tcp和udp的命名存在时不被忽略。 
-- - 重置所有的选项，把信号设置为SIGKILL. 
+1. -a 显示所有命令行中指定的文件，默认情况下被访问的文件才会被显示。 
+1. -c 和-m一样，用于POSIX兼容。 
+1. -k 杀掉访问文件的进程。如果没有指定-signal就会发送SIGKILL信号。 
+1. -i 杀掉进程之前询问用户，如果没有-k这个选项会被忽略。 
+1. -l 列出所有已知的信号名称。 
+1. -m name 指定一个挂载文件系统上的文件或者被挂载的块设备（名称name）。这样所有访问这个文件或者文件系统的进程都会被列出来。如果指定的是一个目录会自动转换成"name/",并使用所有挂载在那个目录下面的文件系统。 
+1. -n space 指定一个不同的命名空间(space).这里支持不同的空间文件(文件名，此处默认)、tcp(本地tcp端口)、udp(本地udp端口)。对于端口， 可以指定端口号或者名称，如果不会引起歧义那么可以使用简单表示的形式，例如：name/space (即形如:80/tcp之类的表示)。 
+1. -s 静默模式，这时候-u,-v会被忽略。-a不能和-s一起使用。 
+1. -signal 使用指定的信号，而不是用SIGKILL来杀掉进程。可以通过名称或者号码来表示信号(例如-HUP,-1),这个选项要和-k一起使用，否则会被忽略。 
+1. -u 在每个PID后面添加进程拥有者的用户名称。 
+1. -v 详细模式。输出似ps命令的输出，包含PID,USER,COMMAND等许多域,如果是内核访问的那么PID为kernel. -V 输出版本号。 
+1. -4 使用IPV4套接字,不能和-6一起应用，只在-n的tcp和udp的命名存在时不被忽略。 
+1. -6 使用IPV6套接字,不能和-4一起应用，只在-n的tcp和udp的命名存在时不被忽略。 
+1. `-` 重置所有的选项，把信号设置为SIGKILL. 
 
 - 查询占用端口 `fuser -v -n tcp 22` 或者 `fuser -v 22/tcp` fuser中含三种协议, file默认, tcp, udp
     - 得到一些进程信息 `fuser -v -n tcp 0`
 - 还能发送信号 `fuser -v -k /home/kuang/sdk` 就把占用该文件夹的进程全部杀掉了(如果是ssh登录的服务器,当前目录就是这个的话, 就直接下线了)
 
-#### ps
+### ps
 > [参考博客: ps命令输出](http://www.cnblogs.com/lidabo/p/5505610.html) `输出的信息解释`
 
 - 直接运行 `ps` 就会显示当前会话中的进程
@@ -298,7 +296,7 @@
         - e 显示所有进程, j 任务格式来显示进程, H 显示数状结构 
 
 
-#### kill
+### kill
 - `kill -l` 或者 `trap -l` 显示kill可以向进程发送的信号, kill是通过发送信号让进程自己决定做什么，而不是kill去做什么
     - 那有恶意的屏蔽 所有信号的进程怎么办
 
@@ -340,14 +338,14 @@
 - 终结后台作业:
     - 命令格式: `kill -信号 %作业号`   编号就是运行`jobs`后方括号内编号
 
-#### killall
+### killall
 > 通过名字来发送信号,其他和kill是一致的
 
 - 杀掉指定名字 不需要sudo `killall -9 name`
 
 - [ ] 确定使用注意事项, 避免误杀
 
-#### 作业控制
+### 作业控制
 > 在Linux中, 作业是由一个或多个进程构成的, 作业控制就是对作业的行为进行控制, 前后台的切换, 终止等操作
 
 - 常用的操作:
@@ -378,7 +376,7 @@
 
 > 也就是说,这个匹配也是只能匹配一个作业,不能通配
 
-#### trap
+### trap
 > 捕捉信号并响应， 格式：trap "commands" signal-list
 > 动态读取并更新配置文件
 > 定期清除临时文件
@@ -396,12 +394,12 @@
     - `trap INT` 恢复
 
 *************
-### 后台运行
+## 后台运行
 - 运行的命令不因 用户注销，网络中断等因素而中断
     - 让进程对hup信号免疫 nohup disown
     - 让进程在新的会话中运行 setid screen
 
-#### nohup
+### nohup
 - 在命令前 加上hohup 
     - 忽略所有hup信号 并将标准输出重定向到 nohup.out 若当前目录不可写，就会重定向到 $HOME/nohup.out 
 - nohup 命令>result.txt 2>&1
@@ -415,14 +413,14 @@
     - 126 指定命令能找到，但是不能调用
     - 127 找不到指定命令
 
-#### disown
+### disown
 - 执行中的命令，Ctrl+Z 暂停到后台去了 jobs查看作业编号
 - `disown %作业号` 就能在后台运行，且屏蔽hup信号了
 
-#### setid
+### setid
 - 命令前 `setid 命令` 就会让进程在一个新的会话运行
 
-#### screen
+### screen
 > 在一个真实的终端运行多个伪终端，认为是开启了多个新会话 [命令参考](http://man.linuxde.net/screen)
 
 - 会话恢复
@@ -433,11 +431,13 @@
     - 还提供了类似滚动条的功能，可以查看窗口状况的历史记录。窗口还可以被分区和命名，还可以监视后台窗口的活动。 会话共享 Screen可以让一个或多个用户从不同终端多次登录一个会话，
     - 并共享会话的所有特性（比如可以看到完全相同的输出）。它同时提供了窗口访问权限的机制，可以对窗口进行密码保护。
 
+- [ ] 更改为表格
+
 ```
-    -A 　将所有的视窗都调整为目前终端机的大小。 
+    -A 　          将所有的视窗都调整为目前终端机的大小。 
     -d <作业名称> 　将指定的screen作业离线。 
-    -h <行数> 　指定视窗的缓冲区行数。 
-    -m 　即使目前已在作业中的screen作业，仍强制建立新的screen作业。 
+    -h <行数> 　   指定视窗的缓冲区行数。 
+    -m 　          即使目前已在作业中的screen作业，仍强制建立新的screen作业。 
     -r <作业名称> 　恢复离线的screen作业。 
     -R 　先试图恢复离线的作业。若找不到离线的作业，即建立新的screen作业。 
     -s 　指定建立新视窗时，所要执行的shell。 
@@ -449,8 +449,8 @@
 ```
 
 ****************
-### 系统管理
-#### uname 
+## 系统管理
+### uname 
 - `uname -a` 输出所有信息
     - -s 内核名称
     - -n 主机名称
@@ -461,28 +461,28 @@
     - -i 硬件平台名称
     - -o 操作系统名称
 
-#### who
+### who
 - `who` 和 `w`  who是按照不同tty来显示信息
 - `whoami` 查看有效用户，就是当前会话的拥有者
 - `who am i` 查看系统的真实用户，例如普通用户 su 切换用户，这条命令就显示了真正的用户，而不是su切换的用户
     - who 后面有俩参数就行了都能达到相同的效果
 - `groups` 查看所有组
 
-#### service
+### service
 - `service 服务名 status/start/stop/restart`
     - `cd /etc/init.d/ && ls -F` 查看所有service掌控的服务名
 - `which service` 结果显示这是个脚本 `service 服务名 stop` 等价于 `/etc/init.d/服务名 stop`
 
-#### chkconfig
+### chkconfig
 > 掌控等级制度 LSB 
 
-#### dmidecode 
+### dmidecode 
 > 输出机器的 BIOS CPU 内存等硬件信息 （DMTF DMI）
 
 - 运行 `dmidecode -t `就会提示你后接类别
 
-#### lsmod
-#### chroot
+### lsmod
+### chroot
 > change root directory 更改root目录 最古老的容器技术
 
 - `mkdir 目录 ` 复制相关目录过来，就能把系统迁移过来了
@@ -491,7 +491,7 @@
 - ![p264](https://raw.githubusercontent.com/Kuangcp/ImageRepos/master/Tech/Book/Linux_DaPeng_mingling100/p264.jpg)
 - ![p265](https://raw.githubusercontent.com/Kuangcp/ImageRepos/master/Tech/Book/Linux_DaPeng_mingling100/p265.jpg)
 
-### 关机重启
+## 关机重启
 - shutdown reboot halt poweroff init
 
 |命令|作用|

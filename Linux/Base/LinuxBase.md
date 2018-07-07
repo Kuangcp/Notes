@@ -27,7 +27,7 @@
         - [修改主机名](#修改主机名)
     - [终端快捷键](#终端快捷键)
 
-`目录 end` |_2018-06-27_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
+`目录 end` |_2018-07-07_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
 ****************************************
 # Linux系统
 > 只是记录了debian系的Linux, 不过也是大同小异
@@ -144,13 +144,13 @@
 ### 时间管理
 > [同步Linux服务器时间](http://www.cnblogs.com/chenmh/p/5485829.html)
 
-_同步时间_
+**同步时间**
 1. 修改时区 `cp -y /usr/share/zoneinfo/Asia/Shanghai /etc/localtime`
 2. 同步时间 `/usr/sbin/ntpdate -u cn.pool.ntp.org`
 3. 查看硬件时间 `hwclock -r`
     - 如果不同步就需要写入时间 `hwclock -w` _因为系统重启是参考硬件时间的_
 
-_自动同步时间_
+**自动同步时间**
 1. 配置开机自动校验 `vim /etc/rc.d/rc.local`
     - `/usr/sbin/ntpdate -u cn.pool.ntp.org> /dev/null 2>&1; /sbin/hwclock -w`
 2. 配置定时任务 `crontab -e`

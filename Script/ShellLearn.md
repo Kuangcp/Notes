@@ -30,7 +30,7 @@
         - [jq](#jq)
         - [shyaml](#shyaml)
 
-`目录 end` |_2018-07-06_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
+`目录 end` |_2018-07-07_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
 ****************************************
 # 学习Shell
 > 首先语法不像别的语言可读性好，比如Python，然后方言众多，学习比Python2，3还恶心  
@@ -94,9 +94,9 @@ echo  printf
   red='\033[0;31m'
   green='\033[0;32m'
   yellow='\033[0;33m'
-  yarn='\033[0;34m'
+  blue='\033[0;34m'
   purple='\033[0;35m'
-  blue='\033[0;36m'
+  cyan='\033[0;36m'
   white='\033[0;37m'
   default='\033[0m'
 ```
@@ -144,11 +144,11 @@ echo  printf
 _判断变量是否为数值_
 > [博客 判断是否为数值](http://www.jb51.net/article/67468.htm)
 ```sh
-if [ "$1" -gt 0 ] 2>/dev/null ;then 
-  echo "$1 is number." 
-else 
-  echo 'no.' 
-fi 
+  if [ "$1" -gt 0 ] 2>/dev/null ;then 
+    echo "$1 is number." 
+  else 
+    echo 'no.' 
+  fi 
 ```
 ************
 ### 字符串
@@ -187,7 +187,6 @@ fi
       echo $x
   }
 ```
-
 _求长_ `${#var}`
 
 _字符串拆分成数组_
@@ -195,7 +194,6 @@ _字符串拆分成数组_
 
 1. 如果是空格分割的字符串
     - 直接 `for element in $target`
-
 
 ************************
 ### 数组

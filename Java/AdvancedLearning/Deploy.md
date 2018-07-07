@@ -1,17 +1,20 @@
 `目录 start`
  
 - [部署运行](#部署运行)
-    - [原始打包](#原始打包)
-        - [命令打包出一个可执行jar](#命令打包出一个可执行jar)
-        - [传统部署](#传统部署)
-        - [Docker部署](#docker部署)
+    - [可执行jar](#可执行jar)
+        - [用命令手动打包](#用命令手动打包)
+        - [Maven](#maven)
+        - [Gradle](#gradle)
+    - [打包war](#打包war)
+    - [Docker部署](#docker部署)
 
-`目录 end` |_2018-06-15_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
+`目录 end` |_2018-07-07_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
 ****************************************
 # 部署运行
+> 传统的可执行jar, war 以及Docker镜像
 
-## 原始打包
-### 命令打包出一个可执行jar
+## 可执行jar
+### 用命令手动打包
 > [关于MANIFEST.MF文件](https://blog.csdn.net/baileyfu/article/details/1808023)`这个文件很重要, 如果自己手动配置就需要编写该文件`
 _MANIFEST.MF示例_
 ```yml
@@ -30,8 +33,23 @@ _MANIFEST.MF示例_
 - 运行jar包中指定的类`java -cp clojure.jar clojure.main`
     - 多个jar运行 `java -cp jline-0.9.94.jar;clojure.jar jline.ConsoleRunner clojure.main`
     - [参考博客: 用java –jar 命令运行Jar包](https://blog.csdn.net/paullinjie/article/details/53188943)
-### 传统部署
-> 将生成的war放到tomcat的目录下即可
 
-### Docker部署
+### Maven
+> [Demo项目](https://gitee.com/kcp1104/maven-package-execute-jar) | [详情](/Java/Tool/Maven.md#31打包成可执行jar)
+
+### Gradle
+> 有好几种插件可以实现 1.[shadow插件官网文档](http://imperceptiblethoughts.com/shadow/) 
+
+- [ ] 其他方式
+
+*************************
+
+## 打包war
+> 最终将生成的war放到tomcat的webapps目录下即可
+
+********************
+
+## Docker部署
 > 以一个基础镜像,然后将war放进去构建成一个镜像, 然后推送到服务器上构建容器进行运行
+
+

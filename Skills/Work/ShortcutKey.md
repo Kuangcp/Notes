@@ -4,8 +4,10 @@
     - [操作系统](#操作系统)
         - [公用](#公用)
     - [常用软件](#常用软件)
+        - [IDEA](#idea)
+        - [VSCode](#vscode)
 
-`目录 end` |_2018-04-08_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
+`目录 end` |_2018-07-07_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
 ****************************************
 # 快捷键
 
@@ -18,3 +20,5 @@
 
 ## 常用软件
 
+### IDEA
+### VSCode
