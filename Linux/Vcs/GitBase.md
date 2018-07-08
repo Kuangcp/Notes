@@ -37,7 +37,7 @@
         - [SVN](#svn)
     - [repos的使用](#repos的使用)
 
-`目录 end` |_2018-06-27_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
+`目录 end` |_2018-07-08_| [码云](https://gitee.com/gin9) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
 ****************************************
 # Git基础
 > Git is a free and open source distributed version control system designed to handle everything from small to very large projects with speed and efficiency. --[git-scm.com](https://git-scm.com/)
@@ -150,16 +150,18 @@
     - b) 表示修正了具体的某个bug
 
 #### remote
-- [官方文档](https://git-scm.com/docs/git-remote)
-- `git remote add name URL地址` 添加远程关联仓库 不唯一，可以关联多个一般默认有个origin
-        - `git remote`  可以看到添加的远程URL的名字
-- `git remote set-url name URL地址` 修改关联仓库 预定默认的叫origin
-- `git remote rm URL` 删除和远程文档库的关系
-- `git remote rename origin myth` 更改远程文档库的名称
-- `git ls-remote` 输出所有关联的remote库 还会输出库的分支
-- `git remote -v` 输出push和pull的URL
-- `git push 远程URL的名称 --delete 分支名称` 删除远程库某分支
-- `git remote show origin` 查看远程分支的状态和信息
+> [官方文档](https://git-scm.com/docs/git-remote)
+
+1. **常用参数**
+    - `add name URL地址` 添加远程关联仓库 不唯一，可以关联多个, 一般默认是origin
+    - `set-url name URL地址` 修改关联仓库的URL
+    - `rm URL` 删除和远程文档库的关系
+    - `rename origin myth` 更改远程文档库的名称
+    - `show origin` 查看远程分支的状态和信息
+
+1. 删除远程库某分支`git push 远程URL的名称 --delete 分支名称` 
+1. `git ls-remote` 显示本地仓库跟踪的那个远程仓库
+1. `git remote -v` 查看关联远程仓库的详情(push和pull的地址)
 
 *******
 - [删除，重命名远程分支](http://zengrong.net/post/1746.htm)
@@ -188,6 +190,8 @@
     > 例如改成500m  `git config http.postBuffer 524288000`
 
 - 提交本地所有分支 `git push --all` pull时同理
+- 删除远程分支 `git push 远程URL的名称 --delete 分支名称`
+
 - _第一次与远程建立连接_
     - `git push -u origin master ` | `git push --set-uptream master` | `git push -all` 
     - 这几个都是可以的,最后那个简单, 还能将别的分支一起推上去

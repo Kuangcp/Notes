@@ -32,6 +32,7 @@
             - [快捷键](#快捷键)
             - [代码片段](#代码片段)
             - [插件](#插件)
+            - [实践](#实践)
         - [Gedit](#gedit)
         - [小书匠](#小书匠)
         - [Moeditor|Typora|CuteMarkEd](#moeditor|typora|cutemarked)
@@ -59,7 +60,7 @@
     - [安全工具](#安全工具)
         - [gpg](#gpg)
 
-`目录 end` |_2018-07-07_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
+`目录 end` |_2018-07-08_| [码云](https://gitee.com/gin9) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
 ****************************************
 # 软件使用记事
 ## 【包管理】
@@ -219,6 +220,7 @@ _个人配置_
 ************************************
 
 ### VSCode
+
 > [官网](https://code.visualstudio.com/) 码笔记，码Python 比较方便，目录树，预览，整合终端  | [中文手册](https://jeasonstudio.gitbooks.io/vscode-cn-doc/)
 
 1. 其所有用户自定义配置都缓存在此目录 `~/.config/Code/User/`
@@ -236,10 +238,11 @@ _个人配置_
 - `Ctrl Shift P ` 执行命令
 - `Ctrl+K Ctrl+S` 设置用户快捷键  Keyboard Shortcuts
 - `Ctrl Shift C `在当前打开的文件夹下打开系统默认终端
-- `Ctrl Space` 智能提示 变量,代码片段...
+- `Ctrl Space` 智能提示 变量,代码片段... **需要注意这个快捷键和Windows以及Linux上切换输入法快捷键有冲突,修改即可**
 - `Alt Shift` 列编辑
 
-- [使用vscocd进行python开发](http://www.cnblogs.com/bloglkl/archive/2016/08/23/5797805.html)
+> [参考博客: 快捷键大全](https://blog.csdn.net/crper/article/details/54099319)
+> [参考博客: VS Code 使用小技巧](https://zhuanlan.zhihu.com/p/22880087)
 
 #### 代码片段
 > 配置地点 文件-首选项-用户代码片段 可以新建一个代码片段  
@@ -260,6 +263,10 @@ _个人配置_
 1. Beautify
 1. Auto Rename Tag
 1. Todo Tree 
+
+#### 实践
+> [参考博客: 用Git在Visual Studio Code内进行版本控制[指导]](https://sdk.cn/news/4041)
+> [参考博客: 使用vscocd进行python开发 ](http://www.cnblogs.com/bloglkl/archive/2016/08/23/5797805.html)
 
 ***********************************
 

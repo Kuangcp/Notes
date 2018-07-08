@@ -17,7 +17,7 @@
         - [显卡问题](#显卡问题)
         - [双硬盘的折腾记录](#双硬盘的折腾记录)
 
-`目录 end` |_2018-04-08_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
+`目录 end` |_2018-07-08_| [码云](https://gitee.com/gin9) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
 ****************************************
 # 配置Linux
 > 修改Hostname需要重启, 设置java默认需要重启, docker添加用户组需要重启

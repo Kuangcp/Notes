@@ -12,7 +12,7 @@
     - [NGINX 扩展状态码](#nginx-扩展状态码)
     - [七牛扩展状态码](#七牛扩展状态码)
 
-`目录 end` |_2018-04-26_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
+`目录 end` |_2018-07-08_| [码云](https://gitee.com/gin9) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
 ****************************************
 # HTTP状态码大全
 > [HTTP状态码](http://www.runoob.com/http/http-status-codes.html)

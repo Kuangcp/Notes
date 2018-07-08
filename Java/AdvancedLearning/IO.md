@@ -7,10 +7,12 @@
         - [Java1.7 AIO](#java17-aio)
     - [关于普通IO的文件操作](#关于普通io的文件操作)
         - [读取配置文件](#读取配置文件)
+            - [可执行jar读取外部配置文件](#可执行jar读取外部配置文件)
+            - [Maven项目](#maven项目)
     - [NIO](#nio)
         - [Buffer](#buffer)
 
-`目录 end` |_2018-04-08_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
+`目录 end` |_2018-07-08_| [码云](https://gitee.com/gin9) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
 ****************************************
 # IO操作的学习
 > - [个人代码:IO流的相关学习](https://github.com/Kuangcp/JavaBase/tree/master/src/main/java/com/io)

@@ -2,7 +2,7 @@
  
 - [为何要将Netty放在Tomcat下](#为何要将netty放在tomcat下)
 
-`目录 end` |_2018-06-23_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
+`目录 end` |_2018-07-08_| [码云](https://gitee.com/gin9) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
 ****************************************
 # 为何要将Netty放在Tomcat下
 > 2018-03-19 17:41:28

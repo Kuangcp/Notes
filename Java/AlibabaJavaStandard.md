@@ -26,7 +26,7 @@
 - [安全规约](#安全规约)
     - [注意](#注意)
 
-`目录 end` |_2018-06-26_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
+`目录 end` |_2018-07-08_| [码云](https://gitee.com/gin9) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
 ****************************************
 # 阿里巴巴Java开发手册终极版
 

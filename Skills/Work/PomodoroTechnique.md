@@ -6,7 +6,7 @@
         - [细节](#细节)
     - [相关软件](#相关软件)
 
-`目录 end` |_2018-04-08_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
+`目录 end` |_2018-07-08_| [码云](https://gitee.com/gin9) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
 ****************************************
 # 番茄工作法
 > 参考: [知乎:分秒时](https://www.zhihu.com/question/20189826/answer/14283234)  

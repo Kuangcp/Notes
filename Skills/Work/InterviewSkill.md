@@ -4,7 +4,7 @@
     - [铺垫](#铺垫)
     - [简历](#简历)
 
-`目录 end` |_2018-04-08_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
+`目录 end` |_2018-07-08_| [码云](https://gitee.com/gin9) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
 ****************************************
 # 面试技巧
 > [参考博客: 面试的时候问：你的期望薪资多少？怎么谈？](http://blog.csdn.net/Z1XpIYDj9sn/article/details/79049373)

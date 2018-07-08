@@ -10,7 +10,7 @@
         - [插入模式](#插入模式)
         - [命令模式](#命令模式)
 
-`目录 end` |_2018-06-06_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
+`目录 end` |_2018-07-08_| [码云](https://gitee.com/gin9) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
 ****************************************
 # Vim 
 > 学习曲线很高，但是学会熟练使用后就效率很高

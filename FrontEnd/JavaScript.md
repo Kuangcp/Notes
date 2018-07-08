@@ -16,10 +16,11 @@
         - [Jquery](#jquery)
             - [Ajax](#ajax)
             - [form插件](#form插件)
+        - [echarts](#echarts)
     - [资源文件](#资源文件)
         - [图片](#图片)
 
-`目录 end` |_2018-06-10_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
+`目录 end` |_2018-07-08_| [码云](https://gitee.com/gin9) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
 ****************************************
 # JavaScript
 

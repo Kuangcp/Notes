@@ -200,7 +200,6 @@
     * 【 Skills/Work 】
         * [ InterviewSkill ](/Skills/Work/InterviewSkill.md)
         * [ PomodoroTechnique ](/Skills/Work/PomodoroTechnique.md)
-        * [ ShortcutKey ](/Skills/Work/ShortcutKey.md)
         * [ WorkThinking ](/Skills/Work/WorkThinking.md)
     * [ AppManual ](/Skills/AppManual.md)
     * [ CelebrityQuotes ](/Skills/CelebrityQuotes.md)

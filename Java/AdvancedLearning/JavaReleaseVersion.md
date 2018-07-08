@@ -1,13 +1,13 @@
 `目录 start`
  
-- [Java版本更迭](#java版本更迭)
+- [Java主要发行版本](#java主要发行版本)
     - [Java7](#java7)
     - [Java8](#java8)
     - [Java9](#java9)
     - [Java10](#java10)
     - [Java11](#java11)
 
-`目录 end` |_2018-06-20_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
+`目录 end` |_2018-07-08_| [码云](https://gitee.com/gin9) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
 ****************************************
 # Java主要发行版本
 > 粗度列举特性 
