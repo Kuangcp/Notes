@@ -46,7 +46,7 @@
     - [Jenkin 使用](#jenkin-使用)
         - [下载安装和配置](#下载安装和配置)
 
-`目录 end` |_2018-07-08_| [码云](https://gitee.com/gin9) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
+`目录 end` |_2018-07-09_| [码云](https://gitee.com/gin9) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
 ****************************************
 
 # Gradle
@@ -193,7 +193,9 @@ _一个简单示例_
 - maven 
     - `apply plugin: "maven"` 然后就能执行 install等命令了
     - gradle 4.8 用不了 [需要这种方式](https://blog.csdn.net/mxw2552261/article/details/78640338)
-- shadowJar 含依赖进行打包
+
+- shadowJar 含依赖的jar进行打包
+
 - docker 提供Docker操作
     - `apply plugin: 'docker'`
     - buildscript dependencies 中添加`classpath('se.transmode.gradle:gradle-docker:1.2')`
