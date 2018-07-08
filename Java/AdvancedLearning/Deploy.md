@@ -8,7 +8,7 @@
     - [打包war](#打包war)
     - [Docker部署](#docker部署)
 
-`目录 end` |_2018-07-07_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
+`目录 end` |_2018-07-08_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
 ****************************************
 # 部署运行
 > 传统的可执行jar, war 以及Docker镜像
@@ -35,7 +35,7 @@ _MANIFEST.MF示例_
     - [参考博客: 用java –jar 命令运行Jar包](https://blog.csdn.net/paullinjie/article/details/53188943)
 
 ### Maven
-> [Demo项目](https://gitee.com/kcp1104/maven-package-execute-jar) | [详情](/Java/Tool/Maven.md#31打包成可执行jar)
+> [Demo项目](https://gitee.com/gin9/codes/ri4x8cut3awgh0e271lfb54) | [详情](/Java/Tool/Maven.md#31打包成可执行jar)
 
 ### Gradle
 > 有好几种插件可以实现 1.[shadow插件官网文档](http://imperceptiblethoughts.com/shadow/) 

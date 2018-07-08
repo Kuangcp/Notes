@@ -46,7 +46,7 @@
                 - [Gradle](#gradle)
                 - [Maven](#maven)
 
-`目录 end` |_2018-07-07_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
+`目录 end` |_2018-07-08_| [码云](https://gitee.com/kcp1104) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
 ****************************************
 # Maven
 > [官网](https://maven.apache.org/) | [官网手册](https://maven.apache.org/guides/) | [http://takari.io/ 在线练习网](http://takari.io/)
@@ -222,7 +222,7 @@ mvn install:install-file
 > [Maven打包成可执行jar](https://blog.csdn.net/u013177446/article/details/53944424)
 > [参考博客: 使用MAVEN打包可执行的jar包](https://www.jianshu.com/p/afb79650b606)
 
-1. [Demo项目](https://gitee.com/kcp1104/maven-package-execute-jar)
+1. [Demo项目的完整代码片段](https://gitee.com/gin9/codes/ri4x8cut3awgh0e271lfb54)
     - 多个main的情况下运行指定的main 
         - `java -cp example03-1.0-SNAPSHOT.jar cn.zhouyafeng.itchat4j.main.TulingRobot`
 
