@@ -14,13 +14,6 @@
     - [【软件管理】](#软件管理)
         - [安装命令](#安装命令)
     - [安装Linux发行版](#安装linux发行版)
-        - [常见问题](#常见问题)
-            - [终端错误提示音](#终端错误提示音)
-            - [Ubuntu与Windows10时间相差8小时的解决](#ubuntu与windows10时间相差8小时的解决)
-            - [终端开启慢](#终端开启慢)
-            - [命令找不到](#命令找不到)
-            - [Deepin的NVIDIA驱动问题](#deepin的nvidia驱动问题)
-            - [笔记本突然断电导致开机报错](#笔记本突然断电导致开机报错)
     - [【Tips】](#tips)
         - [一行执行多条命令](#一行执行多条命令)
         - [让命令在后台运行](#让命令在后台运行)
@@ -29,7 +22,7 @@
         - [修改主机名](#修改主机名)
     - [终端快捷键](#终端快捷键)
 
-`目录 end` |_2018-07-08_| [码云](https://gitee.com/gin9) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
+`目录 end` |_2018-07-09_| [码云](https://gitee.com/gin9) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
 ****************************************
 # Linux系统
 > 只是记录了debian系的Linux, 不过也是大同小异
@@ -220,41 +213,6 @@ _系统运行级别_
 
 > 新手的话特别注意不要随意用sudo然后更改配置文件，容易导致系统crash（除非你明确的知道这个更改操作的作用）
 
-**********************
-
-### 常见问题
-#### 终端错误提示音
-- 临时关闭：`rmmod pcspkr` 临时开启：`modprobe pcspkr`
-- 编辑 `/etc/inputrc`，找到`#set bell-style none`这一行，去掉前面的注释符号
-
-`下面的方法不敢试`
-- 对于Debian/Ubuntu系统，使用root身份执行：
-    - `sudo echo "blacklist pcspkr" >> /etc/modprobe.d/blacklist`
-- 对于CentOS/Redhat/RHEL/Fedora系统，使用root身份执行：
-    - `echo "alias pcspkr off" >> /etc/modprobe.conf `
-
-#### Ubuntu与Windows10时间相差8小时的解决
-- `timedatectl set-local-rtc true `
-
-
-#### 终端开启慢 
-- 检查 .bashrc 文件 看是否有可疑脚本,
-    -  这次就是因为sdkman的原因导致巨慢,那上次搞得我新建用户,重装系统是什么原因呢?
-
-#### 命令找不到
-- `sudo找不到` 就安装 sudo
-- locale-gen 安装locales 使用`locale-gen --purge`命令进行更新编码
-
-#### Deepin的NVIDIA驱动问题
-- [论坛博客](https://bbs.deepin.org/forum.php?mod=viewthread&tid=132312)
-    - `sudo apt-get install bumblebee-nvidia nvidia-driver nvidia-settings`
-
-#### 笔记本突然断电导致开机报错
-> fsck exited with status code 4
-
-1. 根据报错提示的分区, 进行修复, 由于我的Linux是ext3文件系统
-1. `fsck.ext3 -y /dev/sda9` **分区根据实际情况**
-1. 完成后重启即可
 
 *****************************************************
 ## 【Tips】

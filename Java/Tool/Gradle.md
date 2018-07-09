@@ -14,7 +14,7 @@
         - [dependency](#dependency)
         - [常用插件](#常用插件)
         - [统一依赖管理](#统一依赖管理)
-        - [配置Gradle包管理器 Wrapper](#配置gradle包管理器-wrapper)
+        - [配置Wrapper](#配置wrapper)
     - [setting.gradle](#settinggradle)
         - [Gradle多模块的构建](#gradle多模块的构建)
     - [Gradle进阶知识](#gradle进阶知识)
@@ -203,25 +203,25 @@ _一个简单示例_
 ### 统一依赖管理
 新建一个文件 _dependency.gradle_
 ```groovy
-ext {
-    ver = [
+    ext {
+        ver = [
             junit     : '4.12',
-    ]
-    libs = [
-            "junit"          : "junit:junit:$ver.junit",
-    ]
-}
+        ]
+        libs = [
+            "junit"   : "junit:junit:$ver.junit",
+        ]
+    }
 ```
 - 在 build.gradle 中引入 `apply from: 'dependency.gradle'`
 - 使用依赖时 只需 `compile libs['junit']`即使在子模块中也是如此使用
 
 
-### 配置Gradle包管理器 Wrapper
+### 配置Wrapper
 > 在使用IDE生成项目的时候，可以选择gradle的执行目录，可以选`gradle wrapper` 也可以选自己下载解压的完整包
 > 如果使用的不是这个wrapper，那么别人在下载项目后，运行gradle命令就要先安装gradle，使用wrapper更好
 ```groovy
    task wrapper(type: Wrapper){
-      gradleVersion = '1.7'
+      gradleVersion = '4.8'
       distributionUrl = '限定访问内网的URL'
       distributionPath = '包装器被解压缩放的相对路径'
    }
@@ -243,19 +243,19 @@ _setting.gradle_
 ```
 _父项目的build.gradle_
 ```groovy
-// 避免中文报错, 应该旧版本需要
-[compileJava, compileTestJava, javadoc]*.options*.encoding='UTF-8'
+    // 避免中文报错, 应该旧版本需要
+    [compileJava, compileTestJava, javadoc]*.options*.encoding='UTF-8'
 
-allprojects {
-    apply plugin: 'java'
-    group 'com.github.kuangcp'
-    sourceCompatibility=1.8
-    targetCompatibility=1.8
-    repositories {
-        mavenLocal()
-        mavenCentral()
+    allprojects {
+        apply plugin: 'java'
+        group 'com.github.kuangcp'
+        sourceCompatibility=1.8
+        targetCompatibility=1.8
+        repositories {
+            mavenLocal()
+            mavenCentral()
+        }
     }
-}
 ```
 _如果要添加一个项目也简单_
 1. 直接新建一个目录 test

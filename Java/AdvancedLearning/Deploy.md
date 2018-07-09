@@ -7,6 +7,9 @@
         - [Gradle](#gradle)
     - [打包war](#打包war)
     - [Docker部署](#docker部署)
+        - [手动](#手动)
+        - [Maven](#maven)
+        - [Gradle](#gradle)
 
 `目录 end` |_2018-07-09_| [码云](https://gitee.com/gin9) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
 ****************************************
@@ -25,9 +28,9 @@ _MANIFEST.MF示例_
     Build-Jdk: 1.8.0_152
     Main-Class: com.youaishujuhui.minigame.Main
 ```
-- `javac -d *.java `编译文件
-- `jar -cvf hello.jar com/test/*.*` 打包字节码成jar
-- `jar -cvfm hello.jar mainfest *.*` 打包成可执行jar
+- 编译文件        `javac -d *.java `
+- 打包字节码成jar `jar -cvf hello.jar com/test/*.*` 
+- 打包成可执行jar `jar -cvfm hello.jar mainfest *.*` 
     - 其中：`mainfest` 文本文件： `Main-Class: com.test.Main` 冒号后一定要有空格，文件最后一行一定留空行
 
 - 运行jar包中指定的类`java -cp clojure.jar clojure.main`
@@ -60,6 +63,7 @@ _MANIFEST.MF示例_
 **依赖Jar的项目**
 > 有好几种插件可以实现 1.[shadow插件官网文档](http://imperceptiblethoughts.com/shadow/) 
 
+- [ ] 完善
 
 *************************
 
@@ -70,5 +74,11 @@ _MANIFEST.MF示例_
 
 ## Docker部署
 > 以一个基础镜像,然后将war放进去构建成一个镜像, 然后推送到服务器上构建容器进行运行
+
+### 手动
+
+### Maven
+
+### Gradle
 
 
