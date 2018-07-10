@@ -25,24 +25,26 @@
 
 1. sudo tar -C /usr/local -xzf go1.10.3.linux-amd64.tar.gz
 2. *shrc或者 /etc/profile 中添加
-```
-    export GOROOT=/usr/local/go
-    export GOBIN=$GOROOT/bin
-    export GOPATH=/home/kcp/code/go # workspace
-    export PATH=$PATH:$GOBIN:$GOPATH
+```sh
+export GOROOT=/usr/local/go
+export GOPATH=$HOME/Code/go # workspace
+export GOBIN=$GOPATH/bin # install dir
+export PATH=$PATH:$GOBIN:$GOPATH:$GOROOT/bin
 ```
 > **查看版本** `go version`正常输出go的版本则是配置成功  
 3. 在 /home/kcp/code/go 下 新建 test.go
 ```go
-    package main
-    import "fmt"
-    func main() {
-        fmt.Printf("hello, world\n")
-    }
+package main
+import "fmt"
+func main() {
+    fmt.Printf("hello, world\n")
+}
 ```
 4. go run test.go 或者 go build
 
 ## 环境变量
+> [	关于GOROOT、GOPATH、GOBIN、project目录](https://blog.csdn.net/Alsmile/article/details/48290223)
+> [GOPATH 深度解析 ](https://studygolang.com/articles/3493)
 
 - Go 开发环境依赖于一些操作系统环境变量，你最好在安装 Go 之间就已经设置好他们。如果你使用的是 Windows 的话，你完全不用进行手动设置，Go 将被默认安装在目录 c:/go 下。这里列举几个最为重要的环境变量：
     - `$GOROOT` 表示 Go 在你的电脑上的安装位置，它的值一般都是 $HOME/go，当然，你也可以安装在别的地方。

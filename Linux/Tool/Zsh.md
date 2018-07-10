@@ -55,9 +55,9 @@ _额外安装_
     - `git clone https://github.com/bhilburn/powerlevel9k.git ~/.oh-my-zsh/custom/themes/powerlevel9k`
     - `powerlevel9k/powerlevel9k`
 
-- Bullet Train (桌面在用)
+- Bullet Train (桌面在用) | [Github repo](https://github.com/caiogondim/bullet-train.zsh)
     - Source Code Pro for Powerline + Powerline + Awesonme 的 Bold 字体搭配最合适
-- muse 服务器在使用
+
 - spaceship
     - [地址](https://www.ctolib.com/denysdovhan-spaceship-zsh-theme.html)
 
