@@ -10,7 +10,7 @@
     - [前端](#前端)
     - [Docker](#docker)
 
-`目录 end` |_2018-07-08_| [码云](https://gitee.com/gin9) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
+`目录 end` |_2018-07-10_| [码云](https://gitee.com/gin9) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
 ****************************************
 # 【Book】
 > 在线书籍以及GitBook
@@ -31,6 +31,7 @@
 - [《Go入门指南》](https://github.com/Unknwon/the-way-to-go_ZH_CN)
 - [Learning-Go](https://github.com/mikespook/Learning-Go-zh-cn)
 - [使用Go构建一个WebApplication](https://github.com/astaxie/build-web-application-with-golang)
+- [Go语言圣经（中文版）](https://books.studygolang.com/gopl-zh/)
 
 ## Python
 - [笨方法学Python](http://www.ttlsa.com/docs/learn-python-the-hard-way/)

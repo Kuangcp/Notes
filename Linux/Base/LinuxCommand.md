@@ -10,7 +10,7 @@
         - [定时执行脚本](#定时执行脚本)
 - [实用的工具](#实用的工具)
 
-`目录 end` |_2018-07-08_| [码云](https://gitee.com/gin9) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
+`目录 end` |_2018-07-10_| [码云](https://gitee.com/gin9) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
 ****************************************
 # 系统常用基础命令
 
@@ -60,3 +60,6 @@
 - logkeys 记录键盘输入 [Github](https://github.com/kernc/logkeys)
 
 - expect [用于自动输入密码](http://www.cnblogs.com/iloveyoucc/archive/2012/05/11/2496433.html)
+
+
+- autojump  `方便跳转目录`  *shrc 中要有 : `. /usr/share/autojump/autojump.sh`  

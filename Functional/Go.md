@@ -1,14 +1,17 @@
 `目录 start`
  
 - [Go](#go)
+    - [安装](#安装)
     - [环境变量](#环境变量)
     - [数据类型](#数据类型)
     - [Tips](#tips)
         - [通过字符串调用指定函数](#通过字符串调用指定函数)
 
-`目录 end` |_2018-07-08_| [码云](https://gitee.com/gin9) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
+`目录 end` |_2018-07-10_| [码云](https://gitee.com/gin9) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
 ****************************************
 # Go
+> [官网](https://golang.org) | [镜像](https://golang.google.cn/)
+
 > Go 语言被设计成一门应用于搭载 Web 服务器，存储集群或类似用途的巨型中央服务器的系统编程语言。对于高性能分布式系统领域而言，Go 语言无疑比大多数其它语言有着更高的开发效率。它提供了海量并行的支持，这对于游戏服务端的开发而言是再好不过了。
 
 - [Go语言资料收集](https://github.com/wonderfo/wonderfogo/wiki)
@@ -16,6 +19,28 @@
 - [Go相关书籍的知乎话题](https://www.zhihu.com/question/30461290)
 - [Go1.0的吐槽](http://blog.csdn.net/liigo/article/details/23699459)
 - [Java 20年：转角遇到Go](http://www.infoq.com/cn/news/2015/05/java20-from-language-to-platform)
+
+## 安装
+> 官网下载 安装 [参考 教程](http://www.runoob.com/go/go-environment.html) | [官网教程](https://golang.google.cn/doc/install)
+
+1. sudo tar -C /usr/local -xzf go1.10.3.linux-amd64.tar.gz
+2. *shrc或者 /etc/profile 中添加
+```
+    export GOROOT=/usr/local/go
+    export GOBIN=$GOROOT/bin
+    export GOPATH=/home/kcp/code/go # workspace
+    export PATH=$PATH:$GOBIN:$GOPATH
+```
+> **查看版本** `go version`正常输出go的版本则是配置成功  
+3. 在 /home/kcp/code/go 下 新建 test.go
+```go
+    package main
+    import "fmt"
+    func main() {
+        fmt.Printf("hello, world\n")
+    }
+```
+4. go run test.go 或者 go build
 
 ## 环境变量
 

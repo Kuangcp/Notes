@@ -4,6 +4,7 @@
     - [基础](#基础)
         - [ISO七层模型和TCP/IP五层模型](#iso七层模型和tcpip五层模型)
         - [TCP和UDP](#tcp和udp)
+        - [IPv4 & IPv6](#ipv4-&-ipv6)
         - [网络延迟](#网络延迟)
             - [TTFB](#ttfb)
         - [URL](#url)
@@ -21,7 +22,7 @@
     - [WebDAV](#webdav)
     - [WebAssembly](#webassembly)
 
-`目录 end` |_2018-07-08_| [码云](https://gitee.com/gin9) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
+`目录 end` |_2018-07-10_| [码云](https://gitee.com/gin9) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
 ****************************************
 # 网络
 
@@ -36,6 +37,10 @@ ISO制定的OSI参考模型的过于庞大、复杂招致了许多批评。与�
 
 ### TCP和UDP
 [参考博客: 区别](http://www.cnblogs.com/bizhu/archive/2012/05/12/2497493.html)
+
+### IPv4 & IPv6
+> [参考博客: 浏览器访问IPv6地址](http://www.cnblogs.com/cuihongyu3503319/p/7422877.html)
+
 
 ### 网络延迟
 > [如何彻底解决「网络延迟」这个问题？](https://www.zhihu.com/question/34689035)

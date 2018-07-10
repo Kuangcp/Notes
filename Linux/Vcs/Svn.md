@@ -14,7 +14,7 @@
         - [处理冲突](#处理冲突)
             - [树冲突](#树冲突)
 
-`目录 end` |_2018-07-08_| [码云](https://gitee.com/gin9) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
+`目录 end` |_2018-07-10_| [码云](https://gitee.com/gin9) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
 ****************************************
 # SVN
 > 传统的中心化版本控制工具,能够精确控制每个目录的权限, Apache顶级项目  
@@ -92,4 +92,8 @@
 > 多个开发人员修改了同一个文件夹, 并且一方修改, 一方做了删除 
 
 > [参考博客: SVN 树冲突解决详解](https://blog.csdn.net/xgf415/article/details/75196714)
+> [参考博客: 使用SVN命令行解决树冲突(tree conflict)](https://www.jianshu.com/p/e3cc83ca512d)
+
+1. 标记冲突已解决(使用本地的状态, 本地该文件的状态是Delete, 提交后服务端对应的文件就会被删除)
+    - `svn resolve --accept=working file/dir`
 

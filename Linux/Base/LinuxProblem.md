@@ -9,14 +9,13 @@
         - [Deepin的NVIDIA驱动问题](#deepin的nvidia驱动问题)
         - [笔记本突然断电导致开机报错](#笔记本突然断电导致开机报错)
 
-`目录 end` |_2018-07-09_| [码云](https://gitee.com/gin9) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
+`目录 end` |_2018-07-10_| [码云](https://gitee.com/gin9) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
 ****************************************
 # 遇到的常见问题
 
 ## 命令找不到
 - `sudo找不到` 就安装 sudo
 - locale-gen 安装locales 使用`locale-gen --purge`命令进行更新编码
-
 
 ## 其他
 ### 终端响铃

@@ -11,7 +11,7 @@
         - [Maven](#maven)
         - [Gradle](#gradle)
 
-`目录 end` |_2018-07-09_| [码云](https://gitee.com/gin9) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
+`目录 end` |_2018-07-10_| [码云](https://gitee.com/gin9) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
 ****************************************
 # 部署运行
 > 传统的可执行jar, war 以及Docker镜像
@@ -43,7 +43,7 @@ _MANIFEST.MF示例_
 > [Demo项目](https://gitee.com/gin9/codes/ri4x8cut3awgh0e271lfb54) | [详情](/Java/Tool/Maven.md#31打包成可执行jar)
 
 **依赖Jar的项目**
-- [ ] 完善
+- [ ] 完善 Maven 含 Jar 打包可执行jar
 
 ### Gradle
 > [参考博客: Building Java Applications](https://guides.gradle.org/building-java-applications/)
@@ -63,7 +63,7 @@ _MANIFEST.MF示例_
 **依赖Jar的项目**
 > 有好几种插件可以实现 1.[shadow插件官网文档](http://imperceptiblethoughts.com/shadow/) 
 
-- [ ] 完善
+- [ ] 完善 Gradle 含 Jar 打包可执行jar
 
 *************************
 
