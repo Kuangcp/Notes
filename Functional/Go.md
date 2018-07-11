@@ -3,7 +3,7 @@
 - [Go](#go)
     - [社区](#社区)
     - [安装](#安装)
-        - [使用Docker安装和部署](#使用docker安装和部署)
+        - [Docker](#docker)
     - [环境变量解释](#环境变量解释)
     - [数据类型](#数据类型)
 - [Tips](#tips)
@@ -48,8 +48,10 @@ func main() {
 ```
 4. go run test.go 或者 go build
 
-### 使用Docker安装和部署
-> [Docker image](https://hub.docker.com/_/golang/)`这里的镜像都是用于 从源码编译构建成可执行文件的 环境`   
+### Docker
+> 使用Docker安装和部署
+
+> [Docker image](https://hub.docker.com/_/golang/) `这里的镜像都是用于 从源码编译构建成可执行文件的 环境`   
 > [go 的 Docker镜像的讨论](https://gocn.vip/question/153)
 
 1. 实际运行的时候, 如果不需要调用外部Linux命令 就直接 `from scratch`

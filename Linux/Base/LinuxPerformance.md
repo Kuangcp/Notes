@@ -2,6 +2,7 @@
  
 - [Linux 性能分析和管理](#linux-性能分析和管理)
     - [运行状况信息](#运行状况信息)
+        - [工具](#工具)
     - [内存情况](#内存情况)
     - [性能监测](#性能监测)
         - [vmstat](#vmstat)
@@ -34,7 +35,7 @@
         - [chroot](#chroot)
     - [关机重启](#关机重启)
 
-`目录 end` |_2018-07-09_| [码云](https://gitee.com/gin9) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
+`目录 end` |_2018-07-11_| [码云](https://gitee.com/gin9) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
 ****************************************
 # Linux 性能分析和管理
 ## 运行状况信息
@@ -45,6 +46,9 @@
 - `cat /proc/loadavg ` 
     - 运行结果 : 1,5,15分钟的平均负载 | 当前运行的进程/总进程 | 最近一个启动的进程的id
 > 常规: 单核:平均负载0.7以下是安全的,大于就需要优化了,多核则是 0.7*N(核心数)
+
+### 工具
+> [vector](https://github.com/Netflix/vector)
 
 ## 内存情况
 > 对于Linux来说, 都是有内存就去分配, 然后就用, 只有内存不够了才会去回收, 对于服务器来说, 交换内存会带来性能的明显下降 一般是不会配置的

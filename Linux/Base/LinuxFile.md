@@ -33,8 +33,8 @@
         - [系统日志](#系统日志)
         - [应用日志](#应用日志)
     - [在Linux上操作压缩文件的命令](#在linux上操作压缩文件的命令)
-        - [tar归档](#tar归档)
-        - [tar归档后压缩](#tar归档后压缩)
+        - [tar](#tar)
+            - [tar归档和压缩](#tar归档和压缩)
         - [rar](#rar)
         - [zip](#zip)
         - [7Z](#7z)
@@ -45,7 +45,7 @@
             - [查看发行版](#查看发行版)
             - [查看系统所有用户信息](#查看系统所有用户信息)
 
-`目录 end` |_2018-07-08_| [码云](https://gitee.com/gin9) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
+`目录 end` |_2018-07-11_| [码云](https://gitee.com/gin9) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
 ****************************************
 # 【文件管理】
 > Linux中认为万物皆文件
@@ -371,55 +371,56 @@ _mv_
 ## 在Linux上操作压缩文件的命令
 > Linux默认自带ZIP压缩，最大支持4GB压缩，RAR的压缩比大于4GB.
 
-### tar归档
+### tar
 
-_tar_
-`这五个是独立的命令，压缩解压都要用到其中一个，可以和别的命令连用但只能用其中一个。`
-- c: 打包 压缩
-- x：解压
-- t：查看内容 不解压
-- r：向压缩归档文件末尾追加文件
-- u：更新原压缩包中的文件
+1  `这五个是独立的参数, 五个参数之间互斥`
+- c : 打包 压缩
+- x : 解压
+- t : 查看内容 不解压
+- r : 向压缩归档文件末尾追加文件
+- u : 更新原压缩包中的文件
 
-***
-`下面的参数是根据需要在压缩或解压档案时可选的。`
+2 `可选参数`  
+2.1 `下面的参数是根据需要在压缩或解压档案时可选的。`
 - z：有gzip属性的
 - j：有bz2属性的
 - Z：有compress属性的
 - v：显示所有过程
 - O：将文件解开到标准输出
 
-***
-- `-v 可选` 将压缩或解压的过程输出
+2.2 `其他可选参数`
+- `-p` 保留绝对路径符
+- `-v` 将压缩或解压的过程输出
+
+3 `最后`
 - `-f 是必须的,-f: 使用档案名字，切记，这个参数是最后一个参数，后面只能接文件或目录`
 
-***
+> 以上则组合出了 tar 的所有使用场景
+
+***************************
+**示例 :**
 - `tar -rf all.tar *.gif`这条命令是将所有.gif的文件增加到all.tar的包里面去。
 - `tar -uf all.tar logo.gif`这条命令是更新原来tar包all.tar中logo.gif文件，
 - `tar -tf all.tar` 这条命令是列出all.tar包中所有文件，
 - `tar -xf all.tar` 这条命令是解出all.tar包中所有文件，
-    - `-u`是表示更新文件的意思。
-    - `-r`是表示增加文件的意思。
-    - `-t`是列出所有文件的意思
-    - `-x`是解压的意思
-    - `-p` 保留绝对路径符
- 
+
 - 保留文件属性和跟随链接， -p 保留属性 -h 备份的源文件而不是链接本身
     - `tar -cphf etc.tar /etc`
 
 ********************
-### tar归档后压缩
-- tar -cvf a.tar *.txt
-    1. `-czf` tar.gz
-    1. `-cjf` tar.bz2
+#### tar归档和压缩
+_压缩_
+- tar -cf a.tar *.txt **仅仅归档,没有压缩**
+    1. `-czf` tar.gz **gz压缩**
+    1. `-cjf` tar.bz2 
     1. `-cZf` tar.Z
     1. `-cJf` tar.xz
 
 _解压_
-- `tar -xvf file.tar`      // 解压 tar
-- `tar -xzvf file.tar.gz`  // 解压 tar.gz
-- `tar -xjvf file.tar.bz2` // 解压 tar.bz2
-- `tar -xZvf file.tar.Z `  // 解压 tar.Z
+- `tar -xf file.tar`      // 解压 tar
+- `tar -xzf file.tar.gz`  // 解压 tar.gz
+- `tar -xjf file.tar.bz2` // 解压 tar.bz2
+- `tar -xZf file.tar.Z `  // 解压 tar.Z
 
 ****************
 ### rar

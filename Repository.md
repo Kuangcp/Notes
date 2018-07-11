@@ -40,7 +40,7 @@
     - [工作](#工作)
         - [简历](#简历)
 
-`目录 end` |_2018-07-08_| [码云](https://gitee.com/gin9) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
+`目录 end` |_2018-07-11_| [码云](https://gitee.com/gin9) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
 ****************************************
 
 # 【GitRepos】
@@ -259,6 +259,7 @@
 - [JVM分析优化的定制JDK](https://www.yourkit.com/java/profiler/features/)
 - [acme](https://github.com/Neilpang/acme.sh)`可以自动更新https证书从lets上`
 - [acme-tiny](https://github.com/diafygi/acme-tiny)`同样支持acme协议然后更新证书`
+- [noVNC](https://github.com/novnc/noVNC)`js VNC client`
 
 ### 微信相关
 - [微信小程序Demo](https://gitee.com/yuzeng84/wxapp)
