@@ -15,7 +15,7 @@
     - [常用插件](#常用插件)
     - [启动配置](#启动配置)
 
-`目录 end` |_2018-07-08_| [码云](https://gitee.com/gin9) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
+`目录 end` |_2018-07-11_| [码云](https://gitee.com/gin9) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
 ****************************************
 
 # IDEA 使用笔记
@@ -187,6 +187,8 @@ _例如修改为如下_
     - **Ctrl Shift Space** 结合上下文补全
 1. **Ctrl W** 选中代码，连续按会有其他效果
 
+1. **Ctrl Alt V** 自动声明一个变量 自定义为`Ctrl Alt Shift J`
+
 **Jump**
 1. **Alt+ Up/Down** 在方法间快速移动定位
 1. **Ctrl Alt ←/→** 后退/前进 至光标的上一个位置
@@ -231,12 +233,14 @@ _例如修改为如下_
 
 1. TestMe
     - 快速创建测试类
+
 1. TestNG
     - TestNG 测试框架的集成
 
 1. lombok
     - 插件商店中搜索 lombok 安装重启idea即可
     - 配置 Build,Execution > Compiler > Annotation Processors 勾选上即可使用lombok的注解
+
 1. Jrebel
     - 热部署插件, 需要付费
     

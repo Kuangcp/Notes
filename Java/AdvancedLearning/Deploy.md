@@ -11,7 +11,7 @@
         - [Maven](#maven)
         - [Gradle](#gradle)
 
-`目录 end` |_2018-07-10_| [码云](https://gitee.com/gin9) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
+`目录 end` |_2018-07-11_| [码云](https://gitee.com/gin9) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
 ****************************************
 # 部署运行
 > 传统的可执行jar, war 以及Docker镜像
@@ -74,6 +74,9 @@ _MANIFEST.MF示例_
 
 ## Docker部署
 > 以一个基础镜像,然后将war放进去构建成一个镜像, 然后推送到服务器上构建容器进行运行
+
+> [jib](https://github.com/GoogleContainerTools/jib)
+> - 结合 Maven Gradle 方便的构建 Docker镜像
 
 ### 手动
 

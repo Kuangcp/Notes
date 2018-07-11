@@ -1,18 +1,20 @@
 `目录 start`
  
 - [Go](#go)
+    - [社区](#社区)
     - [安装](#安装)
-    - [环境变量](#环境变量)
+        - [使用Docker安装和部署](#使用docker安装和部署)
+    - [环境变量解释](#环境变量解释)
     - [数据类型](#数据类型)
-    - [Tips](#tips)
-        - [通过字符串调用指定函数](#通过字符串调用指定函数)
+- [Tips](#tips)
+    - [通过字符串调用指定函数](#通过字符串调用指定函数)
 
-`目录 end` |_2018-07-10_| [码云](https://gitee.com/gin9) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
+`目录 end` |_2018-07-11_| [码云](https://gitee.com/gin9) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
 ****************************************
 # Go
-> [官网](https://golang.org) | [镜像](https://golang.google.cn/)
+> [官网](https://golang.org) | [镜像网](https://golang.google.cn/) | [Github Repo](https://github.com/golang/go)
 
-> Go 语言被设计成一门应用于搭载 Web 服务器，存储集群或类似用途的巨型中央服务器的系统编程语言。对于高性能分布式系统领域而言，Go 语言无疑比大多数其它语言有着更高的开发效率。它提供了海量并行的支持，这对于游戏服务端的开发而言是再好不过了。
+Go 语言被设计成一门应用于搭载 Web 服务器，存储集群或类似用途的巨型中央服务器的系统编程语言。对于高性能分布式系统领域而言，Go 语言无疑比大多数其它语言有着更高的开发效率。它提供了海量并行的支持，这对于游戏服务端的开发而言是再好不过了。
 
 - [Go语言资料收集](https://github.com/wonderfo/wonderfogo/wiki)
 - [学习Go的知乎话题](https://www.zhihu.com/question/23486344)
@@ -20,15 +22,19 @@
 - [Go1.0的吐槽](http://blog.csdn.net/liigo/article/details/23699459)
 - [Java 20年：转角遇到Go](http://www.infoq.com/cn/news/2015/05/java20-from-language-to-platform)
 
+## 社区
+- [GoCN Forum](https://gocn.vip/)
+- [Go语言中文网](https://studygolang.com)
+
 ## 安装
-> 官网下载 安装 [参考 教程](http://www.runoob.com/go/go-environment.html) | [官网教程](https://golang.google.cn/doc/install)
+> [官方教程](https://golang.google.cn/doc/install) | [参考 教程](http://www.runoob.com/go/go-environment.html)
 
 1. sudo tar -C /usr/local -xzf go1.10.3.linux-amd64.tar.gz
 2. *shrc或者 /etc/profile 中添加
 ```sh
 export GOROOT=/usr/local/go
 export GOPATH=$HOME/Code/go # workspace
-export GOBIN=$GOPATH/bin # install dir
+export GOBIN=$GOPATH/bin # 'go install' command install dir
 export PATH=$PATH:$GOBIN:$GOPATH:$GOROOT/bin
 ```
 > **查看版本** `go version`正常输出go的版本则是配置成功  
@@ -42,7 +48,14 @@ func main() {
 ```
 4. go run test.go 或者 go build
 
-## 环境变量
+### 使用Docker安装和部署
+> [Docker image](https://hub.docker.com/_/golang/)`这里的镜像都是用于 从源码编译构建成可执行文件的 环境`   
+> [go 的 Docker镜像的讨论](https://gocn.vip/question/153)
+
+1. 实际运行的时候, 如果不需要调用外部Linux命令 就直接 `from scratch`
+1. 需要则 `from alpine` 更精简一点 更好是使用 `frolvlad/alpine-glibc`
+
+## 环境变量解释
 > [	关于GOROOT、GOPATH、GOBIN、project目录](https://blog.csdn.net/Alsmile/article/details/48290223)
 > [GOPATH 深度解析 ](https://studygolang.com/articles/3493)
 
@@ -63,7 +76,7 @@ _有关类型后置_
 > [螺旋形（C/C++）和顺序（Go）的声明语法](https://cxwangyi.wordpress.com/2011/03/14/%E8%9E%BA%E6%97%8B%E5%BD%A2%EF%BC%88cc%EF%BC%89%E5%92%8C%E9%A1%BA%E5%BA%8F%EF%BC%88go%EF%BC%89%E7%9A%84%E5%A3%B0%E6%98%8E%E8%AF%AD%E6%B3%95/)
 > [Why do a lot of programming languages put the type *after* the variable name?](https://stackoverflow.com/questions/1712274/why-do-a-lot-of-programming-languages-put-the-type-after-the-variable-name)
 
-## Tips
-### 通过字符串调用指定函数
+# Tips
+## 通过字符串调用指定函数
 > [参考博客: Go 根据字符串调用指定函数](https://blog.csdn.net/HOOKTTG/article/details/52184500)
 

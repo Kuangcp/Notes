@@ -36,11 +36,16 @@
     - [Docker-Swarm](#docker-swarm)
 - [网络](#网络)
 
-`目录 end` |_2018-07-08_| [码云](https://gitee.com/gin9) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
+`目录 end` |_2018-07-11_| [码云](https://gitee.com/gin9) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
 ****************************************
 # Docker
+> [官方文档](https://docs.docker.com/)
+
 > [docker资源汇总 ](http://www.open-open.com/lib/view/open1443075440623.html)
 > [简述 Docker](http://www.importnew.com/24658.html)
+
+- [ ] [Use multi-stage builds](https://docs.docker.com/develop/develop-images/multistage-build/)
+
 *****************************************
 ## 简介
 - `Docker 是一个开源的应用容器引擎` 理解为加强版虚拟机
