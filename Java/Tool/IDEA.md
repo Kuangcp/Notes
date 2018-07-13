@@ -15,7 +15,7 @@
     - [常用插件](#常用插件)
     - [启动配置](#启动配置)
 
-`目录 end` |_2018-07-11_| [码云](https://gitee.com/gin9) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
+`目录 end` |_2018-07-13_| [码云](https://gitee.com/gin9) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
 ****************************************
 
 # IDEA 使用笔记
@@ -32,7 +32,8 @@
 
 
 ## 常用技巧
-_鼠标方法上悬停显示javadoc_  勾选 General -> show quick documentation on mouse move 
+1. 鼠标方法上悬停显示javadoc  勾选 General -> show quick documentation on mouse move 
+1. 自定义 TODO 等标签 Editor -> TODO, 照已有的 TODO FIXME 新建一个即可 
 
 ### Tomcat的使用
 > 直接配置解压的即可, 然后Idea会在 用户目录下的Idea主目录中配置一个专门放Tomcat的配置和日志等文件, 和原Tomcat进行了隔离, 这样就不会影响到该Tomcat.
@@ -196,11 +197,11 @@ _例如修改为如下_
 1. **Ctrl＋[ 或 ]** 可以跳到大括号的开头结尾
 
 **Search**
-1. **Ctrl N** 查找类
-1. **Ctrl Shift N** 查找文件
+1. **Ctrl N** 查找类(所有类范围,包括引用的包)
+1. **Ctrl Shift N** 查找文件名
+1. **Ctrl Shift Alt N** 符号查找: 类中的方法或变量
 1. **Ctrl R** 替换文本
 1. **Ctrl F** 查找文本
-1. **Ctrl Shift Alt N** 全项目查找: 类中的方法或变量
 
 **View**
 1. **Ctrl H** 生成类结构图并显示

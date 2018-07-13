@@ -50,7 +50,7 @@
         - [三方库](#三方库)
     - [QT](#qt)
 
-`目录 end` |_2018-07-08_| [码云](https://gitee.com/gin9) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
+`目录 end` |_2018-07-13_| [码云](https://gitee.com/gin9) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
 ****************************************
 # Python
 > [Python初学者（零基础学习Python、Python入门）书籍、视频、资料、社区推荐](https://github.com/Yixiaohan/codeparkshare)
@@ -295,11 +295,14 @@
     - 删除指定键并返回值 ：pop() 
     - 合并另一个字典：update() 
     - in 
+
 - 嵌套：
     - 字典套列表 `{'d':['we','e']}` 
     - 列表套字典，当成普通类型包含即可
     - 字典套字典
     
+- [ ] 字典的排序问题
+
 ### 运算符
 - 算术运算符
     - 加减一样，`*` 乘,不仅可以用于数字，还可以用于字符串 ，`/` 除，和Java不一样，整数相除也会得到浮点数

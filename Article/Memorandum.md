@@ -16,7 +16,7 @@
     - [喜事](#喜事)
     - [丧事](#丧事)
 
-`目录 end` |_2018-07-08_| [码云](https://gitee.com/gin9) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
+`目录 end` |_2018-07-13_| [码云](https://gitee.com/gin9) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
 ****************************************
 # 备忘录
 > 用来记录一些容易忘的乱七八糟的事情
@@ -29,6 +29,8 @@
 > 现在使用的是 Poker II, 61键, 小巧方便, 习惯上要稍微适应一下
 
 #### Poker II 
+> [官网](http://www.ikbc.com.cn/)
+
 [参考博客: Poker II 机械键盘键位改造记](https://segmentfault.com/a/1190000000585559) `Caps Win Alt 换位置`
 [参考博客: IKBC Poker2的终极使用方法](http://www.dgtle.com/thread-366040-1-1.html) `编程实现方向键更简单`
 ***********************

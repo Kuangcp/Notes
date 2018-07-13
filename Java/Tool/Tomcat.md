@@ -22,9 +22,11 @@
             - [【Tomcat与Web服务器、应用服务器的关系】](#tomcat与web服务器、应用服务器的关系)
     - [一、Tomcat 与应用服务器](#一、tomcat-与应用服务器)
     - [二、Tomcat 与 Web 服务器](#二、tomcat-与-web-服务器)
-    - [Tomcat和Jetty](#tomcat和jetty)
+- [优化](#优化)
+    - [Tomcat僵死问题](#tomcat僵死问题)
+- [Tomcat和Jetty](#tomcat和jetty)
 
-`目录 end` |_2018-07-08_| [码云](https://gitee.com/gin9) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
+`目录 end` |_2018-07-13_| [码云](https://gitee.com/gin9) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
 ****************************************
 # Tomcat
 > [官方网站](http://tomcat.apache.org/)
@@ -211,7 +213,13 @@ Tomcat 是提供一个支持 Servlet 和 JSP 运行的容器。Servlet 和 JSP �
 一般来说，大的站点都是将 Tomcat 与 Apache 的结合，Apache 负责接受所有来自客户端的 HTTP 请求，然后将 Servlets 和 JSP 的请求转发给 Tomcat 来处理。Tomcat 完成处理后，将响应传回给 Apache，最后 Apache 将响应返回给客户端。
 
 *************************
-## Tomcat和Jetty
+# 优化
+
+## Tomcat僵死问题
+- [ ] 分析各种可能的原因
+
+*************************
+# Tomcat和Jetty
 > [参考博客: Jetty和Tomcat的选择：按场景而定](http://www.open-open.com/lib/view/open1322622094390.html)
 
 - [Jetty官网](http://www.eclipse.org/jetty/) 

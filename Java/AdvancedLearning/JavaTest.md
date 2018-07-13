@@ -5,15 +5,15 @@
         - [正式代码](#正式代码)
         - [测试代码](#测试代码)
     - [单元测试](#单元测试)
-    - [实现方案](#实现方案)
-        - [使用Junit](#使用junit)
-            - [Idea上Junit的使用](#idea上junit的使用)
-        - [TestNG](#testng)
-        - [Mock框架](#mock框架)
-            - [DBUnit](#dbunit)
-    - [感悟](#感悟)
+- [实现方案](#实现方案)
+    - [使用Junit](#使用junit)
+        - [Idea上Junit的使用](#idea上junit的使用)
+    - [TestNG](#testng)
+    - [Mock框架](#mock框架)
+        - [DBUnit](#dbunit)
+- [感悟](#感悟)
 
-`目录 end` |_2018-07-08_| [码云](https://gitee.com/gin9) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
+`目录 end` |_2018-07-13_| [码云](https://gitee.com/gin9) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
 ****************************************
 # Java的测试
 > [测试的基础理论](/Skills/Base/Test.md)
@@ -51,8 +51,8 @@ assert应该是开发阶段打开，而在发布后关闭。
 - assert(expression) 断言表达式为真
 
 ****************
-## 实现方案
-### 使用Junit
+# 实现方案
+## 使用Junit
 > [官网](https://junit.org/junit4/) | [如何上手Junit](/MyBlog/how-to-use-junit.md) | [如何上手Junit5](/MyBlog/how-to-use-junit5.md)
 
 - Before Test 执行顺序：
@@ -64,21 +64,25 @@ assert应该是开发阶段打开，而在发布后关闭。
     - 这几个线程都是开了就立马关闭了,而且也是正常的退出码 0 
     - 原因:
 
-#### Idea上Junit的使用
+### Idea上Junit的使用
 _可以使用TestMe插件_
 - Ctrl Shift T 生成测试类 结合Mockit可以更好的模拟测试环境
 
-### TestNG
+## TestNG
 
 
 **************
-### Mock框架
+## Mock框架
 > 2017-06-21 14:36:54 对mock的使用很迷，还是需要稳定心态慢慢看文档才能理解
 > [JMockit官方文档](http://www.vogella.com/tutorials/Mockito/article.html#testing-with-mock-objects)
 - [入门博客](http://blog.csdn.net/chjttony/article/details/17838693)
 
-#### DBUnit
+http://www.baeldung.com/mockito-void-methods
+https://www.tutorialspoint.com/mockito/mockito_quick_guide.htm
+http://static.javadoc.io/org.mockito/mockito-core/2.19.0/org/mockito/Mockito.html#1
+
+### DBUnit
 > 基于Junit的一个数据库测试框架, 方便测试dao层
 
-## 感悟
+# 感悟
 

@@ -1,10 +1,15 @@
 `目录 start`
  
 - [Java的性能调优](#java的性能调优)
+    - [JVM参数配置](#jvm参数配置)
     - [内存优化](#内存优化)
+        - [处理内存泄露问题](#处理内存泄露问题)
         - [内存监测工具](#内存监测工具)
+            - [jvisualvm](#jvisualvm)
+            - [MAT](#mat)
+- [记录](#记录)
 
-`目录 end` |_2018-07-08_| [码云](https://gitee.com/gin9) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
+`目录 end` |_2018-07-13_| [码云](https://gitee.com/gin9) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
 ****************************************
 # Java的性能调优
 
@@ -16,6 +21,9 @@
 
 - [GC 性能优化 专栏](https://blog.csdn.net/column/details/14851.html)
 
+### 处理内存泄露问题
+> [参考博客: java内存泄漏的定位与分析](https://blog.csdn.net/lc0817/article/details/67014499)
+
 ### 内存监测工具
 #### jvisualvm
 > JDK 自带的工具 
@@ -24,7 +32,9 @@
 > [参考博客: JVisualVM简介与内存泄漏实战分析](http://www.cnblogs.com/belen/p/5573501.html)
 
 #### MAT
-- Memory Analyzer tool(MAT)
+> Memory Analyzer tool(MAT) [官网](http://www.eclipse.org/mat/)
+
+> [参考博客: JAVA Shallow heap & Retained heap](http://www.cnblogs.com/lipeineng/p/5824799.html)
 
 **************
 
