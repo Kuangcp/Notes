@@ -56,8 +56,8 @@
 > [参考: Gradle在大型Java项目上的应用](www.infoq.com/cn/articles/Gradle-application-in-large-Java-projects)
 
 **优缺点**
-> 相关博客 [Gradle大吐槽](https://blog.csdn.net/MCL529/article/details/79341706)
-
+> [Gradle大吐槽](https://blog.csdn.net/MCL529/article/details/79341706)
+> [官方对比Gradle和Maven](https://gradle.org/maven-vs-gradle/)
 > 优点  
 1. 相对于Maven, 配置文件简洁了很多, 所以才入坑学习使用的
 2. 对于一些需要自定义的任务,因为核心为Groovy,所以实现能力高
@@ -66,7 +66,6 @@
 > 缺点  
 1. 内存占用巨大,存在内存泄露问题, 以至于在IDEA上不敢使用自动导入, 不然每动一下build.gradle 就会卡半天, 8G内存都不够用!!
 2. 编译速度慢, 如果和Maven进行对比, 编译速度和资源占用确实慢
-3. 
 
 ********************
 ## 书籍

@@ -189,9 +189,7 @@
 
 1. `lsof -d 3` 查看打开标准错误输出的进程 (标准错误输出是3)
 1. `lsof file/dir` 查看打开某文件或目录(不关注子文件夹)的进程 
-1. 通过进程查询打开的文件
-    1. `ps aux | grep mysqld`  得到pid
-    1. `sudo lsof -p pid` 查看mysql服务打开的文件了
+1. **通过进程查询打开的文件** `sudo lsof -p pid`
 1. `sudo lsof -u username` 查看某一用户打开的文件 输出结果说明:
     - Command 进程名过长会简略显示, PID 进程标识符, USER 进程拥有者
     - FD 一般是文件描述符:

@@ -365,7 +365,7 @@ CMD编辑器
 
 **************************************************
 #### 必备插件
-> [插件开发相关](https://github.com/Kuangcp/LearnWebExtension)
+> [开发自己的插件](https://github.com/Kuangcp/LearnWebExtension)
 
 - `Saka Key` 快捷键神器 大幅度脱离鼠标 [官方文档](https://key.saka.io/)
     1. 浏览器默认: 脱离输入框焦点 _Esc_ | 切换标签 _ctrl-Tab_  _shift-ctrl-Tab_ | 关闭标签 _ctrl-w_
@@ -401,6 +401,7 @@ CMD编辑器
 1. `Remove Cookies Button`
 1. `围脖是个好图床哟` 方便的图床,但是要登录微博
 1. `滴答清单` 全平台可使用
+1. `Auto Reload Tab` 定时自动刷新标签页
 
 #### 配置
 > 主要是 about:config 

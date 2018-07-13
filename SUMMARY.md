@@ -177,6 +177,7 @@
 * 【 Skills 】
     * 【 Skills/CS 】
         * [ Arithmetic ](/Skills/CS/Arithmetic.md)
+        * [ CharacterEncoding ](/Skills/CS/CharacterEncoding.md)
         * [ Computer ](/Skills/CS/Computer.md)
         * [ Concurrent ](/Skills/CS/Concurrent.md)
         * [ Network ](/Skills/CS/Network.md)
