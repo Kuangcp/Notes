@@ -78,6 +78,26 @@ _有关类型后置_
 > [螺旋形（C/C++）和顺序（Go）的声明语法](https://cxwangyi.wordpress.com/2011/03/14/%E8%9E%BA%E6%97%8B%E5%BD%A2%EF%BC%88cc%EF%BC%89%E5%92%8C%E9%A1%BA%E5%BA%8F%EF%BC%88go%EF%BC%89%E7%9A%84%E5%A3%B0%E6%98%8E%E8%AF%AD%E6%B3%95/)
 > [Why do a lot of programming languages put the type *after* the variable name?](https://stackoverflow.com/questions/1712274/why-do-a-lot-of-programming-languages-put-the-type-after-the-variable-name)
 
+## 文件操作
+
+**递归读取当前目录的文件**
+```go
+package main
+import (
+    "fmt"
+    "os"
+    "path/filepath"
+)
+func main() {
+    filepath.Walk("./", walkfunc)
+}
+func walkfunc(path string, info os.FileInfo, err error) error {
+	if(!info.IsDir()){
+		fmt.Println(path)
+	}
+    return nil
+}
+```
 # Tips
 ## 通过字符串调用指定函数
 > [参考博客: Go 根据字符串调用指定函数](https://blog.csdn.net/HOOKTTG/article/details/52184500)
