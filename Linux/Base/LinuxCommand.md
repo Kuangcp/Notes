@@ -10,7 +10,7 @@
         - [定时执行脚本](#定时执行脚本)
 - [实用的工具](#实用的工具)
 
-`目录 end` |_2018-07-10_| [码云](https://gitee.com/gin9) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
+`目录 end` |_2018-07-14_| [码云](https://gitee.com/gin9) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
 ****************************************
 # 系统常用基础命令
 
@@ -63,3 +63,8 @@
 
 
 - autojump  `方便跳转目录`  *shrc 中要有 : `. /usr/share/autojump/autojump.sh`  
+
+
+- [WTF](https://wtfutil.com/posts/overview/) | [Github Repo](https://github.com/senorprogrammer/wtf)
+    - 丰富的功能, 一个方便的终端控制面板
+

@@ -24,8 +24,6 @@
         - [Tool](#tool)
     - [【Docker】](#docker)
         - [web](#web)
-    - [【Go】](#go)
-        - [Fun](#fun)
         - [Demo](#demo)
     - [【Python】](#python)
     - [【Linux】](#linux)
@@ -40,7 +38,7 @@
     - [工作](#工作)
         - [简历](#简历)
 
-`目录 end` |_2018-07-11_| [码云](https://gitee.com/gin9) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
+`目录 end` |_2018-07-14_| [码云](https://gitee.com/gin9) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
 ****************************************
 
 # 【GitRepos】
@@ -91,7 +89,6 @@
 ## 【算法】
 - [魏楚阳的算法学习](https://github.com/brianway/algorithms-learning)
 - [interview](https://github.com/kdn251/interviews)`面试所需算法练习`
-
 
 ***********************************
 ## 【Java】
@@ -199,13 +196,6 @@
 
 ### web
 - [webdis](https://github.com/anapsix/docker-webdis) `基于redis构建的使用http请求存取数据`
-
-*************
-## 【Go】
-- [Go Programming & Concurrency in Practice](https://github.com/hyper0x/goc2p)
-
-### Fun
-- [wtf](https://github.com/senorprogrammer/wtf)`终端中的丰富功能`
 
 ### Demo
 - [gin-example](https://github.com/EDDYCJY/go-gin-example)

@@ -6,10 +6,11 @@
         - [Docker](#docker)
     - [环境变量解释](#环境变量解释)
     - [数据类型](#数据类型)
+    - [文件操作](#文件操作)
 - [Tips](#tips)
     - [通过字符串调用指定函数](#通过字符串调用指定函数)
 
-`目录 end` |_2018-07-11_| [码云](https://gitee.com/gin9) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
+`目录 end` |_2018-07-14_| [码云](https://gitee.com/gin9) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
 ****************************************
 # Go
 > [官网](https://golang.org) | [镜像网](https://golang.google.cn/) | [Github Repo](https://github.com/golang/go)
@@ -25,6 +26,8 @@ Go 语言被设计成一门应用于搭载 Web 服务器，存储集群或类似
 ## 社区
 - [GoCN Forum](https://gocn.vip/)
 - [Go语言中文网](https://studygolang.com)
+
+- [Go Programming & Concurrency in Practice](https://github.com/hyper0x/goc2p)
 
 ## 安装
 > [官方教程](https://golang.google.cn/doc/install) | [参考 教程](http://www.runoob.com/go/go-environment.html)
