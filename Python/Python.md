@@ -50,7 +50,7 @@
         - [三方库](#三方库)
     - [QT](#qt)
 
-`目录 end` |_2018-07-13_| [码云](https://gitee.com/gin9) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
+`目录 end` |_2018-07-16_| [码云](https://gitee.com/gin9) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
 ****************************************
 # Python
 > [Python初学者（零基础学习Python、Python入门）书籍、视频、资料、社区推荐](https://github.com/Yixiaohan/codeparkshare)
@@ -693,8 +693,11 @@ _or (if you need to use Python 2)_
 ## 常见库
 ### 内置库
 - `codecs` 编码
+
 - `os` 操作系统相关API
     - 获取脚本绝对路径  `os.path.split(os.path.realpath(__file__))[0]`
+    - 获取用户目录 `os.environ['HOME']` | `os.path.expandvars('$HOME')` | `os.path.expanduser('~')`
+
 - `subprocess` [代码](https://gitee.com/kcp1104/codes/9ytejo7fl2xmqsr5zwkv380)
 
 #### 时间处理
