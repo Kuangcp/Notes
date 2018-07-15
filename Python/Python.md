@@ -498,8 +498,8 @@ fire.Fire(main)
 ```python
     try:
         print(5/0)
-    except ZeroDivisionError:
-        print("0 不能做除数")
+    except ZeroDivisionError as err:
+        print("0 不能做除数", err)
     else:
         print("成功")
     finally:

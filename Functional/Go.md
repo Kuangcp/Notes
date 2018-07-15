@@ -23,12 +23,16 @@ Go 语言被设计成一门应用于搭载 Web 服务器，存储集群或类似
 - [Go1.0的吐槽](http://blog.csdn.net/liigo/article/details/23699459)
 - [Java 20年：转角遇到Go](http://www.infoq.com/cn/news/2015/05/java20-from-language-to-platform)
 
+> [参考博客: Golang官网被墙解决办法](https://golangtc.com/t/504072ca320b5276e2000004)
 ## 社区
 - [GoCN Forum](https://gocn.vip/)
 - [Go语言中文网](https://studygolang.com)
 
 - [Go Programming & Concurrency in Practice](https://github.com/hyper0x/goc2p)
 
+## 书籍
+
+> [Go语言高级编程(Advanced Go Programming)](https://books.studygolang.com/advanced-go-programming-book/index.html)
 ## 安装
 > [官方教程](https://golang.google.cn/doc/install) | [参考 教程](http://www.runoob.com/go/go-environment.html)
 
@@ -101,6 +105,14 @@ func walkfunc(path string, info os.FileInfo, err error) error {
     return nil
 }
 ```
+
+## JSON
+> [参考博客: Go操作JSON](https://blog.csdn.net/u011304970/article/details/70769949)
+> [参考博客: go and json](https://eager.io/blog/go-and-json/)
+> [参考博客: 在Go语言中使用JSON](https://blog.csdn.net/tiaotiaoyly/article/details/38942311) `结构体必须是大写字母开头的成员才会被JSON处理到，小写字母开头的成员不会有影响。`
+
+> [website: json to go struct](https://mholt.github.io/json-to-go/)
+
 # Tips
 ## 通过字符串调用指定函数
 > [参考博客: Go 根据字符串调用指定函数](https://blog.csdn.net/HOOKTTG/article/details/52184500)
