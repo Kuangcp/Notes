@@ -3,7 +3,7 @@
 - [Git基础](#git基础)
     - [版本控制系统(VCS)](#版本控制系统vcs)
     - [Git常用命令](#git常用命令)
-        - [【Tips】](#tips)
+        - [Tips](#tips)
         - [清理仓库](#清理仓库)
             - [gc](#gc)
         - [fork相关操作](#fork相关操作)
@@ -29,6 +29,8 @@
             - [merge](#merge)
             - [rebase](#rebase)
             - [grep](#grep)
+        - [常用文件](#常用文件)
+            - [gitattributes](#gitattributes)
         - [Tools](#tools)
             - [git-svn](#git-svn)
             - [Submodules](#submodules)
@@ -37,7 +39,7 @@
         - [SVN](#svn)
     - [repos的使用](#repos的使用)
 
-`目录 end` |_2018-07-08_| [码云](https://gitee.com/gin9) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
+`目录 end` |_2018-07-16_| [码云](https://gitee.com/gin9) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
 ****************************************
 # Git基础
 > Git is a free and open source distributed version control system designed to handle everything from small to very large projects with speed and efficiency. --[git-scm.com](https://git-scm.com/)
@@ -53,7 +55,7 @@
 > [使用原理视角看 Git](https://coding.net/help/doc/practice/git-principle.html)
 > [如何高效地使用 Git](https://zhuanlan.zhihu.com/p/30561653)
 
-### 【Tips】
+### Tips
 - `git ls-files` 列出文件列表
     - `git ls-files | xargs wc -l` 计算文件中程序代码行数 通过工具：`xargs` `wc` (中文命名的文件编码问题无法计算行数)
     - `git ls-files | xargs cat | wc -l` 计算行数总和
@@ -352,6 +354,12 @@ alias glola='git log --graph --pretty='\''%Cred%h%Creset -%C(yellow)%d%Creset %s
     - `git grep --all-match -e '#define' -e SORT_DIRENT` 匹配两个字符串
     
 *************
+### 常用文件
+
+#### gitattributes
+> [gitattributes](http://schacon.github.io/git/gitattributes.html)
+
+*****************
 
 ### Tools
 

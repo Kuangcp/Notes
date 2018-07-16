@@ -2,18 +2,27 @@
  
 - [Go](#go)
     - [社区](#社区)
+    - [书籍](#书籍)
     - [安装](#安装)
         - [Docker](#docker)
     - [环境变量解释](#环境变量解释)
     - [数据类型](#数据类型)
+        - [基本类型](#基本类型)
+        - [Array](#array)
+        - [Slice](#slice)
+        - [Map](#map)
+        - [Set](#set)
+    - [基本语法](#基本语法)
+        - [标准输入输出](#标准输入输出)
     - [文件操作](#文件操作)
+    - [JSON](#json)
 - [Tips](#tips)
     - [通过字符串调用指定函数](#通过字符串调用指定函数)
 
-`目录 end` |_2018-07-14_| [码云](https://gitee.com/gin9) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
+`目录 end` |_2018-07-16_| [码云](https://gitee.com/gin9) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
 ****************************************
 # Go
-> [官网](https://golang.org) | [镜像网](https://golang.google.cn/) | [Github Repo](https://github.com/golang/go)
+> [官网](https://golang.org) | [镜像网](https://golang.google.cn/) | [Github Repo](https://github.com/golang/go) | [Go Doc](https://godoc.org/)
 
 Go 语言被设计成一门应用于搭载 Web 服务器，存储集群或类似用途的巨型中央服务器的系统编程语言。对于高性能分布式系统领域而言，Go 语言无疑比大多数其它语言有着更高的开发效率。它提供了海量并行的支持，这对于游戏服务端的开发而言是再好不过了。
 
@@ -84,6 +93,20 @@ func main() {
 _有关类型后置_
 > [螺旋形（C/C++）和顺序（Go）的声明语法](https://cxwangyi.wordpress.com/2011/03/14/%E8%9E%BA%E6%97%8B%E5%BD%A2%EF%BC%88cc%EF%BC%89%E5%92%8C%E9%A1%BA%E5%BA%8F%EF%BC%88go%EF%BC%89%E7%9A%84%E5%A3%B0%E6%98%8E%E8%AF%AD%E6%B3%95/)
 > [Why do a lot of programming languages put the type *after* the variable name?](https://stackoverflow.com/questions/1712274/why-do-a-lot-of-programming-languages-put-the-type-after-the-variable-name)
+
+### 基本类型
+
+
+
+### Array
+### Slice
+### Map
+### Set
+******************
+## 基本语法
+
+### 标准输入输出
+> [参考博客: golang中的格式化输入输出](https://blog.csdn.net/xiaoyida11/article/details/51554022)
 
 ## 文件操作
 

@@ -13,7 +13,7 @@
         - [DBUnit](#dbunit)
 - [感悟](#感悟)
 
-`目录 end` |_2018-07-13_| [码云](https://gitee.com/gin9) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
+`目录 end` |_2018-07-16_| [码云](https://gitee.com/gin9) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
 ****************************************
 # Java的测试
 > [测试的基础理论](/Skills/Base/Test.md)
@@ -73,6 +73,8 @@ _可以使用TestMe插件_
 
 **************
 ## Mock框架
+> mock 模拟 , 也就是说对需要测试的模块, 将该模块依赖的相关对象给修改成自己期望的行为方式, 以移除依赖性, 针对性的测试
+
 > 2017-06-21 14:36:54 对mock的使用很迷，还是需要稳定心态慢慢看文档才能理解
 > [JMockit官方文档](http://www.vogella.com/tutorials/Mockito/article.html#testing-with-mock-objects)
 - [入门博客](http://blog.csdn.net/chjttony/article/details/17838693)
@@ -81,8 +83,10 @@ http://www.baeldung.com/mockito-void-methods
 https://www.tutorialspoint.com/mockito/mockito_quick_guide.htm
 http://static.javadoc.io/org.mockito/mockito-core/2.19.0/org/mockito/Mockito.html#1
 
+- [ ] 学习mock
+
 ### DBUnit
 > 基于Junit的一个数据库测试框架, 方便测试dao层
 
 # 感悟
-
+> 好的测试能大大节省时间, 坏的测试大量延误时间

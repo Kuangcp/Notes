@@ -21,11 +21,16 @@
         - [BOS](#bos)
         - [BAE](#bae)
         - [其他应用](#其他应用)
+            - [翻译](#翻译)
     - [腾讯](#腾讯)
         - [域名](#域名)
         - [CVM](#cvm)
         - [COS](#cos)
         - [微信公众号](#微信公众号)
+    - [网易](#网易)
+        - [有道智云](#有道智云)
+    - [微软](#微软)
+        - [翻译](#翻译)
 - [云存储](#云存储)
     - [NextCloud](#nextcloud)
     - [坚果云](#坚果云)
@@ -44,7 +49,7 @@
 - [测试平台](#测试平台)
 - [培训](#培训)
 
-`目录 end` |_2018-07-08_| [码云](https://gitee.com/gin9) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
+`目录 end` |_2018-07-16_| [码云](https://gitee.com/gin9) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
 ****************************************
 
 # 代码托管平台
@@ -200,6 +205,9 @@ CDN回源流出 	0.14
 - [百度脑图](http://naotu.baidu.com/)`在线思维导图创作`
 - [站内搜索](https://zn.baidu.com/cse/home/index)`不用自己写搜索了`
 
+#### 翻译
+> [官网](http://api.fanyi.baidu.com/api/trans/product/index) `免费注册, 每月有 2000,000 字符 免费额度`
+
 *******************************************************
 ## 腾讯
 ### 域名
@@ -229,6 +237,15 @@ _免费额度_
 ## 网易
 ### 有道智云
 > [官网](https://ai.youdao.com/gw.s)
+
+## 微软
+
+### 翻译
+`每月 2000,000 字符免费`
+
+> [文档](https://azure.microsoft.com/en-us/services/cognitive-services/translator-text-api/)
+> [api](https://docs.microsoft.com/en-us/azure/cognitive-services/translator/reference/v3-0-reference)
+> [定价](https://azure.microsoft.com/en-us/pricing/details/cognitive-services/translator-text-api/)
 
 *************************************************
 # 云存储

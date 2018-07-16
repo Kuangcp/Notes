@@ -1,7 +1,7 @@
 [![GitBook](https://img.shields.io/badge/GitBook-online-brightgreen.svg)](https://legacy.gitbook.com/book/kuangcp/notes/details)
 [![目录](https://img.shields.io/badge/note-Catalog-brightgreen.svg)](./SUMMARY.md)
 [![目录](https://img.shields.io/badge/note-Wiki-brightgreen.svg)](https://github.com/Kuangcp/Notes/wiki)
-[![码云](https://img.shields.io/badge/code-Gitee-red.svg)](https://gitee.com/kcp1104)
+[![码云](https://img.shields.io/badge/code-Gitee-red.svg)](https://gitee.com/gin9)
 [![CSDN](https://img.shields.io/badge/blog-CSDN-orange.svg)](http://blog.csdn.net/kcp606)
 [![JavaSE](https://img.shields.io/badge/note-JavaSE-blue.svg)](./Java/JavaSE.md)
 
@@ -143,6 +143,7 @@ _有自制力的人， 能够坚持的人才更有可能成功！_
     * [ CleanCode ](/Article/CleanCode.md)
     * [ Font ](/Article/Font.md)
     * [ FreeBook ](/Article/FreeBook.md)
+    * [ HistoricalBias ](/Article/HistoricalBias.md)
     * [ Memorandum ](/Article/Memorandum.md)
     * [ NotCode ](/Article/NotCode.md)
     * [ ReadBook ](/Article/ReadBook.md)
@@ -179,10 +180,12 @@ _有自制力的人， 能够坚持的人才更有可能成功！_
 * 【 Functional 】
     * [ Clojure ](/Functional/Clojure.md)
     * [ FPBase ](/Functional/FPBase.md)
-    * [ Go ](/Functional/Go.md)
     * [ Groovy ](/Functional/Groovy.md)
     * [ Kotlin ](/Functional/Kotlin.md)
     * [ Scala ](/Functional/Scala.md)
+* 【 Go 】
+    * [ GoBase ](/Go/GoBase.md)
+    * [ GoDatabase ](/Go/GoDatabase.md)
 * 【 Java 】
     * 【 Java/AdvancedLearning 】
         * [ Annotation ](/Java/AdvancedLearning/Annotation.md)
@@ -224,6 +227,7 @@ _有自制力的人， 能够坚持的人才更有可能成功！_
         * [ Querydsl ](/Java/Framework/Querydsl.md)
         * [ Struts ](/Java/Framework/Struts.md)
         * [ Vertx ](/Java/Framework/Vertx.md)
+    * 【 Java/MSA 】
     * 【 Java/Spring 】
         * [ Spring ](/Java/Spring/Spring.md)
         * [ Spring5 ](/Java/Spring/Spring5.md)
@@ -265,6 +269,7 @@ _有自制力的人， 能够坚持的人才更有可能成功！_
         * [ LinuxFile ](/Linux/Base/LinuxFile.md)
         * [ LinuxNet ](/Linux/Base/LinuxNet.md)
         * [ LinuxPerformance ](/Linux/Base/LinuxPerformance.md)
+        * [ LinuxProblem ](/Linux/Base/LinuxProblem.md)
         * [ ReleaseExperience ](/Linux/Base/ReleaseExperience.md)
         * [ Ssh ](/Linux/Base/Ssh.md)
     * 【 Linux/Centos 】
@@ -272,7 +277,6 @@ _有自制力的人， 能够坚持的人才更有可能成功！_
     * 【 Linux/Container 】
         * [ Docker ](/Linux/Container/Docker.md)
         * [ DockerFile ](/Linux/Container/DockerFile.md)
-        * [ DockerService ](/Linux/Container/DockerService.md)
         * [ DockerSoft ](/Linux/Container/DockerSoft.md)
         * [ Kubernetes ](/Linux/Container/Kubernetes.md)
     * 【 Linux/Debian 】
@@ -306,6 +310,7 @@ _有自制力的人， 能够坚持的人才更有可能成功！_
 * 【 Skills 】
     * 【 Skills/CS 】
         * [ Arithmetic ](/Skills/CS/Arithmetic.md)
+        * [ CharacterEncoding ](/Skills/CS/CharacterEncoding.md)
         * [ Computer ](/Skills/CS/Computer.md)
         * [ Concurrent ](/Skills/CS/Concurrent.md)
         * [ Network ](/Skills/CS/Network.md)
@@ -314,22 +319,24 @@ _有自制力的人， 能够坚持的人才更有可能成功！_
     * 【 Skills/Document 】
         * [ MarkDown ](/Skills/Document/MarkDown.md)
         * [ RequirementsDocument ](/Skills/Document/RequirementsDocument.md)
+    * 【 Skills/Ecology 】
+        * [ MSA ](/Skills/Ecology/MSA.md)
     * 【 Skills/FrameWork 】
         * [ JavaBoot ](/Skills/FrameWork/JavaBoot.md)
     * 【 Skills/Soft 】
+        * [ Terminal ](/Skills/Soft/Terminal.md)
         * [ VirtualBox ](/Skills/Soft/VirtualBox.md)
     * 【 Skills/Spider 】
         * [ SpiderBase ](/Skills/Spider/SpiderBase.md)
     * 【 Skills/Test 】
+        * [ Hamcrest ](/Skills/Test/Hamcrest.md)
         * [ Junit ](/Skills/Test/Junit.md)
         * [ Junit5 ](/Skills/Test/Junit5.md)
         * [ TestNG ](/Skills/Test/TestNG.md)
         * [ TestTheory ](/Skills/Test/TestTheory.md)
-        * [ hamcrest ](/Skills/Test/hamcrest.md)
     * 【 Skills/Work 】
         * [ InterviewSkill ](/Skills/Work/InterviewSkill.md)
         * [ PomodoroTechnique ](/Skills/Work/PomodoroTechnique.md)
-        * [ ShortcutKey ](/Skills/Work/ShortcutKey.md)
         * [ WorkThinking ](/Skills/Work/WorkThinking.md)
     * [ AppManual ](/Skills/AppManual.md)
     * [ CelebrityQuotes ](/Skills/CelebrityQuotes.md)

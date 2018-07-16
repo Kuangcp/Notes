@@ -25,7 +25,7 @@
     - [人工智能](#人工智能)
     - [在线工具](#在线工具)
 
-`目录 end` |_2018-07-10_| [码云](https://gitee.com/gin9) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
+`目录 end` |_2018-07-16_| [码云](https://gitee.com/gin9) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
 ****************************************
 # 【常用的网站】
 ## 软件商店
@@ -56,6 +56,8 @@
 - [代码时间](http://codetimecn.com/) `访谈类语言节目`
 - [云收藏](http://favorites.ren/index)`SpringBoot搭建的收藏夹服务`
 - [ce安全网](https://www.cesafe.com/)`没事看看这个网站, 提高安危意识`
+
+- [schacon.github.io](http://schacon.github.io/)
 
 # 社区网站
 - [掘金门户网](http://e.xitu.io)

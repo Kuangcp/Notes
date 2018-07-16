@@ -13,6 +13,7 @@
     * [ CleanCode ](/Article/CleanCode.md)
     * [ Font ](/Article/Font.md)
     * [ FreeBook ](/Article/FreeBook.md)
+    * [ HistoricalBias ](/Article/HistoricalBias.md)
     * [ Memorandum ](/Article/Memorandum.md)
     * [ NotCode ](/Article/NotCode.md)
     * [ ReadBook ](/Article/ReadBook.md)
@@ -49,10 +50,12 @@
 * 【 Functional 】
     * [ Clojure ](/Functional/Clojure.md)
     * [ FPBase ](/Functional/FPBase.md)
-    * [ Go ](/Functional/Go.md)
     * [ Groovy ](/Functional/Groovy.md)
     * [ Kotlin ](/Functional/Kotlin.md)
     * [ Scala ](/Functional/Scala.md)
+* 【 Go 】
+    * [ GoBase ](/Go/GoBase.md)
+    * [ GoDatabase ](/Go/GoDatabase.md)
 * 【 Java 】
     * 【 Java/AdvancedLearning 】
         * [ Annotation ](/Java/AdvancedLearning/Annotation.md)

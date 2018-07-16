@@ -710,6 +710,7 @@ _time_
     - POST时 特别注意:`参数==值`
 - [python-excel](http://www.python-excel.org/)
 - `python-docx` [文档](https://python-docx.readthedocs.io/en/latest/)
+- `chef` [文档](https://docs.chef.io/resource_python.html) `Use the python resource to execute scripts using the Python interpreter`
 
 ********************
 ## QT
