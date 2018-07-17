@@ -14,8 +14,10 @@
         - [个人习惯](#个人习惯)
     - [常用插件](#常用插件)
     - [启动配置](#启动配置)
+    - [Tips](#tips)
+        - [Error:Cannot compile Groovy files: no Groovy library is defined for module "XXX"](#errorcannot-compile-groovy-files-no-groovy-library-is-defined-for-module-"xxx")
 
-`目录 end` |_2018-07-16_| [码云](https://gitee.com/gin9) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
+`目录 end` |_2018-07-17_| [码云](https://gitee.com/gin9) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
 ****************************************
 
 # IDEA 使用笔记
@@ -160,7 +162,7 @@ _例如修改为如下_
 1. **Ctrl Q** 显示javadoc
 1. **Ctrl B** 显示定义处或者调用处
 1. **Ctrl Shift T** 自动创建或跳转 Test
-1. **Ctrl Shift F7** 高亮显示光标所在元素所有出现过的地方
+1. **Ctrl Shift F7** 高亮显示光标所在元素所有出现过的地方(就是搜索)
 1. **Ctrl Alt L** 快速格式化代码 
 1. **Ctrl Alt O** 优化导入的类和包
 
@@ -187,8 +189,8 @@ _例如修改为如下_
 1. **Ctrl Shift Space** 智能提示代码的补全
 1. **Ctrl Shift 上/下键** 代码上/下移动 `光标在一行上就是移动一行, 在代码块的首行就是移动整个代码块`
 1. **Ctrl J** 提示代码片段 也就是 Live Template
-1. **Alt J** 选中变量
-1. **Ctrl Spac**e 智能补全
+1. **Alt J** 选中字符
+1. **Ctrl Space** 智能补全
     - **Ctrl Shift Space** 结合上下文补全
 1. **Ctrl W** 选中代码，连续按会有其他效果
 
@@ -258,4 +260,10 @@ _例如修改为如下_
 ## 启动配置
 > [官网文档](https://www.jetbrains.com/help/idea/increasing-memory-heap.html)
 > [IntelliJ IDEA 内存优化最佳实践](http://blog.oneapm.com/apm-tech/426.html)
+
+
+## Tips
+
+### Error:Cannot compile Groovy files: no Groovy library is defined for module "XXX"
+1. Project Structure -> 找到 XXX 项目 右击 -> Add -> 选择 Groovy
 
