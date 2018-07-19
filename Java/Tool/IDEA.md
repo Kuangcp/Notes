@@ -17,7 +17,7 @@
     - [Tips](#tips)
         - [Error:Cannot compile Groovy files: no Groovy library is defined for module "XXX"](#errorcannot-compile-groovy-files-no-groovy-library-is-defined-for-module-"xxx")
 
-`目录 end` |_2018-07-17_| [码云](https://gitee.com/gin9) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
+`目录 end` |_2018-07-19_| [码云](https://gitee.com/gin9) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
 ****************************************
 
 # IDEA 使用笔记
@@ -111,7 +111,7 @@ _例如修改为如下_
 1. `Ctrl＋E`，可以显示最近编辑的文件列表
 1. `Shift＋单击标签页` 可以关闭文件
 1. `Ctrl＋Shift＋Backspace `可以跳转到上次编辑的地方
-1. `Ctrl＋F12`，可以弹窗显示当前文件中类的结构
+1. `Ctrl＋F12`，可以弹窗显示当前文件中类的结构(快速跳转方法和属性)
 1. `Ctrl＋F7`可以查询当前元素在当前文件中的引用，然后按F3可以选择
 1. `Ctrl＋N`，可以快速打开类
 1. `Ctrl＋Shift＋N`，可以快速打开文件
@@ -202,6 +202,7 @@ _例如修改为如下_
 1. **Ctrl Alt ←/→** 后退/前进 至光标的上一个位置
 1. **F2** 或 **Shift F2** 高亮错误或警告快速定位
 1. **Ctrl＋[ 或 ]** 可以跳到大括号的开头结尾
+1. **Alt S** 跳转类的方法或属性 `原为 Ctrl F12`
 
 **Search**
 1. **Ctrl N** 查找类(所有类范围,包括引用的包)
@@ -213,7 +214,6 @@ _例如修改为如下_
 **View** `显示/隐藏窗口`
 1. **Ctrl H** 生成类结构图并显示
 1. **Alt H** 类结构图窗口
-1. **Alt S** 当前文件的结构
 1. **Alt A**  目录结构窗口
 1. **Alt X**  Run窗口
 1. **Alt D**  debug窗口
@@ -236,7 +236,7 @@ _例如修改为如下_
 - **Ctrl Shift Alt ?** 进行一些设置，找到编译自动部署，就能热加载
 
 **Tips**
-- 代码模板 Live Template (fori notnull...) 输入完成后，按Tab或者Enter，生成代码。
+- 代码模板 Live Template (**fori** **notnull**...) 输入完成后，按Tab或者Enter，生成代码。
 
 *********************
 ## 常用插件

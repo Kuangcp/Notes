@@ -9,8 +9,11 @@
     - [定时任务crontab](#定时任务crontab)
         - [定时执行脚本](#定时执行脚本)
 - [实用的工具](#实用的工具)
+    - [终端工具](#终端工具)
+    - [图形化工具](#图形化工具)
+        - [剪贴板管理](#剪贴板管理)
 
-`目录 end` |_2018-07-14_| [码云](https://gitee.com/gin9) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
+`目录 end` |_2018-07-19_| [码云](https://gitee.com/gin9) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
 ****************************************
 # 系统常用基础命令
 
@@ -44,7 +47,10 @@
 ### 定时执行脚本 
 > 脚本中的操作最好都使用绝对路径
 
+*******************************************
+
 # 实用的工具
+## 终端工具
 - htop _终端里的任务管理器_
 - strace -p PID _查看系统调用_
 - ps | clorm 20 30 `colrm` _删除输出的20 到30 列_
@@ -68,3 +74,8 @@
 - [WTF](https://wtfutil.com/posts/overview/) | [Github Repo](https://github.com/senorprogrammer/wtf)
     - 丰富的功能, 一个方便的终端控制面板
 
+## 图形化工具
+### 剪贴板管理
+> [参考博客: 面向 Linux 的 10 款最佳剪贴板管理器](https://linux.cn/article-7329-1.html)
+
+- CopyQ 比较好用
