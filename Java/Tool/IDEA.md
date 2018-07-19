@@ -98,7 +98,6 @@ _例如修改为如下_
  */
 ```
 ### 个人IDEA配置
-> [导出的配置jar](https://github.com/Kuangcp/Configs/tree/master/Idea)
 - 字体Fira Code Retina 14 0.9
 
 ************************
@@ -107,6 +106,7 @@ _例如修改为如下_
 > 如果一时不习惯idea, 可以在 设置中 的keymap 选择eclipse系列即可
 
 ### 默认快捷键
+> 可以在 Help -> Keymap Reference 看到PDF文档 `个人觉得最简单就是打开 Setting -> keymap -> Find Action by shortcut, 任意的按键, 然后查看对应的内容`
 
 1. `Ctrl＋E`，可以显示最近编辑的文件列表
 1. `Shift＋单击标签页` 可以关闭文件
@@ -156,7 +156,8 @@ _例如修改为如下_
 **************************************************************************
 
 ### 个人习惯
-> 从eclipse风格脱离而来和原生Idea快捷键结合, 自己修改的风格 在 [个人配置文件夹下找到导入即可](#https://github.com/Kuangcp/Configs/tree/master/Idea)
+> 从eclipse风格继承而来和原生Idea快捷键结合, 自己修改的风格, 如果需要, 则在[个人配置文件夹](#https://github.com/Kuangcp/Configs/tree/master/Idea)下找到对应的jar导入即可
+> 个人的习惯特点是左手完成大部分快捷键的任务, 因为还没习惯脱离鼠标工作  
 
 1. **Alt Enter** 自动修复
 1. **Ctrl Q** 显示javadoc
@@ -170,9 +171,9 @@ _例如修改为如下_
 1. **Ctrl W** 选中代码
 1. **Ctrl E** / **Alt E** 最近文件打开
 1. **Alt Shift C** 最近更改的文件
-1. **Ctrl N** 快速搜索Java文件 
+1. **Ctrl N** 快速搜索类
     - **Ctrl Shift N** 搜索所有文件
-    - **Ctrl Shift Alt N** 按类名首字母搜索
+    - **Ctrl Shift Alt N** 按文件内容字符的搜索,也能按类名首字母搜索
 1. **Alt left/right** 左右切换打开的文件
 
 **Coding**
@@ -194,7 +195,7 @@ _例如修改为如下_
     - **Ctrl Shift Space** 结合上下文补全
 1. **Ctrl W** 选中代码，连续按会有其他效果
 
-1. **Ctrl Alt V** 自动声明一个变量 自定义为`Ctrl Alt Shift J`
+1. **Ctrl Alt V** 根据当前行代码自动生成变量定义 自定义为 `Ctrl Alt Shift J`
 
 **Jump**
 1. **Alt+ Up/Down** 在方法间快速移动定位
@@ -209,17 +210,22 @@ _例如修改为如下_
 1. **Ctrl R** 替换文本
 1. **Ctrl F** 查找文本
 
-**View**
+**View** `显示/隐藏窗口`
 1. **Ctrl H** 生成类结构图并显示
-1. **Alt H** 显示类结构图窗口
-1. **Ctrl F12**，可以显示当前文件的结构 `或者直接Alt S`
-1. **Alt A** , 显示目录结构
-1. **Alt R** , 显示运行窗口
-1. **Alt D** , 显示debug窗口
-1. **Alt T** , 显示TODO的窗口 | `Ctrl +/-` 全部显示和折叠 TODO
-1. **Alt G** , 显示Gradle窗口
-1. **Alt M** , 显示Maven窗口
-1. **Alt 3** , 显示数据库工具窗口
+1. **Alt H** 类结构图窗口
+1. **Alt S** 当前文件的结构
+1. **Alt A**  目录结构窗口
+1. **Alt X**  Run窗口
+1. **Alt D**  debug窗口
+1. **Alt T**  TODO的窗口 | `Ctrl +/-` 显示和折叠TODO
+1. **Alt G**  Gradle窗口
+1. **Alt M**  Maven窗口
+1. **Alt Z**  Spring窗口
+1. **Alt V**  VCS窗口
+1. **Alt N**  定位当前文件在目录结构的位置
+1. **Alt 3**  数据库工具窗口
+1. **Alt .**  终端窗口
+1. **Shift Alt V** 数据库 Console 窗口
 1. **Ctrl Shift 左/右** , 调节以上工具窗口与编辑器窗口的分隔线位置
 
 > 在任一工具窗口, 按`ESC`都会让焦点回到编辑器 `Shift ESC` 就能关闭工具窗口并让焦点回到编辑器

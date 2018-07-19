@@ -9,6 +9,8 @@
 `目录 end` |_2018-07-08_| [码云](https://gitee.com/gin9) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
 ****************************************
 # Java8
+> [Java8 JDK Readme](http://www.oracle.com/technetwork/java/javase/jdk-8-readme-2095712.html) | [Jre8 Readme](http://www.oracle.com/technetwork/java/javase/jre-8-readme-2095710.html)`有说明哪些是JRE运行不必要的文件`  
+> [Java8 tools](https://docs.oracle.com/javase/8/docs/technotes/tools/)`目录 bin/* 下的工具`
 
 ## Optional
 ## Funcational

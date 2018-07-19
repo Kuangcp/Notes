@@ -10,7 +10,7 @@
 `目录 end` |_2018-07-08_| [码云](https://gitee.com/gin9) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
 ****************************************
 # Java主要发行版本
-> 粗度列举特性 
+> [官网 Release Note](http://www.oracle.com/technetwork/java/javase/jdk-relnotes-index-2162236.html)
 
 ## Java7
 > [详情](/Java/AdvancedLearning/Java7.md)
@@ -30,6 +30,7 @@
 1. Stream
 1. java.time 包 增强了日期时间的处理
 
+- 181 版本移除了 Derby 
 
 ## Java9
 > [参考博客: Java9 新特性汇总](http://www.infoq.com/cn/news/2014/09/java9)  

@@ -30,29 +30,27 @@
 
 # 在Linux上配置Java环境
 ## 配置JDK
-### 直接解压配置
+### 解压配置
 - [下载地址](http://www.oracle.com/technetwork/java/javase/downloads/index.html)
-- 打开配置文件 ： `sudo gedit /etc/profile`
-```
-export JAVA_HOME= 绝对路径例如： /home/kcp/Application/sdk/jdk1.8.0_131
-export JRE_HOME=${JAVA_HOME}/jre
-export CLASSPATH=.:${JAVA_HOME}/lib:${JRE_HOME}/lib
-export PATH=${JAVA_HOME}/bin:$PATH
-```
-- 让修改立即生效`source /etc/profile` 或者修改 `.bash_aliases`
+- 在文件 `/etc/profile` 中添加
+
 ```sh
-    JAVA_HOME=/home/kcp/Application/sdk/jdk1.8.0_131
+    export JAVA_HOME= 绝对路径例如： /home/kcp/Application/sdk/jdk1.8.0_131
     export JRE_HOME=${JAVA_HOME}/jre
     export CLASSPATH=.:${JAVA_HOME}/lib:${JRE_HOME}/lib
     export PATH=${JAVA_HOME}/bin:$PATH
 ```
-`source ~/.bash_aliases`
+> 让修改立即生效`source /etc/profile` 或者修改 `.bashrc` 文件, 就会在当前用户的终端生效
 
-- *一定要执行*: 指定默认的jdk，因为系统预装了openJdk ,为了稳妥建议先进入JDK的bin目录,然后执行
+**root用户的环境**
+- 指定默认的jdk，因为系统预装了openJdk ,为了稳妥建议先进入JDK的bin目录,然后执行
 ```sh
     sudo update-alternatives --install /usr/bin/java java `pwd`/java 300
     sudo update-alternatives --install /usr/bin/javac javac `pwd`/javac 300
 ```
+> 后期更新JDK版本, 普通用户的话, 就只是需要更改 `.bashrc` 文件, root用户就执行以上命令, 或者直接重建软链接文件
+>> root 用户下 `which java` 然后 `ls -l 显示的路径` 一直往下找, 找到 `/etc/alternatives/java` 和 `/etc/alternatives/javac` 重建这两个软链接.
+
 ### sdkman方式 
 > jdk不推荐使用sdkman安装，这里的jdk是开源版估计，会少包 认准这个版本才是完整的(Oracle Corporation 25.131-b11)
 > 但是最近出了一个oracle的版本貌似是完整的，因为有个同意协议的过程 `sdk install java 8u144-oracle`

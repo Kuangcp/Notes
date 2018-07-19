@@ -19,7 +19,7 @@
 
 *************************************
 # Java
-> [Oracle Java 首页](http://www.oracle.com/technetwork/java/index.html)
+> [Oracle JavaSE](http://www.oracle.com/technetwork/java/javase/overview/index.html)
 
 ## 【基础】
 >- [基础语法](/Java/AdvancedLearning/GrammarAndType.md)  
