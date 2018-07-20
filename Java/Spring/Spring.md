@@ -3,7 +3,6 @@
 - [Spring](#spring)
     - [配置使用](#配置使用)
         - [通过构建工具](#通过构建工具)
-        - [Spring中的Bean的生命周期](#spring中的bean的生命周期)
         - [注解方式](#注解方式)
             - [xml文件配置](#xml文件配置)
             - [常用的注解](#常用的注解)
@@ -13,6 +12,8 @@
         - [获取Context上下文环境](#获取context上下文环境)
             - [在JSP或Servlet中获取](#在jsp或servlet中获取)
         - [Spring 和 ServletContextList](#spring-和-servletcontextlist)
+- [基础](#基础)
+    - [生命周期](#生命周期)
     - [IOC/DI 控制反转](#iocdi-控制反转)
     - [AOP](#aop)
         - [基本概念](#基本概念)
@@ -25,7 +26,7 @@
         - [maven配置](#maven配置)
     - [Web开发上的一些优秀的习惯](#web开发上的一些优秀的习惯)
 
-`目录 end` |_2018-07-08_| [码云](https://gitee.com/gin9) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
+`目录 end` |_2018-07-20_| [码云](https://gitee.com/gin9) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
 ****************************************
 # Spring
 > [Spring官网](https://spring.io/) | [spring4all社区](http://www.spring4all.com/)
@@ -50,9 +51,6 @@ _其他,可选_
 1. spring-web
 1. spring-webmvc
 1. spring-test
-
-### Spring中的Bean的生命周期
-> [参考博客: Spring Bean的生命周期](https://www.cnblogs.com/redcool/p/6397398.html)
 
 ### 注解方式
 > 需要在配置文件 xml配置文件 中配置包扫描 才能生效
@@ -161,7 +159,14 @@ _其他,可选_
         //....
     }
 ``` 
-****************
+
+# 基础
+## 生命周期
+@PreDestroy
+@PostConstruct
+
+- [ ] 完善
+
 ##  IOC/DI 控制反转
 - DI 译为依赖注入 所有的bean都在IOC容器中（单例的）多例的不在该容器中进行管理
 - 通过注入 可以注入基本属性 对象属性，集合属性，构造器，properties等

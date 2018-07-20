@@ -50,9 +50,11 @@
         - [三方库](#三方库)
     - [QT](#qt)
 
-`目录 end` |_2018-07-16_| [码云](https://gitee.com/gin9) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
+`目录 end` |_2018-07-20_| [码云](https://gitee.com/gin9) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
 ****************************************
 # Python
+> [官网](https://www.python.org/)
+
 > [Python初学者（零基础学习Python、Python入门）书籍、视频、资料、社区推荐](https://github.com/Yixiaohan/codeparkshare)
 
 - [Python中的多态](http://blog.csdn.net/shangzhihaohao/article/details/7065675)
@@ -77,8 +79,6 @@
 
 ### Docker
 > [docker hub](https://hub.docker.com/_/python/)
-
-
 
 
 ## 基础
