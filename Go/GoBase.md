@@ -89,6 +89,39 @@ func main() {
     - `$GOARM` 专门针对基于 arm 架构的处理器，它的值可以是 5 或 6，默认为 6。
     - `$GOMAXPROCS` 用于设置应用程序可使用的处理器个数与核数，详见第 14.1.3 节。
 
+## 基本开发环境搭建
+> [Github:Golang](https://github.com/golang)
+
+入门时使用VSCode是比较方便的, VSCode 会推荐我们安装如下工具
+1. tools _工具集_
+    1. guru `golang.org/x/tools/cmd/guru`
+    1. gorename `golang.org/x/tools/cmd/gorename`
+1. lint `golang.org/x/lint`
+    1. golint `golang.org/x/lint/golint`
+1. go-outline `github.com/ramya-rao-a/go-outline`
+1. go-symbols `github.com/acroca/go-symbols`
+1. goreturns `github.com/sqs/goreturns`
+
+- [ ] godep 同样的方式
+
+- 安装完后就会在GOPATH中能找到这些工具对应的命令了, 由于 golang.org 被墙 
+    - 所以 只有这几个工具不能直接 go get : guru gorename imports(goreturns要用到) lint golint 
+
+https://github.com/golang/tools 是 tools 的Github地址,  
+https://github.com/golang/lint 是 lint 和 golint 的Github地址, 
+
+
+1. `mkdir -p src/golang.org/x/tools`
+1. `mkdir -p src/golang.org/x/lint`
+1. 将 https://github.com/golang/tools clone所有内容 放到 src/golang.org/x/tools 下
+1. 将 https://github.com/golang/lint  clone所有内容 放到 src/golang.org/x/lint 下
+1. 此时再执行 go get 那五个工具即可全部安装成功
+
+问题又来了, Github 由于飘忽不定的被墙, 网速特别慢, 就可以利用码云来加速下载
+1. lint https://gitee.com/gin9/golang-lint.git
+1. tools https://gitee.com/gin9/golang-tools.git 
+
+*********************************
 ## 数据类型
 _有关类型后置_
 > [螺旋形（C/C++）和顺序（Go）的声明语法](https://cxwangyi.wordpress.com/2011/03/14/%E8%9E%BA%E6%97%8B%E5%BD%A2%EF%BC%88cc%EF%BC%89%E5%92%8C%E9%A1%BA%E5%BA%8F%EF%BC%88go%EF%BC%89%E7%9A%84%E5%A3%B0%E6%98%8E%E8%AF%AD%E6%B3%95/)
