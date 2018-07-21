@@ -113,6 +113,7 @@ _有自制力的人， 能够坚持的人才更有可能成功！_
 | 2017.04 | 接触Groovy |
 | 2017.05 | 接触Linux  |
 | 2017.08 | 接触Docker |
+| 2018.07 | 接触Go |
 
 ## 笔记中所涉及到的知识
 - 编程语言: Python Java Kotlin Groovy Scala Clojure Shell Go
@@ -133,7 +134,6 @@ _有自制力的人， 能够坚持的人才更有可能成功！_
 # Catalog
 
 * [ ApiAndDoc ](./ApiAndDoc.md)
-* [ AppList ](./AppList.md)
 * [ Platform ](./Platform.md)
 * [ Process ](./Process.md)
 * [ Repository ](./Repository.md)
@@ -186,6 +186,7 @@ _有自制力的人， 能够坚持的人才更有可能成功！_
 * 【 Go 】
     * [ GoBase ](/Go/GoBase.md)
     * [ GoDatabase ](/Go/GoDatabase.md)
+    * [ GoRestful ](/Go/GoRestful.md)
 * 【 Java 】
     * 【 Java/AdvancedLearning 】
         * [ Annotation ](/Java/AdvancedLearning/Annotation.md)
@@ -203,6 +204,7 @@ _有自制力的人， 能够坚持的人才更有可能成功！_
         * [ JMS ](/Java/AdvancedLearning/JMS.md)
         * [ Java7 ](/Java/AdvancedLearning/Java7.md)
         * [ Java8 ](/Java/AdvancedLearning/Java8.md)
+        * [ JavaDatabase ](/Java/AdvancedLearning/JavaDatabase.md)
         * [ JavaPerformance ](/Java/AdvancedLearning/JavaPerformance.md)
         * [ JavaReleaseVersion ](/Java/AdvancedLearning/JavaReleaseVersion.md)
         * [ JavaTest ](/Java/AdvancedLearning/JavaTest.md)
