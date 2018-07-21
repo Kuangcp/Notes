@@ -10,9 +10,9 @@
 
 > [Manjaro 安装配置简要](https://blog.csdn.net/ouening/article/details/79633966)
 
-> 2018-05-25 15:19:26
-- 都说这个好用, 为什么我就连nginx都装不上...emm
+ 由于是基于arch的, 滚动更新的特性, 所以需要在每次在安装软件前 `pacman -Syu` 更新整个系统
+ - 这次下载解压运行 VSCode 就是这样, 报错为 
+    - error while loading shared libraries: libgconf-2.so.4: cannot open shared object file: No such file or directory
+    - 尝试安装 libgconf libgconf2 ...
+    - 其实真正的包是 gconf , 而这个也是尝试过的,  但是还是说找不到package, 更新了下系统,才找到了这个包
 
-> 2018-05-30 09:35:41
-- 装nginx没装上, 弄一下弄好了, 装ssh装不上, 折腾一下弄好了 装git装不上, 弄一下没弄好 pacman也挂掉了, 这个arch的依赖管理真的那么好用的吗!!
-- 日常还是追求稳定吧, Ubuntu, Deepin什么的, Manjaro 就是用来瞎玩的
