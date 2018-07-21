@@ -7,7 +7,7 @@
     - [【抽象】](#抽象)
     - [相关资源](#相关资源)
 
-`目录 end` |_2018-07-08_| [码云](https://gitee.com/gin9) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
+`目录 end` |_2018-07-21_| [码云](https://gitee.com/gin9) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
 ****************************************
 # 计算机基础
 
@@ -20,6 +20,8 @@
 *************************************
 # Java
 > [Oracle JavaSE](http://www.oracle.com/technetwork/java/javase/overview/index.html)
+- [openjdk](http://openjdk.java.net/)`开源的JDK, `
+- [oracle-jdk英文版页面](http://www.oracle.com/technetwork/java/javase/downloads/index.html) | [oracle-jdk中文版页面](http://www.oracle.com/technetwork/cn/java/javase/downloads/index.html)
 
 ## 【基础】
 >- [基础语法](/Java/AdvancedLearning/GrammarAndType.md)  

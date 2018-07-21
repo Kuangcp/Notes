@@ -5,7 +5,7 @@
     - [安装Docker](#安装docker)
 - [在Linux上配置Java环境](#在linux上配置java环境)
     - [配置JDK](#配置jdk)
-        - [直接解压配置](#直接解压配置)
+        - [解压配置](#解压配置)
         - [sdkman方式](#sdkman方式)
         - [mythsdk](#mythsdk)
         - [使用软链接](#使用软链接)
@@ -17,7 +17,7 @@
         - [显卡问题](#显卡问题)
         - [双硬盘的折腾记录](#双硬盘的折腾记录)
 
-`目录 end` |_2018-07-08_| [码云](https://gitee.com/gin9) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
+`目录 end` |_2018-07-21_| [码云](https://gitee.com/gin9) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
 ****************************************
 # 配置Linux
 > 修改Hostname需要重启, 设置java默认需要重启, docker添加用户组需要重启
@@ -48,6 +48,7 @@
     sudo update-alternatives --install /usr/bin/java java `pwd`/java 300
     sudo update-alternatives --install /usr/bin/javac javac `pwd`/javac 300
 ```
+- 或者不执行命令, 直接修改链接文件即可完成同样的目的
 > 后期更新JDK版本, 普通用户的话, 就只是需要更改 `.bashrc` 文件, root用户就执行以上命令, 或者直接重建软链接文件
 >> root 用户下 `which java` 然后 `ls -l 显示的路径` 一直往下找, 找到 `/etc/alternatives/java` 和 `/etc/alternatives/javac` 重建这两个软链接.
 

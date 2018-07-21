@@ -3,7 +3,6 @@
 * [ Introduction ](README.md)
 
 * [ ApiAndDoc ](./ApiAndDoc.md)
-* [ AppList ](./AppList.md)
 * [ Platform ](./Platform.md)
 * [ Process ](./Process.md)
 * [ Repository ](./Repository.md)
