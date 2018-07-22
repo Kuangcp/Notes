@@ -13,7 +13,7 @@
     - [图形化工具](#图形化工具)
         - [剪贴板管理](#剪贴板管理)
 
-`目录 end` |_2018-07-19_| [码云](https://gitee.com/gin9) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
+`目录 end` |_2018-07-23_| [码云](https://gitee.com/gin9) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
 ****************************************
 # 系统常用基础命令
 
@@ -79,3 +79,6 @@
 > [参考博客: 面向 Linux 的 10 款最佳剪贴板管理器](https://linux.cn/article-7329-1.html)
 
 - CopyQ 比较好用
+
+> [参考博客: 这9个Linux命令非常危险 请大家慎用](https://www.jb51.net/LINUXjishu/498660.html)
+

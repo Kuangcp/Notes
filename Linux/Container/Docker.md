@@ -36,7 +36,7 @@
     - [Docker-Swarm](#docker-swarm)
 - [网络](#网络)
 
-`目录 end` |_2018-07-11_| [码云](https://gitee.com/gin9) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
+`目录 end` |_2018-07-23_| [码云](https://gitee.com/gin9) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
 ****************************************
 # Docker
 > [官方文档](https://docs.docker.com/)
@@ -197,9 +197,26 @@ _登录镜像仓库_
 - 上传镜像： `docker push mythos/test:lastest`
 
 ## 容器命令
+_ps_
 - 查看当前运行的容器：`docker ps `
     - 查看所有容器 ：`docker ps -a`
     - 查看占用 :`docker ps -s`
+    - [ps formatting](https://docs.docker.com/engine/reference/commandline/ps/#formatting)
+```
+.ID 	    Container ID
+.Image 	    Image ID
+.Command 	Quoted command
+.CreatedAt 	Time when the container was created.
+.RunningFor Elapsed time since the container was started.
+.Ports 	    Exposed ports.
+.Status 	Container status.
+.Size 	    Container disk size.
+.Names 	    Container names.
+.Labels 	All labels assigned to the container.
+.Label 	    Value of a specific label for this container. For example '{{.Label "com.docker.swarm.cpu"}}'
+.Mounts 	Names of the volumes mounted in this container.
+.Networks 	Names of the networks attached to this container.
+```
 - 查看所有容器的状态：`docker stats` 能看到正在运行的容器内存 cpu io net等信息
     - `-a` 所有容器
     - `--no-stream` 不阻塞标准输出流，只输出一次信息

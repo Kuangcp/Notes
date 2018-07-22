@@ -46,7 +46,7 @@
             - [查看发行版](#查看发行版)
             - [查看系统所有用户信息](#查看系统所有用户信息)
 
-`目录 end` |_2018-07-13_| [码云](https://gitee.com/gin9) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
+`目录 end` |_2018-07-23_| [码云](https://gitee.com/gin9) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
 ****************************************
 # 【文件管理】
 > Linux中认为万物皆文件
@@ -146,10 +146,23 @@ _find_
 - `find -type f -name README.md` 默认当前目录查找
     - d 文件夹 f 普通文件 l 符号链接文件 b 块设备 c 字符设备 p 管道文件 s 套接字
 
-> 递归删除目录下所有run后缀的文件 `find . -name "*.run"  | xargs rm -f`
+- **exec** 嵌入一个命令
+    1. 找到所有pdf移动到指定目录 `find . -name "*.pdf" -exec mv {} /home/test \;`
+    1. 把当前目录下面的file（不包括目录)，移动到/opt/shell 
+        - `find .  -type f  -exec mv {}   /opt/shell   \;`
+        - `find .  -type f  |  xargs  -I  '{}'  mv  {}  /opt/shell`
+    1. 解压目录下所有zip文件 `find . -name "*.zip" -exec unzip  {}  \;`
 
-> 查找文件内容 `find etc/  |xargs grep -i java`
+*********
+**实践**
+1. 递归删除目录下所有run后缀的文件 `find . -name "*.run"  | xargs rm -f`
+1. 查找文件内容 `find etc/  |xargs grep -i java`
+
+
 ### 查看文件
+_stat_
+- 查看文件详细信息 `stat filename `
+
 _tree_
 - 展示目录结构
     - -p 匹配
@@ -357,6 +370,11 @@ _mv_
 - du -sk * | grep guojf //看一个人的大小
 - du -m | cut -d "/" -f 2 //看第二个/ 字符前的文字
 
+- 获取当前目录最大的6个文件 `du -hsx * | sort -rh | head -6` 
+    - -hsx – （-h）更易读的格式，（-s）汇总输出，（-x）跳过其他文件系统的文件
+    - sort – 对文本文件按行排序
+    - -rf – （-r）将比较的结果逆序输出，（-f）忽略大小写
+    - head – 输出文件的头几行
 *********************************
 ## 日志
 > 基本都在 `/var/log` 下

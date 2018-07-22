@@ -1,5 +1,6 @@
 `目录 start`
  
+- [书单](#书单)
 - [待阅读的书籍](#待阅读的书籍)
     - [数学](#数学)
         - [统计学](#统计学)
@@ -20,11 +21,22 @@
     - [生活](#生活)
 - [教学视频](#教学视频)
 
-`目录 end` |_2018-07-08_| [码云](https://gitee.com/gin9) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
+`目录 end` |_2018-07-23_| [码云](https://gitee.com/gin9) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
 ****************************************
-# 待阅读的书籍
-> [程序员必读书单](http://www.cnblogs.com/figure9/p/developer-reading-list.html)
+# 书单
 
+> [jb51 编程专区](https://www.jb51.net/books/list422_1.html)
+> [3322.cc电子书专区](http://www.3322.cc/sort/132-1.html)
+
+*******************************
+
+> [程序员必读书单](http://www.cnblogs.com/figure9/p/developer-reading-list.html)
+> [参考博客: 一个合格的程序员应该读过哪些书(偏java)](https://www.jb51.net/article/35440.htm)
+> [参考博客: 2018 年 Java 程序员必读的十本书](http://blog.jobbole.com/113955/)
+> [参考博客: 程序员必读的六本书](https://droidyue.com/blog/2015/07/04/six-books-every-programer-must-read/)
+> [参考博客: Java自学书籍Top 10](https://www.jb51.net/article/93337.htm)
+
+# 待阅读的书籍
 ## 数学
 ### 统计学
 - 统计学完全教程
@@ -58,6 +70,7 @@
 - Java核心技术 卷1 基础知识 卷2 高级特性
 - 实战java高并发程序设计
 - 深入理解Java虚拟机
+- Effective Java 
 
 ### Git
 - GitHub实践  [美] Chris Dawson , [美] Ben Straub (作者) 安道 (译者) 
@@ -65,7 +78,10 @@
 ### Linux
 - 鸟哥的Linux私房菜
 - 构建高可用 Linux 服务器（第 4 版） 余洪春
-
+快乐的命令行 https://github.com/billie66/TLCL
+只是为了好玩 
+Linux命令行与shell脚本编程大全
+Linux Shell脚本攻略 二 三 版
 ### Python
 - Python Web 开发实战
 
@@ -108,7 +124,6 @@
 果壳中的宇宙
 时间简史
 重构
-鸟哥Linux
 编程之美
 高性能Mysql
 HTTP权威指南
