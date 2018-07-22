@@ -6,6 +6,7 @@
     - [安装](#安装)
         - [Docker](#docker)
     - [环境变量解释](#环境变量解释)
+    - [基本开发环境搭建](#基本开发环境搭建)
     - [数据类型](#数据类型)
         - [基本类型](#基本类型)
         - [Array](#array)
@@ -19,7 +20,7 @@
 - [Tips](#tips)
     - [通过字符串调用指定函数](#通过字符串调用指定函数)
 
-`目录 end` |_2018-07-16_| [码云](https://gitee.com/gin9) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
+`目录 end` |_2018-07-22_| [码云](https://gitee.com/gin9) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
 ****************************************
 # Go
 > [官网](https://golang.org) | [镜像网](https://golang.google.cn/) | [Github Repo](https://github.com/golang/go) | [Go Doc](https://godoc.org/)
@@ -42,8 +43,11 @@ Go 语言被设计成一门应用于搭载 Web 服务器，存储集群或类似
 ## 书籍
 
 > [Go语言高级编程(Advanced Go Programming)](https://books.studygolang.com/advanced-go-programming-book/index.html)
+
+
 ## 安装
-> [官方教程](https://golang.google.cn/doc/install) | [参考 教程](http://www.runoob.com/go/go-environment.html)
+> [官方教程](https://golang.google.cn/doc/install) | [参考 教程](http://www.runoob.com/go/go-environment.html) | [_](http://cloud.kuangcp.top/go-1.10.3.tar.gz)
+
 
 1. sudo tar -C /usr/local -xzf go1.10.3.linux-amd64.tar.gz
 2. *shrc或者 /etc/profile 中添加

@@ -18,7 +18,7 @@
             - [静态服务器将后台反代理](#静态服务器将后台反代理)
     - [问题](#问题)
 
-`目录 end` |_2018-07-08_| [码云](https://gitee.com/gin9) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
+`目录 end` |_2018-07-22_| [码云](https://gitee.com/gin9) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
 ****************************************
 # Nginx
 
@@ -113,6 +113,7 @@ server {
 
 ```conf
   server {
+    # listen 6050;
     client_max_body_size 4G;
     listen  80;  ## listen for ipv4; this line is default and implied
     server_name static.me.com;

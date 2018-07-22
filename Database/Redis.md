@@ -40,7 +40,7 @@
         - [Python使用](#python使用)
         - [webdis](#webdis)
 
-`目录 end` |_2018-07-08_| [码云](https://gitee.com/gin9) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
+`目录 end` |_2018-07-22_| [码云](https://gitee.com/gin9) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
 ****************************************
 # Redis
 > [Redis官网](https://redis.io/) | [Redis中文社区](http://www.redis.cn/) | [Redis教程](http://www.runoob.com/redis/redis-tutorial.html) 
@@ -69,7 +69,7 @@
 - 打开客户端 `redis-cli`
 
 ### 解压即用
-> [下载我打包好的(适用于Linux平台)](https://github.com/Kuangcp/Configs/tree/master/Database/redis)  
+> [下载我打包好的(仅适用于Linux平台)](https://github.com/Kuangcp/Configs/tree/master/Database/redis)  
 > [4.0.2](http://cloud.kuangcp.top/redis-4.0.2.zip) | [3.2.8](http://cloud.kuangcp.top/redis-3.2.8.zip)  
 
 `个人配置步骤:`
