@@ -27,6 +27,7 @@
 
 > [jb51 编程专区](https://www.jb51.net/books/list422_1.html)
 > [3322.cc电子书专区](http://www.3322.cc/sort/132-1.html)
+> [java1234](java1234.com)
 
 *******************************
 
@@ -72,16 +73,22 @@
 - 深入理解Java虚拟机
 - Effective Java 
 
+
+- Mybatis 从入门到精通
+- 深入实践SpringBoot
+- 深入浅出 Mybatis 技术原理与实战
+- SpringCloud 与 Docker 微服务架构与实战
 ### Git
 - GitHub实践  [美] Chris Dawson , [美] Ben Straub (作者) 安道 (译者) 
 
 ### Linux
 - 鸟哥的Linux私房菜
 - 构建高可用 Linux 服务器（第 4 版） 余洪春
-快乐的命令行 https://github.com/billie66/TLCL
-只是为了好玩 
-Linux命令行与shell脚本编程大全
-Linux Shell脚本攻略 二 三 版
+- 快乐的命令行 https://github.com/billie66/TLCL
+- 只是为了好玩 
+- Linux命令行与shell脚本编程大全
+- Linux Shell脚本攻略 二 三 版
+
 ### Python
 - Python Web 开发实战
 
@@ -99,6 +106,7 @@ Linux Shell脚本攻略 二 三 版
 - 程序员健康指南
 
 ********************
+```
 魏楚阳书单:
     《算法》（第四版）图以前章节
     《剑指 Offer》
@@ -117,9 +125,10 @@ Linux Shell脚本攻略 二 三 版
     《Head First 设计模式》
     《大型网站技术架构》（李智慧 著）
     《大型网站系统与 Java 中间件实践》
-
+```
 ******************
 自己Kindle选择的书籍
+```
 大设计
 果壳中的宇宙
 时间简史
@@ -127,7 +136,7 @@ Linux Shell脚本攻略 二 三 版
 编程之美
 高性能Mysql
 HTTP权威指南
-
+```
 
 # 教学视频
 
