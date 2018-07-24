@@ -9,7 +9,7 @@
             - [MAT](#mat)
 - [记录](#记录)
 
-`目录 end` |_2018-07-13_| [码云](https://gitee.com/gin9) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
+`目录 end` |_2018-07-24_| [码云](https://gitee.com/gin9) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
 ****************************************
 # Java的性能调优
 
@@ -26,10 +26,7 @@
 
 ### 内存监测工具
 #### jvisualvm
-> JDK 自带的工具 
-
-> [使用 VisualVM 进行性能分析及调优](https://www.ibm.com/developerworks/cn/java/j-lo-visualvm/index.html)
-> [参考博客: JVisualVM简介与内存泄漏实战分析](http://www.cnblogs.com/belen/p/5573501.html)
+> [详情](/Java/AdvancedLearning/JDKAndJRE.md#jvisualvm)
 
 #### MAT
 > Memory Analyzer tool(MAT) [官网](http://www.eclipse.org/mat/)

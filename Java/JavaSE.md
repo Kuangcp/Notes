@@ -7,7 +7,7 @@
     - [【抽象】](#抽象)
     - [相关资源](#相关资源)
 
-`目录 end` |_2018-07-21_| [码云](https://gitee.com/gin9) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
+`目录 end` |_2018-07-24_| [码云](https://gitee.com/gin9) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
 ****************************************
 # 计算机基础
 
@@ -23,6 +23,12 @@
 - [openjdk](http://openjdk.java.net/)`开源的JDK, `
 - [oracle-jdk英文版页面](http://www.oracle.com/technetwork/java/javase/downloads/index.html) | [oracle-jdk中文版页面](http://www.oracle.com/technetwork/cn/java/javase/downloads/index.html)
 
+
+>- [JDK and JRE](/Java/AdvancedLearning/JDKAndJRE.md)
+>- [Java 发行版大致特性](/Java/AdvancedLearning/JavaReleaseVersion.md)  
+>- [Java7](/Java/AdvancedLearning/Java7.md)
+>- [Java8](/Java/AdvancedLearning/Java8.md)
+
 ## 【基础】
 >- [基础语法](/Java/AdvancedLearning/GrammarAndType.md)  
 >- [继承和接口](/Java/AdvancedLearning/ExtendsAndInterface.md)  
@@ -32,6 +38,7 @@
 >- [线程](/Java/AdvancedLearning/Thread.md)  
 >- [并发](/Java/AdvancedLearning/Concurrents.md)  
 >- [IO](/Java/AdvancedLearning/IO.md)  
+>- [注解](/Java/AdvancedLearning/Annotation.md)  
 
 ## 【深入】
 >- [JDBC](/Java/AdvancedLearning/JDBC.md)  
@@ -42,7 +49,6 @@
 >- [持续集成 CI](/Java/AdvancedLearning/ContinuousIntegration.md)  
 >- [JMS](/Java/AdvancedLearning/JMS.md)  
 >- [JVM上的多语言](/Java/AdvancedLearning/MultipleLanguage.md)   
->- [最近版本的特性](/Java/AdvancedLearning/Update.md)  
 >- [Java性能调优](/Java/AdvancedLearning/JavaPerformance.md)  
 >- [Web性能调优](/Java/AdvancedLearning/WebPerformance.md)  
 
