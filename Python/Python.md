@@ -50,7 +50,7 @@
         - [三方库](#三方库)
     - [QT](#qt)
 
-`目录 end` |_2018-07-20_| [码云](https://gitee.com/gin9) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
+`目录 end` |_2018-07-25_| [码云](https://gitee.com/gin9) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
 ****************************************
 # Python
 > [官网](https://www.python.org/)
@@ -76,6 +76,11 @@
 > 列出所有已安装模块 pydoc pydoc3
 
 ## 安装配置
+
+**Debian系安装3.6**
+1. sudo add-apt-repository ppa:jonathonf/python-3.6
+1. sudo apt update 
+1. sudo apt install python3.6
 
 ### Docker
 > [docker hub](https://hub.docker.com/_/python/)
