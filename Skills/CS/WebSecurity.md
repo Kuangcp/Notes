@@ -1,6 +1,7 @@
 `目录 start`
  
 - [Web安全](#web安全)
+    - [Authenticate](#authenticate)
     - [SSL和TSL](#ssl和tsl)
     - [ARP断网攻击](#arp断网攻击)
     - [SYNFlood攻击](#synflood攻击)
@@ -8,7 +9,7 @@
         - [XSS](#xss)
     - [JWT](#jwt)
 
-`目录 end` |_2018-07-08_| [码云](https://gitee.com/gin9) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
+`目录 end` |_2018-07-26_| [码云](https://gitee.com/gin9) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
 ****************************************
 # Web安全
 > 关注常见的比如 XSS CSRF SQL注入 上传等问题的原理和修复方案。还有密码安全也基本上是面试必考点。
@@ -16,6 +17,10 @@
 > 用户的登录态（Cookies）在不知情的情况下会被发送到服务器，导致用户在不知情的情况下被利用身份。 点击支持则是网页被嵌入到了其他网站中，并通过视觉隐藏的方式引导用户进行一些不知情的操作。 
 > 上传导致的漏洞是因为用户的文件没有做好判断和处理，导致传上来的文件被当成程序执行了。 SQL注入是用户的数据被当成了表示SQL语义的部分，改变了原来的查询语句的语义，从而产生意料之外的结果。
 > 反向代理服务器，构建在web服务器与 客户端之间，保护web服务器，服务器发送到客户端的请求被代理
+
+## Authenticate
+
+> [WWW-Authenticate](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/WWW-Authenticate)
 
 ## SSL和TSL
 > [SSL/TLS协议运行机制的概述](http://www.ruanyifeng.com/blog/2014/02/ssl_tls.html)

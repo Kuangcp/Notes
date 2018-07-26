@@ -50,7 +50,7 @@
         - [三方库](#三方库)
     - [QT](#qt)
 
-`目录 end` |_2018-07-25_| [码云](https://gitee.com/gin9) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
+`目录 end` |_2018-07-26_| [码云](https://gitee.com/gin9) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
 ****************************************
 # Python
 > [官网](https://www.python.org/)
@@ -711,7 +711,7 @@ _time_
 > [参考博客: Python 日期和时间](http://www.runoob.com/python/python-date-time.html)
 ### 三方库
 - `redis` 和Redis命令完美融合
-- `httpie` HTTP方便的交互
+- `httpie` HTTP方便的交互 [doc](https://httpie.org/doc)
     - POST时 特别注意:`参数==值`
 - [python-excel](http://www.python-excel.org/)
 - `python-docx` [文档](https://python-docx.readthedocs.io/en/latest/)

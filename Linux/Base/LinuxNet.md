@@ -10,6 +10,7 @@
     - [基础命令工具](#基础命令工具)
         - [1.ping](#1ping)
         - [2.curl](#2curl)
+- [如果没有认证则会收到如下结果](#如果没有认证则会收到如下结果)
         - [3.iproute2](#3iproute2)
         - [4.tcpdump](#4tcpdump)
         - [5.netcat](#5netcat)
@@ -32,7 +33,7 @@
         - [防火墙](#防火墙)
             - [iptables](#iptables)
 
-`目录 end` |_2018-07-08_| [码云](https://gitee.com/gin9) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
+`目录 end` |_2018-07-26_| [码云](https://gitee.com/gin9) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
 ****************************************
 # 【网络管理】
 ## DNS
@@ -116,8 +117,26 @@ _netstat工具_ 或者 更好用的 [iproute2](#3iproute2)
     - 注意：得到的结果中的 mdev 表示ICMP包的RTT偏离平均值的程度，mdev 越大表示网速不稳定 Linux有，mac下叫stddev win系列没有
 
 ### 2.curl
-- 不输出，重定向到*黑洞*  ` curl -s -o /dev/null URL`
-- 格式化返回的json数据：`curl xxxx|python -m json.tool `
+1. 不输出，重定向到*黑洞设备*  ` curl -s -o /dev/null URL`
+1. 格式化返回的json数据：`curl xxxx|python -m json.tool `
+1. 使用基础认证 发送JSON数据 `curl -i -H "Content-Type:application/json" -u admin:secret -X POST --data '{"title":"1","content":"1"}' http://tomcat.kcp/email/content`
+```sh
+# 如果没有认证则会收到如下结果
+$ curl -i -u admin:secret -X POST http://tomcat.kcp/email/content
+    HTTP/1.1 401 
+    Server: nginx/1.13.3
+    Date: Thu, 26 Jul 2018 12:17:18 GMT
+    Content-Length: 0
+    Connection: keep-alive
+    Set-Cookie: JSESSIONID=D863FC575140E9B1A0A2505410617487; Path=/; HttpOnly
+    X-Content-Type-Options: nosniff
+    X-XSS-Protection: 1; mode=block
+    Cache-Control: no-cache, no-store, max-age=0, must-revalidate
+    Pragma: no-cache
+    Expires: 0
+    X-Frame-Options: DENY
+    WWW-Authenticate: Basic realm="Realm"
+```
 
 - [curl cookie](https://curl.haxx.se/docs/http-cookies.html) | [curl使用Cookie](https://aiezu.com/article/linux_curl_http_cookie.html)
 

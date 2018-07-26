@@ -1,6 +1,9 @@
 `目录 start`
  
 - [SpringSecurity](#springsecurity)
+    - [配置](#配置)
+        - [配置静态口令使用](#配置静态口令使用)
+- [使用该配置即可自定义用户名密码](#使用该配置即可自定义用户名密码)
     - [SpringBoot的集成Demo](#springboot的集成demo)
         - [创建单用户单角色的安全控制](#创建单用户单角色的安全控制)
         - [多用户多角色的实现思路](#多用户多角色的实现思路)
@@ -17,11 +20,36 @@
         - [保护方法应用](#保护方法应用)
     - [社交登录](#社交登录)
 
-`目录 end` |_2018-07-08_| [码云](https://gitee.com/gin9) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
+`目录 end` |_2018-07-26_| [码云](https://gitee.com/gin9) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
 ****************************************
 # SpringSecurity
+> [Spring Security 5.0.6 doc](https://docs.spring.io/spring-security/site/docs/5.0.6.RELEASE/reference/htmlsingle)
+
 [参考博客: Spring Security 入门系列](http://www.spring4all.com/article/428)
 
+
+## 配置
+### 配置静态口令使用
+当添加了Security依赖之后, 只会生成一个默认的随机密码, 如下简单配置:
+```ini
+# 使用该配置即可自定义用户名密码
+spring.security.user.name=admin
+spring.security.user.password=secret
+```
+如果要用 curl 访问则是 `curl -i  -u admin:secret  http://tomcat.kcp/hi`  
+> 注意 : 前提是要关闭 crsf 校验 
+```java
+@EnableWebSecurity
+public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
+  @Override
+  protected void configure(HttpSecurity http) throws Exception {
+    http.csrf().disable();
+  }
+}
+```
+
+
+******************************************************************
 ## SpringBoot的集成Demo
 ### 创建单用户单角色的安全控制
 
@@ -66,10 +94,12 @@
 > [集成JWT到Spring Boot项目](http://www.saily.top/2016/12/08/spring-boot-jwt/) | [使用JWT保护你的Spring Boot应用](https://segmentfault.com/a/1190000009231329)
 > [重拾后端之Spring Boot（四）：使用JWT和Spring Security保护REST API](https://juejin.im/post/58c29e0b1b69e6006bce02f4)
 > [开箱即用 - jwt 无状态分布式授权](http://www.cnblogs.com/grissom007/p/6294746.html)
+
 ### 跨域问题
 > [跨域(CORS) 解决方案中，为什么 Access-Control-Allow-Methods 不起作用？](https://segmentfault.com/q/1010000005067552)
 > [WEB应用前后端分离实践 关键词：rest架构+跨域访问+JWT校验](https://bbs.csdn.net/topics/392006333)
 
+[csrf](https://docs.spring.io/spring-security/site/docs/5.0.6.RELEASE/reference/htmlsingle/#csrf)
 *******************
 ## Oauth
 > [oauth](https://github.com/spring-projects/spring-security-oauth)
