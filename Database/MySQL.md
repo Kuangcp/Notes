@@ -15,6 +15,7 @@
         - [text](#text)
     - [LongBlob](#longblob)
 - [基本组成](#基本组成)
+    - [数据编码](#数据编码)
     - [数据库](#数据库)
         - [创建](#创建)
         - [导出](#导出)
@@ -57,11 +58,11 @@
         - [【授权】](#授权)
 - [查询](#查询)
 
-`目录 end` |_2018-07-08_| [码云](https://gitee.com/gin9) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
+`目录 end` |_2018-07-27_| [码云](https://gitee.com/gin9) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
 ****************************************
 
 # Mysql
-> [MySQL官方下载地址](https://dev.mysql.com/downloads/mysql/)
+> [MySQL官方下载地址](https://dev.mysql.com/downloads/mysql/) | [doc](https://dev.mysql.com/doc/)
 
 ## 安装
 ### Ubuntu安装配置MySQL
@@ -115,6 +116,10 @@ _重启_
 
 *****************************
 # 基本组成
+## 数据编码 
+utf8 最大字节为3的非标准utf8实现
+utf8mb4 才是真正意义上的 utf8 `5.5.3才开始支持`
+
 ## 数据库
 ### 创建
 > create database name;

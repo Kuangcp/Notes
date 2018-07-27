@@ -12,12 +12,14 @@
     - [IDEA快捷键](#idea快捷键)
         - [默认快捷键](#默认快捷键)
         - [个人习惯](#个人习惯)
+            - [File](#file)
+            - [Coding](#coding)
     - [常用插件](#常用插件)
     - [启动配置](#启动配置)
     - [Tips](#tips)
         - [Error:Cannot compile Groovy files: no Groovy library is defined for module "XXX"](#errorcannot-compile-groovy-files-no-groovy-library-is-defined-for-module-"xxx")
 
-`目录 end` |_2018-07-19_| [码云](https://gitee.com/gin9) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
+`目录 end` |_2018-07-27_| [码云](https://gitee.com/gin9) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
 ****************************************
 
 # IDEA 使用笔记
@@ -167,35 +169,40 @@ _例如修改为如下_
 1. **Ctrl Alt L** 快速格式化代码 
 1. **Ctrl Alt O** 优化导入的类和包
 
-**File**
-1. **Ctrl W** 选中代码
-1. **Ctrl E** / **Alt E** 最近文件打开
-1. **Alt Shift C** 最近更改的文件
-1. **Ctrl N** 快速搜索类
-    - **Ctrl Shift N** 搜索所有文件
-    - **Ctrl Shift Alt N** 按文件内容字符的搜索,也能按类名首字母搜索
-1. **Alt left/right** 左右切换打开的文件
+#### File 
+| Ctrl | Shift | Alt | Key | Action |
+|:----:|:----:|:----:|:----:|:----|
+|C| | | **W** | 选中代码 |
+|C| | | **E** | 显示最近打开的文件 |
+| | |A| **E** | 显示最近打开的文件 |
+| |A|S| **C** | 最近更改的文件|
+|C| | | **N** | 快速搜索类 |
+|C|S| | **N** | 搜索所有文件|
+|C|S|A| **N** | 按文件内容字符的搜索,也能按类名首字母搜索|
+| | |A| **左/右** | 左右切换打开的文件|
 
-**Coding**
-1. **Ctrl S** build 项目
-1. **Ctrl Shift V** 显示最近的粘贴板记录
-1. **Ctrl O** 选择要重写的方法
-1. **Ctrl L** 选择要实现的方法 
-1. **Alt Insert** 生成代码(如get,set方法,构造函数等)
-1. **Shift F6** 重构-重命名
-1. **Ctrl X** 剪切一行
-1. **Ctrl D** 删除一行
-1. **Ctrl Y** 复制一行到下一行
-1. **Ctrl Q** 显示注释文档 或者 Alt+鼠标中键
-1. **Ctrl Shift Space** 智能提示代码的补全
-1. **Ctrl Shift 上/下键** 代码上/下移动 `光标在一行上就是移动一行, 在代码块的首行就是移动整个代码块`
-1. **Ctrl J** 提示代码片段 也就是 Live Template
-1. **Alt J** 选中字符
-1. **Ctrl Space** 智能补全
-    - **Ctrl Shift Space** 结合上下文补全
-1. **Ctrl W** 选中代码，连续按会有其他效果
-
-1. **Ctrl Alt V** 根据当前行代码自动生成变量定义 自定义为 `Ctrl Alt Shift J`
+#### Coding
+| Ctrl | Shift | Alt | Key | Action |
+|:----:|:----:|:----:|:----:|:----|
+| | |A| **C** | build 项目
+|C|S| | **V** | 显示最近的粘贴板记录
+|C| | | **O** | 选择要重写的方法
+|C| | | **I** | 选择要实现的方法 
+|C| |A| **Insert** |  生成代码(如get,set方法,构造函数等)
+| |S|A| **K** |  重构-重命名
+|C| | | **X** |  剪切一行
+|C| | | **D** |  删除一行
+|C| | | **Y** |  复制一行到下一行
+|C| | | **Q** |  显示注释文档 或者 Alt+鼠标中键
+|C|S| | **Space** |  智能提示代码的补全
+| |S|A| **上/下** |  代码上/下移动
+|C|S| | **上/下** |  代码上/下移动 | `光标在一行上就是移动一行, 光标在代码块的首行就是移动整个代码块`
+|C| | | **J** |  提示代码片段 也就是 Live Template
+| | |A| **J** |  选中字符
+|C| | | **Space** |  智能补全
+|C|S| | **Space** |  结合上下文补全
+|C| | | **W** |  选中代码，连续按会有其他效果
+|C| |A| **V** | 根据当前行代码自动生成变量定义 自定义为 `Ctrl Alt Shift J`
 
 **Jump**
 1. **Alt+ Up/Down** 在方法间快速移动定位

@@ -13,7 +13,7 @@
     - [图形化工具](#图形化工具)
         - [剪贴板管理](#剪贴板管理)
 
-`目录 end` |_2018-07-25_| [码云](https://gitee.com/gin9) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
+`目录 end` |_2018-07-27_| [码云](https://gitee.com/gin9) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
 ****************************************
 # 系统常用基础命令
 
@@ -67,12 +67,14 @@
 
 - expect [用于自动输入密码](http://www.cnblogs.com/iloveyoucc/archive/2012/05/11/2496433.html)
 
-
 - autojump  `方便跳转目录`  *shrc 中要有 : `. /usr/share/autojump/autojump.sh`  
-
 
 - [WTF](https://wtfutil.com/posts/overview/) | [Github Repo](https://github.com/senorprogrammer/wtf)
     - 丰富的功能, 一个方便的终端控制面板
+
+- md5sum 报文摘要算法 Message-Digest Algorithm 5 的实现 
+    - `md5sum file` 计算出md5值
+    - `md5sum -c file.md5` file 和 file.md5 在同一目录下, 执行这个命令就是检查md5是否匹配, 确保文件的完整性和正确性
 
 ## 图形化工具
 ### 剪贴板管理

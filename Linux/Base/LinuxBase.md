@@ -22,7 +22,7 @@
         - [修改主机名](#修改主机名)
     - [终端快捷键](#终端快捷键)
 
-`目录 end` |_2018-07-11_| [码云](https://gitee.com/gin9) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
+`目录 end` |_2018-07-27_| [码云](https://gitee.com/gin9) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
 ****************************************
 # Linux系统
 > 只是记录了debian系的Linux, 不过也是大同小异
@@ -89,21 +89,22 @@
     - `echo "root:caishi" | chpasswd` 如果是普通用户就是 sudo chpasswd
 *****
 - _修改相关信息_ `usermod` 
-```
-    -d, --home HOME_DIR           用户的新主目录
-    -e, --expiredate EXPIRE_DATE  设定帐户过期的日期为 EXPIRE_DATE
-    -f, --inactive INACTIVE       过期 INACTIVE 天数后，设定密码为失效状态
-    -g, --gid GROUP               强制使用 GROUP 为新主组
-    -G, --groups GROUPS           新的附加组列表 GROUPS
-    -a, --append GROUP            将用户追加至上边 -G 中提到的附加组中，并不从其它组中删除此用户
-    -l, --login LOGIN             新的登录名称
-    -L, --lock                    锁定用户帐号
-    -m, --move-home               将家目录内容移至新位置 (仅于 -d 一起使用)
-    -p, --password PASSWORD       将加密过的密码 (PASSWORD) 设为新密码
-    -R, --root CHROOT_DIR         chroot 到的目录
-    -s, --shell SHELL             该用户帐号的新登录 shell
-    -U, --unlock                  解锁用户帐号
-```
+
+| verb | long verb | comment |
+|:----:|:----|:----|
+| -d | --home HOME_DIR          |  用户的新主目录 |
+| -e | --expiredate EXPIRE_DATE |  设定帐户过期的日期为 EXPIRE_DATE |
+| -f | --inactive INACTIVE      |  过期 INACTIVE 天数后，设定密码为失效状态 |
+| -g | --gid GROUP              |  强制使用 GROUP 为新主组 |
+| -G | --groups GROUPS          |  新的附加组列表 GROUPS |
+| -a | --append GROUP           |  将用户追加至上边 -G 中提到的附加组中，并不从其它组中删除此用 |户
+| -l | --login LOGIN            |  新的登录名称 |
+| -L | --lock                   |  锁定用户帐号 |
+| -m | --move-home              |  将家目录内容移至新位置 (仅于 -d 一起使用) |
+| -p | --password PASSWORD      |  将加密过的密码 (PASSWORD) 设为新密码 |
+| -R | --root CHROOT_DIR        |  chroot 到的目录 |
+| -s | --shell SHELL            |  该用户帐号的新登录 shell |
+| -U | --unlock                 |  解锁用户帐号 |
 > [所有参数说明](https://gitee.com/kcp1104/codes/gca14wtqvm67l9j5r0deb56#usermod.md)
 
 ******
@@ -169,33 +170,33 @@ _系统运行级别_
 ```
     0        系统停机状态
     1        单用户或系统维护状态
-    2~5 多用户状态
+    2~5      多用户状态
     6        重新启动 
 ```
 ******************
 ## 软件管理
 ### 安装命令
-- 1,deb 安装deb包
+1. 安装deb包
 	- ` sudo  dpkg  -i  *.deb`
-- 2,apt-get
+1. apt-get / apt 
 	- `sudo apt-get install xxx`
-- 若不能添加私有源ppa：
-    - debain：`  `
-    - Ubuntu `sudo apt-get install python-software-properties`
-- 例如：`sudo add-apt-repository ppa:dotcloud/lxc-docker `
-	- 删除ppa `cd  /etc/apt/sources.list.d/` 打开该目录下文件把对应的ppa的一行注释掉或删掉就行了
-
-- 3,make install 源代码安装
+1. 添加私有源ppa
+    - 若不能添加私有源ppa：
+        - debain：`  `
+        - Ubuntu `sudo apt-get install python-software-properties`
+    - 添加：`sudo add-apt-repository ppa:dotcloud/lxc-docker `
+	- 删除ppa : `cd  /etc/apt/sources.list.d/` 打开该目录下文件把对应的ppa的一行注释掉或删掉就行了
+1. make install 源代码安装
     - 1.解压缩 `tar -zxf nagios-4.0.2.tar.gz ` 
     - 2.进入目录 `cd nagios-4.0.2`
     - 3.配置 `./configure --prefix=/usr/local/nagios  ` 
     - 4.编译 `make all`
     - 5.安装 `make install && make install-init && make install-commandmode && make install-config`
-- 查看已安装的应用
+1. 查看已安装的应用
 	- `dpkg --list`
-- 彻底卸载应用
+1. 彻底卸载应用
 	- `sudo apt-get --purge remove 应用名`
-- 只卸载程序，保留配置文件
+1. 只卸载程序，保留配置文件
 	- `sudo apt-get remove 应用名`
 
 *****************************************************
@@ -262,21 +263,21 @@ _系统运行级别_
 - `Ctrl L` 清屏，Mysql也适用
 - `Ctrl ；` 显示最近五条剪贴板内容
 
-- Ctrl
-    - D       删除光标后字符,等价于Delete键（命令行若无任何字符，则相当于exit；处理多行标准输入时也表示EOF）
-    - H       退格删除一个字符，相当于通常的Backspace键
-    - U       删除光标之前到 行首 的字符
-    - K       删除光标之前到 行尾 的字符
-    - 
-    - C       取消运行当前行输入的命令，相当于Ctrl + Break
-    - A       光标移动到行首（Ahead of line），相当于通常的Home键
-    - E       光标移动到行尾（End of line）
-    - F       光标向前(Forward)移动一个字符位置
-    - B       光标往回(Backward)移动一个字符位置
-    - 
-    - P       调出命令历史中的前一条（Previous）命令，相当于通常的上箭头
-    - N       调出命令历史中的下一条（Next）命令，相当于通常的下箭头
-    - O       运行上翻下翻出来的命令, 并且自动将下一条命令填入
-    - 
-    - R       显示：号提示，根据用户输入查找相关历史命令（reverse-i-search）
+| Controller | Key | comment |
+|:---|:----|:----|
+| Ctrl | D | 删除光标后字符,等价于Delete键（命令行若无任何字符，则相当于exit；处理| Ctrl 多行标准输入时也表示EOF） |
+| Ctrl | H | 退格删除一个字符，相当于通常的Backspace键 |
+| Ctrl | U | 删除光标之前到 行首 的字符 |
+| Ctrl | K | 删除光标之前到 行尾 的字符 |
+||||
+| Ctrl | C | 取消运行当前行输入的命令，相当于Ctrl + Break |
+| Ctrl | A | 光标移动到行首（Ahead of line），相当于通常的Home键 |
+| Ctrl | E | 光标移动到行尾（End of line） |
+| Ctrl | F | 光标向前(Forward)移动一个字符位置 |
+| Ctrl | B | 光标往回(Backward)移动一个字符位置 |
+||||
+| Ctrl | P | 调出命令历史中的前一条（Previous）命令，相当于通常的上箭头 |
+| Ctrl | N | 调出命令历史中的下一条（Next）命令，相当于通常的下箭头 |
+| Ctrl | O | 运行上翻下翻出来的命令, 并且自动将下一条命令填入 |
+| Ctrl | R | 显示：号提示，根据用户输入查找相关历史命令（reverse-i-search） |
 
