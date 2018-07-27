@@ -163,7 +163,7 @@ _例如修改为如下_
 **************************************************************************
 
 ### 个人习惯
-> 从eclipse风格继承而来和原生Idea快捷键结合, 自己修改的风格, 如果需要, 则在[个人配置文件夹](#https://github.com/Kuangcp/Configs/tree/master/Idea)下找到对应的jar导入即可
+> 从eclipse风格继承而来和原生Idea快捷键结合, 自己修改的风格, 如果需要, 则在[个人配置文件夹](https://github.com/Kuangcp/Configs/tree/master/Idea)下找到对应的jar导入即可
 > 个人的习惯特点是左手完成大部分快捷键的任务, 因为还没习惯脱离鼠标工作  
 
 | Ctrl | Shift | Alt | Key | Action |
