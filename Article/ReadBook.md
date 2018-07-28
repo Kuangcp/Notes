@@ -35,9 +35,12 @@
             - [《史记》](#《史记》)
             - [《西游记》](#《西游记》)
 
-`目录 end` |_2018-07-23_| [码云](https://gitee.com/gin9) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
+`目录 end` |_2018-07-28_| [码云](https://gitee.com/gin9) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
 ****************************************
 # 书籍简单读后感
+- [ ] Linux Shell 脚本攻略
+- [ ] 编写可读代码的艺术
+
 
 ## 计算机类
 ### 算法
