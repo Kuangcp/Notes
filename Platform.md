@@ -10,6 +10,10 @@
         - [Bandage图标](#bandage图标)
     - [Gitea](#gitea)
         - [自建](#自建)
+- [代码质量检测平台](#代码质量检测平台)
+    - [codeclimate](#codeclimate)
+    - [codebeat](#codebeat)
+    - [codacy](#codacy)
 - [综合开发平台](#综合开发平台)
     - [华为云](#华为云)
     - [阿里云](#阿里云)
@@ -49,7 +53,7 @@
 - [测试平台](#测试平台)
 - [培训](#培训)
 
-`目录 end` |_2018-07-16_| [码云](https://gitee.com/gin9) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
+`目录 end` |_2018-07-30_| [码云](https://gitee.com/gin9) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
 ****************************************
 
 # 代码托管平台
@@ -122,6 +126,21 @@ SSH_DOMAIN       = kuangcp.top
 ```
 然后还需修改本地的SSH配置才能正常使用
 ********************************************************
+# 代码质量检测平台
+## codeclimate
+> [官网](https://codeclimate.com/dashboard)
+
+要求比较严格, 有详细的说明
+## codebeat
+> [官网](https://codebeat.co/)
+
+要求比较严格
+## codacy
+> [官网](https://app.codacy.com/projects)
+
+要求比较宽松
+
+*****************************
 # 综合开发平台
 ## 华为云
 - [CSE微服务相关文档](http://support.huaweicloud.com/devg-cse/cse_03_summary.html)

@@ -14,9 +14,10 @@
     - [build.gradle](#buildgradle)
         - [初始化一个新项目](#初始化一个新项目)
         - [dependency](#dependency)
-        - [常用插件](#常用插件)
         - [统一依赖管理](#统一依赖管理)
         - [配置Wrapper](#配置wrapper)
+        - [插件](#插件)
+            - [常用插件](#常用插件)
     - [setting.gradle](#settinggradle)
         - [Gradle多模块的构建](#gradle多模块的构建)
 - [部署](#部署)
@@ -26,7 +27,7 @@
     - [构建Docker镜像](#构建docker镜像)
         - [第二种插件方式](#第二种插件方式)
 
-`目录 end` |_2018-07-29_| [码云](https://gitee.com/gin9) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
+`目录 end` |_2018-07-30_| [码云](https://gitee.com/gin9) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
 ****************************************
 
 # Gradle
@@ -174,25 +175,6 @@ _Hello World_
     - runtime
     - provide
 
-### 常用插件
-- lombok
-> [使用Lombok的正确方式](https://discuss.gradle.org/t/correct-way-to-use-lombok-with-gradle-4-7-rc/26537) | [gradle lombok plugin](https://projectlombok.org/setup/gradle)
-```groovy
-    annotationProcessor 'org.projectlombok:lombok:1.18.2'
-    implementation 'org.projectlombok:lombok:1.18.2'
-```
-
-***************
-
-- maven 
-    - `apply plugin: "maven"` 然后就能执行 install等命令了
-    - gradle 4.8 用不了 [需要这种方式](https://blog.csdn.net/mxw2552261/article/details/78640338)
-
-- shadowJar 含依赖的jar进行打包
-
-- docker 提供Docker操作
-    - `apply plugin: 'docker'`
-    - buildscript dependencies 中添加`classpath('se.transmode.gradle:gradle-docker:1.2')`
 
 ### 统一依赖管理
 新建一个文件 _dependency.gradle_
@@ -223,6 +205,46 @@ _Hello World_
 - 运行 gradle wrapper 一次即可开始使用包装器的脚本来构建项目了
 - 生成gradle包管理器：`gradle wrapper --gradle-version 2.0`
 
+### 插件
+有多种方式:
+
+```groovy
+// 1
+apply plugin: 'java'
+// 2
+apply{
+    'java'
+}
+// 3
+plugins{
+    id 'java'
+}
+```
+#### 常用插件
+- lombok
+> [使用Lombok的正确方式](https://stackoverflow.com/questions/50519138/annotationprocessor-gradle-4-7-configuration-doesnt-run-lombok) | [gradle lombok plugin](https://projectlombok.org/setup/gradle)
+
+[官方文档](https://docs.gradle.org/4.7-rc-1/userguide/java_plugin.html#sec:java_compile_avoidance)
+```groovy
+  annotationProcessor 'org.projectlombok:lombok:1.18.2'
+  compileOnly 'org.projectlombok:lombok:1.18.2'
+  testAnnotationProcessor 'org.projectlombok:lombok:1.18.2'
+  testCompileOnly 'org.projectlombok:lombok:1.18.2'
+```
+
+***************
+
+- maven 
+    - `apply plugin: "maven"` 然后就能执行 install等命令了
+    - gradle 4.8 用不了 [需要这种方式](https://blog.csdn.net/mxw2552261/article/details/78640338)
+
+- shadowJar 含依赖的jar进行打包
+
+- docker 提供Docker操作
+    - `apply plugin: 'docker'`
+    - buildscript dependencies 中添加`classpath('se.transmode.gradle:gradle-docker:1.2')`
+
+****************
 ## setting.gradle
 > 项目的配置信息, 一般存在这个文件的时候, Gradle就会认为当前目录是作为一个完整的根项目的, 并在当前目录添加 .gradle 目录  
 > 一般默认内容为 `rootProject.name = ''`

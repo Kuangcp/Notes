@@ -22,7 +22,7 @@
         - [修改主机名](#修改主机名)
     - [终端快捷键](#终端快捷键)
 
-`目录 end` |_2018-07-27_| [码云](https://gitee.com/gin9) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
+`目录 end` |_2018-07-30_| [码云](https://gitee.com/gin9) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
 ****************************************
 # Linux系统
 > 只是记录了debian系的Linux, 不过也是大同小异
@@ -158,6 +158,8 @@
     - `00 10 * * * root /usr/sbin/ntpdate -u cn.pool.ntp.org > /dev/null 2>&1; /sbin/hwclock -w `
 
 ### 自启服务管理
+> /etc/init.d/ 是服务的存放目录
+1. 列出所有服务的状态 service --status-all
 
 1. 移除MySQL的自启 `sudo update-rc.d -f mysql remove`
 2. 设置MySQL随机启动 `sudo update-rc.d mysql defaults`
