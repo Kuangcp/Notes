@@ -30,6 +30,8 @@
             - [rebase](#rebase)
             - [grep](#grep)
         - [常用文件](#常用文件)
+            - [.gitignore](#gitignore)
+- [注释](#注释)
             - [gitattributes](#gitattributes)
         - [Tools](#tools)
             - [git-svn](#git-svn)
@@ -39,7 +41,7 @@
         - [SVN](#svn)
     - [repos的使用](#repos的使用)
 
-`目录 end` |_2018-07-17_| [码云](https://gitee.com/gin9) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
+`目录 end` |_2018-07-29_| [码云](https://gitee.com/gin9) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
 ****************************************
 # Git基础
 > Git is a free and open source distributed version control system designed to handle everything from small to very large projects with speed and efficiency. --[git-scm.com](https://git-scm.com/)
@@ -358,6 +360,20 @@ alias glola='git log --graph --pretty='\''%Cred%h%Creset -%C(yellow)%d%Creset %s
     
 *************
 ### 常用文件
+#### .gitignore
+```
+# 注释
+*/ 忽略所有文件
+build/ 所有build目录
+/build 只忽略当前目录的build, 子目录的不忽略
+*.iml 所有iml文件
+?.log 忽略所有 后缀为log, 文件名字只有一个字母
+!*.java 不忽略所有java文件
+a.[abc] 忽略 后缀为 a或者b或者c 的文件
+doc/*.txt 忽略 doc一级子目录的txt文件, 不忽略多级子目录中txt
+
+```
+
 
 #### gitattributes
 > [gitattributes](http://schacon.github.io/git/gitattributes.html)

@@ -43,7 +43,7 @@
     - [DAO](#dao)
 - [关键字](#关键字)
 
-`目录 end` |_2018-07-13_| [码云](https://gitee.com/gin9) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
+`目录 end` |_2018-07-29_| [码云](https://gitee.com/gin9) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
 ****************************************
 # 基础语法
 
@@ -234,3 +234,5 @@ case     double   for     long       return    throw
 catch    else     goto    native     short     throws
 char     enum     if      new        static    transient
 ```
+
+- [ ]  transient 序列化时不进行序列化

@@ -23,7 +23,7 @@
     - [Tips](#tips)
         - [Error:Cannot compile Groovy files: no Groovy library is defined for module "XXX"](#errorcannot-compile-groovy-files-no-groovy-library-is-defined-for-module-"xxx")
 
-`目录 end` |_2018-07-27_| [码云](https://gitee.com/gin9) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
+`目录 end` |_2018-07-29_| [码云](https://gitee.com/gin9) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
 ****************************************
 
 # IDEA 使用笔记
@@ -90,11 +90,12 @@ _竖向的七个按钮_
 
 *************************
 ## 常用配置
+
+**自定义类文件头**
 - 依次找到配置项: `File->settings->Editor->File and Code Templates->`
     - 如果自己要每个文件都单独设置头部, 就依次点击Class Interface Enum ...进行设置
         - [参考博客](https://segmentfault.com/q/1010000005997550)
     - 如果要统一设置 就点击Includes标签, 选择File Header
-
 _例如修改为如下_
 ```java
 /**
@@ -103,6 +104,11 @@ _例如修改为如下_
  * @date ${DATE}  ${TIME}
  */
 ```
+
+**自定义缩写模板**
+在 `Setting -> Editor -> Live Templates` 设置项下可以看到已有的配置, 新建一个即可
+
+
 ### 个人IDEA配置
 - 字体Fira Code Retina 14 0.9
 

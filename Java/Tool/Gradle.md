@@ -26,7 +26,7 @@
     - [构建Docker镜像](#构建docker镜像)
         - [第二种插件方式](#第二种插件方式)
 
-`目录 end` |_2018-07-28_| [码云](https://gitee.com/gin9) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
+`目录 end` |_2018-07-29_| [码云](https://gitee.com/gin9) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
 ****************************************
 
 # Gradle
@@ -99,21 +99,25 @@ _4.6_
 **阿里云**
 > [参考博客: 配置Gradle的镜像为阿里云镜像](https://tvzr.com/change-the-mirror-of-gradle-to-aliyun.html)
 
-当前项目的 _build.gradle_
+_当前项目的build.gradle_
 ```Groovy
-repositories {
-    // maven库
-    def cn = "http://maven.aliyun.com/nexus/content/groups/public/"
+  repositories {
+    def aliyun = "http://maven.aliyun.com/nexus/content/groups/public/"
     def abroad = "http://central.maven.org/maven2/"
-    // 先从url中下载jar若没有找到，则在artifactUrls中寻找
     maven {
-        url cn
-        artifactUrls abroad
+      url = aliyun
+      artifactUrls abroad
     }
-}
+    // 马云上自己的库
+    maven {
+      url = "https://gitee.com/gin9/MavenRepos/raw/master"
+    }
+    mavenCentral()
+    jcenter()
+  }
 ```
-
-或者 _全局配置 ~/.gradle/init.gradle_
+**全局的配置**
+_~/.gradle/init.gradle_
 ```Groovy
 allprojects{
     repositories {
@@ -172,7 +176,13 @@ _Hello World_
 
 ### 常用插件
 - lombok
-    - `compile 'org.projectlombok:lombok:1.18.0'`
+> [使用Lombok的正确方式](https://discuss.gradle.org/t/correct-way-to-use-lombok-with-gradle-4-7-rc/26537) | [gradle lombok plugin](https://projectlombok.org/setup/gradle)
+```groovy
+    annotationProcessor 'org.projectlombok:lombok:1.18.2'
+    implementation 'org.projectlombok:lombok:1.18.2'
+```
+
+***************
 
 - maven 
     - `apply plugin: "maven"` 然后就能执行 install等命令了

@@ -22,7 +22,7 @@
     - [Jenkin 使用](#jenkin-使用)
         - [下载安装和配置](#下载安装和配置)
 
-`目录 end` |_2018-07-28_| [码云](https://gitee.com/gin9) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
+`目录 end` |_2018-07-29_| [码云](https://gitee.com/gin9) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
 ****************************************
 # Gradle进阶知识
 > [davenkin的学习仓库](https://github.com/davenkin/gradle-learning)
@@ -210,7 +210,7 @@ task makeReleaseVersion(type:ReleaseVersionTask){
 > 凡是依赖于本地环境的测试，使用完就注释Test注解，还有那些会CRUD，影响到数据的测试方法也是
 > 以防以后线上测试通不过 打包失败, 
 
-- 跳过测试 `gradle build -x test`
+- 跳过测试 `gradle build -x test` 或者是 `--exclude-task test` 参数 
 
 
 ## 单元测试
