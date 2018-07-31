@@ -11,7 +11,7 @@
         - [Maven](#maven)
         - [Gradle](#gradle)
 
-`目录 end` |_2018-07-11_| [码云](https://gitee.com/gin9) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
+`目录 end` |_2018-07-31_| [码云](https://gitee.com/gin9) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
 ****************************************
 # 部署运行
 > 传统的可执行jar, war 以及Docker镜像
@@ -49,7 +49,18 @@ _MANIFEST.MF示例_
 > [参考博客: Building Java Applications](https://guides.gradle.org/building-java-applications/)
 
 **不依赖Jar的项目**
-1. gradle init --type java-application
+1. 依据模板新建项目 `gradle init --type java-application` 
+```groovy
+// 主要是如下配置
+plugins {
+    // Apply the java plugin to add support for Java
+    id 'java'
+    // Apply the application plugin to add support for building an application
+    id 'application'
+}
+// Define the main class for the application
+mainClassName = 'App'
+```
 2. add this config to build.gradle
 ```groovy
     jar {

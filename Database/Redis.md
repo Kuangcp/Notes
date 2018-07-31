@@ -40,7 +40,7 @@
         - [Python使用](#python使用)
         - [webdis](#webdis)
 
-`目录 end` |_2018-07-22_| [码云](https://gitee.com/gin9) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
+`目录 end` |_2018-07-31_| [码云](https://gitee.com/gin9) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
 ****************************************
 # Redis
 > [Redis官网](https://redis.io/) | [Redis中文社区](http://www.redis.cn/) | [Redis教程](http://www.runoob.com/redis/redis-tutorial.html) 
@@ -101,6 +101,8 @@
 - 保存内存中数据 `save`
 - 认证 `auth` 口令
 - 测试联通性 `ping` 连接成功会返回pong
+- 模糊删除 
+    - 删除 6666端口 的 2数据库中`detail-2018-07-0*`模式的数据: `./redis-cli -p 6666 -n 2 keys "detail-2018-07-0*" | xargs  ./redis-cli -p 6666 -n 2 del`
 
 ### 过期策略
 - `expire key seconds` 设置键的过期时间

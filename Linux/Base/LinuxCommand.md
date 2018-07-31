@@ -20,7 +20,7 @@
 ## 输入输出
 
 ### 重定向
-- 输出重定向  `> a.log 2>&1`表示为将2也输出到标准输出
+- 输出重定向  `> a.log 2>&1` 表示为将2也输出到标准输出 **为了方便记忆也可以将&理解为C中的取地址符:2重定向到1的地址**
     - 2是错误输出
     - 1是标准输出
 
@@ -36,9 +36,12 @@
 - 将秒时间戳转换为日期 `date --date='@1524738626'`
 
 ## grep
-> egrep [相关网页](http://man.linuxde.net/grep)
+> egrep [相关网页](http://man.linuxde.net/grep) 与 grep -E 等价
 
 - 正则 `grep -E "[1-9]+"` 注意` [] 和 ()`的区别 `[]` 是里面单个字符 `()`是里面的全部
+
+- -o 一行内多次匹配 `grep -o 的 total.md | wc -l` 统计所有`的`的数量
+- -i 忽略大小写
 
 ## 定时任务crontab
 > [参考博客 shell定时任务crontab](http://www.cnblogs.com/taosim/articles/2007056.html)
