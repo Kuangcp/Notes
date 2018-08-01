@@ -25,7 +25,7 @@
     - 1是标准输出
 
 ## time
-> 可以用于计算命令运行消耗的时间
+> 可以用于统计命令运行消耗的时间
 
 - bash内置简易time `time` 和 /usr/bin/time `\time`
     - `\time -v ls -al`

@@ -81,6 +81,7 @@
 - [ce安全网](https://www.cesafe.com/)`没事看看这个网站, 提高安危意识`
 
 - [schacon.github.io](http://schacon.github.io/)
+- [dictionary](https://www.dictionary.com/)
 
 # 社区网站
 - [掘金门户网](http://e.xitu.io)
