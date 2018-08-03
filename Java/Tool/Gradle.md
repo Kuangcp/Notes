@@ -20,6 +20,7 @@
             - [常用插件](#常用插件)
     - [setting.gradle](#settinggradle)
         - [Gradle多模块的构建](#gradle多模块的构建)
+            - [另一种方式](#另一种方式)
 - [部署](#部署)
     - [War包](#war包)
     - [Jar包](#jar包)
@@ -27,7 +28,7 @@
     - [构建Docker镜像](#构建docker镜像)
         - [第二种插件方式](#第二种插件方式)
 
-`目录 end` |_2018-07-30_| [码云](https://gitee.com/gin9) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
+`目录 end` |_2018-08-03_| [码云](https://gitee.com/gin9) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
 ****************************************
 
 # Gradle
@@ -250,29 +251,8 @@ plugins{
 > 一般默认内容为 `rootProject.name = ''`
 
 ### Gradle多模块的构建
-> [完整示例 JavaBase](https://github.com/Kuangcp/JavaBase)`统一配置依赖, 管理多模块` 
+> 采用一个文件统一管理依赖, 然后各个子项目独立引用 | [完整示例 JavaBase](https://github.com/Kuangcp/JavaBase)`统一配置依赖, 管理多模块` 
 
-_setting.gradle_
-```groovy
-    rootProject.name = 'JavaBase'
-    include('java-io', 'java-test')
-```
-_父项目的build.gradle_
-```groovy
-    // 避免中文报错, 应该旧版本需要
-    [compileJava, compileTestJava, javadoc]*.options*.encoding='UTF-8'
-
-    allprojects {
-        apply plugin: 'java'
-        group 'com.github.kuangcp'
-        sourceCompatibility=1.8
-        targetCompatibility=1.8
-        repositories {
-            mavenLocal()
-            mavenCentral()
-        }
-    }
-```
 _如果要添加一个项目也简单_
 1. 直接新建一个目录 test
 1. 目录下新建空的文件 build.gradle
@@ -280,23 +260,59 @@ _如果要添加一个项目也简单_
 1. gradle build 整个项目, 就完成了
 1. 最后就是手动的新建项目结构
 
-***************
+**********************************
+#### 另一种方式
+> [参考博客:重拾后端之Spring Boot（六） -- 热加载、容器和多项目](https://www.jianshu.com/p/ac4c00a63750)
+> 直接在build.gradle中配置 
 
-以下是以往的经验, 存在错误: 
-_目录结构_
-- RedisClient
-    - Core
-    - Website
-    
-``` groovy
-    rootProject.name = 'RedisClient'
-    include 'Core','Website'
-``` 
-- 如果只是同级的目录，就直接新建，无需配置，引用类时添加下依赖即可，但是这样只能运行，不能打包构建
+```groovy
+    // 一个典型的根项目的构建文件结构
+    buildscript {
+        //  构建脚本段落可以配置整个项目需要的插件，构建过程中的依赖以及依赖类库的版本号等
+    }
+    allprojects {
+        //  在这个段落中你可以声明对于所有项目（含根项目）都适用的配置，比如依赖性的仓储等
+    }
+    subprojects {
+        //  * 在这个段落中你可以声明适用于各子项目的配置（不包括根项目哦）
+        version = "0.0.1"
+    }
+    //  * 对于子项目的特殊配置
+    project(':common') {
+    }
+    project(':api') {
+    }
+    project(':report') {
+    }
+```
+```groovy
+    project(':common') {
+        dependencies {
+            compile("org.springframework.boot:spring-boot-starter-data-rest")
+            compile("org.springframework.boot:spring-boot-starter-data-mongodb")
+            compile("org.projectlombok:lombok:${lombokVersion}")
+        }
+    }
+
+    project(':api') {
+        dependencies {
+            compile project(':common')
+            compile("org.springframework.boot:spring-boot-devtools")
+        }
+    }
+
+    project(':report') {
+        dependencies {
+            compile project(':common')
+            compile("org.springframework.boot:spring-boot-devtools")
+            compile files(["lib/simsun.jar"])
+            compile("org.springframework.boot:spring-boot-starter-web")
+        }
+    }
+```
+
 - [有关多模块的构建详情参考这里](https://github.com/Kuangcp/GradleIntegrationMultipleModules)
 - [参考更为规范的多项目构建](https://github.com/someok/gradle-multi-project-example)
-    - 依赖另一个模块的代码 `compile project(":redis_core")` 
-
 
 ******************************************************
 # 部署

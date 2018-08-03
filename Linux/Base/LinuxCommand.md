@@ -13,7 +13,7 @@
     - [图形化工具](#图形化工具)
         - [剪贴板管理](#剪贴板管理)
 
-`目录 end` |_2018-08-02_| [码云](https://gitee.com/gin9) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
+`目录 end` |_2018-08-03_| [码云](https://gitee.com/gin9) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
 ****************************************
 # 系统常用基础命令
 
@@ -54,6 +54,8 @@
 
 # 实用的工具
 ## 终端工具
+- whence 查看命令的真实面貌
+- which 命令的位置
 - htop _终端里的任务管理器_
 - strace -p PID _查看系统调用_
 - ps | clorm 20 30 `colrm` _删除输出的20 到30 列_
