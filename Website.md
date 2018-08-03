@@ -48,7 +48,7 @@
 - [安卓手机](#安卓手机)
     - [Google](#google)
 
-`目录 end` |_2018-07-21_| [码云](https://gitee.com/gin9) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
+`目录 end` |_2018-08-02_| [码云](https://gitee.com/gin9) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
 ****************************************
 # 常用的网站
 ## 软件商店
@@ -183,7 +183,7 @@
 ## 在线工具
 - [开源中国](http://tool.oschina.net/)
 - [脚本之家](http://tools.jb51.net/)
-
+- [tool.lu](https://tool.lu/)`小而全`
 
 ************************************
 ************************************

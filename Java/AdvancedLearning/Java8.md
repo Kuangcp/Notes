@@ -5,8 +5,11 @@
     - [Funcational](#funcational)
     - [Lambda](#lambda)
     - [集合](#集合)
+    - [时间处理](#时间处理)
+        - [Instant](#instant)
+        - [LocalDateTime](#localdatetime)
 
-`目录 end` |_2018-07-08_| [码云](https://gitee.com/gin9) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
+`目录 end` |_2018-08-02_| [码云](https://gitee.com/gin9) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
 ****************************************
 # Java8
 > [Java8 JDK Readme](http://www.oracle.com/technetwork/java/javase/jdk-8-readme-2095712.html) | [Jre8 Readme](http://www.oracle.com/technetwork/java/javase/jre-8-readme-2095710.html)`有说明哪些是JRE运行不必要的文件`  
@@ -37,3 +40,20 @@
 ## 集合
 _集合的Lambda迭代方式_
 - [参考博客: List、Map的循环迭代](http://blog.csdn.net/xf_87/article/details/53931207)
+
+## 时间处理
+
+### Instant 
+- [ ] 暂时没有学会怎么用上
+
+### LocalDateTime
+> 方便的新时间处理类, 用于替代Date
+
+```java
+    // LocalDateTime 获取毫秒以及秒  也可以手动指定中国的时区 ZoneOffset.of("+8")
+    ZonedDateTime zonedDateTime = refreshTime.atZone(ZoneOffset.systemDefault());
+    Instant instant = zonedDateTime.toInstant();
+    long seconds = instant.getEpochSecond(); 
+    long millis = instant.toEpochMilli();
+    Date date = Date.from(instant);
+```

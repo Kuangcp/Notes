@@ -1,0 +1,2 @@
+- [Web前端开发](http://caibaojian.com/gitbook/format/cover.html) `gitbook的使用以及相关技术的索引页`
+- [深入浅出 Greasemonkey](http://www.ttlsa.com/docs/greasemonkey/#basic.what)`火狐一个辅助性插件`

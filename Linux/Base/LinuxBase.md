@@ -22,7 +22,7 @@
         - [修改主机名](#修改主机名)
     - [终端快捷键](#终端快捷键)
 
-`目录 end` |_2018-07-30_| [码云](https://gitee.com/gin9) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
+`目录 end` |_2018-08-02_| [码云](https://gitee.com/gin9) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
 ****************************************
 # Linux系统
 > 只是记录了debian系的Linux, 不过也是大同小异
@@ -267,10 +267,13 @@ _系统运行级别_
 
 | Controller | Key | comment |
 |:---|:----|:----|
-| Ctrl | D | 删除光标后字符,等价于Delete键（命令行若无任何字符，则相当于exit；处理| Ctrl 多行标准输入时也表示EOF） |
+| Ctrl | D | 删除光标后字符,等价于Delete键（命令行若无任何字符，则相当于exit；处理 多行标准输入时也表示EOF） |
 | Ctrl | H | 退格删除一个字符，相当于通常的Backspace键 |
-| Ctrl | U | 删除光标之前到 行首 的字符 |
+| Ctrl | U | 删除光标之前到 行首 的字符 (Zsh中是删除整行)|
 | Ctrl | K | 删除光标之前到 行尾 的字符 |
+| Ctrl | W | 删除光标之前的一个单词 |
+| Ctrl | _ | 撤销修改 |
+| Ctrl | T | 互换字符位置 |
 ||||
 | Ctrl | C | 取消运行当前行输入的命令，相当于Ctrl + Break |
 | Ctrl | A | 光标移动到行首（Ahead of line），相当于通常的Home键 |

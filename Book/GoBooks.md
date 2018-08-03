@@ -1,0 +1,4 @@
+- [《Go入门指南》](https://github.com/Unknwon/the-way-to-go_ZH_CN)
+- [Learning-Go](https://github.com/mikespook/Learning-Go-zh-cn)
+- [使用Go构建一个WebApplication](https://github.com/astaxie/build-web-application-with-golang)
+- [Go语言圣经（中文版）](https://books.studygolang.com/gopl-zh/)
