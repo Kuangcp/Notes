@@ -11,7 +11,7 @@ import subprocess
 ignoreFolder=['.git', 'backup']
 # 所有要被忽略的文件
 ignoreFile=['PULL_REQUEST_TEMPLATE.md', 'ISSUE_TEMPLATE.md', 'CODE_OF_CONDUCT.md',
-       'README.md', 'CSS3.md', 'HTML5.md', '_Sidebar.md']
+       'README.md', 'Readme.md', 'CSS3.md', 'HTML5.md', '_Sidebar.md']
 result = []
 
 def showHelp():
