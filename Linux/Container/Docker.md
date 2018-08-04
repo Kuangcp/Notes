@@ -36,21 +36,14 @@
     - [Docker-Swarm](#docker-swarm)
 - [网络](#网络)
 
-`目录 end` |_2018-07-23_| [码云](https://gitee.com/gin9) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
+`目录 end` |_2018-08-04_| [码云](https://gitee.com/gin9) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
 ****************************************
 # Docker
 > [官方文档](https://docs.docker.com/)
 
-> [docker资源汇总 ](http://www.open-open.com/lib/view/open1443075440623.html)
-> [简述 Docker](http://www.importnew.com/24658.html)
-
-- [ ] [Use multi-stage builds](https://docs.docker.com/develop/develop-images/multistage-build/)
-
-*****************************************
 ## 简介
 - `Docker 是一个开源的应用容器引擎` 理解为加强版虚拟机
 - 让开发者可以打包他们的应用以及依赖包到一个可移植的容器中，然后发布到任何流行的 Linux 机器上，也可以实现虚拟化。容器是完全使用沙箱机制，相互之间不会有任何接口。
-********************************************
 
 ## 个人理解
 - docker中的容器是动态的，随时创建和销毁，只有镜像是持久化的
@@ -73,6 +66,12 @@
 
 - [ 具有中国特色的docker折腾记（上）](http://blog.csdn.net/Raptor/article/details/18305299)
     - [ 具有中国特色的docker折腾记（下）](http://blog.csdn.net/raptor/article/details/18405569)
+
+> [docker资源汇总 ](http://www.open-open.com/lib/view/open1443075440623.html)
+> [简述 Docker](http://www.importnew.com/24658.html)
+
+- [ ] [Use multi-stage builds](https://docs.docker.com/develop/develop-images/multistage-build/)
+
 ***************************************
 # 安装与卸载
 > [daocloud安装帮助](http://get.daocloud.io/#install-docker) | [Docker 加速器](http://guide.daocloud.io/dcs/daocloud-9153151.html)

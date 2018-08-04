@@ -2,14 +2,15 @@
  
 - [Gradle进阶知识](#gradle进阶知识)
     - [Gradle 构建块](#gradle-构建块)
-    - [task的依赖关系](#task的依赖关系)
-    - [终结器 task](#终结器-task)
-    - [Groovy的POGO类管理配置文件上的版本号](#groovy的pogo类管理配置文件上的版本号)
+    - [task](#task)
+        - [task的依赖关系](#task的依赖关系)
+        - [终结器 task](#终结器-task)
+        - [Groovy的POGO类管理配置文件上的版本号](#groovy的pogo类管理配置文件上的版本号)
+        - [task 的inputs 和 outputs](#task-的inputs-和-outputs)
+        - [编写和使用自定义task](#编写和使用自定义task)
+            - [声明task规则](#声明task规则)
     - [增量式构建特性](#增量式构建特性)
-    - [task 的inputs 和 outputs](#task-的inputs-和-outputs)
-    - [编写和使用自定义task](#编写和使用自定义task)
-        - [声明task规则](#声明task规则)
-- [Gradle 自动测试](#gradle-自动测试)
+- [测试模块](#测试模块)
     - [单元测试](#单元测试)
         - [使用JUnit](#使用junit)
         - [使用其他框架 TestNG Spock](#使用其他框架-testng-spock)
@@ -22,7 +23,7 @@
     - [Jenkin 使用](#jenkin-使用)
         - [下载安装和配置](#下载安装和配置)
 
-`目录 end` |_2018-07-29_| [码云](https://gitee.com/gin9) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
+`目录 end` |_2018-08-04_| [码云](https://gitee.com/gin9) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
 ****************************************
 # Gradle进阶知识
 > [davenkin的学习仓库](https://github.com/davenkin/gradle-learning)
@@ -32,9 +33,11 @@
 - 三个基本块 project task property， 使用DDD（领域驱动设计）
 - 一个真实的项目包含多个project 而 Project又包含多个task ，task之间通过依赖来确保执行顺序
 - build.gradle 和 pom.xml 作用是一致的，但是gradle可以使用一份源码 构建出多种想要的目标程序
-- gradle 也方便构建多模块项目
 
-## task的依赖关系
+## task
+- [doc:task](https://docs.gradle.org/current/dsl/org.gradle.api.Task.html)
+
+### task的依赖关系
 ```groovy
    version = '0.1-SNAPSHOT'
    task first {
@@ -63,7 +66,7 @@
 - 如果 是 `gradle -b tasksL.gradle -q third` 就会运行所有的task，因为这是最后一层依赖
     - 如果 是`gradle -b tasksL.gradle -q printVersion` 就会只运行 printVersion 如果整个文件有编译错误也是不运行的
 
-## 终结器 task
+### 终结器 task
 ```Groovy
    task f<<{println 'first'}
    task s<<{println 'second'}
@@ -71,19 +74,17 @@
    //当运行 gradle f 就会自动触发 s
    //如果gradle s 就和f没有任何关系了
 ```
-## Groovy的POGO类管理配置文件上的版本号
+***************************
+
+### Groovy的POGO类管理配置文件上的版本号
 - [taskL.gradle](https://github.com/Kuangcp/LearnGradle/blob/master/demo/tasksL.gradle)
 -  gradle -b tasksL.gradle -q printVersion
 -  虽然只是 运行了这个task 但是读取文件的task也被自动调用了
 -  因为Gradle的构建生命周期阶段如下: 初始化、配置和执行 读取文件就属于配置阶段
 	- **注意** : 项目的每一次构建都会运行属于配置阶段的代码，即使你只是运行了 gradle tasks
 
-***************************
 
-## 增量式构建特性
-- 如果Java源文件与最后一次运行的构建不同的话，运行 `compileJava task` 将充分提高构建的性能
-
-## task 的inputs 和 outputs
+### task 的inputs 和 outputs
 - 流程 : inputs -> |task| -> outputs
 - gradle通过比较两个task的inputs和outputs来决定task是否最新
     - 如果inputs和outputs没有改变 就不会执行该task
@@ -96,7 +97,7 @@
 
 ***************
 
-## 编写和使用自定义task
+### 编写和使用自定义task
 - 自定义task包含两个组件：
     - 自定义的task类，封装了逻辑行为，也被称为任务类型
     - 真实的task 提供了用于配置行为的task类所暴露的属性值
@@ -152,7 +153,7 @@ task makeReleaseVersion(type:ReleaseVersionTask){
 }
 ```
 
-### 声明task规则
+#### 声明task规则
 ```groovy
    //All used property must define and initial first
    version = new ProjectVersion(0,1,true)
@@ -204,9 +205,13 @@ task makeReleaseVersion(type:ReleaseVersionTask){
     - 使用 incrementMajorVersion就可以增加主版本号
 - 如果运行 `gradle -b RulesTask.gradle -q tasks` 就会得到一个具体的tasks的组Rules
 
+
+## 增量式构建特性
+- 如果Java源文件与最后一次运行的构建不同的话，运行 `compileJava task` 将充分提高构建的性能
+
 *****************************
 
-# Gradle 自动测试
+# 测试模块
 > 凡是依赖于本地环境的测试，使用完就注释Test注解，还有那些会CRUD，影响到数据的测试方法也是
 > 以防以后线上测试通不过 打包失败, 
 

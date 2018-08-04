@@ -7,6 +7,7 @@
 - [社区网站](#社区网站)
     - [娱乐](#娱乐)
 - [资源网](#资源网)
+    - [字典网站](#字典网站)
 - [学习网站](#学习网站)
     - [并发](#并发)
     - [语言](#语言)
@@ -48,7 +49,7 @@
 - [安卓手机](#安卓手机)
     - [Google](#google)
 
-`目录 end` |_2018-08-02_| [码云](https://gitee.com/gin9) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
+`目录 end` |_2018-08-04_| [码云](https://gitee.com/gin9) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
 ****************************************
 # 常用的网站
 ## 软件商店
@@ -103,12 +104,17 @@
 
 ## 娱乐
 - [数字尾巴](http://www.dgtle.com/portal.php) `小清新的数字技术`
-
+- [粤语影院](http://www.yueyuyy.com/)
 ********************************
 # 资源网
 - [脚本之家](http://www.jb51.net/)`用windows的时候一直以为是下盗版软件的地方, 现在才知道还有各种编程学习资源`
 - [河东软件园](http://www.pc0359.cn/)`和上面一样`
 
+## 字典网站
+> [参考博客: 搜索列表](http://www.lingoes.cn/zh/translator/webengine.htm)
+
+- [海词词典](http://dict.cn/)
+- [汉典](http://www.zdic.net/)
 *********************************
 # 学习网站
 ## 并发
