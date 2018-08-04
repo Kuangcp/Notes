@@ -11,7 +11,7 @@
         - [Maven](#maven)
         - [Gradle](#gradle)
 
-`目录 end` |_2018-07-31_| [码云](https://gitee.com/gin9) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
+`目录 end` |_2018-08-04_| [码云](https://gitee.com/gin9) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104) | [cnblogs](http://www.cnblogs.com/kuangcp)
 ****************************************
 # 部署运行
 > 传统的可执行jar, war 以及Docker镜像

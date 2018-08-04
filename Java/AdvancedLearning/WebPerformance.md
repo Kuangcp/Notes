@@ -11,7 +11,7 @@
         - [MySQL](#mysql)
             - [主从复制以及读写分离](#主从复制以及读写分离)
 
-`目录 end` |_2018-07-08_| [码云](https://gitee.com/gin9) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
+`目录 end` |_2018-08-04_| [码云](https://gitee.com/gin9) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104) | [cnblogs](http://www.cnblogs.com/kuangcp)
 ****************************************
 # Java性能调优
 > [查看详情>>](/Java/JavaPerformance.md)
@@ -35,7 +35,9 @@
 - [jmeter](http://jmeter.apache.org/download_jmeter.cgi) `apache 下的开源压测工具`
 
 #### wrk
-> [Github地址](https://github.com/wg/wrk) | [参考博客:  wrk 压力测试 http benchmark POST接口](http://www.cnblogs.com/felixzh/p/8400729.html)
+> [Github地址](https://github.com/wg/wrk) 
+> [参考博客:  wrk 压力测试 http benchmark POST接口](http://www.cnblogs.com/felixzh/p/8400729.html)
+> [参考博客: 性能测试之－wrk(转)](http://www.cnblogs.com/rainy-shurun/p/5867946.html)
 
 1. 需要手动编译安装 make
 

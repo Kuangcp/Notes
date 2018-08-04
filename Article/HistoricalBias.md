@@ -1,3 +1,9 @@
+`目录 start`
+ 
+- [历史的偏见性](#历史的偏见性)
+
+`目录 end` |_2018-08-04_| [码云](https://gitee.com/gin9) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104) | [cnblogs](http://www.cnblogs.com/kuangcp)
+****************************************
 # 历史的偏见性
 
 六十年过去了，有几个中国人知道同盟国二次大战中国战区最高司令是蒋中正。

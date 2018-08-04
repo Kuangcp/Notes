@@ -5,7 +5,7 @@
     - [一些建议](#一些建议)
     - [无论做什么，原则最重要](#无论做什么原则最重要)
 
-`目录 end` |_2018-07-08_| [码云](https://gitee.com/gin9) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
+`目录 end` |_2018-08-04_| [码云](https://gitee.com/gin9) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104) | [cnblogs](http://www.cnblogs.com/kuangcp)
 ****************************************
 # 首先我想说三句话：
 >- 1、欢迎入坑，现在爬上去还来得及。

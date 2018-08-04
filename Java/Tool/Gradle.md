@@ -28,11 +28,11 @@
     - [构建Docker镜像](#构建docker镜像)
         - [第二种插件方式](#第二种插件方式)
 
-`目录 end` |_2018-08-03_| [码云](https://gitee.com/gin9) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104)
+`目录 end` |_2018-08-04_| [码云](https://gitee.com/gin9) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104) | [cnblogs](http://www.cnblogs.com/kuangcp)
 ****************************************
-
 # Gradle
-> [官方 guide](https://gradle.org/guides/?q=JVM)
+> [官方 guide](https://gradle.org/guides/?q=JVM) | [其他 tutorial](https://www.tutorialspoint.com/gradle/index.htm)  
+> [参考博客: 零散知识点总结(1) - Gradle 使用配置总结](https://www.jianshu.com/p/47cbbb4eab13)
 
 **个人看法**
 > [参考: Gradle在大型Java项目上的应用](www.infoq.com/cn/articles/Gradle-application-in-large-Java-projects)
@@ -40,6 +40,7 @@
 **优缺点**
 > [Gradle大吐槽](https://blog.csdn.net/MCL529/article/details/79341706)
 > [官方对比Gradle和Maven](https://gradle.org/maven-vs-gradle/)
+
 > 优点  
 1. 相对于Maven, 配置文件简洁了很多, 所以才入坑学习使用的
 2. 对于一些需要自定义的任务,因为核心为Groovy,所以实现能力高
@@ -251,6 +252,8 @@ plugins{
 > 一般默认内容为 `rootProject.name = ''`
 
 ### Gradle多模块的构建
+> [官网文档 creating multi project builds ](https://guides.gradle.org/creating-multi-project-builds/)
+
 > 采用一个文件统一管理依赖, 然后各个子项目独立引用 | [完整示例 JavaBase](https://github.com/Kuangcp/JavaBase)`统一配置依赖, 管理多模块` 
 
 _如果要添加一个项目也简单_
