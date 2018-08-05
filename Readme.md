@@ -38,14 +38,22 @@
 > 你只有尽力奔跑才可能停留在原地啊.  
 > 不怕不努力, 最怕你喜欢装着努力, 还总被自己伪装出来的勤奋样子感动的一塌糊涂. 人总是会娇惯自己的!! 
 > 如果你觉得自己是周围人中活的最不容易的, 相信我, 那一定是错觉.  
-**************
 
-## 个人备忘
-- [阿里Java编程规范](Java/AlibabaJavaStandard.md)
-- [常用SDK自动下载配置工具 mythsdk](https://github.com/Kuangcp/Script/tree/master/python/mythsdk) 
-    - `功能仿sdkman，但简单，不过是提供自行搭建使用的，毕竟七牛云下载超量了是要收费的`
-- 克隆笔记仓库可以加上 `--depth 1` 参数, 减小克隆的大小
-- [notes](https://github.com/pimterry/notes)`终端内的note工具`
+## 同类仓库
+- [巨人工作记录](https://ztgame.shenyu.me/)`笔记 基于 GitBook`
+- [daydayup](https://github.com/ITDragonBlog/daydayup)
+- [某研究生在校阅读笔记](https://github.com/lanxuezaipiao/ReadingNotes)
+- [老齐的笔记](https://github.com/qiwsir/ITArticles)`跟老齐学Python的轻松入门 作者`
+- [judasn](https://github.com/judasn/hexo-blog)`善于归纳的人 相关:Javaer眼中的Linux`
+- [梁少锋的博客笔记](https://github.com/youngwind/blog)`前端相关`
+- [cain-note](https://github.com/james-cain/cain-note)`像是培训机构的资料和他本人的学习笔记,偏向前端`
+- [书写规范和建议](https://github.com/sparanoid/chinese-copywriting-guidelines)`比较全面,闲暇可以参考`
+- [阮一峰的博客](https://github.com/ruanyf/articles)`Github账号每日都有提交....`
+- [HstarDoc](https://github.com/hstarorg/HstarDoc)`前端的大量文档`
+
+- [唯品会的规范文档](https://github.com/vipshop/vjtools)`规范这种东西, 各有各家的说法, 适合自己就好`
+
+************************************
 
 ## 醍醐灌顶
 - [相关:知乎专栏-程序员你为什么这么累？](/Java/AdvancedLearning/ProgramThinking.md#编程习惯)
@@ -115,22 +123,16 @@ _有自制力的人， 能够坚持的人才更有可能成功！_
 | 2017.08 | 接触Docker |
 | 2018.07 | 接触Go |
 
-## 笔记中所涉及到的知识
-- 编程语言: Python Java Kotlin Groovy Scala Clojure Shell Go
-- 构建工具: Git Gradle Maven 
-- 系统相关: Linux Docker 
-- 数据库相关: MySQL Oracle Redis Postgresql
-- web服务器: Tomcat Niginx
-
-## 2016.08.11 新的开始
-- 这是用来记录我的笔记的仓库，用上git来管理，促使我熟悉git命令，习惯记录电子笔记
-    - 每个文件都有目录,方便阅读,但是因为平台的兼容性,目前只在Github上能正常使用
-    - `浏览器的 Octotree 插件` 也方便查阅
-
-## 相关
-- [巨人工作记录](https://ztgame.shenyu.me/)`笔记 基于 GitBook`
+**************
+## 个人备忘
+- [阿里Java编程规范](Java/AlibabaJavaStandard.md)
+- [常用SDK自动下载配置工具 mythsdk](https://github.com/Kuangcp/Script/tree/master/python/mythsdk) 
+    - `功能仿sdkman，但简单，不过是提供自行搭建使用的，毕竟七牛云下载超量了是要收费的`
+- 克隆笔记仓库可以加上 `--depth 1` 参数, 减小克隆的大小
+- [notes](https://github.com/pimterry/notes)`终端内的note工具`
 
 *******************************
+
 # Catalog
 
 * [ ApiAndDoc ](./ApiAndDoc.md)

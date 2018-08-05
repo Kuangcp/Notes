@@ -69,18 +69,6 @@
 - [mank319](https://github.com/mank319)`go for it 作者`
 - [cycleuser](https://github.com/cycleuser)`博士, 翻译了很多东西`
 
-## 笔记仓库
-- [某研究生在校阅读笔记](https://github.com/lanxuezaipiao/ReadingNotes)
-- [老齐的笔记](https://github.com/qiwsir/ITArticles)`跟老齐学Python的轻松入门 作者`
-- [judasn](https://github.com/judasn/hexo-blog)`善于归纳的人 相关:Javaer眼中的Linux`
-- [梁少锋的博客笔记](https://github.com/youngwind/blog)`前端相关`
-- [cain-note](https://github.com/james-cain/cain-note)`像是培训机构的资料和他本人的学习笔记,偏向前端`
-- [书写规范和建议](https://github.com/sparanoid/chinese-copywriting-guidelines)`比较全面,闲暇可以参考`
-- [阮一峰的博客](https://github.com/ruanyf/articles)`Github账号每日都有提交....`
-- [HstarDoc](https://github.com/hstarorg/HstarDoc)`前端的大量文档`
-
-- [唯品会的规范文档](https://github.com/vipshop/vjtools)`规范这种东西, 各有各家的说法, 适合自己就好`
-
 ## 翻译和搬运
 - [translations](https://github.com/oldratlee/translations)`翻译外国的文章`
 - [掘金翻译计划](https://github.com/xitu/gold-miner)

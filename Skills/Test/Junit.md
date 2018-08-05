@@ -11,7 +11,7 @@
     - [测试套件](#测试套件)
     - [分类测试](#分类测试)
 
-`目录 end` |_2018-08-04_| [码云](https://gitee.com/gin9) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104) | [cnblogs](http://www.cnblogs.com/kuangcp)
+`目录 end` |_2018-08-05_| [码云](https://gitee.com/gin9) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104) | [cnblogs](http://www.cnblogs.com/kuangcp)
 ****************************************
 # 为何要使用测试
 1. 帮助理解需求
@@ -45,17 +45,17 @@ _一个基本的JUnit测试_
 ## 在Maven项目中
 > [参考项目](https://github.com/zhuifengshen/Junit4Demo)
 
-_添加依赖_
+> 添加依赖
 ```xml
 <dependency>
     <groupId>junit</groupId>
     <artifactId>junit</artifactId>
-    <version>4.11</version>
+    <version>4.12</version>
     <scope>test</scope>
 </dependency>
 ```
 
-_例如该项目结构_
+> 例如该项目结构
 ```
 ├── pom.xml
 └── src
@@ -90,6 +90,7 @@ _例如该项目结构_
     1. @Test : 测试方法，测试程序会运行的方法,可设置参数
         - (expected=XXException.class) 期望该测试方法应该抛出某异常
         - (timeout=xxx) 限制该测试方法的执行时间, 超时视为失败
+        - `注意被注解的方法 必须是 public 无参数 非静态 `
     2. @Ignore : 被忽略的测试方法
     3. @Before: 每一个测试方法之前运行
     4. @After : 每一个测试方法之后运行
@@ -145,7 +146,6 @@ public class AssertTest {
         fail("测试失败");
     }
 }
-
 ```
 
 ## 参数化测试
