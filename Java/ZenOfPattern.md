@@ -44,7 +44,7 @@
     - [实践](#实践)
         - [经验之谈](#经验之谈)
 
-`目录 end` |_2018-08-04_| [码云](https://gitee.com/gin9) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104) | [cnblogs](http://www.cnblogs.com/kuangcp)
+`目录 end` |_2018-08-07_| [码云](https://gitee.com/gin9) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104) | [cnblogs](http://www.cnblogs.com/kuangcp)
 ****************************************
 # 设计模式之禅
 ## 软件设计的一些原则
@@ -85,7 +85,7 @@ KISS原则在设计上可能最被推崇的，在家装设计，界面设计 ，
     - 软件开发先是一场沟通博弈。 
     
 #### 最少知识原则
-`【Law of Demeter – 迪米特法则】`
+> 【Law of Demeter – 迪米特法则】
 - 迪米特法则(Law of Demeter)，又称“最少知识原则” `（Principle of Least Knowledge）`，其来源于1987年荷兰大学的一个叫做Demeter的项目。
 - Craig Larman把Law of Demeter又称作“不要和陌生人说话”。在《程序员修炼之道》中讲LoD的那一章叫作“解耦合与迪米特法则”。
 - 关于迪米特法则有一些很形象的比喻：
@@ -98,6 +98,7 @@ KISS原则在设计上可能最被推崇的，在家装设计，界面设计 ，
     - 由方法M创建或者实例化的对象；
     - 作为方法M的参数的对象。
 
+> [参考博客: 迪米特法则与重构](http://zhangyi.xyz/demeter-law-and-refactoring/)
 *******************
 ### 面向对象的S.O.L.I.D 原则
 - 一般来说这是面向对象的五大设计原则，但是，我觉得这些原则可适用于所有的软件开发。

@@ -2,6 +2,7 @@
  
 - [Linux系统](#linux系统)
     - [系统管理](#系统管理)
+        - [窗口管理器](#窗口管理器)
         - [文件系统对比](#文件系统对比)
         - [桌面环境对比](#桌面环境对比)
         - [文件管理器对比](#文件管理器对比)
@@ -22,7 +23,7 @@
         - [修改主机名](#修改主机名)
     - [终端快捷键](#终端快捷键)
 
-`目录 end` |_2018-08-04_| [码云](https://gitee.com/gin9) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104) | [cnblogs](http://www.cnblogs.com/kuangcp)
+`目录 end` |_2018-08-07_| [码云](https://gitee.com/gin9) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104) | [cnblogs](http://www.cnblogs.com/kuangcp)
 ****************************************
 # Linux系统
 > 只是记录了debian系的Linux, 不过也是大同小异
@@ -30,6 +31,10 @@
 ## 系统管理
 > sudo 其实是软件 早该意识到的，所有的命令都是可执行文件  
 > [笔记: 发行版之别](/Linux/Release_Experience.md)
+
+### 窗口管理器
+
+- [awesome window manager](https://awesomewm.org/)
 
 ### 文件系统对比
 > [参考博客: 如何选择文件系统：EXT4、Btrfs 和 XFS ](https://linux.cn/article-7083-1.html)

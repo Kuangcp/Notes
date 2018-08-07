@@ -5,9 +5,20 @@
     - [如何完成任务](#如何完成任务)
     - [交流](#交流)
 
-`目录 end` |_2018-08-04_| [码云](https://gitee.com/gin9) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104) | [cnblogs](http://www.cnblogs.com/kuangcp)
+`目录 end` |_2018-08-07_| [码云](https://gitee.com/gin9) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104) | [cnblogs](http://www.cnblogs.com/kuangcp)
 ****************************************
 # 工作思考
+
+> [参考博客: 如何提升你的能力？给年轻程序员的几条建议](http://tech.glowing.com/cn/advices-to-junior-developers/)
+
+1. 一套高效的开发环境
+1. 一个信息采集器和一本笔记本
+1.目标要够大，这样你才能看到更多的风景。
+    - 目标应该设定在解决哪一类问题，而不是精通哪一类技术。技术只是手段，不是目的。
+1. 打造自己的 portfolio 
+    - 建议每个程序员都应该经营一款自己的产品，它可以是一款app，一个网站或是一个开源软件。
+
+https://insights.thoughtworks.cn/five-steps-of-developer/
 
 ## 如何学习
 1. 没有人教代表你发挥的余地很大, 提升空间空前, 不该抱怨, 应该看到这个机会所在. 

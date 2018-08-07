@@ -8,6 +8,7 @@
         - [配置](#配置)
             - [配置Gradle](#配置gradle)
         - [使用](#使用)
+    - [GoCD](#gocd)
     - [Drone](#drone)
     - [flow.ci](#flowci)
     - [三方平台](#三方平台)
@@ -15,7 +16,7 @@
     - [sonarqube](#sonarqube)
         - [小型项目目前使用的方案](#小型项目目前使用的方案)
 
-`目录 end` |_2018-08-04_| [码云](https://gitee.com/gin9) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104) | [cnblogs](http://www.cnblogs.com/kuangcp)
+`目录 end` |_2018-08-07_| [码云](https://gitee.com/gin9) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104) | [cnblogs](http://www.cnblogs.com/kuangcp)
 ****************************************
 # 传统部署
 - 打包成jar或者war，下载JDK或者JRE 绿色解压即用，将jar/war文件复制到bin目录下
@@ -51,6 +52,12 @@
 ### 使用
 
 
+## GoCD
+> [Github:GoCD](https://github.com/GoCD) 
+
+> [参考博客: GoCD的正确打开方式](https://insights.thoughtworks.cn/the-right-interpretation-of-gocd/)
+
+> [参考博客: GoCD概念篇](http://www.cnblogs.com/elisun/p/7071536.html)
 ************************
 ## Drone 
 > [官网](https://drone.io/)
@@ -59,6 +66,7 @@
 *******************
 ## flow.ci
 > [官网](https://flow.ci/) | [文档](https://github.com/FlowCI/docs/blob/master/intro_base.md)
+
 
 ## 三方平台
 - [appveyor](https://ci.appveyor.com/projects)
