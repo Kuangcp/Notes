@@ -49,7 +49,7 @@
 - [安卓手机](#安卓手机)
     - [Google](#google)
 
-`目录 end` |_2018-08-04_| [码云](https://gitee.com/gin9) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104) | [cnblogs](http://www.cnblogs.com/kuangcp)
+`目录 end` |_2018-08-08_| [码云](https://gitee.com/gin9) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104) | [cnblogs](http://www.cnblogs.com/kuangcp)
 ****************************************
 # 常用的网站
 ## 软件商店
@@ -110,7 +110,7 @@
 # 资源网
 - [脚本之家](http://www.jb51.net/)`用windows的时候一直以为是下盗版软件的地方, 现在才知道还有各种编程学习资源`
 - [河东软件园](http://www.pc0359.cn/)`和上面一样`
-
+- [搜网盘](https://www.57fx.com/search/)
 ## 字典网站
 > [参考博客: 搜索列表](http://www.lingoes.cn/zh/translator/webengine.htm)
 

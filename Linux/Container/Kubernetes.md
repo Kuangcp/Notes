@@ -6,7 +6,7 @@
     - [简单使用](#简单使用)
     - [容器编排](#容器编排)
 
-`目录 end` |_2018-08-04_| [码云](https://gitee.com/gin9) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104) | [cnblogs](http://www.cnblogs.com/kuangcp)
+`目录 end` |_2018-08-08_| [码云](https://gitee.com/gin9) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104) | [cnblogs](http://www.cnblogs.com/kuangcp)
 ****************************************
 # Kubernetes
 > 又称K8s
@@ -16,6 +16,7 @@
 > [浅谈k8s+docker 资源监控](https://segmentfault.com/a/1190000003898140) | [基于Kubernetes构建Docker集群管理详解](http://www.csdn.net/article/2014-12-24/2823292-Docker-Kubernetes)  
 [Kubernetes 学习笔记 ](http://wdxtub.com/2017/06/05/k8s-note/)
 
+> [参考博客: Kubernetes会不会被自身的复杂性压垮？](http://www.infoq.com/cn/articles/will-kubernetes-collapse-under-the-weight-of-its-complexity)
 ## 安装
 
 ## 简单使用

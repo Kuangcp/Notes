@@ -41,7 +41,7 @@
         - [SVN](#svn)
     - [repos的使用](#repos的使用)
 
-`目录 end` |_2018-08-04_| [码云](https://gitee.com/gin9) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104) | [cnblogs](http://www.cnblogs.com/kuangcp)
+`目录 end` |_2018-08-08_| [码云](https://gitee.com/gin9) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104) | [cnblogs](http://www.cnblogs.com/kuangcp)
 ****************************************
 # Git基础
 > Git is a free and open source distributed version control system designed to handle everything from small to very large projects with speed and efficiency. --[git-scm.com](https://git-scm.com/)
@@ -245,6 +245,7 @@ alias glola='git log --graph --pretty='\''%Cred%h%Creset -%C(yellow)%d%Creset %s
 ```
 
 > [Github:diff-so-fancy](https://github.com/so-fancy/diff-so-fancy)`一个更方便查看diff的工具`
+- 最简单的就是 `npm install -g diff-so-fancy` 安装 
 
 #### tag
 > [官方文档](https://git-scm.com/docs/git-tag/2.10.2)
@@ -273,6 +274,15 @@ alias glola='git log --graph --pretty='\''%Cred%h%Creset -%C(yellow)%d%Creset %s
     - 但是在新建一个远程仓库后, 推送时会报错:`shallow update not allowed` 因为本地库是残缺的
     - 所以需要新建一个目录, 把原仓库全拉下来, 再添加远程进行推送, 然后删除该目录, 残缺版的仓库也能正常向新远程推送提交了
 
+> 克隆在指定tag状态的仓库 `git clone URL --branch=name ` 然后 Git会提示 
+```
+您正处于分离头指针状态。您可以查看、做试验性的修改及提交，并且您可以通过另外
+的检出分支操作丢弃在这个状态下所做的任何提交。
+如果您想要通过创建分支来保留在此状态下所做的提交，您可以通过在检出命令添加
+参数 -b 来实现（现在或稍后）。例如：
+  git checkout -b <new-branch-name>
+```
+按他提示来就行了 
 #### checkout
 > [官方文档 : git checkout](https://git-scm.com/docs/git-checkout)
 

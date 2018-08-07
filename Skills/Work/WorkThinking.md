@@ -5,7 +5,7 @@
     - [如何完成任务](#如何完成任务)
     - [交流](#交流)
 
-`目录 end` |_2018-08-07_| [码云](https://gitee.com/gin9) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104) | [cnblogs](http://www.cnblogs.com/kuangcp)
+`目录 end` |_2018-08-08_| [码云](https://gitee.com/gin9) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104) | [cnblogs](http://www.cnblogs.com/kuangcp)
 ****************************************
 # 工作思考
 
@@ -39,5 +39,5 @@ https://insights.thoughtworks.cn/five-steps-of-developer/
 
 职责明确 配合问题 
 
-[参考博客: 如何更好地控制情绪，不「抬杠」？](https://www.zhihu.com/question/27306335)
-
+> [参考博客: 如何更好地控制情绪，不「抬杠」？](https://www.zhihu.com/question/27306335)
+> [参考博客: 看清程序员怒打产品经理的本质](http://www.techug.com/post/progrmmer-fight-with-pm.html)
