@@ -10,13 +10,10 @@
         - [特殊字符](#特殊字符)
     - [规范](#规范)
         - [提交规范](#提交规范)
-- [生活](#生活)
-    - [出行](#出行)
-- [习俗](#习俗)
-    - [喜事](#喜事)
-    - [丧事](#丧事)
+    - [游戏](#游戏)
+    - [科技](#科技)
 
-`目录 end` |_2018-08-04_| [码云](https://gitee.com/gin9) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104) | [cnblogs](http://www.cnblogs.com/kuangcp)
+`目录 end` |_2018-08-08_| [码云](https://gitee.com/gin9) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104) | [cnblogs](http://www.cnblogs.com/kuangcp)
 ****************************************
 # 备忘录
 > 用来记录一些容易忘的乱七八糟的事情
@@ -61,18 +58,12 @@ RegionId  cn-qingdao cn-beijing cn-zhangjiakou cn-hangzhou cn-shanghai cn-shenzh
 - `改良的余地` :warning: `:warning:`
 
 ***************************************
-# 生活
-## 出行
-- 出行尽量不要把东西放在袋子里提, 很容易丢!!! `写了便签,还发生了两次...`
+ 
+## 游戏
+> [DMC 鬼泣](http://www.gamersky.com/z/devilmaycry/down/)
+***************************
 
+## 科技
 
-# 习俗
-
-## 喜事
-- 大舅为大, 老舅为二, 然后就是做舅舅的买被子, 姑姑的置办酒水, 送礼要给小孩回礼
-- 吹吹打打是一定要有礼数的, 客人到场, 进门之前就要放好礼炮, 所以要在门口放一个机灵的人.
-
-
-## 丧事
-
-- 很多东西要在老人走之前置办好, 然后就是 儿子儿媳是要跪拜礼的, 是不能做事情的, 下面的事情是要别人安排
+> [
+关于LTE频段划分及4G手机适配情况分析](https://bbs.meizu.cn/thread-4912100-1-1.html)

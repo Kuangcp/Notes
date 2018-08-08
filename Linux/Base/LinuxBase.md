@@ -23,7 +23,7 @@
         - [修改主机名](#修改主机名)
     - [终端快捷键](#终端快捷键)
 
-`目录 end` |_2018-08-07_| [码云](https://gitee.com/gin9) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104) | [cnblogs](http://www.cnblogs.com/kuangcp)
+`目录 end` |_2018-08-08_| [码云](https://gitee.com/gin9) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104) | [cnblogs](http://www.cnblogs.com/kuangcp)
 ****************************************
 # Linux系统
 > 只是记录了debian系的Linux, 不过也是大同小异
@@ -291,3 +291,4 @@ _系统运行级别_
 | Ctrl | O | 运行上翻下翻出来的命令, 并且自动将下一条命令填入 |
 | Ctrl | R | 显示：号提示，根据用户输入查找相关历史命令（reverse-i-search） |
 
+https://www.cnblogs.com/besharp/p/6296929.html
