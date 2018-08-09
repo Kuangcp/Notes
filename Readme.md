@@ -1,3 +1,13 @@
+`目录 start`
+ 
+    - [同类仓库](#同类仓库)
+    - [醍醐灌顶](#醍醐灌顶)
+        - [为什么写作](#为什么写作)
+    - [【学习历程】](#学习历程)
+    - [个人备忘](#个人备忘)
+
+`目录 end` |_2018-08-09_| [码云](https://gitee.com/gin9) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104) | [cnblogs](http://www.cnblogs.com/kuangcp)
+****************************************
 [![GitBook](https://img.shields.io/badge/GitBook-online-brightgreen.svg)](https://legacy.gitbook.com/book/kuangcp/notes/details)
 [![目录](https://img.shields.io/badge/note-Catalog-brightgreen.svg)](./SUMMARY.md)
 [![目录](https://img.shields.io/badge/doc-Note-brightgreen.svg)](https://gitee.com/gin9/Notes/wikis/pages)
@@ -71,6 +81,9 @@
 - [参考博客: 国外的程序猿可以工作到退休而国内的为什么这么短命（思维认知）](http://group.jobbole.com/33239/?utm_source=hao.jobbole.com&utm_medium=relatedTopic)
 
 > [写作中的排版指南](https://github.com/sparanoid/chinese-copywriting-guidelines)
+
+> [程序员的那些反模式 ](http://zhangtielei.com/posts/blog-programmer-anti-pattern.html)
+> [技术的正宗与野路子](http://zhangtielei.com/posts/blog-programmer-learn.html)
 
 ********************
 ### 为什么写作

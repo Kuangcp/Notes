@@ -23,7 +23,7 @@
     - [Tips](#tips)
         - [Error:Cannot compile Groovy files: no Groovy library is defined for module "XXX"](#errorcannot-compile-groovy-files-no-groovy-library-is-defined-for-module-"xxx")
 
-`目录 end` |_2018-08-04_| [码云](https://gitee.com/gin9) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104) | [cnblogs](http://www.cnblogs.com/kuangcp)
+`目录 end` |_2018-08-09_| [码云](https://gitee.com/gin9) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104) | [cnblogs](http://www.cnblogs.com/kuangcp)
 ****************************************
 
 # IDEA 使用笔记
@@ -231,10 +231,12 @@ _例如修改为如下_
 | Ctrl | Shift | Alt | Key | Action |
 |:----:|:----:|:----:|:----:|:----|
 |C| | | **N** | 查找类(所有类范围,包括引用的包)
+| | |A| **K** | 查找类 `原默认是 Ctrl N`
 |C|S| | **N** | 查找文件名
 |C|S|A| **N** | 符号查找: 类中的方法或变量
 |C| | | **R** | 替换文本
 |C| | | **F** | 查找文本
+| | |A| **L** | 查找任意文件`原默认是双击Shift` 
 
 #### View 
 | Ctrl | Shift | Alt | Key | Action |

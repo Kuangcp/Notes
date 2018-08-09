@@ -1,7 +1,7 @@
 `目录 start`
  
 - [常用的网站](#常用的网站)
-    - [软件商店](#软件商店)
+    - [软件下载站](#软件下载站)
     - [国内镜像站](#国内镜像站)
     - [特别网站](#特别网站)
 - [社区网站](#社区网站)
@@ -49,10 +49,10 @@
 - [安卓手机](#安卓手机)
     - [Google](#google)
 
-`目录 end` |_2018-08-08_| [码云](https://gitee.com/gin9) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104) | [cnblogs](http://www.cnblogs.com/kuangcp)
+`目录 end` |_2018-08-09_| [码云](https://gitee.com/gin9) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104) | [cnblogs](http://www.cnblogs.com/kuangcp)
 ****************************************
 # 常用的网站
-## 软件商店
+## 软件下载站
 - [https://en.softonic.com/](https://en.softonic.com/)`windows软件居多`
 - [VirtualBox和VMWare的镜像网](http://www.osboxes.org/)
 - [安卓在X86设备上的ISO下载](http://www.android-x86.org/download)
@@ -116,6 +116,10 @@
 
 - [海词词典](http://dict.cn/)
 - [汉典](http://www.zdic.net/)
+
+**英文字典**
+- [https://www.merriam-webster.com](https://www.merriam-webster.com)
+- [https://www.dictionary.com](https://www.dictionary.com)
 *********************************
 # 学习网站
 ## 并发

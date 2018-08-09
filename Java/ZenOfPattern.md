@@ -44,7 +44,7 @@
     - [实践](#实践)
         - [经验之谈](#经验之谈)
 
-`目录 end` |_2018-08-07_| [码云](https://gitee.com/gin9) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104) | [cnblogs](http://www.cnblogs.com/kuangcp)
+`目录 end` |_2018-08-09_| [码云](https://gitee.com/gin9) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104) | [cnblogs](http://www.cnblogs.com/kuangcp)
 ****************************************
 # 设计模式之禅
 ## 软件设计的一些原则
@@ -416,6 +416,7 @@ _Singleton_
 
 ## 实践
 ### 经验之谈
+- [IBM 社区 Java 设计模式专题](https://www.ibm.com/developerworks/cn/java/design/)
 - [一个鸭子游戏引发的设计（多态，继承，抽象，接口，策略者模式）](http://www.cnblogs.com/x-xk/archive/2012/12/21/2823401.html)
 - [不要再盲目的new了！你要学着针对接口编程！（具体方法，Factory，Abstract Factory](www.cnblogs.com/x-xk/archive/2013/01/06/2830742.html)
 

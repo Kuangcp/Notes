@@ -1,7 +1,7 @@
 `目录 start`
  
 - [博客](#博客)
-    - [【个人博客网】](#个人博客网)
+    - [个人博客网](#个人博客网)
     - [博客能人](#博客能人)
     - [专栏](#专栏)
 - [【Blog】](#blog)
@@ -20,7 +20,7 @@
         - [娱乐](#娱乐)
     - [商业](#商业)
 
-`目录 end` |_2018-08-04_| [码云](https://gitee.com/gin9) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104) | [cnblogs](http://www.cnblogs.com/kuangcp)
+`目录 end` |_2018-08-09_| [码云](https://gitee.com/gin9) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104) | [cnblogs](http://www.cnblogs.com/kuangcp)
 ****************************************
 
 > 只用来记录非技术类的文章,技术类的直接放到对应的笔记中去  
@@ -28,7 +28,7 @@
 
 # 博客
 
-## 【个人博客网】
+## 个人博客网
 - [ciaoshen](http://www.ciaoshen.com/)`肉身翻墙? Java大佬`
 - [阮一峰](http://www.ruanyifeng.com/blog/)`一个勤奋的布道者,Github每天都有提交`
 - [酷壳](https://coolshell.cn/)`左耳朵耗子个人博客网 阿里架构师`
@@ -68,6 +68,8 @@
 - [晓风轻技术小站](https://xwjie.github.io/)`程序员你为什么这么累？ 作者`
 
 - [todo](http://www.saitjr.com/)
+- [张铁蕾](http://zhangtielei.com/)`总结能力强`
+
 ## 博客能人
 - [赵劼](http://www.cnblogs.com/JeffreyZhao/) `对函数式编程，并行程序开发，代码之美以及程序员能力与修养等相关问题`
 - [进击的Java新人](https://zhuanlan.zhihu.com/hinus)

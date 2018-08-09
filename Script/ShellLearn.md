@@ -2,6 +2,7 @@
  
 - [学习Shell](#学习shell)
     - [shell类别](#shell类别)
+    - [Shell内建命令](#shell内建命令)
     - [Tips](#tips)
     - [执行](#执行)
     - [输入输出](#输入输出)
@@ -29,7 +30,7 @@
     - [工具](#工具)
         - [shyaml](#shyaml)
 
-`目录 end` |_2018-08-04_| [码云](https://gitee.com/gin9) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104) | [cnblogs](http://www.cnblogs.com/kuangcp)
+`目录 end` |_2018-08-09_| [码云](https://gitee.com/gin9) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104) | [cnblogs](http://www.cnblogs.com/kuangcp)
 ****************************************
 # 学习Shell
 > 首先语法不像别的语言可读性好，比如Python，然后方言众多，学习比Python2，3还恶心  
@@ -49,6 +50,11 @@
 
 > [linux shell dash&bash](http://blog.csdn.net/zengqiang1/article/details/61916697)
 
+*****************
+## Shell内建命令
+- [ ] 学习内建命令的使用
+
+****************
 ## Tips
 > 常用代码片段 
 

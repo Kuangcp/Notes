@@ -18,11 +18,6 @@
 
 `目录 end` |_2018-08-07_| [码云](https://gitee.com/gin9) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104) | [cnblogs](http://www.cnblogs.com/kuangcp)
 ****************************************
-# 传统部署
-- 打包成jar或者war，下载JDK或者JRE 绿色解压即用，将jar/war文件复制到bin目录下
-    - 后台运行 `start /b java -jar fileName`
-
-****************************************
 # 持续集成
 > 参考博客: [持续集成](http://www.ruanyifeng.com/blog/2015/09/continuous-integration.html) | [持续集成服务 Travis CI 教程](http://www.ruanyifeng.com/blog/2017/12/travis_ci_tutorial.html)  
 > [廖雪峰 使用Travis进行持续集成](https://www.liaoxuefeng.com/article/0014631488240837e3633d3d180476cb684ba7c10fda6f6000)  

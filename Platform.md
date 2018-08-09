@@ -10,6 +10,7 @@
         - [Bandage图标](#bandage图标)
     - [Gitea](#gitea)
         - [自建](#自建)
+- [二进制包仓库](#二进制包仓库)
 - [代码质量检测平台](#代码质量检测平台)
     - [codeclimate](#codeclimate)
     - [codebeat](#codebeat)
@@ -53,7 +54,7 @@
 - [测试平台](#测试平台)
 - [培训](#培训)
 
-`目录 end` |_2018-08-04_| [码云](https://gitee.com/gin9) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104) | [cnblogs](http://www.cnblogs.com/kuangcp)
+`目录 end` |_2018-08-09_| [码云](https://gitee.com/gin9) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104) | [cnblogs](http://www.cnblogs.com/kuangcp)
 ****************************************
 
 # 代码托管平台
@@ -126,6 +127,10 @@ SSH_DOMAIN       = kuangcp.top
 ```
 然后还需修改本地的SSH配置才能正常使用
 ********************************************************
+# 二进制包仓库
+- [JFrog Bintray](https://bintray.com/kuangcp) 
+- [Maven Central Repository ](http://mvnrepository.com/)
+
 # 代码质量检测平台
 ## codeclimate
 > [官网](https://codeclimate.com/dashboard)

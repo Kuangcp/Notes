@@ -22,8 +22,9 @@
         - [Java 和 Scala](#java-和-scala)
     - [Jenkin 使用](#jenkin-使用)
         - [下载安装和配置](#下载安装和配置)
+- [发布自己的构件](#发布自己的构件)
 
-`目录 end` |_2018-08-04_| [码云](https://gitee.com/gin9) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104) | [cnblogs](http://www.cnblogs.com/kuangcp)
+`目录 end` |_2018-08-09_| [码云](https://gitee.com/gin9) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104) | [cnblogs](http://www.cnblogs.com/kuangcp)
 ****************************************
 # Gradle进阶知识
 > [gradle api ](https://docs.gradle.org/4.9/dsl/org.gradle.api.Project.html) `所有{}结构 以及配置`
@@ -257,4 +258,8 @@ task makeReleaseVersion(type:ReleaseVersionTask){
 - 官网下载war包后，直接使用Java命令运行 或者放在web容器中运行
 - 配置下载插件（位置在C盘用户目录下， 其实第一次运行后也是会解压在.jenkin 目录下 插件就在plugin目录下）
 - 
+
+# 发布自己的构件 
+
+[如何发布Jar包到Maven Central Repository ](https://lambeta.com/2017/09/15/release-jar-to-maven-central-repository/)
 

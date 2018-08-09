@@ -60,7 +60,7 @@
     - [安全工具](#安全工具)
         - [gpg](#gpg)
 
-`目录 end` |_2018-08-04_| [码云](https://gitee.com/gin9) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104) | [cnblogs](http://www.cnblogs.com/kuangcp)
+`目录 end` |_2018-08-09_| [码云](https://gitee.com/gin9) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104) | [cnblogs](http://www.cnblogs.com/kuangcp)
 ****************************************
 # 软件使用记事
 ## 【包管理】
@@ -402,6 +402,7 @@ CMD编辑器
 1. `围脖是个好图床哟` 方便的图床,但是要登录微博
 1. `滴答清单` 全平台可使用
 1. `Auto Reload Tab` 定时自动刷新标签页
+1. `轻灵划译` 即刻翻译, 多种平台
 
 #### 配置
 > 主要是 about:config 

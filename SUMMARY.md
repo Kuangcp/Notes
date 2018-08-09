@@ -71,7 +71,6 @@
         * [ ClassFile ](/Java/AdvancedLearning/ClassFile.md)
         * [ Collection ](/Java/AdvancedLearning/Collection.md)
         * [ Concurrents ](/Java/AdvancedLearning/Concurrents.md)
-        * [ ContinuousIntegration ](/Java/AdvancedLearning/ContinuousIntegration.md)
         * [ Deploy ](/Java/AdvancedLearning/Deploy.md)
         * [ Exception ](/Java/AdvancedLearning/Exception.md)
         * [ ExtendsAndInterface ](/Java/AdvancedLearning/ExtendsAndInterface.md)
@@ -200,6 +199,10 @@
         * [ Network ](/Skills/CS/Network.md)
         * [ Profile ](/Skills/CS/Profile.md)
         * [ WebSecurity ](/Skills/CS/WebSecurity.md)
+    * 【 Skills/DevOps 】
+        * [ ContinuousDelivery ](/Skills/DevOps/ContinuousDelivery.md)
+        * [ ContinuousDeployment ](/Skills/DevOps/ContinuousDeployment.md)
+        * [ ContinuousIntegration ](/Skills/DevOps/ContinuousIntegration.md)
     * 【 Skills/Document 】
         * [ MarkDown ](/Skills/Document/MarkDown.md)
         * [ RequirementsDocument ](/Skills/Document/RequirementsDocument.md)
@@ -224,7 +227,7 @@
         * [ WorkThinking ](/Skills/Work/WorkThinking.md)
     * [ AppManual ](/Skills/AppManual.md)
     * [ CelebrityQuotes ](/Skills/CelebrityQuotes.md)
-    * [ CodingThinking ](/Skills/CodingThinking.md)
+    * [ Miscellaneous ](/Skills/Miscellaneous.md)
     * [ Problem ](/Skills/Problem.md)
     * [ RegularExpression ](/Skills/RegularExpression.md)
     * [ SoftwareDesignEngineer ](/Skills/SoftwareDesignEngineer.md)

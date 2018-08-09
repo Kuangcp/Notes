@@ -21,6 +21,7 @@
         - [国际化的配置](#国际化的配置)
 - [设计软件的方法](#设计软件的方法)
     - [契约式设计](#契约式设计)
+    - [精益思想](#精益思想)
 - [编程习惯](#编程习惯)
     - [晓风轻的经验](#晓风轻的经验)
         - [接口定义](#接口定义)
@@ -33,7 +34,7 @@
         - [阿里巴巴的代码检查](#阿里巴巴的代码检查)
     - [配置文件](#配置文件)
 
-`目录 end` |_2018-08-04_| [码云](https://gitee.com/gin9) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104) | [cnblogs](http://www.cnblogs.com/kuangcp)
+`目录 end` |_2018-08-09_| [码云](https://gitee.com/gin9) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104) | [cnblogs](http://www.cnblogs.com/kuangcp)
 ****************************************
 # 开发思想
 > 有关开发的理论性思想,编写,测试,部署等
@@ -159,12 +160,15 @@ _[Spring Web 应用的最大败笔](http://www.jdon.com/45857)_
 - 将配置文件按语言分别配置
 - 然后在加载时设定语言的配置, 然后加载对应文件夹下的配置文件
 
+*****************************************
 # 设计软件的方法
 ## 契约式设计
 > Design by Contract  (Dbc)
 
 > [百度百科解释 ](https://baike.baidu.com/item/%E5%A5%91%E7%BA%A6%E5%BC%8F%E8%AE%BE%E8%AE%A1)
 
+## 精益思想
+> 持续集成、持续交付、持续部署
 ********************************
 # 编程习惯
 ## 晓风轻的经验

@@ -10,10 +10,11 @@
         - [Idea上Junit的使用](#idea上junit的使用)
     - [TestNG](#testng)
     - [Mock框架](#mock框架)
-        - [DBUnit](#dbunit)
+        - [Mockito](#mockito)
+    - [DBUnit](#dbunit)
 - [感悟](#感悟)
 
-`目录 end` |_2018-08-04_| [码云](https://gitee.com/gin9) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104) | [cnblogs](http://www.cnblogs.com/kuangcp)
+`目录 end` |_2018-08-09_| [码云](https://gitee.com/gin9) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104) | [cnblogs](http://www.cnblogs.com/kuangcp)
 ****************************************
 # Java的测试
 > [测试的基础理论](/Skills/Base/Test.md)
@@ -53,7 +54,7 @@ assert应该是开发阶段打开，而在发布后关闭。
 ****************
 # 实现方案
 ## 使用Junit
-> [官网](https://junit.org/junit4/) | [如何上手Junit](/MyBlog/how-to-use-junit.md) | [如何上手Junit5](/MyBlog/how-to-use-junit5.md)
+> [Junit4官网](https://junit.org/junit4/)|[Junit5官网](https://junit.org/junit5/)| [如何上手Junit](/MyBlog/how-to-use-junit.md) | [如何上手Junit5](/MyBlog/how-to-use-junit5.md)
 
 - Before Test 执行顺序：
     - Before在Test之前执行是毋庸置疑的，但是如果有多个Before的话，按定义的先后逆序执行，也就是说AB顺序定义，BA顺序执行
@@ -69,13 +70,12 @@ _可以使用TestMe插件_
 - Ctrl Shift T 生成测试类 结合Mockit可以更好的模拟测试环境
 
 ## TestNG
-
+> [Spring、Spring Boot和TestNG测试指南](https://github.com/chanjarster/spring-test-examples)
 
 **************
 ## Mock框架
-> mock 模拟 , 也就是说对需要测试的模块, 将该模块依赖的相关对象给修改成自己期望的行为方式, 以移除依赖性, 针对性的测试
+> mock 模拟 , 也就是说对需要测试的模块, 将该模块依赖的相关对象给修改成自己期望的行为方式(伪造一个假对象), 以移除依赖性, 从而针对性的测试该模块
 
-> 2017-06-21 14:36:54 对mock的使用很迷，还是需要稳定心态慢慢看文档才能理解
 > [JMockit官方文档](http://www.vogella.com/tutorials/Mockito/article.html#testing-with-mock-objects)
 - [入门博客](http://blog.csdn.net/chjttony/article/details/17838693)
 
@@ -83,9 +83,11 @@ http://www.baeldung.com/mockito-void-methods
 https://www.tutorialspoint.com/mockito/mockito_quick_guide.htm
 http://static.javadoc.io/org.mockito/mockito-core/2.19.0/org/mockito/Mockito.html#1
 
-- [ ] 学习mock
+### Mockito
+> [官网](http://site.mockito.org/) | [Github:mockito](https://github.com/mockito/mockito)
 
-### DBUnit
+
+## DBUnit
 > 基于Junit的一个数据库测试框架, 方便测试dao层
 
 # 感悟

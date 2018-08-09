@@ -14,6 +14,7 @@
         - [【VI编辑器的使用】](#vi编辑器的使用)
     - [【配置SSH连接上Github】](#配置ssh连接上github)
         - [Github上fork别人项目的操作](#github上fork别人项目的操作)
+        - [Github上PR](#github上pr)
         - [.gitingnore文件](#gitingnore文件)
         - [终端中显示当前分支](#终端中显示当前分支)
         - [命令的自动补全](#命令的自动补全)
@@ -34,7 +35,7 @@
         - [8.Reset一个单独的文件](#8reset一个单独的文件)
         - [9.保留working_tree并且丢弃一些commit](#9保留working_tree并且丢弃一些commit)
 
-`目录 end` |_2018-08-04_| [码云](https://gitee.com/gin9) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104) | [cnblogs](http://www.cnblogs.com/kuangcp)
+`目录 end` |_2018-08-09_| [码云](https://gitee.com/gin9) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104) | [cnblogs](http://www.cnblogs.com/kuangcp)
 ****************************************
 # GitInAction
 > [try git](https://try.github.io/)
@@ -190,6 +191,9 @@
 > 4.合并两个分支代码 `git merge --no-ff A/master`  
 > 5.push即可  
 
+### Github上PR
+> [Using git to prepare your PR to have a clean history](https://github.com/mockito/mockito/wiki/Using-git-to-prepare-your-PR-to-have-a-clean-history)
+- [ ] Learn
 ********************
 ### .gitingnore文件
 > [Github: gitignore](https://github.com/github/gitignore) | 一行是一个配置, 是独占一行的
