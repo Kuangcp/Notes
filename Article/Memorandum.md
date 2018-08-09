@@ -65,5 +65,4 @@ RegionId  cn-qingdao cn-beijing cn-zhangjiakou cn-hangzhou cn-shanghai cn-shenzh
 
 ## 科技
 
-> [
-关于LTE频段划分及4G手机适配情况分析](https://bbs.meizu.cn/thread-4912100-1-1.html)
+> [关于LTE频段划分及4G手机适配情况分析](https://bbs.meizu.cn/thread-4912100-1-1.html)
