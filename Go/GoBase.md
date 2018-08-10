@@ -176,4 +176,4 @@ func walkfunc(path string, info os.FileInfo, err error) error {
 # Tips
 ## 通过字符串调用指定函数
 > [参考博客: Go 根据字符串调用指定函数](https://blog.csdn.net/HOOKTTG/article/details/52184500)
-
+> [参考博客: WebAssembly 和 Go语言：对未来的观望](http://www.techug.com/post/webassembly-and-go-a-look-to-the-future.html)

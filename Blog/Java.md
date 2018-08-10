@@ -84,4 +84,10 @@
 
 ## Java语言讨论
 > [冷眼看Java](http://swiftlet.net/archives/2530)
+> [参考博客: 王垠：为Java说句公道话](http://www.techug.com/post/java-python.html)
+> [参考博客: 比较 Rust 和 Java](http://www.techug.com/post/comparing-rust-and-java.html)
+> [参考博客: Kotlin与Java的主客观比较](http://www.techug.com/post/kotlin-vs-java-the-whole-story.html)
+> [参考博客: 10个实用的但偏执的Java编程技术](http://www.techug.com/post/10-java-tips.html)
+> [参考博客: 王垠：编程的智慧](http://www.techug.com/post/programming-philosophy.html)
+
 

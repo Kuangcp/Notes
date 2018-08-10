@@ -9,3 +9,8 @@
 
 ## 统计学佯谬
 辛普森佯谬
+
+
+> [参考博客: 王垠 : AlphaGo与人工智能](http://www.techug.com/post/alpha-go.html)
+
+

@@ -23,7 +23,7 @@ export PATH=$PATH:$NODE_HOME/bin
 
 ## 配置
 ### 使用淘宝的镜像
-> [官网](http://npm.taobao.org/)
+> [镜像地址](http://npm.taobao.org/) `还包括各种常用软件`
 
 1. 临时使用 `npm --registry https://registry.npm.taobao.org install express`
 2. 永久使用 `npm config set registry https://registry.npm.taobao.org`

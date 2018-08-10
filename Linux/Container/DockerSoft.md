@@ -97,7 +97,7 @@
 ## Java
 - 基础镜像：
     - [官方镜像](https://hub.docker.com/_/java/)
-
+> [参考博客: Java和Docker限制的那些事儿](http://www.techug.com/post/java-and-docker-memory-limits.html)`描述了一个天坑`
 **********************************
 # 数据库
 ## PostgreSQL

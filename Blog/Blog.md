@@ -157,6 +157,7 @@ _如何将脑海中的思维火花转化为代码_
 ***************
 ## 团队开发
 - [团队开发工作流项目](http://www.cnblogs.com/foundation/archive/2009/10/17/1584875.html)
+> [参考博客: 有人向我反馈了一个bug](http://www.techug.com/post/when_someone_gives_you_a_bug.html)
 
 ***************
 ## 毕业

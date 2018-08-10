@@ -270,7 +270,18 @@ _个人配置_
 > [参考博客: 使用vscocd进行python开发 ](http://www.cnblogs.com/bloglkl/archive/2016/08/23/5797805.html)
 
 ***********************************
+### Atom
+> Github 推出的编辑器 [淘宝Mirror](https://npm.taobao.org/mirrors/atom)
 
+1. 配置apm命令镜像 
+`~/.atom/.atomrc`
+```
+registry=https://registry.npm.taobao.org/
+strict-ssl=false
+```
+1. 或者直接clone 进行安装 在`~/.atom/packages`下clone仓库, 然后 apm install 
+
+************************************
 ### Gedit
 > [Github地址](https://github.com/GNOME/gedit)
 
