@@ -264,6 +264,7 @@ _个人配置_
 1. Beautify
 1. Auto Rename Tag
 1. Todo Tree 
+1. GitLens `方便查看更改`
 
 #### 实践
 > [参考博客: 用Git在Visual Studio Code内进行版本控制[指导]](https://sdk.cn/news/4041)
