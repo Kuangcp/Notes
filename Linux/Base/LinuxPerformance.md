@@ -35,7 +35,7 @@
         - [chroot](#chroot)
     - [关机重启](#关机重启)
 
-`目录 end` |_2018-08-04_| [码云](https://gitee.com/gin9) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104) | [cnblogs](http://www.cnblogs.com/kuangcp)
+`目录 end` |_2018-08-10_| [码云](https://gitee.com/gin9) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104) | [cnblogs](http://www.cnblogs.com/kuangcp)
 ****************************************
 # Linux 性能分析和管理
 ## 运行状况信息
@@ -300,6 +300,10 @@
     - UNIX : `ps -ejH`
         - e 显示所有进程, j 任务格式来显示进程, H 显示数状结构 
 
+**实践**
+1. 列出Java进程 `ps aux | grep RSS | grep -v "grep" && ps aux | egrep -v "grep" | grep -i java` 
+1. 统计所有java进程内存使用 `ps aux|grep java | grep -v grep | awk "{sum+=$6};END {print sum "K " sum/1024"M "}"` 
+1. 按内存排序 列出所有进程 `ps aux | grep -v RSS | awk "{print $6 "\t" $11 }" | sort --human-numeric-sort -r | less`
 
 ### kill
 - `kill -l` 或者 `trap -l` 显示kill可以向进程发送的信号

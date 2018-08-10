@@ -8,7 +8,7 @@
         - [源码](#源码)
         - [配置环境](#配置环境)
 
-`目录 end` |_2018-08-04_| [码云](https://gitee.com/gin9) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104) | [cnblogs](http://www.cnblogs.com/kuangcp)
+`目录 end` |_2018-08-10_| [码云](https://gitee.com/gin9) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104) | [cnblogs](http://www.cnblogs.com/kuangcp)
 ****************************************
 # Netty
 > [trustlin](https://github.com/trustin)`Netty mina 的作者`
@@ -19,6 +19,7 @@
 - [为什么选择Netty作为基础通信组件？ ](https://my.oschina.net/zhaky/blog/760469)
 - [Reactive Extension (Rx) Adaptor for Netty ](https://github.com/ReactiveX/RxNetty)
 
+> [《Netty 实战》 Netty In Action 中文版](https://github.com/ReactivePlatform/netty-in-action-cn)
 ********************
 ## 原理
 > [Netty核心组件](http://cmsblogs.com/?p=2467)  

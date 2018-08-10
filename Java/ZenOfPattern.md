@@ -44,7 +44,7 @@
     - [实践](#实践)
         - [经验之谈](#经验之谈)
 
-`目录 end` |_2018-08-09_| [码云](https://gitee.com/gin9) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104) | [cnblogs](http://www.cnblogs.com/kuangcp)
+`目录 end` |_2018-08-10_| [码云](https://gitee.com/gin9) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104) | [cnblogs](http://www.cnblogs.com/kuangcp)
 ****************************************
 # 设计模式之禅
 ## 软件设计的一些原则
@@ -70,8 +70,16 @@ KISS原则在设计上可能最被推崇的，在家装设计，界面设计 ，
 #### 组合优于继承 
 `【Composition over inheritance】`
 - 多使用组合而不是继承, 但是这个观点是存在一定的争议的, 还是要有度的,合理搭配最为重要
-    - 组合就是将原来继承方式中的父类放到子类作为属性? TODO 再度思考
+    - 组合就是将原来继承方式中的父类放到子类作为属性?
 
+组合
+1.（对象）组合是一种通过创建一个组合了其它对象的对象，从而获得新功能的复用方法。
+2.将功能委托给所组合的一个对象，从而获得新功能。
+3.有些时候也称之为"聚合"（aggregation）或"包容"（containment），尽管有些作者对这些术语赋予了专门的含义
+- [ ] 再度思考
+
+> [参考博客: 组合、委托与继承，面向对象中类之间的基本关系漫游](http://www.cnblogs.com/narutow/p/8117352.html)
+> [参考博客: 优先使用（对象）组合，而非（类）继承](https://www.xuebuyuan.com/1639556.html)
 #### 查询与命令分离
 `【CQS Command-Query Separation】`
 - 查询命令分离原则

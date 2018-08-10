@@ -7,24 +7,25 @@
         - [jvisualvm](#jvisualvm)
 - [JRE](#jre)
     - [目录结构](#目录结构)
+- [OpenJDK](#openjdk)
 
-`目录 end` |_2018-08-04_| [码云](https://gitee.com/gin9) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104) | [cnblogs](http://www.cnblogs.com/kuangcp)
+`目录 end` |_2018-08-10_| [码云](https://gitee.com/gin9) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104) | [cnblogs](http://www.cnblogs.com/kuangcp)
 ****************************************
 # JDK and JRE
-> 当下载好压缩包或者安装包后, 都没有仔细看JDK和JRE的区别以及各自的工具等等
 
 # JDK
+> 指的是Oracle JDK 
 
 ## 目录结构
 ```
-├── bin
+├── bin/
 ├── COPYRIGHT
-├── include
+├── include/
 ├── javafx-src.zip
-├── jre
-├── lib
+├── jre/
+├── lib/
 ├── LICENSE
-├── man
+├── man/
 ├── README.html
 ├── release
 ├── src.zip
@@ -40,19 +41,25 @@
 > [使用 VisualVM 进行性能分析及调优](https://www.ibm.com/developerworks/cn/java/j-lo-visualvm/index.html)
 > [参考博客: JVisualVM简介与内存泄漏实战分析](http://www.cnblogs.com/belen/p/5573501.html)
 
+
 *******************
 # JRE
 
 ## 目录结构
 
 ```
-├── bin
+├── bin/
 ├── COPYRIGHT
-├── lib
+├── lib/
 ├── LICENSE
-├── plugin
+├── plugin/
 ├── README
 ├── THIRDPARTYLICENSEREADME-JAVAFX.txt
 ├── THIRDPARTYLICENSEREADME.txt
 └── Welcome.html
 ```
+
+*********************************************************
+# OpenJDK
+> [官网](http://openjdk.java.net/) | [openJDK下载地址](https://adoptopenjdk.net/nightly.html)
+

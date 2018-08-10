@@ -29,7 +29,7 @@
         - [Coding平台的WebIDE](#coding平台的webide)
     - [图形化管理工具](#图形化管理工具)
 
-`目录 end` |_2018-08-04_| [码云](https://gitee.com/gin9) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104) | [cnblogs](http://www.cnblogs.com/kuangcp)
+`目录 end` |_2018-08-10_| [码云](https://gitee.com/gin9) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104) | [cnblogs](http://www.cnblogs.com/kuangcp)
 ****************************************
 # 使用Docker安装软件
 > [如何创建尽可能小的Docker容器教程](http://www.open-open.com/lib/view/open1419760974078.html)
@@ -124,6 +124,8 @@
 
 *****************************************
 # 持续集成
+
+> [参考博客: 如何Docker化端到端验收测试](https://www.tuicool.com/articles/YZJzAzF)
 ## flow.ci
 - [flow.ci](https://github.com/flowci/docker) 可以学习compose
 

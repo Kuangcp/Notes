@@ -20,7 +20,7 @@
     - [资源文件](#资源文件)
         - [图片](#图片)
 
-`目录 end` |_2018-08-04_| [码云](https://gitee.com/gin9) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104) | [cnblogs](http://www.cnblogs.com/kuangcp)
+`目录 end` |_2018-08-10_| [码云](https://gitee.com/gin9) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104) | [cnblogs](http://www.cnblogs.com/kuangcp)
 ****************************************
 # JavaScript
 
@@ -94,6 +94,8 @@ function testRole() {
 
 ## Ajax
 > [js 原生 post请求](https://segmentfault.com/q/1010000005162727)
+
+> [参考博客: 使用 Fetch](https://developer.mozilla.org/zh-CN/docs/Web/API/Fetch_API/Using_Fetch)
 
 ## 事件
 

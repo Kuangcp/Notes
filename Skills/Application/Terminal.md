@@ -36,6 +36,37 @@
 
 ************************
 ## 工具
+
+- whence 查看命令的真实面貌
+- which 命令的位置
+- htop _终端里的任务管理器_
+- strace -p PID _查看系统调用_
+- ps | clorm 20 30 `colrm` _删除输出的20 到30 列_
+- w | uptime _查看启动情况_
+- wc -l file _统计文件行数_
+- last _查看Linux登录信息_
+    - last -n 5 最近五次登录
+
+- cmatrix _装13,字符雨_
+- stty -a 查看键映射
+- xsel 
+    - `cat a.md | xsel -b` _将文件所有内容复制到剪贴板_
+- logkeys 记录键盘输入 [Github](https://github.com/kernc/logkeys)
+
+- expect [用于自动输入密码](http://www.cnblogs.com/iloveyoucc/archive/2012/05/11/2496433.html)
+
+- autojump  `方便跳转目录`  *shrc 中要有 : `. /usr/share/autojump/autojump.sh`  
+
+- [WTF](https://wtfutil.com/posts/overview/) | [Github Repo](https://github.com/senorprogrammer/wtf)
+    - 丰富的功能, 一个方便的终端控制面板
+
+- md5sum 报文摘要算法 Message-Digest Algorithm 5 的实现 
+    - `md5sum file` 计算出md5值
+    - `md5sum -c file.md5` file 和 file.md5 在同一目录下, 执行这个命令就是检查md5是否匹配, 确保文件的完整性和正确性
+
+- ag `快速当前目录下, 全文内容搜索, 快到可怕` silversearcher-ag
+    - [The Silver Searcher](https://github.com/ggreer/the_silver_searcher)
+
 ### 效率工具
 > 提高工作和开发效率
 

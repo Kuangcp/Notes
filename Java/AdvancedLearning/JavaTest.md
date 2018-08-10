@@ -14,7 +14,7 @@
     - [DBUnit](#dbunit)
 - [感悟](#感悟)
 
-`目录 end` |_2018-08-09_| [码云](https://gitee.com/gin9) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104) | [cnblogs](http://www.cnblogs.com/kuangcp)
+`目录 end` |_2018-08-10_| [码云](https://gitee.com/gin9) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104) | [cnblogs](http://www.cnblogs.com/kuangcp)
 ****************************************
 # Java的测试
 > [测试的基础理论](/Skills/Base/Test.md)
@@ -85,7 +85,8 @@ http://static.javadoc.io/org.mockito/mockito-core/2.19.0/org/mockito/Mockito.htm
 
 ### Mockito
 > [官网](http://site.mockito.org/) | [Github:mockito](https://github.com/mockito/mockito)
-
+> [Mockito Tutorial](https://www.tutorialspoint.com/mockito/index.htm)
+> [参考博客: TDD：什么是桩（stub）和模拟（mock）？](http://www.cnblogs.com/happyframework/p/3595547.html)
 
 ## DBUnit
 > 基于Junit的一个数据库测试框架, 方便测试dao层

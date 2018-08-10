@@ -10,7 +10,6 @@
     - [基础命令工具](#基础命令工具)
         - [1.ping](#1ping)
         - [2.curl](#2curl)
-- [如果没有认证则会收到如下结果](#如果没有认证则会收到如下结果)
         - [3.iproute2](#3iproute2)
         - [4.tcpdump](#4tcpdump)
         - [5.netcat](#5netcat)
@@ -33,7 +32,7 @@
         - [防火墙](#防火墙)
             - [iptables](#iptables)
 
-`目录 end` |_2018-08-04_| [码云](https://gitee.com/gin9) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104) | [cnblogs](http://www.cnblogs.com/kuangcp)
+`目录 end` |_2018-08-10_| [码云](https://gitee.com/gin9) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104) | [cnblogs](http://www.cnblogs.com/kuangcp)
 ****************************************
 # 【网络管理】
 ## DNS
@@ -121,7 +120,7 @@ _netstat工具_ 或者 更好用的 [iproute2](#3iproute2)
 1. 格式化返回的json数据：`curl xxxx|python -m json.tool `
 1. 使用基础认证 发送JSON数据 `curl -i -H "Content-Type:application/json" -u admin:secret -X POST --data '{"title":"1","content":"1"}' http://tomcat.kcp/email/content`
 ```sh
-# 如果没有认证则会收到如下结果
+    # 如果没有认证则会收到如下结果
 $ curl -i -u admin:secret -X POST http://tomcat.kcp/email/content
     HTTP/1.1 401 
     Server: nginx/1.13.3
@@ -142,7 +141,7 @@ $ curl -i -u admin:secret -X POST http://tomcat.kcp/email/content
 
 > [参考博客: curl返回常见错误码](http://www.cnblogs.com/wainiwann/p/3492939.html)
 - [56错误码](https://stackoverflow.com/questions/10285700/curl-error-recv-failure-connection-reset-by-peer-php-curl)
-
+> [参考博客: 使用cURL和用户名和密码？](http://www.cnblogs.com/seasonzone/p/7527218.html)
 ### 3.iproute2
 > 代替 netstat 的强大工具
 

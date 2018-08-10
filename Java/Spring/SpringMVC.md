@@ -19,11 +19,12 @@
         - [自定义拦截器](#自定义拦截器)
         - [Q&A](#q&a)
 
-`目录 end` |_2018-08-04_| [码云](https://gitee.com/gin9) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104) | [cnblogs](http://www.cnblogs.com/kuangcp)
+`目录 end` |_2018-08-10_| [码云](https://gitee.com/gin9) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104) | [cnblogs](http://www.cnblogs.com/kuangcp)
 ****************************************
 
 # SpringMVC
 
+> [Spring MVC 4.2.4.RELEASE 中文文档](https://legacy.gitbook.com/book/linesh/spring-mvc-documentation-linesh-translation/details)
 ## MVC思想
 > [参考博客](http://blog.csdn.net/besley/article/details/8479943)
 ![图](https://raw.githubusercontent.com/Kuangcp/ImageRepos/master/Tech/Model/mvc.png)
@@ -36,6 +37,7 @@
 > [简洁的API设计](http://www.csdn.net/article/2013-05-02/2815115-stop-designing-fragile-web-api)
 
 ***********
+
 ## SpringBoot中配置
 > 如果引入了别的模板引擎就不需要配置解析器，不然就要配
 
@@ -44,11 +46,14 @@
 > [SpringBoot 较完善的入门博客](https://www.tianmaying.com/tutorial/spring-mvc-quickstart)
 
 ***********************
+
 ## 传统项目配置完整流程
 > 也就是Maven的Web结构，甚至是Eclipse那样的DynamicWeb项目结构， [参考 博客](https://www.cnblogs.com/Sinte-Beuve/p/5730553.html)
 
 ### 配置依赖
+
 #### Maven
+
 ```xml
 <properties>
     <spring.version>4.3.9.RELEASE</spring.version>

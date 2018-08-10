@@ -11,7 +11,7 @@
     - [线程的优先级](#线程的优先级)
     - [线程池](#线程池)
 
-`目录 end` |_2018-08-04_| [码云](https://gitee.com/gin9) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104) | [cnblogs](http://www.cnblogs.com/kuangcp)
+`目录 end` |_2018-08-10_| [码云](https://gitee.com/gin9) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104) | [cnblogs](http://www.cnblogs.com/kuangcp)
 ****************************************
 # 线程的基础学习
 > [个人相关代码](https://github.com/Kuangcp/JavaBase/tree/master/src/main/java/com/threads)
@@ -67,5 +67,10 @@ _Thread类的target属性_
 ***************************
 ## 线程池
 > [线程池 BlockingQueue synchronized volatile](https://segmentfault.com/a/1190000012916473)
+> [参考博客: Java(Android)线程池](http://www.trinea.cn/android/java-android-thread-pool/)
+> [参考博客: Java ThreadPoolExecutor线程池使用的一个误区](http://codefine.site/2941.html)
+> [参考博客: 聊聊并发（三）Java线程池的分析和使用](http://ifeve.com/java-threadpool/)
+> [参考博客: 线程池](http://ifeve.com/thread-pools/)
+
 
 

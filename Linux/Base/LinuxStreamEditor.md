@@ -8,7 +8,7 @@
     - [sed](#sed)
     - [awk](#awk)
 
-`目录 end` |_2018-08-04_| [码云](https://gitee.com/gin9) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104) | [cnblogs](http://www.cnblogs.com/kuangcp)
+`目录 end` |_2018-08-10_| [码云](https://gitee.com/gin9) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104) | [cnblogs](http://www.cnblogs.com/kuangcp)
 ****************************************
 # 流编辑器
 > [参考博客: 比较linux下各种流编辑器的用法](https://blog.csdn.net/havedream_one/article/details/45007449)
@@ -52,6 +52,7 @@ so，也不需要和其他的对比了，其他都是拆分，而paste是合并�
 > 1. 截取指定行数到新文件 `sed -n ‘开始行数，结束行数p’ info.log > newFile.log`
 > 2. 修改配置文件中name的值为123 `sed -i "s/name=.*/name=123/g" config.conf`
 
+> [参考博客: linux sed 命令单行任务快速参考](http://www.techug.com/post/linux-sed1line.html)
 ## awk
 > awk有3个不同版本: awk、nawk和gawk，未作特别说明，一般指gawk，gawk 是 AWK 的 GNU 版本。
 

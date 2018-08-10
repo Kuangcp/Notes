@@ -37,6 +37,7 @@
 - [陈光剑的免费图书馆](https://universsky.github.io/)`Kotlin极简教程的作者`
     - [陈光剑先生的学习方式](https://github.com/judasn/hexo-blog/blob/master/2016/02/My-Learning-Way.md) 
 - [Github某仓库](https://github.com/EbookFoundation/free-programming-books)
+- [经典编程书籍大全](https://github.com/jobbole/awesome-programming-books)
 - [bookstack](https://www.bookstack.cn/)
 - [b-ok](http://b-ok.xyz)
 

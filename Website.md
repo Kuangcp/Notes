@@ -49,7 +49,7 @@
 - [安卓手机](#安卓手机)
     - [Google](#google)
 
-`目录 end` |_2018-08-09_| [码云](https://gitee.com/gin9) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104) | [cnblogs](http://www.cnblogs.com/kuangcp)
+`目录 end` |_2018-08-10_| [码云](https://gitee.com/gin9) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104) | [cnblogs](http://www.cnblogs.com/kuangcp)
 ****************************************
 # 常用的网站
 ## 软件下载站
@@ -84,6 +84,8 @@
 - [schacon.github.io](http://schacon.github.io/)
 - [dictionary](https://www.dictionary.com/)
 
+
+- [学术搜索](http://scholar.chongbuluo.com/)
 # 社区网站
 - [掘金门户网](http://e.xitu.io)
 - [吾爱破解](https://www.52pojie.cn/)

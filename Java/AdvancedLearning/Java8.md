@@ -4,12 +4,13 @@
     - [Optional](#optional)
     - [Funcational](#funcational)
     - [Lambda](#lambda)
+    - [Stream](#stream)
     - [集合](#集合)
     - [时间处理](#时间处理)
         - [Instant](#instant)
         - [LocalDateTime](#localdatetime)
 
-`目录 end` |_2018-08-08_| [码云](https://gitee.com/gin9) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104) | [cnblogs](http://www.cnblogs.com/kuangcp)
+`目录 end` |_2018-08-10_| [码云](https://gitee.com/gin9) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104) | [cnblogs](http://www.cnblogs.com/kuangcp)
 ****************************************
 # Java8
 > [doc: Java8](https://docs.oracle.com/javase/8/)  
@@ -37,7 +38,12 @@
     - 尝试使用新的语言特性，理解多样化的编程思想，提升编程表达能力。
 
 ## Lambda
+> [参考博客: 级联 lambda 表达式的函数重用与代码简短问题](http://www.techug.com/post/java-lambda.html)
 
+- [ ] 排序
+> [参考博客: Java8：Lambda表达式增强版Comparator和排序](http://www.importnew.com/15259.html)
+## Stream
+> [参考博客: Java 8 中的 Streams API 详解](https://www.ibm.com/developerworks/cn/java/j-lo-java8streamapi/)
 
 ## 集合
 _集合的Lambda迭代方式_

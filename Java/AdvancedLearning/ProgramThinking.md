@@ -34,7 +34,7 @@
         - [阿里巴巴的代码检查](#阿里巴巴的代码检查)
     - [配置文件](#配置文件)
 
-`目录 end` |_2018-08-09_| [码云](https://gitee.com/gin9) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104) | [cnblogs](http://www.cnblogs.com/kuangcp)
+`目录 end` |_2018-08-10_| [码云](https://gitee.com/gin9) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104) | [cnblogs](http://www.cnblogs.com/kuangcp)
 ****************************************
 # 开发思想
 > 有关开发的理论性思想,编写,测试,部署等
@@ -169,6 +169,7 @@ _[Spring Web 应用的最大败笔](http://www.jdon.com/45857)_
 
 ## 精益思想
 > 持续集成、持续交付、持续部署
+
 ********************************
 # 编程习惯
 ## 晓风轻的经验

@@ -7,7 +7,7 @@
             - [xml文件配置](#xml文件配置)
             - [常用的注解](#常用的注解)
         - [xml方式](#xml方式)
-            - [xml方式和注解方式的比较：](#xml方式和注解方式的比较)
+            - [xml方式和注解方式的比较](#xml方式和注解方式的比较)
     - [Spring技巧](#spring技巧)
         - [获取Context上下文环境](#获取context上下文环境)
             - [在JSP或Servlet中获取](#在jsp或servlet中获取)
@@ -26,12 +26,14 @@
         - [maven配置](#maven配置)
     - [Web开发上的一些优秀的习惯](#web开发上的一些优秀的习惯)
 
-`目录 end` |_2018-08-04_| [码云](https://gitee.com/gin9) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104) | [cnblogs](http://www.cnblogs.com/kuangcp)
+`目录 end` |_2018-08-10_| [码云](https://gitee.com/gin9) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104) | [cnblogs](http://www.cnblogs.com/kuangcp)
 ****************************************
 # Spring
 > [Spring官网](https://spring.io/) | [spring4all社区](http://www.spring4all.com/)
 
 > [Spring For All 社区 ->  Spring 官方教程翻译](http://www.spring4all.com/article/558)
+
+> [Spring Tutorial](https://www.tutorialspoint.com/spring/index.htm)
 
 ## 配置使用
 > **通过原始的复制jar方式 :** 官网下载对应的jar, 添加到ide中
@@ -107,9 +109,9 @@ _其他,可选_
     </bean>
     <bean id="construct" class="cn.spring.entity.ConstructorEntity">
     <!-- 如果是不同的类型的参数 顺序可以随意，但是数据类型一样的话就要严格按顺序了-->
-        <constructor-arg type="java.lang.String" value="String_1"></constructor-arg>
+    <constructor-arg type="java.lang.String" value="String_1"></constructor-arg>
         <!-- 注意引用类型是要写全路径，基本数据类型是可以直接写小写 -->
-        <constructor-arg type="int" value="2"></constructor-arg>
+    <constructor-arg type="int" value="2"></constructor-arg>
         <!-- <constructor-arg type="java.lang.String" value="String_2"></constructor-arg> -->
     </bean>
     <bean id="TestConstruct" class="cn.spring.entity.TestConstruct">
@@ -133,13 +135,14 @@ _其他,可选_
     </bean>
 ```
 
-#### xml方式和注解方式的比较：
+#### xml方式和注解方式的比较
 
 - 当你确定切面是实现一个给定需求的最佳方法时，你如何选择是使用Spring AOP还是AspectJ，以及选择 Aspect语言（代码）风格、@AspectJ声明风格或XML风格？
 - 这个决定会受到多个因素的影响，包括应用的需求、 开发工具和小组对AOP的精通程度。
 - **个人理解**：使用bean的时候使用注解，AOP使用xml方式，更直观
 
-***********************************
+**************
+
 ##  Spring技巧
 ### 获取Context上下文环境
 #### 在JSP或Servlet中获取

@@ -23,7 +23,7 @@
     - [修改主机名](#修改主机名)
 - [终端快捷键](#终端快捷键)
 
-`目录 end` |_2018-08-09_| [码云](https://gitee.com/gin9) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104) | [cnblogs](http://www.cnblogs.com/kuangcp)
+`目录 end` |_2018-08-10_| [码云](https://gitee.com/gin9) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104) | [cnblogs](http://www.cnblogs.com/kuangcp)
 ****************************************
 # Linux系统
 > 只是记录了debian系的Linux, 不过也是大同小异
@@ -33,8 +33,7 @@
 > [笔记: 发行版之别](/Linux/Release_Experience.md)
 
 ### 窗口管理器
-
-- [awesome window manager](https://awesomewm.org/)
+- [awesome window manager](https://awesomewm.org/) `平铺式的`
 
 ### 文件系统对比
 > [参考博客: 如何选择文件系统：EXT4、Btrfs 和 XFS ](https://linux.cn/article-7083-1.html)
@@ -46,7 +45,7 @@
 - xfce 占用资源少，操作类似于xp
 - kde 功能强大，占用资源中等
     - [知乎 KDE如何配置得漂亮大气？](https://www.zhihu.com/question/54147372)
-- dde deepin设计的桌面环境，小bug略多，但是美观操作方便
+- dde deepin设计的桌面环境，小bug略多，但是美观操作方便, 但是扩展性不好
 
 ***************************
 ### 文件管理器对比
