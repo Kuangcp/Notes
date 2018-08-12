@@ -352,6 +352,7 @@ _4.另外还有SocketAppender、SMTPAppender、DBAppender、SyslogAppender、Sif
 1. 日志记录方式, 注意格式的正确, 否则, 错误会被隐藏
     - [Github: CorrectLog.java](https://github.com/kuangcp/JavaBase/blob/master/java-classfile/src/main/java/log/CorrectLog.java)
 
+1. 在Springboot中还能指定包的日志等级 `logging.level.com.github.kuangcp.service = DEBUG`
 ************
 ## apache 体系
 - [apache的简单示例](https://github.com/Kuangcp/Notes/blob/master/ConfigFiles/Log/log4j.xml)

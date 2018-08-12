@@ -54,7 +54,7 @@
 ### Springboot热加载
 > 每个project都是一个新的工作区，所以要重新配置 | [howto-hotswapping](https://docs.spring.io/spring-boot/docs/current/reference/html/howto-hotswapping.html)
 
-- **Ctrl Shift A 快捷搜索 automatically 在Build下的 Compiler，勾选 `Build project automatically` 自动构建
+- Ctrl Shift A 快捷搜索 automatically 在Build下的 Compiler，勾选 `Build project automatically` 自动构建
     -  (如果旁边有提示说不会在运行和debug执行, 那么就要勾选并行)  `Compile independent modules in parallel`
 - **Ctrl Shift A 快捷搜索 Registry 进入后找到 compiler.automake.allow.when.app.running 勾选
 - 加入devtools依赖 | [DevTools的官方文档](https://docs.spring.io/spring-boot/docs/current/reference/html/using-boot-devtools.html#using-boot-devtools)
@@ -76,13 +76,13 @@ _横排的八个按钮_
 > `Evaluate Expression (Alt + F8)`：计算表达式，后面章节详细说明。  
 
 _竖向的七个按钮_
-> Rerun 'xxxx'：重新运行程序，会关闭服务后重新启动程序。
-> Update 'tech' application (Ctrl + F5)：更新程序，一般在你的代码有改动后可执行这个功能。而这个功能对应的操作则是在服务配置里，如图2.3。
-> Resume Program (F9)：恢复程序，比如，你在第20行和25行有两个断点，当前运行至第20行，按F9，则运行到下一个断点(即第25行)，再按F9，则运行完整个流程，因为后面已经没有断点了。
-> Pause Program：暂停程序，启用Debug。目前没发现具体用法。
-> Stop 'xxx' (Ctrl + F2)：连续按两下，关闭程序。有时候你会发现关闭服务再启动时，报端口被占用，这是因为没完全关闭服务的原因，你就需要查杀所有JVM进程了。
-> View Breakpoints (Ctrl + Shift + F8)：查看所有断点，后面章节会涉及到。
-> Mute Breakpoints：哑的断点，选择这个后，所有断点变为灰色，断点失效，按F9则可以直接运行完程序。再次点击，断点变为红色，有效。如果只想使某一个断点失效，可以在断点上右键取消Enabled
+> Rerun 'xxxx'：重新运行程序，会关闭服务后重新启动程序。  
+> Update 'tech' application (Ctrl + F5)：更新程序，一般在你的代码有改动后可执行这个功能。而这个功能对应的操作则是在服务配置里，如图2.3。  
+> Resume Program (F9)：恢复程序，比如，你在第20行和25行有两个断点，当前运行至第20行，按F9，则运行到下一个断点(即第25行)，再按F9，则运行完整个流程，因为后面已经没有断点了。  
+> Pause Program：暂停程序，启用Debug。目前没发现具体用法。  
+> Stop 'xxx' (Ctrl + F2)：连续按两下，关闭程序。有时候你会发现关闭服务再启动时，报端口被占用，这是因为没完全关闭服务的原因，你就需要查杀所有JVM进程了。  
+> View Breakpoints (Ctrl + Shift + F8)：查看所有断点，后面章节会涉及到。  
+> Mute Breakpoints：哑的断点，选择这个后，所有断点变为灰色，断点失效，按F9则可以直接运行完程序。再次点击，断点变为红色，有效。如果只想使某一个断点失效，可以在断点上右键取消Enabled  
 
 **个人思考**
 1. 当断点 F8 步过 到一行代码后, 这个方法没有抛出异常什么的, idea的面板上的那些属性, 断点什么的都没了, 只有一个 app is running , 这个意思就是这行代码还在执行中, 很有可能就是死循环...
@@ -136,7 +136,7 @@ _例如修改为如下_
 |C| | | **P** | 可以显示参数信息
 |C|S| | **Insert** | 可以选择剪贴板内容并插入
 | | |A| **Insert** | 可以生成构造器/Getter/Setter等
-|C| |A| **V** | 可以引入变量。例如把括号内的SQL赋成一个变量
+|C| |A| **V** | 重构代码, 将选中的代码抽离出称为一个变量 Variable 
 |C| |A| **T** | 可以把代码包在一块内，例如try/catch
 | | |A| **Up/Down** | 可在方法间快速移动
 | |S| | **Escape** | 不仅可以把焦点移到编辑器上而且还可以隐藏当前（或最后活动的）工具窗口。
@@ -196,6 +196,8 @@ _例如修改为如下_
 | | |A| **左/右** | 左右切换打开的文件|
 
 #### Coding
+> [Doc: 2018.2](https://www.jetbrains.com/help/idea/2018.2/using-code-editor.html?utm_content=2018.2&utm_medium=link&utm_source=product&utm_campaign=IU)
+
 | Ctrl | Shift | Alt | Key | Action |
 |:----:|:----:|:----:|:----:|:----|
 | | |A| **C** | build 项目
@@ -203,7 +205,7 @@ _例如修改为如下_
 |C| | | **O** | 选择要重写的方法
 |C| | | **I** | 选择要实现的方法 
 |C| |A| **Insert** |  生成代码(如get,set方法,构造函数等)
-| |S|A| **K** |  重构-重命名
+| |S|A| **K** |  重命名
 |C| | | **X** |  剪切一行
 |C| | | **D** |  删除一行
 |C| | | **Y** |  复制一行到下一行
@@ -216,7 +218,17 @@ _例如修改为如下_
 |C| | | **Space** |  智能补全
 |C|S| | **Space** |  结合上下文补全
 |C| | | **W** |  选中代码，连续按会有其他效果
-|C| |A| **V** | 根据当前行代码自动生成变量定义 自定义为 `Ctrl Alt Shift J`
+
+#### Extract
+| Ctrl | Shift | Alt | Key | Action |
+|:----:|:----:|:----:|:----:|:----|
+|C| |A| **T** | 根据选中代码(或者光标前的代码片段)**包裹 在块中** 例如try/catch if for ...
+|C| |A| **J** | 根据选中代码(或者光标前的代码片段)**包裹在自定义的模板中**
+|C| |A| **M** | 根据选中代码(或者光标前的代码片段)抽离成 **函数** 
+|C| |A| **V** | 根据选中代码(或者光标前的代码片段)抽离成 **变量** 自定义为 `C A S J`
+|C| |A| **C** | 根据选中代码(或者光标前的代码片段)抽离成 **常量**
+|C| |A| **F** | 根据选中代码(或者光标前的代码片段)抽离成 **属性**
+|C| |A| **P** | 根据选中代码(或者光标前的代码片段)抽离成 **参数**
 
 #### Jump
 | Ctrl | Shift | Alt | Key | Action |

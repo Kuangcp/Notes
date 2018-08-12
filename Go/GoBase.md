@@ -46,7 +46,7 @@ Go 语言被设计成一门应用于搭载 Web 服务器，存储集群或类似
 
 
 ## 安装
-> [官方教程](https://golang.google.cn/doc/install) | [参考 教程](http://www.runoob.com/go/go-environment.html) | [_](http://cloud.kuangcp.top/go-1.10.3.tar.gz)
+> [下载](https://golang.google.cn/dl/)|[官方教程](https://golang.google.cn/doc/install) | [参考 教程](http://www.runoob.com/go/go-environment.html) | [_](http://cloud.kuangcp.top/go-1.10.3.tar.gz)
 
 
 1. sudo tar -C /usr/local -xzf go1.10.3.linux-amd64.tar.gz
@@ -132,6 +132,19 @@ _有关类型后置_
 > [Why do a lot of programming languages put the type *after* the variable name?](https://stackoverflow.com/questions/1712274/why-do-a-lot-of-programming-languages-put-the-type-after-the-variable-name)
 
 ### 基本类型
+#### int 
+#### int64
+
+```go
+    // string到int
+    int,err:=strconv.Atoi(string)
+    // string到int64
+    int64, err := strconv.ParseInt(string, 10, 64)
+    // int到string
+    string:=strconv.Itoa(int)
+    // int64到string
+    string:=strconv.FormatInt(int64,10)
+```
 
 ### Array
 ### Slice
