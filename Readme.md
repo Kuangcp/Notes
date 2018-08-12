@@ -133,3 +133,8 @@ _有自制力的人， 能够坚持的人才更有可能成功！_
     - `功能仿sdkman，但简单，不过是提供自行搭建使用的，毕竟七牛云下载超量了是要收费的`
 - 克隆笔记仓库可以加上 `--depth 1` 参数, 减小克隆的大小
 - [notes](https://github.com/pimterry/notes)`终端内的note工具`
+
+## 涉及的工具 
+1. [创建 SUMMARY.md 目录文件脚本](create_tree.py)
+1. [统计仓库所有中文字数](wordRecord.sh) `count 命令是 go 写的工具 [项目地址](https://gitee.com/gin9/GoBase/tree/master/count)`
+1. [为每个md文件创建目录头部](https://gitee.com/gin9/script/blob/master/shell/text/deal_md.sh)
