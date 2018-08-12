@@ -266,28 +266,63 @@ _系统运行级别_
 *************************
 # 终端快捷键
 
-- `Ctrl L` 清屏，Mysql也适用
+- `鼠标中键` 粘贴鼠标左键已选择的文本 **VSCode中也适用**
+- `!num` history 中第 num 条命令
+- `!!` 上一条命令
+- `ls !$` 执行命令ls，并以上一条命令的参数为其参数
+- `!?string?` 执行含有string字符串的最新命令
+- `Ctrl L` 清屏等价于clear，清除所有这个 shell 提示屏幕中显示的数据。 `Mysql也适用`
+- `reset` 刷新 shell 提示屏幕。如果字符不清晰或乱码的话，在 shell 提示下键入这个命令会刷新屏幕。
 - `Ctrl ；` 显示最近五条剪贴板内容
+- Ctrl Alt Backspace : 杀死你当前的 X 会话。杀死图形化桌面会话，把你返回到登录屏幕。如果正常退出步骤不起作用，你可以使用这种方法。
+- Ctrl Alt Delete : 关机和重新引导 Red Hat Linux。关闭你当前的会话然后重新引导 OS。只有在正常关机步骤不起作用时才使用这种方法。
+- Ctrl Alt Fn: 切换屏幕。 根据默认设置，从 [F1] 到 [F6] 是 shell 提示屏幕， [F7] 是图形化屏幕。`但是deepin是F1为图形化`
 
 | Controller | Key | comment |
 |:---|:----|:----|
 | Ctrl | D | 删除光标后字符,等价于Delete键（命令行若无任何字符，则相当于exit；处理 多行标准输入时也表示EOF） |
 | Ctrl | H | 退格删除一个字符，相当于通常的Backspace键 |
 | Ctrl | U | 删除光标之前到 行首 的字符 (Zsh中是删除整行)|
+| Esc | W | 删除光标之前到 行首 的字符|
 | Ctrl | K | 删除光标之前到 行尾 的字符 |
 | Ctrl | W | 删除光标之前的一个单词 |
-| Ctrl | _ | 撤销修改 |
-| Ctrl | T | 互换字符位置 |
-||||
+| Alt | D | 删除光标之后的一个单词 |
+| Ctrl | Y | 粘贴上次删除的所有字符 |
+| Ctrl | _ | 撤销修改 等价于 `Ctrl x u` |
+
+| Controller | Key | comment |
+|:---|:----|:----|
+| Ctrl | T | 互换当前字符,光标后移 |
+| Alt | T | 互换当前单词与前一个单词,光标后移 等价于 `Esc T`|
+| Alt | D | 将当前单词全部转为大写,光标后移 |
+| Alt | C | 将当前单词首字母转为大写,光标后移 |
+| Alt | L | 将当前单词全部转为小写,光标后移(zsh无效) |
+
+| Controller | Key | comment |
+|:---|:----|:----|
+| Ctrl | S | 停止回显当前Shell |
+| Ctrl | Q | 恢复回显当前Shell |
+
+| Controller | Key | comment |
+|:---|:----|:----|
 | Ctrl | C | 取消运行当前行输入的命令，相当于Ctrl + Break |
 | Ctrl | A | 光标移动到行首（Ahead of line），相当于通常的Home键 |
 | Ctrl | E | 光标移动到行尾（End of line） |
 | Ctrl | F | 光标向前(Forward)移动一个字符位置 |
 | Ctrl | B | 光标往回(Backward)移动一个字符位置 |
-||||
+| Alt | F | 光标向前(Forward)移动一个单词位置 |
+| Alt | B | 光标往回(Backward)移动一个单词位置 |
+| Esc | F | 光标向前(Forward)移动到当前单词的头部 |
+| Esc | B | 光标往回(Backward)移动到当前单词的尾部 |
+
+| Controller | Key | comment |
+|:---|:----|:----|
 | Ctrl | P | 调出命令历史中的前一条（Previous）命令，相当于通常的上箭头 |
 | Ctrl | N | 调出命令历史中的下一条（Next）命令，相当于通常的下箭头 |
 | Ctrl | O | 运行上翻下翻出来的命令, 并且自动将下一条命令填入 |
-| Ctrl | R | 显示：号提示，根据用户输入查找相关历史命令（reverse-i-search） |
+| Ctrl | R | 向上搜索相关命令（reverse-i-search）继续按 Ctrl R 则继续搜索上一条 |
+| Ctrl | S | 与 Ctrl R 类似, 但是是向下搜索 |
 
-https://www.cnblogs.com/besharp/p/6296929.html
+| Controller | Key | comment |
+|:---|:----|:----|
+|Ctrl |Z|暂停程序 |

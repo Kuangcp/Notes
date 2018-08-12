@@ -133,8 +133,6 @@ _有关类型后置_
 
 ### 基本类型
 
-
-
 ### Array
 ### Slice
 ### Map
@@ -145,6 +143,22 @@ _有关类型后置_
 ### 标准输入输出
 > [参考博客: golang中的格式化输入输出](https://blog.csdn.net/xiaoyida11/article/details/51554022)
 
+## 函数
+基本结构
+```go
+// 函数名 (参数 ) 返回值{函数体}
+func functionName (param1 int) int {
+
+}
+```
+> 函数作为参数 `functionName func(string, string)`
+
+
+### 参数
+### 返回值
+
+
+***************
 ## 文件操作
 
 **递归读取当前目录的文件**

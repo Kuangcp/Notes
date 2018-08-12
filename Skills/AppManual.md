@@ -400,7 +400,7 @@ CMD编辑器
     1. [剪贴板](https://key.saka.io/tutorial/clipboard): 复制当前页面的URL:`yy`
         - 当前标签页打开链接 `yf`| 后台打开 `yb` | 新窗口打开 `yn` | 隐私窗口 `y shift-n`
 
-1. `FoxyTab`
+1. `Greasemonkey` 传说中的油猴, 可以自己写脚本 [wiki](https://wiki.greasespot.net/User_Script_Hosting)
 1. `New Tab Tools` 新建标签页的自定义工具 有一定bug
 1. `cliget` 能将下载中的任务转化为 curl wget命令 牛
 1. `eolinker` 接口测试工具
