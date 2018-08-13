@@ -49,7 +49,7 @@
 - [安卓手机](#安卓手机)
     - [Google](#google)
 
-`目录 end` |_2018-08-10_| [码云](https://gitee.com/gin9) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104) | [cnblogs](http://www.cnblogs.com/kuangcp)
+`目录 end` |_2018-08-13_| [码云](https://gitee.com/gin9) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104) | [cnblogs](http://www.cnblogs.com/kuangcp)
 ****************************************
 # 常用的网站
 ## 软件下载站
@@ -104,6 +104,7 @@
 - [Spring4All](http://www.spring4all.com/)`Spring国内社区`
 - [IBM 开发社区](https://www.ibm.com/developerworks/cn/)
 - [daocloud社区](http://open.daocloud.io/)
+- [techug.com](http://www.techug.com)`技术博客`
 
 ## 娱乐
 - [数字尾巴](http://www.dgtle.com/portal.php) `小清新的数字技术`

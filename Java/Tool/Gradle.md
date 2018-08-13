@@ -28,7 +28,7 @@
     - [构建Docker镜像](#构建docker镜像)
         - [第二种插件方式](#第二种插件方式)
 
-`目录 end` |_2018-08-04_| [码云](https://gitee.com/gin9) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104) | [cnblogs](http://www.cnblogs.com/kuangcp)
+`目录 end` |_2018-08-13_| [码云](https://gitee.com/gin9) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104) | [cnblogs](http://www.cnblogs.com/kuangcp)
 ****************************************
 # Gradle
 > [官方 guide](https://gradle.org/guides/?q=JVM) | [其他 tutorial](https://www.tutorialspoint.com/gradle/index.htm)  
@@ -56,10 +56,7 @@
 
 ## 发行版本列表
 > [官方网址](http://services.gradle.org/) 有各个版本的下载以及版本发行说明
-> 似乎版本越高，内存占用越大， 从4.7降级回了4.2
-
-_4.6_
-> [发行说明](https://docs.gradle.org/4.6/release-notes.html?_ga=2.214014495.909415461.1519975016-498617321.1519975016#dependency-constraints-for-transitive-dependencies) | `支持Junit5, 还有解决依赖冲突的一种声明式方式`
+> [Github地址](https://github.com/gradle/gradle/releases)`查看简洁的 Release Note 更方便`
 
 ## 安装配置
 > 和maven使用同一个本地库 只要加上 M2_HOME 环境变量即可, 值和 MAVEN_HOME 一样, 并没有用

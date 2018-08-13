@@ -14,6 +14,7 @@
         - [个人习惯](#个人习惯)
             - [File](#file)
             - [Coding](#coding)
+            - [Extract](#extract)
             - [Jump](#jump)
             - [Search](#search)
             - [View](#view)
@@ -23,7 +24,7 @@
     - [Tips](#tips)
         - [Error:Cannot compile Groovy files: no Groovy library is defined for module "XXX"](#errorcannot-compile-groovy-files-no-groovy-library-is-defined-for-module-"xxx")
 
-`目录 end` |_2018-08-09_| [码云](https://gitee.com/gin9) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104) | [cnblogs](http://www.cnblogs.com/kuangcp)
+`目录 end` |_2018-08-13_| [码云](https://gitee.com/gin9) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104) | [cnblogs](http://www.cnblogs.com/kuangcp)
 ****************************************
 
 # IDEA 使用笔记
@@ -228,7 +229,8 @@ _例如修改为如下_
 |C| |A| **V** | 根据选中代码(或者光标前的代码片段)抽离成 **变量** 自定义为 `C A S J`
 |C| |A| **C** | 根据选中代码(或者光标前的代码片段)抽离成 **常量**
 |C| |A| **F** | 根据选中代码(或者光标前的代码片段)抽离成 **属性**
-|C| |A| **P** | 根据选中代码(或者光标前的代码片段)抽离成 **参数**
+|C| |A| **P** | 根据选中代码(或者光标前的代码片段)抽离成 **方法参数**
+|C|S|A| **P** | 根据选中代码(或者光标前的代码片段)抽离成 **函数式方法参数**
 
 #### Jump
 | Ctrl | Shift | Alt | Key | Action |
@@ -243,12 +245,12 @@ _例如修改为如下_
 | Ctrl | Shift | Alt | Key | Action |
 |:----:|:----:|:----:|:----:|:----|
 |C| | | **N** | 查找类(所有类范围,包括引用的包)
-| | |A| **K** | 查找类 `原默认是 Ctrl N`
+| | |A| **L** | 查找类 `原默认是 Ctrl N`
 |C|S| | **N** | 查找文件名
 |C|S|A| **N** | 符号查找: 类中的方法或变量
 |C| | | **R** | 替换文本
 |C| | | **F** | 查找文本
-| | |A| **L** | 查找任意文件`原默认是双击Shift` 
+| | |A| **K** | 查找任意文件`原默认是双击Shift` 
 
 #### View 
 | Ctrl | Shift | Alt | Key | Action |

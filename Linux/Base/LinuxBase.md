@@ -22,8 +22,12 @@
         - [关闭ssh回话仍能运行](#关闭ssh回话仍能运行)
     - [修改主机名](#修改主机名)
 - [终端快捷键](#终端快捷键)
+    - [Delete](#delete)
+    - [Convert](#convert)
+    - [Jump](#jump)
+    - [Search](#search)
 
-`目录 end` |_2018-08-10_| [码云](https://gitee.com/gin9) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104) | [cnblogs](http://www.cnblogs.com/kuangcp)
+`目录 end` |_2018-08-13_| [码云](https://gitee.com/gin9) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104) | [cnblogs](http://www.cnblogs.com/kuangcp)
 ****************************************
 # Linux系统
 > 只是记录了debian系的Linux, 不过也是大同小异
@@ -278,6 +282,7 @@ _系统运行级别_
 - Ctrl Alt Delete : 关机和重新引导 Red Hat Linux。关闭你当前的会话然后重新引导 OS。只有在正常关机步骤不起作用时才使用这种方法。
 - Ctrl Alt Fn: 切换屏幕。 根据默认设置，从 [F1] 到 [F6] 是 shell 提示屏幕， [F7] 是图形化屏幕。`但是deepin是F1为图形化`
 
+## Delete
 | Controller | Key | comment |
 |:---|:----|:----|
 | Ctrl | D | 删除光标后字符,等价于Delete键（命令行若无任何字符，则相当于exit；处理 多行标准输入时也表示EOF） |
@@ -290,6 +295,8 @@ _系统运行级别_
 | Ctrl | Y | 粘贴上次删除的所有字符 |
 | Ctrl | _ | 撤销修改 等价于 `Ctrl x u` |
 
+**************************
+## Convert
 | Controller | Key | comment |
 |:---|:----|:----|
 | Ctrl | T | 互换当前字符,光标后移 |
@@ -303,6 +310,8 @@ _系统运行级别_
 | Ctrl | S | 停止回显当前Shell |
 | Ctrl | Q | 恢复回显当前Shell |
 
+*******************
+## Jump
 | Controller | Key | comment |
 |:---|:----|:----|
 | Ctrl | C | 取消运行当前行输入的命令，相当于Ctrl + Break |
@@ -315,6 +324,8 @@ _系统运行级别_
 | Esc | F | 光标向前(Forward)移动到当前单词的头部 |
 | Esc | B | 光标往回(Backward)移动到当前单词的尾部 |
 
+*****************************
+## Search
 | Controller | Key | comment |
 |:---|:----|:----|
 | Ctrl | P | 调出命令历史中的前一条（Previous）命令，相当于通常的上箭头 |

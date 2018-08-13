@@ -41,10 +41,12 @@
         - [SVN](#svn)
     - [repos的使用](#repos的使用)
 
-`目录 end` |_2018-08-08_| [码云](https://gitee.com/gin9) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104) | [cnblogs](http://www.cnblogs.com/kuangcp)
+`目录 end` |_2018-08-13_| [码云](https://gitee.com/gin9) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104) | [cnblogs](http://www.cnblogs.com/kuangcp)
 ****************************************
 # Git基础
 > Git is a free and open source distributed version control system designed to handle everything from small to very large projects with speed and efficiency. --[git-scm.com](https://git-scm.com/)
+
+> [参考博客: 重看”Linus Torvalds on Git”视频](http://www.techug.com/post/review-of-linus-torvalds-on-git.html)
 
 ## 版本控制系统(VCS)
 - [码农翻身:小李的版本管理系统](https://mp.weixin.qq.com/s?__biz=MzAxOTc0NzExNg==&mid=2665513204&idx=1&sn=c4c493d771a167a84ace01c3e016417e&scene=21#wechat_redirect)
@@ -181,7 +183,7 @@
 - _常用参数_
     - `-h` 查看所有参数和说明
     - `-q` 控制台不输出任何信息
-    - `-f` 强制
+    - `-f` 强制 **使用这个参数时要再三考虑清楚**
     - `--all` 推送所有引用
     - `-u` upstream 设置 git pull/status 的上游
         - `git push origin master`和`git push -u origin master` 区别在于 前者是使用该远程和分支进行推送

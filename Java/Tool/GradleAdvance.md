@@ -1,6 +1,8 @@
 `目录 start`
  
 - [Gradle进阶知识](#gradle进阶知识)
+    - [Gradle 使用和配置](#gradle-使用和配置)
+        - [主配置目录](#主配置目录)
     - [Gradle 构建块](#gradle-构建块)
     - [task](#task)
         - [task的依赖关系](#task的依赖关系)
@@ -24,13 +26,41 @@
         - [下载安装和配置](#下载安装和配置)
 - [发布自己的构件](#发布自己的构件)
 
-`目录 end` |_2018-08-09_| [码云](https://gitee.com/gin9) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104) | [cnblogs](http://www.cnblogs.com/kuangcp)
+`目录 end` |_2018-08-13_| [码云](https://gitee.com/gin9) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104) | [cnblogs](http://www.cnblogs.com/kuangcp)
 ****************************************
 # Gradle进阶知识
 > [gradle api ](https://docs.gradle.org/4.9/dsl/org.gradle.api.Project.html) `所有{}结构 以及配置`
 
 > [davenkin的学习仓库](https://github.com/davenkin/gradle-learning)
 > [个人学习Gradle的记录仓库](https://github.com/Kuangcp/LearnGradle)
+
+## Gradle 使用和配置
+### 主配置目录
+> ~/.gradle
+
+```
+├── caches
+│   ├── 4.8
+│   ├── 4.9
+│   ├── jars-3
+│   ├── modules-2
+│   │   ├── files-2.1 依赖的Jar 缓存目录
+│   │   ├── metadata-2.58
+│   │   └── modules-2.lock
+│   └── transforms-1
+├── daemon
+│   ├── 4.8
+│   └── 4.9
+├── native
+│   ├── 25
+│   └── jansi
+├── notifications
+│   ├── 4.8
+│   └── 4.9
+└── workers
+```
+- 那么问题来了, 以前一直以为是和Maven共用一个仓库
+    - 他和Maven本地仓库没有半毛钱关系, 他只是去复制了一下而已! [详情](https://blog.csdn.net/kcp606/article/details/81636426)
 
 ## Gradle 构建块
 - 三个基本块 project task property， 使用DDD（领域驱动设计）

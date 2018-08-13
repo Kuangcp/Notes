@@ -4,11 +4,12 @@
     - [ascii](#ascii)
     - [ANSI](#ansi)
     - [Unicode](#unicode)
-    - [UTF](#utf)
-        - [UTF-8](#utf-8)
-        - [UTF-16](#utf-16)
+        - [UTF](#utf)
+            - [UTF-8](#utf-8)
+            - [UTF-16](#utf-16)
+    - [汉字编码发展史](#汉字编码发展史)
 
-`目录 end` |_2018-08-08_| [码云](https://gitee.com/gin9) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104) | [cnblogs](http://www.cnblogs.com/kuangcp)
+`目录 end` |_2018-08-13_| [码云](https://gitee.com/gin9) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104) | [cnblogs](http://www.cnblogs.com/kuangcp)
 ****************************************
 # 字符编码
 
@@ -108,3 +109,4 @@ GB2312、GBK到GB18030都属于双字节字符集 (DBCS)
 | 汉语注音 	|43字|	3105-312F
 | 注音扩展 	|22字|	31A0-31BA
 | 〇 	|1字|	3007
+
