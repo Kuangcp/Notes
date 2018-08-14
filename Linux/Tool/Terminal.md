@@ -2,7 +2,9 @@
  
 - [Terminal](#terminal)
     - [终端模拟器对比](#终端模拟器对比)
-    - [工具](#工具)
+    - [终端工具命令](#终端工具命令)
+        - [Shell内建命令](#shell内建命令)
+        - [需用户安装](#需用户安装)
         - [效率工具](#效率工具)
             - [Autojump](#autojump)
             - [tmux](#tmux)
@@ -15,7 +17,7 @@
         - [分享](#分享)
             - [asciinema](#asciinema)
 
-`目录 end` |_2018-08-04_| [码云](https://gitee.com/gin9) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104) | [cnblogs](http://www.cnblogs.com/kuangcp)
+`目录 end` |_2018-08-14_| [码云](https://gitee.com/gin9) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104) | [cnblogs](http://www.cnblogs.com/kuangcp)
 ****************************************
 # Terminal
 > 终端模拟器是吸引我放弃习惯的Windows而转投Linux怀抱的主要原因
@@ -35,34 +37,41 @@
 > [更多可安装终端](https://gitee.com/kcp1104/codes/gca14wtqvm67l9j5r0deb56#Terminals.md)
 
 ************************
-## 工具
+## 终端工具命令
+> /bin/* 系统自带命令
 
-- whence 查看命令的真实面貌
 - which 命令的位置
-- htop _终端里的任务管理器_
-- strace -p PID _查看系统调用_
-- ps | clorm 20 30 `colrm` _删除输出的20 到30 列_
-- w | uptime _查看启动情况_
+- false 以失败码退出程序
+- `stty -a` 查看键映射
+
+### Shell内建命令
+- whence 查看命令的真实面貌 (zsh中的内建命令)
+- where 查找命令的位置 (Zsh中内建命令)
+
+### 需用户安装
+> 最终都会安装到 /usr/bin/*  目录下
+
 - wc -l file _统计文件行数_
-- last _查看Linux登录信息_
-    - last -n 5 最近五次登录
-
-- cmatrix _装13,字符雨_
-- stty -a 查看键映射
-- xsel 
-    - `cat a.md | xsel -b` _将文件所有内容复制到剪贴板_
-- logkeys 记录键盘输入 [Github](https://github.com/kernc/logkeys)
-
-- expect [用于自动输入密码](http://www.cnblogs.com/iloveyoucc/archive/2012/05/11/2496433.html)
-
-- autojump  `方便跳转目录`  *shrc 中要有 : `. /usr/share/autojump/autojump.sh`  
-
-- [WTF](https://wtfutil.com/posts/overview/) | [Github Repo](https://github.com/senorprogrammer/wtf)
-    - 丰富的功能, 一个方便的终端控制面板
-
 - md5sum 报文摘要算法 Message-Digest Algorithm 5 的实现 
     - `md5sum file` 计算出md5值
     - `md5sum -c file.md5` file 和 file.md5 在同一目录下, 执行这个命令就是检查md5是否匹配, 确保文件的完整性和正确性
+
+- last _查看Linux登录信息_
+    - last -n 5 最近五次登录
+- w | uptime _查看启动情况_
+- colrm
+    - ps | clorm 20 30 `colrm` _删除输出的20 到30 列_
+- xsel 
+    - `cat a.md | xsel -b` _将文件所有内容复制到剪贴板_
+
+- htop _终端里的任务管理器_
+- strace -p PID _查看系统调用_
+- cmatrix _装13,字符雨_
+- logkeys 记录键盘输入 [Github](https://github.com/kernc/logkeys)
+- expect [用于自动输入密码](http://www.cnblogs.com/iloveyoucc/archive/2012/05/11/2496433.html)
+
+- [WTF](https://wtfutil.com/posts/overview/) | [Github Repo](https://github.com/senorprogrammer/wtf)
+    - 丰富的功能, 一个方便的终端控制面板
 
 - ag `快速当前目录下, 全文内容搜索, 快到可怕` silversearcher-ag
     - [The Silver Searcher](https://github.com/ggreer/the_silver_searcher)
@@ -71,7 +80,7 @@
 > 提高工作和开发效率
 
 #### Autojump
-> 统计cd 目录，方便目录跳转
+> 统计cd 目录，方便目录跳转  *shrc 中要有 : `. /usr/share/autojump/autojump.sh`  
 
 - `apt install autojump` 设置为自动运行 `echo '. /usr/share/autojump/autojump.sh' >> ~/.bashrc`
     - `j -v` 查看安装版本
@@ -84,18 +93,19 @@
 #### tmux
 > 好用的管理会话的软件
 
+- [ ] 学习使用 
+
 > [tmux 入门](http://blog.jobbole.com/87278/)
 
-`入门使用`
-- 新建会话 `tmux new -s test`
 - 断开会话但是后台运行 `ctrl-b d`
 - 连接会话 `tmux a -t test`
+- 显示所有 `tmux ls` 
 
-- `tmux new -s myth`  新建一个窗口 
+- `tmux new -s myth`  新建一个会话
 - `Ctrl B`  再 `C`  新建一个窗口 `Ctrl B` `数字键`切换指定窗口
 - 连接远程服务器，运行一个阻塞命令
     - `Ctrl B` `D` 可以合上电脑（休眠）
-    - `tmux ls` 显示所有 `tmux a -t myth` 连上指定名字的就继续了
+    - `tmux a -t myth` 连上指定名字的就继续了
 
 #### notes
 > 管理笔记

@@ -14,11 +14,9 @@
         - [2.3.POM配置文件详解](#23pom配置文件详解)
         - [2.4.配置代码编译版本](#24配置代码编译版本)
     - [3.构建](#3构建)
-        - [3.1.打包成可执行Jar](#31打包成可执行jar)
-        - [3.2.war包当jar使用](#32war包当jar使用)
-        - [3.3.构建Docker镜像](#33构建docker镜像)
-        - [3.4.使用maven构建多模块的项目](#34使用maven构建多模块的项目)
-        - [3.5.Maven多配置环境](#35maven多配置环境)
+        - [3.1.使用maven构建多模块的项目](#31使用maven构建多模块的项目)
+        - [3.2.Maven多配置环境](#32maven多配置环境)
+        - [3.3.部署](#33部署)
     - [4.maven的依赖](#4maven的依赖)
         - [4.1 依赖的范围](#41-依赖的范围)
             - [依赖的传递](#依赖的传递)
@@ -46,7 +44,7 @@
                 - [Gradle](#gradle)
                 - [Maven](#maven)
 
-`目录 end` |_2018-08-10_| [码云](https://gitee.com/gin9) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104) | [cnblogs](http://www.cnblogs.com/kuangcp)
+`目录 end` |_2018-08-14_| [码云](https://gitee.com/gin9) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104) | [cnblogs](http://www.cnblogs.com/kuangcp)
 ****************************************
 # Maven
 > [官网](https://maven.apache.org/) | [官网手册](https://maven.apache.org/guides/) | [http://takari.io/ 在线练习网](http://takari.io/)
@@ -217,23 +215,7 @@ mvn install:install-file
 ```
 
 ## 3.构建
-### 3.1.打包成可执行Jar
-> [Maven实战（九）——打包的技巧](http://www.infoq.com/cn/news/2011/06/xxb-maven-9-package)
-> [Maven打包成可执行jar](https://blog.csdn.net/u013177446/article/details/53944424)
-> [参考博客: 使用MAVEN打包可执行的jar包](https://www.jianshu.com/p/afb79650b606)
-
-1. [Demo项目的完整代码片段](https://gitee.com/gin9/codes/ri4x8cut3awgh0e271lfb54)
-    - 多个main的情况下运行指定的main 
-        - `java -cp example03-1.0-SNAPSHOT.jar cn.zhouyafeng.itchat4j.main.TulingRobot`
-
-### 3.2.war包当jar使用
-- Springboot项目能够做到, 其实就是Main方法, 然后配置了一个Servlet的加载类就可以当war用了
-    - [通过Maven构建打包Spring boot，并将config配置文件提取到jar文件外](http://lib.csdn.net/article/java/65574)
-
-### 3.3.构建Docker镜像
-
-*****************
-### 3.4.使用maven构建多模块的项目
+### 3.1.使用maven构建多模块的项目
 `.gitignore文件`
 ```
     .idea/
@@ -268,10 +250,13 @@ mvn install:install-file
         <version>1.0-SNAPSHOT</version>
     </parent>
 ```
-### 3.5.Maven多配置环境
+### 3.2.Maven多配置环境
 > [Maven 如何为不同的环境打包](https://www.zybuluo.com/haokuixi/note/25985) `开发、测试和产品环境`
 
 - [ ] 子项目编译打包各自独立，怎么整合成一个
+
+### 3.3.部署
+> [Java项目部署方式整理](/Java/AdvancedLearning/Deploy.md)
 
 ******************
 ## 4.maven的依赖
@@ -472,7 +457,9 @@ A 项目 compile
 - 大量的开源项目使用了maven。
 
 ********************
-## 8.发布构件
+## 8.发布构件到公共仓库
+- [ ] Jforg mvnrepository 
+
 > [将项目发布到 maven 中央仓库踩过的坑](http://blog.csdn.net/h3243212/article/details/72374363)
 
 > [发布Maven构件到中央仓库](https://www.xncoding.com/2018/01/27/tool/maven-central.html)

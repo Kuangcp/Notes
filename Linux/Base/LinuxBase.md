@@ -14,6 +14,8 @@
         - [自启服务管理](#自启服务管理)
     - [软件管理](#软件管理)
         - [安装命令](#安装命令)
+    - [终端命令](#终端命令)
+        - [Shell内建命令](#shell内建命令)
     - [安装Linux发行版](#安装linux发行版)
 - [Tips](#tips)
     - [一行执行多条命令](#一行执行多条命令)
@@ -26,8 +28,9 @@
     - [Convert](#convert)
     - [Jump](#jump)
     - [Search](#search)
+    - [Control](#control)
 
-`目录 end` |_2018-08-13_| [码云](https://gitee.com/gin9) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104) | [cnblogs](http://www.cnblogs.com/kuangcp)
+`目录 end` |_2018-08-14_| [码云](https://gitee.com/gin9) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104) | [cnblogs](http://www.cnblogs.com/kuangcp)
 ****************************************
 # Linux系统
 > 只是记录了debian系的Linux, 不过也是大同小异
@@ -209,6 +212,20 @@ _系统运行级别_
 1. 只卸载程序，保留配置文件
 	- `sudo apt-get remove 应用名`
 
+**********************************************
+## 终端命令
+> /bin/* 系统自带的命令
+例如 which命令, 查找到命令的位置
+
+> /usr/bin/* 用户安装终端应用的目录 以下往往是系统自带的
+- wc -l file _统计文件行数_
+- md5sum 报文摘要算法 
+
+### Shell内建命令
+- whence 查看命令的真实面貌 (zsh中的内建命令)
+- where 查找命令的位置 (Zsh中内建命令)
+
+> [更多常用工具列表](/Linux/Tool/Terminal.md)
 *****************************************************
 ## 安装Linux发行版
 - 下载指定的镜像包，使用对应的刻录软件刻录U盘(Windows就是软碟通,Linux没怎么用过,只用过深度的U盘启动盘制作工具挺好的)
@@ -305,11 +322,6 @@ _系统运行级别_
 | Alt | C | 将当前单词首字母转为大写,光标后移 |
 | Alt | L | 将当前单词全部转为小写,光标后移(zsh无效) |
 
-| Controller | Key | comment |
-|:---|:----|:----|
-| Ctrl | S | 停止回显当前Shell |
-| Ctrl | Q | 恢复回显当前Shell |
-
 *******************
 ## Jump
 | Controller | Key | comment |
@@ -334,6 +346,10 @@ _系统运行级别_
 | Ctrl | R | 向上搜索相关命令（reverse-i-search）继续按 Ctrl R 则继续搜索上一条 |
 | Ctrl | S | 与 Ctrl R 类似, 但是是向下搜索 |
 
+**************************
+## Control
 | Controller | Key | comment |
 |:---|:----|:----|
 |Ctrl |Z|暂停程序 |
+| Ctrl | S | 停止回显当前Shell |
+| Ctrl | Q | 恢复回显当前Shell |

@@ -70,6 +70,7 @@
 - [todo](http://www.saitjr.com/)
 - [张铁蕾](http://zhangtielei.com/)`总结能力强`
 - [zhangyi](http://zhangyi.xyz)`设计模式,TDD`
+- [johng.cn](http://johng.cn/)`Docker,算法相关`
 ## 博客能人
 - [赵劼](http://www.cnblogs.com/JeffreyZhao/) `对函数式编程，并行程序开发，代码之美以及程序员能力与修养等相关问题`
 - [进击的Java新人](https://zhuanlan.zhihu.com/hinus)

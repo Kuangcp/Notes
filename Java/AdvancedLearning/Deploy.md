@@ -11,12 +11,15 @@
         - [Maven](#maven)
         - [Gradle](#gradle)
 
-`目录 end` |_2018-08-04_| [码云](https://gitee.com/gin9) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104) | [cnblogs](http://www.cnblogs.com/kuangcp)
+`目录 end` |_2018-08-14_| [码云](https://gitee.com/gin9) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104) | [cnblogs](http://www.cnblogs.com/kuangcp)
 ****************************************
 # 部署运行
 > 传统的可执行jar, war 以及Docker镜像
 
-## 可执行jar
+> [参考博客: JAR 文件揭密](https://www.ibm.com/developerworks/cn/java/j-jar/index.html)
+> [参考博客: maven-assembly-plugin 入门指南](https://www.jianshu.com/p/14bcb17b99e0)
+
+## 打包可执行jar
 ### 用命令手动打包
 > [关于MANIFEST.MF文件](https://blog.csdn.net/baileyfu/article/details/1808023)`这个文件很重要, 如果自己手动配置就需要编写该文件`
 _MANIFEST.MF示例_
@@ -44,6 +47,18 @@ _MANIFEST.MF示例_
 
 **依赖Jar的项目**
 - [ ] 完善 Maven 含 Jar 打包可执行jar
+
+> [Maven实战（九）——打包的技巧](http://www.infoq.com/cn/news/2011/06/xxb-maven-9-package)
+> [Maven打包成可执行jar](https://blog.csdn.net/u013177446/article/details/53944424)
+> [参考博客: 使用MAVEN打包可执行的jar包](https://www.jianshu.com/p/afb79650b606)
+
+1. [Demo项目的完整代码片段](https://gitee.com/gin9/codes/ri4x8cut3awgh0e271lfb54)
+    - 多个main的情况下运行指定的main 
+        - `java -cp example03-1.0-SNAPSHOT.jar cn.zhouyafeng.itchat4j.main.TulingRobot`
+
+> war和jar一样使用
+- Springboot项目能够做到, 其实就是Main方法, 然后配置了一个Servlet的加载类就可以当war用了
+    - [通过Maven构建打包Spring boot，并将config配置文件提取到jar文件外](http://lib.csdn.net/article/java/65574)
 
 ### Gradle
 > [参考博客: Building Java Applications](https://guides.gradle.org/building-java-applications/)
@@ -83,7 +98,7 @@ mainClassName = 'App'
 
 ********************
 
-## Docker部署
+## Docker镜像
 > 以一个基础镜像,然后将war放进去构建成一个镜像, 然后推送到服务器上构建容器进行运行
 
 > [jib](https://github.com/GoogleContainerTools/jib)
