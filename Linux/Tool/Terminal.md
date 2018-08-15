@@ -17,7 +17,7 @@
         - [分享](#分享)
             - [asciinema](#asciinema)
 
-`目录 end` |_2018-08-14_| [码云](https://gitee.com/gin9) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104) | [cnblogs](http://www.cnblogs.com/kuangcp)
+`目录 end` |_2018-08-15_| [码云](https://gitee.com/gin9) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104) | [cnblogs](http://www.cnblogs.com/kuangcp)
 ****************************************
 # Terminal
 > 终端模拟器是吸引我放弃习惯的Windows而转投Linux怀抱的主要原因
@@ -91,21 +91,17 @@
 - `ls -l ~/.local/share/autojump/` 统计信息的目录，清除就相当于卸载重装了
 
 #### tmux
-> 好用的管理会话的软件
+> 好用的管理会话的软件, 在服务器上是很有用的
 
 - [ ] 学习使用 
 
 > [tmux 入门](http://blog.jobbole.com/87278/)
 
-- 断开会话但是后台运行 `ctrl-b d`
+- 新建会话 `tmux new -s myth`  
 - 连接会话 `tmux a -t test`
 - 显示所有 `tmux ls` 
-
-- `tmux new -s myth`  新建一个会话
 - `Ctrl B`  再 `C`  新建一个窗口 `Ctrl B` `数字键`切换指定窗口
-- 连接远程服务器，运行一个阻塞命令
-    - `Ctrl B` `D` 可以合上电脑（休眠）
-    - `tmux a -t myth` 连上指定名字的就继续了
+- 断开会话但是后台运行 `ctrl+B D`
 
 #### notes
 > 管理笔记

@@ -24,7 +24,7 @@
     - [Tips](#tips)
         - [Error:Cannot compile Groovy files: no Groovy library is defined for module "XXX"](#errorcannot-compile-groovy-files-no-groovy-library-is-defined-for-module-"xxx")
 
-`目录 end` |_2018-08-14_| [码云](https://gitee.com/gin9) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104) | [cnblogs](http://www.cnblogs.com/kuangcp)
+`目录 end` |_2018-08-15_| [码云](https://gitee.com/gin9) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104) | [cnblogs](http://www.cnblogs.com/kuangcp)
 ****************************************
 
 # IDEA 使用笔记
@@ -183,6 +183,11 @@ _例如修改为如下_
 |C| |A| **L** | 快速格式化代码 
 |C| |A| **O** | 优化导入的类和包
 |C| | | **Esc** | 格式化并优化导入
+| | |A| **Esc** | 停止正在运行的运行项
+| | |A| **1** | 运行上次的运行项
+| | |A| **2** | Debug上次的运行项
+| | | | **F10** | 运行光标所在处的运行项
+| |S|A| **F10** | 选择运行项的弹窗
 
 #### File 
 | Ctrl | Shift | Alt | Key | Action |

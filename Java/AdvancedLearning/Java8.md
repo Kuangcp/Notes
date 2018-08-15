@@ -10,7 +10,7 @@
         - [Instant](#instant)
         - [LocalDateTime](#localdatetime)
 
-`目录 end` |_2018-08-10_| [码云](https://gitee.com/gin9) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104) | [cnblogs](http://www.cnblogs.com/kuangcp)
+`目录 end` |_2018-08-15_| [码云](https://gitee.com/gin9) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104) | [cnblogs](http://www.cnblogs.com/kuangcp)
 ****************************************
 # Java8
 > [doc: Java8](https://docs.oracle.com/javase/8/)  
@@ -59,7 +59,7 @@ _集合的Lambda迭代方式_
 
 ```java
     // LocalDateTime 获取毫秒以及秒  也可以手动指定中国的时区 ZoneOffset.of("+8")
-    ZonedDateTime zonedDateTime = refreshTime.atZone(ZoneOffset.systemDefault());
+    ZonedDateTime zonedDateTime = datetime.atZone(ZoneOffset.systemDefault());
     Instant instant = zonedDateTime.toInstant();
     long seconds = instant.getEpochSecond(); 
     long millis = instant.toEpochMilli();
