@@ -105,7 +105,7 @@ _一个基本的JUnit测试_
     - `assertSame(java.lang.Object expected, java.lang.Object actual)` 检查两个对象引用是否引用同一对象（即地址是否相等） 
     - `assertNotSame(java.lang.Object unexpected, java.lang.Object actual)` 检查两个对象引用是否不引用统一对象(即地址不等) 
     - `assertArrayEquals(Object[] a, Object[] b)` 检查两个数组是否相等
-    - `assertThat(T, Matcher<? super T>)` 检查泛型是否匹配
+    - `assertThat(T, Matcher<? super T>)` 检查泛型是否匹配, 以及一系列复杂的表达式
     - `fail(String string)` 依据入参并宣告测试失败
 
 
@@ -133,7 +133,11 @@ public class AssertTest {
     }
 }
 ```
+### assertThat
+> [参考博客: assertThat详解](http://www.cnblogs.com/Firefly727/archive/2011/07/05/2098625.html)
 
+
+**********************************
 ## 参数化测试
 > Junit 4 参数化测试 允许通过变化范围的参数值来测试方法 | 个人认为: 将测试方法的入参集合数据和测试行为分离开, 简化书写逻辑
 
