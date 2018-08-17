@@ -42,6 +42,10 @@
 
 - [ ] 排序
 > [参考博客: Java8：Lambda表达式增强版Comparator和排序](http://www.importnew.com/15259.html)
+
+### 利用Lambda开发DSL框架
+- [ ] 可以将mythpoi改造一下
+
 ## Stream
 > [参考博客: Java 8 中的 Streams API 详解](https://www.ibm.com/developerworks/cn/java/j-lo-java8streamapi/)
 
