@@ -33,6 +33,7 @@
             - [代码片段](#代码片段)
             - [插件](#插件)
             - [实践](#实践)
+        - [Atom](#atom)
         - [Gedit](#gedit)
         - [小书匠](#小书匠)
         - [Moeditor|Typora|CuteMarkEd](#moeditor|typora|cutemarked)
@@ -60,7 +61,7 @@
     - [安全工具](#安全工具)
         - [gpg](#gpg)
 
-`目录 end` |_2018-08-09_| [码云](https://gitee.com/gin9) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104) | [cnblogs](http://www.cnblogs.com/kuangcp)
+`目录 end` |_2018-08-19_| [码云](https://gitee.com/gin9) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104) | [cnblogs](http://www.cnblogs.com/kuangcp)
 ****************************************
 # 软件使用记事
 ## 【包管理】
@@ -420,7 +421,7 @@ CMD编辑器
 #### 配置
 > 主要是 about:config 
 
-1. 此地址使用了一个通常用于网络浏览以外的端口 
+1. 配置火狐访问80以外的端口
     1. 地址栏 : `about:config` 
     1. 右键新建字符串 `network.security.ports.banned.override` 
     1. 输入值 81,88,98 也可以是 6000-6005, 省事就 0-65535(不建议)
