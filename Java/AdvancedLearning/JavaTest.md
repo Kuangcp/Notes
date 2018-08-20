@@ -14,7 +14,7 @@
     - [DBUnit](#dbunit)
 - [感悟](#感悟)
 
-`目录 end` |_2018-08-10_| [码云](https://gitee.com/gin9) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104) | [cnblogs](http://www.cnblogs.com/kuangcp)
+`目录 end` |_2018-08-20_| [码云](https://gitee.com/gin9) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104) | [cnblogs](http://www.cnblogs.com/kuangcp)
 ****************************************
 # Java的测试
 > [测试的基础理论](/Skills/Base/Test.md)
@@ -75,10 +75,10 @@ _可以使用TestMe插件_
 **************
 ## Mock框架
 > mock 模拟 , 也就是说对需要测试的模块, 将该模块依赖的相关对象给修改成自己期望的行为方式(伪造一个假对象), 以移除依赖性, 从而针对性的测试该模块
+> 但主要还是适用于单元测试，在集成测试，性能测试，自动化测试等其他测试领域使用并不多
 
 > [JMockit官方文档](http://www.vogella.com/tutorials/Mockito/article.html#testing-with-mock-objects)
 - [入门博客](http://blog.csdn.net/chjttony/article/details/17838693)
-
 http://www.baeldung.com/mockito-void-methods
 https://www.tutorialspoint.com/mockito/mockito_quick_guide.htm
 http://static.javadoc.io/org.mockito/mockito-core/2.19.0/org/mockito/Mockito.html#1
@@ -87,6 +87,12 @@ http://static.javadoc.io/org.mockito/mockito-core/2.19.0/org/mockito/Mockito.htm
 > [官网](http://site.mockito.org/) | [Github:mockito](https://github.com/mockito/mockito)
 > [Mockito Tutorial](https://www.tutorialspoint.com/mockito/index.htm)
 > [参考博客: TDD：什么是桩（stub）和模拟（mock）？](http://www.cnblogs.com/happyframework/p/3595547.html)
+
+> 官网提示:
+>1. Do not mock types you don’t own
+>1. Don’t mock value objects
+>1. Don’t mock everything
+>1. Show love with your tests!
 
 ## DBUnit
 > 基于Junit的一个数据库测试框架, 方便测试dao层

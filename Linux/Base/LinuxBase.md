@@ -30,7 +30,7 @@
     - [Search](#search)
     - [Control](#control)
 
-`目录 end` |_2018-08-14_| [码云](https://gitee.com/gin9) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104) | [cnblogs](http://www.cnblogs.com/kuangcp)
+`目录 end` |_2018-08-20_| [码云](https://gitee.com/gin9) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104) | [cnblogs](http://www.cnblogs.com/kuangcp)
 ****************************************
 # Linux系统
 > 只是记录了debian系的Linux, 不过也是大同小异
@@ -75,6 +75,11 @@
 - [参考博客 阿里云的软件源](https://hacpai.com/article/1482807364546?p=1&m=0)
 - [wiki-源列表说明](http://wiki.ubuntu.com.cn/%E6%BA%90%E5%88%97%E8%A1%A8)
 
+1. 源 URL 后的单词: 
+    1. main: 完全的自由软件。
+    1. restricted: 不完全的自由软件。
+    1. universe: Ubuntu官方不提供支持与补丁，全靠社区支持。
+    1. multiverse: 非自由软件，完全不提供支持和补丁。
 **************************************
 ### 用户管理
 - 添加用户 `sudo adduser username` 

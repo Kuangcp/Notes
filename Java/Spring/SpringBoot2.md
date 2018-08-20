@@ -14,7 +14,7 @@
             - [多数据源](#多数据源)
         - [No Relation Database](#no-relation-database)
 
-`目录 end` |_2018-08-04_| [码云](https://gitee.com/gin9) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104) | [cnblogs](http://www.cnblogs.com/kuangcp)
+`目录 end` |_2018-08-20_| [码云](https://gitee.com/gin9) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104) | [cnblogs](http://www.cnblogs.com/kuangcp)
 ****************************************
 # SringBoot2
 [官方文档](https://docs.spring.io/spring-boot/docs/2.0.3.RELEASE/reference/htmlsingle/)
@@ -28,8 +28,10 @@
 [Springboot2.0 升级（Gradle工程) ](https://my.oschina.net/tangdu/blog/1625336)
 [使用精简版jdk9在docker上运行springboot2 ](https://my.oschina.net/go4it/blog/1623004)
 [ Spring Boot 2.0系列文章(一)：Spring Boot 2.0 迁移指南 ](http://www.54tianzhisheng.cn/2018/03/06/SpringBoot2-Migration-Guide/)
+
 ## 新特性
 > [Spring Boot 2.0系列文章(二)：Spring Boot 2.0 新特性详解 ](http://www.54tianzhisheng.cn/2018/03/06/SpringBoot2-new-features/)
+> [参考博客: Spring Boot 2.0 新特性和发展方向 ](https://mp.weixin.qq.com/s/EWmuzsgHueHcSB0WH-3AQw)
 
 ## Web模块
 ### Web容器
