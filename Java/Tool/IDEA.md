@@ -24,7 +24,7 @@
     - [Tips](#tips)
         - [Error:Cannot compile Groovy files: no Groovy library is defined for module "XXX"](#errorcannot-compile-groovy-files-no-groovy-library-is-defined-for-module-"xxx")
 
-`目录 end` |_2018-08-15_| [码云](https://gitee.com/gin9) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104) | [cnblogs](http://www.cnblogs.com/kuangcp)
+`目录 end` |_2018-08-21_| [码云](https://gitee.com/gin9) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104) | [cnblogs](http://www.cnblogs.com/kuangcp)
 ****************************************
 
 # IDEA 使用笔记
@@ -187,7 +187,8 @@ _例如修改为如下_
 | | |A| **1** | 运行上次的运行项
 | | |A| **2** | Debug上次的运行项
 | | | | **F10** | 运行光标所在处的运行项
-| |S|A| **F10** | 选择运行项的弹窗
+| |S|A| **F10** | 运行选择的运行项
+| |S|A| **F9** | Debug选择的运行项
 
 #### File 
 | Ctrl | Shift | Alt | Key | Action |
@@ -316,7 +317,19 @@ _例如修改为如下_
 1. Docker
 1. Kubernates
 1. Maven helper
-1. rainbow brackets
+1. rainbow brackets 将括号变成彩色, 更方便查看
+
+**************************
+
+> 内置插件
+- 为了节省内存, 禁用无关插件, 把插件列表中所有插件全看一遍
+
+1. haml haml语言, HTML的抽象化语言
+1. Gherkin Gherkin是Cucumber用于定义测试用例的语言。
+    1. cucumber java
+    1. cucumber groovy
+
+**********************
 ## 启动配置
 > [官网文档](https://www.jetbrains.com/help/idea/increasing-memory-heap.html)
 > [IntelliJ IDEA 内存优化最佳实践](http://blog.oneapm.com/apm-tech/426.html)

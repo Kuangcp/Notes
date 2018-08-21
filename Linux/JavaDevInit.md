@@ -1,6 +1,6 @@
 `目录 start`
  
-- [配置Linux](#配置linux)
+- [配置Deepin的Java开发环境](#配置deepin的java开发环境)
     - [新增用户](#新增用户)
     - [安装Docker](#安装docker)
 - [在Linux上配置Java环境](#在linux上配置java环境)
@@ -8,20 +8,17 @@
         - [解压配置](#解压配置)
         - [sdkman方式](#sdkman方式)
         - [mythsdk](#mythsdk)
-        - [使用软链接](#使用软链接)
     - [配置MySQL](#配置mysql)
     - [配置Redis](#配置redis)
         - [从源码编译运行并测试](#从源码编译运行并测试)
     - [问题以及解决方案：](#问题以及解决方案)
-        - [Java OpenJDK](#java-openjdk)
-        - [显卡问题](#显卡问题)
-        - [双硬盘的折腾记录](#双硬盘的折腾记录)
+    - [双硬盘的折腾记录](#双硬盘的折腾记录)
 
-`目录 end` |_2018-08-04_| [码云](https://gitee.com/gin9) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104) | [cnblogs](http://www.cnblogs.com/kuangcp)
+`目录 end` |_2018-08-21_| [码云](https://gitee.com/gin9) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104) | [cnblogs](http://www.cnblogs.com/kuangcp)
 ****************************************
-# 配置Linux
-> 修改Hostname需要重启, 设置java默认需要重启, docker添加用户组需要重启
+# 配置Deepin的Java开发环境
 
+修改Hostname需要重启, 设置java默认需要重启, docker添加用户组需要重启
 ## 新增用户
 > [详细](/Linux/Base/LinuxBase.md#用户管理)
 
@@ -53,8 +50,8 @@
 >> root 用户下 `which java` 然后 `ls -l 显示的路径` 一直往下找, 找到 `/etc/alternatives/java` 和 `/etc/alternatives/javac` 重建这两个软链接.
 
 ### sdkman方式 
-> jdk不推荐使用sdkman安装，这里的jdk是开源版估计，会少包 认准这个版本才是完整的(Oracle Corporation 25.131-b11)
-> 但是最近出了一个oracle的版本貌似是完整的，因为有个同意协议的过程 `sdk install java 8u144-oracle`
+> jdk不推荐使用sdkman安装，这里的jdk是开源版估计，会少javafx等一些闭源包 Oracle版本才是完整的
+> 但是最近SDKMAN出了一个oracle的版本貌似是完整的，因为有个同意协议的过程 `sdk install java 8u144-oracle`
 
 - 安装sdkman `curl -s "https://get.sdkman.io" | bash`
 
@@ -76,20 +73,6 @@
 ### mythsdk
 > 个人用py开发的脚本， 实现了和sdkman一致的内容， 并且很简单 | [使用文档](https://github.com/Kuangcp/Script/tree/master/python/mythsdk)
 
-*************
-### 使用软链接
-> 下载压缩包然后解压到统一的文件夹下，建立一个软链接current在文件夹里，　　
->　然后配置 .bashrc 或者 别名文件，这样的话，更改版本只要更改软链接就可以了
-``` conf
-    SDK_DIR=/home/kcp/.sdkman/candidates
-    GRADLE_HOME=$SDK_DIR/gradle/current
-    GRAILS_HOME=$SDK_DIR/grails/current
-    GROOVY_HOME=$SDK_DIR/groovy/current
-    KOTLIN_HOME=$SDK_DIR/kotlin/current
-    SCALA_HOME=$SDK_DIR/scala/current
-    export PATH=$PATH:$GRADLE_HOME/bin:$GRAILS_HOME/bin:$GROOVY_HOME/bin:$SCALA_HOME/bin:$KOTLIN_HOME/bin
-```
-
 ********************************
 ## 配置MySQL
 > [安装MySQL](/Database/MySQL.md)
@@ -109,23 +92,20 @@
     sudo make
     sudo make install
 ```
-
 **************
 ## 问题以及解决方案：
-### Java OpenJDK
-> Picked up _JAVA_OPTIONS: -Dawt.useSystemAAFontSettings=gasp
-- 原因是linux自带的OpenJDK影响了安装的java
-    - `sudo mv /etc/profile.d/java-awt-font-gasp.sh /etc/profile.d/java-awt-font-gasp.sh.bak`
-    - 重启或注销即可
-
-`QQ:`
+> QQ
 - `sudo apt-get install deepin-crossover deepinwine-qq`
 - [安装QQ](https://www.findhao.net/easycoding/1748)
 
-### 显卡问题
-> 联想G4070 安装 deepin 15.4.1 显卡兼容失败（15.4还能正常用）
-- 因为合上盖子休眠就会导致打开电脑直接死机， 找了半天原因是驱动问题， 安装nvidia-driver nvidia-setting bumblebee-nvidia 即可解决、
-- 手残，按到关闭窗口特效后，就无法打开了，各种用着不爽， 然后重装了最新版系统，然后就装驱动，重启就不能开特效了。。。。。
+> 显卡问题
+- 联想G4070 安装 deepin 15.4.1 显卡兼容失败（15.4还能正常用）, 15.5 15.6 是正常使用的 15.7 有点缺陷
+- 因为合上盖子休眠就会导致打开电脑直接死机， 找了半天原因是驱动问题
+    - 安装 `nvidia-driver`, `nvidia-setting`, `bumblebee-nvidia` 即可解决
 
-### 双硬盘的折腾记录
+手残，按到关闭窗口特效后，就无法打开了，各种用着不爽， 然后重装了最新版系统，然后就装驱动，重启就不能开特效了。。。。。
+虽然各种小bug, 也花费了很多时间来解决这些问题(因为自己有强迫症), 但是还是学到了很多东西
+
+********************
+## 双硬盘的折腾记录
 > [记录](/MyBlog/2018-3-15-install-deepin.md)

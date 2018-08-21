@@ -9,7 +9,7 @@
         - [《Netty权威指南》](#《netty权威指南》)
             - [《Netty in Action 中译》](#《netty-in-action-中译》)
 
-`目录 end` |_2018-08-04_| [码云](https://gitee.com/gin9) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104) | [cnblogs](http://www.cnblogs.com/kuangcp)
+`目录 end` |_2018-08-21_| [码云](https://gitee.com/gin9) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104) | [cnblogs](http://www.cnblogs.com/kuangcp)
 ****************************************
 
 # Java书籍
@@ -42,6 +42,9 @@
 - 深入实践SpringBoot
 - 深入浅出 Mybatis 技术原理与实战
 - SpringCloud 与 Docker 微服务架构与实战
+
+深入Java虚拟机(原书第2版) 译者: 曹晓钢 / 蒋靖
+
 ## 已阅读
 ### 《Java程序员修炼之道》
 > Benjamin J.Evans | Martijn Verburg

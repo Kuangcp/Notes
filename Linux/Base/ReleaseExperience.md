@@ -23,7 +23,7 @@
     - [Mageia](#mageia)
     - [CDLinux](#cdlinux)
 
-`目录 end` |_2018-08-04_| [码云](https://gitee.com/gin9) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104) | [cnblogs](http://www.cnblogs.com/kuangcp)
+`目录 end` |_2018-08-21_| [码云](https://gitee.com/gin9) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104) | [cnblogs](http://www.cnblogs.com/kuangcp)
 ****************************************
 # Linux各个发行版本使用体验
 > 一边用一边记录吧 [发行版热度对比](https://distrowatch.com/dwres.php?resource=popularity)
@@ -82,6 +82,7 @@ _服务器_
 - 2018-03-15 09:25:47 [公司电脑安装Windows10 和 Deepin双系统](/MyBlog/2018-3-15-install-deepin.md)
 - 2018-05-24 15:08:49 `Gtk-WARNING **: 无法在模块路径中找到主题引擎：“adwaita”`， 安装 这个包 gnome-themes-standard
 - 2018-06-15 19:50:40 deepin-wm 进程, 也就是Deepin的桌面管理器, 启动久了之后就会发生内存占用非常大的情况, 关闭窗口特效, 再打开就好了
+- 2018-08-21 20:34:07 更新到15.7, 然后就是一堆的小问题, 任务栏和屏幕边缘有空隙, 多任务切换方式的变化, 原先用Wine安装的企业QQ不能启动... 但是确实Deepin 现在更快了
 
 > [显卡驱动作死录](https://www.jianshu.com/p/f53c8223bac6)
 #### 双系统安装
@@ -115,7 +116,8 @@ _服务器_
 > [人生苦短我用Manjaro](https://www.manjaro.cn/451) | [什么Linux发行版软件最多？](https://www.lulinux.com/archives/2787)
 > | [Manjaro: 一种不同的野兽](https://www.manjaro.cn/195) | [为什么要用Manjaro？](https://www.manjaro.cn/150)
 
-- 因为基于arch, 并且简化了很多操作, 还兼容了Deepin桌面, 真是稳了
+- 因为基于arch, 并且简化了很多操作, 还兼容了Deepin桌面, 真是稳了, 但是日常生活中
+- 因为滚动更新的特性, 所以在安装一个新软件的时候, 需要更新到最新版, 这样就比较烦, 
 
 ****************************
 ## redhat系

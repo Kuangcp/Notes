@@ -7,14 +7,15 @@
     - [time](#time)
     - [date](#date)
     - [grep](#grep)
-    - [定时任务crontab](#定时任务crontab)
-        - [定时执行脚本](#定时执行脚本)
+    - [定时任务](#定时任务)
+        - [crontab](#crontab)
+        - [Systemd](#systemd)
 - [实用的工具](#实用的工具)
     - [终端工具](#终端工具)
     - [图形化工具](#图形化工具)
         - [剪贴板管理](#剪贴板管理)
 
-`目录 end` |_2018-08-10_| [码云](https://gitee.com/gin9) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104) | [cnblogs](http://www.cnblogs.com/kuangcp)
+`目录 end` |_2018-08-21_| [码云](https://gitee.com/gin9) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104) | [cnblogs](http://www.cnblogs.com/kuangcp)
 ****************************************
 # 系统常用基础命令
 
@@ -51,12 +52,16 @@
 - -o 一行内多次匹配 `grep -o 的 total.md | wc -l` 统计所有`的`的数量
 - -i 忽略大小写
 
-## 定时任务crontab
+## 定时任务
+### crontab
 > [参考博客 shell定时任务crontab](http://www.cnblogs.com/taosim/articles/2007056.html)
 `minute hour day-of-month month-of-year day-of-week commands  `
 
-### 定时执行脚本 
-> 脚本中的操作最好都使用绝对路径
+> cron 脚本中的操作命令 最好都使用绝对路径
+
+### Systemd
+> [参考博客: Systemd 定时器教程](http://www.ruanyifeng.com/blog/2018/03/systemd-timer.html) `配置和使用上比Crontab更繁杂, 但是有更多的可控制项`
+
 
 *******************************************
 

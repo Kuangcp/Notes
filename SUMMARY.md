@@ -8,8 +8,6 @@
 * [ Repository ](./Repository.md)
 * [ SUMMARY ](./SUMMARY.md)
 * [ Website ](./Website.md)
-* 【 .vscode 】
-    * [ settings.j ](/.vscode/settings.json)
 * 【 Article 】
     * [ Font ](/Article/Font.md)
     * [ HistoricalBias ](/Article/HistoricalBias.md)
@@ -61,17 +59,16 @@
     * [ ResponseCode ](/FrontEnd/ResponseCode.md)
     * [ ViewSolution ](/FrontEnd/ViewSolution.md)
 * 【 Functional 】
-    * 【 Functional/Scala 】
-        * [ SBT ](/Functional/Scala/SBT.md)
-        * [ Scala ](/Functional/Scala/Scala.md)
     * [ Clojure ](/Functional/Clojure.md)
     * [ FPBase ](/Functional/FPBase.md)
-    * [ Groovy ](/Functional/Groovy.md)
     * [ Kotlin ](/Functional/Kotlin.md)
 * 【 Go 】
     * [ GoBase ](/Go/GoBase.md)
     * [ GoDatabase ](/Go/GoDatabase.md)
     * [ GoRestful ](/Go/GoRestful.md)
+* 【 Groovy 】
+    * [ Groovy ](/Groovy/Groovy.md)
+    * [ GroovySpring ](/Groovy/GroovySpring.md)
 * 【 Java 】
     * 【 Java/AdvancedLearning 】
         * [ Annotation ](/Java/AdvancedLearning/Annotation.md)
@@ -81,6 +78,7 @@
         * [ Deploy ](/Java/AdvancedLearning/Deploy.md)
         * [ Exception ](/Java/AdvancedLearning/Exception.md)
         * [ ExtendsAndInterface ](/Java/AdvancedLearning/ExtendsAndInterface.md)
+        * [ GC ](/Java/AdvancedLearning/GC.md)
         * [ Generics ](/Java/AdvancedLearning/Generics.md)
         * [ GrammarAndType ](/Java/AdvancedLearning/GrammarAndType.md)
         * [ IO ](/Java/AdvancedLearning/IO.md)
@@ -107,6 +105,7 @@
         * [ Hibernate ](/Java/Ecosystem/Hibernate.md)
         * [ JPA ](/Java/Ecosystem/JPA.md)
         * [ JXls ](/Java/Ecosystem/JXls.md)
+        * [ JavaRedis ](/Java/Ecosystem/JavaRedis.md)
         * [ Kafaka ](/Java/Ecosystem/Kafaka.md)
         * [ Mybatis ](/Java/Ecosystem/Mybatis.md)
         * [ Netty ](/Java/Ecosystem/Netty.md)
@@ -200,6 +199,9 @@
     * [ PythonNet ](/Python/PythonNet.md)
     * [ PythonWeb ](/Python/PythonWeb.md)
 * 【 Reactive 】
+* 【 Scala 】
+    * [ SBT ](/Scala/SBT.md)
+    * [ Scala ](/Scala/Scala.md)
 * 【 Script 】
     * [ Dos ](/Script/Dos.md)
     * [ ShellLearn ](/Script/ShellLearn.md)

@@ -24,7 +24,7 @@
     - [Mock](#mock)
     - [BDD](#bdd)
 
-`目录 end` |_2018-08-20_| [码云](https://gitee.com/gin9) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104) | [cnblogs](http://www.cnblogs.com/kuangcp)
+`目录 end` |_2018-08-21_| [码云](https://gitee.com/gin9) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104) | [cnblogs](http://www.cnblogs.com/kuangcp)
 ****************************************
 # 测试
 
@@ -215,11 +215,13 @@ A/B测试其实也是谷歌管理方法论，具体文章请参考：
 ## Mock
 > [参考博客: 面向开发的测试技术（一）：Mock ](http://www.uml.org.cn/Test/201708143.asp?artid=19745)
 
+既然使用模拟技术, 就要让模块的设计更易于测试, 也就是耦合更低, 之间的依赖更少, 一个正向循环呢
+
 1. Mockito 有多种语言的实现
 ********************
 ## BDD
-> 行为驱动开发 作为TDD的一个变种 
+> 行为驱动开发  behavior-driven development 作为TDD的一个变种 
 
-> [cucumber about bdd](https://docs.cucumber.io/bdd/)
+> [cucumber about bdd](https://docs.cucumber.io/bdd/) 
 
 它的重点是描述程序的行为, 而不是一组需要通过的单元测试

@@ -4,13 +4,14 @@
     - [Optional](#optional)
     - [Funcational](#funcational)
     - [Lambda](#lambda)
+        - [利用Lambda开发DSL框架](#利用lambda开发dsl框架)
     - [Stream](#stream)
     - [集合](#集合)
     - [时间处理](#时间处理)
         - [Instant](#instant)
         - [LocalDateTime](#localdatetime)
 
-`目录 end` |_2018-08-15_| [码云](https://gitee.com/gin9) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104) | [cnblogs](http://www.cnblogs.com/kuangcp)
+`目录 end` |_2018-08-21_| [码云](https://gitee.com/gin9) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104) | [cnblogs](http://www.cnblogs.com/kuangcp)
 ****************************************
 # Java8
 > [doc: Java8](https://docs.oracle.com/javase/8/)  
@@ -38,6 +39,7 @@
     - 尝试使用新的语言特性，理解多样化的编程思想，提升编程表达能力。
 
 ## Lambda
+> [参考博客: 你真的了解lambda吗？一文让你明白lambda用法与源码分析 ](https://mp.weixin.qq.com/s?__biz=MzAxODcyNjEzNQ==&mid=2247485682&idx=1&sn=f3fb281b49a029b607f9377853a644bf&chksm=9bd0a56aaca72c7c8beebbea8f9471446cb444bd8e1e7d21016e906d1227e8f87770e2f8f31e&mpshare=1&scene=1&srcid=0810geQnLXB2oMjfoAOEJ39L#rd)
 > [参考博客: 级联 lambda 表达式的函数重用与代码简短问题](http://www.techug.com/post/java-lambda.html)
 
 - [ ] 排序
@@ -53,6 +55,8 @@
 _集合的Lambda迭代方式_
 - [参考博客: List、Map的循环迭代](http://blog.csdn.net/xf_87/article/details/53931207)
 
+对集合中的对象进行求和
+*******************************
 ## 时间处理
 
 ### Instant 
