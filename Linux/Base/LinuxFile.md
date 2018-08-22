@@ -3,6 +3,7 @@
 - [【文件管理】](#文件管理)
     - [Tips](#tips)
         - [设置交换分区](#设置交换分区)
+- [完整命令: root身份运行](#完整命令-root身份运行)
             - [清空交换内存](#清空交换内存)
         - [清除缓存](#清除缓存)
         - [善用*shrc文件](#善用shrc文件)
@@ -17,6 +18,7 @@
         - [文件管理命令](#文件管理命令)
             - [合并文件](#合并文件)
 - [磁盘](#磁盘)
+    - [文件系统](#文件系统)
     - [分区介绍](#分区介绍)
     - [设备列表](#设备列表)
     - [常用命令](#常用命令)
@@ -30,7 +32,7 @@
     - [系统日志](#系统日志)
     - [应用日志](#应用日志)
 
-`目录 end` |_2018-08-04_| [码云](https://gitee.com/gin9) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104) | [cnblogs](http://www.cnblogs.com/kuangcp)
+`目录 end` |_2018-08-22_| [码云](https://gitee.com/gin9) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104) | [cnblogs](http://www.cnblogs.com/kuangcp)
 ****************************************
 # 【文件管理】
 > Linux中认为万物皆文件
@@ -51,6 +53,10 @@
     - 表示物理内存剩余`10%` 才会开始使用交换分区
 - `建议，笔记本的硬盘低于 7200 转的不要设置太高的交换分区使用，大大影响性能，因为交换分区就是在硬盘上，频繁的交换数据`
 
+```sh
+# 完整命令: root身份运行
+dd if=/dev/zero of=/swapfile bs=1024k count=4096 && mkswap /swapfile && swapon /swapfile && echo "/swapfile swap swap defaults 0 0" >> /etc/fstab
+```
 #### 清空交换内存
 - 1.关闭交换分区 `sudo swapoff 交换分区文件`
     - 2.开启交换分区 `sudo swapon 交换分区文件`
@@ -293,6 +299,12 @@
 
 *****************************
 # 磁盘
+
+## 文件系统
+> [参考博客: Linux 文件系统剖析](https://www.ibm.com/developerworks/cn/linux/l-linux-filesystem/index.htmlQ)
+> [参考博客: 详解NTFS文件系统](http://www.blogfshare.com/detail-ntfs-filesys.html)
+> [参考博客: 使用 FUSE 开发自己的文件系统](https://www.ibm.com/developerworks/cn/linux/l-fuse/)
+
 ## 分区介绍
 - /root 系统用户 root 的主目录
 - /home 其他用户的主目录分配路径
@@ -300,22 +312,35 @@
 
 ## 设备列表
 - /dev/random 产生随机数的设备
+- /proc/ 进程信息目录, 这是一个虚拟文件系统
 
 ## 常用命令
-- 创建一个空文件 `dd if=/dev/zero of=virtual.img bs=1M count=256` 查看大小 `du -h virtual.img`
 - 将虚拟磁盘镜像格式化为指定的文件系统 `sudo mkfs.ext4 virtual.img`
 - 查看支持的文件系统 `ls -l /lib/modules/$(uname -r)/kernel/fs`
-- 挂载这个镜像到`/mnt`：`mount -o loop -t ext4 virtual.img /mnt`
-- 只读方式挂载 `mount -o loop --ro virtual.img /mnt`
-- 卸载挂载的磁盘 `sudo umount /mnt`
+- [重命名USB磁盘挂载分区卷标](http://wiki.ubuntu.org.cn/%E9%87%8D%E5%91%BD%E5%90%8DUSB%E7%A3%81%E7%9B%98%E6%8C%82%E8%BD%BD%E5%88%86%E5%8C%BA%E5%8D%B7%E6%A0%87)
+
+> 格式化分区
+1. 格式化为ext4 `mkfs -t ext4 /dev/sdc1`
 
 ### dd
 > [使用 dd 命令进行硬盘 I/O 性能检测 ](https://linux.cn/article-6104-1.html)
+
+- 例如创建一个空4G文件: `dd if=/dev/zero of=/testfile bs=1024k count=4096`
 
 ### mount
 - `mount [options] [source] [directory] `
 - `mount [-o [操作选项]] [-t 文件系统类型] [-w|--rw|--ro] [文件系统源] [挂载点]`
 - 查看已挂载信息 `mount`
+
+- 挂载这个镜像到 /mnt ：`mount -o loop -t ext4 virtual.img /mnt`
+- 只读方式挂载 `mount -o loop --ro virtual.img /mnt`
+- 卸载挂载的磁盘 `sudo umount /mnt`
+
+> 自动挂载分区 (root身份运行命令)
+1. `blkid` 查看设备详情, 找到要挂载的硬盘的 UUID 文件系统类型
+1. `vim /etc/fstab` 在文件中添加, 记得要 先创建该目录 `/media/kcp/Data1`
+    - `UUID=42168DE83BC5EDAD /media/kcp/Data1 ntfs defaults 0 1` 类似配置
+    - `mount -a` 切记要先用该命令测试下该文件是否正确, 如果有错误, 系统关机后就开不了机了(可以使用U盘进系统进行修改该文件)
 
 ### fdisk
 - 查看磁盘分区表信息 ：`sudo fdisk -l `
@@ -336,6 +361,7 @@
     - sort – 对文本文件按行排序
     - -rf – （-r）将比较的结果逆序输出，（-f）忽略大小写
     - head – 输出文件的头几行
+
 *********************************
 # 日志
 > 基本都在 `/var/log` 下
