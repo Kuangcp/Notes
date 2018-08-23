@@ -17,6 +17,8 @@
 - `sudo找不到` 就安装 sudo
 - locale-gen 安装locales 使用`locale-gen --purge`命令进行更新编码
 
+> Linux上的报错, 提示说找不到共享库 | [参考解决方式 ](http://www.cnblogs.com/Anker/p/3209876.html)
+
 ## 其他
 ### 终端响铃
 > [参考博客: Linux中关闭响铃](https://blog.csdn.net/u010691256/article/details/9048729)
@@ -43,7 +45,7 @@
     - `sudo apt-get install bumblebee-nvidia nvidia-driver nvidia-settings`
 
 ### 笔记本突然断电导致开机报错
-> fsck exited with status code 4
+> 报错信息: fsck exited with status code 4
 
 1. 根据报错提示的分区, 进行修复, 由于我的Linux是ext3文件系统
 1. `fsck.ext3 -y /dev/sda9` **分区根据实际情况**

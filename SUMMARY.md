@@ -101,6 +101,7 @@
     * 【 Java/Ecosystem 】
         * [ Activiti ](/Java/Ecosystem/Activiti.md)
         * [ Blade ](/Java/Ecosystem/Blade.md)
+        * [ Elasticsearch ](/Java/Ecosystem/Elasticsearch.md)
         * [ Guava ](/Java/Ecosystem/Guava.md)
         * [ Hibernate ](/Java/Ecosystem/Hibernate.md)
         * [ JPA ](/Java/Ecosystem/JPA.md)
@@ -111,6 +112,7 @@
         * [ Netty ](/Java/Ecosystem/Netty.md)
         * [ POI ](/Java/Ecosystem/POI.md)
         * [ Querydsl ](/Java/Ecosystem/Querydsl.md)
+        * [ Solr ](/Java/Ecosystem/Solr.md)
         * [ Struts ](/Java/Ecosystem/Struts.md)
         * [ Vertx ](/Java/Ecosystem/Vertx.md)
     * 【 Java/MSA 】
@@ -186,8 +188,6 @@
         * [ Svn ](/Linux/Vcs/Svn.md)
     * [ JavaDevInit ](/Linux/JavaDevInit.md)
 * 【 MyBlog 】
-    * 【 MyBlog/Problem 】
-        * [ shared-libiraries ](/MyBlog/Problem/shared-libiraries.md)
     * [ 2018-3-15-install-deepin ](/MyBlog/2018-3-15-install-deepin.md)
     * [ why-put-netty-in-tomcat ](/MyBlog/why-put-netty-in-tomcat.md)
 * 【 Python 】

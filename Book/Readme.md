@@ -45,7 +45,7 @@
 > [jb51 编程专区](https://www.jb51.net/books/list422_1.html)
 > [3322.cc电子书专区](http://www.3322.cc/sort/132-1.html)
 > [java1234](java1234.com)
-
+> [ 6 个高质量电子书网站](http://tech.ifeng.com/a/20180802/45098280_0.shtml)
 
 # 书籍简单读后感
 - [ ] Linux Shell 脚本攻略

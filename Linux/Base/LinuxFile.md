@@ -297,27 +297,30 @@ dd if=/dev/zero of=/swapfile bs=1024k count=4096 && mkswap /swapfile && swapon /
 #### 合并文件
 1. 最简单就是 `cat file1 file2 > result`
 
-*****************************
+******************************************
+******************************************
 # 磁盘
+> 附: [Linux系统基本目录结构](/Linux/Base/LinuxDirectoryStructure.md)
 
 ## 文件系统
 > [参考博客: Linux 文件系统剖析](https://www.ibm.com/developerworks/cn/linux/l-linux-filesystem/index.htmlQ)
 > [参考博客: 详解NTFS文件系统](http://www.blogfshare.com/detail-ntfs-filesys.html)
 > [参考博客: 使用 FUSE 开发自己的文件系统](https://www.ibm.com/developerworks/cn/linux/l-fuse/)
 
-## 分区介绍
-- /root 系统用户 root 的主目录
-- /home 其他用户的主目录分配路径
+## 安装系统时基本分区
+- / 根目录, 操作系统安装的目录
+- /home 普通用户的主目录分配路径
 - /boot 系统引导目录
 
+********************
 ## 设备列表
 - /dev/random 产生随机数的设备
-- /proc/ 进程信息目录, 这是一个虚拟文件系统
 
+**********************
 ## 常用命令
-- 将虚拟磁盘镜像格式化为指定的文件系统 `sudo mkfs.ext4 virtual.img`
-- 查看支持的文件系统 `ls -l /lib/modules/$(uname -r)/kernel/fs`
-- [重命名USB磁盘挂载分区卷标](http://wiki.ubuntu.org.cn/%E9%87%8D%E5%91%BD%E5%90%8DUSB%E7%A3%81%E7%9B%98%E6%8C%82%E8%BD%BD%E5%88%86%E5%8C%BA%E5%8D%B7%E6%A0%87)
+1. 将虚拟磁盘镜像格式化为指定的文件系统 `sudo mkfs.ext4 virtual.img`
+1. 查看支持的文件系统 `ls -l /lib/modules/$(uname -r)/kernel/fs`
+1. [重命名USB磁盘挂载分区卷标](http://wiki.ubuntu.org.cn/%E9%87%8D%E5%91%BD%E5%90%8DUSB%E7%A3%81%E7%9B%98%E6%8C%82%E8%BD%BD%E5%88%86%E5%8C%BA%E5%8D%B7%E6%A0%87)
 
 > 格式化分区
 1. 格式化为ext4 `mkfs -t ext4 /dev/sdc1`
@@ -356,7 +359,7 @@ dd if=/dev/zero of=/swapfile bs=1024k count=4096 && mkswap /swapfile && swapon /
 - du -sk * | grep guojf //看一个人的大小
 - du -m | cut -d "/" -f 2 //看第二个/ 字符前的文字
 
-- 获取当前目录最大的6个文件 `du -hsx * | sort -rh | head -6` 
+- 获取当前目录最大的6个目录或文件 `du -hsx * | sort -rh | head -6` 
     - -hsx – （-h）更易读的格式，（-s）汇总输出，（-x）跳过其他文件系统的文件
     - sort – 对文本文件按行排序
     - -rf – （-r）将比较的结果逆序输出，（-f）忽略大小写

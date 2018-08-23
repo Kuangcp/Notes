@@ -23,7 +23,7 @@
     - [Mageia](#mageia)
     - [CDLinux](#cdlinux)
 
-`目录 end` |_2018-08-21_| [码云](https://gitee.com/gin9) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104) | [cnblogs](http://www.cnblogs.com/kuangcp)
+`目录 end` |_2018-08-23_| [码云](https://gitee.com/gin9) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104) | [cnblogs](http://www.cnblogs.com/kuangcp)
 ****************************************
 # Linux各个发行版本使用体验
 > 一边用一边记录吧 [发行版热度对比](https://distrowatch.com/dwres.php?resource=popularity)
@@ -83,6 +83,10 @@ _服务器_
 - 2018-05-24 15:08:49 `Gtk-WARNING **: 无法在模块路径中找到主题引擎：“adwaita”`， 安装 这个包 gnome-themes-standard
 - 2018-06-15 19:50:40 deepin-wm 进程, 也就是Deepin的桌面管理器, 启动久了之后就会发生内存占用非常大的情况, 关闭窗口特效, 再打开就好了
 - 2018-08-21 20:34:07 更新到15.7, 然后就是一堆的小问题, 任务栏和屏幕边缘有空隙, 多任务切换方式的变化, 原先用Wine安装的企业QQ不能启动... 但是确实Deepin 现在更快了
+    - 使用闭源驱动方案, 休眠一会就卡死了, 只能强制关机, 尝试了开源驱动后, 也是一样 显卡是 Nvidia GTX1050
+- 2018-08-23 09:55:15 遭遇用过的最大问题, 笔记本升级到15.7后有显卡明显不兼容, 各种显示上的卡顿, 切换Prime解决方案后, 内核load不进来, 启动不了了
+    - 显卡 NVIDIA 840m
+    - 也许重装Deepin15.7, 也许装Manjaro-KDE
 
 > [显卡驱动作死录](https://www.jianshu.com/p/f53c8223bac6)
 #### 双系统安装

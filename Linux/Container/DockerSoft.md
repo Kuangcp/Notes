@@ -9,6 +9,7 @@
     - [Centos-ssh](#centos-ssh)
 - [语言环境](#语言环境)
     - [Java](#java)
+        - [Jib](#jib)
 - [数据库](#数据库)
     - [PostgreSQL](#postgresql)
     - [Oracle](#oracle)
@@ -29,7 +30,7 @@
         - [Coding平台的WebIDE](#coding平台的webide)
     - [图形化管理工具](#图形化管理工具)
 
-`目录 end` |_2018-08-10_| [码云](https://gitee.com/gin9) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104) | [cnblogs](http://www.cnblogs.com/kuangcp)
+`目录 end` |_2018-08-23_| [码云](https://gitee.com/gin9) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104) | [cnblogs](http://www.cnblogs.com/kuangcp)
 ****************************************
 # 使用Docker安装软件
 > [如何创建尽可能小的Docker容器教程](http://www.open-open.com/lib/view/open1419760974078.html)
@@ -97,7 +98,12 @@
 ## Java
 - 基础镜像：
     - [官方镜像](https://hub.docker.com/_/java/)
+
 > [参考博客: Java和Docker限制的那些事儿](http://www.techug.com/post/java-and-docker-memory-limits.html)`描述了一个天坑`
+
+### Jib
+> [参考博客: GOOGLE JIB](https://my.oschina.net/u/3666671/blog/1845065) | [Github:jib](https://github.com/GoogleContainerTools/jib)
+
 **********************************
 # 数据库
 ## PostgreSQL

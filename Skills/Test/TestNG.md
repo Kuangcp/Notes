@@ -4,16 +4,15 @@
     - [使用](#使用)
         - [基本注解](#基本注解)
 
-`目录 end` |_2018-08-16_| [码云](https://gitee.com/gin9) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104) | [cnblogs](http://www.cnblogs.com/kuangcp)
+`目录 end` |_2018-08-23_| [码云](https://gitee.com/gin9) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104) | [cnblogs](http://www.cnblogs.com/kuangcp)
 ****************************************
 # TestNG
-> [Official Doc](http://testng.org/doc/documentation-main.html)
+> [Official Doc](http://testng.org/doc/documentation-main.html) 
 
-> [易百: TestNG教程](https://www.yiibai.com/testng/)
-> [TestNG 入门教程](http://www.cnblogs.com/TankXiao/p/3888070.html)
-> [testNG官方文档](http://testng.org/doc/index.html) | [Github:TestNG](https://github.com/cbeust/testng)
+> [易百: TestNG教程](https://www.yiibai.com/testng/)  
+> [TestNG 入门教程](http://www.cnblogs.com/TankXiao/p/3888070.html) 
+> [testNG官方文档](http://testng.org/doc/index.html) | [Github:TestNG](https://github.com/cbeust/testng)  
 > [tools](http://toolsqa.com/selenium-webdriver/testng-introduction/)
-
 
 ## 使用
 > 基本使用

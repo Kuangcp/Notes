@@ -23,7 +23,7 @@
         - [打包最新版git](#打包最新版git)
         - [Dockerfile中新建用户](#dockerfile中新建用户)
 
-`目录 end` |_2018-08-04_| [码云](https://gitee.com/gin9) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104) | [cnblogs](http://www.cnblogs.com/kuangcp)
+`目录 end` |_2018-08-23_| [码云](https://gitee.com/gin9) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104) | [cnblogs](http://www.cnblogs.com/kuangcp)
 ****************************************
 
 # Dockerfile
@@ -65,6 +65,9 @@ _docker build_
 
 - 如果FROM使用中，找不到对应的版本的镜像，整个Dockerfile就会报错返回
 
+> 在 17.05 版本开始, 支持分步构建, 
+>1. 例如基于一个编译环境镜像, 编译得到结果文件, 然后基于运行环境, 将结果文件复制过来, 构建成新的镜像
+>1. 构建出来的镜像是不包含编译环境的
 ### MAINTAINER
 - 留开发者名字 例如 `MAINTAINER kuangcp myth.kuang@gmail.com`
 - 可以放多个信息，但是建议只有开发者信息，其他的放在Labels里 

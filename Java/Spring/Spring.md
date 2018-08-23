@@ -22,11 +22,12 @@
             - [1 Spring AOP还是完全用AspectJ？](#1-spring-aop还是完全用aspectj)
             - [2 Spring AOP中使用@AspectJ还是XML？](#2-spring-aop中使用@aspectj还是xml)
             - [3 混合切面类型](#3-混合切面类型)
+    - [Schedule](#schedule)
     - [Websocket](#websocket)
         - [maven配置](#maven配置)
     - [Web开发上的一些优秀的习惯](#web开发上的一些优秀的习惯)
 
-`目录 end` |_2018-08-10_| [码云](https://gitee.com/gin9) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104) | [cnblogs](http://www.cnblogs.com/kuangcp)
+`目录 end` |_2018-08-23_| [码云](https://gitee.com/gin9) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104) | [cnblogs](http://www.cnblogs.com/kuangcp)
 ****************************************
 # Spring
 > [Spring官网](https://spring.io/) | [spring4all社区](http://www.spring4all.com/)
@@ -290,6 +291,17 @@ XML风格有两个缺点。第一是它不能完全将需求实现的地方封�
 和用 `<aop:advisor>` 声明的advisor，甚至是使用Spring 1.2风格的代理和拦截器。
 由于以上几种风格的切面定义的都使用了相同的底层机制，因此可以很好的共存。
 
+*****************
+## Schedule
+> [Official Doc](https://docs.spring.io/spring-framework/docs/current/spring-framework-reference/integration.html#scheduling)
+
+> [参考博客: The @Scheduled Annotation in Spring](https://www.baeldung.com/spring-scheduled-tasks)  
+> [参考博客: Spring Scheduler的使用与坑](http://qinghua.github.io/spring-scheduler/)
+> [参考博客: [Spring]支持注解的Spring调度器](https://www.cnblogs.com/jingmoxukong/p/5825806.html#%E5%AE%8C%E6%95%B4%E8%8C%83%E4%BE%8B)
+> [参考博客: spring scheduled的动态线程池调度和任务进度的监控](https://blog.csdn.net/yyx1025988443/article/details/78698046)
+
+- [cron maker](http://www.cronmaker.com/)
+- []()
 *******************
 ## Websocket
 ### maven配置
