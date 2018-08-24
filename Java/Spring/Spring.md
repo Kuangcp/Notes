@@ -292,13 +292,15 @@ XML风格有两个缺点。第一是它不能完全将需求实现的地方封�
 由于以上几种风格的切面定义的都使用了相同的底层机制，因此可以很好的共存。
 
 *****************
-## Schedule
+## Scheduling
 > [Official Doc](https://docs.spring.io/spring-framework/docs/current/spring-framework-reference/integration.html#scheduling)
 
 > [参考博客: The @Scheduled Annotation in Spring](https://www.baeldung.com/spring-scheduled-tasks)  
 > [参考博客: Spring Scheduler的使用与坑](http://qinghua.github.io/spring-scheduler/)
 > [参考博客: [Spring]支持注解的Spring调度器](https://www.cnblogs.com/jingmoxukong/p/5825806.html#%E5%AE%8C%E6%95%B4%E8%8C%83%E4%BE%8B)
 > [参考博客: spring scheduled的动态线程池调度和任务进度的监控](https://blog.csdn.net/yyx1025988443/article/details/78698046)
+
+其主体是 TaskExecutor 和 TaskScheduler 组成的, 也就是调度和执行
 
 - [cron maker](http://www.cronmaker.com/)
 - []()

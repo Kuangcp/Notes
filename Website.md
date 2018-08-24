@@ -84,8 +84,9 @@
 - [schacon.github.io](http://schacon.github.io/)
 - [dictionary](https://www.dictionary.com/)
 
-
 - [学术搜索](http://scholar.chongbuluo.com/)
+
+- [habitica](https://habitica.com/)`通过游戏的方式激励完成个人日常任务`
 # 社区网站
 - [掘金门户网](http://e.xitu.io)
 - [吾爱破解](https://www.52pojie.cn/)
