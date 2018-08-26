@@ -2,7 +2,6 @@
 
 * [ Introduction ](README.md)
 
-* [ ApiAndDoc ](./ApiAndDoc.md)
 * [ Platform ](./Platform.md)
 * [ Process ](./Process.md)
 * [ Repository ](./Repository.md)

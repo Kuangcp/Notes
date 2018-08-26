@@ -19,6 +19,7 @@
     - [包装类型](#包装类型)
         - [String](#string)
             - [StringBuffer和StringBuilder](#stringbuffer和stringbuilder)
+        - [Float](#float)
         - [Double](#double)
         - [Integer](#integer)
         - [Long](#long)
@@ -43,7 +44,7 @@
     - [DAO](#dao)
 - [关键字](#关键字)
 
-`目录 end` |_2018-08-04_| [码云](https://gitee.com/gin9) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104) | [cnblogs](http://www.cnblogs.com/kuangcp)
+`目录 end` |_2018-08-26_| [码云](https://gitee.com/gin9) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104) | [cnblogs](http://www.cnblogs.com/kuangcp)
 ****************************************
 # 基础语法
 
@@ -75,13 +76,22 @@
 ## 基础数据类型
 > 八种基本数据类型 byte char boolean short int long float double
 
+> [参考博客: Java 有值类型吗？](http://www.yinwang.org/blog-cn/2016/06/08/java-value-type)
+
+确实, 这样来看Java没有值类型才是更统一的, 不过有没有对程序都是一样的, 因为Java没有解引用, 基本数据类型又没有成员, 所以值还是引用, 没差
+
 ### byte
-> Java8以前是使用char数组来存放String, Java8开始就是byte数组了
+> 字节
+
+Java8以前是使用 char数组 来存放String, Java8开始就是 byte数组 了
 
 ### char
+
 ### boolean
 > [参考 你真的知道Java中boolean类型占用多少个字节吗？](https://www.jianshu.com/p/2f663dc820d0)
+
 ### short
+
 ### int
 > 数值范围 `+- 2147483647` = 2^31-1 也就说明了int是占四个字节 32位 一位是符号位 (操作系统的不同也会有差异)
 
@@ -108,6 +118,7 @@
 #### StringBuffer和StringBuilder
 > [参考博客](https://blog.csdn.net/rmn190/article/details/1492013)
 
+### Float
 ### Double
 ### Integer
 ### Long
@@ -138,6 +149,7 @@ Tool.INSTANCE.getNum();
 
 ****************************
 ## 自动拆装箱
+> 基本数据类型和包装类型在Java中是可以视为等价的, 就是因为自动拆装箱的存在
 
 ***************************
 ## 内部类
@@ -158,7 +170,7 @@ _但是内部类的属性不能用static修饰_
 **********************
 ## 时间类型
 
-1. 最早是 Date 然后 Calendar 然后 Instant 
+1. 最早常用是 Date 然后 Calendar 然后 Instant LocalDateTime ...
 
 _获取指定时间_ [获取指定时间的时间戳](https://blog.csdn.net/jssongwei/article/details/71403354)
 

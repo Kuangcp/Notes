@@ -8,6 +8,7 @@
     - [娱乐](#娱乐)
 - [资源网](#资源网)
     - [字典网站](#字典网站)
+    - [图书馆](#图书馆)
 - [学习网站](#学习网站)
     - [并发](#并发)
     - [语言](#语言)
@@ -49,7 +50,7 @@
 - [安卓手机](#安卓手机)
     - [Google](#google)
 
-`目录 end` |_2018-08-13_| [码云](https://gitee.com/gin9) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104) | [cnblogs](http://www.cnblogs.com/kuangcp)
+`目录 end` |_2018-08-26_| [码云](https://gitee.com/gin9) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104) | [cnblogs](http://www.cnblogs.com/kuangcp)
 ****************************************
 # 常用的网站
 ## 软件下载站
@@ -124,6 +125,10 @@
 **英文字典**
 - [https://www.merriam-webster.com](https://www.merriam-webster.com)
 - [https://www.dictionary.com](https://www.dictionary.com)
+
+## 图书馆
+- [维基教科书](https://zh.wikibooks.org)
+
 *********************************
 # 学习网站
 ## 并发

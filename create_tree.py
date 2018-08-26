@@ -22,7 +22,7 @@ end='\033[0m'
 ignoreFolder=['.git', 'backup', '.vscode']
 # 所有要被忽略的文件
 ignoreFile=['PULL_REQUEST_TEMPLATE.md', 'ISSUE_TEMPLATE.md', 'CODE_OF_CONDUCT.md','README.md', 
-    'Readme.md', 'CSS3.md', 'HTML5.md']
+    'Readme.md', 'CSS3.md', 'HTML5.md', '_Sidebar.md']
 
 result = []
 
