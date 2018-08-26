@@ -2,21 +2,44 @@ import os
 import sys
 import getopt
 import subprocess
+import fire
+
+red='\033[0;31m'
+green='\033[0;32m'
+yellow='\033[0;33m'
+blue='\033[0;34m'
+purple='\033[0;35m'
+cyan='\033[0;36m'
+white='\033[0;37m'
+end='\033[0m'
+
 
 '''
     通过运行脚本，读取文件夹的文件生成目录，为了gitbook和wiki
     使用： python3 create_tree.py -h 查看帮助
 '''
 # 忽略的文件夹
-ignoreFolder=['.git', 'backup']
+ignoreFolder=['.git', 'backup', '.vscode']
 # 所有要被忽略的文件
-ignoreFile=['PULL_REQUEST_TEMPLATE.md', 'ISSUE_TEMPLATE.md', 'CODE_OF_CONDUCT.md',
-       'README.md', 'Readme.md', 'CSS3.md', 'HTML5.md', '_Sidebar.md']
+ignoreFile=['PULL_REQUEST_TEMPLATE.md', 'ISSUE_TEMPLATE.md', 'CODE_OF_CONDUCT.md','README.md', 
+    'Readme.md', 'CSS3.md', 'HTML5.md']
+
 result = []
 
-def showHelp():
-    print("使用: python3 readFolder_tree.py [-s] [-a] [-h] ")
-    print("参数说明: \n -s     : 控制台显示生成的目录\n -a     : 生成的目录追加到文件中去\n -w     : 生成Wiki格式目录\n -h     : 帮助")
+def logError(msg):
+    print('%s%s%s'%(red, msg, end))
+
+def logInfo(msg):
+    print('%s%s%s'%(green, msg, end))
+
+def printParam(verb, args, comment):
+    print('  %s%-5s %s%-6s %s%s'%(green, verb, yellow, args, end, comment))
+
+def help():
+    print('run: %s  %s <verb> %s <args>%s'%('create_tree.py', green, yellow, end))
+    printParam('-h', '', 'help')
+    printParam('-s', '', 'show catalog')
+    printParam('-a', '', 'append cataloag to SUMMARAY.md')
 
 # 列出所有文件的列表 并排好序
 def listFiles(name):
@@ -34,13 +57,10 @@ def listFiles(name):
     return lists 
         
 # 处理文件
-def handlerFile(name, count, path, wiki=False):
+def handlerFile(name, count, path):
     temp = '    '*count
     if not name in ignoreFile:
-        if wiki == False:
-            result.append(temp+'* [ '+name[:-3]+' ](/'+path+')')
-        else:
-            result.append(temp+'* ['+name[:-3]+']('+name[:-3]+')')  # wiki 目录
+        result.append(temp+'* [ '+name[:-3]+' ](/'+path+')')
 
 # 处理标题(文件夹)
 def handlerFolder(name, count):
@@ -48,55 +68,45 @@ def handlerFolder(name, count):
     result.append(temp+'* 【 '+name+' 】') 
 
 # 递归 读取文件夹
-def readFolder(name, count, wiki=False):
+def readFolder(name, count):
     handlerFolder(name,count)
     for fold in listFiles(name):
         if fold in ignoreFolder:
             continue
         if not os.path.isdir(name+'/'+fold):
-            handlerFile(fold, count, name+'/'+fold, wiki)
+            handlerFile(fold, count, name+'/'+fold)
         else:
-            readFolder(name+'/'+fold, count+1, wiki)
+            readFolder(name+'/'+fold, count+1)
 
-def readAll(wiki=False):
+def readAll():
     Folders = os.listdir('./')
     Folders.sort()
     # 处理根目录下的md文件
     for fold in Folders:
         if fold.endswith('.md') and not fold in ignoreFile:
-            if wiki == False:
-                result.append("* [ "+fold[:-3]+" ](./"+fold+")")
-            else:
-                result.append("* [ "+fold[:-3]+" ]("+fold[:-3]+")")
+            result.append("* [ "+fold[:-3]+" ](./"+fold+")")
     # 得到根目录下所有文件夹，然后开始递归得到所有文件       
     for fold in Folders:
         if os.path.isdir(fold) and not fold in ignoreFolder :
-            readFolder(fold, 1, wiki)
+            readFolder(fold, 1)
 
-# 处理参数
-opts, args = getopt.getopt(sys.argv[1:], "shaw")
-for op,value in opts:
+def main(verb=None):
+    if verb == '-h':
+        help()
+        return
     # 只在终端输出
-    if op == "-s":
+    if verb == "-s":
         readAll()
         for res in result:
-            print(res) 
+            print(res)
     # 追加到SUMMARY
-    elif op == "-a":
+    if verb == "-a":
         readAll()
         subprocess.call('mv SUMMARY.md SUMMARY.md.bak',shell=True)
         with open('SUMMARY.md','w+') as dest:
             dest.write('# Summary\n\n* [ Introduction ](README.md)\n\n')
             for res in result:
                 dest.write(res+'\n')
-        print('重新生成目录树完成!')
-    # 追加到 _Sidebar.md
-    elif op == "-w":
-        readAll(True)
-        with open('_Sidebar.md','w+') as dest:
-            dest.write('* [ Introduction ](Home)\n')
-            for res in result:
-                dest.write(res+'\n')
-    # 帮助信息
-    elif op == "-h":
-        showHelp()
+        logInfo('重新生成目录树完成!')
+
+fire.Fire(main)

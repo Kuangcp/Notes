@@ -10,6 +10,7 @@
         - [nmap](#nmap)
         - [apache benchmark](#apache-benchmark)
     - [日常工具](#日常工具)
+        - [百度网盘](#百度网盘)
         - [输入法](#输入法)
             - [搜狗输入法](#搜狗输入法)
             - [rime](#rime)
@@ -61,7 +62,7 @@
     - [安全工具](#安全工具)
         - [gpg](#gpg)
 
-`目录 end` |_2018-08-19_| [码云](https://gitee.com/gin9) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104) | [cnblogs](http://www.cnblogs.com/kuangcp)
+`目录 end` |_2018-08-26_| [码云](https://gitee.com/gin9) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104) | [cnblogs](http://www.cnblogs.com/kuangcp)
 ****************************************
 # 软件使用记事
 ## 【包管理】
@@ -119,6 +120,9 @@
 
 ************************************
 ## 日常工具
+### 百度网盘
+- [百度网盘命令客户端](https://github.com/iikira/BaiduPCS-Go) `Go语言实现`
+
 ### 输入法
 #### 搜狗输入法
 > 唯一一个大厂支持Linux 
@@ -377,7 +381,6 @@ CMD编辑器
 > [开发者版本链接](https://www.mozilla.org/zh-CN/firefox/developer/) | [开发工具](https://firefox-dev.tools/)  
 > [使用说明文档](https://developer.mozilla.org/zh-CN/docs/Tools?utm_source=devtools&utm_medium=tabbar-menu)
 
-**************************************************
 #### 必备插件
 > [开发自己的插件](https://github.com/Kuangcp/LearnWebExtension)
 
@@ -425,6 +428,13 @@ CMD编辑器
     1. 地址栏 : `about:config` 
     1. 右键新建字符串 `network.security.ports.banned.override` 
     1. 输入值 81,88,98 也可以是 6000-6005, 省事就 0-65535(不建议)
+
+1. 对于自己喜欢多开火狐的习惯, 整理如下习惯
+    - 安装开发版本, 使用一个默认的配置
+    - 使用开发版本的可执行文件, 配置一个新的配置目录, 也就是一个新的火狐
+1. 前者是重度使用(往往很多标签20+), 常用的标签页全部固定, 一些TODO的tab也放在这里, 用于开发和娱乐(1000M-2000M)
+1. 后者是轻度使用(开10个以下标签), 仅在内存不够时, 只用于内存不足时开发必需 (一般400M左右)
+
 *********************
 ### seamonkey
 > Mozilla基金会另一个项目 [seamonkey](https://www.seamonkey-project.org/) 亮点在于内置IRC

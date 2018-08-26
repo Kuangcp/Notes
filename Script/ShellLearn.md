@@ -18,19 +18,23 @@
         - [数组](#数组)
     - [结构](#结构)
         - [参数读取](#参数读取)
+- [1. 简单的方式](#1-简单的方式)
+- [2. 规范化的参数](#2-规范化的参数)
         - [判断](#判断)
             - [if](#if)
             - [case](#case)
         - [循环](#循环)
     - [函数](#函数)
     - [配置文件](#配置文件)
-    - [终端中的命令参数自动补全](#终端中的命令参数自动补全)
+    - [脚本的参数自动补全](#脚本的参数自动补全)
+        - [Bash](#bash)
+        - [Zsh](#zsh)
     - [常用模块](#常用模块)
         - [时间](#时间)
     - [工具](#工具)
         - [shyaml](#shyaml)
 
-`目录 end` |_2018-08-09_| [码云](https://gitee.com/gin9) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104) | [cnblogs](http://www.cnblogs.com/kuangcp)
+`目录 end` |_2018-08-26_| [码云](https://gitee.com/gin9) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104) | [cnblogs](http://www.cnblogs.com/kuangcp)
 ****************************************
 # 学习Shell
 > 首先语法不像别的语言可读性好，比如Python，然后方言众多，学习比Python2，3还恶心  
@@ -207,11 +211,40 @@ _字符串拆分成数组_
 ## 结构
 ### 参数读取
 > [参考博客](http://www.cnblogs.com/FrankTan/archive/2010/03/01/1634516.html) `命令行选项 参数处理`
+
 - 只是 $1 $2 ....
     - 脚本退出运行 `exit 0`
-- 得到脚本绝对路径; 如果只是执行 pwd 只是得到执行脚本时的当前绝对路径而已
+
+> 得到脚本绝对路径; 如果只是执行 pwd 只是得到执行脚本时的当前绝对路径而已
 ```sh
 basepath=$(cd \`dirname $0\`; pwd) 
+```
+
+```sh
+# 1. 简单的方式
+case $1 in 
+  -h | h)
+    echo "help"
+  ;;
+  *)
+    echo "default"
+  ;;
+esac
+# 2. 规范化的参数
+while getopts "hup:" opt; do
+  case "$opt" in
+    h)
+      usage
+      exit 0
+      ;;
+    u)
+      UPCASE=true
+      ;;
+    d)
+      DATE=$OPTARG
+      ;;
+  esac
+done
 ```
 ### 判断
 #### if
@@ -273,8 +306,16 @@ _判断文件_
 > [参考博客](http://blog.csdn.net/xinfuqizao/article/details/21812003)
 
 ********************
-## 终端中的命令参数自动补全
+## 脚本的参数自动补全
+> [参考博客: 命令行自动补全原理 ](http://www.cnblogs.com/wang_yb/p/5969451.html)
 
+### Bash
+
+### Zsh
+> 更为直观, 简单
+
+学习怎么使用的话, 可以看上面的博客(虽然有点简陋), 但是如果是 oh-my-zsh 的用户, 可以直接看别人的插件, 模仿就行了, 例如 redis-cli 插件的自动补全, 就很简单直接
+1. `#compdef redis-cli rec` 这第一行很重要, 定义了是对哪个命令或脚本的自动补全
 *****************
 ## 常用模块
 ### 时间
@@ -285,3 +326,4 @@ _判断文件_
 
 ### shyaml
 > [参考](https://linuxtoy.org/archives/shyaml.html)
+

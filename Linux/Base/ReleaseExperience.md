@@ -8,6 +8,7 @@
         - [Ubuntu](#ubuntu)
         - [Ubuntu Mint](#ubuntu-mint)
         - [Deepin](#deepin)
+            - [关于显卡](#关于显卡)
             - [双系统安装](#双系统安装)
         - [raspberry-pi](#raspberry-pi)
     - [arch系](#arch系)
@@ -23,7 +24,7 @@
     - [Mageia](#mageia)
     - [CDLinux](#cdlinux)
 
-`目录 end` |_2018-08-23_| [码云](https://gitee.com/gin9) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104) | [cnblogs](http://www.cnblogs.com/kuangcp)
+`目录 end` |_2018-08-26_| [码云](https://gitee.com/gin9) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104) | [cnblogs](http://www.cnblogs.com/kuangcp)
 ****************************************
 # Linux各个发行版本使用体验
 > 一边用一边记录吧 [发行版热度对比](https://distrowatch.com/dwres.php?resource=popularity)
@@ -88,7 +89,19 @@ _服务器_
     - 显卡 NVIDIA 840m
     - 也许重装Deepin15.7, 也许装Manjaro-KDE
 
-> [显卡驱动作死录](https://www.jianshu.com/p/f53c8223bac6)
+#### 关于显卡
+> [参考博客: 显卡驱动作死录](https://www.jianshu.com/p/f53c8223bac6)
+
+> 个人折腾的整理
+当前系统为 Deepin15.7 已经支持多种解决方案了, 还有一个 `深度显卡驱动管理器`
+1. Intel默认驱动(也就是集显) 
+1. NVIDIA开源驱动 性能不好, 解析闭源驱动而来
+1. 大黄蜂方案 采用闭源驱动, 省电
+1. PRIME方案 高性能
+
+但是和我笔记本完美兼容的是 大黄蜂方案, 也就是之前安装的 `nvidia-driver`, `nvidia-setting`, `bumblebee-nvidia` 这一系列包
+PRIME方案切换后差点把内核挂了, 一顿瞎操作把系统救活了
+
 #### 双系统安装
 - 首先进入BIOS关闭 安全启动, 选择引导方式为Legacy关闭UEFI win8以上则要关闭快速启动, 
     - 制作启动U盘, 然后选择从U盘启动, 进行安装, 分区 / 和 /home / 30-40g就足够, 如果你所用的软件都习惯性解压运行的话

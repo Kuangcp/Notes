@@ -42,13 +42,17 @@
         - [SVN](#svn)
     - [repos的使用](#repos的使用)
 
-`目录 end` |_2018-08-21_| [码云](https://gitee.com/gin9) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104) | [cnblogs](http://www.cnblogs.com/kuangcp)
+`目录 end` |_2018-08-26_| [码云](https://gitee.com/gin9) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104) | [cnblogs](http://www.cnblogs.com/kuangcp)
 ****************************************
 # Git基础
 > Git is a free and open source distributed version control system designed to handle everything from small to very large projects with speed and efficiency. --[git-scm.com](https://git-scm.com/)
 
 > [参考博客: 重看”Linus Torvalds on Git”视频](http://www.techug.com/post/review-of-linus-torvalds-on-git.html)
 > [GUI客户端](https://git-scm.com/downloads/guisQ)
+
+- [git](https://git-scm.com/docs) `git`
+- [github开发接口](https://developer.github.com/v3/)
+- [tig](http://jonas.nitro.dk/tig/manual.html) `tig命令，git的加强版`
 ## 版本控制系统(VCS)
 - [码农翻身:小李的版本管理系统](https://mp.weixin.qq.com/s?__biz=MzAxOTc0NzExNg==&mid=2665513204&idx=1&sn=c4c493d771a167a84ace01c3e016417e&scene=21#wechat_redirect)
 

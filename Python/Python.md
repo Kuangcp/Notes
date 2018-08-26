@@ -50,7 +50,7 @@
         - [三方库](#三方库)
     - [QT](#qt)
 
-`目录 end` |_2018-08-08_| [码云](https://gitee.com/gin9) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104) | [cnblogs](http://www.cnblogs.com/kuangcp)
+`目录 end` |_2018-08-26_| [码云](https://gitee.com/gin9) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104) | [cnblogs](http://www.cnblogs.com/kuangcp)
 ****************************************
 # Python
 > [官网](https://www.python.org/)
@@ -61,6 +61,12 @@
 - [python输出带颜色的字体](http://www.cnblogs.com/oleli/p/5228880.html)
 
 > [Anaconda](https://docs.anaconda.com/anaconda/install/linux)`一站式集成环境`
+
+- [Python2](https://docs.python.org/2/) | [Python3](https://docs.python.org/3/)
+- [python-gtk3](https://python-gtk-3-tutorial.readthedocs.io/en/latest/introduction.html) `python-gtk3的开发`
+- [httpie](http://python.ctolib.com/httpie.html) `好用的类curl工具 文档` 
+- [一译](http://python.usyiyi.cn/)`翻译了大量Python文档`
+
 ## 简介
 
 ### 关于Python2.x与3.x的使用

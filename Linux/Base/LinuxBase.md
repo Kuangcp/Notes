@@ -30,7 +30,7 @@
     - [Search](#search)
     - [Control](#control)
 
-`目录 end` |_2018-08-20_| [码云](https://gitee.com/gin9) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104) | [cnblogs](http://www.cnblogs.com/kuangcp)
+`目录 end` |_2018-08-26_| [码云](https://gitee.com/gin9) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104) | [cnblogs](http://www.cnblogs.com/kuangcp)
 ****************************************
 # Linux系统
 > 只是记录了debian系的Linux, 不过也是大同小异
@@ -216,6 +216,8 @@ _系统运行级别_
 	- `sudo apt-get --purge remove 应用名`
 1. 只卸载程序，保留配置文件
 	- `sudo apt-get remove 应用名`
+
+- [snap](https://snapcraft.io/docs/core/usage) `snap 软件包管理器`
 
 **********************************************
 ## 终端命令

@@ -38,10 +38,12 @@
         - [Python使用](#python使用)
         - [webdis](#webdis)
 
-`目录 end` |_2018-08-20_| [码云](https://gitee.com/gin9) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104) | [cnblogs](http://www.cnblogs.com/kuangcp)
+`目录 end` |_2018-08-26_| [码云](https://gitee.com/gin9) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104) | [cnblogs](http://www.cnblogs.com/kuangcp)
 ****************************************
 # Redis
 > [Redis官网](https://redis.io/) | [Redis中文社区](http://www.redis.cn/) | [Redis教程](http://www.runoob.com/redis/redis-tutorial.html) 
+
+- [Redis中文文档](http://redisdoc.com/index.html)
 
 ## Book 
 > [Redis设计与实现 第二版](http://www.shouce.ren/api/view/a/13483)
@@ -326,6 +328,7 @@
 *******************
 ### Python使用
 > pip install redis 该模块和redis命令的用法几乎一模一样, 上手很快
+- [redis文档](https://pypi.python.org/pypi/redis/) `python操作redis的库的文档`
 
 ### webdis
 > 将redis变为一个简单的web接口  
