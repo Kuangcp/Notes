@@ -24,7 +24,7 @@
     - [Mageia](#mageia)
     - [CDLinux](#cdlinux)
 
-`目录 end` |_2018-08-26_| [码云](https://gitee.com/gin9) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104) | [cnblogs](http://www.cnblogs.com/kuangcp)
+`目录 end` |_2018-08-27_| [码云](https://gitee.com/gin9) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104) | [cnblogs](http://www.cnblogs.com/kuangcp)
 ****************************************
 # Linux各个发行版本使用体验
 > 一边用一边记录吧 
@@ -56,6 +56,7 @@ _查看发行版_
 ### Debian
 > 很古老但是很好用的系统 [官网](https://www.debian.org/index.zh-cn.html)
 
+> [参考博客: Debian8最小安装](https://www.howtoforge.com/tutorial/debian-8-jessie-minimal-server/)
 - 奇怪的是我在虚拟机里装了好几个好几次装不上, 装完一登录就只有壁纸
 
 _服务器_
@@ -64,6 +65,8 @@ _服务器_
 
 ### Ubuntu
 > 很多人的入门系统, 作为个人服务器也是首选, 软件比较新
+
+> [Ubuntu Server Tutorial](https://tutorials.ubuntu.com/tutorial/tutorial-install-ubuntu-server#0) | [网易镜像源](http://mirrors.163.com/ubuntu-releases/)`只有网易有server版的镜像`
 
 ### Ubuntu Mint
 > 作为桌面版系统, 该有的都有了, 个人比较喜欢

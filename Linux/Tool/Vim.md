@@ -10,7 +10,7 @@
         - [插入模式](#插入模式)
         - [命令模式](#命令模式)
 
-`目录 end` |_2018-08-04_| [码云](https://gitee.com/gin9) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104) | [cnblogs](http://www.cnblogs.com/kuangcp)
+`目录 end` |_2018-08-27_| [码云](https://gitee.com/gin9) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104) | [cnblogs](http://www.cnblogs.com/kuangcp)
 ****************************************
 # Vim 
 > 学习曲线很高，但是学会熟练使用后就效率很高
@@ -19,6 +19,8 @@
 
 - [Space Vim](https://github.com/topics/spacevim)`把Vim玩上天了`
     - [GitBook : Space Vim Guide](https://legacy.gitbook.com/book/everettjf/spacevimtutorial/details)
+    - [quick start](https://spacevim.org/quick-start-guide/)
+    - [中文 文档](https://spacevim.org/cn/documentation/)
 
 ## Tips
 1. 误按 `Ctrl S` 终止屏幕输出（即停止回显）你敲的依然有效，只是看不见 `Ctrl Q` 即可恢复

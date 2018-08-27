@@ -12,7 +12,7 @@
         - [卸载](#卸载)
     - [【Windows】](#windows)
 - [使用](#使用)
-    - [Docker仓库](#docker仓库)
+    - [Docker镜像仓库](#docker镜像仓库)
         - [在服务器上搭建私有仓库](#在服务器上搭建私有仓库)
     - [基础命令](#基础命令)
     - [镜像命令](#镜像命令)
@@ -36,11 +36,12 @@
     - [Docker-Swarm](#docker-swarm)
 - [网络](#网络)
 
-`目录 end` |_2018-08-10_| [码云](https://gitee.com/gin9) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104) | [cnblogs](http://www.cnblogs.com/kuangcp)
+`目录 end` |_2018-08-27_| [码云](https://gitee.com/gin9) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104) | [cnblogs](http://www.cnblogs.com/kuangcp)
 ****************************************
 # Docker
-> [官方文档](https://docs.docker.com/)
+> [官方文档](https://docs.docker.com/) | [docker-cn](www.docker-cn.com)`Docker中国`
 
+- [docker中文](http://www.docker.org.cn/)`社区`
 ## 简介
 - `Docker 是一个开源的应用容器引擎` 理解为加强版虚拟机
 - 让开发者可以打包他们的应用以及依赖包到一个可移植的容器中，然后发布到任何流行的 Linux 机器上，也可以实现虚拟化。容器是完全使用沙箱机制，相互之间不会有任何接口。
@@ -70,7 +71,7 @@
 > [docker资源汇总 ](http://www.open-open.com/lib/view/open1443075440623.html)
 > [简述 Docker](http://www.importnew.com/24658.html)
 
-- [ ] [Use multi-stage builds](https://docs.docker.com/develop/develop-images/multistage-build/)
+- [ ] todo [Use multi-stage builds](https://docs.docker.com/develop/develop-images/multistage-build/) `17.05+`
 
 ***************************************
 # 安装与卸载
@@ -83,19 +84,22 @@
 - 查看适用于当前系统的包：`snap install find`
 - 安装： `snap install docker`
 
-`Ubuntu或者Deepin`
+> Ubuntu
+- [Official: Ubuntu安装最新版](https://docs.docker.com/install/linux/docker-ce/ubuntu/#install-docker-ce-1)
 - `sudo apt install docker.io`
     - 关闭服务则是标准服务操作, service docker stop 
 
-`debian 8`
+> debian 8
 > [参考](http://www.docker.org.cn/book/install/install-docker-on-debian-8.0-jessie-34.html)
 - `sudo echo "deb http://http.debian.net/debian jessie-backports main" >> /etc/apt/sources.list`
 - `sudo apt-get install docker.io`
 
-`yum`
+> yum
 - `sudo yum install docker`
     - Ubuntu的话,Docker没有启动, 只要一执行Docker相关命令就会自动启动, 但是Centos要手动启动
     - `service docker start`  设置开机启动: `chkconfig docker on`
+> arch 
+- `pacman -S docker`
 
 ### 安装包安装
 > [官方文件地址](https://download.docker.com/linux/)
@@ -132,20 +136,32 @@ _Debian系_
 - 如果出现命令执行失败，可以登录docker的控制台直接执行 `boot2docker ssh`
 - 可以将镜像看成真正运行的程序，容器就是具体的一些配置，所以镜像是可以重复利用，容器出问题删掉就是了
 
-## Docker仓库
-> 默认的DockerHub因为在国外所以慢,不太稳定
+## Docker镜像仓库
+> 默认的DockerHub因为在国外所以网络不太稳定
 
-**时速云**
+> Docker中国
+- [Official doc](https://www.docker-cn.com/registry-mirror)
+
+`三种使用的方式`
+1. 使用指定的URL `docker pull registry.docker-cn.com/myname/myrepo:mytag`
+2. 仅仅配置当前守护进程, 重启就失效了`docker --registry-mirror=https://registry.docker-cn.com daemon`
+3. 修改 `/etc/docker/daemon.json`文件, 永久性更改
+```
+{
+  "registry-mirrors": ["https://registry.docker-cn.com"]
+}
+```
+> 时速云
 - `sudo docker pull index.tenxcloud.com/<namespace>/<repository>:<tag>`
 - 下载后可以用别名 `docker tag index.tenxcloud.com/docker_library/node:lastest node:lastest`
 - 然后为了控制台干净可以直接将原来的长命名tag直接删除
 
-**阿里云**
+> 阿里云
 - [开发者平台](https://dev.aliyun.com/search.html)
 - 配置命名空间，仓库，然后使用文档的配置即可
 
-**百度云**
-> 个人较为推荐使用  | [官方文档](https://cloud.baidu.com/doc/CCE/GettingStarted.html#.E9.95.9C.E5.83.8F.E4.BB.93.E5.BA.93)
+> 百度云
+- 个人较为推荐使用  | [官方文档](https://cloud.baidu.com/doc/CCE/GettingStarted.html#.E9.95.9C.E5.83.8F.E4.BB.93.E5.BA.93)
 
 1. 登录百度云镜像仓库
     - sudo docker login --username=[username] hub.baidubce.com

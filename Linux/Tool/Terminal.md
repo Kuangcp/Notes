@@ -17,7 +17,7 @@
         - [分享](#分享)
             - [asciinema](#asciinema)
 
-`目录 end` |_2018-08-15_| [码云](https://gitee.com/gin9) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104) | [cnblogs](http://www.cnblogs.com/kuangcp)
+`目录 end` |_2018-08-27_| [码云](https://gitee.com/gin9) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104) | [cnblogs](http://www.cnblogs.com/kuangcp)
 ****************************************
 # Terminal
 > 终端模拟器是吸引我放弃习惯的Windows而转投Linux怀抱的主要原因
@@ -62,7 +62,7 @@
 - colrm
     - ps | clorm 20 30 `colrm` _删除输出的20 到30 列_
 - xsel 
-    - `cat a.md | xsel -b` _将文件所有内容复制到剪贴板_
+    - `cat a.md | xsel -b` _将文件所有内容复制到剪贴板_ 但是处理大文件时会失效 xclip 更有效
 
 - htop _终端里的任务管理器_
 - strace -p PID _查看系统调用_
@@ -73,7 +73,7 @@
 - [WTF](https://wtfutil.com/posts/overview/) | [Github Repo](https://github.com/senorprogrammer/wtf)
     - 丰富的功能, 一个方便的终端控制面板
 
-- ag `快速当前目录下, 全文内容搜索, 快到可怕` silversearcher-ag
+- ag `快速当前目录下, 全文内容搜索, 快到可怕` ubuntu:silversearcher-ag  alpine:the_silver_searcher
     - [The Silver Searcher](https://github.com/ggreer/the_silver_searcher)
 
 ### 效率工具
