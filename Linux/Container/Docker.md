@@ -78,7 +78,11 @@
 > [daocloud安装帮助](http://get.daocloud.io/#install-docker) | [Docker 加速器](http://guide.daocloud.io/dcs/daocloud-9153151.html)
 
 ## Linux
+> [Official doc](https://docs.docker.com/install/linux/docker-ce/)
+
 ### 包管理器安装
+如果装 docker.io 则是旧版本 docker-ce 才是新的, 
+
 `snap`
 - 安装snap `sudo apt install snapd`
 - 查看适用于当前系统的包：`snap install find`
@@ -86,18 +90,19 @@
 
 > Ubuntu
 - [Official: Ubuntu安装最新版](https://docs.docker.com/install/linux/docker-ce/ubuntu/#install-docker-ce-1)
-- `sudo apt install docker.io`
+- `sudo apt install docker-ce`
     - 关闭服务则是标准服务操作, service docker stop 
 
 > debian 8
 > [参考](http://www.docker.org.cn/book/install/install-docker-on-debian-8.0-jessie-34.html)
 - `sudo echo "deb http://http.debian.net/debian jessie-backports main" >> /etc/apt/sources.list`
-- `sudo apt-get install docker.io`
+- `sudo apt-get install docker-ce`
 
 > yum
 - `sudo yum install docker`
     - Ubuntu的话,Docker没有启动, 只要一执行Docker相关命令就会自动启动, 但是Centos要手动启动
     - `service docker start`  设置开机启动: `chkconfig docker on`
+
 > arch 
 - `pacman -S docker`
 
