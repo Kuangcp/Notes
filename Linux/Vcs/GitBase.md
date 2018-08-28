@@ -47,28 +47,33 @@
 # Git基础
 > Git is a free and open source distributed version control system designed to handle everything from small to very large projects with speed and efficiency. --[git-scm.com](https://git-scm.com/)
 
-> [参考博客: 重看”Linus Torvalds on Git”视频](http://www.techug.com/post/review-of-linus-torvalds-on-git.html)
-> [GUI客户端](https://git-scm.com/downloads/guisQ)
+> [Github:git](https://github.com/git/git)  
+> [official doc: git](https://git-scm.com/docs) 
+> [Git官网中文教程](https://git-scm.com/book/zh/v2) | [对应的仓库](https://github.com/progit/progit2)  
 
-- [git](https://git-scm.com/docs) `git`
-- [github开发接口](https://developer.github.com/v3/)
-- [tig](http://jonas.nitro.dk/tig/manual.html) `tig命令，git的加强版`
+***************************
 ## 版本控制系统(VCS)
 - [码农翻身:小李的版本管理系统](https://mp.weixin.qq.com/s?__biz=MzAxOTc0NzExNg==&mid=2665513204&idx=1&sn=c4c493d771a167a84ace01c3e016417e&scene=21#wechat_redirect)
 
+**********************
 ## Git常用命令
-> [Git官网中文教程](https://git-scm.com/book/zh/v2)  
 > [git-tips](https://github.com/521xueweihan/git-tips)`学习Git的仓库`  
 > [git权威指南的组织](https://github.com/gotgit)`完整书籍,以及相关测试题`
 
 > [使用原理视角看 Git](https://coding.net/help/doc/practice/git-principle.html)
 > [如何高效地使用 Git](https://zhuanlan.zhihu.com/p/30561653)
 
+> [参考博客: 重看”Linus Torvalds on Git”视频](http://www.techug.com/post/review-of-linus-torvalds-on-git.html)
+> [GUI客户端](https://git-scm.com/downloads/guisQ)
+
+- [tig](http://jonas.nitro.dk/tig/manual.html) `tig命令，git的加强版`
 ### Tips
 - `git ls-files` 列出文件列表
     - `git ls-files | xargs wc -l` 计算文件中程序代码行数 通过工具：`xargs` `wc` (中文命名的文件编码问题无法计算行数)
     - `git ls-files | xargs cat | wc -l` 计算行数总和
 - [二分查找捉虫记](http://www.worldhello.net/2016/02/29/git-bisect-on-git.html)`通过分析提交历史查到哪次提交引起的Bug然后检出,修复`
+
+- [API: github开发接口](https://developer.github.com/v3/)
 
 ### 清理仓库
 > [bfg-cleaner](https://rtyley.github.io/bfg-repo-cleaner/)

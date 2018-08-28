@@ -71,15 +71,6 @@
 ### 终端模拟器对比
 > [详细](/Skills/Soft/Terminal.md)
 
-### 软件源列表
-- [参考博客 阿里云的软件源](https://hacpai.com/article/1482807364546?p=1&m=0)
-- [wiki-源列表说明](http://wiki.ubuntu.com.cn/%E6%BA%90%E5%88%97%E8%A1%A8)
-
-1. 源 URL 后的单词: 
-    1. main: 完全的自由软件。
-    1. restricted: 不完全的自由软件。
-    1. universe: Ubuntu官方不提供支持与补丁，全靠社区支持。
-    1. multiverse: 非自由软件，完全不提供支持和补丁。
 **************************************
 ### 用户管理
 - 添加用户 `sudo adduser username` 
@@ -193,31 +184,57 @@ _系统运行级别_
 ```
 ******************
 ## 软件管理
-### 安装命令
-1. 安装deb包
-	- ` sudo  dpkg  -i  *.deb`
-1. apt-get / apt 
-	- `sudo apt-get install xxx`
+### 软件源列表
+ubuntu 是 `/etc/apt/source.list`
+
+- [参考博客 阿里云的软件源](https://hacpai.com/article/1482807364546?p=1&m=0)
+- [wiki-源列表说明](http://wiki.ubuntu.com.cn/%E6%BA%90%E5%88%97%E8%A1%A8)
+
+1. 源 URL 后的单词: 
+    1. main: 完全的自由软件。
+    1. restricted: 不完全的自由软件。
+    1. universe: Ubuntu官方不提供支持与补丁，全靠社区支持。
+    1. multiverse: 非自由软件，完全不提供支持和补丁。
+
 1. 添加私有源ppa
     - 若不能添加私有源ppa：
-        - debain：`  `
-        - Ubuntu `sudo apt-get install python-software-properties`
+        - debain：`sudo apt install software-properties-common python-software-properties`
+        - Ubuntu `sudo apt install python-software-properties`
     - 添加：`sudo add-apt-repository ppa:dotcloud/lxc-docker `
 	- 删除ppa : `cd  /etc/apt/sources.list.d/` 打开该目录下文件把对应的ppa的一行注释掉或删掉就行了
+
+### 包管理器
+> dpkg
+1. 查看已安装的应用 `dpkg --list`
+1. 显示已安装包的详情 `dpkg -s package`
+1. 安装deb包
+	- ` sudo  dpkg  -i  *.deb`
+
+> apt-get / apt 
+1. 安装 `install 包名` 
+    - `-y` 参数可以省去确认
+    - `-s` 模拟安装
+    - package=version 安装指定版本的包
+
+1. 只卸载程序，保留配置文件 `sudo apt remove 应用名`
+1. 彻底卸载应用 `sudo apt--purge remove 应用名`
+
+- apt-cache showpkg/policy/madison/show package
+    - showpkg (特别详细) 列出所有版本以及来源, MD5 ...
+    - policy (基本信息) 列出所有版本以及来源
+    - madison (简略显示) 内容同上
+    - show 查询指定包的详情(已安装的版本信息)
+
+> snap
+- [official doc: snap](https://snapcraft.io/docs/core/usage) 
+
+### 源码编译安装
 1. make install 源代码安装
     - 1.解压缩 `tar -zxf nagios-4.0.2.tar.gz ` 
     - 2.进入目录 `cd nagios-4.0.2`
     - 3.配置 `./configure --prefix=/usr/local/nagios  ` 
     - 4.编译 `make all`
     - 5.安装 `make install && make install-init && make install-commandmode && make install-config`
-1. 查看已安装的应用
-	- `dpkg --list`
-1. 彻底卸载应用
-	- `sudo apt-get --purge remove 应用名`
-1. 只卸载程序，保留配置文件
-	- `sudo apt-get remove 应用名`
-
-- [snap](https://snapcraft.io/docs/core/usage) `snap 软件包管理器`
 
 **********************************************
 ## 终端命令
