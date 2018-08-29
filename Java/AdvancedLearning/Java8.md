@@ -11,7 +11,7 @@
         - [Instant](#instant)
         - [LocalDateTime](#localdatetime)
 
-`目录 end` |_2018-08-26_| [码云](https://gitee.com/gin9) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104) | [cnblogs](http://www.cnblogs.com/kuangcp)
+`目录 end` |_2018-08-29_| [码云](https://gitee.com/gin9) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104) | [cnblogs](http://www.cnblogs.com/kuangcp)
 ****************************************
 # Java8
 > [doc: Java8](https://docs.oracle.com/javase/8/) | [API](https://docs.oracle.com/javase/8/docs/api/)
@@ -51,6 +51,11 @@
 
 ## Stream
 > [参考博客: Java 8 中的 Streams API 详解](https://www.ibm.com/developerworks/cn/java/j-lo-java8streamapi/)
+
+1. filter 满足该条件的元素保留下来
+1. map 将一个流中的每个元素通过一种映射得到新的元素组成的流
+1. collect 将流收集起来
+1. forEach 遍历流
 
 ## 集合
 _集合的Lambda迭代方式_
