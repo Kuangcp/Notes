@@ -22,11 +22,11 @@
             - [diff](#diff)
             - [tag](#tag)
         - [分支操作](#分支操作)
+            - [开发流程的常用分支操作](#开发流程的常用分支操作)
             - [clone](#clone)
             - [checkout](#checkout)
             - [fetch](#fetch)
             - [pull](#pull)
-            - [开发流程的常用分支操作](#开发流程的常用分支操作)
             - [merge](#merge)
             - [rebase](#rebase)
             - [grep](#grep)
@@ -42,7 +42,7 @@
         - [SVN](#svn)
     - [repos的使用](#repos的使用)
 
-`目录 end` |_2018-08-26_| [码云](https://gitee.com/gin9) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104) | [cnblogs](http://www.cnblogs.com/kuangcp)
+`目录 end` |_2018-08-29_| [码云](https://gitee.com/gin9) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104) | [cnblogs](http://www.cnblogs.com/kuangcp)
 ****************************************
 # Git基础
 > Git is a free and open source distributed version control system designed to handle everything from small to very large projects with speed and efficiency. --[git-scm.com](https://git-scm.com/)
@@ -283,6 +283,32 @@ alias glola='git log --graph --pretty='\''%Cred%h%Creset -%C(yellow)%d%Creset %s
 ### 分支操作
 > [stash的争论](http://www.cppblog.com/deercoder/archive/2011/11/13/160007.html)
 
+#### 开发流程的常用分支操作
+- 一般的开发过程中会使用到三种临时分支（用完就删）和两个主分支 master develop
+    - 功能分支 `feature-*` 
+    - 预发布分支 `release`
+    - 修复bug `fixbug`
+
+*******
+- `git checkout -b feature-x develop` 从develop的分支生成一个功能分支，并切换过去
+- 完成功能后：`git checkout develop `
+    - 合并： `git merge --no-ff feature-x`
+    - 删除： `git branch -d feature-x`
+
+*****
+- `git checkout -b release-1.2 develop` 新建一个预发布分支
+    - `git checkout master` 确认没有问题后 `git merge --no-ff release-1.2` 合并到master分支
+    - `git tag -a 1.2` 打标签，这就是github上软件的版本控制
+    - 没有问题后 合并到develop分支`git checkout develop` `git merge --no-ff release-1.2`
+    - 删除预发布分支 `git branch -d release-1.2`
+
+*****
+- `git checkout -b fixbug-0.1 master` 新建修复bug的分支 
+- `git checkout master ``git merge --no-ff fixbug-0.1 ``git tag -a 0.1.1` 修补结束后合并到master分支
+- `git checkout develop` `　git merge --no-ff fixbug-0.1` 再合并到develop分支
+- 删除分支 `git branch -d fixbug-0.1` 
+- 删除远程没有本地有的分支`git fetch -p`
+
 #### clone
 - `git clone branchname URL` 克隆指定分支
 - `git clone URL 目录` 克隆下来后更名为指定目录
@@ -324,48 +350,29 @@ alias glola='git log --graph --pretty='\''%Cred%h%Creset -%C(yellow)%d%Creset %s
 - `git pull origin dev` 下拉指定远程的指定分支
 - `git pull --all` 下拉默认远程的所有分支代码并自动合并
 
-#### 开发流程的常用分支操作
-- 一般的开发过程中会使用到三种临时分支（用完就删）和两个主分支 master develop
-    - 功能分支 `feature-*` 
-    - 预发布分支 `release`
-    - 修复bug `fixbug`
-
-*******
-- `git checkout -b feature-x develop` 从develop的分支生成一个功能分支，并切换过去
-- 完成功能后：`git checkout develop `
-    - 合并： `git merge --no-ff feature-x`
-    - 删除： `git branch -d feature-x`
-
-*****
-- `git checkout -b release-1.2 develop` 新建一个预发布分支
-    - `git checkout master` 确认没有问题后 `git merge --no-ff release-1.2` 合并到master分支
-    - `git tag -a 1.2` 打标签，这就是github上软件的版本控制
-    - 没有问题后 合并到develop分支`git checkout develop` `git merge --no-ff release-1.2`
-    - 删除预发布分支 `git branch -d release-1.2`
-
-*****
-- `git checkout -b fixbug-0.1 master` 新建修复bug的分支 
-- `git checkout master ``git merge --no-ff fixbug-0.1 ``git tag -a 0.1.1` 修补结束后合并到master分支
-- `git checkout develop` `　git merge --no-ff fixbug-0.1` 再合并到develop分支
-- 删除分支 `git branch -d fixbug-0.1` 
-- 删除远程没有本地有的分支`git fetch -p`
 
 #### merge
 - [官方文档](https://git-scm.com/docs/git-merge)
-`配置mergetool工具：`
+
+> [Official Doc: 高级合并](https://git-scm.com/book/zh/v2/Git-%E5%B7%A5%E5%85%B7-%E9%AB%98%E7%BA%A7%E5%90%88%E5%B9%B6)
+> [参考博客: 解决 Git 冲突的 14 个建议和工具](http://blog.jobbole.com/97911/)
+
+- `git merge develop `默认会直接将当前分支指向Develop分支。(一条拐弯的线)
+- `git merge--no-ff develop` 在当前分支`主动合并`分支Develop，在Master分支上生成一个新节点(有一个环的线)
+
+1. merge 和 download 在一定意义上是等价的
+    - master merge dev 就是master 下载dev的修改, 并入master自己
+
+- 如果遇到冲突：
+    - `git mergetool` 使用工具进行分析冲突文件方便修改
+
+
+> 配置mergetool工具：
 - `git config --global merge.tool kdiff3`
 - `git config --global mergetool.kdiff3.cmd "'D:/kdiff3.exe' \"\$BASE\" \"\$LOCAL\" \"\$REMOTE\" -o \"\$MERGED\""`
 - `git config --global mergetool.prompt false`
 - `git config --global mergetool.kdiff3.trustExitCode true`
 - `git config --global mergetool.keepBackup false`
-
-*********
-
-- `git merge develop `默认会直接将master分支指向Develop分支。(一条拐弯的线)
-- `git merge--no-ff develop` 将当前master分支与分支Develop合并，在Master分支上生成一个新节点(有一个环的线)
-    - 也就是说master将develop分支拉取下来然后合并 develop向master合并
-- 如果遇到冲突：
-    - `git mergetool` 使用工具进行分析冲突文件方便修改
 
 #### rebase
 > 衍和操作 [参考博客](http://blog.csdn.net/endlu/article/details/51605861) | 

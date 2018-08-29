@@ -18,8 +18,6 @@
         - [数组](#数组)
     - [结构](#结构)
         - [参数读取](#参数读取)
-- [1. 简单的方式](#1-简单的方式)
-- [2. 规范化的参数](#2-规范化的参数)
         - [判断](#判断)
             - [if](#if)
             - [case](#case)
@@ -34,7 +32,7 @@
     - [工具](#工具)
         - [shyaml](#shyaml)
 
-`目录 end` |_2018-08-26_| [码云](https://gitee.com/gin9) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104) | [cnblogs](http://www.cnblogs.com/kuangcp)
+`目录 end` |_2018-08-29_| [码云](https://gitee.com/gin9) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104) | [cnblogs](http://www.cnblogs.com/kuangcp)
 ****************************************
 # 学习Shell
 > 首先语法不像别的语言可读性好，比如Python，然后方言众多，学习比Python2，3还恶心  
@@ -221,30 +219,30 @@ basepath=$(cd \`dirname $0\`; pwd)
 ```
 
 ```sh
-# 1. 简单的方式
-case $1 in 
-  -h | h)
-    echo "help"
-  ;;
-  *)
-    echo "default"
-  ;;
-esac
-# 2. 规范化的参数
-while getopts "hup:" opt; do
-  case "$opt" in
-    h)
-      usage
-      exit 0
-      ;;
-    u)
-      UPCASE=true
-      ;;
-    d)
-      DATE=$OPTARG
-      ;;
+  # 1. 简单的方式
+  case $1 in 
+    -h | h)
+      echo "help"
+    ;;
+    *)
+      echo "default"
+    ;;
   esac
-done
+  # 2. 规范化的参数
+  while getopts "hup:" opt; do
+    case "$opt" in
+      h)
+        usage
+        exit 0
+        ;;
+      u)
+        UPCASE=true
+        ;;
+      d)
+        DATE=$OPTARG
+        ;;
+    esac
+  done
 ```
 ### 判断
 #### if

@@ -14,7 +14,7 @@
     - [DBUnit](#dbunit)
 - [感悟](#感悟)
 
-`目录 end` |_2018-08-20_| [码云](https://gitee.com/gin9) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104) | [cnblogs](http://www.cnblogs.com/kuangcp)
+`目录 end` |_2018-08-29_| [码云](https://gitee.com/gin9) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104) | [cnblogs](http://www.cnblogs.com/kuangcp)
 ****************************************
 # Java的测试
 > [测试的基础理论](/Skills/Base/Test.md)
@@ -84,8 +84,9 @@ https://www.tutorialspoint.com/mockito/mockito_quick_guide.htm
 http://static.javadoc.io/org.mockito/mockito-core/2.19.0/org/mockito/Mockito.html#1
 
 ### Mockito
-> [官网](http://site.mockito.org/) | [Github:mockito](https://github.com/mockito/mockito)
+> [Officail Site](http://site.mockito.org/) | [Github:mockito](https://github.com/mockito/mockito)
 > [Mockito Tutorial](https://www.tutorialspoint.com/mockito/index.htm)
+
 > [参考博客: TDD：什么是桩（stub）和模拟（mock）？](http://www.cnblogs.com/happyframework/p/3595547.html)
 
 > 官网提示:
@@ -97,5 +98,9 @@ http://static.javadoc.io/org.mockito/mockito-core/2.19.0/org/mockito/Mockito.htm
 ## DBUnit
 > 基于Junit的一个数据库测试框架, 方便测试dao层
 
+**********************
 # 感悟
-> 好的测试能大大节省时间, 坏的测试大量延误时间
+>1. 好的测试能大大节省时间, 坏的测试大量延误时间
+>1. 应该在项目主体架构明确后, 才大量书写测试, 验证程序, 避免编写大量无用测试代码
+>1. 单元测试有多难写, 你的代码就有多高的耦合度
+

@@ -24,7 +24,7 @@
     - [Mock](#mock)
     - [BDD](#bdd)
 
-`目录 end` |_2018-08-26_| [码云](https://gitee.com/gin9) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104) | [cnblogs](http://www.cnblogs.com/kuangcp)
+`目录 end` |_2018-08-29_| [码云](https://gitee.com/gin9) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104) | [cnblogs](http://www.cnblogs.com/kuangcp)
 ****************************************
 # 测试
  > [参考博客: 测试的道理](http://www.yinwang.org/blog-cn/2016/09/14/tests)
@@ -76,10 +76,10 @@
     - 然后要把模拟对象需要的行为记录下来，通过 when方法表明要记录哪些方法的行为，然后用thenReturn方法指定期望结果。
 
 ## 测试类别
+- [ ] 单元测试, 集成测试
 
 ### 单元测试
 
-- [ ] 单元测试, 集成测试
 
 - 3A 原则: 
     - Arrange: 初始化测试对象或者准备测试数据
@@ -217,7 +217,8 @@ A/B测试其实也是谷歌管理方法论，具体文章请参考：
 
 既然使用模拟技术, 就要让模块的设计更易于测试, 也就是耦合更低, 之间的依赖更少, 一个正向循环呢
 
-1. Mockito 有多种语言的实现
+1. Mockito [Official Site](https://site.mockito.org/) 该框架有多种语言的实现 Java Python ...
+1. Easy Mock [Official Site](http://easymock.org/) 
 
 ********************
 

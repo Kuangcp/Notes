@@ -24,7 +24,7 @@
     - [Tips](#tips)
         - [Error:Cannot compile Groovy files: no Groovy library is defined for module "XXX"](#errorcannot-compile-groovy-files-no-groovy-library-is-defined-for-module-"xxx")
 
-`目录 end` |_2018-08-21_| [码云](https://gitee.com/gin9) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104) | [cnblogs](http://www.cnblogs.com/kuangcp)
+`目录 end` |_2018-08-29_| [码云](https://gitee.com/gin9) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104) | [cnblogs](http://www.cnblogs.com/kuangcp)
 ****************************************
 
 # IDEA 使用笔记
@@ -201,6 +201,7 @@ _例如修改为如下_
 |C|S| | **N** | 搜索所有文件|
 |C|S|A| **N** | 按文件内容字符的搜索,也能按类名首字母搜索|
 | | |A| **左/右** | 左右切换打开的文件|
+|C| | | **鼠标左键** | 在文件标签页上单击, 即可在文件管理器中打开该文件 |
 
 #### Coding
 > [Doc: 2018.2](https://www.jetbrains.com/help/idea/2018.2/using-code-editor.html?utm_content=2018.2&utm_medium=link&utm_source=product&utm_campaign=IU)

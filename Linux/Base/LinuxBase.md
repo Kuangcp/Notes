@@ -7,13 +7,14 @@
         - [桌面环境对比](#桌面环境对比)
         - [文件管理器对比](#文件管理器对比)
         - [终端模拟器对比](#终端模拟器对比)
-        - [软件源列表](#软件源列表)
         - [用户管理](#用户管理)
         - [用户组管理](#用户组管理)
         - [时间管理](#时间管理)
         - [自启服务管理](#自启服务管理)
     - [软件管理](#软件管理)
-        - [安装命令](#安装命令)
+        - [软件源列表](#软件源列表)
+        - [包管理器](#包管理器)
+        - [源码编译安装](#源码编译安装)
     - [终端命令](#终端命令)
         - [Shell内建命令](#shell内建命令)
     - [安装Linux发行版](#安装linux发行版)
@@ -30,7 +31,7 @@
     - [Search](#search)
     - [Control](#control)
 
-`目录 end` |_2018-08-26_| [码云](https://gitee.com/gin9) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104) | [cnblogs](http://www.cnblogs.com/kuangcp)
+`目录 end` |_2018-08-29_| [码云](https://gitee.com/gin9) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104) | [cnblogs](http://www.cnblogs.com/kuangcp)
 ****************************************
 # Linux系统
 > 只是记录了debian系的Linux, 不过也是大同小异
@@ -185,7 +186,8 @@ _系统运行级别_
 ******************
 ## 软件管理
 ### 软件源列表
-ubuntu 是 `/etc/apt/source.list`
+- apt 的默认配置文件是 `/etc/apt/source.list`
+    - 以及 sources.list.d/ 目录下的 *.list 文件 (最好将list文件都进行备份 备份文件为 *.save)
 
 - [参考博客 阿里云的软件源](https://hacpai.com/article/1482807364546?p=1&m=0)
 - [wiki-源列表说明](http://wiki.ubuntu.com.cn/%E6%BA%90%E5%88%97%E8%A1%A8)
@@ -211,10 +213,12 @@ ubuntu 是 `/etc/apt/source.list`
 	- ` sudo  dpkg  -i  *.deb`
 
 > apt-get / apt 
-1. 安装 `install 包名` 
+1. `install 包名`  安装指定包的最新版
     - `-y` 参数可以省去确认
     - `-s` 模拟安装
-    - package=version 安装指定版本的包
+    - `package=version` 安装指定版本的包
+1. list 列出所有可安装的包
+    - package 列出已安装的 该package 的信息 `加上 -a`: 所有版本
 
 1. 只卸载程序，保留配置文件 `sudo apt remove 应用名`
 1. 彻底卸载应用 `sudo apt--purge remove 应用名`
