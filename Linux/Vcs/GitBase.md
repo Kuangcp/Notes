@@ -42,7 +42,7 @@
         - [SVN](#svn)
     - [repos的使用](#repos的使用)
 
-`目录 end` |_2018-08-29_| [码云](https://gitee.com/gin9) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104) | [cnblogs](http://www.cnblogs.com/kuangcp)
+`目录 end` |_2018-08-30_| [码云](https://gitee.com/gin9) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104) | [cnblogs](http://www.cnblogs.com/kuangcp)
 ****************************************
 # Git基础
 > Git is a free and open source distributed version control system designed to handle everything from small to very large projects with speed and efficiency. --[git-scm.com](https://git-scm.com/)
@@ -175,17 +175,17 @@
     - `rename origin myth` 更改远程文档库的名称
     - `show origin` 查看远程分支的状态和信息
 
-1. 删除远程库某分支`git push 远程URL的名称 --delete 分支名称` 
+1. 删除远程库某分支`git push 远程名称 --delete 分支名称` 
 1. `git ls-remote` 显示本地仓库跟踪的那个远程仓库
 1. `git remote -v` 查看关联远程仓库的详情(push和pull的地址)
 
-*******
 - [删除，重命名远程分支](http://zengrong.net/post/1746.htm)
 
 #### submodule
 > 子模块
 
 - [ ] 完成
+
 #### show
 > 展示提交信息
 
@@ -193,7 +193,6 @@
 - `git show -h` 查看更多
 
 #### push
-
 - _常用参数_
     - `-h` 查看所有参数和说明
     - `-q` 控制台不输出任何信息
@@ -207,10 +206,10 @@
 
 - 出现 `RPC failed; result=22, HTTP code = 411` 的错误
     - 就是因为一次提交的文件太大，需要改大缓冲区 
-    > 例如改成500m  `git config http.postBuffer 524288000`
+    - > 例如改成500m  `git config http.postBuffer 524288000`
 
 - 提交本地所有分支 `git push --all` pull时同理
-- 删除远程分支 `git push 远程URL的名称 --delete 分支名称`
+- 删除远程分支 `git push 远程名称 --delete 分支名称`
 
 - _第一次与远程建立连接_
     - `git push -u origin master ` | `git push --set-uptream master` | `git push -all` 
