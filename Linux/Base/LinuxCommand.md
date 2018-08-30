@@ -4,6 +4,7 @@
     - [输入输出](#输入输出)
         - [重定向](#重定向)
     - [管道](#管道)
+        - [xargs](#xargs)
     - [time](#time)
     - [date](#date)
     - [grep](#grep)
@@ -15,7 +16,7 @@
     - [图形化工具](#图形化工具)
         - [剪贴板管理](#剪贴板管理)
 
-`目录 end` |_2018-08-21_| [码云](https://gitee.com/gin9) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104) | [cnblogs](http://www.cnblogs.com/kuangcp)
+`目录 end` |_2018-08-30_| [码云](https://gitee.com/gin9) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104) | [cnblogs](http://www.cnblogs.com/kuangcp)
 ****************************************
 # 系统常用基础命令
 
@@ -31,6 +32,9 @@
 > [参考博客: linux 管道 ](http://www.cnblogs.com/davidwang456/p/3839874.html)
 > [参考博客: linux shell 管道命令(pipe)使用及与shell重定向区别](http://www.cnblogs.com/chengmo/archive/2010/10/21/1856577.html)
 - [ ] 学习管道的使用
+
+### xargs
+- [ ] xargs 让命令更为灵活
 
 ***************************
 ## time

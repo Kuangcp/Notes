@@ -9,13 +9,14 @@
     - [流程图](#流程图)
     - [Github](#github)
 
-`目录 end` |_2018-08-04_| [码云](https://gitee.com/gin9) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104) | [cnblogs](http://www.cnblogs.com/kuangcp)
+`目录 end` |_2018-08-30_| [码云](https://gitee.com/gin9) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104) | [cnblogs](http://www.cnblogs.com/kuangcp)
 ****************************************
 # Markdown
 > [markup](https://github.com/github/markup)`丰富的标记性文本格式`  
 > [Markdown教程](http://www.markdown.cn/)  
 > [CSDN的Markdown案例](https://github.com/kuangcp/Notes/blob/master/Article/CSDN的Markdown案例.md)
 > [ Markdown 编辑器语法指南](https://segmentfault.com/markdown)
+
 **************
 ## 基础格式
 
@@ -31,11 +32,12 @@
     - 末尾: [targetNum]: url "description"
 
 ### 列表
-> 注意都要有空格隔开
+> 注意符号和内容之间都要有空格隔开
 
-- **无序列表** : `- ` 和  `* `
+- **无序列表** : `- ` 或  `* `
 - **有序列表** : `1. ` (markdown渲染的时候会自动排序 1 也可以换成任意非0正整数)
 
+- 列表中还能嵌套 引用, 例如: `- > `
 ### 头信息
 ```
     --- 
@@ -64,6 +66,7 @@ st->op->cond
 cond(yes)->e
 cond(no)->op
 ```
+
 **************
 ## Github 
 > [比较全面的Github格式 GFM](https://github.com/guodongxiaren/README)

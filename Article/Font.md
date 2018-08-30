@@ -7,17 +7,25 @@
     - [编辑器](#编辑器)
     - [终端](#终端)
 
-`目录 end` |_2018-08-04_| [码云](https://gitee.com/gin9) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104) | [cnblogs](http://www.cnblogs.com/kuangcp)
+`目录 end` |_2018-08-30_| [码云](https://gitee.com/gin9) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104) | [cnblogs](http://www.cnblogs.com/kuangcp)
 ****************************************
 # 字体
 
 > [有哪些适合用于写代码的西文字体？](https://www.zhihu.com/question/20299865)
 
+- Linxu 字体缓存目录: `$HOME/.local/share/fonts/`
 ## 资源
+> Github
 - [IBM字体](https://github.com/IBM/type)`2017年发布的新字体`
 - [codefont](https://github.com/zhenruyan/codefont)`常用的代码字体`
 - [nerd-fonts](https://github.com/ryanoasis/nerd-fonts)`系列字体图标`
 - [Font-Awesome](https://github.com/FortAwesome/Font-Awesome)`一大堆字体图标`
+
+> website
+- [https://www.fontsquirrel.com/](https://www.fontsquirrel.com/)
+- [https://www.urbanfonts.com/](https://www.urbanfonts.com/)
+- [https://www.1001fonts.com/](https://www.1001fonts.com/)
+- [https://www.ffonts.net/](https://www.ffonts.net/)
 
 ### 终端中常用字体
 - [powerline](https://github.com/powerline/powerline)

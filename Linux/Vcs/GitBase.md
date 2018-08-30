@@ -414,7 +414,6 @@ doc/*.txt 忽略 doc一级子目录的txt文件, 不忽略多级子目录中txt
 > [gitattributes](http://schacon.github.io/git/gitattributes.html)
 
 *****************
-
 ### Tools
 
 #### git-svn
@@ -430,14 +429,33 @@ doc/*.txt 忽略 doc一级子目录的txt文件, 不忽略多级子目录中txt
 ## 各个VCS工具的区别以及优缺点
 
 ### Git
-> 分布式的去中心化的, 年轻化的团队在用, 个人也是习惯性用Git了
+> 分布式的去中心化的, 个人也是习惯性用Git了
 
 ### SVN
 > [Svn笔记](/Linux/Svn.md)
 
-1. 中心化的, 代码统一保存, 如果中心发生错误, 代码会全部毁掉, 旧的技术栈以及非开发人员还在用
-2. 允许部分的进行修改, 下拉提交, 而对于Git来说一个仓库就是一个整体
-3. 能够精确控制每个目录的每个人的访问权限
+1. 中心化的, 代码统一保存, 如果中心发生错误, 代码会全部毁掉, 提交是必须要和服务端通信才能完成
+2. 允许部分的进行修改, 下拉, 提交. 而对于Git来说一个仓库就是一个整体(Git submodule 目前也能完成, 但是还是没有SVN灵活)
+3. 优点: 能够精确控制每个目录的每个人的访问权限
+
+可以通过 git-svn 使用Git的命令与SVN服务器进行交互
+> [Official doc: git-svn](https://git-scm.com/docs/git-svn)
+
+> 但是个人目前在用的方式是直接 git 和 svn 一起用  
+> [参考博客: 为啥要同时用 SVN 和 Git 管理项目](https://www.cnblogs.com/dasusu/p/7774469.html)
+
+1. IDEA中移除git相关插件, 防止混乱, 而且最好是先把SVN项目拉下来,
+    - 达到 先让IDEA使用SVN管理项目 的目的 然后 git init 
+1. 避免LRLF LF 问题
+```sh
+    git config --global core.autocrlf false
+    git config --global core.safecrlf false
+```
+1. 互相忽略各自配置目录 .svn .git
+
+- 至此, 就能和团队保持一致的使用SVN, 然后自己多任务开发时, 又能使用git优秀的分支模型
+- 当然该场景是有限的, 也就是说只有你一个人在用git 而且团队中使用SVN时没有使用SVN的分支模型, 这个是没有问题的
+    - 如果SVN也用了分支, 那么就要命了, 这么多分支和状态, 要靠大脑记住实时的状态就....
 
 ## repos的使用
 > 综合各个VCS的管理方式
