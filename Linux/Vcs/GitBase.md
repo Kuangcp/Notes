@@ -24,6 +24,7 @@
         - [分支操作](#分支操作)
             - [开发流程的常用分支操作](#开发流程的常用分支操作)
             - [clone](#clone)
+            - [branch](#branch)
             - [checkout](#checkout)
             - [fetch](#fetch)
             - [pull](#pull)
@@ -42,7 +43,7 @@
         - [SVN](#svn)
     - [repos的使用](#repos的使用)
 
-`目录 end` |_2018-08-30_| [码云](https://gitee.com/gin9) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104) | [cnblogs](http://www.cnblogs.com/kuangcp)
+`目录 end` |_2018-09-01_| [码云](https://gitee.com/gin9) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104) | [cnblogs](http://www.cnblogs.com/kuangcp)
 ****************************************
 # Git基础
 > Git is a free and open source distributed version control system designed to handle everything from small to very large projects with speed and efficiency. --[git-scm.com](https://git-scm.com/)
@@ -324,6 +325,11 @@ alias glola='git log --graph --pretty='\''%Cred%h%Creset -%C(yellow)%d%Creset %s
   git checkout -b <new-branch-name>
 ```
 按他提示来就行了 
+
+#### branch 
+- 列出远程分支 `git branch -r`
+- 创建分支 `git branch name`
+
 #### checkout
 > [官方文档 : git checkout](https://git-scm.com/docs/git-checkout)
 
@@ -357,7 +363,7 @@ alias glola='git log --graph --pretty='\''%Cred%h%Creset -%C(yellow)%d%Creset %s
 > [参考博客: 解决 Git 冲突的 14 个建议和工具](http://blog.jobbole.com/97911/)
 
 - `git merge develop `默认会直接将当前分支指向Develop分支。(一条拐弯的线)
-- `git merge--no-ff develop` 在当前分支`主动合并`分支Develop，在Master分支上生成一个新节点(有一个环的线)
+- `git merge --no-ff develop` 在当前分支`主动合并`分支Develop，在Master分支上生成一个新节点(有一个环的线)
 
 1. merge 和 download 在一定意义上是等价的
     - master merge dev 就是master 下载dev的修改, 并入master自己

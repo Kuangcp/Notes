@@ -9,12 +9,11 @@
         - [《Netty权威指南》](#《netty权威指南》)
             - [《Netty in Action 中译》](#《netty-in-action-中译》)
 
-`目录 end` |_2018-08-21_| [码云](https://gitee.com/gin9) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104) | [cnblogs](http://www.cnblogs.com/kuangcp)
+`目录 end` |_2018-09-01_| [码云](https://gitee.com/gin9) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104) | [cnblogs](http://www.cnblogs.com/kuangcp)
 ****************************************
 
 # Java书籍
 - [从 Java 代码到 Java 堆](https://www.ibm.com/developerworks/cn/java/j-codetoheap/) `理解和优化您的应用程序的内存使用`
-
 
 ## 视频
 - [用Java学编程  讲师：翁恺](http://study.163.com/course/introduction.htm?courseId=533006#/courseDetail?tab=1)
@@ -36,6 +35,7 @@
 - 实战java高并发程序设计
 - 深入理解Java虚拟机
 - Effective Java 
+- 图解Java多线程设计模式
 
 
 - Mybatis 从入门到精通

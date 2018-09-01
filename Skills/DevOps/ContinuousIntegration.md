@@ -1,6 +1,5 @@
 `目录 start`
  
-- [传统部署](#传统部署)
 - [持续集成](#持续集成)
     - [Jenkins](#jenkins)
         - [安装](#安装)
@@ -16,7 +15,7 @@
     - [sonarqube](#sonarqube)
         - [小型项目目前使用的方案](#小型项目目前使用的方案)
 
-`目录 end` |_2018-08-07_| [码云](https://gitee.com/gin9) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104) | [cnblogs](http://www.cnblogs.com/kuangcp)
+`目录 end` |_2018-09-01_| [码云](https://gitee.com/gin9) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104) | [cnblogs](http://www.cnblogs.com/kuangcp)
 ****************************************
 # 持续集成
 > 参考博客: [持续集成](http://www.ruanyifeng.com/blog/2015/09/continuous-integration.html) | [持续集成服务 Travis CI 教程](http://www.ruanyifeng.com/blog/2017/12/travis_ci_tutorial.html)  
@@ -26,6 +25,8 @@
 > [利用Travis CI更新github page](https://github.com/steveklabnik/automatically_update_github_pages_with_travis_example)
 - 使用bitbucket配置私有仓库，在hub上配置docker文件的目录，进行构建，这样就会得到一个可用的镜像
     - 源码是过去了，构建呢，这是个问题，可以使用Jenkins么？
+
+**************************
 ## Jenkins
 > [官网](https://jenkins.io/)
 
@@ -37,7 +38,6 @@
 #### Docker方式
 > [详情](/Linux/Container/DockerSoft.md/jenkins)
 
-*************************
 ### 配置
 
 #### 配置Gradle
@@ -46,7 +46,13 @@
 ***********************
 ### 使用
 
+> 案例: 从Gitlab私有库(Maven SpringBooot项目)建好一个构建
+1. 复制项目URL, Credentials 中添加一个 username/password 类型的授权即可(就是gitlab上的用户名密码)
+    - 可以选择指定的 分支 进行构建
+1. 添加一个构建, 选择Maven的版本, Goal 中添加 命令
+1. 完成配置, 可以直接开始构建
 
+**************************
 ## GoCD
 > [Github:GoCD](https://github.com/GoCD) 
 
