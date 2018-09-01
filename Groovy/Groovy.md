@@ -32,7 +32,7 @@
         - [默认return](#默认return)
     - [Grails](#grails)
 
-`目录 end` |_2018-08-04_| [码云](https://gitee.com/gin9) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104) | [cnblogs](http://www.cnblogs.com/kuangcp)
+`目录 end` |_2018-09-01_| [码云](https://gitee.com/gin9) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104) | [cnblogs](http://www.cnblogs.com/kuangcp)
 ****************************************
 # Groovy
 > [Groovy 官网](http://www.groovy-lang.org/) | 
@@ -95,7 +95,8 @@
 - 添加额外的JAR可以使用`@Grab`注解或者和Java一样加入到ClassPath中去
 
 #### 隐式return
-> Groovy会在`代码块`的行末缺省return null, 如果末行有一个表达式, 并有返回值, 就会return该值, 略坑
+- 如果方法是具有返回值的, Groovy会在`代码块`的行末缺省return null, 
+    - 如果末行有一个表达式, 并有返回值, 就会return该值, 略坑
 
 #### 默认生成setter getter
 > 类当中的属性, 只要不是使用private修饰, 就能自动生成getter setter, 并且直接`.引用`属性, 相当于调用了对应的get set
@@ -159,6 +160,7 @@
         }
     }
 ```
+
 ### 函数
 > [参考博客: Groovy进阶之函数、闭包和类](https://www.tuicool.com/articles/iEBJnqF)
 
@@ -184,8 +186,10 @@
 
 ***************************
 ## 强大的注解
+> 和Java不同的是, Groovy提供具有功能性的注解, Java大多是接口规范性注解
 
 @ToString 自动实现toString方法, 但是字符串有点冗余
+> [参考博客: Groovy中那些神奇注解之ToString](http://www.cnblogs.com/varlxj/p/5181788.html)
 
 _日志相关_ 只需要引入对应的依赖, 就和lombok一样的使用
 ```java

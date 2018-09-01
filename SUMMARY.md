@@ -206,7 +206,9 @@
     * [ ShellLearn ](/Script/ShellLearn.md)
 * 【 Skills 】
     * 【 Skills/Application 】
+        * [ Editor ](/Skills/Application/Editor.md)
         * [ VirtualBox ](/Skills/Application/VirtualBox.md)
+        * [ WebBrowser ](/Skills/Application/WebBrowser.md)
     * 【 Skills/CS 】
         * [ Arithmetic ](/Skills/CS/Arithmetic.md)
         * [ CharacterEncoding ](/Skills/CS/CharacterEncoding.md)

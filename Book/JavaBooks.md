@@ -37,6 +37,8 @@
 - Effective Java 
 - 图解Java多线程设计模式
 
+大教堂和集市
+> [参考博客: 《大教堂和集市》笔记](http://www.ruanyifeng.com/blog/2008/02/notes_on_the_cathedral_and_the_bazaar.html)
 
 - Mybatis 从入门到精通
 - 深入实践SpringBoot
