@@ -5,13 +5,14 @@
         - [开发版本](#开发版本)
         - [必备插件](#必备插件)
         - [配置](#配置)
+        - [使用](#使用)
     - [seamonkey](#seamonkey)
     - [Chrome](#chrome)
         - [主题](#主题)
     - [Vivaldi](#vivaldi)
     - [Opera](#opera)
 
-`目录 end` |_2018-09-01_| [码云](https://gitee.com/gin9) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104) | [cnblogs](http://www.cnblogs.com/kuangcp)
+`目录 end` |_2018-09-02_| [码云](https://gitee.com/gin9) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104) | [cnblogs](http://www.cnblogs.com/kuangcp)
 ****************************************
 # 浏览器
 ## FireFox
@@ -87,6 +88,9 @@
 1. 前者是重度使用(往往很多标签20+), 常用的标签页全部固定, 一些TODO的tab也放在这里, 用于开发和娱乐(1000M-2000M)
 1. 后者是轻度使用(开10个以下标签), 仅在内存不够时, 只用于内存不足时开发必需 (一般400M左右)
 
+### 使用
+1. 地址栏 `@bing` @baidu... 即可使用指定的搜索引擎进行搜索
+1. 地址栏 `* Java` 即可在所有书签中搜索 Java
 *********************
 ## seamonkey
 > Mozilla基金会另一个项目 [seamonkey](https://www.seamonkey-project.org/) 亮点在于内置IRC

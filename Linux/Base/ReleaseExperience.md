@@ -24,7 +24,7 @@
     - [Mageia](#mageia)
     - [CDLinux](#cdlinux)
 
-`目录 end` |_2018-08-27_| [码云](https://gitee.com/gin9) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104) | [cnblogs](http://www.cnblogs.com/kuangcp)
+`目录 end` |_2018-09-02_| [码云](https://gitee.com/gin9) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104) | [cnblogs](http://www.cnblogs.com/kuangcp)
 ****************************************
 # Linux各个发行版本使用体验
 > 一边用一边记录吧 
@@ -83,14 +83,24 @@ _服务器_
 
 `遇到的bug记录`
 - 2018-01-09 19:29:25 休眠结束系统卡死,然后重启输入法没有窗口,然后升级到最新重启还是没有,杀掉搜狗进程再启动解决
+
 - 2018-03-15 09:25:47 [公司电脑安装Windows10 和 Deepin双系统](/MyBlog/2018-3-15-install-deepin.md)
+
 - 2018-05-24 15:08:49 `Gtk-WARNING **: 无法在模块路径中找到主题引擎：“adwaita”`， 安装 这个包 gnome-themes-standard
+
 - 2018-06-15 19:50:40 deepin-wm 进程, 也就是Deepin的桌面管理器, 启动久了之后就会发生内存占用非常大的情况, 关闭窗口特效, 再打开就好了
+
 - 2018-08-21 20:34:07 更新到15.7, 然后就是一堆的小问题, 任务栏和屏幕边缘有空隙, 多任务切换方式的变化, 原先用Wine安装的企业QQ不能启动... 但是确实Deepin 现在更快了
     - 使用闭源驱动方案, 休眠一会就卡死了, 只能强制关机, 尝试了开源驱动后, 也是一样 显卡是 Nvidia GTX1050
+
 - 2018-08-23 09:55:15 遭遇用过的最大问题, 笔记本升级到15.7后有显卡明显不兼容, 各种显示上的卡顿, 切换Prime解决方案后, 内核load不进来, 启动不了了
-    - 显卡 NVIDIA 840m
-    - 也许重装Deepin15.7, 也许装Manjaro-KDE
+    - 配置是 显卡 NVIDIA 840m 也许重装Deepin15.7, 也许装Manjaro-KDE
+    - 最终是进的恢复模式, 卸载了无用的包就成功进入了, 但是发现自动挂载分区的文件都被注释了, 如果手动添加, 即使mount -a 没有报错, 但是启动时就加载不了分区
+    - 又得进恢复模式注释掉, 才能进入系统
+
+- 2018-09-02 21:44:21 ` Driver 'pcspkr' is already registered, aborting,`
+    >- [参考博客: 社区帖子](https://bbs.deepin.org/forum.php?mod=viewthread&tid=166517&highlight=pcspkr)
+    
 
 #### 关于显卡
 > [参考博客: 显卡驱动作死录](https://www.jianshu.com/p/f53c8223bac6)
