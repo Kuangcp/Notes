@@ -20,7 +20,7 @@
         - [娱乐](#娱乐)
     - [商业](#商业)
 
-`目录 end` |_2018-08-26_| [码云](https://gitee.com/gin9) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104) | [cnblogs](http://www.cnblogs.com/kuangcp)
+`目录 end` |_2018-09-01_| [码云](https://gitee.com/gin9) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104) | [cnblogs](http://www.cnblogs.com/kuangcp)
 ****************************************
 
 > 只用来记录非技术类的文章,技术类的直接放到对应的笔记中去  
@@ -73,6 +73,8 @@
 - [zhangyi](http://zhangyi.xyz)`设计模式,TDD`
 - [johng.cn](http://johng.cn/)`Docker,算法相关`
 - [Catch](http://edaoe.com/Catch)`简单的小知识点`
+- [importNew](http://www.importnew.com/)
+
 ## 博客能人
 - [赵劼](http://www.cnblogs.com/JeffreyZhao/) `对函数式编程，并行程序开发，代码之美以及程序员能力与修养等相关问题`
 - [进击的Java新人](https://zhuanlan.zhihu.com/hinus)

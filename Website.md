@@ -2,7 +2,8 @@
  
 - [常用的网站](#常用的网站)
     - [软件下载站](#软件下载站)
-    - [国内镜像站](#国内镜像站)
+    - [国内镜像源站点](#国内镜像源站点)
+        - [镜像站点](#镜像站点)
     - [特别网站](#特别网站)
 - [社区网站](#社区网站)
     - [娱乐](#娱乐)
@@ -50,7 +51,7 @@
 - [安卓手机](#安卓手机)
     - [Google](#google)
 
-`目录 end` |_2018-08-26_| [码云](https://gitee.com/gin9) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104) | [cnblogs](http://www.cnblogs.com/kuangcp)
+`目录 end` |_2018-09-01_| [码云](https://gitee.com/gin9) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104) | [cnblogs](http://www.cnblogs.com/kuangcp)
 ****************************************
 # 常用的网站
 ## 软件下载站
@@ -58,7 +59,7 @@
 - [VirtualBox和VMWare的镜像网](http://www.osboxes.org/)
 - [安卓在X86设备上的ISO下载](http://www.android-x86.org/download)
 
-## 国内镜像站
+## 国内镜像源站点
 - [网易](http://mirrors.163.com/)`下载系统是 *-cd 的文件`
 - [清华大学](https://mirrors.tuna.tsinghua.edu.cn/)
 - [中科大](http://mirrors.ustc.edu.cn/)`中国科学技术大学 各大Linux发行版以及一些开源软件`
@@ -69,6 +70,12 @@
 - [程序员应该访问的最佳网站中文版](https://github.com/tuteng/Best-websites-a-programmer-should-visit-zh)
 
 - [mycat镜像站](http://dl.mycat.io/)
+
+### 镜像站点
+> Google
+- [1](https://rain.likeso.ml/)
+- [2](https://plus.likeso.ml/)
+- [3](http://www.kaseng.top/)
 ******************************
 ## 特别网站
 - [ping domain true ip](ping.eu/ping/)
