@@ -8,6 +8,7 @@
         - [网络延迟](#网络延迟)
             - [TTFB](#ttfb)
         - [URL](#url)
+            - [移动通信技术规格](#移动通信技术规格)
     - [Web安全](#web安全)
     - [HTTP](#http)
         - [HTTP的返回码](#http的返回码)
@@ -22,7 +23,7 @@
     - [WebDAV](#webdav)
     - [WebAssembly](#webassembly)
 
-`目录 end` |_2018-08-09_| [码云](https://gitee.com/gin9) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104) | [cnblogs](http://www.cnblogs.com/kuangcp)
+`目录 end` |_2018-09-04_| [码云](https://gitee.com/gin9) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104) | [cnblogs](http://www.cnblogs.com/kuangcp)
 ****************************************
 # 网络
 
@@ -56,6 +57,12 @@ ISO制定的OSI参考模型的过于庞大、复杂招致了许多批评。与�
 
 - 统一资源定位符 特别注意URL的组成和编解码  [url中的特殊字符问题](http://www.cnblogs.com/xmphoenix/archive/2011/04/20/2022945.html)
     - 不能在URL的关键位置出现%号，作为参数的值是允许的。
+
+#### 移动通信技术规格
+> 1g 2g 2.5g 2.75g 3g 4g 5g
+
+> [参考: 1G, 2G, 3G, 4G, & 5G Explained ](https://www.lifewire.com/1g-vs-2g-vs-2-5g-vs-3g-vs-4g-578681)
+> [参考: Difference Between 1G, 2G, 3G vs. 4G and 5G](Difference Between 1G, 2G, 3G vs. 4G and 5G)
 
 *******************************
 ## Web安全
