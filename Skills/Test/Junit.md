@@ -1,20 +1,22 @@
 `目录 start`
  
-- [为何要使用测试](#为何要使用测试)
 - [如何使用Junit](#如何使用junit)
     - [在Maven项目中](#在maven项目中)
     - [编码规范](#编码规范)
     - [常用注解](#常用注解)
         - [Rule注解的使用](#rule注解的使用)
     - [断言的使用](#断言的使用)
+        - [assertThat](#assertthat)
     - [参数化测试](#参数化测试)
     - [测试套件](#测试套件)
     - [分类测试](#分类测试)
 
-`目录 end` |_2018-08-05_| [码云](https://gitee.com/gin9) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104) | [cnblogs](http://www.cnblogs.com/kuangcp)
+`目录 end` |_2018-09-04_| [码云](https://gitee.com/gin9) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104) | [cnblogs](http://www.cnblogs.com/kuangcp)
 ****************************************
 # 如何使用Junit
-> Junit4已经停止更新了, 取而代之的是 Junit5 Jupiter, 但是Spring等众多框架仍使用Junit4
+> [Official doc: 4.12](https://github.com/junit-team/junit4/blob/master/doc/ReleaseNotes4.12.md)
+
+- Junit4已经停止更新了, 取而代之的是 Junit5 Jupiter, 但是Spring等众多框架仍使用Junit4
 
 > 基本使用
 _JUnit_
