@@ -35,7 +35,7 @@
         - [其他](#其他)
     - [成员属性](#成员属性)
     - [方法](#方法)
-- [POJO](#pojo)
+- [Object](#object)
     - [VO](#vo)
     - [PO](#po)
     - [TO](#to)
@@ -44,7 +44,7 @@
     - [DAO](#dao)
 - [关键字](#关键字)
 
-`目录 end` |_2018-08-26_| [码云](https://gitee.com/gin9) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104) | [cnblogs](http://www.cnblogs.com/kuangcp)
+`目录 end` |_2018-09-05_| [码云](https://gitee.com/gin9) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104) | [cnblogs](http://www.cnblogs.com/kuangcp)
 ****************************************
 # 基础语法
 
@@ -125,12 +125,16 @@ Java8以前是使用 char数组 来存放String, Java8开始就是 byte数组 �
 ### Boolean
 ****************************
 ## 枚举类型
+> [official doc: enum](https://docs.oracle.com/javase/tutorial/java/javaOO/enum.html)
+
+枚举类的构造器必须是private 或者 package private (也就是缺省)
 
 > [参考博客: Java 语言中 Enum 类型的使用介绍](https://www.ibm.com/developerworks/cn/java/j-lo-enum/index.html)
 从上面的定义形式来看，似乎 Java 中的枚举类型很简单，但实际上 Java 语言规范赋予枚举类型的功能非常的强大，它不仅是简单地将整形数值转换成对象，而是将枚举类型定义转变成一个完整功能的类定义。
 
 - 简单定义
     - `public enum Color {RED, GREEN, GRAY, BLUE, YELLOW, WHITE, PURPLE, BLACK}`
+
 - 简单单例
 ```java
 public enum Tool{
@@ -161,7 +165,6 @@ _但是内部类的属性不能用static修饰_
 各个对象都是不依赖的，静态属性的出现破坏了这一逻辑，所以java语言在语义层面不允许我们那么做，这其实不是技术问题，是一个语言的逻辑和语义问题。
 
 > [参考博客: 关于Java内部类字段和方法不能使用static修饰的原因](https://my.oschina.net/u/1027043/blog/1823113)
-
 
 **************************
 ## 类型强转
@@ -196,9 +199,11 @@ _获取指定时间_ [获取指定时间的时间戳](https://blog.csdn.net/jsso
 - [ ] 方法签名的详解
 
 **************
-# POJO
+# Object 
+
 > [参考博客:  java的(PO,VO,TO,BO,DAO,POJO)解释](http://www.cnblogs.com/yxnchinahlj/archive/2012/02/24/2366110.html)
 > | [VO DAO BO 等缩写的意义](https://zhuanlan.zhihu.com/p/35762537?group_id=969493512006373376)
+
 ## VO
 > (value object) 值对象
 1. 使用new关键字创建的, 由GC回收的, 
@@ -219,16 +224,22 @@ _获取指定时间_ [获取指定时间的时间戳](https://blog.csdn.net/jsso
 > 首先说PO和VO吧，它们的关系应该是相互独立的，一个VO可以只是PO的部分，也可以是多个PO构成，同样也可以等同于一个PO（当然我是指他们的属性）。
 正因为这样，PO独立出来，数据持久层也就独立出来了，它不会受到任何业务的干涉。又正因为这样，业务逻辑层也独立开来，它不会受到数据持久层的影响，业务层关心的只是业务逻辑的处理，至于怎么存怎么读交给别人吧！
 不过，另外一点，如果我们没有使用数据持久层，或者说没有使用hibernate，那么PO和VO也可以是同一个东西，虽然这并不好。
+
 ## TO
 > (transfer Object) 数据传输对象
 - 在应用程序不同tie(关系)之间传输的对象
+
 ## BO
 > (business object) 业务对象
 - 从业务模型的角度看,见UML元件领域模型中的领域对象。封装业务逻辑的java对象,通过调用DAO方法,结合PO,VO进行业务操作。
 - 它装满了业务逻辑的处理，在业务逻辑复杂的应用中有用。
+
 ## POJO
+> [Wikipedia: POJO](https://en.wikipedia.org/wiki/Plain_old_Java_object) `Plain Old Java Object`
+
 > (plain ordinary java object) 简单无规则java对象
 - 纯的传统意义的java对象。就是说在一些Object/Relation Mapping工具中，能够做到维护数据库表记录的persisent object完全是一个符合Java Bean规范的纯Java对象，没有增加别的属性和方法。我的理解就是最基本的Java Bean，只有属性字段及setter和getter方法！
+
 ## DAO
 > (data access object) 数据访问对象
 - 通常和PO结合使用，DAO中包含了各种数据库的操作方法

@@ -14,6 +14,7 @@
                 - [原生SQL](#原生sql)
             - [Mysql](#mysql)
             - [映射关系](#映射关系)
+                - [一对一](#一对一)
                 - [一对多](#一对多)
                 - [多对多](#多对多)
         - [Restful设计](#restful设计)
@@ -26,7 +27,7 @@
             - [关于StringRedisTemplate的方法使用](#关于stringredistemplate的方法使用)
             - [消息订阅和发布](#消息订阅和发布)
 
-`目录 end` |_2018-08-29_| [码云](https://gitee.com/gin9) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104) | [cnblogs](http://www.cnblogs.com/kuangcp)
+`目录 end` |_2018-09-05_| [码云](https://gitee.com/gin9) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104) | [cnblogs](http://www.cnblogs.com/kuangcp)
 ****************************************
 # 数据库模块
 > 主要是采用的JPA，极大的缩减了代码量，但是要注意不要过度依赖框架，丧失了基本的能力
@@ -92,6 +93,30 @@
     - 默认使用的是HQL（HQL是基于类的所以使用的是类的名字不是表的名字），可以设置下使用原生SQL
 
 #### 映射关系
+##### 一对一
+> 据说这是性能最好的方式, 但是有一点让人不舒服, A的id是名存实亡的, 数据库都没有这个字段, 实际上就是B的id, 但是对象又一定要保留这个id, 不然约束通不过  
+> 也就是说, 创建的时候要设置A的id的值, 但是后面却用不到这个值
+
+```java
+@Entity
+@Data
+public class A {
+  @Id
+  private String id;
+  private String name;
+  @OneToOne(fetch = FetchType.LAZY)
+  @MapsId
+  private B b;
+}
+
+@Data
+@Entity
+public class B implements Serializable {
+  @Id
+  private String id;
+  private String name;
+}
+```
 ##### 一对多
 - 一方的配置是当前类的id，多方则按基本ER的规则来，注解中配置的是外键的名字, 所以当前类中的属性,外键名是不能重复的
 ```java
