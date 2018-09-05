@@ -58,8 +58,16 @@
 ****************************************
 
 # 代码托管平台
+## Gitlab
+> [Site](https://gitlab.com/)
+
+功能丰富, 集成了 CI/CD, 也能自己搭建 社区版, 免费的私有库, 用于团队协作的功能比较多
+
 ## Gitee
 > 码云,国内的github [帮助文档](http://git.mydoc.io/)
+
+
+也是有私有库, 但是私有库有数量限制, 不过那个数挺大的, 1000 还是多少, 但是分支图的显示不喜欢, 分支都没有闭合, 真难受
 
 ### URL规则
 - HTTPS & SSH
@@ -69,11 +77,11 @@
 ***********************************
 ## Github
 > 全球范围性的网站  [开发者文档](https://developer.github.com/v3/) 
-3. 在github上修改了项目后，或者以后是和别人一起开发，就要先git pull origin （master）将别人的分支和自己的分支都拉下来确保是最新，
-    - 再进行git push -u origin master 才能正确提交代码，如果不pull，提交是注定失败的，还会扰乱分支图
-4. 在github上修改文件，容易引起编码的变化，这时候没有pull就修改文件再commit也是会在push的时候很麻烦，最好在本地修改文件
-    - 最好是，在github上修改了就在本地pull之后再修改文件，万一出错了回退也简单
-[少有人知的 GitHub 使用技巧](https://segmentfault.com/a/1190000000475547)
+
+1. 在github上修改了项目后，或者以后是和别人一起开发，就要先git pull origin （master）将别人的分支和自己的分支都拉下来确保是最新，
+    - 再进行`git push -u origin master` 才能正确提交代码，如果不pull，提交是注定失败的，还会扰乱分支图
+
+- [少有人知的 GitHub 使用技巧](https://segmentfault.com/a/1190000000475547)
 ### URL规则
 > github仓库的URL规则
 >> git.io 是短网址服务
@@ -82,12 +90,13 @@
     - `HTTPS:` https://github.com/Kuangcp/Script.git
 
 - 目录：
-    - https://github.com/用户/项目/tree/分支/相对根目录的目录
+    - `https://github.com/用户/项目/tree/分支/相对根目录的目录`
 - 文本文件：
-    -  https://github.com/用户/项目/blob/分支/文件目录
+    - `https://github.com/用户/项目/blob/分支/文件目录`
 - 二进制文件，例如图片：
-    -  https://raw.githubusercontent.com/用户/项目/分支/文件目录
-- 例如同仓库下的这个文件`/Linux/Docker.md` 可以直接这样写，方便调用，最好最前面不要加`.`这个表示当前目录的 
+    -  `https://raw.githubusercontent.com/用户/项目/分支/文件目录`
+
+> 例如同仓库下的这个文件`/Linux/Docker.md` 可以直接这样写，方便调用，最好最前面不要加`.`这个表示当前目录的 
 
 ### MarkDown规则
 > [更多详情>>](/Skills/Document/MarkDown.md#github)
