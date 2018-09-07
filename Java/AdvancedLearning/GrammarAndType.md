@@ -44,7 +44,7 @@
     - [DAO](#dao)
 - [关键字](#关键字)
 
-`目录 end` |_2018-09-05_| [码云](https://gitee.com/gin9) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104) | [cnblogs](http://www.cnblogs.com/kuangcp)
+`目录 end` |_2018-09-06_| [码云](https://gitee.com/gin9) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104) | [cnblogs](http://www.cnblogs.com/kuangcp)
 ****************************************
 # 基础语法
 
@@ -183,10 +183,10 @@ _获取指定时间_ [获取指定时间的时间戳](https://blog.csdn.net/jsso
 > [参考博客: java 权限修饰符](https://blog.csdn.net/yan8024/article/details/6426451)
 
 ### 权限修饰符
-- `public`   **公开访问**
-- `protect`  **子类**（可以是别的包下） / **包** （主要是包内）
-- `缺省`      **包** 不能访问所修饰的对象的属性 只有 **public** 可以
-- `private`  **当前类** 或者 **内部类**
+- `public`   **任意范围**;
+- `protected`  **子类** 与 **同包**;  子类可以是任意包下
+- `缺省(package private)` **同包**;  限定了同一个包下, 才能访问 所修饰的属性
+- `private`  只能 **当前类** 或者 **内部类** 访问
 
 ### 其他
 

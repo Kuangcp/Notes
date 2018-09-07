@@ -59,7 +59,26 @@ Node数组 大小 是 使用容量达到0.75 就扩容(翻倍), 初始化大小�
 ********************************************
 
 ## List
+> interface 
 
+包括的方法有:
+![List method](https://raw.githubusercontent.com/Kuangcp/ImageRepos/master/Tech/Java/Collection/List/List.png)
+
+List接口有众多实现, 最常用的ArrayList LinkedList 
+
+******************************
+[stackoverflow: list add then unsupportedoperationexception](https://stackoverflow.com/questions/5755477/java-list-add-unsupportedoperationexception)
+> 有时候会使用 Arrays.asList() 或者 Collections.singletonList() 来快速生成 List  
+> 但是 这两个生成的实例都是返回 AbstractList 的实现类, 其 add remove 方法是没有实现的, 如果调用了就会抛出异常
+
+```java
+    public void add(int index, E element) {
+        throw new UnsupportedOperationException();
+    }
+```
+> 这是因为, 这个类设计就是采用的定长数组来实现List, 所以不能对其中元素进行更改
+
+******************************************
 ## Set
 - Set是无序的，但是StringRedisTemplate的对象操作返回的set竟然是有序的
     - 因为有一个类是SortSet，顾名思义，所以是有序的，要继续多学习和使用Java原生的集合对象了

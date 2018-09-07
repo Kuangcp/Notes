@@ -7,7 +7,7 @@
     - [编辑器](#编辑器)
     - [终端](#终端)
 
-`目录 end` |_2018-08-30_| [码云](https://gitee.com/gin9) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104) | [cnblogs](http://www.cnblogs.com/kuangcp)
+`目录 end` |_2018-09-06_| [码云](https://gitee.com/gin9) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104) | [cnblogs](http://www.cnblogs.com/kuangcp)
 ****************************************
 # 字体
 
@@ -46,3 +46,4 @@
 - Droid Sans Mono for Powerline
 - Roboto Mono for Powerline Bold
 - Hack
+

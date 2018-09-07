@@ -10,7 +10,7 @@
         - [插入模式](#插入模式)
         - [命令模式](#命令模式)
 
-`目录 end` |_2018-08-27_| [码云](https://gitee.com/gin9) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104) | [cnblogs](http://www.cnblogs.com/kuangcp)
+`目录 end` |_2018-09-06_| [码云](https://gitee.com/gin9) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104) | [cnblogs](http://www.cnblogs.com/kuangcp)
 ****************************************
 # Vim 
 > 学习曲线很高，但是学会熟练使用后就效率很高
@@ -116,7 +116,6 @@
 - O  在光标该行上一行新增一行
 - I  在光标该行开头插入
 - A  在光标该行末尾插入
-
 
 ### 命令模式
 - `:e path` 打开指定路径下文件

@@ -43,7 +43,7 @@
         - [SVN](#svn)
     - [repos的使用](#repos的使用)
 
-`目录 end` |_2018-09-01_| [码云](https://gitee.com/gin9) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104) | [cnblogs](http://www.cnblogs.com/kuangcp)
+`目录 end` |_2018-09-06_| [码云](https://gitee.com/gin9) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104) | [cnblogs](http://www.cnblogs.com/kuangcp)
 ****************************************
 # Git基础
 > Git is a free and open source distributed version control system designed to handle everything from small to very large projects with speed and efficiency. --[git-scm.com](https://git-scm.com/)
@@ -362,15 +362,14 @@ alias glola='git log --graph --pretty='\''%Cred%h%Creset -%C(yellow)%d%Creset %s
 > [Official Doc: 高级合并](https://git-scm.com/book/zh/v2/Git-%E5%B7%A5%E5%85%B7-%E9%AB%98%E7%BA%A7%E5%90%88%E5%B9%B6)
 > [参考博客: 解决 Git 冲突的 14 个建议和工具](http://blog.jobbole.com/97911/)
 
-- `git merge develop `默认会直接将当前分支指向Develop分支。(一条拐弯的线)
-- `git merge --no-ff develop` 在当前分支`主动合并`分支Develop，在Master分支上生成一个新节点(有一个环的线)
+- `git merge develop `默认会直接将当前分支指向Develop分支。(一条拐弯的分支线)
+- 推荐: `git merge --no-ff develop` 在当前分支`主动合并`分支Develop，在当前分支上生成一个新节点(有一个环的线)
 
-1. merge 和 download 在一定意义上是等价的
-    - master merge dev 就是master 下载dev的修改, 并入master自己
+1. merge 就是获取对方的修改, 与自己这一份进行合并(对 对方没有任何影响)
+    - `master merge dev` 就是 master 下载 dev 的那一份代码, 与自己的这份代码合并为一份
 
 - 如果遇到冲突：
     - `git mergetool` 使用工具进行分析冲突文件方便修改
-
 
 > 配置mergetool工具：
 - `git config --global merge.tool kdiff3`

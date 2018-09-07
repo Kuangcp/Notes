@@ -4,6 +4,7 @@
     - [/root](#root)
     - [/home](#home)
     - [/proc](#proc)
+        - [网络](#网络)
     - [/etc](#etc)
         - [/etc/alternatives](#etcalternatives)
         - [使用](#使用)
@@ -11,7 +12,7 @@
         - [查看系统所有用户信息](#查看系统所有用户信息)
     - [/tmp](#tmp)
 
-`目录 end` |_2018-08-04_| [码云](https://gitee.com/gin9) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104) | [cnblogs](http://www.cnblogs.com/kuangcp)
+`目录 end` |_2018-09-06_| [码云](https://gitee.com/gin9) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104) | [cnblogs](http://www.cnblogs.com/kuangcp)
 ****************************************
 # Linux 目录结构
 > Linux 系统目录结构的大致分布以及说明
@@ -22,9 +23,15 @@
 ## /home
 > 非root用户的默认用户目录  
 
+********************************
 ## /proc
 > 进程的目录, 一个个进程看起来是一个个目录(并不是真正的目录,这是一个虚拟文件系统), 使用进程号作为目录名
 
+### 网络
+1. ARP: /proc/net/arp cat该文件, 如果发现里面有重复的mac地址, 并且有机器伪装成了网关的mac 就说明遭受了ARP攻击 `或者 arp -a`
+    - arping 10.91.255.254 能查看到真实的mac地址
+
+************************
 ## /etc
 > 系统以及应用的配置目录
 
