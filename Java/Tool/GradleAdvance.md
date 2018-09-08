@@ -26,7 +26,7 @@
         - [下载安装和配置](#下载安装和配置)
 - [发布自己的构件](#发布自己的构件)
 
-`目录 end` |_2018-08-13_| [码云](https://gitee.com/gin9) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104) | [cnblogs](http://www.cnblogs.com/kuangcp)
+`目录 end` |_2018-09-09_| [码云](https://gitee.com/gin9) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104) | [cnblogs](http://www.cnblogs.com/kuangcp)
 ****************************************
 # Gradle进阶知识
 > [gradle api ](https://docs.gradle.org/4.9/dsl/org.gradle.api.Project.html) `所有{}结构 以及配置`
@@ -59,6 +59,9 @@
 │   └── 4.9
 └── workers
 ```
+> ~/.gradle/caches/modules-2/files-2.1 等价于Maven的 ~/.m2/repository 目录  
+> 不得不说, 这个目录很丑, 字母加字符短杠..强迫症很难受
+
 - 那么问题来了, 以前一直以为是和Maven共用一个仓库
     - 他和Maven本地仓库没有半毛钱关系, 他只是去复制了一下而已! [详情](https://blog.csdn.net/kcp606/article/details/81636426)
 

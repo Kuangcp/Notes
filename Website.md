@@ -51,7 +51,7 @@
 - [安卓手机](#安卓手机)
     - [Google](#google)
 
-`目录 end` |_2018-09-01_| [码云](https://gitee.com/gin9) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104) | [cnblogs](http://www.cnblogs.com/kuangcp)
+`目录 end` |_2018-09-09_| [码云](https://gitee.com/gin9) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104) | [cnblogs](http://www.cnblogs.com/kuangcp)
 ****************************************
 # 常用的网站
 ## 软件下载站
@@ -95,6 +95,8 @@
 - [学术搜索](http://scholar.chongbuluo.com/)
 
 - [habitica](https://habitica.com/)`通过游戏的方式激励完成个人日常任务`
+- [手机参数对比网站](http://product.pconline.com.cn/mobile/pk/param/1062508_1091427_1101075_604928_1035872.html)
+
 # 社区网站
 - [掘金门户网](http://e.xitu.io)
 - [吾爱破解](https://www.52pojie.cn/)
