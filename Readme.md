@@ -39,6 +39,8 @@
 > 不怕不努力, 最怕你喜欢装着努力, 还总被自己伪装出来的勤奋样子感动的一塌糊涂. 人总是会娇惯自己的!! 
 > 如果你觉得自己是周围人中活的最不容易的, 相信我, 那一定是错觉.  
 
+> 掩盖复杂性并不能让事情变得简单  
+
 ## 同类仓库
 - [巨人工作记录](https://ztgame.shenyu.me/)`笔记 基于 GitBook`
 - [daydayup](https://github.com/ITDragonBlog/daydayup)

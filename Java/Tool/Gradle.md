@@ -28,7 +28,7 @@
     - [构建Docker镜像](#构建docker镜像)
         - [第二种插件方式](#第二种插件方式)
 
-`目录 end` |_2018-08-13_| [码云](https://gitee.com/gin9) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104) | [cnblogs](http://www.cnblogs.com/kuangcp)
+`目录 end` |_2018-09-09_| [码云](https://gitee.com/gin9) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104) | [cnblogs](http://www.cnblogs.com/kuangcp)
 ****************************************
 # Gradle
 > [官方 guide](https://gradle.org/guides/?q=JVM) | [其他 tutorial](https://www.tutorialspoint.com/gradle/index.htm)  
@@ -168,11 +168,62 @@ _Hello World_
 - 和Maven用的是同一种方式 groupId artifactId version 
 - 使用本地依赖 `compile files('lib/ojdbc-14.jar')` 相对的根目录是src同级目录
 
-- 但是依赖的类别要多于Maven
-    - compile
-    - testCompile
-    - runtime
-    - provide
+[Official doc: dependency management](https://docs.gradle.org/current/userguide/java_plugin.html#sec:java_plugin_and_dependency_management)
+
+> 4.10  Deprecated: `compile runtime testCompile testRuntime`
+
+- `compile(Deprecated)`
+  - Compile time dependencies. Superseded by implementation.
+
+- `implementation extends compile`
+    - Implementation only dependencies.
+
+- `compileOnly`
+    - Compile time only dependencies, not used at runtime.
+
+- `compileClasspath extends compile, compileOnly, implementation`
+    - Compile classpath, used when compiling source. Used by task compileJava.
+
+- `annotationProcessor`
+    - Annotation processors used during compilation.
+
+- `runtime(Deprecated) extends compile`
+    - Runtime dependencies. Superseded by runtimeOnly.
+
+- `runtimeOnly`
+    - Runtime only dependencies.
+
+- `runtimeClasspath extends runtimeOnly, runtime, implementation`
+    - Runtime classpath contains elements of the implementation, as well as runtime only elements.
+
+- `testCompile(Deprecated) extends compile`
+    - Additional dependencies for compiling tests. Superseded by testImplementation.
+
+- `testImplementation extends testCompile, implementation`
+    - Implementation only dependencies for tests.
+
+- `testCompileOnly`
+    - Additional dependencies only for compiling tests, not used at runtime.
+
+- `testCompileClasspath extends testCompile, testCompileOnly, testImplementation`
+    - Test compile classpath, used when compiling test sources. Used by task compileTestJava.
+
+- `testRuntime(Deprecated) extends runtime, testCompile`
+    - Additional dependencies for running tests only. Used by task test. Superseded by testRuntimeOnly.
+
+- `testRuntimeOnly extends runtimeOnly`
+    - Runtime only dependencies for running tests. Used by task test.
+
+- `testRuntimeClasspath extends testRuntimeOnly, testRuntime, testImplementation`
+    - Runtime classpath for running tests.
+
+- `archives`
+    - Artifacts (e.g. jars) produced by this project. Used by tasks uploadArchives.
+
+- `default extends runtime`
+    - The default configuration used by a project dependency on this project. Contains the artifacts - and dependencies required by this project at runtime.
+
+
 
 
 ### 统一依赖管理
@@ -188,7 +239,7 @@ _Hello World_
     }
 ```
 - 在 build.gradle 中引入 `apply from: 'dependency.gradle'`
-- 使用依赖时 只需 `compile libs['junit']`即使在子模块中也是如此使用
+- 使用依赖时 只需 `compile libs['junit']` 即使在子模块中也是如此使用
 
 
 ### 配置Wrapper
