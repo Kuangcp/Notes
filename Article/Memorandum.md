@@ -19,6 +19,15 @@
 > 用来记录一些容易忘的乱七八糟的事情
 
 ## 数码
+### 硬盘
+
+> [参考博客: 为SSD编程（6）：总结—每个程序员都应该了解的固态硬盘知识](http://blog.jobbole.com/69969/)
+> [参考博客: 隐患重重遭诟病 细数固态硬盘“七宗罪”](http://ssd.zol.com.cn/471/4715723_all.html#p5061992)
+> [参考博客: 我偏要逆势而行 细数固态硬盘“七宗罪”](http://diy.pconline.com.cn/cpu/study_cpu/1205/2795735_all.html)
+> [参考博客: 越用越慢?谈谈使用SSD的几个注意事项](http://diy.pconline.com.cn/cpu/study_cpu/1203/2722291_all.html#content_page_2)
+
+
+> [参考博客: 显著提升程序员身心健康和工作效率的装备有哪些？](https://www.zhihu.com/question/23165812)
 ### 笔记本
 > 关于方向键的移动速度一定要快, 便携性上, 2kg以下 16g内存
 
