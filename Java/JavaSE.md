@@ -7,7 +7,7 @@
     - [【抽象】](#抽象)
     - [相关资源](#相关资源)
 
-`目录 end` |_2018-08-26_| [码云](https://gitee.com/gin9) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104) | [cnblogs](http://www.cnblogs.com/kuangcp)
+`目录 end` |_2018-09-10_| [码云](https://gitee.com/gin9) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104) | [cnblogs](http://www.cnblogs.com/kuangcp)
 ****************************************
 # 计算机基础
 
@@ -59,3 +59,4 @@
 ## 相关资源
 > [architect-awesome](https://github.com/xingshaocheng/architect-awesome)
 > [Java资源大全](http://www.codeceo.com/article/java-resource-collection.html)
+> [google: style guide](https://google.github.io/styleguide/javaguide.html)

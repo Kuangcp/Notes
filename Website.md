@@ -51,7 +51,7 @@
 - [安卓手机](#安卓手机)
     - [Google](#google)
 
-`目录 end` |_2018-09-09_| [码云](https://gitee.com/gin9) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104) | [cnblogs](http://www.cnblogs.com/kuangcp)
+`目录 end` |_2018-09-10_| [码云](https://gitee.com/gin9) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104) | [cnblogs](http://www.cnblogs.com/kuangcp)
 ****************************************
 # 常用的网站
 ## 软件下载站
@@ -264,7 +264,7 @@ _自建Git服务_
 
 ### 构建工具
 - [Maven](http://maven.apache.org/)
-- [Gradle官方下载地址](http://services.gradle.org/distributions/)
+- [service.gradle.org](http://service.gradle.org)`Official download`
     - [gradle-tomcat-plugin](https://github.com/bmuschko/gradle-tomcat-plugin)`gradle中tomcat插件`
 - [sbt](https://github.com/sbt/sbt)
 

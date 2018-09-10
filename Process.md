@@ -1,6 +1,6 @@
 ## 日记归档
-- [2017年](/Article/backup/Process_2017.md)
-- [2016年](/Article/backup/Process_2016.md)
+- [2017年](Article/backup/Process_2017.md)
+- [2016年](Article/backup/Process_2016.md)
 
 ## 2018-09-09 00:23:11
 - 在花钱方面也要有计划了, 面对需要的物品, 但是不是急需, 就应该先在各个平台挑好, 等做活动降价的时候买下来

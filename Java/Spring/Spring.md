@@ -22,12 +22,12 @@
             - [1 Spring AOP还是完全用AspectJ？](#1-spring-aop还是完全用aspectj)
             - [2 Spring AOP中使用@AspectJ还是XML？](#2-spring-aop中使用@aspectj还是xml)
             - [3 混合切面类型](#3-混合切面类型)
-    - [Schedule](#schedule)
+    - [Scheduling](#scheduling)
     - [Websocket](#websocket)
         - [maven配置](#maven配置)
     - [Web开发上的一些优秀的习惯](#web开发上的一些优秀的习惯)
 
-`目录 end` |_2018-08-23_| [码云](https://gitee.com/gin9) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104) | [cnblogs](http://www.cnblogs.com/kuangcp)
+`目录 end` |_2018-09-10_| [码云](https://gitee.com/gin9) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104) | [cnblogs](http://www.cnblogs.com/kuangcp)
 ****************************************
 # Spring
 > [Spring官网](https://spring.io/) | [spring4all社区](http://www.spring4all.com/)
@@ -181,6 +181,16 @@ _其他,可选_
    - **动态代理**
        - 针对一个方面编写一个InvocationHandler，然后借用JDK反射包中的Proxy类为各种接口动态生成相应的代理类 
 
+属性上 @Autowired 即可, 但是现在不建议直接在属性上使用注解, 而是建议在构造器上, 为了避免 手动使用new 实例化Bean, 然后里面本该注入的属性全部为null
+可以用lombok来协助
+```java
+@Component
+@RequiredArgsConstructor(onConstructor = @__(@Autowired))
+public class A{
+  @NonNull
+  private B b;
+  }
+```
 **********************
 ## AOP
 > Aspect Oriented Programming  面向切面编程
