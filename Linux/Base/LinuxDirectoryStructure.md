@@ -7,12 +7,13 @@
         - [网络](#网络)
     - [/etc](#etc)
         - [/etc/alternatives](#etcalternatives)
+        - [/etc/apt](#etcapt)
         - [使用](#使用)
         - [查看发行版](#查看发行版)
         - [查看系统所有用户信息](#查看系统所有用户信息)
     - [/tmp](#tmp)
 
-`目录 end` |_2018-09-06_| [码云](https://gitee.com/gin9) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104) | [cnblogs](http://www.cnblogs.com/kuangcp)
+`目录 end` |_2018-09-10_| [码云](https://gitee.com/gin9) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104) | [cnblogs](http://www.cnblogs.com/kuangcp)
 ****************************************
 # Linux 目录结构
 > Linux 系统目录结构的大致分布以及说明
@@ -43,6 +44,13 @@ alternative是可选项的意思.
 update-alternatives 命令就是操作的这个目录, 实现的步骤往往是在该目录建立一个软链接, 然后又从这里建立软链接到 /usr/bin 下, 实现将命令加入到 PATH 中的目的
 
 - [ ] 学习
+
+### /etc/apt
+> Debian 系 apt 包管理器的配置目录
+
+1. /etc/apt/sources.list.d/ 这个目录是放别的应用需要的软件列表
+
+***************************
 
 ### 使用
 > 具体配置文件的使用

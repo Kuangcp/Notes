@@ -20,7 +20,7 @@
         - [娱乐](#娱乐)
     - [商业](#商业)
 
-`目录 end` |_2018-09-01_| [码云](https://gitee.com/gin9) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104) | [cnblogs](http://www.cnblogs.com/kuangcp)
+`目录 end` |_2018-09-10_| [码云](https://gitee.com/gin9) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104) | [cnblogs](http://www.cnblogs.com/kuangcp)
 ****************************************
 
 > 只用来记录非技术类的文章,技术类的直接放到对应的笔记中去  
@@ -75,6 +75,8 @@
 - [Catch](http://edaoe.com/Catch)`简单的小知识点`
 - [importNew](http://www.importnew.com/)
 
+- [漠然](https://mritd.me/)`容器 kubernetes方面`
+
 ## 博客能人
 - [赵劼](http://www.cnblogs.com/JeffreyZhao/) `对函数式编程，并行程序开发，代码之美以及程序员能力与修养等相关问题`
 - [进击的Java新人](https://zhuanlan.zhihu.com/hinus)
@@ -89,12 +91,14 @@
 - [人月神话](http://blog.sina.com.cn/s/articlelist_1228571733_0_1.html)
 - [杜琪 ](https://www.jianshu.com/u/28d7875c78df)`Java 服务端`
 - [恒宇少年 ](https://www.jianshu.com/u/092df3f77bca)
+
 ************************
 ## 专栏
 - [CSDN 知识林](http://blog.csdn.net/zsl129)
 - [三分钟教你学Git](http://blog.csdn.net/column/details/13149.html)
 - [设计模式](http://blog.csdn.net/column/details/zsxdesignpattern.html)
 - [网络安全](https://zhuanlan.zhihu.com/avcom)
+
 *********************************
 # 【Blog】
 ## 搭建博客
