@@ -408,6 +408,7 @@ server {
 ## Docker-Compose
 > 声明式环境，管理多容器， 并处理好相关资源的关系
 
+案例 [1](https://github.com/fecshop/yii2_fecshop_docker/blob/master/docker-compose.yml)
 ### 安装
 > sudo pip install -U docker-compose
 

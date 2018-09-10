@@ -161,6 +161,7 @@
 ### pip
 > [pip](https://pip.readthedocs.io/en/stable/) | Python的包管理器
 
+> [doc](https://pip.pypa.io/en/stable/reference/pip_install/)
 #### Requirements files
 > [pip官方文档 Requirements files](https://pip.readthedocs.io/en/1.1/requirements.html)
 
@@ -168,6 +169,23 @@
     - 如果没有使用虚拟环境, 然后只想导出某项目的依赖 [Github pipreqs](https://github.com/bndr/pipreqs)
     - 安装 : `pip install pipreqs` 然后 `pipreqs /path/to/project`
 2. 使用 `pip install -r requirements.txt`
+
+#### 发布包到 pypi
+> [Official : about package](https://packaging.python.org/guides/distributing-packages-using-setuptools/?highlight=pypirc#id78)
+
+`$HOME/.pypirc`
+```
+[pypi]
+username = <username>
+password = <password>
+```
+
+pip3 install wheel twine 
+
+rm -rf dist
+
+python3 setup.py bdist_wheel
+twine upload dist/*
 
 *******************************
 ## 变量
