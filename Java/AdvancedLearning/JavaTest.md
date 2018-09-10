@@ -95,6 +95,9 @@ http://static.javadoc.io/org.mockito/mockito-core/2.19.0/org/mockito/Mockito.htm
 >1. Don’t mock everything
 >1. Show love with your tests!
 
+
+`when(player.hasEnoughScore(anyInt(), anyInt())).thenReturn(true);`
+
 ## DBUnit
 > 基于Junit的一个数据库测试框架, 方便测试dao层
 

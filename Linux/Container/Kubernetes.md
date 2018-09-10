@@ -21,11 +21,26 @@
 ## 安装
 > [official doc](https://kubernetes.io/docs/tasks/tools/install-kubectl/)
 
-
 > [参考博客: kubeadm 搭建 kubernetes 集群](https://mritd.me/2016/10/29/set-up-kubernetes-cluster-by-kubeadm/)
+
 > [参考博客: Kubernetes国内镜像、下载安装包和拉取gcr.io镜像](https://blog.csdn.net/nklinsirui/article/details/80581286)
 
 > [参考博客: 国内服务器安装kubernetes一路坑，求大神指点 ](http://dockone.io/question/1225#!answer_form)
+
+- **注意** Deepin上不要安装 kubernetes-client 这个是 1.7 版本, 类似于 docker.io 这样的老旧版本
+
+> 使用阿里云的镜像进行安装
+```sh
+# 均以 root 运行
+apt update && apt install -y apt-transport-https
+
+curl https://mirrors.aliyun.com/kubernetes/apt/doc/apt-key.gpg | apt-key add -
+
+echo "deb https://mirrors.aliyun.com/kubernetes/apt/ kubernetes-xenial main" > /etc/apt/sources.list.d/kubernetes.list 
+
+apt install kubelet kubeadm kubectl
+```
+> `deb http://apt.kubernetes.io/ kubernetes-xenial main` 虽然这才是官方源,奈何是Google服务器
 
 ## 简单使用
 

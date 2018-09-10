@@ -205,6 +205,17 @@ _系统运行级别_
     - 添加：`sudo add-apt-repository ppa:dotcloud/lxc-docker `
 	- 删除ppa : `cd  /etc/apt/sources.list.d/` 打开该目录下文件把对应的ppa的一行注释掉或删掉就行了
 
+
+1. 添加一个源列表
+
+- 例如添加 nginx: 新建文件 `/etc/apt/sources.list.d/nginx.list` 
+```
+    deb http://nginx.org/packages/mainline/debian/ jessie nginx
+    deb-src http://nginx.org/packages/mainline/debian/ jessie nginx
+```
+- `curl http://nginx.org/keys/nginx_signing.key | apt-key add -`
+    - 把签名添加进来才能正常 apt update
+
 ### 包管理器
 > dpkg
 1. 查看已安装的应用 `dpkg --list`
