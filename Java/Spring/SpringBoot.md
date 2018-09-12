@@ -30,7 +30,7 @@
             - [gradle结合docker](#gradle结合docker)
         - [热部署](#热部署)
 
-`目录 end` |_2018-08-10_| [码云](https://gitee.com/gin9) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104) | [cnblogs](http://www.cnblogs.com/kuangcp)
+`目录 end` |_2018-09-12_| [码云](https://gitee.com/gin9) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104) | [cnblogs](http://www.cnblogs.com/kuangcp)
 ****************************************
 # SpringBoot
 > [首页](https://spring.io/projects/spring-boot#learn)
@@ -45,6 +45,7 @@
     - `大大降低编程门槛, 但是, 将大量细节隐藏在默认配置中, 需要详细阅读文档和源码才能更好的玩转SpringBoot, 不然到处是坑`
 
 - [SpringBoot启动流程解析](https://www.cnblogs.com/trgl/p/7353782.html)`原理才是王道`
+- [spring boot应用启动原理分析 ](https://yq.aliyun.com/articles/6056)
 
 - Spring 是单例模式, 全部使用IOC容器进行管理, 那么怎么处理并发呢, 
     - 答案是 ? 多线程 然后 ThreadLocal 分别存储了各自的数据, 所以才说, 不能在Controller层 放置属性, 使其具有状态, 从而导致并发问题

@@ -12,6 +12,7 @@
         - [virtualenv](#virtualenv)
         - [pip](#pip)
             - [Requirements files](#requirements-files)
+            - [发布包到 pypi](#发布包到-pypi)
     - [变量](#变量)
     - [基本运行结构](#基本运行结构)
         - [序列](#序列)
@@ -50,7 +51,7 @@
         - [三方库](#三方库)
     - [QT](#qt)
 
-`目录 end` |_2018-08-26_| [码云](https://gitee.com/gin9) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104) | [cnblogs](http://www.cnblogs.com/kuangcp)
+`目录 end` |_2018-09-12_| [码云](https://gitee.com/gin9) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104) | [cnblogs](http://www.cnblogs.com/kuangcp)
 ****************************************
 # Python
 > [官网](https://www.python.org/)
@@ -182,7 +183,7 @@ password = <password>
 
 pip3 install wheel twine 
 
-rm -rf dist
+rm -rf dist build *.egg-info
 
 python3 setup.py bdist_wheel
 twine upload dist/*

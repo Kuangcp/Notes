@@ -9,7 +9,7 @@
         - [XSS](#xss)
     - [JWT](#jwt)
 
-`目录 end` |_2018-08-04_| [码云](https://gitee.com/gin9) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104) | [cnblogs](http://www.cnblogs.com/kuangcp)
+`目录 end` |_2018-09-12_| [码云](https://gitee.com/gin9) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104) | [cnblogs](http://www.cnblogs.com/kuangcp)
 ****************************************
 # Web安全
 > 关注常见的比如 XSS CSRF SQL注入 上传等问题的原理和修复方案。还有密码安全也基本上是面试必考点。
@@ -79,6 +79,8 @@
 - [Blog:介绍JWT](blog.leapoahead.com/2015/09/06/understanding-jwt/)`其实JWT还经常用于设计用户认证和授权系统，甚至实现Web应用的单点登录。`  
 - [Blog:单点登录](http://blog.leapoahead.com/2015/09/07/user-authentication-with-jwt/)  
 - [Web 安全之 XSS、CSRF 和 JWT](https://juejin.im/entry/58e67673a22b9d00588e7148)
+
+> [参考博客: 开箱即用 - jwt 无状态分布式授权](http://www.cnblogs.com/grissom007/p/6294746.html)
 
 > 需要注意的是，不是什么数据都适合放在 Cookie、localStorage 和 sessionStorage 中的。使用它们的时候，需要时刻注意是否有代码存在 XSS 注入的风险。  
 > 因为只要打开控制台，你就随意修改它们的值，也就是说如果你的网站中有 XSS 的风险，它们就能对你的 localStorage 肆意妄为。所以千万不要用它们存储你系统中的敏感数据

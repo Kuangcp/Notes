@@ -32,7 +32,7 @@
         - [防火墙](#防火墙)
             - [iptables](#iptables)
 
-`目录 end` |_2018-08-10_| [码云](https://gitee.com/gin9) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104) | [cnblogs](http://www.cnblogs.com/kuangcp)
+`目录 end` |_2018-09-12_| [码云](https://gitee.com/gin9) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104) | [cnblogs](http://www.cnblogs.com/kuangcp)
 ****************************************
 # 【网络管理】
 ## DNS
@@ -325,6 +325,12 @@ _ss_
     
 > [wget cookie](http://blog.csdn.net/adream307/article/details/47379149)  
 > [参考博客: wget命令详解](http://blog.csdn.net/RichardYSteven/article/details/4565931)
+
+- 镜像整站 `wget --mirror -p --convert-links -P . URL`
+    - –miror:开户镜像下载
+    - -p:下载所有为了html页面显示正常的文件
+    - –convert-links:下载后，转换成本地的链接
+    - -P .：保存所有文件和目录 到当前目录
 
 ****************************
 ## 【常用网络服务】

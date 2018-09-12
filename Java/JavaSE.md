@@ -7,7 +7,7 @@
     - [【抽象】](#抽象)
     - [相关资源](#相关资源)
 
-`目录 end` |_2018-09-10_| [码云](https://gitee.com/gin9) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104) | [cnblogs](http://www.cnblogs.com/kuangcp)
+`目录 end` |_2018-09-12_| [码云](https://gitee.com/gin9) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104) | [cnblogs](http://www.cnblogs.com/kuangcp)
 ****************************************
 # 计算机基础
 
@@ -21,7 +21,9 @@
 # Java
 > [Oracle JavaSE](http://www.oracle.com/technetwork/java/javase/overview/index.html)
 - [openjdk](http://openjdk.java.net/)`开源的JDK, `
-- [oracle-jdk 下载](http://www.oracle.com/technetwork/java/javase/downloads/index.html) | [oracle-jdk中文版下载页面](http://www.oracle.com/technetwork/cn/java/javase/downloads/index.html)
+- [oracle-jdk download](http://www.oracle.com/technetwork/java/javase/downloads/index.html) | [oracle-jdk中文版下载页面](http://www.oracle.com/technetwork/cn/java/javase/downloads/index.html)
+
+- [Java8 api 中文版 Google翻译](https://blog.fondme.cn/posts/21004/)
 
 >- [JDK and JRE](/Java/AdvancedLearning/JDKAndJRE.md)
 >- [Java 发行版大致特性](/Java/AdvancedLearning/JavaReleaseVersion.md)  
