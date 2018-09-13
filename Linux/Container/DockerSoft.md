@@ -30,7 +30,7 @@
         - [Coding平台的WebIDE](#coding平台的webide)
     - [图形化管理工具](#图形化管理工具)
 
-`目录 end` |_2018-08-23_| [码云](https://gitee.com/gin9) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104) | [cnblogs](http://www.cnblogs.com/kuangcp)
+`目录 end` |_2018-09-13_| [码云](https://gitee.com/gin9) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104) | [cnblogs](http://www.cnblogs.com/kuangcp)
 ****************************************
 # 使用Docker安装软件
 > [如何创建尽可能小的Docker容器教程](http://www.open-open.com/lib/view/open1419760974078.html)
@@ -137,14 +137,7 @@
 
 ******************
 ## Jenkins
-> [DockerHub : official ](https://hub.docker.com/_/jenkins/) | [长期支持版](https://hub.docker.com/r/jenkins/jenkins/)[长期支持版文档](https://github.com/jenkinsci/docker/blob/master/README.md)
-
-- `sudo docker pull jenkins` 下拉镜像(600M+) `jenkins:alpine` 更小点(200M+)
-- `sudo docker run --name myjenkins -p 8080:8080 -p 50000:50000 -v /home/kcp/docker/jenkins:/var/jenkins_home jenkins` 构建容器
-- 确保目录是开放了权限的, `chmod 777 jenkins` 最简单直接
-- 容器启动后, 第一次访问需要初始化, 之后就是正常的容器的启动关闭了
-
-> 分析可知基础镜像是 openjdk
+> [详情](/Skills/DevOps/Jenkins.md#docker)
 
 ****************************
 # 工具
@@ -154,7 +147,6 @@
 1. 下载 https://github.com/google/protobuf/releases
 2. 安装 g++ make 
 4. 编译安装下载的源码 进入目录 `./configure --prefix=/usr && make && make check && make install` 
-
 
 ## git服务器
 ### 简易git-daemon

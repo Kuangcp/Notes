@@ -36,7 +36,7 @@
     - [Docker-Swarm](#docker-swarm)
 - [网络](#网络)
 
-`目录 end` |_2018-08-27_| [码云](https://gitee.com/gin9) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104) | [cnblogs](http://www.cnblogs.com/kuangcp)
+`目录 end` |_2018-09-13_| [码云](https://gitee.com/gin9) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104) | [cnblogs](http://www.cnblogs.com/kuangcp)
 ****************************************
 # Docker
 > [官方文档](https://docs.docker.com/) | [docker-cn](www.docker-cn.com)`Docker中国`
@@ -212,8 +212,8 @@ _登录镜像仓库_
 - 查看详细： `docker inspect [-f {{".Architesture"}}]`  -f 查看JSON格式的具体节点的数据值
 - 查看历史：`docker history imagename`
 - 添加标签（别名）： `docker tag originname newname`
-- 导入导出：`docker save -o ubuntu.tar  ubuntu:14.04`
-    - 导入： `docker load --input ubuntu.tar`或 `docker load < ubuntu.tar`
+- 导出镜像文件：`docker save -o ubuntu.tar  ubuntu:14.04`
+    - 导入镜像文件： `docker load --input ubuntu.tar`或 `docker load < ubuntu.tar`
 - 上传镜像： `docker push mythos/test:lastest`
 
 ## 容器命令

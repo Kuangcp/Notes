@@ -32,7 +32,7 @@
         - [防火墙](#防火墙)
             - [iptables](#iptables)
 
-`目录 end` |_2018-09-12_| [码云](https://gitee.com/gin9) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104) | [cnblogs](http://www.cnblogs.com/kuangcp)
+`目录 end` |_2018-09-13_| [码云](https://gitee.com/gin9) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104) | [cnblogs](http://www.cnblogs.com/kuangcp)
 ****************************************
 # 【网络管理】
 ## DNS
@@ -437,7 +437,16 @@ _客户端_
 
 #### iptables
 > [参考博客: linux下IPTABLES配置详解](http://www.cnblogs.com/JemBai/archive/2009/03/19/1416364.html)
+
+> 其主要配置文件为: `/etc/sysconfig/iptables`
+
 - 查看配置情况 ` iptables -L -n`
+
+- 开启端口 `iptables -A INPUT -p tcp --dport 8000 -j ACCEPT`
+    - -A 参数表示添加规则，此外-D表示删除规则
+    - -p 表示协议，一般都是tcp
+    - --dport 就是指定端口号
+    - -j 指定是ACCEPT还是DROP，接收还是抛弃
 
 _有时候会发生这样的事情_
 1. 服务器的服务是正常启动的, 但是客户端连不上, 然后使用curl 去访问那个端口, 报错说 curl: (7) Failed to connect to 192.168.10.201 port 16888: 没有到主机的路由

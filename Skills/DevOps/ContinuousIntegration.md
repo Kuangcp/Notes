@@ -2,11 +2,6 @@
  
 - [持续集成](#持续集成)
     - [Jenkins](#jenkins)
-        - [安装](#安装)
-            - [Docker方式](#docker方式)
-        - [配置](#配置)
-            - [配置Gradle](#配置gradle)
-        - [使用](#使用)
     - [GoCD](#gocd)
     - [Drone](#drone)
     - [flow.ci](#flowci)
@@ -15,7 +10,7 @@
     - [sonarqube](#sonarqube)
         - [小型项目目前使用的方案](#小型项目目前使用的方案)
 
-`目录 end` |_2018-09-01_| [码云](https://gitee.com/gin9) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104) | [cnblogs](http://www.cnblogs.com/kuangcp)
+`目录 end` |_2018-09-13_| [码云](https://gitee.com/gin9) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104) | [cnblogs](http://www.cnblogs.com/kuangcp)
 ****************************************
 # 持续集成
 > 参考博客: [持续集成](http://www.ruanyifeng.com/blog/2015/09/continuous-integration.html) | [持续集成服务 Travis CI 教程](http://www.ruanyifeng.com/blog/2017/12/travis_ci_tutorial.html)  
@@ -28,31 +23,8 @@
 
 **************************
 ## Jenkins
-> [官网](https://jenkins.io/)
+> [详细](Jenkins.md)
 
-> [参考博客: 用 Docker, maven, jenkins 完成 CI](http://www.open-open.com/lib/view/open1436922756240.html)
-
-### 安装
-> [官方下载地址](https://jenkins.io/download/) | 由于是一个Java的Web服务, 所以也有war版本, 资源消耗都挺大的
-
-#### Docker方式
-> [详情](/Linux/Container/DockerSoft.md/jenkins)
-
-### 配置
-
-#### 配置Gradle
-> 系统管理 -> Global Tool Configuration 下 配置gradle, 然后新建项目的时候选择新建的gradle配置, 执行构建的时候才会去下载Gradle
-
-***********************
-### 使用
-
-> 案例: 从Gitlab私有库(Maven SpringBooot项目)建好一个构建
-1. 复制项目URL, Credentials 中添加一个 username/password 类型的授权即可(就是gitlab上的用户名密码)
-    - 可以选择指定的 分支 进行构建
-1. 添加一个构建, 选择Maven的版本, Goal 中添加 命令
-1. 完成配置, 可以直接开始构建
-
-**************************
 ## GoCD
 > [Github:GoCD](https://github.com/GoCD) 
 

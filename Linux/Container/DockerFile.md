@@ -23,7 +23,7 @@
         - [打包最新版git](#打包最新版git)
         - [Dockerfile中新建用户](#dockerfile中新建用户)
 
-`目录 end` |_2018-08-23_| [码云](https://gitee.com/gin9) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104) | [cnblogs](http://www.cnblogs.com/kuangcp)
+`目录 end` |_2018-09-13_| [码云](https://gitee.com/gin9) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104) | [cnblogs](http://www.cnblogs.com/kuangcp)
 ****************************************
 
 # Dockerfile
@@ -151,9 +151,9 @@ _docker build_
 - 使用`docker build --build=-arg<name>=<value>` 来传入值
 
 ### COPY
-> [参考博客](http://www.simapple.com/364.html)
+> 当复制本地目录时，推荐使用copy
 
-- 当复制本地目录时，推荐使用copy
+> [参考博客](http://www.simapple.com/364.html)
 - `copy <src> <dest>`
     - src是当前Dockerfile的相对路径的文件或目录,也可以是远程URL
     - dest 是目标容器中的绝对路径。
@@ -189,19 +189,21 @@ _docker build_
 - [官方文档 builder](http://docs.docker.io/reference/builder/)
 
 ### 打包最新版git
+- 注意其运行环境是容器内，不是宿主机，入口点的命令运行完了就退出了，不能当成宿主机上的git使用，只能说是学习一些操作
+    - 所以不可能说在容器中安装软件然后在宿主机上交互运行
+
 ```Dockerfile
     FROM ubuntu
-    MAINTAINER "youtemail"
-    RUN apt-get update
-    RUN apt-get install -ysoftware-properties-common
-    RUN add-apt-repository ppa:git-core/ppa
-    RUN apt-get update && apt-get install -y git
+    MAINTAINER "your email"
+    RUN apt-get update \
+        && apt-get install -ysoftware-properties-common \
+        && add-apt-repository ppa:git-core/ppa \
+        && apt-get update && apt-get install -y git
     ENTRYPOINT ["git"]
 ```
+
 - 构建镜像`docker build -t git:new .`
 - 将镜像容器化执行命令后自动删除容器`docker run --rm git:new`
-- 注意其运行环境是容器内，不是宿主机，入口点的命令运行完了就退出了，不能当成宿主机上的git使用，只能说是听个响
-    - 所以不可能说在容器中安装软件然后在宿主机上交互运行
 
 ### Dockerfile中新建用户
 ```Dockerfile
