@@ -2,6 +2,7 @@
  
 - [备忘录](#备忘录)
     - [数码](#数码)
+        - [硬盘](#硬盘)
         - [笔记本](#笔记本)
         - [键盘](#键盘)
             - [Poker II](#poker-ii)
@@ -13,7 +14,7 @@
     - [游戏](#游戏)
     - [科技](#科技)
 
-`目录 end` |_2018-08-08_| [码云](https://gitee.com/gin9) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104) | [cnblogs](http://www.cnblogs.com/kuangcp)
+`目录 end` |_2018-09-14_| [码云](https://gitee.com/gin9) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104) | [cnblogs](http://www.cnblogs.com/kuangcp)
 ****************************************
 # 备忘录
 > 用来记录一些容易忘的乱七八糟的事情
@@ -49,9 +50,8 @@
 RegionId  cn-qingdao cn-beijing cn-zhangjiakou cn-hangzhou cn-shanghai cn-shenzhen
 ```
 ### 特殊字符
-```
-    ╭ ─ ╳ ╬ ┇ ╧ ♀ ♂ ♡ ▽ △ □ ◇ ♢ ○ ☆ ㈱ ☒ ★ ◆■▲▼◀▶♠♣♥▁▂▃▄▅▆▇█▉▊▋▌▍▎▏
-```
+> [getemoji.com](http://getemoji.com/)
+
 **********************************
 ## 规范
 ### 提交规范
@@ -65,6 +65,11 @@ RegionId  cn-qingdao cn-beijing cn-zhangjiakou cn-hangzhou cn-shanghai cn-shenzh
 
 - `里程碑` :trophy: `:trophy:`
 - `改良的余地` :warning: `:warning:`
+
+- [🏆] 里程碑
+- [➕]  增加
+- [➖]  删除
+- [☯️] 修复bug
 
 ***************************************
  
