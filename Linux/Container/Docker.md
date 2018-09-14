@@ -36,7 +36,7 @@
     - [Docker-Swarm](#docker-swarm)
 - [网络](#网络)
 
-`目录 end` |_2018-09-13_| [码云](https://gitee.com/gin9) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104) | [cnblogs](http://www.cnblogs.com/kuangcp)
+`目录 end` |_2018-09-14_| [码云](https://gitee.com/gin9) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104) | [cnblogs](http://www.cnblogs.com/kuangcp)
 ****************************************
 # Docker
 > [官方文档](https://docs.docker.com/) | [docker-cn](www.docker-cn.com)`Docker中国`
@@ -286,10 +286,13 @@ _ps_
     - `--rm` 容器运行结束退出就自动删除该容器 注意和`-d`不能共存
     - `--restart=always` 设置该容器随dokcer 服务自启动
     - `--hostname 容器hostname` 指定容器的hostname
+
 - 常用的参数    
     - `-e TZ="Asia/Shanghai"` 指定时区，可以解决时间不一致
     - `-v /etc/localtime:/etc/localtime:ro` 设置容器的时钟和宿主机一致，不一定有用
     
+> [参考博客: Docker修改默认时区](https://www.jianshu.com/p/004ddf941aac)
+
 > `docker create` 是创建一个容器，不会运行，`docker run`是运行命令在一个新容器里
 
 ### docker exec

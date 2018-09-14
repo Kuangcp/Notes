@@ -56,6 +56,8 @@ RegionId  cn-qingdao cn-beijing cn-zhangjiakou cn-hangzhou cn-shanghai cn-shenzh
 ## 规范
 ### 提交规范
 
+> github 采用的字符渲染emoji (只能用于github)
+
 - `bug` :x: `:x:`
 - `解决bug` :white_check_mark: `:white_check_mark:`
 
@@ -66,6 +68,7 @@ RegionId  cn-qingdao cn-beijing cn-zhangjiakou cn-hangzhou cn-shanghai cn-shenzh
 - `里程碑` :trophy: `:trophy:`
 - `改良的余地` :warning: `:warning:`
 
+> 直接使用emoji字符, 但是兼容性有问题
 - [🏆] 里程碑
 - [➕]  增加
 - [➖]  删除

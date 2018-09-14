@@ -23,7 +23,7 @@
         - [打包最新版git](#打包最新版git)
         - [Dockerfile中新建用户](#dockerfile中新建用户)
 
-`目录 end` |_2018-09-13_| [码云](https://gitee.com/gin9) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104) | [cnblogs](http://www.cnblogs.com/kuangcp)
+`目录 end` |_2018-09-14_| [码云](https://gitee.com/gin9) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104) | [cnblogs](http://www.cnblogs.com/kuangcp)
 ****************************************
 
 # Dockerfile
@@ -135,6 +135,8 @@ _docker build_
 - 如果`docker run --env <key>=<value>`则会覆盖dockerfile中同名key的值
     - `docker run -e` 重设环境变量
 - 一个ENV命令一个新层，所以也是尽量使用一个ENV命令
+
+- `ENV TIME_ZONE Asiz/Shanghai`
 
 ### LABEL
 > 用来定义键值对， 相当于是一个内置的配置文件

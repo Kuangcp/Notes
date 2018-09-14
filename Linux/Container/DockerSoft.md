@@ -30,21 +30,25 @@
         - [Coding平台的WebIDE](#coding平台的webide)
     - [图形化管理工具](#图形化管理工具)
 
-`目录 end` |_2018-09-13_| [码云](https://gitee.com/gin9) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104) | [cnblogs](http://www.cnblogs.com/kuangcp)
+`目录 end` |_2018-09-14_| [码云](https://gitee.com/gin9) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104) | [cnblogs](http://www.cnblogs.com/kuangcp)
 ****************************************
 # 使用Docker安装软件
 > [如何创建尽可能小的Docker容器教程](http://www.open-open.com/lib/view/open1419760974078.html)
 
 ## 个人镜像
 `百度云`
-- 配置好SSH服务器的 alpine 3.6  
+- 配置好SSH服务器的 alpine 3.6 `但是很多人不建议这么做,所以简单的 docker exec 登录就行了`  
     - [docker hub地址](https://hub.docker.com/r/mythkuang/alpine-ssh/) | 百度镜像源: `hub.baidubce.com/mythos/alpine-ssh:1.0` 
     1. 使用上, pull, 然后 `docker run --name sshd -p 8989:22 alpine-ssh`
     1. 设置root用户密码 `docker exec -it sshd passwd`
     1. 登录 `ssh -p 8989 root@localhost`
 
+- Jenkins 镜像 `hub.baidubce.com/mythos/jenkins:2.138.1`
+
 - redis的alpine版镜像 `hub.baidubce.com/mythos/redis-alpine:1211` 
+
 - idea的注册机 `hub.baidubce.com/mythos/idea-register:1.0`
+
 - protobuf的编译环境以及2.5的源码在内 `hub.baidubce.com/mythos/protoc-alpine-src:2.5` 
     - protobuf 的 Alpine 的 2.5版本 `hub.baidubce.com/mythos/protoc-alpine:2.5` 
     - protobuf 的 Ubuntu 的 2.5版本 `hub.baidubce.com/mythos/protoc:2.5`
