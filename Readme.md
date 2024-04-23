@@ -114,29 +114,3 @@ _有自制力的人， 能够坚持的人才更有可能成功！_
 一年多，积累了很多读者，也通过写的东西造福了很多找工作的学生、迷茫的大学生、想转行的就业者，也让我有动力的不断继续更新下去。  
 > -- 知乎: 路人甲
 
-## 【学习历程】
-
-|   时间   |  语言或工具  |
-| :--------: | :------: |
-| 2014.09 |   接触C    |
-| 2015.07 |  接触Java  |
-| 2016.02 | 接触Maven |
-| 2016.03 | 接触Gradle |
-| 2017.03 | 接触Python |
-| 2017.04 | 接触Groovy |
-| 2017.05 | 接触Linux  |
-| 2017.08 | 接触Docker |
-| 2018.07 | 接触Go |
-
-**************
-## 个人备忘
-- [阿里Java编程规范](Java/AlibabaJavaStandard.md)
-- [常用SDK自动下载配置工具 mythsdk](https://github.com/Kuangcp/Script/tree/master/python/mythsdk) 
-    - `功能仿sdkman，但简单，不过是提供自行搭建使用的，毕竟七牛云下载超量了是要收费的`
-- 克隆笔记仓库可以加上 `--depth 1` 参数, 减小克隆的大小
-- [notes](https://github.com/pimterry/notes)`终端内的note工具`
-
-## 涉及的工具 
-1. [创建 SUMMARY.md 目录文件脚本](create_tree.py)
-1. [统计仓库所有中文字数](wordRecord.sh) `count 命令是 go 写的工具 [项目地址](https://gitee.com/gin9/GoBase/tree/master/count)`
-1. [为每个md文件创建目录头部](https://gitee.com/gin9/script/blob/master/shell/text/deal_md.sh)
