@@ -1,25 +1,38 @@
-`目录 start`
- 
-- [Scala](#scala)
-    - [安装](#安装)
-    - [基础了解](#基础了解)
-    - [Scala基础语法](#scala基础语法)
-    - [适合Scala使用的场景](#适合scala使用的场景)
-        - [Scala和Java的比较](#scala和java的比较)
-        - [Scala特性](#scala特性)
-            - [类型推断](#类型推断)
-            - [方法](#方法)
-            - [导入](#导入)
-            - [循环控制结构](#循环控制结构)
-            - [函数式编程](#函数式编程)
-        - [Scala对象模型](#scala对象模型)
-        - [数据结构和集合](#数据结构和集合)
-        - [actor](#actor)
+---
+title: Scala
+date: 2018-12-15 12:09:46
+tags: 
+    - 基础
+categories: 
+    - Scala
+---
 
-`目录 end` |_2018-08-04_| [码云](https://gitee.com/gin9) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104) | [cnblogs](http://www.cnblogs.com/kuangcp)
+**目录 start**
+
+1. [Scala](#scala)
+    1. [安装](#安装)
+    1. [基础了解](#基础了解)
+    1. [基础语法](#基础语法)
+    1. [适合Scala使用的场景](#适合scala使用的场景)
+        1. [Scala和Java的比较](#scala和java的比较)
+        1. [Scala特性](#scala特性)
+            1. [类型推断](#类型推断)
+            1. [方法](#方法)
+            1. [导入](#导入)
+            1. [循环控制结构](#循环控制结构)
+            1. [函数式编程](#函数式编程)
+        1. [Scala对象模型](#scala对象模型)
+        1. [数据结构和集合](#数据结构和集合)
+        1. [actor](#actor)
+
+**目录 end**|_2020-04-27 23:42_|
 ****************************************
 # Scala
+> [Official tour](https://docs.scala-lang.org/tour/tour-of-scala.html)
 
+> [Groovy创始人：Java面临终结 Scala将取而代之](http://developer.51cto.com/art/200907/134785.htm)
+
+> [参考: 20 Best Scala Books To Go From Beginner To Expert](https://whatpixel.com/best-scala-books/)
 ## 安装
 - 通过sdkman安装，或者下载解压配置环境变量 [sdkman使用](/Skills/usually_app.md)
 
@@ -51,15 +64,14 @@
 - 不必声明hello的类型，编译器会自行推断
 - 无需声明main方法的返回类型 编译器会自动设为 Unit 等价于Java中的void
 - 和Java Groovy不一样的是，变量的类型在变量之后
-- 方括号 [] 表示泛型，所以类型参数的表示方法是Array[String] 不是 String[]
+- 方括号 [] 表示泛型，所以类型参数的表示方法是`Array[String]` 不是 String[]
 - Array是纯正的泛型
 - 集合类型必须指明泛型 不能像Java那样声明生类型（指不带类型参数的泛型类或接口。）
-    - 例如泛型类 Box<T> 创建其参数化类型时要指明类型参数的真实类型 Box<Integer>intBox = new Box<>(); 
+    - 例如泛型类 `Box<T>` 创建其参数化类型时要指明类型参数的真实类型 Box<Integer>intBox = new Box<>(); 
     - 如果忽略了类型参数，Box rawBox = new Box();则是创建了一个生类型
 - 分号绝对是可选的
 - val 就相当于Java中的final变量，用于声明一个不可变量
 - Scala应用程序的初始入口总是在Object中
-
 
 `match表达式`
 - 最简单的match用法跟Java的switch差不多，但是match表达力更强
@@ -71,6 +83,7 @@
     }
     println(transFer)
 ```
+
 - 从语言的纯粹性来看，Scala语法比Java更清晰，也更正规：
     - 默认case 不需要另外一个不同的关键字
     - 单个case 不会像Java那样进入下一个case，所以也就不需要break
@@ -102,24 +115,24 @@
 - Scala选择actor机制来实现并发编程。提供了一个异步并发模型，通过在代码单元间传递消息实现并发。这种并发模型比Java提供的基于锁的机制，默认共享的并发模型更易用，不过Scala的底层模型也是JVM
 
 *******************************
-## Scala基础语法
+## 基础语法
 `运行`
-- 可以进入REPL终端，和Python似的
-- 也可以使用`scalac scala`就像`javac java`先进行编译然后再运行字节码
-- 或者`Scala 文件`解释运行
+1. 可以进入REPL终端，和Python类似
+1. 也可以使用`scalac scala`就像`javac java`先进行编译然后再运行字节码
+1. 或者`scala 文件`解释运行
 
 `包`
-- 第一种方法和 Java 一样，在文件的头定义包名，这种方法就后续所有代码都放在该包中。 比如：
-```scala
-package com.runoob
-class HelloWorld
-```
-- 第二种方法有些类似 C#，如：
-```scala
-package com.runoob {
-  class HelloWorld 
-}
-```
+1. 第一种方法和 Java 一样，在文件的头定义包名，这种方法就后续所有代码都放在该包中。 比如：
+    ```scala
+        package com.runoob
+        class HelloWorld
+    ```
+1. 第二种方法有些类似 C#，如：
+    ```scala
+        package com.runoob {
+        class HelloWorld 
+        }
+    ```
 
 `Scala数据类型`
 |数据类型|描述|

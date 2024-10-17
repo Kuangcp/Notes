@@ -1,11 +1,20 @@
-`目录 start`
- 
-- [PyCharm](#pycharm)
+---
+title: PyCharm
+date: 2018-12-15 12:08:04
+tags: 
+    - IDEA
+categories: 
+    - IDE
+---
 
-`目录 end` |_2018-08-04_| [码云](https://gitee.com/gin9) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104) | [cnblogs](http://www.cnblogs.com/kuangcp)
+**目录 start**
+
+1. [PyCharm](#pycharm)
+
+**目录 end**|_2020-06-04 19:41_|
 ****************************************
 # PyCharm
-> [参考博客: PyCharm安装及使用](https://www.jianshu.com/p/042324342bf4)
+> [参考: PyCharm安装及使用](https://www.jianshu.com/p/042324342bf4)
 
 
 

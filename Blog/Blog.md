@@ -1,26 +1,28 @@
-`目录 start`
- 
-- [博客](#博客)
-    - [个人博客网](#个人博客网)
-    - [博客能人](#博客能人)
-    - [专栏](#专栏)
-- [【Blog】](#blog)
-    - [搭建博客](#搭建博客)
-    - [NetWork](#network)
-    - [经验之谈](#经验之谈)
-    - [操作系统](#操作系统)
-        - [Windows](#windows)
-        - [Linux](#linux)
-        - [安卓](#安卓)
-    - [Web性能](#web性能)
-    - [Tool](#tool)
-    - [团队开发](#团队开发)
-    - [毕业](#毕业)
-    - [生活](#生活)
-        - [娱乐](#娱乐)
-    - [商业](#商业)
+---
+title: Blog
+date: 2018-12-16 17:30:58
+tags: 
+    - Blog
+categories: 
+    - Blog
+---
 
-`目录 end` |_2018-09-10_| [码云](https://gitee.com/gin9) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104) | [cnblogs](http://www.cnblogs.com/kuangcp)
+💠
+
+- 1. [博客](#博客)
+    - 1.1. [技术团队](#技术团队)
+    - 1.2. [个人博客网](#个人博客网)
+    - 1.3. [专栏](#专栏)
+    - 1.4. [经验之谈](#经验之谈)
+    - 1.5. [Tool](#tool)
+    - 1.6. [团队开发](#团队开发)
+    - 1.7. [毕业](#毕业)
+    - 1.8. [生活](#生活)
+        - 1.8.1. [娱乐](#娱乐)
+        - 1.8.2. [玩机](#玩机)
+    - 1.9. [商业](#商业)
+
+💠 2024-05-06 19:59:21
 ****************************************
 
 > 只用来记录非技术类的文章,技术类的直接放到对应的笔记中去  
@@ -28,12 +30,37 @@
 
 # 博客
 
+## 技术团队
+- [阿里中间件](http://jm.taobao.org/)
+
 ## 个人博客网
+
+- [Paul Graham](http://www.paulgraham.com/hackpaint.html)
+- [baeldung](https://www.baeldung.com/)`搜Spring相关总会搜到他的博客`
+
+> 搭建博客
+- [知乎话题：如何搭建博客](https://www.zhihu.com/question/20463581)
+- [知乎专栏：使用Springboot搭建博客](https://zhuanlan.zhihu.com/p/28428463)
+- [solo](https://github.com/b3log/solo)`博客系统 markdown`
+- [咖啡兔](https://github.com/henryyan/henryyan.github.com)`现成的模板直接用md就能生成了`
+- [Gitment：使用 GitHub Issues 搭建评论系统 ](https://imsun.net/posts/gitment-introduction/)
+
+************************
+
+- [java-success](https://www.java-success.com/)
+
+- [解道](https://www.jdon.com/)
 - [王垠](http://www.yinwang.org/)
 - [ciaoshen](http://www.ciaoshen.com/)`肉身翻墙? Java大佬`
 - [阮一峰](http://www.ruanyifeng.com/blog/)`一个勤奋的布道者,Github每天都有提交`
 - [酷壳](https://coolshell.cn/)`左耳朵耗子个人博客网 阿里架构师`
 - [程序员DD](http://blog.didispace.com/)`翟永超 Spring4all社区创立者`
+- [纯洁的微笑](http://www.ityouknow.com/)`Java丰富技术栈 云收藏的开发者`
+- [Hollis](http://www.hollischuang.com/)
+
+- [java3y](https://zhongfucheng.bitcron.com/)`技术比较全面`
+- [mythsman](https://blog.mythsman.com/#blog)
+
 - [冰封千里](http://ice1000.org/)`Javaer,JavaFX和JVM类语言擅长`
 - [hushuang.me](https://hushuang.me/)
 - [猛禽](http://my.csdn.net/Raptor) `一个坚持了17年博客的程序员`
@@ -41,29 +68,20 @@
 - [David's blog](blog.weisiliang.com)`Java程序员`
 - [http://blog.leapoahead.com](http://blog.leapoahead.com)`经验之谈`
 - [Java和Vue前后端](http://blog.exrick.cn/)
-
 - [Web程序猿](https://imququ.com/)
 - [letus.club](http://letus.club/)
 - [海底苍鹰(tank)](http://blog.51yip.com/) `前端和Linux`
 - [彭鑫](http://www.worldhello.net)`Git权威指南作者,Git比较熟练`
 - [Chenxu](https://www.dogxu.cn)`使用Github page 以及Https 全免费搭建`
-
 - [Romeng's blog](https://www.romeng.men/)`edu邮箱,VPS等`
 - [如有乐享](https://51.ruyo.net/)`突破限制的 教程资源比较多`
-
 - [javabolg](https://javablog.net/)`nutz作者的博客`
-
 - [chenssy ](http://cmsblogs.com/)`技术较新 Java博客网`
-- [java3y](https://zhongfucheng.bitcron.com/)`技术比较全面`
-
 - [tengj](http://tengj.top/)`SpringBoot了解深入`
 - [dreamlikes](http://dreamlikes.cn/)`Java后台开发`
-
 - [张子阳的博客](http://www.tracefact.net/) `有技术,有推荐的书`
 - [绿色记忆](https://blog.gmem.cc/) `技术涉猎广泛`
-
 - [嘟嘟独立博客](http://tengj.top/)`SpringBoot系`
-- [ityouknow](http://www.ityouknow.com/)`Java丰富技术栈 云收藏的开发者`
 - [会飞的污熊](https://www.xncoding.com/)`github 搭建静态博客, 内容多`
 - [yscoder](https://yscoder.github.io/)`indigo主题的作者 hexo`
 - [晓风轻技术小站](https://xwjie.github.io/)`程序员你为什么这么累？ 作者`
@@ -76,8 +94,15 @@
 - [importNew](http://www.importnew.com/)
 
 - [漠然](https://mritd.me/)`容器 kubernetes方面`
+- [senra](http://www.senra.me/) `服务器, 容器等方面`
 
-## 博客能人
+- [xxl](https://www.cnblogs.com/xuxueli/)`开发了一套分布式组件`
+- [infotech](http://www.infotech.vip) 
+- [yourbatman](https://www.yourbatman.cn/)`励志成长`
+
+
+************************
+
 - [赵劼](http://www.cnblogs.com/JeffreyZhao/) `对函数式编程，并行程序开发，代码之美以及程序员能力与修养等相关问题`
 - [进击的Java新人](https://zhuanlan.zhihu.com/hinus)
 - [Java知音](http://blog.csdn.net/sky_blue12321)`较多面试题`
@@ -92,6 +117,10 @@
 - [杜琪 ](https://www.jianshu.com/u/28d7875c78df)`Java 服务端`
 - [恒宇少年 ](https://www.jianshu.com/u/092df3f77bca)
 
+- [wsdjeg](http://www.cnblogs.com/wsdjeg/)`SpaceVim作者`
+
+- [Dale](https://www.cnblogs.com/Anker/)`Linux方面`
+
 ************************
 ## 专栏
 - [CSDN 知识林](http://blog.csdn.net/zsl129)
@@ -99,17 +128,6 @@
 - [设计模式](http://blog.csdn.net/column/details/zsxdesignpattern.html)
 - [网络安全](https://zhuanlan.zhihu.com/avcom)
 
-*********************************
-# 【Blog】
-## 搭建博客
-- [知乎话题：如何搭建博客](https://www.zhihu.com/question/20463581)
-- [知乎专栏：使用Springboot搭建博客](https://zhuanlan.zhihu.com/p/28428463)
-- [solo](https://github.com/b3log/solo)`博客系统 markdown`
-- [咖啡兔](https://github.com/henryyan/henryyan.github.com)`现成的模板直接用md就能生成了`
-- [Gitment：使用 GitHub Issues 搭建评论系统 ](https://imsun.net/posts/gitment-introduction/)
-
-## NetWork
-- [使用清华的IPV6](http://ju.outofmemory.cn/entry/154398)
 
 ## 经验之谈
 - [不好的编程习惯](http://blog.csdn.net/xishining/article/details/78824148)
@@ -136,25 +154,11 @@ _如何将脑海中的思维火花转化为代码_
 
 >先把流程大致想清楚，在 main() 中写下大致的调用结构,不一定要实现每个细节，可以先用函数分装起来。实现最少的功能，之后再想怎么改进，加功能；这个过程也可以检验一开始写下来的代码是不是具备可拓展性。  
 比如用 js 做日历，可以先实现一个只能打印字符串日历的版本（这涉及到日期的计算，简单格式化输出），然后思考怎么把字符串适配到 html 上？或者服务端的话输出为 json ？
-或者其实可以跳过序列化这一步？等等。可以学习一下 TDD ，一边写代码一边写测试，切忌自以为思考完所有细节一气呵成实现完毕，这样的话基本上写代码：调试找 bug = 1:10
-
+或者其实可以跳过序列化这一步？等等。  
+可以学习一下 TDD ，一边写代码一边写测试，切忌自以为思考完所有细节一气呵成实现完毕，这样的话基本上 写代码：调试找bug = 1:10  
 
 ***************
-## 操作系统
-### Windows
-
-### Linux
-- [Ubuntu放弃战斗, Linux桌面的悲哀](http://www.jianshu.com/p/86dd6e34ce91)`deepin王总`
-- [一些工具软件](https://bbs.deepin.org/forum.php?mod=viewthread&tid=134241&extra=)
-- [关于uptime输出的详解](http://blog.csdn.net/adparking/article/details/6684690)
-- [Ubuntu安装我的世界](https://www.linuxidc.com/Linux/2016-04/129764.htm)
-
-### 安卓
-> [Android，开源还是封闭？](http://www.ruanyifeng.com/blog/2010/02/open_android_or_not.html)
-***************
-## Web性能
-- [ab: Apache Benchmark 的使用的个人浅薄经验](https://ruby-china.org/topics/13870)
-- [1M带宽的服务器并发问题](http://www.cnblogs.com/zikai/p/4971426.html)
+> [参考: 2018开发者技能报告，让你更了解自己的行业。](https://mp.weixin.qq.com/s?__biz=MzU3OTYxOTU4NA==&mid=2247483877&idx=1&sn=bf8d6078770992004e7ac10e606112c7&chksm=fd621f8aca15969c2094683eb3d233f6e98ebda1028ce57081faef013f02e742c57c21f6a919&scene=21#wechat_redirect)
 
 ***************
 ## Tool
@@ -166,7 +170,7 @@ _如何将脑海中的思维火花转化为代码_
 ***************
 ## 团队开发
 - [团队开发工作流项目](http://www.cnblogs.com/foundation/archive/2009/10/17/1584875.html)
-> [参考博客: 有人向我反馈了一个bug](http://www.techug.com/post/when_someone_gives_you_a_bug.html)
+- [参考: 有人向我反馈了一个bug](http://www.techug.com/post/when_someone_gives_you_a_bug.html)
 
 ***************
 ## 毕业
@@ -185,6 +189,10 @@ _如何将脑海中的思维火花转化为代码_
 - [业务分析三维度（场景+角色+时间）之程序员坐禅论道](http://www.cnblogs.com/bluedoctor/archive/2013/04/30/3051418.html#C5)
 
 ### 娱乐
+
+### 玩机
+> [华为全面屏手势](https://cn.club.vmall.com/forum.php?mod=viewthread&tid=16067108)
+
 ## 商业
 - [都说在做某界的 Airbnb，Airbnb 到底做了什么](http://daily.zhihu.com/story/4826947)
 

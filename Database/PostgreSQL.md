@@ -1,102 +1,59 @@
-`目录 start`
- 
-- [Postgresql](#postgresql)
-    - [概述](#概述)
-    - [和MySQL对比](#和mysql对比)
-    - [安装](#安装)
-        - [安装客户端](#安装客户端)
-        - [安装服务端](#安装服务端)
-        - [Docker方式安装服务端](#docker方式安装服务端)
-            - [pull完整版](#pull完整版)
-            - [pull精简版](#pull精简版)
-            - [Dockerfile构建](#dockerfile构建)
-            - [解释Dockerfile文件](#解释dockerfile文件)
-    - [使用](#使用)
-        - [Postgresql终端命令行使用](#postgresql终端命令行使用)
-        - [用户和角色权限](#用户和角色权限)
-            - [创建用户](#创建用户)
-            - [修改权限](#修改权限)
-        - [Java使用](#java使用)
-    - [基础数据](#基础数据)
+---
+title: PostgreSQL
+date: 2018-12-16 17:27:21
+tags: 
+    - PostgreSQL
+categories: 
+    - 数据库
+---
 
-`目录 end` |_2018-08-04_| [码云](https://gitee.com/gin9) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104) | [cnblogs](http://www.cnblogs.com/kuangcp)
+💠
+
+- 1. [Postgresql](#postgresql)
+- 2. [安装](#安装)
+    - 2.1. [Docker方式](#docker方式)
+- 3. [管理](#管理)
+    - 3.1. [终端命令行使用](#终端命令行使用)
+    - 3.2. [用户和角色权限](#用户和角色权限)
+        - 3.2.1. [创建用户](#创建用户)
+        - 3.2.2. [修改权限](#修改权限)
+- 4. [基础数据类型](#基础数据类型)
+- 5. [DDL](#ddl)
+- 6. [图数据库](#图数据库)
+- 7. [应用](#应用)
+    - 7.1. [Java使用](#java使用)
+    - 7.2. [导入导出](#导入导出)
+
+💠 2024-09-27 19:50:28
 ****************************************
 # Postgresql
-- [ ] [该公司对于PostgreSQL的缺点陈列是否属实](http://www.onexsoft.com/onesql.html)
 
-## 概述
 > [PostgreSQL](http://www.cnblogs.com/fcode/articles/PostgreSQL.html) | [wiki](https://wiki.postgresql.org/wiki/Main_Page)
 
-- 严格SQL标准
+- 严格实现SQL标准
 - Schemas 和表，用户的关系：
     - Schemas相当于是一个数据库进行分类的文件夹
 
-## 和MySQL对比
+`PostgreSQL和MySQL对比`
 > [PostgreSQL 与 MySQL 相比，优势何在？](https://www.zhihu.com/question/20010554)
 > [Converting MySQL to PostgreSQL](https://en.wikibooks.org/wiki/Converting_MySQL_to_PostgreSQL)
 
-## 安装
-### 安装客户端
-> `sudo apt-get install postgresql-client`
+# 安装
+安装客户端 `sudo apt install postgresql-client`  
+安装服务端 `sudo apt install postgresql`  
 
-### 安装服务端
-> `sudo apt install postgresql`
+## Docker方式
+> [Dockerhub 官方镜像](https://hub.docker.com/_/postgres/)
 
-### Docker方式安装服务端
-> [官方镜像](https://hub.docker.com/_/postgres/)
-
-#### pull完整版
-- 或者： `docker pull postgres` [官方镜像](https://hub.docker.com/_/postgres/)
+- `docker pull postgres`
     - 运行容器 `docker run --name mypostgre -i -t -p 5432:5432 postgres`
     - 客户端连接 `psql -h localhost -p 5432 -U postgres`
 
-#### pull精简版
-- 下拉镜像：`docker pull postgres:alpine` | 因为个人系统客户端是9.6, 所以用`9.6-alpine`镜像
-- 构建容器：
-```sh
-    docker run -d --name postgre \
-    -e POSTGRES_PASSWORD=jiushi \
-    -v gitea-db-data:/var/lib/postgresql/data \
-    -p 5432:5432 \
-    postgres:9.6-alpine
-```
-- 容器中连接 进入postgresql终端 `docker exec -it postgre psql -U postgres`
-    - 客户端连接 `psql -h localhost -U postgres`
-- 连接后 输入`\l` 列出所有数据库 即可查看连接成功与否
-
-#### Dockerfile构建
-`Dockerfile`
-```dockerfile
-    FROM ubuntu:16.04
-    RUN apt-key adv --keyserver keyserver.ubuntu.com --recv-keys B97B0AFCAA1A47F044F244A07FCC7D46ACCC4CF8
-    RUN echo "deb http://apt.postgresql.org/pub/repos/apt/ precise-pgdg main" > /etc/apt/sources.list.d/pgdg.list
-    RUN apt-get update && apt-get -y -q install python-software-properties software-properties-common \
-        && apt-get -y -q install postgresql-9.4 postgresql-client-9.4 postgresql-contrib-9.4
-    USER postgres
-    RUN /etc/init.d/postgresql start \
-        && psql --command "CREATE USER pger WITH SUPERUSER PASSWORD 'pger';" \
-        && createdb -O pger pgerdb
-    USER root
-    RUN echo "host all  all    0.0.0.0/0  md5" >> /etc/postgresql/9.4/main/pg_hba.conf
-    RUN echo "listen_addresses='*'" >> /etc/postgresql/9.4/main/postgresql.conf
-    EXPOSE 5432
-    RUN mkdir -p /var/run/postgresql && chown -R postgres /var/run/postgresql
-    VOLUME  ["/etc/postgresql", "/var/log/postgresql", "/var/lib/postgresql"]
-    USER postgres
-    CMD ["/usr/lib/postgresql/9.4/bin/postgres", "-D", "/var/lib/postgresql/9.4/main", "-c", "config_file=/etc/postgresql/9.4/main/postgresql.conf"]
-```
-- 构建容器 `docker build -t mypostgresql:9.4 .`
-    - 运行容器 `docker run --name mypostgre -i -t -p 5432:5432 mypostgresql:9.4`
-    - 使用客户端连接`psql -h localhost -p 5432 -U pger -W pgerdb` 口令：`pger`
-
-#### 解释Dockerfile文件
-> 待学习解释
-
 ************************************
-## 使用
+# 管理
 > [PostgreSQL 9.6.0 手册](http://postgres.cn/docs/9.6/index.html)
 
-### Postgresql终端命令行使用
+## 终端命令行使用
 > [PostgreSQL新手入门](http://www.ruanyifeng.com/blog/2013/12/getting_started_with_postgresql.html)
 `用熟悉的MySQL命令来解释`
 - `\l` show databases
@@ -115,9 +72,9 @@
 - 可以使用pg_dump和pg_dumpall来完成。比如备份sales数据库： 
     - pg_dump drupal>/opt/Postgresql/backup/1.bak 
 
-### 用户和角色权限
+## 用户和角色权限
 
-#### 创建用户
+### 创建用户
 - `createuser -P -D -R -e playboy`  //创建一个用户,-P要设置密码，-R,不参创建其他用户，-D不能创建数据库
 - `create user myth` 不带login属性
 - `create role myth` 具有login属性
@@ -125,7 +82,7 @@
 
 - [修改默认登录不需要密码的配置](http://www.linuxidc.com/Linux/2013-04/83564p2.htm)
 
-#### 修改权限
+### 修改权限
 > [参考博客](http://blog.csdn.net/beiigang/article/details/8604578)
 > [参考博客_角色](http://www.cnblogs.com/stephen-liu74/archive/2012/05/18/2302639.html)
 > [配置](http://www.linuxidc.com/Linux/2013-04/83564p2.htm)
@@ -142,12 +99,72 @@
     - 在PostgreSQL中，首先需要创建一个代表组的角色，之后再将该角色的membership 权限赋给独立的角色即可。
 - `GRANT CONNECT ON DATABASE test to father;` 角色赋予数据库test 连接权限和相关表的查询权限。
 
+> 注意：如果一个库授权给了用户A，库里面新建了表C 需要再次单独授权给用户A 否则A没有C表的权限
 
-### Java使用
+# 基础数据类型
+> [Chapter 8. Data Types](https://www.postgresql.org/docs/current/datatype.html)  
+> [PostgreSQL 数据类型](https://www.runoob.com/postgresql/postgresql-data-type.html)  
+
+> 自动增长 
+- 相比于MySQL的 AUTO_INCREMENT 关键字标记， pg将该特性设计为数据类型SERIAL， 但是在使用上没有MySQL方便
+- SMALLSERIAL 2字节  SERIAL	4字节 	BIGSERIAL 8字节 
+    - 注意这个自增序列值实际上是在系统表维护的 `SELECT nextval(pg_get_serial_sequence('the_table', 'the_primary_key'));` 
+
+- 在insert时，如果手动指定了id的值，那这个序列值不会跟着更新，下一次不带id去insert的时候就会冲突报错。
+```sql
+    create table t_user(id BIGSERIAL primary key , name varchar(31), email varchar(64), deprecated boolean );
+    INSERT INTO t_user (id, name, email, deprecated) VALUES (22, 'test6', null, false);
+    -- 如果当前序列值为21 这个insert会报错，id重复
+    INSERT INTO t_user (name, email, deprecated) VALUES ('test5', null, false);
+```
+- `id int8 GENERATED ALWAYS AS IDENTITY primary key` 这种字段就无法通过insert values指定id的值，会直接报错。
+- `id int8 GENERATED BY DEFAULT AS IDENTITY primary key` 等价于 BIGSERIAL primary key
+
+因此最好的方式是insert完，手动通过setval更新序列值到当前表的最大值。 [PostgreSQL更新所有表序列值到当前表中最大值](https://hhao.wang/archives/545)
+
+```sql
+    SELECT nextval(pg_get_serial_sequence('t_user', 'id')); -- 自增
+    SELECT currval(pg_get_serial_sequence('t_phone', 'id')); -- get 
+    SELECT setval(pg_get_serial_sequence('t_phone', 'id'), 1000); -- set 
+```
+
+
+
+- 日期类型转bigint `select   to_char(period,'yyyymmdd')::bigint  as period_int` 
+
+# DDL
+> 注意PG的查看表，函数，视图的定义(DCL)时很复杂，没有直观的语句类似`show create table`可以用，通常使用工具来查看表定义和函数定义视图定义等等。
+
+- 元数据存储： PostgreSQL将数据库对象（表、列、索引等）的元数据存储在系统目录（如pg_catalog）中。
+- 数据类型： PostgreSQL支持多种数据类型、约束、继承等特性，这些复杂性使得直接生成一个简单的CREATE TABLE语句变得困难。
+    - 为了准确地反映表的定义，需要考虑各种情况，比如默认值、约束、继承关系等。
+- 性能： 对于大型数据库生成 show create table 很耗费性能。
+
+```sql
+-- 简单查询出列
+SELECT attname AS column_name, format_type(atttypid, atttypmod) AS data_type, attnotnull AS is_nullable
+FROM pg_attribute  WHERE attrelid = (SELECT oid FROM pg_class WHERE relname = 'table_name') AND attnum > 0;
+```
+
+************************
+
+# 图数据库
+[PostgreSQL 图式搜索(graph search)实践 ](https://developer.aliyun.com/article/328141)  
+[edgedb](https://github.com/edgedb/edgedb)  
+
+
+************************
+# 应用
+
+## Java使用
 > [Postgresql JDBC Driver](https://github.com/pgjdbc/pgjdbc)
 
 - [官方：springboot使用](https://springframework.guru/configuring-spring-boot-for-postgresql/)
     - [参考博客](https://www.netkiller.cn/java/spring/boot/postgresql.html)
 
-## 基础数据
-> [ PostgreSQL中的数据类型](https://blog.csdn.net/jpzhu16/article/details/52140048)
+## 导入导出
+> 导出
+
+copy 方式，单连接复制出查询语句的结果
+
+[JDBC： 长连接流式导出数据](/Java/AdvancedLearning/JDBC.md#长连接流式导出数据)

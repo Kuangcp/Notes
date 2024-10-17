@@ -1,9 +1,18 @@
-`目录 start`
- 
-- [pygame](#pygame)
-    - [安装](#安装)
+---
+title: PythonGame
+date: 2018-12-13 16:01:52
+tags: 
+    - Game
+categories: 
+    - Python
+---
 
-`目录 end` |_2018-08-04_| [码云](https://gitee.com/gin9) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104) | [cnblogs](http://www.cnblogs.com/kuangcp)
+**目录 start**
+
+1. [pygame](#pygame)
+    1. [安装](#安装)
+
+**目录 end**|_2020-04-27 23:42_|
 ****************************************
 # pygame
 ## 安装

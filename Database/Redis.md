@@ -1,54 +1,70 @@
-`目录 start`
- 
-- [Redis](#redis)
-    - [Book](#book)
-    - [【windows上的基本配置】](#windows上的基本配置)
-    - [Linux下的使用](#linux下的使用)
-        - [docker安装redis](#docker安装redis)
-        - [命令安装](#命令安装)
-        - [解压即用](#解压即用)
-    - [redis配置文件](#redis配置文件)
-    - [Redis命令行常规使用](#redis命令行常规使用)
-        - [过期策略](#过期策略)
-        - [数据类型](#数据类型)
-            - [字符串 String](#字符串-string)
-            - [列表 list](#列表-list)
-            - [集合 set](#集合-set)
-            - [有序集合 zset](#有序集合-zset)
-            - [散列 hash](#散列-hash)
-            - [HyperLogLog](#hyperloglog)
-            - [GEO【地理位置】](#geo地理位置)
-        - [Pub/Sub发布订阅](#pubsub发布订阅)
-        - [事务](#事务)
-        - [服务器](#服务器)
-        - [Run Configuration](#run-configuration)
-    - [数据安全和性能](#数据安全和性能)
-        - [持久化策略](#持久化策略)
-        - [复制](#复制)
-        - [数据迁移](#数据迁移)
-    - [【Redis的使用】](#redis的使用)
-        - [作为日志记录](#作为日志记录)
-        - [作为网站统计数据](#作为网站统计数据)
-        - [存储配置信息](#存储配置信息)
-        - [自动补全](#自动补全)
-        - [构建锁](#构建锁)
-        - [任务队列](#任务队列)
-    - [编程语言的使用](#编程语言的使用)
-        - [Java 使用](#java-使用)
-        - [Python使用](#python使用)
-        - [webdis](#webdis)
+---
+title: Redis
+date: 2018-12-16 17:28:55
+tags: 
+    - Redis
+categories: 
+    - 数据库
+---
 
-`目录 end` |_2018-08-26_| [码云](https://gitee.com/gin9) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104) | [cnblogs](http://www.cnblogs.com/kuangcp)
+💠
+
+- 1. [Redis](#redis)
+    - 1.1. [Book](#book)
+- 2. [安装和配置](#安装和配置)
+    - 2.1. [Windows](#windows)
+    - 2.2. [Linux](#linux)
+        - 2.2.1. [Docker 方式](#docker-方式)
+        - 2.2.2. [解压即用](#解压即用)
+    - 2.3. [Redis配置文件](#redis配置文件)
+- 3. [数据类型](#数据类型)
+    - 3.1. [String](#string)
+        - 3.1.1. [BitMap](#bitmap)
+        - 3.1.2. [HyperLogLog](#hyperloglog)
+    - 3.2. [List](#list)
+    - 3.3. [Set](#set)
+    - 3.4. [Zset](#zset)
+    - 3.5. [Hash](#hash)
+    - 3.6. [Stream](#stream)
+    - 3.7. [GEO地理位置](#geo地理位置)
+- 4. [Scan](#scan)
+- 5. [Pipelining](#pipelining)
+- 6. [Pub/Sub发布和订阅](#pubsub发布和订阅)
+- 7. [客户端](#客户端)
+    - 7.1. [Java](#java)
+    - 7.2. [Python](#python)
+    - 7.3. [GUI客户端](#gui客户端)
+    - 7.4. [Cli](#cli)
+- 8. [Project](#project)
+    - 8.1. [Codis](#codis)
+    - 8.2. [webdis](#webdis)
+    - 8.3. [Redis Stack](#redis-stack)
+- 9. [Redis的应用场景](#redis的应用场景)
+    - 9.1. [分布式锁](#分布式锁)
+    - 9.2. [消息队列](#消息队列)
+- 10. [Redis 缓存相关问题](#redis-缓存相关问题)
+    - 10.1. [缓存雪崩](#缓存雪崩)
+    - 10.2. [缓存击穿](#缓存击穿)
+    - 10.3. [缓存穿透](#缓存穿透)
+
+💠 2024-09-14 11:51:16
 ****************************************
 # Redis
-> [Redis官网](https://redis.io/) | [Redis中文社区](http://www.redis.cn/) | [Redis教程](http://www.runoob.com/redis/redis-tutorial.html) 
+> [Official Site](https://redis.io/) | [Redis中文社区](http://www.redis.cn/) | [Redis教程](http://www.runoob.com/redis/redis-tutorial.html) 
 
-- [Redis中文文档](http://redisdoc.com/index.html)
+- [Redis Official doc zh](http://redisdoc.com/index.html)
+
+> [参考: nodejs + redis/mysql 连接池问题](https://www.cnblogs.com/laozhbook/p/nodejs_redis_connection_pool.html)`单线程问题`
+> [Redis 命令参考](http://doc.redisfans.com/index.html)`中文版，注意版本时效性` 
 
 ## Book 
-> [Redis设计与实现 第二版](http://www.shouce.ren/api/view/a/13483)
+> [Redis设计与实现 第二版](http://www.shouce.ren/api/view/a/13483)  
+> [Redis 设计与实现](http://redisbook.com)`作者自建网站`
 
-## 【windows上的基本配置】
+***********************
+
+# 安装和配置
+## Windows
 - 注册为服务
 	- `redis-server --service-install redis.windows.conf --loglevel verbose`
 - 使用cmder
@@ -57,66 +73,49 @@
 	- `requirepass redis1104`
 	- 客户端登录 `auth redis1104`
 
-## Linux下的使用
-### docker安装redis
+## Linux
+包管理器安装 redis 如 debian系`apt install redis` arch系`pacman -S redis`
+
+### Docker 方式
 > [docker-install-redis](/Linux/Container/DockerSoft.md#redis)
-
-### 命令安装
-> 这样不太好做多个redis, 个人不喜欢这种方式
-
-- 安装 `apt install redis`
-- 开启数据库服务 `redis-server`
-- 打开客户端 `redis-cli`
 
 ### 解压即用
 > [下载我打包好的(仅适用于Linux平台)](https://github.com/Kuangcp/Configs/tree/master/Database/redis)  
-> [4.0.2](http://cloud.kuangcp.top/redis-4.0.2.zip) | [3.2.8](http://cloud.kuangcp.top/redis-3.2.8.zip)  
+> [4.0.2](http://cloud.kuangcp.top/redis-4.0.2.zip) | [3.2.8](http://cloud.kuangcp.top/redis-3.2.8.zip)
 
 `个人配置步骤:`
-- 官网下载源码，执行`make`进行编译，编译完成后，复制src目录中的`redis-cli redis-server`就可以用了，redis-benchmark可选，测性能
-    - 再复制下面的简化配置文件，或者使用源码中根目录下的配置文件自己配置下
+1. 从源码编译: [官网下载源码](https://redis.io/)
+    - src下执行`make`进行编译，编译完成后，复制src目录中的`redis-cli redis-server`就可以用了
+    - `redis-benchmark` 压测工具
+    
+1. 配置文件: 再复制下面的简化配置文件，或者使用源码中根目录下的配置文件自己配置下
     - [简化配置文件](https://raw.githubusercontent.com/Kuangcp/Configs/master/Database/redis/simple_redis.conf)
-- 再创建以下两个脚本就可以便捷的使用redis了
-`server_redis.sh`
-```sh
-    basepath=$(cd `dirname $0`; pwd)
-    echo $basepath
-    $basepath/redis-server $basepath/redis.conf>redis.log &
-```
-`client_redis.sh`
-```sh
-    basepath=$(cd `dirname $0`; pwd)
-    $basepath/redis-cli -p 6379
-```
+1. 再下载脚本就可以便捷的使用redis了 [shell辅助脚本](https://github.com/Kuangcp/Configs/tree/master/Database/redis/helper)
 
-****************************
-## redis配置文件
+************************
+
+## Redis配置文件
 - [配置文件讲解](https://github.com/Kuangcp/Configs/blob/master/Database/redis/explain_redis.conf) | [原始配置文件](https://github.com/Kuangcp/Configs/blob/master/Database/redis/redis.conf)
-- `使用ing`[简化配置文件](https://github.com/Kuangcp/Configs/blob/master/Database/redis/simple_redis.conf) 
 
-********
-## Redis命令行常规使用
+- [简化配置文件](https://github.com/Kuangcp/Configs/blob/master/Database/redis/simple_redis.conf) 
 
-- 关闭数据库 `shutdown` 他会在关闭前保存数据
-- 保存内存中数据 `save`
-- 认证 `auth` 口令
-- 测试联通性 `ping` 连接成功会返回pong
-- 模糊删除 
-    - 删除 6666端口 的 2数据库中`detail-2018-07-0*`模式的数据: `./redis-cli -p 6666 -n 2 keys "detail-2018-07-0*" | xargs  ./redis-cli -p 6666 -n 2 del`
+**************************
 
-### 过期策略
-- `expire key seconds` 设置键的过期时间
-- `PTTL/TTL key ` 查看键剩余过期时间（生存时间） ms/s
-    -  -1表示永久 -2表示没有该key
+# 数据类型
+> [社区: 中文文档](http://redisdoc.com/index.html)
 
-### 数据类型
-> [中文文档](http://redisdoc.com/index.html)
-
-#### 字符串 String
+## String
 > 字符串就是字节组成的序列 可以放字节串，整数，浮点数
 
-- `set key newval nx `存在则set失败
-- `set key newval xx `不存在则set失败
+> `SET key value [EX seconds] [PX millisecounds] [NX|XX]`
+
+- EX seconds: 设置键的过期时间为second秒
+- PX millisecounds: 设置键的过期时间为millisecounds 毫秒
+- NX: 只在键不存在的时候,才对键进行设置操作
+- XX: 只在键已经存在的时候,才对键进行设置操作
+
+SET操作成功后,返回的是OK,失败返回NIL
+
 - `incr incrby decr decrby`  只要存入的String能被解析为数值,就能执行这些命令: 递增或者递减
 - `incr` 是原子操作即并发的情况下不会有脏读(可用于主键生成策略)
 - `getset key val` get旧值并且set新值
@@ -127,11 +126,40 @@
 - `del key` 返回1被删除，0 key不存在
 - `type key` 返回值的类型
 - `expire key secondes` 设置或改变超时时间，精度是秒或毫秒
-	- `set key val ex secondes` set时设置超时时间
 - `persist key` 去除超时时间
 - `ttl key` 查看剩余存活时间 -1表示永久 -2表示没有该key
 
-#### 列表 list
+************************
+
+### BitMap
+> [参考: redis的bitset实战](https://segmentfault.com/a/1190000016296106)  
+
+基于string, 可以操作每个 bit 的值
+- setbit key offset value
+    - `set key 上偏移量offset(2^32) 的 值 value(0/1)`
+- getbit key offset 
+- bitop
+    - 主要做bitset的and、or、xor、not操作，结果存在新的bitset中，注意时间复杂度为O(N)
+- bitpos
+    - 返回指定bitset中在指定起始位置中第一个出现指定值的offset，不传start，end默认估计是0,-1
+- bitcount
+    - 统计bitset中出现1的个数
+
+可以基于bitmap手动实现BloomFilter，也可以直接使用RedisStack的BloomFilter组件。
+
+### HyperLogLog
+> 用于做基数统计的算法
+
+HyperLogLog 的优点是，在输入元素的数量或者体积非常非常大时，计算基数所需的空间总是固定 的、并且是很小的  
+
+- PFADD 添加元素到制定 HyperLogLog 中
+- PFCOUNT 返回给定 HyperLogLog 的基数估算值。
+- PFMERGE 将多个 HyperLogLog 合并为一个 HyperLogLog 
+
+************************
+
+## List
+- llen 
 - `rpush key val val val `右/尾添加元素 lpush是左/头，若表不存在就新建
 - `rpushx key value` 若表不存在就什么都不做，否则尾插元素
 - `rpop key` 从list右/尾端中删除元素返回元素值 没有了就返回null
@@ -149,7 +177,7 @@
     - `bpoplpush`
     - `brpoplpush` 阻塞式先右弹再左进
 
-#### 集合 set
+## Set
 - `SADD key member [member ...]`
 - `SCARD key` 返回集合 key 的基数(集合中元素的数量)。
 - `SDIFF key [key ...]`  返回一个集合的全部成员，该集合是所有给定集合之间的差集。不存在的 key 被视为空集。
@@ -166,18 +194,21 @@
 - `SUNIONSTORE destination key [key ...]`
 - `SSCAN key cursor [MATCH pattern] [COUNT count]` 参考 SCAN 命令
 
-#### 有序集合 zset
+************************
+
+## Zset
 > 元素是键值对，键是member成员，值是score分值必须是浮点数
 
-- _zadd_ 将一个给定分值的成员添加到有序集合里
-- ZCARD
-- ZCOUNT
-- _zincrby_ 自增
+- ZADD 将一个给定分值的成员添加到有序集合里
+- ZCARD 获取有序集合的成员数
+- ZCOUNT min max 计算在有序集合中指定区间分数的成员数
+- ZINCRBY key increment member 自增
 
-- _zrange_ 根据元素在有序集合中的位置，从有序集合中从小到大获取多个元素
+- ZRANGE 根据元素在有序集合中的位置，从有序集合中从小到大获取多个元素
     - `zrange name 0 -1 withscores` 获取所有并获取分值
     - `zrange name 0 3 withscores`  获取分数最少的4个键值对
-- _zrevrange_ 相反的, 从大到小
+
+- ZREVRANGE 相反的, 从大到小
 
 - _zrangebyscore_ 获取有序集合在给定范围中的所有元素
     - `zrangebyscore name 0 200 withscores`
@@ -187,7 +218,7 @@
 - ZREMRANGEBYSCORE
 - ZREVRANGEBYSCORE
 - ZREVRANK
-- ZSCORE
+- `ZSCORE key member` 依据指定member获取score
 - ZUNIONSTORE
 - `zinterstore` 进行集合之间的并集（可以看作关系型数据库的多表连接）
 - ZSCAN
@@ -195,8 +226,10 @@
 - ZLEXCOUNT
 - ZREMRANGEBYLEX
 
-#### 散列 hash
-> (类似Map 嵌套，一个内置的微型redis)
+************************
+
+## Hash
+> key-value 结构
 
 - HDEL 删除散列中指定的K
 - HEXISTS
@@ -214,12 +247,11 @@
 - HSCAN
 - HSTRLEN
 
-#### HyperLogLog
-- PFADD
-- PFCOUNT
-- PFMERGE
+## Stream 
 
-#### GEO【地理位置】
+************************
+
+## GEO地理位置
 - GEOADD
 - GEOPOS
 - GEODIST
@@ -227,8 +259,37 @@
 - GEORADIUSBYMEMBER
 - GEOHASH
 
-***************
-### Pub/Sub发布订阅
+************************
+# Scan 
+- **SCAN** 命令用于迭代当前数据库中的数据库键 相较于 keys 降低阻塞进程的概率。
+    - cursor 游标 
+        - 注意这个游标不是 常见的 fori 循环里的i规律递增，第一次 sscan 会返回 cursor(第一个参数) 需要下一次拿这个 cursor 作为参数继续获取
+        - 直到 `返回 0` 表示迭代完成 如果数据发生变化游标也会变化，且 count 是不保证准确数量的
+    - count 数量
+        - redis 只保证返回的数据数量大于等于 count. **注意count不能小于1 否则报 syntax error**
+    - match pattern 匹配key的模式
+    - 因为 这种不易理解的迭代方式, Spring 的 RedisTemplate 只提供了 count pattern 参数 cursor 默认为0
+
+- **SSCAN** 命令用于迭代 Set 键中的元素。
+- **HSCAN** 命令用于迭代哈希键中的键值对。
+- **ZSCAN** 命令用于迭代有序集合中的元素（包括元素成员和元素分值）
+
+> 使用SCAN命令代替原有全查询命令更安全，因为是部分查询不容易像全查询命令那样阻塞Redis进程，因此往往生产环境会禁止全查询命令 keys smembers 等 
+
+> 注意 scan 命令只能顺序依据返回的cursor进行查找，而且由于实现方式，不一定每次查询是有数据的  
+> 也就导致了在有大量key的db里面 找到 match pattern 的所有key 靠手工执行scan一次次找是不可能的
+
+************************
+
+# Pipelining
+> 一次请求/响应服务器能实现处理新的请求即使旧的请求还未被响应。这样就可以将多个命令发送到服务器，而不用等待回复，最后在一个步骤中读取该答复。
+
+- `(printf "PING\r\nPING\r\nPING\r\n"; sleep 1) | nc localhost 6379`
+
+************************
+
+# Pub/Sub发布和订阅
+> 基于 阻塞 list 实现
 
 - `PSUBSCRIBE pattern [pattern ...]`
     - 订阅一个或多个符合给定模式的频道。每个模式以 * 作为匹配符，比如 it* 匹配所有以 it 开头的频道( it.news 、 it.blog 、 it.tweets 等等)，
@@ -249,89 +310,127 @@
     - 指示客户端退订给定的频道。如果没有频道被指定，也即是，一个无参数的 UNSUBSCRIBE 调用被执行，
     - 那么客户端使用 SUBSCRIBE 命令订阅的所有频道都会被退订。在这种情况下，命令会返回一个信息，告知客户端所有被退订的频道。
 
-**************
-### 事务
+************************
 
-- `DISCARD` 取消事务，放弃执行事务块内的所有命令。
-- `EXEC`
-    - 执行所有事务块内的命令。假如某个(或某些) key 正处于 WATCH 命令的监视之下，且事务块中有和这个(或这些) key 相关的命令，
-    - 那么 EXEC 命令只在这个(或这些) key 没有被其他命令所改动的情况下执行并生效，否则该事务被打断(abort)。
-- `MULTI` 标记一个事务块的开始。事务块内的多条命令会按照先后顺序被放进一个队列当中，最后由 EXEC 命令原子性(atomic)地执行。
-- `UNWATCH` 
-    - 取消 WATCH 命令对所有 key 的监视。如果在执行 WATCH 命令之后， EXEC 命令或 DISCARD 命令先被执行了的话，那么就不需要再执行 UNWATCH 了。
-    - 因为 EXEC 命令会执行事务，因此 WATCH 命令的效果已经产生了；而 DISCARD 命令在取消事务的同时也会取消所有对 key 的监视，因此这两个命令执行之后，就没有必要执行 UNWATCH 了。
-- `WATCH key [key ...]`
-    - 监视一个(或多个) key ，如果在事务执行之前这个(或这些) key 被其他命令所改动，那么事务将被打断。
+# 客户端
+> [program language client](http://www.redis.com.cn/clients)
 
-*************
-### 服务器
+## Java
+> [详细](/Java/Ecosystem/JavaRedis.md)
 
-- BGREWRITEAOF
-- BGSAVE
-- CLIENT GETNAME
-- CLIENT KILL
-- CLIENT LIST
-- CLIENT SETNAME
-- CONFIG GET
-- CONFIG RESETSTAT
-- CONFIG REWRITE
-- CONFIG SET
-- DBSIZE
-- DEBUG OBJECT
-- DEBUG SEGFAULT
-- FLUSHALL
-- FLUSHDB
-- INFO
-- LASTSAVE
-- MONITOR
-- PSYNC
-- SAVE
-- SHUTDOWN
-- SLAVEOF
-- SLOWLOG
-- SYNC
-- TIME
-*****************************
-	
-### Run Configuration	
-- *slaveof*
-    - `redis-server --port 9999 --slaveof 127.0.0.1 6379` 启动一个9999端口作为6379的从服务器进行同步
-    - 或者服务启动后执行 `slaveof host port`（如果已经是从服务器，就丢去旧服务器的数据集，转而对新的主服务器进行同步）
-    - 从服务变成主服务 `slaveof no one` (同步的数据集不会丢失，迅速替换主服务器)
-- *loglevel*
-    - `./redis-server /etc/redis/6379.conf --loglevel debug	`
+************************
 
-***********
-## 数据安全和性能
-### 持久化策略
-### 复制
-
-### 数据迁移
-- 使用主从复制来进行数据, 或者自己写Py脚本?
-
-*******
-## 【Redis的使用】
-### 作为日志记录
-### 作为网站统计数据
-### 存储配置信息
-### 自动补全
-- 搜索建议
-
-### 构建锁
-
-### 任务队列
-- 发送邮件
-
-## 编程语言的使用
-***************************
-### Java 使用
-*******************
-### Python使用
+## Python
 > pip install redis 该模块和redis命令的用法几乎一模一样, 上手很快
 - [redis文档](https://pypi.python.org/pypi/redis/) `python操作redis的库的文档`
 
-### webdis
+## GUI客户端
+> [官方收录 客户端](https://redis.io/clients) | [alternativeto 列表](https://alternativeto.net/software/redily/)
+
+> [Redis Desktop Manager](https://github.com/uglide/RedisDesktopManager/)  
+> [Another Redis DeskTop Manager](https://gitee.com/qishibo/AnotherRedisDesktopManager)  
+
+> arch 上暂时存在这个问题导致无法使用 Redis Desktop Manager [Github Issues](https://github.com/uglide/RedisDesktopManager/issues/4826)
+1. rm -rf ~/.cache/fontconfig
+1. rm -rf ~/snap/redis-desktop-manager/common/.cache/fontconfig
+1. fc-cache -r
+
+## Cli 
+- redis-cli 
+- redli 
+    - go install github.com/IBM-Cloud/redli@latest
+
+************************
+
+> [FastoRedis](https://fastoredis.com/)  
+> [Redis Plus](https://gitee.com/MaxBill/RedisPlus)  
+> Redily  
+> [Medis](https://github.com/luin/medis)  
+> [rdbtools](https://rdbtools.com)  
+> p3x-redis-ui  
+
+*********
+
+# Project
+> 衍生项目 
+
+## Codis
+> [Github: Codis](https://github.com/CodisLabs/codis)
+> [Kedis](https://gitee.com/kehaw9818/Kedis)  
+
+## webdis
 > 将redis变为一个简单的web接口  
 
 > [官网](http://webd.is/) | [Github地址](https://github.com/nicolasff/webdis)
 
+## Redis Stack
+> [Github Redis Stack](https://github.com/redis-stack/redis-stack)
+
+Redis Stack 是一组软件套件，它主要由三部分组成。Redis Stack Server，RedisInsight，Redis Stack 客户端 SDK。 其中 Redis Stack Server 由 Redis，RedisSearch，RedisJSON，RedisGraph，RedisTimeSeries 和 RedisBloom 组成。
+
+可支撑如下业务
+- 索引和查询Redis数据，聚合运算，`全文检索`
+- 运行高级向量相似性搜索 `(KNN)`
+- 有效地存储和操作嵌套的 `JSON 文档`
+- 将关系构建和建模为`属性图`
+- 存储、查询和聚合`时间序列数据`
+- 利用快速、空间和计算高效的`概率数据结构`
+
+************************
+
+# Redis的应用场景
+> [Redis的n种妙用，不仅仅是缓存 ](https://mp.weixin.qq.com/s?__biz=MzI3NzE0NjcwMg==&mid=2650123010&idx=2&sn=c17bd9192daa15c00502b7e27acacc61&chksm=f36bb623c41c3f35060bf244eddddc25ea6e2b96900f57299e0d8ffe548a08823b057dee5baf&mpshare=1&scene=1&srcid=0109PazxT49BtR2oCJ6Od32h&pass_ticket=ZX4WKje%2FJzbdB6LEivhrNCtzmljNugDZul02fl5SX4snt5QLMa6Cle9o1I5CumfQ#rd)
+
+> [参考: 为什么我们做分布式使用Redis？](https://my.oschina.net/u/3971241/blog/2221560)`缓存的场景和应对措施`
+
+## 分布式锁
+> [Doc: setnx](http://cndoc.github.io/redis-doc-cn/cn/commands/setnx.html)`包含以此命令设计锁的一些缺陷`  
+> [redisson](https://github.com/redisson/redisson)  
+
+单机 使用 setnx， redis分布式部署的情况下使用RedLock
+
+> [基于Redis的分布式锁到底安全吗（上）？](https://mp.weixin.qq.com/s/JTsJCDuasgIJ0j95K8Ay8w)  
+> [基于Redis的分布式锁到底安全吗（下）？](https://mp.weixin.qq.com/s/4CUe7OpM6y1kQRK8TOC_qQ?)  
+> [参考: Redis 分布式锁进化史解读 + 缺陷分析](https://zhuanlan.zhihu.com/p/161078350)  
+
+> [参考: redis分布式锁在MySQL事务代码中使用](https://blog.csdn.net/seapeak007/article/details/99337781)  
+> [参考: Lua脚本在redis分布式锁场景的运用](https://www.cnblogs.com/demingblog/p/9542124.html)  
+
+## 消息队列
+> List, Pub/Sub, Stream 可实现, 可靠性依次增加，但依然会有消息丢失问题
+
+> [asynq](https://github.com/hibiken/asynq)  
+
+************************
+
+`搜索`
+> [RediSearch](https://github.com/RediSearch/RediSearch)
+
+************************
+
+# Redis 缓存相关问题
+## 缓存雪崩
+同一时间大量缓存失效，请求都打到DB，导致DB负载过大甚至宕机。
+
+与此同时，大量缓存集中失效会让Redis瞬时OPS很高，操作的延迟会突增。
+
+1. 大量 key 使用了相同的过期时间
+    - 过期时间加随机值或者特定算法分散过期时间
+    - 使用本地缓存(JVM级别)
+    - 当请求过多，提供服务降级
+1. Redis发生重启(Redis 未做持久化)
+    - 启动时预先加载 热点Key
+
+## 缓存击穿
+针对缓存中没有但是DB中有的数据请求
+
+1. 当某个Key失效后，瞬间涌入大量的请求同一个Key，这些请求不会命中Redis，都会请求到DB，导致数据库压力过大
+    1. 设置热点Key，自动检测热点Key，将热点Key的过期时间加大或者永不过期。
+    2. 在更新缓存时加互斥锁。当发现没有命中Redis，去查数据库的时候，在执行更新缓存的操作上加锁，当一个线程访问时，其它线程等待
+        - 这个线程访问过后，缓存中的数据会被重建，这样其他线程就可以从缓存中取值。
+
+## 缓存穿透
+针对缓存和 DB 都没有的数据 请求
+
+1. 对查询结果为空的情况也进行缓存，这样，再次访问时，缓存层会直接返回空值。缓存时间设置短一点，或者该key对应的数据insert了之后清理缓存。
+2. 对一定不存在的key进行过滤。例如： 布隆过滤器

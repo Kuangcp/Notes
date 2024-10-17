@@ -1,32 +1,37 @@
-`目录 start`
- 
-- [JavaScript](#javascript)
-    - [数据类型](#数据类型)
-        - [字符串](#字符串)
-    - [函数](#函数)
-        - [函数传值](#函数传值)
-    - [JSON](#json)
-    - [常用功能小模块](#常用功能小模块)
-        - [输入校验](#输入校验)
-    - [Ajax](#ajax)
-    - [事件](#事件)
-        - [鼠标](#鼠标)
-            - [滚轮](#滚轮)
-    - [常用库和框架](#常用库和框架)
-        - [Jquery](#jquery)
-            - [Ajax](#ajax)
-            - [form插件](#form插件)
-        - [echarts](#echarts)
-    - [资源文件](#资源文件)
-        - [图片](#图片)
+---
+title: JavaScript
+date: 2018-11-21 10:56:52
+tags: 
+    - 基础
+categories: 
+    - JavaScript
+---
 
-`目录 end` |_2018-08-10_| [码云](https://gitee.com/gin9) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104) | [cnblogs](http://www.cnblogs.com/kuangcp)
+💠
+
+- 1. [JavaScript](#javascript)
+    - 1.1. [数据类型](#数据类型)
+        - 1.1.1. [字符串](#字符串)
+    - 1.2. [函数](#函数)
+        - 1.2.1. [函数传值](#函数传值)
+    - 1.3. [JSON](#json)
+    - 1.4. [常用功能小模块](#常用功能小模块)
+        - 1.4.1. [输入校验](#输入校验)
+    - 1.5. [Ajax](#ajax)
+    - 1.6. [事件](#事件)
+        - 1.6.1. [键盘](#键盘)
+        - 1.6.2. [鼠标](#鼠标)
+    - 1.7. [常用库和框架](#常用库和框架)
+        - 1.7.1. [Jquery](#jquery)
+        - 1.7.2. [echarts](#echarts)
+    - 1.8. [资源文件](#资源文件)
+        - 1.8.1. [图片](#图片)
+
+💠 2024-07-07 18:00:42
 ****************************************
 # JavaScript
 
 ## 数据类型
-> 虽然是弱类型,但还是要注意一下
-
 
 ### 字符串
 - 字符串转码:
@@ -35,22 +40,22 @@
 ## 函数
 ### 函数传值
 ```js
-function handlerGet(url, role, success, fail) {
-  var request = $.ajax({
-    method: 'GET',
-    url : 'xxx'+url
-  });
-  request.done(success);
-  request.fail(fail);
-}
-function testRole() {
-    handlerGet('/world', 'student',
-        function (data) {
-            layer.msg('获取成功');
-        }, function (data) {
-            layer.msg('身份认证已过期， 请重新登录');
-        })
-}
+    function handlerGet(url, role, success, fail) {
+    var request = $.ajax({
+        method: 'GET',
+        url : 'xxx'+url
+    });
+    request.done(success);
+    request.fail(fail);
+    }
+    function testRole() {
+        handlerGet('/world', 'student',
+            function (data) {
+                layer.msg('获取成功');
+            }, function (data) {
+                layer.msg('身份认证已过期， 请重新登录');
+            })
+    }
 ```
 **********************
 ## JSON
@@ -93,22 +98,51 @@ function testRole() {
 - [Blog:关于Input的输入校验](http://yuncode.net/code/c_5039bb4a3fccf28)`数字,字母汉字等限制`
 
 ## Ajax
-> [js 原生 post请求](https://segmentfault.com/q/1010000005162727)
+> [参考: 使用 Fetch](https://developer.mozilla.org/zh-CN/docs/Web/API/Fetch_API/Using_Fetch)
 
-> [参考博客: 使用 Fetch](https://developer.mozilla.org/zh-CN/docs/Web/API/Fetch_API/Using_Fetch)
+```js
+function get(url, handle) {
+    let httpRequest = new XMLHttpRequest();
+    httpRequest.open('GET', url, true);
+    httpRequest.send();
+    /**
+        * 获取数据后的处理程序
+        */
+    httpRequest.onreadystatechange = function () {
+        if (httpRequest.readyState === 4 && httpRequest.status === 200) {
+            handle(httpRequest)
+        }
+    };
+}
+
+function post(url, data, handle) {
+    let xhr = new XMLHttpRequest();
+    //使用HTTP POST请求与服务器交互数据
+    xhr.open("POST", url, true);
+    //设置发送数据的请求格式
+    xhr.setRequestHeader('content-type', 'application/json');
+    xhr.onreadystatechange = function () {
+        if (xhr.readyState === 4) {
+            handle(xhr.responseText)
+        }
+    }
+    //将用户输入值序列化成字符串
+    xhr.send(JSON.stringify(data));
+}
+```
 
 ## 事件
-
+### 键盘
 
 ### 鼠标
-
-#### 滚轮
 > [JavaScript 鼠标滚轮事件](https://www.web-tinker.com/article/20037.html)
 
-
+************************
 
 ## 常用库和框架
 - lozad.js 懒加载
+- [网页底部的浏览 ](https://www.logicbig.com/tutorials/java-ee-tutorial/jpa/group-by-criteria.html) 
+- [游戏手柄模拟](https://www.phaser-china.com/example-30.html)
 
 ### Jquery
 > jquery有是slim版(没有ajax的精简版 ) [JQuery官网](http://jquery.com/) | [Jquery教程](http://www.w3school.com.cn/jquery/index.asp)
@@ -116,38 +150,19 @@ function testRole() {
 - 事件绑定 `$('#Button').on('click', function(){})`
 - 在HTML的DOM上绑定数据:设置 `data-*` 属性 然后jq拿到元素直接调用 `$(this).data('id')`拿到值就可以避免函数传值
 
-_原生方式异步提交_
+_原生方式异步提交Form_
 ```js
     $("#set-form").submit(function(e){
         e.preventDefault();
         console.log('prepare submit')
     });
 ```
-#### Ajax
-> [ajax文档](https://api.jquery.com/jQuery.ajax/)
-
-#### form插件
-```js
-// 使用jquery 的 form插件进行异步提交
-$(".submit").on('click', function () {
-    console.log('dfs')
-    // var jk = $("#contents").submit()
-    var options = {
-        // target:'#contents', //后台将把传递过来的值赋给该元素
-        url:'../teacher/topic/add', //提交给哪个执行
-        type:'POST',
-        success: function(data){
-            console.log(data)
-        } //显示操作提示
-    };
-    $('#contents').ajaxSubmit(options);
-})
-```
 
 ### echarts
 > [官网](http://echarts.baidu.com/index.html) | 做图表展示很简单
 
+***************************************
 
 ## 资源文件
 ### 图片
-> [参考博客: JS 图片转Base64](http://www.cnblogs.com/wujingtao/p/5196836.html)
+> [参考: JS 图片转Base64](http://www.cnblogs.com/wujingtao/p/5196836.html)

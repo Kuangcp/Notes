@@ -1,13 +1,22 @@
-`目录 start`
- 
-- [Oracle](#oracle)
-    - [安装](#安装)
-        - [Linux](#linux)
-            - [Docker安装](#docker安装)
-        - [Windows](#windows)
-    - [使用](#使用)
+---
+title: Oracle
+date: 2018-11-21 10:56:52
+tags: 
+    - Oracle
+categories: 
+    - 数据库
+---
 
-`目录 end` |_2018-08-04_| [码云](https://gitee.com/gin9) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104) | [cnblogs](http://www.cnblogs.com/kuangcp)
+**目录 start**
+
+1. [Oracle](#oracle)
+    1. [安装](#安装)
+        1. [Linux](#linux)
+            1. [Docker安装](#docker安装)
+        1. [Windows](#windows)
+    1. [使用](#使用)
+
+**目录 end**|_2020-04-27 23:42_|
 ****************************************
 # Oracle
 > 强大的数据库, 稍微理解一下他的设计都觉得精妙

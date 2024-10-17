@@ -1,11 +1,20 @@
-`目录 start`
- 
-- [SQLServer](#sqlserver)
-    - [安装配置](#安装配置)
-        - [Docker安装2017硬是不成功](#docker安装2017硬是不成功)
-            - [2000版本](#2000版本)
+---
+title: SQLServer
+date: 2018-12-16 17:29:45
+tags: 
+    - SQLServer
+categories: 
+    - 数据库
+---
 
-`目录 end` |_2018-08-04_| [码云](https://gitee.com/gin9) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104) | [cnblogs](http://www.cnblogs.com/kuangcp)
+**目录 start**
+
+1. [SQLServer](#sqlserver)
+    1. [安装配置](#安装配置)
+        1. [Docker安装2017硬是不成功](#docker安装2017硬是不成功)
+            1. [2000版本](#2000版本)
+
+**目录 end**|_2020-04-27 23:42_|
 ****************************************
 # SQLServer
 

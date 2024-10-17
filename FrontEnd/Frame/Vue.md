@@ -1,9 +1,18 @@
-`目录 start`
- 
-- [Vue](#vue)
-        - [构建前后端分离的应用](#构建前后端分离的应用)
+---
+title: Vue
+date: 2018-11-21 10:56:52
+tags: 
+    - Vue
+categories: 
+    - 前端框架
+---
 
-`目录 end` |_2018-08-04_| [码云](https://gitee.com/gin9) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104) | [cnblogs](http://www.cnblogs.com/kuangcp)
+**目录 start**
+
+1. [Vue](#vue)
+        1. [构建前后端分离的应用](#构建前后端分离的应用)
+
+**目录 end**|_2020-06-24 02:06_|
 ****************************************
 # Vue
 > [vue.js guide](https://cn.vuejs.org/v2/guide/) | [iview](https://www.iviewui.com/)

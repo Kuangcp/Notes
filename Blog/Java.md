@@ -1,25 +1,35 @@
-`目录 start`
- 
-- [Java](#java)
-    - [社区](#社区)
-    - [SE](#se)
-    - [JavaFx](#javafx)
-    - [爬虫](#爬虫)
-    - [Springboot](#springboot)
-    - [BuildTool](#buildtool)
-    - [Test](#test)
-    - [精彩系列](#精彩系列)
-        - [码农翻身](#码农翻身)
-        - [架构师](#架构师)
-    - [Java语言讨论](#java语言讨论)
+---
+title: Java相关精彩博客
+date: 2018-12-16 17:32:04
+tags: 
+    - Blog
+categories: 
+    - Java
+---
 
-`目录 end` |_2018-08-04_| [码云](https://gitee.com/gin9) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104) | [cnblogs](http://www.cnblogs.com/kuangcp)
+💠
+
+- 1. [Java](#java)
+    - 1.1. [社区](#社区)
+    - 1.2. [SE](#se)
+    - 1.3. [JavaFx](#javafx)
+    - 1.4. [爬虫](#爬虫)
+    - 1.5. [Springboot](#springboot)
+    - 1.6. [BuildTool](#buildtool)
+    - 1.7. [Test](#test)
+    - 1.8. [精彩系列](#精彩系列)
+        - 1.8.1. [码农翻身](#码农翻身)
+        - 1.8.2. [架构师](#架构师)
+    - 1.9. [Java语言讨论](#java语言讨论)
+
+💠 2024-03-30 11:43:28
 ****************************************
 # Java
 > 和Java有关的博客和网页  
 ## 社区
 - [并发编程网 Java](http://ifeve.com/category/java/)
 - [InfoQ Java](http://www.infoq.com/cn/java)
+- [IBM Java](https://www.ibm.com/developerworks/cn/java/)
 
 ## SE
 - [ 菜鸟入门：Java程序员学习之路 ](http://blog.csdn.net/zzp16/article/details/5614588)
@@ -30,6 +40,10 @@
 - [推荐！国外程序员整理的Java资源大全](http://www.codeceo.com/article/java-resource-collection.html)
 
 - [oracle magazine](https://blogs.oracle.com/java/java-magazine-design-pattern)
+- [参考: 一个牛人给Java初学者的建议(必看篇)](https://www.jb51.net/article/113819.htm)  
+
+- [Fasterj](http://www.fasterj.com/index.shtml)
+
 ***************
 - [Java动态代理机制详解](http://blog.csdn.net/luanlouis/article/details/24589193) `博客很细致，深入原理`
 - [使用JMockit编写java单元测试](http://blog.csdn.net/chjttony/article/details/17838693)
@@ -38,6 +52,7 @@
 
 ## JavaFx
 - [xJavaFxTool](https://gitee.com/xwintop/xJavaFxTool)`基于JavaFX的工具集`
+- [Adding HTML Content to JavaFX Applications](https://docs.oracle.com/javafx/2/webview/jfxpub-webview.htm)
 
 ## 爬虫
 - [Java网络爬虫实操](https://juejin.im/post/5a804b2cf265da4e9c63265b) `比较全面的讲述了如何使用Java写爬虫`
@@ -84,10 +99,10 @@
 
 ## Java语言讨论
 > [冷眼看Java](http://swiftlet.net/archives/2530)
-> [参考博客: 王垠：为Java说句公道话](http://www.techug.com/post/java-python.html)
-> [参考博客: 比较 Rust 和 Java](http://www.techug.com/post/comparing-rust-and-java.html)
-> [参考博客: Kotlin与Java的主客观比较](http://www.techug.com/post/kotlin-vs-java-the-whole-story.html)
-> [参考博客: 10个实用的但偏执的Java编程技术](http://www.techug.com/post/10-java-tips.html)
-> [参考博客: 王垠：编程的智慧](http://www.techug.com/post/programming-philosophy.html)
+> [参考: 王垠：为Java说句公道话](http://www.techug.com/post/java-python.html)
+> [参考: 比较 Rust 和 Java](http://www.techug.com/post/comparing-rust-and-java.html)
+> [参考: Kotlin与Java的主客观比较](http://www.techug.com/post/kotlin-vs-java-the-whole-story.html)
+> [参考: 10个实用的但偏执的Java编程技术](http://www.techug.com/post/10-java-tips.html)
+> [参考: 王垠：编程的智慧](http://www.techug.com/post/programming-philosophy.html)
 
 

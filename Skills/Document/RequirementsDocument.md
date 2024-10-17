@@ -1,21 +1,51 @@
-`目录 start`
- 
-- [需求文档](#需求文档)
-- [技术文档](#技术文档)
-    - [Java](#java)
-        - [SpringBoot](#springboot)
+---
+title: 需求到实现所需文档
+date: 2018-11-21 10:56:52
+tags: 
+categories: 
+---
 
-`目录 end` |_2018-08-04_| [码云](https://gitee.com/gin9) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104) | [cnblogs](http://www.cnblogs.com/kuangcp)
+💠
+
+- 1. [需求文档](#需求文档)
+- 2. [技术文档](#技术文档)
+    - 2.1. [架构图](#架构图)
+    - 2.2. [Java](#java)
+        - 2.2.1. [SpringBoot](#springboot)
+- 3. [上线CheckList](#上线checklist)
+
+💠 2024-09-20 11:52:03
 ****************************************
 # 需求文档
-> 做一个完善的需求分析，并书写一个需求文档
+> 贴近多方实际诉求调研，分析有效需求，输出需求文档
 
-- [参考博客](http://www.kejilie.com/woshipm/article/6Bri6b.html)
-
+- [参考 如何写一份程序员爱看的需求文档？](http://www.kejilie.com/woshipm/article/6Bri6b.html)
 
 ***********************
 # 技术文档
+- 技术方案组成 5W2H
+    - 背景: why: 现状流程, 为什么要做, 是否有替代方式
+    - 目标: waht: 目的和做什么 量化指标
+    - 方案: how : 多个方案 优劣势分析 how much: 做到不同程度的成本和产出
+    - 结论: 选择的方案, 选择原因及注意事项
+    - 备忘/执行计划: who when where 
+
+## 架构图
+> [diagrams](https://github.com/mingrammer/diagrams)`Python代码生成架构图，类似于plantuml的DSL`  
+
 ## Java
 ### SpringBoot
 > 可以使用 swagger2 和 spring data rest hal-browser 两者是接口文档  
 showdoc是文档的共享更方便
+
+
+************************
+
+# 上线CheckList
+> 梳理上线需求的项目范围，按顺序罗列事项及负责人，降低上线的风险。
+
+常见问题：
+- 前端/后端/运维 漏合并分支，漏配置（SQL，Nginx，K8S，网络）
+- 上线发现配置项或逻辑不生效或要花费很大成本，但是在测试和验收时都正常
+    - 开发，测试，灰度，生产 由于各种客观原因导致环境不一致`例如只有生产对接了付费或定制的第三方API，生产环境数据量和数据倾斜的压力远大于测试环境，测试环境在内网生产环境在公网等等`，未及时对当前版本的修改做演练。
+

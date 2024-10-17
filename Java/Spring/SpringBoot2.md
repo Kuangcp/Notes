@@ -1,20 +1,29 @@
-`目录 start`
- 
-- [SringBoot2](#sringboot2)
-    - [从1迁移到2](#从1迁移到2)
-    - [新特性](#新特性)
-    - [Web模块](#web模块)
-        - [Web容器](#web容器)
-            - [Tomcat](#tomcat)
-            - [Jetty](#jetty)
-        - [跨域](#跨域)
-        - [SpringBoot上下文事件监听](#springboot上下文事件监听)
-    - [数据库模块](#数据库模块)
-        - [Relation Database](#relation-database)
-            - [多数据源](#多数据源)
-        - [No Relation Database](#no-relation-database)
+---
+title: SpringBoot2 新特性
+date: 2018-12-21 10:49:53
+tags: 
+    - SpringBoot
+categories: 
+    - Java
+---
 
-`目录 end` |_2018-08-20_| [码云](https://gitee.com/gin9) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104) | [cnblogs](http://www.cnblogs.com/kuangcp)
+💠
+
+- 1. [SringBoot2](#sringboot2)
+    - 1.1. [从1迁移到2](#从1迁移到2)
+    - 1.2. [新特性](#新特性)
+    - 1.3. [Web模块](#web模块)
+        - 1.3.1. [Web容器](#web容器)
+            - 1.3.1.1. [Tomcat](#tomcat)
+            - 1.3.1.2. [Jetty](#jetty)
+        - 1.3.2. [跨域](#跨域)
+        - 1.3.3. [SpringBoot上下文事件监听](#springboot上下文事件监听)
+    - 1.4. [数据库模块](#数据库模块)
+        - 1.4.1. [Relation Database](#relation-database)
+            - 1.4.1.1. [多数据源](#多数据源)
+        - 1.4.2. [No Relation Database](#no-relation-database)
+
+💠 2024-05-04 22:39:50
 ****************************************
 # SringBoot2
 [官方文档](https://docs.spring.io/spring-boot/docs/2.0.3.RELEASE/reference/htmlsingle/)
@@ -31,7 +40,7 @@
 
 ## 新特性
 > [Spring Boot 2.0系列文章(二)：Spring Boot 2.0 新特性详解 ](http://www.54tianzhisheng.cn/2018/03/06/SpringBoot2-new-features/)
-> [参考博客: Spring Boot 2.0 新特性和发展方向 ](https://mp.weixin.qq.com/s/EWmuzsgHueHcSB0WH-3AQw)
+> [参考: Spring Boot 2.0 新特性和发展方向 ](https://mp.weixin.qq.com/s/EWmuzsgHueHcSB0WH-3AQw)
 
 ## Web模块
 ### Web容器
@@ -61,25 +70,25 @@
     }
  ```
  ```java
- @Configuration
-public class Listener implements ApplicationListener {
-  @Override
-  public void onApplicationEvent(ApplicationEvent event) {
-    // 在这里可以监听到Spring Boot的生命周期
-    if (event instanceof ContextRefreshedEvent) {
-      System.out.println("应用刷新");
-    }
-    if (event instanceof ContextStartedEvent) {
-      System.out.println("应用启动");
+  @Configuration
+  public class Listener implements ApplicationListener {
+    @Override
+    public void onApplicationEvent(ApplicationEvent event) {
+      // 在这里可以监听到Spring Boot的生命周期
+      if (event instanceof ContextRefreshedEvent) {
+        System.out.println("应用刷新");
+      }
+      if (event instanceof ContextStartedEvent) {
+        System.out.println("应用启动");
 
-    } else if (event instanceof ContextStoppedEvent) {
-      System.out.println("应用停止");
+      } else if (event instanceof ContextStoppedEvent) {
+        System.out.println("应用停止");
 
-    } else if (event instanceof ContextClosedEvent) {
-      System.out.println("应用关闭");
+      } else if (event instanceof ContextClosedEvent) {
+        System.out.println("应用关闭");
+      }
     }
   }
-}
  ```
 
 
@@ -92,6 +101,6 @@ public class Listener implements ApplicationListener {
 ### Relation Database
 
 #### 多数据源
-- [参考博客: Spring Boot 2.0 多数据源编程 原](https://my.oschina.net/chinesedragon/blog/1647846) | [源码](https://gitee.com/shupengluo/SpringBoot2.0-MultiDataSource)
+- [参考: Spring Boot 2.0 多数据源编程 原](https://my.oschina.net/chinesedragon/blog/1647846) | [源码](https://gitee.com/shupengluo/SpringBoot2.0-MultiDataSource)
 
 ### No Relation Database

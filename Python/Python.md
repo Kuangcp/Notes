@@ -1,77 +1,73 @@
-`目录 start`
- 
-- [Python](#python)
-    - [简介](#简介)
-        - [关于Python2.x与3.x的使用](#关于python2x与3x的使用)
-    - [安装配置](#安装配置)
-        - [Docker](#docker)
-    - [基础](#基础)
-        - [代码风格](#代码风格)
-        - [基础语法](#基础语法)
-        - [基础数据类型](#基础数据类型)
-        - [virtualenv](#virtualenv)
-        - [pip](#pip)
-            - [Requirements files](#requirements-files)
-            - [发布包到 pypi](#发布包到-pypi)
-    - [变量](#变量)
-    - [基本运行结构](#基本运行结构)
-        - [序列](#序列)
-            - [列表](#列表)
-            - [元组](#元组)
-            - [字符串](#字符串)
-            - [字符串编码问题(python2问题)](#字符串编码问题python2问题)
-            - [字典（键值对）](#字典（键值对）)
-        - [运算符](#运算符)
-        - [模块](#模块)
-    - [输入输出](#输入输出)
-        - [输入](#输入)
-        - [输出](#输出)
-        - [读取命令行参数](#读取命令行参数)
-            - [docopt](#docopt)
-            - [Python Fire](#python-fire)
-    - [函数](#函数)
-    - [类](#类)
-            - [继承](#继承)
-    - [异常](#异常)
-    - [文件操作](#文件操作)
-        - [JSON](#json)
-        - [conf或者ini](#conf或者ini)
-    - [测试](#测试)
-    - [数据库](#数据库)
-        - [MySQL](#mysql)
-        - [Redis](#redis)
-    - [部署](#部署)
-        - [Docker部署](#docker部署)
-    - [绘图](#绘图)
-        - [matplotlib](#matplotlib)
-    - [常见函数](#常见函数)
-    - [常见库](#常见库)
-        - [内置库](#内置库)
-            - [时间处理](#时间处理)
-        - [三方库](#三方库)
-    - [QT](#qt)
+---
+title: Python 基础
+date: 2018-12-13 16:00:45
+tags: 
+    - 基础
+categories: 
+    - Python
+---
 
-`目录 end` |_2018-09-12_| [码云](https://gitee.com/gin9) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104) | [cnblogs](http://www.cnblogs.com/kuangcp)
+💠
+
+- 1. [Python](#python)
+- 2. [基础](#基础)
+    - 2.1. [代码风格](#代码风格)
+    - 2.2. [序列](#序列)
+        - 2.2.1. [列表 list](#列表-list)
+        - 2.2.2. [元组 tuple](#元组-tuple)
+        - 2.2.3. [字符串 str](#字符串-str)
+            - 2.2.3.1. [字符串编码问题](#字符串编码问题)
+        - 2.2.4. [字典 dict](#字典-dict)
+    - 2.3. [运算符](#运算符)
+    - 2.4. [函数](#函数)
+    - 2.5. [包](#包)
+    - 2.6. [类](#类)
+        - 2.6.1. [继承](#继承)
+    - 2.7. [异常](#异常)
+    - 2.8. [读取命令行参数](#读取命令行参数)
+        - 2.8.1. [docopt](#docopt)
+        - 2.8.2. [Python Fire](#python-fire)
+- 3. [应用](#应用)
+    - 3.1. [模块](#模块)
+        - 3.1.1. [http](#http)
+        - 3.1.2. [virtualenv](#virtualenv)
+        - 3.1.3. [pip](#pip)
+            - 3.1.3.1. [Requirements files](#requirements-files)
+            - 3.1.3.2. [发布包到 pypi](#发布包到-pypi)
+        - 3.1.4. [matplotlib](#matplotlib)
+    - 3.2. [文件操作](#文件操作)
+        - 3.2.1. [JSON](#json)
+        - 3.2.2. [conf或者ini](#conf或者ini)
+    - 3.3. [日志](#日志)
+    - 3.4. [测试](#测试)
+    - 3.5. [数据库](#数据库)
+        - 3.5.1. [MySQL](#mysql)
+        - 3.5.2. [Redis](#redis)
+    - 3.6. [部署](#部署)
+        - 3.6.1. [Docker部署](#docker部署)
+    - 3.7. [常见库](#常见库)
+        - 3.7.1. [内置库](#内置库)
+        - 3.7.2. [时间处理](#时间处理)
+        - 3.7.3. [三方库](#三方库)
+
+💠 2024-10-13 17:59:27
 ****************************************
 # Python
-> [官网](https://www.python.org/)
+> [Official Site](https://www.python.org/)  
+> [Doc: Python2](https://docs.python.org/2/) | [Doc: Python3](https://docs.python.org/3/)
 
 > [Python初学者（零基础学习Python、Python入门）书籍、视频、资料、社区推荐](https://github.com/Yixiaohan/codeparkshare)
-> [参考博客: Python3的主要应用](http://www.techug.com/post/what-can-you-do-with-python-the-3-main-applications.html)
+> [参考: Python3的主要应用](http://www.techug.com/post/what-can-you-do-with-python-the-3-main-applications.html)
 - [Python中的多态](http://blog.csdn.net/shangzhihaohao/article/details/7065675)
-- [python输出带颜色的字体](http://www.cnblogs.com/oleli/p/5228880.html)
-
 > [Anaconda](https://docs.anaconda.com/anaconda/install/linux)`一站式集成环境`
 
-- [Python2](https://docs.python.org/2/) | [Python3](https://docs.python.org/3/)
 - [python-gtk3](https://python-gtk-3-tutorial.readthedocs.io/en/latest/introduction.html) `python-gtk3的开发`
-- [httpie](http://python.ctolib.com/httpie.html) `好用的类curl工具 文档` 
 - [一译](http://python.usyiyi.cn/)`翻译了大量Python文档`
 
-## 简介
+> [Python 项目工程化开发指南](https://github.com/pyloong/pythonic-project-guidelines)
 
-### 关于Python2.x与3.x的使用
-> 摘自 Python核心编程 第三版 Wesley Chun著
+关于Python2与3的变化  
+> 摘自 Python核心编程 第三版 Wesley Chun著  
 
 - print 变为 print()
 - 默认字符的编码是 Unicode
@@ -80,21 +76,61 @@
 - 更新了整数
 - 迭代无处不在
 
-> 列出所有已安装模块 pydoc pydoc3
+> 列出所有已安装模块: pydoc pydoc3
 
-## 安装配置
+# 基础
+> 运行脚本
+1. python 源文件
+1. 源文件 第一行声明 `#!/usr/bin/python` 和shell脚本一样的用法, 然后 ./源文件
 
-**Debian系安装3.6**
-1. sudo add-apt-repository ppa:jonathonf/python-3.6
-1. sudo apt update 
-1. sudo apt install python3.6
+- 缩进来表示代码块的嵌套关系
+- 单行注释：`#` 多行注释： `""" """`
+- 空行的重要性，代码段之间有空行，Python之禅
 
-### Docker
-> [docker hub](https://hub.docker.com/_/python/)
+> 基础数据类型
+- 数值类型
+    - 整型 (`-2^31 ~ 2^31-1`) `0b`,`0`,`0x`  2,8,16 进制
+    - 浮点型 `1.2e2` `13.34e-2`
+    - 复数  `3+4j` `0.1-0.5j`
 
+- 布尔型
+    - 0 或 0.0   视作 False
+    - `""` `''`  视作 False
+    - () [] {}   视作 False
+    
+- 字符串
+    - 单引号 双引号: 单行字符串
+    - 三引号 多行字符串
 
-## 基础
-### 代码风格
+- 空值 None
+
+- 局部变量： 
+    - `_` 标识变量隐藏
+- 全局变量： 定义在函数外的变量，也称公用变量，函数中 `global x` 声明引用全局变量x
+
+- 逻辑运算符
+    - and or not
+- 选择：
+    - if elif else
+- for 循环：
+    - `for in ` `while ` 例如：`for i in range(1,10,2):`  范围 [1,10) 增量为2
+    - pass 语句，当某个子句没有任何操作，，用pass保持程序结构完整性 不影响下一句 不像continue
+- while 循环
+    - `while True:`` while ‘2’ in nums:`` while num<2:`  
+    - `while 列表: ` 直到列表为空退出循环
+
+```python
+    if (b==0) and (a==1) :
+        pass
+        print("pass")
+    else:
+        print("Hi")
+```
+1. 优化代码 `python -O -m py_compile test.py` 
+
+## 代码风格
+> [PEP8](https://www.python.org/dev/peps/pep-0008/) `官方建议`
+
 - 一行只写一句
 - 表达式尽量不要省略括号，有助于理解
 - 函数的行数不要超过100行
@@ -130,105 +166,24 @@
     
     命名空间是一种绝妙的理念，我们应当多加利用（倡导与号召）
 ```
-### 基础语法
-- 缩进来表示代码块的嵌套关系
-- 单行注释：`#` 多行注释： `""" """`
-- 空行的重要性，代码段之间有空行，Python之禅
 
-### 基础数据类型
-- 数值类型
-    - 整数 各种进制 `0 八` `0x 十六` `0b 二`
-    - 浮点数 `1.2e2` `13.34e-2`
-    - 复数  `3+4j` `0.1-0.5j`
-- 布尔型
-    - 0或0.0 :看成false
-    - `""` `''` :false
-    - () [] {} :false
-- 字符串
-    - 单引号 双引号: 单行字符串
-    - 三引号 多行字符串
-- 空值 None
+## 序列
+> 序列通用操作（包含：字符串，列表，元组）
 
-### virtualenv
-> [廖雪峰 virtualenv](https://www.liaoxuefeng.com/wiki/0014316089557264a6b348958f449949df42a6d3a2e542c000/001432712108300322c61f256c74803b43bfd65c6f8d0d0000)
-
-`sudo apt install python3-venv`
-
-- 创建环境 `python3 -m venv web` 或者 `virtualenv --no-site-packages web` 不将系统中安装的包带入该环境
-- 启动环境 `source web/bin/activate`
-    - 在环境中使用的pip python 都是环境中的, 其实就是修改了系统的环境变量指向
-- 停用环境 `deactivate`
-
-### pip
-> [pip](https://pip.readthedocs.io/en/stable/) | Python的包管理器
-
-> [doc](https://pip.pypa.io/en/stable/reference/pip_install/)
-#### Requirements files
-> [pip官方文档 Requirements files](https://pip.readthedocs.io/en/1.1/requirements.html)
-
-1. 导出 `pip freeze > requirements.txt` _这个命令会将当前环境安装的包全部列出来, 适合env环境下使用_
-    - 如果没有使用虚拟环境, 然后只想导出某项目的依赖 [Github pipreqs](https://github.com/bndr/pipreqs)
-    - 安装 : `pip install pipreqs` 然后 `pipreqs /path/to/project`
-2. 使用 `pip install -r requirements.txt`
-
-#### 发布包到 pypi
-> [Official : about package](https://packaging.python.org/guides/distributing-packages-using-setuptools/?highlight=pypirc#id78)
-
-`$HOME/.pypirc`
-```
-[pypi]
-username = <username>
-password = <password>
-```
-
-pip3 install wheel twine 
-
-rm -rf dist build *.egg-info
-
-python3 setup.py bdist_wheel
-twine upload dist/*
-
-*******************************
-## 变量
-- 局部变量：
-- 全局变量：定义在函数外的变量，也称公用变量，函数中 `global x` 声明引用全局变量x
-## 基本运行结构
-- 输入输出：
-    - input("") 默认当成字符串输入 数值：int() 强转一下
-    - print("")
-        - 输出不带换行  print('', '', end='')
-- 选择：
-    - if elif else
-- for循环：
-    - `for in ` `while ` 例如：`for i in range(1,10,2):`  范围 [1,10) 增量为2
-    - pass 语句，当某个子句没有任何操作，，用pass保持程序结构完整性 不影响下一句 不像continue
-- while 循环;
-    - `while True:`` while ‘2’ in nums:`` while num<2:`  
-    - `while 列表: ` 直到列表为空退出循环
-
-```python
-    if (b==0) and (a==1) :
-        pass
-        print("pass")
-    else:
-        print("Hi")
-```
-
-### 序列
-`序列通用操作（包含：字符串，列表，元组）`
-- `​索引`，从左至右：`0,1,2...n` 从右至左：`-1,-2...-n`
+- `索引` 从左至右：`0,1,2...n` 从右至左：`-1,-2...-n`
 - `切片`（截取序列的部分） `temp[:]` 返回一个副本
-    - `temp[2:4]`就是`[2,4)` 
-    - `temp[1:]`1到最后 `temp[-3:]` *[-3,-1]*
-    - `temp[:4]` *[0,4)* `temp[:-3]` *[0,-3]*
+    - `temp[2:4]` 数学中的 `[2,4)` 
+    - `temp[1:]` 1到最后 `temp[-3:]` *[-3,-1]*
+    - `temp[:4]` [0,4) `temp[:-3]` *[0,-3]*
 - `加 `：lista+listb 直接连接
 - `乘`：lista*4
 - `判断是否存在`：`in` `not int`
-- len() 
+- len()
 - min() max() sum() 要求元素全是数值
 
-*****
-#### 列表
+************************
+
+### 列表 list
 - 元素可包含 字符串，浮点，整型，列表，布尔
 - 操作：
     - 增加 + ，`append()/extend()`尾部加入元素/列表  `insert(index, "")` 元素插入到任意位置,其后元素后移
@@ -244,20 +199,25 @@ twine upload dist/*
 - 二维数组的定义：
     - 原始： lists = [[1, 2], [3, 4]]
     - 仿造一维的定义： lists = [[0 for x in range(10)] for y in range(10)] 10*10 初始为0的列表
-    - 简便但是不可行的方法： lists = [[0]*10]*10 这是个坑， 只是声明了一维数组，然后多次引用， 虽然看起来是二维， 引用数据就会发现是一维  
+    - 简便但是不可行的方法： `lists = [[0]*10]*10` 这是个坑， 只是声明了一维数组，然后多次引用， 虽然看起来是二维， 引用数据就会发现是一维  
 
-#### 元组
+> set() 函数, 返回结果则是不重复的元素集合
+
+************************
+
+### 元组 tuple
 - 元组和列表类似但是元组是创建不可更改的 
     - 和列表相比，相同点：按定义的顺序排序，负索引一致，可以使用分片
     - 不同点：元组使用的是()，不能增加删除元素，没有index方法但是有in，可以在字典中作为键,列表不可以
     - 由于具有写保护，代码安全，操作速度略快列表
 - 操作：
-    - 访问： 和列表一样的索引和分片，
+    - 访问：和列表一样, 使用索引和分片
     - 连接：+ 连接得到新的元组
     - 删除：del 删除整个元组
 
-*****
-#### 字符串
+************************
+
+### 字符串 str
 - str() 将对象转化成字符串 （注：Python中不能像Java一样字符串和数值直接+）
 - repr() 注意和str()的区别
 - `r"d:\python27\"` r前缀表示转义字符看成普通字符
@@ -280,16 +240,15 @@ twine upload dist/*
         - 字典方式 
     - `title()` 首字母大写 
 
-****
+************************
+
 `字符串，列表，元组相互转换：`
 - 字符串-列表 ： list("python")
 - 字符串-元组 ： tuple("python")
 - 列表或元组-字符串 join(obj) 参数是列表或元组类型，其元素只能是字符串类型
 
-
-***************************************
-#### 字符串编码问题(python2问题)
-> [ Python 3的bytes/str之别 ](http://www.ituring.com.cn/article/1116)
+#### 字符串编码问题
+> [ Python3 的 bytes str 之别 ](http://www.ituring.com.cn/article/1116)
 
 ![str和bytes的关系](https://raw.githubusercontent.com/Kuangcp/ImageRepos/masters/Tech/python/str_bytes.jpeg)
 
@@ -308,19 +267,21 @@ twine upload dist/*
 ```
 - 因为文件不是UTF8：`UnicodeDecodeError: 'utf-8' codec can't decode byte 0xb9 in position 2: invalid start byte `
 
-*************************************
-#### 字典（键值对）
+************************
+
+### 字典 dict
 - 通过用空间来换取时间，与列表相比，键的增加不影响查找插入速度，需要占用大量内存 
 - 特性：
     - 值是可以是任意的，甚至是字典嵌套
     - 键必须不可变，只能由 数值，字符串，元组，不能用列表
 - 操作：
-    - 定义字典 dict={}
-    - 添加 ： `dict['a'] = 2323 `
-    - 返回所有key：keys() 
-    - 查询是否有这个键 ：has_key() 
-    - get() keys() values() 
-    - 转化元组并返回 ：items() 
+    - 定义 dict={}
+    - 添加 `dict['count'] = 1`
+    - 获取 `count = dict['count]` 但是如果字典中没有该key, 会抛出异常
+    - 获取 `get(key)` 获取不到返回 None
+    - 返回所有key/value `keys() values()`
+    - 转化元组 ：items() 
+        - 可用于遍历 `for key,value in dict.items():`
     - 删除指定键：del() `del dict['name']` 
     - 删除所有：clear() 
     - 删除指定键并返回值 ：pop() 
@@ -332,9 +293,7 @@ twine upload dist/*
     - 列表套字典，当成普通类型包含即可
     - 字典套字典
     
-- [ ] 字典的排序问题
-
-### 运算符
+## 运算符
 - 算术运算符
     - 加减一样，`*` 乘,不仅可以用于数字，还可以用于字符串 ，`/` 除，和Java不一样，整数相除也会得到浮点数
     - `//` 取整除，得到商的整数部分 ，`%` 取余数 ，`**` 幂运算 可以用来开根
@@ -360,96 +319,23 @@ twine upload dist/*
     - \f   换页
     - \  续行符（行尾）
 
-
-### 模块
-> [参考博客](http://blog.csdn.net/hansel/article/details/8975663)
-
-- 关于同级，子级目录是比较方便的，涉及到上级目录的就麻烦点了
-
-************
-## 输入输出
-### 输入
-### 输出
-- python3 `print('Hi')`
-    - 格式化输出 `print("%10s - %-10s"%(name, addr))`
-    - print会默认追加换行符, 取消需要参数 `end=''`
-```python
-def show_help():
-    start='\033[0;32m'
-    end='\033[0m'
-    print("%-26s %-20s"%(start+"-h"+end, "帮助"))
-```
-
-- python2 `print 'Hi'`
-
-### 读取命令行参数
-> [参考博客](http://www.sharejs.com/codes/python/6121)
-
-`只有输入参数，没有选项`
-```python
-    import sys
-    print("脚本名：", sys.argv[0])
-    for i in range(1, len(sys.argv)):
-        print("参数", i, sys.argv[i])
-```
-`python tree.py hi op ` 顺序是python，第一个参数是文件，之后才是别的参数
- 结果>> `脚本名 tree.py 参数1 hi 参数2 op`
-
-`有选项`
-`getopt.getopt(args, options[, long_options])`
-```python
-    import sys, getopt
-    opts, args = getopt.getopt(sys.argv[1:], "hi:o:")
-    for op, value in opts:
-    
-```
-- `sys.argv[1:]`为要处理的参数列表，`sys.argv[0]`为脚本名，所以用`sys.argv[1:]`过滤掉脚本名。
-- `"hi:o:"`: 当一个选项只是表示开关状态时，即后面不带附加参数时，在分析串中写入选项字符。当选项后面是带一个附加参数时，在分析串中写入选项字符同时后面加一个":"号。
-    - 所以"hi:o:"就表示"h"是一个开关选项(单单的-h)；"i:"和"o:"则表示后面应该带一个参数。
-- 调用getopt函数。函数返回两个列表：`opts和args`。opts为分析出的格式信息。args为不属于格式信息的剩余的命令行参数。
-    - opts是一个两元组的列表。每个元素为：(选项串,附加参数)。如果没有附加参数则为空串''。
-    - getopt函数的第三个参数[, long_options]为可选的长选项参数，上面例子中的都为短选项(如-i -o)
-- 长选项格式举例:
-    - `--version`
-    - `--file=error.txt`
-- 让一个脚本同时支持短选项和长选项 `getopt.getopt(sys.argv[1:], "hi:o:", ["version", "file="]) `
-
-#### docopt
-> [Github地址](https://github.com/docopt/docopt) | 在脚本头部添加文档来实现读取参数的便捷
-会读取输入返回字典对象,可以很方便的读取输入的参数,但是需要书写大量文档, 适合参数比较多的时候,一眼过去简洁明了
-
-#### Python Fire
-> [Github地址](https://github.com/google/python-fire)快速的简洁的生成CLI
-> 不过要自己书写帮助文档输出,小量参数的话,开发十分的便利 可以和类一起,也可以和方法一起
-
-```python
-import fire
-def main(action=None):
-    print(action)
-    if action == '-h':
-        show_help()
-       
-fire.Fire(main)
-// 使用时 py filename.py -h  
-```
-*****************************************
 ## 函数
-
 - 形参赋值传递方式
     - 按位置 `就是直接用看起来和Java一样，但不是按类型和位置，只是位置`
-    - 按指定名称 调用的时候 `create(name='df')`
-    - 缺省默认值（参数缺省之后，调用可以不传这个参数，否则必须要传） `def create(name='df')`
+    - 按指定名称 调用的时候 `create(name='hi')`
+    - 缺省默认值（参数缺省之后，调用可以不传这个参数，否则必须要传） 声明: `def create(name='hi')`
     - 列表类型，不想形参改变实参 传递副本过去即可 `list[:]`
     
-- `以下两种情况（* 和 **），都必须放在形参列表的最后 (两者同时使用时：* 只能在 ** 前 )`
-    - 多个实参 `create(age, *name)` `create(12, 's','d')`
-        - 所以这是名为name的`元组` 不能指定没有的名称 错误：create(12，d=2, 2,3,4)
-    - 多个指定名称实参 `create(age, **name)` `create(12, name='d', lo=23)` 
-        - 必须要指定名称 这是名为name的键值对`字典`
-        - 错误：create(12,d=23,3,3,3)
-    - 注意：
-        - `def hi(name, age=0, *names, **s)` `hi('d', 23,34, d=6) ` age会被赋值23
-        - `def hi(name, *names, age=0, **s)` `hi('d', 23,34, d=6)` 这样写age就不会赋值，除非指定名称 age=23
+
+- 多个实参 `create(age, *name)` `create(12, 's','d')`
+    - 所以这是名为name的`元组` 不能指定没有的名称 错误：create(12，d=2, 2,3,4)
+- 多个指定名称实参 `create(age, **name)` `create(12, name='d', lo=23)` 
+    - 必须要指定名称 这是名为name的键值对`字典`
+    - 错误：create(12,d=23,3,3,3)
+- 注意：
+    - `def hi(name, age=0, *names, **s)` `hi('d', 23,34, d=6) ` age会被赋值23
+    - `def hi(name, *names, age=0, **s)` `hi('d', 23,34, d=6)` 这样写age就不会赋值，除非指定名称 age=23
+    - `以上两种情况（* 和 **），都必须放在形参列表的最后 (两者同时使用时：* 只能在 ** 前 )`
 
 - 返回值
     - 返不返回 看需求 没有像Java一样的强制性约束类型
@@ -459,10 +345,24 @@ fire.Fire(main)
     -  导入指定的函数 `from create import create_aliens, type_button` 多个就，分隔 同理 as给函数加别名 * 通配所有
 - 注意：递归深度，Python中递归默认深度是 989， 要么更改实现，要么就 `sys.setrecursionlimit(10000000)`
 
+> [参考: Magic Method](https://segmentfault.com/a/1190000007256392) `__xxx__ 方法`
 
-*******************
+> 内置函数
+
+- `id()` 查看内存地址
+- `help(方法名)` 展示方法的说明文档
+- `dir(对象)` 展示对象的方法API
+
+************************
+## 包 
+> [official tutorial](https://docs.python.org/3/tutorial/modules.html#packages)
+
+When importing the package, Python searches through the directories on `sys.path` looking for the package subdirectory.
+
+> 1. 注意不能出现 import 循环依赖 `A.py import B.py` then `B.py import A.py`  
+
 ## 类
-`Python 不存在多态，存在鸭子类型` [博客介绍](http://blog.csdn.net/shangzhihaohao/article/details/7065675)
+`Python 不存在多态，存在鸭子类型` [博客介绍](http://blog.csdn.net/shangzhihaohao/article/details/7065675) | [python中的多态与鸭子类型](https://www.jianshu.com/p/650485b78d11)
 - 写在一个py文件里，默认构造器，可以加参数 `def __init__(self):`
 
 - 属性：
@@ -508,7 +408,7 @@ fire.Fire(main)
 
 - 导入和函数一样 注意继承中类的依赖
 
-#### 继承
+### 继承
 - Python是支持多重继承的
 
 - 同文件 父类定义要在子类之前
@@ -523,7 +423,8 @@ fire.Fire(main)
     - 方法重载： 子类覆盖父类的方法
     - 运算符重载： 加`__add__(self, x)` 减`__sub__(self, x)`
 
-******************************************
+************************
+
 ## 异常
 ```python
     try:
@@ -535,18 +436,20 @@ fire.Fire(main)
     finally:
         print('finally')
 ```
-- 基本语法 `try except else finally`
-    - else是无异常执行
-    - 有异常就执行 except， except 超类Exception，也可以多个except （和Java一致）
-    - 最终执行finally 和 Java的结构是一致的
 
-| except 分句使用形式 |  说明 |
-| :--- | :---|
-|except | 捕获所有类型|
-|except name| 只捕获指定类型|
-|except name, value|捕获指定类型，并获得抛出的异常对象|
-|except (name1, name2)|捕获列出的异常|
-|except (name1, name2), value |捕获列出的异常，获得抛出的异常对象|
+- 基本语法 `try except else finally`
+    - else 是无异常时执行
+    - 有异常就会执行 except， 可以多个except （和Java一致）
+        - `except Exception as e:` 捕获所有异常
+    - 最终执行 finally 和 Java的结构是一致的
+
+    | except 分句使用形式 |  说明 |
+    | :--- | :--- |
+    | except                        | 捕获所有类型 |
+    | except name                   | 只捕获指定类型 |
+    | except name, value            | 捕获指定类型，并获得抛出的异常对象|
+    | except (name1, name2)         | 捕获列出的异常|
+    | except (name1, name2), value  | 捕获列出的异常，获得抛出的异常对象|
 
 - raise 语句 和Java的throw关键字 一致 ， 不过raise只是抛出一个通用异常类型 Exception
 - dir(exceptions) 查看所有异常类型
@@ -558,28 +461,158 @@ fire.Fire(main)
 
 | 常见异常类 | 描述 |
 |:---|:---|
-|NameError/UnboundLocalError | 引用不存在的变量/或者引用在声明之前|
-|ZeroDivisionError|除数为0|
-|SyntaxError|语法错误|
-|IndexError|索引错误|
-|KeyError|使用不存在的字典关键字|
-|IOError|输入输出错误|
-|ValueError|搜索列表中不存在的值|
-|AtrributeError|调用不存在的方法|
-|TypeError|未强制转换就混用数据类型|
-|EOPError|文件结束标识错误|
+| NameError/UnboundLocalError | 引用不存在的变量/或者引用在声明之前 |
+| ZeroDivisionError           | 除数为0 |
+| SyntaxError                 | 语法错误 |
+| IndexError                  | 索引错误 |
+| KeyError                    | 使用不存在的字典关键字 |
+| IOError                     | 输入输出错误 |
+| ValueError                  | 搜索列表中不存在的值 |
+| AtrributeError              | 调用不存在的方法 |
+| TypeError                   | 未强制转换就混用数据类型 |
+| EOPError                    | 文件结束标识错误 |
 
-*****************
+************************
+
+## 读取命令行参数
+> [参考博客](http://www.sharejs.com/codes/python/6121)
+
+`只有输入参数，没有选项`
+```python
+    import sys
+    print("脚本名：", sys.argv[0])
+    for i in range(1, len(sys.argv)):
+        print("参数", i, sys.argv[i])
+```
+`python tree.py hi op ` 顺序是python，第一个参数是文件，之后才是别的参数
+ 结果>> `脚本名 tree.py 参数1 hi 参数2 op`
+
+`有选项`
+`getopt.getopt(args, options[, long_options])`
+```python
+    import sys, getopt
+    opts, args = getopt.getopt(sys.argv[1:], "hi:o:")
+    for op, value in opts:
+    
+```
+- `sys.argv[1:]`为要处理的参数列表，`sys.argv[0]`为脚本名，所以用`sys.argv[1:]`过滤掉脚本名。
+- `"hi:o:"`: 当一个选项只是表示开关状态时，即后面不带附加参数时，在分析串中写入选项字符。当选项后面是带一个附加参数时，在分析串中写入选项字符同时后面加一个":"号。
+    - 所以"hi:o:"就表示"h"是一个开关选项(单单的-h)；"i:"和"o:"则表示后面应该带一个参数。
+- 调用getopt函数。函数返回两个列表：`opts和args`。opts为分析出的格式信息。args为不属于格式信息的剩余的命令行参数。
+    - opts是一个两元组的列表。每个元素为：(选项串,附加参数)。如果没有附加参数则为空串''。
+    - getopt函数的第三个参数[, long_options]为可选的长选项参数，上面例子中的都为短选项(如-i -o)
+- 长选项格式举例:
+    - `--version`
+    - `--file=error.txt`
+- 让一个脚本同时支持短选项和长选项 `getopt.getopt(sys.argv[1:], "hi:o:", ["version", "file="]) `
+
+### docopt
+> [Github地址](https://github.com/docopt/docopt) | 在脚本头部添加文档来实现读取参数的便捷
+会读取输入返回字典对象,可以很方便的读取输入的参数,但是需要书写大量文档, 适合参数比较多的时候,一眼过去简洁明了
+
+### Python Fire
+> [Github地址](https://github.com/google/python-fire)快速的简洁的生成CLI
+> 不过要自己书写帮助文档输出,小量参数的话,开发十分的便利 可以和类一起,也可以和方法一起
+
+```python
+    import fire
+    def main(action=None):
+        print(action)
+        if action == '-h':
+            show_help()
+        
+    fire.Fire(main)
+    # 使用时 py filename.py -h  
+```
+
+******************
+# 应用
+## 模块
+python -m module_name
+
+### http
+- 快速启动一个 HTTP Web 服务器 `http.server [port]`
+
+### virtualenv
+> [廖雪峰 virtualenv](https://www.liaoxuefeng.com/wiki/0014316089557264a6b348958f449949df42a6d3a2e542c000/001432712108300322c61f256c74803b43bfd65c6f8d0d0000)
+
+**虽然也可以用apt安装 python-venv, 但是最好不要这样,避免后续模块升级后不必要的冲突**
+
+- 创建环境 `python3 -m venv web` 或者 `virtualenv --no-site-packages web` 不将系统中安装的包带入该环境
+- 启动环境 `source web/bin/activate`
+    - 在环境中使用的pip python 都是环境中的, 其实就是修改了系统的环境变量指向
+- 停用环境 `deactivate`
+
+### pip
+> [pip](https://pip.readthedocs.io/en/stable/) | [doc](https://pip.pypa.io/en/stable/reference/pip_install/) | [guide](https://packaging.python.org/tutorials/installing-packages/) 
+
+1. 作为Python的包管理器, 包的可执行文件默认在 /usr/local/bin 目录下(全局)
+    - 如果安装时加了该参数 --user 就是安装在 ~/.local/bin 目录下
+
+> install
+- `pip install name` 安装最新版本
+- `pip install name==version` 安装指定版本
+- 镜像源 豆瓣 `-i https://pypi.doubanio.com/simple/` 清华 `-i https://pypi.tuna.tsinghua.edu.cn/simple`
+    - [修改Pip 管理工具默认下载源](https://blog.csdn.net/JQ_AK47/article/details/77944444)
+- 代理 `--proxy 192.168.1.24:1234`
+- 强行使用HTTP `-i http://pypi.doubanio.com/simple/ --trusted-host pypi.doubanio.com` pip版本高于20.3后默认使用HTTPS
+- 安装tar.gz:  pip install xxxx.tar.gz
+
+> 注意：自PEP668开始限制默认安装为全局依赖，否则会报错 externally-managed-environment
+- 可以设置默认全局 python3 -m pip config set global.break-system-packages true
+- 或者单次安装到全局 --break-system-packages
+
+> 3.10 后 pip 作为子模块
+- 安装 `python -m ensurepip --upgrade`
+- 使用 `python -m pip install pkgName` 
+- 升级 `python -m pip install --upgrade pip`
+
+#### Requirements files
+> [pip官方文档 Requirements files](https://pip.readthedocs.io/en/1.1/requirements.html)
+
+1. 导出 `pip freeze > requirements.txt` _这个命令会将当前环境安装的包全部列出来, 适合env环境下使用_
+    - 如果没有使用虚拟环境, 然后只想导出某项目的依赖 [Github pipreqs](https://github.com/bndr/pipreqs)
+    - 安装 : `pip install pipreqs` 然后 `pipreqs /path/to/project`
+
+1. 使用 `pip install -r requirements.txt`
+
+#### 发布包到 pypi
+> [Official : about package](https://packaging.python.org/guides/distributing-packages-using-setuptools/?highlight=pypirc#id78)
+
+1. edit `$HOME/.pypirc` to save authorization  info
+    ```
+        [pypi]
+        username = <username>
+        password = <password>
+    ```
+1. pip3 install wheel twine 
+1. rm -rf dist build *.egg-info
+1. python3 setup.py bdist_wheel
+1. twine upload dist/*
+
+> [可以参考该项目: 终端内使用百度翻译](https://gitee.com/gin9/baidu-trans-cli)
+
+由于Readme 使用的是 [reStructuredText](https://rest-sphinx-memo.readthedocs.io/en/latest/ReST.html) 语法(要求严格,所以需要借助工具)
+> 1. pip install collective.checkdocs Pygments
+> 1. python3 setup.py checkdocs
+
+### matplotlib
+
+************************
+
+
 ## 文件操作
+
 - 注意路径，Windows系统中要使用反斜杠 \ 
 - 最简单：`file = open('')` 只读打开
-- `使用with来操作 好处是Python自动关闭文件`
-```python
-    with open('filename') as name: 
-        name.read()
-```
+- `使用with来操作 好处是Python自动关闭文件` 类似于Java的TWR
+    ```python
+        with open('filename') as file: 
+            lines = file.readlines()
+    ```
 - 为写打开新文本文件只读 `file = open('a.txt','w+'[,coding='utf-8'])` 打开删空
 - `file.write('')`
+
 - `os模块`
     - `os.rename('filename1','filename2') ` mv 
     - `os.remove('filename.py')` rm
@@ -588,7 +621,7 @@ fire.Fire(main)
     - `os.makedirs(r'path')` mkdir
     - `os.chdir('')` 改变一个目录
     - `os.rmdir('')` 删除该目录，前提是空目录
-
+ 
 - `os.path模块`
     - abspath('') 获取绝对路径
     - exists('') 是否存在
@@ -601,37 +634,59 @@ fire.Fire(main)
     - dir() 复制单个文件
     - shultil.copytree(r'',r'') 复制目录树 
 
+```python
+    # 读取大文件
+    for line in fileinput.input("test.txt"):
+        print(line)
+```
+************************
+
 `b 表示字节流（二进制文件） 不加表示字符流（文本文件）`
 
-|方式   |意义   |当存在   |当不存在   |
-|:-----:|:-----:|:------:|:-----:|
+|字符流方式   |意义   |当存在   |当不存在   |
+|:-----|:-----|:------|:-----|
 |r   |只读打开   |打开   |返回空指针 |
-|w   |只写打开新  |打开删空 |新建打开  |
+|w   |只写打开  |打开删空 |新建打开  |
 |a   |追加打开   |打开   |新建打开  |
 |r+  |读打开可写  |打开   |返回空指针  |
-|w+  |写打开新可读 |打开删空 |新建打开  |
+|w+  |写打开可读 |打开删空 |新建打开  |
 |a+  |追加打开可读 |打开   |新建打开  |
+
+****************
+
+|字节流方式   |意义   |当存在   |当不存在   |
+|:-----|:-----|:------|:-----|
 |rb  |只读打开   |打开   |返回空指针 |
-|wb  |只写打开新  |打开删空 |新建打开  |
+|wb  |只写打开  |打开删空 |新建打开  |
 |ab  |追加打开   |打开   |新建打开  |
 |rb+ |读打开可写  |打开   |返回空指针 |
-|wb+ |写打开新可读 |打开删空 |新建打开  |
+|wb+ |写打开可读 |打开删空 |新建打开  |
 |ab+ |追加打开可读 |打开   |新建打开  |
+
+************************
 
 ### JSON
 ```python
-    alien = {'color': 'green', 'age': '23'}
-    files = 'a.json'
-    with open(files, 'w') as o:
-        json.dump(alien, o)
-    data = json.load(files)
-    # 引用
-    data['root']['name']
+    import json
+    file_name='result.json'
+    
+    def write_json():
+        global file_name
+        person = {'color': 'green', 'age': '23'}
+        with open(file_name, 'w') as o:
+            json.dump(person, o)
+
+    def read_json():
+        global file_name
+        with open(file_name) as file:
+            datas = json.load(file)
+            for data in datas :
+                # 引用的时候就当做是字典
+                print(data, datas[data])
 ```
-- json.dump()持久化 和 load() 装载
 
 ### conf或者ini
-> [参考博客: python操作ini文件](https://www.oschina.net/code/snippet_782578_14344)
+> [参考: python操作ini文件](https://www.oschina.net/code/snippet_782578_14344)
 
 ```python
     import os
@@ -646,27 +701,39 @@ fire.Fire(main)
     # 写 但是要有write节点
     cf.set('write', 'add', '12')
     cf.write(open(mainConf, 'r+'))
-    ```
-    _对应的conf_
-    ```conf
-        [redis]
-        host=127.0.0.1
 ```
-******************************
+
+_对应的conf_
+```conf
+    [redis]
+    host=127.0.0.1
+```
+
+************************
+## 日志
+loguru
+
+> [Effective Logging in Threaded or Multiprocessing Python Applications ](https://www.loggly.com/blog/effective-logging-in-threaded-or-multiprocessing-python-applications/)
+
+但是 FastApi 里的 BackgroundTasks 是跨线程的，但是同样支持log， 需要找找怎么实现的
+- 实际上是因为他是协程，不是线程
+
+************************
+
 ## 测试
-- 文件名test开头就当做是测试类，不会直接运行
+
+- 文件名test_开头, 需要 unittest.main() 方式运行
 - 类继承 unittest.TestCase, 所有test_开头的方法都将自动运行
 - 断言 self.assertEqual assertNotEquals assertIn(item, list)
-- 直接运行 unittest.main()
-- 输出结果，`. 测试通过` `E 测试运行错误` `F 测试断言不通过`
+- 输出结果: `. 测试通过` `E 测试运行错误` `F 测试断言不通过`
 
-************
+************************
+
 ## 数据库
 ### MySQL
-- python3环境下： `sudo apt install python3-mysqldb`
-- `sudo apt install libmysqlclient-dev`
-- `sudo pip install mysql-python`
+> pip install mysqlclient
 
+- import MySQLdb
 
 ### Redis
 _安装模块_
@@ -680,7 +747,7 @@ _使用_
 ## 部署
 ### Docker部署
 > [参考官方文档](https://hub.docker.com/_/python/)
-Create a Dockerfile in your Python app project
+
 ```dockerfile
     FROM python:3
     WORKDIR /usr/src/app
@@ -689,7 +756,7 @@ Create a Dockerfile in your Python app project
     COPY . .
     CMD [ "python", "./your-daemon-or-script.py" ]
 ```
-_or (if you need to use Python 2)_
+
 ```dockerfile
     FROM python:2
     WORKDIR /usr/src/app
@@ -702,23 +769,6 @@ _or (if you need to use Python 2)_
     - $ docker build -t my-python-app .
     - $ docker run -it --rm --name my-running-app my-python-app
 
-********************
-## 绘图 
-### matplotlib
-`python 3.5 安装`
-```sh
-    sudo apt install python3-matplotlib 
-    sudo apt install python3.5-dev python3.5-tk tk-dev
-    sudo apt install libfreetype6-dev g++
-```
-
-********
-## 常见函数
-
-- `id()` 查看内存地址
-- `help(方法名)` 展示方法的说明文档
-- `dir(对象)` 展示对象的方法API
-
 ******************************
 ## 常见库
 ### 内置库
@@ -728,27 +778,23 @@ _or (if you need to use Python 2)_
     - 获取脚本绝对路径  `os.path.split(os.path.realpath(__file__))[0]`
     - 获取用户目录 `os.environ['HOME']` | `os.path.expandvars('$HOME')` | `os.path.expanduser('~')`
 
-- `subprocess` [代码](https://gitee.com/kcp1104/codes/9ytejo7fl2xmqsr5zwkv380)
+- platform 操作系统信息
+    - 获取当前操作系统名称 platform.system() 
 
-#### 时间处理
+- `subprocess` [代码](https://gitee.com/gin9/codes/9ytejo7fl2xmqsr5zwkv380)
+
+### 时间处理
 
 _time_
-> [参考博客: Python 日期和时间](http://www.runoob.com/python/python-date-time.html)
+> [菜鸟教程: Python 日期和时间](http://www.runoob.com/python/python-date-time.html)
+
+1. 格式化当前时间 `time.strftime("%Y-%m-%d %H:%M:%S", time.localtime())`
+
 ### 三方库
+- `qrcode` 终端生成二维码
 - `redis` 和Redis命令完美融合
 - `httpie` HTTP方便的交互 [doc](https://httpie.org/doc)
     - POST时 特别注意:`参数==值`
 - [python-excel](http://www.python-excel.org/)
 - `python-docx` [文档](https://python-docx.readthedocs.io/en/latest/)
 - `chef` [文档](https://docs.chef.io/resource_python.html) `Use the python resource to execute scripts using the Python interpreter`
-
-********************
-## QT
-- 在Terminal中输入:sudo apt-get install qt4-dev-tools qt4-doc qt4-qtconfig qt4-demos qt4-designer
-```
-    qt4-dev-tools 中包括了Qt Assistant,Qt Linguist,Qt Creator
-    qt4-doc 这个是帮助文档
-    qt4-qtconfig Qt的配置工具,这个装好默认好
-    qt4-demos 官方的一些Demo
-    qt4-designer 可视化窗体设置工具
-```

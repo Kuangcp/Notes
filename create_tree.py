@@ -19,10 +19,10 @@ end='\033[0m'
     使用： python3 create_tree.py -h 查看帮助
 '''
 # 忽略的文件夹
-ignoreFolder=['.git', 'backup', '.vscode']
+ignoreFolder=['.git', 'backup', '.vscode', 'ARTS']
 # 所有要被忽略的文件
 ignoreFile=['PULL_REQUEST_TEMPLATE.md', 'ISSUE_TEMPLATE.md', 'CODE_OF_CONDUCT.md','README.md', 
-    'Readme.md', 'CSS3.md', 'HTML5.md', '_Sidebar.md']
+    'Readme.md', 'CSS3.md', 'HTML5.md', '_Sidebar.md', 'SUMMARY.md']
 
 result = []
 
@@ -102,11 +102,11 @@ def main(verb=None):
     # 追加到SUMMARY
     if verb == "-a":
         readAll()
-        subprocess.call('mv SUMMARY.md SUMMARY.md.bak',shell=True)
+        subprocess.call('mv SUMMARY.md SUMMARY.md.bak', shell=True)
         with open('SUMMARY.md','w+') as dest:
             dest.write('# Summary\n\n* [ Introduction ](README.md)\n\n')
             for res in result:
                 dest.write(res+'\n')
-        logInfo('重新生成目录树完成!')
+        logInfo('complete refresh catalog file')
 
 fire.Fire(main)

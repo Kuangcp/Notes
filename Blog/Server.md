@@ -1,10 +1,17 @@
-`目录 start`
- 
-- [Server](#server)
-    - [终端](#终端)
-    - [内存优化](#内存优化)
+---
+title: Server
+date: 2018-11-21 10:56:52
+tags: 
+categories: 
+---
 
-`目录 end` |_2018-08-04_| [码云](https://gitee.com/gin9) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104) | [cnblogs](http://www.cnblogs.com/kuangcp)
+**目录 start**
+
+1. [Server](#server)
+    1. [终端](#终端)
+    1. [内存优化](#内存优化)
+
+**目录 end**|_2020-06-28 02:11_|
 ****************************************
 # Server
 > 服务器运维相关

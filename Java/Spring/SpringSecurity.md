@@ -1,43 +1,53 @@
-`目录 start`
- 
-- [SpringSecurity](#springsecurity)
-    - [配置](#配置)
-        - [配置静态口令使用](#配置静态口令使用)
-- [使用该配置即可自定义用户名密码](#使用该配置即可自定义用户名密码)
-    - [SpringBoot的集成Demo](#springboot的集成demo)
-        - [创建单用户单角色的安全控制](#创建单用户单角色的安全控制)
-        - [多用户多角色的实现思路](#多用户多角色的实现思路)
-            - [每个身份都使用一个登录实体类](#每个身份都使用一个登录实体类)
-            - [另一种思路：](#另一种思路)
-    - [JWT](#jwt)
-        - [跨域问题](#跨域问题)
-    - [Oauth](#oauth)
-    - [实现细节](#实现细节)
-        - [关于注解的几种使用方式](#关于注解的几种使用方式)
-            - [@Secured](#@secured)
-            - [@RolesAllowed](#@rolesallowed)
-            - [SpringSecurity3.0 开始提供了 SpEL表达式](#springsecurity30-开始提供了-spel表达式)
-        - [保护方法应用](#保护方法应用)
-    - [社交登录](#社交登录)
+---
+title: SpringSecurity
+date: 2018-12-21 10:53:23
+tags: 
+    - Spring
+categories: 
+    - Java
+---
 
-`目录 end` |_2018-08-04_| [码云](https://gitee.com/gin9) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104) | [cnblogs](http://www.cnblogs.com/kuangcp)
+💠
+
+- 1. [SpringSecurity](#springsecurity)
+    - 1.1. [配置](#配置)
+        - 1.1.1. [配置静态口令使用](#配置静态口令使用)
+    - 1.2. [SpringBoot的集成Demo](#springboot的集成demo)
+        - 1.2.1. [创建单用户单角色的安全控制](#创建单用户单角色的安全控制)
+        - 1.2.2. [多用户多角色的实现思路](#多用户多角色的实现思路)
+            - 1.2.2.1. [每个身份都使用一个登录实体类](#每个身份都使用一个登录实体类)
+            - 1.2.2.2. [另一种思路：](#另一种思路)
+    - 1.3. [JWT 和 Spring](#jwt-和-spring)
+        - 1.3.1. [跨域问题](#跨域问题)
+    - 1.4. [Oauth](#oauth)
+    - 1.5. [实现细节](#实现细节)
+        - 1.5.1. [关于注解的几种使用方式](#关于注解的几种使用方式)
+            - 1.5.1.1. [@Secured](#@secured)
+            - 1.5.1.2. [@RolesAllowed](#@rolesallowed)
+            - 1.5.1.3. [SpringSecurity3.0 开始提供了 SpEL表达式](#springsecurity30-开始提供了-spel表达式)
+        - 1.5.2. [保护方法应用](#保护方法应用)
+    - 1.6. [社交登录](#社交登录)
+
+💠 2024-07-24 17:28:31
 ****************************************
 # SpringSecurity
 > [Spring Security 5.0.6 doc](https://docs.spring.io/spring-security/site/docs/5.0.6.RELEASE/reference/htmlsingle)
 
-[参考博客: Spring Security 入门系列](http://www.spring4all.com/article/428)
+[参考: Spring Security 入门系列](http://www.spring4all.com/article/428)
 
 
 ## 配置
 ### 配置静态口令使用
 当添加了Security依赖之后, 只会生成一个默认的随机密码, 如下简单配置:
 ```ini
-# 使用该配置即可自定义用户名密码
-spring.security.user.name=admin
-spring.security.user.password=secret
+    # 使用该配置即可自定义用户名密码
+    spring.security.user.name=admin
+    spring.security.user.password=secret
 ```
 如果要用 curl 访问则是 `curl -i  -u admin:secret  http://tomcat.kcp/hi`  
+
 > 注意 : 前提是要关闭 crsf 校验 
+
 ```java
 @EnableWebSecurity
 public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
@@ -47,7 +57,6 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
   }
 }
 ```
-
 
 ******************************************************************
 ## SpringBoot的集成Demo
@@ -86,7 +95,8 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 >- 其实这个安全框架使用的是角色控制，而不是权限控制，目前的了解，达不到Oracle那样的权限加角色的精细化控制
 
 *********
-## JWT
+
+## JWT 和 Spring
 > [JWT相关原理](/Skills/Base/WebSecurity.md#jwt) | [Github SpringBoot2使用Security整合Jwt案例项目](https://github.com/Kuangcp/SpringBoot2-Security-Jwt)  
 
 - [个人代码片段](https://gitee.com/kcp1104/codes/kw31qf40iz9p8mt2x7bcd49)  |
@@ -100,7 +110,9 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 > [WEB应用前后端分离实践 关键词：rest架构+跨域访问+JWT校验](https://bbs.csdn.net/topics/392006333)
 
 [csrf](https://docs.spring.io/spring-security/site/docs/5.0.6.RELEASE/reference/htmlsingle/#csrf)
+
 *******************
+
 ## Oauth
 > [oauth](https://github.com/spring-projects/spring-security-oauth)
 

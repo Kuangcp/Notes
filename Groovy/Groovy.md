@@ -1,38 +1,47 @@
-`目录 start`
- 
-- [Groovy](#groovy)
-    - [书籍](#书籍)
-    - [语言特性](#语言特性)
-    - [安装配置](#安装配置)
-        - [在IDEA中](#在idea中)
-        - [Maven引入Groovy](#maven引入groovy)
-        - [Docker](#docker)
-    - [Groovy基础](#groovy基础)
-        - [Groovy特性](#groovy特性)
-            - [默认导入](#默认导入)
-            - [隐式return](#隐式return)
-            - [默认生成setter getter](#默认生成setter-getter)
-            - [数字处理](#数字处理)
-            - [变量，动态和静态类型，作用域](#变量动态和静态类型作用域)
-            - [列表和映射语法](#列表和映射语法)
-            - [动态调用函数](#动态调用函数)
-        - [函数](#函数)
-        - [闭包](#闭包)
-        - [测试](#测试)
-        - [调用系统命令行](#调用系统命令行)
-    - [强大的注解](#强大的注解)
-    - [与Java的差异](#与java的差异)
-        - [Java不具备的Groovy特性](#java不具备的groovy特性)
-    - [Groovy和Java的交互](#groovy和java的交互)
-        - [Maven中引入Groovy](#maven中引入groovy)
-        - [Groovy调用Java](#groovy调用java)
-        - [Java调用Groovy](#java调用groovy)
-        - [Groovy和Spring](#groovy和spring)
-    - [坑](#坑)
-        - [默认return](#默认return)
-    - [Grails](#grails)
+---
+title: Groovy
+date: 2018-12-15 12:13:52
+tags: 
+    - 基础
+categories: 
+    - Groovy
+---
 
-`目录 end` |_2018-09-01_| [码云](https://gitee.com/gin9) | [CSDN](http://blog.csdn.net/kcp606) | [OSChina](https://my.oschina.net/kcp1104) | [cnblogs](http://www.cnblogs.com/kuangcp)
+**目录 start**
+
+1. [Groovy](#groovy)
+    1. [书籍](#书籍)
+    1. [语言特性](#语言特性)
+    1. [安装配置](#安装配置)
+        1. [在IDEA中](#在idea中)
+        1. [Maven引入Groovy](#maven引入groovy)
+        1. [Docker](#docker)
+    1. [Groovy基础](#groovy基础)
+        1. [Groovy特性](#groovy特性)
+            1. [默认导入](#默认导入)
+            1. [隐式return](#隐式return)
+            1. [默认生成setter getter](#默认生成setter-getter)
+            1. [数字处理](#数字处理)
+            1. [变量，动态和静态类型，作用域](#变量动态和静态类型作用域)
+            1. [列表和映射语法](#列表和映射语法)
+            1. [动态调用函数](#动态调用函数)
+        1. [函数](#函数)
+        1. [闭包](#闭包)
+        1. [测试](#测试)
+        1. [调用系统命令行](#调用系统命令行)
+    1. [强大的注解](#强大的注解)
+    1. [与Java的差异](#与java的差异)
+        1. [Java不具备的Groovy特性](#java不具备的groovy特性)
+    1. [Groovy和Java的交互](#groovy和java的交互)
+        1. [Maven中引入Groovy](#maven中引入groovy)
+        1. [Groovy调用Java](#groovy调用java)
+        1. [Java调用Groovy](#java调用groovy)
+        1. [Groovy和Spring](#groovy和spring)
+    1. [坑](#坑)
+        1. [默认return](#默认return)
+    1. [Grails](#grails)
+
+**目录 end**|_2020-12-08 19:23_|
 ****************************************
 # Groovy
 > [Groovy 官网](http://www.groovy-lang.org/) | 
@@ -162,7 +171,7 @@
 ```
 
 ### 函数
-> [参考博客: Groovy进阶之函数、闭包和类](https://www.tuicool.com/articles/iEBJnqF)
+> [参考: Groovy进阶之函数、闭包和类](https://www.tuicool.com/articles/iEBJnqF)
 
 ### 闭包
 ```groovy
@@ -174,7 +183,7 @@
 ```
 
 ### 测试
-[参考博客: 用 Groovy 更迅速地对 Java 代码进行单元测试](https://www.ibm.com/developerworks/cn/java/j-pg11094/)
+[参考: 用 Groovy 更迅速地对 Java 代码进行单元测试](https://www.ibm.com/developerworks/cn/java/j-pg11094/)
 
 *************************
 ### 调用系统命令行
@@ -189,7 +198,7 @@
 > 和Java不同的是, Groovy提供具有功能性的注解, Java大多是接口规范性注解
 
 @ToString 自动实现toString方法, 但是字符串有点冗余
-> [参考博客: Groovy中那些神奇注解之ToString](http://www.cnblogs.com/varlxj/p/5181788.html)
+> [参考: Groovy中那些神奇注解之ToString](http://www.cnblogs.com/varlxj/p/5181788.html)
 
 _日志相关_ 只需要引入对应的依赖, 就和lombok一样的使用
 ```java
@@ -364,15 +373,14 @@ class Person{
 > [示例代码](https://github.com/kuangcp/JavaBase/blob/master/src/main/java/com/classfile/JavaUseGroovy.java)
 
 ### Groovy和Spring
-> [参考博客: Groovy 使 Spring 更出色，第 1 部分](https://www.ibm.com/developerworks/cn/java/j-groovierspring1.html)
+> [参考: Groovy 使 Spring 更出色，第 1 部分](https://www.ibm.com/developerworks/cn/java/j-groovierspring1.html)
 
 **************************************
 ## 坑
 > 因为是动态的, 所以, 当Java或Groovy类更改了一些接口, 属性名, 调用方那里不会报错, 直到运行才报错, 而且 eclipse idea 都不报错, 只是会把错误的属性和调用变成带有下划线的灰色...
 
 ### 默认return
-> 只要在方法最后一行放入表达式, 就会自动return, 这就导致了Groovy不会对方法进行检查, 逻辑复杂时如果少了一个return, 不会报编译错误, 方法直接返回null.  
-> 这个坑, 硬是Debug了近一个小时, debug功力要提升了
+> 只要在方法最后一行放入表达式, 就会自动return, 这就导致了Groovy不会对方法返回值进行检查, 逻辑复杂时如果少了一个return, 不会报编译错误, 方法直接返回null.  
 
 ***********************
 ## Grails
